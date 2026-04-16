@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archive Editorial - Nikke Script Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif+KR:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#131313",
+                        "outline-variant": "#3e484f",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-secondary": "#670211",
+                        "on-secondary-fixed": "#410006",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-container": "#a7a9ff",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#393939",
+                        "secondary": "#ffb3b0",
+                        "on-tertiary-container": "#2b29bb",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "tertiary": "#c7c8ff",
+                        "inverse-on-surface": "#313030",
+                        "primary": "#8ed5ff",
+                        "on-secondary-container": "#ff9996",
+                        "surface-container-highest": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#7bd0ff",
+                        "on-secondary-fixed-variant": "#881d24",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#bdc8d1",
+                        "secondary-container": "#881d24",
+                        "on-primary-fixed": "#001e2c",
+                        "inverse-primary": "#00668a",
+                        "on-primary-container": "#004965",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed": "#ffdad8",
+                        "on-primary": "#00354a",
+                        "outline": "#87929a",
+                        "tertiary-fixed": "#e1e0ff",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "on-tertiary": "#1000a9",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#38bdf8",
+                        "on-tertiary-fixed": "#07006c",
+                        "primary-fixed": "#c4e7ff",
+                        "on-primary-fixed-variant": "#004c69",
+                        "secondary-fixed-dim": "#ffb3b0",
+                        "primary-fixed-dim": "#7bd0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Noto Serif KR"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #131313; color: #e5e2e1; }
+        .glass-nav { background: rgba(19, 19, 19, 0.8); backdrop-filter: blur(12px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .editorial-shadow { box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5); }
+        .primary-gradient { background: linear-gradient(135deg, #8ed5ff 0%, #38bdf8 100%); }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #3e484f; border-radius: 10px; }
+    </style>
+</head>
+<body class="font-headline selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/80 backdrop-blur-md shadow-xl shadow-sky-900/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-lg font-bold tracking-tighter text-white uppercase font-headline">
+                The Archive Editorial
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] tracking-tight">
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Home</a>
+<a class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1" href="#">Stories</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Search</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-neutral-400 hover:text-white transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto min-h-screen">
+<!-- Path Indicator / Breadcrumb -->
+<header class="mb-12">
+<nav class="flex items-center gap-2 text-xs uppercase tracking-widest font-label text-outline mb-4">
+<span>Home</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary">Main Story</span>
+</nav>
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface mb-2">Main Story</h1>
+<p class="font-body text-on-surface-variant max-w-xl opacity-80 leading-relaxed italic">
+                A chronicle of the surface reclamation war. Trace the footsteps of those who sought the sky.
+            </p>
+</header>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Sidebar: Categories -->
+<aside class="lg:w-64 flex-shrink-0">
+<div class="sticky top-32 space-y-8">
+<div>
+<h3 class="text-[10px] uppercase tracking-[0.2em] font-label text-outline mb-6">Archive Sections</h3>
+<ul class="space-y-4">
+<li>
+<a class="group flex items-center justify-between text-primary font-bold" href="#">
+<span class="text-sm">Main Story</span>
+<div class="h-1 w-1 rounded-full bg-primary"></div>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="text-sm">Bond Episodes</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="text-sm">Event Chronicles</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="text-sm">Side Stories</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="text-sm">Lost Relics</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-3">auto_stories</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                            Currently exploring the foundational narrative of the Ark's defense forces.
+                        </p>
+</div>
+</div>
+</aside>
+<!-- Chapter Grid -->
+<section class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Chapter Card 01 -->
+<div class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02] cursor-pointer editorial-shadow">
+<div class="absolute inset-0 bg-neutral-900">
+<img alt="" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="abstract digital art with geometric crystalline shapes in deep blue and black tones with soft neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLZbtS6rEqK-5c_igGB_FswCZKKlP5i-EfbMo5rpiOgVf0QqDZacuKvQVp_oeY-N2ykCs7XyKdD_lr49jrApiGqsEDhAdH74-5kOH9IxjUzGayqyFJIJl5roq_VJnEpqBj0zQDOpUxZH88HQCaEBSBvVmrSl6XQUdRVv4GLnF8DrYCLxfOpYEQZuC-n6CzAmSXvOIlArR6uyS1DiaHjrp0Ip_yIEclam-mnJCF2rir6Q3o0Q90-a7lx6L4y8SF2OL-ONOtT0h1m-LL"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full backdrop-blur-sm">New Entry</span>
+<span class="material-symbols-outlined text-on-surface-variant/50">bookmark_add</span>
+</div>
+<div>
+<h4 class="font-label text-[11px] uppercase tracking-[0.3em] text-outline mb-2">Chapter.01</h4>
+<h3 class="font-body text-3xl font-bold text-white mb-1">침식</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 italic opacity-80">새벽의 전쟁</p>
+<div class="flex items-end justify-between">
+<div class="flex items-center gap-2 text-xs font-label text-outline tracking-wider">
+<span class="material-symbols-outlined text-sm">segment</span>
+                                        12 SCENES
+                                    </div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform duration-300">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chapter Card 02 -->
+<div class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02] cursor-pointer editorial-shadow">
+<div class="absolute inset-0 bg-neutral-900">
+<img alt="" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="minimalist dark architectural interior with sharp shadows and a single beam of cool light cutting through the void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQAlDW9Ju8jqNxlEYSlhjLpIItE6jtNUU0XlZ6dvgra8_jH-LnwE4kGDpxTl-4zrXgdlUkN-G8MKOr-b0wXvAikELgXN3ARcrnfsj6oi36g5UEuPPmByBslqyeDgxxhyhJ9uOtWjV3PXvsA2p76fooNRsgsuOBFzcJAtv2W6CtjLVq5tVkBjietmlhvzx15gefcliiqMKQPjAXXrccXw8IGsL8aoCPBM-PUu-HLfK_phZgQ6srMK7q49F9I655Srf1ojPyrfarbsh"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-end items-start">
+<span class="material-symbols-outlined text-on-surface-variant/50">bookmark_add</span>
+</div>
+<div>
+<h4 class="font-label text-[11px] uppercase tracking-[0.3em] text-outline mb-2">Chapter.02</h4>
+<h3 class="font-body text-3xl font-bold text-white mb-1">승리</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 italic opacity-80">기억의 저편</p>
+<div class="flex items-end justify-between">
+<div class="flex items-center gap-2 text-xs font-label text-outline tracking-wider">
+<span class="material-symbols-outlined text-sm">segment</span>
+                                        15 SCENES
+                                    </div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform duration-300">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chapter Card 03 -->
+<div class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02] cursor-pointer editorial-shadow">
+<div class="absolute inset-0 bg-neutral-900">
+<img alt="" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="swirling liquid mercury abstract texture with subtle reflections of cyan and violet light in a dark environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9yHPY3WReJEsQSOJIO-3oRA_HHfYSZG6nWsvYI2Y3mjbi63eGZvDVkN62z985XAUG3-iJ3HhEP5Np7e32vEzbrDgJ_kiVLCbmNpaItGHVemHbokxH2dNqQMI92jLmvUJUQGfTIiT31Bc6s2qFChJ6V50UXm-z7x4n0ne50wpU-421lATxCEKFz9kNSn8TfYVmxofhPrGGroh-GQWT-Tht-ULYF4gk0EIaUM3-eJ8xwP35caB85s5GDf0dZwzIVo5DKngZIRZiyDBs"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-end items-start">
+<span class="material-symbols-outlined text-on-surface-variant/50">bookmark_add</span>
+</div>
+<div>
+<h4 class="font-label text-[11px] uppercase tracking-[0.3em] text-outline mb-2">Chapter.03</h4>
+<h3 class="font-body text-3xl font-bold text-white mb-1">교차</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 italic opacity-80">붉은 눈동자</p>
+<div class="flex items-end justify-between">
+<div class="flex items-center gap-2 text-xs font-label text-outline tracking-wider">
+<span class="material-symbols-outlined text-sm">segment</span>
+                                        10 SCENES
+                                    </div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform duration-300">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chapter Card 04 -->
+<div class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02] cursor-pointer editorial-shadow">
+<div class="absolute inset-0 bg-neutral-900">
+<img alt="" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="futuristic digital landscape with glowing cyan lines forming a grid over a dark undulating surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeCGweW3WJ4wrOjk-cTyhijrBwUz-EfTVrnWudIsJeqGfxLNa-nxsE8zdQwMkD688ZsjgOmgwrkqxu_zZCkmLCVkFH5-wveWS7J4uWehVmzzIK3hVUBsj_dBWiIBlYdGWhJLikTv4aqpxB7H4KtFE3DdTqFMNs2u4yG-g7J5Kagj3FIaoa5mHc4NQusNb1BCNPib3yjMPgKNpG5m9weOlzHP-RuBO0PHryc1BiHtnCfIX21fryLecD-8xHd_0KRnK9zxjXZE2Jf0rO"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-end items-start">
+<span class="material-symbols-outlined text-on-surface-variant/50">bookmark_add</span>
+</div>
+<div>
+<h4 class="font-label text-[11px] uppercase tracking-[0.3em] text-outline mb-2">Chapter.04</h4>
+<h3 class="font-body text-3xl font-bold text-white mb-1">인연</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 italic opacity-80">푸른 불꽃</p>
+<div class="flex items-end justify-between">
+<div class="flex items-center gap-2 text-xs font-label text-outline tracking-wider">
+<span class="material-symbols-outlined text-sm">segment</span>
+                                        18 SCENES
+                                    </div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform duration-300">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chapter Card 05 -->
+<div class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg transition-all duration-500 hover:scale-[1.02] cursor-pointer editorial-shadow">
+<div class="absolute inset-0 bg-neutral-900">
+<img alt="" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="soft blurred gradient background with shifting hues of deep charcoal, slate blue, and a touch of electric cyan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjFy3glauKPbttgRKmFj3N8x4VH6ovdA_TKHx8_crH6yVGf9BPGXHeWEEMkb4AZu4XlN7W0xvsO5kCrSCOhTr6o1F8ZQng-nD721KgVXIyEUHbdx-IkqX7-zURhmRzXyk5U1sfjcVddyLAlp8RJ0lTgrHxhZErMnc42r6e6bOabecqnXFjnmZ3BK28B3cUPYI17rMsi30UC_qqeiY4wkc7JY0nNGW889MFyHZLVI1opHYn80yXfiycA0KAktatJFiIagx_pfSe84DP"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-end items-start">
+<span class="material-symbols-outlined text-on-surface-variant/50">bookmark_add</span>
+</div>
+<div>
+<h4 class="font-label text-[11px] uppercase tracking-[0.3em] text-outline mb-2">Chapter.05</h4>
+<h3 class="font-body text-3xl font-bold text-white mb-1">해후</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 italic opacity-80">길 잃은 아이</p>
+<div class="flex items-end justify-between">
+<div class="flex items-center gap-2 text-xs font-label text-outline tracking-wider">
+<span class="material-symbols-outlined text-sm">segment</span>
+                                        14 SCENES
+                                    </div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform duration-300">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Placeholder/Coming Soon -->
+<div class="group relative aspect-[4/5] bg-surface-container-lowest border border-dashed border-outline-variant/30 rounded-lg flex items-center justify-center text-center p-8">
+<div>
+<span class="material-symbols-outlined text-4xl text-outline-variant/50 mb-4">more_horiz</span>
+<h4 class="font-label text-[11px] uppercase tracking-[0.3em] text-outline mb-2">Next Update</h4>
+<p class="font-body text-sm text-on-surface-variant opacity-40 italic">New chapters are being archived</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto bg-neutral-900 border-t border-neutral-800/30">
+<div class="flex flex-col items-center gap-6 max-w-7xl mx-auto px-8 font-['Manrope'] text-xs uppercase tracking-widest">
+<div class="text-sm font-semibold text-neutral-500 uppercase">The Archive Editorial</div>
+<div class="flex gap-8">
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Project Info</a>
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+<p class="text-neutral-500 lowercase opacity-50 tracking-normal">© 2024 The Archive Editorial. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

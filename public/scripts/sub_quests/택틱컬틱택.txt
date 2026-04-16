@@ -1,0 +1,505 @@
+@@@SCRIPT_ID: 택티컬티택_00
+@@@SUB_TITLE: 택티컬티택 1
+[SCENE START]
+[MESSENGER_START TITLE="택티컬티택" PARTICIPANTS="택티컬티택,지휘관"]
+  [MSG SENDER="택티컬티택"]
+    네가 그 소문의 지휘관인가?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    사적인 부탁이 있다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    들어주길 바란다
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    [CHOICE_START]
+      [OPTION TEXT="잉그리드···?"]
+        [MSG SENDER="택티컬티택"]
+          누구지 그건?
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          내 닉네임이 보이지 않는 건가?
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          택티컬이라는 단어 하나로 그렇게 짐작하는 것이라면
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          오산이라고 말해주고 싶군
+        [MSG_END]
+      [OPTION_END]
+      [OPTION TEXT="누구지···?"]
+        [MSG SENDER="택티컬티택"]
+          그건 중요하지 않다
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          난 너에게 의뢰를 할 것이고
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          그것에 대한 합당한 대가를 지불할 것이다
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          그 외의 정보가 필요한가?
+        [MSG_END]
+      [OPTION_END]
+    [CHOICE_END]
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    엘리시온에서 관리하고 있는 양산형 니케 1기가 탈주했다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    얼마 전 지상 임무에 투입되었는데
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    방주 복귀 명령을 받고 복귀 과정에서
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    야영 중 탈주했다고 한다
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    탈주 사유는?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    짐작 가는 건 있지만 확실하지 않다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    항상 적극적이었고 별다른 불만을 표하지 않았다
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    이런 경우가 자주 있어?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    자주 있진 않지만 가끔 있다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    하지만 탈주는 보통 니케가 된 후 가까운 시일 내에 발생한다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    양산형 니케가 되었다는 절망감, 이질감 등에 의해서지
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    하지만 이번에 탈주한 그 녀석은 다르다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    양산형이지만 다섯 번의 지상 임무에서 살아 돌아왔다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    굉장히 높은 생존 확률이야
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    양산형이라 부르기엔 기량이 출중하지
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    임무 참여도 매우 적극적으로 해왔다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    조만간 전용 무장 지급이 예정되어 있을 만큼
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    매우 택티컬 한 니케의 표본이라 할 수 있을 정도다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그런 녀석이 탈주라니 나는 이해할 수 없다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    당장이라도 직접 올라가서 추적하고 싶지만
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    너도 알다시피 지금 방주는 외부로 병력을 뺄 수 없다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    특수별동대인 너만 추적할 수 있다
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    알겠어. 해볼게
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    식별 신호는 계속 감지되는 상태다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    살아는 있다는 얘기지
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    좌표를 알려줄 테니 그쪽으로 가보도록
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    부탁한다
+  [MSG_END]
+[MESSENGER_END]
+아니스: ···그. 탈주한 걔 잡아가면 어떻게 되는 거야?
+네온: 별일 없을걸요?
+라피: 별일 없을거야.
+아니스: ···응?
+라피: 교관은 그 탈주 니케를 신뢰하고 아끼는 것 같으니까.
+라피: 전용 무장까지 지급할 예정이었다면, 중요 전력으로 생각하고 있다는 얘기야.
+라피: 아마 가벼운 문책 정도로 끝나겠지.
+네온: 아, 참고로 어디까지나 사장님 입장에서 가벼운 거예요.
+네온: 1시간은 기본으로 깔고 가야 한다는 얘기죠.
+아니스: ···정말이지?
+라피: ···? 정말이야.
+아니스: 그래. 그럼 마음 놓고 추적하자.
+아니스: 데려가면 더러운 꼴을 당할 것이 뻔히 보이는데, 우리 손으로 잡아가는 것만큼 기분 더러운 건 없으니까.
+라피: ···장담할게. 그런 일은 절대 없을거야.
+아니스: 그래. 믿을게.
+아니스: 잡았다!
+탈주 니케: ···칫.
+네온: 순순히 돌아가시죠? 사장님이 찾는다고요.
+탈주 니케: 교관이 나를?
+아니스: 그래. 너를 얼마나 걱정했는지 우리한테 직접 의뢰했다고.
+아니스: 너 좀 데려와달라고.
+[CHOICE_START]
+  [OPTION TEXT="맞아. 그러니 같이 가자."]
+  [OPTION_END]
+[CHOICE_END]
+탈주 니케: ··· ···.
+라피: 불만 사항이나 원하는 것이 있다면 얘기해 줘.
+라피: 교관은 절대 그 말을 흘려듣지 않아.
+라피: 엘리시온의 니케라면 너도 잘 알 텐데?
+네온: 대신 돌아가면 잔소리는 좀 들을 거예요.
+탈주 니케: ···너희는 아직 잉그리드를 믿나?
+라피: ···?
+네온: ??
+탈주 니케: 난 믿지 않는다.
+탈주 니케: 정확히는 믿지 않게 되었다.
+라피: 이유가 뭐지?
+탈주 니케: ··· ···.
+탈주 니케: 우리를 인간으로 대해주는 것처럼 보여도, 결국엔 병기 취급이다.
+탈주 니케: 그러니 날 그냥 내버려 둬라.
+펑-!
+바닥에서 자욱한 연기가 피어올랐다.
+[CHOICE_START]
+  [OPTION TEXT="연막탄···!"]
+  [OPTION_END]
+[CHOICE_END]
+라피: 다들 조심해! 접근해온다!
+아니스: 오! 육탄전으로 오는 거야?
+연기를 뚫고 모습을 드러내는 양산형 니케.
+···의 모습을 닮은 데코이다.
+라피: ···데코이?
+네온: 라피! 저쪽이에요!
+네온이 가리킨 곳에서 검은 그림자가 빠르게 움직인다.
+[CHOICE_START]
+  [OPTION TEXT="제압탄 사용 허가!"]
+  [OPTION_END]
+[CHOICE_END]
+라피: 라져!
+투두두두-!!
+라피의 총구가 불을 뿜는다.
+펑!
+···빠르게 움직이던 그림자가 큰 소음과 함께 터졌다.
+아니스: ···어?
+네온: 터, 터졌는데요?
+라피: 벌룬 데코이···!
+라피: 지휘관! 뒤를!
+뒤를 돌아본다.
+양산형 니케가 전력으로 뛰어가고 있었다.
+이상할 정도로 빠른 속도다.
+라피: ···사거리 밖입니다. 부스트 팩을 사용했군요.
+라피: 추적은 불가능할 것 같습니다.
+[CHOICE_START]
+  [OPTION TEXT="···무슨 일이 일어난 거지?"]
+  [OPTION_END]
+[CHOICE_END]
+라피: ···처음 저희 쪽으로 날려보낸 것이 데코이가 아니라 본체였던 것 같습니다.
+라피: 데코이를 덮어쓰고 부스트 팩을 써서 데코이 특유의 움직임을 흉내 낸 것 같습니다.
+아니스: ···뭐야. 닌자야?
+네온: ···대단한데요.
+라피: ···일단 복귀하시죠.
+[MESSENGER_START TITLE="택티컬티택" PARTICIPANTS="택티컬티택,지휘관"]
+  [MSG SENDER="택티컬티택"]
+    놓쳤다고
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    놓친 과정에 대해서는 라피와 네온에게 전해 들었다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    연막을 터트린 다음
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    데코이를 덮어쓰고 너희들 쪽으로 돌진해 데코이를 던졌다고 인지하게 한 다음
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    다른 방향으로 벌룬 데코이를 쏴서 그것이 본체인 줄 착각하게 해 이목을 집중
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    시선이 벌룬 데코이 쪽으로 향한 틈을 타 부스트 팩으로 도주
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    순식간에 일어난 일이었어
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    이 무슨 택티컬!!!!!!!!!!
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    후
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    너무 훌륭해서 대인전의 표본으로 삼고 싶을 정도로군
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그 짧은 시간에 그런 판단을 했다는 게 믿기지 않아
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    즐거워 보이네
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    물론이다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    엘리시온의 커리큘럼이 틀리지 않았다는 증거니까
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    하지만 나를
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    아니 엘리시온의 대표를 믿지 않는다고 했나
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    흠
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그래
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그 이유였군
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    언젠가 터질 일이었다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    업보인가
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    무슨 사정인데?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    직접 들어라
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그리고 네가 선택해라
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    선택하라니 뭘?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    얘기 해보면 알 거다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    도주 경로로 짐작되는 장소를 파악 중이다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    곧 알려줄 테니 대기하고 있도록
+  [MSG_END]
+[MESSENGER_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+
+@@@SCRIPT_ID: 택티컬티택_01
+@@@SUB_TITLE: 택티컬티택 2
+[SCENE START]
+[MESSENGER_START TITLE="택티컬티택" PARTICIPANTS="택티컬티택,지휘관"]
+  [MSG SENDER="택티컬티택"]
+    도주 예상 지점을 확정했다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    좌표를 알려줄 테니 이동하도록
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    어떻게 안 거야?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그곳 말고는 선택지가 없으니까
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    녀석은 우수하다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그러니 최적의 장소를 선택했을 것이고
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그런 곳은 인근에 한 곳 밖에 없다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그러니 확신할 수 있다
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    알겠어 출발할게
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그래
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    잘 부탁한다
+  [MSG_END]
+[MESSENGER_END]
+탈주 니케: ··· ···.
+탈주 니케: 이곳으로 올 것 같았다.
+탈주 니케: 인근에는 이곳밖에 없으니까. 몸을 숨기거나 보호할 장소는.
+[CHOICE_START]
+  [OPTION TEXT="그런데 왜 계속 여기 있던 거지?"]
+  [OPTION_END]
+[CHOICE_END]
+탈주 니케: 다른 곳으로 가면 죽을 테니까.
+탈주 니케: 죽는 건 싫거든.
+[CHOICE_START]
+  [OPTION TEXT="···잉그리드를 믿지 않게 되었다고 했지."]
+  [OPTION_END]
+[CHOICE_END]
+[CHOICE_START]
+  [OPTION TEXT="이유를 물어볼 수 있을까?"]
+  [OPTION_END]
+[CHOICE_END]
+탈주 니케: ··· ···.
+탈주 니케: 나는 두 명의 동료가 있었다.
+탈주 니케: 모두 양산형 니케다.
+탈주 니케: 우리 셋은 양산형이라고는 믿을 수 없을 정도의 공적을 세워나갔다.
+탈주 니케: 어지간한 스쿼드보다 우수했다고 자부했다.
+탈주 니케: 우리가 그렇게 강해질 수 있었던 건.
+탈주 니케: 엘리시온의 커리큘럼과.
+탈주 니케: 잉그리드가 우리를 인간으로 대해주었기 때문.
+탈주 니케: ···이라고 생각했다.
+라피: ··· ···.
+탈주 니케: 헬레틱과의 총력전은 기억하겠지.
+아니스: ···모더니아와 싸웠던 그때 말이야?
+탈주 니케: 맞아.
+탈주 니케: 우리는 그 전투에 투입됐다.
+탈주 니케: 모더니아 인근에서 너희가 올 때까지 시간을 벌고 있었지.
+탈주 니케: 작전은 대성공으로 끝났고.
+탈주 니케: 우리 역시 공적을 세워 기쁜 마음으로 파티를 열기로 했다.
+탈주 니케: 그랬는데, 둘이 기억 소거를 받았다.
+라피: ···! 그때의 양산형 둘이···.
+탈주 니케: 이 사태를 이해할 수 없어서 잉그리드에게 물었다.
+탈주 니케: 그랬더니 기밀 사항이라고 알려주지 않았다.
+탈주 니케: ··· ···.
+탈주 니케: 결국 병기 취급이었던 거야. 인간인 척 대해주다가도,
+탈주 니케: 필요에 따라 얼마든지 막 취급할 수 있는.
+탈주 니케: 그래서 탈주할 기회만 보고 있었다.
+탈주 니케: 언제 어떻게 병기로서 다뤄질지 몰라서.
+탈주 니케: 나는 인간다운 취급을 받아서, 인간이라고 생각하고 있었는데.
+탈주 니케: 가장 믿었던 사람이 나를 병기로 취급할 때가 무서워서.
+탈주 니케: 도망쳤다.
+라피: ···그때는 정말 그 방법밖에 없었어.
+탈주 니케: 똑같은 얘길 하는군.
+탈주 니케: 그래서 그 이유가 뭐냐는 거다.
+탈주 니케: 무슨 대단한 이유길래, 내 소중한 친구를, 동료를 죽여버렸냐고.
+라피: ···미안해.
+탈주 니케: ···!!
+탈주 니케: 네가 연관되어 있나···!
+라피: 그래.
+탈주 니케: 그럼 뭐라고 말이라도 해봐!
+라피: 말할 수 없어.
+탈주 니케: ··· ···.
+탈주 니케: 가.
+탈주 니케: 아니면 날 죽이던가.
+아니스: ···지휘관님.
+[CHOICE_START]
+  [OPTION TEXT="···돌아가자."]
+  [OPTION_END]
+[CHOICE_END]
+네온: ···예.
+라피: ··· ···.
+[MESSENGER_START TITLE="택티컬티택" PARTICIPANTS="택티컬티택,지휘관"]
+  [MSG SENDER="택티컬티택"]
+    고생했다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    지휘관
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    내가 잘못된 선택을 했다고 생각하나?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    레드 후드의 존재를 숨기기 위해
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    라피를 위해
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    나를 믿어줬던 둘의 기억을 소거한 것이
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    과연 옳았던 일이었을까?
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    [CHOICE_START]
+      [OPTION TEXT="대를 위한 소의 희생이라고 생각해"]
+        [MSG SENDER="택티컬티택"]
+          나는
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          부친의 그런 방식이 너무나 싫었다
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          하지만 나도 막상 그 상황이 되니
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          같은 선택을 해버리는군
+        [MSG_END]
+      [OPTION_END]
+      [OPTION TEXT="좀 더 좋은 방법이 있지 않았을까"]
+        [MSG SENDER="택티컬티택"]
+          짧은 시간 안에 좋은 방법을 찾기에는
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          내 지식과 경험이 너무나 부족했다
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          결국 부친과 똑같은 길을 가버렸군
+        [MSG_END]
+      [OPTION_END]
+      [OPTION TEXT="모르겠어"]
+        [MSG SENDER="택티컬티택"]
+          그래
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          만약 너에게도 같은 상황이 온다면
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          어떻게 할 것인지 지금부터 생각해두길 바란다
+        [MSG_END]
+        [MSG SENDER="택티컬티택"]
+          잘못된 선택은 되돌릴 수 없다
+        [MSG_END]
+      [OPTION_END]
+    [CHOICE_END]
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    어쨌든 고생했다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    고맙다
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    이제 어떻게 할 거야?
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그냥 둔다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    추적도 중지한다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    나는 그 녀석에게 상처를 준 선택을 했고
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    녀석은 나를 죽이거나 상처 입히는 대신
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    나를 떠나는 선택을 했다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    고마운 일이다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    그러니 그냥 둬야 한다
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    살아있기를 바랄 수밖에 없군
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    기회가 왔을 때
+  [MSG_END]
+  [MSG SENDER="택티컬티택"]
+    속죄할 수 있게
+  [MSG_END]
+[MESSENGER_END]
+[SCENE END]

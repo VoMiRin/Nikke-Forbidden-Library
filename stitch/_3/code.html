@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archive Editorial | Script Reader</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif+KR:wght@300;400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#131313",
+                    "outline-variant": "#3e484f",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "on-secondary": "#670211",
+                    "on-secondary-fixed": "#410006",
+                    "background": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-container": "#a7a9ff",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#353534",
+                    "surface-bright": "#393939",
+                    "secondary": "#ffb3b0",
+                    "on-tertiary-container": "#2b29bb",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "tertiary": "#c7c8ff",
+                    "inverse-on-surface": "#313030",
+                    "primary": "#8ed5ff",
+                    "on-secondary-container": "#ff9996",
+                    "surface-container-highest": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-tint": "#7bd0ff",
+                    "on-secondary-fixed-variant": "#881d24",
+                    "inverse-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface-variant": "#bdc8d1",
+                    "secondary-container": "#881d24",
+                    "on-primary-fixed": "#001e2c",
+                    "inverse-primary": "#00668a",
+                    "on-primary-container": "#004965",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "secondary-fixed": "#ffdad8",
+                    "on-primary": "#00354a",
+                    "outline": "#87929a",
+                    "tertiary-fixed": "#e1e0ff",
+                    "surface-container": "#201f1f",
+                    "surface": "#131313",
+                    "on-tertiary": "#1000a9",
+                    "on-background": "#e5e2e1",
+                    "primary-container": "#38bdf8",
+                    "on-tertiary-fixed": "#07006c",
+                    "primary-fixed": "#c4e7ff",
+                    "on-primary-fixed-variant": "#004c69",
+                    "secondary-fixed-dim": "#ffb3b0",
+                    "primary-fixed-dim": "#7bd0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Noto Serif KR", "serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Noto Serif KR', serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for editorial feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3e484f;
+            border-radius: 10px;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopNavBar (The Archive Editorial Branding) -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/80 backdrop-blur-md shadow-xl shadow-sky-900/5 flex justify-between items-center px-8 py-4 max-w-full font-['Manrope'] tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-lg font-bold tracking-tighter text-white uppercase">The Archive Editorial</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Home</a>
+<a class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1" href="#">Stories</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Search</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-neutral-400 hover:text-white transition-all duration-300 hover:bg-neutral-800/50 p-2 rounded-full scale-95 active:scale-90">dark_mode</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-6">
+<div class="max-w-[1024px] mx-auto">
+<!-- Breadcrumbs & Secondary Nav Header -->
+<header class="mb-12 flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-2">
+<nav class="flex items-center gap-2 font-['Inter'] text-[10px] uppercase tracking-[0.15em] text-outline">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Main Story</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-on-surface-variant">Chapter 01</span>
+</nav>
+<h1 class="font-['Manrope'] text-3xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Scene 1 - 새벽의 전쟁</h1>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-all duration-300">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-all duration-300">
+<span class="material-symbols-outlined">undo</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-on-primary font-bold transition-all duration-300 hover:opacity-90">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container-highest opacity-20"></div>
+</header>
+<!-- Script Content Area -->
+<article class="space-y-12">
+<!-- Narration Block -->
+<section class="italic text-on-surface-variant/80 font-body text-lg leading-relaxed pl-8 border-l border-primary/20">
+                    잿빛 연기가 자욱한 하늘 아래, 기계들의 파편이 흩어져 있다. 정적을 깨는 것은 멀리서 들려오는 금속성의 마찰음뿐이다.
+                </section>
+<!-- Dialogue Block: Character -->
+<div class="flex flex-col md:flex-row gap-4 md:gap-12 items-baseline">
+<div class="w-32 flex-shrink-0">
+<span class="font-['Inter'] font-bold text-xs uppercase tracking-widest text-primary block">라피</span>
+<span class="font-['Inter'] text-[10px] text-outline block mt-1">COUNTERIS</span>
+</div>
+<div class="flex-grow">
+<p class="font-body text-xl text-on-surface leading-[1.8]">지휘관님, 정신이 드십니까? 현재 구역 내 랩쳐 반응이 다시 감지되었습니다.</p>
+</div>
+</div>
+<!-- Dialogue Block: Commander -->
+<div class="flex flex-col md:flex-row gap-4 md:gap-12 items-baseline group">
+<div class="w-32 flex-shrink-0">
+<span class="font-['Inter'] font-bold text-xs uppercase tracking-widest text-tertiary block">지휘관</span>
+<div class="h-1 w-8 bg-tertiary-container mt-1 rounded-full opacity-40 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="flex-grow bg-surface-container-low/40 p-6 rounded-xl border border-outline-variant/10">
+<p class="font-body text-xl text-on-surface leading-[1.8]">...방금 무슨 일이 있었던 거지? 몸이 움직이질 않아.</p>
+</div>
+</div>
+<!-- Scene Break -->
+<div class="py-8 flex items-center justify-center gap-4 opacity-30">
+<div class="h-[1px] flex-grow bg-gradient-to-r from-transparent to-outline-variant"></div>
+<span class="material-symbols-outlined text-outline text-sm">filter_vintage</span>
+<div class="h-[1px] flex-grow bg-gradient-to-l from-transparent to-outline-variant"></div>
+</div>
+<!-- Dialogue Block: Character -->
+<div class="flex flex-col md:flex-row gap-4 md:gap-12 items-baseline">
+<div class="w-32 flex-shrink-0">
+<span class="font-['Inter'] font-bold text-xs uppercase tracking-widest text-primary block">라피</span>
+</div>
+<div class="flex-grow">
+<p class="font-body text-xl text-on-surface leading-[1.8]">충격에 의한 일시적인 마비 현상일 겁니다. 아니스, 지휘관님의 상태를 체크해.</p>
+</div>
+</div>
+<!-- Dialogue Block: Character -->
+<div class="flex flex-col md:flex-row gap-4 md:gap-12 items-baseline">
+<div class="w-32 flex-shrink-0">
+<span class="font-['Inter'] font-bold text-xs uppercase tracking-widest text-on-secondary-container block">아니스</span>
+</div>
+<div class="flex-grow">
+<p class="font-body text-xl text-on-surface leading-[1.8]">알았어, 라피. 지휘관님~ 제 목소리 들려요? 눈 깜빡여봐요!</p>
+</div>
+</div>
+<!-- Illustration Placeholder / Narrative Visual -->
+<div class="relative group my-16">
+<div class="absolute -inset-2 bg-gradient-to-r from-primary/10 to-tertiary/10 rounded-2xl blur-xl opacity-50"></div>
+<div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container-high">
+<img alt="Post-apocalyptic cityscape" class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 scale-105 group-hover:scale-100" data-alt="cinematic shot of a ruined futuristic city at dawn, debris scattered on dusty ground, orange and blue atmospheric lighting, digital art style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbStENRnWHFzrQwqTLY5ArMthyuHWnc0c4gB4CAjR8NubQ4DWRlljdI_7hm70AqxGUGzPAC1slR0fr_tQUhbpGKv6jt9TIJWGgKkJUqy2cX32au_7idcJnKayLirngBCQ8rs5nKDGl6eHdiqEh3Vii6Z-AqH0XZC83kOiL8Nx3qy_Yj1HCs0piyFBFAQVqSjPTOA0rc8gwN4aZQs3f9SmtaRkreazaZpcgHQW__OwL7PHB1iL2WQcM8FsTHYJ_8fYq1qEK-2wR0c4Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<p class="mt-4 font-['Inter'] text-[10px] text-center text-outline uppercase tracking-widest">Visual Data: Sector 04 - Peripheral View</p>
+</div>
+<!-- Dialogue Block: Choice (Editorial Style) -->
+<div class="flex flex-col items-center gap-4 pt-8">
+<p class="font-['Inter'] text-[11px] text-outline uppercase tracking-widest mb-2">Decision Required</p>
+<button class="w-full max-w-md py-4 px-8 rounded-full border border-outline-variant/30 font-body text-lg text-on-surface hover:bg-primary-container/10 hover:border-primary/50 transition-all duration-300">
+                        "정신 차렸어. 현재 위치를 보고해."
+                    </button>
+<button class="w-full max-w-md py-4 px-8 rounded-full border border-outline-variant/30 font-body text-lg text-on-surface hover:bg-primary-container/10 hover:border-primary/50 transition-all duration-300">
+                        "아니스, 너무 가까워..."
+                    </button>
+</div>
+<section class="italic text-on-surface-variant/80 font-body text-lg leading-relaxed text-center py-16">
+                    먼발치에서 무거운 금속음이 울려 퍼지며, 거대한 그림자가 폐허 사이를 가로지른다.
+                </section>
+</article>
+<!-- Bottom Action Bar (Replicated Header Actions) -->
+<footer class="mt-24 mb-16 flex justify-between items-center bg-surface-container-low p-6 rounded-2xl">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-6 py-2 rounded-full font-['Inter'] text-xs font-bold uppercase tracking-widest text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                        Previous
+                    </button>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-outline hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-outline hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-['Inter'] text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all">
+                        Next Chapter
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+</main>
+<!-- Global Footer -->
+<footer class="bg-neutral-900 w-full py-12 mt-auto border-t border-neutral-800/30">
+<div class="flex flex-col items-center gap-6 max-w-7xl mx-auto px-8 font-['Manrope'] text-xs uppercase tracking-widest">
+<span class="text-sm font-semibold text-neutral-500">The Archive Editorial</span>
+<div class="flex gap-8">
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Project Info</a>
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+<p class="text-neutral-500 normal-case tracking-normal">© 2024 The Archive Editorial. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

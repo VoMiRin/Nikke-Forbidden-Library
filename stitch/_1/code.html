@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archive Editorial - Nikke Script Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Noto+Serif+KR:wght@300;600;900&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#131313",
+                        "outline-variant": "#3e484f",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-secondary": "#670211",
+                        "on-secondary-fixed": "#410006",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-container": "#a7a9ff",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#393939",
+                        "secondary": "#ffb3b0",
+                        "on-tertiary-container": "#2b29bb",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "tertiary": "#c7c8ff",
+                        "inverse-on-surface": "#313030",
+                        "primary": "#8ed5ff",
+                        "on-secondary-container": "#ff9996",
+                        "surface-container-highest": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#7bd0ff",
+                        "on-secondary-fixed-variant": "#881d24",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#bdc8d1",
+                        "secondary-container": "#881d24",
+                        "on-primary-fixed": "#001e2c",
+                        "inverse-primary": "#00668a",
+                        "on-primary-container": "#004965",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed": "#ffdad8",
+                        "on-primary": "#00354a",
+                        "outline": "#87929a",
+                        "tertiary-fixed": "#e1e0ff",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "on-tertiary": "#1000a9",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#38bdf8",
+                        "on-tertiary-fixed": "#07006c",
+                        "primary-fixed": "#c4e7ff",
+                        "on-primary-fixed-variant": "#004c69",
+                        "secondary-fixed-dim": "#ffb3b0",
+                        "primary-fixed-dim": "#7bd0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Noto Serif KR"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/30 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/80 backdrop-blur-md shadow-xl shadow-sky-900/5 flex justify-between items-center px-8 py-4 max-w-full font-['Manrope'] tracking-tight">
+<div class="text-lg font-bold tracking-tighter text-white uppercase">The Archive Editorial</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1" href="#">Home</a>
+<div class="relative group">
+<button class="text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
+                    Stories
+                    <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+</div>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Search</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:bg-neutral-800/50 transition-all duration-300 p-2 rounded-full text-sky-400 dark:text-sky-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-40 pb-24 px-8 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-dim via-surface-dim to-primary/10"></div>
+<img class="w-full h-full object-cover opacity-20 grayscale" data-alt="Cinematic wide shot of a futuristic ruined city overgrown with vegetation at dawn with soft atmospheric blue and golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf5xnsL1SKHxLwnGa0iWtclPUiz7oyG6wR-JZGq9ba-w4VKFtG2UhXenFBwiDK4_4f4U_NgLTUbWVWIH1Hs7Rt97KgN3qlyYW3rwWkaXjYCT-5HB39awMk3GM2BHY-vrmOQIEod42jMYYklbojGB2SAfeiQ2Ia16E8uGKsiLg1ej8K7CuqQGJhoBsxbssYI8RiUmbdL1saEj6acFM0cpgqSZ4_I_PRETBaaBYpDSwYO98AaqQeQPVXPBJgdnSwgioV2lKWoo_5f16-"/>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto">
+<div class="inline-block px-4 py-1 mb-8 bg-surface-container-high rounded-full border border-outline-variant/15">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">Preserving the narrative</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-8">
+                Nikke Script Archive
+            </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+                A meticulously curated digital library dedicated to archiving the profound stories and complex dialogues of <span class="text-on-surface font-semibold">Goddess of Victory: Nikke</span>. 
+            </p>
+<div class="mt-12 flex gap-4">
+<button class="px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-semibold rounded-full hover:opacity-90 transition-opacity">
+                    Explore Stories
+                </button>
+<button class="px-8 py-3 bg-surface-container-high text-on-surface font-semibold rounded-full border border-outline-variant/20 hover:bg-surface-container-highest transition-colors">
+                    Search Archive
+                </button>
+</div>
+</div>
+</section>
+<!-- Quick Access Section (Bento Grid) -->
+<section class="py-24 px-8 max-w-7xl mx-auto w-full">
+<div class="mb-16 flex items-end justify-between">
+<div>
+<h2 class="font-headline text-3xl font-bold tracking-tight mb-2">Archive Categories</h2>
+<div class="w-12 h-1 bg-primary"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Main Story -->
+<div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant/15 p-8 flex flex-col justify-end min-h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" data-alt="Dramatic silhouette of a robotic warrior standing against a high-tech cityscape at night with glowing blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvBN2auD9E0dkJ0Cskuhm62hNbOYwPTlDoWSDB4W98u17_pCgSH8xAFTtW2aWEM-gqB6TNS-cSbQMDudIGbRrE8AZ7T7aeJssvh8OYD93-1DgxSaSdge7SKEJvRxN4Un0MwUeIUlHudd7t0pnTFpIASMWpqZuIpIh3t1Fv_rGMYFs9CHpfiHIf9SR3gIzA2-Wg73nFLZr5npMsHr_dtNt7Xp1w1pD7QgMRKp-REf1Org8KkzRErkH6Fo3mVfKAnAyr3ikm3MJQkfuC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="auto_stories">auto_stories</span>
+<h3 class="font-headline text-3xl font-bold mb-2">Main Story</h3>
+<p class="text-on-surface-variant max-w-xs">The core narrative following the Commander and the Counters squad.</p>
+</div>
+</div>
+<!-- Side Story -->
+<div class="group bg-surface-container-low border border-outline-variant/15 p-6 rounded-xl hover:bg-surface-container-high transition-all duration-300 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="menu_book">menu_book</span>
+<h3 class="font-headline text-xl font-bold">Side Story</h3>
+<p class="text-sm text-on-surface-variant font-body">Deep dives into the world and various factions.</p>
+</div>
+<!-- Subquests -->
+<div class="group bg-surface-container-low border border-outline-variant/15 p-6 rounded-xl hover:bg-surface-container-high transition-all duration-300 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="assignment">assignment</span>
+<h3 class="font-headline text-xl font-bold">Subquests</h3>
+<p class="text-sm text-on-surface-variant font-body">Detailed side missions and tactical encounters.</p>
+</div>
+<!-- Event Stories -->
+<div class="md:col-span-2 group bg-surface-container-low border border-outline-variant/15 p-6 rounded-xl hover:bg-surface-container-high transition-all duration-300 flex items-center gap-6">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Colorful digital illustration of a celebratory festival in a futuristic dome with floating lanterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCujTC1Ikefn820zSsKuMSz0ubs91X89m_q2W0SFOe6zvaQaW7ucQrmAoTfny_hDT5jFrz4eEZHUTB7vt5lvPlTX5PhatlmdovBBvb_9TKe2Wfr_0B8Ecbl8FrhMQBhLAazJEcf2xNyjOeKKi5AhARZWYDuHjkptRbj56VldMsp-u17FTqZIQBUCxtSPJeONiAStggdfefh_oPUh1ye778YZNAvlp4cepEpKelJ2rYyeJ9Cv4rwJ6uNV3uvTy9R4QXYHsWBdFFpGCuo"/>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold mb-1">Event Stories</h3>
+<p class="text-sm text-on-surface-variant font-body">Limited-time narratives and seasonal celebrations archive.</p>
+</div>
+</div>
+<!-- Bond Stories -->
+<div class="group bg-surface-container-low border border-outline-variant/15 p-6 rounded-xl hover:bg-surface-container-high transition-all duration-300 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="favorite">favorite</span>
+<h3 class="font-headline text-xl font-bold">Bond Stories</h3>
+<p class="text-sm text-on-surface-variant font-body">Personal interactions and character developments.</p>
+</div>
+<!-- Lost Relics -->
+<div class="group bg-surface-container-low border border-outline-variant/15 p-6 rounded-xl hover:bg-surface-container-high transition-all duration-300 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="history_edu">history_edu</span>
+<h3 class="font-headline text-xl font-bold">Lost Relics</h3>
+<p class="text-sm text-on-surface-variant font-body">Fragments of the old world before the invasion.</p>
+</div>
+<!-- Event Lost Relics -->
+<div class="group bg-surface-container-low border border-outline-variant/15 p-6 rounded-xl hover:bg-surface-container-high transition-all duration-300 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="travel_explore">travel_explore</span>
+<h3 class="font-headline text-xl font-bold">Event Relics</h3>
+<p class="text-sm text-on-surface-variant font-body">Unique artifacts discovered during field events.</p>
+</div>
+<!-- Outpost Encounters -->
+<div class="group bg-surface-container-low border border-outline-variant/15 p-6 rounded-xl hover:bg-surface-container-high transition-all duration-300 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="hub">hub</span>
+<h3 class="font-headline text-xl font-bold">Outpost</h3>
+<p class="text-sm text-on-surface-variant font-body">Daily life and casual moments at the base.</p>
+</div>
+</div>
+</section>
+<!-- Recent Updates Section -->
+<section class="py-24 bg-surface-container-low/50">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<div>
+<h2 class="font-headline text-3xl font-bold tracking-tight mb-2">Recent Archives</h2>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Lately documented entries</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 group">
+                    View Full Changelog
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Update Item 1 -->
+<div class="group bg-surface-container-high p-1 rounded-xl transition-all duration-300 hover:bg-surface-container-highest">
+<div class="flex flex-col md:flex-row items-center gap-6 p-4">
+<div class="w-full md:w-48 h-24 rounded-lg overflow-hidden bg-surface">
+<img class="w-full h-full object-cover opacity-60" data-alt="Close up of a holographic interface screen displaying encrypted data in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPgmW586qVbUHFSgxgvhhFhV_kuc6fZUIfqaoFWedVXhSAmM7ibgXGrcIJxi31s-DnNiwHkTRISHj_mKrdPRFATXGLNC54CSwpWVbslyT1nmWIxdxPxkckgQ_XECVCOKDU5V_ZRu96v9uk-1SEnM1MAR611qFhymWN1xze93BeElsOuOtaj6cXTokk1Zfh6BqxkWg1iW1ny7zK0Y9q5qSXGi5kRl124ua0oBMsXI-fXOX8s1EGz3iknT0mcmN8rXPCrw59fNcnptOo"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase font-label tracking-tighter">Main Story</span>
+<span class="text-xs text-on-surface-variant font-label">Chapter 31: Invasion</span>
+</div>
+<h4 class="font-headline text-xl font-bold">The Last Stand of Sector 04</h4>
+</div>
+<div class="text-right">
+<p class="text-xs font-label text-on-surface-variant uppercase mb-1">Archived</p>
+<p class="font-headline font-semibold text-primary">2 HOURS AGO</p>
+</div>
+</div>
+</div>
+<!-- Update Item 2 -->
+<div class="group bg-surface-container-high p-1 rounded-xl transition-all duration-300 hover:bg-surface-container-highest">
+<div class="flex flex-col md:flex-row items-center gap-6 p-4">
+<div class="w-full md:w-48 h-24 rounded-lg overflow-hidden bg-surface">
+<img class="w-full h-full object-cover opacity-60" data-alt="A soft focus portrait of a female character with pink hair looking thoughtful in a garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgPdew4HdARv76lOCgH7AcKz1bKz5GbB_iaZCVw26OU0gvVusUnXVKQhlhCTKRBX_n94h9RDqx-suhZsh-pXal-Mjwg2UfXPqXtUGMykyWw_2VIuiI6mPy3X7vlXFO4bBIlBj33vsP5yYnm8kS04nzRqLtPFI8FJKw72aYqvfgDcxVru7HH4AxKssf0pzGY6rnYUSHeXUC4iZRTcpZJkZSNRHRT99L2EjUHrq9-gfTgUPlrz3D1y9exXnF-CgYzvAxWRzJ1AU5wNH5"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase font-label tracking-tighter">Bond Story</span>
+<span class="text-xs text-on-surface-variant font-label">Dorothy: Ep. 5</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Paradise Lost in Thought</h4>
+</div>
+<div class="text-right">
+<p class="text-xs font-label text-on-surface-variant uppercase mb-1">Archived</p>
+<p class="font-headline font-semibold text-primary">6 HOURS AGO</p>
+</div>
+</div>
+</div>
+<!-- Update Item 3 -->
+<div class="group bg-surface-container-high p-1 rounded-xl transition-all duration-300 hover:bg-surface-container-highest">
+<div class="flex flex-col md:flex-row items-center gap-6 p-4">
+<div class="w-full md:w-48 h-24 rounded-lg overflow-hidden bg-surface">
+<img class="w-full h-full object-cover opacity-60" data-alt="A cold snowy mountain landscape with abandoned military equipment half buried in ice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuXUyHCaqtRCOtXTZEmsJc1Twi1Jv-xJ6iYyFTTdgH51sfroxvs-4Hm0FBv27ykVpVG_IBduV0e9n6ksRClYeaMEw1S2H_pKJmJn-8ZDg4oexVBb0HGHsoSwLhrq9JLXL3TnnrP3YkhzUZP9_1Ger9lw6cNAYJxwOCe0nWwU7Pp4LHyLgszyY5RwF46Z74iRF31wY6J8d2XBhYtXiE7YDBi1uE-XTrF6xlkxpnNVgGwIY0okmX_z8xyAvcbE7VGp9NE2hpUZ5UTBEV"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase font-label tracking-tighter">Event Story</span>
+<span class="text-xs text-on-surface-variant font-label">Archive: Miracle Snow</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Eternal Winter Memories</h4>
+</div>
+<div class="text-right">
+<p class="text-xs font-label text-on-surface-variant uppercase mb-1">Archived</p>
+<p class="font-headline font-semibold text-primary">1 DAY AGO</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-neutral-900 w-full py-12 mt-auto border-t border-neutral-800/30">
+<div class="flex flex-col items-center gap-6 max-w-7xl mx-auto px-8 font-['Manrope'] text-xs uppercase tracking-widest">
+<div class="text-sm font-semibold text-neutral-500">The Archive Editorial</div>
+<div class="flex gap-8">
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Project Info</a>
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+<a class="text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Terms</a>
+</div>
+<div class="text-neutral-500 opacity-60 text-[10px] tracking-normal normal-case">
+                © 2024 The Archive Editorial. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

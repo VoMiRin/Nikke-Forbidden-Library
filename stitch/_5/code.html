@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search - The Archive Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif+KR:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#f8f9fa",
+                        "outline-variant": "#dee2e6",
+                        "error-container": "#f8d7da",
+                        "on-error": "#842029",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#410006",
+                        "background": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#e0e0ff",
+                        "error": "#dc3545",
+                        "surface-variant": "#f1f3f5",
+                        "surface-bright": "#ffffff",
+                        "secondary": "#ffb3b0",
+                        "on-tertiary-container": "#2b29bb",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "tertiary": "#c7c8ff",
+                        "inverse-on-surface": "#ffffff",
+                        "primary": "#38bdf8",
+                        "on-secondary-container": "#ff9996",
+                        "surface-container-highest": "#e9ecef",
+                        "on-surface": "#1a1c1e",
+                        "surface-container-high": "#f8f9fa",
+                        "surface-tint": "#38bdf8",
+                        "on-secondary-fixed-variant": "#881d24",
+                        "inverse-surface": "#1a1c1e",
+                        "on-error-container": "#842029",
+                        "surface-container-low": "#f8f9fa",
+                        "on-surface-variant": "#495057",
+                        "secondary-container": "#881d24",
+                        "on-primary-fixed": "#001e2c",
+                        "inverse-primary": "#00668a",
+                        "on-primary-container": "#004965",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed": "#ffdad8",
+                        "on-primary": "#ffffff",
+                        "outline": "#adb5bd",
+                        "tertiary-fixed": "#e1e0ff",
+                        "surface-container": "#f1f3f5",
+                        "surface": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1e",
+                        "primary-container": "#38bdf8",
+                        "on-tertiary-fixed": "#07006c",
+                        "primary-fixed": "#c4e7ff",
+                        "on-primary-fixed-variant": "#004c69",
+                        "secondary-fixed-dim": "#ffb3b0",
+                        "primary-fixed-dim": "#7bd0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Noto Serif KR"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .editorial-title { font-family: 'Manrope', sans-serif; }
+        .script-snippet { font-family: 'Noto Serif KR', serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar from Shared Components JSON -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/80 backdrop-blur-md shadow-xl shadow-sky-900/5 flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-lg font-bold tracking-tighter text-white uppercase font-['Manrope']">
+            The Archive Editorial
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Manrope'] tracking-tight text-neutral-400 hover:text-white transition-colors" href="#">Home</a>
+<a class="font-['Manrope'] tracking-tight text-neutral-400 hover:text-white transition-colors" href="#">Stories</a>
+<a class="font-['Manrope'] tracking-tight text-sky-400 font-bold border-b-2 border-sky-400 pb-1" href="#">Search</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-neutral-800/50 transition-all duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sky-400">dark_mode</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-6 md:px-8 max-w-[1024px] mx-auto w-full">
+<!-- Search Header Section -->
+<header class="mb-12">
+<div class="flex flex-col gap-2 mb-8">
+<span class="text-[0.75rem] font-bold tracking-[0.1em] text-primary uppercase font-['Inter']">Global Search</span>
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter editorial-title text-on-background">
+                    Nikke Script Archive
+                </h1>
+</div>
+<!-- Search Bar Component -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-none rounded-full py-6 pl-16 pr-8 text-xl focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline font-['Inter'] shadow-sm" placeholder="검색어를 입력하세요..." type="text"/>
+</div>
+<!-- Mode Toggle (Tab Style) -->
+<div class="mt-8 flex justify-center">
+<div class="inline-flex p-1 bg-surface-container-high rounded-full overflow-hidden">
+<button class="px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-primary text-on-primary shadow-lg shadow-primary/10">
+                        Content Search
+                    </button>
+<button class="px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 text-on-surface-variant hover:bg-surface-variant">
+                        Speaker Search
+                    </button>
+</div>
+</div>
+</header>
+<!-- Search Results Section -->
+<section class="space-y-16">
+<!-- Category: Main Story -->
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<h2 class="text-xs font-black tracking-widest uppercase text-outline font-['Inter']">Main Story</h2>
+<div class="h-px flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid gap-4">
+<!-- Result Item 1 -->
+<div class="group bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container hover:translate-x-1 cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+<div class="flex flex-col gap-1">
+<nav class="text-[0.65rem] font-bold tracking-wider text-primary uppercase font-['Inter']">Main Story &gt; Chapter 01</nav>
+<h3 class="text-xl font-bold tracking-tight text-on-surface">격리 구역의 침입자</h3>
+</div>
+<span class="text-[0.65rem] font-medium text-outline-variant font-['Inter'] uppercase tracking-widest">2024.03.12</span>
+</div>
+<p class="script-snippet text-lg leading-relaxed text-on-surface-variant line-clamp-2">
+                            라피: "지휘관님, 경계를 늦추지 마십시오. 이 <span class="bg-primary/20 text-on-background px-1 rounded-sm font-bold">구역</span>은 아직 정화되지 않았습니다. 랩쳐의 반응이 근처에서 감지되고 있습니다."
+                        </p>
+</div>
+<!-- Result Item 2 -->
+<div class="group bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container hover:translate-x-1 cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+<div class="flex flex-col gap-1">
+<nav class="text-[0.65rem] font-bold tracking-wider text-primary uppercase font-['Inter']">Main Story &gt; Chapter 24</nav>
+<h3 class="text-xl font-bold tracking-tight text-on-surface">심해의 증언자</h3>
+</div>
+<span class="text-[0.65rem] font-medium text-outline-variant font-['Inter'] uppercase tracking-widest">2024.01.05</span>
+</div>
+<p class="script-snippet text-lg leading-relaxed text-on-surface-variant line-clamp-2">
+                            아니스: "뭐? 거기로 들어간다고? 이 위험한 <span class="bg-primary/20 text-on-background px-1 rounded-sm font-bold">구역</span>에 제발로 기어들어가겠다는 거야? 제정신이야?"
+                        </p>
+</div>
+</div>
+</div>
+<!-- Category: Event Story -->
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<h2 class="text-xs font-black tracking-widest uppercase text-outline font-['Inter']">Event Story</h2>
+<div class="h-px flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid gap-4">
+<!-- Result Item 3 -->
+<div class="group bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container hover:translate-x-1 cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+<div class="flex flex-col gap-1">
+<nav class="text-[0.65rem] font-bold tracking-wider text-primary uppercase font-['Inter']">Event &gt; Over Zone</nav>
+<h3 class="text-xl font-bold tracking-tight text-on-surface">마지막 낙원</h3>
+</div>
+<span class="text-[0.65rem] font-medium text-outline-variant font-['Inter'] uppercase tracking-widest">Archive</span>
+</div>
+<p class="script-snippet text-lg leading-relaxed text-on-surface-variant line-clamp-2">
+                            도로시: "우리가 지켜야 했던 것은 이 <span class="bg-primary/20 text-on-background px-1 rounded-sm font-bold">구역</span>이 아니에요. 우리가 잃어버린 그 시절의 긍지였죠."
+                        </p>
+</div>
+</div>
+</div>
+<!-- No Results Logic (Hidden by default, shown when filtering) -->
+<div class="hidden flex-col items-center justify-center py-32 text-center opacity-40">
+<span class="material-symbols-outlined text-6xl mb-4">search_off</span>
+<p class="text-xl font-medium font-['Inter']">검색 결과가 없습니다</p>
+</div>
+</section>
+<!-- Decorative Background Element -->
+<div class="fixed bottom-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] -z-10 rounded-full"></div>
+</main>
+<!-- Footer from Shared Components JSON -->
+<footer class="w-full py-12 mt-auto border-t border-neutral-800/30 bg-neutral-900">
+<div class="flex flex-col items-center gap-6 max-w-7xl mx-auto px-8">
+<div class="text-sm font-semibold text-neutral-500 font-['Manrope'] uppercase tracking-widest">
+                The Archive Editorial
+            </div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Project Info</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+<p class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 opacity-60">
+                © 2024 The Archive Editorial. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

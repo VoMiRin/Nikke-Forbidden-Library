@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archive Editorial | Script Reader</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif+KR:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#131313",
+                    "outline-variant": "#3e484f",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "on-secondary": "#670211",
+                    "on-secondary-fixed": "#410006",
+                    "background": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-container": "#a7a9ff",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#353534",
+                    "surface-bright": "#393939",
+                    "secondary": "#ffb3b0",
+                    "on-tertiary-container": "#2b29bb",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "tertiary": "#c7c8ff",
+                    "inverse-on-surface": "#313030",
+                    "primary": "#8ed5ff",
+                    "on-secondary-container": "#ff9996",
+                    "surface-container-highest": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-tint": "#7bd0ff",
+                    "on-secondary-fixed-variant": "#881d24",
+                    "inverse-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface-variant": "#bdc8d1",
+                    "secondary-container": "#881d24",
+                    "on-primary-fixed": "#001e2c",
+                    "inverse-primary": "#00668a",
+                    "on-primary-container": "#004965",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "secondary-fixed": "#ffdad8",
+                    "on-primary": "#00354a",
+                    "outline": "#87929a",
+                    "tertiary-fixed": "#e1e0ff",
+                    "surface-container": "#201f1f",
+                    "surface": "#131313",
+                    "on-tertiary": "#1000a9",
+                    "on-background": "#e5e2e1",
+                    "primary-container": "#38bdf8",
+                    "on-tertiary-fixed": "#07006c",
+                    "primary-fixed": "#c4e7ff",
+                    "on-primary-fixed-variant": "#004c69",
+                    "secondary-fixed-dim": "#ffb3b0",
+                    "primary-fixed-dim": "#7bd0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Noto Serif KR"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #131313; color: #e5e2e1; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .editorial-shadow { box-shadow: 0 40px 60px -15px rgba(0, 73, 101, 0.06); }
+        .glass-nav { background: rgba(19, 19, 19, 0.8); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-xl shadow-sky-900/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-lg font-bold tracking-tighter text-white uppercase font-headline">The Archive Editorial</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-neutral-400 hover:text-white transition-colors font-headline tracking-tight" href="#">Home</a>
+<a class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1 font-headline tracking-tight" href="#">Stories</a>
+<a class="text-neutral-400 hover:text-white transition-colors font-headline tracking-tight" href="#">Search</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-sky-400 hover:bg-neutral-800/50 transition-all duration-300 rounded-full scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-0 max-w-3xl mx-auto">
+<!-- Reader Header -->
+<header class="mb-20 text-center">
+<p class="font-label text-[0.75rem] uppercase tracking-[0.05em] text-primary mb-4">Chapter 01 - First Encounter</p>
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface mb-6">Scene 2 - 작전 회의</h1>
+<div class="w-12 h-1 bg-primary-container mx-auto rounded-full"></div>
+</header>
+<!-- Script Content -->
+<article class="space-y-16">
+<!-- Standard Dialogue -->
+<section class="group">
+<div class="font-label text-[0.75rem] uppercase tracking-[0.05em] text-outline mb-3 transition-colors group-hover:text-primary">라피</div>
+<p class="text-[1.375rem] leading-[1.7] text-on-surface font-body">
+                    지휘관님, 작전 구역에 대한 정찰이 끝났습니다. 랩쳐의 반응이 생각보다 거셉니다.
+                </p>
+</section>
+<!-- Choice Block Component -->
+<section class="editorial-shadow bg-surface-container-low p-8 md:p-12 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary-container" data-icon="alt_route">alt_route</span>
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight text-on-surface-variant">Choice</h3>
+</div>
+<div class="space-y-4">
+<button class="w-full text-left p-5 rounded-lg bg-surface-container-high border border-outline-variant/20 hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 group flex items-center gap-4">
+<span class="w-2 h-2 rounded-full border border-current"></span>
+<span class="font-body text-lg">라피를 칭찬한다</span>
+</button>
+<button class="w-full text-left p-5 rounded-lg bg-surface-container-high border border-outline-variant/20 hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 group flex items-center gap-4">
+<span class="w-2 h-2 rounded-full border border-current"></span>
+<span class="font-body text-lg">아네스를 격려한다</span>
+</button>
+</div>
+</section>
+<!-- Dialogue Post-Choice -->
+<section class="group">
+<div class="font-label text-[0.75rem] uppercase tracking-[0.05em] text-outline mb-3 transition-colors group-hover:text-primary">아네스</div>
+<p class="text-[1.375rem] leading-[1.7] text-on-surface font-body">
+                    격려해주셔서 감사합니다, 지휘관님. 이번 작전은 반드시 성공시키겠습니다.
+                </p>
+</section>
+<!-- Messenger UI Component -->
+<section class="bg-surface-container-low rounded-2xl overflow-hidden editorial-shadow max-w-xl mx-auto border border-outline-variant/10">
+<!-- Messenger Header -->
+<div class="bg-surface-container-high p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="forum">forum</span>
+<span class="font-headline font-bold text-sm">💬 채팅방 이름</span>
+</div>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="more_vert">more_vert</span>
+</div>
+<!-- Chat Feed -->
+<div class="p-6 space-y-6 bg-surface-container-low min-h-[400px]">
+<!-- System Message -->
+<div class="flex justify-center">
+<div class="bg-surface-container-highest px-4 py-1 rounded-full">
+<p class="font-label text-[0.65rem] text-outline tracking-wider">라피가 입장했습니다.</p>
+</div>
+</div>
+<!-- Left Bubble (라피) -->
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-primary-container/30">
+<img alt="Character portrait of Rapi with a serious expression" class="w-full h-auto" data-alt="close-up portrait of an anime female soldier with long dark hair and red eyes wearing a military beret" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGpPA7upijQvFO10Y9kUr3gpWA8UB9SSrQ82vddNWl3KE1HbXSqRoKBxQF_uDPOqAF_4d4g_CpGqP1jqFYiPTKNbHp_W3nTNnQ_zjLJGdXbubYR4Ol4imW_t5zRKSkTeekEBoscgNVEbu5cjx9-ymTV6IFR3tU4zK4ZeT7DNt8Xjr2XK5DItjXHwdVYQAwZeAcxg7YDrtZhT61qGZJ1K4cGUZwDA5vSgY-lRRZfLHdTq_Umz2gCx1n3FMM_AIvNPavVZjOnbKKycLp"/>
+</div>
+<div class="space-y-1">
+<span class="font-label text-[0.7rem] text-outline ml-1">라피</span>
+<div class="bg-surface-container-high p-4 rounded-tr-xl rounded-br-xl rounded-bl-xl max-w-xs">
+<p class="text-sm font-body leading-relaxed">지휘관님, 블라블라 메시지 확인 부탁드립니다.</p>
+</div>
+</div>
+</div>
+<!-- Right Bubble (Commander) -->
+<div class="flex justify-end gap-3">
+<div class="space-y-1 flex flex-col items-end">
+<span class="font-label text-[0.7rem] text-outline mr-1">Commander</span>
+<div class="bg-primary-container text-on-primary-container p-4 rounded-tl-xl rounded-bl-xl rounded-br-xl max-w-xs shadow-lg shadow-primary/10">
+<p class="text-sm font-body leading-relaxed">지금 바로 확인하겠다. 다들 대기해.</p>
+</div>
+</div>
+</div>
+<!-- Mini Choice within Chat -->
+<div class="flex flex-col items-center gap-3 py-4">
+<button class="px-6 py-3 rounded-full border border-primary-container/40 text-primary-container font-label text-xs hover:bg-primary-container/10 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem]" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                            네, 확인했습니다
+                        </button>
+</div>
+</div>
+<!-- Chat Input Placeholder -->
+<div class="p-4 bg-surface-container-high/50 border-t border-outline-variant/10 flex items-center gap-4">
+<div class="flex-grow bg-surface-container rounded-lg h-10 px-4 flex items-center">
+<span class="text-outline text-xs font-label">메시지를 입력하세요...</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="send">send</span>
+</div>
+</section>
+<!-- Final Scene Dialogue -->
+<section class="group">
+<div class="font-label text-[0.75rem] uppercase tracking-[0.05em] text-outline mb-3 transition-colors group-hover:text-primary">라피</div>
+<p class="text-[1.375rem] leading-[1.7] text-on-surface font-body">
+                    이것으로 브리핑을 마칩니다. 출격 준비를 서두르죠.
+                </p>
+</section>
+</article>
+<!-- Bottom Action -->
+<div class="mt-32 flex justify-center">
+<button class="group flex items-center gap-4 px-8 py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-headline font-extrabold uppercase tracking-widest text-sm shadow-2xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+                Next Scene
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto border-t border-neutral-800/30 bg-neutral-900">
+<div class="flex flex-col items-center gap-6 max-w-7xl mx-auto px-8">
+<span class="text-sm font-semibold text-neutral-500 font-headline uppercase">The Archive Editorial</span>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Project Info</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+<p class="font-['Manrope'] text-xs uppercase tracking-widest text-neutral-500 opacity-60">© 2024 The Archive Editorial. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

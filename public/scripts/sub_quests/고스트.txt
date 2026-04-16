@@ -1,0 +1,155 @@
+@@@SCRIPT_ID: 고스트_00
+@@@SUB_TITLE: 고스트 1
+[SCENE START]
+[MESSENGER_START TITLE="고스트" PARTICIPANTS="지휘관,고스트"]
+  [MSG SENDER="고스트"]
+    SYSTEM : 전력 충전 87% 완료
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 메인터넌스 개시
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 메인터넌스 중···
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 메인터넌스 완료
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 기능 복구 확인
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 가동률 52%
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    사용자로 등록해 주신 GHOST 님이 맞으십니까?
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    맞아
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    구역관리보호자율체의 사용자가 되신 것을 환영합니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    현 시간부로 명령을 내릴 수 있습니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    어떤 명령을 내리시겠습니까?
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    무슨 명령을 내릴 수 있지?
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    1. 미들 시티의 공기 정화
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    2. 미들 시티의 날씨 조정
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    3. 미들 시티의 시설 복구
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    4. 자폭 명령
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    현재 기능 장애를 이유로
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    3. 미들 시티의 시설 복구
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    4. 자폭 명령 이외에는 정상 작동하지 않습니다.
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    3. 미들 시티의 시설 복구
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    확인했습니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    현재 미들 시티의 기능 전체가 마비된 상태입니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    중추 전력 센터의 스위치가 내려간 것이 그 이유로 판단됩니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    이를 수동으로 작동 시 미들 시티의 중추 전력이 활성화됩니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    번거로우시겠지만 수동으로 스위치를 작동시켜주십시오.
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    그러면 어떻게 되지?
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    간단한 명령 확인 절차 후
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    미들 시티의 시설들을 순차적으로 복구합니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    시설 완벽 복구까지 추정 소요 시간 5421시간입니다.
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    알겠어 스위치를 작동시킬게
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 대기 중···
+  [MSG_END]
+[MESSENGER_END]
+라피: 스위치 작동 완료했습니다.
+네온: 그런데 정말 이걸로 도시가 부활하는 걸까요?
+라피: 고스트는 사실상 에닉의 프로토 타입이나 마찬가지니까.
+라피: 도시 관리나 복구 같은 기능은 신용할 수 있어.
+아니스: 지상은 완전 낙원이었겠구만. 다 알아서 해주는 A.I도 도시마다 있었고.
+네온: 그러니 하루라도 빨리 되찾으려 하는 것 아닐까요?
+아니스: 그렇겠지. 방주도 좋겠지만 지상만 하겠어.
+네온: 도시가 복구된다 해도 당장 올라와서 살 순 없는 거겠죠?
+라피: 응. 랩쳐가 있으니까.
+아니스: 그럼 뭐 설레발이네. 살지도 못할 도시를 미리 복구시켜놓는 거.
+라피: 크게 다르지 않을 거야.
+아니스: ··· ···.
+아니스: 뭐, 난 설레발 좋아하니까.
+네온: 저도요.
+라피: 그래. 나도 마찬가지야.
+[CHOICE_START]
+  [OPTION TEXT="희망은 좋은 거야."]
+  [OPTION_END]
+[CHOICE_END]
+아니스: 동의해.
+아니스: 부서지기 전까진 그것만 믿고 사는 거니까.
+[MESSENGER_START TITLE="고스트" PARTICIPANTS="지휘관,고스트"]
+  [MSG SENDER="고스트"]
+    중추 전력 센터의 가동을 확인했습니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    현 시간부로 미들 시티 복구 명령 수행이 가능합니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    복구 중에는 다른 명령 수행은 불가능하며,
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    강제로 다른 명령 수행 시 복구 작업이 일시적으로 중단됩니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    이 점 참고해 주시면 감사하겠습니다.
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    모든 내용을 이해했으며 복구를 시작하시겠습니까?
+  [MSG_END]
+  [MSG SENDER="지휘관" IS_SENDER="true"]
+    시작하자
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    명령 확인
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 미들 시티 복구 중···
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 미들 시티 복구 중··· 0.005%
+  [MSG_END]
+  [MSG SENDER="고스트"]
+    SYSTEM : 미들 시티 복구 중··· 0.078%
+  [MSG_END]
+[MESSENGER_END]
+[SCENE END]
