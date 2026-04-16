@@ -1,4 +1,6 @@
 
+import type { ReactNode } from 'react';
+
 export interface BaseScriptElement {
   // originalLineText: string; // Kept for potential debugging
 }
@@ -100,12 +102,39 @@ export interface Script {
   searchableSpeakers: string; // Pre-calculated for searching speakers
   mainChapterFile: string; // Filename (e.g., "chapter_00.txt")
   loadContent: () => Promise<string>; // Function to load the full content
+  searchSnippet?: string;
+}
+
+export interface ScriptManifestEntry {
+  id: string;
+  title: string;
+  categoryKey: string;
+  subTitle?: string;
+  mainChapterFile: string;
+}
+
+export interface SearchIndexDocument extends ScriptManifestEntry {
+  searchableContent: string;
+  searchableSpeakers: string;
+  snippet: string;
+}
+
+export interface SearchApiResult extends ScriptManifestEntry {
+  snippet: string;
+  score: number;
+}
+
+export interface SearchApiResponse {
+  mode: 'content' | 'speaker';
+  query: string;
+  results: SearchApiResult[];
+  source: 'api' | 'static';
 }
 
 export interface ScriptCategory {
   key: string;
   name: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
 }
 
 // Legacy type, can be kept for reference or if any old parser logic remnants exist.

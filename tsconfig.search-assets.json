@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "outDir": ".generated-search-assets",
+    "noEmit": false,
+    "declaration": false,
+    "sourceMap": false,
+    "allowImportingTsExtensions": false
+  },
+  "include": [
+    "data/**/*.ts",
+    "utils.ts",
+    "types.ts"
+  ]
+}

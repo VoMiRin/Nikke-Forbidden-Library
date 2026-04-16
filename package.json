@@ -4,9 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npm run build:search-assets && vite",
+    "build:search-assets": "tsc -p tsconfig.search-assets.json && node scripts/buildSearchAssets.mjs",
+    "build": "npm run build:search-assets && vite build",
+    "preview": "vite preview",
+    "search-api": "node server/index.mjs",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "react-dom": "^19.1.0",

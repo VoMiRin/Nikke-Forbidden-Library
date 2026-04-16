@@ -171,7 +171,7 @@ const App: React.FC = () => {
         <main className="w-full flex-1 overflow-y-auto rounded-[2rem] bg-transparent p-2 md:max-h-[calc(100vh-176px)] md:p-4">
           {viewerLoading ? (
             <LoadingMessage
-              message={isLoadingInitialData ? 'Loading script metadata...' : 'Preparing the script archive...'}
+              message={isLoadingInitialData ? 'Loading script metadata...' : 'Preparing the archive...'}
               isSpinning={true}
             />
           ) : indexingError && scripts.length === 0 ? (

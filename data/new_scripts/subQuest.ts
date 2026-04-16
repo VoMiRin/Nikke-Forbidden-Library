@@ -12,7 +12,6 @@ export const subQuestScripts: ScriptData[] = [
     { id: '콜렉터_00', categoryKey: 'sub_quests', title: '콜렉터', subTitle: '콜렉터 1', mainChapterFile: '콜렉터.txt' },
     { id: '콜렉터_01', categoryKey: 'sub_quests', title: '콜렉터', subTitle: '콜렉터 2', mainChapterFile: '콜렉터.txt' },
     { id: '콜렉터_02', categoryKey: 'sub_quests', title: '콜렉터', subTitle: '콜렉터 3', mainChapterFile: '콜렉터.txt' },
-    { id: '콜렉터_03', categoryKey: 'sub_quests', title: '콜렉터', subTitle: '콜렉터 4', mainChapterFile: '콜렉터.txt' },
 
     // 테트라 커넥트
     { id: '테트라_커넥트_00', categoryKey: 'sub_quests', title: '테트라 커넥트', subTitle: '테트라 커넥트 1', mainChapterFile: '테트라_커넥트.txt' },

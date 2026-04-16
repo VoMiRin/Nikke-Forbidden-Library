@@ -1,8 +1,6 @@
 import React from 'react';
-import type { Script, ScriptCategory } from './types';
+import type { ScriptCategory } from './types';
 import { BookOpenIcon, UserCircleIcon, CalendarDaysIcon, SparklesIcon, ArchiveBoxIcon, PuzzlePieceIcon } from './components/Icons';
-import { buildScripts } from './data/scriptLoader';
-import { newScriptsData } from './data/newScripts';
 
 export const SCRIPT_CATEGORIES: ScriptCategory[] = [
   { key: 'main_story', name: '메인 스토리', icon: React.createElement(BookOpenIcon) },
@@ -25,7 +23,3 @@ export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   event_lost_relics: 'Event-specific relic archives and temporary discoveries documented for reference.',
   outpost_stories: 'Daily base life, side conversations, and quieter scenes from the outpost.',*/
 };
-
-export const ALL_SCRIPTS: Script[] = [
-  ...buildScripts(newScriptsData),
-];

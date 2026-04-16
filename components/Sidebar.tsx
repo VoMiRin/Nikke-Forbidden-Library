@@ -195,7 +195,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </div>
               {showLoadingStateForSearchInput && (
                 <p className="mt-2 text-center font-label text-[11px] uppercase tracking-[0.18em] text-nikke-accent">
-                  {isLoadingInitialMetadata ? 'Metadata Loading' : 'Archive Indexing'}
+                  {isLoadingInitialMetadata ? 'Metadata Loading' : 'Archive Ready'}
                 </p>
               )}
               {isSearching && searchTerm && (
