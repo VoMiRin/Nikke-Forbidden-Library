@@ -86,10 +86,10 @@ export const SearchPage: React.FC<SearchPageProps> = ({
             )}
           </div>
           <div className="mt-4 flex justify-center md:mt-8">
-            <div className="inline-flex w-full max-w-md flex-col gap-1 rounded-[1rem] bg-nikke-surface-low/70 p-1 sm:flex-row sm:rounded-full md:w-auto md:max-w-none md:gap-2 md:rounded-[1.25rem] md:bg-transparent md:p-0">
+            <div className="grid w-full max-w-md grid-cols-2 gap-1 rounded-[1rem] bg-nikke-surface-low/70 p-1 sm:max-w-[26rem] md:max-w-[28rem] md:gap-2 md:rounded-full md:bg-transparent md:p-0">
               <button
                 onClick={() => onSearchModeChange('content')}
-                className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'content' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
+                className={`w-full min-w-0 rounded-[0.85rem] px-3 py-2.5 text-center text-sm font-semibold whitespace-nowrap transition-all duration-300 ease-editorial sm:rounded-full sm:px-5 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'content' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary'
                   }`}
                 aria-pressed={searchMode === 'content'}
               >
@@ -97,7 +97,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
               </button>
               <button
                 onClick={() => onSearchModeChange('speaker')}
-                className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'speaker' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
+                className={`w-full min-w-0 rounded-[0.85rem] px-3 py-2.5 text-center text-sm font-semibold whitespace-nowrap transition-all duration-300 ease-editorial sm:rounded-full sm:px-5 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'speaker' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary'
                   }`}
                 aria-pressed={searchMode === 'speaker'}
               >
