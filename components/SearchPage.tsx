@@ -54,39 +54,39 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   const showInitialLoading = isLoadingInitialMetadata || isIndexingScripts;
 
   return (
-    <div className="mx-auto flex h-full w-full max-w-[1024px] flex-col pb-10">
-      <header className="mb-12">
+    <div className="mx-auto flex h-full w-full max-w-[1024px] flex-col pb-8 md:pb-10">
+      <header className="mb-8 md:mb-12">
         <p className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-accent">전체 검색</p>
-        <h2 className="mt-3 font-headline text-4xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-6xl">
+        <h2 className="mt-2 font-headline text-3xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-5xl md:mt-3 md:sm:text-6xl">
           Nikke Forbidden Library
         </h2>
-        <div className="relative mt-8">
+        <div className="relative mt-5 md:mt-8">
           <input
             type="search"
             placeholder={searchPlaceholder}
             value={searchTerm}
             onChange={(e) => onSearchTermChange(e.target.value)}
             aria-label="Search all scripts"
-            className="w-full rounded-[1.15rem] bg-nikke-surface-low/85 py-5 pl-14 pr-12 text-lg text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20"
+            className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-4 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 md:rounded-[1.15rem] md:py-5 md:pl-14 md:pr-12 md:text-lg md:placeholder:text-base"
             disabled={showInitialLoading}
             autoFocus
           />
-          <SearchIcon className="absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted" />
+          <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted md:left-5" />
           {searchTerm && (
             <button
               onClick={onClearSearch}
-              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary md:right-4"
               aria-label="Clear search"
             >
               <XIcon className="h-5 w-5" />
             </button>
           )}
         </div>
-        <div className="mt-6 flex justify-center">
-          <div className="inline-flex rounded-full bg-nikke-surface-low/70 p-1">
+        <div className="mt-5 flex justify-center md:mt-8">
+          <div className="inline-flex w-full max-w-md flex-col gap-1 rounded-[1rem] bg-nikke-surface-low/70 p-1 sm:flex-row sm:rounded-full md:w-auto md:max-w-none md:gap-2 md:rounded-[1.25rem] md:bg-transparent md:p-0">
             <button
               onClick={() => onSearchModeChange('content')}
-              className={`rounded-full px-7 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial ${searchMode === 'content' ? 'bg-nikke-gradient text-slate-950' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary'
+              className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'content' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
                 }`}
               aria-pressed={searchMode === 'content'}
             >
@@ -94,7 +94,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
             </button>
             <button
               onClick={() => onSearchModeChange('speaker')}
-              className={`rounded-full px-7 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial ${searchMode === 'speaker' ? 'bg-nikke-gradient text-slate-950' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary'
+              className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'speaker' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
                 }`}
               aria-pressed={searchMode === 'speaker'}
             >
@@ -104,7 +104,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
         </div>
       </header>
 
-      <div className="flex-grow overflow-y-auto pb-6">
+      <div className="flex-grow overflow-y-visible pb-6 md:overflow-y-auto">
         {showInitialLoading && !searchTerm ? (
           <div className="py-10 text-center">
             <div role="status" className="flex flex-col items-center">
@@ -117,25 +117,25 @@ export const SearchPage: React.FC<SearchPageProps> = ({
             </div>
           </div>
         ) : searchTerm && globallySearchedScripts.length > 0 ? (
-          <div className="space-y-14">
+          <div className="space-y-10 md:space-y-14">
             {Object.entries(groupedScripts).map(([groupKey, subScriptsArray]) => {
               const [catKey, title] = groupKey.split('@@');
               const categoryNameForGroup = categories.find(c => c.key === catKey)?.name ?? catKey;
 
               return (
                 <section key={groupKey}>
-                  <div className="mb-5 flex items-center gap-4">
+                  <div className="mb-4 flex items-center gap-3 md:mb-5 md:gap-4">
                     <h3 className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-text-muted">
                       {categoryNameForGroup}
                     </h3>
                     <div className="h-px flex-1 bg-nikke-border/15" />
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {subScriptsArray.map(script => (
                       <button
                         key={script.id}
                         onClick={() => onSelectScript(script.id)}
-                        className={`w-full rounded-[1.4rem] p-6 text-left transition-all duration-300 ease-editorial ${selectedScriptId === script.id
+                        className={`w-full rounded-[1.1rem] p-4 text-left transition-all duration-300 ease-editorial md:rounded-[1.4rem] md:p-6 ${selectedScriptId === script.id
                             ? 'bg-nikke-surface-high text-nikke-text-primary shadow-glass'
                             : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-low hover:translate-x-1 hover:text-nikke-text-primary'
                           }`}
@@ -146,19 +146,19 @@ export const SearchPage: React.FC<SearchPageProps> = ({
                             <p className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-accent">
                               {categoryNameForGroup} / {script.title}
                             </p>
-                            <h4 className="mt-2 font-headline text-2xl font-bold tracking-[-0.02em] text-nikke-text-primary">
+                            <h4 className="mt-2 font-headline text-xl font-bold tracking-[-0.02em] text-nikke-text-primary md:text-2xl">
                               {script.subTitle || 'Open Content'}
                             </h4>
-                            <p className="mt-3 font-body text-lg leading-8 text-nikke-text-secondary">
+                            <p className="mt-2 font-body text-sm leading-6 text-nikke-text-secondary md:mt-3 md:text-lg md:leading-8">
                               {script.title}
                             </p>
                             {script.searchSnippet && (
-                              <p className="mt-3 line-clamp-3 font-body text-sm leading-7 text-nikke-text-muted">
+                              <p className="mt-2 line-clamp-4 font-body text-sm leading-6 text-nikke-text-muted md:mt-3 md:line-clamp-3 md:leading-7">
                                 {script.searchSnippet}
                               </p>
                             )}
                           </div>
-                          <span className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted">
+                          <span className="font-label text-[10px] uppercase tracking-[0.16em] text-nikke-text-muted md:text-[11px] md:tracking-[0.18em]">
                             아카이브 문서
                           </span>
                         </div>

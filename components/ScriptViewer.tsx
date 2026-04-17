@@ -238,21 +238,30 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     return element.targetScriptId;
   }, [selectedOptions]);
 
+  const getRequiredChoiceIds = React.useCallback((element: Extract<ScriptElement, { type: 'next_subchapter_button' }>) => (
+    Array.from(new Set(
+      element.routes
+        ? element.routes
+        .filter(route => !route.isDefault && route.choiceId)
+        .map(route => route.choiceId as string)
+        : []
+    ))
+  ), []);
+
   const getFirstUnresolvedChoiceId = React.useCallback((element: Extract<ScriptElement, { type: 'next_subchapter_button' }>) => {
-    if (!element.routes || element.routes.length === 0) {
+    const requiredChoiceIds = getRequiredChoiceIds(element);
+    if (requiredChoiceIds.length === 0) {
       return null;
     }
 
-    const requiredChoiceIds = Array.from(new Set(
-      element.routes
-        .filter(route => !route.isDefault && route.choiceId)
-        .map(route => route.choiceId as string)
-    ));
-
     return requiredChoiceIds.find(choiceId => !selectedOptions[choiceId]) ?? null;
-  }, [selectedOptions]);
+  }, [getRequiredChoiceIds, selectedOptions]);
 
-  const getFirstVisibleUnresolvedChoiceId = React.useCallback(() => {
+  const getFirstVisibleUnresolvedChoiceId = React.useCallback((choiceIds: string[]) => {
+    if (choiceIds.length === 0) {
+      return null;
+    }
+
     const visibleUnresolvedChoices = Array.from(
       document.querySelectorAll<HTMLElement>('[data-choice-block="true"][data-choice-selected="false"]')
     );
@@ -261,7 +270,12 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
       return null;
     }
 
-    return visibleUnresolvedChoices[visibleUnresolvedChoices.length - 1]?.dataset.choiceId ?? null;
+    const matchingVisibleChoice = visibleUnresolvedChoices.find(choiceBlock => {
+      const choiceId = choiceBlock.dataset.choiceId;
+      return choiceId ? choiceIds.includes(choiceId) : false;
+    });
+
+    return matchingVisibleChoice?.dataset.choiceId ?? null;
   }, []);
 
   const renderElements = (elements: ScriptElement[], parentKeyPrefix: string = ''): React.ReactNode => {
@@ -286,7 +300,8 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
             key={key}
             buttonText={element.buttonText}
             onNavigate={() => {
-              const unresolvedChoiceId = getFirstVisibleUnresolvedChoiceId() ?? getFirstUnresolvedChoiceId(element);
+              const requiredChoiceIds = getRequiredChoiceIds(element);
+              const unresolvedChoiceId = getFirstVisibleUnresolvedChoiceId(requiredChoiceIds) ?? getFirstUnresolvedChoiceId(element);
 
               if (!targetScriptId && unresolvedChoiceId) {
                 setBranchWarning({ choiceId: unresolvedChoiceId });
@@ -353,12 +368,12 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
 
   if (!script) {
     return (
-      <div className="flex h-full flex-col items-center justify-center rounded-[2rem] bg-nikke-surface-low/70 p-6 text-center">
+      <div className="flex h-full flex-col items-center justify-center rounded-[1.5rem] bg-nikke-surface-low/70 p-5 text-center md:rounded-[2rem] md:p-6">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mb-4 h-16 w-16 text-nikke-border">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
         </svg>
-        <p className="font-headline text-2xl font-bold tracking-[-0.02em] text-nikke-text-primary">Select a script from the sidebar.</p>
-        <p className="mt-2 max-w-lg text-sm leading-7 text-nikke-text-secondary">
+        <p className="font-headline text-xl font-bold tracking-[-0.02em] text-nikke-text-primary md:text-2xl">Select a script from the sidebar.</p>
+        <p className="mt-2 max-w-lg text-sm leading-6 text-nikke-text-secondary md:leading-7">
           Selected chapters and subchapters now read in a quieter editorial layout.
         </p>
         {onNavigateToSearch && (
@@ -380,7 +395,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        <p className="text-xl text-nikke-accent">Loading "{script.title}{script.subTitle ? ` - ${script.subTitle}` : ''}"...</p>
+        <p className="text-base text-nikke-accent md:text-xl">Loading "{script.title}{script.subTitle ? ` - ${script.subTitle}` : ''}"...</p>
       </div>
     );
   }
@@ -432,17 +447,17 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
       )}
 
       <article className="mx-auto flex h-full max-w-[980px] flex-col" aria-labelledby="script-title">
-        <header className="mb-6 rounded-[1.5rem] bg-nikke-surface-low/75 px-5 py-5 shadow-glass md:px-6">
+        <header className="mb-5 rounded-[1.25rem] bg-nikke-surface-low/75 px-4 py-4 shadow-glass md:mb-6 md:rounded-[1.5rem] md:px-6 md:py-5">
         <p className="font-label text-[10px] uppercase tracking-[0.22em] text-nikke-accent">
           {script.categoryKey.replace(/_/g, ' ')}
         </p>
         <div className="mt-2 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
           <div>
-            <h2 id="script-title" className="font-headline text-2xl font-extrabold tracking-[-0.03em] text-nikke-text-primary md:text-3xl">
+            <h2 id="script-title" className="font-headline text-xl font-extrabold tracking-[-0.03em] text-nikke-text-primary md:text-3xl">
           {script.title}
             </h2>
             {script.subTitle && (
-              <p className="mt-1.5 font-body text-base leading-7 text-nikke-text-secondary md:text-lg">
+              <p className="mt-1.5 font-body text-sm leading-6 text-nikke-text-secondary md:text-lg md:leading-7">
                 {script.subTitle}
               </p>
             )}
@@ -450,7 +465,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
           {onNavigateToSearch && (
             <button
               onClick={onNavigateToSearch}
-              className="rounded-full bg-nikke-surface-high px-4 py-2 font-label text-[11px] uppercase tracking-[0.16em] text-nikke-text-secondary transition-colors duration-300 ease-editorial hover:text-nikke-text-primary"
+              className="rounded-full bg-nikke-surface-high px-4 py-2 font-label text-[10px] uppercase tracking-[0.14em] text-nikke-text-secondary transition-colors duration-300 ease-editorial hover:text-nikke-text-primary md:text-[11px] md:tracking-[0.16em]"
             >
               Back to Stories
             </button>
@@ -459,9 +474,9 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
         <div className="mt-4 h-px bg-gradient-to-r from-nikke-accent/30 via-nikke-border/20 to-transparent" />
         </header>
 
-        <div className="mt-1 flex-grow overflow-y-auto pr-2">
+        <div className="mt-1 flex-grow overflow-y-visible md:overflow-y-auto md:pr-2">
           {parsedElements.length > 0 ? renderElements(parsedElements) :
-            <p className="font-body text-lg italic text-nikke-text-muted">This script part is empty or cannot be displayed right now.</p>
+            <p className="font-body text-base italic text-nikke-text-muted md:text-lg">This script part is empty or cannot be displayed right now.</p>
           }
         </div>
       </article>

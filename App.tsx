@@ -307,8 +307,8 @@ const App: React.FC = () => {
   };
 
   const renderStoriesLayout = () => (
-    <div className="flex flex-1 overflow-y-hidden">
-      <div className="container mx-auto flex w-full flex-1 flex-col gap-4 overflow-y-hidden px-0 py-4 sm:px-4 sm:py-6 md:flex-row md:gap-6">
+    <div className="flex flex-1 overflow-visible md:overflow-y-hidden">
+      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-6 md:overflow-y-hidden">
         <Sidebar
           key={`stories-sidebar-${activeCategoryKey ?? 'root'}`}
           categories={SCRIPT_CATEGORIES}
@@ -334,7 +334,7 @@ const App: React.FC = () => {
             aria-hidden="true"
           ></div>
         )}
-        <main className="w-full flex-1 overflow-y-auto rounded-[2rem] bg-transparent p-2 md:max-h-[calc(100vh-176px)] md:p-4">
+        <main className="w-full flex-1 overflow-y-visible rounded-[1.5rem] bg-transparent p-3 md:max-h-[calc(100vh-176px)] md:overflow-y-auto md:rounded-[2rem] md:p-4">
           <StoriesPage
             categories={SCRIPT_CATEGORIES}
             scripts={scripts}
@@ -349,8 +349,8 @@ const App: React.FC = () => {
   );
 
   const renderScriptViewerLayout = () => (
-    <div className="flex flex-1 overflow-y-hidden">
-      <div className="container mx-auto flex w-full flex-1 flex-col gap-4 overflow-y-hidden px-0 py-4 sm:px-4 sm:py-6 md:flex-row md:gap-6">
+    <div className="flex flex-1 overflow-visible md:overflow-y-hidden">
+      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-6 md:overflow-y-hidden">
         <Sidebar
           key={activeCategoryKey || 'sidebar-script-viewer-key'}
           categories={SCRIPT_CATEGORIES}
@@ -377,7 +377,7 @@ const App: React.FC = () => {
             aria-hidden="true"
           ></div>
         )}
-        <main className="w-full flex-1 overflow-y-auto rounded-[2rem] bg-transparent p-2 md:max-h-[calc(100vh-176px)] md:p-4">
+        <main className="w-full flex-1 overflow-y-visible rounded-[1.5rem] bg-transparent p-3 md:max-h-[calc(100vh-176px)] md:overflow-y-auto md:rounded-[2rem] md:p-4">
           {viewerLoading ? (
             <LoadingMessage
               message={isLoadingInitialData ? 'Loading script metadata...' : 'Preparing the archive...'}
@@ -414,8 +414,8 @@ const App: React.FC = () => {
   );
 
   const renderSearchPageLayout = () => (
-    <div className="flex flex-1 overflow-y-hidden">
-      <div className="container mx-auto flex w-full flex-1 flex-col gap-4 overflow-y-hidden px-0 py-4 sm:px-4 sm:py-6 md:flex-row md:gap-6">
+    <div className="flex flex-1 overflow-visible md:overflow-y-hidden">
+      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-6 md:overflow-y-hidden">
         <Sidebar
           key="search-page-sidebar"
           categories={SCRIPT_CATEGORIES}
@@ -441,7 +441,7 @@ const App: React.FC = () => {
             aria-hidden="true"
           ></div>
         )}
-        <main className="w-full flex-1 overflow-y-auto rounded-[2rem] bg-transparent p-2 md:max-h-[calc(100vh-176px)] md:p-4">
+        <main className="w-full flex-1 overflow-y-visible rounded-[1.5rem] bg-transparent p-3 md:max-h-[calc(100vh-176px)] md:overflow-y-auto md:rounded-[2rem] md:p-4">
           <SearchPage
             categories={SCRIPT_CATEGORIES}
             globallySearchedScripts={globallySearchedScripts}
@@ -463,7 +463,7 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="flex h-screen flex-col bg-nikke-bg text-nikke-text-primary antialiased transition-colors duration-500">
+    <div className="flex min-h-[100dvh] flex-col bg-nikke-bg text-nikke-text-primary antialiased transition-colors duration-500 md:h-screen">
       <Header
         onToggleSidebar={(currentView === 'search' || currentView === 'stories' || currentView === 'script_viewer') ? () => setIsSidebarOpenOnMobile(prev => !prev) : undefined}
         isSidebarOpen={isSidebarOpenOnMobile}

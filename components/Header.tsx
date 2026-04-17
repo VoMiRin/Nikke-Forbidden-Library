@@ -39,11 +39,11 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className={`border-b border-transparent ${className}`}>
       <div className="border-b border-nikke-border/10 bg-nikke-bg/75 backdrop-blur-md shadow-glass">
-        <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-4 sm:px-6">
-          <div className="flex items-center">
+        <div className="container mx-auto flex items-center justify-between gap-2 px-3 py-3 sm:px-6 sm:py-4">
+          <div className="flex min-w-0 items-center">
             {onToggleSidebar && (
               <button
-                className="mr-2 rounded-full bg-nikke-surface-low/80 p-2 text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-high hover:text-nikke-accent focus:outline-none focus:ring-2 focus:ring-nikke-accent md:hidden"
+                className="mr-2 shrink-0 rounded-full bg-nikke-surface-low/80 p-2 text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-high hover:text-nikke-accent focus:outline-none focus:ring-2 focus:ring-nikke-accent md:hidden"
                 onClick={onToggleSidebar}
                 aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isSidebarOpen}
@@ -56,14 +56,14 @@ export const Header: React.FC<HeaderProps> = ({
               href="#search"
               onClick={handleLogoClick}
               aria-label="Go to search page"
-              className="group flex items-center rounded-full pr-3 focus:outline-none focus:ring-2 focus:ring-nikke-accent"
+              className="group flex min-w-0 items-center rounded-full pr-1 focus:outline-none focus:ring-2 focus:ring-nikke-accent sm:pr-3"
             >
-              <div className="mr-3 rounded-full bg-nikke-surface-high/80 p-2.5 transition-transform duration-300 ease-editorial group-hover:scale-105">
-                <NikkeLogo className="h-7 w-7 text-nikke-accent" />
+              <div className="mr-2 shrink-0 rounded-full bg-nikke-surface-high/80 p-2 transition-transform duration-300 ease-editorial group-hover:scale-105 sm:mr-3 sm:p-2.5">
+                <NikkeLogo className="h-6 w-6 text-nikke-accent sm:h-7 sm:w-7" />
               </div>
-              <div>
-                <p className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-text-muted">The Archive Editorial</p>
-                <h1 className="font-headline text-lg font-extrabold tracking-[-0.02em] text-nikke-text-primary sm:text-2xl">
+              <div className="min-w-0">
+                <p className="hidden font-label text-[11px] uppercase tracking-[0.24em] text-nikke-text-muted sm:block">The Archive Editorial</p>
+                <h1 className="truncate font-headline text-sm font-extrabold tracking-[-0.02em] text-nikke-text-primary sm:text-2xl">
                   Nikke Forbidden Library
                 </h1>
               </div>
@@ -84,14 +84,15 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onToggleTheme}
             type="button"
-            className="flex items-center gap-2 rounded-full bg-nikke-surface-low/85 px-3 py-2 text-sm font-semibold text-nikke-text-primary transition-all duration-300 ease-editorial hover:bg-nikke-surface-high focus:outline-none focus:ring-2 focus:ring-nikke-accent"
+            className="flex shrink-0 items-center gap-2 rounded-full bg-nikke-surface-low/85 px-2.5 py-2 text-sm font-semibold text-nikke-text-primary transition-all duration-300 ease-editorial hover:bg-nikke-surface-high focus:outline-none focus:ring-2 focus:ring-nikke-accent sm:px-3"
             aria-label={themeMode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
-            <span className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted">
+            <span className="hidden font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted sm:inline">
               {themeMode === 'dark' ? 'Dark' : 'Light'}
             </span>
-            <span className="rounded-full bg-nikke-gradient px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-950">
-              {themeMode === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            <span className="rounded-full bg-nikke-gradient px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-950 sm:px-3 sm:text-[11px] sm:tracking-[0.16em]">
+              <span className="sm:hidden">{themeMode === 'dark' ? 'Light' : 'Dark'}</span>
+              <span className="hidden sm:inline">{themeMode === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
             </span>
           </button>
         </div>

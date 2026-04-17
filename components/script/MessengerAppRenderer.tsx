@@ -54,9 +54,9 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
   }
 
   return (
-    <div className="mx-auto my-10 max-w-2xl rounded-[2rem] bg-nikke-surface-low/90 p-4 shadow-ambient ring-1 ring-nikke-border/10 md:p-5">
+    <div className="mx-auto my-8 max-w-2xl rounded-[1.4rem] bg-nikke-surface-low/90 p-3 shadow-ambient ring-1 ring-nikke-border/10 md:my-10 md:rounded-[2rem] md:p-5">
       {element.appTitle && (
-        <h3 className="mb-2 text-left font-headline text-xl font-bold tracking-[-0.02em] text-nikke-text-primary">
+        <h3 className="mb-2 text-left font-headline text-lg font-bold tracking-[-0.02em] text-nikke-text-primary md:text-xl">
           {element.appTitle}
         </h3>
       )}
@@ -65,7 +65,7 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
           Participants: {element.participants.join(', ')}
         </p>
       )}
-      <div className="max-h-[500px] space-y-4 overflow-y-auto rounded-[1.5rem] bg-nikke-bg-alt/60 p-4 pr-3">
+      <div className="max-h-[58vh] space-y-3 overflow-y-auto rounded-[1.15rem] bg-nikke-bg-alt/60 p-3 pr-2 md:max-h-[500px] md:space-y-4 md:rounded-[1.5rem] md:p-4 md:pr-3">
         {messagesToRender.map((msg, msgIdx) => {
           const msgKey = `${keyPrefix}_msg_${msgIdx}`;
 
@@ -119,12 +119,12 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
               if (!selectedOptionValue) {
                 return (
                   <div key={msgKey} className="my-2 flex justify-end">
-                    <div className="w-full max-w-[85%] space-y-2">
+                    <div className="w-full max-w-full space-y-2 md:max-w-[85%]">
                       {msg.choice.options.map(option => (
                         <button
                           key={option.optionId}
                           onClick={() => onOptionSelect(msg.choice!.choiceId, option.value)}
-                          className="w-full rounded-full bg-nikke-surface-high px-4 py-3 text-center font-body text-base text-nikke-text-primary transition-all duration-300 ease-editorial hover:bg-nikke-accent hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-nikke-accent"
+                          className="w-full rounded-[0.95rem] bg-nikke-surface-high px-4 py-3 text-center font-body text-sm text-nikke-text-primary transition-all duration-300 ease-editorial hover:bg-nikke-accent hover:text-slate-950 focus:outline-none focus:ring-2 focus:ring-nikke-accent md:rounded-full md:text-base"
                         >
                           {option.text}
                         </button>
@@ -137,7 +137,7 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
               return (
                 <div key={msgKey} className="my-2">
                   <div className="mb-2 flex justify-end">
-                    <div className="max-w-[75%] rounded-[1.25rem] rounded-br-md bg-nikke-gradient p-3 text-slate-950 shadow-glass">
+                    <div className="max-w-[85%] rounded-[1rem] rounded-br-md bg-nikke-gradient p-3 text-slate-950 shadow-glass md:max-w-[75%] md:rounded-[1.25rem]">
                       <p className="whitespace-pre-wrap font-body text-sm">{selectedOption?.text}</p>
                     </div>
                   </div>
@@ -157,9 +157,9 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
             if (msg.text) {
               return (
                 <div key={msgKey} className={`flex ${msg.isSender ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[75%] rounded-[1.25rem] p-3 shadow-sm ${msg.isSender ? 'rounded-br-md bg-nikke-gradient text-slate-950' : 'rounded-bl-md bg-nikke-surface-high text-nikke-text-primary'}`}>
+                  <div className={`max-w-[86%] rounded-[1rem] p-3 shadow-sm md:max-w-[75%] md:rounded-[1.25rem] ${msg.isSender ? 'rounded-br-md bg-nikke-gradient text-slate-950' : 'rounded-bl-md bg-nikke-surface-high text-nikke-text-primary'}`}>
                     {!msg.isSender && <p className="mb-1 font-label text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-nikke-accent">{msg.sender}</p>}
-                    <p className="whitespace-pre-wrap font-body text-sm leading-7">{msg.text}</p>
+                    <p className="whitespace-pre-wrap font-body text-sm leading-6 md:leading-7">{msg.text}</p>
                   </div>
                 </div>
               );
