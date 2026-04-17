@@ -8,7 +8,13 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const port = Number(process.env.PORT ?? 8080);
 const indexPath = process.env.SEARCH_INDEX_PATH ?? path.join(rootDir, 'public', 'search-index.json');
-const allowOrigin = process.env.ACCESS_CONTROL_ALLOW_ORIGIN ?? '*';
+const allowedOrigins = (process.env.ACCESS_CONTROL_ALLOW_ORIGIN ?? '')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+const rateLimitWindowMs = Number(process.env.RATE_LIMIT_WINDOW_MS ?? 60_000);
+const rateLimitMaxRequests = Number(process.env.RATE_LIMIT_MAX_REQUESTS ?? 120);
+const rateLimitStore = new Map();
 
 const normalizeSearchValue = (value = '') => (
   value
@@ -65,6 +71,46 @@ const readSearchIndex = async () => {
 
 let cachedDocuments = null;
 
+const getRequestIp = (request) => (
+  request.headers['x-forwarded-for']?.toString().split(',')[0]?.trim()
+  || request.socket.remoteAddress
+  || 'unknown'
+);
+
+const getAllowedOrigin = (request) => {
+  const requestOrigin = request.headers.origin?.toString();
+  if (!requestOrigin || allowedOrigins.length === 0) {
+    return null;
+  }
+
+  if (allowedOrigins.includes('*')) {
+    return '*';
+  }
+
+  return allowedOrigins.includes(requestOrigin) ? requestOrigin : null;
+};
+
+const buildSecurityHeaders = (request) => {
+  const allowedOrigin = getAllowedOrigin(request);
+  const headers = {
+    'cache-control': 'no-store',
+    'content-type': 'application/json; charset=utf-8',
+    'permissions-policy': 'camera=(), geolocation=(), microphone=()',
+    'referrer-policy': 'no-referrer',
+    'x-content-type-options': 'nosniff',
+    'x-frame-options': 'DENY',
+  };
+
+  if (allowedOrigin) {
+    headers['access-control-allow-origin'] = allowedOrigin;
+    headers['access-control-allow-methods'] = 'GET,OPTIONS';
+    headers['access-control-allow-headers'] = 'content-type';
+    headers.vary = 'Origin';
+  }
+
+  return headers;
+};
+
 const getDocuments = async () => {
   if (!cachedDocuments) {
     cachedDocuments = await readSearchIndex();
@@ -73,29 +119,49 @@ const getDocuments = async () => {
   return cachedDocuments;
 };
 
-const writeJson = (response, statusCode, payload) => {
+const isRateLimited = (request) => {
+  const ip = getRequestIp(request);
+  const now = Date.now();
+  const entry = rateLimitStore.get(ip);
+
+  if (!entry || entry.resetAt <= now) {
+    rateLimitStore.set(ip, { count: 1, resetAt: now + rateLimitWindowMs });
+    return null;
+  }
+
+  if (entry.count >= rateLimitMaxRequests) {
+    return Math.ceil((entry.resetAt - now) / 1000);
+  }
+
+  entry.count += 1;
+  return null;
+};
+
+const writeJson = (request, response, statusCode, payload, extraHeaders = {}) => {
+  const securityHeaders = buildSecurityHeaders(request);
   response.writeHead(statusCode, {
-    'access-control-allow-origin': allowOrigin,
-    'access-control-allow-methods': 'GET,OPTIONS',
-    'access-control-allow-headers': 'content-type',
+    ...securityHeaders,
     'cache-control': statusCode === 200 ? 'public, max-age=120' : 'no-store',
-    'content-type': 'application/json; charset=utf-8',
+    ...extraHeaders,
   });
   response.end(JSON.stringify(payload));
 };
 
 const server = http.createServer(async (request, response) => {
   if (!request.url) {
-    writeJson(response, 400, { error: 'Missing request URL.' });
+    writeJson(request, response, 400, { error: 'Missing request URL.' });
     return;
   }
 
   if (request.method === 'OPTIONS') {
-    response.writeHead(204, {
-      'access-control-allow-origin': allowOrigin,
-      'access-control-allow-methods': 'GET,OPTIONS',
-      'access-control-allow-headers': 'content-type',
-    });
+    const allowedOrigin = getAllowedOrigin(request);
+    if (!allowedOrigin) {
+      response.writeHead(403, buildSecurityHeaders(request));
+      response.end();
+      return;
+    }
+
+    response.writeHead(204, buildSecurityHeaders(request));
     response.end();
     return;
   }
@@ -103,12 +169,22 @@ const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host ?? `127.0.0.1:${port}`}`);
 
   if (url.pathname === '/healthz') {
-    writeJson(response, 200, { ok: true });
+    writeJson(request, response, 200, { ok: true });
     return;
   }
 
   if (url.pathname !== '/api/search') {
-    writeJson(response, 404, { error: 'Not found.' });
+    writeJson(request, response, 404, { error: 'Not found.' });
+    return;
+  }
+
+  const retryAfterSeconds = isRateLimited(request);
+  if (retryAfterSeconds !== null) {
+    writeJson(request, response, 429, {
+      error: 'Too many search requests. Please try again later.',
+    }, {
+      'retry-after': String(retryAfterSeconds),
+    });
     return;
   }
 
@@ -121,7 +197,7 @@ const server = http.createServer(async (request, response) => {
     : 50;
 
   if (!normalizedQuery) {
-    writeJson(response, 200, {
+    writeJson(request, response, 200, {
       mode,
       query: '',
       results: [],
@@ -152,7 +228,7 @@ const server = http.createServer(async (request, response) => {
         score,
       }));
 
-    writeJson(response, 200, {
+    writeJson(request, response, 200, {
       mode,
       query: normalizedQuery,
       results,
@@ -160,7 +236,7 @@ const server = http.createServer(async (request, response) => {
     });
   } catch (error) {
     console.error('Search request failed:', error);
-    writeJson(response, 500, {
+    writeJson(request, response, 500, {
       error: 'Search index is unavailable.',
     });
   }

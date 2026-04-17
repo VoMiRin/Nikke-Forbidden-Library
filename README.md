@@ -32,6 +32,11 @@ npm run search-api
 
 기본 포트는 `8080`이며 `GET /api/search?q=...&mode=content` 형식으로 검색합니다.
 
+보안 관련 환경 변수:
+- `ACCESS_CONTROL_ALLOW_ORIGIN`: 허용할 Origin 목록. 쉼표로 여러 개 지정 가능
+- `RATE_LIMIT_WINDOW_MS`: 검색 API rate limit 윈도우 시간
+- `RATE_LIMIT_MAX_REQUESTS`: 윈도우당 최대 검색 요청 수
+
 ## 빌드
 ```bash
 npm run build
@@ -93,6 +98,11 @@ gcloud run deploy nikke-search-api \
 2. `npm run build`
 3. Firebase Hosting 재배포
 4. 검색 API 이미지를 다시 배포
+
+## 배포 직전 체크
+1. `npm audit --omit=dev` 결과가 `0 vulnerabilities`인지 확인
+2. Cloud Run 환경변수 `ACCESS_CONTROL_ALLOW_ORIGIN` 이 실제 배포 도메인으로 설정되어 있는지 확인
+3. 배포 후 `curl -I https://YOUR_DOMAIN` 와 `curl -I https://YOUR_DOMAIN/api/search?q=test` 로 보안 헤더가 붙는지 확인
 
 ## 운영 매뉴얼
 평소 운영은 아래 순서로 진행하면 됩니다.
