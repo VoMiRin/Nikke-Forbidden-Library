@@ -56,50 +56,54 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   return (
     <div className="mx-auto flex h-full w-full max-w-[1024px] flex-col pb-8 md:pb-10">
       <header className="mb-8 md:mb-12">
-        <p className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-accent">전체 검색</p>
-        <h2 className="mt-2 font-headline text-3xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-5xl md:mt-3 md:sm:text-6xl">
-          Nikke Forbidden Library
-        </h2>
-        <div className="relative mt-5 md:mt-8">
-          <input
-            type="search"
-            placeholder={searchPlaceholder}
-            value={searchTerm}
-            onChange={(e) => onSearchTermChange(e.target.value)}
-            aria-label="Search all scripts"
-            className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-4 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 md:rounded-[1.15rem] md:py-5 md:pl-14 md:pr-12 md:text-lg md:placeholder:text-base"
-            disabled={showInitialLoading}
-            autoFocus
-          />
-          <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted md:left-5" />
-          {searchTerm && (
-            <button
-              onClick={onClearSearch}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary md:right-4"
-              aria-label="Clear search"
-            >
-              <XIcon className="h-5 w-5" />
-            </button>
-          )}
+        <div>
+          <p className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-accent">전체 검색</p>
+          <h2 className="mt-2 font-headline text-3xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-5xl md:mt-3 md:sm:text-6xl">
+            Nikke Forbidden Library
+          </h2>
         </div>
-        <div className="mt-5 flex justify-center md:mt-8">
-          <div className="inline-flex w-full max-w-md flex-col gap-1 rounded-[1rem] bg-nikke-surface-low/70 p-1 sm:flex-row sm:rounded-full md:w-auto md:max-w-none md:gap-2 md:rounded-[1.25rem] md:bg-transparent md:p-0">
-            <button
-              onClick={() => onSearchModeChange('content')}
-              className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'content' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
-                }`}
-              aria-pressed={searchMode === 'content'}
-            >
-              내용 검색
-            </button>
-            <button
-              onClick={() => onSearchModeChange('speaker')}
-              className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'speaker' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
-                }`}
-              aria-pressed={searchMode === 'speaker'}
-            >
-              화자 검색
-            </button>
+        <div className="sticky top-[68px] z-20 -mx-3 mt-4 border-y border-nikke-border/10 bg-nikke-bg/96 px-3 py-3 shadow-[0_14px_32px_rgba(0,0,0,0.16)] backdrop-blur-md md:static md:mx-0 md:mt-8 md:border-y-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none">
+          <div className="relative">
+            <input
+              type="search"
+              placeholder={searchPlaceholder}
+              value={searchTerm}
+              onChange={(e) => onSearchTermChange(e.target.value)}
+              aria-label="Search all scripts"
+              className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-4 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 md:rounded-[1.15rem] md:py-5 md:pl-14 md:pr-12 md:text-lg md:placeholder:text-base"
+              disabled={showInitialLoading}
+              autoFocus
+            />
+            <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted md:left-5" />
+            {searchTerm && (
+              <button
+                onClick={onClearSearch}
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary md:right-4"
+                aria-label="Clear search"
+              >
+                <XIcon className="h-5 w-5" />
+              </button>
+            )}
+          </div>
+          <div className="mt-4 flex justify-center md:mt-8">
+            <div className="inline-flex w-full max-w-md flex-col gap-1 rounded-[1rem] bg-nikke-surface-low/70 p-1 sm:flex-row sm:rounded-full md:w-auto md:max-w-none md:gap-2 md:rounded-[1.25rem] md:bg-transparent md:p-0">
+              <button
+                onClick={() => onSearchModeChange('content')}
+                className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'content' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
+                  }`}
+                aria-pressed={searchMode === 'content'}
+              >
+                내용 검색
+              </button>
+              <button
+                onClick={() => onSearchModeChange('speaker')}
+                className={`rounded-[0.85rem] px-4 py-2.5 text-sm font-semibold transition-all duration-300 ease-editorial sm:rounded-full sm:px-7 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'speaker' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary md:bg-nikke-surface-low/70'
+                  }`}
+                aria-pressed={searchMode === 'speaker'}
+              >
+                화자 검색
+              </button>
+            </div>
           </div>
         </div>
       </header>

@@ -150,6 +150,7 @@ const App: React.FC = () => {
     selectedScriptId,
     selectedScript,
     scriptsForActiveCategoryWhenBrowsing,
+    handleNavigateToPreviousScript,
     handleSelectScript,
     handleCategorySelect,
     handleNavigateToNextScript,
@@ -269,6 +270,24 @@ const App: React.FC = () => {
   };
 
   const viewerLoading = (isLoadingInitialData || (isIndexing && scripts.length === 0 && !indexingError)) && !selectedScriptId;
+  const scriptsInSelectedChapter = useMemo(() => {
+    if (!selectedScript) return [];
+    return scripts.filter(entry => (
+      entry.categoryKey === selectedScript.categoryKey
+      && entry.title === selectedScript.title
+    ));
+  }, [scripts, selectedScript]);
+
+  const selectedScriptChapterIndex = useMemo(() => {
+    if (!selectedScript) return -1;
+    return scriptsInSelectedChapter.findIndex(entry => entry.id === selectedScript.id);
+  }, [scriptsInSelectedChapter, selectedScript]);
+
+  const canNavigateToPreviousScript = selectedScriptChapterIndex > 0;
+  const canNavigateToNextScript = (
+    selectedScriptChapterIndex !== -1
+    && selectedScriptChapterIndex < scriptsInSelectedChapter.length - 1
+  );
 
   const handleSelectScriptWithoutSearchFocus = (scriptId: string) => {
     setViewerSearchFocus(null);
@@ -284,6 +303,11 @@ const App: React.FC = () => {
   const handleNavigateToNextScriptWithoutSearchFocus = (scriptId: string) => {
     setViewerSearchFocus(null);
     handleNavigateToNextScript(scriptId);
+  };
+
+  const handleNavigateToPreviousScriptWithoutSearchFocus = (scriptId: string) => {
+    setViewerSearchFocus(null);
+    handleNavigateToPreviousScript(scriptId);
   };
 
   const handleNavigateToScriptWithoutSearchFocus = (scriptId: string) => {
@@ -389,6 +413,8 @@ const App: React.FC = () => {
             <ScriptViewer
               script={selectedScript}
               searchFocus={viewerSearchFocus}
+              canNavigateToPreviousScript={canNavigateToPreviousScript}
+              canNavigateToNextScript={canNavigateToNextScript}
               selectedOptions={selectedOptions}
               onOptionSelect={(choiceId, optionValue) => {
                 setSelectedOptions(prev => ({
@@ -403,6 +429,7 @@ const App: React.FC = () => {
                   return nextSelections;
                 });
               }}
+              onNavigateToPreviousScript={handleNavigateToPreviousScriptWithoutSearchFocus}
               onNavigateToNextScript={handleNavigateToNextScriptWithoutSearchFocus}
               onNavigateToScript={handleNavigateToScriptWithoutSearchFocus}
               onNavigateToSearch={() => handleNavigateToStoriesWithoutSearchFocus(activeCategoryKey ?? SCRIPT_CATEGORIES[0]?.key ?? null)}

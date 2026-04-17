@@ -16,6 +16,7 @@ interface UseScriptNavigationReturn {
   selectedScriptId: string | null;
   selectedScript: Script | null;
   scriptsForActiveCategoryWhenBrowsing: Script[];
+  handleNavigateToPreviousScript: (currentScriptId: string) => void;
   handleSelectScript: (scriptId: string) => void;
   handleCategorySelect: (categoryKey: string) => void;
   handleNavigateToNextScript: (currentScriptId: string) => void;
@@ -101,6 +102,21 @@ export function useScriptNavigation({
     }
   }, [scripts, handleSelectScript]);
 
+  const handleNavigateToPreviousScript = useCallback((currentScriptId: string) => {
+    const currentScriptInstance = scripts.find(s => s.id === currentScriptId);
+    if (!currentScriptInstance) return;
+
+    const scriptsInSameChapter = scripts.filter(
+      s => s.categoryKey === currentScriptInstance.categoryKey && s.title === currentScriptInstance.title
+    );
+
+    const currentIndex = scriptsInSameChapter.findIndex(s => s.id === currentScriptId);
+
+    if (currentIndex > 0) {
+      handleSelectScript(scriptsInSameChapter[currentIndex - 1].id);
+    }
+  }, [scripts, handleSelectScript]);
+
   const handleNavigateToSearch = useCallback(() => {
     setCurrentView('search');
     setActiveCategoryKey(null);
@@ -122,6 +138,7 @@ export function useScriptNavigation({
     selectedScriptId,
     selectedScript,
     scriptsForActiveCategoryWhenBrowsing,
+    handleNavigateToPreviousScript,
     handleSelectScript,
     handleCategorySelect,
     handleNavigateToNextScript,

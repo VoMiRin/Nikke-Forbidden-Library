@@ -131,9 +131,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <aside
       id="sidebar"
       className={`
-        fixed inset-y-0 left-0 z-40 flex w-[85vw] max-w-[20rem] flex-col overflow-y-auto bg-nikke-surface/96 p-4 shadow-ambient ring-1 ring-nikke-border/10 backdrop-blur-xl transition-transform duration-300 ease-editorial
+        fixed bottom-0 left-0 top-[68px] z-40 flex w-[85vw] max-w-[20rem] flex-col overflow-y-auto bg-nikke-surface/96 p-4 shadow-ambient ring-1 ring-nikke-border/10 backdrop-blur-xl transition-transform duration-300 ease-editorial
         ${isOpenOnMobile ? 'translate-x-0' : '-translate-x-full'}
-        md:relative md:max-h-[calc(100vh-176px)] md:w-80 md:translate-x-0 md:rounded-[2rem] md:p-5
+        md:relative md:top-auto md:max-h-[calc(100vh-176px)] md:w-80 md:translate-x-0 md:rounded-[2rem] md:p-5
       `}
       aria-hidden={!isOpenOnMobile && typeof window !== 'undefined' && window.innerWidth < 768}
       aria-labelledby="sidebar-title"

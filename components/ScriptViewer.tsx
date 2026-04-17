@@ -17,9 +17,12 @@ type SearchFocus = {
 interface ScriptViewerProps {
   script: Script | null;
   searchFocus?: SearchFocus | null;
+  canNavigateToPreviousScript?: boolean;
+  canNavigateToNextScript?: boolean;
   selectedOptions: Record<string, string>;
   onOptionSelect: (choiceId: string, optionValue: string) => void;
   onClearChoice: (choiceId: string) => void;
+  onNavigateToPreviousScript?: (currentScriptId: string) => void;
   onNavigateToNextScript?: (currentScriptId: string) => void;
   onNavigateToScript?: (scriptId: string) => void;
   onNavigateToSearch?: () => void;
@@ -28,9 +31,12 @@ interface ScriptViewerProps {
 export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   script,
   searchFocus = null,
+  canNavigateToPreviousScript = false,
+  canNavigateToNextScript = false,
   selectedOptions,
   onOptionSelect,
   onClearChoice,
+  onNavigateToPreviousScript,
   onNavigateToNextScript,
   onNavigateToScript,
   onNavigateToSearch,
@@ -448,9 +454,29 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
 
       <article className="mx-auto flex h-full max-w-[980px] flex-col" aria-labelledby="script-title">
         <header className="mb-5 rounded-[1.25rem] bg-nikke-surface-low/75 px-4 py-4 shadow-glass md:mb-6 md:rounded-[1.5rem] md:px-6 md:py-5">
+        <div className="mb-3 flex items-center justify-between gap-3">
         <p className="font-label text-[10px] uppercase tracking-[0.22em] text-nikke-accent">
           {script.categoryKey.replace(/_/g, ' ')}
         </p>
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <button
+              type="button"
+              onClick={() => onNavigateToPreviousScript?.(script.id)}
+              disabled={!canNavigateToPreviousScript}
+              className="rounded-full bg-nikke-surface-high px-3 py-1.5 font-label text-[10px] uppercase tracking-[0.14em] text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-highest disabled:cursor-not-allowed disabled:opacity-35"
+            >
+              이전
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigateToNextScript?.(script.id)}
+              disabled={!canNavigateToNextScript}
+              className="rounded-full bg-nikke-surface-high px-3 py-1.5 font-label text-[10px] uppercase tracking-[0.14em] text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-highest disabled:cursor-not-allowed disabled:opacity-35"
+            >
+              다음
+            </button>
+          </div>
+        </div>
         <div className="mt-2 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
           <div>
             <h2 id="script-title" className="font-headline text-xl font-extrabold tracking-[-0.03em] text-nikke-text-primary md:text-3xl">
