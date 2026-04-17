@@ -6,6 +6,7 @@ import type {
     MessengerChoiceOption,
     NextRoute
 } from '../../types';
+import { isDocumentStyleCategory } from '../../utils';
 
 // MessengerChoiceOption 타입이 messages 필드를 지원하지 않을 경우를 대비한 확장 타입
 export interface ExtendedMessengerChoiceOption extends Omit<MessengerChoiceOption, 'messages'> {
@@ -20,11 +21,36 @@ const generateOptionId = (choiceId: string, optionIndex: number) => `${choiceId}
 
 const MAX_PARSER_RECURSION_DEPTH = 50;
 
+type ParserMode = 'default' | 'document';
+
+const shouldTreatLineAsDialogue = (line: string, parserMode: ParserMode): boolean => {
+    if (parserMode === 'document') {
+        return false;
+    }
+
+    const dialogueMatch = line.match(/^([^:]+):\s*(.*)/);
+    if (!dialogueMatch ||
+        !dialogueMatch[1] ||
+        !dialogueMatch[1].trim() ||
+        dialogueMatch[2] === undefined ||
+        dialogueMatch[1].trim().length >= 75 ||
+        dialogueMatch[1].trim().startsWith('[')) {
+        return false;
+    }
+
+    const potentialSpeaker = dialogueMatch[1].trim();
+    const upperSpeakerForCheck = potentialSpeaker.toUpperCase();
+    const narrationKeywords = ['LOCATION', 'SOUND', 'NARRATION', '나래이션', 'MUSIC', 'EFFECTS', 'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM'];
+
+    return !narrationKeywords.map(k => k.toUpperCase()).includes(upperSpeakerForCheck.replace(/\.$/, ''));
+};
+
 const parseScriptElementsRecursive = (
     lines: string[],
     currentLineIndex: number,
     stopAtTag?: '[OPTION_END]' | '[CHOICE_END]' | '[MESSENGER_END]' | '[MSG_END]',
-    depth = 0
+    depth = 0,
+    parserMode: ParserMode = 'default',
 ): { elements: ScriptElement[], nextLineIndex: number } => {
     if (depth > MAX_PARSER_RECURSION_DEPTH) {
         console.error("Script parser exceeded max recursion depth. Possible malformed nested choices or messenger blocks.");
@@ -173,7 +199,7 @@ const parseScriptElementsRecursive = (
                 if (optionTextMatch) {
                     const optionId = generateOptionId(choiceId, optionIndex++);
                     const optionValue = optionTextMatch[2] || optionId;
-                    const parsedOptionContent = parseScriptElementsRecursive(lines, optParseIndex + 1, '[OPTION_END]', depth + 1);
+                    const parsedOptionContent = parseScriptElementsRecursive(lines, optParseIndex + 1, '[OPTION_END]', depth + 1, parserMode);
                     options.push({
                         optionId,
                         text: optionTextMatch[1],
@@ -402,22 +428,11 @@ const parseScriptElementsRecursive = (
                 });
             } else {
                 const dialogueMatch = line.match(/^([^:]+):\s*(.*)/);
-                if (dialogueMatch &&
-                    dialogueMatch[1] && dialogueMatch[1].trim() &&
-                    dialogueMatch[2] &&
-                    dialogueMatch[1].trim().length < 75 &&
-                    !dialogueMatch[1].trim().startsWith('[')) {
+                if (shouldTreatLineAsDialogue(line, parserMode) && dialogueMatch) {
 
                     const potentialSpeaker = dialogueMatch[1].trim();
                     const dialogueText = dialogueMatch[2].trim();
-                    const upperSpeakerForCheck = potentialSpeaker.toUpperCase();
-                    const narrationKeywords = ['LOCATION', 'SOUND', 'NARRATION', '나래이션', 'MUSIC', 'EFFECTS', 'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM'];
-
-                    if (narrationKeywords.map(k => k.toUpperCase()).includes(upperSpeakerForCheck.replace(/\.$/, ''))) {
-                        elements.push({ type: 'narration', text: dialogueText, speaker: upperSpeakerForCheck.replace(/\.$/, '') });
-                    } else {
-                        elements.push({ type: 'dialogue', speaker: potentialSpeaker, dialogue: dialogueText });
-                    }
+                    elements.push({ type: 'dialogue', speaker: potentialSpeaker, dialogue: dialogueText });
                 } else {
                     const parentheticalMatch = line.match(/^\((.*)\)$/);
                     if (parentheticalMatch) {
@@ -436,12 +451,16 @@ const parseScriptElementsRecursive = (
 /**
  * 스크립트 콘텐츠를 파싱하여 ScriptElement 배열로 반환합니다.
  */
-export const parseScriptContent = (content: string | undefined, options?: { scriptId?: string }): ScriptElement[] => {
+export const parseScriptContent = (
+    content: string | undefined,
+    options?: { scriptId?: string; categoryKey?: string },
+): ScriptElement[] => {
     if (!content) return [];
     choiceIdCounter = 0;
     parserScriptScope = options?.scriptId || 'global';
     const lines = content.split('\n');
-    return parseScriptElementsRecursive(lines, 0).elements;
+    const parserMode: ParserMode = isDocumentStyleCategory(options?.categoryKey) ? 'document' : 'default';
+    return parseScriptElementsRecursive(lines, 0, undefined, 0, parserMode).elements;
 };
 
 /**

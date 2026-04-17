@@ -86,8 +86,11 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
 
   const parsedElements = React.useMemo(() => {
     if (!internalScriptContent) return [];
-    return parseScriptContent(internalScriptContent, { scriptId: script?.id });
-  }, [internalScriptContent, script?.id]);
+    return parseScriptContent(internalScriptContent, {
+      scriptId: script?.id,
+      categoryKey: script?.categoryKey,
+    });
+  }, [internalScriptContent, script?.categoryKey, script?.id]);
 
   const elementMatchesSearch = React.useCallback((
     element: ScriptElement,

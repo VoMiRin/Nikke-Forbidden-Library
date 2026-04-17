@@ -47,7 +47,10 @@ const extractScriptContent = (fullChapterText, scriptId) => {
   return null;
 };
 
-const buildPreviewText = (content) => {
+const buildPreviewText = (content, options = {}) => {
+  const documentStyleMode = typeof options.isDocumentStyleCategory === 'function'
+    ? options.isDocumentStyleCategory(options.categoryKey)
+    : false;
   const previewChunks = [];
   const lines = content.split('\n');
 
@@ -82,7 +85,7 @@ const buildPreviewText = (content) => {
       continue;
     }
 
-    const dialogueMatch = line.match(/^([^:]+):\s*(.*)$/);
+    const dialogueMatch = documentStyleMode ? null : line.match(/^([^:]+):\s*(.*)$/);
     if (dialogueMatch?.[2]) {
       previewChunks.push(dialogueMatch[2].trim());
       continue;
@@ -109,7 +112,7 @@ const main = async () => {
 
   const require = createRequire(import.meta.url);
   const { newScriptsData } = require(path.join(generatedDir, 'data', 'newScripts.js'));
-  const { extractTextFromScriptContent } = require(path.join(generatedDir, 'utils.js'));
+  const { extractTextFromScriptContent, isDocumentStyleCategory } = require(path.join(generatedDir, 'utils.js'));
 
   const manifest = newScriptsData.map(({ id, title, categoryKey, subTitle, mainChapterFile }) => ({
     id,
@@ -146,7 +149,9 @@ const main = async () => {
     }
 
     const safeContent = typeof content === 'string' ? content : '';
-    const { content: searchableContent, speakers: searchableSpeakers } = extractTextFromScriptContent(safeContent);
+    const { content: searchableContent, speakers: searchableSpeakers } = extractTextFromScriptContent(safeContent, {
+      categoryKey: script.categoryKey,
+    });
 
     searchIndex.push({
       id: script.id,
@@ -156,7 +161,10 @@ const main = async () => {
       mainChapterFile: script.mainChapterFile,
       searchableContent,
       searchableSpeakers,
-      snippet: safeContent ? buildPreviewText(safeContent) : '',
+      snippet: safeContent ? buildPreviewText(safeContent, {
+        categoryKey: script.categoryKey,
+        isDocumentStyleCategory,
+      }) : '',
     });
   }
 

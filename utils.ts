@@ -1,10 +1,22 @@
 
+export const DOCUMENT_STYLE_CATEGORIES = new Set([
+  'lost_relics',
+]);
+
+export const isDocumentStyleCategory = (categoryKey?: string): boolean => (
+  typeof categoryKey === 'string' && DOCUMENT_STYLE_CATEGORIES.has(categoryKey)
+);
+
 // Helper function to extract searchable text from script content
-export const extractTextFromScriptContent = (content: string | undefined): { content: string; speakers: string } => {
+export const extractTextFromScriptContent = (
+  content: string | undefined,
+  options?: { categoryKey?: string },
+): { content: string; speakers: string } => {
   if (typeof content !== 'string' || !content) { // Guard against null, undefined, or non-string
     return { content: "", speakers: "" };
   }
-  
+
+  const documentStyleMode = isDocumentStyleCategory(options?.categoryKey);
   let searchableText = "";
   const speakerSet = new Set<string>();
   const lines = content.split('\n');
@@ -74,7 +86,7 @@ export const extractTextFromScriptContent = (content: string | undefined): { con
         continue;
     }
 
-    const dialogueMatch = trimmedLine.match(/^([^:]+):\s*(.*)/); 
+    const dialogueMatch = documentStyleMode ? null : trimmedLine.match(/^([^:]+):\s*(.*)/);
     if (dialogueMatch && dialogueMatch[1] && dialogueMatch[1].trim().length < 75 && dialogueMatch[2]) {
       const potentialSpeaker = dialogueMatch[1].trim();
       const upperSpeakerForCheck = potentialSpeaker.toUpperCase();
@@ -98,7 +110,7 @@ export const extractTextFromScriptContent = (content: string | undefined): { con
         continue;
     }
     
-    if (trimmedLine && !dialogueMatch && !narrationKeywordMatch && !parentheticalMatch && !trimmedLine.startsWith('[') && !trimmedLine.endsWith(']') && !trimmedLine.endsWith(':')) {
+    if (trimmedLine && !dialogueMatch && !narrationKeywordMatch && !parentheticalMatch && !trimmedLine.startsWith('[') && !trimmedLine.endsWith(']')) {
         searchableText += trimmedLine + " ";
     }
   }
