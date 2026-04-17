@@ -18,6 +18,13 @@ npm run dev
 - `public/script-manifest.json`
 - `public/search-index.json`
 
+## 깃허브에 푸시할때
+```bash
+git add .
+git commit -m "Update scripts"
+git push
+```
+
 ## 검색 API 실행
 ```bash
 npm run search-api
@@ -86,6 +93,41 @@ gcloud run deploy nikke-search-api \
 2. `npm run build`
 3. Firebase Hosting 재배포
 4. 검색 API 이미지를 다시 배포
+
+## 운영 매뉴얼
+평소 운영은 아래 순서로 진행하면 됩니다.
+
+1. WSL에서 프로젝트 루트로 이동
+```bash
+cd /home/vomirin/nikke-script-archive
+```
+
+2. 스크립트나 프런트 코드를 수정
+- `data/new_scripts/*`
+- `public/scripts/*`
+- 필요한 경우 `components/*`, `hooks/*`
+
+3. GitHub에 백업
+```bash
+git add .
+git commit -m "Update scripts"
+git push
+```
+
+4. 전체 배포
+```bash
+npm run deploy
+```
+
+5. Hosting 설정만 바뀐 경우에만 예외적으로 아래 명령 사용
+```bash
+firebase deploy --only hosting
+```
+
+한 줄 요약:
+```bash
+수정 -> git push -> npm run deploy
+```
 
 ## 원클릭 배포
 WSL에서 아래 한 줄로 전체 배포를 실행할 수 있습니다.

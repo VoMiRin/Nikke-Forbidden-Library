@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { Script, ScriptCategory } from '../types';
 import { SearchIcon, ChevronDownIcon, ChevronRightIcon, type IconProps, XIcon } from './Icons';
 
@@ -54,6 +54,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   listOnlyMode = false,
 }) => {
   const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>({});
+  const scriptListContainerRef = useRef<HTMLDivElement | null>(null);
+  const scriptItemRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const groupedScripts = useMemo(() => {
     if (hideScriptListAndSearch || !scripts || scripts.length === 0) return {};
@@ -88,6 +90,29 @@ export const Sidebar: React.FC<SidebarProps> = ({
       setExpandedChapters(nextExpanded);
     }
   }, [selectedScriptId, scripts, searchTerm, groupedScripts, isIndexingScripts, isSearching, hideScriptListAndSearch]);
+
+  useEffect(() => {
+    if (hideScriptListAndSearch || !selectedScriptId) return;
+
+    const container = scriptListContainerRef.current;
+    const selectedItem = scriptItemRefs.current[selectedScriptId];
+    if (!container || !selectedItem) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const selectedItemRect = selectedItem.getBoundingClientRect();
+    const nextScrollTop = (
+      selectedItemRect.top
+      - containerRect.top
+      + container.scrollTop
+      - (container.clientHeight / 2)
+      + (selectedItem.clientHeight / 2)
+    );
+
+    container.scrollTo({
+      top: Math.max(0, nextScrollTop),
+      behavior: 'smooth',
+    });
+  }, [selectedScriptId, expandedChapters, hideScriptListAndSearch]);
 
   const toggleChapterExpansion = (groupKey: string) => {
     setExpandedChapters(prev => (
@@ -204,7 +229,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           )}
 
-          <div className={`min-h-[100px] flex-grow overflow-y-auto ${listOnlyMode ? '' : 'rounded-[1.5rem] bg-nikke-surface-low/55 p-4'}`}>
+          <div
+            ref={scriptListContainerRef}
+            className={`min-h-[100px] flex-grow overflow-y-auto ${listOnlyMode ? '' : 'rounded-[1.5rem] bg-nikke-surface-low/55 p-4'}`}
+          >
             {showLoadingStateForSearchInput && scripts.length === 0 ? (
               <div>
                 <SkeletonChapter />
@@ -266,6 +294,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             {subScriptsArray.map(script => (
                               <li key={script.id}>
                                 <button
+                                  ref={(element) => {
+                                    scriptItemRefs.current[script.id] = element;
+                                  }}
                                   onClick={() => onSelectScript(script.id)}
                                   className={`w-full rounded-[0.9rem] px-4 py-3 text-left text-xs transition-all duration-300 ease-editorial ${
                                     selectedScriptId === script.id

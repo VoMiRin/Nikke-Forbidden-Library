@@ -8,6 +8,11 @@ import { StoriesPage } from './components/StoriesPage';
 import { SCRIPT_CATEGORIES } from './constants';
 import { useScriptIndexing, useScriptSearch, useScriptNavigation } from './hooks';
 
+type ViewerSearchFocus = {
+  term: string;
+  mode: 'content' | 'speaker';
+};
+
 const LoadingMessage: React.FC<{ message: string; isSpinning?: boolean; isError?: boolean }> = ({ message, isSpinning, isError }) => (
   <div className={`flex h-full flex-col items-center justify-center px-4 text-center ${isError ? 'text-red-400' : 'text-nikke-accent'}`} role="alert">
     {isSpinning && (
@@ -25,6 +30,7 @@ type ThemeMode = 'dark' | 'light';
 const App: React.FC = () => {
   const [isSidebarOpenOnMobile, setIsSidebarOpenOnMobile] = useState<boolean>(false);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
+  const [viewerSearchFocus, setViewerSearchFocus] = useState<ViewerSearchFocus | null>(null);
   const [themeMode, setThemeMode] = useState<ThemeMode>(() => (
     typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light'
   ));
@@ -97,6 +103,42 @@ const App: React.FC = () => {
 
   const viewerLoading = (isLoadingInitialData || (isIndexing && scripts.length === 0 && !indexingError)) && !selectedScriptId;
 
+  const handleSelectScriptWithoutSearchFocus = (scriptId: string) => {
+    setViewerSearchFocus(null);
+    handleSelectScript(scriptId);
+  };
+
+  const handleSelectScriptFromSearch = (scriptId: string) => {
+    const focusTerm = debouncedSearchTerm.trim() || searchTerm.trim();
+    setViewerSearchFocus(focusTerm ? { term: focusTerm, mode: searchMode } : null);
+    handleSelectScript(scriptId);
+  };
+
+  const handleNavigateToNextScriptWithoutSearchFocus = (scriptId: string) => {
+    setViewerSearchFocus(null);
+    handleNavigateToNextScript(scriptId);
+  };
+
+  const handleNavigateToScriptWithoutSearchFocus = (scriptId: string) => {
+    setViewerSearchFocus(null);
+    handleSelectScript(scriptId);
+  };
+
+  const handleCategorySelectWithoutSearchFocus = (categoryKey: string) => {
+    setViewerSearchFocus(null);
+    handleCategorySelect(categoryKey);
+  };
+
+  const handleNavigateToSearchWithoutSearchFocus = () => {
+    setViewerSearchFocus(null);
+    handleNavigateToSearch();
+  };
+
+  const handleNavigateToStoriesWithoutSearchFocus = (categoryKey?: string | null) => {
+    setViewerSearchFocus(null);
+    handleNavigateToStories(categoryKey);
+  };
+
   const renderStoriesLayout = () => (
     <div className="flex flex-1 overflow-y-hidden">
       <div className="container mx-auto flex w-full flex-1 flex-col gap-4 overflow-y-hidden px-0 py-4 sm:px-4 sm:py-6 md:flex-row md:gap-6">
@@ -106,7 +148,7 @@ const App: React.FC = () => {
           activeCategoryKey={activeCategoryKey}
           scripts={[]}
           selectedScriptId={null}
-          onSelectScript={handleSelectScript}
+          onSelectScript={handleSelectScriptWithoutSearchFocus}
           isLoadingInitialMetadata={isLoadingInitialData}
           isIndexingScripts={isIndexing && scripts.length === 0}
           isSearching={false}
@@ -115,7 +157,7 @@ const App: React.FC = () => {
           onClearSearch={() => {}}
           isOpenOnMobile={isSidebarOpenOnMobile}
           onClose={() => setIsSidebarOpenOnMobile(false)}
-          onCategorySelect={handleCategorySelect}
+          onCategorySelect={handleCategorySelectWithoutSearchFocus}
           hideScriptListAndSearch={true}
         />
         {isSidebarOpenOnMobile && (
@@ -131,8 +173,8 @@ const App: React.FC = () => {
             scripts={scripts}
             activeCategoryKey={activeCategoryKey}
             selectedScriptId={selectedScriptId}
-            onCategorySelect={handleCategorySelect}
-            onSelectScript={handleSelectScript}
+            onCategorySelect={handleCategorySelectWithoutSearchFocus}
+            onSelectScript={handleSelectScriptWithoutSearchFocus}
           />
         </main>
       </div>
@@ -148,7 +190,7 @@ const App: React.FC = () => {
           activeCategoryKey={activeCategoryKey}
           scripts={scriptsToDisplayInSidebar}
           selectedScriptId={selectedScript?.id || null}
-          onSelectScript={handleSelectScript}
+          onSelectScript={handleSelectScriptWithoutSearchFocus}
           isLoadingInitialMetadata={isLoadingInitialData}
           isIndexingScripts={isIndexing && scripts.length === 0}
           isSearching={isUserSearching || (searchTerm !== debouncedSearchTerm && !!searchTerm)}
@@ -157,8 +199,8 @@ const App: React.FC = () => {
           onClearSearch={handleClearSearch}
           isOpenOnMobile={isSidebarOpenOnMobile}
           onClose={() => setIsSidebarOpenOnMobile(false)}
-          onCategorySelect={handleCategorySelect}
-          onNavigateToSearch={handleNavigateToSearch}
+          onCategorySelect={handleCategorySelectWithoutSearchFocus}
+          onNavigateToSearch={handleNavigateToSearchWithoutSearchFocus}
           listOnlyMode={true}
         />
         {isSidebarOpenOnMobile && (
@@ -179,6 +221,7 @@ const App: React.FC = () => {
           ) : (
             <ScriptViewer
               script={selectedScript}
+              searchFocus={viewerSearchFocus}
               selectedOptions={selectedOptions}
               onOptionSelect={(choiceId, optionValue) => {
                 setSelectedOptions(prev => ({
@@ -193,9 +236,9 @@ const App: React.FC = () => {
                   return nextSelections;
                 });
               }}
-              onNavigateToNextScript={handleNavigateToNextScript}
-              onNavigateToScript={handleSelectScript}
-              onNavigateToSearch={() => handleNavigateToStories(activeCategoryKey ?? SCRIPT_CATEGORIES[0]?.key ?? null)}
+              onNavigateToNextScript={handleNavigateToNextScriptWithoutSearchFocus}
+              onNavigateToScript={handleNavigateToScriptWithoutSearchFocus}
+              onNavigateToSearch={() => handleNavigateToStoriesWithoutSearchFocus(activeCategoryKey ?? SCRIPT_CATEGORIES[0]?.key ?? null)}
             />
           )}
         </main>
@@ -212,7 +255,7 @@ const App: React.FC = () => {
           activeCategoryKey={activeCategoryKey}
           scripts={[]}
           selectedScriptId={null}
-          onSelectScript={handleSelectScript}
+          onSelectScript={handleSelectScriptWithoutSearchFocus}
           isLoadingInitialMetadata={isLoadingInitialData}
           isIndexingScripts={isIndexing && scripts.length === 0}
           isSearching={false}
@@ -221,7 +264,7 @@ const App: React.FC = () => {
           onClearSearch={() => {}}
           isOpenOnMobile={isSidebarOpenOnMobile}
           onClose={() => setIsSidebarOpenOnMobile(false)}
-          onCategorySelect={handleCategorySelect}
+          onCategorySelect={handleCategorySelectWithoutSearchFocus}
           hideScriptListAndSearch={true}
         />
         {isSidebarOpenOnMobile && (
@@ -236,14 +279,14 @@ const App: React.FC = () => {
             categories={SCRIPT_CATEGORIES}
             globallySearchedScripts={globallySearchedScripts}
             selectedScriptId={selectedScriptId}
-            onSelectScript={handleSelectScript}
+            onSelectScript={handleSelectScriptFromSearch}
             isLoadingInitialMetadata={isLoadingInitialData}
             isIndexingScripts={isIndexing && scripts.length === 0}
             isSearching={isUserSearching || (searchTerm !== debouncedSearchTerm && !!searchTerm)}
             searchTerm={searchTerm}
             onSearchTermChange={handleSearchInputChange}
             onClearSearch={handleClearSearch}
-            onCategorySelect={handleCategorySelect}
+            onCategorySelect={handleCategorySelectWithoutSearchFocus}
             searchMode={searchMode}
             onSearchModeChange={handleSearchModeChange}
           />
@@ -258,8 +301,8 @@ const App: React.FC = () => {
         onToggleSidebar={(currentView === 'search' || currentView === 'stories' || currentView === 'script_viewer') ? () => setIsSidebarOpenOnMobile(prev => !prev) : undefined}
         isSidebarOpen={isSidebarOpenOnMobile}
         className="sticky top-0 z-50 shrink-0"
-        onNavigateToSearch={handleNavigateToSearch}
-        onNavigateToStories={() => handleNavigateToStories(activeCategoryKey ?? SCRIPT_CATEGORIES[0]?.key ?? null)}
+        onNavigateToSearch={handleNavigateToSearchWithoutSearchFocus}
+        onNavigateToStories={() => handleNavigateToStoriesWithoutSearchFocus(activeCategoryKey ?? SCRIPT_CATEGORIES[0]?.key ?? null)}
         activeNav={activeNav}
         themeMode={themeMode}
         onToggleTheme={toggleTheme}

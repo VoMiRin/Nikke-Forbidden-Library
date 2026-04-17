@@ -9,8 +9,14 @@ import {
   NextSubChapterButton,
 } from './script';
 
+type SearchFocus = {
+  term: string;
+  mode: 'content' | 'speaker';
+};
+
 interface ScriptViewerProps {
   script: Script | null;
+  searchFocus?: SearchFocus | null;
   selectedOptions: Record<string, string>;
   onOptionSelect: (choiceId: string, optionValue: string) => void;
   onClearChoice: (choiceId: string) => void;
@@ -21,6 +27,7 @@ interface ScriptViewerProps {
 
 export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   script,
+  searchFocus = null,
   selectedOptions,
   onOptionSelect,
   onClearChoice,
@@ -33,6 +40,19 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   const [internalContentError, setInternalContentError] = React.useState<string | null>(null);
   const [branchWarning, setBranchWarning] = React.useState<{ choiceId: string } | null>(null);
   const [highlightedChoiceId, setHighlightedChoiceId] = React.useState<string | null>(null);
+  const [highlightedSearchMatchId, setHighlightedSearchMatchId] = React.useState<string | null>(null);
+
+  const normalizeSearchValue = React.useCallback((value: string): string => (
+    value
+      .normalize('NFKC')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim()
+  ), []);
+
+  const buildElementDomId = React.useCallback((parentKeyPrefix: string, index: number, type: ScriptElement['type']) => (
+    `script-element-${script?.id || 's'}-${parentKeyPrefix}${index}-${type}`.replace(/[^a-zA-Z0-9:_-]/g, '_')
+  ), [script?.id]);
 
   React.useEffect(() => {
     if (script && script.id) {
@@ -63,6 +83,95 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     return parseScriptContent(internalScriptContent, { scriptId: script?.id });
   }, [internalScriptContent, script?.id]);
 
+  const elementMatchesSearch = React.useCallback((
+    element: ScriptElement,
+    normalizedTerm: string,
+  ): boolean => {
+    if (!normalizedTerm) return false;
+
+    if (element.type === 'dialogue') {
+      const searchableField = searchFocus?.mode === 'speaker'
+        ? element.speaker ?? ''
+        : `${element.speaker ?? ''} ${element.dialogue ?? ''}`;
+      return normalizeSearchValue(searchableField).includes(normalizedTerm);
+    }
+
+    if (element.type === 'narration') {
+      const searchableField = searchFocus?.mode === 'speaker'
+        ? element.speaker ?? ''
+        : `${element.speaker ?? ''} ${element.text}`;
+      return normalizeSearchValue(searchableField).includes(normalizedTerm);
+    }
+
+    if (element.type === 'messenger_app') {
+      const searchableField = element.messages
+        .filter((message) => message.type === 'message_bubble')
+        .map((message) => {
+          if (searchFocus?.mode === 'speaker') {
+            return message.sender;
+          }
+
+          return `${message.sender} ${message.text ?? ''}`;
+        })
+        .join(' ');
+
+      return normalizeSearchValue(searchableField).includes(normalizedTerm);
+    }
+
+    if (element.type === 'choice_block') {
+      const searchableField = [
+        element.prompt ?? '',
+        ...element.options.map((option) => option.text),
+      ].join(' ');
+
+      return normalizeSearchValue(searchableField).includes(normalizedTerm);
+    }
+
+    return false;
+  }, [normalizeSearchValue, searchFocus?.mode]);
+
+  const findFirstSearchMatchId = React.useCallback((
+    elements: ScriptElement[],
+    normalizedTerm: string,
+    parentKeyPrefix: string = '',
+  ): string | null => {
+    for (let index = 0; index < elements.length; index++) {
+      const element = elements[index];
+      const elementId = buildElementDomId(parentKeyPrefix, index, element.type);
+
+      if (elementMatchesSearch(element, normalizedTerm)) {
+        return elementId;
+      }
+
+      if (element.type === 'choice_block') {
+        const selectedOptionValue = selectedOptions[element.choiceId];
+        const selectedOption = element.options.find((option) => option.value === selectedOptionValue);
+        if (selectedOption) {
+          const nestedMatchId = findFirstSearchMatchId(
+            selectedOption.elements,
+            normalizedTerm,
+            `${element.choiceId}_${selectedOptionValue}_`,
+          );
+
+          if (nestedMatchId) {
+            return nestedMatchId;
+          }
+        }
+      }
+    }
+
+    return null;
+  }, [buildElementDomId, elementMatchesSearch, selectedOptions]);
+
+  const firstSearchMatchId = React.useMemo(() => {
+    const normalizedSearchTerm = normalizeSearchValue(searchFocus?.term ?? '');
+    if (!normalizedSearchTerm || parsedElements.length === 0) {
+      return null;
+    }
+
+    return findFirstSearchMatchId(parsedElements, normalizedSearchTerm);
+  }, [findFirstSearchMatchId, normalizeSearchValue, parsedElements, searchFocus?.term]);
+
   const focusChoiceBlock = React.useCallback((choiceId: string) => {
     const target = document.getElementById(`choice-block-${choiceId}`);
     if (!target) return;
@@ -84,7 +193,32 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   React.useEffect(() => {
     setBranchWarning(null);
     setHighlightedChoiceId(null);
+    setHighlightedSearchMatchId(null);
   }, [script?.id]);
+
+  React.useEffect(() => {
+    if (!firstSearchMatchId) return;
+
+    const frameId = window.requestAnimationFrame(() => {
+      const target = document.getElementById(firstSearchMatchId);
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setHighlightedSearchMatchId(firstSearchMatchId);
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, [firstSearchMatchId]);
+
+  React.useEffect(() => {
+    if (!highlightedSearchMatchId) return;
+
+    const timeout = window.setTimeout(() => {
+      setHighlightedSearchMatchId(null);
+    }, 2500);
+
+    return () => window.clearTimeout(timeout);
+  }, [highlightedSearchMatchId]);
 
   const resolveBranchTarget = React.useCallback((element: Extract<ScriptElement, { type: 'next_subchapter_button' }>) => {
     if (element.routes && element.routes.length > 0) {
@@ -133,10 +267,21 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   const renderElements = (elements: ScriptElement[], parentKeyPrefix: string = ''): React.ReactNode => {
     return elements.map((element, index) => {
       const key = `${parentKeyPrefix}el_${script?.id || 's'}_${index}_${element.type}`;
+      const elementId = buildElementDomId(parentKeyPrefix, index, element.type);
+      const isSearchMatched = highlightedSearchMatchId === elementId;
+      const wrapElement = (node: React.ReactNode) => (
+        <div
+          key={key}
+          id={elementId}
+          className={isSearchMatched ? 'rounded-[1.75rem] ring-2 ring-nikke-accent/80 shadow-[0_0_0_1px_rgba(104,206,255,0.16),0_0_36px_rgba(104,206,255,0.16)] transition-all duration-300 ease-editorial' : undefined}
+        >
+          {node}
+        </div>
+      );
 
       if (element.type === 'next_subchapter_button') {
         const targetScriptId = resolveBranchTarget(element);
-        return (
+        return wrapElement(
           <NextSubChapterButton
             key={key}
             buttonText={element.buttonText}
@@ -163,19 +308,19 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
       }
 
       if (element.type === 'dialogue') {
-        return <DialogueRenderer key={key} element={element} />;
+        return wrapElement(<DialogueRenderer key={key} element={element} />);
       }
 
       if (element.type === 'narration') {
-        return <NarrationRenderer key={key} element={element} />;
+        return wrapElement(<NarrationRenderer key={key} element={element} />);
       }
 
       if (element.type === 'scene_break') {
-        return <hr key={key} className="my-10 h-px border-0 bg-gradient-to-r from-transparent via-nikke-border/25 to-transparent" aria-hidden="true" />;
+        return wrapElement(<hr key={key} className="my-10 h-px border-0 bg-gradient-to-r from-transparent via-nikke-border/25 to-transparent" aria-hidden="true" />);
       }
 
       if (element.type === 'choice_block') {
-        return (
+        return wrapElement(
           <ChoiceBlockRenderer
             key={key}
             element={element}
@@ -190,7 +335,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
       }
 
       if (element.type === 'messenger_app') {
-        return (
+        return wrapElement(
           <MessengerAppRenderer
             key={key}
             element={element}
