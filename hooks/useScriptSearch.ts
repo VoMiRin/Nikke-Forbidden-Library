@@ -23,6 +23,7 @@ interface UseScriptSearchReturn {
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
     setDebouncedSearchTerm: React.Dispatch<React.SetStateAction<string>>;
     setIsUserSearching: React.Dispatch<React.SetStateAction<boolean>>;
+    setSearchMode: React.Dispatch<React.SetStateAction<SearchMode>>;
 }
 
 export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSearchReturn {
@@ -253,5 +254,6 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         setSearchTerm,
         setDebouncedSearchTerm,
         setIsUserSearching,
+        setSearchMode,
     };
 }

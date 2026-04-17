@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { ScriptViewer } from './components/ScriptViewer';
@@ -6,11 +6,94 @@ import { Footer } from './components/Footer';
 import { SearchPage } from './components/SearchPage';
 import { StoriesPage } from './components/StoriesPage';
 import { SCRIPT_CATEGORIES } from './constants';
-import { useScriptIndexing, useScriptSearch, useScriptNavigation } from './hooks';
+import { useScriptIndexing, useScriptSearch, useScriptNavigation, type AppView, type SearchMode } from './hooks';
 
 type ViewerSearchFocus = {
   term: string;
-  mode: 'content' | 'speaker';
+  mode: SearchMode;
+};
+
+type BrowserHistoryState = {
+  view: AppView;
+  categoryKey: string | null;
+  scriptId: string | null;
+  searchTerm: string;
+  searchMode: SearchMode;
+  viewerSearchFocus: ViewerSearchFocus | null;
+};
+
+const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistoryState => {
+  const params = new URLSearchParams(locationSearch);
+  const searchTerm = params.get('q')?.trim() ?? '';
+  const searchMode: SearchMode = params.get('mode') === 'speaker' ? 'speaker' : 'content';
+  const focusTerm = params.get('focus')?.trim() ?? '';
+  const focusMode: SearchMode = params.get('focusMode') === 'speaker' ? 'speaker' : searchMode;
+  const categoryKey = params.get('category')?.trim() || null;
+  const scriptId = params.get('script')?.trim() || null;
+  const rawView = params.get('view');
+
+  let view: AppView = 'search';
+  if (rawView === 'stories') {
+    view = 'stories';
+  } else if (rawView === 'script' || rawView === 'script_viewer') {
+    view = 'script_viewer';
+  } else if (scriptId) {
+    view = 'script_viewer';
+  } else if (categoryKey && !searchTerm) {
+    view = 'stories';
+  }
+
+  return {
+    view,
+    categoryKey: view === 'search' ? null : categoryKey,
+    scriptId: view === 'script_viewer' ? scriptId : null,
+    searchTerm: view === 'search' ? searchTerm : '',
+    searchMode,
+    viewerSearchFocus: view === 'script_viewer' && focusTerm
+      ? { term: focusTerm, mode: focusMode }
+      : null,
+  };
+};
+
+const buildHistoryUrl = (state: BrowserHistoryState): string => {
+  const params = new URLSearchParams();
+
+  if (state.view === 'stories') {
+    params.set('view', 'stories');
+    if (state.categoryKey) {
+      params.set('category', state.categoryKey);
+    }
+  }
+
+  if (state.view === 'script_viewer') {
+    params.set('view', 'script');
+    if (state.categoryKey) {
+      params.set('category', state.categoryKey);
+    }
+    if (state.scriptId) {
+      params.set('script', state.scriptId);
+    }
+    if (state.viewerSearchFocus?.term) {
+      params.set('focus', state.viewerSearchFocus.term);
+      if (state.viewerSearchFocus.mode === 'speaker') {
+        params.set('focusMode', state.viewerSearchFocus.mode);
+      }
+    }
+  }
+
+  if (state.view === 'search') {
+    if (state.searchTerm) {
+      params.set('view', 'search');
+      params.set('q', state.searchTerm);
+    }
+    if (state.searchMode === 'speaker') {
+      params.set('view', 'search');
+      params.set('mode', state.searchMode);
+    }
+  }
+
+  const queryString = params.toString();
+  return queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
 };
 
 const LoadingMessage: React.FC<{ message: string; isSpinning?: boolean; isError?: boolean }> = ({ message, isSpinning, isError }) => (
@@ -31,9 +114,12 @@ const App: React.FC = () => {
   const [isSidebarOpenOnMobile, setIsSidebarOpenOnMobile] = useState<boolean>(false);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
   const [viewerSearchFocus, setViewerSearchFocus] = useState<ViewerSearchFocus | null>(null);
+  const [isHistoryReady, setIsHistoryReady] = useState<boolean>(false);
   const [themeMode, setThemeMode] = useState<ThemeMode>(() => (
     typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light'
   ));
+  const skipNextHistorySyncRef = useRef<boolean>(false);
+  const hasWrittenHistoryStateRef = useRef<boolean>(false);
 
   const {
     scripts,
@@ -52,6 +138,10 @@ const App: React.FC = () => {
     handleSearchInputChange,
     handleClearSearch,
     handleSearchModeChange,
+    setSearchTerm,
+    setDebouncedSearchTerm,
+    setIsUserSearching,
+    setSearchMode,
   } = useScriptSearch({ scripts });
 
   const {
@@ -65,6 +155,9 @@ const App: React.FC = () => {
     handleNavigateToNextScript,
     handleNavigateToSearch,
     handleNavigateToStories,
+    setCurrentView,
+    setActiveCategoryKey,
+    setSelectedScriptId,
   } = useScriptNavigation({
     scripts,
     onSearchClear: handleClearSearch,
@@ -79,10 +172,41 @@ const App: React.FC = () => {
     ? 'stories'
     : 'search';
 
+  const applyHistoryState = React.useCallback((historyState: BrowserHistoryState) => {
+    skipNextHistorySyncRef.current = true;
+
+    setCurrentView(historyState.view);
+    setActiveCategoryKey(historyState.categoryKey);
+    setSelectedScriptId(historyState.scriptId);
+    setViewerSearchFocus(historyState.viewerSearchFocus);
+    setSearchMode(historyState.searchMode);
+    setSearchTerm(historyState.searchTerm);
+    setDebouncedSearchTerm(historyState.searchTerm.toLowerCase());
+    setIsUserSearching(false);
+    setIsSidebarOpenOnMobile(false);
+  }, [
+    setActiveCategoryKey,
+    setCurrentView,
+    setDebouncedSearchTerm,
+    setIsUserSearching,
+    setSearchMode,
+    setSearchTerm,
+    setSelectedScriptId,
+  ]);
+
   const scriptsToDisplayInSidebar = useMemo(() => {
     if (currentView === 'search') return [];
     return debouncedSearchTerm ? sidebarSearchedScripts : scriptsForActiveCategoryWhenBrowsing;
   }, [currentView, debouncedSearchTerm, sidebarSearchedScripts, scriptsForActiveCategoryWhenBrowsing]);
+
+  const historyState = useMemo<BrowserHistoryState>(() => ({
+    view: currentView,
+    categoryKey: currentView === 'search' ? null : activeCategoryKey,
+    scriptId: currentView === 'script_viewer' ? selectedScriptId : null,
+    searchTerm: currentView === 'search' ? debouncedSearchTerm : '',
+    searchMode,
+    viewerSearchFocus: currentView === 'script_viewer' ? viewerSearchFocus : null,
+  }), [activeCategoryKey, currentView, debouncedSearchTerm, searchMode, selectedScriptId, viewerSearchFocus]);
 
   useEffect(() => {
     document.body.style.overflow = isSidebarOpenOnMobile ? 'hidden' : '';
@@ -96,6 +220,49 @@ const App: React.FC = () => {
     document.documentElement.dataset.theme = themeMode;
     localStorage.setItem('nikke-theme', themeMode);
   }, [themeMode]);
+
+  useEffect(() => {
+    const initialHistoryState = parseHistoryStateFromLocation(window.location.search);
+    applyHistoryState(initialHistoryState);
+    setIsHistoryReady(true);
+
+    const handlePopState = () => {
+      applyHistoryState(parseHistoryStateFromLocation(window.location.search));
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [applyHistoryState]);
+
+  useEffect(() => {
+    if (!isHistoryReady) return;
+
+    const nextUrl = buildHistoryUrl(historyState);
+
+    if (skipNextHistorySyncRef.current) {
+      skipNextHistorySyncRef.current = false;
+
+      if (!hasWrittenHistoryStateRef.current) {
+        window.history.replaceState(historyState, '', nextUrl);
+        hasWrittenHistoryStateRef.current = true;
+      }
+      return;
+    }
+
+    if (!hasWrittenHistoryStateRef.current) {
+      window.history.replaceState(historyState, '', nextUrl);
+      hasWrittenHistoryStateRef.current = true;
+      return;
+    }
+
+    const currentUrl = `${window.location.pathname}${window.location.search}`;
+    if (currentUrl === nextUrl) {
+      window.history.replaceState(historyState, '', nextUrl);
+      return;
+    }
+
+    window.history.pushState(historyState, '', nextUrl);
+  }, [historyState, isHistoryReady]);
 
   const toggleTheme = () => {
     setThemeMode(prev => (prev === 'dark' ? 'light' : 'dark'));
