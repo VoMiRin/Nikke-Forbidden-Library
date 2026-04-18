@@ -6,7 +6,7 @@ import { Footer } from './components/Footer';
 import { SearchPage } from './components/SearchPage';
 import { StoriesPage } from './components/StoriesPage';
 import { SCRIPT_CATEGORIES } from './constants';
-import { useScriptIndexing, useScriptSearch, useScriptNavigation, type AppView, type SearchMode } from './hooks';
+import { useDeploymentRefresh, useScriptIndexing, useScriptSearch, useScriptNavigation, type AppView, type SearchMode } from './hooks';
 
 type ViewerSearchFocus = {
   term: string;
@@ -111,6 +111,8 @@ const LoadingMessage: React.FC<{ message: string; isSpinning?: boolean; isError?
 type ThemeMode = 'dark' | 'light';
 
 const App: React.FC = () => {
+  useDeploymentRefresh();
+
   const [isSidebarOpenOnMobile, setIsSidebarOpenOnMobile] = useState<boolean>(false);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
   const [viewerSearchFocus, setViewerSearchFocus] = useState<ViewerSearchFocus | null>(null);

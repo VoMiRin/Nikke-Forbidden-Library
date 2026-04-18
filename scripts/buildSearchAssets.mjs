@@ -180,6 +180,9 @@ const main = async () => {
 
   await writeJson(path.join(publicDir, 'script-manifest.json'), manifest);
   await writeJson(path.join(publicDir, 'search-index.json'), searchIndex);
+  await writeJson(path.join(publicDir, 'app-version.json'), {
+    version: new Date().toISOString(),
+  });
 
   const manifestBytes = Buffer.byteLength(JSON.stringify(manifest));
   const searchIndexBytes = Buffer.byteLength(JSON.stringify(searchIndex));
