@@ -1,4 +1,5 @@
 import type { Script } from '../types';
+import { buildVersionedAssetUrl } from '../lib/staticAssets';
 
 // Module-level cache for chapter file content promises
 const chapterContentCache = new Map<string, Promise<string>>();
@@ -7,9 +8,15 @@ const chapterContentCache = new Map<string, Promise<string>>();
  * 스크립트 콘텐츠를 로드하는 함수를 생성합니다.
  * 챕터 파일을 가져와 캐싱하고, 스크립트 ID별로 콘텐츠를 분리합니다.
  */
-export const createLoadContentFn = (categoryKey: string, mainChapterFile: string, scriptId: string): () => Promise<string> => {
+export const createLoadContentFn = (
+    categoryKey: string,
+    mainChapterFile: string,
+    scriptId: string,
+    mainChapterVersion?: string,
+): () => Promise<string> => {
     return async () => {
-        const pathForFetch = `scripts/${categoryKey}/${mainChapterFile}`;
+        const assetPath = `/scripts/${categoryKey}/${mainChapterFile}`;
+        const pathForFetch = buildVersionedAssetUrl(assetPath, mainChapterVersion);
 
         if (!chapterContentCache.has(pathForFetch)) {
             chapterContentCache.set(pathForFetch, (async () => {
@@ -89,7 +96,7 @@ export const buildScripts = (scripts: ScriptData[]): Script[] => {
         searchableContent: '',
         searchableSpeakers: '',
         loadContent: function () {
-            return createLoadContentFn(this.categoryKey, this.mainChapterFile, this.id)();
+            return createLoadContentFn(this.categoryKey, this.mainChapterFile, this.id, this.mainChapterVersion)();
         }
     }));
 };

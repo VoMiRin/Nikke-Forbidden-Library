@@ -101,6 +101,7 @@ export interface Script {
   searchableContent: string; // Pre-calculated for searching dialogue and narration
   searchableSpeakers: string; // Pre-calculated for searching speakers
   mainChapterFile: string; // Filename (e.g., "chapter_00.txt")
+  mainChapterVersion?: string; // Version token for cache-busting chapter text only when the file changes
   loadContent: () => Promise<string>; // Function to load the full content
   searchSnippet?: string;
 }
@@ -111,6 +112,7 @@ export interface ScriptManifestEntry {
   categoryKey: string;
   subTitle?: string;
   mainChapterFile: string;
+  mainChapterVersion?: string;
 }
 
 export interface SearchIndexDocument extends ScriptManifestEntry {

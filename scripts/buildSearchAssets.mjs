@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
@@ -107,20 +108,17 @@ const writeJson = async (filePath, value) => {
   await fs.writeFile(filePath, JSON.stringify(value, null, 2), 'utf8');
 };
 
+const buildContentVersion = (content) => (
+  crypto.createHash('sha256').update(content).digest('hex').slice(0, 12)
+);
+
 const main = async () => {
   await ensureGeneratedPackage();
 
   const require = createRequire(import.meta.url);
   const { newScriptsData } = require(path.join(generatedDir, 'data', 'newScripts.js'));
   const { extractTextFromScriptContent, isDocumentStyleCategory } = require(path.join(generatedDir, 'utils.js'));
-
-  const manifest = newScriptsData.map(({ id, title, categoryKey, subTitle, mainChapterFile }) => ({
-    id,
-    title,
-    categoryKey,
-    subTitle,
-    mainChapterFile,
-  }));
+  const chapterVersionCache = new Map();
 
   const chapterFileCache = new Map();
   const searchIndex = [];
@@ -131,11 +129,14 @@ const main = async () => {
     if (!chapterFileCache.has(chapterKey)) {
       const chapterPath = path.join(scriptsRootDir, script.categoryKey, script.mainChapterFile);
       try {
-        chapterFileCache.set(chapterKey, await fs.readFile(chapterPath, 'utf8'));
+        const chapterFileContents = await fs.readFile(chapterPath, 'utf8');
+        chapterFileCache.set(chapterKey, chapterFileContents);
+        chapterVersionCache.set(chapterKey, buildContentVersion(chapterFileContents));
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         console.warn(`Skipping searchable content for "${script.id}" because ${chapterPath} could not be read: ${message}`);
         chapterFileCache.set(chapterKey, null);
+        chapterVersionCache.set(chapterKey, undefined);
       }
     }
 
@@ -167,6 +168,15 @@ const main = async () => {
       }) : '',
     });
   }
+
+  const manifest = newScriptsData.map(({ id, title, categoryKey, subTitle, mainChapterFile }) => ({
+    id,
+    title,
+    categoryKey,
+    subTitle,
+    mainChapterFile,
+    mainChapterVersion: chapterVersionCache.get(`${categoryKey}/${mainChapterFile}`),
+  }));
 
   await writeJson(path.join(publicDir, 'script-manifest.json'), manifest);
   await writeJson(path.join(publicDir, 'search-index.json'), searchIndex);
