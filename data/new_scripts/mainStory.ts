@@ -62,7 +62,7 @@ export const mainStoryScripts: ScriptData[] = [
     { id: 'main_04_15', categoryKey: 'main_story', title: 'Chapter.04: 헌화', subTitle: '헌화', mainChapterFile: 'chapter_04.txt' },
     { id: 'main_04_16', categoryKey: 'main_story', title: 'Chapter.04: 헌화', subTitle: '지휘관의 명령', mainChapterFile: 'chapter_04.txt' },
     { id: 'main_04_17', categoryKey: 'main_story', title: 'Chapter.04: 헌화', subTitle: '작은 복수', mainChapterFile: 'chapter_04.txt' },
-    { id: 'main_04_18', categoryKey: 'main_story', title: 'Chapter.04: 헌화', subTitle: '복부로', mainChapterFile: 'chapter_04.txt' },
+    { id: 'main_04_18', categoryKey: 'main_story', title: 'Chapter.04: 헌화', subTitle: '북부로', mainChapterFile: 'chapter_04.txt' },
     { id: 'main_04_19', categoryKey: 'main_story', title: 'Chapter.04: 헌화', subTitle: '엔-터테인먼트!', mainChapterFile: 'chapter_04.txt' },
     // Main Story - chapter 05
     { id: 'main_05_00', categoryKey: 'main_story', title: 'Chapter.05: 환상', subTitle: '눈의 대지', mainChapterFile: 'chapter_05.txt' },
