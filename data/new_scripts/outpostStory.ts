@@ -63,6 +63,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'hotel_09', categoryKey: 'outpost_stories', title: '호텔', subTitle: '방주의 낙원?', mainChapterFile: '호텔.txt' },
     { id: 'hotel_10', categoryKey: 'outpost_stories', title: '호텔', subTitle: '룸서비스의 맛', mainChapterFile: '호텔.txt' },
     { id: 'hotel_11', categoryKey: 'outpost_stories', title: '호텔', subTitle: '완벽한 바캉스', mainChapterFile: '호텔.txt' },
+    { id: 'hotel_12', categoryKey: 'outpost_stories', title: '호텔', subTitle: '호텔에서의 하루', mainChapterFile: '호텔.txt' },
 
     // 메이드 카페
     { id: 'maid_cafe_00', categoryKey: 'outpost_stories', title: '메이드 카페', subTitle: '우당탕 요리 교실', mainChapterFile: '메이드_카페.txt' },
@@ -118,15 +119,16 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'workshop_08', categoryKey: 'outpost_stories', title: '공방', subTitle: '기술의 종착점', mainChapterFile: '공방.txt' },
 
     // 무기고
-    { id: 'unknown_00', categoryKey: 'outpost_stories', title: '무기고', subTitle: '무기고 괴담', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_01', categoryKey: 'outpost_stories', title: '무기고', subTitle: '무기를 보는 감', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_02', categoryKey: 'outpost_stories', title: '무기고', subTitle: '장인은 도구를 탓하지 않는다', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_03', categoryKey: 'outpost_stories', title: '무기고', subTitle: '전당포 여인들', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_04', categoryKey: 'outpost_stories', title: '무기고', subTitle: '전투복', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_05', categoryKey: 'outpost_stories', title: '무기고', subTitle: '수중 총기', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_06', categoryKey: 'outpost_stories', title: '무기고', subTitle: '덩치 큰 로봇의 무기', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_07', categoryKey: 'outpost_stories', title: '무기고', subTitle: '사나운 토끼 병정', mainChapterFile: '무기고.txt' },
-    { id: 'unknown_08', categoryKey: 'outpost_stories', title: '무기고', subTitle: '0이 가지는 무게', mainChapterFile: '무기고.txt' },
+    { id: 'armory_00', categoryKey: 'outpost_stories', title: '무기고', subTitle: '무기고 괴담', mainChapterFile: '무기고.txt' },
+    { id: 'armory_01', categoryKey: 'outpost_stories', title: '무기고', subTitle: '무기를 보는 감', mainChapterFile: '무기고.txt' },
+    { id: 'armory_02', categoryKey: 'outpost_stories', title: '무기고', subTitle: '장인은 도구를 탓하지 않는다', mainChapterFile: '무기고.txt' },
+    { id: 'armory_03', categoryKey: 'outpost_stories', title: '무기고', subTitle: '전당포 여인들', mainChapterFile: '무기고.txt' },
+    { id: 'armory_04', categoryKey: 'outpost_stories', title: '무기고', subTitle: '전투복', mainChapterFile: '무기고.txt' },
+    { id: 'armory_05', categoryKey: 'outpost_stories', title: '무기고', subTitle: '수중 총기', mainChapterFile: '무기고.txt' },
+    { id: 'armory_06', categoryKey: 'outpost_stories', title: '무기고', subTitle: '덩치 큰 로봇의 무기', mainChapterFile: '무기고.txt' },
+    { id: 'armory_07', categoryKey: 'outpost_stories', title: '무기고', subTitle: '사나운 토끼 병정', mainChapterFile: '무기고.txt' },
+    { id: 'armory_08', categoryKey: 'outpost_stories', title: '무기고', subTitle: '0이 가지는 무게', mainChapterFile: '무기고.txt' },
+    { id: 'armory_09', categoryKey: 'outpost_stories', title: '무기고', subTitle: '사실은 궁금해', mainChapterFile: '무기고.txt' },
 
     // 발전기
     { id: 'generator_00', categoryKey: 'outpost_stories', title: '발전기', subTitle: '마이너스와 플러스 사이', mainChapterFile: '발전기.txt' },
@@ -138,6 +140,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'generator_06', categoryKey: 'outpost_stories', title: '발전기', subTitle: '히어로 레슨이다!', mainChapterFile: '발전기.txt' },
     { id: 'generator_07', categoryKey: 'outpost_stories', title: '발전기', subTitle: '탈출 왕의 탈출 강의', mainChapterFile: '발전기.txt' },
     { id: 'generator_08', categoryKey: 'outpost_stories', title: '발전기', subTitle: '우정 파괴 운동', mainChapterFile: '발전기.txt' },
+    { id: 'generator_09', categoryKey: 'outpost_stories', title: '발전기', subTitle: '비전문가의 만행', mainChapterFile: '발전기.txt' },
 
     // 모던 바
     { id: 'trendy_bar_00', categoryKey: 'outpost_stories', title: '모던 바', subTitle: '위험한 거래', mainChapterFile: '모던_바.txt' },
@@ -178,6 +181,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'hospital_06', categoryKey: 'outpost_stories', title: '병원', subTitle: '1%의 가능성', mainChapterFile: '병원.txt' },
     { id: 'hospital_07', categoryKey: 'outpost_stories', title: '병원', subTitle: '정기 검진 내기', mainChapterFile: '병원.txt' },
     { id: 'hospital_08', categoryKey: 'outpost_stories', title: '병원', subTitle: '그녀들의 아이', mainChapterFile: '병원.txt' },
+    { id: 'hospital_09', categoryKey: 'outpost_stories', title: '병원', subTitle: '고생하는 이들의 단결', mainChapterFile: '병원.txt' },
 
     // 카페
     { id: 'cafe_00', categoryKey: 'outpost_stories', title: '카페', subTitle: '돈의 주인', mainChapterFile: '카페.txt' },
@@ -206,6 +210,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'theater_08', categoryKey: 'outpost_stories', title: '극장', subTitle: 'Clay, Rewind!', mainChapterFile: '극장.txt' },
     { id: 'theater_09', categoryKey: 'outpost_stories', title: '극장', subTitle: '꿈을 좇는 자들', mainChapterFile: '극장.txt' },
     { id: 'theater_10', categoryKey: 'outpost_stories', title: '극장', subTitle: '특별 게스트', mainChapterFile: '극장.txt' },
+    { id: 'theater_11', categoryKey: 'outpost_stories', title: '극장', subTitle: '괴식과 극장', mainChapterFile: '극장.txt' },
 
     // 수상한 클럽
     { id: 'seedy_club_00', categoryKey: 'outpost_stories', title: '수상한 클럽', subTitle: '비밀의 계단', mainChapterFile: '수상한_클럽.txt' },
@@ -303,6 +308,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'wings_of_victory_07', categoryKey: 'outpost_stories', title: '승리의 날개', subTitle: '유연성 대결', mainChapterFile: '승리의_날개.txt' },
     { id: 'wings_of_victory_08', categoryKey: 'outpost_stories', title: '승리의 날개', subTitle: '산책 친구', mainChapterFile: '승리의_날개.txt' },
     { id: 'wings_of_victory_09', categoryKey: 'outpost_stories', title: '승리의 날개', subTitle: '사탕의 유혹', mainChapterFile: '승리의_날개.txt' },
+    { id: 'wings_of_victory_10', categoryKey: 'outpost_stories', title: '승리의 날개', subTitle: '화력 상담소', mainChapterFile: '승리의_날개.txt' },
 
     // 종합 체육관
     { id: 'fitness_club_00', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '몸짱 프로젝트', mainChapterFile: '종합_체육관.txt' },
@@ -327,6 +333,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'outdoor_swimming_pool_05', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '종이배 경주', mainChapterFile: '야외_수영장.txt' },
     { id: 'outdoor_swimming_pool_06', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '수질 검사', mainChapterFile: '야외_수영장.txt' },
     { id: 'outdoor_swimming_pool_07', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '물속의 정체', mainChapterFile: '야외_수영장.txt' },
+    { id: 'outdoor_swimming_pool_08', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '위엄 있는 감찰 부대의 비밀', mainChapterFile: '야외_수영장.txt' },
 
     // 생화 공원
     { id: 'flower_park_00', categoryKey: 'outpost_stories', title: '생화 공원', subTitle: '전초기지의 작은 쉼터', mainChapterFile: '생화_공원.txt' },
