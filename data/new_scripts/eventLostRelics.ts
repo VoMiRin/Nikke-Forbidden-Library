@@ -25,6 +25,7 @@ export const eventLostRelicsScripts: ScriptData[] = [
     { id: 'white_memory_19', categoryKey: 'event_lost_relics', title: 'WHITE MEMORY', subTitle: '길들여진 목줄', mainChapterFile: 'white_memory.txt' },
     { id: 'white_memory_20', categoryKey: 'event_lost_relics', title: 'WHITE MEMORY', subTitle: '언sl의머fl가사fk졌ek', mainChapterFile: 'white_memory.txt' },
 
+
     // RED ASH 돌발 스토리
     { id: 'red_ash_lost_00', categoryKey: 'event_lost_relics', title: 'RED ASH 돌발 스토리', subTitle: '침식 치료 기록 I', mainChapterFile: 'red_ash_lost.txt' },
     { id: 'red_ash_lost_01', categoryKey: 'event_lost_relics', title: 'RED ASH 돌발 스토리', subTitle: '침식 치료 기록 II', mainChapterFile: 'red_ash_lost.txt' },
