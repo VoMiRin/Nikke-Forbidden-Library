@@ -5,6 +5,8 @@ import type { ExtendedMessengerChoiceOption } from './scriptParser';
 interface MessengerAppRendererProps {
   element: MessengerAppElement;
   keyPrefix: string;
+  messageIdPrefix: string;
+  highlightedSearchMatchId?: string | null;
   selectedOptions: Record<string, string>;
   onOptionSelect: (choiceId: string, optionValue: string) => void;
   onClearChoice: (choiceId: string) => void;
@@ -13,6 +15,8 @@ interface MessengerAppRendererProps {
 export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
   element,
   keyPrefix,
+  messageIdPrefix,
+  highlightedSearchMatchId = null,
   selectedOptions,
   onOptionSelect,
   onClearChoice,
@@ -68,6 +72,11 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
       <div className="max-h-[58vh] space-y-3 overflow-y-auto rounded-[1.15rem] bg-nikke-bg-alt/60 p-3 pr-2 md:max-h-[500px] md:space-y-4 md:rounded-[1.5rem] md:p-4 md:pr-3">
         {messagesToRender.map((msg, msgIdx) => {
           const msgKey = `${keyPrefix}_msg_${msgIdx}`;
+          const msgId = `${messageIdPrefix}-message-${msgIdx}`.replace(/[^a-zA-Z0-9:_-]/g, '_');
+          const isSearchMatched = highlightedSearchMatchId === msgId;
+          const searchMatchClass = isSearchMatched
+            ? 'ring-2 ring-nikke-accent/80 shadow-[0_0_0_1px_rgba(104,206,255,0.16),0_0_28px_rgba(104,206,255,0.18)]'
+            : '';
 
           let isOriginalMessage = false;
           let messageCount = 0;
@@ -94,7 +103,7 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
 
           if (msg.type === 'message_status' && msg.statusType === 'delivery_failed') {
             return (
-              <div key={msgKey} className="my-1 flex items-center justify-center text-xs italic text-red-400/90">
+              <div id={msgId} key={msgKey} className={`my-1 flex items-center justify-center rounded-full text-xs italic text-red-400/90 ${searchMatchClass}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="mr-1.5 h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-9a1 1 0 002 0V5a1 1 0 00-2 0v4zm1 4a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
                 </svg>
@@ -106,7 +115,7 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
           if (msg.type === 'message_bubble') {
             if (msg.isSystem) {
               return (
-                <div key={msgKey} className="my-2 text-center">
+                <div id={msgId} key={msgKey} className={`my-2 rounded-full text-center ${searchMatchClass}`}>
                   <span className="rounded-full bg-nikke-surface-high px-3 py-1 font-label text-[0.68rem] uppercase tracking-[0.16em] text-nikke-text-muted">{msg.text}</span>
                 </div>
               );
@@ -118,7 +127,7 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
 
               if (!selectedOptionValue) {
                 return (
-                  <div key={msgKey} className="my-2 flex justify-end">
+                  <div id={msgId} key={msgKey} className={`my-2 flex justify-end rounded-[1.1rem] ${searchMatchClass}`}>
                     <div className="w-full max-w-full space-y-2 md:max-w-[85%]">
                       {msg.choice.options.map(option => (
                         <button
@@ -135,7 +144,7 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
               }
 
               return (
-                <div key={msgKey} className="my-2">
+                <div id={msgId} key={msgKey} className={`my-2 rounded-[1.25rem] ${searchMatchClass}`}>
                   <div className="mb-2 flex justify-end">
                     <div className="max-w-[85%] rounded-[1rem] rounded-br-md bg-nikke-gradient p-3 text-slate-950 shadow-glass md:max-w-[75%] md:rounded-[1.25rem]">
                       <p className="whitespace-pre-wrap font-body text-sm">{selectedOption?.text}</p>
@@ -156,7 +165,7 @@ export const MessengerAppRenderer: React.FC<MessengerAppRendererProps> = ({
 
             if (msg.text) {
               return (
-                <div key={msgKey} className={`flex ${msg.isSender ? 'justify-end' : 'justify-start'}`}>
+                <div id={msgId} key={msgKey} className={`flex rounded-[1.25rem] ${msg.isSender ? 'justify-end' : 'justify-start'} ${searchMatchClass}`}>
                   <div className={`max-w-[86%] rounded-[1rem] p-3 shadow-sm md:max-w-[75%] md:rounded-[1.25rem] ${msg.isSender ? 'rounded-br-md bg-nikke-gradient text-slate-950' : 'rounded-bl-md bg-nikke-surface-high text-nikke-text-primary'}`}>
                     {!msg.isSender && <p className="mb-1 font-label text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-nikke-accent">{msg.sender}</p>}
                     <p className="whitespace-pre-wrap font-body text-sm leading-6 md:leading-7">{msg.text}</p>

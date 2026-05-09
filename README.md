@@ -33,7 +33,7 @@ npm run search-api
 ```
 
 기본 포트는 `8080`이며 `GET /api/search?q=...` 형식으로 내용 검색을 합니다.
-화자까지 함께 좁히려면 `GET /api/search?q=...&speaker=...`를 사용합니다.
+화자까지 함께 좁히려면 `GET /api/search?q=...&speaker=...`를 사용합니다. 이 경우 해당 화자가 직접 말한 텍스트 안에서만 내용이 검색됩니다.
 기존 화자 전용 검색용 `GET /api/search?q=...&mode=speaker` 형식도 계속 지원합니다.
 
 보안 관련 환경 변수:

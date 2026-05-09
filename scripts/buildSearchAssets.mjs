@@ -150,7 +150,11 @@ const main = async () => {
     }
 
     const safeContent = typeof content === 'string' ? content : '';
-    const { content: searchableContent, speakers: searchableSpeakers } = extractTextFromScriptContent(safeContent, {
+    const {
+      content: searchableContent,
+      speakers: searchableSpeakers,
+      speakerContent: searchableSpeakerContent,
+    } = extractTextFromScriptContent(safeContent, {
       categoryKey: script.categoryKey,
     });
 
@@ -162,6 +166,7 @@ const main = async () => {
       mainChapterFile: script.mainChapterFile,
       searchableContent,
       searchableSpeakers,
+      searchableSpeakerContent,
       snippet: safeContent ? buildPreviewText(safeContent, {
         categoryKey: script.categoryKey,
         isDocumentStyleCategory,

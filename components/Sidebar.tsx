@@ -133,7 +133,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       className={`
         fixed bottom-0 left-0 top-[68px] z-40 flex w-[85vw] max-w-[20rem] flex-col overflow-y-auto bg-nikke-surface/96 p-4 shadow-ambient ring-1 ring-nikke-border/10 backdrop-blur-xl transition-transform duration-300 ease-editorial
         ${isOpenOnMobile ? 'translate-x-0' : '-translate-x-full'}
-        md:relative md:top-auto md:max-h-[calc(100vh-176px)] md:w-80 md:translate-x-0 md:rounded-[2rem] md:p-5
+        md:relative md:top-auto md:max-h-[calc(100vh-176px)] md:w-72 md:translate-x-0 md:rounded-[1.5rem] md:p-4 xl:w-80 xl:rounded-[2rem] xl:p-5
       `}
       aria-hidden={!isOpenOnMobile && typeof window !== 'undefined' && window.innerWidth < 768}
       aria-labelledby="sidebar-title"

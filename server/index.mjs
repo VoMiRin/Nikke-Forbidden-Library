@@ -34,7 +34,29 @@ const calculateScore = (document, normalizedContentQuery, normalizedSpeakerQuery
   const normalizedSpeakers = normalizeSearchValue(document.searchableSpeakers);
   const normalizedContent = normalizeSearchValue(document.searchableContent);
 
+  const getSpeakerContentForQuery = () => (
+    Object.entries(document.searchableSpeakerContent ?? {})
+      .filter(([speaker]) => normalizeSearchValue(speaker).includes(normalizedSpeakerQuery))
+      .map(([, speakerContent]) => normalizeSearchValue(speakerContent))
+      .join(' ')
+  );
+
   let score = 0;
+
+  if (normalizedContentQuery && normalizedSpeakerQuery) {
+    const matchedSpeakerContent = getSpeakerContentForQuery();
+
+    if (!matchedSpeakerContent.includes(normalizedContentQuery)) {
+      return 0;
+    }
+
+    return (
+      120
+      + countTokenHits(matchedSpeakerContent, contentTokens, 12)
+      + countTokenHits(normalizedSpeakers, speakerTokens, 24)
+      + (normalizedTitle.includes(normalizedSpeakerQuery) ? 4 : 0)
+    );
+  }
 
   if (normalizedContentQuery) {
     const matchesContentQuery = (
@@ -212,7 +234,7 @@ const server = http.createServer(async (request, response) => {
   const mode = getSearchModeForQueries(normalizedContentQuery, normalizedSpeakerQuery);
   const requestedLimit = Number(url.searchParams.get('limit') ?? 50);
   const limit = Number.isFinite(requestedLimit)
-    ? Math.max(1, Math.min(100, requestedLimit))
+    ? Math.max(1, Math.min(5000, requestedLimit))
     : 50;
 
   if (!normalizedQuery) {
@@ -221,6 +243,9 @@ const server = http.createServer(async (request, response) => {
       query: '',
       contentQuery: '',
       speakerQuery: '',
+      speakerContentSearch: false,
+      limit,
+      totalResults: 0,
       results: [],
       source: 'api',
     });
@@ -232,13 +257,15 @@ const server = http.createServer(async (request, response) => {
     const contentTokens = normalizedContentQuery.split(' ').filter(Boolean);
     const speakerTokens = normalizedSpeakerQuery.split(' ').filter(Boolean);
 
-    const results = documents
+    const scoredResults = documents
       .map((document) => ({
         document,
         score: calculateScore(document, normalizedContentQuery, normalizedSpeakerQuery, contentTokens, speakerTokens),
       }))
       .filter((entry) => entry.score > 0)
-      .sort((left, right) => right.score - left.score)
+      .sort((left, right) => right.score - left.score);
+
+    const results = scoredResults
       .slice(0, limit)
       .map(({ document, score }) => ({
         id: document.id,
@@ -255,6 +282,9 @@ const server = http.createServer(async (request, response) => {
       query: normalizedQuery,
       contentQuery: normalizedContentQuery,
       speakerQuery: normalizedSpeakerQuery,
+      speakerContentSearch: !!(normalizedContentQuery && normalizedSpeakerQuery),
+      limit,
+      totalResults: scoredResults.length,
       results,
       source: 'api',
     });

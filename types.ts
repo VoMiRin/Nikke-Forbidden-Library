@@ -118,6 +118,7 @@ export interface ScriptManifestEntry {
 export interface SearchIndexDocument extends ScriptManifestEntry {
   searchableContent: string;
   searchableSpeakers: string;
+  searchableSpeakerContent?: Record<string, string>;
   snippet: string;
 }
 
@@ -131,6 +132,9 @@ export interface SearchApiResponse {
   query: string;
   contentQuery?: string;
   speakerQuery?: string;
+  speakerContentSearch?: boolean;
+  limit?: number;
+  totalResults?: number;
   results: SearchApiResult[];
   source: 'api' | 'static';
 }

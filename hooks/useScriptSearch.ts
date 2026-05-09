@@ -3,6 +3,7 @@ import type { Script, SearchApiResponse, SearchIndexDocument } from '../types';
 
 const SEARCH_DEBOUNCE_DELAY = 350;
 const DEFAULT_RESULT_LIMIT = 80;
+const RESULT_LIMIT_INCREMENT = 80;
 
 export type SearchMode = 'content' | 'speaker';
 
@@ -16,11 +17,15 @@ interface UseScriptSearchReturn {
     debouncedSearchTerm: string;
     debouncedSpeakerSearchTerm: string;
     isUserSearching: boolean;
+    totalSearchResults: number;
+    searchResultLimit: number;
+    hasMoreSearchResults: boolean;
     globallySearchedScripts: Script[];
     sidebarSearchedScripts: Script[];
     handleSearchInputChange: (term: string) => void;
     handleSpeakerSearchInputChange: (term: string) => void;
     handleClearSearch: () => void;
+    handleLoadMoreSearchResults: () => void;
     setSearchTerm: Dispatch<SetStateAction<string>>;
     setSpeakerSearchTerm: Dispatch<SetStateAction<string>>;
     setDebouncedSearchTerm: Dispatch<SetStateAction<string>>;
@@ -35,6 +40,8 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
     const [debouncedSpeakerSearchTerm, setDebouncedSpeakerSearchTerm] = useState<string>('');
     const [isUserSearching, setIsUserSearching] = useState<boolean>(false);
     const [searchedScripts, setSearchedScripts] = useState<Script[]>([]);
+    const [totalSearchResults, setTotalSearchResults] = useState<number>(0);
+    const [searchResultLimit, setSearchResultLimit] = useState<number>(DEFAULT_RESULT_LIMIT);
     const localIndexRef = useRef<SearchIndexDocument[] | null>(null);
     const searchApiBaseUrl = (import.meta.env.VITE_SEARCH_API_BASE_URL ?? '').trim();
 
@@ -66,7 +73,29 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
             tokens.reduce((score, token) => score + (field.includes(token) ? weight : 0), 0)
         );
 
+        const getSpeakerContentForQuery = () => (
+            Object.entries(document.searchableSpeakerContent ?? {})
+                .filter(([speaker]) => normalizeSearchValue(speaker).includes(normalizedSpeakerQuery))
+                .map(([, speakerContent]) => normalizeSearchValue(speakerContent))
+                .join(' ')
+        );
+
         let score = 0;
+
+        if (normalizedContentQuery && normalizedSpeakerQuery) {
+            const matchedSpeakerContent = getSpeakerContentForQuery();
+
+            if (!matchedSpeakerContent.includes(normalizedContentQuery)) {
+                return 0;
+            }
+
+            return (
+                120
+                + countTokenHits(matchedSpeakerContent, contentTokens, 12)
+                + countTokenHits(normalizedSpeakers, speakerTokens, 24)
+                + (normalizedTitle.includes(normalizedSpeakerQuery) ? 4 : 0)
+            );
+        }
 
         if (normalizedContentQuery) {
             const matchesContentQuery = (
@@ -125,20 +154,22 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         return normalizedSpeakerQuery ? 'speaker' : 'content';
     };
 
-    const searchLocally = useCallback(async (normalizedContentQuery: string, normalizedSpeakerQuery: string): Promise<SearchApiResponse> => {
+    const searchLocally = useCallback(async (normalizedContentQuery: string, normalizedSpeakerQuery: string, resultLimit: number): Promise<SearchApiResponse> => {
         const documents = await fetchLocalIndex();
         const contentTokens = normalizedContentQuery.split(' ').filter(Boolean);
         const speakerTokens = normalizedSpeakerQuery.split(' ').filter(Boolean);
         const mode = getSearchModeForTerms(normalizedContentQuery, normalizedSpeakerQuery);
 
-        const results = documents
+        const scoredResults = documents
             .map((document) => ({
                 document,
                 score: calculateLocalScore(document, normalizedContentQuery, normalizedSpeakerQuery, contentTokens, speakerTokens),
             }))
             .filter((entry) => entry.score > 0)
-            .sort((left, right) => right.score - left.score)
-            .slice(0, DEFAULT_RESULT_LIMIT)
+            .sort((left, right) => right.score - left.score);
+
+        const results = scoredResults
+            .slice(0, resultLimit)
             .map(({ document, score }) => ({
                 id: document.id,
                 title: document.title,
@@ -154,15 +185,18 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
             query: [normalizedContentQuery, normalizedSpeakerQuery].filter(Boolean).join(' '),
             contentQuery: normalizedContentQuery,
             speakerQuery: normalizedSpeakerQuery,
+            speakerContentSearch: !!(normalizedContentQuery && normalizedSpeakerQuery),
+            limit: resultLimit,
+            totalResults: scoredResults.length,
             results,
             source: 'static',
         };
     }, [fetchLocalIndex]);
 
-    const searchRemotely = useCallback(async (normalizedContentQuery: string, normalizedSpeakerQuery: string, signal: AbortSignal): Promise<SearchApiResponse> => {
+    const searchRemotely = useCallback(async (normalizedContentQuery: string, normalizedSpeakerQuery: string, resultLimit: number, signal: AbortSignal): Promise<SearchApiResponse> => {
         const endpointBase = searchApiBaseUrl || '';
         const params = new URLSearchParams({
-            limit: String(DEFAULT_RESULT_LIMIT),
+            limit: String(resultLimit),
         });
 
         if (normalizedContentQuery) {
@@ -191,6 +225,10 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
             throw new Error('Search API does not support speaker filters yet.');
         }
 
+        if (normalizedContentQuery && normalizedSpeakerQuery && searchResponse.speakerContentSearch !== true) {
+            throw new Error('Search API does not support strict speaker content filters yet.');
+        }
+
         return searchResponse;
     }, [searchApiBaseUrl]);
 
@@ -211,12 +249,15 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
             setDebouncedSearchTerm('');
             setDebouncedSpeakerSearchTerm('');
             setIsUserSearching(false);
+            setSearchResultLimit(DEFAULT_RESULT_LIMIT);
+            setTotalSearchResults(0);
         }
     }, [searchTerm, speakerSearchTerm]);
 
     useEffect(() => {
         if ((!debouncedSearchTerm && !debouncedSpeakerSearchTerm) || scripts.length === 0) {
             setSearchedScripts([]);
+            setTotalSearchResults(0);
             return;
         }
 
@@ -230,14 +271,14 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
                 let response: SearchApiResponse;
 
                 try {
-                    response = await searchRemotely(debouncedSearchTerm, debouncedSpeakerSearchTerm, abortController.signal);
+                    response = await searchRemotely(debouncedSearchTerm, debouncedSpeakerSearchTerm, searchResultLimit, abortController.signal);
                 } catch (error) {
                     if (abortController.signal.aborted) {
                         return;
                     }
 
                     console.warn('Search API unavailable, falling back to static search index.', error);
-                    response = await searchLocally(debouncedSearchTerm, debouncedSpeakerSearchTerm);
+                    response = await searchLocally(debouncedSearchTerm, debouncedSpeakerSearchTerm, searchResultLimit);
                 }
 
                 if (!isMounted) {
@@ -259,6 +300,7 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
                     .filter((script): script is Script => script !== null);
 
                 setSearchedScripts(resolvedScripts);
+                setTotalSearchResults(response.totalResults ?? resolvedScripts.length);
             } finally {
                 if (isMounted) {
                     setIsUserSearching(false);
@@ -272,16 +314,19 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
             isMounted = false;
             abortController.abort();
         };
-    }, [debouncedSearchTerm, debouncedSpeakerSearchTerm, scripts.length, scriptMap, searchLocally, searchRemotely]);
+    }, [debouncedSearchTerm, debouncedSpeakerSearchTerm, scripts.length, scriptMap, searchLocally, searchRemotely, searchResultLimit]);
 
     const globallySearchedScripts = useMemo(() => searchedScripts, [searchedScripts]);
     const sidebarSearchedScripts = useMemo(() => searchedScripts, [searchedScripts]);
+    const hasMoreSearchResults = searchedScripts.length < totalSearchResults;
 
     const handleSearchInputChange = useCallback((term: string) => {
+        setSearchResultLimit(DEFAULT_RESULT_LIMIT);
         setSearchTerm(term);
     }, []);
 
     const handleSpeakerSearchInputChange = useCallback((term: string) => {
+        setSearchResultLimit(DEFAULT_RESULT_LIMIT);
         setSpeakerSearchTerm(term);
     }, []);
 
@@ -292,6 +337,12 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         setDebouncedSpeakerSearchTerm('');
         setIsUserSearching(false);
         setSearchedScripts([]);
+        setTotalSearchResults(0);
+        setSearchResultLimit(DEFAULT_RESULT_LIMIT);
+    }, []);
+
+    const handleLoadMoreSearchResults = useCallback(() => {
+        setSearchResultLimit((currentLimit) => currentLimit + RESULT_LIMIT_INCREMENT);
     }, []);
 
     return {
@@ -300,11 +351,15 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         debouncedSearchTerm,
         debouncedSpeakerSearchTerm,
         isUserSearching,
+        totalSearchResults,
+        searchResultLimit,
+        hasMoreSearchResults,
         globallySearchedScripts,
         sidebarSearchedScripts,
         handleSearchInputChange,
         handleSpeakerSearchInputChange,
         handleClearSearch,
+        handleLoadMoreSearchResults,
         setSearchTerm,
         setSpeakerSearchTerm,
         setDebouncedSearchTerm,

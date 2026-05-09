@@ -11,6 +11,7 @@ import { useDeploymentRefresh, useScriptIndexing, useScriptSearch, useScriptNavi
 type ViewerSearchFocus = {
   term: string;
   mode: SearchMode;
+  speakerTerm?: string;
 };
 
 type BrowserHistoryState = {
@@ -38,6 +39,7 @@ const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistorySt
   const speakerSearchTerm = params.get('speaker')?.trim() ?? (legacySearchMode === 'speaker' ? rawQuery : '');
   const focusTerm = params.get('focus')?.trim() ?? '';
   const focusMode: SearchMode = params.get('focusMode') === 'speaker' ? 'speaker' : 'content';
+  const focusSpeakerTerm = params.get('focusSpeaker')?.trim() ?? '';
   const categoryKey = params.get('category')?.trim() || null;
   const scriptId = params.get('script')?.trim() || null;
   const rawView = params.get('view');
@@ -61,7 +63,7 @@ const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistorySt
     searchTerm: view === 'search' ? searchTerm : '',
     speakerSearchTerm: view === 'search' ? speakerSearchTerm : '',
     viewerSearchFocus: view === 'script_viewer' && focusTerm
-      ? { term: focusTerm, mode: focusMode }
+      ? { term: focusTerm, mode: focusMode, speakerTerm: focusSpeakerTerm || undefined }
       : null,
   };
 };
@@ -88,6 +90,9 @@ const buildHistoryUrl = (state: BrowserHistoryState): string => {
       params.set('focus', state.viewerSearchFocus.term);
       if (state.viewerSearchFocus.mode === 'speaker') {
         params.set('focusMode', state.viewerSearchFocus.mode);
+      }
+      if (state.viewerSearchFocus.speakerTerm) {
+        params.set('focusSpeaker', state.viewerSearchFocus.speakerTerm);
       }
     }
   }
@@ -147,11 +152,14 @@ const App: React.FC = () => {
     debouncedSearchTerm,
     debouncedSpeakerSearchTerm,
     isUserSearching,
+    totalSearchResults,
+    hasMoreSearchResults,
     globallySearchedScripts,
     sidebarSearchedScripts,
     handleSearchInputChange,
     handleSpeakerSearchInputChange,
     handleClearSearch,
+    handleLoadMoreSearchResults,
     setSearchTerm,
     setSpeakerSearchTerm,
     setDebouncedSearchTerm,
@@ -319,7 +327,7 @@ const App: React.FC = () => {
     const focusContentTerm = debouncedSearchTerm.trim() || normalizeSearchValue(searchTerm);
     const focusSpeakerTerm = debouncedSpeakerSearchTerm.trim() || normalizeSearchValue(speakerSearchTerm);
     const nextFocus = focusContentTerm
-      ? { term: focusContentTerm, mode: 'content' as const }
+      ? { term: focusContentTerm, mode: 'content' as const, speakerTerm: focusSpeakerTerm || undefined }
       : focusSpeakerTerm
         ? { term: focusSpeakerTerm, mode: 'speaker' as const }
         : null;
@@ -359,7 +367,7 @@ const App: React.FC = () => {
 
   const renderStoriesLayout = () => (
     <div className="flex flex-1 overflow-visible md:overflow-y-hidden">
-      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-6 md:overflow-y-hidden">
+      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-4 md:overflow-y-hidden xl:gap-6">
         <Sidebar
           key={`stories-sidebar-${activeCategoryKey ?? 'root'}`}
           categories={SCRIPT_CATEGORIES}
@@ -401,7 +409,7 @@ const App: React.FC = () => {
 
   const renderScriptViewerLayout = () => (
     <div className="flex flex-1 overflow-visible md:overflow-y-hidden">
-      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-6 md:overflow-y-hidden">
+      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-4 md:overflow-y-hidden xl:gap-6">
         <Sidebar
           key={activeCategoryKey || 'sidebar-script-viewer-key'}
           categories={SCRIPT_CATEGORIES}
@@ -469,7 +477,7 @@ const App: React.FC = () => {
 
   const renderSearchPageLayout = () => (
     <div className="flex flex-1 overflow-visible md:overflow-y-hidden">
-      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-6 md:overflow-y-hidden">
+      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-4 md:overflow-y-hidden xl:gap-6">
         <Sidebar
           key="search-page-sidebar"
           categories={SCRIPT_CATEGORIES}
@@ -504,11 +512,14 @@ const App: React.FC = () => {
             isLoadingInitialMetadata={isLoadingInitialData}
             isIndexingScripts={isIndexing && scripts.length === 0}
             isSearching={isUserSearching || isSearchPending}
+            totalSearchResults={totalSearchResults}
+            hasMoreSearchResults={hasMoreSearchResults}
             searchTerm={searchTerm}
             speakerSearchTerm={speakerSearchTerm}
             onSearchTermChange={handleSearchInputChange}
             onSpeakerSearchTermChange={handleSpeakerSearchInputChange}
             onClearSearch={handleClearSearch}
+            onLoadMoreSearchResults={handleLoadMoreSearchResults}
             onCategorySelect={handleCategorySelectWithoutSearchFocus}
           />
         </main>

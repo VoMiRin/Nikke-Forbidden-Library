@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Script, ScriptElement } from '../types';
+import type { MessengerAppElement, MessengerContentElement, Script, ScriptElement } from '../types';
 import {
   parseScriptContent,
   DialogueRenderer,
@@ -7,11 +7,13 @@ import {
   ChoiceBlockRenderer,
   MessengerAppRenderer,
   NextSubChapterButton,
+  type ExtendedMessengerChoiceOption,
 } from './script';
 
 type SearchFocus = {
   term: string;
   mode: 'content' | 'speaker';
+  speakerTerm?: string;
 };
 
 interface ScriptViewerProps {
@@ -60,6 +62,10 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     `script-element-${script?.id || 's'}-${parentKeyPrefix}${index}-${type}`.replace(/[^a-zA-Z0-9:_-]/g, '_')
   ), [script?.id]);
 
+  const buildMessengerMessageDomId = React.useCallback((messengerElementId: string, messageIndex: number) => (
+    `${messengerElementId}-message-${messageIndex}`.replace(/[^a-zA-Z0-9:_-]/g, '_')
+  ), []);
+
   React.useEffect(() => {
     if (script && script.id) {
       setIsLoadingInternalContent(true);
@@ -92,13 +98,86 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     });
   }, [internalScriptContent, script?.categoryKey, script?.id]);
 
+  const getVisibleMessengerMessages = React.useCallback((element: MessengerAppElement): MessengerContentElement[] => {
+    const allMessages: MessengerContentElement[] = [];
+
+    for (const msg of element.messages) {
+      allMessages.push(msg);
+
+      if (msg.type === 'message_bubble' && msg.choice) {
+        const selectedOptionValue = selectedOptions[msg.choice.choiceId];
+        if (selectedOptionValue) {
+          const selectedOption = msg.choice.options.find(option => option.value === selectedOptionValue) as ExtendedMessengerChoiceOption;
+          if (selectedOption?.messages) {
+            allMessages.push(...selectedOption.messages);
+          }
+        }
+      }
+    }
+
+    const firstUnansweredChoiceIndex = element.messages.findIndex(
+      msg => msg.type === 'message_bubble' && msg.choice && !selectedOptions[msg.choice.choiceId]
+    );
+
+    if (firstUnansweredChoiceIndex === -1) {
+      return allMessages;
+    }
+
+    let messageCount = 0;
+    for (let index = 0; index <= firstUnansweredChoiceIndex; index++) {
+      messageCount++;
+      const msg = element.messages[index];
+      if (msg.type === 'message_bubble' && msg.choice && selectedOptions[msg.choice.choiceId]) {
+        const selectedOption = msg.choice.options.find(option => option.value === selectedOptions[msg.choice.choiceId]) as ExtendedMessengerChoiceOption;
+        if (selectedOption?.messages) {
+          messageCount += selectedOption.messages.length;
+        }
+      }
+    }
+
+    return allMessages.slice(0, messageCount);
+  }, [selectedOptions]);
+
+  const messageMatchesSearch = React.useCallback((
+    message: MessengerContentElement,
+    normalizedTerm: string,
+    normalizedSpeakerTerm: string,
+  ): boolean => {
+    if (!normalizedTerm || message.type !== 'message_bubble') {
+      return false;
+    }
+
+    const normalizedSender = normalizeSearchValue(message.sender);
+    const normalizedText = normalizeSearchValue(message.text ?? '');
+
+    if (searchFocus?.mode === 'speaker') {
+      return normalizedSender.includes(normalizedTerm);
+    }
+
+    if (normalizedSpeakerTerm && !normalizedSender.includes(normalizedSpeakerTerm)) {
+      return false;
+    }
+
+    return normalizedSpeakerTerm
+      ? normalizedText.includes(normalizedTerm)
+      : normalizeSearchValue(`${message.sender} ${message.text ?? ''}`).includes(normalizedTerm);
+  }, [normalizeSearchValue, searchFocus?.mode]);
+
   const elementMatchesSearch = React.useCallback((
     element: ScriptElement,
     normalizedTerm: string,
   ): boolean => {
     if (!normalizedTerm) return false;
+    const normalizedSpeakerTerm = normalizeSearchValue(searchFocus?.speakerTerm ?? '');
 
     if (element.type === 'dialogue') {
+      if (searchFocus?.mode === 'content' && normalizedSpeakerTerm) {
+        return (
+          normalizeSearchValue(element.speaker ?? '').includes(normalizedSpeakerTerm)
+          && normalizeSearchValue(element.dialogue ?? '').includes(normalizedTerm)
+        );
+      }
+
       const searchableField = searchFocus?.mode === 'speaker'
         ? element.speaker ?? ''
         : `${element.speaker ?? ''} ${element.dialogue ?? ''}`;
@@ -106,6 +185,13 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     }
 
     if (element.type === 'narration') {
+      if (searchFocus?.mode === 'content' && normalizedSpeakerTerm) {
+        return (
+          normalizeSearchValue(element.speaker ?? '').includes(normalizedSpeakerTerm)
+          && normalizeSearchValue(element.text).includes(normalizedTerm)
+        );
+      }
+
       const searchableField = searchFocus?.mode === 'speaker'
         ? element.speaker ?? ''
         : `${element.speaker ?? ''} ${element.text}`;
@@ -113,21 +199,16 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     }
 
     if (element.type === 'messenger_app') {
-      const searchableField = element.messages
-        .filter((message) => message.type === 'message_bubble')
-        .map((message) => {
-          if (searchFocus?.mode === 'speaker') {
-            return message.sender;
-          }
-
-          return `${message.sender} ${message.text ?? ''}`;
-        })
-        .join(' ');
-
-      return normalizeSearchValue(searchableField).includes(normalizedTerm);
+      return getVisibleMessengerMessages(element).some((message) => (
+        messageMatchesSearch(message, normalizedTerm, normalizedSpeakerTerm)
+      ));
     }
 
     if (element.type === 'choice_block') {
+      if (searchFocus?.mode === 'content' && normalizedSpeakerTerm) {
+        return false;
+      }
+
       const searchableField = [
         element.prompt ?? '',
         ...element.options.map((option) => option.text),
@@ -137,16 +218,28 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     }
 
     return false;
-  }, [normalizeSearchValue, searchFocus?.mode]);
+  }, [getVisibleMessengerMessages, messageMatchesSearch, normalizeSearchValue, searchFocus?.mode, searchFocus?.speakerTerm]);
 
   const findFirstSearchMatchId = React.useCallback((
     elements: ScriptElement[],
     normalizedTerm: string,
     parentKeyPrefix: string = '',
   ): string | null => {
+    const normalizedSpeakerTerm = normalizeSearchValue(searchFocus?.speakerTerm ?? '');
+
     for (let index = 0; index < elements.length; index++) {
       const element = elements[index];
       const elementId = buildElementDomId(parentKeyPrefix, index, element.type);
+
+      if (element.type === 'messenger_app') {
+        const matchingMessageIndex = getVisibleMessengerMessages(element).findIndex((message) => (
+          messageMatchesSearch(message, normalizedTerm, normalizedSpeakerTerm)
+        ));
+
+        if (matchingMessageIndex !== -1) {
+          return buildMessengerMessageDomId(elementId, matchingMessageIndex);
+        }
+      }
 
       if (elementMatchesSearch(element, normalizedTerm)) {
         return elementId;
@@ -170,7 +263,16 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     }
 
     return null;
-  }, [buildElementDomId, elementMatchesSearch, selectedOptions]);
+  }, [
+    buildElementDomId,
+    buildMessengerMessageDomId,
+    elementMatchesSearch,
+    getVisibleMessengerMessages,
+    messageMatchesSearch,
+    normalizeSearchValue,
+    searchFocus?.speakerTerm,
+    selectedOptions,
+  ]);
 
   const firstSearchMatchId = React.useMemo(() => {
     const normalizedSearchTerm = normalizeSearchValue(searchFocus?.term ?? '');
@@ -364,6 +466,8 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
             key={key}
             element={element}
             keyPrefix={key}
+            messageIdPrefix={elementId}
+            highlightedSearchMatchId={highlightedSearchMatchId}
             selectedOptions={selectedOptions}
             onOptionSelect={onOptionSelect}
             onClearChoice={onClearChoice}

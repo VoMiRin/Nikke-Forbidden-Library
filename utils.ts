@@ -7,21 +7,47 @@ export const isDocumentStyleCategory = (categoryKey?: string): boolean => (
   typeof categoryKey === 'string' && DOCUMENT_STYLE_CATEGORIES.has(categoryKey)
 );
 
+const normalizeSearchText = (value: string): string => (
+  value
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim()
+);
+
 // Helper function to extract searchable text from script content
 export const extractTextFromScriptContent = (
   content: string | undefined,
   options?: { categoryKey?: string },
-): { content: string; speakers: string } => {
+): { content: string; speakers: string; speakerContent: Record<string, string> } => {
   if (typeof content !== 'string' || !content) { // Guard against null, undefined, or non-string
-    return { content: "", speakers: "" };
+    return { content: "", speakers: "", speakerContent: {} };
   }
 
   const documentStyleMode = isDocumentStyleCategory(options?.categoryKey);
   let searchableText = "";
   const speakerSet = new Set<string>();
+  const speakerContentMap = new Map<string, string[]>();
   const lines = content.split('\n');
   let inMessengerBlock = false;
   let inMessageBubble = false;
+  let currentMessengerSender: string | null = null;
+  let currentMessengerMessageIsSystem = false;
+
+  const addSpeakerContent = (speaker: string, text: string) => {
+    const normalizedSpeaker = normalizeSearchText(speaker);
+    const normalizedText = normalizeSearchText(text);
+
+    if (!normalizedSpeaker || !normalizedText) {
+      return;
+    }
+
+    if (!speakerContentMap.has(normalizedSpeaker)) {
+      speakerContentMap.set(normalizedSpeaker, []);
+    }
+
+    speakerContentMap.get(normalizedSpeaker)?.push(normalizedText);
+  };
 
   for (const line of lines) {
     const trimmedLine = line.trim();
@@ -37,23 +63,32 @@ export const extractTextFromScriptContent = (
     }
     if (trimmedLine.match(/^\[MESSENGER_END\]$/i)) {
       inMessengerBlock = false;
+      inMessageBubble = false;
+      currentMessengerSender = null;
+      currentMessengerMessageIsSystem = false;
       continue;
     }
 
     if (inMessengerBlock) {
       if (trimmedLine.match(/^\[MSG\s+SENDER="([^"]+?)".*?\]$/i)) {
         inMessageBubble = true;
+        currentMessengerSender = null;
+        currentMessengerMessageIsSystem = false;
         const senderMatch = trimmedLine.match(/SENDER="([^"]+)"/i);
         if (senderMatch && senderMatch[1]) {
           const currentSender = senderMatch[1];
-          if (!trimmedLine.match(/IS_SYSTEM="true"/i)) {
-             speakerSet.add(currentSender.toLowerCase());
+          currentMessengerSender = currentSender;
+          currentMessengerMessageIsSystem = !!trimmedLine.match(/IS_SYSTEM="true"/i);
+          if (!currentMessengerMessageIsSystem) {
+             speakerSet.add(normalizeSearchText(currentSender));
           }
         }
         continue;
       }
       if (trimmedLine.match(/^\[MSG_END\]$/i)) {
         inMessageBubble = false;
+        currentMessengerSender = null;
+        currentMessengerMessageIsSystem = false;
         continue;
       }
       if (inMessageBubble) {
@@ -62,6 +97,9 @@ export const extractTextFromScriptContent = (
           continue;
         }
         searchableText += trimmedLine + " ";
+        if (currentMessengerSender && !currentMessengerMessageIsSystem) {
+          addSpeakerContent(currentMessengerSender, trimmedLine);
+        }
         continue;
       }
     }
@@ -82,8 +120,14 @@ export const extractTextFromScriptContent = (
     
     const actionDialogueMatch = trimmedLine.match(/^([^\[]+)\[ACTION\]:\s*(.*)/i);
     if (actionDialogueMatch) {
-        searchableText += actionDialogueMatch[2].trim() + " ";
-        continue;
+      const potentialSpeaker = actionDialogueMatch[1].trim();
+      const actionText = actionDialogueMatch[2].trim();
+      if (potentialSpeaker && potentialSpeaker.length < 75 && actionText) {
+        speakerSet.add(normalizeSearchText(potentialSpeaker));
+        addSpeakerContent(potentialSpeaker, actionText);
+      }
+      searchableText += actionText + " ";
+      continue;
     }
 
     const dialogueMatch = documentStyleMode ? null : trimmedLine.match(/^([^:]+):\s*(.*)/);
@@ -92,8 +136,10 @@ export const extractTextFromScriptContent = (
       const upperSpeakerForCheck = potentialSpeaker.toUpperCase();
       const narrationKeywords = ['LOCATION', 'SOUND', 'NARRATION', '나래이션', 'MUSIC', 'EFFECTS', 'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM'];
       if (!narrationKeywords.includes(upperSpeakerForCheck.replace(/\.$/, ''))) {
-        speakerSet.add(potentialSpeaker.toLowerCase());
-        searchableText += dialogueMatch[2].trim() + " "; 
+        const dialogueText = dialogueMatch[2].trim();
+        speakerSet.add(normalizeSearchText(potentialSpeaker));
+        addSpeakerContent(potentialSpeaker, dialogueText);
+        searchableText += dialogueText + " "; 
         continue;
       }
     }
@@ -116,7 +162,13 @@ export const extractTextFromScriptContent = (
   }
 
   const speakers = Array.from(speakerSet).join(' ');
-  const finalContent = searchableText.replace(/\s+/g, ' ').trim().toLowerCase();
+  const finalContent = normalizeSearchText(searchableText);
+  const speakerContent = Object.fromEntries(
+    Array.from(speakerContentMap.entries()).map(([speaker, speakerLines]) => [
+      speaker,
+      normalizeSearchText(speakerLines.join(' ')),
+    ])
+  );
 
-  return { content: finalContent, speakers: speakers };
+  return { content: finalContent, speakers: speakers, speakerContent };
 };

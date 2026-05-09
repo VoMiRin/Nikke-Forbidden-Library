@@ -10,11 +10,14 @@ interface SearchPageProps {
   isLoadingInitialMetadata: boolean;
   isIndexingScripts: boolean;
   isSearching: boolean;
+  totalSearchResults: number;
+  hasMoreSearchResults: boolean;
   searchTerm: string;
   speakerSearchTerm: string;
   onSearchTermChange: (term: string) => void;
   onSpeakerSearchTermChange: (term: string) => void;
   onClearSearch: () => void;
+  onLoadMoreSearchResults: () => void;
   onCategorySelect?: (categoryKey: string) => void;
 }
 
@@ -26,11 +29,14 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   isLoadingInitialMetadata,
   isIndexingScripts,
   isSearching,
+  totalSearchResults,
+  hasMoreSearchResults,
   searchTerm,
   speakerSearchTerm,
   onSearchTermChange,
   onSpeakerSearchTermChange,
   onClearSearch,
+  onLoadMoreSearchResults,
 }) => {
   const groupedScripts = useMemo(() => {
     return globallySearchedScripts.reduce<Record<string, Script[]>>((acc, script) => {
@@ -185,6 +191,21 @@ export const SearchPage: React.FC<SearchPageProps> = ({
                 </section>
               );
             })}
+            <div className="flex flex-col items-center gap-3 border-t border-nikke-border/15 pt-6 text-center">
+              <p className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted">
+                {totalSearchResults}개 중 {globallySearchedScripts.length}개 표시
+              </p>
+              {hasMoreSearchResults && (
+                <button
+                  type="button"
+                  onClick={onLoadMoreSearchResults}
+                  disabled={isSearching}
+                  className="rounded-full bg-nikke-surface-low px-5 py-2.5 text-sm font-semibold text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-high disabled:cursor-wait disabled:opacity-60"
+                >
+                  {isSearching ? '불러오는 중...' : '더 보기'}
+                </button>
+              )}
+            </div>
           </div>
         ) : hasSearchTerm && isSearching ? (
           <p className="p-6 text-center text-lg text-nikke-text-muted">검색 중입니다...</p>
