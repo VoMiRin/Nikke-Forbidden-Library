@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
 import type { Script, ScriptCategory } from '../types';
-import { SearchIcon, XIcon } from './Icons';
-
-type SearchMode = 'content' | 'speaker';
+import { SearchIcon, UserCircleIcon, XIcon } from './Icons';
 
 interface SearchPageProps {
   categories: ScriptCategory[];
@@ -13,11 +11,11 @@ interface SearchPageProps {
   isIndexingScripts: boolean;
   isSearching: boolean;
   searchTerm: string;
+  speakerSearchTerm: string;
   onSearchTermChange: (term: string) => void;
+  onSpeakerSearchTermChange: (term: string) => void;
   onClearSearch: () => void;
   onCategorySelect?: (categoryKey: string) => void;
-  searchMode: SearchMode;
-  onSearchModeChange: (mode: SearchMode) => void;
 }
 
 export const SearchPage: React.FC<SearchPageProps> = ({
@@ -29,10 +27,10 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   isIndexingScripts,
   isSearching,
   searchTerm,
+  speakerSearchTerm,
   onSearchTermChange,
+  onSpeakerSearchTermChange,
   onClearSearch,
-  searchMode,
-  onSearchModeChange,
 }) => {
   const groupedScripts = useMemo(() => {
     return globallySearchedScripts.reduce<Record<string, Script[]>>((acc, script) => {
@@ -45,71 +43,86 @@ export const SearchPage: React.FC<SearchPageProps> = ({
     }, {});
   }, [globallySearchedScripts]);
 
-  const searchPlaceholder = (isLoadingInitialMetadata || isIndexingScripts)
-    ? '전체 아카이브 로딩 중...'
-    : searchMode === 'speaker'
-      ? '화자 이름으로 검색'
-      : '제목, 소제목, 또는 대사로 검색';
-
   const showInitialLoading = isLoadingInitialMetadata || isIndexingScripts;
+  const hasSearchTerm = !!(searchTerm.trim() || speakerSearchTerm.trim());
+  const resultQueryLabel = [
+    searchTerm.trim() ? `"${searchTerm.trim()}"` : null,
+    speakerSearchTerm.trim() ? `화자 "${speakerSearchTerm.trim()}"` : null,
+  ].filter(Boolean).join(' + ');
+  const contentPlaceholder = showInitialLoading ? '전체 아카이브 로딩 중...' : '제목, 소제목, 또는 대사';
+  const speakerPlaceholder = showInitialLoading ? '전체 아카이브 로딩 중...' : '화자 이름';
 
   return (
     <div className="mx-auto flex h-full w-full max-w-[1024px] flex-col pb-8 md:pb-10">
-      <header className="mb-8 md:mb-12">
+      <header className="mb-6 xl:mb-10">
         <div>
           <p className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-accent">전체 검색</p>
-          <h2 className="mt-2 font-headline text-3xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-5xl md:mt-3 md:sm:text-6xl">
+          <h2 className="mt-2 font-headline text-3xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-4xl lg:text-5xl xl:mt-3 xl:text-6xl">
             Nikke Forbidden Library
           </h2>
         </div>
-        <div className="sticky top-[68px] z-20 -mx-3 mt-4 border-y border-nikke-border/10 bg-nikke-bg/96 px-3 py-3 shadow-[0_14px_32px_rgba(0,0,0,0.16)] backdrop-blur-md md:static md:mx-0 md:mt-8 md:border-y-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none">
-          <div className="relative">
-            <input
-              type="search"
-              placeholder={searchPlaceholder}
-              value={searchTerm}
-              onChange={(e) => onSearchTermChange(e.target.value)}
-              aria-label="Search all scripts"
-              className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-4 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 md:rounded-[1.15rem] md:py-5 md:pl-14 md:pr-12 md:text-lg md:placeholder:text-base"
-              disabled={showInitialLoading}
-              autoFocus
-            />
-            <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted md:left-5" />
-            {searchTerm && (
-              <button
-                onClick={onClearSearch}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary md:right-4"
-                aria-label="Clear search"
-              >
-                <XIcon className="h-5 w-5" />
-              </button>
-            )}
-          </div>
-          <div className="mt-4 flex justify-center md:mt-8">
-            <div className="grid w-full max-w-md grid-cols-2 gap-1 rounded-[1rem] bg-nikke-surface-low/70 p-1 sm:max-w-[26rem] md:max-w-[28rem] md:gap-2 md:rounded-full md:bg-transparent md:p-0">
-              <button
-                onClick={() => onSearchModeChange('content')}
-                className={`w-full min-w-0 rounded-[0.85rem] px-3 py-2.5 text-center text-sm font-semibold whitespace-nowrap transition-all duration-300 ease-editorial sm:rounded-full sm:px-5 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'content' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary'
-                  }`}
-                aria-pressed={searchMode === 'content'}
-              >
-                내용 검색
-              </button>
-              <button
-                onClick={() => onSearchModeChange('speaker')}
-                className={`w-full min-w-0 rounded-[0.85rem] px-3 py-2.5 text-center text-sm font-semibold whitespace-nowrap transition-all duration-300 ease-editorial sm:rounded-full sm:px-5 md:min-w-[10rem] md:px-8 md:py-3 ${searchMode === 'speaker' ? 'bg-nikke-gradient text-slate-950 shadow-glass' : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-high/70 hover:text-nikke-text-primary'
-                  }`}
-                aria-pressed={searchMode === 'speaker'}
-              >
-                화자 검색
-              </button>
+        <div className="sticky top-[68px] z-20 -mx-3 mt-4 border-y border-nikke-border/10 bg-nikke-bg/96 px-3 py-3 shadow-[0_14px_32px_rgba(0,0,0,0.16)] backdrop-blur-md md:static md:mx-0 md:mt-5 md:border-y-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none xl:mt-8">
+          <div className="grid gap-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(14rem,0.65fr)]">
+            <div className="relative">
+              <input
+                type="search"
+                placeholder={contentPlaceholder}
+                value={searchTerm}
+                onChange={(e) => onSearchTermChange(e.target.value)}
+                aria-label="Search script content"
+                className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-3.5 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 xl:rounded-[1.15rem] xl:py-5 xl:pl-14 xl:pr-12 xl:text-lg xl:placeholder:text-base"
+                disabled={showInitialLoading}
+                autoFocus
+              />
+              <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted xl:left-5" />
+              {searchTerm && (
+                <button
+                  onClick={() => onSearchTermChange('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary xl:right-4"
+                  aria-label="Clear content search"
+                >
+                  <XIcon className="h-5 w-5" />
+                </button>
+              )}
+            </div>
+            <div className="relative">
+              <input
+                type="search"
+                placeholder={speakerPlaceholder}
+                value={speakerSearchTerm}
+                onChange={(e) => onSpeakerSearchTermChange(e.target.value)}
+                aria-label="Search script speakers"
+                className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-3.5 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 xl:rounded-[1.15rem] xl:py-5 xl:pl-14 xl:pr-12 xl:text-lg xl:placeholder:text-base"
+                disabled={showInitialLoading}
+              />
+              <UserCircleIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted xl:left-5" />
+              {speakerSearchTerm && (
+                <button
+                  onClick={() => onSpeakerSearchTermChange('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary xl:right-4"
+                  aria-label="Clear speaker search"
+                >
+                  <XIcon className="h-5 w-5" />
+                </button>
+              )}
             </div>
           </div>
+          {hasSearchTerm && (
+            <div className="mt-3 flex justify-end">
+              <button
+                type="button"
+                onClick={onClearSearch}
+                className="rounded-full px-3 py-1.5 font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted transition-colors duration-300 ease-editorial hover:bg-nikke-surface-low/70 hover:text-nikke-text-primary"
+              >
+                전체 지우기
+              </button>
+            </div>
+          )}
         </div>
       </header>
 
       <div className="flex-grow overflow-y-visible pb-6 md:overflow-y-auto">
-        {showInitialLoading && !searchTerm ? (
+        {showInitialLoading && !hasSearchTerm ? (
           <div className="py-10 text-center">
             <div role="status" className="flex flex-col items-center">
               <svg aria-hidden="true" className="mb-3 h-10 w-10 animate-spin text-nikke-accent" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +133,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
               <span className="mt-1 text-sm text-nikke-text-muted">검색 인덱스는 서버 또는 정적 인덱스에서 요청 시 로드됩니다.</span>
             </div>
           </div>
-        ) : searchTerm && globallySearchedScripts.length > 0 ? (
+        ) : hasSearchTerm && globallySearchedScripts.length > 0 ? (
           <div className="space-y-10 md:space-y-14">
             {Object.entries(groupedScripts).map(([groupKey, subScriptsArray]) => {
               const [catKey, title] = groupKey.split('@@');
@@ -173,10 +186,12 @@ export const SearchPage: React.FC<SearchPageProps> = ({
               );
             })}
           </div>
-        ) : searchTerm && !isSearching ? (
-          <p className="p-6 text-center text-lg text-nikke-text-muted">"{searchTerm}"에 대한 검색 결과가 없습니다.</p>
-        ) : !searchTerm && !showInitialLoading ? (
-          <div className="py-10 text-center">
+        ) : hasSearchTerm && isSearching ? (
+          <p className="p-6 text-center text-lg text-nikke-text-muted">검색 중입니다...</p>
+        ) : hasSearchTerm && !isSearching ? (
+          <p className="p-6 text-center text-lg text-nikke-text-muted">{resultQueryLabel}에 대한 검색 결과가 없습니다.</p>
+        ) : !hasSearchTerm && !showInitialLoading ? (
+          <div className="py-6 text-center xl:py-10">
             <p className="font-headline text-2xl font-bold tracking-[-0.02em] text-nikke-text-primary">전체 아카이브를 탐색하려면 검색어를 입력하세요.</p>
             <p className="mt-3 text-base leading-7 text-nikke-text-secondary">
               제목, 소제목, 대사, 화자 등을 통해 원하는 스토리를 빠르게 찾아보세요.

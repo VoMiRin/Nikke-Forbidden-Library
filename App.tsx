@@ -18,19 +18,30 @@ type BrowserHistoryState = {
   categoryKey: string | null;
   scriptId: string | null;
   searchTerm: string;
-  searchMode: SearchMode;
+  speakerSearchTerm: string;
   viewerSearchFocus: ViewerSearchFocus | null;
 };
 
+const normalizeSearchValue = (value: string): string => (
+  value
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim()
+);
+
 const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistoryState => {
   const params = new URLSearchParams(locationSearch);
-  const searchTerm = params.get('q')?.trim() ?? '';
-  const searchMode: SearchMode = params.get('mode') === 'speaker' ? 'speaker' : 'content';
+  const rawQuery = params.get('q')?.trim() ?? '';
+  const legacySearchMode: SearchMode = params.get('mode') === 'speaker' ? 'speaker' : 'content';
+  const searchTerm = legacySearchMode === 'speaker' && !params.has('speaker') ? '' : rawQuery;
+  const speakerSearchTerm = params.get('speaker')?.trim() ?? (legacySearchMode === 'speaker' ? rawQuery : '');
   const focusTerm = params.get('focus')?.trim() ?? '';
-  const focusMode: SearchMode = params.get('focusMode') === 'speaker' ? 'speaker' : searchMode;
+  const focusMode: SearchMode = params.get('focusMode') === 'speaker' ? 'speaker' : 'content';
   const categoryKey = params.get('category')?.trim() || null;
   const scriptId = params.get('script')?.trim() || null;
   const rawView = params.get('view');
+  const hasSearchTerm = !!(searchTerm || speakerSearchTerm);
 
   let view: AppView = 'search';
   if (rawView === 'stories') {
@@ -39,7 +50,7 @@ const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistorySt
     view = 'script_viewer';
   } else if (scriptId) {
     view = 'script_viewer';
-  } else if (categoryKey && !searchTerm) {
+  } else if (categoryKey && !hasSearchTerm) {
     view = 'stories';
   }
 
@@ -48,7 +59,7 @@ const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistorySt
     categoryKey: view === 'search' ? null : categoryKey,
     scriptId: view === 'script_viewer' ? scriptId : null,
     searchTerm: view === 'search' ? searchTerm : '',
-    searchMode,
+    speakerSearchTerm: view === 'search' ? speakerSearchTerm : '',
     viewerSearchFocus: view === 'script_viewer' && focusTerm
       ? { term: focusTerm, mode: focusMode }
       : null,
@@ -86,9 +97,9 @@ const buildHistoryUrl = (state: BrowserHistoryState): string => {
       params.set('view', 'search');
       params.set('q', state.searchTerm);
     }
-    if (state.searchMode === 'speaker') {
+    if (state.speakerSearchTerm) {
       params.set('view', 'search');
-      params.set('mode', state.searchMode);
+      params.set('speaker', state.speakerSearchTerm);
     }
   }
 
@@ -132,18 +143,20 @@ const App: React.FC = () => {
 
   const {
     searchTerm,
+    speakerSearchTerm,
     debouncedSearchTerm,
+    debouncedSpeakerSearchTerm,
     isUserSearching,
-    searchMode,
     globallySearchedScripts,
     sidebarSearchedScripts,
     handleSearchInputChange,
+    handleSpeakerSearchInputChange,
     handleClearSearch,
-    handleSearchModeChange,
     setSearchTerm,
+    setSpeakerSearchTerm,
     setDebouncedSearchTerm,
+    setDebouncedSpeakerSearchTerm,
     setIsUserSearching,
-    setSearchMode,
   } = useScriptSearch({ scripts });
 
   const {
@@ -182,34 +195,36 @@ const App: React.FC = () => {
     setActiveCategoryKey(historyState.categoryKey);
     setSelectedScriptId(historyState.scriptId);
     setViewerSearchFocus(historyState.viewerSearchFocus);
-    setSearchMode(historyState.searchMode);
     setSearchTerm(historyState.searchTerm);
-    setDebouncedSearchTerm(historyState.searchTerm.toLowerCase());
+    setSpeakerSearchTerm(historyState.speakerSearchTerm);
+    setDebouncedSearchTerm(normalizeSearchValue(historyState.searchTerm));
+    setDebouncedSpeakerSearchTerm(normalizeSearchValue(historyState.speakerSearchTerm));
     setIsUserSearching(false);
     setIsSidebarOpenOnMobile(false);
   }, [
     setActiveCategoryKey,
     setCurrentView,
     setDebouncedSearchTerm,
+    setDebouncedSpeakerSearchTerm,
     setIsUserSearching,
-    setSearchMode,
+    setSpeakerSearchTerm,
     setSearchTerm,
     setSelectedScriptId,
   ]);
 
   const scriptsToDisplayInSidebar = useMemo(() => {
     if (currentView === 'search') return [];
-    return debouncedSearchTerm ? sidebarSearchedScripts : scriptsForActiveCategoryWhenBrowsing;
-  }, [currentView, debouncedSearchTerm, sidebarSearchedScripts, scriptsForActiveCategoryWhenBrowsing]);
+    return (debouncedSearchTerm || debouncedSpeakerSearchTerm) ? sidebarSearchedScripts : scriptsForActiveCategoryWhenBrowsing;
+  }, [currentView, debouncedSearchTerm, debouncedSpeakerSearchTerm, sidebarSearchedScripts, scriptsForActiveCategoryWhenBrowsing]);
 
   const historyState = useMemo<BrowserHistoryState>(() => ({
     view: currentView,
     categoryKey: currentView === 'search' ? null : activeCategoryKey,
     scriptId: currentView === 'script_viewer' ? selectedScriptId : null,
     searchTerm: currentView === 'search' ? debouncedSearchTerm : '',
-    searchMode,
+    speakerSearchTerm: currentView === 'search' ? debouncedSpeakerSearchTerm : '',
     viewerSearchFocus: currentView === 'script_viewer' ? viewerSearchFocus : null,
-  }), [activeCategoryKey, currentView, debouncedSearchTerm, searchMode, selectedScriptId, viewerSearchFocus]);
+  }), [activeCategoryKey, currentView, debouncedSearchTerm, debouncedSpeakerSearchTerm, selectedScriptId, viewerSearchFocus]);
 
   useEffect(() => {
     document.body.style.overflow = isSidebarOpenOnMobile ? 'hidden' : '';
@@ -290,6 +305,10 @@ const App: React.FC = () => {
     selectedScriptChapterIndex !== -1
     && selectedScriptChapterIndex < scriptsInSelectedChapter.length - 1
   );
+  const isSearchPending = (
+    normalizeSearchValue(searchTerm) !== debouncedSearchTerm
+    || normalizeSearchValue(speakerSearchTerm) !== debouncedSpeakerSearchTerm
+  );
 
   const handleSelectScriptWithoutSearchFocus = (scriptId: string) => {
     setViewerSearchFocus(null);
@@ -297,8 +316,14 @@ const App: React.FC = () => {
   };
 
   const handleSelectScriptFromSearch = (scriptId: string) => {
-    const focusTerm = debouncedSearchTerm.trim() || searchTerm.trim();
-    setViewerSearchFocus(focusTerm ? { term: focusTerm, mode: searchMode } : null);
+    const focusContentTerm = debouncedSearchTerm.trim() || normalizeSearchValue(searchTerm);
+    const focusSpeakerTerm = debouncedSpeakerSearchTerm.trim() || normalizeSearchValue(speakerSearchTerm);
+    const nextFocus = focusContentTerm
+      ? { term: focusContentTerm, mode: 'content' as const }
+      : focusSpeakerTerm
+        ? { term: focusSpeakerTerm, mode: 'speaker' as const }
+        : null;
+    setViewerSearchFocus(nextFocus);
     handleSelectScript(scriptId);
   };
 
@@ -386,7 +411,7 @@ const App: React.FC = () => {
           onSelectScript={handleSelectScriptWithoutSearchFocus}
           isLoadingInitialMetadata={isLoadingInitialData}
           isIndexingScripts={isIndexing && scripts.length === 0}
-          isSearching={isUserSearching || (searchTerm !== debouncedSearchTerm && !!searchTerm)}
+          isSearching={isUserSearching || isSearchPending}
           searchTerm={searchTerm}
           onSearchTermChange={handleSearchInputChange}
           onClearSearch={handleClearSearch}
@@ -478,13 +503,13 @@ const App: React.FC = () => {
             onSelectScript={handleSelectScriptFromSearch}
             isLoadingInitialMetadata={isLoadingInitialData}
             isIndexingScripts={isIndexing && scripts.length === 0}
-            isSearching={isUserSearching || (searchTerm !== debouncedSearchTerm && !!searchTerm)}
+            isSearching={isUserSearching || isSearchPending}
             searchTerm={searchTerm}
+            speakerSearchTerm={speakerSearchTerm}
             onSearchTermChange={handleSearchInputChange}
+            onSpeakerSearchTermChange={handleSpeakerSearchInputChange}
             onClearSearch={handleClearSearch}
             onCategorySelect={handleCategorySelectWithoutSearchFocus}
-            searchMode={searchMode}
-            onSearchModeChange={handleSearchModeChange}
           />
         </main>
       </div>

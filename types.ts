@@ -127,8 +127,10 @@ export interface SearchApiResult extends ScriptManifestEntry {
 }
 
 export interface SearchApiResponse {
-  mode: 'content' | 'speaker';
+  mode: 'content' | 'speaker' | 'combined';
   query: string;
+  contentQuery?: string;
+  speakerQuery?: string;
   results: SearchApiResult[];
   source: 'api' | 'static';
 }

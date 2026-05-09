@@ -28,40 +28,54 @@ const countTokenHits = (field, tokens, weight) => (
   tokens.reduce((score, token) => score + (field.includes(token) ? weight : 0), 0)
 );
 
-const calculateScore = (document, normalizedQuery, tokens, mode) => {
+const calculateScore = (document, normalizedContentQuery, normalizedSpeakerQuery, contentTokens, speakerTokens) => {
   const normalizedTitle = normalizeSearchValue(document.title);
   const normalizedSubTitle = normalizeSearchValue(document.subTitle ?? '');
   const normalizedSpeakers = normalizeSearchValue(document.searchableSpeakers);
   const normalizedContent = normalizeSearchValue(document.searchableContent);
 
-  if (mode === 'speaker') {
-    if (!normalizedSpeakers.includes(normalizedQuery)) {
+  let score = 0;
+
+  if (normalizedContentQuery) {
+    const matchesContentQuery = (
+      normalizedTitle.includes(normalizedContentQuery)
+      || normalizedSubTitle.includes(normalizedContentQuery)
+      || normalizedContent.includes(normalizedContentQuery)
+    );
+
+    if (!matchesContentQuery) {
       return 0;
     }
 
-    return 60
-      + countTokenHits(normalizedSpeakers, tokens, 24)
-      + (normalizedTitle.includes(normalizedQuery) ? 4 : 0);
+    score += (
+      (normalizedTitle.includes(normalizedContentQuery) ? 80 : 0)
+      + (normalizedSubTitle.includes(normalizedContentQuery) ? 60 : 0)
+      + (normalizedContent.includes(normalizedContentQuery) ? 32 : 0)
+      + countTokenHits(normalizedTitle, contentTokens, 18)
+      + countTokenHits(normalizedSubTitle, contentTokens, 12)
+      + countTokenHits(normalizedContent, contentTokens, 5)
+    );
   }
 
-  const matchesQuery = (
-    normalizedTitle.includes(normalizedQuery)
-    || normalizedSubTitle.includes(normalizedQuery)
-    || normalizedContent.includes(normalizedQuery)
-  );
+  if (normalizedSpeakerQuery) {
+    if (!normalizedSpeakers.includes(normalizedSpeakerQuery)) {
+      return 0;
+    }
 
-  if (!matchesQuery) {
-    return 0;
+    score += 60
+      + countTokenHits(normalizedSpeakers, speakerTokens, 24)
+      + (normalizedTitle.includes(normalizedSpeakerQuery) ? 4 : 0);
   }
 
-  return (
-    (normalizedTitle.includes(normalizedQuery) ? 80 : 0)
-    + (normalizedSubTitle.includes(normalizedQuery) ? 60 : 0)
-    + (normalizedContent.includes(normalizedQuery) ? 32 : 0)
-    + countTokenHits(normalizedTitle, tokens, 18)
-    + countTokenHits(normalizedSubTitle, tokens, 12)
-    + countTokenHits(normalizedContent, tokens, 5)
-  );
+  return score;
+};
+
+const getSearchModeForQueries = (normalizedContentQuery, normalizedSpeakerQuery) => {
+  if (normalizedContentQuery && normalizedSpeakerQuery) {
+    return 'combined';
+  }
+
+  return normalizedSpeakerQuery ? 'speaker' : 'content';
 };
 
 const readSearchIndex = async () => {
@@ -189,8 +203,13 @@ const server = http.createServer(async (request, response) => {
   }
 
   const rawQuery = url.searchParams.get('q') ?? '';
-  const normalizedQuery = normalizeSearchValue(rawQuery);
-  const mode = url.searchParams.get('mode') === 'speaker' ? 'speaker' : 'content';
+  const legacyMode = url.searchParams.get('mode') === 'speaker' ? 'speaker' : 'content';
+  const rawContentQuery = url.searchParams.get('content') ?? (legacyMode === 'speaker' ? '' : rawQuery);
+  const rawSpeakerQuery = url.searchParams.get('speaker') ?? (legacyMode === 'speaker' ? rawQuery : '');
+  const normalizedContentQuery = normalizeSearchValue(rawContentQuery);
+  const normalizedSpeakerQuery = normalizeSearchValue(rawSpeakerQuery);
+  const normalizedQuery = [normalizedContentQuery, normalizedSpeakerQuery].filter(Boolean).join(' ');
+  const mode = getSearchModeForQueries(normalizedContentQuery, normalizedSpeakerQuery);
   const requestedLimit = Number(url.searchParams.get('limit') ?? 50);
   const limit = Number.isFinite(requestedLimit)
     ? Math.max(1, Math.min(100, requestedLimit))
@@ -200,6 +219,8 @@ const server = http.createServer(async (request, response) => {
     writeJson(request, response, 200, {
       mode,
       query: '',
+      contentQuery: '',
+      speakerQuery: '',
       results: [],
       source: 'api',
     });
@@ -208,12 +229,13 @@ const server = http.createServer(async (request, response) => {
 
   try {
     const documents = await getDocuments();
-    const tokens = normalizedQuery.split(' ').filter(Boolean);
+    const contentTokens = normalizedContentQuery.split(' ').filter(Boolean);
+    const speakerTokens = normalizedSpeakerQuery.split(' ').filter(Boolean);
 
     const results = documents
       .map((document) => ({
         document,
-        score: calculateScore(document, normalizedQuery, tokens, mode),
+        score: calculateScore(document, normalizedContentQuery, normalizedSpeakerQuery, contentTokens, speakerTokens),
       }))
       .filter((entry) => entry.score > 0)
       .sort((left, right) => right.score - left.score)
@@ -231,6 +253,8 @@ const server = http.createServer(async (request, response) => {
     writeJson(request, response, 200, {
       mode,
       query: normalizedQuery,
+      contentQuery: normalizedContentQuery,
+      speakerQuery: normalizedSpeakerQuery,
       results,
       source: 'api',
     });

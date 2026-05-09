@@ -32,7 +32,9 @@ git push
 npm run search-api
 ```
 
-기본 포트는 `8080`이며 `GET /api/search?q=...&mode=content` 형식으로 검색합니다.
+기본 포트는 `8080`이며 `GET /api/search?q=...` 형식으로 내용 검색을 합니다.
+화자까지 함께 좁히려면 `GET /api/search?q=...&speaker=...`를 사용합니다.
+기존 화자 전용 검색용 `GET /api/search?q=...&mode=speaker` 형식도 계속 지원합니다.
 
 보안 관련 환경 변수:
 - `ACCESS_CONTROL_ALLOW_ORIGIN`: 허용할 Origin 목록. 쉼표로 여러 개 지정 가능
