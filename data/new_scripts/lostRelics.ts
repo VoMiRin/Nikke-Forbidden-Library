@@ -312,4 +312,18 @@ export const lostRelicsScripts: ScriptData[] = [
     { id: '거인을찾아서.txt_01', categoryKey: 'lost_relics', title: '거인을 찾아서.txt', subTitle: '51002.txt', mainChapterFile: '거인을찾아서.txt.txt' },
     { id: '거인을찾아서.txt_02', categoryKey: 'lost_relics', title: '거인을 찾아서.txt', subTitle: '51003.txt', mainChapterFile: '거인을찾아서.txt.txt' },
     { id: '거인을찾아서.txt_03', categoryKey: 'lost_relics', title: '거인을 찾아서.txt', subTitle: '임시 저장된 메모.txt', mainChapterFile: '거인을찾아서.txt.txt' },
+
+    // 신에게 닿기 위한 탑.txt
+    { id: '신에게닿기위한탑.txt_00', categoryKey: 'lost_relics', title: '신에게 닿기 위한 탑.txt', subTitle: '001.txt', mainChapterFile: '신에게닿기위한탑.txt.txt' },
+    { id: '신에게닿기위한탑.txt_01', categoryKey: 'lost_relics', title: '신에게 닿기 위한 탑.txt', subTitle: '002.txt', mainChapterFile: '신에게닿기위한탑.txt.txt' },
+    { id: '신에게닿기위한탑.txt_02', categoryKey: 'lost_relics', title: '신에게 닿기 위한 탑.txt', subTitle: '003.txt', mainChapterFile: '신에게닿기위한탑.txt.txt' },
+    { id: '신에게닿기위한탑.txt_03', categoryKey: 'lost_relics', title: '신에게 닿기 위한 탑.txt', subTitle: '004(임시 저장).txt', mainChapterFile: '신에게닿기위한탑.txt.txt' },
+
+    // 궤도 엘리베이터 음모론
+    { id: '궤도엘리베이터음모론_00', categoryKey: 'lost_relics', title: '궤도 엘리베이터 음모론', subTitle: '[충격] 랩쳐의 주둔지는 궤도 엘리베이터다!', mainChapterFile: '궤도엘리베이터음모론.txt' },
+    { id: '궤도엘리베이터음모론_01', categoryKey: 'lost_relics', title: '궤도 엘리베이터 음모론', subTitle: '[충격] 랩쳐는 V.T.C.에 의해 생산되고 있다!', mainChapterFile: '궤도엘리베이터음모론.txt' },
+    { id: '궤도엘리베이터음모론_02', categoryKey: 'lost_relics', title: '궤도 엘리베이터 음모론', subTitle: '[충격] 궤도 엘리베이터 공략의 실패는 내부의 첩자 때문이다!', mainChapterFile: '궤도엘리베이터음모론.txt' },
+    { id: '궤도엘리베이터음모론_03', categoryKey: 'lost_relics', title: '궤도 엘리베이터 음모론', subTitle: '[충격] 모두가 거짓말을 하고 있다!', mainChapterFile: '궤도엘리베이터음모론.txt' },
+
+
 ];
