@@ -54,7 +54,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
 
   return (
     <div className="mx-auto flex h-full w-full max-w-[1024px] flex-col pb-8 md:pb-10">
-      <header className="mb-6 xl:mb-10">
+      <header className={hasSearchTerm ? 'mb-4 xl:mb-5' : 'mb-6 xl:mb-10'}>
         <div>
           <p className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-accent">전체 검색</p>
           <h2 className="mt-2 font-headline text-3xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-4xl lg:text-5xl xl:mt-3 xl:text-6xl">
@@ -121,7 +121,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
         </div>
       </header>
 
-      <div className="flex-grow overflow-y-visible pb-6 md:overflow-y-auto">
+      <div className="flex-grow overflow-x-hidden overflow-y-visible pb-6 md:overflow-y-auto">
         {showInitialLoading && !hasSearchTerm ? (
           <div className="py-10 text-center">
             <div role="status" className="flex flex-col items-center">
@@ -154,7 +154,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
                         onClick={() => onSelectScript(script.id)}
                         className={`w-full rounded-[1.1rem] p-4 text-left transition-all duration-300 ease-editorial md:rounded-[1.4rem] md:p-6 ${selectedScriptId === script.id
                             ? 'bg-nikke-surface-high text-nikke-text-primary shadow-glass'
-                            : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-low hover:translate-x-1 hover:text-nikke-text-primary'
+                            : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-low hover:text-nikke-text-primary'
                           }`}
                         aria-current={selectedScriptId === script.id ? 'page' : undefined}
                       >
