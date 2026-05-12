@@ -106,7 +106,7 @@ export const AiAskPanel: React.FC = () => {
           <SparklesIcon className="h-5 w-5" />
         </span>
         <div>
-          <p className="font-label text-[11px] uppercase tracking-[0.2em] text-nikke-accent">AI Archive Test</p>
+          <p className="font-label text-[11px] uppercase tracking-[0.2em] text-nikke-accent">AI Chat</p>
           <h3 className="font-headline text-xl font-bold tracking-[-0.02em] text-nikke-text-primary md:text-2xl">
             스토리 질문하기
           </h3>
