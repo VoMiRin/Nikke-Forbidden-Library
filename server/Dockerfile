@@ -2,6 +2,9 @@ FROM node:22-slim
 
 WORKDIR /app
 
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
 COPY server/index.mjs ./server/index.mjs
 COPY public/search-index.json ./public/search-index.json
 

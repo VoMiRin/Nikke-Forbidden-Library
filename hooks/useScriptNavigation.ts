@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import type { Script } from '../types';
 
-export type AppView = 'search' | 'stories' | 'script_viewer';
+export type AppView = 'search' | 'stories' | 'script_viewer' | 'ai_chat';
 
 interface UseScriptNavigationProps {
   scripts: Script[];
@@ -22,6 +22,7 @@ interface UseScriptNavigationReturn {
   handleNavigateToNextScript: (currentScriptId: string) => void;
   handleNavigateToSearch: () => void;
   handleNavigateToStories: (categoryKey?: string | null) => void;
+  handleNavigateToAiChat: () => void;
   setCurrentView: React.Dispatch<React.SetStateAction<AppView>>;
   setActiveCategoryKey: React.Dispatch<React.SetStateAction<string | null>>;
   setSelectedScriptId: React.Dispatch<React.SetStateAction<string | null>>;
@@ -125,6 +126,14 @@ export function useScriptNavigation({
     closeMobileSidebarIfNeeded();
   }, [onSearchClear, closeMobileSidebarIfNeeded]);
 
+  const handleNavigateToAiChat = useCallback(() => {
+    setCurrentView('ai_chat');
+    setActiveCategoryKey(null);
+    setSelectedScriptId(null);
+    onSearchClear();
+    closeMobileSidebarIfNeeded();
+  }, [onSearchClear, closeMobileSidebarIfNeeded]);
+
   useEffect(() => {
     if (currentView === 'script_viewer' && !activeCategoryKey && scripts.length > 0) {
       setCurrentView('stories');
@@ -144,6 +153,7 @@ export function useScriptNavigation({
     handleNavigateToNextScript,
     handleNavigateToSearch,
     handleNavigateToStories,
+    handleNavigateToAiChat,
     setCurrentView,
     setActiveCategoryKey,
     setSelectedScriptId,

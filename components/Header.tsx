@@ -8,7 +8,8 @@ interface HeaderProps {
   className?: string;
   onNavigateToSearch?: () => void;
   onNavigateToStories?: () => void;
-  activeNav: 'stories' | 'search';
+  onNavigateToAiChat?: () => void;
+  activeNav: 'stories' | 'search' | 'ai_chat';
   themeMode: 'dark' | 'light';
   onToggleTheme: () => void;
 }
@@ -19,6 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   className,
   onNavigateToSearch,
   onNavigateToStories,
+  onNavigateToAiChat,
   activeNav,
   themeMode,
   onToggleTheme,
@@ -30,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
     }
   };
 
-  const navClass = (navKey: 'stories' | 'search') => (
+  const navClass = (navKey: 'stories' | 'search' | 'ai_chat') => (
     activeNav === navKey
       ? 'border-b border-nikke-accent pb-1 font-label text-xs uppercase tracking-[0.18em] text-nikke-accent'
       : 'font-label text-xs uppercase tracking-[0.18em] text-nikke-text-secondary transition-colors duration-300 ease-editorial hover:text-nikke-text-primary'
@@ -75,6 +77,9 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <button onClick={onNavigateToSearch} className={navClass('search')} type="button">
               Search
+            </button>
+            <button onClick={onNavigateToAiChat} className={navClass('ai_chat')} type="button">
+              AI Chat
             </button>
           </nav>
           <div className="hidden text-right lg:block">

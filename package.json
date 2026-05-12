@@ -9,9 +9,11 @@
     "build": "npm run build:search-assets && vite build",
     "preview": "vite preview",
     "search-api": "node server/index.mjs",
+    "gemini:file-search:test": "node scripts/testGeminiFileSearch.mjs",
     "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
+    "@google/genai": "^2.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

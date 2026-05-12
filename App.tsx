@@ -5,6 +5,7 @@ import { ScriptViewer } from './components/ScriptViewer';
 import { Footer } from './components/Footer';
 import { SearchPage } from './components/SearchPage';
 import { StoriesPage } from './components/StoriesPage';
+import { AiChatPage } from './components/AiChatPage';
 import { SCRIPT_CATEGORIES } from './constants';
 import { useDeploymentRefresh, useScriptIndexing, useScriptSearch, useScriptNavigation, type AppView, type SearchMode } from './hooks';
 
@@ -48,6 +49,8 @@ const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistorySt
   let view: AppView = 'search';
   if (rawView === 'stories') {
     view = 'stories';
+  } else if (rawView === 'ai_chat' || rawView === 'ai') {
+    view = 'ai_chat';
   } else if (rawView === 'script' || rawView === 'script_viewer') {
     view = 'script_viewer';
   } else if (scriptId) {
@@ -58,7 +61,7 @@ const parseHistoryStateFromLocation = (locationSearch: string): BrowserHistorySt
 
   return {
     view,
-    categoryKey: view === 'search' ? null : categoryKey,
+    categoryKey: view === 'stories' || view === 'script_viewer' ? categoryKey : null,
     scriptId: view === 'script_viewer' ? scriptId : null,
     searchTerm: view === 'search' ? searchTerm : '',
     speakerSearchTerm: view === 'search' ? speakerSearchTerm : '',
@@ -76,6 +79,10 @@ const buildHistoryUrl = (state: BrowserHistoryState): string => {
     if (state.categoryKey) {
       params.set('category', state.categoryKey);
     }
+  }
+
+  if (state.view === 'ai_chat') {
+    params.set('view', 'ai_chat');
   }
 
   if (state.view === 'script_viewer') {
@@ -179,6 +186,7 @@ const App: React.FC = () => {
     handleNavigateToNextScript,
     handleNavigateToSearch,
     handleNavigateToStories,
+    handleNavigateToAiChat,
     setCurrentView,
     setActiveCategoryKey,
     setSelectedScriptId,
@@ -191,8 +199,11 @@ const App: React.FC = () => {
 
   const isSearchView = currentView === 'search';
   const isStoriesView = currentView === 'stories';
+  const isAiChatView = currentView === 'ai_chat';
 
-  const activeNav = isStoriesView || currentView === 'script_viewer'
+  const activeNav = isAiChatView
+    ? 'ai_chat'
+    : isStoriesView || currentView === 'script_viewer'
     ? 'stories'
     : 'search';
 
@@ -221,13 +232,13 @@ const App: React.FC = () => {
   ]);
 
   const scriptsToDisplayInSidebar = useMemo(() => {
-    if (currentView === 'search') return [];
+    if (currentView === 'search' || currentView === 'ai_chat') return [];
     return (debouncedSearchTerm || debouncedSpeakerSearchTerm) ? sidebarSearchedScripts : scriptsForActiveCategoryWhenBrowsing;
   }, [currentView, debouncedSearchTerm, debouncedSpeakerSearchTerm, sidebarSearchedScripts, scriptsForActiveCategoryWhenBrowsing]);
 
   const historyState = useMemo<BrowserHistoryState>(() => ({
     view: currentView,
-    categoryKey: currentView === 'search' ? null : activeCategoryKey,
+    categoryKey: currentView === 'stories' || currentView === 'script_viewer' ? activeCategoryKey : null,
     scriptId: currentView === 'script_viewer' ? selectedScriptId : null,
     searchTerm: currentView === 'search' ? debouncedSearchTerm : '',
     speakerSearchTerm: currentView === 'search' ? debouncedSpeakerSearchTerm : '',
@@ -363,6 +374,11 @@ const App: React.FC = () => {
   const handleNavigateToStoriesWithoutSearchFocus = (categoryKey?: string | null) => {
     setViewerSearchFocus(null);
     handleNavigateToStories(categoryKey);
+  };
+
+  const handleNavigateToAiChatWithoutSearchFocus = () => {
+    setViewerSearchFocus(null);
+    handleNavigateToAiChat();
   };
 
   const renderStoriesLayout = () => (
@@ -527,19 +543,55 @@ const App: React.FC = () => {
     </div>
   );
 
+  const renderAiChatPageLayout = () => (
+    <div className="flex flex-1 overflow-visible md:overflow-y-hidden">
+      <div className="container mx-auto flex w-full flex-1 flex-col gap-3 overflow-visible px-0 py-3 sm:px-4 sm:py-6 md:flex-row md:gap-4 md:overflow-y-hidden xl:gap-6">
+        <Sidebar
+          key="ai-chat-page-sidebar"
+          categories={SCRIPT_CATEGORIES}
+          activeCategoryKey={activeCategoryKey}
+          scripts={[]}
+          selectedScriptId={null}
+          onSelectScript={handleSelectScriptWithoutSearchFocus}
+          isLoadingInitialMetadata={isLoadingInitialData}
+          isIndexingScripts={isIndexing && scripts.length === 0}
+          isSearching={false}
+          searchTerm=""
+          onSearchTermChange={() => {}}
+          onClearSearch={() => {}}
+          isOpenOnMobile={isSidebarOpenOnMobile}
+          onClose={() => setIsSidebarOpenOnMobile(false)}
+          onCategorySelect={handleCategorySelectWithoutSearchFocus}
+          hideScriptListAndSearch={true}
+        />
+        {isSidebarOpenOnMobile && (
+          <div
+            className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden"
+            onClick={() => setIsSidebarOpenOnMobile(false)}
+            aria-hidden="true"
+          ></div>
+        )}
+        <main className="w-full flex-1 overflow-y-visible rounded-[1.5rem] bg-transparent p-3 md:max-h-[calc(100vh-176px)] md:overflow-y-auto md:rounded-[2rem] md:p-4">
+          <AiChatPage />
+        </main>
+      </div>
+    </div>
+  );
+
   return (
     <div className="flex min-h-[100dvh] flex-col bg-nikke-bg text-nikke-text-primary antialiased transition-colors duration-500 md:h-screen">
       <Header
-        onToggleSidebar={(currentView === 'search' || currentView === 'stories' || currentView === 'script_viewer') ? () => setIsSidebarOpenOnMobile(prev => !prev) : undefined}
+        onToggleSidebar={(currentView === 'search' || currentView === 'stories' || currentView === 'script_viewer' || currentView === 'ai_chat') ? () => setIsSidebarOpenOnMobile(prev => !prev) : undefined}
         isSidebarOpen={isSidebarOpenOnMobile}
         className="sticky top-0 z-50 shrink-0"
         onNavigateToSearch={handleNavigateToSearchWithoutSearchFocus}
         onNavigateToStories={() => handleNavigateToStoriesWithoutSearchFocus(activeCategoryKey ?? SCRIPT_CATEGORIES[0]?.key ?? null)}
+        onNavigateToAiChat={handleNavigateToAiChatWithoutSearchFocus}
         activeNav={activeNav}
         themeMode={themeMode}
         onToggleTheme={toggleTheme}
       />
-      {isSearchView ? renderSearchPageLayout() : isStoriesView ? renderStoriesLayout() : renderScriptViewerLayout()}
+      {isSearchView ? renderSearchPageLayout() : isStoriesView ? renderStoriesLayout() : isAiChatView ? renderAiChatPageLayout() : renderScriptViewerLayout()}
       <Footer className="shrink-0" />
     </div>
   );
