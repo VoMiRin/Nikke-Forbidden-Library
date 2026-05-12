@@ -15,8 +15,6 @@ type AskResponse = {
   groundingSupportCount: number;
 };
 
-const DEFAULT_QUESTION = 'D.E.E.P.이 추락한 이유는 뭘까? 근거를 바탕으로 추측해줘.';
-
 const renderInlineMarkdown = (text: string): React.ReactNode[] => {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
 
@@ -64,7 +62,7 @@ const AnswerBlock: React.FC<{ answer: string }> = ({ answer }) => {
 };
 
 export const AiAskPanel: React.FC = () => {
-  const [prompt, setPrompt] = useState(DEFAULT_QUESTION);
+  const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState<AskResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
