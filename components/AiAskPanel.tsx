@@ -6,6 +6,16 @@ type AskSource = {
   fileSearchStore?: string;
 };
 
+type TokenUsage = {
+  estimatedInputTokenCount?: number;
+  promptTokenCount?: number;
+  candidatesTokenCount?: number;
+  totalTokenCount?: number;
+  cachedContentTokenCount?: number;
+  thoughtsTokenCount?: number;
+  toolUsePromptTokenCount?: number;
+};
+
 type AskResponse = {
   answer: string;
   model: string;
@@ -13,6 +23,35 @@ type AskResponse = {
   sources: AskSource[];
   groundingChunkCount: number;
   groundingSupportCount: number;
+  tokenUsage?: TokenUsage | null;
+  askLogId?: string | null;
+};
+
+const formatTokenCount = (value: number | undefined) => (
+  Number.isFinite(value) ? value.toLocaleString('ko-KR') : null
+);
+
+const formatRetryAfter = (retryAfter: string | null) => {
+  if (!retryAfter) return null;
+
+  const retryAfterSeconds = Number(retryAfter);
+  if (Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0) {
+    if (retryAfterSeconds < 60) {
+      return `${Math.ceil(retryAfterSeconds)}초 후에 다시 시도해 주세요.`;
+    }
+
+    if (retryAfterSeconds < 3600) {
+      return `${Math.ceil(retryAfterSeconds / 60)}분 후에 다시 시도해 주세요.`;
+    }
+
+    if (retryAfterSeconds < 86400) {
+      return `${Math.ceil(retryAfterSeconds / 3600)}시간 후에 다시 시도해 주세요.`;
+    }
+
+    return `${Math.ceil(retryAfterSeconds / 86400)}일 후에 다시 시도해 주세요.`;
+  }
+
+  return '잠시 후에 다시 시도해 주세요.';
 };
 
 const renderInlineMarkdown = (text: string): React.ReactNode[] => {
@@ -61,6 +100,13 @@ const AnswerBlock: React.FC<{ answer: string }> = ({ answer }) => {
   );
 };
 
+const TokenMetric: React.FC<{ label: string; value?: number }> = ({ label, value }) => {
+  const formattedValue = formatTokenCount(value);
+  if (!formattedValue) return null;
+
+  return <span>{label} {formattedValue} 토큰</span>;
+};
+
 export const AiAskPanel: React.FC = () => {
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState<AskResponse | null>(null);
@@ -88,7 +134,12 @@ export const AiAskPanel: React.FC = () => {
       const payload = await result.json().catch(() => ({}));
 
       if (!result.ok) {
-        throw new Error(payload.error || 'AI 질문 요청에 실패했습니다.');
+        const retryMessage = result.status === 429 ? formatRetryAfter(result.headers.get('retry-after')) : null;
+        throw new Error(
+          retryMessage
+            ? `AI 요청이 잠시 많습니다. ${retryMessage}`
+            : payload.error || 'AI 질문 요청에 실패했습니다.'
+        );
       }
 
       setResponse(payload as AskResponse);
@@ -124,8 +175,8 @@ export const AiAskPanel: React.FC = () => {
           aria-label="AI archive question"
         />
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-nikke-text-muted">
-            {prompt.length}/1200
+          <p className="text-xs leading-5 text-nikke-text-muted">
+            질문과 답변은 위키 품질 개선을 위해 저장될 수 있습니다. {prompt.length}/1200
           </p>
           <button
             type="submit"
@@ -152,6 +203,10 @@ export const AiAskPanel: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2 text-xs text-nikke-text-muted">
             <span className="font-label uppercase tracking-[0.18em] text-nikke-text-muted">{response.model}</span>
             <span>근거 {response.groundingChunkCount}개</span>
+            <TokenMetric label="입력" value={response.tokenUsage?.promptTokenCount} />
+            <TokenMetric label="검색" value={response.tokenUsage?.toolUsePromptTokenCount} />
+            <TokenMetric label="출력" value={response.tokenUsage?.candidatesTokenCount} />
+            <TokenMetric label="총합" value={response.tokenUsage?.totalTokenCount} />
             {response.sources.map((source) => (
               <span key={source.title} className="rounded-full bg-nikke-surface-low px-3 py-1 text-nikke-text-secondary">
                 {source.title}

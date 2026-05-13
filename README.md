@@ -41,6 +41,63 @@ npm run search-api
 - `RATE_LIMIT_WINDOW_MS`: 검색 API rate limit 윈도우 시간
 - `RATE_LIMIT_MAX_REQUESTS`: 윈도우당 최대 검색 요청 수
 
+AI 질문 관련 환경 변수:
+- `ASK_RATE_LIMIT_WINDOW_MS`: IP별 AI 질문 rate limit 윈도우 시간. 기본값은 `600000`
+- `ASK_RATE_LIMIT_MAX_REQUESTS`: IP별 윈도우당 최대 AI 질문 수. 기본값은 `10`
+- `ASK_GLOBAL_RATE_LIMIT_WINDOW_MS`: 서버 인스턴스별 전체 AI 질문 rate limit 윈도우 시간. 기본값은 `60000`
+- `ASK_GLOBAL_RATE_LIMIT_MAX_REQUESTS`: 서버 인스턴스별 윈도우당 전체 AI 질문 수. 기본값은 `6`
+- `ASK_DAILY_LIMIT_WINDOW_MS`: 서버 인스턴스별 AI 질문 일일 상한 윈도우 시간. 기본값은 `86400000`
+- `ASK_DAILY_LIMIT_MAX_REQUESTS`: 서버 인스턴스별 일일 최대 AI 질문 수. 기본값은 `100`
+- `GEMINI_RETRY_COUNT`: Gemini 429/503 재시도 횟수
+- `GEMINI_RETRY_INITIAL_DELAY_MS`: Gemini 재시도 시작 대기 시간
+- `GEMINI_RETRY_MAX_DELAY_MS`: Gemini 재시도 최대 대기 시간
+- `GEMINI_PROVIDER_COOLDOWN_MS`: Gemini 429 후 서버가 새 AI 질문을 잠시 막는 시간
+- `GEMINI_COUNT_TOKENS_BEFORE_REQUEST`: `1`이면 Gemini 호출 전에 `countTokens`로 입력 토큰을 선계산
+
+유료 API 보호용 기본값은 IP별 `10회/10분`, 서비스 전체 `6회/분`, 서버 인스턴스별 `100회/일`입니다. `npm run deploy`는 기본적으로 Cloud Run `RUN_MAX_INSTANCES=1`로 배포해 in-memory 제한이 예측 가능하게 동작하도록 합니다.
+Gemini 429가 자주 나면 `ASK_GLOBAL_RATE_LIMIT_MAX_REQUESTS`를 낮추거나, `GEMINI_MODEL`을 preview 모델보다 quota가 여유로운 모델로 바꾸는 것이 우선입니다. API 키를 여러 개 넣어도 Gemini rate limit은 프로젝트 단위로 적용되므로 같은 프로젝트 키를 돌려 쓰는 방식은 효과가 없습니다.
+AI 답변이 성공하면 응답 하단과 서버 로그에서 입력/검색 도구/출력/총 토큰 수를 확인할 수 있습니다. 단, `GEMINI_COUNT_TOKENS_BEFORE_REQUEST=1`은 Gemini 요청을 하나 더 보내므로 429가 심할 때는 기본값 `0`을 유지하세요.
+
+AI 질문 기록 관련 환경 변수:
+- `ASK_LOG_STORAGE`: AI 질문/답변 저장소. `firestore`이면 Firestore에 저장하고, `off`이면 저장하지 않습니다.
+- `ASK_LOG_PROJECT_ID`: Firestore 프로젝트 ID. 배포 시 비어 있으면 `PROJECT_ID`를 사용합니다.
+- `ASK_LOG_DATABASE_ID`: Firestore database ID. 기본값은 `(default)`
+- `ASK_LOG_COLLECTION`: 저장 컬렉션명. 기본값은 `aiAskLogs`
+- `ASK_LOG_DEFAULT_STATUS`: 저장 문서의 초기 검수 상태. 기본값은 `pending_review`
+- `ASK_LOG_INCLUDE_PROMPT`: `1`이면 사용자 질문을 저장합니다.
+- `ASK_LOG_INCLUDE_ANSWER`: `1`이면 AI 답변을 저장합니다.
+- `ASK_LOG_WRITE_TIMEOUT_MS`: Firestore 저장 타임아웃
+- `SYNC_FIRESTORE_IAM`: `1`이면 배포 중 Cloud Run 서비스 계정에 `roles/datastore.user` 권한을 부여하려고 시도합니다.
+
+AI 질문 기록은 LLM 위키 초안 검수용입니다. 공개 서비스에서는 사용자가 입력한 질문과 AI 답변이 저장될 수 있음을 안내하고, Firestore의 `aiAskLogs` 컬렉션에서 `status=pending_review` 문서만 골라 검수하는 흐름을 권장합니다.
+
+## Gemini File Search 갱신
+처음 유료 API 프로젝트에서 File Search store를 만들 때는 전체 업로드를 한 번 실행합니다.
+
+```bash
+npm run gemini:file-search:test -- --all --keep-store --concurrency 2
+```
+
+출력의 `Store name: fileSearchStores/...` 값을 `.env.local`의 `GEMINI_FILE_SEARCH_STORE`에 저장합니다.
+
+이후 스크립트를 계속 추가하거나 수정할 때는 전체 재업로드 대신 증분 동기화를 사용합니다.
+
+```bash
+npm run gemini:file-search:sync -- --dry-run
+npm run gemini:file-search:sync
+```
+
+`gemini:file-search:sync`는 `public/scripts/**/*.txt`와 `data/new_scripts/**/*.ts`의 해시를 `.gemini-file-search-manifest.json`에 기록하고, 다음 실행부터 새 파일과 수정된 파일만 기존 store에 업로드합니다. 수정된 파일은 기존 문서를 삭제한 뒤 다시 업로드합니다.
+이 manifest는 이후 증분 비교의 기준이므로 store를 확정한 뒤 Git에 함께 커밋하는 것을 권장합니다.
+
+파일을 삭제한 경우 store에서도 지우려면 `--prune`을 붙입니다.
+
+```bash
+npm run gemini:file-search:sync -- --prune
+```
+
+첫 전체 업로드 직후 manifest가 아직 없으면, sync 스크립트는 기존 store 문서를 로컬 파일과 매칭해 manifest에 먼저 등록합니다. 이 경우에는 업로드 비용이 다시 들지 않습니다. 기존 문서 매칭은 새 sync 스크립트의 metadata나 기존 업로드 스크립트의 display name을 사용합니다.
+
 ## 빌드
 ```bash
 npm run build
@@ -162,6 +219,7 @@ npm run deploy
 - `ARTIFACT_REPOSITORY`: `nikke-containers`
 - `IMAGE_NAME`: `nikke-search-api`
 - `SERVICE_NAME`: `nikke-search-api`
+- `RUN_MAX_INSTANCES`: `1`
 
 예시:
 ```bash
