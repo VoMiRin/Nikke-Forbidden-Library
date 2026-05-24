@@ -24,6 +24,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'elevator_05', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '걱정되는 조합', mainChapterFile: '엘리베이터.txt' },
     { id: 'elevator_06', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '엘리베이터의 망령', mainChapterFile: '엘리베이터.txt' },
     { id: 'elevator_07', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '긴급 환자?', mainChapterFile: '엘리베이터.txt' },
+    { id: 'elevator_08', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '아이돌 영접', mainChapterFile: '엘리베이터.txt' },
 
     // 관측소
     { id: 'observation_post_00', categoryKey: 'outpost_stories', title: '관측소', subTitle: '혼을 보았는가', mainChapterFile: '관측소.txt' },
@@ -323,6 +324,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'fitness_club_09', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '스트레스 관리법', mainChapterFile: '종합_체육관.txt' },
     { id: 'fitness_club_10', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '혹독한 훈련', mainChapterFile: '종합_체육관.txt' },
     { id: 'fitness_club_11', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '친절한 벨벳씨', mainChapterFile: '종합_체육관.txt' },
+    { id: 'fitness_club_12', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '아이돌 특훈!', mainChapterFile: '종합_체육관.txt' },
 
     // 야외 수영장
     { id: 'outdoor_swimming_pool_00', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '중요한 것은 놀고야 말겠다는 마음', mainChapterFile: '야외_수영장.txt' },

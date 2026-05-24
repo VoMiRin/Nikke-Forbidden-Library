@@ -1087,4 +1087,11 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'avistar_03', categoryKey: 'character_episodes', title: '아비스타', subTitle: '네온의 탄환 감찰', mainChapterFile: '아비스타.txt' },
     { id: 'avistar_04', categoryKey: 'character_episodes', title: '아비스타', subTitle: '감찰 부대의 신뢰', mainChapterFile: '아비스타.txt' },
 
+    // 민트
+    { id: 'mint_00', categoryKey: 'character_episodes', title: '민트', subTitle: '오디션 제의', mainChapterFile: '민트.txt' },
+    { id: 'mint_01', categoryKey: 'character_episodes', title: '민트', subTitle: '연기 연습', mainChapterFile: '민트.txt' },
+    { id: 'mint_02', categoryKey: 'character_episodes', title: '민트', subTitle: '이입을 위한 동거', mainChapterFile: '민트.txt' },
+    { id: 'mint_03', categoryKey: 'character_episodes', title: '민트', subTitle: '연기력의 변곡점', mainChapterFile: '민트.txt' },
+    { id: 'mint_04', categoryKey: 'character_episodes', title: '민트', subTitle: '마지막 연습', mainChapterFile: '민트.txt' },
+
 ];
