@@ -273,6 +273,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'shopping_mall_09', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '꽃향수의 귀재', mainChapterFile: '쇼핑몰.txt' },
     { id: 'shopping_mall_10', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '은화는 선물이 어려워', mainChapterFile: '쇼핑몰.txt' },
     { id: 'shopping_mall_11', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '레이블의 향기를 찾아서', mainChapterFile: '쇼핑몰.txt' },
+    { id: 'shopping_mall_12', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '새로운 헤드폰', mainChapterFile: '쇼핑몰.txt' },
 
     // 전파탑
     { id: 'radio_tower_00', categoryKey: 'outpost_stories', title: '전파탑', subTitle: '전파를 찾아서', mainChapterFile: '전파탑.txt' },
@@ -325,6 +326,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'fitness_club_10', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '혹독한 훈련', mainChapterFile: '종합_체육관.txt' },
     { id: 'fitness_club_11', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '친절한 벨벳씨', mainChapterFile: '종합_체육관.txt' },
     { id: 'fitness_club_12', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '아이돌 특훈!', mainChapterFile: '종합_체육관.txt' },
+    { id: 'fitness_club_13', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '운동의 재능', mainChapterFile: '종합_체육관.txt' },
 
     // 야외 수영장
     { id: 'outdoor_swimming_pool_00', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '중요한 것은 놀고야 말겠다는 마음', mainChapterFile: '야외_수영장.txt' },

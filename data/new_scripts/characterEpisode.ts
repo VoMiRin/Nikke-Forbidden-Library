@@ -1094,4 +1094,11 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'mint_03', categoryKey: 'character_episodes', title: '민트', subTitle: '연기력의 변곡점', mainChapterFile: '민트.txt' },
     { id: 'mint_04', categoryKey: 'character_episodes', title: '민트', subTitle: '마지막 연습', mainChapterFile: '민트.txt' },
 
+    // 프리카
+    { id: 'prika_00', categoryKey: 'character_episodes', title: '프리카', subTitle: '디지털 싱글', mainChapterFile: '프리카.txt' },
+    { id: 'prika_01', categoryKey: 'character_episodes', title: '프리카', subTitle: 'PAPRIKA', mainChapterFile: '프리카.txt' },
+    { id: 'prika_02', categoryKey: 'character_episodes', title: '프리카', subTitle: '공동 작사', mainChapterFile: '프리카.txt' },
+    { id: 'prika_03', categoryKey: 'character_episodes', title: '프리카', subTitle: '특별 취급', mainChapterFile: '프리카.txt' },
+    { id: 'prika_04', categoryKey: 'character_episodes', title: '프리카', subTitle: '설탕과 향신료', mainChapterFile: '프리카.txt' },
+
 ];
