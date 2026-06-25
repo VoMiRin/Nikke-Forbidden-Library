@@ -1101,4 +1101,11 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'prika_03', categoryKey: 'character_episodes', title: '프리카', subTitle: '특별 취급', mainChapterFile: '프리카.txt' },
     { id: 'prika_04', categoryKey: 'character_episodes', title: '프리카', subTitle: '설탕과 향신료', mainChapterFile: '프리카.txt' },
 
+    // 아크레인저 블랙
+    { id: 'arkrangerblack_00', categoryKey: 'character_episodes', title: '아크레인저 블랙', subTitle: '히어로가 하는 일', mainChapterFile: '아크레인저_블랙.txt' },
+    { id: 'arkrangerblack_01', categoryKey: 'character_episodes', title: '아크레인저 블랙', subTitle: '방주 순찰', mainChapterFile: '아크레인저_블랙.txt' },
+    { id: 'arkrangerblack_02', categoryKey: 'character_episodes', title: '아크레인저 블랙', subTitle: '쓰레기 줍기', mainChapterFile: '아크레인저_블랙.txt' },
+    { id: 'arkrangerblack_03', categoryKey: 'character_episodes', title: '아크레인저 블랙', subTitle: '사소한 일과 해야 하는 일', mainChapterFile: '아크레인저_블랙.txt' },
+    { id: 'arkrangerblack_04', categoryKey: 'character_episodes', title: '아크레인저 블랙', subTitle: '작은 것 하나부터', mainChapterFile: '아크레인저_블랙.txt' },
+
 ];

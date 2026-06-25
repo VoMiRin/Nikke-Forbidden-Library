@@ -25,6 +25,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'elevator_06', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '엘리베이터의 망령', mainChapterFile: '엘리베이터.txt' },
     { id: 'elevator_07', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '긴급 환자?', mainChapterFile: '엘리베이터.txt' },
     { id: 'elevator_08', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '아이돌 영접', mainChapterFile: '엘리베이터.txt' },
+    { id: 'elevator_09', categoryKey: 'outpost_stories', title: '엘리베이터', subTitle: '단독 팬미팅', mainChapterFile: '엘리베이터.txt' },
 
     // 관측소
     { id: 'observation_post_00', categoryKey: 'outpost_stories', title: '관측소', subTitle: '혼을 보았는가', mainChapterFile: '관측소.txt' },
@@ -244,6 +245,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'church_06', categoryKey: 'outpost_stories', title: '교회', subTitle: '게임의 신', mainChapterFile: '교회.txt' },
     { id: 'church_07', categoryKey: 'outpost_stories', title: '교회', subTitle: '몸서리쳐지는 두려움', mainChapterFile: '교회.txt' },
     { id: 'church_08', categoryKey: 'outpost_stories', title: '교회', subTitle: '상자 속의 신', mainChapterFile: '교회.txt' },
+    { id: 'church_09', categoryKey: 'outpost_stories', title: '교회', subTitle: '지지 않는 용기', mainChapterFile: '교회.txt' },
 
     // 의류 상점
     { id: 'clothing_store_00', categoryKey: 'outpost_stories', title: '의류 상점', subTitle: '레몬그라스의 손님', mainChapterFile: '의류_상점.txt' },
@@ -327,6 +329,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'fitness_club_11', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '친절한 벨벳씨', mainChapterFile: '종합_체육관.txt' },
     { id: 'fitness_club_12', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '아이돌 특훈!', mainChapterFile: '종합_체육관.txt' },
     { id: 'fitness_club_13', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '운동의 재능', mainChapterFile: '종합_체육관.txt' },
+    { id: 'fitness_club_14', categoryKey: 'outpost_stories', title: '종합 체육관', subTitle: '유익한 PT 체험', mainChapterFile: '종합_체육관.txt' },
 
     // 야외 수영장
     { id: 'outdoor_swimming_pool_00', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '중요한 것은 놀고야 말겠다는 마음', mainChapterFile: '야외_수영장.txt' },
