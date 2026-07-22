@@ -1108,4 +1108,18 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'arkrangerblack_03', categoryKey: 'character_episodes', title: '아크레인저 블랙', subTitle: '사소한 일과 해야 하는 일', mainChapterFile: '아크레인저_블랙.txt' },
     { id: 'arkrangerblack_04', categoryKey: 'character_episodes', title: '아크레인저 블랙', subTitle: '작은 것 하나부터', mainChapterFile: '아크레인저_블랙.txt' },
 
+    // 마르차나 : 마린 스터디
+    { id: 'marciana_marinestudy_00', categoryKey: 'character_episodes', title: '마르차나 : 마린 스터디', subTitle: '정체 모를 답답함', mainChapterFile: '마르차나_마린_스터디.txt' },
+    { id: 'marciana_marinestudy_01', categoryKey: 'character_episodes', title: '마르차나 : 마린 스터디', subTitle: '답답함의 정체', mainChapterFile: '마르차나_마린_스터디.txt' },
+    { id: 'marciana_marinestudy_02', categoryKey: 'character_episodes', title: '마르차나 : 마린 스터디', subTitle: '해변의 데이트', mainChapterFile: '마르차나_마린_스터디.txt' },
+    { id: 'marciana_marinestudy_03', categoryKey: 'character_episodes', title: '마르차나 : 마린 스터디', subTitle: '수상했던 것들', mainChapterFile: '마르차나_마린_스터디.txt' },
+    { id: 'marciana_marinestudy_04', categoryKey: 'character_episodes', title: '마르차나 : 마린 스터디', subTitle: '평생의 짝', mainChapterFile: '마르차나_마린_스터디.txt' },
+
+    // 신데렐라 : 크리스탈 웨이브
+    { id: 'cinderella_crystalwave_00', categoryKey: 'character_episodes', title: '신데렐라 : 크리스탈 웨이브', subTitle: '왕자님을 사로잡는 방법', mainChapterFile: '신데렐라_크리스탈_웨이브.txt' },
+    { id: 'cinderella_crystalwave_01', categoryKey: 'character_episodes', title: '신데렐라 : 크리스탈 웨이브', subTitle: 'STEP1. 손잡기', mainChapterFile: '신데렐라_크리스탈_웨이브.txt' },
+    { id: 'cinderella_crystalwave_02', categoryKey: 'character_episodes', title: '신데렐라 : 크리스탈 웨이브', subTitle: 'STEP2. 달콤함을 나누기', mainChapterFile: '신데렐라_크리스탈_웨이브.txt' },
+    { id: 'cinderella_crystalwave_03', categoryKey: 'character_episodes', title: '신데렐라 : 크리스탈 웨이브', subTitle: 'STEP3. 더 가까이', mainChapterFile: '신데렐라_크리스탈_웨이브.txt' },
+    { id: 'cinderella_crystalwave_04', categoryKey: 'character_episodes', title: '신데렐라 : 크리스탈 웨이브', subTitle: 'STEP7. 하고 싶은 대로', mainChapterFile: '신데렐라_크리스탈_웨이브.txt' },
+
 ];
