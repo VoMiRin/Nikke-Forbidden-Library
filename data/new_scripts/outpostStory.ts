@@ -51,6 +51,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'police_station_08', categoryKey: 'outpost_stories', title: '경찰서', subTitle: '범인은 바니걸?', mainChapterFile: '경찰서.txt' },
     { id: 'police_station_09', categoryKey: 'outpost_stories', title: '경찰서', subTitle: '바니걸 vs 메이드', mainChapterFile: '경찰서.txt' },
     { id: 'police_station_10', categoryKey: 'outpost_stories', title: '경찰서', subTitle: '수수께끼의 인물', mainChapterFile: '경찰서.txt' },
+    { id: 'police_station_11', categoryKey: 'outpost_stories', title: '경찰서', subTitle: '기이한 소리의 범인', mainChapterFile: '경찰서.txt' },
 
     // 호텔
     { id: 'hotel_00', categoryKey: 'outpost_stories', title: '호텔', subTitle: '호텔, 신 포도', mainChapterFile: '호텔.txt' },
@@ -341,6 +342,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'outdoor_swimming_pool_06', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '수질 검사', mainChapterFile: '야외_수영장.txt' },
     { id: 'outdoor_swimming_pool_07', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '물속의 정체', mainChapterFile: '야외_수영장.txt' },
     { id: 'outdoor_swimming_pool_08', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '위엄 있는 감찰 부대의 비밀', mainChapterFile: '야외_수영장.txt' },
+    { id: 'outdoor_swimming_pool_09', categoryKey: 'outpost_stories', title: '야외 수영장', subTitle: '휴식 아닌 휴식', mainChapterFile: '야외_수영장.txt' },
 
     // 생화 공원
     { id: 'flower_park_00', categoryKey: 'outpost_stories', title: '생화 공원', subTitle: '전초기지의 작은 쉼터', mainChapterFile: '생화_공원.txt' },

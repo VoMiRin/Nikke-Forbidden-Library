@@ -1122,4 +1122,18 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'cinderella_crystalwave_03', categoryKey: 'character_episodes', title: '신데렐라 : 크리스탈 웨이브', subTitle: 'STEP3. 더 가까이', mainChapterFile: '신데렐라_크리스탈_웨이브.txt' },
     { id: 'cinderella_crystalwave_04', categoryKey: 'character_episodes', title: '신데렐라 : 크리스탈 웨이브', subTitle: 'STEP7. 하고 싶은 대로', mainChapterFile: '신데렐라_크리스탈_웨이브.txt' },
 
+    // 라플라스 : 얼티밋 히어로
+    { id: 'laplace_ultimatehero_00', categoryKey: 'character_episodes', title: '라플라스 : 얼티밋 히어로', subTitle: '히어로 후배 모집 중!', mainChapterFile: '라플라스_얼티밋_히어로.txt' },
+    { id: 'laplace_ultimatehero_01', categoryKey: 'character_episodes', title: '라플라스 : 얼티밋 히어로', subTitle: '후배 후보', mainChapterFile: '라플라스_얼티밋_히어로.txt' },
+    { id: 'laplace_ultimatehero_02', categoryKey: 'character_episodes', title: '라플라스 : 얼티밋 히어로', subTitle: '히어로의 외치기 교육', mainChapterFile: '라플라스_얼티밋_히어로.txt' },
+    { id: 'laplace_ultimatehero_03', categoryKey: 'character_episodes', title: '라플라스 : 얼티밋 히어로', subTitle: '히어로의 유리 깨기 교육', mainChapterFile: '라플라스_얼티밋_히어로.txt' },
+    { id: 'laplace_ultimatehero_04', categoryKey: 'character_episodes', title: '라플라스 : 얼티밋 히어로', subTitle: '히어로 정신', mainChapterFile: '라플라스_얼티밋_히어로.txt' },
+
+    // 맥스웰 : 오디너리 미케닉
+    { id: 'maxwell_mechanic_00', categoryKey: 'character_episodes', title: '맥스웰 : 오디너리 미케닉', subTitle: '설명 불가능한', mainChapterFile: '맥스웰_오디너리_미케닉.txt' },
+    { id: 'maxwell_mechanic_01', categoryKey: 'character_episodes', title: '맥스웰 : 오디너리 미케닉', subTitle: '가설 검증', mainChapterFile: '맥스웰_오디너리_미케닉.txt' },
+    { id: 'maxwell_mechanic_02', categoryKey: 'character_episodes', title: '맥스웰 : 오디너리 미케닉', subTitle: '간만의 데이트', mainChapterFile: '맥스웰_오디너리_미케닉.txt' },
+    { id: 'maxwell_mechanic_03', categoryKey: 'character_episodes', title: '맥스웰 : 오디너리 미케닉', subTitle: '예외 상황 발생', mainChapterFile: '맥스웰_오디너리_미케닉.txt' },
+    { id: 'maxwell_mechanic_04', categoryKey: 'character_episodes', title: '맥스웰 : 오디너리 미케닉', subTitle: '제 2차 실험 결과', mainChapterFile: '맥스웰_오디너리_미케닉.txt' },
+
 ];
