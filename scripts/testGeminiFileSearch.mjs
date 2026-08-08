@@ -84,6 +84,24 @@ function isUsableApiKey(value) {
   return value && value !== 'PLACEHOLDER_API_KEY' && !value.includes('YOUR_');
 }
 
+function hashFile(filePath) {
+  return createHash('sha256').update(fs.readFileSync(filePath)).digest('hex');
+}
+
+function getSourceKind(relativePath) {
+  if (relativePath.startsWith('public/scripts/')) return 'script-text';
+  if (relativePath.startsWith('data/new_scripts/')) return 'script-metadata';
+  return 'source';
+}
+
+function buildCustomMetadata(sourceFile) {
+  return [
+    { key: 'relativePath', stringValue: sourceFile.relativePath },
+    { key: 'sha256', stringValue: sourceFile.hash },
+    { key: 'sourceKind', stringValue: sourceFile.sourceKind },
+  ];
+}
+
 function collectApiKeys() {
   const keys = [];
   const addKey = (value) => {
@@ -140,6 +158,7 @@ async function uploadSourceFile(ai, fileSearchStoreName, sourceFile, index, tota
     config: {
       displayName: sourceFile.displayName,
       mimeType: sourceFile.mimeType,
+      customMetadata: buildCustomMetadata(sourceFile),
       chunkingConfig: {
         whiteSpaceConfig: {
           maxTokensPerChunk: 400,
@@ -268,7 +287,9 @@ function resolveInputFile(inputPath) {
     displayName: path.relative(repoRoot, resolved).split(path.sep).join('__'),
     relativePath: path.relative(repoRoot, resolved).split(path.sep).join('/'),
     sizeKb: Math.round(stats.size / 1024),
+    hash: hashFile(resolved),
     mimeType: 'text/plain',
+    sourceKind: getSourceKind(path.relative(repoRoot, resolved).split(path.sep).join('/')),
     sourceCount: 1,
   };
 }
@@ -335,6 +356,8 @@ function buildAllScriptsBundle() {
     displayName: 'nikke-all-scripts.txt',
     relativePath: 'nikke-all-scripts.txt',
     mimeType: 'text/plain',
+    hash: hashFile(bundlePath),
+    sourceKind: 'bundle',
     sizeKb: Math.round(stats.size / 1024),
     sourceCount: sourceFiles.length,
     textFileCount: sourceFiles.filter((file) => file.relativePath.endsWith('.txt')).length,
@@ -365,7 +388,9 @@ function collectAllScriptSourceFiles() {
       displayName: relativePath.replace(/\//g, '__'),
       sizeBytes: stats.size,
       sizeKb: Math.round(stats.size / 1024),
+      hash: hashFile(absolutePath),
       mimeType: 'text/plain',
+      sourceKind: getSourceKind(relativePath),
     };
   });
 
@@ -626,6 +651,7 @@ async function main() {
           config: {
             displayName: fileForUpload.displayName,
             mimeType: fileForUpload.mimeType,
+            customMetadata: buildCustomMetadata(fileForUpload),
             chunkingConfig: {
               whiteSpaceConfig: {
                 maxTokensPerChunk: 400,

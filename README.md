@@ -72,31 +72,51 @@ AI 질문 기록 관련 환경 변수:
 AI 질문 기록은 LLM 위키 초안 검수용입니다. 공개 서비스에서는 사용자가 입력한 질문과 AI 답변이 저장될 수 있음을 안내하고, Firestore의 `aiAskLogs` 컬렉션에서 `status=pending_review` 문서만 골라 검수하는 흐름을 권장합니다.
 
 ## Gemini File Search 갱신
-처음 유료 API 프로젝트에서 File Search store를 만들 때는 전체 업로드를 한 번 실행합니다.
+
+AI Chat은 Firebase Hosting의 스크립트 파일이나 검색 API의 `search-index.json`을 직접 읽지 않고, `GEMINI_FILE_SEARCH_STORE`로 지정한 원격 자료만 사용합니다. 따라서 이 store 동기화가 성공해야 새 스크립트가 AI 답변에 반영됩니다.
+
+처음 File Search store를 만들 때는 전체 업로드를 한 번 실행합니다. 이 uploader는 각 문서에 원본 경로와 SHA-256 metadata를 함께 기록합니다.
 
 ```bash
 npm run gemini:file-search:test -- --all --keep-store --concurrency 2
 ```
 
-출력의 `Store name: fileSearchStores/...` 값을 `.env.local`의 `GEMINI_FILE_SEARCH_STORE`에 저장합니다.
-
-이후 스크립트를 계속 추가하거나 수정할 때는 전체 재업로드 대신 증분 동기화를 사용합니다.
+출력의 `Store name: fileSearchStores/...` 값을 `.env.local`의 `GEMINI_FILE_SEARCH_STORE`에 저장한 뒤, sync를 한 번 실행해 `.gemini-file-search-manifest.json`을 생성합니다.
 
 ```bash
 npm run gemini:file-search:sync -- --dry-run
 npm run gemini:file-search:sync
 ```
 
-`gemini:file-search:sync`는 `public/scripts/**/*.txt`와 `data/new_scripts/**/*.ts`의 해시를 `.gemini-file-search-manifest.json`에 기록하고, 다음 실행부터 새 파일과 수정된 파일만 기존 store에 업로드합니다. 수정된 파일은 기존 문서를 삭제한 뒤 다시 업로드합니다.
-이 manifest는 이후 증분 비교의 기준이므로 store를 확정한 뒤 Git에 함께 커밋하는 것을 권장합니다.
+기존 store에 manifest가 아직 없다면 dry-run 결과를 먼저 확인하세요. 원격 `sha256`이 로컬 파일과 같은 문서만 안전하게 채택하고, metadata가 없거나 해시가 다른 기존 문서는 재업로드합니다. 모든 로컬 소스를 강제로 재업로드해야 하는 복구 상황에서만 `--force`를 사용합니다. 이 옵션은 store 자체를 새로 만들거나 경로가 매칭되지 않는 원격 문서를 정리하지는 않습니다.
 
-파일을 삭제한 경우 store에서도 지우려면 `--prune`을 붙입니다.
+긴 강제 재업로드가 중단됐다면 체크포인트를 확인한 뒤 `--force --start-at <상대경로>`로 해당 경로부터 재개하거나, `--force --only <상대경로>`로 한 파일만 다시 처리할 수 있습니다.
+
+선택적 강제 복구 예시:
 
 ```bash
+npm run gemini:file-search:sync -- --dry-run --force
+npm run gemini:file-search:sync -- --force
+```
+
+`gemini:file-search:sync`는 `public/scripts/**/*.txt`와 `data/new_scripts/**/*.ts`의 해시를 manifest에 기록합니다. 수정 파일은 새 문서가 실제 `STATE_ACTIVE`가 된 것을 확인하고 manifest를 원자적으로 체크포인트한 뒤 기존 문서를 삭제합니다. 중간에 실패해도 성공한 문서는 다음 실행에서 이어서 사용합니다. manifest의 store 이름과 현재 설정이 다르면 다른 store의 document ID를 잘못 사용하는 일을 막기 위해 중단합니다.
+
+이 manifest는 이후 증분 비교의 기준이므로 첫 동기화 성공 후 Git에 함께 커밋하세요. 변경이 없는 sync는 manifest의 `updatedAt`도 바꾸지 않습니다.
+
+평상시에는 `npm run deploy`가 빌드 직후 증분 sync를 자동 실행합니다. sync가 실패하면 Cloud Build, Cloud Run, Firebase Hosting 배포를 진행하지 않습니다. 긴급하게 AI 자료 동기화만 건너뛰어야 할 때는 명시적으로 opt-out할 수 있습니다.
+
+```bash
+SYNC_GEMINI_FILE_SEARCH=0 npm run deploy
+```
+
+자동 배포는 삭제된 로컬 파일을 원격에서 지우지 않습니다. 삭제까지 반영하려면 manifest를 확인한 뒤 별도로 `--prune`을 실행합니다.
+
+```bash
+npm run gemini:file-search:sync -- --dry-run --prune
 npm run gemini:file-search:sync -- --prune
 ```
 
-첫 전체 업로드 직후 manifest가 아직 없으면, sync 스크립트는 기존 store 문서를 로컬 파일과 매칭해 manifest에 먼저 등록합니다. 이 경우에는 업로드 비용이 다시 들지 않습니다. 기존 문서 매칭은 새 sync 스크립트의 metadata나 기존 업로드 스크립트의 display name을 사용합니다.
+File Search sync는 Cloud Run 배포와 원자적인 한 작업이 아닙니다. sync 성공 후 Cloud Build가 실패하면 새 자료는 기존 AI 서버에 먼저 보일 수 있습니다. 이 경우 원인을 해결한 뒤 같은 `npm run deploy`를 다시 실행하면 증분 상태에서 이어집니다.
 
 ## 빌드
 ```bash
@@ -153,12 +173,13 @@ gcloud run deploy nikke-search-api \
 ```
 
 ## 운영 플로우
+
 스크립트를 2주마다 추가하는 흐름은 아래처럼 가져가면 됩니다.
 
 1. `data/new_scripts/*`와 `public/scripts/*`에 새 스크립트 추가
-2. `npm run build`
-3. Firebase Hosting 재배포
-4. 검색 API 이미지를 다시 배포
+2. 변경사항을 Git에 백업
+3. `npm run deploy`
+4. 배포 중 build → Gemini File Search 증분 sync → Cloud Build → Cloud Run → Firebase Hosting 순서로 처리되는지 확인
 
 ## 배포 직전 체크
 1. `npm audit --omit=dev` 결과가 `0 vulnerabilities`인지 확인
@@ -208,10 +229,12 @@ npm run deploy
 ```
 
 이 스크립트는 아래 순서를 자동으로 수행합니다.
+
 1. `npm run build`
-2. Cloud Build로 검색 API 이미지 빌드
-3. Cloud Run `nikke-search-api` 배포
-4. Firebase Hosting 배포
+2. Gemini File Search 증분 동기화
+3. Cloud Build로 검색 API 이미지 빌드
+4. Cloud Run `nikke-search-api` 배포
+5. Firebase Hosting 배포
 
 기본값:
 - `PROJECT_ID`: 현재 `gcloud config get-value project`
@@ -220,13 +243,20 @@ npm run deploy
 - `IMAGE_NAME`: `nikke-search-api`
 - `SERVICE_NAME`: `nikke-search-api`
 - `RUN_MAX_INSTANCES`: `1`
+- `SYNC_GEMINI_FILE_SEARCH`: `1`
 
 예시:
 ```bash
 PROJECT_ID=nikkeforbiddenlibrary npm run deploy
 ```
 
-Hosting만 나중에 따로 올리고 싶지 않으면:
+Hosting 배포를 건너뛰려면:
 ```bash
 DEPLOY_HOSTING=0 npm run deploy
+```
+
+AI 자료 sync를 긴급히 건너뛰어야 하면:
+
+```bash
+SYNC_GEMINI_FILE_SEARCH=0 npm run deploy
 ```

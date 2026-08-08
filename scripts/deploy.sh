@@ -46,6 +46,7 @@ DEPLOY_HOSTING="${DEPLOY_HOSTING:-1}"
 RUN_MAX_INSTANCES="${RUN_MAX_INSTANCES:-1}"
 GEMINI_SECRET_NAME="${GEMINI_SECRET_NAME:-nikke-gemini-api-key}"
 SYNC_GEMINI_SECRET="${SYNC_GEMINI_SECRET:-1}"
+SYNC_GEMINI_FILE_SEARCH="${SYNC_GEMINI_FILE_SEARCH:-1}"
 GEMINI_MODEL="${GEMINI_MODEL:-gemini-3-flash-preview}"
 RATE_LIMIT_WINDOW_MS="${RATE_LIMIT_WINDOW_MS:-60000}"
 RATE_LIMIT_MAX_REQUESTS="${RATE_LIMIT_MAX_REQUESTS:-120}"
@@ -71,9 +72,19 @@ ASK_LOG_WRITE_TIMEOUT_MS="${ASK_LOG_WRITE_TIMEOUT_MS:-3000}"
 SYNC_FIRESTORE_IAM="${SYNC_FIRESTORE_IAM:-1}"
 EFFECTIVE_GEMINI_API_KEY=""
 
+is_usable_gemini_api_key() {
+  local candidate="${1:-}"
+  [[ -n "$candidate" && "$candidate" != "PLACEHOLDER_API_KEY" && "$candidate" != *YOUR_* ]]
+}
+
 select_gemini_api_key() {
-  if [[ -n "${GEMINI_API_KEY:-}" ]]; then
+  if is_usable_gemini_api_key "${GEMINI_API_KEY:-}"; then
     EFFECTIVE_GEMINI_API_KEY="$GEMINI_API_KEY"
+    return
+  fi
+
+  if is_usable_gemini_api_key "${GOOGLE_API_KEY:-}"; then
+    EFFECTIVE_GEMINI_API_KEY="$GOOGLE_API_KEY"
     return
   fi
 
@@ -81,7 +92,7 @@ select_gemini_api_key() {
   local key_list="${GEMINI_API_KEYS:-}"
   key_list="${key_list//,/ }"
   for candidate in $key_list; do
-    if [[ -n "$candidate" ]]; then
+    if is_usable_gemini_api_key "$candidate"; then
       EFFECTIVE_GEMINI_API_KEY="$candidate"
       return
     fi
@@ -91,7 +102,7 @@ select_gemini_api_key() {
   for index in {1..10}; do
     local key_name="GEMINI_API_KEY_${index}"
     candidate="${!key_name:-}"
-    if [[ -n "$candidate" ]]; then
+    if is_usable_gemini_api_key "$candidate"; then
       EFFECTIVE_GEMINI_API_KEY="$candidate"
       return
     fi
@@ -132,14 +143,19 @@ require_command npm
 require_command gcloud
 require_command firebase
 
+if [[ "$SYNC_GEMINI_FILE_SEARCH" != "0" && "$SYNC_GEMINI_FILE_SEARCH" != "1" ]]; then
+  echo "SYNC_GEMINI_FILE_SEARCH must be 0 or 1. Received: $SYNC_GEMINI_FILE_SEARCH"
+  exit 1
+fi
+
 if [[ -z "${GEMINI_FILE_SEARCH_STORE:-}" ]]; then
   echo "GEMINI_FILE_SEARCH_STORE is empty. Set it in .env.local or the environment before deploy."
   exit 1
 fi
 
-if [[ "$SYNC_GEMINI_SECRET" == "1" && -z "$EFFECTIVE_GEMINI_API_KEY" ]]; then
-  echo "Gemini API key is empty. Set GEMINI_API_KEY, GEMINI_API_KEYS, or GEMINI_API_KEY_1 in .env.local."
-  echo "Alternatively, set SYNC_GEMINI_SECRET=0 after manually binding the Cloud Run secret."
+if [[ ( "$SYNC_GEMINI_SECRET" == "1" || "$SYNC_GEMINI_FILE_SEARCH" == "1" ) && -z "$EFFECTIVE_GEMINI_API_KEY" ]]; then
+  echo "Gemini API key is empty. Set GEMINI_API_KEY, GOOGLE_API_KEY, GEMINI_API_KEYS, or GEMINI_API_KEY_1 in .env.local."
+  echo "File Search sync and Secret Manager sync can be skipped separately with SYNC_GEMINI_FILE_SEARCH=0 and SYNC_GEMINI_SECRET=0."
   exit 1
 fi
 
@@ -155,6 +171,7 @@ echo "GEMINI_MODEL=$GEMINI_MODEL"
 echo "GEMINI_FILE_SEARCH_STORE=${GEMINI_FILE_SEARCH_STORE}"
 echo "GEMINI_SECRET_NAME=$GEMINI_SECRET_NAME"
 echo "SYNC_GEMINI_SECRET=$SYNC_GEMINI_SECRET"
+echo "SYNC_GEMINI_FILE_SEARCH=$SYNC_GEMINI_FILE_SEARCH"
 echo "ASK_LOG_STORAGE=$ASK_LOG_STORAGE"
 echo "ASK_LOG_PROJECT_ID=$ASK_LOG_PROJECT_ID"
 echo "ASK_LOG_COLLECTION=$ASK_LOG_COLLECTION"
@@ -166,6 +183,13 @@ npm run build
 if [[ ! -f "public/search-index.json" ]]; then
   echo "Missing public/search-index.json after build."
   exit 1
+fi
+
+if [[ "$SYNC_GEMINI_FILE_SEARCH" == "1" ]]; then
+  echo "==> Syncing Gemini File Search documents"
+  npm run gemini:file-search:sync
+else
+  echo "==> Skipping Gemini File Search sync because SYNC_GEMINI_FILE_SEARCH=$SYNC_GEMINI_FILE_SEARCH"
 fi
 
 echo "==> Building and pushing search API image"

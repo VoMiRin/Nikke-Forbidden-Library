@@ -11,6 +11,9 @@
     "search-api": "node server/index.mjs",
     "gemini:file-search:test": "node scripts/testGeminiFileSearch.mjs",
     "gemini:file-search:sync": "node scripts/syncGeminiFileSearchStore.mjs",
+    "test:gemini-file-search-sync": "node --test scripts/syncGeminiFileSearchStore.test.mjs",
+    "test:deploy-flow": "node --test scripts/deploy.test.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
