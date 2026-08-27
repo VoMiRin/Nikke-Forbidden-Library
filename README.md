@@ -118,6 +118,18 @@ npm run gemini:file-search:sync -- --prune
 
 File Search sync는 Cloud Run 배포와 원자적인 한 작업이 아닙니다. sync 성공 후 Cloud Build가 실패하면 새 자료는 기존 AI 서버에 먼저 보일 수 있습니다. 이 경우 원인을 해결한 뒤 같은 `npm run deploy`를 다시 실행하면 증분 상태에서 이어집니다.
 
+## 비공개 Custom GPT 지식 파일
+
+개인용 Custom GPT에 올릴 Markdown 본문 번들은 다음 명령으로 생성합니다.
+
+```bash
+npm run gpt:knowledge:build
+```
+
+결과는 Git에서 제외되는 `custom_gpt_knowledge/`에 생성됩니다. `manifest.json`의 `uploadFiles`에 나열된 파일만 GPT Knowledge에 업로드하세요. 생성기는 메타데이터에 등록되지 않은 비어 있지 않은 원문도 직접 탐지해 포함하고, 누락된 본문이나 설정된 최대 업로드 파일 수 초과가 있으면 실패합니다.
+
+GPT 이름, 설명, Instructions, 기능 설정, 비공개 저장 및 Preview 점검 순서는 [`CUSTOM_GPT_SETUP.md`](./CUSTOM_GPT_SETUP.md)를 따릅니다. 실제 붙여 넣을 지시문은 [`CUSTOM_GPT_INSTRUCTIONS.md`](./CUSTOM_GPT_INSTRUCTIONS.md)에 있습니다. 답변 형식을 고정하지 않으며, 필요한 경우에만 확인된 사실과 해석·추측을 자연스럽게 구분하도록 작성되어 있습니다.
+
 ## 빌드
 ```bash
 npm run build

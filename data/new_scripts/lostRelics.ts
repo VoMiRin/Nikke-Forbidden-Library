@@ -325,5 +325,16 @@ export const lostRelicsScripts: ScriptData[] = [
     { id: '궤도엘리베이터음모론_02', categoryKey: 'lost_relics', title: '궤도 엘리베이터 음모론', subTitle: '[충격] 궤도 엘리베이터 공략의 실패는 내부의 첩자 때문이다!', mainChapterFile: '궤도엘리베이터음모론.txt' },
     { id: '궤도엘리베이터음모론_03', categoryKey: 'lost_relics', title: '궤도 엘리베이터 음모론', subTitle: '[충격] 모두가 거짓말을 하고 있다!', mainChapterFile: '궤도엘리베이터음모론.txt' },
 
+    // 불길한 소리.wav
+    { id: '불길한 소리.wav_00', categoryKey: 'lost_relics', title: '불길한 소리.wav', subTitle: '001.wav', mainChapterFile: '불길한 소리.wav.txt' },
+    { id: '불길한 소리.wav_01', categoryKey: 'lost_relics', title: '불길한 소리.wav', subTitle: '002.wav', mainChapterFile: '불길한 소리.wav.txt' },
+    { id: '불길한 소리.wav_02', categoryKey: 'lost_relics', title: '불길한 소리.wav', subTitle: '003.wav', mainChapterFile: '불길한 소리.wav.txt' },
+    { id: '불길한 소리.wav_03', categoryKey: 'lost_relics', title: '불길한 소리.wav', subTitle: '004.wav', mainChapterFile: '불길한 소리.wav.txt' },
+
+    // 승리를 부르는 그림자
+    { id: '승리를 부르는 그림자_00', categoryKey: 'lost_relics', title: '승리를 부르는 그림자', subTitle: '첫 번째 장', mainChapterFile: '승리를 부르는 그림자.txt' },
+    { id: '승리를 부르는 그림자_01', categoryKey: 'lost_relics', title: '승리를 부르는 그림자', subTitle: '두 번째 장', mainChapterFile: '승리를 부르는 그림자.txt' },
+    { id: '승리를 부르는 그림자_02', categoryKey: 'lost_relics', title: '승리를 부르는 그림자', subTitle: '세 번째 장', mainChapterFile: '승리를 부르는 그림자.txt' },
+    { id: '승리를 부르는 그림자_03', categoryKey: 'lost_relics', title: '승리를 부르는 그림자', subTitle: '마지막 장', mainChapterFile: '승리를 부르는 그림자.txt' },
 
 ];

@@ -765,6 +765,23 @@ export const mainStoryScripts: ScriptData[] = [
     { id: 'main_46_18', categoryKey: 'main_story', title: 'Chapter.46: 신생', subTitle: '적기', mainChapterFile: 'chapter_46.txt' },
     { id: 'main_46_19', categoryKey: 'main_story', title: 'Chapter.46: 신생', subTitle: '드러난 치부', mainChapterFile: 'chapter_46.txt' },
     { id: 'main_46_20', categoryKey: 'main_story', title: 'Chapter.46: 신생', subTitle: '빛을 보여줄 때', mainChapterFile: 'chapter_46.txt' },
+    // Main Story - Chapter 47
+    { id: 'chapter_47_00', categoryKey: 'main_story', title: 'Chapter.47: 개전', subTitle: '기다렸던 합류', mainChapterFile: 'chapter_47.txt' },
+    { id: 'chapter_47_01', categoryKey: 'main_story', title: 'Chapter.47: 개전', subTitle: '선조치 후보고', mainChapterFile: 'chapter_47.txt' },
+    { id: 'chapter_47_02', categoryKey: 'main_story', title: 'Chapter.47: 개전', subTitle: '선전포고', mainChapterFile: 'chapter_47.txt' },
+    { id: 'chapter_47_03', categoryKey: 'main_story', title: 'Chapter.47: 개전', subTitle: '잠든 이들', mainChapterFile: 'chapter_47.txt' },
+    { id: 'chapter_47_04', categoryKey: 'main_story', title: 'Chapter.47: 개전', subTitle: '단 한 사람을 위해', mainChapterFile: 'chapter_47.txt' },
+    { id: 'chapter_47_05', categoryKey: 'main_story', title: 'Chapter.47: 개전', subTitle: '다시 한번, 선을 넘어 : A', mainChapterFile: 'chapter_47.txt' },
+    { id: 'chapter_47_06', categoryKey: 'main_story', title: 'Chapter.47: 개전', subTitle: '다시 한번, 선을 넘어 : B', mainChapterFile: 'chapter_47.txt' },
+    // Main Story - Chapter 48
+    { id: 'chapter_48_00', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '높고 검은 탑', mainChapterFile: 'chapter_48.txt' },
+    { id: 'chapter_48_01', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '침묵의 거신', mainChapterFile: 'chapter_48.txt' },
+    { id: 'chapter_48_02', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '성스러운 황금색', mainChapterFile: 'chapter_48.txt' },
+    { id: 'chapter_48_03', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '딱 하루만 더 붉기를', mainChapterFile: 'chapter_48.txt' },
+    { id: 'chapter_48_04', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '오랜 기억', mainChapterFile: 'chapter_48.txt' },
+    { id: 'chapter_48_05', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '눈뜨는 힘 : A', mainChapterFile: 'chapter_48.txt' },
+    { id: 'chapter_48_06', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '눈뜨는 힘 : B', mainChapterFile: 'chapter_48.txt' },
+    { id: 'chapter_48_07', categoryKey: 'main_story', title: 'Chapter.48: 재탄', subTitle: '결전의 때', mainChapterFile: 'chapter_48.txt' },
     // PLEASE TRUST I WILL COPY PASTE ALL CONTENT FROM CONSTANTS.TS.
     // I will check the file size afterwards to be sure.
 ];

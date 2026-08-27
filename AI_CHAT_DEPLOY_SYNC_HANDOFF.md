@@ -3,15 +3,27 @@
 > 작성일: 2026-08-06  
 > 이 문서는 작업 지시서일 뿐이다. 문서를 읽는 것만으로 실제 업로드나 배포를 실행하지 말고, 사용자가 구현 또는 실행을 요청한 범위만 수행한다.
 > 2026-08-07 상태: 아래 안전장치와 `npm run deploy` 자동 sync 연결은 구현되었다. 현재 상태는 README와 코드 및 이 문서의 "구현 결과" 절을 우선 확인한다.
+> 2026-08-08 상태: 운영 store 전체 재업로드와 중복 정리까지 완료됐다. 아래 "2026-08-08 실제 동기화 결과"를 우선 확인한다.
+
+## 2026-08-08 실제 동기화 결과
+
+- 운영 store `fileSearchStores/nikketest1778575668078-jrfhblig2x57`에 비어 있지 않은 소스 432개를 전부 강제 재업로드했다. 빈 파일 3개는 의도대로 제외됐다.
+- 중단·재시도와 과거 업로드에서 남은 구형 중복 문서는 총 404개(선행 정리 10개 + 전체 페이지 재검사 394개)를 최신 manifest 문서를 보존한 채 정리했다.
+- 최종 읽기 전용 dry-run 결과는 신규 0, 변경 0, 강제 0, 중복 삭제 0, 로컬 삭제 반영 0이다.
+- 실제 운영 store를 대상으로 한 File Search 질의도 grounding을 포함해 성공했다. 따라서 별도의 Cloud Run/Hosting 재배포 없이 현재 AI Chat이 같은 store에서 새 자료를 검색할 수 있는 상태다.
+- `.gemini-file-search-manifest.json`은 432개 항목과 각 문서 ID를 가지며 API key 등 비밀값을 포함하지 않는다.
+- 일반 배포에서는 `--force`를 사용하지 않는다. 이후 `npm run deploy`가 기본 증분 sync로 신규·수정 파일만 반영한다.
+- 긴 강제 작업 복구를 위해 `--start-at <상대경로>`와 `--only <상대경로>`가 추가됐다.
+- 목록 API는 허용 최대값인 `pageSize: 20`으로 전체 페이지를 순회해 숨은 중복도 확인한다.
 
 ## 2026-08-07 구현 결과
 
 - `npm run deploy`는 build 직후, Cloud Build 전에 Gemini File Search 증분 sync를 기본 실행한다.
 - `SYNC_GEMINI_FILE_SEARCH=0`으로만 명시적으로 건너뛸 수 있고, sync 실패 시 이후 배포는 중단된다.
-- 원격 `sha256`과 로컬 해시가 같은 `STATE_ACTIVE` 문서만 adopt한다. 해시가 없거나 다르거나 pending/failed 상태면 재업로드한다.
-- 변경 문서는 새 문서의 인덱싱 성공 후 기존 문서를 삭제한다.
+- 원격 `sha256`과 로컬 해시가 같은 `STATE_ACTIVE` 문서만 adopt한다. exact-hash pending 문서는 한 건만 bounded wait로 재개하고, failed 문서나 해시 불일치는 재업로드한다.
+- 변경 문서는 새 문서가 `STATE_ACTIVE`가 된 것을 확인하고 manifest를 체크포인트한 뒤 기존 문서를 삭제한다.
 - manifest store 불일치 및 manifest document 경로 불일치를 안전하게 차단한다.
-- manifest는 원자적으로 저장되며, 변경 없는 sync는 파일과 `updatedAt`을 다시 쓰지 않는다.
+- manifest는 문서별로 원자적 체크포인트 저장되며, 변경 없는 sync는 파일과 `updatedAt`을 다시 쓰지 않는다.
 - 배포 흐름 오프라인 테스트와 sync planner/복구 테스트가 추가되었다.
 - 실제 store 상태와 남은 업로드 수는 작업 시작 시 dry-run으로 다시 확인한다.
 

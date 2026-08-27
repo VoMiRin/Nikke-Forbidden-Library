@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
@@ -8,15 +9,41 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const generatedDir = path.join(rootDir, '.generated-search-assets');
 const scriptsRootDir = path.join(rootDir, 'public', 'scripts');
+const knowledgeTarget = (process.env.AI_KNOWLEDGE_TARGET || 'notebooklm').trim().toLowerCase();
+
+if (!['notebooklm', 'custom-gpt'].includes(knowledgeTarget)) {
+  throw new Error(`Unsupported AI_KNOWLEDGE_TARGET: ${knowledgeTarget}`);
+}
+
+const isCustomGptTarget = knowledgeTarget === 'custom-gpt';
+const knowledgeToolName = isCustomGptTarget ? '비공개 Custom GPT' : 'NotebookLM';
 
 const outputDir = process.argv[2]
   ? path.resolve(process.argv[2])
-  : path.join(rootDir, 'notebooklm_sources');
+  : path.join(rootDir, isCustomGptTarget ? 'custom_gpt_knowledge' : 'notebooklm_sources');
 
 const maxBytesPerContentFile = Number.parseInt(
-  process.env.NOTEBOOKLM_MAX_BYTES_PER_FILE || '2600000',
+  process.env.AI_KNOWLEDGE_MAX_BYTES_PER_FILE
+    || process.env.NOTEBOOKLM_MAX_BYTES_PER_FILE
+    || (isCustomGptTarget ? '2000000' : '2600000'),
   10,
 );
+const customGptMaxKnowledgeFiles = Number.parseInt(
+  process.env.CUSTOM_GPT_MAX_KNOWLEDGE_FILES || '20',
+  10,
+);
+
+if (!Number.isInteger(maxBytesPerContentFile) || maxBytesPerContentFile < 100_000) {
+  throw new Error('AI_KNOWLEDGE_MAX_BYTES_PER_FILE must be an integer of at least 100000 bytes.');
+}
+
+if (!Number.isInteger(customGptMaxKnowledgeFiles) || customGptMaxKnowledgeFiles < 1) {
+  throw new Error('CUSTOM_GPT_MAX_KNOWLEDGE_FILES must be a positive integer.');
+}
+
+const guideFileName = isCustomGptTarget
+  ? '00_custom_gpt_knowledge_guide.md'
+  : '00_notebooklm_readme.md';
 
 const categoryNames = {
   main_story: '메인 스토리',
@@ -106,6 +133,75 @@ const extractScriptContent = (fullChapterText, scriptId) => {
   }
 
   return null;
+};
+
+export const parseRawScriptRecords = (fullChapterText, relativePath) => {
+  const records = [];
+  const scriptBlocks = String(fullChapterText ?? '').split(/\n*@@@SCRIPT_ID:\s*/).slice(1);
+
+  for (const block of scriptBlocks) {
+    if (!block.trim()) {
+      continue;
+    }
+
+    const idMatch = block.match(/^([^\n]+)/);
+    if (!idMatch) {
+      continue;
+    }
+
+    const id = idMatch[1].trim();
+    let contentStartIndex = block.indexOf('\n') + 1;
+    let subTitle = '';
+    const subTitleMatch = block
+      .substring(contentStartIndex)
+      .match(/^@@@SUB_TITLE:\s*([^\n]*)\n?/i);
+
+    if (subTitleMatch) {
+      subTitle = subTitleMatch[1].trim();
+      contentStartIndex += subTitleMatch[0].length;
+    }
+
+    records.push({
+      id,
+      subTitle,
+      content: block.substring(contentStartIndex).trim(),
+      relativePath,
+    });
+  }
+
+  if (records.length > 0 || !String(fullChapterText ?? '').trim()) {
+    return records;
+  }
+
+  const fallbackId = `raw_file_${relativePath.replace(/[^0-9A-Za-z가-힣]+/g, '_')}`;
+  return [{
+    id: fallbackId,
+    subTitle: '',
+    content: String(fullChapterText).trim(),
+    relativePath,
+  }];
+};
+
+export const selectUnincludedRawRecords = (rawRecords, categoryKey, includedScriptKeys) => (
+  rawRecords.filter((record) => !includedScriptKeys.has(`${categoryKey}:${record.id}`))
+);
+
+const listTextSourceFiles = async (directory, relativeDirectory = '') => {
+  const entries = await fs.readdir(directory, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    const relativePath = path.posix.join(relativeDirectory, entry.name);
+    const fullPath = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      files.push(...await listTextSourceFiles(fullPath, relativePath));
+    } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.txt')) {
+      files.push({ relativePath, fullPath });
+    }
+  }
+
+  return files.sort((a, b) => a.relativePath.localeCompare(b.relativePath, 'ko'));
 };
 
 const byteLength = (value) => Buffer.byteLength(value, 'utf8');
@@ -234,6 +330,9 @@ const formatScriptRecord = (script, content) => {
     `- 분류: ${categoryName}`,
     `- 스크립트 ID: \`${script.id}\``,
     `- 원본 파일: \`public/scripts/${script.categoryKey}/${script.mainChapterFile}\``,
+    script.metadataSource === 'raw-file-fallback'
+      ? '- 자료 등록: 메타데이터에 없던 원본 파일에서 직접 복구'
+      : null,
     speakers.length > 0 ? `- 등장 화자: ${speakers.join(', ')}` : null,
     previewKeywords.length > 0 ? `- 검색 키워드: ${previewKeywords.join(', ')}` : null,
     '',
@@ -251,7 +350,7 @@ const formatChunkHeader = (group, partNumber, totalParts) => {
   return [
     `# ${group.title}${partLabel}`,
     '',
-    '- 용도: NotebookLM 또는 외부 AI 도구에서 스토리 질문, 떡밥 정리, 인물/사건 추적용으로 참조하는 원문 자료입니다.',
+    `- 용도: ${knowledgeToolName}에서 스토리 질문, 떡밥 정리, 인물/사건 추적용으로 참조하는 원문 자료입니다.`,
     `- 포함 분류: ${categoryList}`,
     totalParts > 1 ? `- 분할: ${partNumber} / ${totalParts}` : null,
     '- 주의: 답변할 때는 요약과 근거 위치 위주로 사용하고, 원문을 대량으로 그대로 출력하지 않는 용도로 쓰는 것을 권장합니다.',
@@ -263,11 +362,12 @@ const createChunks = (records) => {
   const chunks = [];
   let currentRecords = [];
   let currentSize = 0;
+  const chunkBudget = maxBytesPerContentFile - 4_096;
 
   for (const record of records) {
     const recordSize = byteLength(record);
 
-    if (currentRecords.length > 0 && currentSize + recordSize > maxBytesPerContentFile) {
+    if (currentRecords.length > 0 && currentSize + recordSize > chunkBudget) {
       chunks.push(currentRecords);
       currentRecords = [];
       currentSize = 0;
@@ -284,30 +384,54 @@ const createChunks = (records) => {
   return chunks;
 };
 
-const formatReadme = (files) => [
-  '# NotebookLM 사용 가이드',
-  '',
-  '이 폴더의 Markdown 파일들은 니케 스크립트 아카이브 원문을 NotebookLM 같은 외부 AI 도구에 넣기 쉽게 재구성한 자료입니다.',
-  '',
-  '## 권장 사용법',
-  '',
-  '- `00_notebooklm_readme.md`, `index_aliases_glossary.md`, `keyword_occurrence_index.md`를 함께 업로드하면 전체 구조와 키워드 위치를 잡는 데 도움이 됩니다.',
-  '- 질문은 “어느 인물/사건/챕터를 중심으로 볼지”를 같이 적으면 더 정확합니다.',
-  '- 답변 지시에는 “원문 대량 출력 금지, 요약과 근거 위치 중심, 확실하지 않으면 모른다고 말하기”를 넣는 것을 권장합니다.',
-  '',
-  '## 추천 시스템 지시문',
-  '',
-  '```text',
-  '이 자료는 니케 스토리 분석과 떡밥 정리용 참조 자료다. 답변할 때 원문을 길게 그대로 출력하지 말고, 요약과 근거가 되는 파일명/분류/제목/서브타이틀을 중심으로 설명해라. 사용자가 원문 전체나 대량 발췌를 요청하면 거절하고 짧은 인용 또는 위치 안내로 대체해라. 자료에 근거가 없거나 확실하지 않으면 추측하지 말고 불확실하다고 말해라.',
-  '```',
-  '',
-  '## 생성 파일',
-  '',
-  '| 파일 | 크기 | 항목 수 |',
-  '| --- | ---: | ---: |',
-  ...files.map((file) => `| ${escapeTableCell(file.name)} | ${(file.bytes / 1024 / 1024).toFixed(2)} MB | ${file.recordCount} |`),
-  '',
-].join('\n');
+const formatReadme = (files) => {
+  if (isCustomGptTarget) {
+    return [
+      '# Custom GPT 지식 자료 안내',
+      '',
+      '이 폴더의 Markdown 파일들은 니케 스크립트 아카이브 원문과 검색용 색인을 비공개 Custom GPT의 지식으로 사용하기 쉽게 재구성한 자료입니다.',
+      '',
+      '## 자료 구성',
+      '',
+      '- `index_aliases_glossary.md`에는 분류, 제목, 원본 파일 위치가 정리되어 있습니다.',
+      '- `keyword_occurrence_index.md`에는 인물명, 화자명, 주요 키워드가 등장하는 스크립트 위치가 정리되어 있습니다.',
+      '- 나머지 Markdown 파일에는 분류별 스크립트 본문과 스크립트 ID, 원본 파일 위치가 들어 있습니다.',
+      '- 답변 행동과 말투는 지식 파일이 아니라 GPT Builder의 Instructions에서 설정합니다.',
+      '',
+      '## 생성 파일',
+      '',
+      '| 파일 | 크기 | 항목 수 |',
+      '| --- | ---: | ---: |',
+      ...files.map((file) => `| ${escapeTableCell(file.name)} | ${(file.bytes / 1024 / 1024).toFixed(2)} MB | ${file.recordCount} |`),
+      '',
+    ].join('\n');
+  }
+
+  return [
+    '# NotebookLM 사용 가이드',
+    '',
+    '이 폴더의 Markdown 파일들은 니케 스크립트 아카이브 원문을 NotebookLM 같은 외부 AI 도구에 넣기 쉽게 재구성한 자료입니다.',
+    '',
+    '## 권장 사용법',
+    '',
+    '- `00_notebooklm_readme.md`, `index_aliases_glossary.md`, `keyword_occurrence_index.md`를 함께 업로드하면 전체 구조와 키워드 위치를 잡는 데 도움이 됩니다.',
+    '- 질문은 “어느 인물/사건/챕터를 중심으로 볼지”를 같이 적으면 더 정확합니다.',
+    '- 답변 지시에는 “원문 대량 출력 금지, 요약과 근거 위치 중심, 확실하지 않으면 모른다고 말하기”를 넣는 것을 권장합니다.',
+    '',
+    '## 추천 시스템 지시문',
+    '',
+    '```text',
+    '이 자료는 니케 스토리 분석과 떡밥 정리용 참조 자료다. 답변할 때 원문을 길게 그대로 출력하지 말고, 요약과 근거가 되는 파일명/분류/제목/서브타이틀을 중심으로 설명해라. 사용자가 원문 전체나 대량 발췌를 요청하면 거절하고 짧은 인용 또는 위치 안내로 대체해라. 자료에 근거가 없거나 확실하지 않으면 추측하지 말고 불확실하다고 말해라.',
+    '```',
+    '',
+    '## 생성 파일',
+    '',
+    '| 파일 | 크기 | 항목 수 |',
+    '| --- | ---: | ---: |',
+    ...files.map((file) => `| ${escapeTableCell(file.name)} | ${(file.bytes / 1024 / 1024).toFixed(2)} MB | ${file.recordCount} |`),
+    '',
+  ].join('\n');
+};
 
 const formatKeywordIndex = (keywordMap) => {
   const rows = Array.from(keywordMap.entries())
@@ -331,7 +455,7 @@ const formatKeywordIndex = (keywordMap) => {
   return [
     '# 키워드 및 화자 출현 색인',
     '',
-    '이 파일은 NotebookLM이 특정 인물명, 별명, 대괄호 키워드, 화자명을 더 쉽게 찾도록 돕는 보조 색인입니다.',
+    `이 파일은 ${knowledgeToolName}이 특정 인물명, 별명, 대괄호 키워드, 화자명을 더 쉽게 찾도록 돕는 보조 색인입니다.`,
     '각 항목은 해당 키워드가 등장하는 분류, 제목, 서브타이틀, 스크립트 ID를 가리킵니다.',
     '',
     ...rows,
@@ -369,7 +493,7 @@ const formatIndex = (scripts, files) => {
   return [
     '# 인덱스 및 질문 가이드',
     '',
-    '이 파일은 NotebookLM이 전체 자료의 분류와 원본 위치를 이해하도록 돕는 보조 인덱스입니다.',
+    `이 파일은 ${knowledgeToolName}이 전체 자료의 분류와 원본 위치를 이해하도록 돕는 보조 인덱스입니다.`,
     '',
     '## 질문 예시',
     '',
@@ -401,7 +525,34 @@ const writeTextFile = async (fileName, content, recordCount) => {
     name: fileName,
     bytes: byteLength(content),
     recordCount,
+    sha256: createHash('sha256').update(content, 'utf8').digest('hex'),
   };
+};
+
+const removePreviouslyGeneratedFiles = async () => {
+  const manifestPath = path.join(outputDir, 'manifest.json');
+  let previousManifest;
+
+  try {
+    previousManifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+  } catch (error) {
+    if (error?.code !== 'ENOENT') {
+      console.warn(`Could not read previous manifest for cleanup: ${error.message}`);
+    }
+    return;
+  }
+
+  for (const file of previousManifest.files ?? []) {
+    const fileName = typeof file?.name === 'string' ? file.name : '';
+    if (!fileName.endsWith('.md') || path.basename(fileName) !== fileName) {
+      continue;
+    }
+    await fs.unlink(path.join(outputDir, fileName)).catch((error) => {
+      if (error?.code !== 'ENOENT') {
+        throw error;
+      }
+    });
+  }
 };
 
 const main = async () => {
@@ -415,7 +566,44 @@ const main = async () => {
   const recordsByGroup = new Map(exportGroups.map((group) => [group.key, []]));
   const keywordMap = new Map();
   const includedScripts = [];
+  const includedScriptKeys = new Set();
   const missingScripts = [];
+  const referencedSourcePaths = new Set(
+    newScriptsData.map((script) => path.posix.join(script.categoryKey, script.mainChapterFile)),
+  );
+
+  const addScriptRecord = (script, content) => {
+    const group = exportGroups.find((candidate) => candidate.categories.includes(script.categoryKey));
+    if (!group) {
+      return false;
+    }
+
+    const scriptKey = `${script.categoryKey}:${script.id}`;
+    if (includedScriptKeys.has(scriptKey)) {
+      throw new Error(`Duplicate script ID in ${script.categoryKey}: ${script.id}`);
+    }
+    includedScriptKeys.add(scriptKey);
+
+    const safeContent = content || '';
+    const { keywords } = extractRecordSignals(safeContent);
+    const categoryName = categoryNames[script.categoryKey] || script.categoryKey;
+    const locationLabel = `${categoryName} / ${script.title}${script.subTitle ? ` - ${script.subTitle}` : ''} (\`${script.id}\`)`;
+
+    for (const keyword of keywords) {
+      if (!keywordMap.has(keyword)) {
+        keywordMap.set(keyword, []);
+      }
+
+      const locations = keywordMap.get(keyword);
+      if (!locations.includes(locationLabel)) {
+        locations.push(locationLabel);
+      }
+    }
+
+    recordsByGroup.get(group.key).push(formatScriptRecord(script, content));
+    includedScripts.push(script);
+    return true;
+  };
 
   for (const script of newScriptsData) {
     const group = exportGroups.find((candidate) => candidate.categories.includes(script.categoryKey));
@@ -437,29 +625,116 @@ const main = async () => {
       ? extractScriptContent(fullChapterText, script.id)
       : null;
 
-    if (content === null) {
+    if (content === null || !content.trim()) {
       missingScripts.push(script);
     }
 
-    const safeContent = content || '';
-    const { keywords } = extractRecordSignals(safeContent);
-    const categoryName = categoryNames[script.categoryKey] || script.categoryKey;
-    const locationLabel = `${categoryName} / ${script.title}${script.subTitle ? ` - ${script.subTitle}` : ''} (\`${script.id}\`)`;
+    addScriptRecord(script, content);
+  }
 
-    for (const keyword of keywords) {
-      if (!keywordMap.has(keyword)) {
-        keywordMap.set(keyword, []);
+  const sourceFiles = await listTextSourceFiles(scriptsRootDir);
+  const skippedEmptySourceFiles = [];
+  const fallbackSourceFiles = [];
+  const rawScriptKeys = new Set();
+  const rawScriptIds = new Set();
+  const duplicateRawScriptKeys = [];
+  const duplicateRawScriptIds = [];
+  const emptyRawScriptKeys = [];
+  let rawScriptRecordCount = 0;
+
+  for (const sourceFile of sourceFiles) {
+    const fullText = await fs.readFile(sourceFile.fullPath, 'utf8');
+    if (!fullText.trim()) {
+      skippedEmptySourceFiles.push(sourceFile.relativePath);
+      continue;
+    }
+
+    const [categoryKey, ...fileNameParts] = sourceFile.relativePath.split('/');
+    const mainChapterFile = fileNameParts.join('/');
+    const fallbackTitle = path.parse(mainChapterFile).name.replaceAll('_', ' ');
+    const rawRecords = parseRawScriptRecords(fullText, sourceFile.relativePath);
+    rawScriptRecordCount += rawRecords.length;
+
+    for (const rawRecord of rawRecords) {
+      const rawScriptKey = `${categoryKey}:${rawRecord.id}`;
+      if (rawScriptKeys.has(rawScriptKey)) {
+        duplicateRawScriptKeys.push(rawScriptKey);
       }
-
-      const locations = keywordMap.get(keyword);
-      if (!locations.includes(locationLabel)) {
-        locations.push(locationLabel);
+      rawScriptKeys.add(rawScriptKey);
+      if (rawScriptIds.has(rawRecord.id)) {
+        duplicateRawScriptIds.push(rawRecord.id);
+      }
+      rawScriptIds.add(rawRecord.id);
+      if (!rawRecord.content.trim()) {
+        emptyRawScriptKeys.push(rawScriptKey);
       }
     }
 
-    recordsByGroup.get(group.key).push(formatScriptRecord(script, content));
-    includedScripts.push(script);
+    const unincludedRawRecords = selectUnincludedRawRecords(
+      rawRecords,
+      categoryKey,
+      includedScriptKeys,
+    );
+    let includedRecordCount = 0;
+
+    for (const rawRecord of unincludedRawRecords) {
+      const included = addScriptRecord({
+        id: rawRecord.id,
+        categoryKey,
+        title: fallbackTitle,
+        subTitle: rawRecord.subTitle,
+        mainChapterFile,
+        metadataSource: 'raw-file-fallback',
+      }, rawRecord.content);
+
+      if (included) {
+        includedRecordCount += 1;
+      }
+    }
+
+    if (includedRecordCount > 0) {
+      fallbackSourceFiles.push({
+        relativePath: sourceFile.relativePath,
+        recordCount: includedRecordCount,
+      });
+    }
   }
+
+  const missingRawScriptKeys = Array.from(rawScriptKeys)
+    .filter((scriptKey) => !includedScriptKeys.has(scriptKey));
+  const extraMetadataScriptKeys = Array.from(includedScriptKeys)
+    .filter((scriptKey) => !rawScriptKeys.has(scriptKey));
+
+  if (isCustomGptTarget && (
+    missingScripts.length > 0
+    || duplicateRawScriptKeys.length > 0
+    || duplicateRawScriptIds.length > 0
+    || emptyRawScriptKeys.length > 0
+    || missingRawScriptKeys.length > 0
+    || extraMetadataScriptKeys.length > 0
+  )) {
+    throw new Error([
+      'Custom GPT knowledge coverage validation failed.',
+      `Missing bodies: ${missingScripts.length}.`,
+      `Duplicate raw IDs: ${duplicateRawScriptKeys.length}.`,
+      `Duplicate global raw IDs: ${duplicateRawScriptIds.length}.`,
+      `Empty raw bodies: ${emptyRawScriptKeys.length}.`,
+      `Unincluded raw IDs: ${missingRawScriptKeys.length}.`,
+      `Metadata-only IDs: ${extraMetadataScriptKeys.length}.`,
+    ].join(' '));
+  }
+
+  const plannedContentFileCount = Array.from(recordsByGroup.values())
+    .reduce((total, records) => total + (records.length > 0 ? createChunks(records).length : 0), 0);
+  const plannedKnowledgeFileCount = plannedContentFileCount;
+
+  if (isCustomGptTarget && plannedKnowledgeFileCount > customGptMaxKnowledgeFiles) {
+    throw new Error(
+      `Custom GPT knowledge build needs ${plannedKnowledgeFileCount} upload files, exceeding the configured maximum of ${customGptMaxKnowledgeFiles}.`,
+    );
+  }
+
+  await removePreviouslyGeneratedFiles();
 
   const generatedFiles = [];
 
@@ -480,6 +755,12 @@ const main = async () => {
         ...chunkRecords,
       ].join('\n');
 
+      if (byteLength(content) > maxBytesPerContentFile) {
+        throw new Error(
+          `${fileName} is ${byteLength(content)} bytes, exceeding the configured ${maxBytesPerContentFile}-byte limit.`,
+        );
+      }
+
       generatedFiles.push(await writeTextFile(fileName, content, chunkRecords.length));
     }
   }
@@ -495,16 +776,39 @@ const main = async () => {
     keywordMap.size,
   );
   const readmeFile = await writeTextFile(
-    '00_notebooklm_readme.md',
+    guideFileName,
     formatReadme([indexFile, keywordIndexFile, ...generatedFiles]),
     generatedFiles.reduce((sum, file) => sum + file.recordCount, 0),
   );
 
+  const allFiles = [readmeFile, indexFile, keywordIndexFile, ...generatedFiles];
+  const uploadFiles = isCustomGptTarget ? generatedFiles : allFiles;
+
   const manifest = {
+    schemaVersion: 1,
+    target: knowledgeTarget,
     generatedAt: new Date().toISOString(),
     outputDir,
     maxBytesPerContentFile,
-    files: [readmeFile, indexFile, keywordIndexFile, ...generatedFiles],
+    includedScriptCount: includedScripts.length,
+    files: allFiles,
+    uploadFiles: uploadFiles.map((file) => file.name),
+    supportFiles: isCustomGptTarget
+      ? [readmeFile.name, indexFile.name, keywordIndexFile.name]
+      : [],
+    sourceAudit: {
+      discoveredTextFileCount: sourceFiles.length,
+      referencedSourceFileCount: referencedSourcePaths.size,
+      rawScriptRecordCount,
+      uniqueRawScriptCount: rawScriptKeys.size,
+      duplicateRawScriptKeys,
+      duplicateRawScriptIds,
+      emptyRawScriptKeys,
+      missingRawScriptKeys,
+      extraMetadataScriptKeys,
+      skippedEmptySourceFiles,
+      fallbackSourceFiles,
+    },
     missingScripts: missingScripts.map((script) => ({
       id: script.id,
       title: script.title,
@@ -522,12 +826,18 @@ const main = async () => {
 
   console.log(`Generated ${manifest.files.length} markdown files in ${outputDir}`);
   console.log(`Included ${includedScripts.length} script records.`);
+  if (isCustomGptTarget) {
+    console.log(`Upload ${manifest.uploadFiles.length} content files listed in manifest.json.`);
+    console.log(`Recovered ${fallbackSourceFiles.reduce((sum, file) => sum + file.recordCount, 0)} unregistered records from ${fallbackSourceFiles.length} source files.`);
+  }
   if (missingScripts.length > 0) {
     console.warn(`Missing content for ${missingScripts.length} script records. See manifest.json.`);
   }
 };
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
