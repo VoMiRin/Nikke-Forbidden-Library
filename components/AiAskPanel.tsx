@@ -112,13 +112,15 @@ const fetchRecoveryResult = async (requestId: string, signal: AbortSignal) => {
   signal.addEventListener('abort', handleAbort, { once: true });
 
   try {
-    return await fetch(`/api/ask/result?requestId=${encodeURIComponent(requestId)}`, {
+    const result = await fetch(`/api/ask/result?requestId=${encodeURIComponent(requestId)}`, {
       cache: 'no-store',
       headers: {
         accept: 'application/json',
       },
       signal: controller.signal,
     });
+    const payload = await readResponsePayload(result);
+    return { result, payload };
   } finally {
     window.clearTimeout(timeout);
     signal.removeEventListener('abort', handleAbort);
@@ -141,8 +143,7 @@ const pollForStoredAnswer = async (requestId: string, signal: AbortSignal): Prom
     let payload: Record<string, unknown>;
 
     try {
-      result = await fetchRecoveryResult(requestId, signal);
-      payload = await readResponsePayload(result);
+      ({ result, payload } = await fetchRecoveryResult(requestId, signal));
     } catch {
       if (signal.aborted) throw createAbortError();
       // A short network interruption should not turn a completed Gemini response into a failure.
@@ -153,7 +154,8 @@ const pollForStoredAnswer = async (requestId: string, signal: AbortSignal): Prom
     if (result.status === 200) {
       const recoveredResponse = normalizeAskResponse(payload);
       if (recoveredResponse) return recoveredResponse;
-      throw new Error('저장된 AI 답변 형식이 올바르지 않습니다.');
+      await wait(retryDelayMs, signal);
+      continue;
     }
 
     if (payload.status === 'RECOVERY_NOT_CONFIGURED') {
@@ -263,27 +265,19 @@ export const AiAskPanel: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isRecovering, setIsRecovering] = useState(false);
   const [pendingRequestId, setPendingRequestId] = useState<string | null>(null);
-  const recoveryAbortControllerRef = useRef<AbortController | null>(null);
+  const activeRequestAbortControllerRef = useRef<AbortController | null>(null);
+  const isMountedRef = useRef(true);
 
   const canSubmit = prompt.trim().length > 0 && !isSubmitting;
 
-  useEffect(() => () => {
-    recoveryAbortControllerRef.current?.abort();
+  useEffect(() => {
+    isMountedRef.current = true;
+
+    return () => {
+      isMountedRef.current = false;
+      activeRequestAbortControllerRef.current?.abort();
+    };
   }, []);
-
-  const pollWithNewController = async (requestId: string) => {
-    recoveryAbortControllerRef.current?.abort();
-    const controller = new AbortController();
-    recoveryAbortControllerRef.current = controller;
-
-    try {
-      return await pollForStoredAnswer(requestId, controller.signal);
-    } finally {
-      if (recoveryAbortControllerRef.current === controller) {
-        recoveryAbortControllerRef.current = null;
-      }
-    }
-  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -293,15 +287,17 @@ export const AiAskPanel: React.FC = () => {
     setError(null);
     setResponse(null);
     setPendingRequestId(null);
-    recoveryAbortControllerRef.current?.abort();
+    activeRequestAbortControllerRef.current?.abort();
 
     const requestId = createAskRequestId();
+    const requestController = new AbortController();
+    activeRequestAbortControllerRef.current = requestController;
 
     const recoverStoredAnswer = async () => {
       setIsRecovering(true);
       setPendingRequestId(requestId);
 
-      const recoveredResponse = await pollWithNewController(requestId);
+      const recoveredResponse = await pollForStoredAnswer(requestId, requestController.signal);
       setResponse(recoveredResponse);
       setPendingRequestId(null);
     };
@@ -316,20 +312,25 @@ export const AiAskPanel: React.FC = () => {
             'content-type': 'application/json',
           },
           body: JSON.stringify({ prompt: prompt.trim(), requestId }),
+          signal: requestController.signal,
         });
       } catch (requestError) {
+        if (isAbortError(requestError)) throw requestError;
+
         if (navigator.onLine !== false) {
           await recoverStoredAnswer();
           return;
         }
 
-        throw requestError;
+        setPendingRequestId(requestId);
+        throw new Error('네트워크 연결이 끊겼습니다. 연결을 확인한 뒤 저장된 결과를 다시 확인해 주세요.');
       }
 
       let payload: Record<string, unknown>;
       try {
         payload = await readResponsePayload(result);
-      } catch {
+      } catch (payloadError) {
+        if (isAbortError(payloadError)) throw payloadError;
         await recoverStoredAnswer();
         return;
       }
@@ -362,10 +363,17 @@ export const AiAskPanel: React.FC = () => {
       setResponse(askResponse);
     } catch (requestError) {
       if (isAbortError(requestError)) return;
-      setError(requestError instanceof Error ? requestError.message : 'AI 질문 요청에 실패했습니다.');
+      if (isMountedRef.current) {
+        setError(requestError instanceof Error ? requestError.message : 'AI 질문 요청에 실패했습니다.');
+      }
     } finally {
-      setIsRecovering(false);
-      setIsSubmitting(false);
+      if (activeRequestAbortControllerRef.current === requestController) {
+        activeRequestAbortControllerRef.current = null;
+      }
+      if (isMountedRef.current) {
+        setIsRecovering(false);
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -376,16 +384,27 @@ export const AiAskPanel: React.FC = () => {
     setIsRecovering(true);
     setError(null);
 
+    activeRequestAbortControllerRef.current?.abort();
+    const requestController = new AbortController();
+    activeRequestAbortControllerRef.current = requestController;
+
     try {
-      const recoveredResponse = await pollWithNewController(pendingRequestId);
+      const recoveredResponse = await pollForStoredAnswer(pendingRequestId, requestController.signal);
       setResponse(recoveredResponse);
       setPendingRequestId(null);
     } catch (requestError) {
       if (isAbortError(requestError)) return;
-      setError(requestError instanceof Error ? requestError.message : '저장된 AI 답변을 확인하지 못했습니다.');
+      if (isMountedRef.current) {
+        setError(requestError instanceof Error ? requestError.message : '저장된 AI 답변을 확인하지 못했습니다.');
+      }
     } finally {
-      setIsRecovering(false);
-      setIsSubmitting(false);
+      if (activeRequestAbortControllerRef.current === requestController) {
+        activeRequestAbortControllerRef.current = null;
+      }
+      if (isMountedRef.current) {
+        setIsRecovering(false);
+        setIsSubmitting(false);
+      }
     }
   };
 
