@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { SparklesIcon } from './Icons';
+import { clearPendingAsk, readPendingAsk, savePendingAsk } from './pendingAsk.mjs';
 
 type AskSource = {
   title: string;
@@ -28,8 +29,10 @@ type AskResponse = {
 };
 
 const ASK_RECOVERY_POLL_INTERVAL_MS = 2_000;
+const ASK_RECOVERY_START_DELAY_MS = 8_000;
 const ASK_RECOVERY_TIMEOUT_MS = 4 * 60_000;
 const ASK_RECOVERY_FETCH_TIMEOUT_MS = 10_000;
+const ASK_INITIAL_REQUEST_DEADLINE_MS = 70_000;
 const ASK_RECOVERY_RETRYABLE_STATUSES = new Set([202, 429, 500, 502, 503, 504]);
 
 const isRecord = (value: unknown): value is Record<string, unknown> => (
@@ -80,6 +83,8 @@ const normalizeAskResponse = (payload: Record<string, unknown>): AskResponse | n
 
 const createAskRequestId = () => `ask_${crypto.randomUUID().replaceAll('-', '')}`;
 
+class TerminalAskRequestError extends Error {}
+
 const createAbortError = () => new DOMException('The operation was aborted.', 'AbortError');
 const isAbortError = (error: unknown) => (
   error instanceof DOMException && error.name === 'AbortError'
@@ -112,7 +117,11 @@ const fetchRecoveryResult = async (requestId: string, signal: AbortSignal) => {
   signal.addEventListener('abort', handleAbort, { once: true });
 
   try {
-    const result = await fetch(`/api/ask/result?requestId=${encodeURIComponent(requestId)}`, {
+    const query = new URLSearchParams({
+      requestId,
+      poll: Date.now().toString(),
+    });
+    const result = await fetch(`/api/ask/result?${query}`, {
       cache: 'no-store',
       headers: {
         accept: 'application/json',
@@ -127,6 +136,61 @@ const fetchRecoveryResult = async (requestId: string, signal: AbortSignal) => {
   }
 };
 
+const requestInitialAnswer = async (
+  prompt: string,
+  requestId: string,
+  signal: AbortSignal
+): Promise<AskResponse | null> => {
+  let result: Response;
+
+  try {
+    result = await fetch('/api/ask', {
+      method: 'POST',
+      cache: 'no-store',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ prompt, requestId }),
+      signal,
+    });
+  } catch (requestError) {
+    if (isAbortError(requestError)) throw requestError;
+    if (navigator.onLine === false) {
+      throw new Error('네트워크 연결이 끊겼습니다. 연결을 확인한 뒤 저장된 결과를 다시 확인해 주세요.');
+    }
+    return null;
+  }
+
+  let payload: Record<string, unknown>;
+  try {
+    payload = await readResponsePayload(result);
+  } catch (payloadError) {
+    if (isAbortError(payloadError)) throw payloadError;
+    return null;
+  }
+
+  if (
+    result.status === 504
+    || ((result.status === 502 || result.status === 503) && Object.keys(payload).length === 0)
+  ) {
+    return null;
+  }
+
+  if (!result.ok) {
+    const retryMessage = result.status === 429 ? formatRetryAfter(result.headers.get('retry-after')) : null;
+    throw new TerminalAskRequestError(
+      retryMessage
+        ? `AI 요청이 잠시 많습니다. ${retryMessage}`
+        : typeof payload.error === 'string'
+          ? payload.error
+          : `AI 질문 요청에 실패했습니다. (HTTP ${result.status})`
+    );
+  }
+
+  return normalizeAskResponse(payload);
+};
+
 const getRetryDelayMs = (result: Response) => {
   const retryAfterSeconds = Number(result.headers.get('retry-after'));
   return Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0
@@ -136,6 +200,7 @@ const getRetryDelayMs = (result: Response) => {
 
 const pollForStoredAnswer = async (requestId: string, signal: AbortSignal): Promise<AskResponse> => {
   const deadline = Date.now() + ASK_RECOVERY_TIMEOUT_MS;
+  let invalidSuccessResponseCount = 0;
 
   while (!signal.aborted && Date.now() < deadline) {
     let retryDelayMs = ASK_RECOVERY_POLL_INTERVAL_MS;
@@ -154,6 +219,10 @@ const pollForStoredAnswer = async (requestId: string, signal: AbortSignal): Prom
     if (result.status === 200) {
       const recoveredResponse = normalizeAskResponse(payload);
       if (recoveredResponse) return recoveredResponse;
+      invalidSuccessResponseCount += 1;
+      if (invalidSuccessResponseCount >= 2) {
+        throw new Error('저장된 AI 답변 응답 형식을 확인할 수 없습니다.');
+      }
       await wait(retryDelayMs, signal);
       continue;
     }
@@ -203,6 +272,14 @@ const formatRetryAfter = (retryAfter: string | null) => {
   }
 
   return '잠시 후에 다시 시도해 주세요.';
+};
+
+const getAskSessionStorage = (): Storage | null => {
+  try {
+    return window.sessionStorage;
+  } catch {
+    return null;
+  }
 };
 
 const renderInlineMarkdown = (text: string): React.ReactNode[] => {
@@ -265,7 +342,7 @@ export const AiAskPanel: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isRecovering, setIsRecovering] = useState(false);
   const [pendingRequestId, setPendingRequestId] = useState<string | null>(null);
-  const activeRequestAbortControllerRef = useRef<AbortController | null>(null);
+  const activeRequestRef = useRef<{ abort: () => void } | null>(null);
   const isMountedRef = useRef(true);
 
   const canSubmit = prompt.trim().length > 0 && !isSubmitting;
@@ -273,9 +350,46 @@ export const AiAskPanel: React.FC = () => {
   useEffect(() => {
     isMountedRef.current = true;
 
+    const pendingAsk = readPendingAsk(getAskSessionStorage());
+    if (pendingAsk) {
+      const requestController = new AbortController();
+      const activeRequest = {
+        abort: () => requestController.abort(),
+      };
+
+      activeRequestRef.current?.abort();
+      activeRequestRef.current = activeRequest;
+      setPendingRequestId(pendingAsk.requestId);
+      setIsSubmitting(true);
+      setIsRecovering(true);
+
+      void pollForStoredAnswer(pendingAsk.requestId, requestController.signal)
+        .then((recoveredResponse) => {
+          if (!isMountedRef.current || activeRequestRef.current !== activeRequest) return;
+          setResponse(recoveredResponse);
+          setError(null);
+          setPendingRequestId(null);
+          clearPendingAsk(getAskSessionStorage(), pendingAsk.requestId);
+        })
+        .catch((requestError: unknown) => {
+          if (isAbortError(requestError)) return;
+          if (isMountedRef.current && activeRequestRef.current === activeRequest) {
+            setError(requestError instanceof Error ? requestError.message : '저장된 AI 답변을 확인하지 못했습니다.');
+          }
+        })
+        .finally(() => {
+          if (activeRequestRef.current !== activeRequest) return;
+          activeRequestRef.current = null;
+          if (isMountedRef.current) {
+            setIsRecovering(false);
+            setIsSubmitting(false);
+          }
+        });
+    }
+
     return () => {
       isMountedRef.current = false;
-      activeRequestAbortControllerRef.current?.abort();
+      activeRequestRef.current?.abort();
     };
   }, []);
 
@@ -284,95 +398,112 @@ export const AiAskPanel: React.FC = () => {
     if (!canSubmit) return;
 
     setIsSubmitting(true);
+    setIsRecovering(false);
     setError(null);
     setResponse(null);
-    setPendingRequestId(null);
-    activeRequestAbortControllerRef.current?.abort();
+    activeRequestRef.current?.abort();
 
     const requestId = createAskRequestId();
-    const requestController = new AbortController();
-    activeRequestAbortControllerRef.current = requestController;
+    const submittedAt = Date.now();
+    const postController = new AbortController();
+    const recoveryController = new AbortController();
+    const activeRequest = {
+      abort: () => {
+        postController.abort();
+        recoveryController.abort();
+      },
+    };
+    activeRequestRef.current = activeRequest;
+    setPendingRequestId(requestId);
+    savePendingAsk(getAskSessionStorage(), { requestId, submittedAt });
 
-    const recoverStoredAnswer = async () => {
-      setIsRecovering(true);
-      setPendingRequestId(requestId);
-
-      const recoveredResponse = await pollForStoredAnswer(requestId, requestController.signal);
-      setResponse(recoveredResponse);
-      setPendingRequestId(null);
+    const markRecoveryStarted = () => {
+      if (isMountedRef.current && activeRequestRef.current === activeRequest) {
+        setIsRecovering(true);
+      }
     };
 
+    let initialDeadlineId = 0;
+    const initialRequestPromise = requestInitialAnswer(
+      prompt.trim(),
+      requestId,
+      postController.signal
+    );
+    const initialDeadlinePromise = new Promise<null>((resolve) => {
+      initialDeadlineId = window.setTimeout(() => resolve(null), ASK_INITIAL_REQUEST_DEADLINE_MS);
+    });
+    const initialOutcomePromise = Promise.race([
+      initialRequestPromise,
+      initialDeadlinePromise,
+    ]).then(
+      (initialResponse) => ({ source: 'initial' as const, response: initialResponse }),
+      (requestError: unknown) => ({ source: 'initial' as const, error: requestError })
+    );
+
+    const recoveryOutcomePromise = (async () => {
+      await wait(ASK_RECOVERY_START_DELAY_MS, recoveryController.signal);
+      markRecoveryStarted();
+      return pollForStoredAnswer(requestId, recoveryController.signal);
+    })().then(
+      (recoveredResponse) => ({ source: 'recovery' as const, response: recoveredResponse }),
+      (requestError: unknown) => ({ source: 'recovery' as const, error: requestError })
+    );
+
     try {
-      let result: Response;
+      const firstOutcome = await Promise.race([initialOutcomePromise, recoveryOutcomePromise]);
+      let askResponse: AskResponse;
 
-      try {
-        result = await fetch('/api/ask', {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify({ prompt: prompt.trim(), requestId }),
-          signal: requestController.signal,
-        });
-      } catch (requestError) {
-        if (isAbortError(requestError)) throw requestError;
+      if (firstOutcome.source === 'initial') {
+        if ('error' in firstOutcome) throw firstOutcome.error;
 
-        if (navigator.onLine !== false) {
-          await recoverStoredAnswer();
-          return;
+        if (firstOutcome.response) {
+          recoveryController.abort();
+          askResponse = firstOutcome.response;
+        } else {
+          markRecoveryStarted();
+          const recoveryOutcome = await recoveryOutcomePromise;
+          if ('error' in recoveryOutcome) throw recoveryOutcome.error;
+          askResponse = recoveryOutcome.response;
         }
+      } else if ('response' in firstOutcome) {
+        postController.abort();
+        askResponse = firstOutcome.response;
+      } else {
+        if (isAbortError(firstOutcome.error)) throw firstOutcome.error;
 
-        setPendingRequestId(requestId);
-        throw new Error('네트워크 연결이 끊겼습니다. 연결을 확인한 뒤 저장된 결과를 다시 확인해 주세요.');
+        const initialOutcome = await initialOutcomePromise;
+        if ('error' in initialOutcome) {
+          throw isAbortError(initialOutcome.error) ? firstOutcome.error : initialOutcome.error;
+        }
+        if (!initialOutcome.response) throw firstOutcome.error;
+        askResponse = initialOutcome.response;
       }
 
-      let payload: Record<string, unknown>;
-      try {
-        payload = await readResponsePayload(result);
-      } catch (payloadError) {
-        if (isAbortError(payloadError)) throw payloadError;
-        await recoverStoredAnswer();
-        return;
+      if (isMountedRef.current && activeRequestRef.current === activeRequest) {
+        setResponse(askResponse);
+        setPendingRequestId(null);
+        clearPendingAsk(getAskSessionStorage(), requestId);
       }
-
-      if (
-        result.status === 504
-        || ((result.status === 502 || result.status === 503) && Object.keys(payload).length === 0)
-      ) {
-        await recoverStoredAnswer();
-        return;
-      }
-
-      if (!result.ok) {
-        const retryMessage = result.status === 429 ? formatRetryAfter(result.headers.get('retry-after')) : null;
-        throw new Error(
-          retryMessage
-            ? `AI 요청이 잠시 많습니다. ${retryMessage}`
-            : typeof payload.error === 'string'
-              ? payload.error
-              : `AI 질문 요청에 실패했습니다. (HTTP ${result.status})`
-        );
-      }
-
-      const askResponse = normalizeAskResponse(payload);
-      if (!askResponse) {
-        await recoverStoredAnswer();
-        return;
-      }
-
-      setResponse(askResponse);
     } catch (requestError) {
       if (isAbortError(requestError)) return;
-      if (isMountedRef.current) {
+      if (requestError instanceof TerminalAskRequestError) {
+        clearPendingAsk(getAskSessionStorage(), requestId);
+      }
+      if (isMountedRef.current && activeRequestRef.current === activeRequest) {
+        if (requestError instanceof TerminalAskRequestError) {
+          setPendingRequestId(null);
+        }
         setError(requestError instanceof Error ? requestError.message : 'AI 질문 요청에 실패했습니다.');
       }
     } finally {
-      if (activeRequestAbortControllerRef.current === requestController) {
-        activeRequestAbortControllerRef.current = null;
-      }
-      if (isMountedRef.current) {
-        setIsRecovering(false);
-        setIsSubmitting(false);
+      window.clearTimeout(initialDeadlineId);
+      activeRequest.abort();
+      if (activeRequestRef.current === activeRequest) {
+        activeRequestRef.current = null;
+        if (isMountedRef.current) {
+          setIsRecovering(false);
+          setIsSubmitting(false);
+        }
       }
     }
   };
@@ -384,26 +515,32 @@ export const AiAskPanel: React.FC = () => {
     setIsRecovering(true);
     setError(null);
 
-    activeRequestAbortControllerRef.current?.abort();
+    activeRequestRef.current?.abort();
     const requestController = new AbortController();
-    activeRequestAbortControllerRef.current = requestController;
+    const activeRequest = {
+      abort: () => requestController.abort(),
+    };
+    activeRequestRef.current = activeRequest;
 
     try {
       const recoveredResponse = await pollForStoredAnswer(pendingRequestId, requestController.signal);
-      setResponse(recoveredResponse);
-      setPendingRequestId(null);
+      if (isMountedRef.current && activeRequestRef.current === activeRequest) {
+        setResponse(recoveredResponse);
+        setPendingRequestId(null);
+        clearPendingAsk(getAskSessionStorage(), pendingRequestId);
+      }
     } catch (requestError) {
       if (isAbortError(requestError)) return;
-      if (isMountedRef.current) {
+      if (isMountedRef.current && activeRequestRef.current === activeRequest) {
         setError(requestError instanceof Error ? requestError.message : '저장된 AI 답변을 확인하지 못했습니다.');
       }
     } finally {
-      if (activeRequestAbortControllerRef.current === requestController) {
-        activeRequestAbortControllerRef.current = null;
-      }
-      if (isMountedRef.current) {
-        setIsRecovering(false);
-        setIsSubmitting(false);
+      if (activeRequestRef.current === activeRequest) {
+        activeRequestRef.current = null;
+        if (isMountedRef.current) {
+          setIsRecovering(false);
+          setIsSubmitting(false);
+        }
       }
     }
   };
