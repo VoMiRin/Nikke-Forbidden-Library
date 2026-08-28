@@ -73,3 +73,26 @@ export const buildRecoveredAskResponse = (documentId, logEntry) => {
     askLogId: documentId,
   };
 };
+
+export const buildAskRecoveryResult = (documentId, logEntry) => {
+  if (!logEntry || typeof logEntry !== 'object') {
+    return { state: 'not_found' };
+  }
+
+  if (logEntry.generationStatus === 'failed') {
+    return {
+      state: 'failed',
+      error: typeof logEntry.failureMessage === 'string' && logEntry.failureMessage.trim()
+        ? logEntry.failureMessage
+        : 'AI 답변 생성이 완료되지 않았습니다. 다시 질문해 주세요.',
+      failureCode: typeof logEntry.failureCode === 'string' ? logEntry.failureCode : null,
+    };
+  }
+
+  const response = buildRecoveredAskResponse(documentId, logEntry);
+  if (response) {
+    return { state: 'completed', response };
+  }
+
+  return { state: 'pending' };
+};

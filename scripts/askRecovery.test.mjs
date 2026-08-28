@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import {
+  buildAskRecoveryResult,
   buildRecoveredAskResponse,
   fromFirestoreFields,
   normalizeAskRequestId,
@@ -69,4 +70,34 @@ test('an absent or incomplete Firestore document remains pending', () => {
     'ask_0123456789abcdef0123456789abcdef',
     { model: 'gemini-3.7-flash' }
   ), null);
+});
+
+test('recovery distinguishes a missing request, active generation, and failed generation', () => {
+  const documentId = 'ask_0123456789abcdef0123456789abcdef';
+
+  assert.deepEqual(buildAskRecoveryResult(documentId, null), { state: 'not_found' });
+  assert.deepEqual(
+    buildAskRecoveryResult(documentId, { generationStatus: 'processing' }),
+    { state: 'pending' }
+  );
+  assert.deepEqual(
+    buildAskRecoveryResult(documentId, {
+      generationStatus: 'failed',
+      failureCode: 'PROVIDER_ERROR',
+      failureMessage: 'AI 답변 생성이 완료되지 않았습니다. 다시 질문해 주세요.',
+    }),
+    {
+      state: 'failed',
+      failureCode: 'PROVIDER_ERROR',
+      error: 'AI 답변 생성이 완료되지 않았습니다. 다시 질문해 주세요.',
+    }
+  );
+  assert.equal(
+    buildAskRecoveryResult(documentId, {
+      generationStatus: 'completed',
+      answer: '완료된 답변',
+      model: 'gemini-3.7-flash',
+    }).state,
+    'completed'
+  );
 });

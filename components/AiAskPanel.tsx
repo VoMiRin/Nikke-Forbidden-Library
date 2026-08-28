@@ -32,6 +32,7 @@ const ASK_RECOVERY_POLL_INTERVAL_MS = 2_000;
 const ASK_RECOVERY_START_DELAY_MS = 8_000;
 const ASK_RECOVERY_TIMEOUT_MS = 4 * 60_000;
 const ASK_RECOVERY_FETCH_TIMEOUT_MS = 10_000;
+const ASK_RECOVERY_NOT_FOUND_TIMEOUT_MS = 30_000;
 const ASK_INITIAL_REQUEST_DEADLINE_MS = 70_000;
 const ASK_RECOVERY_RETRYABLE_STATUSES = new Set([202, 429, 500, 502, 503, 504]);
 
@@ -172,6 +173,7 @@ const requestInitialAnswer = async (
 
   if (
     result.status === 504
+    || (result.status === 503 && payload.status === 'ANSWER_PERSISTENCE_UNCERTAIN')
     || ((result.status === 502 || result.status === 503) && Object.keys(payload).length === 0)
   ) {
     return null;
@@ -200,7 +202,9 @@ const getRetryDelayMs = (result: Response) => {
 
 const pollForStoredAnswer = async (requestId: string, signal: AbortSignal): Promise<AskResponse> => {
   const deadline = Date.now() + ASK_RECOVERY_TIMEOUT_MS;
+  const notFoundDeadline = Date.now() + ASK_RECOVERY_NOT_FOUND_TIMEOUT_MS;
   let invalidSuccessResponseCount = 0;
+  let hasObservedRegisteredRequest = false;
 
   while (!signal.aborted && Date.now() < deadline) {
     let retryDelayMs = ASK_RECOVERY_POLL_INTERVAL_MS;
@@ -225,6 +229,26 @@ const pollForStoredAnswer = async (requestId: string, signal: AbortSignal): Prom
       }
       await wait(retryDelayMs, signal);
       continue;
+    }
+
+    if (result.status === 404 && payload.status === 'not_found') {
+      if (!hasObservedRegisteredRequest && Date.now() >= notFoundDeadline) {
+        throw new TerminalAskRequestError('AI 질문이 서버에 접수된 기록을 찾지 못했습니다. 다시 질문해 주세요.');
+      }
+      await wait(getRetryDelayMs(result), signal);
+      continue;
+    }
+
+    if (payload.status === 'failed') {
+      throw new TerminalAskRequestError(
+        typeof payload.error === 'string'
+          ? payload.error
+          : 'AI 답변 생성을 완료하지 못했습니다. 다시 질문해 주세요.'
+      );
+    }
+
+    if (result.status === 202 && (payload.status === 'processing' || payload.status === 'pending')) {
+      hasObservedRegisteredRequest = true;
     }
 
     if (payload.status === 'RECOVERY_NOT_CONFIGURED') {
@@ -373,7 +397,13 @@ export const AiAskPanel: React.FC = () => {
         })
         .catch((requestError: unknown) => {
           if (isAbortError(requestError)) return;
+          if (requestError instanceof TerminalAskRequestError) {
+            clearPendingAsk(getAskSessionStorage(), pendingAsk.requestId);
+          }
           if (isMountedRef.current && activeRequestRef.current === activeRequest) {
+            if (requestError instanceof TerminalAskRequestError) {
+              setPendingRequestId(null);
+            }
             setError(requestError instanceof Error ? requestError.message : '저장된 AI 답변을 확인하지 못했습니다.');
           }
         })
@@ -531,7 +561,13 @@ export const AiAskPanel: React.FC = () => {
       }
     } catch (requestError) {
       if (isAbortError(requestError)) return;
+      if (requestError instanceof TerminalAskRequestError) {
+        clearPendingAsk(getAskSessionStorage(), pendingRequestId);
+      }
       if (isMountedRef.current && activeRequestRef.current === activeRequest) {
+        if (requestError instanceof TerminalAskRequestError) {
+          setPendingRequestId(null);
+        }
         setError(requestError instanceof Error ? requestError.message : '저장된 AI 답변을 확인하지 못했습니다.');
       }
     } finally {
@@ -579,14 +615,14 @@ export const AiAskPanel: React.FC = () => {
             className="inline-flex items-center justify-center gap-2 rounded-full bg-nikke-gradient px-5 py-2.5 text-sm font-bold text-slate-950 transition-transform duration-300 ease-editorial hover:scale-[1.02] disabled:cursor-wait disabled:opacity-60 disabled:hover:scale-100"
           >
             <SparklesIcon className="h-4 w-4" />
-            {isRecovering ? '답변 확인 중...' : isSubmitting ? '질문 중...' : '질문하기'}
+            {isRecovering ? '답변 생성 중...' : isSubmitting ? '질문 중...' : '질문하기'}
           </button>
         </div>
       </form>
 
       {isRecovering && (
         <div className="mt-4 rounded-[1rem] border border-nikke-accent/20 bg-nikke-accent/5 px-4 py-3 text-sm leading-6 text-nikke-text-secondary" role="status">
-          답변 생성은 계속되고 있습니다. 저장된 결과를 확인하는 중입니다.
+          AI가 답변을 생성 중입니다. 완료되는 즉시 자동으로 표시됩니다.
         </div>
       )}
 

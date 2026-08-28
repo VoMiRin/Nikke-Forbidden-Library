@@ -5,7 +5,7 @@ import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { GoogleGenAI } from '@google/genai';
 import {
-  buildRecoveredAskResponse,
+  buildAskRecoveryResult,
   fromFirestoreFields,
   normalizeAskRequestId,
 } from './askRecovery.mjs';
@@ -714,7 +714,19 @@ const readAskLogFromFirestore = async (documentId) => {
   return fromFirestoreFields(document.fields);
 };
 
-const saveAskLog = async ({ documentId, request, prompt, answer, model, tokenUsage, grounding }) => {
+const saveAskLog = async ({
+  documentId,
+  request,
+  prompt,
+  answer = null,
+  model,
+  tokenUsage = null,
+  grounding = null,
+  generationStatus = 'completed',
+  failureCode = null,
+  failureMessage = null,
+  createdAt = null,
+}) => {
   if (!isAskLogEnabled()) return null;
 
   if (askLogStorage !== 'firestore') {
@@ -727,24 +739,38 @@ const saveAskLog = async ({ documentId, request, prompt, answer, model, tokenUsa
     ?? `ask_${Date.now().toString(36)}_${randomUUID().replaceAll('-', '').slice(0, 12)}`;
   const logEntry = {
     id: resolvedDocumentId,
-    createdAt: now,
-    status: askLogDefaultStatus || 'pending_review',
+    createdAt: createdAt ?? now,
+    updatedAt: now,
+    status: generationStatus === 'completed'
+      ? askLogDefaultStatus || 'pending_review'
+      : generationStatus === 'failed'
+        ? 'generation_failed'
+        : 'generating',
+    generationStatus,
     model,
     path: '/api/ask',
     promptLength: prompt.length,
-    answerLength: answer.length,
-    sources: grounding.sources,
-    groundingChunkCount: grounding.groundingChunkCount,
-    groundingSupportCount: grounding.groundingSupportCount,
+    answerLength: typeof answer === 'string' ? answer.length : 0,
+    sources: grounding?.sources ?? [],
+    groundingChunkCount: grounding?.groundingChunkCount ?? 0,
+    groundingSupportCount: grounding?.groundingSupportCount ?? 0,
     tokenUsage,
     origin: request.headers.origin?.toString() ?? null,
   };
+
+  if (failureCode) {
+    logEntry.failureCode = failureCode;
+  }
+
+  if (failureMessage) {
+    logEntry.failureMessage = failureMessage;
+  }
 
   if (askLogIncludePrompt) {
     logEntry.prompt = prompt;
   }
 
-  if (askLogIncludeAnswer) {
+  if (askLogIncludeAnswer && typeof answer === 'string') {
     logEntry.answer = answer;
   }
 
@@ -857,6 +883,44 @@ const handleAskRequest = async (request, response) => {
     return;
   }
 
+  const askLogId = requestId
+    ?? `ask_${Date.now().toString(36)}_${randomUUID().replaceAll('-', '').slice(0, 12)}`;
+  const askCreatedAt = new Date().toISOString();
+  const saveAskFailure = async (failureCode, failureMessage) => {
+    await saveAskLog({
+      documentId: askLogId,
+      request,
+      prompt,
+      model: geminiModel,
+      generationStatus: 'failed',
+      failureCode,
+      failureMessage,
+      createdAt: askCreatedAt,
+    }).catch((logError) => {
+      console.warn('Could not save failed ask state:', logError);
+    });
+  };
+
+  try {
+    await saveAskLog({
+      documentId: askLogId,
+      request,
+      prompt,
+      model: geminiModel,
+      generationStatus: 'processing',
+      createdAt: askCreatedAt,
+    });
+  } catch (logError) {
+    console.warn('Could not register pending ask state:', logError);
+    writeJson(request, response, 503, {
+      error: 'AI 질문을 서버에 등록하지 못했습니다. 잠시 후 다시 시도해 주세요.',
+      status: 'ASK_REGISTRATION_FAILED',
+    });
+    return;
+  }
+
+  let generationPhase = 'generating';
+
   try {
     const client = getGeminiClient();
     const geminiRequest = {
@@ -881,8 +945,11 @@ const handleAskRequest = async (request, response) => {
     const grounding = summarizeGrounding(groundingMetadata);
 
     if (!grounding.grounded) {
+      const failureMessage = '검색 근거가 충분한 답변을 생성하지 못했습니다. 질문을 조금 더 구체적으로 바꿔 주세요.';
+      await saveAskFailure('UNGROUNDED_RESPONSE', failureMessage);
+      generationPhase = 'failed';
       writeJson(request, response, 502, {
-        error: 'Gemini did not return grounded File Search evidence. Please retry or narrow the question.',
+        error: failureMessage,
         answer: geminiResponse.text ?? '',
         model: geminiModel,
         tokenUsage,
@@ -903,36 +970,73 @@ const handleAskRequest = async (request, response) => {
       });
     }
 
-    const askLogId = await saveAskLog({
-      documentId: requestId,
-      request,
-      prompt,
-      answer,
-      model: geminiModel,
-      tokenUsage,
-      grounding,
-    }).catch((logError) => {
-      console.warn('Could not save ask log:', logError);
-      return null;
-    });
+    let savedAskLogId;
+    try {
+      savedAskLogId = await saveAskLog({
+        documentId: askLogId,
+        request,
+        prompt,
+        answer,
+        model: geminiModel,
+        tokenUsage,
+        grounding,
+        generationStatus: 'completed',
+        createdAt: askCreatedAt,
+      });
+    } catch (logError) {
+      console.warn('Could not confirm completed ask log write:', logError);
 
+      const persistedRecoveryResult = await readAskLogFromFirestore(askLogId)
+        .then((logEntry) => buildAskRecoveryResult(askLogId, logEntry))
+        .catch((readError) => {
+          console.warn('Could not verify completed ask log after write failure:', readError);
+          return null;
+        });
+
+      if (persistedRecoveryResult?.state === 'completed') {
+        generationPhase = 'completed';
+        writeJson(request, response, 200, persistedRecoveryResult.response, {
+          'cache-control': 'no-store',
+        });
+        return;
+      }
+
+      generationPhase = 'persistence_uncertain';
+      writeJson(request, response, 503, {
+        error: '생성된 답변의 저장 상태를 확인하고 있습니다. 잠시만 기다려 주세요.',
+        status: 'ANSWER_PERSISTENCE_UNCERTAIN',
+      }, {
+        'cache-control': 'no-store',
+        'retry-after': '2',
+      });
+      return;
+    }
+
+    generationPhase = 'completed';
     writeJson(request, response, 200, {
       answer,
       model: geminiModel,
       tokenUsage,
-      askLogId,
+      askLogId: savedAskLogId,
       ...grounding,
     }, {
       'cache-control': 'no-store',
     });
   } catch (error) {
+    if (generationPhase !== 'generating') {
+      console.warn(`Could not return AI request state ${generationPhase}:`, error);
+      return;
+    }
+
     console.error('Ask request failed:', error);
     const { payload, code, status } = getErrorDetails(error);
 
     if (isGeminiRateLimitError(error)) {
       const retryAfterSeconds = setGeminiProviderCooldown(error);
+      const failureMessage = 'Gemini 사용량 제한으로 답변 생성을 완료하지 못했습니다. 잠시 후 다시 시도해 주세요.';
+      await saveAskFailure(status ?? 'RESOURCE_EXHAUSTED', failureMessage);
       writeJson(request, response, 429, {
-        error: 'Gemini rate limit exceeded. Please try again later.',
+        error: failureMessage,
         status: status ?? 'RESOURCE_EXHAUSTED',
       }, {
         'retry-after': String(retryAfterSeconds),
@@ -940,8 +1044,10 @@ const handleAskRequest = async (request, response) => {
       return;
     }
 
+    const failureMessage = 'AI 답변 생성을 완료하지 못했습니다. 잠시 후 다시 질문해 주세요.';
+    await saveAskFailure(status ?? 'PROVIDER_ERROR', failureMessage);
     writeJson(request, response, code === 503 ? 503 : 500, {
-      error: payload?.error?.message ?? 'Gemini request failed.',
+      error: payload?.error?.message ?? failureMessage,
       status,
     });
   }
@@ -966,11 +1072,35 @@ const handleAskResultRequest = async (request, response, url) => {
 
   try {
     const logEntry = await readAskLogFromFirestore(requestId);
-    const recoveredResponse = buildRecoveredAskResponse(requestId, logEntry);
+    const recoveryResult = buildAskRecoveryResult(requestId, logEntry);
 
-    if (!recoveredResponse) {
+    if (recoveryResult.state === 'not_found') {
+      writeJson(request, response, 404, {
+        status: 'not_found',
+        requestId,
+        error: 'AI 질문 기록을 아직 확인하지 못했습니다.',
+      }, {
+        'cache-control': 'no-store',
+        'retry-after': '2',
+      });
+      return;
+    }
+
+    if (recoveryResult.state === 'failed') {
+      writeJson(request, response, 422, {
+        status: 'failed',
+        requestId,
+        error: recoveryResult.error,
+        failureCode: recoveryResult.failureCode,
+      }, {
+        'cache-control': 'no-store',
+      });
+      return;
+    }
+
+    if (recoveryResult.state === 'pending') {
       writeJson(request, response, 202, {
-        status: 'pending',
+        status: 'processing',
         requestId,
       }, {
         'cache-control': 'no-store',
@@ -979,7 +1109,7 @@ const handleAskResultRequest = async (request, response, url) => {
       return;
     }
 
-    writeJson(request, response, 200, recoveredResponse, {
+    writeJson(request, response, 200, recoveryResult.response, {
       'cache-control': 'no-store',
     });
   } catch (error) {
