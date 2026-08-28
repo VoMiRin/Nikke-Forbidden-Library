@@ -108,6 +108,7 @@ test('deploy syncs File Search once before any external deployment command', () 
 
   try {
     assert.equal(fixture.result.status, 0, fixture.result.stderr || fixture.result.stdout);
+    assert.match(fixture.result.stdout, /GEMINI_MODEL=gemini-3\.7-flash/);
     assert.equal(
       fixture.commands.filter((command) => command === 'npm run gemini:file-search:sync').length,
       1

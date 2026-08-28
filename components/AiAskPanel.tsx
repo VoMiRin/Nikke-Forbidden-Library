@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { SparklesIcon } from './Icons';
 
 type AskSource = {
@@ -25,6 +25,155 @@ type AskResponse = {
   groundingSupportCount: number;
   tokenUsage?: TokenUsage | null;
   askLogId?: string | null;
+};
+
+const ASK_RECOVERY_POLL_INTERVAL_MS = 2_000;
+const ASK_RECOVERY_TIMEOUT_MS = 4 * 60_000;
+const ASK_RECOVERY_FETCH_TIMEOUT_MS = 10_000;
+const ASK_RECOVERY_RETRYABLE_STATUSES = new Set([202, 429, 500, 502, 503, 504]);
+
+const isRecord = (value: unknown): value is Record<string, unknown> => (
+  !!value && typeof value === 'object' && !Array.isArray(value)
+);
+
+const readResponsePayload = async (result: Response): Promise<Record<string, unknown>> => {
+  const text = await result.text();
+  if (!text) return {};
+
+  try {
+    const payload: unknown = JSON.parse(text);
+    return isRecord(payload) ? payload : {};
+  } catch {
+    return {};
+  }
+};
+
+const normalizeAskResponse = (payload: Record<string, unknown>): AskResponse | null => {
+  if (typeof payload.answer !== 'string' || typeof payload.model !== 'string') {
+    return null;
+  }
+
+  const sources = Array.isArray(payload.sources)
+    ? payload.sources.filter((source): source is AskSource => (
+      isRecord(source) && typeof source.title === 'string'
+    ))
+    : [];
+  const tokenUsage = isRecord(payload.tokenUsage)
+    ? payload.tokenUsage as TokenUsage
+    : null;
+
+  return {
+    answer: payload.answer,
+    model: payload.model,
+    grounded: payload.grounded === true,
+    sources,
+    groundingChunkCount: typeof payload.groundingChunkCount === 'number'
+      ? payload.groundingChunkCount
+      : 0,
+    groundingSupportCount: typeof payload.groundingSupportCount === 'number'
+      ? payload.groundingSupportCount
+      : 0,
+    tokenUsage,
+    askLogId: typeof payload.askLogId === 'string' ? payload.askLogId : null,
+  };
+};
+
+const createAskRequestId = () => `ask_${crypto.randomUUID().replaceAll('-', '')}`;
+
+const createAbortError = () => new DOMException('The operation was aborted.', 'AbortError');
+const isAbortError = (error: unknown) => (
+  error instanceof DOMException && error.name === 'AbortError'
+);
+
+const wait = (delayMs: number, signal: AbortSignal) => new Promise<void>((resolve, reject) => {
+  if (signal.aborted) {
+    reject(createAbortError());
+    return;
+  }
+
+  const handleAbort = () => {
+    window.clearTimeout(timeout);
+    reject(createAbortError());
+  };
+  const timeout = window.setTimeout(() => {
+    signal.removeEventListener('abort', handleAbort);
+    resolve();
+  }, delayMs);
+
+  signal.addEventListener('abort', handleAbort, { once: true });
+});
+
+const fetchRecoveryResult = async (requestId: string, signal: AbortSignal) => {
+  const controller = new AbortController();
+  const handleAbort = () => controller.abort();
+  const timeout = window.setTimeout(() => controller.abort(), ASK_RECOVERY_FETCH_TIMEOUT_MS);
+
+  if (signal.aborted) controller.abort();
+  signal.addEventListener('abort', handleAbort, { once: true });
+
+  try {
+    return await fetch(`/api/ask/result?requestId=${encodeURIComponent(requestId)}`, {
+      cache: 'no-store',
+      headers: {
+        accept: 'application/json',
+      },
+      signal: controller.signal,
+    });
+  } finally {
+    window.clearTimeout(timeout);
+    signal.removeEventListener('abort', handleAbort);
+  }
+};
+
+const getRetryDelayMs = (result: Response) => {
+  const retryAfterSeconds = Number(result.headers.get('retry-after'));
+  return Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0
+    ? Math.max(1_000, retryAfterSeconds * 1_000)
+    : ASK_RECOVERY_POLL_INTERVAL_MS;
+};
+
+const pollForStoredAnswer = async (requestId: string, signal: AbortSignal): Promise<AskResponse> => {
+  const deadline = Date.now() + ASK_RECOVERY_TIMEOUT_MS;
+
+  while (!signal.aborted && Date.now() < deadline) {
+    let retryDelayMs = ASK_RECOVERY_POLL_INTERVAL_MS;
+    let result: Response;
+    let payload: Record<string, unknown>;
+
+    try {
+      result = await fetchRecoveryResult(requestId, signal);
+      payload = await readResponsePayload(result);
+    } catch {
+      if (signal.aborted) throw createAbortError();
+      // A short network interruption should not turn a completed Gemini response into a failure.
+      await wait(retryDelayMs, signal);
+      continue;
+    }
+
+    if (result.status === 200) {
+      const recoveredResponse = normalizeAskResponse(payload);
+      if (recoveredResponse) return recoveredResponse;
+      throw new Error('저장된 AI 답변 형식이 올바르지 않습니다.');
+    }
+
+    if (payload.status === 'RECOVERY_NOT_CONFIGURED') {
+      throw new Error('저장된 AI 답변 복구 기능이 설정되지 않았습니다.');
+    }
+
+    if (!ASK_RECOVERY_RETRYABLE_STATUSES.has(result.status)) {
+      throw new Error(
+        typeof payload.error === 'string'
+          ? payload.error
+          : '저장된 AI 답변을 확인할 수 없습니다.'
+      );
+    }
+
+    retryDelayMs = getRetryDelayMs(result);
+    await wait(retryDelayMs, signal);
+  }
+
+  if (signal.aborted) throw createAbortError();
+  throw new Error('답변 생성이 오래 걸리고 있습니다. 잠시 후 저장된 결과를 다시 확인해 주세요.');
 };
 
 const formatTokenCount = (value: number | undefined) => (
@@ -112,8 +261,29 @@ export const AiAskPanel: React.FC = () => {
   const [response, setResponse] = useState<AskResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRecovering, setIsRecovering] = useState(false);
+  const [pendingRequestId, setPendingRequestId] = useState<string | null>(null);
+  const recoveryAbortControllerRef = useRef<AbortController | null>(null);
 
   const canSubmit = prompt.trim().length > 0 && !isSubmitting;
+
+  useEffect(() => () => {
+    recoveryAbortControllerRef.current?.abort();
+  }, []);
+
+  const pollWithNewController = async (requestId: string) => {
+    recoveryAbortControllerRef.current?.abort();
+    const controller = new AbortController();
+    recoveryAbortControllerRef.current = controller;
+
+    try {
+      return await pollForStoredAnswer(requestId, controller.signal);
+    } finally {
+      if (recoveryAbortControllerRef.current === controller) {
+        recoveryAbortControllerRef.current = null;
+      }
+    }
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -122,30 +292,99 @@ export const AiAskPanel: React.FC = () => {
     setIsSubmitting(true);
     setError(null);
     setResponse(null);
+    setPendingRequestId(null);
+    recoveryAbortControllerRef.current?.abort();
+
+    const requestId = createAskRequestId();
+
+    const recoverStoredAnswer = async () => {
+      setIsRecovering(true);
+      setPendingRequestId(requestId);
+
+      const recoveredResponse = await pollWithNewController(requestId);
+      setResponse(recoveredResponse);
+      setPendingRequestId(null);
+    };
 
     try {
-      const result = await fetch('/api/ask', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({ prompt: prompt.trim() }),
-      });
-      const payload = await result.json().catch(() => ({}));
+      let result: Response;
+
+      try {
+        result = await fetch('/api/ask', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: prompt.trim(), requestId }),
+        });
+      } catch (requestError) {
+        if (navigator.onLine !== false) {
+          await recoverStoredAnswer();
+          return;
+        }
+
+        throw requestError;
+      }
+
+      let payload: Record<string, unknown>;
+      try {
+        payload = await readResponsePayload(result);
+      } catch {
+        await recoverStoredAnswer();
+        return;
+      }
+
+      if (
+        result.status === 504
+        || ((result.status === 502 || result.status === 503) && Object.keys(payload).length === 0)
+      ) {
+        await recoverStoredAnswer();
+        return;
+      }
 
       if (!result.ok) {
         const retryMessage = result.status === 429 ? formatRetryAfter(result.headers.get('retry-after')) : null;
         throw new Error(
           retryMessage
             ? `AI 요청이 잠시 많습니다. ${retryMessage}`
-            : payload.error || 'AI 질문 요청에 실패했습니다.'
+            : typeof payload.error === 'string'
+              ? payload.error
+              : `AI 질문 요청에 실패했습니다. (HTTP ${result.status})`
         );
       }
 
-      setResponse(payload as AskResponse);
+      const askResponse = normalizeAskResponse(payload);
+      if (!askResponse) {
+        await recoverStoredAnswer();
+        return;
+      }
+
+      setResponse(askResponse);
     } catch (requestError) {
+      if (isAbortError(requestError)) return;
       setError(requestError instanceof Error ? requestError.message : 'AI 질문 요청에 실패했습니다.');
     } finally {
+      setIsRecovering(false);
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleRecoverPendingAnswer = async () => {
+    if (!pendingRequestId || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setIsRecovering(true);
+    setError(null);
+
+    try {
+      const recoveredResponse = await pollWithNewController(pendingRequestId);
+      setResponse(recoveredResponse);
+      setPendingRequestId(null);
+    } catch (requestError) {
+      if (isAbortError(requestError)) return;
+      setError(requestError instanceof Error ? requestError.message : '저장된 AI 답변을 확인하지 못했습니다.');
+    } finally {
+      setIsRecovering(false);
       setIsSubmitting(false);
     }
   };
@@ -184,14 +423,29 @@ export const AiAskPanel: React.FC = () => {
             className="inline-flex items-center justify-center gap-2 rounded-full bg-nikke-gradient px-5 py-2.5 text-sm font-bold text-slate-950 transition-transform duration-300 ease-editorial hover:scale-[1.02] disabled:cursor-wait disabled:opacity-60 disabled:hover:scale-100"
           >
             <SparklesIcon className="h-4 w-4" />
-            {isSubmitting ? '질문 중...' : '질문하기'}
+            {isRecovering ? '답변 확인 중...' : isSubmitting ? '질문 중...' : '질문하기'}
           </button>
         </div>
       </form>
 
+      {isRecovering && (
+        <div className="mt-4 rounded-[1rem] border border-nikke-accent/20 bg-nikke-accent/5 px-4 py-3 text-sm leading-6 text-nikke-text-secondary" role="status">
+          답변 생성은 계속되고 있습니다. 저장된 결과를 확인하는 중입니다.
+        </div>
+      )}
+
       {error && (
         <div className="mt-4 rounded-[1rem] border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm leading-6 text-red-200">
-          {error}
+          <p>{error}</p>
+          {pendingRequestId && !isSubmitting && (
+            <button
+              type="button"
+              onClick={handleRecoverPendingAnswer}
+              className="mt-2 font-bold text-red-100 underline decoration-red-200/60 underline-offset-4"
+            >
+              저장된 결과 다시 확인
+            </button>
+          )}
         </div>
       )}
 

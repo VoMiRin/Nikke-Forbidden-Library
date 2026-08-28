@@ -71,6 +71,8 @@ AI 질문 기록 관련 환경 변수:
 
 AI 질문 기록은 LLM 위키 초안 검수용입니다. 공개 서비스에서는 사용자가 입력한 질문과 AI 답변이 저장될 수 있음을 안내하고, Firestore의 `aiAskLogs` 컬렉션에서 `status=pending_review` 문서만 골라 검수하는 흐름을 권장합니다.
 
+Firebase Hosting의 Cloud Run rewrite는 장시간 요청을 60초 뒤 종료할 수 있습니다. AI 답변 생성이 그보다 오래 걸리면 프런트는 최초 요청에 포함한 임의 요청 ID로 `GET /api/ask/result`를 조회해 Firestore에 완료된 답변을 복구합니다. 이 복구 기능을 사용하려면 `ASK_LOG_STORAGE=firestore`와 `ASK_LOG_INCLUDE_ANSWER=1`을 유지해야 합니다.
+
 ## Gemini File Search 갱신
 
 AI Chat은 Firebase Hosting의 스크립트 파일이나 검색 API의 `search-index.json`을 직접 읽지 않고, `GEMINI_FILE_SEARCH_STORE`로 지정한 원격 자료만 사용합니다. 따라서 이 store 동기화가 성공해야 새 스크립트가 AI 답변에 반영됩니다.

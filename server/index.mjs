@@ -4,6 +4,11 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { GoogleGenAI } from '@google/genai';
+import {
+  buildRecoveredAskResponse,
+  fromFirestoreFields,
+  normalizeAskRequestId,
+} from './askRecovery.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,7 +40,7 @@ await loadEnvFile(path.join(rootDir, '.env'));
 
 const port = Number(process.env.PORT ?? 8080);
 const indexPath = process.env.SEARCH_INDEX_PATH ?? path.join(rootDir, 'public', 'search-index.json');
-const geminiModel = process.env.GEMINI_MODEL ?? 'gemini-3-flash-preview';
+const geminiModel = process.env.GEMINI_MODEL ?? 'gemini-3.7-flash';
 const geminiFileSearchStore = process.env.GEMINI_FILE_SEARCH_STORE ?? '';
 const allowedOrigins = (process.env.ACCESS_CONTROL_ALLOW_ORIGIN ?? '')
   .split(',')
@@ -638,7 +643,7 @@ const getFirestoreAccessToken = async () => {
   return accessToken;
 };
 
-const writeAskLogToFirestore = async (documentId, logEntry) => {
+const getAskLogDocumentUrl = (documentId) => {
   if (!askLogProjectId) {
     throw new Error('ASK_LOG_PROJECT_ID is not configured.');
   }
@@ -647,32 +652,69 @@ const writeAskLogToFirestore = async (documentId, logEntry) => {
     throw new Error('ASK_LOG_COLLECTION is not configured.');
   }
 
-  const accessToken = await getFirestoreAccessToken();
   const databaseId = encodeURIComponent(askLogDatabaseId || '(default)');
   const collection = encodeURIComponent(askLogCollection);
-  const url = new URL(
-    `https://firestore.googleapis.com/v1/projects/${encodeURIComponent(askLogProjectId)}/databases/${databaseId}/documents/${collection}`
+  return (
+    `https://firestore.googleapis.com/v1/projects/${encodeURIComponent(askLogProjectId)}`
+    + `/databases/${databaseId}/documents/${collection}/${encodeURIComponent(documentId)}`
   );
-  url.searchParams.set('documentId', documentId);
-
-  const response = await fetchWithTimeout(url, {
-    method: 'POST',
-    headers: {
-      authorization: `Bearer ${accessToken}`,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      fields: toFirestoreFields(logEntry),
-    }),
-  }, askLogWriteTimeoutMs);
-
-  if (!response.ok) {
-    const errorBody = await response.text().catch(() => '');
-    throw new Error(`Firestore ask log write failed: ${response.status} ${errorBody}`);
-  }
 };
 
-const saveAskLog = async ({ request, prompt, answer, model, tokenUsage, grounding }) => {
+const writeAskLogToFirestore = async (documentId, logEntry) => {
+  const accessToken = await getFirestoreAccessToken();
+  const url = getAskLogDocumentUrl(documentId);
+  let lastError;
+
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      const firestoreResponse = await fetchWithTimeout(url, {
+        method: 'PATCH',
+        headers: {
+          authorization: `Bearer ${accessToken}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          fields: toFirestoreFields(logEntry),
+        }),
+      }, askLogWriteTimeoutMs);
+
+      if (firestoreResponse.ok) return;
+
+      const errorBody = await firestoreResponse.text().catch(() => '');
+      lastError = new Error(`Firestore ask log write failed: ${firestoreResponse.status} ${errorBody}`);
+      if (firestoreResponse.status < 500 || attempt > 0) break;
+    } catch (error) {
+      lastError = error;
+      if (attempt > 0) break;
+    }
+
+    await sleep(250);
+  }
+
+  throw lastError ?? new Error('Firestore ask log write failed.');
+};
+
+const readAskLogFromFirestore = async (documentId) => {
+  const accessToken = await getFirestoreAccessToken();
+  const url = getAskLogDocumentUrl(documentId);
+  const firestoreResponse = await fetchWithTimeout(url, {
+    headers: {
+      authorization: `Bearer ${accessToken}`,
+    },
+  }, askLogWriteTimeoutMs);
+
+  if (firestoreResponse.status === 404) return null;
+
+  if (!firestoreResponse.ok) {
+    const errorBody = await firestoreResponse.text().catch(() => '');
+    throw new Error(`Firestore ask log read failed: ${firestoreResponse.status} ${errorBody}`);
+  }
+
+  const document = await firestoreResponse.json();
+  return fromFirestoreFields(document.fields);
+};
+
+const saveAskLog = async ({ documentId, request, prompt, answer, model, tokenUsage, grounding }) => {
   if (!isAskLogEnabled()) return null;
 
   if (askLogStorage !== 'firestore') {
@@ -681,9 +723,10 @@ const saveAskLog = async ({ request, prompt, answer, model, tokenUsage, groundin
   }
 
   const now = new Date().toISOString();
-  const documentId = `ask_${Date.now().toString(36)}_${randomUUID().replaceAll('-', '').slice(0, 12)}`;
+  const resolvedDocumentId = documentId
+    ?? `ask_${Date.now().toString(36)}_${randomUUID().replaceAll('-', '').slice(0, 12)}`;
   const logEntry = {
-    id: documentId,
+    id: resolvedDocumentId,
     createdAt: now,
     status: askLogDefaultStatus || 'pending_review',
     model,
@@ -705,8 +748,8 @@ const saveAskLog = async ({ request, prompt, answer, model, tokenUsage, groundin
     logEntry.answer = answer;
   }
 
-  await writeAskLogToFirestore(documentId, logEntry);
-  return documentId;
+  await writeAskLogToFirestore(resolvedDocumentId, logEntry);
+  return resolvedDocumentId;
 };
 
 const summarizeGrounding = (groundingMetadata) => {
@@ -797,6 +840,13 @@ const handleAskRequest = async (request, response) => {
   }
 
   const prompt = typeof body.prompt === 'string' ? body.prompt.trim() : '';
+  const requestId = body.requestId === undefined ? null : normalizeAskRequestId(body.requestId);
+
+  if (body.requestId !== undefined && !requestId) {
+    writeJson(request, response, 400, { error: 'Invalid AI request ID.' });
+    return;
+  }
+
   if (!prompt) {
     writeJson(request, response, 400, { error: 'Prompt is required.' });
     return;
@@ -854,6 +904,7 @@ const handleAskRequest = async (request, response) => {
     }
 
     const askLogId = await saveAskLog({
+      documentId: requestId,
       request,
       prompt,
       answer,
@@ -871,6 +922,8 @@ const handleAskRequest = async (request, response) => {
       tokenUsage,
       askLogId,
       ...grounding,
+    }, {
+      'cache-control': 'no-store',
     });
   } catch (error) {
     console.error('Ask request failed:', error);
@@ -890,6 +943,51 @@ const handleAskRequest = async (request, response) => {
     writeJson(request, response, code === 503 ? 503 : 500, {
       error: payload?.error?.message ?? 'Gemini request failed.',
       status,
+    });
+  }
+};
+
+const handleAskResultRequest = async (request, response, url) => {
+  const requestId = normalizeAskRequestId(url.searchParams.get('requestId'));
+  if (!requestId) {
+    writeJson(request, response, 400, { error: 'Invalid AI request ID.' });
+    return;
+  }
+
+  if (askLogStorage !== 'firestore' || !askLogIncludeAnswer) {
+    writeJson(request, response, 503, {
+      error: 'Stored AI answer recovery is not configured.',
+      status: 'RECOVERY_NOT_CONFIGURED',
+    }, {
+      'retry-after': '3',
+    });
+    return;
+  }
+
+  try {
+    const logEntry = await readAskLogFromFirestore(requestId);
+    const recoveredResponse = buildRecoveredAskResponse(requestId, logEntry);
+
+    if (!recoveredResponse) {
+      writeJson(request, response, 202, {
+        status: 'pending',
+        requestId,
+      }, {
+        'cache-control': 'no-store',
+        'retry-after': '2',
+      });
+      return;
+    }
+
+    writeJson(request, response, 200, recoveredResponse, {
+      'cache-control': 'no-store',
+    });
+  } catch (error) {
+    console.warn('Could not recover stored AI answer:', error);
+    writeJson(request, response, 503, {
+      error: 'Stored AI answer is temporarily unavailable.',
+    }, {
+      'retry-after': '3',
     });
   }
 };
@@ -927,6 +1025,26 @@ const server = http.createServer(async (request, response) => {
     }
 
     await handleAskRequest(request, response);
+    return;
+  }
+
+  if (url.pathname === '/api/ask/result') {
+    if (request.method !== 'GET') {
+      writeJson(request, response, 405, { error: 'Method not allowed.' });
+      return;
+    }
+
+    const retryAfterSeconds = isRateLimited(request);
+    if (retryAfterSeconds !== null) {
+      writeJson(request, response, 429, {
+        error: 'Too many stored answer checks. Please try again later.',
+      }, {
+        'retry-after': String(retryAfterSeconds),
+      });
+      return;
+    }
+
+    await handleAskResultRequest(request, response, url);
     return;
   }
 
