@@ -48,6 +48,8 @@ AI 질문 관련 환경 변수:
 - `ASK_GLOBAL_RATE_LIMIT_MAX_REQUESTS`: 서버 인스턴스별 윈도우당 전체 AI 질문 수. 기본값은 `6`
 - `ASK_DAILY_LIMIT_WINDOW_MS`: 서버 인스턴스별 AI 질문 일일 상한 윈도우 시간. 기본값은 `86400000`
 - `ASK_DAILY_LIMIT_MAX_REQUESTS`: 서버 인스턴스별 일일 최대 AI 질문 수. 기본값은 `100`
+- `GEMINI_MODEL`: 기본 답변 모델. 기본값은 `gemini-3.7-flash`
+- `GEMINI_FALLBACK_MODEL`: 기본 모델의 모델별 일일 요청 할당량이 소진되면 사용할 모델. 기본값은 `gemini-3.5-flash-lite`
 - `GEMINI_RETRY_COUNT`: Gemini 429/503 재시도 횟수
 - `GEMINI_RETRY_INITIAL_DELAY_MS`: Gemini 재시도 시작 대기 시간
 - `GEMINI_RETRY_MAX_DELAY_MS`: Gemini 재시도 최대 대기 시간
@@ -56,6 +58,8 @@ AI 질문 관련 환경 변수:
 
 유료 API 보호용 기본값은 IP별 `10회/10분`, 서비스 전체 `6회/분`, 서버 인스턴스별 `100회/일`입니다. `npm run deploy`는 기본적으로 Cloud Run `RUN_MAX_INSTANCES=1`로 배포해 in-memory 제한이 예측 가능하게 동작하도록 합니다.
 Gemini 429가 자주 나면 `ASK_GLOBAL_RATE_LIMIT_MAX_REQUESTS`를 낮추거나, `GEMINI_MODEL`을 preview 모델보다 quota가 여유로운 모델로 바꾸는 것이 우선입니다. API 키를 여러 개 넣어도 Gemini rate limit은 프로젝트 단위로 적용되므로 같은 프로젝트 키를 돌려 쓰는 방식은 효과가 없습니다.
+
+`GEMINI_MODEL`에서 `GenerateRequestsPerDayPerProjectPerModel` 일일 할당량 오류가 확인되면 서버는 같은 요청을 `GEMINI_FALLBACK_MODEL`로 즉시 다시 실행합니다. 분당 제한이나 일시적인 503에는 모델을 바꾸지 않고 기존 재시도 정책을 적용합니다. 일일 할당량이 소진된 기본 모델은 태평양 날짜가 바뀔 때까지 건너뜁니다.
 AI 답변이 성공하면 응답 하단과 서버 로그에서 입력/검색 도구/출력/총 토큰 수를 확인할 수 있습니다. 단, `GEMINI_COUNT_TOKENS_BEFORE_REQUEST=1`은 Gemini 요청을 하나 더 보내므로 429가 심할 때는 기본값 `0`을 유지하세요.
 
 AI 질문 기록 관련 환경 변수:

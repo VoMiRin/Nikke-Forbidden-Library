@@ -72,6 +72,20 @@ test('an absent or incomplete Firestore document remains pending', () => {
   ), null);
 });
 
+test('a stored fallback-model answer keeps its effective model during recovery', () => {
+  const documentId = 'ask_abcdef0123456789abcdef0123456789';
+  const response = buildRecoveredAskResponse(documentId, {
+    answer: 'Flash-Lite가 생성한 답변',
+    model: 'gemini-3.5-flash-lite',
+    groundingChunkCount: 1,
+    sources: [{ title: '메인 스토리' }],
+  });
+
+  assert.equal(response.model, 'gemini-3.5-flash-lite');
+  assert.equal(response.answer, 'Flash-Lite가 생성한 답변');
+  assert.equal(response.askLogId, documentId);
+});
+
 test('recovery distinguishes a missing request, active generation, and failed generation', () => {
   const documentId = 'ask_0123456789abcdef0123456789abcdef';
 

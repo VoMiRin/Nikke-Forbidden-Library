@@ -7,6 +7,7 @@ RUN npm ci --omit=dev
 
 COPY server/index.mjs ./server/index.mjs
 COPY server/askRecovery.mjs ./server/askRecovery.mjs
+COPY server/geminiFallback.mjs ./server/geminiFallback.mjs
 COPY public/search-index.json ./public/search-index.json
 
 ENV PORT=8080

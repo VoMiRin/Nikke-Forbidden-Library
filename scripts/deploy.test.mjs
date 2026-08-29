@@ -8,6 +8,7 @@ import test from 'node:test';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const deployScriptPath = path.join(scriptDirectory, 'deploy.sh');
+const serverDockerfilePath = path.join(scriptDirectory, '..', 'server', 'Dockerfile');
 
 function writeExecutable(filePath, contents) {
   fs.writeFileSync(filePath, contents, 'utf8');
@@ -103,12 +104,18 @@ function commandIndex(commands, prefix) {
   return commands.findIndex((command) => command.startsWith(prefix));
 }
 
+test('the Cloud Run image includes the Gemini fallback module', () => {
+  const dockerfile = fs.readFileSync(serverDockerfilePath, 'utf8');
+  assert.match(dockerfile, /COPY server\/geminiFallback\.mjs \.\/server\/geminiFallback\.mjs/);
+});
+
 test('deploy syncs File Search once before any external deployment command', () => {
   const fixture = runFixture();
 
   try {
     assert.equal(fixture.result.status, 0, fixture.result.stderr || fixture.result.stdout);
     assert.match(fixture.result.stdout, /GEMINI_MODEL=gemini-3\.7-flash/);
+    assert.match(fixture.result.stdout, /GEMINI_FALLBACK_MODEL=gemini-3\.5-flash-lite/);
     assert.equal(
       fixture.commands.filter((command) => command === 'npm run gemini:file-search:sync').length,
       1
@@ -125,6 +132,10 @@ test('deploy syncs File Search once before any external deployment command', () 
     assert.ok(syncIndex < cloudBuildIndex);
     assert.ok(cloudBuildIndex < cloudRunIndex);
     assert.ok(cloudRunIndex < hostingIndex);
+    assert.match(
+      fixture.commands[cloudRunIndex],
+      /GEMINI_FALLBACK_MODEL=gemini-3\.5-flash-lite/
+    );
   } finally {
     fs.rmSync(fixture.rootDirectory, { recursive: true, force: true });
   }

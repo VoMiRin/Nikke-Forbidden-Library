@@ -9,6 +9,12 @@ import {
   fromFirestoreFields,
   normalizeAskRequestId,
 } from './askRecovery.mjs';
+import {
+  createGeminiFallbackRouter,
+  getGeminiErrorDetails,
+  isGeminiRateLimitError,
+  isRetryableGeminiError,
+} from './geminiFallback.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,6 +47,7 @@ await loadEnvFile(path.join(rootDir, '.env'));
 const port = Number(process.env.PORT ?? 8080);
 const indexPath = process.env.SEARCH_INDEX_PATH ?? path.join(rootDir, 'public', 'search-index.json');
 const geminiModel = process.env.GEMINI_MODEL ?? 'gemini-3.7-flash';
+const geminiFallbackModel = process.env.GEMINI_FALLBACK_MODEL ?? 'gemini-3.5-flash-lite';
 const geminiFileSearchStore = process.env.GEMINI_FILE_SEARCH_STORE ?? '';
 const allowedOrigins = (process.env.ACCESS_CONTROL_ALLOW_ORIGIN ?? '')
   .split(',')
@@ -80,6 +87,11 @@ let askDailyLimitEntry = null;
 let geminiProviderCooldownUntil = 0;
 let geminiClient = null;
 let firestoreAccessTokenEntry = null;
+
+const geminiFallbackRouter = createGeminiFallbackRouter({
+  primaryModel: geminiModel,
+  fallbackModel: geminiFallbackModel,
+});
 
 const SYSTEM_INSTRUCTION = [
   'You answer questions about the GODDESS OF VICTORY: NIKKE script archive.',
@@ -386,26 +398,6 @@ const getGeminiClient = () => {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const parseErrorPayload = (error) => {
-  const rawMessage = error instanceof Error ? error.message : String(error);
-  try {
-    return JSON.parse(rawMessage);
-  } catch {
-    return { error: { message: rawMessage } };
-  }
-};
-
-const getErrorDetails = (error) => {
-  const payload = parseErrorPayload(error);
-  return {
-    payload,
-    code: payload?.error?.code,
-    status: payload?.error?.status,
-    message: payload?.error?.message ?? '',
-    details: Array.isArray(payload?.error?.details) ? payload.error.details : [],
-  };
-};
-
 const parseDelayMs = (value) => {
   if (!value) return null;
 
@@ -455,7 +447,7 @@ const getRetryAfterMs = (error) => {
   const headerDelayMs = parseDelayMs(headerValue);
   if (headerDelayMs !== null) return headerDelayMs;
 
-  const { details } = getErrorDetails(error);
+  const { details } = getGeminiErrorDetails(error);
   for (const detail of details) {
     const type = detail?.['@type'] ?? detail?.type;
     if (typeof type !== 'string' || !type.includes('RetryInfo')) continue;
@@ -476,23 +468,6 @@ const getGeminiRetryDelayMs = (error, attempt, initialDelayMs, maxDelayMs) => {
   const exponentialDelayMs = initialDelayMs * (2 ** attempt);
   const jitterMs = Math.floor(Math.random() * Math.min(1_000, Math.round(exponentialDelayMs * 0.2)));
   return Math.min(maxDelayMs, exponentialDelayMs + jitterMs);
-};
-
-const isGeminiRateLimitError = (error) => {
-  const { code, status, message } = getErrorDetails(error);
-
-  return code === 429
-    || status === 'RESOURCE_EXHAUSTED'
-    || /rate limit|quota|resource exhausted|429/i.test(message);
-};
-
-const isRetryableGeminiError = (error) => {
-  const { code, status, message } = getErrorDetails(error);
-
-  return isGeminiRateLimitError(error)
-    || code === 503
-    || status === 'UNAVAILABLE'
-    || /high demand|try again later|unavailable|503/i.test(message);
 };
 
 const generateContentWithRetry = async (
@@ -886,12 +861,13 @@ const handleAskRequest = async (request, response) => {
   const askLogId = requestId
     ?? `ask_${Date.now().toString(36)}_${randomUUID().replaceAll('-', '').slice(0, 12)}`;
   const askCreatedAt = new Date().toISOString();
+  let activeGeminiModel = geminiFallbackRouter.getPreferredModel();
   const saveAskFailure = async (failureCode, failureMessage) => {
     await saveAskLog({
       documentId: askLogId,
       request,
       prompt,
-      model: geminiModel,
+      model: activeGeminiModel,
       generationStatus: 'failed',
       failureCode,
       failureMessage,
@@ -906,7 +882,7 @@ const handleAskRequest = async (request, response) => {
       documentId: askLogId,
       request,
       prompt,
-      model: geminiModel,
+      model: activeGeminiModel,
       generationStatus: 'processing',
       createdAt: askCreatedAt,
     });
@@ -924,7 +900,7 @@ const handleAskRequest = async (request, response) => {
   try {
     const client = getGeminiClient();
     const geminiRequest = {
-      model: geminiModel,
+      model: activeGeminiModel,
       contents: prompt,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
@@ -937,8 +913,25 @@ const handleAskRequest = async (request, response) => {
         ],
       },
     };
-    const countedTokens = await countTokensIfEnabled(client, geminiRequest);
-    const geminiResponse = await generateContentWithRetry(client, geminiRequest);
+    let countedTokens = null;
+    const generated = await geminiFallbackRouter.generate(
+      geminiRequest,
+      async (routedRequest) => {
+        activeGeminiModel = routedRequest.model;
+        countedTokens = await countTokensIfEnabled(client, routedRequest);
+        return generateContentWithRetry(client, routedRequest);
+      }
+    );
+    const geminiResponse = generated.response;
+    activeGeminiModel = generated.model;
+
+    if (generated.fallbackReason === 'primary_daily_quota') {
+      console.warn('Gemini primary daily quota exhausted; switched to fallback model:', {
+        primaryModel: geminiModel,
+        fallbackModel: activeGeminiModel,
+      });
+    }
+
     const tokenUsage = buildTokenUsage(geminiResponse, countedTokens);
 
     const groundingMetadata = geminiResponse.candidates?.[0]?.groundingMetadata;
@@ -951,7 +944,7 @@ const handleAskRequest = async (request, response) => {
       writeJson(request, response, 502, {
         error: failureMessage,
         answer: geminiResponse.text ?? '',
-        model: geminiModel,
+        model: activeGeminiModel,
         tokenUsage,
       });
       return;
@@ -961,7 +954,7 @@ const handleAskRequest = async (request, response) => {
 
     if (tokenUsage) {
       console.info('Ask token usage:', {
-        model: geminiModel,
+        model: activeGeminiModel,
         promptTokens: tokenUsage.promptTokenCount,
         outputTokens: tokenUsage.candidatesTokenCount,
         toolTokens: tokenUsage.toolUsePromptTokenCount,
@@ -977,7 +970,7 @@ const handleAskRequest = async (request, response) => {
         request,
         prompt,
         answer,
-        model: geminiModel,
+        model: activeGeminiModel,
         tokenUsage,
         grounding,
         generationStatus: 'completed',
@@ -1015,7 +1008,7 @@ const handleAskRequest = async (request, response) => {
     generationPhase = 'completed';
     writeJson(request, response, 200, {
       answer,
-      model: geminiModel,
+      model: activeGeminiModel,
       tokenUsage,
       askLogId: savedAskLogId,
       ...grounding,
@@ -1029,7 +1022,7 @@ const handleAskRequest = async (request, response) => {
     }
 
     console.error('Ask request failed:', error);
-    const { payload, code, status } = getErrorDetails(error);
+    const { payload, code, status, message } = getGeminiErrorDetails(error);
 
     if (isGeminiRateLimitError(error)) {
       const retryAfterSeconds = setGeminiProviderCooldown(error);
@@ -1046,8 +1039,8 @@ const handleAskRequest = async (request, response) => {
 
     const failureMessage = 'AI 답변 생성을 완료하지 못했습니다. 잠시 후 다시 질문해 주세요.';
     await saveAskFailure(status ?? 'PROVIDER_ERROR', failureMessage);
-    writeJson(request, response, code === 503 ? 503 : 500, {
-      error: payload?.error?.message ?? failureMessage,
+    writeJson(request, response, Number(code) === 503 ? 503 : 500, {
+      error: payload?.error?.message ?? message ?? failureMessage,
       status,
     });
   }
