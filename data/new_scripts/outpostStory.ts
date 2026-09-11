@@ -235,6 +235,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'courthouse_05', categoryKey: 'outpost_stories', title: '법원', subTitle: '아, 그렇군요', mainChapterFile: '법원.txt' },
     { id: 'courthouse_06', categoryKey: 'outpost_stories', title: '법원', subTitle: '프리바티의 역할', mainChapterFile: '법원.txt' },
     { id: 'courthouse_07', categoryKey: 'outpost_stories', title: '법원', subTitle: '냉정냉혹 프로페셔널', mainChapterFile: '법원.txt' },
+    { id: 'courthouse_08', categoryKey: 'outpost_stories', title: '법원', subTitle: '빌런이라면 피할 수 없는', mainChapterFile: '법원.txt' },
 
     // 교회
     { id: 'church_00', categoryKey: 'outpost_stories', title: '교회', subTitle: '도둑의 말로', mainChapterFile: '교회.txt' },

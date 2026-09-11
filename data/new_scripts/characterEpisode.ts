@@ -1136,4 +1136,11 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'maxwell_mechanic_03', categoryKey: 'character_episodes', title: '맥스웰 : 오디너리 미케닉', subTitle: '예외 상황 발생', mainChapterFile: '맥스웰_오디너리_미케닉.txt' },
     { id: 'maxwell_mechanic_04', categoryKey: 'character_episodes', title: '맥스웰 : 오디너리 미케닉', subTitle: '제 2차 실험 결과', mainChapterFile: '맥스웰_오디너리_미케닉.txt' },
 
+    // 드레이크 : 그레이트 빌런
+    { id: 'drake_greatvillain_00', categoryKey: 'character_episodes', title: '드레이크 : 그레이트 빌런', subTitle: '빌런 데뷔 무대', mainChapterFile: '드레이크_그레이트빌런.txt' },
+    { id: 'drake_greatvillain_01', categoryKey: 'character_episodes', title: '드레이크 : 그레이트 빌런', subTitle: '무대 장소 대관', mainChapterFile: '드레이크_그레이트빌런.txt' },
+    { id: 'drake_greatvillain_02', categoryKey: 'character_episodes', title: '드레이크 : 그레이트 빌런', subTitle: '초대장 배포', mainChapterFile: '드레이크_그레이트빌런.txt' },
+    { id: 'drake_greatvillain_03', categoryKey: 'character_episodes', title: '드레이크 : 그레이트 빌런', subTitle: '변질된 행사', mainChapterFile: '드레이크_그레이트빌런.txt' },
+    { id: 'drake_greatvillain_04', categoryKey: 'character_episodes', title: '드레이크 : 그레이트 빌런', subTitle: '이어지는 평화', mainChapterFile: '드레이크_그레이트빌런.txt' },
+
 ];
