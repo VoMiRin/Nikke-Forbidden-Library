@@ -120,6 +120,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'workshop_06', categoryKey: 'outpost_stories', title: '공방', subTitle: '제작의 숨은 고수?', mainChapterFile: '공방.txt' },
     { id: 'workshop_07', categoryKey: 'outpost_stories', title: '공방', subTitle: 'BOOM친구', mainChapterFile: '공방.txt' },
     { id: 'workshop_08', categoryKey: 'outpost_stories', title: '공방', subTitle: '기술의 종착점', mainChapterFile: '공방.txt' },
+    //{ id: 'workshop_09', categoryKey: 'outpost_stories', title: '공방', subTitle: '할로윈 특별 선물♡', mainChapterFile: '공방.txt' },
 
     // 무기고
     { id: 'armory_00', categoryKey: 'outpost_stories', title: '무기고', subTitle: '무기고 괴담', mainChapterFile: '무기고.txt' },
@@ -159,6 +160,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'trendy_bar_10', categoryKey: 'outpost_stories', title: '모던 바', subTitle: '직장인 애환 모임', mainChapterFile: '모던_바.txt' },
     { id: 'trendy_bar_11', categoryKey: 'outpost_stories', title: '모던 바', subTitle: '바니걸 뒤풀이', mainChapterFile: '모던_바.txt' },
     { id: 'trendy_bar_12', categoryKey: 'outpost_stories', title: '모던 바', subTitle: '술의 위험성', mainChapterFile: '모던_바.txt' },
+    { id: 'trendy_bar_13', categoryKey: 'outpost_stories', title: '모던 바', subTitle: '바니 칵테일의 위력', mainChapterFile: '모던_바.txt' },
 
     // 도서관
     { id: 'library_00', categoryKey: 'outpost_stories', title: '도서관', subTitle: '도서관 괴담', mainChapterFile: '도서관.txt' },
@@ -278,6 +280,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'shopping_mall_10', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '은화는 선물이 어려워', mainChapterFile: '쇼핑몰.txt' },
     { id: 'shopping_mall_11', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '레이블의 향기를 찾아서', mainChapterFile: '쇼핑몰.txt' },
     { id: 'shopping_mall_12', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '새로운 헤드폰', mainChapterFile: '쇼핑몰.txt' },
+    { id: 'shopping_mall_13', categoryKey: 'outpost_stories', title: '쇼핑몰', subTitle: '지켜줘, 겨드랑이!', mainChapterFile: '쇼핑몰.txt' },
 
     // 전파탑
     { id: 'radio_tower_00', categoryKey: 'outpost_stories', title: '전파탑', subTitle: '전파를 찾아서', mainChapterFile: '전파탑.txt' },

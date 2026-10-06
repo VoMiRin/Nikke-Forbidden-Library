@@ -1143,4 +1143,18 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'drake_greatvillain_03', categoryKey: 'character_episodes', title: '드레이크 : 그레이트 빌런', subTitle: '변질된 행사', mainChapterFile: '드레이크_그레이트빌런.txt' },
     { id: 'drake_greatvillain_04', categoryKey: 'character_episodes', title: '드레이크 : 그레이트 빌런', subTitle: '이어지는 평화', mainChapterFile: '드레이크_그레이트빌런.txt' },
 
+    // 길티 : 마이티 바니
+    { id: 'guilty_mightybunny_00', categoryKey: 'character_episodes', title: '길티 : 마이티 바니', subTitle: 'MIGHTY BUNNY', mainChapterFile: '길티_마이티_바니.txt' },
+    { id: 'guilty_mightybunny_01', categoryKey: 'character_episodes', title: '길티 : 마이티 바니', subTitle: 'GUILTY BUNNY', mainChapterFile: '길티_마이티_바니.txt' },
+    { id: 'guilty_mightybunny_02', categoryKey: 'character_episodes', title: '길티 : 마이티 바니', subTitle: 'LYING BUNNY', mainChapterFile: '길티_마이티_바니.txt' },
+    { id: 'guilty_mightybunny_03', categoryKey: 'character_episodes', title: '길티 : 마이티 바니', subTitle: 'BAD BUNNY', mainChapterFile: '길티_마이티_바니.txt' },
+    { id: 'guilty_mightybunny_04', categoryKey: 'character_episodes', title: '길티 : 마이티 바니', subTitle: 'INNOCENT BUNNY', mainChapterFile: '길티_마이티_바니.txt' },
+
+    // 신 : 스위프트 바니
+    { id: 'sin_swiftbunny_00', categoryKey: 'character_episodes', title: '신 : 스위프트 바니', subTitle: '듀얼-클래스 카페', mainChapterFile: '신_스위프트_바니.txt' },
+    { id: 'sin_swiftbunny_01', categoryKey: 'character_episodes', title: '신 : 스위프트 바니', subTitle: '제대로 된 말', mainChapterFile: '신_스위프트_바니.txt' },
+    { id: 'sin_swiftbunny_02', categoryKey: 'character_episodes', title: '신 : 스위프트 바니', subTitle: '전설의 옥장판', mainChapterFile: '신_스위프트_바니.txt' },
+    { id: 'sin_swiftbunny_03', categoryKey: 'character_episodes', title: '신 : 스위프트 바니', subTitle: '감사의 말', mainChapterFile: '신_스위프트_바니.txt' },
+    { id: 'sin_swiftbunny_04', categoryKey: 'character_episodes', title: '신 : 스위프트 바니', subTitle: '전하려 하는 말', mainChapterFile: '신_스위프트_바니.txt' },
+
 ];
