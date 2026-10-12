@@ -1,9 +1,10 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import type { Script } from '../types';
 
-export type AppView = 'search' | 'stories' | 'script_viewer' | 'ai_chat';
+export type AppView = 'search' | 'stories' | 'script_viewer' | 'ai_chat' | 'speakers';
 
 interface UseScriptNavigationProps {
+  initialState?: { view: AppView; categoryKey: string | null; scriptId: string | null };
   scripts: Script[];
   onSearchClear: () => void;
   isSidebarOpenOnMobile: boolean;
@@ -28,15 +29,29 @@ interface UseScriptNavigationReturn {
   setSelectedScriptId: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
+/** 챕터 경계를 넘어 이어서 이동할 수 있는 분류 */
+const CROSS_CHAPTER_CATEGORIES = new Set(['main_story']);
+
+/**
+ * 이전/다음 이동 범위에 들어가는 장면 목록.
+ * 메인 스토리는 분류 전체(챕터 순서대로)를, 그 외 분류는 같은 타이틀 안의 장면만 돌려준다.
+ */
+export const getSequentialScripts = (scripts: Script[], currentScript: Script): Script[] => (
+  CROSS_CHAPTER_CATEGORIES.has(currentScript.categoryKey)
+    ? scripts.filter(s => s.categoryKey === currentScript.categoryKey)
+    : scripts.filter(s => s.categoryKey === currentScript.categoryKey && s.title === currentScript.title)
+);
+
 export function useScriptNavigation({
+  initialState,
   scripts,
   onSearchClear,
   isSidebarOpenOnMobile,
   setIsSidebarOpenOnMobile,
 }: UseScriptNavigationProps): UseScriptNavigationReturn {
-  const [currentView, setCurrentView] = useState<AppView>('search');
-  const [activeCategoryKey, setActiveCategoryKey] = useState<string | null>(null);
-  const [selectedScriptId, setSelectedScriptId] = useState<string | null>(null);
+  const [currentView, setCurrentView] = useState<AppView>(initialState?.view ?? 'stories');
+  const [activeCategoryKey, setActiveCategoryKey] = useState<string | null>(initialState?.categoryKey ?? null);
+  const [selectedScriptId, setSelectedScriptId] = useState<string | null>(initialState?.scriptId ?? null);
 
   const scriptsForActiveCategoryWhenBrowsing = useMemo(() => {
     if (!activeCategoryKey || scripts.length === 0) return [];
@@ -92,14 +107,12 @@ export function useScriptNavigation({
     const currentScriptInstance = scripts.find(s => s.id === currentScriptId);
     if (!currentScriptInstance) return;
 
-    const scriptsInSameChapter = scripts.filter(
-      s => s.categoryKey === currentScriptInstance.categoryKey && s.title === currentScriptInstance.title
-    );
+    const sequentialScripts = getSequentialScripts(scripts, currentScriptInstance);
 
-    const currentIndex = scriptsInSameChapter.findIndex(s => s.id === currentScriptId);
+    const currentIndex = sequentialScripts.findIndex(s => s.id === currentScriptId);
 
-    if (currentIndex !== -1 && currentIndex < scriptsInSameChapter.length - 1) {
-      handleSelectScript(scriptsInSameChapter[currentIndex + 1].id);
+    if (currentIndex !== -1 && currentIndex < sequentialScripts.length - 1) {
+      handleSelectScript(sequentialScripts[currentIndex + 1].id);
     }
   }, [scripts, handleSelectScript]);
 
@@ -107,14 +120,12 @@ export function useScriptNavigation({
     const currentScriptInstance = scripts.find(s => s.id === currentScriptId);
     if (!currentScriptInstance) return;
 
-    const scriptsInSameChapter = scripts.filter(
-      s => s.categoryKey === currentScriptInstance.categoryKey && s.title === currentScriptInstance.title
-    );
+    const sequentialScripts = getSequentialScripts(scripts, currentScriptInstance);
 
-    const currentIndex = scriptsInSameChapter.findIndex(s => s.id === currentScriptId);
+    const currentIndex = sequentialScripts.findIndex(s => s.id === currentScriptId);
 
     if (currentIndex > 0) {
-      handleSelectScript(scriptsInSameChapter[currentIndex - 1].id);
+      handleSelectScript(sequentialScripts[currentIndex - 1].id);
     }
   }, [scripts, handleSelectScript]);
 

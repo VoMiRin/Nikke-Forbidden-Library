@@ -4,6 +4,8 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { GoogleGenAI } from '@google/genai';
+import { searchDocuments } from '../lib/search.mjs';
+import { createGroundingResolver, summarizeGrounding } from './groundingSources.mjs';
 import {
   buildAskRecoveryResult,
   fromFirestoreFields,
@@ -102,90 +104,6 @@ const SYSTEM_INSTRUCTION = [
   'Keep direct quotations short.',
 ].join('\n');
 
-const normalizeSearchValue = (value = '') => (
-  value
-    .normalize('NFKC')
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim()
-);
-
-const countTokenHits = (field, tokens, weight) => (
-  tokens.reduce((score, token) => score + (field.includes(token) ? weight : 0), 0)
-);
-
-const calculateScore = (document, normalizedContentQuery, normalizedSpeakerQuery, contentTokens, speakerTokens) => {
-  const normalizedTitle = normalizeSearchValue(document.title);
-  const normalizedSubTitle = normalizeSearchValue(document.subTitle ?? '');
-  const normalizedSpeakers = normalizeSearchValue(document.searchableSpeakers);
-  const normalizedContent = normalizeSearchValue(document.searchableContent);
-
-  const getSpeakerContentForQuery = () => (
-    Object.entries(document.searchableSpeakerContent ?? {})
-      .filter(([speaker]) => normalizeSearchValue(speaker).includes(normalizedSpeakerQuery))
-      .map(([, speakerContent]) => normalizeSearchValue(speakerContent))
-      .join(' ')
-  );
-
-  let score = 0;
-
-  if (normalizedContentQuery && normalizedSpeakerQuery) {
-    const matchedSpeakerContent = getSpeakerContentForQuery();
-
-    if (!matchedSpeakerContent.includes(normalizedContentQuery)) {
-      return 0;
-    }
-
-    return (
-      120
-      + countTokenHits(matchedSpeakerContent, contentTokens, 12)
-      + countTokenHits(normalizedSpeakers, speakerTokens, 24)
-      + (normalizedTitle.includes(normalizedSpeakerQuery) ? 4 : 0)
-    );
-  }
-
-  if (normalizedContentQuery) {
-    const matchesContentQuery = (
-      normalizedTitle.includes(normalizedContentQuery)
-      || normalizedSubTitle.includes(normalizedContentQuery)
-      || normalizedContent.includes(normalizedContentQuery)
-    );
-
-    if (!matchesContentQuery) {
-      return 0;
-    }
-
-    score += (
-      (normalizedTitle.includes(normalizedContentQuery) ? 80 : 0)
-      + (normalizedSubTitle.includes(normalizedContentQuery) ? 60 : 0)
-      + (normalizedContent.includes(normalizedContentQuery) ? 32 : 0)
-      + countTokenHits(normalizedTitle, contentTokens, 18)
-      + countTokenHits(normalizedSubTitle, contentTokens, 12)
-      + countTokenHits(normalizedContent, contentTokens, 5)
-    );
-  }
-
-  if (normalizedSpeakerQuery) {
-    if (!normalizedSpeakers.includes(normalizedSpeakerQuery)) {
-      return 0;
-    }
-
-    score += 60
-      + countTokenHits(normalizedSpeakers, speakerTokens, 24)
-      + (normalizedTitle.includes(normalizedSpeakerQuery) ? 4 : 0);
-  }
-
-  return score;
-};
-
-const getSearchModeForQueries = (normalizedContentQuery, normalizedSpeakerQuery) => {
-  if (normalizedContentQuery && normalizedSpeakerQuery) {
-    return 'combined';
-  }
-
-  return normalizedSpeakerQuery ? 'speaker' : 'content';
-};
-
 const readSearchIndex = async () => {
   const raw = await fs.readFile(indexPath, 'utf8');
   return JSON.parse(raw);
@@ -233,9 +151,12 @@ const buildSecurityHeaders = (request) => {
   return headers;
 };
 
+let documentsPromise;
 const getDocuments = async () => {
   if (!cachedDocuments) {
-    cachedDocuments = await readSearchIndex();
+    // Concurrent cold-start requests share one index read and parse.
+    if (!documentsPromise) documentsPromise = readSearchIndex().catch(error => { documentsPromise = null; throw error; });
+    cachedDocuments = await documentsPromise;
   }
 
   return cachedDocuments;
@@ -753,32 +674,24 @@ const saveAskLog = async ({
   return resolvedDocumentId;
 };
 
-const summarizeGrounding = (groundingMetadata) => {
-  const seenTitles = new Set();
-  const sources = [];
-
-  for (const chunk of groundingMetadata?.groundingChunks ?? []) {
-    const context = chunk.retrievedContext;
-    const title = context?.title;
-    if (!title || seenTitles.has(title)) continue;
-
-    seenTitles.add(title);
-    sources.push({
-      title,
-      fileSearchStore: context.fileSearchStore,
-    });
+let sourceLookupPromise;
+const getSourceLookup = () => {
+  if (!sourceLookupPromise) {
+    const manifestPath = process.env.SCRIPT_MANIFEST_PATH ?? path.join(rootDir, 'public', 'script-manifest.json');
+    sourceLookupPromise = fs.readFile(manifestPath, 'utf8')
+      .then(raw => createGroundingResolver(JSON.parse(raw), script => {
+        const scriptsRoot = path.resolve(process.env.SCRIPT_SOURCE_ROOT ?? path.join(rootDir, 'public/scripts'));
+        const sourcePath = path.resolve(scriptsRoot, script.categoryKey, script.mainChapterFile);
+        if (!sourcePath.startsWith(scriptsRoot + path.sep)) throw new Error('Invalid script source path');
+        return fs.readFile(sourcePath, 'utf8');
+      }, error => console.warn('Scene source link unavailable:', error.message)))
+      .catch(error => {
+        sourceLookupPromise = null;
+        console.warn('Source links unavailable: could not read script manifest.', error.message);
+        return metadata => summarizeGrounding(metadata);
+      });
   }
-
-  return {
-    grounded: Boolean(
-      groundingMetadata?.groundingChunks?.length
-      || groundingMetadata?.groundingSupports?.length
-      || groundingMetadata?.retrievalMetadata
-    ),
-    sources,
-    groundingChunkCount: groundingMetadata?.groundingChunks?.length ?? 0,
-    groundingSupportCount: groundingMetadata?.groundingSupports?.length ?? 0,
-  };
+  return sourceLookupPromise;
 };
 
 const handleAskRequest = async (request, response) => {
@@ -935,7 +848,7 @@ const handleAskRequest = async (request, response) => {
     const tokenUsage = buildTokenUsage(geminiResponse, countedTokens);
 
     const groundingMetadata = geminiResponse.candidates?.[0]?.groundingMetadata;
-    const grounding = summarizeGrounding(groundingMetadata);
+    const grounding = await (await getSourceLookup())(groundingMetadata);
 
     if (!grounding.grounded) {
       const failureMessage = '검색 근거가 충분한 답변을 생성하지 못했습니다. 질문을 조금 더 구체적으로 바꿔 주세요.';
@@ -1134,7 +1047,13 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
-  const url = new URL(request.url, `http://${request.headers.host ?? `127.0.0.1:${port}`}`);
+  let url;
+  try {
+    url = new URL(request.url, 'http://127.0.0.1');
+  } catch {
+    writeJson(request, response, 400, { error: 'Invalid request URL.' });
+    return;
+  }
 
   if (url.pathname === '/healthz') {
     writeJson(request, response, 200, { ok: true });
@@ -1176,6 +1095,11 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
+  if (request.method !== 'GET') {
+    writeJson(request, response, 405, { error: 'Method not allowed.' }, { allow: 'GET, OPTIONS' });
+    return;
+  }
+
   const retryAfterSeconds = isRateLimited(request);
   if (retryAfterSeconds !== null) {
     writeJson(request, response, 429, {
@@ -1190,66 +1114,17 @@ const server = http.createServer(async (request, response) => {
   const legacyMode = url.searchParams.get('mode') === 'speaker' ? 'speaker' : 'content';
   const rawContentQuery = url.searchParams.get('content') ?? (legacyMode === 'speaker' ? '' : rawQuery);
   const rawSpeakerQuery = url.searchParams.get('speaker') ?? (legacyMode === 'speaker' ? rawQuery : '');
-  const normalizedContentQuery = normalizeSearchValue(rawContentQuery);
-  const normalizedSpeakerQuery = normalizeSearchValue(rawSpeakerQuery);
-  const normalizedQuery = [normalizedContentQuery, normalizedSpeakerQuery].filter(Boolean).join(' ');
-  const mode = getSearchModeForQueries(normalizedContentQuery, normalizedSpeakerQuery);
+  const categoryKey = url.searchParams.get('category')?.trim() || null;
   const requestedLimit = Number(url.searchParams.get('limit') ?? 50);
-  const limit = Number.isFinite(requestedLimit)
-    ? Math.max(1, Math.min(5000, requestedLimit))
-    : 50;
-
-  if (!normalizedQuery) {
-    writeJson(request, response, 200, {
-      mode,
-      query: '',
-      contentQuery: '',
-      speakerQuery: '',
-      speakerContentSearch: false,
-      limit,
-      totalResults: 0,
-      results: [],
-      source: 'api',
-    });
-    return;
-  }
 
   try {
-    const documents = await getDocuments();
-    const contentTokens = normalizedContentQuery.split(' ').filter(Boolean);
-    const speakerTokens = normalizedSpeakerQuery.split(' ').filter(Boolean);
-
-    const scoredResults = documents
-      .map((document) => ({
-        document,
-        score: calculateScore(document, normalizedContentQuery, normalizedSpeakerQuery, contentTokens, speakerTokens),
-      }))
-      .filter((entry) => entry.score > 0)
-      .sort((left, right) => right.score - left.score);
-
-    const results = scoredResults
-      .slice(0, limit)
-      .map(({ document, score }) => ({
-        id: document.id,
-        title: document.title,
-        categoryKey: document.categoryKey,
-        subTitle: document.subTitle,
-        mainChapterFile: document.mainChapterFile,
-        snippet: document.snippet,
-        score,
-      }));
-
-    writeJson(request, response, 200, {
-      mode,
-      query: normalizedQuery,
-      contentQuery: normalizedContentQuery,
-      speakerQuery: normalizedSpeakerQuery,
-      speakerContentSearch: !!(normalizedContentQuery && normalizedSpeakerQuery),
-      limit,
-      totalResults: scoredResults.length,
-      results,
-      source: 'api',
+    const result = searchDocuments(await getDocuments(), {
+      contentQuery: rawContentQuery,
+      speakerQuery: rawSpeakerQuery,
+      categoryKey,
+      limit: requestedLimit,
     });
+    writeJson(request, response, 200, { ...result, source: 'api' });
   } catch (error) {
     console.error('Search request failed:', error);
     writeJson(request, response, 500, {
@@ -1259,5 +1134,5 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(port, () => {
-  console.log(`Search API listening on port ${port}`);
+  console.log(`Search API listening on port ${server.address().port}`);
 });

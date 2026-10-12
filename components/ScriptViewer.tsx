@@ -7,8 +7,17 @@ import {
   ChoiceBlockRenderer,
   MessengerAppRenderer,
   NextSubChapterButton,
+  BranchNextButtons,
+  collectChoiceOptionKeys,
+  collectRouteTargets,
+  getMessengerBranchSearchList,
+  hasBranchingContent,
+  type BranchRouteButton,
   type ExtendedMessengerChoiceOption,
 } from './script';
+import { BranchIcon, ChevronLeftIcon, ChevronRightIcon, FourPointStarIcon, LinkIcon } from './Icons';
+import { NikkeLogo } from './NikkeLogo';
+import { scenePath } from '../lib/pageRoutes.mjs';
 
 type SearchFocus = {
   term: string;
@@ -16,11 +25,70 @@ type SearchFocus = {
   speakerTerm?: string;
 };
 
+type ReaderTextSize = 'sm' | 'md' | 'lg' | 'xl';
+type ReaderLineHeight = 'tight' | 'normal' | 'loose';
+type ReaderWidth = 'narrow' | 'normal' | 'wide';
+
+const READER_TEXT_SIZES: readonly ReaderTextSize[] = ['sm', 'md', 'lg', 'xl'];
+/** 본문 기준 글자 크기(px). 대사·지문은 이 값에 대한 em 단위로 그린다. */
+const READER_TEXT_SIZE_PX: Record<ReaderTextSize, number> = { sm: 14, md: 16, lg: 18, xl: 20 };
+const READER_LINE_HEIGHTS: readonly ReaderLineHeight[] = ['tight', 'normal', 'loose'];
+const READER_LINE_HEIGHT_VALUE: Record<ReaderLineHeight, number> = { tight: 1.7, normal: 1.9, loose: 2.15 };
+const READER_WIDTHS: readonly ReaderWidth[] = ['narrow', 'normal', 'wide'];
+const READER_WIDTH_PX: Record<ReaderWidth, number> = { narrow: 640, normal: 760, wide: 920 };
+
+/** 읽기 설정처럼 이 브라우저에만 기억하면 되는 값. 저장소를 못 써도 화면에는 적용된다. */
+const useStoredOption = <T extends string>(storageKey: string, options: readonly T[], fallback: T) => {
+  const [value, setValue] = React.useState<T>(() => {
+    try {
+      const stored = localStorage.getItem(storageKey);
+      return options.includes(stored as T) ? stored as T : fallback;
+    } catch {
+      return fallback;
+    }
+  });
+
+  React.useEffect(() => {
+    try {
+      localStorage.setItem(storageKey, value);
+    } catch {
+      // 저장하지 못해도 현재 화면에는 적용된다
+    }
+  }, [storageKey, value]);
+
+  return [value, setValue] as const;
+};
+
+const copyTextToClipboard = async (text: string): Promise<boolean> => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    const copied = document.execCommand('copy');
+    textarea.remove();
+    return copied;
+  }
+};
+
 interface ScriptViewerProps {
   script: Script | null;
   searchFocus?: SearchFocus | null;
   canNavigateToPreviousScript?: boolean;
   canNavigateToNextScript?: boolean;
+  /** 툴바 기록 번호 표시용: 분류 로마 숫자, 챕터 안 장면 순번(0부터)과 총수 */
+  categoryRoman?: string;
+  sceneIndex?: number;
+  sceneCount?: number;
+  /** 이전/다음이 챕터를 넘어갈 때 그 챕터 제목 (메인 스토리) */
+  previousChapterTitle?: string;
+  nextChapterTitle?: string;
   selectedOptions: Record<string, string>;
   onOptionSelect: (choiceId: string, optionValue: string) => void;
   onClearChoice: (choiceId: string) => void;
@@ -28,6 +96,8 @@ interface ScriptViewerProps {
   onNavigateToNextScript?: (currentScriptId: string) => void;
   onNavigateToScript?: (scriptId: string) => void;
   onNavigateToSearch?: () => void;
+  /** 장면 ID → 화면에 보일 장면 이름 (분기 목적지 표시용) */
+  describeScene?: (scriptId: string) => string | undefined;
 }
 
 export const ScriptViewer: React.FC<ScriptViewerProps> = ({
@@ -35,6 +105,11 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   searchFocus = null,
   canNavigateToPreviousScript = false,
   canNavigateToNextScript = false,
+  categoryRoman,
+  sceneIndex = -1,
+  sceneCount = 0,
+  previousChapterTitle,
+  nextChapterTitle,
   selectedOptions,
   onOptionSelect,
   onClearChoice,
@@ -42,13 +117,66 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   onNavigateToNextScript,
   onNavigateToScript,
   onNavigateToSearch,
+  describeScene,
 }) => {
-  const [internalScriptContent, setInternalScriptContent] = React.useState<string | null>(null);
+  const [internalScriptContent, setInternalScriptContent] = React.useState<string | null>(script?.content ?? null);
   const [isLoadingInternalContent, setIsLoadingInternalContent] = React.useState<boolean>(false);
   const [internalContentError, setInternalContentError] = React.useState<string | null>(null);
   const [branchWarning, setBranchWarning] = React.useState<{ choiceId: string } | null>(null);
   const [highlightedChoiceId, setHighlightedChoiceId] = React.useState<string | null>(null);
   const [highlightedSearchMatchId, setHighlightedSearchMatchId] = React.useState<string | null>(null);
+  const [readerTextSize, setReaderTextSize] = useStoredOption<ReaderTextSize>('nikke-reader-text-size', READER_TEXT_SIZES, 'md');
+  const [readerLineHeight, setReaderLineHeight] = useStoredOption<ReaderLineHeight>('nikke-reader-line-height', READER_LINE_HEIGHTS, 'normal');
+  const [readerWidth, setReaderWidth] = useStoredOption<ReaderWidth>('nikke-reader-width', READER_WIDTHS, 'normal');
+  const [showAllBranchesSetting, setShowAllBranchesSetting] = useStoredOption<'on' | 'off'>('nikke-reader-all-branches', ['on', 'off'], 'off');
+  // 검색으로 들어왔는데 일치 위치가 고르지 않은 분기 안에만 있으면, 이 장면에서만 임시로 모든 분기를 펼친다
+  const [searchAutoExpand, setSearchAutoExpand] = React.useState<'idle' | 'trying' | 'on' | 'done'>('idle');
+  const showAllBranches = showAllBranchesSetting === 'on' || searchAutoExpand === 'trying' || searchAutoExpand === 'on';
+  const [isReaderSettingsOpen, setIsReaderSettingsOpen] = React.useState(false);
+  const [isLinkCopied, setIsLinkCopied] = React.useState(false);
+  const branchWarningDialogRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    if (!isLinkCopied) return;
+    const timeout = window.setTimeout(() => setIsLinkCopied(false), 2000);
+    return () => window.clearTimeout(timeout);
+  }, [isLinkCopied]);
+
+  // 선택 필요 모달: Esc로 닫기, Tab을 모달 안에 가두기, 닫으면 이전 포커스로 돌아가기
+  React.useEffect(() => {
+    if (!branchWarning) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setBranchWarning(null);
+        return;
+      }
+      if (event.key !== 'Tab') return;
+
+      const focusable = branchWarningDialogRef.current?.querySelectorAll<HTMLElement>('button');
+      if (!focusable || focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      // 선택지로 이동한 경우에는 선택지 버튼에 포커스가 이미 있으므로 덮어쓰지 않는다
+      if (previouslyFocused && document.activeElement === document.body) {
+        previouslyFocused.focus({ preventScroll: true });
+      }
+    };
+  }, [branchWarning]);
 
   const normalizeSearchValue = React.useCallback((value: string): string => (
     value
@@ -67,22 +195,38 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   ), []);
 
   React.useEffect(() => {
+    if (typeof script?.content === 'string') {
+      setInternalScriptContent(script.content);
+      setIsLoadingInternalContent(false);
+      setInternalContentError(null);
+      return;
+    }
     if (script && script.id) {
       setIsLoadingInternalContent(true);
       setInternalScriptContent(null);
       setInternalContentError(null);
 
+      // 빠르게 장면을 바꿀 때 늦게 끝난 이전 요청이 현재 화면을 덮지 않도록 한다
+      let isCurrentRequest = true;
+
       script.loadContent()
         .then(content => {
+          if (!isCurrentRequest) return;
           setInternalScriptContent(content);
         })
         .catch(error => {
+          if (!isCurrentRequest) return;
           console.error(`Error loading content for script ${script.id} in ScriptViewer:`, error);
           setInternalContentError(error instanceof Error ? error.message : `Failed to load script content. Error: ${String(error)}`);
         })
         .finally(() => {
+          if (!isCurrentRequest) return;
           setIsLoadingInternalContent(false);
         });
+
+      return () => {
+        isCurrentRequest = false;
+      };
     } else {
       setInternalScriptContent(null);
       setIsLoadingInternalContent(false);
@@ -98,7 +242,12 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     });
   }, [internalScriptContent, script?.categoryKey, script?.id]);
 
-  const getVisibleMessengerMessages = React.useCallback((element: MessengerAppElement): MessengerContentElement[] => {
+  const getVisibleMessengerMessages = React.useCallback((element: MessengerAppElement): (MessengerContentElement | null)[] => {
+    // 모든 분기 보기에서는 화면에 펼친 순서 그대로 (인덱스가 메시지 DOM id와 맞아야 한다)
+    if (showAllBranches) {
+      return getMessengerBranchSearchList(element);
+    }
+
     const allMessages: MessengerContentElement[] = [];
 
     for (const msg of element.messages) {
@@ -136,14 +285,14 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     }
 
     return allMessages.slice(0, messageCount);
-  }, [selectedOptions]);
+  }, [selectedOptions, showAllBranches]);
 
   const messageMatchesSearch = React.useCallback((
-    message: MessengerContentElement,
+    message: MessengerContentElement | null,
     normalizedTerm: string,
     normalizedSpeakerTerm: string,
   ): boolean => {
-    if (!normalizedTerm || message.type !== 'message_bubble') {
+    if (!normalizedTerm || !message || message.type !== 'message_bubble') {
       return false;
     }
 
@@ -246,13 +395,15 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
       }
 
       if (element.type === 'choice_block') {
-        const selectedOptionValue = selectedOptions[element.choiceId];
-        const selectedOption = element.options.find((option) => option.value === selectedOptionValue);
-        if (selectedOption) {
+        // 모든 분기 보기에서는 펼쳐진 모든 갈래를, 아니면 고른 갈래만 찾는다
+        const searchableOptions = showAllBranches
+          ? element.options
+          : element.options.filter((option) => option.value === selectedOptions[element.choiceId]);
+        for (const option of searchableOptions) {
           const nestedMatchId = findFirstSearchMatchId(
-            selectedOption.elements,
+            option.elements,
             normalizedTerm,
-            `${element.choiceId}_${selectedOptionValue}_`,
+            `${element.choiceId}_${option.value}_`,
           );
 
           if (nestedMatchId) {
@@ -272,6 +423,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     normalizeSearchValue,
     searchFocus?.speakerTerm,
     selectedOptions,
+    showAllBranches,
   ]);
 
   const firstSearchMatchId = React.useMemo(() => {
@@ -288,6 +440,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     if (!target) return;
 
     target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.querySelector<HTMLButtonElement>('button')?.focus({ preventScroll: true });
     setHighlightedChoiceId(choiceId);
   }, []);
 
@@ -306,6 +459,22 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     setHighlightedChoiceId(null);
     setHighlightedSearchMatchId(null);
   }, [script?.id]);
+
+  React.useEffect(() => {
+    setSearchAutoExpand('idle');
+  }, [script?.id, searchFocus?.term]);
+
+  React.useEffect(() => {
+    if (!searchFocus?.term || parsedElements.length === 0) return;
+    if (searchAutoExpand === 'idle') {
+      if (!firstSearchMatchId && showAllBranchesSetting === 'off' && hasBranchingContent(parsedElements)) {
+        setSearchAutoExpand('trying');
+      }
+    } else if (searchAutoExpand === 'trying') {
+      // 펼쳐도 못 찾으면 원래대로 접는다
+      setSearchAutoExpand(firstSearchMatchId ? 'on' : 'done');
+    }
+  }, [firstSearchMatchId, parsedElements, searchAutoExpand, searchFocus?.term, showAllBranchesSetting]);
 
   React.useEffect(() => {
     if (!firstSearchMatchId) return;
@@ -389,6 +558,40 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     return matchingVisibleChoice?.dataset.choiceId ?? null;
   }, []);
 
+  const sceneHasBranches = React.useMemo(() => hasBranchingContent(parsedElements), [parsedElements]);
+  const choiceOptionKeys = React.useMemo(() => collectChoiceOptionKeys(parsedElements), [parsedElements]);
+  const routeTargets = React.useMemo(() => collectRouteTargets(parsedElements), [parsedElements]);
+  const getOptionDestination = (choiceId: string, optionValue: string) => {
+    const targetScriptId = routeTargets.get(choiceId)?.get(optionValue);
+    return targetScriptId ? (describeScene?.(targetScriptId) ?? targetScriptId) : undefined;
+  };
+
+  /** 모든 분기 보기에서 선택에 따라 목적지가 갈리는 경우, 경우별 버튼 목록을 만든다 */
+  const buildBranchRouteButtons = (element: Extract<ScriptElement, { type: 'next_subchapter_button' }>): BranchRouteButton[] => {
+    const conditionalRoutes = (element.routes ?? []).filter(route => !route.isDefault && route.choiceId && route.targetScriptId);
+    if (conditionalRoutes.length === 0) return [];
+
+    // 선택지 문구를 함께 적어, 서로 다른 선택지의 A/B가 섞여도 구분되게 한다
+    const shorten = (text: string) => (text.length > 22 ? `${text.slice(0, 22)}…` : text);
+    const labelsByTarget = new Map<string, string[]>();
+    for (const route of conditionalRoutes) {
+      const option = choiceOptionKeys.get(route.choiceId!)?.get(route.optionValue ?? '');
+      const label = option ? `${option.key} 「${shorten(option.text)}」` : (route.optionValue ?? '?');
+      labelsByTarget.set(route.targetScriptId, [...(labelsByTarget.get(route.targetScriptId) ?? []), label]);
+    }
+
+    const buttons: BranchRouteButton[] = [...labelsByTarget.entries()].map(([targetScriptId, labels]) => ({
+      label: `${labels.join(' 또는 ')} 선택 시`,
+      targetScriptId,
+      destination: describeScene?.(targetScriptId),
+    }));
+    const defaultTarget = element.routes?.find(route => route.isDefault)?.targetScriptId ?? element.targetScriptId;
+    if (defaultTarget && !labelsByTarget.has(defaultTarget)) {
+      buttons.push({ label: '그 외', targetScriptId: defaultTarget, destination: describeScene?.(defaultTarget) });
+    }
+    return buttons;
+  };
+
   const renderElements = (elements: ScriptElement[], parentKeyPrefix: string = ''): React.ReactNode => {
     return elements.map((element, index) => {
       const key = `${parentKeyPrefix}el_${script?.id || 's'}_${index}_${element.type}`;
@@ -398,13 +601,30 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
         <div
           key={key}
           id={elementId}
-          className={isSearchMatched ? 'rounded-[1.75rem] ring-2 ring-nikke-accent/80 shadow-[0_0_0_1px_rgba(104,206,255,0.16),0_0_36px_rgba(104,206,255,0.16)] transition-all duration-300 ease-editorial' : undefined}
+          className={isSearchMatched ? 'relative rounded-lg ring-1 ring-inset ring-nikke-accent/70 transition-shadow duration-300 ease-editorial max-sm:-mx-3 max-sm:px-3' : undefined}
         >
           {node}
+          {isSearchMatched && (
+            <span className="absolute -top-[9px] right-3.5 rounded bg-nikke-accent px-2 py-px font-sans text-[11px] font-semibold not-italic text-nikke-accent-ink">
+              검색 일치
+            </span>
+          )}
         </div>
       );
 
       if (element.type === 'next_subchapter_button') {
+        const branchRouteButtons = showAllBranches ? buildBranchRouteButtons(element) : [];
+        if (branchRouteButtons.length > 1) {
+          return wrapElement(
+            <BranchNextButtons
+              key={key}
+              buttonText={element.buttonText}
+              routes={branchRouteButtons}
+              onNavigate={(targetScriptId) => onNavigateToScript?.(targetScriptId)}
+            />
+          );
+        }
+
         const targetScriptId = resolveBranchTarget(element);
         return wrapElement(
           <NextSubChapterButton
@@ -442,7 +662,11 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
       }
 
       if (element.type === 'scene_break') {
-        return wrapElement(<hr key={key} className="my-10 h-px border-0 bg-gradient-to-r from-transparent via-nikke-border/25 to-transparent" aria-hidden="true" />);
+        return wrapElement(
+          <div key={key} role="separator" className="my-10 flex justify-center text-nikke-border-strong">
+            <FourPointStarIcon aria-hidden="true" className="h-3.5 w-3.5" />
+          </div>
+        );
       }
 
       if (element.type === 'choice_block') {
@@ -456,6 +680,8 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
             renderElements={renderElements}
             containerId={`choice-block-${element.choiceId}`}
             isHighlighted={highlightedChoiceId === element.choiceId}
+            showAllBranches={showAllBranches}
+            getOptionDestination={getOptionDestination}
           />
         );
       }
@@ -471,6 +697,8 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
             selectedOptions={selectedOptions}
             onOptionSelect={onOptionSelect}
             onClearChoice={onClearChoice}
+            showAllBranches={showAllBranches}
+            getOptionDestination={getOptionDestination}
           />
         );
       }
@@ -479,22 +707,23 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     });
   };
 
+  const sceneLabel = script ? (script.subTitle || script.title) : '';
+  const scriptLabel = script ? `${script.title}${script.subTitle ? ` — ${script.subTitle}` : ''}` : '';
+
   if (!script) {
     return (
-      <div className="flex h-full flex-col items-center justify-center rounded-[1.5rem] bg-nikke-surface-low/70 p-5 text-center md:rounded-[2rem] md:p-6">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mb-4 h-16 w-16 text-nikke-border">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-        </svg>
-        <p className="font-headline text-xl font-bold tracking-[-0.02em] text-nikke-text-primary md:text-2xl">Select a script from the sidebar.</p>
-        <p className="mt-2 max-w-lg text-sm leading-6 text-nikke-text-secondary md:leading-7">
-          Selected chapters and subchapters now read in a quieter editorial layout.
+      <div className="flex min-h-[50vh] flex-col items-center justify-center px-4 text-center">
+        <NikkeLogo aria-hidden="true" className="h-10 w-7 opacity-60 grayscale" />
+        <h2 className="mt-[18px] font-headline text-[21px] font-bold text-nikke-text-primary">열람할 장면을 선택하십시오</h2>
+        <p className="mt-2 text-sm text-nikke-text-secondary">
+          왼쪽 목록에서 타이틀을 펼치면 장면별로 열 수 있습니다.
         </p>
         {onNavigateToSearch && (
           <button
             onClick={onNavigateToSearch}
-            className="mt-6 rounded-full bg-nikke-gradient px-6 py-3 font-semibold text-slate-950 transition-transform duration-300 ease-editorial hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-nikke-accent"
+            className="mt-[22px] min-h-11 rounded-lg bg-nikke-accent px-5 text-sm font-semibold text-nikke-accent-ink hover:bg-nikke-accent-strong focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent focus-visible:ring-offset-2 focus-visible:ring-offset-nikke-bg"
           >
-            Back to Stories
+            스토리 목록으로
           </button>
         )}
       </div>
@@ -503,113 +732,236 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
 
   if (isLoadingInternalContent) {
     return (
-      <div className="flex h-full flex-col items-center justify-center p-4 text-center" role="status" aria-live="polite">
-        <svg className="mb-3 h-8 w-8 animate-spin text-nikke-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        <p className="text-base text-nikke-accent md:text-xl">Loading "{script.title}{script.subTitle ? ` - ${script.subTitle}` : ''}"...</p>
+      <div className="flex min-h-[50vh] flex-col items-center justify-center gap-[18px] p-4 text-center" role="status" aria-live="polite">
+        <div aria-hidden="true" className="relative h-0.5 w-44 overflow-hidden rounded-sm bg-nikke-border">
+          <span className="absolute inset-y-0 left-0 w-16 animate-pulse bg-nikke-accent" />
+        </div>
+        <p className="text-[15px] text-nikke-text-secondary">기록을 불러오는 중입니다</p>
+        <p className="text-[13px] text-nikke-text-muted">{scriptLabel}</p>
       </div>
     );
   }
 
   if (internalContentError) {
     return (
-      <div className="flex h-full flex-col items-center justify-center rounded-[2rem] bg-red-950/20 p-4 text-center text-red-400" role="alert">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mb-3 h-12 w-12">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-        </svg>
-        <p className="text-xl font-semibold">Unable to load this script.</p>
-        <p className="mb-3 mt-1 text-nikke-text-secondary">The content for "{script.title}{script.subTitle ? ` - ${script.subTitle}` : ''}" could not be opened.</p>
-        <p className="max-w-md rounded-2xl bg-nikke-bg p-3 text-xs">{internalContentError}</p>
+      <div className="flex min-h-[50vh] flex-col items-center justify-center p-4 text-center" role="alert">
+        <div className="flex max-w-[340px] flex-col items-center gap-2.5">
+          <h2 className="font-headline text-[21px] font-bold text-nikke-text-primary">기록을 열 수 없습니다</h2>
+          <p className="text-sm leading-[1.6] text-nikke-text-secondary">"{scriptLabel}" 본문을 불러오지 못했습니다.</p>
+          <p className="mt-2 w-full rounded-lg bg-red-500/10 px-3.5 py-3 text-left text-[13px] text-red-600 dark:text-[#FFB4B6]">{internalContentError}</p>
+        </div>
       </div>
     );
   }
 
+  const hasSceneCounter = sceneIndex >= 0 && sceneCount > 0;
+  const sceneCounter = hasSceneCounter
+    ? `${String(sceneIndex + 1).padStart(2, '0')} / ${String(sceneCount).padStart(2, '0')}`
+    : null;
+  /** 읽기 설정 한 줄: 라벨 + 단일 선택 버튼 묶음 */
+  const renderReaderSettingRow = <T extends string>(
+    label: string,
+    options: readonly T[],
+    value: T,
+    onChange: (next: T) => void,
+    formatOption: (option: T) => string,
+    className = '',
+  ) => (
+    <React.Fragment key={label}>
+      <span className={`text-nikke-text-muted ${className}`}>{label}</span>
+      <div role="radiogroup" aria-label={label} className={`flex flex-wrap gap-1 ${className}`}>
+        {options.map(option => (
+          <button
+            key={option}
+            type="button"
+            role="radio"
+            aria-checked={value === option}
+            onClick={() => onChange(option)}
+            className={`min-h-9 min-w-14 rounded-lg px-3 max-sm:min-h-11 ${
+              value === option
+                ? 'bg-nikke-surface-high font-semibold text-nikke-text-primary'
+                : 'text-nikke-text-secondary hover:text-nikke-text-primary'
+            }`}
+          >
+            {formatOption(option)}
+          </button>
+        ))}
+      </div>
+    </React.Fragment>
+  );
+  const readerToolButtonClass = 'flex min-h-9 items-center justify-center gap-1 px-2.5 text-nikke-text-secondary hover:text-nikke-text-primary disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:text-nikke-text-secondary max-sm:min-h-11';
+  const toolbarButtonClass = 'flex min-h-10 items-center gap-1.5 rounded-lg border border-nikke-border-strong px-3.5 text-[13px] text-nikke-text-secondary hover:border-nikke-accent hover:text-nikke-text-primary disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-nikke-border-strong disabled:hover:text-nikke-text-secondary max-sm:h-11 max-sm:w-11 max-sm:justify-center max-sm:border-0 max-sm:px-0';
+
   return (
     <>
       {branchWarning && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/55 px-4 backdrop-blur-md">
-          <div className="w-full max-w-md rounded-[2rem] bg-nikke-surface p-6 shadow-ambient ring-1 ring-nikke-border/10">
-            <p className="font-label text-[11px] uppercase tracking-[0.22em] text-nikke-accent">Choice Required</p>
-            <h3 className="mt-3 font-headline text-2xl font-extrabold tracking-[-0.03em] text-nikke-text-primary">
-              Make a selection first
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 px-4">
+          <div
+            ref={branchWarningDialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="branch-warning-title"
+            className="w-full max-w-[360px] rounded-xl border border-nikke-border-strong bg-nikke-surface p-7"
+          >
+            <h3 id="branch-warning-title" className="font-headline text-[22px] font-bold text-nikke-text-primary">
+              선택이 필요합니다
             </h3>
-            <p className="mt-4 font-body text-base leading-7 text-nikke-text-secondary">
-              You need to choose an option before moving to the next part.
+            <p className="mt-2.5 text-[15px] leading-[1.7] text-nikke-text-secondary">
+              다음 장면으로 이동하려면 먼저 선택지를 고르십시오.
             </p>
-            <div className="mt-6 flex items-center justify-end gap-3">
+            <div className="mt-6 flex items-center justify-end gap-2">
+              <button
+                onClick={() => setBranchWarning(null)}
+                className="min-h-11 rounded-lg border border-nikke-border-strong px-4 text-sm text-nikke-text-secondary hover:border-nikke-accent hover:text-nikke-text-primary"
+              >
+                닫기
+              </button>
               <button
                 onClick={() => {
                   focusChoiceBlock(branchWarning.choiceId);
                   setBranchWarning(null);
                 }}
-                className="rounded-full bg-nikke-gradient px-5 py-3 font-semibold text-slate-950 transition-transform duration-300 ease-editorial hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-nikke-accent"
+                className="min-h-11 rounded-lg bg-nikke-accent px-[18px] text-sm font-semibold text-nikke-accent-ink hover:bg-nikke-accent-strong"
+                autoFocus
               >
-                Go to Choice
-              </button>
-              <button
-                onClick={() => setBranchWarning(null)}
-                className="rounded-full bg-nikke-surface-high px-5 py-3 font-label text-[11px] uppercase tracking-[0.16em] text-nikke-text-secondary transition-colors duration-300 ease-editorial hover:text-nikke-text-primary focus:outline-none focus:ring-2 focus:ring-nikke-accent/30"
-              >
-                Close
+                선택지로 이동
               </button>
             </div>
           </div>
         </div>
       )}
 
-      <article className="mx-auto flex h-full max-w-[980px] flex-col" aria-labelledby="script-title">
-        <header className="mb-5 rounded-[1.25rem] bg-nikke-surface-low/75 px-4 py-4 shadow-glass md:mb-6 md:rounded-[1.5rem] md:px-6 md:py-5">
-        <div className="mb-3 flex items-center justify-between gap-3">
-        <p className="font-label text-[10px] uppercase tracking-[0.22em] text-nikke-accent">
-          {script.categoryKey.replace(/_/g, ' ')}
-        </p>
-          <div className="flex items-center gap-1.5 md:gap-2">
+      <article className="max-w-[760px]" style={{ maxWidth: `${READER_WIDTH_PX[readerWidth]}px` }} aria-labelledby="script-title">
+        <div className="flex flex-wrap items-center justify-between gap-3 max-sm:-mx-1 max-sm:flex-nowrap max-sm:border-b max-sm:border-nikke-border max-sm:pb-1">
+          {/* 기록 번호: 로마 숫자(제목 서체) · 타이틀(본문 UI 서체) · 장면 순번(모노) */}
+          <p className="flex min-w-0 items-baseline gap-2 text-[13px] text-nikke-text-muted max-sm:text-xs">
+            {categoryRoman && <span className="shrink-0 font-headline font-semibold text-nikke-accent">{categoryRoman}</span>}
+            <span className="min-w-0 truncate">{script.title}</span>
+            {sceneCounter && <span aria-hidden="true">·</span>}
+            {sceneCounter && (
+              <span className="shrink-0 font-mono text-xs tracking-[0.04em] max-sm:text-[11px]">{sceneCounter}</span>
+            )}
+          </p>
+          <div className="flex shrink-0 gap-2 max-sm:gap-1">
             <button
               type="button"
               onClick={() => onNavigateToPreviousScript?.(script.id)}
               disabled={!canNavigateToPreviousScript}
-              className="rounded-full bg-nikke-surface-high px-3 py-1.5 font-label text-[10px] uppercase tracking-[0.14em] text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-highest disabled:cursor-not-allowed disabled:opacity-35"
+              aria-label={previousChapterTitle ? `이전 챕터: ${previousChapterTitle}` : '이전 장면'}
+              title={previousChapterTitle ? `이전 챕터: ${previousChapterTitle}` : undefined}
+              className={toolbarButtonClass}
             >
-              이전
+              <ChevronLeftIcon className="h-3.5 w-3.5 max-sm:h-[18px] max-sm:w-[18px]" />
+              <span className="max-sm:hidden">{previousChapterTitle ? '이전 챕터' : '이전'}</span>
             </button>
             <button
               type="button"
               onClick={() => onNavigateToNextScript?.(script.id)}
               disabled={!canNavigateToNextScript}
-              className="rounded-full bg-nikke-surface-high px-3 py-1.5 font-label text-[10px] uppercase tracking-[0.14em] text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-highest disabled:cursor-not-allowed disabled:opacity-35"
+              aria-label={nextChapterTitle ? `다음 챕터: ${nextChapterTitle}` : '다음 장면'}
+              title={nextChapterTitle ? `다음 챕터: ${nextChapterTitle}` : undefined}
+              className={toolbarButtonClass}
             >
-              다음
+              <span className="max-sm:hidden">{nextChapterTitle ? '다음 챕터' : '다음'}</span>
+              <ChevronRightIcon className="h-3.5 w-3.5 max-sm:h-[18px] max-sm:w-[18px]" strokeWidth={1.8} />
             </button>
-          </div>
-        </div>
-        <div className="mt-2 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-          <div>
-            <h2 id="script-title" className="font-headline text-xl font-extrabold tracking-[-0.03em] text-nikke-text-primary md:text-3xl">
-          {script.title}
-            </h2>
-            {script.subTitle && (
-              <p className="mt-1.5 font-body text-sm leading-6 text-nikke-text-secondary md:text-lg md:leading-7">
-                {script.subTitle}
-              </p>
+            {onNavigateToSearch && (
+              <button
+                type="button"
+                onClick={onNavigateToSearch}
+                className={`${toolbarButtonClass} max-sm:hidden`}
+              >
+                목록
+              </button>
             )}
           </div>
-          {onNavigateToSearch && (
-            <button
-              onClick={onNavigateToSearch}
-              className="rounded-full bg-nikke-surface-high px-4 py-2 font-label text-[10px] uppercase tracking-[0.14em] text-nikke-text-secondary transition-colors duration-300 ease-editorial hover:text-nikke-text-primary md:text-[11px] md:tracking-[0.16em]"
-            >
-              Back to Stories
-            </button>
-          )}
         </div>
-        <div className="mt-4 h-px bg-gradient-to-r from-nikke-accent/30 via-nikke-border/20 to-transparent" />
+
+        <header className="border-b border-nikke-border pb-10 pt-12 max-sm:pb-6 max-sm:pt-7">
+          {script.subTitle && (
+            <p className="text-[15px] text-nikke-text-secondary max-sm:text-[13px]">{script.title}</p>
+          )}
+          <h1
+            id="script-title"
+            className={`${script.subTitle ? 'mt-3 max-sm:mt-1.5' : ''} font-headline text-[clamp(34px,4.6vw,60px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-nikke-text-primary`}
+          >
+            {sceneLabel}
+          </h1>
+          <div className="mt-7 flex flex-wrap items-center gap-2 max-sm:mt-5">
+            <button
+              type="button"
+              onClick={() => setIsReaderSettingsOpen(open => !open)}
+              aria-expanded={isReaderSettingsOpen}
+              aria-controls="reader-settings"
+              className={`${readerToolButtonClass} rounded-lg border px-3 text-[13px] ${isReaderSettingsOpen ? 'border-nikke-accent text-nikke-text-primary' : 'border-nikke-border-strong'}`}
+            >
+              <span aria-hidden="true" className="font-headline text-[15px] font-semibold">가</span>
+              읽기 설정
+            </button>
+            {sceneHasBranches && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (showAllBranches) {
+                    setShowAllBranchesSetting('off');
+                    setSearchAutoExpand('done');
+                  } else {
+                    setShowAllBranchesSetting('on');
+                  }
+                }}
+                aria-pressed={showAllBranches}
+                className={`${readerToolButtonClass} rounded-lg border px-3 text-[13px] ${
+                  showAllBranches
+                    ? 'border-nikke-accent bg-nikke-accent/10 text-nikke-text-primary'
+                    : 'border-nikke-border-strong'
+                }`}
+              >
+                <BranchIcon aria-hidden="true" className="h-4 w-4" />
+                모든 분기 보기
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={async () => {
+                const sceneUrl = `${window.location.origin}${scenePath(script.categoryKey, script.id)}`;
+                if (await copyTextToClipboard(sceneUrl)) {
+                  setIsLinkCopied(true);
+                }
+              }}
+              className={`${readerToolButtonClass} rounded-lg border border-nikke-border-strong px-3 text-[13px]`}
+            >
+              <LinkIcon aria-hidden="true" className="h-4 w-4" />
+              <span aria-live="polite">{isLinkCopied ? '복사했습니다' : '장면 링크 복사'}</span>
+            </button>
+          </div>
+          {isReaderSettingsOpen && (
+            <div
+              id="reader-settings"
+              className="mt-3 grid gap-3 rounded-[10px] border border-nikke-border bg-nikke-surface p-4 text-[13px] sm:w-fit sm:grid-cols-[72px_auto] sm:items-center sm:gap-x-4"
+            >
+              {renderReaderSettingRow<ReaderTextSize>('글자 크기', READER_TEXT_SIZES, readerTextSize, setReaderTextSize, value => `${READER_TEXT_SIZE_PX[value]}`)}
+              {renderReaderSettingRow<ReaderLineHeight>('줄 간격', READER_LINE_HEIGHTS, readerLineHeight, setReaderLineHeight, value => ({ tight: '좁게', normal: '보통', loose: '넓게' })[value])}
+              {renderReaderSettingRow<ReaderWidth>('본문 폭', READER_WIDTHS, readerWidth, setReaderWidth, value => ({ narrow: '좁게', normal: '보통', wide: '넓게' })[value], 'max-sm:hidden')}
+            </div>
+          )}
+          {showAllBranches && (
+            <p role="status" className="mt-3 text-[13px] text-nikke-text-muted">
+              {searchAutoExpand === 'on' && showAllBranchesSetting === 'off'
+                ? '검색어가 고르지 않은 분기 안에 있어 모든 분기를 펼쳤습니다.'
+                : '모든 선택지의 갈래를 펼쳐 보여 줍니다. 고른 선택은 바뀌지 않습니다.'}
+            </p>
+          )}
         </header>
 
-        <div className="mt-1 flex-grow overflow-y-visible md:overflow-y-auto md:pr-2">
+        <div
+          className="flex flex-col gap-1 pt-10 font-body max-sm:pt-6"
+          style={{
+            fontSize: `${READER_TEXT_SIZE_PX[readerTextSize]}px`,
+            ['--reader-leading' as string]: READER_LINE_HEIGHT_VALUE[readerLineHeight],
+          }}
+        >
           {parsedElements.length > 0 ? renderElements(parsedElements) :
-            <p className="font-body text-base italic text-nikke-text-muted md:text-lg">This script part is empty or cannot be displayed right now.</p>
+            <p className="font-body text-base italic text-nikke-text-muted md:text-lg">이 장면은 비어 있거나 지금 표시할 수 없습니다.</p>
           }
         </div>
       </article>

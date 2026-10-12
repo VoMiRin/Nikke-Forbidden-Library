@@ -5,22 +5,28 @@ interface DialogueRendererProps {
   element: DialogueElement;
 }
 
+const COMMANDER_SPEAKERS = new Set(['COMMANDER', '지휘관']);
+
 export const DialogueRenderer: React.FC<DialogueRendererProps> = ({ element }) => {
   const speaker = element.speaker;
-  const isCommander = speaker?.toUpperCase() === 'COMMANDER';
+  const isCommander = !!speaker && COMMANDER_SPEAKERS.has(speaker.trim().toUpperCase());
 
   return (
-    <div className={`my-3 md:my-4 flex ${isCommander ? 'justify-end' : 'justify-start'}`}>
-      <div className={`max-w-full rounded-[1rem] px-3.5 py-2.5 md:max-w-[82%] md:rounded-[1.25rem] md:px-5 md:py-4 ${isCommander ? 'bg-nikke-surface-high text-right shadow-glass' : 'bg-transparent text-left'}`}>
-        {speaker && (
-          <p className={`font-label text-[0.68rem] font-bold uppercase tracking-[0.16em] md:text-[0.75rem] md:tracking-[0.18em] ${isCommander ? 'text-nikke-accent' : 'text-nikke-text-muted'}`}>
-            {speaker}
-          </p>
-        )}
-        <p className="mt-1.5 whitespace-pre-wrap font-body text-[0.95rem] leading-[1.75] text-nikke-text-primary md:mt-2 md:text-[1.1rem] md:leading-[1.8]">
-          {element.dialogue}
-        </p>
-      </div>
+    <div
+      className={`grid grid-cols-[112px_minmax(0,1fr)] gap-6 rounded-lg px-4 py-3.5 max-sm:grid-cols-1 max-sm:gap-1 max-sm:py-2 ${
+        isCommander ? 'bg-nikke-accent/[0.07] max-sm:-mx-3 max-sm:px-3 max-sm:py-2.5' : 'max-sm:px-0'
+      }`}
+    >
+      <span
+        className={`pt-[0.375em] text-right font-sans text-[0.8125em] max-sm:pt-0 max-sm:text-left max-sm:text-[0.75em] ${
+          isCommander ? 'font-semibold text-nikke-highlight' : 'font-medium text-nikke-text-secondary'
+        }`}
+      >
+        {speaker}
+      </span>
+      <p className="whitespace-pre-wrap font-body text-[1.125em] leading-[var(--reader-leading,1.9)] text-nikke-text-primary max-sm:text-[1em]">
+        {element.dialogue}
+      </p>
     </div>
   );
 };

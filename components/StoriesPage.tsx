@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react';
+import { categoryPath, scenePath } from '../lib/pageRoutes.mjs';
+import { followInApp } from '../lib/linkNavigation';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { Script, ScriptCategory } from '../types';
-import { CATEGORY_DESCRIPTIONS } from '../constants';
-import { ChevronRightIcon, type IconProps } from './Icons';
+import { ArrowRightIcon, ChevronRightIcon, SearchIcon, XIcon, type IconProps } from './Icons';
 
 interface StoriesPageProps {
   categories: ScriptCategory[];
@@ -10,12 +11,33 @@ interface StoriesPageProps {
   selectedScriptId: string | null;
   onCategorySelect: (categoryKey: string) => void;
   onSelectScript: (scriptId: string) => void;
+  onNavigateToHome?: () => void;
+  onNavigateToSearch?: () => void;
+  onNavigateToAiChat?: () => void;
+  /** 홈 히어로 검색창에서 바로 검색 */
+  onSearch?: (term: string) => void;
+  chapterTitleFilter?: string | null;
 }
 
 interface ChapterGroup {
   title: string;
   scripts: Script[];
 }
+
+const formatCount = (value: number) => value.toLocaleString('ko-KR');
+
+/** 'Chapter.01: 침식' → { number: '01', name: '침식' } */
+const parseChapterTitle = (title: string, index: number) => {
+  const match = title.match(/^Chapter\.?\s*(\d+)\s*:\s*(.+)$/i);
+  if (match) {
+    return { number: match[1].padStart(2, '0'), name: match[2] };
+  }
+  return { number: String(index + 1).padStart(2, '0'), name: title };
+};
+
+const normalizeFilterValue = (value: string) => value.normalize('NFKC').toLowerCase().replace(/\s+/g, '');
+
+const unitLabelFor = (categoryKey: string) => (categoryKey === 'main_story' ? '챕터' : '타이틀');
 
 export const StoriesPage: React.FC<StoriesPageProps> = ({
   categories,
@@ -24,7 +46,18 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
   selectedScriptId,
   onCategorySelect,
   onSelectScript,
+  onNavigateToHome,
+  onNavigateToSearch,
+  onNavigateToAiChat,
+  onSearch,
+  chapterTitleFilter,
 }) => {
+  const [heroSearchTerm, setHeroSearchTerm] = useState('');
+  const [chapterFilter, setChapterFilter] = useState(chapterTitleFilter ?? '');
+
+  useEffect(() => {
+    setChapterFilter(chapterTitleFilter ?? '');
+  }, [activeCategoryKey, chapterTitleFilter]);
   const effectiveCategoryKey = activeCategoryKey ?? null;
   const activeCategory = categories.find(category => category.key === effectiveCategoryKey) ?? null;
 
@@ -47,139 +80,269 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
     }));
   }, [scripts, effectiveCategoryKey]);
 
-  return (
-    <div className="mx-auto flex h-full w-full max-w-[1180px] flex-col pb-8 md:pb-10">
-      {!effectiveCategoryKey ? (
-        <>
-          <header className="mb-8 md:mb-12">
-            <div className="flex items-center gap-2 font-label text-[11px] uppercase tracking-[0.2em] text-nikke-text-muted">
-              <span>Home</span>
-              <span className="text-nikke-accent">/</span>
-              <span className="text-nikke-accent">Stories</span>
-            </div>
-            <h2 className="mt-3 font-headline text-3xl font-extrabold tracking-[-0.05em] text-nikke-text-primary sm:text-5xl md:mt-4 md:sm:text-6xl">
-              Stories
-            </h2>
-            <p className="mt-3 max-w-3xl font-body text-base leading-7 text-nikke-text-secondary sm:text-xl sm:leading-9 md:mt-4">
-              Choose an archive section first, then browse its chapters in the editorial list view.
+  const categoryStats = useMemo(() => {
+    const stats: Record<string, { titles: Set<string>; scenes: number }> = {};
+    scripts.forEach(script => {
+      if (!stats[script.categoryKey]) {
+        stats[script.categoryKey] = { titles: new Set(), scenes: 0 };
+      }
+      stats[script.categoryKey].titles.add(script.title);
+      stats[script.categoryKey].scenes += 1;
+    });
+    return stats;
+  }, [scripts]);
+
+  const totalTitles = useMemo(
+    () => Object.values(categoryStats).reduce((sum, stat) => sum + stat.titles.size, 0),
+    [categoryStats]
+  );
+  const hasScripts = scripts.length > 0;
+
+  if (!effectiveCategoryKey) {
+    return (
+      <div>
+        <section aria-labelledby="hero-title" className="flex flex-wrap items-center gap-x-[72px] gap-y-12 pb-[72px] pt-6 md:pt-10">
+          <div className="min-w-0 flex-[999_1_520px]">
+            <p className="text-[13px] font-medium tracking-[0.04em] text-nikke-highlight">방주 도서관 · 특급 기밀 보관소</p>
+            <h1 id="hero-title" className="mt-[18px] font-headline text-[clamp(64px,9vw,120px)] font-extrabold leading-none tracking-[-0.03em] text-nikke-text-primary">
+              금서고
+            </h1>
+            <p className="mt-7 max-w-[540px] text-[17px] leading-[1.8] text-nikke-text-secondary">
+              니케 금서고는 승리의 여신: 니케의 스토리 기록을 모은 사이트입니다. 열람할 분류를 선택하거나, 대사와 화자로 기록을 검색하십시오.
             </p>
-          </header>
-
-          <section className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-3">
-            {categories.map((category, index) => {
-              const tonalStyles = [
-                'from-sky-500/20 via-slate-900 to-slate-950',
-                'from-slate-500/15 via-neutral-900 to-slate-950',
-                'from-cyan-500/15 via-slate-950 to-neutral-950',
-                'from-teal-500/15 via-slate-950 to-neutral-950',
-                'from-stone-400/10 via-slate-900 to-neutral-950',
-              ];
-
-              const count = scripts.filter(script => script.categoryKey === category.key).length;
-
-              return (
+            {onSearch ? (
+              <form
+                role="search"
+                aria-label="기록 검색"
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  onSearch(heroSearchTerm.trim());
+                }}
+                className="mt-9 flex max-w-[560px] flex-wrap gap-3"
+              >
+                <label htmlFor="hero-search" className="sr-only">대사, 제목, 화자 검색</label>
+                <div className="relative min-w-[240px] flex-1">
+                  <SearchIcon aria-hidden="true" className="absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-nikke-text-muted" strokeWidth={1.8} />
+                  <input
+                    id="hero-search"
+                    type="search"
+                    value={heroSearchTerm}
+                    onChange={(event) => setHeroSearchTerm(event.target.value)}
+                    placeholder="대사나 제목으로 기록 검색"
+                    className="h-12 w-full rounded-lg border border-nikke-border-strong bg-nikke-surface pl-11 pr-4 text-[15px] text-nikke-text-primary outline-none placeholder:text-nikke-text-muted focus:border-nikke-accent"
+                  />
+                </div>
                 <button
-                  key={category.key}
-                  type="button"
-                  onClick={() => onCategorySelect(category.key)}
-                  className="group relative min-h-[180px] overflow-hidden rounded-[1.25rem] bg-nikke-surface-low text-left transition-all duration-500 ease-editorial hover:scale-[1.02] hover:bg-nikke-surface-high/70 md:min-h-[220px] md:rounded-[1.5rem]"
+                  type="submit"
+                  className="inline-flex min-h-12 items-center rounded-lg bg-nikke-accent px-[22px] text-[15px] font-semibold text-nikke-accent-ink hover:bg-nikke-accent-strong"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tonalStyles[index % tonalStyles.length]}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-nikke-bg via-transparent to-transparent opacity-90" />
-                  <div className="relative flex h-full flex-col justify-between p-4 md:p-6">
-                    <div className="flex items-start justify-between">
-                      <span className="rounded-full bg-nikke-surface-high/70 px-3 py-1 font-label text-[10px] uppercase tracking-[0.2em] text-nikke-accent">
-                        Archive Section
-                      </span>
-                      <span className="font-label text-[10px] uppercase tracking-[0.18em] text-nikke-text-muted">
-                        {count} scripts
-                      </span>
-                    </div>
-                    <div>
-                      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-nikke-surface-high/60 text-nikke-accent md:mb-4 md:h-10 md:w-10">
-                        {category.icon && React.isValidElement(category.icon)
-                          ? React.cloneElement(category.icon as React.ReactElement<IconProps>, { className: 'h-5 w-5' })
-                          : null}
-                      </div>
-                      <h3 className="font-headline text-2xl font-bold tracking-[-0.03em] text-white md:text-3xl">
-                        {category.name}
-                      </h3>
-                      <p className="mt-2 font-body text-sm leading-6 text-nikke-text-secondary md:mt-3 md:text-base md:leading-7">
-                        {CATEGORY_DESCRIPTIONS[category.key]}
-                      </p>
-                    </div>
-                    <div className="flex items-end justify-between">
-                      <span className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted">
-                        Explore
-                      </span>
-                      <ChevronRightIcon className="h-5 w-5 text-nikke-accent transition-transform duration-300 ease-editorial group-hover:translate-x-1" />
-                    </div>
-                  </div>
+                  검색
                 </button>
-              );
-            })}
-          </section>
-        </>
-      ) : (
-        <>
-          <header className="mb-8 md:mb-12">
-            <div className="flex items-center gap-2 font-label text-[11px] uppercase tracking-[0.2em] text-nikke-text-muted">
-              <span>Home</span>
-              <span className="text-nikke-accent">/</span>
+              </form>
+            ) : onNavigateToSearch && (
+              <div className="mt-9">
+                <button
+                  type="button"
+                  onClick={onNavigateToSearch}
+                  className="inline-flex min-h-12 items-center gap-2.5 rounded-lg bg-nikke-accent px-[22px] text-[15px] font-semibold text-nikke-accent-ink hover:bg-nikke-accent-strong"
+                >
+                  <SearchIcon className="h-[18px] w-[18px]" strokeWidth={1.8} />
+                  기록 검색
+                </button>
+              </div>
+            )}
+            {onNavigateToAiChat && (
               <button
                 type="button"
-                onClick={() => onCategorySelect(effectiveCategoryKey)}
-                className="text-nikke-accent"
+                onClick={onNavigateToAiChat}
+                className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm text-nikke-text-secondary hover:text-nikke-text-primary"
               >
-                {activeCategory?.name ?? 'Stories'}
+                또는 AI에게 질의하기
+                <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
               </button>
+            )}
+          </div>
+          <aside aria-label="관리 정보" className="max-w-[440px] flex-[1_1_340px] rounded-[10px] border border-nikke-border bg-nikke-surface p-7">
+            <p className="flex justify-between text-xs text-nikke-text-muted">
+              <span>관리 정보</span>
+              <span className="font-mono tracking-[0.08em]">ARK LIBRARY</span>
+            </p>
+            <dl className="mt-5 grid grid-cols-[64px_minmax(0,1fr)] gap-x-5 gap-y-3.5 text-[15px]">
+              <dt className="text-nikke-text-muted">관리자</dt>
+              <dd className="text-nikke-text-primary">아르카나 <span className="text-nikke-text-muted">· 제17대</span></dd>
+              <dt className="text-nikke-text-muted">소속</dt>
+              <dd className="text-nikke-text-primary">베스트셀러 스쿼드</dd>
+              <dt className="text-nikke-text-muted">권한</dt>
+              <dd className="text-nikke-highlight">열람 승인</dd>
+            </dl>
+            <div className="mt-6 grid grid-cols-3 gap-3 border-t border-nikke-border pt-6">
+              {[
+                { label: '분류', value: formatCount(categories.length) },
+                { label: '타이틀', value: hasScripts ? formatCount(totalTitles) : '—' },
+                { label: '장면', value: hasScripts ? formatCount(scripts.length) : '—', highlight: true },
+              ].map(stat => (
+                <div key={stat.label}>
+                  <p className={`font-mono text-[26px] font-medium ${stat.highlight ? 'text-nikke-highlight' : 'text-nikke-text-primary'}`}>{stat.value}</p>
+                  <p className="mt-1 text-xs text-nikke-text-muted">{stat.label}</p>
+                </div>
+              ))}
             </div>
-            <h2 className="mt-3 font-headline text-3xl font-extrabold tracking-[-0.05em] text-nikke-text-primary sm:text-5xl md:mt-4 md:sm:text-6xl">
-              {activeCategory?.name ?? 'Stories'}
-            </h2>
-          </header>
+          </aside>
+        </section>
 
-          <section className="min-w-0">
-            <div className="space-y-3 md:space-y-4">
-              {chapterGroups.map((chapter, index) => {
-                const firstScript = chapter.scripts[0];
-                const isSelected = selectedScriptId ? chapter.scripts.some(script => script.id === selectedScriptId) : false;
+        <section aria-labelledby="index-title">
+          <div className="mb-8 flex items-baseline justify-between gap-4 border-b border-nikke-border pb-5">
+            <h2 id="index-title" className="font-headline text-2xl font-bold text-nikke-text-primary">기록 분류</h2>
+            <span className="text-[13px] text-nikke-text-muted">{categories.length}개 분류</span>
+          </div>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-5 max-sm:grid-cols-2 max-sm:gap-3">
+            {categories.map((category, index) => {
+              const stat = categoryStats[category.key];
 
-                return (
-                  <button
-                    key={chapter.title}
-                    type="button"
-                    onClick={() => onSelectScript(firstScript.id)}
-                    className={`group w-full rounded-[1.1rem] px-4 py-4 text-left transition-all duration-300 ease-editorial md:rounded-[1.35rem] md:px-6 md:py-5 ${
-                      isSelected
-                        ? 'bg-nikke-surface-high text-nikke-text-primary shadow-glass'
-                        : 'bg-nikke-surface-low/65 text-nikke-text-secondary hover:bg-nikke-surface-low hover:translate-x-1 hover:text-nikke-text-primary'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                      <div className="max-w-3xl">
-                        <h3 className="font-headline text-xl font-bold tracking-[-0.03em] text-nikke-text-primary md:text-3xl">
-                          {chapter.title}
-                        </h3>
-                        {firstScript.subTitle && (
-                          <p className="mt-2 font-body text-sm leading-6 text-nikke-text-secondary md:mt-3 md:text-lg md:leading-8">
-                            {firstScript.subTitle}
-                          </p>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-4 md:gap-5 md:pt-1">
-                        <span className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted">
-                          {chapter.scripts.length} scenes
-                        </span>
-                        <ChevronRightIcon className="h-5 w-5 text-nikke-accent transition-transform duration-300 ease-editorial group-hover:translate-x-1" />
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-        </>
+              return (
+                <a
+                  key={category.key}
+                  href={categoryPath(category.key)}
+                  onClick={event => followInApp(event, () => onCategorySelect(category.key))}
+                  className="group block rounded-[10px] border border-nikke-border bg-nikke-surface p-2 text-nikke-text-primary transition-colors duration-200 hover:border-nikke-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent"
+                >
+                  <span className="flex h-[272px] flex-col items-center justify-between rounded-md border border-nikke-border px-4 py-[22px] text-center transition-colors duration-200 group-hover:border-nikke-accent/45 max-sm:h-[220px] max-sm:px-2">
+                    <span className="font-headline text-xl tracking-[0.1em] text-nikke-text-muted transition-colors duration-200 group-hover:text-nikke-accent">
+                      {category.roman ?? index + 1}
+                    </span>
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full border border-nikke-border-strong text-nikke-accent">
+                      {category.icon && React.isValidElement(category.icon)
+                        ? React.cloneElement(category.icon as React.ReactElement<IconProps>, { className: 'h-[26px] w-[26px]', strokeWidth: 1.4 })
+                        : null}
+                    </span>
+                    <span className="flex flex-col gap-2">
+                      <span className="font-headline text-xl font-bold max-sm:text-lg">{category.name}</span>
+                      <span className="text-xs text-nikke-text-muted">
+                        {stat
+                          ? `${formatCount(stat.titles.size)} ${unitLabelFor(category.key)} · ${formatCount(stat.scenes)} 장면`
+                          : ' '}
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  const totalScenes = chapterGroups.reduce((sum, chapter) => sum + chapter.scripts.length, 0);
+  const normalizedChapterFilter = normalizeFilterValue(chapterFilter);
+  const visibleChapters = chapterGroups
+    .map((chapter, index) => ({ chapter, index }))
+    .filter(({ chapter }) => (
+      !normalizedChapterFilter
+      || (chapterTitleFilter && chapterFilter === chapterTitleFilter
+        ? chapter.title === chapterTitleFilter
+        : normalizeFilterValue(chapter.title).includes(normalizedChapterFilter)
+          || chapter.scripts.some(script => normalizeFilterValue(script.subTitle ?? '').includes(normalizedChapterFilter)))
+    ));
+  const showChapterFilter = chapterGroups.length > 8 || !!chapterTitleFilter;
+
+  return (
+    <div className="max-w-[900px]">
+      <nav aria-label="현재 위치" className="flex items-center gap-2 text-[13px] text-nikke-text-muted">
+        {onNavigateToHome ? (
+          <a href="/" onClick={event => followInApp(event, () => onNavigateToHome?.())} className="hover:text-nikke-text-primary">스토리</a>
+        ) : (
+          <span>스토리</span>
+        )}
+        <span aria-hidden="true">/</span>
+        <span aria-current="page" className="text-nikke-text-secondary">{activeCategory?.name ?? '스토리'}</span>
+      </nav>
+      <header className="mt-5 flex flex-wrap items-end justify-between gap-4 pb-8">
+        <div className="flex items-baseline gap-5">
+          {activeCategory?.roman && (
+            <span className="font-headline text-[28px] text-nikke-accent">{activeCategory.roman}</span>
+          )}
+          <h1 className="font-headline text-[clamp(40px,5vw,56px)] font-extrabold leading-none tracking-[-0.03em] text-nikke-text-primary">
+            {activeCategory?.name ?? '스토리'}
+          </h1>
+        </div>
+        {chapterGroups.length > 0 && (
+          <p className="text-sm text-nikke-text-muted">
+            {formatCount(chapterGroups.length)} {unitLabelFor(effectiveCategoryKey)} · {formatCount(totalScenes)} 장면
+          </p>
+        )}
+      </header>
+
+      {showChapterFilter && (
+        <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="relative min-w-[220px] flex-1 sm:max-w-sm">
+            <label htmlFor="chapter-filter" className="sr-only">목록에서 찾기</label>
+            <SearchIcon aria-hidden="true" className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-nikke-text-muted" strokeWidth={1.8} />
+            <input
+              id="chapter-filter"
+              type="search"
+              value={chapterFilter}
+              onChange={(event) => setChapterFilter(event.target.value)}
+              placeholder={`${unitLabelFor(effectiveCategoryKey)}·장면 이름으로 찾기`}
+              className="h-11 w-full rounded-lg border border-nikke-border-strong bg-nikke-surface pl-10 pr-10 text-sm text-nikke-text-primary outline-none placeholder:text-nikke-text-muted focus:border-nikke-accent"
+            />
+            {chapterFilter && (
+              <button
+                type="button"
+                onClick={() => setChapterFilter('')}
+                aria-label="찾기 지우기"
+                className="absolute right-0 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-nikke-text-muted hover:text-nikke-text-primary"
+              >
+                <XIcon className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+          {normalizedChapterFilter && (
+            <p role="status" className="text-[13px] text-nikke-text-muted">
+              {visibleChapters.length}개 일치
+            </p>
+          )}
+        </div>
+      )}
+
+      {visibleChapters.length === 0 && normalizedChapterFilter ? (
+        <p className="border-t border-nikke-border py-12 text-center text-[15px] text-nikke-text-secondary">
+          "{chapterFilter.trim()}"와 일치하는 항목이 없습니다.
+        </p>
+      ) : (
+      <ol className="border-t border-nikke-border">
+        {visibleChapters.map(({ chapter, index }) => {
+          const firstScript = chapter.scripts[0];
+          const isSelected = selectedScriptId ? chapter.scripts.some(script => script.id === selectedScriptId) : false;
+          const { number, name } = parseChapterTitle(chapter.title, index);
+
+          return (
+            <li key={chapter.title} className="border-b border-nikke-border">
+              <a
+                href={scenePath(firstScript.categoryKey, firstScript.id)}
+                onClick={event => followInApp(event, () => onSelectScript(firstScript.id))}
+                aria-current={isSelected ? 'true' : undefined}
+                className="group grid w-full grid-cols-[56px_minmax(0,1fr)_auto_20px] items-center gap-x-5 px-3 py-5 text-left text-nikke-text-primary transition-colors duration-150 hover:bg-nikke-surface max-sm:grid-cols-[36px_minmax(0,1fr)_20px] max-sm:gap-x-3 max-sm:px-1"
+              >
+                <span className={`font-mono text-[15px] ${isSelected ? 'text-nikke-accent' : 'text-nikke-text-muted'}`}>{number}</span>
+                <span className="flex min-w-0 flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <span className="font-headline text-xl font-bold">{name}</span>
+                  {firstScript.subTitle && (
+                    <span className="text-sm text-nikke-text-muted">{firstScript.subTitle}</span>
+                  )}
+                  <span className={`w-full text-[13px] sm:hidden ${isSelected ? 'text-nikke-highlight' : 'text-nikke-text-muted'}`}>
+                    {isSelected ? '열람 중 · ' : ''}{chapter.scripts.length} 장면
+                  </span>
+                </span>
+                <span className={`text-[13px] max-sm:hidden ${isSelected ? 'text-nikke-highlight' : 'text-nikke-text-muted'}`}>
+                  {isSelected ? '열람 중 · ' : ''}{chapter.scripts.length} 장면
+                </span>
+                <ChevronRightIcon className="h-[18px] w-[18px] text-nikke-text-muted transition-transform duration-150 group-hover:translate-x-[3px] group-hover:text-nikke-accent" />
+              </a>
+            </li>
+          );
+        })}
+      </ol>
       )}
     </div>
   );

@@ -1,10 +1,12 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { SparklesIcon } from './Icons';
+import { ArrowRightIcon } from './Icons';
+import { normalizeSourceTarget, sourceTargetUrl } from '../lib/sourceLinks.mjs';
 import { clearPendingAsk, readPendingAsk, savePendingAsk } from './pendingAsk.mjs';
 
 type AskSource = {
   title: string;
   fileSearchStore?: string;
+  target?: { kind: 'chapter' | 'category' | 'scene'; categoryKey: string; title?: string; scriptId?: string; subTitle?: string };
 };
 
 type TokenUsage = {
@@ -60,7 +62,7 @@ const normalizeAskResponse = (payload: Record<string, unknown>): AskResponse | n
   const sources = Array.isArray(payload.sources)
     ? payload.sources.filter((source): source is AskSource => (
       isRecord(source) && typeof source.title === 'string'
-    ))
+    )).map(source => ({ ...source, target: normalizeSourceTarget(source.target) ?? undefined }))
     : [];
   const tokenUsage = isRecord(payload.tokenUsage)
     ? payload.tokenUsage as TokenUsage
@@ -311,7 +313,7 @@ const renderInlineMarkdown = (text: string): React.ReactNode[] => {
 
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={`${part}-${index}`} className="font-semibold text-nikke-text-primary">{part.slice(2, -2)}</strong>;
+      return <strong key={`${part}-${index}`} className="font-semibold">{part.slice(2, -2)}</strong>;
     }
 
     return <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>;
@@ -322,16 +324,16 @@ const AnswerBlock: React.FC<{ answer: string }> = ({ answer }) => {
   const lines = useMemo(() => answer.split(/\r?\n/), [answer]);
 
   return (
-    <div className="space-y-2 text-sm leading-7 text-nikke-text-secondary md:text-base md:leading-8">
+    <div className="flex flex-col gap-3.5 font-body text-[17px] leading-[1.95] text-nikke-text-primary max-sm:text-base">
       {lines.map((line, index) => {
         const trimmed = line.trim();
         if (!trimmed) {
-          return <div key={`blank-${index}`} className="h-1" />;
+          return null;
         }
 
         if (trimmed.startsWith('###')) {
           return (
-            <h4 key={`${trimmed}-${index}`} className="pt-2 font-headline text-lg font-bold text-nikke-text-primary">
+            <h4 key={`${trimmed}-${index}`} className="pt-2 font-headline text-lg font-bold">
               {renderInlineMarkdown(trimmed.replace(/^#+\s*/, ''))}
             </h4>
           );
@@ -340,7 +342,7 @@ const AnswerBlock: React.FC<{ answer: string }> = ({ answer }) => {
         if (/^[-*]\s+/.test(trimmed)) {
           return (
             <p key={`${trimmed}-${index}`} className="pl-4">
-              <span className="-ml-4 mr-2 text-nikke-accent">•</span>
+              <span aria-hidden="true" className="-ml-4 mr-2 text-nikke-accent">•</span>
               {renderInlineMarkdown(trimmed.replace(/^[-*]\s+/, '').replace(/^\s+/, ''))}
             </p>
           );
@@ -352,11 +354,23 @@ const AnswerBlock: React.FC<{ answer: string }> = ({ answer }) => {
   );
 };
 
-const TokenMetric: React.FC<{ label: string; value?: number }> = ({ label, value }) => {
-  const formattedValue = formatTokenCount(value);
-  if (!formattedValue) return null;
+const formatTokenUsage = (tokenUsage?: TokenUsage | null): string | null => {
+  if (!tokenUsage) return null;
 
-  return <span>{label} {formattedValue} 토큰</span>;
+  const metrics = [
+    ['입력', tokenUsage.promptTokenCount],
+    ['검색', tokenUsage.toolUsePromptTokenCount],
+    ['출력', tokenUsage.candidatesTokenCount],
+    ['총합', tokenUsage.totalTokenCount],
+  ] as const;
+  const parts = metrics
+    .map(([label, value]) => {
+      const formattedValue = formatTokenCount(value);
+      return formattedValue ? `${label} ${formattedValue}` : null;
+    })
+    .filter(Boolean);
+
+  return parts.length > 0 ? `${parts.join(' · ')} 토큰` : null;
 };
 
 export const AiAskPanel: React.FC = () => {
@@ -581,59 +595,55 @@ export const AiAskPanel: React.FC = () => {
     }
   };
 
-  return (
-    <section className="mb-6 border-y border-nikke-border/15 py-4 md:mb-8 md:py-5">
-      <div className="mb-3 flex items-center gap-3">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-nikke-surface-high text-nikke-accent">
-          <SparklesIcon className="h-5 w-5" />
-        </span>
-        <div>
-          <p className="font-label text-[11px] uppercase tracking-[0.2em] text-nikke-accent">AI Chat</p>
-          <h3 className="font-headline text-xl font-bold tracking-[-0.02em] text-nikke-text-primary md:text-2xl">
-            스토리 질문하기
-          </h3>
-        </div>
-      </div>
+  const tokenUsageLabel = response ? formatTokenUsage(response.tokenUsage) : null;
 
-      <form onSubmit={handleSubmit} className="space-y-3">
+  return (
+    <>
+      <form
+        onSubmit={handleSubmit}
+        aria-label="AI에게 질문"
+        className="mt-8 rounded-xl border border-nikke-border-strong bg-nikke-surface focus-within:border-nikke-accent"
+      >
+        <label htmlFor="ai-ask-prompt" className="sr-only">질문</label>
         <textarea
+          id="ai-ask-prompt"
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
           rows={3}
           maxLength={1200}
-          className="min-h-[7rem] w-full resize-y rounded-[1rem] bg-nikke-surface-low/85 px-4 py-3 text-sm leading-7 text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 md:text-base"
+          className="block min-h-28 w-full resize-y border-0 bg-transparent px-5 pb-2 pt-5 text-[17px] leading-[1.7] text-nikke-text-primary outline-none placeholder:text-nikke-text-muted max-sm:px-4 max-sm:text-base"
           placeholder="궁금한 내용을 입력하세요"
-          aria-label="AI archive question"
         />
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs leading-5 text-nikke-text-muted">
-            질문과 답변은 위키 품질 개선을 위해 저장될 수 있습니다. {prompt.length}/1200
+        <div className="flex flex-wrap items-center justify-between gap-3 py-2.5 pl-5 pr-2.5 max-sm:pl-4">
+          <p className="text-xs leading-[1.6] text-nikke-text-muted">
+            질문과 답변은 위키 품질 개선을 위해 저장될 수 있습니다. · {prompt.length} / 1200
           </p>
           <button
             type="submit"
             disabled={!canSubmit}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-nikke-gradient px-5 py-2.5 text-sm font-bold text-slate-950 transition-transform duration-300 ease-editorial hover:scale-[1.02] disabled:cursor-wait disabled:opacity-60 disabled:hover:scale-100"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-nikke-accent px-5 text-sm font-semibold text-nikke-accent-ink hover:bg-nikke-accent-strong disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-nikke-accent max-sm:w-full"
           >
-            <SparklesIcon className="h-4 w-4" />
-            {isRecovering ? '답변 생성 중...' : isSubmitting ? '질문 중...' : '질문하기'}
+            {isRecovering ? '답변 생성 중…' : isSubmitting ? '질문 중…' : '질문하기'}
+            {!isSubmitting && <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />}
           </button>
         </div>
       </form>
 
       {isRecovering && (
-        <div className="mt-4 rounded-[1rem] border border-nikke-accent/20 bg-nikke-accent/5 px-4 py-3 text-sm leading-6 text-nikke-text-secondary" role="status">
-          AI가 답변을 생성 중입니다. 완료되는 즉시 자동으로 표시됩니다.
+        <div className="mt-6 flex items-center gap-3 rounded-lg bg-nikke-accent/10 px-4 py-3.5" role="status">
+          <span aria-hidden="true" className="h-1.5 w-1.5 flex-none rounded-full bg-nikke-accent ring-[3px] ring-nikke-accent/20" />
+          <p className="text-sm leading-[1.65] text-nikke-text-primary">AI가 답변을 생성 중입니다. 완료되는 즉시 자동으로 표시됩니다.</p>
         </div>
       )}
 
       {error && (
-        <div className="mt-4 rounded-[1rem] border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm leading-6 text-red-200">
-          <p>{error}</p>
+        <div className="mt-6 rounded-lg bg-red-500/10 px-4 py-3.5" role="alert">
+          <p className="text-sm leading-[1.65] text-red-600 dark:text-[#FFB4B6]">{error}</p>
           {pendingRequestId && !isSubmitting && (
             <button
               type="button"
               onClick={handleRecoverPendingAnswer}
-              className="mt-2 font-bold text-red-100 underline decoration-red-200/60 underline-offset-4"
+              className="mt-1.5 min-h-9 text-sm font-semibold text-red-600 underline underline-offset-4 dark:text-[#FFB4B6]"
             >
               저장된 결과 다시 확인
             </button>
@@ -642,25 +652,46 @@ export const AiAskPanel: React.FC = () => {
       )}
 
       {response && (
-        <div className="mt-5 space-y-4">
-          <div className="rounded-[1rem] bg-nikke-surface-low/70 px-4 py-4 md:px-5 md:py-5">
+        <section aria-labelledby="ai-answer-title" className="mt-10">
+          <div className="flex items-baseline justify-between gap-3 border-b border-nikke-border pb-3.5">
+            <h2 id="ai-answer-title" className="text-[13px] font-medium text-nikke-text-muted">답변</h2>
+            <span className="font-mono text-[11px] text-nikke-text-muted">{response.model}</span>
+          </div>
+          <div className="pt-6">
             <AnswerBlock answer={response.answer} />
           </div>
-          <div className="flex flex-wrap items-center gap-2 text-xs text-nikke-text-muted">
-            <span className="font-label uppercase tracking-[0.18em] text-nikke-text-muted">{response.model}</span>
-            <span>근거 {response.groundingChunkCount}개</span>
-            <TokenMetric label="입력" value={response.tokenUsage?.promptTokenCount} />
-            <TokenMetric label="검색" value={response.tokenUsage?.toolUsePromptTokenCount} />
-            <TokenMetric label="출력" value={response.tokenUsage?.candidatesTokenCount} />
-            <TokenMetric label="총합" value={response.tokenUsage?.totalTokenCount} />
-            {response.sources.map((source) => (
-              <span key={source.title} className="rounded-full bg-nikke-surface-low px-3 py-1 text-nikke-text-secondary">
-                {source.title}
-              </span>
-            ))}
-          </div>
-        </div>
+          {(response.sources.length > 0 || response.groundingChunkCount > 0) && (
+            <div className="mt-7">
+              <p className="mb-2.5 text-xs text-nikke-text-muted">근거 {response.groundingChunkCount}개</p>
+              {response.sources.length > 0 && (
+                <ul className="flex flex-wrap gap-2">
+                  {response.sources.map((source) => (
+                    <li
+                      key={`${source.title}:${source.target?.kind === 'scene' ? source.target.scriptId : ''}`}
+                      className="inline-flex min-h-9 items-center rounded-lg border border-nikke-border-strong px-3 text-[13px] text-nikke-text-secondary"
+                    >
+                      {sourceTargetUrl(source.target) ? (
+                        <a href={sourceTargetUrl(source.target)!} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:text-nikke-highlight">
+                          {source.target?.kind === 'scene' ? `${source.target.title} · ${source.target.subTitle ?? source.target.scriptId}` : source.target?.kind === 'chapter' ? source.target.title : '관련 분류 보기'} <span aria-hidden="true">↗</span><span className="sr-only"> (새 탭에서 원문 열기)</span>
+                        </a>
+                      ) : source.title}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+          {tokenUsageLabel && (
+            <details className="group mt-5 text-xs text-nikke-text-muted">
+              <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1.5 hover:text-nikke-text-secondary [&::-webkit-details-marker]:hidden">
+                <span aria-hidden="true" className="transition-transform duration-150 group-open:rotate-90">›</span>
+                상세 정보
+              </summary>
+              <p className="mt-1 font-mono text-[11px]">{tokenUsageLabel}</p>
+            </details>
+          )}
+        </section>
       )}
-    </section>
+    </>
   );
 };

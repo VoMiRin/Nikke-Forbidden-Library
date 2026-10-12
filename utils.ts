@@ -15,26 +15,34 @@ const normalizeSearchText = (value: string): string => (
     .trim()
 );
 
+export interface SpeakerExtraction {
+  name: string;
+  lines: string[];
+  dialogueCount: number;
+}
+
 // Helper function to extract searchable text from script content
 export const extractTextFromScriptContent = (
   content: string | undefined,
   options?: { categoryKey?: string },
-): { content: string; speakers: string; speakerContent: Record<string, string> } => {
+): { content: string; displayContent: string; speakers: string; speakerContent: Record<string, string>; speakerDetails: Record<string, SpeakerExtraction> } => {
   if (typeof content !== 'string' || !content) { // Guard against null, undefined, or non-string
-    return { content: "", speakers: "", speakerContent: {} };
+    return { content: "", displayContent: "", speakers: "", speakerContent: {}, speakerDetails: {} };
   }
 
   const documentStyleMode = isDocumentStyleCategory(options?.categoryKey);
   let searchableText = "";
   const speakerSet = new Set<string>();
   const speakerContentMap = new Map<string, string[]>();
+  const speakerDetails = new Map<string, SpeakerExtraction>();
   const lines = content.split('\n');
   let inMessengerBlock = false;
   let inMessageBubble = false;
   let currentMessengerSender: string | null = null;
   let currentMessengerMessageIsSystem = false;
+  const messengerStack: { sender: string | null; isSystem: boolean }[] = [];
 
-  const addSpeakerContent = (speaker: string, text: string) => {
+  const addSpeakerContent = (speaker: string, text: string, isDialogue = true) => {
     const normalizedSpeaker = normalizeSearchText(speaker);
     const normalizedText = normalizeSearchText(text);
 
@@ -47,6 +55,12 @@ export const extractTextFromScriptContent = (
     }
 
     speakerContentMap.get(normalizedSpeaker)?.push(normalizedText);
+    if (!speakerDetails.has(normalizedSpeaker)) {
+      speakerDetails.set(normalizedSpeaker, { name: speaker.normalize('NFKC').trim(), lines: [], dialogueCount: 0 });
+    }
+    const details = speakerDetails.get(normalizedSpeaker)!;
+    details.lines.push(text.normalize('NFKC').replace(/\s+/g, ' ').trim());
+    if (isDialogue) details.dialogueCount += 1;
   };
 
   for (const line of lines) {
@@ -63,6 +77,7 @@ export const extractTextFromScriptContent = (
     }
     if (trimmedLine.match(/^\[MESSENGER_END\]$/i)) {
       inMessengerBlock = false;
+      messengerStack.length = 0;
       inMessageBubble = false;
       currentMessengerSender = null;
       currentMessengerMessageIsSystem = false;
@@ -71,6 +86,7 @@ export const extractTextFromScriptContent = (
 
     if (inMessengerBlock) {
       if (trimmedLine.match(/^\[MSG\s+SENDER="([^"]+?)".*?\]$/i)) {
+        if (inMessageBubble) messengerStack.push({ sender: currentMessengerSender, isSystem: currentMessengerMessageIsSystem });
         inMessageBubble = true;
         currentMessengerSender = null;
         currentMessengerMessageIsSystem = false;
@@ -86,14 +102,16 @@ export const extractTextFromScriptContent = (
         continue;
       }
       if (trimmedLine.match(/^\[MSG_END\]$/i)) {
-        inMessageBubble = false;
-        currentMessengerSender = null;
-        currentMessengerMessageIsSystem = false;
+        const previous = messengerStack.pop();
+        inMessageBubble = !!previous;
+        currentMessengerSender = previous?.sender ?? null;
+        currentMessengerMessageIsSystem = previous?.isSystem ?? false;
         continue;
       }
       if (inMessageBubble) {
-        // Inside a message bubble, add text content, ignore image/sticker tags for search
-        if (trimmedLine.match(/^\[IMAGE:.*?\]$/i) || trimmedLine.match(/^\[STICKER:.*?\]$/i)) {
+        // Structural choice tags are not dialogue lines. Nested messages restore
+        // their parent sender after MSG_END.
+        if (/^\[(?:CHOICE_|OPTION(?:\s|_)|NEXT_|IMAGE:|STICKER:)/i.test(trimmedLine)) {
           continue;
         }
         searchableText += trimmedLine + " ";
@@ -124,7 +142,7 @@ export const extractTextFromScriptContent = (
       const actionText = actionDialogueMatch[2].trim();
       if (potentialSpeaker && potentialSpeaker.length < 75 && actionText) {
         speakerSet.add(normalizeSearchText(potentialSpeaker));
-        addSpeakerContent(potentialSpeaker, actionText);
+        addSpeakerContent(potentialSpeaker, actionText, false);
       }
       searchableText += actionText + " ";
       continue;
@@ -170,5 +188,11 @@ export const extractTextFromScriptContent = (
     ])
   );
 
-  return { content: finalContent, speakers: speakers, speakerContent };
+  return {
+    content: finalContent,
+    displayContent: searchableText.normalize('NFKC').replace(/\s+/g, ' ').trim(),
+    speakers,
+    speakerContent,
+    speakerDetails: Object.fromEntries(speakerDetails),
+  };
 };

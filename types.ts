@@ -104,6 +104,8 @@ export interface Script {
   mainChapterVersion?: string; // Version token for cache-busting chapter text only when the file changes
   loadContent: () => Promise<string>; // Function to load the full content
   searchSnippet?: string;
+  searchMatchType?: SearchMatchType;
+  matchedSpeaker?: string;
 }
 
 export interface ScriptManifestEntry {
@@ -122,12 +124,18 @@ export interface SearchIndexDocument extends ScriptManifestEntry {
   snippet: string;
 }
 
+export type SearchMatchType = 'content' | 'speaker' | 'title' | 'subtitle';
+
 export interface SearchApiResult extends ScriptManifestEntry {
   snippet: string;
   score: number;
+  matchType?: SearchMatchType;
+  matchedSpeaker?: string;
 }
 
 export interface SearchApiResponse {
+  searchVersion?: number;
+  categoryKey?: string | null;
   mode: 'content' | 'speaker' | 'combined';
   query: string;
   contentQuery?: string;
@@ -139,9 +147,22 @@ export interface SearchApiResponse {
   source: 'api' | 'static';
 }
 
+export interface SpeakerSummary {
+  id: string;
+  name: string;
+  sceneCount: number;
+  titleCount: number;
+  dialogueCount: number;
+}
+
+export interface SpeakerDetail extends SpeakerSummary {
+  scenes: { scriptId: string; dialogueCount: number }[];
+}
+
 export interface ScriptCategory {
   key: string;
   name: string;
+  roman?: string;
   icon?: ReactNode;
 }
 

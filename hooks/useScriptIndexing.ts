@@ -10,14 +10,18 @@ interface UseScriptIndexingReturn {
     initialLoadAndIndexComplete: React.MutableRefObject<boolean>;
 }
 
-export function useScriptIndexing(): UseScriptIndexingReturn {
-    const [scripts, setScripts] = useState<Script[]>([]);
-    const [isLoadingInitialData, setIsLoadingInitialData] = useState<boolean>(true);
+export function useScriptIndexing(initialScripts?: Script[]): UseScriptIndexingReturn {
+    const [scripts, setScripts] = useState<Script[]>(initialScripts ?? []);
+    const [isLoadingInitialData, setIsLoadingInitialData] = useState<boolean>(!initialScripts);
     const [isIndexing] = useState<boolean>(false);
     const [indexingError, setIndexingError] = useState<string | null>(null);
     const initialLoadAndIndexComplete = useRef(false);
 
     useEffect(() => {
+        if (initialScripts) {
+            initialLoadAndIndexComplete.current = true;
+            return;
+        }
         let isMounted = true;
         initialLoadAndIndexComplete.current = false;
 

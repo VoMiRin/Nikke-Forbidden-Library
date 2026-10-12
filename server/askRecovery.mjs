@@ -1,3 +1,5 @@
+import { normalizeSourceTarget } from '../lib/sourceLinks.mjs';
+
 const ASK_REQUEST_ID_PATTERN = /^ask_[0-9a-f]{32}$/;
 
 export const normalizeAskRequestId = (value) => {
@@ -44,6 +46,7 @@ const normalizeSources = (sources) => {
     .filter((source) => source && typeof source === 'object' && typeof source.title === 'string')
     .map((source) => ({
       title: source.title,
+      ...(normalizeSourceTarget(source.target) ? { target: normalizeSourceTarget(source.target) } : {}),
       ...(typeof source.fileSearchStore === 'string'
         ? { fileSearchStore: source.fileSearchStore }
         : {}),

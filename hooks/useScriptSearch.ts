@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback, useRef, type Dispatch, type SetStateAction } from 'react';
 import type { Script, SearchApiResponse, SearchIndexDocument } from '../types';
+import { normalizeSearchValue, searchDocuments, SEARCH_VERSION } from '../lib/search.mjs';
 
 const SEARCH_DEBOUNCE_DELAY = 350;
 const DEFAULT_RESULT_LIMIT = 80;
@@ -14,6 +15,10 @@ interface UseScriptSearchProps {
 interface UseScriptSearchReturn {
     searchTerm: string;
     speakerSearchTerm: string;
+    searchCategoryKey: string | null;
+    searchError: string | null;
+    setSearchCategoryKey: Dispatch<SetStateAction<string | null>>;
+    handleSearchCategoryChange: (categoryKey: string | null) => void;
     debouncedSearchTerm: string;
     debouncedSpeakerSearchTerm: string;
     isUserSearching: boolean;
@@ -36,6 +41,8 @@ interface UseScriptSearchReturn {
 export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSearchReturn {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [speakerSearchTerm, setSpeakerSearchTerm] = useState<string>('');
+    const [searchCategoryKey, setSearchCategoryKey] = useState<string | null>(null);
+    const [searchError, setSearchError] = useState<string | null>(null);
     const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
     const [debouncedSpeakerSearchTerm, setDebouncedSpeakerSearchTerm] = useState<string>('');
     const [isUserSearching, setIsUserSearching] = useState<boolean>(false);
@@ -48,88 +55,6 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
     const scriptMap = useMemo(() => {
         return new Map(scripts.map((script) => [script.id, script]));
     }, [scripts]);
-
-    const normalizeSearchValue = (value: string): string => (
-        value
-            .normalize('NFKC')
-            .toLowerCase()
-            .replace(/\s+/g, ' ')
-            .trim()
-    );
-
-    const calculateLocalScore = (
-        document: SearchIndexDocument,
-        normalizedContentQuery: string,
-        normalizedSpeakerQuery: string,
-        contentTokens: string[],
-        speakerTokens: string[],
-    ): number => {
-        const normalizedTitle = normalizeSearchValue(document.title);
-        const normalizedSubTitle = normalizeSearchValue(document.subTitle ?? '');
-        const normalizedSpeakers = normalizeSearchValue(document.searchableSpeakers);
-        const normalizedContent = normalizeSearchValue(document.searchableContent);
-
-        const countTokenHits = (field: string, tokens: string[], weight: number) => (
-            tokens.reduce((score, token) => score + (field.includes(token) ? weight : 0), 0)
-        );
-
-        const getSpeakerContentForQuery = () => (
-            Object.entries(document.searchableSpeakerContent ?? {})
-                .filter(([speaker]) => normalizeSearchValue(speaker).includes(normalizedSpeakerQuery))
-                .map(([, speakerContent]) => normalizeSearchValue(speakerContent))
-                .join(' ')
-        );
-
-        let score = 0;
-
-        if (normalizedContentQuery && normalizedSpeakerQuery) {
-            const matchedSpeakerContent = getSpeakerContentForQuery();
-
-            if (!matchedSpeakerContent.includes(normalizedContentQuery)) {
-                return 0;
-            }
-
-            return (
-                120
-                + countTokenHits(matchedSpeakerContent, contentTokens, 12)
-                + countTokenHits(normalizedSpeakers, speakerTokens, 24)
-                + (normalizedTitle.includes(normalizedSpeakerQuery) ? 4 : 0)
-            );
-        }
-
-        if (normalizedContentQuery) {
-            const matchesContentQuery = (
-                normalizedTitle.includes(normalizedContentQuery)
-                || normalizedSubTitle.includes(normalizedContentQuery)
-                || normalizedContent.includes(normalizedContentQuery)
-            );
-
-            if (!matchesContentQuery) {
-                return 0;
-            }
-
-            score += (
-                (normalizedTitle.includes(normalizedContentQuery) ? 80 : 0)
-                + (normalizedSubTitle.includes(normalizedContentQuery) ? 60 : 0)
-                + (normalizedContent.includes(normalizedContentQuery) ? 32 : 0)
-                + countTokenHits(normalizedTitle, contentTokens, 18)
-                + countTokenHits(normalizedSubTitle, contentTokens, 12)
-                + countTokenHits(normalizedContent, contentTokens, 5)
-            );
-        }
-
-        if (normalizedSpeakerQuery) {
-            if (!normalizedSpeakers.includes(normalizedSpeakerQuery)) {
-                return 0;
-            }
-
-            score += 60
-                + countTokenHits(normalizedSpeakers, speakerTokens, 24)
-                + (normalizedTitle.includes(normalizedSpeakerQuery) ? 4 : 0);
-        }
-
-        return score;
-    };
 
     const fetchLocalIndex = useCallback(async (): Promise<SearchIndexDocument[]> => {
         if (localIndexRef.current) {
@@ -146,58 +71,18 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         return documents;
     }, []);
 
-    const getSearchModeForTerms = (normalizedContentQuery: string, normalizedSpeakerQuery: string): SearchApiResponse['mode'] => {
-        if (normalizedContentQuery && normalizedSpeakerQuery) {
-            return 'combined';
-        }
-
-        return normalizedSpeakerQuery ? 'speaker' : 'content';
-    };
-
-    const searchLocally = useCallback(async (normalizedContentQuery: string, normalizedSpeakerQuery: string, resultLimit: number): Promise<SearchApiResponse> => {
-        const documents = await fetchLocalIndex();
-        const contentTokens = normalizedContentQuery.split(' ').filter(Boolean);
-        const speakerTokens = normalizedSpeakerQuery.split(' ').filter(Boolean);
-        const mode = getSearchModeForTerms(normalizedContentQuery, normalizedSpeakerQuery);
-
-        const scoredResults = documents
-            .map((document) => ({
-                document,
-                score: calculateLocalScore(document, normalizedContentQuery, normalizedSpeakerQuery, contentTokens, speakerTokens),
-            }))
-            .filter((entry) => entry.score > 0)
-            .sort((left, right) => right.score - left.score);
-
-        const results = scoredResults
-            .slice(0, resultLimit)
-            .map(({ document, score }) => ({
-                id: document.id,
-                title: document.title,
-                categoryKey: document.categoryKey,
-                subTitle: document.subTitle,
-                mainChapterFile: document.mainChapterFile,
-                snippet: document.snippet,
-                score,
-            }));
-
-        return {
-            mode,
-            query: [normalizedContentQuery, normalizedSpeakerQuery].filter(Boolean).join(' '),
-            contentQuery: normalizedContentQuery,
-            speakerQuery: normalizedSpeakerQuery,
-            speakerContentSearch: !!(normalizedContentQuery && normalizedSpeakerQuery),
-            limit: resultLimit,
-            totalResults: scoredResults.length,
-            results,
-            source: 'static',
-        };
-    }, [fetchLocalIndex]);
+    const searchLocally = useCallback(async (contentQuery: string, speakerQuery: string, limit: number): Promise<SearchApiResponse> => ({
+        ...searchDocuments(await fetchLocalIndex(), { contentQuery, speakerQuery, categoryKey: searchCategoryKey, limit }),
+        source: 'static',
+    }), [fetchLocalIndex, searchCategoryKey]);
 
     const searchRemotely = useCallback(async (normalizedContentQuery: string, normalizedSpeakerQuery: string, resultLimit: number, signal: AbortSignal): Promise<SearchApiResponse> => {
         const endpointBase = searchApiBaseUrl || '';
         const params = new URLSearchParams({
             limit: String(resultLimit),
         });
+
+        if (searchCategoryKey) params.set('category', searchCategoryKey);
 
         if (normalizedContentQuery) {
             params.set('q', normalizedContentQuery);
@@ -221,6 +106,10 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
 
         const searchResponse = await response.json() as SearchApiResponse;
 
+        if (searchResponse.searchVersion !== SEARCH_VERSION || (searchResponse.categoryKey ?? null) !== searchCategoryKey) {
+            throw new Error('Search API needs the current search contract.');
+        }
+
         if (normalizedSpeakerQuery && typeof searchResponse.speakerQuery === 'undefined') {
             throw new Error('Search API does not support speaker filters yet.');
         }
@@ -230,7 +119,7 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         }
 
         return searchResponse;
-    }, [searchApiBaseUrl]);
+    }, [searchApiBaseUrl, searchCategoryKey]);
 
     // Debounce search terms
     useEffect(() => {
@@ -258,6 +147,7 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         if ((!debouncedSearchTerm && !debouncedSpeakerSearchTerm) || scripts.length === 0) {
             setSearchedScripts([]);
             setTotalSearchResults(0);
+            setSearchError(null);
             return;
         }
 
@@ -266,6 +156,7 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
 
         const runSearch = async () => {
             setIsUserSearching(true);
+            setSearchError(null);
 
             try {
                 let response: SearchApiResponse;
@@ -286,7 +177,7 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
                 }
 
                 const resolvedScripts = response.results
-                    .map((result) => {
+                    .map((result): Script | null => {
                         const script = scriptMap.get(result.id);
                         if (!script) {
                             return null;
@@ -295,12 +186,20 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
                         return {
                             ...script,
                             searchSnippet: result.snippet,
+                            searchMatchType: result.matchType,
+                            matchedSpeaker: result.matchedSpeaker,
                         };
                     })
                     .filter((script): script is Script => script !== null);
 
                 setSearchedScripts(resolvedScripts);
                 setTotalSearchResults(response.totalResults ?? resolvedScripts.length);
+            } catch (error) {
+                if (isMounted) {
+                    setSearchedScripts([]);
+                    setTotalSearchResults(0);
+                    setSearchError('검색 결과를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+                }
             } finally {
                 if (isMounted) {
                     setIsUserSearching(false);
@@ -330,7 +229,14 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
         setSpeakerSearchTerm(term);
     }, []);
 
+    const handleSearchCategoryChange = useCallback((categoryKey: string | null) => {
+        setSearchCategoryKey(categoryKey);
+        setSearchResultLimit(DEFAULT_RESULT_LIMIT);
+    }, []);
+
     const handleClearSearch = useCallback(() => {
+        setSearchCategoryKey(null);
+        setSearchError(null);
         setSearchTerm('');
         setSpeakerSearchTerm('');
         setDebouncedSearchTerm('');
@@ -346,6 +252,10 @@ export function useScriptSearch({ scripts }: UseScriptSearchProps): UseScriptSea
     }, []);
 
     return {
+        searchCategoryKey,
+        setSearchCategoryKey,
+        handleSearchCategoryChange,
+        searchError,
         searchTerm,
         speakerSearchTerm,
         debouncedSearchTerm,

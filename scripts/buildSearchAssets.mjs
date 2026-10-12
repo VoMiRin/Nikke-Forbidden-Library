@@ -3,6 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
+import { buildSpeakerAssets } from './speakerAssets.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -122,6 +123,7 @@ const main = async () => {
 
   const chapterFileCache = new Map();
   const searchIndex = [];
+  const speakerRecords = [];
 
   for (const script of newScriptsData) {
     const chapterKey = `${script.categoryKey}/${script.mainChapterFile}`;
@@ -151,13 +153,17 @@ const main = async () => {
 
     const safeContent = typeof content === 'string' ? content : '';
     const {
-      content: searchableContent,
+      displayContent: searchableContent,
       speakers: searchableSpeakers,
-      speakerContent: searchableSpeakerContent,
+      speakerDetails,
     } = extractTextFromScriptContent(safeContent, {
       categoryKey: script.categoryKey,
     });
 
+    speakerRecords.push({ script, speakerDetails });
+    const searchableSpeakerContent = Object.fromEntries(
+      Object.values(speakerDetails).map(({ name, lines }) => [name, lines.join(' ')])
+    );
     searchIndex.push({
       id: script.id,
       title: script.title,
@@ -183,6 +189,9 @@ const main = async () => {
     mainChapterVersion: chapterVersionCache.get(`${categoryKey}/${mainChapterFile}`),
   }));
 
+  const { speakers, speakerIndex } = buildSpeakerAssets(speakerRecords);
+  await writeJson(path.join(publicDir, 'speakers.json'), speakers);
+  await writeJson(path.join(publicDir, 'speaker-index.json'), speakerIndex);
   await writeJson(path.join(publicDir, 'script-manifest.json'), manifest);
   await writeJson(path.join(publicDir, 'search-index.json'), searchIndex);
   await writeJson(path.join(publicDir, 'app-version.json'), {

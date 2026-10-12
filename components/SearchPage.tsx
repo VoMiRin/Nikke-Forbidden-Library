@@ -1,6 +1,28 @@
 import React, { useMemo } from 'react';
 import type { Script, ScriptCategory } from '../types';
-import { SearchIcon, UserCircleIcon, XIcon } from './Icons';
+import { ChevronRightIcon, SearchIcon, XIcon } from './Icons';
+import { SpeakerInput } from './SpeakerInput';
+import { displaySearchText, findMatchRange } from '../lib/search.mjs';
+
+const highlightSnippet = (snippet: string, term: string): React.ReactNode => {
+  const text = displaySearchText(snippet);
+  const parts: React.ReactNode[] = [];
+  let offset = 0;
+  while (offset < text.length) {
+    const match = findMatchRange(text.slice(offset), term);
+    if (!match) { parts.push(text.slice(offset)); break; }
+    parts.push(text.slice(offset, offset + match.start));
+    parts.push(<mark key={offset + match.start}>{text.slice(offset + match.start, offset + match.end)}</mark>);
+    offset += match.end;
+  }
+  return parts;
+};
+
+const PersonIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor" {...props}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+  </svg>
+);
 
 interface SearchPageProps {
   categories: ScriptCategory[];
@@ -14,6 +36,10 @@ interface SearchPageProps {
   hasMoreSearchResults: boolean;
   searchTerm: string;
   speakerSearchTerm: string;
+  searchCategoryKey: string | null;
+  onSearchCategoryChange: (key: string | null) => void;
+  searchError: string | null;
+  onBrowseSpeakers: () => void;
   onSearchTermChange: (term: string) => void;
   onSpeakerSearchTermChange: (term: string) => void;
   onClearSearch: () => void;
@@ -33,6 +59,10 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   hasMoreSearchResults,
   searchTerm,
   speakerSearchTerm,
+  searchCategoryKey,
+  onSearchCategoryChange,
+  searchError,
+  onBrowseSpeakers,
   onSearchTermChange,
   onSpeakerSearchTermChange,
   onClearSearch,
@@ -40,7 +70,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
 }) => {
   const groupedScripts = useMemo(() => {
     return globallySearchedScripts.reduce<Record<string, Script[]>>((acc, script) => {
-      const groupKey = `${script.categoryKey}@@${script.title}`;
+      const groupKey = script.categoryKey;
       if (!acc[groupKey]) {
         acc[groupKey] = [];
       }
@@ -54,167 +84,179 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   const resultQueryLabel = [
     searchTerm.trim() ? `"${searchTerm.trim()}"` : null,
     speakerSearchTerm.trim() ? `화자 "${speakerSearchTerm.trim()}"` : null,
-  ].filter(Boolean).join(' + ');
-  const contentPlaceholder = showInitialLoading ? '전체 아카이브 로딩 중...' : '제목, 소제목, 또는 대사';
-  const speakerPlaceholder = showInitialLoading ? '전체 아카이브 로딩 중...' : '화자 이름';
+  ].filter(Boolean).join(' · ');
+  const contentPlaceholder = showInitialLoading ? '기록을 불러오는 중입니다' : '제목, 소제목, 또는 대사';
+  const speakerPlaceholder = showInitialLoading ? '기록을 불러오는 중입니다' : '화자 이름';
+  const inputClass = 'h-14 w-full rounded-[10px] border bg-nikke-surface px-12 text-[17px] text-nikke-text-primary outline-none placeholder:text-base placeholder:text-nikke-text-muted focus:border-nikke-accent disabled:cursor-wait disabled:opacity-70';
 
   return (
-    <div className="mx-auto flex h-full w-full max-w-[1024px] flex-col pb-8 md:pb-10">
-      <header className={hasSearchTerm ? 'mb-4 xl:mb-5' : 'mb-6 xl:mb-10'}>
-        <div>
-          <p className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-accent">전체 검색</p>
-          <h2 className="mt-2 font-headline text-3xl font-extrabold tracking-[-0.04em] text-nikke-text-primary sm:text-4xl lg:text-5xl xl:mt-3 xl:text-6xl">
-            Nikke Forbidden Library
-          </h2>
-        </div>
-        <div className="sticky top-[68px] z-20 -mx-3 mt-4 border-y border-nikke-border/10 bg-nikke-bg/96 px-3 py-3 shadow-[0_14px_32px_rgba(0,0,0,0.16)] backdrop-blur-md md:static md:mx-0 md:mt-5 md:border-y-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none xl:mt-8">
-          <div className="grid gap-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(14rem,0.65fr)]">
-            <div className="relative">
-              <input
-                type="search"
-                placeholder={contentPlaceholder}
-                value={searchTerm}
-                onChange={(e) => onSearchTermChange(e.target.value)}
-                aria-label="Search script content"
-                className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-3.5 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 xl:rounded-[1.15rem] xl:py-5 xl:pl-14 xl:pr-12 xl:text-lg xl:placeholder:text-base"
-                disabled={showInitialLoading}
-                autoFocus
-              />
-              <SearchIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted xl:left-5" />
-              {searchTerm && (
-                <button
-                  onClick={() => onSearchTermChange('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary xl:right-4"
-                  aria-label="Clear content search"
-                >
-                  <XIcon className="h-5 w-5" />
-                </button>
-              )}
-            </div>
-            <div className="relative">
-              <input
-                type="search"
-                placeholder={speakerPlaceholder}
-                value={speakerSearchTerm}
-                onChange={(e) => onSpeakerSearchTermChange(e.target.value)}
-                aria-label="Search script speakers"
-                className="w-full rounded-[1rem] bg-nikke-surface-low/85 py-3.5 pl-12 pr-11 text-base text-nikke-text-primary outline-none transition-all duration-300 ease-editorial placeholder:text-sm placeholder:text-nikke-text-muted focus:bg-nikke-surface-low focus:ring-2 focus:ring-nikke-accent/20 xl:rounded-[1.15rem] xl:py-5 xl:pl-14 xl:pr-12 xl:text-lg xl:placeholder:text-base"
-                disabled={showInitialLoading}
-              />
-              <UserCircleIcon className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-nikke-text-muted xl:left-5" />
-              {speakerSearchTerm && (
-                <button
-                  onClick={() => onSpeakerSearchTermChange('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-nikke-text-muted transition-colors duration-300 ease-editorial hover:text-nikke-text-primary xl:right-4"
-                  aria-label="Clear speaker search"
-                >
-                  <XIcon className="h-5 w-5" />
-                </button>
-              )}
-            </div>
-          </div>
-          {hasSearchTerm && (
-            <div className="mt-3 flex justify-end">
+    <div className="max-w-[900px]">
+      <h1 className="font-headline text-[clamp(36px,4.4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-nikke-text-primary">
+        기록 검색
+      </h1>
+      <p className="mt-3 text-[15px] text-nikke-text-secondary">제목, 소제목, 대사로 찾고 화자로 범위를 좁히십시오.</p>
+
+      <form
+        role="search"
+        aria-label="스크립트 검색"
+        onSubmit={(event) => event.preventDefault()}
+        className="sticky top-16 z-20 -mx-[clamp(16px,3vw,32px)] mt-8 grid grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] gap-3 bg-nikke-bg/95 px-[clamp(16px,3vw,32px)] py-3 backdrop-blur-md max-sm:grid-cols-1 md:static md:mx-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none"
+      >
+        <div className="flex min-w-0 flex-col gap-2">
+          <label htmlFor="search-content" className="text-xs text-nikke-text-muted">내용</label>
+          <div className="relative">
+            <SearchIcon aria-hidden="true" className="absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-nikke-text-muted" strokeWidth={1.8} />
+            <input
+              id="search-content"
+              type="search"
+              placeholder={contentPlaceholder}
+              value={searchTerm}
+              onChange={(e) => onSearchTermChange(e.target.value)}
+              className={`${inputClass} ${searchTerm ? 'border-nikke-accent' : 'border-nikke-border-strong'}`}
+              disabled={showInitialLoading}
+              autoFocus
+            />
+            {searchTerm && (
               <button
                 type="button"
-                onClick={onClearSearch}
-                className="rounded-full px-3 py-1.5 font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted transition-colors duration-300 ease-editorial hover:bg-nikke-surface-low/70 hover:text-nikke-text-primary"
+                onClick={() => onSearchTermChange('')}
+                className="absolute right-1.5 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-nikke-text-muted hover:text-nikke-text-primary"
+                aria-label="내용 검색어 지우기"
               >
-                전체 지우기
+                <XIcon className="h-4 w-4" strokeWidth={1.8} />
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </header>
+        <div className="flex min-w-0 flex-col gap-2">
+          <label htmlFor="search-speaker" className="text-xs text-nikke-text-muted">화자</label>
+          <div className="relative">
+            <PersonIcon aria-hidden="true" className="absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-nikke-text-muted" />
+            <SpeakerInput
+              id="search-speaker"
+              placeholder={speakerPlaceholder}
+              value={speakerSearchTerm}
+              onChange={onSpeakerSearchTermChange}
+              className={`${inputClass} border-nikke-border-strong`}
+              disabled={showInitialLoading}
+            />
+            {speakerSearchTerm && (
+              <button
+                type="button"
+                onClick={() => onSpeakerSearchTermChange('')}
+                className="absolute right-1.5 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-nikke-text-muted hover:text-nikke-text-primary"
+                aria-label="화자 검색어 지우기"
+              >
+                <XIcon className="h-4 w-4" strokeWidth={1.8} />
+              </button>
+            )}
+          </div>
+        </div>
+      </form>
 
-      <div className="flex-grow overflow-x-hidden overflow-y-visible pb-6 md:overflow-y-auto">
-        {showInitialLoading && !hasSearchTerm ? (
-          <div className="py-10 text-center">
-            <div role="status" className="flex flex-col items-center">
-              <svg aria-hidden="true" className="mb-3 h-10 w-10 animate-spin text-nikke-accent" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
-                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0492C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5424 39.6781 93.9676 39.0409Z" fill="currentFill" />
-              </svg>
-              <span className="text-xl text-nikke-text-primary">전체 스크립트 메타데이터를 불러오는 중입니다...</span>
-              <span className="mt-1 text-sm text-nikke-text-muted">검색 인덱스는 서버 또는 정적 인덱스에서 요청 시 로드됩니다.</span>
+      <fieldset className="mt-5">
+        <legend className="mb-2 text-xs text-nikke-text-muted">검색 범위</legend>
+        <div className="flex flex-wrap gap-2">
+          {[{ key: '', name: '전체', roman: '' }, ...categories].map(category => (
+            <button key={category.key} type="button" aria-pressed={(searchCategoryKey ?? '') === category.key}
+              onClick={() => onSearchCategoryChange(category.key || null)}
+              className={`min-h-11 rounded-lg border px-3 text-sm ${(searchCategoryKey ?? '') === category.key ? 'border-nikke-accent bg-nikke-accent/10 text-nikke-highlight' : 'border-nikke-border-strong text-nikke-text-secondary hover:border-nikke-accent'}`}>
+              {category.roman && <span className="mr-1.5 font-headline">{category.roman}</span>}{category.name}
+            </button>
+          ))}
+        </div>
+      </fieldset>
+      <button type="button" onClick={onBrowseSpeakers} className="mt-3 min-h-11 text-sm text-nikke-highlight hover:underline">화자별 기록 보기 →</button>
+
+      {hasSearchTerm && (
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-3 max-sm:mt-6">
+          <p className="text-sm text-nikke-text-secondary">{resultQueryLabel}</p>
+          <button
+            type="button"
+            onClick={onClearSearch}
+            className="min-h-9 rounded-lg border border-nikke-border-strong px-3 text-[13px] text-nikke-text-secondary hover:border-nikke-accent hover:text-nikke-text-primary"
+          >
+            전체 지우기
+          </button>
+        </div>
+      )}
+
+      <div>
+        {searchError ? <p role="alert" className="py-10 text-nikke-text-secondary">{searchError}</p> : showInitialLoading && !hasSearchTerm ? (
+          <div role="status" className="flex flex-col items-center gap-[18px] py-16 text-center">
+            <div aria-hidden="true" className="relative h-0.5 w-44 overflow-hidden rounded-sm bg-nikke-border">
+              <span className="absolute inset-y-0 left-0 w-16 animate-pulse bg-nikke-accent" />
             </div>
+            <p className="text-[15px] text-nikke-text-secondary">기록 목록을 불러오는 중입니다</p>
+            <p className="text-[13px] text-nikke-text-muted">검색 인덱스는 서버 또는 정적 인덱스에서 요청 시 불러옵니다.</p>
           </div>
         ) : hasSearchTerm && globallySearchedScripts.length > 0 ? (
-          <div className="space-y-10 md:space-y-14">
-            {Object.entries(groupedScripts).map(([groupKey, subScriptsArray]) => {
-              const [catKey, title] = groupKey.split('@@');
-              const categoryNameForGroup = categories.find(c => c.key === catKey)?.name ?? catKey;
+          <>
+            {Object.entries(groupedScripts).map(([catKey, subScriptsArray], groupIndex) => {
+              const category = categories.find(c => c.key === catKey);
+              const headingId = `search-group-${catKey}`;
 
               return (
-                <section key={groupKey}>
-                  <div className="mb-4 flex items-center gap-3 md:mb-5 md:gap-4">
-                    <h3 className="font-label text-[11px] uppercase tracking-[0.24em] text-nikke-text-muted">
-                      {categoryNameForGroup}
-                    </h3>
-                    <div className="h-px flex-1 bg-nikke-border/15" />
-                  </div>
-                  <div className="space-y-3 md:space-y-4">
+                <section key={catKey} aria-labelledby={headingId} className={groupIndex === 0 ? 'mt-7' : 'mt-9'}>
+                  <h2 id={headingId} className="mb-1 flex items-baseline gap-2.5 text-[13px] font-medium text-nikke-text-muted">
+                    {category?.roman && <span className="font-headline text-nikke-accent">{category.roman}</span>}
+                    {category?.name ?? catKey}
+                  </h2>
+                  <ul className="border-t border-nikke-border">
                     {subScriptsArray.map(script => (
-                      <button
-                        key={script.id}
-                        onClick={() => onSelectScript(script.id)}
-                        className={`w-full rounded-[1.1rem] p-4 text-left transition-all duration-300 ease-editorial md:rounded-[1.4rem] md:p-6 ${selectedScriptId === script.id
-                            ? 'bg-nikke-surface-high text-nikke-text-primary shadow-glass'
-                            : 'bg-nikke-surface-low/70 text-nikke-text-secondary hover:bg-nikke-surface-low hover:text-nikke-text-primary'
+                      <li key={script.id} className="border-b border-nikke-border">
+                        <button
+                          onClick={() => onSelectScript(script.id)}
+                          className={`group grid w-full grid-cols-[minmax(0,1fr)_20px] items-center gap-5 px-3 py-5 text-left text-nikke-text-primary transition-colors duration-150 hover:bg-nikke-surface max-sm:px-1 ${
+                            selectedScriptId === script.id ? 'bg-nikke-surface' : ''
                           }`}
-                        aria-current={selectedScriptId === script.id ? 'page' : undefined}
-                      >
-                        <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                          <div className="max-w-3xl">
-                            <p className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-accent">
-                              {categoryNameForGroup} / {script.title}
-                            </p>
-                            <h4 className="mt-2 font-headline text-xl font-bold tracking-[-0.02em] text-nikke-text-primary md:text-2xl">
-                              {script.subTitle || 'Open Content'}
-                            </h4>
-                            <p className="mt-2 font-body text-sm leading-6 text-nikke-text-secondary md:mt-3 md:text-lg md:leading-8">
-                              {script.title}
-                            </p>
-                            {script.searchSnippet && (
-                              <p className="mt-2 line-clamp-4 font-body text-sm leading-6 text-nikke-text-muted md:mt-3 md:line-clamp-3 md:leading-7">
-                                {script.searchSnippet}
-                              </p>
+                          aria-current={selectedScriptId === script.id ? 'page' : undefined}
+                        >
+                          <span className="flex min-w-0 flex-col gap-1.5">
+                            {script.subTitle && (
+                              <span className="text-xs text-nikke-text-muted">{script.title}</span>
                             )}
-                          </div>
-                          <span className="font-label text-[10px] uppercase tracking-[0.16em] text-nikke-text-muted md:text-[11px] md:tracking-[0.18em]">
-                            아카이브 문서
+                            <span className="font-headline text-xl font-bold">{script.subTitle || script.title}</span>
+                            {(script.searchMatchType === 'title' || script.searchMatchType === 'subtitle') && <span className="text-xs text-nikke-highlight">{script.searchMatchType === 'title' ? '타이틀 일치' : '장면 제목 일치'} · 본문 미리보기</span>}
+                            {script.matchedSpeaker && <span className="text-xs text-nikke-highlight">화자: {script.matchedSpeaker}</span>}
+                            {script.searchSnippet && (
+                              <span className="line-clamp-3 font-body text-[15px] leading-[1.8] text-nikke-text-secondary">
+                                {highlightSnippet(script.searchSnippet, searchTerm)}
+                              </span>
+                            )}
                           </span>
-                        </div>
-                      </button>
+                          <ChevronRightIcon aria-hidden="true" className="h-[18px] w-[18px] text-nikke-text-muted transition-transform duration-150 group-hover:translate-x-[3px] group-hover:text-nikke-accent" />
+                        </button>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </section>
               );
             })}
-            <div className="flex flex-col items-center gap-3 border-t border-nikke-border/15 pt-6 text-center">
-              <p className="font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted">
-                {totalSearchResults}개 중 {globallySearchedScripts.length}개 표시
+            <div className="mt-8 flex flex-col items-center gap-3 text-center">
+              <p className="text-[13px] text-nikke-text-muted">
+                {totalSearchResults.toLocaleString('ko-KR')}개 중 {globallySearchedScripts.length.toLocaleString('ko-KR')}개 표시
               </p>
               {hasMoreSearchResults && (
                 <button
                   type="button"
                   onClick={onLoadMoreSearchResults}
                   disabled={isSearching}
-                  className="rounded-full bg-nikke-surface-low px-5 py-2.5 text-sm font-semibold text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-high disabled:cursor-wait disabled:opacity-60"
+                  className="min-h-11 rounded-lg border border-nikke-border-strong px-5 text-sm text-nikke-text-primary hover:border-nikke-accent disabled:cursor-wait disabled:opacity-60"
                 >
-                  {isSearching ? '불러오는 중...' : '더 보기'}
+                  {isSearching ? '불러오는 중…' : '더 보기'}
                 </button>
               )}
             </div>
-          </div>
+          </>
         ) : hasSearchTerm && isSearching ? (
-          <p className="p-6 text-center text-lg text-nikke-text-muted">검색 중입니다...</p>
+          <p role="status" className="py-12 text-center text-[15px] text-nikke-text-secondary">검색 중입니다…</p>
         ) : hasSearchTerm && !isSearching ? (
-          <p className="p-6 text-center text-lg text-nikke-text-muted">{resultQueryLabel}에 대한 검색 결과가 없습니다.</p>
+          <p className="py-12 text-center text-[15px] text-nikke-text-secondary">{resultQueryLabel}에 대한 검색 결과가 없습니다.</p>
         ) : !hasSearchTerm && !showInitialLoading ? (
-          <div className="py-6 text-center xl:py-10">
-            <p className="font-headline text-2xl font-bold tracking-[-0.02em] text-nikke-text-primary">전체 아카이브를 탐색하려면 검색어를 입력하세요.</p>
-            <p className="mt-3 text-base leading-7 text-nikke-text-secondary">
+          <div className="py-14 text-center">
+            <h2 className="font-headline text-[19px] font-bold text-nikke-text-primary">전체 아카이브를 탐색하려면 검색어를 입력하세요.</h2>
+            <p className="mt-2 text-sm leading-[1.6] text-nikke-text-secondary">
               제목, 소제목, 대사, 화자 등을 통해 원하는 스토리를 빠르게 찾아보세요.
             </p>
           </div>

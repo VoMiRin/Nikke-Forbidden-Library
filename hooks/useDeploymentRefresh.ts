@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const APP_VERSION_PATH = '/app-version.json';
 const VERSION_CHECK_INTERVAL_MS = 60_000;
@@ -25,9 +25,21 @@ const fetchDeploymentVersion = async (): Promise<string | null> => {
     : null;
 };
 
-export function useDeploymentRefresh(): void {
+export type DeploymentRefreshState = {
+  /** 새 배포가 감지돼 새로고침을 권할 수 있는 상태 */
+  hasUpdate: boolean;
+  reload: () => void;
+  dismiss: () => void;
+};
+
+/**
+ * 새 배포를 감지하면 바로 새로고침하지 않고 hasUpdate만 켠다.
+ * 읽던 화면과 선택지를 잃지 않도록 새로고침 시점은 사용자가 고른다.
+ */
+export function useDeploymentRefresh(): DeploymentRefreshState {
   const currentVersionRef = useRef<string | null>(null);
-  const isReloadingRef = useRef(false);
+  const hasDetectedUpdateRef = useRef(false);
+  const [hasUpdate, setHasUpdate] = useState(false);
 
   useEffect(() => {
     if (import.meta.env.DEV) {
@@ -37,6 +49,10 @@ export function useDeploymentRefresh(): void {
     let isMounted = true;
 
     const syncVersion = async (shouldReloadOnChange: boolean) => {
+      if (hasDetectedUpdateRef.current) {
+        return;
+      }
+
       try {
         const nextVersion = await fetchDeploymentVersion();
 
@@ -49,9 +65,9 @@ export function useDeploymentRefresh(): void {
           return;
         }
 
-        if (shouldReloadOnChange && currentVersionRef.current !== nextVersion && !isReloadingRef.current) {
-          isReloadingRef.current = true;
-          window.location.reload();
+        if (shouldReloadOnChange && currentVersionRef.current !== nextVersion) {
+          hasDetectedUpdateRef.current = true;
+          setHasUpdate(true);
           return;
         }
 
@@ -89,4 +105,14 @@ export function useDeploymentRefresh(): void {
       window.removeEventListener('focus', handleFocus);
     };
   }, []);
+
+  const reload = useCallback(() => {
+    window.location.reload();
+  }, []);
+
+  const dismiss = useCallback(() => {
+    setHasUpdate(false);
+  }, []);
+
+  return { hasUpdate, reload, dismiss };
 }

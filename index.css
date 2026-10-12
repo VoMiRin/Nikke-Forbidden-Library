@@ -4,36 +4,42 @@
 
 :root {
   color-scheme: light;
-  --nikke-bg: 244 241 236;
-  --nikke-bg-alt: 255 252 247;
-  --nikke-surface: 248 244 239;
-  --nikke-surface-low: 242 236 229;
-  --nikke-surface-high: 232 224 214;
-  --nikke-surface-highest: 220 211 198;
-  --nikke-text-primary: 30 34 39;
-  --nikke-text-secondary: 70 77 84;
-  --nikke-text-muted: 114 122 130;
-  --nikke-accent: 17 120 168;
-  --nikke-accent-strong: 56 189 248;
-  --nikke-border: 135 148 156;
-  --nikke-glow: 125 181 210;
+  --nikke-bg: 244 246 250;              /* #F4F6FA */
+  --nikke-bg-alt: 255 255 255;          /* #FFFFFF */
+  --nikke-surface: 255 255 255;         /* #FFFFFF */
+  --nikke-surface-low: 255 255 255;     /* #FFFFFF */
+  --nikke-surface-high: 232 237 245;    /* #E8EDF5 */
+  --nikke-surface-highest: 217 224 234; /* #D9E0EA */
+  --nikke-text-primary: 14 22 38;       /* #0E1626 */
+  --nikke-text-secondary: 60 74 96;     /* #3C4A60 */
+  --nikke-text-muted: 94 107 128;       /* #5E6B80 */
+  --nikke-accent: 31 95 214;            /* #1F5FD6 */
+  --nikke-accent-strong: 23 74 168;     /* #174AA8 (hover) */
+  --nikke-accent-ink: 255 255 255;      /* accent 배경 위 글자 */
+  --nikke-highlight: 31 95 214;         /* 지휘관 이름, 강조 수치 */
+  --nikke-border: 217 224 234;          /* #D9E0EA */
+  --nikke-border-strong: 195 205 219;   /* #C3CDDB */
+  --nikke-glow: 31 95 214;
 }
 
 .dark {
   color-scheme: dark;
-  --nikke-bg: 19 19 19;
-  --nikke-bg-alt: 24 23 23;
-  --nikke-surface: 28 27 27;
-  --nikke-surface-low: 32 31 31;
-  --nikke-surface-high: 42 42 42;
-  --nikke-surface-highest: 53 53 52;
-  --nikke-text-primary: 229 226 225;
-  --nikke-text-secondary: 189 200 209;
-  --nikke-text-muted: 135 146 154;
-  --nikke-accent: 142 213 255;
-  --nikke-accent-strong: 56 189 248;
-  --nikke-border: 62 72 79;
-  --nikke-glow: 56 189 248;
+  --nikke-bg: 10 15 26;                 /* #0A0F1A */
+  --nikke-bg-alt: 12 18 30;             /* #0C121E */
+  --nikke-surface: 15 22 36;            /* #0F1624 */
+  --nikke-surface-low: 15 22 36;        /* #0F1624 */
+  --nikke-surface-high: 22 32 54;       /* #162036 */
+  --nikke-surface-highest: 30 42 62;    /* #1E2A3E */
+  --nikke-text-primary: 230 237 247;    /* #E6EDF7 */
+  --nikke-text-secondary: 169 182 202;  /* #A9B6CA */
+  --nikke-text-muted: 127 141 163;      /* #7F8DA3 */
+  --nikke-accent: 76 141 255;           /* #4C8DFF */
+  --nikke-accent-strong: 111 163 255;   /* #6FA3FF (hover) */
+  --nikke-accent-ink: 6 18 38;          /* #061226 */
+  --nikke-highlight: 143 184 255;       /* #8FB8FF */
+  --nikke-border: 30 42 62;             /* #1E2A3E */
+  --nikke-border-strong: 43 58 84;      /* #2B3A54 */
+  --nikke-glow: 76 141 255;
 }
 
 html,
@@ -44,13 +50,9 @@ body,
 
 body {
   margin: 0;
-  color: #1a1a2e;
-  background-color: #f5f5f5;
-  background:
-    radial-gradient(circle at top right, rgb(var(--nikke-glow) / 0.12), transparent 28%),
-    linear-gradient(180deg, rgb(var(--nikke-bg-alt)) 0%, rgb(var(--nikke-bg)) 100%);
+  background: rgb(var(--nikke-bg));
   color: rgb(var(--nikke-text-primary));
-  font-family: 'Manrope', sans-serif;
+  font-family: 'IBM Plex Sans KR', sans-serif;
   transition:
     background-color 350ms cubic-bezier(0.22, 1, 0.36, 1),
     color 350ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -61,7 +63,14 @@ body {
 }
 
 ::selection {
-  background: rgb(var(--nikke-accent-strong) / 0.24);
+  background: rgb(var(--nikke-accent) / 0.28);
+}
+
+mark {
+  background: rgb(var(--nikke-accent) / 0.25);
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar {
@@ -80,7 +89,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(var(--nikke-accent-strong) / 0.75);
+  background-color: rgb(var(--nikke-accent) / 0.75);
 }
 
 ::-webkit-scrollbar-corner {
@@ -112,12 +121,24 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-* {
-  transition-property: color, background-color, border-color, box-shadow;
-  transition-duration: 150ms;
-  transition-timing-function: ease-in-out;
+/* 테마를 바꾸는 순간에만 색을 부드럽게 전환한다 (App.tsx가 html에 클래스를 잠시 붙임).
+   전역 transition을 상시 걸면 Tailwind transition-* 유틸리티와 충돌한다. */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition-property: color, background-color, border-color, fill, stroke !important;
+  transition-duration: 300ms !important;
+  transition-timing-function: ease-in-out !important;
 }
 
-.animate-spin, .animate-pulse, [class*="transition-"] {
-  transition-property: none;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

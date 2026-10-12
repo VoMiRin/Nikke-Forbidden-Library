@@ -8,7 +8,8 @@
 - 검색 API가 없으면 `public/search-index.json`으로 자동 폴백합니다.
 - 본문은 사용자가 실제로 스크립트를 열 때만 `public/scripts/*`에서 로드합니다.
 - 정적 JSON은 재검증하고, 스크립트 본문 파일은 파일별 버전 쿼리로 바뀐 챕터만 다시 받도록 처리합니다.
-- `public/app-version.json`으로 새 배포를 감지해, 이미 열려 있던 탭도 다시 포커스를 받거나 일정 시간이 지나면 최신 버전으로 새로고침됩니다.
+- `public/app-version.json`으로 새 배포를 감지해 새로고침 알림을 표시합니다.
+- 프로덕션 빌드는 홈·분류·장면의 HTML을 미리 생성합니다. 장면 주소는 `/stories/<분류>/<장면 ID>/`이며 기존 쿼리 주소도 계속 열립니다.
 
 ## 로컬 실행
 ```bash
@@ -35,6 +36,18 @@ npm run search-api
 기본 포트는 `8080`이며 `GET /api/search?q=...` 형식으로 내용 검색을 합니다.
 화자까지 함께 좁히려면 `GET /api/search?q=...&speaker=...`를 사용합니다. 이 경우 해당 화자가 직접 말한 텍스트 안에서만 내용이 검색됩니다.
 기존 화자 전용 검색용 `GET /api/search?q=...&mode=speaker` 형식도 계속 지원합니다.
+
+분류를 좁히려면 `category=event_stories` 같은 분류 키를 추가합니다. 서버와 정적 fallback은 같은 검색 모듈을 사용하며, 일치 위치 주변의 스니펫과 제목/본문 일치 구분을 반환합니다. 분류는 결과 개수 제한 전에 적용됩니다.
+
+빌드 시 `public/speakers.json`(화자 요약)과 `public/speaker-index.json`(화자별 장면)도 생성됩니다. 검색 화면에서 화자 자동완성과 “화자별 기록 보기”를 사용할 수 있습니다. 자세한 집계 기준, AI 출처 링크 범위와 검증 결과는 [백엔드 개선 결과](BACKEND_WORK_RESULT.md)에 있습니다.
+
+코드 검사:
+
+```bash
+npm run typecheck
+npm test
+npm run build
+```
 
 보안 관련 환경 변수:
 - `ACCESS_CONTROL_ALLOW_ORIGIN`: 허용할 Origin 목록. 쉼표로 여러 개 지정 가능
@@ -144,6 +157,15 @@ npm run build
 빌드 시 아래 순서로 동작합니다.
 1. 스크립트 메타데이터와 검색 인덱스를 생성
 2. Vite 프로덕션 빌드 생성
+3. 기존 React 화면으로 홈·분류·장면 HTML, `sitemap.xml`, `robots.txt`, `404.html` 생성
+
+SSG는 별도 서버 없이 Firebase Hosting에서 제공됩니다. 원문 누락·빈 장면·중복 ID·본문 렌더링 실패는 빌드를 실패시켜 잘못된 페이지가 배포되지 않게 합니다. 대표 도메인은 `VITE_SITE_URL`로 설정하며 기본값은 `https://nikkeforbiddenlibrary.com`입니다. 도메인을 바꾸면 전체 빌드를 다시 실행하세요.
+
+AI 출처는 제공자의 인용 문맥이 로컬 원문의 한 장면에만 정확하게 일치할 때 장면 주소로 연결합니다. 문맥이 없거나 불명확하면 타이틀/분류 링크를 유지합니다. 이 검증에 필요한 원문 파일도 Cloud Run 이미지에 포함됩니다.
+
+구현 범위·프런트 연동 변경·검증과 제한은 [SSG·백엔드 추가 작업 결과](SSG_BACKEND_WORK_RESULT.md)를 참고하세요.
+
+SEO 목표는 **“니케 금서고”로 홈페이지 찾기**입니다. 홈에 사이트명·소개·WebSite 구조화 데이터를 제공하고 사이트맵에는 홈만 포함합니다. 장면·분류 HTML은 `noindex,follow`, 원문 TXT와 검색용 JSON은 HTTP `X-Robots-Tag: noindex`로 검색 노출을 제외합니다. 크롤러가 제외 설정을 읽을 수 있도록 해당 경로를 robots.txt로 차단하지 않습니다. 스토리 추가 시 SSG 자동 생성과 사이트 내부 검색·공유는 유지됩니다.
 
 ## Cloud Run 검색 API 배포
 검색 API 이미지는 [`server/Dockerfile`](/home/vomirin/nikke-script-archive/server/Dockerfile:1)를 사용합니다.

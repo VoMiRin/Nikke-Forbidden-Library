@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npm run build:search-assets && vite",
     "build:search-assets": "tsc -p tsconfig.search-assets.json && node scripts/buildSearchAssets.mjs",
-    "build": "npm run build:search-assets && vite build",
+    "build": "npm run build:search-assets && vite build && npm run build:ssg",
+    "build:ssg": "node scripts/buildStaticPages.mjs",
     "preview": "vite preview",
     "search-api": "node server/index.mjs",
     "gemini:file-search:test": "node scripts/testGeminiFileSearch.mjs",
@@ -16,7 +17,8 @@
     "test:gemini-file-search-sync": "node --test scripts/syncGeminiFileSearchStore.test.mjs",
     "test:deploy-flow": "node --test scripts/deploy.test.mjs",
     "test": "node --test scripts/*.test.mjs",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@google/genai": "^2.1.0",
@@ -25,6 +27,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.10",

@@ -1,11 +1,12 @@
 import React from 'react';
 import { NikkeLogo } from './NikkeLogo';
-import { MenuIcon } from './Icons';
+import { MenuIcon, MoonIcon, SunIcon } from './Icons';
 
 interface HeaderProps {
   onToggleSidebar?: () => void;
   isSidebarOpen?: boolean;
   className?: string;
+  onNavigateToHome?: () => void;
   onNavigateToSearch?: () => void;
   onNavigateToStories?: () => void;
   onNavigateToAiChat?: () => void;
@@ -14,10 +15,24 @@ interface HeaderProps {
   onToggleTheme: () => void;
 }
 
+export const NAV_ITEMS: { key: 'stories' | 'search' | 'ai_chat'; label: string }[] = [
+  { key: 'stories', label: '스토리' },
+  { key: 'search', label: '검색' },
+  { key: 'ai_chat', label: 'AI 채팅' },
+];
+
+export const ArchiveStatus: React.FC<{ className?: string }> = ({ className = '' }) => (
+  <span className={`flex items-center gap-2 text-xs text-nikke-text-muted ${className}`}>
+    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-nikke-accent ring-[3px] ring-nikke-accent/20" />
+    관리자 아르카나 · 열람 승인
+  </span>
+);
+
 export const Header: React.FC<HeaderProps> = ({
   onToggleSidebar,
   isSidebarOpen,
   className,
+  onNavigateToHome,
   onNavigateToSearch,
   onNavigateToStories,
   onNavigateToAiChat,
@@ -26,79 +41,78 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleTheme,
 }) => {
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (onNavigateToSearch) {
+    const navigate = onNavigateToHome ?? onNavigateToSearch;
+    if (navigate) {
       e.preventDefault();
-      onNavigateToSearch();
+      navigate();
     }
   };
 
-  const navClass = (navKey: 'stories' | 'search' | 'ai_chat') => (
-    activeNav === navKey
-      ? 'border-b border-nikke-accent pb-1 font-label text-xs uppercase tracking-[0.18em] text-nikke-accent'
-      : 'font-label text-xs uppercase tracking-[0.18em] text-nikke-text-secondary transition-colors duration-300 ease-editorial hover:text-nikke-text-primary'
-  );
+  const navHandlers = {
+    stories: onNavigateToStories,
+    search: onNavigateToSearch,
+    ai_chat: onNavigateToAiChat,
+  };
 
   return (
-    <header className={`border-b border-transparent ${className}`}>
-      <div className="border-b border-nikke-border/10 bg-nikke-bg/75 backdrop-blur-md shadow-glass">
-        <div className="container mx-auto flex items-center justify-between gap-2 px-3 py-3 sm:px-6 sm:py-4">
-          <div className="flex min-w-0 items-center">
-            {onToggleSidebar && (
-              <button
-                className="mr-2 shrink-0 rounded-full bg-nikke-surface-low/80 p-2 text-nikke-text-primary transition-colors duration-300 ease-editorial hover:bg-nikke-surface-high hover:text-nikke-accent focus:outline-none focus:ring-2 focus:ring-nikke-accent md:hidden"
-                onClick={onToggleSidebar}
-                aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={isSidebarOpen}
-                aria-controls="sidebar"
-              >
-                <MenuIcon className="h-6 w-6" />
-              </button>
-            )}
-            <a
-              href="#search"
-              onClick={handleLogoClick}
-              aria-label="Go to search page"
-              className="group flex min-w-0 items-center rounded-full pr-1 focus:outline-none focus:ring-2 focus:ring-nikke-accent sm:pr-3"
+    <header className={`border-b border-nikke-border bg-nikke-bg/[0.92] backdrop-blur-md ${className}`}>
+      <div className="mx-auto flex min-h-16 max-w-[1320px] items-center gap-x-9 gap-y-2 px-[clamp(16px,3vw,32px)] max-sm:gap-x-1 max-sm:pl-1 max-sm:pr-2">
+        <div className="flex min-w-0 items-center gap-2 max-sm:flex-1 max-sm:gap-1">
+          {onToggleSidebar && (
+            <button
+              id="sidebar-toggle"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-nikke-text-primary hover:text-nikke-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent md:hidden"
+              onClick={onToggleSidebar}
+              aria-label={isSidebarOpen ? '메뉴 닫기' : '메뉴 열기'}
+              aria-expanded={isSidebarOpen}
+              aria-controls="sidebar"
+              type="button"
             >
-              <div className="mr-2 shrink-0 rounded-full bg-nikke-surface-high/80 p-2 transition-transform duration-300 ease-editorial group-hover:scale-105 sm:mr-3 sm:p-2.5">
-                <NikkeLogo className="h-6 w-6 text-nikke-accent sm:h-7 sm:w-7" />
-              </div>
-              <div className="min-w-0">
-                <p className="hidden font-label text-[11px] uppercase tracking-[0.24em] text-nikke-text-muted sm:block">The Archive Editorial</p>
-                <h1 className="truncate font-headline text-sm font-extrabold tracking-[-0.02em] text-nikke-text-primary sm:text-2xl">
-                  Nikke Forbidden Library
-                </h1>
-              </div>
-            </a>
-          </div>
-          <nav className="hidden items-center gap-8 sm:flex">
-            <button onClick={onNavigateToStories} className={navClass('stories')} type="button">
-              Stories
+              <MenuIcon className="h-[22px] w-[22px]" />
             </button>
-            <button onClick={onNavigateToSearch} className={navClass('search')} type="button">
-              Search
-            </button>
-            <button onClick={onNavigateToAiChat} className={navClass('ai_chat')} type="button">
-              AI Chat
-            </button>
-          </nav>
-          <div className="hidden text-right lg:block">
-            <p className="font-label text-[11px] uppercase tracking-[0.22em] text-nikke-text-muted">Curated Reading Mode</p>
-            <p className="text-sm text-nikke-text-secondary">An editorial archive for reading story chapters and dialogue.</p>
-          </div>
+          )}
+          <a
+            href="/"
+            onClick={handleLogoClick}
+            aria-label="금서고 홈"
+            className="flex min-w-0 items-center gap-3 rounded-lg text-nikke-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent max-sm:flex-1 max-sm:gap-2.5"
+          >
+            <NikkeLogo aria-hidden="true" className="h-6 w-4 shrink-0 sm:h-8 sm:w-[22px]" />
+            <span className="flex min-w-0 items-baseline gap-2.5">
+              <span className="font-headline text-lg font-bold sm:text-xl">금서고</span>
+              <span className="hidden truncate text-[13px] text-nikke-text-muted sm:inline">Nikke Forbidden Library</span>
+            </span>
+          </a>
+        </div>
+        <nav aria-label="주 메뉴" className="hidden gap-7 self-stretch sm:flex">
+          {NAV_ITEMS.map(item => {
+            const isActive = activeNav === item.key;
+            return (
+              <button
+                key={item.key}
+                onClick={navHandlers[item.key]}
+                type="button"
+                aria-current={isActive ? 'page' : undefined}
+                className={`border-b-2 pb-[19px] pt-[21px] text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent ${
+                  isActive
+                    ? 'border-nikke-accent font-semibold text-nikke-text-primary'
+                    : 'border-transparent font-medium text-nikke-text-secondary hover:text-nikke-text-primary'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
+        </nav>
+        <div className="ml-auto flex items-center gap-4">
+          <ArchiveStatus className="hidden lg:flex" />
           <button
             onClick={onToggleTheme}
             type="button"
-            className="flex shrink-0 items-center gap-2 rounded-full bg-nikke-surface-low/85 px-2.5 py-2 text-sm font-semibold text-nikke-text-primary transition-all duration-300 ease-editorial hover:bg-nikke-surface-high focus:outline-none focus:ring-2 focus:ring-nikke-accent sm:px-3"
-            aria-label={themeMode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-nikke-text-secondary hover:border-nikke-accent hover:text-nikke-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent sm:border sm:border-nikke-border-strong"
+            aria-label={themeMode === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
           >
-            <span className="hidden font-label text-[11px] uppercase tracking-[0.18em] text-nikke-text-muted sm:inline">
-              {themeMode === 'dark' ? 'Dark' : 'Light'}
-            </span>
-            <span className="rounded-full bg-nikke-gradient px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-950 sm:px-3 sm:text-[11px] sm:tracking-[0.16em]">
-              <span className="sm:hidden">{themeMode === 'dark' ? 'Light' : 'Dark'}</span>
-              <span className="hidden sm:inline">{themeMode === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
-            </span>
+            {themeMode === 'dark' ? <SunIcon className="h-[18px] w-[18px]" /> : <MoonIcon className="h-[18px] w-[18px]" />}
           </button>
         </div>
       </div>
