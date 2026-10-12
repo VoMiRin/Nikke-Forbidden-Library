@@ -15,6 +15,43 @@ const normalizeSearchText = (value: string): string => (
     .trim()
 );
 
+const NARRATION_LABELS = new Set([
+  'LOCATION', 'SOUND', 'NARRATION', '나래이션', '나레이션', 'MUSIC', 'EFFECTS',
+  'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM', '시스템', '알림',
+]);
+
+// Reviewed field labels in the source corpus, not character aliases. Ordinary
+// anonymous speakers, dialogue nicknames and names containing digits stay valid.
+const DOCUMENT_FIELD_LABELS = new Set([
+  '제목', '내용', '장소', '시간', '용도', '서명자', '타겟', '부사령관실',
+  '노이즈 게릴라 콘서트. 장소', '슈가 커피 레시피',
+  '카페 서비스', '카페 신메뉴 맛', '미카의 서비스', '미카가 만든 신메뉴 맛',
+]);
+
+const isSpeakerLabel = (name: string): boolean => {
+  const label = name.normalize('NFKC').trim();
+  const unwrapped = label.replace(/^\[([^\[\]]+)\]$/, '$1');
+  return !!label && label.length < 75
+    && !/[\[\]]/.test(unwrapped)
+    && !NARRATION_LABELS.has(unwrapped.toUpperCase().replace(/\.$/, ''))
+    && !DOCUMENT_FIELD_LABELS.has(unwrapped);
+};
+
+const isNarrativeColonLine = (line: string, title?: string): boolean => {
+  if (/^\(.*\)$/.test(line)) return true;
+  // Times and ratios are prose, even though they contain a colon.
+  if (/^(?:(?:다음날\s*)?(?:오전|오후|AM|PM)|현재\s*시각|평일\s*\/|휴대폰에 뜬 숫자가)\s*[\d?]+\s*:/i.test(line)
+    || /^\d{1,2}\s*:\s*\d{2}(?:\D|$)/.test(line)
+    || /^[^:]*\d+\s*:\s*\d+\s*(?:로|사이즈|비율)/.test(line)) return true;
+  const endCard = line.match(/^(.+?)\s*:\s*(?:END|BEGIN|TO BE CONTINUED)[.·…\s]*$/i);
+  if (!endCard) return false;
+  const label = normalizeSearchText(endCard[1]);
+  const storyTitle = title ? normalizeSearchText(title) : '';
+  return !!storyTitle && (label === storyTitle || label.endsWith(` ${storyTitle}`)
+    // The original end card spells this title differently from its manifest.
+    || (storyTitle === 'lord for justice' && label === 'road, for justice'));
+};
+
 export interface SpeakerExtraction {
   name: string;
   lines: string[];
@@ -24,7 +61,7 @@ export interface SpeakerExtraction {
 // Helper function to extract searchable text from script content
 export const extractTextFromScriptContent = (
   content: string | undefined,
-  options?: { categoryKey?: string },
+  options?: { categoryKey?: string; title?: string },
 ): { content: string; displayContent: string; speakers: string; speakerContent: Record<string, string>; speakerDetails: Record<string, SpeakerExtraction> } => {
   if (typeof content !== 'string' || !content) { // Guard against null, undefined, or non-string
     return { content: "", displayContent: "", speakers: "", speakerContent: {}, speakerDetails: {} };
@@ -46,9 +83,10 @@ export const extractTextFromScriptContent = (
     const normalizedSpeaker = normalizeSearchText(speaker);
     const normalizedText = normalizeSearchText(text);
 
-    if (!normalizedSpeaker || !normalizedText) {
+    if (!isSpeakerLabel(speaker) || !normalizedText) {
       return;
     }
+    speakerSet.add(normalizedSpeaker);
 
     if (!speakerContentMap.has(normalizedSpeaker)) {
       speakerContentMap.set(normalizedSpeaker, []);
@@ -95,9 +133,6 @@ export const extractTextFromScriptContent = (
           const currentSender = senderMatch[1];
           currentMessengerSender = currentSender;
           currentMessengerMessageIsSystem = !!trimmedLine.match(/IS_SYSTEM="true"/i);
-          if (!currentMessengerMessageIsSystem) {
-             speakerSet.add(normalizeSearchText(currentSender));
-          }
         }
         continue;
       }
@@ -140,26 +175,24 @@ export const extractTextFromScriptContent = (
     if (actionDialogueMatch) {
       const potentialSpeaker = actionDialogueMatch[1].trim();
       const actionText = actionDialogueMatch[2].trim();
-      if (potentialSpeaker && potentialSpeaker.length < 75 && actionText) {
-        speakerSet.add(normalizeSearchText(potentialSpeaker));
+      if (isSpeakerLabel(potentialSpeaker) && actionText) {
         addSpeakerContent(potentialSpeaker, actionText, false);
       }
       searchableText += actionText + " ";
       continue;
     }
 
-    const dialogueMatch = documentStyleMode ? null : trimmedLine.match(/^([^:]+):\s*(.*)/);
-    if (dialogueMatch && dialogueMatch[1] && dialogueMatch[1].trim().length < 75 && dialogueMatch[2]) {
-      const potentialSpeaker = dialogueMatch[1].trim();
-      const upperSpeakerForCheck = potentialSpeaker.toUpperCase();
-      const narrationKeywords = ['LOCATION', 'SOUND', 'NARRATION', '나래이션', 'MUSIC', 'EFFECTS', 'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM'];
-      if (!narrationKeywords.includes(upperSpeakerForCheck.replace(/\.$/, ''))) {
-        const dialogueText = dialogueMatch[2].trim();
-        speakerSet.add(normalizeSearchText(potentialSpeaker));
-        addSpeakerContent(potentialSpeaker, dialogueText);
-        searchableText += dialogueText + " "; 
-        continue;
-      }
+    // A colon inside [시스템: ...] is not a speaker delimiter. A complete
+    // bracketed nickname followed by a colon, e.g. [블랙로즈]: ..., is dialogue.
+    const plainLine = trimmedLine.replace(/^\*{1,3}(.+?)\*{1,3}$/, '$1').trim();
+    const timestampedChat = plainLine.match(/^\[([^\[\]]+)\]\s*\[(?:(?:오전|오후|AM|PM)\s*)?[\d?]{1,2}\s*:\s*[\d?]{2}(?::[\d?]{2})?\]\s*(.+)$/i);
+    const dialogueMatch = documentStyleMode || isNarrativeColonLine(plainLine, options?.title)
+      ? null : timestampedChat ?? plainLine.match(/^(\[[^\[\]:]+\]|[^:\[\]]+)\s*:\s*(.+)$/);
+    if (dialogueMatch && isSpeakerLabel(dialogueMatch[1])) {
+      const dialogueText = dialogueMatch[2].trim();
+      addSpeakerContent(dialogueMatch[1].trim(), dialogueText);
+      searchableText += dialogueText + " ";
+      continue;
     }
 
     const narrationKeywordMatch = trimmedLine.match(/^(Location|SOUND|NARRATION|MUSIC|EFFECTS|ACTION|TRANSITION|FADE IN|FADE OUT|CUT TO|INT\.|EXT\.|SYSTEM)[:\s](.*)/i);
@@ -174,7 +207,9 @@ export const extractTextFromScriptContent = (
         continue;
     }
     
-    if (trimmedLine && !dialogueMatch && !narrationKeywordMatch && !parentheticalMatch && !trimmedLine.startsWith('[') && !trimmedLine.endsWith(']')) {
+    // Rejected speaker lines remain searchable as narrative/document text.
+    // Structural tags were already consumed above; do not discard system notices.
+    if (trimmedLine && !trimmedLine.startsWith('@@@')) {
         searchableText += trimmedLine + " ";
     }
   }

@@ -158,6 +158,7 @@ const main = async () => {
       speakerDetails,
     } = extractTextFromScriptContent(safeContent, {
       categoryKey: script.categoryKey,
+      title: script.title,
     });
 
     speakerRecords.push({ script, speakerDetails });
