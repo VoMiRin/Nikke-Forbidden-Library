@@ -1,9 +1,11 @@
-import { categoryPath, scenePath } from '../lib/pageRoutes.mjs';
+import { categoryPath, scenePath, sectionPath } from '../lib/pageRoutes.mjs';
+import { listSections } from '../lib/sections';
 import { followInApp } from '../lib/linkNavigation';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { Script, ScriptCategory } from '../types';
 import { SearchIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, XIcon } from './Icons';
 import { NikkeLogo } from './NikkeLogo';
+import { SectionTabs } from './SectionTabs';
 import { ArchiveStatus, NAV_ITEMS } from './Header';
 
 type MainNavKey = 'stories' | 'search' | 'ai_chat';
@@ -22,7 +24,7 @@ interface SidebarProps {
   onClearSearch: () => void;
   isOpenOnMobile?: boolean;
   onClose?: () => void;
-  onCategorySelect: (categoryKey: string) => void;
+  onCategorySelect: (categoryKey: string, section?: string | null) => void;
   onNavigateToSearch?: () => void;
   hideScriptListAndSearch?: boolean;
   listOnlyMode?: boolean;
@@ -35,6 +37,11 @@ interface SidebarProps {
   /** 데스크톱에서는 레일을 숨기고 모바일 드로어로만 쓴다 (스토리 홈) */
   hideOnDesktop?: boolean;
 }
+
+/** 검색 중에는 카테고리별로, 평소에는 섹션(있을 때)별로 같은 제목을 묶는다 */
+const groupKeyFor = (script: Script, searchTerm: string) => (
+  searchTerm ? `${script.categoryKey}@@${script.title}` : `${script.section ?? ''}@@${script.title}`
+);
 
 const DESKTOP_QUERY = '(min-width: 768px)';
 
@@ -93,7 +100,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>(() => {
     const selected = scripts.find(script => script.id === selectedScriptId);
-    return selected ? { [searchTerm ? `${selected.categoryKey}@@${selected.title}` : selected.title]: true } : {};
+    return selected ? { [groupKeyFor(selected, searchTerm)]: true } : {};
   });
   const scriptListContainerRef = useRef<HTMLDivElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -113,18 +120,30 @@ export const Sidebar: React.FC<SidebarProps> = ({
   }, [isOpenOnMobile, isDesktop]);
   const scriptItemRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
+  // 검색 중이 아닐 때만 소분류(예: 개인/단체방) 탭으로 목록을 나눈다
+  const sections = useMemo(() => (searchTerm ? [] : listSections(scripts)), [scripts, searchTerm]);
+  const selectedSection = scripts.find(script => script.id === selectedScriptId)?.section ?? null;
+  const [pickedSection, setPickedSection] = useState<string | null>(selectedSection);
+  useEffect(() => {
+    setPickedSection(selectedSection);
+  }, [selectedScriptId, selectedSection]);
+  const currentSection = sections.length > 1
+    ? (sections.find(section => section.name === pickedSection)?.name ?? sections[0].name)
+    : null;
+
   const groupedScripts = useMemo(() => {
     if (hideScriptListAndSearch || !scripts || scripts.length === 0) return {};
 
-    return scripts.reduce<Record<string, Script[]>>((acc, script) => {
-      const groupKey = searchTerm ? `${script.categoryKey}@@${script.title}` : script.title;
+    const listedScripts = currentSection ? scripts.filter(script => script.section === currentSection) : scripts;
+    return listedScripts.reduce<Record<string, Script[]>>((acc, script) => {
+      const groupKey = groupKeyFor(script, searchTerm);
       if (!acc[groupKey]) {
         acc[groupKey] = [];
       }
       acc[groupKey].push(script);
       return acc;
     }, {});
-  }, [scripts, searchTerm, hideScriptListAndSearch]);
+  }, [scripts, searchTerm, hideScriptListAndSearch, currentSection]);
 
   useEffect(() => {
     if (hideScriptListAndSearch) {
@@ -135,7 +154,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     if (selectedScriptId && scripts.length > 0) {
       const selectedScriptInstance = scripts.find(s => s.id === selectedScriptId);
       if (selectedScriptInstance) {
-        const groupKey = searchTerm ? `${selectedScriptInstance.categoryKey}@@${selectedScriptInstance.title}` : selectedScriptInstance.title;
+        const groupKey = groupKeyFor(selectedScriptInstance, searchTerm);
         setExpandedChapters({ [groupKey]: true });
       }
     } else if (searchTerm && Object.keys(groupedScripts).length > 0 && !isIndexingScripts && !isSearching) {
@@ -281,8 +300,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className="mt-4 md:mt-0">
               {activeCategory && (
                 <a
-                  href={categoryPath(activeCategory.key)}
-                  onClick={event => followInApp(event, () => onCategorySelect(activeCategory.key))}
+                  href={sectionPath(activeCategory.key, currentSection)}
+                  onClick={event => followInApp(event, () => onCategorySelect(activeCategory.key, currentSection))}
                   className="inline-flex min-h-9 items-center gap-2 text-[13px] text-nikke-text-secondary hover:text-nikke-text-primary"
                 >
                   <ChevronLeftIcon className="h-3.5 w-3.5" />
@@ -325,6 +344,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           )}
 
+          {currentSection && activeCategory && (
+            <div className="mb-3">
+              <SectionTabs
+                sections={sections}
+                activeSection={currentSection}
+                hrefFor={section => sectionPath(activeCategory.key, section)}
+                onSelect={setPickedSection}
+                size="sm"
+                label={`${activeCategory.name} 소분류`}
+              />
+            </div>
+          )}
+
           <div
             ref={scriptListContainerRef}
             className={`min-h-[100px] flex-grow overflow-y-auto md:min-h-0 ${listOnlyMode ? 'border-t border-nikke-border' : ''}`}
@@ -341,13 +373,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   const containsSelectedScript = subScriptsArray.some(s => s.id === selectedScriptId);
                   const contentsId = `chapter-contents-${groupKey.replace(/\s+/g, '-')}`;
 
-                  let displayGroupTitle = groupKey;
-                  let categoryNameForGroup: string | undefined;
-                  if (searchTerm && groupKey.includes('@@')) {
-                    const [catKey, title] = groupKey.split('@@');
-                    displayGroupTitle = title;
-                    categoryNameForGroup = categories.find(c => c.key === catKey)?.name;
-                  }
+                  const displayGroupTitle = subScriptsArray[0].title;
+                  const categoryNameForGroup = searchTerm
+                    ? categories.find(c => c.key === subScriptsArray[0].categoryKey)?.name
+                    : undefined;
 
                   return (
                     <li key={groupKey} className={`border-b border-nikke-border ${isExpanded ? 'pb-2.5' : ''}`}>

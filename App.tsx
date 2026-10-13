@@ -52,6 +52,7 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
   const deploymentRefresh = useDeploymentRefresh();
 
   const [chapterTitle, setChapterTitle] = useState<string | null>(initialData?.history.chapterTitle ?? null);
+  const [storySection, setStorySection] = useState<string | null>(initialData?.history.section ?? null);
   const [speakerId, setSpeakerId] = useState<string | null>(null);
   const [isSidebarOpenOnMobile, setIsSidebarOpenOnMobile] = useState<boolean>(false);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
@@ -137,6 +138,7 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
     setCurrentView(historyState.view);
     setSearchCategoryKey(historyState.searchCategoryKey);
     setChapterTitle(historyState.chapterTitle);
+    setStorySection(historyState.section);
     setSpeakerId(historyState.speakerId);
     setActiveCategoryKey(historyState.categoryKey);
     setSelectedScriptId(historyState.scriptId);
@@ -168,13 +170,14 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
     view: currentView,
     searchCategoryKey: currentView === 'search' ? searchCategoryKey : null,
     chapterTitle: currentView === 'stories' ? chapterTitle : null,
+    section: currentView === 'stories' ? storySection : null,
     speakerId: currentView === 'speakers' ? speakerId : null,
     categoryKey: currentView === 'stories' || currentView === 'script_viewer' ? activeCategoryKey : null,
     scriptId: currentView === 'script_viewer' ? selectedScriptId : null,
     searchTerm: currentView === 'search' ? debouncedSearchTerm : '',
     speakerSearchTerm: currentView === 'search' ? debouncedSpeakerSearchTerm : '',
     viewerSearchFocus: currentView === 'script_viewer' ? viewerSearchFocus : null,
-  }), [activeCategoryKey, currentView, debouncedSearchTerm, debouncedSpeakerSearchTerm, selectedScriptId, viewerSearchFocus, searchCategoryKey, chapterTitle, speakerId]);
+  }), [activeCategoryKey, currentView, debouncedSearchTerm, debouncedSpeakerSearchTerm, selectedScriptId, viewerSearchFocus, searchCategoryKey, chapterTitle, storySection, speakerId]);
 
   useEffect(() => {
     document.body.style.overflow = isSidebarOpenOnMobile ? 'hidden' : '';
@@ -354,8 +357,9 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
     handleSelectScript(scriptId);
   };
 
-  const handleCategorySelectWithoutSearchFocus = (categoryKey: string) => {
+  const handleCategorySelectWithoutSearchFocus = (categoryKey: string, section: string | null = null) => {
     setChapterTitle(null);
+    setStorySection(section);
     setViewerSearchFocus(null);
     handleCategorySelect(categoryKey);
   };
@@ -367,6 +371,7 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
 
   const handleNavigateToStoriesWithoutSearchFocus = (categoryKey?: string | null) => {
     setChapterTitle(null);
+    setStorySection(null);
     setViewerSearchFocus(null);
     handleNavigateToStories(categoryKey);
   };
@@ -512,6 +517,11 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
             onNavigateToSearch={handleNavigateToSearchWithoutSearchFocus}
             onNavigateToAiChat={handleNavigateToAiChatWithoutSearchFocus}
             chapterTitleFilter={chapterTitle}
+            activeSection={storySection}
+            onSectionSelect={(section) => {
+              setChapterTitle(null);
+              setStorySection(section);
+            }}
             onSearch={(term) => {
               handleNavigateToSearchWithoutSearchFocus();
               handleSearchInputChange(term);

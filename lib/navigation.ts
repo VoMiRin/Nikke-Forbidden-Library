@@ -16,6 +16,8 @@ export type BrowserHistoryState = {
   viewerSearchFocus: ViewerSearchFocus | null;
   searchCategoryKey: string | null;
   chapterTitle: string | null;
+  /** 분류 안의 소분류 (예: 블라블라 개인/단체방) */
+  section: string | null;
   speakerId: string | null;
 };
 
@@ -61,6 +63,7 @@ export const parseHistoryStateFromLocation = (locationSearch: string, pathname =
     view,
     searchCategoryKey: view === 'search' ? categoryKey : null,
     chapterTitle: view === 'stories' && categoryKey ? params.get('title')?.trim() || null : null,
+    section: view === 'stories' && categoryKey ? params.get('section')?.trim() || null : null,
     speakerId: view === 'speakers' ? params.get('speakerId')?.trim() || null : null,
     categoryKey: view === 'stories' || view === 'script_viewer' ? categoryKey : null,
     scriptId: view === 'script_viewer' ? scriptId : null,
@@ -79,6 +82,7 @@ export const buildHistoryUrl = (state: BrowserHistoryState): string => {
   // 스토리 홈이 기본 화면이므로 분류가 없으면 파라미터 없이 둔다
   if (state.view === 'stories' && state.categoryKey) {
     pathname = categoryPath(state.categoryKey);
+    if (state.section) params.set('section', state.section);
     if (state.chapterTitle) params.set('title', state.chapterTitle);
   }
 

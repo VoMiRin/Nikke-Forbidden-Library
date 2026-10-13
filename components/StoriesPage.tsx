@@ -1,7 +1,9 @@
-import { categoryPath, scenePath } from '../lib/pageRoutes.mjs';
+import { categoryPath, scenePath, sectionPath } from '../lib/pageRoutes.mjs';
+import { listSections } from '../lib/sections';
 import { followInApp } from '../lib/linkNavigation';
 import React, { useEffect, useMemo, useState } from 'react';
 import type { Script, ScriptCategory } from '../types';
+import { SectionTabs } from './SectionTabs';
 import { ArrowRightIcon, ChevronRightIcon, SearchIcon, XIcon, type IconProps } from './Icons';
 
 interface StoriesPageProps {
@@ -17,6 +19,9 @@ interface StoriesPageProps {
   /** 홈 히어로 검색창에서 바로 검색 */
   onSearch?: (term: string) => void;
   chapterTitleFilter?: string | null;
+  /** URL로 고른 소분류. 없으면 열람 중인 장면의 소분류나 첫 소분류를 보여준다. */
+  activeSection?: string | null;
+  onSectionSelect?: (section: string) => void;
 }
 
 interface ChapterGroup {
@@ -37,7 +42,9 @@ const parseChapterTitle = (title: string, index: number) => {
 
 const normalizeFilterValue = (value: string) => value.normalize('NFKC').toLowerCase().replace(/\s+/g, '');
 
-const unitLabelFor = (categoryKey: string) => (categoryKey === 'main_story' ? '챕터' : '타이틀');
+const unitLabelFor = (categoryKey: string) => (
+  categoryKey === 'main_story' ? '챕터' : categoryKey === 'blabla' ? '대화방' : '타이틀'
+);
 
 export const StoriesPage: React.FC<StoriesPageProps> = ({
   categories,
@@ -51,6 +58,8 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
   onNavigateToAiChat,
   onSearch,
   chapterTitleFilter,
+  activeSection,
+  onSectionSelect,
 }) => {
   const [heroSearchTerm, setHeroSearchTerm] = useState('');
   const [chapterFilter, setChapterFilter] = useState(chapterTitleFilter ?? '');
@@ -61,11 +70,21 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
   const effectiveCategoryKey = activeCategoryKey ?? null;
   const activeCategory = categories.find(category => category.key === effectiveCategoryKey) ?? null;
 
-  const chapterGroups = useMemo<ChapterGroup[]>(() => {
-    if (!effectiveCategoryKey) return [];
+  const categoryScripts = useMemo(
+    () => (effectiveCategoryKey ? scripts.filter(script => script.categoryKey === effectiveCategoryKey) : []),
+    [scripts, effectiveCategoryKey]
+  );
+  const sections = useMemo(() => listSections(categoryScripts), [categoryScripts]);
+  const hasSections = sections.length > 1;
+  const currentSection = hasSections
+    ? (sections.find(section => section.name === activeSection)?.name
+      ?? categoryScripts.find(script => script.id === selectedScriptId)?.section
+      ?? sections[0].name)
+    : null;
 
-    const grouped = scripts
-      .filter(script => script.categoryKey === effectiveCategoryKey)
+  const chapterGroups = useMemo<ChapterGroup[]>(() => {
+    const grouped = categoryScripts
+      .filter(script => !currentSection || script.section === currentSection)
       .reduce<Record<string, Script[]>>((acc, script) => {
         if (!acc[script.title]) {
           acc[script.title] = [];
@@ -78,7 +97,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
       title,
       scripts: chapterScripts,
     }));
-  }, [scripts, effectiveCategoryKey]);
+  }, [categoryScripts, currentSection]);
 
   const categoryStats = useMemo(() => {
     const stats: Record<string, { titles: Set<string>; scenes: number }> = {};
@@ -90,6 +109,14 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
       stats[script.categoryKey].scenes += 1;
     });
     return stats;
+  }, [scripts]);
+
+  const sectionsByCategory = useMemo(() => {
+    const byCategory: Record<string, Script[]> = {};
+    scripts.forEach(script => {
+      if (script.section) (byCategory[script.categoryKey] ??= []).push(script);
+    });
+    return Object.fromEntries(Object.entries(byCategory).map(([key, list]) => [key, listSections(list)]));
   }, [scripts]);
 
   const totalTitles = useMemo(
@@ -198,6 +225,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
           <div className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-5 max-sm:grid-cols-2 max-sm:gap-3">
             {categories.map((category, index) => {
               const stat = categoryStats[category.key];
+              const cardSections = sectionsByCategory[category.key] ?? [];
 
               return (
                 <a
@@ -218,7 +246,9 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
                     <span className="flex flex-col gap-2">
                       <span className="font-headline text-xl font-bold max-sm:text-lg">{category.name}</span>
                       <span className="text-xs text-nikke-text-muted">
-                        {stat
+                        {cardSections.length > 1
+                          ? cardSections.map(section => `${section.name} ${formatCount(section.titleCount)}`).join(' · ')
+                          : stat
                           ? `${formatCount(stat.titles.size)} ${unitLabelFor(category.key)} · ${formatCount(stat.scenes)} 장면`
                           : ' '}
                       </span>
@@ -255,7 +285,13 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
           <span>스토리</span>
         )}
         <span aria-hidden="true">/</span>
-        <span aria-current="page" className="text-nikke-text-secondary">{activeCategory?.name ?? '스토리'}</span>
+        <span aria-current={currentSection ? undefined : 'page'} className="text-nikke-text-secondary">{activeCategory?.name ?? '스토리'}</span>
+        {currentSection && (
+          <>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page" className="text-nikke-text-secondary">{currentSection}</span>
+          </>
+        )}
       </nav>
       <header className="mt-5 flex flex-wrap items-end justify-between gap-4 pb-8">
         <div className="flex items-baseline gap-5">
@@ -268,10 +304,22 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
         </div>
         {chapterGroups.length > 0 && (
           <p className="text-sm text-nikke-text-muted">
-            {formatCount(chapterGroups.length)} {unitLabelFor(effectiveCategoryKey)} · {formatCount(totalScenes)} 장면
+            {currentSection && `${currentSection} · `}{formatCount(chapterGroups.length)} {unitLabelFor(effectiveCategoryKey)} · {formatCount(totalScenes)} 장면
           </p>
         )}
       </header>
+
+      {currentSection && effectiveCategoryKey && (
+        <div className="mb-6">
+          <SectionTabs
+            sections={sections}
+            activeSection={currentSection}
+            hrefFor={section => sectionPath(effectiveCategoryKey, section)}
+            onSelect={section => onSectionSelect?.(section)}
+            label={`${activeCategory?.name ?? ''} 소분류`}
+          />
+        </div>
+      )}
 
       {showChapterFilter && (
         <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -327,7 +375,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
                 <span className={`font-mono text-[15px] ${isSelected ? 'text-nikke-accent' : 'text-nikke-text-muted'}`}>{number}</span>
                 <span className="flex min-w-0 flex-wrap items-baseline gap-x-4 gap-y-1">
                   <span className="font-headline text-xl font-bold">{name}</span>
-                  {firstScript.subTitle && (
+                  {firstScript.subTitle && !/^\d+$/.test(firstScript.subTitle) && (
                     <span className="text-sm text-nikke-text-muted">{firstScript.subTitle}</span>
                   )}
                   <span className={`w-full text-[13px] sm:hidden ${isSelected ? 'text-nikke-highlight' : 'text-nikke-text-muted'}`}>

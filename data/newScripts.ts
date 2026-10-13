@@ -15,6 +15,7 @@ import { lostRelicsScripts } from './new_scripts/lostRelics';
 import { outpostStoryScripts } from './new_scripts/outpostStory';
 import { characterEpisodeScripts } from './new_scripts/characterEpisode';
 import { eventLostRelicsScripts } from './new_scripts/eventLostRelics';
+import { blablaScripts } from './new_scripts/blabla';
 
 /**
  * 새로 추가된 모든 스크립트 데이터
@@ -28,4 +29,5 @@ export const newScriptsData: ScriptData[] = [
     ...outpostStoryScripts,
     ...characterEpisodeScripts,
     ...eventLostRelicsScripts,
+    ...blablaScripts,
 ];

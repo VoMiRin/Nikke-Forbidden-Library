@@ -181,10 +181,11 @@ const main = async () => {
     });
   }
 
-  const manifest = newScriptsData.map(({ id, title, categoryKey, subTitle, mainChapterFile }) => ({
+  const manifest = newScriptsData.map(({ id, title, categoryKey, section, subTitle, mainChapterFile }) => ({
     id,
     title,
     categoryKey,
+    section,
     subTitle,
     mainChapterFile,
     mainChapterVersion: chapterVersionCache.get(`${categoryKey}/${mainChapterFile}`),

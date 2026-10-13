@@ -96,6 +96,7 @@ export interface Script {
   id: string;
   title: string; // Main Chapter Title
   categoryKey: string;
+  section?: string; // Optional grouping inside a category (e.g. 블라블라 개인/단체방)
   content?: string; // Full script content, lazy-loaded
   subTitle?: string; // Sub-Chapter Title or specific part name
   searchableContent: string; // Pre-calculated for searching dialogue and narration
@@ -112,6 +113,7 @@ export interface ScriptManifestEntry {
   id: string;
   title: string;
   categoryKey: string;
+  section?: string;
   subTitle?: string;
   mainChapterFile: string;
   mainChapterVersion?: string;
