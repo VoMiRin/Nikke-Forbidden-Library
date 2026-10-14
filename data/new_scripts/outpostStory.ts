@@ -120,7 +120,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'workshop_06', categoryKey: 'outpost_stories', title: '공방', subTitle: '제작의 숨은 고수?', mainChapterFile: '공방.txt' },
     { id: 'workshop_07', categoryKey: 'outpost_stories', title: '공방', subTitle: 'BOOM친구', mainChapterFile: '공방.txt' },
     { id: 'workshop_08', categoryKey: 'outpost_stories', title: '공방', subTitle: '기술의 종착점', mainChapterFile: '공방.txt' },
-    //{ id: 'workshop_09', categoryKey: 'outpost_stories', title: '공방', subTitle: '할로윈 특별 선물♡', mainChapterFile: '공방.txt' },
+    { id: 'workshop_09', categoryKey: 'outpost_stories', title: '공방', subTitle: '할로윈 특별 선물♡', mainChapterFile: '공방.txt' },
 
     // 무기고
     { id: 'armory_00', categoryKey: 'outpost_stories', title: '무기고', subTitle: '무기고 괴담', mainChapterFile: '무기고.txt' },

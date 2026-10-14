@@ -10,6 +10,7 @@ COPY server/groundingSources.mjs ./server/groundingSources.mjs
 COPY server/index.mjs ./server/index.mjs
 COPY server/askRecovery.mjs ./server/askRecovery.mjs
 COPY server/geminiFallback.mjs ./server/geminiFallback.mjs
+COPY server/aiConfig.mjs ./server/aiConfig.mjs
 COPY public/search-index.json public/script-manifest.json ./public/
 COPY public/scripts ./public/scripts/
 

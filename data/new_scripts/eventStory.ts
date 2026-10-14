@@ -1728,4 +1728,21 @@ export const eventStoryScripts: ScriptData[] = [
     { id: 'coin_rush_show_down_25', categoryKey: 'event_stories', title: 'COIN RUSH SHOWDOWN', subTitle: '마지막 시합 : A', mainChapterFile: 'coin_rush_show_down.txt' },
     { id: 'coin_rush_show_down_26', categoryKey: 'event_stories', title: 'COIN RUSH SHOWDOWN', subTitle: '마지막 시합 : B', mainChapterFile: 'coin_rush_show_down.txt' },
     { id: 'coin_rush_show_down_27', categoryKey: 'event_stories', title: 'COIN RUSH SHOWDOWN', subTitle: '웃고 있는 입', mainChapterFile: 'coin_rush_show_down.txt' },
+
+    // LITTLE WITCH TRICK
+    { id: 'little_witch_trick_00', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '수상한 마녀 벨로타', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_01', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '마녀의 준비 : A', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_02', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '마녀의 준비 : B', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_03', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: 'Little Witch Trick! : A', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_04', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: 'Little Witch Trick! : B', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_05', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '인기 부스 : A', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_06', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '인기 부스 : B', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_07', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '수상한 게시글', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_08', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '범인을 잡는 법 : A', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_09', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '범인을 잡는 법 : B', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_10', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '범인을 찾아라 : A', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_11', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '범인을 찾아라 : B', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_12', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '마녀의 장난 : A', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_13', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '마녀의 장난 : B', mainChapterFile: 'little_witch_trick.txt' },
+    { id: 'little_witch_trick_14', categoryKey: 'event_stories', title: 'LITTLE WITCH TRICK', subTitle: '마지막 장난', mainChapterFile: 'little_witch_trick.txt' },
 ];

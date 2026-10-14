@@ -1157,4 +1157,10 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'sin_swiftbunny_03', categoryKey: 'character_episodes', title: '신 : 스위프트 바니', subTitle: '감사의 말', mainChapterFile: '신_스위프트_바니.txt' },
     { id: 'sin_swiftbunny_04', categoryKey: 'character_episodes', title: '신 : 스위프트 바니', subTitle: '전하려 하는 말', mainChapterFile: '신_스위프트_바니.txt' },
 
+    // 벨로타 : 펌킨 위치
+    { id: 'belorta_pumpkinwitch_00', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '사역마가 되어줘', mainChapterFile: '벨로타_펌킨_위치.txt' },
+    { id: 'belorta_pumpkinwitch_01', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '마녀와의 계약', mainChapterFile: '벨로타_펌킨_위치.txt' },
+    { id: 'belorta_pumpkinwitch_02', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '재료를 찾아라', mainChapterFile: '벨로타_펌킨_위치.txt' },
+    { id: 'belorta_pumpkinwitch_03', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '이게 수집이 된다고?', mainChapterFile: '벨로타_펌킨_위치.txt' },
+    { id: 'belorta_pumpkinwitch_04', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '마녀의 보수', mainChapterFile: '벨로타_펌킨_위치.txt' },
 ];

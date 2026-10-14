@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run build:search-assets && vite",
+    "dev": "npm run build:search-assets && node scripts/dev.mjs",
     "build:search-assets": "tsc -p tsconfig.search-assets.json && node scripts/buildSearchAssets.mjs",
     "build": "npm run build:search-assets && vite build && npm run build:ssg",
     "build:ssg": "node scripts/buildStaticPages.mjs",

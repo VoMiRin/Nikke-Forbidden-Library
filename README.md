@@ -12,10 +12,35 @@
 - 프로덕션 빌드는 홈·분류·장면의 HTML을 미리 생성합니다. 장면 주소는 `/stories/<분류>/<장면 ID>/`이며 기존 쿼리 주소도 계속 열립니다.
 
 ## 로컬 실행
+`.env.development.local`에 개발 전용 Gemini API 키를 입력합니다. 이 파일은 Git에 포함되지 않습니다.
+
+```dotenv
+DEV_GEMINI_API_KEY=개발용_AI_Studio_API_키
+```
+
+개발용 키에는 `.env.local`의 `GEMINI_FILE_SEARCH_STORE` 저장소 접근 권한이 필요합니다.
+다른 저장소를 테스트할 때만 `.env.development.local`에 `DEV_GEMINI_FILE_SEARCH_STORE`를 추가합니다.
+
 ```bash
 npm install
 npm run dev
 ```
+
+`http://127.0.0.1:3000`에 접속합니다. `npm run dev`는 화면과 개발용 API 서버를 함께 실행하므로
+별도로 `npm run search-api`를 실행할 필요가 없습니다. 포트가 사용 중이면 Vite가 표시하는 주소를 사용하세요.
+개발용 API는 빈 로컬 포트를 자동으로 선택하고 해당 개발 화면에서만 연결합니다.
+
+AI Chat은 **`gemini-4-argon` + Flex**로 고정됩니다. 개발용 키가 없으면 실행을 중단하고,
+할당량 초과나 Flex 오류가 나도 운영 키·다른 모델·Standard 요금으로 전환하지 않습니다.
+Flex 대기를 위해 API 요청별 제한은 15분, 화면의 결과 조회 대기는 재시도를 포함해 65분입니다.
+개발용 질문/답변은 서버 메모리에서만 보관하므로 개발 서버를 종료하면 복구할 수 없습니다.
+키를 바꾼 뒤에는 `npm run dev`를 다시 시작하세요.
+
+`npm run search-api`와 배포는 기존 `.env.local`/운영 환경변수의 키·모델 설정을 사용합니다.
+개발 전용 파일의 `DEV_*` 값은 배포 설정이나 브라우저 코드에 포함되지 않습니다.
+
+공식 문서: [Gemini 4 Argon](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon),
+[Flex 요청 설정](https://ai.google.dev/gemini-api/docs/generate-content/flex-inference).
 
 `npm run dev`는 실행 전에 아래 생성 자산을 자동으로 만듭니다.
 - `public/script-manifest.json`
