@@ -276,8 +276,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       onClick={event => followInApp(event, () => onCategorySelect(category.key))}
                       className={`flex min-h-11 w-full items-center gap-3.5 rounded-lg px-3 text-left text-sm ${
                         isActive
-                          ? 'bg-nikke-surface-high font-semibold text-nikke-text-primary md:bg-nikke-surface'
-                          : 'text-nikke-text-secondary hover:bg-nikke-surface hover:text-nikke-text-primary'
+                          ? 'bg-nikke-accent/10 font-semibold text-nikke-text-primary shadow-[inset_3px_0_0_rgb(var(--nikke-accent))]'
+                          : 'text-nikke-text-secondary hover:bg-nikke-surface-high/60 hover:text-nikke-text-primary'
                       }`}
                       aria-current={isActive ? 'page' : undefined}
                     >

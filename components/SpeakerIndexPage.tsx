@@ -67,7 +67,7 @@ export const SpeakerIndexPage: React.FC<SpeakerIndexPageProps> = ({ scripts, cat
           <span aria-current="page" className="text-nikke-text-secondary">화자 목록</span>
         )}
       </nav>
-      <h1 className="mt-4 font-headline text-[clamp(36px,4.4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-nikke-text-primary">
+      <h1 className="mt-4 font-headline text-[clamp(36px,4.4vw,52px)] font-bold leading-[1.1] tracking-[-0.01em] text-nikke-text-primary">
         {detail?.name ?? '화자별 기록'}
       </h1>
       <p className="mt-3 max-w-[640px] text-[15px] leading-[1.7] text-nikke-text-secondary">직접 대사가 기록된 장면을 모았습니다. 이름만 언급된 장면은 포함하지 않으며, 원문에서 이름이 다르게 표기된 화자는 따로 표시합니다.</p>

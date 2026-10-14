@@ -703,7 +703,7 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
           ></div>
         )}
         <main className="min-w-0 flex-[999_1_560px]">
-          <AiChatPage />
+          <AiChatPage onNavigateToSearch={handleNavigateToSearchWithoutSearchFocus} />
         </main>
       </div>
     </div>

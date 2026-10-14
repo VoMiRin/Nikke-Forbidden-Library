@@ -883,7 +883,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
           )}
           <h1
             id="script-title"
-            className={`${script.subTitle ? 'mt-3 max-sm:mt-1.5' : ''} font-headline text-[clamp(34px,4.6vw,60px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-nikke-text-primary`}
+            className={`${script.subTitle ? 'mt-3 max-sm:mt-1.5' : ''} font-headline text-[clamp(34px,4.6vw,60px)] font-bold leading-[1.05] tracking-[-0.01em] text-nikke-text-primary`}
           >
             {sceneLabel}
           </h1>

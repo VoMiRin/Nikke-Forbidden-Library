@@ -91,7 +91,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
 
   return (
     <div className="max-w-[900px]">
-      <h1 className="font-headline text-[clamp(36px,4.4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-nikke-text-primary">
+      <h1 className="font-headline text-[clamp(36px,4.4vw,52px)] font-bold leading-[1.1] tracking-[-0.01em] text-nikke-text-primary">
         기록 검색
       </h1>
       <p className="mt-3 text-[15px] text-nikke-text-secondary">제목, 소제목, 대사로 찾고 화자로 범위를 좁히십시오.</p>

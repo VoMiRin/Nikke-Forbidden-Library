@@ -300,6 +300,13 @@ const formatRetryAfter = (retryAfter: string | null) => {
   return '잠시 후에 다시 시도해 주세요.';
 };
 
+const formatElapsed = (elapsedMs: number) => {
+  const totalSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return minutes > 0 ? `${minutes}분 ${seconds}초` : `${seconds}초`;
+};
+
 const getAskSessionStorage = (): Storage | null => {
   try {
     return window.sessionStorage;
@@ -380,6 +387,8 @@ export const AiAskPanel: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isRecovering, setIsRecovering] = useState(false);
   const [pendingRequestId, setPendingRequestId] = useState<string | null>(null);
+  const [waitStartedAt, setWaitStartedAt] = useState<number | null>(null);
+  const [now, setNow] = useState(() => Date.now());
   const activeRequestRef = useRef<{ abort: () => void } | null>(null);
   const isMountedRef = useRef(true);
 
@@ -400,6 +409,7 @@ export const AiAskPanel: React.FC = () => {
       setPendingRequestId(pendingAsk.requestId);
       setIsSubmitting(true);
       setIsRecovering(true);
+      setWaitStartedAt(pendingAsk.submittedAt);
 
       void pollForStoredAnswer(pendingAsk.requestId, requestController.signal)
         .then((recoveredResponse) => {
@@ -437,6 +447,14 @@ export const AiAskPanel: React.FC = () => {
     };
   }, []);
 
+  // 답변을 기다리는 동안 경과 시간을 1초마다 갱신한다
+  useEffect(() => {
+    if (!isSubmitting || waitStartedAt === null) return;
+    setNow(Date.now());
+    const intervalId = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(intervalId);
+  }, [isSubmitting, waitStartedAt]);
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!canSubmit) return;
@@ -460,6 +478,7 @@ export const AiAskPanel: React.FC = () => {
     activeRequestRef.current = activeRequest;
     setPendingRequestId(requestId);
     savePendingAsk(getAskSessionStorage(), { requestId, submittedAt });
+    setWaitStartedAt(submittedAt);
 
     const markRecoveryStarted = () => {
       if (isMountedRef.current && activeRequestRef.current === activeRequest) {
@@ -557,6 +576,7 @@ export const AiAskPanel: React.FC = () => {
 
     setIsSubmitting(true);
     setIsRecovering(true);
+    setWaitStartedAt(Date.now());
     setError(null);
 
     activeRequestRef.current?.abort();
@@ -596,6 +616,9 @@ export const AiAskPanel: React.FC = () => {
   };
 
   const tokenUsageLabel = response ? formatTokenUsage(response.tokenUsage) : null;
+  const elapsedLabel = isSubmitting && waitStartedAt !== null
+    ? formatElapsed(now - waitStartedAt)
+    : null;
 
   return (
     <>
@@ -629,10 +652,18 @@ export const AiAskPanel: React.FC = () => {
         </div>
       </form>
 
-      {isRecovering && (
-        <div className="mt-6 flex items-center gap-3 rounded-lg bg-nikke-accent/10 px-4 py-3.5" role="status">
-          <span aria-hidden="true" className="h-1.5 w-1.5 flex-none rounded-full bg-nikke-accent ring-[3px] ring-nikke-accent/20" />
-          <p className="text-sm leading-[1.65] text-nikke-text-primary">AI가 답변을 생성 중입니다. 완료되는 즉시 자동으로 표시됩니다.</p>
+      {elapsedLabel && (
+        <div className="mt-6 flex items-start gap-3 rounded-lg bg-nikke-accent/10 px-4 py-3.5" role="status">
+          <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 flex-none animate-pulse rounded-full bg-nikke-accent ring-[3px] ring-nikke-accent/20" />
+          <div className="min-w-0 flex-1">
+            <p className="flex flex-wrap items-baseline justify-between gap-x-3 text-sm leading-[1.65] text-nikke-text-primary">
+              <span>{isRecovering ? 'AI가 답변을 생성 중입니다.' : '기록을 대조하고 있습니다.'}</span>
+              <span className="font-mono text-xs text-nikke-text-secondary" aria-hidden="true">{elapsedLabel}</span>
+            </p>
+            <p className="mt-0.5 text-xs leading-[1.6] text-nikke-text-muted">
+              답변에 몇 분까지 걸릴 수 있습니다. 같은 질문을 다시 보내지 않아도 되며, 다른 메뉴에 다녀오거나 새로고침해도 이 탭에서 이어서 받아 옵니다.
+            </p>
+          </div>
         </div>
       )}
 

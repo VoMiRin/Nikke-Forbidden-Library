@@ -131,7 +131,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
         <section aria-labelledby="hero-title" className="flex flex-wrap items-center gap-x-[72px] gap-y-12 pb-[72px] pt-6 md:pt-10">
           <div className="min-w-0 flex-[999_1_520px]">
             <p className="text-[13px] font-medium tracking-[0.04em] text-nikke-highlight">방주 도서관 · 특급 기밀 보관소</p>
-            <h1 id="hero-title" className="mt-[18px] font-headline text-[clamp(64px,9vw,120px)] font-extrabold leading-none tracking-[-0.03em] text-nikke-text-primary">
+            <h1 id="hero-title" className="mt-[18px] font-headline text-[clamp(64px,9vw,120px)] font-bold leading-none tracking-[-0.02em] text-nikke-text-primary">
               금서고
             </h1>
             <p className="mt-7 max-w-[540px] text-[17px] leading-[1.8] text-nikke-text-secondary">
@@ -189,7 +189,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
               </button>
             )}
           </div>
-          <aside aria-label="관리 정보" className="max-w-[440px] flex-[1_1_340px] rounded-[10px] border border-nikke-border bg-nikke-surface p-7">
+          <aside aria-label="관리 정보" className="max-w-[440px] flex-[1_1_340px] rounded-[10px] border border-nikke-border border-t-2 border-t-nikke-accent bg-nikke-surface p-7 shadow-[0_1px_2px_rgb(14_22_38/0.04),0_6px_16px_-6px_rgb(14_22_38/0.08)] dark:shadow-none">
             <p className="flex justify-between text-xs text-nikke-text-muted">
               <span>관리 정보</span>
               <span className="font-mono tracking-[0.08em]">ARK LIBRARY</span>
@@ -218,7 +218,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
         </section>
 
         <section aria-labelledby="index-title">
-          <div className="mb-8 flex items-baseline justify-between gap-4 border-b border-nikke-border pb-5">
+          <div className="mb-8 flex items-baseline justify-between gap-4 border-b border-nikke-border-strong pb-5">
             <h2 id="index-title" className="font-headline text-2xl font-bold text-nikke-text-primary">기록 분류</h2>
             <span className="text-[13px] text-nikke-text-muted">{categories.length}개 분류</span>
           </div>
@@ -232,7 +232,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
                   key={category.key}
                   href={categoryPath(category.key)}
                   onClick={event => followInApp(event, () => onCategorySelect(category.key))}
-                  className="group block rounded-[10px] border border-nikke-border bg-nikke-surface p-2 text-nikke-text-primary transition-colors duration-200 hover:border-nikke-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent"
+                  className="group block rounded-[10px] border border-nikke-border bg-nikke-surface p-2 text-nikke-text-primary shadow-[0_1px_2px_rgb(14_22_38/0.04),0_6px_16px_-6px_rgb(14_22_38/0.08)] dark:shadow-none transition-colors duration-200 hover:border-nikke-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent"
                 >
                   <span className="flex h-[272px] flex-col items-center justify-between rounded-md border border-nikke-border px-4 py-[22px] text-center transition-colors duration-200 group-hover:border-nikke-accent/45 max-sm:h-[220px] max-sm:px-2">
                     <span className="font-headline text-xl tracking-[0.1em] text-nikke-text-muted transition-colors duration-200 group-hover:text-nikke-accent">
@@ -298,7 +298,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
           {activeCategory?.roman && (
             <span className="font-headline text-[28px] text-nikke-accent">{activeCategory.roman}</span>
           )}
-          <h1 className="font-headline text-[clamp(40px,5vw,56px)] font-extrabold leading-none tracking-[-0.03em] text-nikke-text-primary">
+          <h1 className="font-headline text-[clamp(40px,5vw,56px)] font-bold leading-none tracking-[-0.01em] text-nikke-text-primary">
             {activeCategory?.name ?? '스토리'}
           </h1>
         </div>

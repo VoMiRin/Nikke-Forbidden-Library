@@ -53,6 +53,9 @@ body {
   background: rgb(var(--nikke-bg));
   color: rgb(var(--nikke-text-primary));
   font-family: 'IBM Plex Sans KR', sans-serif;
+  /* 한글은 어절 단위로 줄바꿈하고, 공백 없는 긴 문자열만 어디서든 끊는다 */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
   transition:
     background-color 350ms cubic-bezier(0.22, 1, 0.36, 1),
     color 350ms cubic-bezier(0.22, 1, 0.36, 1);
