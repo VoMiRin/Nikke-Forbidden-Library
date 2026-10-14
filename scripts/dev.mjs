@@ -52,9 +52,9 @@ try {
         '/api': {
           target: `http://127.0.0.1:${port}`,
           changeOrigin: true,
-          // Flex may take 15 minutes per attempt, including provider retries.
-          timeout: 65 * 60_000,
-          proxyTimeout: 65 * 60_000,
+          // Keep slow Flex responses connected until they complete or fail.
+          timeout: 0,
+          proxyTimeout: 0,
         },
       },
     },

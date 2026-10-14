@@ -32,7 +32,7 @@ type AskResponse = {
 
 const ASK_RECOVERY_POLL_INTERVAL_MS = 2_000;
 const ASK_RECOVERY_START_DELAY_MS = 8_000;
-const ASK_RECOVERY_TIMEOUT_MS = (import.meta.env.DEV ? 65 : 4) * 60_000;
+const ASK_RECOVERY_TIMEOUT_MS = import.meta.env.DEV ? Infinity : 4 * 60_000;
 const ASK_RECOVERY_FETCH_TIMEOUT_MS = 10_000;
 const ASK_RECOVERY_NOT_FOUND_TIMEOUT_MS = 30_000;
 const ASK_INITIAL_REQUEST_DEADLINE_MS = 70_000;
@@ -397,7 +397,7 @@ export const AiAskPanel: React.FC = () => {
   useEffect(() => {
     isMountedRef.current = true;
 
-    const pendingAsk = readPendingAsk(getAskSessionStorage());
+    const pendingAsk = readPendingAsk(getAskSessionStorage(), Date.now(), import.meta.env.DEV ? Infinity : undefined);
     if (pendingAsk) {
       const requestController = new AbortController();
       const activeRequest = {

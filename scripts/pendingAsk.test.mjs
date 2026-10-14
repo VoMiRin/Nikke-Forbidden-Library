@@ -53,3 +53,18 @@ test('finishing an older request cannot clear a newer pending request', () => {
   clearPendingAsk(storage, newerRequestId);
   assert.equal(readPendingAsk(storage), null);
 });
+
+test('development can recover old requests after reload without extending the production expiry', () => {
+  const storage = createStorage();
+  const submittedAt = Date.now() - 24 * 60 * 60_000;
+  const pending = { requestId, submittedAt };
+  savePendingAsk(storage, pending);
+
+  assert.deepEqual(readPendingAsk(storage, Date.now(), Infinity), pending);
+  assert.equal(parsePendingAsk(JSON.stringify(pending)), null);
+
+  clearPendingAsk(storage, 'ask_abcdef0123456789abcdef0123456789');
+  assert.deepEqual(readPendingAsk(storage, Date.now(), Infinity), pending);
+  clearPendingAsk(storage, requestId);
+  assert.equal(readPendingAsk(storage, Date.now(), Infinity), null);
+});

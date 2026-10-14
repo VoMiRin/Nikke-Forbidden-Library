@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ScriptCategory } from './types';
-import { BookOpenIcon, ChatBubbleIcon, UserCircleIcon, CalendarDaysIcon, SparklesIcon, ArchiveBoxIcon, PuzzlePieceIcon } from './components/Icons';
+import { BookOpenIcon, ChatBubbleIcon, UserCircleIcon, CalendarDaysIcon, SparklesIcon, ArchiveBoxIcon, PuzzlePieceIcon, GiftIcon } from './components/Icons';
 
 export const SCRIPT_CATEGORIES: ScriptCategory[] = [
   { key: 'main_story', name: '메인 스토리', roman: 'I', icon: React.createElement(BookOpenIcon) },
@@ -11,5 +11,6 @@ export const SCRIPT_CATEGORIES: ScriptCategory[] = [
   { key: 'lost_relics', name: '유실물', roman: 'VI', icon: React.createElement(ArchiveBoxIcon) },
   { key: 'event_lost_relics', name: '이벤트 유실물', roman: 'VII', icon: React.createElement(ArchiveBoxIcon) },
   { key: 'outpost_stories', name: '돌발 스토리', roman: 'VIII', icon: React.createElement(SparklesIcon) },
-  { key: 'blabla', name: '블라블라', roman: 'IX', icon: React.createElement(ChatBubbleIcon) },
+  { key: 'special_stories', name: '특별 스토리', roman: 'IX', icon: React.createElement(GiftIcon) },
+  { key: 'blabla', name: '블라블라', roman: 'X', icon: React.createElement(ChatBubbleIcon) },
 ];

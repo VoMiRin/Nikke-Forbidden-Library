@@ -3,7 +3,7 @@ export const PENDING_ASK_MAX_AGE_MS = 30 * 60_000;
 
 const ASK_REQUEST_ID_PATTERN = /^ask_[0-9a-f]{32}$/;
 
-export const parsePendingAsk = (rawValue, now = Date.now()) => {
+export const parsePendingAsk = (rawValue, now = Date.now(), maxAgeMs = PENDING_ASK_MAX_AGE_MS) => {
   if (typeof rawValue !== 'string' || !rawValue) return null;
 
   try {
@@ -19,7 +19,7 @@ export const parsePendingAsk = (rawValue, now = Date.now()) => {
     }
 
     const ageMs = now - value.submittedAt;
-    if (ageMs < -60_000 || ageMs > PENDING_ASK_MAX_AGE_MS) return null;
+    if (ageMs < -60_000 || ageMs > maxAgeMs) return null;
 
     return {
       requestId: value.requestId,
@@ -30,12 +30,12 @@ export const parsePendingAsk = (rawValue, now = Date.now()) => {
   }
 };
 
-export const readPendingAsk = (storage, now = Date.now()) => {
+export const readPendingAsk = (storage, now = Date.now(), maxAgeMs = PENDING_ASK_MAX_AGE_MS) => {
   if (!storage) return null;
 
   try {
     const rawValue = storage.getItem(PENDING_ASK_STORAGE_KEY);
-    const pendingAsk = parsePendingAsk(rawValue, now);
+    const pendingAsk = parsePendingAsk(rawValue, now, maxAgeMs);
     if (rawValue && !pendingAsk) storage.removeItem(PENDING_ASK_STORAGE_KEY);
     return pendingAsk;
   } catch {
@@ -57,7 +57,8 @@ export const clearPendingAsk = (storage, requestId) => {
   if (!storage) return;
 
   try {
-    const pendingAsk = parsePendingAsk(storage.getItem(PENDING_ASK_STORAGE_KEY));
+    // Clearing a request must compare IDs even when a long-running request is old.
+    const pendingAsk = parsePendingAsk(storage.getItem(PENDING_ASK_STORAGE_KEY), Date.now(), Infinity);
     if (!pendingAsk || pendingAsk.requestId === requestId) {
       storage.removeItem(PENDING_ASK_STORAGE_KEY);
     }

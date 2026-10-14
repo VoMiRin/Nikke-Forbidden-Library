@@ -27,7 +27,8 @@ test('development fixes Argon/Flex, reuses the store, and never mutates operatio
   assert.equal(config.fallbackModel, '');
   assert.equal(config.fileSearchStore, 'fileSearchStores/existing');
   assert.equal(config.requestConfig.serviceTier, 'flex');
-  assert.equal(config.requestConfig.httpOptions.timeout, 900_000);
+  assert.equal(config.requestConfig.httpOptions.timeout, 0);
+  assert.equal(config.requestConfig.httpOptions.headers['X-Server-Timeout'], '3600');
   assert.deepEqual(env, original);
 
   const router = createGeminiFallbackRouter({ primaryModel: config.model, fallbackModel: config.fallbackModel });
@@ -87,7 +88,7 @@ test('installed SDK sends Flex at the API request level alongside File Search', 
   t.after(() => { globalThis.fetch = originalFetch; });
   let captured;
   globalThis.fetch = async (url, options) => {
-    captured = { url: String(url), body: JSON.parse(options.body), headers: new Headers(options.headers) };
+    captured = { url: String(url), body: JSON.parse(options.body), headers: new Headers(options.headers), signal: options.signal };
     return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: 'ok' }] } }] }), {
       headers: { 'content-type': 'application/json' },
     });
@@ -99,6 +100,8 @@ test('installed SDK sends Flex at the API request level alongside File Search', 
   });
   assert.match(captured.url, /generativelanguage\.googleapis\.com\/.*models\/gemini-4-argon:generateContent/);
   assert.equal(captured.headers.get('x-goog-api-key'), 'dev-test-key');
+  assert.equal(captured.headers.get('x-server-timeout'), '3600');
+  assert.equal(captured.signal, undefined, 'the SDK must not install a local timeout signal');
   assert.equal(captured.body.serviceTier, 'flex');
   assert.deepEqual(captured.body.tools, [{ fileSearch: { fileSearchStoreNames: ['fileSearchStores/existing'] } }]);
 });

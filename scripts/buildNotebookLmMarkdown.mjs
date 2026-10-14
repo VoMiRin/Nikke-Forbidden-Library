@@ -54,6 +54,7 @@ const categoryNames = {
   character_episodes: '니케 에피소드',
   lost_relics: '유실물',
   event_lost_relics: '이벤트 유실물',
+  special_stories: '특별 스토리',
   blabla: '블라블라',
 };
 
@@ -105,6 +106,12 @@ const exportGroups = [
     title: '이벤트 유실물',
     fileBase: 'event_lost_relics',
     categories: ['event_lost_relics'],
+  },
+  {
+    key: 'special_stories',
+    title: '특별 스토리',
+    fileBase: 'special_stories',
+    categories: ['special_stories'],
   },
   {
     key: 'blabla',

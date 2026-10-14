@@ -15,6 +15,7 @@ import { lostRelicsScripts } from './new_scripts/lostRelics';
 import { outpostStoryScripts } from './new_scripts/outpostStory';
 import { characterEpisodeScripts } from './new_scripts/characterEpisode';
 import { eventLostRelicsScripts } from './new_scripts/eventLostRelics';
+import { specialStoryScripts } from './new_scripts/specialStory';
 import { blablaScripts } from './new_scripts/blabla';
 
 /**
@@ -29,5 +30,6 @@ export const newScriptsData: ScriptData[] = [
     ...outpostStoryScripts,
     ...characterEpisodeScripts,
     ...eventLostRelicsScripts,
+    ...specialStoryScripts,
     ...blablaScripts,
 ];

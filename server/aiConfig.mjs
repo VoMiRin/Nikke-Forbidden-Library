@@ -29,7 +29,14 @@ export const loadAiConfig = async ({ rootDir, env = process.env, development = f
       fallbackModel: '',
       fileSearchStore: (env.DEV_GEMINI_FILE_SEARCH_STORE ?? local.DEV_GEMINI_FILE_SEARCH_STORE)?.trim()
         || env.GEMINI_FILE_SEARCH_STORE || '',
-      requestConfig: { serviceTier: 'flex', httpOptions: { timeout: 900_000 } },
+      requestConfig: {
+        serviceTier: 'flex',
+        httpOptions: {
+          timeout: 0,
+          // A server-side hint, not a guarantee that Google will wait this long.
+          headers: { 'X-Server-Timeout': '3600' },
+        },
+      },
     };
   }
 
