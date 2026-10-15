@@ -1,0 +1,503 @@
+{
+  "schema_version": "1.2.0",
+  "generated_at": "2026-10-14T16:00:12.863Z",
+  "title_id": "blabla__personal__flora",
+  "category": "blabla",
+  "title": "플로라",
+  "source_file": "public/scripts/blabla/personal/flora.txt",
+  "scene_count": 3,
+  "scenes": [
+    {
+      "scene_id": "blabla_flora_001",
+      "title_id": "blabla__personal__flora",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/flora.txt",
+      "source_sha256": "76b4787aa439686787ec428b94366d8aed39009cdf0cc0e1883041e26b53eb10",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "보타닉 가든 스쿼드의 플로라가 지휘관을 '꽃님'이라 부르며 자기소개를 하고, 지휘관이 좋아하는 꽃을 정원에 피워 놓겠다고 약속하며 정원으로 초대한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_flora_001__rvo_001",
+            "speaker_label": "플로라",
+            "entity_id": "char_플로라",
+            "medium": "messenger",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "꽃님 안녕하세요✿"
+          },
+          {
+            "item_id": "blabla_flora_001__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 45,
+            "line_end": 45,
+            "quote": "알겠어"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_flora_001__mnt_001",
+            "surface_text": "보타닉 가든 스쿼드",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 7,
+            "line_end": 7,
+            "quote": "보타닉 가든 스쿼드에 소속되어 있는"
+          },
+          {
+            "item_id": "blabla_flora_001__mnt_002",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 30,
+            "line_end": 30,
+            "quote": "저는 지상에서 꽃들과 씨앗을 채집해"
+          },
+          {
+            "item_id": "blabla_flora_001__mnt_003",
+            "surface_text": "정원",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 33,
+            "line_end": 33,
+            "quote": "정원에서 키우고 있어요✿"
+          },
+          {
+            "item_id": "blabla_flora_001__mnt_004",
+            "surface_text": "아네모네",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 78,
+            "line_end": 78,
+            "quote": "아네모네도 좋아하고 비올라도 좋아해 그리고 또"
+          },
+          {
+            "item_id": "blabla_flora_001__mnt_005",
+            "surface_text": "비올라",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 78,
+            "line_end": 78,
+            "quote": "아네모네도 좋아하고 비올라도 좋아해 그리고 또"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_flora_001__foa_001",
+          "from_speaker": "플로라",
+          "to_target": "지휘관",
+          "address_term": "꽃님",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "꽃님 안녕하세요✿"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_flora_001__chb_001",
+          "choice_line": 13,
+          "options": [
+            {
+              "item_id": "blabla_flora_001__chb_001_opt_01",
+              "option_text": "반가워",
+              "continuation_summary": "플로라가 반갑다고 인사한다.",
+              "branch_specific_facts": []
+            },
+            {
+              "item_id": "blabla_flora_001__chb_001_opt_02",
+              "option_text": "잘 부탁해✿",
+              "continuation_summary": "플로라가 꽃 기호를 따라 쓴 지휘관의 센스를 칭찬하며 잘 부탁한다고 답한다.",
+              "branch_specific_facts": [
+                "지휘관이 플로라의 말투처럼 꽃 기호(✿)를 붙여 인사하자 플로라가 센스가 좋다고 칭찬한다."
+              ]
+            }
+          ]
+        },
+        {
+          "item_id": "blabla_flora_001__chb_002",
+          "choice_line": 60,
+          "options": [
+            {
+              "item_id": "blabla_flora_001__chb_002_opt_01",
+              "option_text": "내가 꽃에 대해 잘 몰라서",
+              "continuation_summary": "플로라가 지휘관이 정원에 놀러 오면 다양한 꽃에 대해 알려주겠다고 약속한다.",
+              "branch_specific_facts": [
+                "지휘관이 꽃에 대해 잘 모른다고 하자 플로라가 정원에서 직접 알려주겠다고 한다."
+              ]
+            },
+            {
+              "item_id": "blabla_flora_001__chb_002_opt_02",
+              "option_text": "아네모네도 좋아하고 비올라도 좋아해 그리고 또",
+              "continuation_summary": "플로라가 지휘관이 꽃에 관심이 많아 기뻐하며 정원에 올 때까지 좋아하는 꽃들을 피워 놓겠다고 약속한다.",
+              "branch_specific_facts": [
+                "지휘관이 아네모네와 비올라 등을 좋아한다고 답하자 플로라가 정원에 피워 놓겠다고 약속한다."
+              ]
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_flora_001__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "플로라",
+          "summary": "플로라가 자신이 보타닉 가든 스쿼드 소속이며 지상에서 꽃과 씨앗을 채집해 정원에서 키우고 있다고 소개한다.",
+          "line_start": 7,
+          "line_end": 33,
+          "quote": "보타닉 가든 스쿼드에 소속되어 있는 플로라라고 합니다✿",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "blabla_flora_001__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "플로라",
+          "summary": "플로라가 정원에서 새로 키울 꽃으로 지휘관이 좋아하는 꽃을 묻고, 지휘관은 정원에 꼭 놀러 가겠다고 약속한다.",
+          "line_start": 48,
+          "line_end": 95,
+          "quote": "혹시 꽃님께서 좋아하는 꽃이 있다면 저에게 알려주실 수 있으신가요?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_flora_001__rln_001",
+          "subject": "플로라",
+          "target": "지휘관",
+          "relation_or_change": "플로라는 지휘관을 '꽃님'이라고 부르며 문장 끝에 꽃 기호(✿)와 장미 이모티콘(@}>->----)을 붙이는 습관이 있다.",
+          "line_start": 4,
+          "line_end": 119,
+          "quote": "꽃님 안녕하세요✿"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_flora_001__uec_001",
+          "surface_text": "보타닉 가든 스쿼드",
+          "suggested_type": "squad",
+          "line_start": 7
+        }
+      ]
+    },
+    {
+      "scene_id": "blabla_flora_002",
+      "title_id": "blabla__personal__flora",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/flora.txt",
+      "source_sha256": "38b982d46709b37911577a65573082098cda88878c277a2816563e363e097711",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "외출 나온 플로라가 지휘관실에 들르기로 하면서, 지휘관을 닮은 꽃으로 꽃말이 '당신은 매력적입니다'인 라넌큘러스를 꼽고 지휘관이 골라준 자신을 닮은 꽃을 키워 선물하겠다고 말한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_flora_002__rvo_001",
+            "speaker_label": "플로라",
+            "entity_id": "char_플로라",
+            "medium": "messenger",
+            "line_start": 13,
+            "line_end": 13,
+            "quote": "그럼 지휘관실에 놀러 가도 괜찮을까요?"
+          },
+          {
+            "item_id": "blabla_flora_002__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 10,
+            "line_end": 10,
+            "quote": "아니 안 바빠"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_flora_002__mnt_001",
+            "surface_text": "지휘관실",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 13,
+            "line_end": 13,
+            "quote": "그럼 지휘관실에 놀러 가도 괜찮을까요?"
+          },
+          {
+            "item_id": "blabla_flora_002__mnt_002",
+            "surface_text": "정원",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 16,
+            "line_end": 16,
+            "quote": "정원에 필요한 게 있어서"
+          },
+          {
+            "item_id": "blabla_flora_002__mnt_003",
+            "surface_text": "라넌큘러스",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 76,
+            "line_end": 76,
+            "quote": "저는 라넌큘러스를 고르고 싶네요✿"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_flora_002__foa_001",
+          "from_speaker": "플로라",
+          "to_target": "지휘관",
+          "address_term": "꽃님",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "꽃님✿"
+        },
+        {
+          "item_id": "blabla_flora_002__foa_002",
+          "from_speaker": "지휘관",
+          "to_target": "플로라",
+          "address_term": "플로라",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "그럼 나도 플로라 닮은 꽃 하나 말해줘도 돼?"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_flora_002__chb_001",
+          "choice_line": 121,
+          "options": [
+            {
+              "item_id": "blabla_flora_002__chb_001_opt_01",
+              "option_text": "라벤더",
+              "continuation_summary": "지휘관이 플로라를 닮은 꽃으로 라벤더를 꼽자 플로라는 자신이 좋아하는 꽃이라며 키워서 선물하겠다고 한다.",
+              "branch_specific_facts": [
+                "지휘관이 플로라를 닮은 꽃으로 라벤더를 골랐다."
+              ]
+            },
+            {
+              "item_id": "blabla_flora_002__chb_001_opt_02",
+              "option_text": "아이리스",
+              "continuation_summary": "지휘관이 플로라를 닮은 꽃으로 아이리스를 꼽자 플로라는 자신이 좋아하는 꽃이라며 키워서 선물하겠다고 한다.",
+              "branch_specific_facts": [
+                "지휘관이 플로라를 닮은 꽃으로 아이리스를 골랐다."
+              ]
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_flora_002__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "플로라",
+          "summary": "정원에 필요한 물품을 사러 외출한 플로라가 지휘관실에 놀러 가도 되는지 묻고 지휘관이 흔쾌히 승낙한다.",
+          "line_start": 13,
+          "line_end": 25,
+          "quote": "그럼 지휘관실에 놀러 가도 괜찮을까요?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "blabla_flora_002__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "플로라",
+          "summary": "플로라가 지휘관을 닮은 꽃으로 '당신은 매력적입니다'라는 꽃말을 가진 라넌큘러스를 꼽으며 호감을 표현한다.",
+          "line_start": 76,
+          "line_end": 100,
+          "quote": "저는 라넌큘러스를 고르고 싶네요✿",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "blabla_flora_002__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "플로라",
+          "summary": "지휘관이 예쁘게 생겼다며 플로라를 닮은 꽃을 골라주자, 플로라는 그 꽃을 정원에서 키워 지휘관에게 선물하겠다고 약속하며 지휘관실 앞에 도착한다.",
+          "line_start": 129,
+          "line_end": 156,
+          "quote": "정원에서 키워 꽃님께 선물해 드려야겠어요✿",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_flora_002__rln_001",
+          "subject": "플로라",
+          "target": "지휘관",
+          "relation_or_change": "지휘관을 본 사람 중 가장 매력적인 사람이라며 꽃말이 '당신은 매력적입니다'인 라넌큘러스에 비유하고, 지휘관이 골라준 꽃을 키워 선물하겠다고 말한다.",
+          "line_start": 76,
+          "line_end": 147,
+          "quote": "무엇보다도 라넌큘러스의 꽃말이 꽃님과 잘어울려서요✿"
+        }
+      ],
+      "unregistered_entity_candidates": []
+    },
+    {
+      "scene_id": "blabla_flora_003",
+      "title_id": "blabla__personal__flora",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/flora.txt",
+      "source_sha256": "f20f5307bd57cd69bfa88a131952126afae97bc6298d19b1fe7e51ecc8ec72ef",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "플로라가 꽃들이 지휘관을 보고 싶어 한다며 정원 산책을 청하고, 지휘관이 꽃보다 플로라가 더 보고 싶다고 하자 꽃들에게 물어본 뒤 자신도 지휘관이 아주 많이 보고 싶다고 고백한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_flora_003__rvo_001",
+            "speaker_label": "플로라",
+            "entity_id": "char_플로라",
+            "medium": "messenger",
+            "line_start": 10,
+            "line_end": 10,
+            "quote": "정원에서 산책 어떠신지요✿"
+          },
+          {
+            "item_id": "blabla_flora_003__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 16,
+            "line_end": 16,
+            "quote": "어떤 꽃들이 날 보고 싶대?"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_flora_003__mnt_001",
+            "surface_text": "정원",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 10,
+            "line_end": 10,
+            "quote": "정원에서 산책 어떠신지요✿"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_flora_003__foa_001",
+          "from_speaker": "플로라",
+          "to_target": "지휘관",
+          "address_term": "꽃님",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "꽃님✿"
+        },
+        {
+          "item_id": "blabla_flora_003__foa_002",
+          "from_speaker": "지휘관",
+          "to_target": "플로라",
+          "address_term": "플로라",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "플로라?"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_flora_003__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "플로라",
+          "summary": "플로라가 꽃들에게 직접 물어보느라 답장이 늦었다며 장미, 튤립, 비올라, 수국, 데이지, 해바라기, 리시마키아가 지휘관을 보고 싶어 한다고 말한다.",
+          "line_start": 28,
+          "line_end": 40,
+          "quote": "꽃들에게 물어보느라 답장이 늦었어요✿",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "blabla_flora_003__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "플로라",
+          "summary": "지휘관이 꽃보다 플로라가 더 보고 싶다고 말하자, 플로라는 꽃들에게 조언을 구한 뒤 자신도 지휘관이 아주 많이 보고 싶다고 답하고 지휘관이 정원으로 향한다.",
+          "line_start": 58,
+          "line_end": 106,
+          "quote": "난 꽃도 보고 싶지만 플로라가 더 보고 싶긴 한데",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_flora_003__rln_001",
+          "subject": "플로라",
+          "target": "지휘관",
+          "relation_or_change": "지휘관이 플로라가 더 보고 싶다고 하자 자신도 지휘관이 아주 많이 보고 싶다며 호감을 고백한다.",
+          "line_start": 58,
+          "line_end": 97,
+          "quote": "저도 꽃님이 보고 싶어요✿ 그것도 아주 많이"
+        }
+      ],
+      "unregistered_entity_candidates": []
+    }
+  ]
+}
