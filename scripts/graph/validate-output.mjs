@@ -2,7 +2,15 @@ import fs from 'node:fs/promises';
 import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { GRAPH_DATA_DIR, normalizeWhitespaceOnly } from './lib.mjs';
+import {
+  GRAPH_DATA_DIR,
+  PASS1_SCHEMA_VERSION,
+  normalizeWhitespaceOnly,
+  lineSpeakerAt,
+  getBranchingOptionRanges,
+  resolveBranchOption,
+  chronologiesInRange,
+} from './lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -14,12 +22,26 @@ export const SCENE_CHRONOLOGY_ENUM = new Set([
   'mixed',
 ]);
 
-export const EVENT_CHRONOLOGY_ENUM = new Set([
-  'present',
+// chronology_segments[].chronology_type (구간 밖은 present)
+export const SEGMENT_CHRONOLOGY_ENUM = new Set([
   'flashback',
   'dream',
   'hypothetical',
 ]);
+
+export const RELATIONSHIP_EPISTEMIC_TYPE_ENUM = new Set([
+  'established_event',
+  'character_claim',
+]);
+
+// 2.3의 7·16·17항: 한 칸에 여러 엔티티를 나열한 것으로 보는 구분자 (&와 괄호는 실제 이름에 쓰여 허용)
+export const MULTI_ENTITY_SEPARATOR_RE = /[,、\/·]/;
+
+// 3절 6항: 간접화법 지문에 전달자가 없을 때의 주장 화자
+export const NARRATION_CLAIMANT = '지문';
+
+// 2.3의 20항 밀도 경고 기준
+export const DENSITY_WARNING_MIN_DIALOGUE_LINES = 60;
 
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
@@ -67,6 +89,7 @@ export const CLUE_CATEGORY_ENUM = new Set([
   'lore_concept',
   'location',
   'organization',
+  'trait',
 ]);
 
 export const UNREGISTERED_ENTITY_TYPE_ENUM = new Set([
@@ -74,9 +97,11 @@ export const UNREGISTERED_ENTITY_TYPE_ENUM = new Set([
   'alias',
   'squad',
   'organization',
+  'faction_or_species',
   'location',
   'concept',
   'item',
+  'event',
 ]);
 
 export const FORBIDDEN_SCENE_FIELDS = [
@@ -89,14 +114,27 @@ export const FORBIDDEN_SCENE_FIELDS = [
   'item_id',
 ];
 
+// 2.3의 18항: 근거 항목에서 병합기만 채우는 필드 (1.2.0의 분기 필드는 1.3.0에서 병합기로 이관)
+export const FORBIDDEN_ITEM_FIELDS = [
+  'item_id',
+  'chronology_type',
+  'in_branch_option',
+  'claimant_unknown_id',
+  'branch_specific',
+  'branch_option_text',
+  'branch_choice_line',
+];
+
 export const REQUIRED_SCENE_FIELDS = [
   'scene_id',
   'chronology_type',
+  'chronology_segments',
   'is_plot_critical',
   'summary',
   'participants',
   'forms_of_address',
   'unknown_speakers',
+  'descriptor_speakers',
   'same_scene_speaker_groups',
   'cross_scene_hints',
   'choice_branches',
@@ -200,9 +238,38 @@ export const normalizeQuoteUtterance = (quote, rawSliceLines = []) => {
   return normalized;
 };
 
+const overlapAtEdge = (a, b, minLen) => {
+  const max = Math.min(a.length, b.length);
+  for (let len = max; len >= minLen; len--) {
+    if (a.endsWith(b.slice(0, len))) return true;
+  }
+  return false;
+};
 
 /**
- * 단일 배치 샤드 JSON을 해당 배치 입력 데이터(batchInput)와 대조해 2.3의 8가지 규칙을 모두 검증한다.
+ * 인용이 특정 줄을 실제로 걸치는지 판정한다 (2.3의 7항).
+ * 그 줄 전체를 포함하거나, 그 줄 안에 인용이 들어 있거나, 인용의 앞뒤 끝이 그 줄과 이어지면 걸친 것으로 본다.
+ */
+export const quoteCoversLine = (quote, rawLine, rawSliceLines = []) => {
+  const lineUtterance = normalizeWhitespaceOnly(extractUtteranceTextFromRawLine(rawLine));
+  const lineRaw = normalizeWhitespaceOnly(rawLine);
+  if (!lineUtterance && !lineRaw) return false;
+  const candidates = [normalizeWhitespaceOnly(quote), normalizeQuoteUtterance(quote, rawSliceLines)].filter(
+    (q) => q.length > 0
+  );
+  for (const target of [lineUtterance, lineRaw]) {
+    if (!target) continue;
+    const minLen = Math.min(4, target.length);
+    for (const q of candidates) {
+      if (q.includes(target) || target.includes(q)) return true;
+      if (overlapAtEdge(q, target, minLen) || overlapAtEdge(target, q, minLen)) return true;
+    }
+  }
+  return false;
+};
+
+/**
+ * 단일 배치 샤드 JSON을 해당 배치 입력 데이터(batchInput)와 대조해 2.3의 1~20항을 검증한다.
  */
 export const validateShard = (shardData, batchInput) => {
   const errors = [];
@@ -222,12 +289,13 @@ export const validateShard = (shardData, batchInput) => {
     return { valid: false, errors, warnings };
   }
 
-  if (shardData.schema_version !== '1.2.0') {
+  // 19. 스키마 버전: 이전 버전 샤드는 받지 않는다
+  if (shardData.schema_version !== PASS1_SCHEMA_VERSION) {
     addError(
-      'SCHEMA_VALIDATION',
+      'SCHEMA_VERSION',
       null,
       '$.schema_version',
-      `Expected schema_version "1.2.0", got ${JSON.stringify(shardData.schema_version)}`
+      `Expected schema_version "${PASS1_SCHEMA_VERSION}", got ${JSON.stringify(shardData.schema_version)}`
     );
   }
 
@@ -463,6 +531,243 @@ export const validateShard = (shardData, batchInput) => {
       return true;
     };
 
+    // 13. 시점 구간 (chronology_segments)
+    const segments = Array.isArray(scene.chronology_segments) ? scene.chronology_segments : [];
+    const segmentsUsable = [];
+    if (!Array.isArray(scene.chronology_segments)) {
+      addError('SCHEMA_VALIDATION', sid, `${sceneBasePath}.chronology_segments`, 'chronology_segments must be an array');
+    } else {
+      if (scene.chronology_type === 'mixed' && segments.length === 0) {
+        addError(
+          'CHRONOLOGY_SEGMENTS',
+          sid,
+          `${sceneBasePath}.chronology_segments`,
+          'mixed scene requires at least one chronology_segments entry'
+        );
+      }
+      if (scene.chronology_type !== 'mixed' && segments.length > 0) {
+        addError(
+          'CHRONOLOGY_SEGMENTS',
+          sid,
+          `${sceneBasePath}.chronology_segments`,
+          `chronology_segments must be empty unless chronology_type is mixed (got ${JSON.stringify(scene.chronology_type)})`
+        );
+      }
+      segments.forEach((seg, idx) => {
+        const segPath = `${sceneBasePath}.chronology_segments[${idx}]`;
+        if (!seg || typeof seg !== 'object' || Array.isArray(seg)) {
+          addError('SCHEMA_VALIDATION', sid, segPath, 'Segment must be an object');
+          return;
+        }
+        if (!isPositiveInt(seg.line_start) || !isPositiveInt(seg.line_end) || seg.line_start > seg.line_end || seg.line_end > totalLines) {
+          addError(
+            'CHRONOLOGY_SEGMENTS',
+            sid,
+            segPath,
+            `Invalid segment range ${seg.line_start}~${seg.line_end} (scene has ${totalLines} lines)`
+          );
+          return;
+        }
+        if (!SEGMENT_CHRONOLOGY_ENUM.has(seg.chronology_type)) {
+          addError(
+            'SCHEMA_VALIDATION',
+            sid,
+            `${segPath}.chronology_type`,
+            `Invalid segment chronology_type ${JSON.stringify(seg.chronology_type)} (flashback | dream | hypothetical)`
+          );
+          return;
+        }
+        for (const other of segmentsUsable) {
+          if (seg.line_start <= other.line_end && seg.line_end >= other.line_start) {
+            addError(
+              'CHRONOLOGY_SEGMENTS',
+              sid,
+              segPath,
+              `Segment ${seg.line_start}~${seg.line_end} overlaps segment ${other.line_start}~${other.line_end}`
+            );
+          }
+        }
+        segmentsUsable.push(seg);
+      });
+    }
+
+    const optionRanges = getBranchingOptionRanges(mgt);
+    const documentAuthor =
+      scene.participants && typeof scene.participants === 'object' ? scene.participants.document_author : null;
+    const documentVoiceNames = new Set(
+      documentAuthor && typeof documentAuthor === 'object'
+        ? [documentAuthor.name, ...(Array.isArray(documentAuthor.voices) ? documentAuthor.voices : [])].filter(
+            isNonEmptyString
+          )
+        : []
+    );
+
+    // 18. 근거 항목에서 병합기만 채우는 필드 경고
+    const warnForbiddenItemFields = (item, itemPath) => {
+      for (const field of FORBIDDEN_ITEM_FIELDS) {
+        if (Object.prototype.hasOwnProperty.call(item, field)) {
+          addWarning(
+            'FORBIDDEN_MODEL_FIELD',
+            sid,
+            `${itemPath}.${field}`,
+            `Forbidden model field "${field}" present; will be ignored and filled by merger`
+          );
+        }
+      }
+    };
+
+    // 12·13. 근거 항목의 분기·시점 경계 검사
+    const checkEvidenceBoundaries = (item, itemPath, { isClaim = false } = {}) => {
+      const { line_start: ls, line_end: le } = item;
+      if (!isPositiveInt(ls) || !isPositiveInt(le) || ls > le || le > totalLines) return;
+      const branch = resolveBranchOption(optionRanges, ls, le);
+      if (!branch.ok) {
+        addError(
+          'BRANCH_BOUNDARY',
+          sid,
+          itemPath,
+          `Line range ${ls}~${le} spans incompatible options: ${branch.touched
+            .map((o) => `${JSON.stringify(o.option_text)}(L${o.start}~L${o.end})`)
+            .join(', ')}`
+        );
+      }
+      if (!isClaim && SCENE_CHRONOLOGY_ENUM.has(scene.chronology_type)) {
+        const found = chronologiesInRange(scene.chronology_type, segmentsUsable, ls, le);
+        if (found.size > 1) {
+          addError(
+            'CHRONOLOGY_BOUNDARY',
+            sid,
+            itemPath,
+            `Line range ${ls}~${le} crosses chronology segment boundary (${[...found].join(', ')}); only character_claim may cross`
+          );
+        }
+      }
+    };
+
+    // 7. 주장 화자 (events_and_claims.actor_or_speaker, relationship_and_lore_notes.claimant)
+    const checkClaimAttribution = (item, itemPath, speakerField) => {
+      const speaker = item[speakerField];
+      const claimLine = item.claim_line;
+      if (!isPositiveInt(claimLine)) {
+        addError('CLAIM_SPEAKER', sid, `${itemPath}.claim_line`, 'character_claim requires claim_line (positive integer)');
+        return;
+      }
+      if (isPositiveInt(item.line_start) && isPositiveInt(item.line_end)) {
+        if (claimLine < item.line_start || claimLine > item.line_end) {
+          addError(
+            'CLAIM_SPEAKER',
+            sid,
+            `${itemPath}.claim_line`,
+            `claim_line ${claimLine} is outside line range ${item.line_start}~${item.line_end}`
+          );
+          return;
+        }
+      }
+      if (!isNonEmptyString(speaker)) {
+        addError('CLAIM_SPEAKER', sid, `${itemPath}.${speakerField}`, `character_claim requires ${speakerField}`);
+        return;
+      }
+      if (MULTI_ENTITY_SEPARATOR_RE.test(speaker)) {
+        addError(
+          'CLAIM_SPEAKER',
+          sid,
+          `${itemPath}.${speakerField}`,
+          `${speakerField} "${speaker}" lists multiple speakers; a claim has exactly one speaker`
+        );
+        return;
+      }
+      const rawClaimLine = rawLines[claimLine - 1] ?? '';
+      const actual = lineSpeakerAt(mgt, claimLine);
+      if (actual) {
+        if (actual !== speaker) {
+          addError(
+            'CLAIM_SPEAKER',
+            sid,
+            `${itemPath}.${speakerField}`,
+            `${speakerField} "${speaker}" does not match line_speaker "${actual}" at claim_line ${claimLine}`
+          );
+          return;
+        }
+      } else {
+        // 지문 줄(간접화법) 또는 화자 라벨 없는 기록물
+        const allowed =
+          speaker === NARRATION_CLAIMANT ||
+          normalizeWhitespaceOnly(rawClaimLine).includes(normalizeWhitespaceOnly(speaker)) ||
+          documentVoiceNames.has(speaker);
+        if (!allowed) {
+          addError(
+            'CLAIM_SPEAKER',
+            sid,
+            `${itemPath}.${speakerField}`,
+            `claim_line ${claimLine} has no line_speaker; ${speakerField} must be a teller named in that line, document_author name/voices, or "${NARRATION_CLAIMANT}" (got "${speaker}")`
+          );
+          return;
+        }
+      }
+      if (isNonEmptyString(item.quote) && isPositiveInt(item.line_start) && isPositiveInt(item.line_end)) {
+        const rawSlice = rawLines.slice(item.line_start - 1, item.line_end);
+        if (!quoteCoversLine(item.quote, rawClaimLine, rawSlice)) {
+          addError(
+            'CLAIM_SPEAKER',
+            sid,
+            `${itemPath}.quote`,
+            `quote does not cover claim_line ${claimLine}; the quote must include the claimant's own line`
+          );
+        }
+      }
+    };
+
+    const checkNoClaimFields = (item, itemPath, speakerField) => {
+      if (item.claim_line !== null && item.claim_line !== undefined) {
+        addError('CLAIM_SPEAKER', sid, `${itemPath}.claim_line`, 'claim_line must be null unless epistemic_type is character_claim');
+      }
+      if (speakerField && item[speakerField] !== null && item[speakerField] !== undefined) {
+        addError(
+          'CLAIM_SPEAKER',
+          sid,
+          `${itemPath}.${speakerField}`,
+          `${speakerField} must be null unless epistemic_type is character_claim`
+        );
+      }
+    };
+
+    const requireKey = (item, key, itemPath) => {
+      if (!Object.prototype.hasOwnProperty.call(item, key)) {
+        addError('SCHEMA_VALIDATION', sid, `${itemPath}.${key}`, `Missing required field "${key}"`);
+        return false;
+      }
+      return true;
+    };
+
+    // 10. 정체 공개 (unknown_speakers / descriptor_speakers 공통)
+    const checkResolvedIdentity = (res, resPath) => {
+      if (res === null) return;
+      if (!res || typeof res !== 'object' || Array.isArray(res)) {
+        addError('SCHEMA_VALIDATION', sid, resPath, 'resolved_in_same_scene_to must be null or an object');
+        return;
+      }
+      warnForbiddenItemFields(res, resPath);
+      if (!isNonEmptyString(res.surface_text)) {
+        addError('SCHEMA_VALIDATION', sid, `${resPath}.surface_text`, 'surface_text is required when identity is resolved');
+      }
+      if (!isNullableString(res.entity_id)) {
+        addError('SCHEMA_VALIDATION', sid, `${resPath}.entity_id`, 'entity_id must be string or null');
+      }
+      const quoteOk = verifyQuoteInRange(res, resPath);
+      if (quoteOk && isNonEmptyString(res.surface_text)) {
+        const normSurface = normalizeWhitespaceOnly(res.surface_text);
+        if (!normalizeWhitespaceOnly(res.quote).includes(normSurface) && !validSpeakers.has(res.surface_text)) {
+          addError(
+            'RESOLVED_SURFACE_TEXT',
+            sid,
+            `${resPath}.surface_text`,
+            `surface_text "${normSurface}" is neither in the quote nor a speaker label of this scene`
+          );
+        }
+      }
+      checkEvidenceBoundaries(res, resPath);
+    };
+
     // participants 검증
     if (!scene.participants || typeof scene.participants !== 'object' || Array.isArray(scene.participants)) {
       addError('SCHEMA_VALIDATION', sid, `${sceneBasePath}.participants`, 'participants must be an object');
@@ -492,8 +797,14 @@ export const validateShard = (shardData, batchInput) => {
         if (!da || typeof da !== 'object' || Array.isArray(da)) {
           addError('SCHEMA_VALIDATION', sid, daPath, 'document_author must be null or an object');
         } else {
-          if (!isNonEmptyString(da.name)) {
-            addError('SCHEMA_VALIDATION', sid, `${daPath}.name`, 'document_author.name must be a non-empty string');
+          // 5. 기록물 작성자: name이 있거나 voices가 1개 이상
+          if (!(da.name === null || isNonEmptyString(da.name))) {
+            addError('SCHEMA_VALIDATION', sid, `${daPath}.name`, 'document_author.name must be a non-empty string or null');
+          }
+          if (!Array.isArray(da.voices) || !da.voices.every(isNonEmptyString)) {
+            addError('SCHEMA_VALIDATION', sid, `${daPath}.voices`, 'document_author.voices must be an array of non-empty strings');
+          } else if (!isNonEmptyString(da.name) && da.voices.length === 0) {
+            addError('DOCUMENT_AUTHOR', sid, daPath, 'document_author needs a name or at least one voice');
           }
           if (!isNullableString(da.entity_id)) {
             addError('SCHEMA_VALIDATION', sid, `${daPath}.entity_id`, 'document_author.entity_id must be string or null');
@@ -557,7 +868,9 @@ export const validateShard = (shardData, batchInput) => {
           if (!isNullableString(p.entity_id)) {
             addError('SCHEMA_VALIDATION', sid, `${pPath}.entity_id`, 'entity_id must be string or null');
           }
+          warnForbiddenItemFields(p, pPath);
           verifyQuoteInRange(p, pPath);
+          checkEvidenceBoundaries(p, pPath);
         });
       }
 
@@ -621,7 +934,9 @@ export const validateShard = (shardData, batchInput) => {
               `Invalid entity_type ${JSON.stringify(p.entity_type)}`
             );
           }
+          warnForbiddenItemFields(p, pPath);
           verifyQuoteInRange(p, pPath);
+          checkEvidenceBoundaries(p, pPath);
           if (isNonEmptyString(p.surface_text) && isNonEmptyString(p.quote)) {
             const normSurface = normalizeWhitespaceOnly(p.surface_text);
             const normQuote = normalizeWhitespaceOnly(p.quote);
@@ -636,13 +951,35 @@ export const validateShard = (shardData, batchInput) => {
           }
         });
       }
+
+      // 2. 화자 완전성: speakers의 라벨(??? 제외)은 present_in_scene이나 remote_or_voice_only에 있어야 한다
+      if (
+        Array.isArray(scene.participants.present_in_scene) &&
+        Array.isArray(scene.participants.remote_or_voice_only)
+      ) {
+        const listed = new Set(
+          [...scene.participants.present_in_scene, ...scene.participants.remote_or_voice_only]
+            .map((p) => p?.speaker_label)
+            .filter(isNonEmptyString)
+        );
+        for (const label of validSpeakers) {
+          if (label === '???') continue;
+          if (!listed.has(label)) {
+            addError(
+              'SPEAKER_COMPLETENESS',
+              sid,
+              `${sceneBasePath}.participants`,
+              `Speaker "${label}" from mechanical_ground_truth.speakers is missing from present_in_scene and remote_or_voice_only`
+            );
+          }
+        }
+      }
     }
 
-    // 5. 호칭 검증 (FORMS_OF_ADDRESS)
+    // 8. 호칭 검증 (FORMS_OF_ADDRESS)
     if (!Array.isArray(scene.forms_of_address)) {
       addError('SCHEMA_VALIDATION', sid, `${sceneBasePath}.forms_of_address`, 'forms_of_address must be an array');
     } else {
-      const lineSpeakerMap = mgt.line_speaker ?? {};
       scene.forms_of_address.forEach((fa, idx) => {
         const faPath = `${sceneBasePath}.forms_of_address[${idx}]`;
         if (!fa || typeof fa !== 'object') {
@@ -659,16 +996,31 @@ export const validateShard = (shardData, batchInput) => {
           addError('SCHEMA_VALIDATION', sid, `${faPath}.address_term`, 'address_term is required');
         }
 
-        verifyQuoteInRange(fa, faPath);
+        warnForbiddenItemFields(fa, faPath);
+        const quoteOk = verifyQuoteInRange(fa, faPath);
+        checkEvidenceBoundaries(fa, faPath);
 
-        if (isPositiveInt(fa.line_start)) {
-          const actualSpeaker = lineSpeakerMap[String(fa.line_start)] ?? lineSpeakerMap[fa.line_start];
-          if (!actualSpeaker || actualSpeaker !== fa.from_speaker) {
+        // 호칭어가 든 줄의 화자가 from_speaker여야 한다 (앞 지문·대사를 범위에 넣어도 됨)
+        if (quoteOk && isNonEmptyString(fa.address_term) && isNonEmptyString(fa.from_speaker)) {
+          const normTerm = normalizeWhitespaceOnly(fa.address_term);
+          const termLines = [];
+          for (let line = fa.line_start; line <= fa.line_end; line++) {
+            if (normalizeWhitespaceOnly(rawLines[line - 1] ?? '').includes(normTerm)) {
+              termLines.push(line);
+            }
+          }
+          const spokenByFrom = termLines.some((line) => {
+            const actual = lineSpeakerAt(mgt, line);
+            return actual ? actual === fa.from_speaker : documentVoiceNames.has(fa.from_speaker);
+          });
+          if (!spokenByFrom) {
             addError(
               'FORMS_OF_ADDRESS',
               sid,
               `${faPath}.from_speaker`,
-              `from_speaker "${fa.from_speaker}" does not match line_speaker "${actualSpeaker ?? 'none'}" at line_start ${fa.line_start}`
+              `No line in ${fa.line_start}~${fa.line_end} containing "${normTerm}" is spoken by from_speaker "${fa.from_speaker}" (speakers: ${
+                termLines.map((line) => `L${line}=${lineSpeakerAt(mgt, line) ?? 'none'}`).join(', ') || 'term not found'
+              })`
             );
           }
         }
@@ -704,9 +1056,7 @@ export const validateShard = (shardData, batchInput) => {
           addError('SCHEMA_VALIDATION', sid, uPath, 'Item must be an object');
           return;
         }
-        if (Object.prototype.hasOwnProperty.call(unk, 'item_id')) {
-          addWarning('FORBIDDEN_MODEL_FIELD', sid, `${uPath}.item_id`, 'item_id is forbidden in model output');
-        }
+        warnForbiddenItemFields(unk, uPath);
 
         const uid = unk.unknown_id;
         if (!isNonEmptyString(uid)) {
@@ -789,26 +1139,8 @@ export const validateShard = (shardData, batchInput) => {
           );
         }
 
-        if (unk.resolved_in_same_scene_to !== null) {
-          const res = unk.resolved_in_same_scene_to;
-          if (!res || typeof res !== 'object' || Array.isArray(res)) {
-            addError(
-              'SCHEMA_VALIDATION',
-              sid,
-              `${uPath}.resolved_in_same_scene_to`,
-              'resolved_in_same_scene_to must be null or an object'
-            );
-          } else {
-            if (!isNonEmptyString(res.entity_id)) {
-              addError(
-                'SCHEMA_VALIDATION',
-                sid,
-                `${uPath}.resolved_in_same_scene_to.entity_id`,
-                'entity_id must be a non-empty string'
-              );
-            }
-            verifyQuoteInRange(res, `${uPath}.resolved_in_same_scene_to`);
-          }
+        if (requireKey(unk, 'resolved_in_same_scene_to', uPath)) {
+          checkResolvedIdentity(unk.resolved_in_same_scene_to, `${uPath}.resolved_in_same_scene_to`);
         }
       });
 
@@ -819,6 +1151,80 @@ export const validateShard = (shardData, batchInput) => {
             sid,
             `${sceneBasePath}.unknown_speakers`,
             `Missing required unknown_id "${expectedUid}" in scene "${sid}"`
+          );
+        }
+      }
+    }
+
+    // 4. 묘사형 화자 (descriptor_speakers)
+    const expectedDescriptorLabels = new Set(
+      (mgt.speakers ?? [])
+        .filter((spk) => typeof spk === 'object' && spk.is_descriptor_alias === true)
+        .map((spk) => spk.speaker_label)
+    );
+    if (!Array.isArray(scene.descriptor_speakers)) {
+      addError('SCHEMA_VALIDATION', sid, `${sceneBasePath}.descriptor_speakers`, 'descriptor_speakers must be an array');
+    } else {
+      const seenDescriptorLabels = new Set();
+      scene.descriptor_speakers.forEach((dsp, idx) => {
+        const dPath = `${sceneBasePath}.descriptor_speakers[${idx}]`;
+        if (!dsp || typeof dsp !== 'object' || Array.isArray(dsp)) {
+          addError('SCHEMA_VALIDATION', sid, dPath, 'Item must be an object');
+          return;
+        }
+        warnForbiddenItemFields(dsp, dPath);
+        const label = dsp.speaker_label;
+        if (!isNonEmptyString(label)) {
+          addError('SCHEMA_VALIDATION', sid, `${dPath}.speaker_label`, 'speaker_label is required');
+          return;
+        }
+        if (!expectedDescriptorLabels.has(label)) {
+          addError(
+            'DESCRIPTOR_SPEAKERS',
+            sid,
+            `${dPath}.speaker_label`,
+            `"${label}" is not a descriptor-alias speaker of this scene`
+          );
+        }
+        if (seenDescriptorLabels.has(label)) {
+          addError('DESCRIPTOR_SPEAKERS', sid, `${dPath}.speaker_label`, `Duplicate descriptor_speakers entry for "${label}"`);
+        }
+        seenDescriptorLabels.add(label);
+
+        if (verifyQuoteInRange(dsp, dPath)) {
+          for (let line = dsp.line_start; line <= dsp.line_end; line++) {
+            const actual = lineSpeakerAt(mgt, line);
+            if (actual && actual !== label) {
+              addError(
+                'DESCRIPTOR_SPEAKERS',
+                sid,
+                `${dPath}.quote`,
+                `Representative line range ${dsp.line_start}~${dsp.line_end} includes L${line} spoken by "${actual}", not "${label}"`
+              );
+              break;
+            }
+          }
+        }
+        if (!isNonEmptyString(dsp.speaking_style)) {
+          addError('SCHEMA_VALIDATION', sid, `${dPath}.speaking_style`, 'speaking_style must be a non-empty string');
+        }
+        if (!isNullableString(dsp.target_addressed)) {
+          addError('SCHEMA_VALIDATION', sid, `${dPath}.target_addressed`, 'target_addressed must be string or null');
+        }
+        if (!Array.isArray(dsp.contextual_clues) || !dsp.contextual_clues.every((c) => typeof c === 'string')) {
+          addError('SCHEMA_VALIDATION', sid, `${dPath}.contextual_clues`, 'contextual_clues must be an array of strings');
+        }
+        if (requireKey(dsp, 'resolved_in_same_scene_to', dPath)) {
+          checkResolvedIdentity(dsp.resolved_in_same_scene_to, `${dPath}.resolved_in_same_scene_to`);
+        }
+      });
+      for (const label of expectedDescriptorLabels) {
+        if (!seenDescriptorLabels.has(label)) {
+          addError(
+            'DESCRIPTOR_SPEAKERS',
+            sid,
+            `${sceneBasePath}.descriptor_speakers`,
+            `Missing descriptor_speakers entry for descriptor-alias speaker "${label}"`
           );
         }
       }
@@ -984,27 +1390,72 @@ export const validateShard = (shardData, batchInput) => {
               `option_text ${JSON.stringify(opt.option_text)} does not exactly match original OPTION TEXT`
             );
           }
-          if (typeof opt.continuation_summary !== 'string') {
+          // 본문 없는 옵션은 continuation_summary가 null (요약을 지어내지 않게)
+          const gtOpt = matchedGtBlock?.options.find((o) => o.option_text === opt.option_text);
+          if (gtOpt && gtOpt.body_line_count === 0) {
+            if (opt.continuation_summary !== null) {
+              addError(
+                'CHOICE_BRANCHES',
+                sid,
+                `${oPath}.continuation_summary`,
+                `Option ${JSON.stringify(opt.option_text)} has no body lines; continuation_summary must be null`
+              );
+            }
+          } else if (!isNonEmptyString(opt.continuation_summary)) {
             addError(
               'SCHEMA_VALIDATION',
               sid,
               `${oPath}.continuation_summary`,
-              'continuation_summary must be a string'
+              'continuation_summary must be a non-empty string for options with body lines'
             );
           }
-          if (
-            !Array.isArray(opt.branch_specific_facts) ||
-            !opt.branch_specific_facts.every((f) => typeof f === 'string')
-          ) {
-            addError(
-              'SCHEMA_VALIDATION',
+          if (Object.prototype.hasOwnProperty.call(opt, 'branch_specific_facts')) {
+            addWarning(
+              'FORBIDDEN_MODEL_FIELD',
               sid,
               `${oPath}.branch_specific_facts`,
-              'branch_specific_facts must be an array of strings'
+              'branch_specific_facts was removed in 1.3.0; record branch facts in events_and_claims or relationship_and_lore_notes'
             );
           }
         });
       });
+
+      // 11. 선택지 완전성: is_branching 블록마다 항목 하나, 그 블록의 옵션 전부
+      const recordedByLine = new Map();
+      for (const cb of scene.choice_branches) {
+        if (cb && isPositiveInt(cb.choice_line)) {
+          if (recordedByLine.has(cb.choice_line)) {
+            addError('CHOICE_BRANCHES', sid, `${sceneBasePath}.choice_branches`, `Duplicate choice_branches entry for choice_line ${cb.choice_line}`);
+          }
+          recordedByLine.set(cb.choice_line, cb);
+        }
+      }
+      for (const gtBlock of gtChoiceBlocks) {
+        if (!gtBlock.is_branching) continue;
+        const recorded = recordedByLine.get(gtBlock.choice_line);
+        if (!recorded) {
+          addError(
+            'CHOICE_BRANCHES',
+            sid,
+            `${sceneBasePath}.choice_branches`,
+            `Missing choice_branches entry for branching block at line ${gtBlock.choice_line}`
+          );
+          continue;
+        }
+        const recordedTexts = new Set(
+          (Array.isArray(recorded.options) ? recorded.options : []).map((o) => o?.option_text)
+        );
+        for (const gtOpt of gtBlock.options) {
+          if (!recordedTexts.has(gtOpt.option_text)) {
+            addError(
+              'CHOICE_BRANCHES',
+              sid,
+              `${sceneBasePath}.choice_branches`,
+              `Missing option ${JSON.stringify(gtOpt.option_text)} of branching block at line ${gtBlock.choice_line}`
+            );
+          }
+        }
+      }
     }
 
     // events_and_claims 검증
@@ -1025,33 +1476,22 @@ export const validateShard = (shardData, batchInput) => {
             `Invalid epistemic_type ${JSON.stringify(ev.epistemic_type)}`
           );
         }
-        if (!EVENT_CHRONOLOGY_ENUM.has(ev.chronology_type)) {
-          addError(
-            'SCHEMA_VALIDATION',
-            sid,
-            `${evPath}.chronology_type`,
-            `Invalid event chronology_type ${JSON.stringify(ev.chronology_type)} (mixed is not allowed on events)`
-          );
-        }
+        // 15. confidence: interpretation이면 필수, 아니면 생략하거나 null
         if (ev.epistemic_type === 'interpretation') {
           if (!INTERPRETATION_CONFIDENCE_ENUM.has(ev.confidence)) {
             addError(
-              'SCHEMA_VALIDATION',
+              'CONFIDENCE',
               sid,
               `${evPath}.confidence`,
               `interpretation requires confidence in [유력한 해석, 가능성, 판단 보류], got ${JSON.stringify(ev.confidence)}`
             );
           }
-        } else if (
-          ev.confidence !== undefined &&
-          ev.confidence !== null &&
-          !CONFIDENCE_ENUM.has(ev.confidence)
-        ) {
+        } else if (ev.confidence !== undefined && ev.confidence !== null) {
           addError(
-            'SCHEMA_VALIDATION',
+            'CONFIDENCE',
             sid,
             `${evPath}.confidence`,
-            `Invalid confidence ${JSON.stringify(ev.confidence)}`
+            `confidence must be omitted or null unless epistemic_type is interpretation (got ${JSON.stringify(ev.confidence)})`
           );
         }
         if (!isNonEmptyString(ev.actor_or_speaker)) {
@@ -1060,30 +1500,32 @@ export const validateShard = (shardData, batchInput) => {
         if (!isNonEmptyString(ev.summary)) {
           addError('SCHEMA_VALIDATION', sid, `${evPath}.summary`, 'summary is required');
         }
-        if (typeof ev.branch_specific !== 'boolean') {
-          addError('SCHEMA_VALIDATION', sid, `${evPath}.branch_specific`, 'branch_specific must be boolean');
-        }
-        if (!isNullableString(ev.branch_option_text)) {
-          addError(
-            'SCHEMA_VALIDATION',
-            sid,
-            `${evPath}.branch_option_text`,
-            'branch_option_text must be string or null'
-          );
-        }
-        if (ev.branch_specific === true && !isNonEmptyString(ev.branch_option_text)) {
-          addError(
-            'SCHEMA_VALIDATION',
-            sid,
-            `${evPath}.branch_option_text`,
-            'branch_option_text is required when branch_specific is true'
-          );
-        }
         if (typeof ev.refers_to_past !== 'boolean') {
           addError('SCHEMA_VALIDATION', sid, `${evPath}.refers_to_past`, 'refers_to_past must be boolean');
         }
+        warnForbiddenItemFields(ev, evPath);
         verifyQuoteInRange(ev, evPath);
+        const isClaim = ev.epistemic_type === 'character_claim';
+        checkEvidenceBoundaries(ev, evPath, { isClaim });
+        if (requireKey(ev, 'claim_line', evPath)) {
+          if (isClaim) {
+            checkClaimAttribution(ev, evPath, 'actor_or_speaker');
+          } else {
+            checkNoClaimFields(ev, evPath, null);
+          }
+        }
       });
+
+      // 20. 밀도 경고 (실패 아님)
+      const dialogueLineCount = Object.keys(mgt.line_speaker ?? {}).length;
+      if (dialogueLineCount >= DENSITY_WARNING_MIN_DIALOGUE_LINES && scene.events_and_claims.length === 0) {
+        addWarning(
+          'DENSITY',
+          sid,
+          `${sceneBasePath}.events_and_claims`,
+          `Scene has ${dialogueLineCount} dialogue lines but no events_and_claims`
+        );
+      }
     }
 
     // clues_and_hooks 검증
@@ -1110,7 +1552,21 @@ export const validateShard = (shardData, batchInput) => {
         if (!isNonEmptyString(clue.detail)) {
           addError('SCHEMA_VALIDATION', sid, `${cPath}.detail`, 'detail is required');
         }
+        // 17. 특징 단서: trait이면 subject 필수(엔티티 하나), 아니면 null
+        if (requireKey(clue, 'subject', cPath)) {
+          if (clue.category === 'trait') {
+            if (!isNonEmptyString(clue.subject)) {
+              addError('TRAIT_SUBJECT', sid, `${cPath}.subject`, 'trait clue requires subject');
+            } else if (MULTI_ENTITY_SEPARATOR_RE.test(clue.subject)) {
+              addError('TRAIT_SUBJECT', sid, `${cPath}.subject`, `subject "${clue.subject}" lists multiple entities`);
+            }
+          } else if (clue.subject !== null) {
+            addError('TRAIT_SUBJECT', sid, `${cPath}.subject`, 'subject must be null unless category is trait');
+          }
+        }
+        warnForbiddenItemFields(clue, cPath);
         verifyQuoteInRange(clue, cPath);
+        checkEvidenceBoundaries(clue, cPath);
       });
     }
 
@@ -1129,16 +1585,49 @@ export const validateShard = (shardData, batchInput) => {
           addError('SCHEMA_VALIDATION', sid, rPath, 'Item must be an object');
           return;
         }
-        if (!isNonEmptyString(rel.subject)) {
-          addError('SCHEMA_VALIDATION', sid, `${rPath}.subject`, 'subject is required');
-        }
-        if (!isNonEmptyString(rel.target)) {
-          addError('SCHEMA_VALIDATION', sid, `${rPath}.target`, 'target is required');
+        // 16. 관계 메모: 엔티티 하나씩, interpretation 금지, character_claim이면 claimant
+        for (const field of ['subject', 'target']) {
+          if (!isNonEmptyString(rel[field])) {
+            addError('SCHEMA_VALIDATION', sid, `${rPath}.${field}`, `${field} is required`);
+          } else if (MULTI_ENTITY_SEPARATOR_RE.test(rel[field])) {
+            addError(
+              'RELATIONSHIP_NOTES',
+              sid,
+              `${rPath}.${field}`,
+              `${field} "${rel[field]}" lists multiple entities; split into separate notes`
+            );
+          }
         }
         if (!isNonEmptyString(rel.relation_or_change)) {
           addError('SCHEMA_VALIDATION', sid, `${rPath}.relation_or_change`, 'relation_or_change is required');
         }
+        if (!RELATIONSHIP_EPISTEMIC_TYPE_ENUM.has(rel.epistemic_type)) {
+          addError(
+            'RELATIONSHIP_NOTES',
+            sid,
+            `${rPath}.epistemic_type`,
+            `relationship notes allow only established_event | character_claim (got ${JSON.stringify(rel.epistemic_type)})`
+          );
+        }
+        if (Object.prototype.hasOwnProperty.call(rel, 'confidence')) {
+          addWarning('FORBIDDEN_MODEL_FIELD', sid, `${rPath}.confidence`, 'relationship notes have no confidence field');
+        }
+        if (typeof rel.refers_to_past !== 'boolean') {
+          addError('SCHEMA_VALIDATION', sid, `${rPath}.refers_to_past`, 'refers_to_past must be boolean');
+        }
+        warnForbiddenItemFields(rel, rPath);
         verifyQuoteInRange(rel, rPath);
+        const isClaim = rel.epistemic_type === 'character_claim';
+        checkEvidenceBoundaries(rel, rPath, { isClaim });
+        const hasClaimant = requireKey(rel, 'claimant', rPath);
+        const hasClaimLine = requireKey(rel, 'claim_line', rPath);
+        if (hasClaimant && hasClaimLine) {
+          if (isClaim) {
+            checkClaimAttribution(rel, rPath, 'claimant');
+          } else {
+            checkNoClaimFields(rel, rPath, 'claimant');
+          }
+        }
       });
     }
 

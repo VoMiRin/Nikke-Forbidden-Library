@@ -15,6 +15,10 @@ import {
   writeJsonAtomic,
   normalizeNewlines,
   sha256,
+  PASS1_SCHEMA_VERSION,
+  descriptorLabelsOf,
+  emptyProgressDoc,
+  isSceneReusable,
 } from './lib.mjs';
 import { runInitRegistryCli } from './init-registry.mjs';
 
@@ -103,8 +107,9 @@ export const packScenesIntoBatches = (scenes, options = {}) => {
     }
   }
 
+  const startNumber = options.startNumber ?? 1;
   return rawGroups.map((group, idx) => {
-    const batchId = `${prefix}${String(idx + 1).padStart(4, '0')}`;
+    const batchId = `${prefix}${String(startNumber + idx).padStart(4, '0')}`;
     const bodyBytes = group.reduce((acc, s) => acc + s.body_bytes, 0);
     const rawBytes = group.reduce((acc, s) => acc + s.raw_bytes, 0);
     const unknownCount = group.reduce(
@@ -133,7 +138,7 @@ export const packScenesIntoBatches = (scenes, options = {}) => {
  * 배치 입력 파일용 JSON 객체를 만든다 (1.5).
  */
 export const formatBatchInputPayload = (batch) => ({
-  schema_version: '1.2.0',
+  schema_version: PASS1_SCHEMA_VERSION,
   batch_id: batch.batch_id,
   is_pilot: Boolean(batch.is_pilot),
   scene_count: batch.scene_count,
@@ -152,6 +157,84 @@ export const formatBatchInputPayload = (batch) => ({
   })),
 });
 
+const batchNumberOf = (batchId) => {
+  const match = /^batch_(\d+)$/.exec(batchId);
+  return match ? Number(match[1]) : 0;
+};
+
+const groupStats = (batchId, scenes, isPilot = false) => ({
+  batch_id: batchId,
+  is_pilot: isPilot,
+  scene_ids: scenes.map((s) => s.scene_id),
+  scene_count: scenes.length,
+  body_bytes: scenes.reduce((acc, s) => acc + s.body_bytes, 0),
+  raw_bytes: scenes.reduce((acc, s) => acc + s.raw_bytes, 0),
+  unknown_count: scenes.reduce((acc, s) => acc + s.mechanical_ground_truth.unknowns.length, 0),
+  scenes,
+});
+
+/**
+ * 장면 단위 재사용으로 이번에 추출할 배치를 정한다 (8절 1단계).
+ * - 재사용 가능한 장면(해시·스키마 버전·묘사형 화자 목록이 같은 병합 장면)은 다시 추출하지 않는다.
+ * - 아직 끝나지 않은 기존 배치는 장면이 그대로면 같은 번호로 유지한다.
+ * - 나머지 장면만 새 배치로 묶고, 새 번호는 기존 번호를 재사용하지 않는다.
+ */
+export const planBatches = (allScenes, progressDoc) => {
+  const sceneProgress = progressDoc.scenes ?? {};
+  const existingBatches = progressDoc.batches ?? {};
+  const sceneById = new Map(allScenes.map((s) => [s.scene_id, s]));
+
+  const needsExtraction = new Set(
+    allScenes.filter((s) => !isSceneReusable(sceneProgress[s.scene_id], s)).map((s) => s.scene_id)
+  );
+
+  const keptBatches = [];
+  const assigned = new Set();
+  for (const entry of Object.values(existingBatches)) {
+    if (entry.is_pilot || entry.status === 'merged' || !Array.isArray(entry.scene_ids)) continue;
+    const scenes = entry.scene_ids.map((id) => sceneById.get(id));
+    const unchanged = scenes.every((scene) => {
+      if (!scene || !needsExtraction.has(scene.scene_id) || assigned.has(scene.scene_id)) return false;
+      const prev = sceneProgress[scene.scene_id];
+      return (
+        prev &&
+        prev.batch_id === entry.batch_id &&
+        prev.source_sha256 === scene.source_sha256 &&
+        JSON.stringify(prev.descriptor_labels ?? []) === JSON.stringify(descriptorLabelsOf(scene.mechanical_ground_truth))
+      );
+    });
+    if (!unchanged) continue;
+    for (const s of scenes) {
+      assigned.add(s.scene_id);
+      s.batch_id = entry.batch_id;
+    }
+    keptBatches.push({ ...groupStats(entry.batch_id, scenes), status: entry.status, retries: entry.retries ?? 0 });
+  }
+
+  const maxExisting = Object.keys(existingBatches).reduce((max, id) => Math.max(max, batchNumberOf(id)), 0);
+  const remaining = allScenes.filter((s) => needsExtraction.has(s.scene_id) && !assigned.has(s.scene_id));
+  const newBatches = packScenesIntoBatches(remaining, { batchPrefix: 'batch_', startNumber: maxExisting + 1 }).map(
+    (b) => ({ ...b, status: 'pending', retries: 0 })
+  );
+
+  return {
+    batches: [...keptBatches, ...newBatches].sort((a, b) => batchNumberOf(a.batch_id) - batchNumberOf(b.batch_id)),
+    reusedSceneIds: allScenes.filter((s) => !needsExtraction.has(s.scene_id)).map((s) => s.scene_id),
+  };
+};
+
+const readProgressDoc = async (progressPath, { resetProgress = false } = {}) => {
+  if (resetProgress || !fsSync.existsSync(progressPath)) return emptyProgressDoc();
+  const doc = JSON.parse(await fs.readFile(progressPath, 'utf8'));
+  if (doc.schema_version !== PASS1_SCHEMA_VERSION || !doc.scenes) {
+    throw new Error(
+      `progress.json is schema ${JSON.stringify(doc.schema_version)} (batch-level); ` +
+        `run build-manifest with --reset-progress to start ${PASS1_SCHEMA_VERSION} scene-level progress (8절 2단계).`
+    );
+  }
+  return doc;
+};
+
 /**
  * 매니페스트, 배치 입력, progress.json을 생성한다.
  */
@@ -160,6 +243,7 @@ export const buildManifestAndBatches = async (options = {}) => {
   const scriptsRootDir = options.scriptsRootDir ?? SCRIPTS_ROOT_DIR;
   const newScriptsData = options.newScriptsData ?? loadNewScriptsData();
   const writeFiles = options.writeFiles ?? true;
+  const progressPath = path.join(outDir, 'progress.json');
 
   // 레지스트리가 없으면 먼저 초기화
   const registryPath = path.join(outDir, 'entity_registry.json');
@@ -257,8 +341,17 @@ export const buildManifestAndBatches = async (options = {}) => {
   // 1.3 분기 판별 (장면 간 루트 + 부제 루트)
   computeCorpusRoutes(allScenes);
 
-  // 1.4 용량 기준 배치 생성
-  const batches = packScenesIntoBatches(allScenes, { batchPrefix: 'batch_' });
+  // 1.4 용량 기준 배치 생성. ignoreProgress면 전체 장면을 1번부터 묶는다(파일럿의 batch_0025 복제용).
+  const progressDoc = options.ignoreProgress
+    ? emptyProgressDoc()
+    : await readProgressDoc(progressPath, { resetProgress: options.resetProgress });
+  const { batches, reusedSceneIds } = planBatches(allScenes, progressDoc);
+  const reusedSet = new Set(reusedSceneIds);
+  for (const scene of allScenes) {
+    if (reusedSet.has(scene.scene_id)) {
+      scene.batch_id = progressDoc.scenes[scene.scene_id]?.batch_id ?? null;
+    }
+  }
 
   // 분류별 / 타이틀별 통계 집계 (1.1 & 7.2)
   const categoryStatsMap = new Map();
@@ -334,7 +427,7 @@ export const buildManifestAndBatches = async (options = {}) => {
     : 0;
 
   const manifestDoc = {
-    schema_version: '1.2.0',
+    schema_version: PASS1_SCHEMA_VERSION,
     generated_at: new Date().toISOString(),
     totals: {
       categories_count: categoryStatsMap.size,
@@ -344,6 +437,7 @@ export const buildManifestAndBatches = async (options = {}) => {
       total_raw_scene_bytes: totalRawSceneBytes,
       total_body_bytes: totalBodyBytes,
       total_unknown_lines: totalUnknownLines,
+      reused_scenes_count: reusedSceneIds.length,
       batches_count: batches.length,
       min_batch_bytes: minBatchBytes,
       max_batch_bytes: maxBatchBytes,
@@ -397,55 +491,53 @@ export const buildManifestAndBatches = async (options = {}) => {
       await writeJsonAtomic(batchInputPath, formatBatchInputPayload(batch));
     }
 
-    // progress.json 초기화 및 증분 상태 보존 (6절)
-    const progressPath = path.join(outDir, 'progress.json');
-    let existingProgress = null;
-    if (fsSync.existsSync(progressPath)) {
-      try {
-        existingProgress = JSON.parse(await fs.readFile(progressPath, 'utf8'));
-      } catch {
-        existingProgress = null;
+    // progress.json: 장면 단위 상태 + 배치 요약 (6절, 8절 1단계)
+    const nowIso = new Date().toISOString();
+    const nextProgress = {
+      schema_version: PASS1_SCHEMA_VERSION,
+      updated_at: nowIso,
+      scenes: {},
+      batches: {},
+    };
+
+    // 병합된 배치 기록과 파일럿 배치는 보존한다. 끝나지 않은 배치는 planBatches 결과로 다시 쓴다.
+    for (const [bId, bEntry] of Object.entries(progressDoc.batches ?? {})) {
+      if (bEntry.is_pilot || bEntry.status === 'merged') {
+        nextProgress.batches[bId] = bEntry;
       }
     }
-
-    const existingBatches = existingProgress?.batches ?? {};
-    const newProgressBatches = {};
-
-    // 기존 pilot_ 배치가 있으면 보존
-    for (const [bId, bEntry] of Object.entries(existingBatches)) {
-      if (bId.startsWith('pilot_')) {
-        newProgressBatches[bId] = bEntry;
-      }
-    }
-
     for (const batch of batches) {
-      const sceneHashes = Object.fromEntries(
-        batch.scenes.map((s) => [s.scene_id, s.source_sha256])
-      );
-      const prev = existingBatches[batch.batch_id];
-      const sameScenes =
-        prev &&
-        JSON.stringify(prev.scene_ids) === JSON.stringify(batch.scene_ids) &&
-        JSON.stringify(prev.scene_hashes) === JSON.stringify(sceneHashes);
-
-      newProgressBatches[batch.batch_id] = {
+      const prev = progressDoc.batches?.[batch.batch_id];
+      nextProgress.batches[batch.batch_id] = {
         batch_id: batch.batch_id,
         is_pilot: false,
-        status: sameScenes ? prev.status : 'pending',
-        retries: sameScenes ? prev.retries ?? 0 : 0,
+        status: batch.status,
+        retries: batch.retries,
         scene_ids: batch.scene_ids,
-        scene_hashes: sceneHashes,
-        updated_at: sameScenes ? prev.updated_at : new Date().toISOString(),
+        updated_at: prev?.updated_at ?? nowIso,
       };
     }
 
-    const progressDoc = {
-      schema_version: '1.2.0',
-      updated_at: new Date().toISOString(),
-      batches: newProgressBatches,
-    };
+    for (const scene of allScenes) {
+      const prev = progressDoc.scenes?.[scene.scene_id];
+      if (reusedSet.has(scene.scene_id)) {
+        nextProgress.scenes[scene.scene_id] = prev;
+        continue;
+      }
+      const keptSameBatch = prev && prev.batch_id === scene.batch_id;
+      nextProgress.scenes[scene.scene_id] = {
+        scene_id: scene.scene_id,
+        status: keptSameBatch ? prev.status : 'pending',
+        source_sha256: scene.source_sha256,
+        extraction_schema_version: null,
+        descriptor_labels: descriptorLabelsOf(scene.mechanical_ground_truth),
+        batch_id: scene.batch_id,
+        retries: keptSameBatch ? prev.retries ?? 0 : 0,
+        updated_at: keptSameBatch ? prev.updated_at : nowIso,
+      };
+    }
 
-    await writeJsonAtomic(progressPath, progressDoc);
+    await writeJsonAtomic(progressPath, nextProgress);
   }
 
   return {
@@ -484,6 +576,7 @@ export const buildPilotBatches = async (pilotSceneIds = DEFAULT_PILOT_SCENE_IDS,
   const { allScenes, batches: mainBatches } = await buildManifestAndBatches({
     ...options,
     writeFiles: false,
+    ignoreProgress: true,
   });
 
   const sceneById = new Map(allScenes.map((s) => [s.scene_id, s]));
@@ -537,18 +630,7 @@ export const buildPilotBatches = async (pilotSceneIds = DEFAULT_PILOT_SCENE_IDS,
     }
 
     const progressPath = path.join(outDir, 'progress.json');
-    let progressDoc = {
-      schema_version: '1.2.0',
-      updated_at: new Date().toISOString(),
-      batches: {},
-    };
-    if (fsSync.existsSync(progressPath)) {
-      try {
-        progressDoc = JSON.parse(await fs.readFile(progressPath, 'utf8'));
-      } catch {
-        // fallback to default
-      }
-    }
+    const progressDoc = await readProgressDoc(progressPath, { resetProgress: options.resetProgress });
 
     // 기존 pilot_ 항목 정리 후 새 파일럿 배치만 등록
     for (const key of Object.keys(progressDoc.batches)) {
@@ -570,6 +652,7 @@ export const buildPilotBatches = async (pilotSceneIds = DEFAULT_PILOT_SCENE_IDS,
         scene_hashes: sceneHashes,
         updated_at: new Date().toISOString(),
       };
+      progressDoc.schema_version = PASS1_SCHEMA_VERSION;
     }
     progressDoc.updated_at = new Date().toISOString();
     await writeJsonAtomic(progressPath, progressDoc);
@@ -582,6 +665,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   const args = process.argv.slice(2);
   const pilotScenesArg = args.find((a) => a.startsWith('--pilot-scenes='));
   const isDefaultPilot = args.includes('--pilot');
+  const resetProgress = args.includes('--reset-progress');
 
   if (pilotScenesArg || isDefaultPilot) {
     const ids = pilotScenesArg
@@ -592,6 +676,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           .filter(Boolean)
       : DEFAULT_PILOT_SCENE_IDS;
     const includeFullBatchId = pilotScenesArg ? null : 'batch_0025';
+    // 파일럿은 progress.json의 본 실행 장면 기록을 지우지 않도록 --reset-progress를 받지 않는다
     buildPilotBatches(ids, { includeFullBatchId })
       .then((pilotBatches) => {
         for (const b of pilotBatches) {
@@ -605,9 +690,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
         process.exitCode = 1;
       });
   } else {
-    buildManifestAndBatches()
+    buildManifestAndBatches({ resetProgress })
       .then(({ manifestDoc }) => {
         const t = manifestDoc.totals;
+        console.log(`[build-manifest] Reused scenes: ${t.reused_scenes_count}, batches to extract: ${t.batches_count}`);
         console.log(
           `[build-manifest] Categories: ${t.categories_count}, Titles: ${t.titles_count}, Scenes: ${t.scenes_count}, Raw File Bytes: ${t.total_raw_file_bytes} (${(
             t.total_raw_file_bytes /

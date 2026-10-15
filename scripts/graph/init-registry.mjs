@@ -9,6 +9,7 @@ import {
   extractSceneMechanicalGroundTruth,
   writeJsonAtomic,
   sha256,
+  PASS1_SCHEMA_VERSION,
 } from './lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -369,7 +370,7 @@ export const buildInitialRegistry = async (options = {}) => {
     .map((r) => r.speaker_label);
 
   const genericRolesDoc = {
-    schema_version: '1.2.0',
+    schema_version: PASS1_SCHEMA_VERSION,
     description:
       '일반 역할 명사, 묘사형 별칭(descriptor_alias) 및 미상 화자(???) 초안. Pass 1에서는 is_generic_role: true, entity_id: null로 두며 descriptor_alias는 Pass 2 정체 후보 탐색 대상에 포함한다 (1.6).',
     total_roles: genericRoles.length,
@@ -380,7 +381,7 @@ export const buildInitialRegistry = async (options = {}) => {
   };
 
   const entityRegistryDoc = {
-    schema_version: '1.2.0',
+    schema_version: PASS1_SCHEMA_VERSION,
     description:
       '등록 대본 화자 기반 인물 정체 레지스트리 초안. 다른 이름으로 불린 두 화자의 병합은 반드시 대본 근거 검증(Pass 2/3)을 거쳐 수행한다 (1.6).',
     total_entities: entities.length,

@@ -246,7 +246,7 @@ test('1.4 & 1.6 batch packing and initial registry rules work as specified', asy
   );
 });
 
-test('2.3 & 2.4.6 validate-output catches all required failure modes and passes valid shard (v1.2.0)', () => {
+test('2.3 & 2.4.6 validate-output catches all required failure modes and passes valid shard (v1.3.0)', () => {
   // Also verify extractSceneMechanicalGroundTruth extracts indented ???: inside choice blocks
   // and assigns line_speaker="지휘관" to [OPTION TEXT]
   const choiceUnknownMgt = extractSceneMechanicalGroundTruth({
@@ -270,7 +270,7 @@ test('2.3 & 2.4.6 validate-output catches all required failure modes and passes 
   assert.ok(choiceUnknownMgt.speakers.some((s) => s.speaker_label === '지휘관' && s.sources.includes('option')));
 
   const sampleBatchInput = {
-    schema_version: '1.2.0',
+    schema_version: '1.3.0',
     batch_id: 'batch_9999',
     scenes: [
       {
@@ -350,12 +350,13 @@ test('2.3 & 2.4.6 validate-output catches all required failure modes and passes 
   };
 
   const makeValidShard = () => ({
-    schema_version: '1.2.0',
+    schema_version: '1.3.0',
     batch_id: 'batch_9999',
     scenes: [
       {
         scene_id: 'test_scene_1',
         chronology_type: 'present',
+        chronology_segments: [],
         is_plot_critical: true,
         summary: '라피가 아니스의 부재를 알리던 중 미상 화자가 등장한다.',
         participants: {
@@ -405,6 +406,7 @@ test('2.3 & 2.4.6 validate-output catches all required failure modes and passes 
             resolved_in_same_scene_to: null,
           },
         ],
+        descriptor_speakers: [],
         same_scene_speaker_groups: [
           {
             unknown_ids: ['unk_test_scene_1_L0003', 'unk_test_scene_1_L0006'],
@@ -422,34 +424,30 @@ test('2.3 & 2.4.6 validate-output catches all required failure modes and passes 
           {
             choice_line: 4,
             options: [
-              { option_text: '누구냐!', continuation_summary: '정체를 묻는다', branch_specific_facts: [] },
-              { option_text: '경계한다.', continuation_summary: '자세를 낮춘다', branch_specific_facts: [] },
+              { option_text: '누구냐!', continuation_summary: '정체를 묻는다' },
+              { option_text: '경계한다.', continuation_summary: null },
             ],
           },
         ],
         events_and_claims: [
           {
             epistemic_type: 'established_event',
-            chronology_type: 'present',
             actor_or_speaker: '라피',
             summary: '아니스가 아직 도착하지 않았다고 보고함',
             line_start: 2,
             line_end: 2,
             quote: '지휘관님, 아니스는 아직 도착하지 않았습니다.',
-            branch_specific: false,
-            branch_option_text: null,
+            claim_line: null,
             refers_to_past: false,
           },
           {
             epistemic_type: 'established_event',
-            chronology_type: 'present',
             actor_or_speaker: '라피',
             summary: '라피가 두 줄에 걸쳐 적의 접근을 경고함 (화자 라벨 제거 대사 연결 인용 허용 확인)',
             line_start: 11,
             line_end: 12,
             quote: '조심하십시오. 적이 가까이에 있습니다.',
-            branch_specific: false,
-            branch_option_text: null,
+            claim_line: null,
             refers_to_past: false,
           },
         ],
@@ -460,6 +458,7 @@ test('2.3 & 2.4.6 validate-output catches all required failure modes and passes 
       {
         scene_id: 'test_scene_2',
         chronology_type: 'present',
+        chronology_segments: [],
         is_plot_critical: false,
         summary: '네온이 짧게 대답한다.',
         participants: {
@@ -473,20 +472,19 @@ test('2.3 & 2.4.6 validate-output catches all required failure modes and passes 
         },
         forms_of_address: [],
         unknown_speakers: [],
+        descriptor_speakers: [],
         same_scene_speaker_groups: [],
         cross_scene_hints: [],
         choice_branches: [],
         events_and_claims: [
           {
             epistemic_type: 'established_event',
-            chronology_type: 'present',
             actor_or_speaker: '네온',
             summary: '네온이 짧게 긍정함',
             line_start: 1,
             line_end: 1,
             quote: '네.',
-            branch_specific: false,
-            branch_option_text: null,
+            claim_line: null,
             refers_to_past: false,
           },
         ],
@@ -643,7 +641,7 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
     await fs.mkdir(shardsDir, { recursive: true });
 
     const testManifest = {
-      schema_version: '1.2.0',
+      schema_version: '1.3.0',
       titles: [
         {
           title_id: 'main_story__chapter_00',
@@ -670,7 +668,7 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
     };
 
     const batchInput = {
-      schema_version: '1.2.0',
+      schema_version: '1.3.0',
       batch_id: 'batch_0001',
       scenes: [
         {
@@ -688,13 +686,14 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
     };
 
     const validShard = {
-      schema_version: '1.2.0',
+      schema_version: '1.3.0',
       batch_id: 'batch_0001',
       scenes: [
         {
           scene_id: 's1',
           title_id: 'model_wrong_title_id',
           chronology_type: 'present',
+          chronology_segments: [],
           is_plot_critical: true,
           summary: '라피가 낡은 태엽 오르골을 보여준다.',
           participants: {
@@ -715,20 +714,19 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
             },
           ],
           unknown_speakers: [],
+          descriptor_speakers: [],
           same_scene_speaker_groups: [],
           cross_scene_hints: [],
           choice_branches: [],
           events_and_claims: [
             {
               epistemic_type: 'established_event',
-              chronology_type: 'present',
               actor_or_speaker: '라피',
               summary: '라피가 지휘관에게 낡은 태엽 오르골을 보여 달라고 요청한다.',
               line_start: 1,
               line_end: 1,
               quote: '지휘관님, 이 낡은 태엽 오르골을 보십시오.',
-              branch_specific: false,
-              branch_option_text: null,
+              claim_line: null,
               refers_to_past: false,
             },
           ],
@@ -736,6 +734,7 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
             {
               keyword: '낡은 태엽 오르골',
               category: 'item',
+              subject: null,
               detail: '라피가 발견한 단서 소품',
               line_start: 1,
               line_end: 1,
@@ -794,6 +793,11 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
 
     const progressDoc = JSON.parse(await fs.readFile(path.join(tmpDir, 'progress.json'), 'utf8'));
     assert.equal(progressDoc.batches['batch_0001'].status, 'merged');
+    assert.equal(progressDoc.scenes['s1'].status, 'merged');
+    assert.equal(progressDoc.scenes['s1'].extraction_schema_version, '1.3.0');
+    assert.equal(progressDoc.scenes['s1'].source_sha256, 'abc123hash');
+    assert.equal(titleViewDoc.scenes[0].events_and_claims[0].chronology_type, 'present');
+    assert.equal(titleViewDoc.scenes[0].events_and_claims[0].in_branch_option, null);
 
     const candidatesDoc = JSON.parse(
       await fs.readFile(path.join(tmpDir, 'unregistered_entity_candidates.json'), 'utf8')

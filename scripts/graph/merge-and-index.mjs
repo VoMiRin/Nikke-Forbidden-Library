@@ -2,27 +2,58 @@ import fs from 'node:fs/promises';
 import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { GRAPH_DATA_DIR, writeJsonAtomic } from './lib.mjs';
-import { validateShard, FORBIDDEN_SCENE_FIELDS } from './validate-output.mjs';
+import {
+  GRAPH_DATA_DIR,
+  PASS1_SCHEMA_VERSION,
+  writeJsonAtomic,
+  getBranchingOptionRanges,
+  resolveBranchOption,
+  chronologyAtLine,
+  descriptorLabelsOf,
+  emptyProgressDoc,
+} from './lib.mjs';
+import { validateShard, FORBIDDEN_SCENE_FIELDS, FORBIDDEN_ITEM_FIELDS } from './validate-output.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
 const stripForbiddenItemFields = (item) => {
   if (!item || typeof item !== 'object' || Array.isArray(item)) return item;
   const clone = { ...item };
-  delete clone.item_id;
+  for (const field of FORBIDDEN_ITEM_FIELDS) {
+    delete clone[field];
+  }
+  delete clone.branch_specific_facts;
   return clone;
 };
 
 /**
- * 장면 객체에서 모델이 임의로 썼을 수 있는 금지 필드를 제거하고,
- * 매니페스트의 권위 있는 값과 항목별 고유 item_id를 부여한다 (2.3.8 & 4절).
+ * 근거 항목의 시점을 정한다 (3절 8항): character_claim은 claim_line, 그 외는 line_start 기준.
+ * 검증기(2.3의 13항)가 character_claim이 아닌 항목의 구간 경계 걸침을 막으므로 line_start 하나로 정해진다.
  */
-export const enrichSceneFromManifest = (rawScene, manifestScene) => {
+const chronologyForItem = (scene, item) => {
+  const anchor =
+    item.epistemic_type === 'character_claim' && Number.isInteger(item.claim_line)
+      ? item.claim_line
+      : item.line_start;
+  return chronologyAtLine(scene.chronology_type, scene.chronology_segments, anchor);
+};
+
+/**
+ * 장면 객체에서 모델이 임의로 썼을 수 있는 금지 필드를 제거하고,
+ * 매니페스트의 권위 있는 값과 항목별 고유 item_id, 시점, 분기 소속을 부여한다 (2.3의 18항 & 4절).
+ * mechanicalGroundTruth가 없으면 manifestScene.mechanical_ground_truth를 쓴다.
+ */
+export const enrichSceneFromManifest = (rawScene, manifestScene, mechanicalGroundTruth = null) => {
   const cleanScene = { ...rawScene };
   for (const field of FORBIDDEN_SCENE_FIELDS) {
     delete cleanScene[field];
   }
+  const segments = Array.isArray(cleanScene.chronology_segments) ? cleanScene.chronology_segments : [];
+  const sceneForChronology = { chronology_type: cleanScene.chronology_type, chronology_segments: segments };
+
+  const mgt = mechanicalGroundTruth ?? manifestScene.mechanical_ground_truth ?? {};
+  const optionRanges = getBranchingOptionRanges(mgt);
+  const unknownIdByLine = new Map((mgt.unknowns ?? []).map((u) => [u.line, u.unknown_id]));
 
   const sid = manifestScene.scene_id;
   const attachItemIds = (arr, prefix) =>
@@ -31,11 +62,30 @@ export const enrichSceneFromManifest = (rawScene, manifestScene) => {
       ...stripForbiddenItemFields(item),
     }));
 
+  // 근거 항목(2.3의 12항 목록)에 시점과 분기 소속을 붙인다
+  const withLineContext = (item) => {
+    if (!Number.isInteger(item.line_start) || !Number.isInteger(item.line_end)) return item;
+    return {
+      ...item,
+      chronology_type: chronologyForItem(sceneForChronology, item),
+      in_branch_option: resolveBranchOption(optionRanges, item.line_start, item.line_end).option,
+    };
+  };
+  const attachEvidence = (arr, prefix) => attachItemIds(arr, prefix).map(withLineContext);
+
+  const withClaimantUnknownId = (item, speakerField) => {
+    if (item.epistemic_type !== 'character_claim' || item[speakerField] !== '???') return item;
+    return { ...item, claimant_unknown_id: unknownIdByLine.get(item.claim_line) ?? null };
+  };
+
+  const resolvedWithContext = (res) =>
+    res && typeof res === 'object' ? withLineContext(stripForbiddenItemFields(res)) : null;
+
   const participants = {
     present_in_scene: attachItemIds(cleanScene.participants?.present_in_scene, 'pis'),
-    present_silent: attachItemIds(cleanScene.participants?.present_silent, 'psl'),
+    present_silent: attachEvidence(cleanScene.participants?.present_silent, 'psl'),
     remote_or_voice_only: attachItemIds(cleanScene.participants?.remote_or_voice_only, 'rvo'),
-    mentioned_only: attachItemIds(cleanScene.participants?.mentioned_only, 'mnt'),
+    mentioned_only: attachEvidence(cleanScene.participants?.mentioned_only, 'mnt'),
     document_author:
       cleanScene.participants?.document_author &&
       typeof cleanScene.participants.document_author === 'object'
@@ -46,12 +96,26 @@ export const enrichSceneFromManifest = (rawScene, manifestScene) => {
         : null,
   };
 
-  const unknownSpeakers = attachItemIds(cleanScene.unknown_speakers, 'unk').map((u) => ({
-    ...u,
-    resolved_in_same_scene_to:
-      u.resolved_in_same_scene_to && typeof u.resolved_in_same_scene_to === 'object'
-        ? stripForbiddenItemFields(u.resolved_in_same_scene_to)
-        : null,
+  // unknown_speakers는 unknown_id의 줄로 시점·분기를 붙인다 (3절 8항)
+  const unknownLineById = new Map((mgt.unknowns ?? []).map((u) => [u.unknown_id, u.line]));
+  const unknownSpeakers = attachItemIds(cleanScene.unknown_speakers, 'unk').map((u) => {
+    const line = unknownLineById.get(u.unknown_id);
+    return {
+      ...u,
+      ...(Number.isInteger(line)
+        ? {
+            line,
+            chronology_type: chronologyAtLine(sceneForChronology.chronology_type, segments, line),
+            in_branch_option: resolveBranchOption(optionRanges, line, line).option,
+          }
+        : {}),
+      resolved_in_same_scene_to: resolvedWithContext(u.resolved_in_same_scene_to),
+    };
+  });
+
+  const descriptorSpeakers = attachItemIds(cleanScene.descriptor_speakers, 'dsp').map((d) => ({
+    ...d,
+    resolved_in_same_scene_to: resolvedWithContext(d.resolved_in_same_scene_to),
   }));
 
   const choiceBranches = attachItemIds(cleanScene.choice_branches, 'chb').map((cb) => ({
@@ -62,14 +126,13 @@ export const enrichSceneFromManifest = (rawScene, manifestScene) => {
     })),
   }));
 
-  const eventsAndClaims = attachItemIds(cleanScene.events_and_claims, 'eac').map((ev) => ({
-    item_id: ev.item_id,
-    epistemic_type: ev.epistemic_type,
-    chronology_type: ev.chronology_type,
-    confidence: ev.confidence ?? null,
-    ...ev,
-    confidence: ev.confidence ?? null,
-  }));
+  const eventsAndClaims = attachEvidence(cleanScene.events_and_claims, 'eac').map((ev) =>
+    withClaimantUnknownId({ ...ev, confidence: ev.confidence ?? null }, 'actor_or_speaker')
+  );
+
+  const relationshipNotes = attachEvidence(cleanScene.relationship_and_lore_notes, 'rln').map((rel) =>
+    withClaimantUnknownId(rel, 'claimant')
+  );
 
   return {
     scene_id: sid,
@@ -80,22 +143,48 @@ export const enrichSceneFromManifest = (rawScene, manifestScene) => {
     route: manifestScene.route,
     mechanical_validated: true,
     chronology_type: cleanScene.chronology_type,
+    chronology_segments: segments,
     is_plot_critical: cleanScene.is_plot_critical,
     summary: cleanScene.summary,
     participants,
-    forms_of_address: attachItemIds(cleanScene.forms_of_address, 'foa'),
+    forms_of_address: attachEvidence(cleanScene.forms_of_address, 'foa'),
     unknown_speakers: unknownSpeakers,
+    descriptor_speakers: descriptorSpeakers,
     same_scene_speaker_groups: attachItemIds(cleanScene.same_scene_speaker_groups, 'ssg'),
     cross_scene_hints: attachItemIds(cleanScene.cross_scene_hints, 'csh'),
     choice_branches: choiceBranches,
     events_and_claims: eventsAndClaims,
-    clues_and_hooks: attachItemIds(cleanScene.clues_and_hooks, 'clh'),
-    relationship_and_lore_notes: attachItemIds(cleanScene.relationship_and_lore_notes, 'rln'),
+    clues_and_hooks: attachEvidence(cleanScene.clues_and_hooks, 'clh'),
+    relationship_and_lore_notes: relationshipNotes,
     unregistered_entity_candidates: attachItemIds(
       cleanScene.unregistered_entity_candidates,
       'uec'
     ),
   };
+};
+
+/**
+ * 배치 안 장면 위치(앞·중간·뒤 3등분)별 events_and_claims 밀도를 계산한다 (2.3의 20항).
+ * 밀도는 대사 100줄당 항목 수다.
+ */
+export const computeBatchDensity = (shardScenes, batchInput) => {
+  const gtById = new Map((batchInput?.scenes ?? []).map((s) => [s.scene_id, s]));
+  const thirds = [
+    { position: 'front', events: 0, dialogue_lines: 0 },
+    { position: 'middle', events: 0, dialogue_lines: 0 },
+    { position: 'back', events: 0, dialogue_lines: 0 },
+  ];
+  const n = shardScenes.length;
+  shardScenes.forEach((scene, idx) => {
+    const third = thirds[Math.min(2, Math.floor((idx * 3) / Math.max(1, n)))];
+    const lineSpeaker = gtById.get(scene.scene_id)?.mechanical_ground_truth?.line_speaker ?? {};
+    third.events += Array.isArray(scene.events_and_claims) ? scene.events_and_claims.length : 0;
+    third.dialogue_lines += Object.keys(lineSpeaker).length;
+  });
+  return thirds.map((t) => ({
+    ...t,
+    events_per_100_lines: t.dialogue_lines > 0 ? Math.round((t.events / t.dialogue_lines) * 1000) / 10 : null,
+  }));
 };
 
 /**
@@ -119,6 +208,8 @@ export const buildPass1IndexAndCandidates = (enrichedScenes, metadata = {}) => {
   };
 
   const unknownSpeakersIndex = [];
+  const descriptorSpeakersIndex = [];
+  const relationshipsByEntity = {};
   const formsOfAddressIndex = {};
   const clueKeywordsIndex = {};
   const clueCategoriesIndex = {};
@@ -198,12 +289,60 @@ export const buildPass1IndexAndCandidates = (enrichedScenes, metadata = {}) => {
         title_id: tid,
         category: cat,
         item_id: unk.item_id,
+        line: unk.line ?? null,
+        chronology_type: unk.chronology_type ?? null,
+        in_branch_option: unk.in_branch_option ?? null,
         quote: unk.quote,
         speaking_style: unk.speaking_style,
         target_addressed: unk.target_addressed,
         contextual_clues: unk.contextual_clues,
         resolved_in_same_scene_to: unk.resolved_in_same_scene_to,
       });
+    }
+
+    // 2-1. 묘사형 화자 역색인 (3절 3항)
+    for (const dsp of scene.descriptor_speakers ?? []) {
+      descriptorSpeakersIndex.push({
+        speaker_label: dsp.speaker_label,
+        scene_id: sid,
+        title_id: tid,
+        category: cat,
+        item_id: dsp.item_id,
+        line_start: dsp.line_start,
+        line_end: dsp.line_end,
+        quote: dsp.quote,
+        speaking_style: dsp.speaking_style,
+        target_addressed: dsp.target_addressed,
+        contextual_clues: dsp.contextual_clues,
+        resolved_in_same_scene_to: dsp.resolved_in_same_scene_to,
+      });
+    }
+
+    // 2-2. 관계 메모 역색인: subject와 target 양쪽 표기로 찾을 수 있게 한다 (3절 9항)
+    for (const rel of scene.relationship_and_lore_notes ?? []) {
+      const entry = {
+        scene_id: sid,
+        title_id: tid,
+        category: cat,
+        item_id: rel.item_id,
+        subject: rel.subject,
+        target: rel.target,
+        relation_or_change: rel.relation_or_change,
+        epistemic_type: rel.epistemic_type,
+        claimant: rel.claimant ?? null,
+        claimant_unknown_id: rel.claimant_unknown_id ?? null,
+        chronology_type: rel.chronology_type ?? null,
+        in_branch_option: rel.in_branch_option ?? null,
+        refers_to_past: rel.refers_to_past,
+        line_start: rel.line_start,
+        line_end: rel.line_end,
+        quote: rel.quote,
+      };
+      for (const surface of new Set([rel.subject, rel.target])) {
+        const key = String(surface).normalize('NFKC').trim();
+        if (!relationshipsByEntity[key]) relationshipsByEntity[key] = [];
+        relationshipsByEntity[key].push(entry);
+      }
     }
 
     // 3. 호칭(forms_of_address) 역색인
@@ -220,6 +359,8 @@ export const buildPass1IndexAndCandidates = (enrichedScenes, metadata = {}) => {
         from_speaker: fa.from_speaker,
         to_target: fa.to_target,
         address_term: fa.address_term,
+        chronology_type: fa.chronology_type ?? null,
+        in_branch_option: fa.in_branch_option ?? null,
         line_start: fa.line_start,
         line_end: fa.line_end,
         quote: fa.quote,
@@ -239,7 +380,10 @@ export const buildPass1IndexAndCandidates = (enrichedScenes, metadata = {}) => {
         item_id: clue.item_id,
         keyword: clue.keyword,
         clue_category: clue.category,
+        subject: clue.subject ?? null,
         detail: clue.detail,
+        chronology_type: clue.chronology_type ?? null,
+        in_branch_option: clue.in_branch_option ?? null,
         line_start: clue.line_start,
         line_end: clue.line_end,
         quote: clue.quote,
@@ -276,7 +420,7 @@ export const buildPass1IndexAndCandidates = (enrichedScenes, metadata = {}) => {
   }
 
   const pass1IndexDoc = {
-    schema_version: '1.2.0',
+    schema_version: PASS1_SCHEMA_VERSION,
     generated_at: new Date().toISOString(),
     is_pilot: Boolean(metadata.isPilot),
     merged_batches_count: metadata.mergedBatchIds?.length ?? 0,
@@ -284,13 +428,15 @@ export const buildPass1IndexAndCandidates = (enrichedScenes, metadata = {}) => {
     merged_scenes_count: enrichedScenes.length,
     entities: byEntity,
     unknown_speakers: unknownSpeakersIndex,
+    descriptor_speakers: descriptorSpeakersIndex,
+    relationships_by_entity: relationshipsByEntity,
     forms_of_address: formsOfAddressIndex,
     clues_by_keyword: clueKeywordsIndex,
     clues_by_category: clueCategoriesIndex,
   };
 
   const unregisteredCandidatesDoc = {
-    schema_version: '1.2.0',
+    schema_version: PASS1_SCHEMA_VERSION,
     generated_at: new Date().toISOString(),
     is_pilot: Boolean(metadata.isPilot),
     total_candidates: unregisteredAggMap.size,
@@ -335,6 +481,9 @@ export const mergeValidatedShards = async (options = {}) => {
   const enrichedScenes = [];
   const mergedBatchIds = [];
   const skippedBatches = [];
+  const densityByBatch = {};
+  const densityWarnings = [];
+  const mergedSceneRecords = [];
 
   for (const fileName of shardFiles) {
     const shardPath = path.join(shardsDir, fileName);
@@ -364,13 +513,26 @@ export const mergeValidatedShards = async (options = {}) => {
     }
 
     mergedBatchIds.push(batchId);
+    densityByBatch[batchId] = computeBatchDensity(shardData.scenes, batchInput);
+    densityWarnings.push(
+      ...validation.warnings.filter((w) => w.rule === 'DENSITY').map((w) => ({ batch_id: batchId, ...w }))
+    );
 
+    const gtById = new Map((batchInput.scenes ?? []).map((s) => [s.scene_id, s]));
     for (const rawScene of shardData.scenes) {
       const mScene = manifestScenes[rawScene.scene_id];
       if (!mScene) {
         throw new Error(`Scene "${rawScene.scene_id}" in shard "${batchId}" not found in manifest.json`);
       }
-      enrichedScenes.push(enrichSceneFromManifest(rawScene, mScene));
+      const gtScene = gtById.get(rawScene.scene_id);
+      enrichedScenes.push(enrichSceneFromManifest(rawScene, mScene, gtScene?.mechanical_ground_truth ?? null));
+      mergedSceneRecords.push({
+        scene_id: rawScene.scene_id,
+        batch_id: batchId,
+        source_sha256: mScene.source_sha256,
+        extraction_schema_version: shardData.schema_version,
+        descriptor_labels: descriptorLabelsOf(gtScene?.mechanical_ground_truth ?? mScene.mechanical_ground_truth),
+      });
     }
   }
 
@@ -400,7 +562,7 @@ export const mergeValidatedShards = async (options = {}) => {
       source_file: titleScenes[0]?.source_file ?? null,
     };
     const titleViewDoc = {
-      schema_version: '1.2.0',
+      schema_version: PASS1_SCHEMA_VERSION,
       generated_at: new Date().toISOString(),
       title_id: titleId,
       category: titleMeta.category,
@@ -429,13 +591,32 @@ export const mergeValidatedShards = async (options = {}) => {
   await writeJsonAtomic(pass1IndexPath, pass1IndexDoc);
   await writeJsonAtomic(unregisteredPath, unregisteredCandidatesDoc);
 
-  // progress.json 원자적 갱신
-  const progressPath = path.join(graphDir, 'progress.json');
-  let progressDoc = {
-    schema_version: '1.2.0',
-    updated_at: new Date().toISOString(),
-    batches: {},
+  // 밀도 보고 (2.3의 20항)
+  const densityReportPath = path.join(targetBaseDir, 'pass1_density_report.json');
+  const densityTotals = ['front', 'middle', 'back'].map((position) => {
+    const parts = Object.values(densityByBatch).map((thirds) => thirds.find((t) => t.position === position));
+    const events = parts.reduce((acc, t) => acc + t.events, 0);
+    const lines = parts.reduce((acc, t) => acc + t.dialogue_lines, 0);
+    return {
+      position,
+      events,
+      dialogue_lines: lines,
+      events_per_100_lines: lines > 0 ? Math.round((events / lines) * 1000) / 10 : null,
+    };
+  });
+  const densityReportDoc = {
+    schema_version: PASS1_SCHEMA_VERSION,
+    generated_at: new Date().toISOString(),
+    is_pilot: isPilot,
+    totals_by_position: densityTotals,
+    by_batch: densityByBatch,
+    empty_event_warnings: densityWarnings,
   };
+  await writeJsonAtomic(densityReportPath, densityReportDoc);
+
+  // progress.json 원자적 갱신: 배치 요약 + 본 실행은 장면 단위 (8절 1단계)
+  const progressPath = path.join(graphDir, 'progress.json');
+  let progressDoc = emptyProgressDoc();
   if (fsSync.existsSync(progressPath)) {
     try {
       progressDoc = JSON.parse(await fs.readFile(progressPath, 'utf8'));
@@ -443,22 +624,32 @@ export const mergeValidatedShards = async (options = {}) => {
       // fallback
     }
   }
+  progressDoc.batches = progressDoc.batches ?? {};
+  progressDoc.scenes = progressDoc.scenes ?? {};
 
   const nowIso = new Date().toISOString();
   for (const batchId of mergedBatchIds) {
-    if (progressDoc.batches?.[batchId]) {
-      progressDoc.batches[batchId].status = 'merged';
-      progressDoc.batches[batchId].updated_at = nowIso;
-    } else {
-      progressDoc.batches[batchId] = {
-        batch_id: batchId,
-        is_pilot: isPilot,
-        status: 'merged',
+    progressDoc.batches[batchId] = {
+      batch_id: batchId,
+      is_pilot: isPilot,
+      retries: 0,
+      ...progressDoc.batches[batchId],
+      status: 'merged',
+      updated_at: nowIso,
+    };
+  }
+  if (!isPilot) {
+    for (const record of mergedSceneRecords) {
+      progressDoc.scenes[record.scene_id] = {
         retries: 0,
+        ...progressDoc.scenes[record.scene_id],
+        ...record,
+        status: 'merged',
         updated_at: nowIso,
       };
     }
   }
+  progressDoc.schema_version = PASS1_SCHEMA_VERSION;
   progressDoc.updated_at = nowIso;
   await writeJsonAtomic(progressPath, progressDoc);
 
@@ -469,9 +660,11 @@ export const mergeValidatedShards = async (options = {}) => {
     mergedScenesCount: enrichedScenes.length,
     pass1IndexPath,
     unregisteredPath,
+    densityReportPath,
     writtenTitleViewPaths,
     pass1IndexDoc,
     unregisteredCandidatesDoc,
+    densityReportDoc,
   };
 };
 

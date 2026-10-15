@@ -14,6 +14,9 @@ export const GENERATED_DIR = path.join(ROOT_DIR, '.generated-search-assets');
 export const SCRIPTS_ROOT_DIR = path.join(ROOT_DIR, 'public', 'scripts');
 export const GRAPH_DATA_DIR = path.join(ROOT_DIR, 'data', 'graph');
 
+// Pass 1 샤드·배치 입력·병합 산출물의 스키마 버전 (4절)
+export const PASS1_SCHEMA_VERSION = '1.3.0';
+
 export const CATEGORY_NAMES = {
   main_story: '메인 스토리',
   event_stories: '이벤트 스토리',
@@ -628,6 +631,8 @@ export const extractSceneMechanicalGroundTruth = (scene, options = {}) => {
       sources: [...entry.sources],
       dialogue_line_count: entry.line_count,
       first_line: entry.first_line,
+      // 1.6: 묘사형 화자는 descriptor_speakers 작성 대상이다 (2.3의 4항)
+      is_descriptor_alias: lookup?.role_category === 'descriptor_alias',
       ...(lookup
         ? {
             suggested_entity_id: lookup.entity_id,
@@ -652,6 +657,109 @@ export const extractSceneMechanicalGroundTruth = (scene, options = {}) => {
     },
     line_speaker: lineSpeaker,
   };
+};
+
+/**
+ * 장면의 묘사형 화자 라벨 목록 (정렬). 장면 재사용 기준의 일부다 (8절 1단계).
+ */
+export const descriptorLabelsOf = (mgt) =>
+  (mgt?.speakers ?? [])
+    .filter((s) => s && typeof s === 'object' && s.is_descriptor_alias === true)
+    .map((s) => s.speaker_label)
+    .sort();
+
+/**
+ * progress.json 기본 형태: 배치 요약(batches)과 본 실행 장면 단위 상태(scenes) (6절, 8절 1단계).
+ */
+export const emptyProgressDoc = () => ({
+  schema_version: PASS1_SCHEMA_VERSION,
+  updated_at: new Date().toISOString(),
+  scenes: {},
+  batches: {},
+});
+
+/**
+ * 장면을 다시 추출하지 않아도 되는지 판정한다 (8절 1단계):
+ * 본문 해시, 추출 스키마 버전, 묘사형 화자 라벨 목록이 모두 같고 이미 병합된 장면만 재사용한다.
+ */
+export const isSceneReusable = (progressEntry, scene) =>
+  Boolean(progressEntry) &&
+  progressEntry.status === 'merged' &&
+  progressEntry.source_sha256 === scene.source_sha256 &&
+  progressEntry.extraction_schema_version === PASS1_SCHEMA_VERSION &&
+  JSON.stringify(progressEntry.descriptor_labels ?? []) ===
+    JSON.stringify(descriptorLabelsOf(scene.mechanical_ground_truth));
+
+/**
+ * line_speaker 맵에서 줄 번호의 화자를 읽는다 (JSON 키는 문자열, 메모리 객체는 숫자일 수 있음).
+ */
+export const lineSpeakerAt = (mgt, line) => {
+  const map = mgt?.line_speaker ?? {};
+  return map[String(line)] ?? map[line] ?? null;
+};
+
+/**
+ * is_branching 선택지 블록의 옵션 범위 목록 (2.3의 12항: [OPTION TEXT] 줄부터 [OPTION_END] 줄까지).
+ */
+export const getBranchingOptionRanges = (mgt) => {
+  const ranges = [];
+  for (const block of mgt?.choices?.choice_blocks ?? []) {
+    if (!block.is_branching) continue;
+    for (const opt of block.options ?? []) {
+      const start = opt.line;
+      const end = opt.end_line ?? block.end_line ?? start;
+      ranges.push({ choice_line: block.choice_line, option_text: opt.option_text, start, end });
+    }
+  }
+  return ranges;
+};
+
+const rangeContains = (outer, inner) => outer.start <= inner.start && inner.end <= outer.end;
+
+/**
+ * 줄 범위가 닿는 분기 옵션을 판정한다 (2.3의 12항, 3절 4항).
+ * - 서로 겹치지 않는 옵션 둘 이상에 닿으면 ok: false (양립할 수 없는 갈래)
+ * - 중첩 선택지처럼 한 옵션이 다른 옵션을 감싸면 가장 안쪽 옵션 소속
+ * - 옵션 하나와 공통 줄에 걸치면 그 옵션 소속
+ */
+export const resolveBranchOption = (optionRanges, lineStart, lineEnd) => {
+  const touched = optionRanges.filter((r) => lineStart <= r.end && lineEnd >= r.start);
+  for (let i = 0; i < touched.length; i++) {
+    for (let j = i + 1; j < touched.length; j++) {
+      if (!rangeContains(touched[i], touched[j]) && !rangeContains(touched[j], touched[i])) {
+        return { ok: false, option: null, touched };
+      }
+    }
+  }
+  if (touched.length === 0) {
+    return { ok: true, option: null, touched };
+  }
+  const innermost = touched.reduce((best, r) => (r.end - r.start < best.end - best.start ? r : best));
+  return {
+    ok: true,
+    option: { choice_line: innermost.choice_line, option_text: innermost.option_text },
+    touched,
+  };
+};
+
+/**
+ * 장면 시점과 chronology_segments로 한 줄의 연출 시점을 구한다 (3절 2항: 구간 밖은 present).
+ */
+export const chronologyAtLine = (sceneChronology, segments, line) => {
+  if (sceneChronology !== 'mixed') return sceneChronology;
+  const seg = (segments ?? []).find((s) => line >= s.line_start && line <= s.line_end);
+  return seg ? seg.chronology_type : 'present';
+};
+
+/**
+ * 줄 범위 안에 나타나는 연출 시점 집합 (2.3의 13항 경계 검사용).
+ */
+export const chronologiesInRange = (sceneChronology, segments, lineStart, lineEnd) => {
+  const found = new Set();
+  for (let line = lineStart; line <= lineEnd; line++) {
+    found.add(chronologyAtLine(sceneChronology, segments, line));
+  }
+  return found;
 };
 
 /**
