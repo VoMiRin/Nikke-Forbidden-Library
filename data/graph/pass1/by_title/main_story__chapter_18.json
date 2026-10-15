@@ -1,12 +1,3933 @@
 {
   "schema_version": "1.2.0",
-  "generated_at": "2026-10-14T16:00:12.808Z",
+  "generated_at": "2026-10-15T02:51:20.484Z",
   "title_id": "main_story__chapter_18",
   "category": "main_story",
   "title": "Chapter.18: 영웅",
   "source_file": "public/scripts/main_story/chapter_18.txt",
-  "scene_count": 3,
+  "scene_count": 20,
   "scenes": [
+    {
+      "scene_id": "main_18_00",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "48266c1a9541ae44ca3f1b71148bd9276c33640b6e65025b3f9329e213a1edc6",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "mixed",
+      "is_plot_critical": true,
+      "summary": "방주 인근에 랩쳐가 출현해 긴급 경보가 울리고 시민들이 피난소로 대피하는 가운데, 슈엔은 자신의 히어로들이 랩쳐를 막아내고 있다는 생방송을 시작한다. 24시간 전 지상에서 메티스와 카운터스, 지휘관은 슈엔이 알려준 방어벽 연구소를 향해 출발했고, 카운터스는 슈엔과의 마찰을 피하기 위해 후방 지원을 맡아 거리를 두고 따라가기로 했다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_00__pis_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_002",
+            "speaker_label": "리안",
+            "entity_id": "char_리안",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_003",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_004",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_005",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_006",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_007",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_008",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_00__pis_009",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_18_00__rvo_001",
+            "speaker_label": "안내 방송",
+            "entity_id": null,
+            "medium": "other",
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "[긴급 경보. 긴급 경보.] [중앙 정부에서 알려드립니다.] [방주 인근에 랩쳐 출현. 시민 여러분들께서는 모두 지정된 피난소로 이동해 주십시오.]"
+          },
+          {
+            "item_id": "main_18_00__rvo_002",
+            "speaker_label": "TV 소리",
+            "entity_id": null,
+            "medium": "other",
+            "line_start": 12,
+            "line_end": 12,
+            "quote": "[거리를 가득 메웠던 시위 행렬도 아늑한 일상을 즐기던 시민들도 모두.]"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_00__mnt_001",
+            "surface_text": "중앙 정부",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "[중앙 정부에서 알려드립니다.]"
+          },
+          {
+            "item_id": "main_18_00__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "[방주 인근에 랩쳐 출현. 시민 여러분들께서는 모두 지정된 피난소로 이동해 주십시오.]"
+          },
+          {
+            "item_id": "main_18_00__mnt_003",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "[방주 인근에 랩쳐 출현. 시민 여러분들께서는 모두 지정된 피난소로 이동해 주십시오.]"
+          },
+          {
+            "item_id": "main_18_00__mnt_004",
+            "surface_text": "카운터스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 82,
+            "line_end": 82,
+            "quote": "카운터스 일행이 후방으로 떠나갔다."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_00__foa_001",
+          "from_speaker": "리안",
+          "to_target": "슈엔",
+          "address_term": "사장님",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "사장님."
+        },
+        {
+          "item_id": "main_18_00__foa_002",
+          "from_speaker": "리안",
+          "to_target": "슈엔",
+          "address_term": "꼬맹이",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "이 꼬맹이는 귀가 먹었나···?"
+        },
+        {
+          "item_id": "main_18_00__foa_003",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 67,
+          "line_end": 67,
+          "quote": "지휘관, 저희는 거리를 두고 따라가는 게 좋을 거 같습니다."
+        },
+        {
+          "item_id": "main_18_00__foa_004",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "이따 봐, 지휘관님."
+        },
+        {
+          "item_id": "main_18_00__foa_005",
+          "from_speaker": "네온",
+          "to_target": "지휘관",
+          "address_term": "스승님",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "이따 봐요, 스승님!"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_00__csh_001",
+          "text": "장면 전반부의 방주 긴급 경보 및 슈엔의 생방송은 24시간 전 회상 이후 main_18_12~main_18_13의 스톰 브링어 전투 및 추가 랩쳐 출현 시점과 이어진다.",
+          "related_scene_ids": [
+            "main_18_12",
+            "main_18_13"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_00__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "슈엔, 리안",
+          "summary": "방주 인근에 랩쳐가 출현해 긴급 경보가 울리고 시민들이 피난소로 대피하는 가운데, 슈엔은 리안의 만류를 물리치고 맥스웰 쪽이 띄운 촬영용 드론과 방송국을 연결해 자신의 히어로들이 랩쳐를 막아내고 있다는 생방송을 시작한다.",
+          "line_start": 3,
+          "line_end": 41,
+          "quote": "[방주 인근에 랩쳐 출현. 시민 여러분들께서는 모두 지정된 피난소로 이동해 주십시오.]",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_00__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "flashback",
+          "confidence": null,
+          "actor_or_speaker": "슈엔, 라플라스, 맥스웰",
+          "summary": "24시간 전 지상에서 메티스가 방주에 새로운 방어벽을 생성해 히어로로 복귀한다는 명분으로 출발하고, 슈엔은 통신으로 연구소 앞에 도착하면 연락하라고 지시한다.",
+          "line_start": 42,
+          "line_end": 56,
+          "quote": "물론이다! 방주에 새로운 방어벽을 생성하고 자랑스럽게 히어로로 복귀하는 것 아닌가!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_00__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "flashback",
+          "confidence": null,
+          "actor_or_speaker": "라피, 아니스, 맥스웰",
+          "summary": "카운터스는 슈엔에 대한 불쾌감을 숨기지 못하는 아니스 때문에 괜한 분란이 일지 않도록 후방 지원을 맡아 거리를 두고 따라가기로 하며, 맥스웰은 지휘관과 카운터스, 슈엔 사이에 무슨 일이 있었는지 의아해한다.",
+          "line_start": 67,
+          "line_end": 90,
+          "quote": "지휘관, 저희는 거리를 두고 따라가는 게 좋을 거 같습니다. 슈엔이 말했던 대로 후방 지원도 해야 되고···.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_00__clh_001",
+          "keyword": "리안의 우려와 라플라스의 상태",
+          "category": "foreshadowing",
+          "detail": "생방송 직전 리안이 슈엔에게 라플라스 때문에 정말 괜찮겠냐며 그만두기를 권유해 라플라스에게 이상이 있음을 암시함.",
+          "line_start": 23,
+          "line_end": 27,
+          "quote": "괜찮으시겠습니까? 라플라스가···."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_00__rln_001",
+          "subject": "아니스",
+          "target": "슈엔",
+          "relation_or_change": "슈엔과의 통신이 끊어진 직후 이제는 얼굴만 봐도 짜증이 난다며 강한 반감을 드러냄.",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "아··· 이젠 얼굴만 봐도 짜증 나."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_00__uec_001",
+          "surface_text": "중앙 정부",
+          "suggested_type": "organization",
+          "line_start": 4
+        },
+        {
+          "item_id": "main_18_00__uec_002",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 5
+        },
+        {
+          "item_id": "main_18_00__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 5
+        },
+        {
+          "item_id": "main_18_00__uec_004",
+          "surface_text": "카운터스",
+          "suggested_type": "squad",
+          "line_start": 82
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_01",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "136e7688aef62409d513dcd76872989ed2122d52eac97b73ce4819326f1f41da",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "오랜만에 지상에 올라온 라플라스는 속이 울렁거리는 증상을 느끼지만 설렘을 먹어서 그렇다며 넘긴다. 맥스웰은 평소답지 않게 기운 없이 대답하는 지휘관의 태도를 보고 무언가 숨기는 일이 있음을 직감한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_01__pis_001",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_01__pis_002",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_01__pis_003",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_01__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_01__foa_001",
+          "from_speaker": "드레이크",
+          "to_target": "라플라스",
+          "address_term": "네놈",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "네놈, 우리 몰래 뭘 먹고 올라온 거냐!"
+        },
+        {
+          "item_id": "main_18_01__foa_002",
+          "from_speaker": "맥스웰",
+          "to_target": "지휘관",
+          "address_term": "베이비",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "베이비도 괜찮지?"
+        },
+        {
+          "item_id": "main_18_01__foa_003",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "왜 그렇게 기운 없게 대답하는가, 버드 보이!"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_01__csh_001",
+          "text": "라플라스가 호소하는 속 울렁거림은 main_18_05에서 NIMPH 제거 후 침식 당시의 상처가 트라우마로 발현된 증상임이 밝혀진다.",
+          "related_scene_ids": [
+            "main_18_02",
+            "main_18_04",
+            "main_18_05"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_01__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 맥스웰, 드레이크",
+          "summary": "지상에 올라온 라플라스가 속이 울렁거린다고 말하다가, 드레이크의 말에 복귀가 기대돼 설렘을 가득 먹어 속이 술렁거리는 것이라고 둘러댄다.",
+          "line_start": 7,
+          "line_end": 19,
+          "quote": "아, 아니다! 그냥, 속이 좀 울렁거려서.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_01__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰, 지휘관",
+          "summary": "맥스웰은 기운 없이 대답하는 지휘관의 모습을 보고 아직 무엇인지는 몰라도 무언가 숨기는 일이 있다고 확신한다.",
+          "line_start": 22,
+          "line_end": 37,
+          "quote": "흐응~ 뭔가가 있는 건 확실하네. ···뭔지는 아직은 모르겠지만.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_01__clh_001",
+          "keyword": "라플라스의 속 울렁거림",
+          "category": "foreshadowing",
+          "detail": "지상에 올라온 라플라스가 원인을 알 수 없는 속 울렁거림을 느끼기 시작함.",
+          "line_start": 11,
+          "line_end": 14,
+          "quote": "왜 그래. 무슨 문제 있어? 아, 아니다! 그냥, 속이 좀 울렁거려서."
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_01__uec_001",
+          "surface_text": "베이비",
+          "suggested_type": "alias",
+          "line_start": 22
+        },
+        {
+          "item_id": "main_18_01__uec_002",
+          "surface_text": "버드 보이",
+          "suggested_type": "alias",
+          "line_start": 27
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_02",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "f9a6e8cd7a27d143b52d095b0a06f5c96a2b83c7ed7b6e74133fa46e8c216ece",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "라플라스는 바닥이 심하게 울렁거린다며 구역질을 하면서도 설렘을 덜어내는 것이라 넘기고, 이번 작전이 끝나면 더 이상 범죄자처럼 숨지 않고 니케의 본질대로 히어로로서 살아갈 수 있다며 기뻐한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_02__pis_001",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_02__pis_002",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_02__pis_003",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_02__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_02__mnt_001",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 21,
+            "line_end": 21,
+            "quote": "역시 지상은 좋군. 다시 니케로 살아가게 된 느낌이야."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_02__foa_001",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "기쁘지 않나, 버드 보이!"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_02__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 드레이크",
+          "summary": "라플라스는 아까보다 속이 더 울렁거리고 바닥이 흔들리는 것 같다며 드레이크의 부추김에 설렘을 덜어낸다고 구역질을 한다.",
+          "line_start": 2,
+          "line_end": 13,
+          "quote": "속이 아까 전보다··· 흠. 바닥이 심하게 울렁거리는 것 같은데···.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_02__eac_002",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스는 이 일만 끝나면 더 이상 범죄자들처럼 숨어 있지 않고 니케의 본질대로 히어로로서 당당히 살아갈 수 있다며 들떠 한다.",
+          "line_start": 21,
+          "line_end": 24,
+          "quote": "이 일만 끝나면, 다시 이게 당연한 일상이 되겠지. 다시 히어로로 당당히 설 수 있어. 더 이상 범죄자들처럼 숨어있지 않아도 된다는 거다!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_02__clh_001",
+          "keyword": "바닥이 울렁거리는 증상",
+          "category": "foreshadowing",
+          "detail": "라플라스가 단순한 속 울렁거림을 넘어 바닥이 심하게 울렁거린다는 착각을 겪으며 구토함.",
+          "line_start": 4,
+          "line_end": 5,
+          "quote": "속이 아까 전보다··· 흠. 바닥이 심하게 울렁거리는 것 같은데···."
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_02__uec_001",
+          "surface_text": "니케",
+          "suggested_type": "concept",
+          "line_start": 21
+        },
+        {
+          "item_id": "main_18_02__uec_002",
+          "surface_text": "버드 보이",
+          "suggested_type": "alias",
+          "line_start": 29
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_03",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "3aa2d2e06ded72ecd89b2655abe3b3a32cd7df938d020fb930afacce01167606",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "지나치게 낡고 으스스한 연구소 앞에 도착하자 슈엔은 카운터스가 안에서 입을 놀릴지 모른다며 연구소 진입을 금지하고 밖에서 대기하게 한다. 메티스와 지휘관이 안으로 들어간 뒤, 카운터스는 메티스가 자기 손으로 방주에 랩쳐를 불러들이게 될 상황을 알면서도 과열된 여론에서 메티스를 구할 다른 방법이 없어 고뇌한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_03__pis_001",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_03__pis_002",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_03__pis_003",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_03__pis_004",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_03__pis_005",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_03__pis_006",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_03__pis_007",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_18_03__rvo_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "medium": "comm",
+            "line_start": 13,
+            "line_end": 13,
+            "quote": "시끄럽고, 얼른 들어가기나 해."
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_03__mnt_001",
+            "surface_text": "메티스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 46,
+            "line_end": 46,
+            "quote": "메티스가 연구소 안으로 들어갔다."
+          },
+          {
+            "item_id": "main_18_03__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 50,
+            "line_end": 50,
+            "quote": "방주에 랩쳐를 불러들이게 되는 건데!"
+          },
+          {
+            "item_id": "main_18_03__mnt_003",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 50,
+            "line_end": 50,
+            "quote": "방주에 랩쳐를 불러들이게 되는 건데!"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_03__foa_001",
+          "from_speaker": "슈엔",
+          "to_target": "카운터스",
+          "address_term": "고철",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "고철이면 고철답게 얌전히,  이 앞이나 지키면서 기다리고 있어."
+        },
+        {
+          "item_id": "main_18_03__foa_002",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "지휘관. 조심히 다녀오십시오."
+        },
+        {
+          "item_id": "main_18_03__foa_003",
+          "from_speaker": "네온",
+          "to_target": "지휘관",
+          "address_term": "스승님",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "조심하세요. 스승님."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_03__csh_001",
+          "text": "드레이크가 농담처럼 말한 테러 장치가 있을 법한 곳이라는 발언과 아니스의 대사는 main_18_04에서 실제로 콜링 시그널 발생 장치임이 드러나는 것과 직결된다.",
+          "related_scene_ids": [
+            "main_18_04"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_03__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰, 드레이크",
+          "summary": "목적지인 연구소에 도착한 맥스웰은 새로운 방어벽을 만들었다기엔 지나치게 낡았다고 의아해하고, 드레이크는 방어벽 생성 장치가 아니라 꼭 테러 장치가 있을 법한 곳이라고 말한다.",
+          "line_start": 4,
+          "line_end": 9,
+          "quote": "방어벽 생성 장치가 아니라  꼭 테러 장치가 있을 법한 곳이군!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_03__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "슈엔, 라피",
+          "summary": "슈엔은 표정 관리도 못 하는 카운터스가 안에서 입을 어떻게 놀릴지 믿을 수 없다며 연구소 진입을 막고 밖에서 대기하도록 명령한다.",
+          "line_start": 15,
+          "line_end": 35,
+          "quote": "고철이면 고철답게 얌전히,  이 앞이나 지키면서 기다리고 있어. 우리 애들 일 망치려고 하지 말고.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_03__eac_003",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "아니스, 네온, 라피",
+          "summary": "메티스가 연구소 안으로 들어가자 아니스는 메티스가 자기 손으로 방주에 랩쳐를 불러들이게 된다며 괴로워하고, 라피는 이번 일을 망치면 슈엔을 진짜 적으로 돌리게 될뿐더러 과열된 여론으로부터 메티스를 구할 방법이 없다며 네온을 만류한다.",
+          "line_start": 46,
+          "line_end": 56,
+          "quote": "이번 일을 망쳤다간 슈엔을 진짜 적으로 돌리게 될 거야. 그리고···. 지금 저 과열된 여론으로부터,  메티스를 구할 방법이 없는 것도 사실이니까.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_03__clh_001",
+          "keyword": "위장된 방어벽 연구소",
+          "category": "location",
+          "detail": "슈엔이 메티스에게 새로운 방어벽 연구소라고 속여 데려온 낡은 시설로, 실제로는 방주에 랩쳐를 불러들이는 장치가 있는 곳.",
+          "line_start": 47,
+          "line_end": 50,
+          "quote": "저분들 괜찮을까요? 이 연구소가 뭔지 알게 되면···. 괜찮을 리 없잖아. 자기 손으로···. 방주에 랩쳐를 불러들이게 되는 건데!"
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_03__uec_001",
+          "surface_text": "메티스",
+          "suggested_type": "squad",
+          "line_start": 46
+        },
+        {
+          "item_id": "main_18_03__uec_002",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 50
+        },
+        {
+          "item_id": "main_18_03__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 50
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_04",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "7ca4d6a255ef12c7182cb92019f4ff9aba075464bb61a99d01ea8c0254a17b4f",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "슈엔의 지시로 촬영용 드론이 녹화를 시작하고 라플라스가 히어로의 부활을 선언하며 버튼을 누르자, 방주 쪽에서 랩쳐를 부르는 콜링 시그널이 울려 퍼진다. 자신이 방주에 랩쳐를 불러들였다는 충격과 함께 연구소 건물이 무너지자 라플라스는 과거 촉수에 찔렸던 침식 트라우마로 패닉에 빠져 주저앉고, 드레이크가 라플라스를 업고 탈출한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_04__pis_001",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_04__pis_002",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_04__pis_003",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_04__pis_004",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_18_04__rvo_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "medium": "comm",
+            "line_start": 5,
+            "line_end": 6,
+            "quote": "앞에 버튼 보이지? 다른 거 만지지 말고, 그것만 누르면 돼."
+          },
+          {
+            "item_id": "main_18_04__rvo_002",
+            "speaker_label": "시프티",
+            "entity_id": "char_시프티",
+            "medium": "comm",
+            "line_start": 96,
+            "line_end": 96,
+            "quote": "지, 지면 불안정! 곧 무너집니다!"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_04__mnt_001",
+            "surface_text": "기억 소거",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 23,
+            "line_end": 23,
+            "quote": "더 이상 기억 소거를 당할까 봐 걱정하지 않아도 된다는 것."
+          },
+          {
+            "item_id": "main_18_04__mnt_002",
+            "surface_text": "메티스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 44,
+            "line_end": 44,
+            "quote": "이것 말고는 정말로 메티스를 구할 방법이 없는 것인가?"
+          },
+          {
+            "item_id": "main_18_04__mnt_003",
+            "surface_text": "콜링 시그널",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 70,
+            "line_end": 70,
+            "quote": "이 타이밍 뭐야?  왜, 버튼을 누르자마자 콜링 시그널이···!"
+          },
+          {
+            "item_id": "main_18_04__mnt_004",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 71,
+            "line_end": 71,
+            "quote": "이 방향은··· 방주 쪽에서 들려오고 있다!"
+          },
+          {
+            "item_id": "main_18_04__mnt_005",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 79,
+            "line_end": 79,
+            "quote": "내가 지금··· 이 손으로 방주에 랩쳐를 불러들였다는 건가?"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_04__foa_001",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "하지만 슈엔의 믿음과  버드 보이의 도움으로!"
+        },
+        {
+          "item_id": "main_18_04__foa_002",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "음? 버드 보이?"
+        },
+        {
+          "item_id": "main_18_04__foa_003",
+          "from_speaker": "맥스웰",
+          "to_target": "지휘관",
+          "address_term": "베이비",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "베이비, 왜 그래. 어디 아파?"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_04__csh_001",
+          "text": "이 장면에서 슈엔이 음성 없이 녹화하게 한 드론 영상은 main_18_07에서 작전 실패 시 지휘관에게 모든 죄를 뒤집어씌우기 위한 협박 수단으로 쓰인다.",
+          "related_scene_ids": [
+            "main_18_07"
+          ]
+        }
+      ],
+      "choice_branches": [
+        {
+          "item_id": "main_18_04__chb_001",
+          "choice_line": 47,
+          "options": [
+            {
+              "item_id": "main_18_04__chb_001_opt_01",
+              "option_text": "라플라스를 막는다.",
+              "continuation_summary": "지휘관이 달려가 라플라스의 손을 잡아채지만, 라플라스의 반대편 손이 버튼을 누른다.",
+              "branch_specific_facts": [
+                "지휘관이 버튼을 누르려는 라플라스의 한쪽 손을 잡아채며 제지하려 시도함"
+              ]
+            },
+            {
+              "item_id": "main_18_04__chb_001_opt_02",
+              "option_text": "라플라스를 막지 않는다.",
+              "continuation_summary": "지휘관이 주먹을 꽉 쥐고 지켜보는 가운데 라플라스가 부활을 외치며 버튼을 누른다.",
+              "branch_specific_facts": [
+                "지휘관이 주먹을 꽉 쥔 채 라플라스가 버튼을 누르는 것을 막지 않음"
+              ]
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_04__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "슈엔, 맥스웰",
+          "summary": "슈엔은 시설을 테스트해보려는 맥스웰을 예민하게 제지하며 버튼만 누르라고 지시하고, 음성은 나가지 않고 영상만 녹화되는 촬영용 드론을 띄우게 한다.",
+          "line_start": 5,
+          "line_end": 29,
+          "quote": "앞에 버튼 보이지? 다른 거 만지지 말고, 그것만 누르면 돼.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_04__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 맥스웰, 드레이크",
+          "summary": "라플라스가 버튼을 누르자마자 방주 쪽에서 콜링 시그널이 울려 퍼지고, 맥스웰과 라플라스는 그 버튼이 방어벽 생성 버튼이 아니라 방주에 랩쳐를 불러들이는 콜링 시그널 발생 버튼이었음을 깨닫는다.",
+          "line_start": 66,
+          "line_end": 80,
+          "quote": "솔직히 말해. 방어벽 아니지. 이거 콜링 시그널 발생 버튼 맞지!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_04__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 시프티, 드레이크, 맥스웰",
+          "summary": "연구소 지면이 불안정해져 건물이 무너지자 라플라스는 과거 촉수에 찔렸던 부위가 마비되는 느낌과 함께 발밑에 촉수가 있다는 환각에 빠져 패닉을 일으키고, 드레이크가 라플라스를 들쳐 업고 건물을 탈출한다.",
+          "line_start": 86,
+          "line_end": 118,
+          "quote": "건물이··· 무너져서··· 발밑에··· 촉수가···!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_04__clh_001",
+          "keyword": "콜링 시그널 발생 버튼",
+          "category": "item",
+          "detail": "슈엔이 새로운 방어벽 생성 버튼이라고 속여 라플라스에게 누르게 한 장치로, 방주 쪽에서 콜링 시그널을 발생시켜 랩쳐를 유인함.",
+          "line_start": 70,
+          "line_end": 80,
+          "quote": "솔직히 말해. 방어벽 아니지. 이거 콜링 시그널 발생 버튼 맞지! 내가 지금··· 이 손으로 방주에 랩쳐를 불러들였다는 건가?"
+        },
+        {
+          "item_id": "main_18_04__clh_002",
+          "keyword": "음성 없는 드론 녹화",
+          "category": "foreshadowing",
+          "detail": "슈엔이 음성은 나가지 않고 영상만 녹화된다며 연구소 내부에서 촬영용 드론을 띄우게 함.",
+          "line_start": 12,
+          "line_end": 14,
+          "quote": "이제부터 촬영 시작할 거니까. 집중해. 저번에 말한 대로, 음성은 안 나가고 영상만 녹화될 거야."
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_04__uec_001",
+          "surface_text": "기억 소거",
+          "suggested_type": "concept",
+          "line_start": 23
+        },
+        {
+          "item_id": "main_18_04__uec_002",
+          "surface_text": "버드 보이",
+          "suggested_type": "alias",
+          "line_start": 34
+        },
+        {
+          "item_id": "main_18_04__uec_003",
+          "surface_text": "메티스",
+          "suggested_type": "squad",
+          "line_start": 44
+        },
+        {
+          "item_id": "main_18_04__uec_004",
+          "surface_text": "베이비",
+          "suggested_type": "alias",
+          "line_start": 61
+        },
+        {
+          "item_id": "main_18_04__uec_005",
+          "surface_text": "콜링 시그널",
+          "suggested_type": "concept",
+          "line_start": 70
+        },
+        {
+          "item_id": "main_18_04__uec_006",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 71
+        },
+        {
+          "item_id": "main_18_04__uec_007",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 79
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_05",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "24dfca0b68ad92873fe3fc8c06ea260b1e2930b5faa1fb542f380f1cb1bdb718",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "붕괴한 연구소에서 탈출한 뒤 슈엔은 몰려오는 랩쳐를 전부 막아내 메티스가 진짜 방어벽이자 히어로임을 증명하라고 다그친다. 라플라스는 자신의 울렁거림이 NIMPH 제거 부작용이라며 괜찮다고 우기지만, 맥스웰과 드레이크는 NIMPH가 사라져 공포를 강제로 마비시키지 못해 생긴 침식 트라우마라고 지적하고, 이를 부정하던 라플라스는 히어로임을 증명하겠다며 홀로 달려간다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_05__pis_001",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_05__pis_002",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_05__pis_003",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_05__pis_004",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_05__pis_005",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_05__pis_006",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_18_05__rvo_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "medium": "comm",
+            "line_start": 20,
+            "line_end": 20,
+            "quote": "어떻게 하긴 뭘 어떻게 해.  너희가 전부 잡아야지."
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_05__mnt_001",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 24,
+            "line_end": 24,
+            "quote": "그럼 방주에 피해도 없고."
+          },
+          {
+            "item_id": "main_18_05__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 25,
+            "line_end": 25,
+            "quote": "시민 단체니 뭐니 하면서 너희를 욕하던 것들은 오히려 랩쳐한테서 자기들을 구해줬다고."
+          },
+          {
+            "item_id": "main_18_05__mnt_003",
+            "surface_text": "NIMPH",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 65,
+            "line_end": 65,
+            "quote": "아무래도 이게 NIMPH를 제거한 부작용인 것 같은데. 나도 곧 괜찮아질 거다."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_05__foa_001",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "지휘관!"
+        },
+        {
+          "item_id": "main_18_05__foa_002",
+          "from_speaker": "맥스웰",
+          "to_target": "지휘관",
+          "address_term": "베이비",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "베이비, 너. 알고 있었지."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_05__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰은 지휘관이 여기까지 오는 내내 안 좋은 표정을 짓고 있었던 것을 지적하며 연구소의 진실을 미리 알고 있었음을 추궁한다.",
+          "line_start": 8,
+          "line_end": 14,
+          "quote": "베이비, 너. 알고 있었지.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_18_05__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "슈엔, 맥스웰",
+          "summary": "슈엔은 미리 진실을 말했으면 라플라스와 드레이크가 따르지 않았을 것이라며, 방주로 향하는 랩쳐를 전부 막아내 메티스가 진짜 새로운 방어벽이자 히어로라는 것을 증명하라고 지시한다.",
+          "line_start": 20,
+          "line_end": 38,
+          "quote": "이렇게 따질 시간 있으면 어서 가서 랩쳐나 잡아. 그리고 증명해 내, 너희가 히어로라는걸.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_05__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 드레이크, 맥스웰",
+          "summary": "주저앉은 라플라스는 자신의 울렁거림이 NIMPH 제거 부작용이라며 괜찮다고 주장하지만, 드레이크는 그런 부작용은 없다고 일축하고 맥스웰은 NIMPH의 강제 공포 마비가 사라져 과거 침식 당시의 상처가 트라우마로 나타난 것이라고 진단한다. 이를 인정하지 못한 라플라스는 자신이 히어로임을 증명하겠다며 홀로 달려 나간다.",
+          "line_start": 50,
+          "line_end": 93,
+          "quote": "그동안은 트라우마가 생겨도 NIMPH의 명령으로 강제로 공포를 마비시켰지만. 지금은 아니야. 지난 상처가 트라우마가 될 수도 있고 겁을 먹을 수 있다고.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_05__clh_001",
+          "keyword": "NIMPH의 공포 마비 기능과 트라우마",
+          "category": "lore_concept",
+          "detail": "니케에게 트라우마가 생겨도 NIMPH의 명령으로 강제로 공포를 마비시켜 왔으나, NIMPH가 제거된 상태에서는 과거의 상처가 트라우마와 공포로 발현될 수 있음.",
+          "line_start": 81,
+          "line_end": 84,
+          "quote": "우린 지금 NIMPH가 없잖아. 그동안은 트라우마가 생겨도 NIMPH의 명령으로 강제로 공포를 마비시켰지만. 지금은 아니야. 지난 상처가 트라우마가 될 수도 있고 겁을 먹을 수 있다고."
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_05__uec_001",
+          "surface_text": "베이비",
+          "suggested_type": "alias",
+          "line_start": 8
+        },
+        {
+          "item_id": "main_18_05__uec_002",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 24
+        },
+        {
+          "item_id": "main_18_05__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 25
+        },
+        {
+          "item_id": "main_18_05__uec_004",
+          "surface_text": "NIMPH",
+          "suggested_type": "concept",
+          "line_start": 65
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_06",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "6d1993e56be3049e23858846d87c439678559467a5ab5023ab3bc201b461f19b",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "홀로 랩쳐 무리와 마주친 라플라스는 극심한 침식 트라우마와 죽음의 공포에 휩싸여 손이 떨리고 변신 무장조차 전개되지 않는다. 패닉에 빠져 비명을 지르는 라플라스를 뒤따라온 드레이크가 구하며 전투에 돌입한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_06__pis_001",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_06__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_06__pis_003",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_06__mnt_001",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "라플라스가 랩쳐 무리가 보이는 곳에 멈춰 섰다."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_06__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "랩쳐 무리와 눈이 마주친 라플라스는 손이 바들바들 떨리는 공포 속에서 변신을 시도하지만 전류와 빛만 일었다가 사그라들며 무장이 전개되지 않는다.",
+          "line_start": 2,
+          "line_end": 27,
+          "quote": "라플라스의 몸에 전류가 흐르며 빛이 일어났다. 변신만 하면··· 저런 악당 따윈···! 치익- 빛이 사그라들었다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_06__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 드레이크",
+          "summary": "촉수에 찢기고 침식되어 죽을 것이라는 공포에 휩싸인 라플라스가 오지 말라며 비명을 지르자, 드레이크가 나서서 라플라스를 뒤로 물리고 교전을 시작한다.",
+          "line_start": 35,
+          "line_end": 49,
+          "quote": "뒤로 물러나라! 인카운터!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_06__clh_001",
+          "keyword": "라플라스의 무장 전개 실패",
+          "category": "lore_concept",
+          "detail": "침식 트라우마로 인한 극심한 공포 때문에 라플라스의 변신 및 무장 전개가 작동하지 않음.",
+          "line_start": 16,
+          "line_end": 22,
+          "quote": "벼, 변신··· 변신! 치지직- 라플라스의 몸에 전류가 흐르며 빛이 일어났다. 변신만 하면··· 저런 악당 따윈···! 치익- 빛이 사그라들었다. 왜··· 무장이···."
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_06__uec_001",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 2
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_07",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "48112ae43a63a95aa318da2e9f93c006d3bb655b4b7fa8663b00df86332ca3a0",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "라플라스는 겁을 먹어 무장이 전개되지 않는다며 NIMPH가 없으면 히어로가 되지 못하는 겁쟁이라고 자책한다. 당황한 슈엔은 랩쳐가 방주까지 오면 에닉의 조사로 미실리스가 무너질 것이라며, 작전이 실패하면 연구소에서 찍은 영상을 언론에 뿌려 지휘관이 꾸민 일로 뒤집어씌우겠다고 협박하고, 일행은 라피의 건의로 일단 은신처를 찾아 재정비하기로 한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_07__pis_001",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_07__pis_002",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_07__pis_003",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_07__pis_004",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_07__pis_005",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_07__pis_006",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_18_07__rvo_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "medium": "comm",
+            "line_start": 9,
+            "line_end": 9,
+            "quote": "아니, 하지 마. 그냥 가."
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_07__mnt_001",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "우리가 방주에 랩쳐를 불러들였어! 대형 사고를 쳤다고!"
+          },
+          {
+            "item_id": "main_18_07__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "우리가 방주에 랩쳐를 불러들였어! 대형 사고를 쳤다고!"
+          },
+          {
+            "item_id": "main_18_07__mnt_003",
+            "surface_text": "메티스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 23,
+            "line_end": 23,
+            "quote": "네가 아무리 메티스라고 해도 얘랑은 차원이 달라!"
+          },
+          {
+            "item_id": "main_18_07__mnt_004",
+            "surface_text": "NIMPH",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 32,
+            "line_end": 32,
+            "quote": "N, NIMPH가 필요해."
+          },
+          {
+            "item_id": "main_18_07__mnt_005",
+            "surface_text": "에닉",
+            "entity_id": "char_에닉",
+            "entity_type": "character",
+            "line_start": 55,
+            "line_end": 55,
+            "quote": "에닉이 우릴 가만두지 않을 거야. 미실리스가··· 내 회사가 무너져버릴 거야!"
+          },
+          {
+            "item_id": "main_18_07__mnt_006",
+            "surface_text": "미실리스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 55,
+            "line_end": 55,
+            "quote": "에닉이 우릴 가만두지 않을 거야. 미실리스가··· 내 회사가 무너져버릴 거야!"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_07__foa_001",
+          "from_speaker": "슈엔",
+          "to_target": "일반 니케들",
+          "address_term": "고철들",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "어딜 걱정할 걸 걱정해야지. 겁? 트라우마? 그런 고철들이 걸릴 법한걸···."
+        },
+        {
+          "item_id": "main_18_07__foa_002",
+          "from_speaker": "슈엔",
+          "to_target": "카운터스",
+          "address_term": "고철들",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "라플라스를 고치든, 저 고철들을 이용해서든  어떻게 해서든!"
+        },
+        {
+          "item_id": "main_18_07__foa_003",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "지휘관."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_07__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 슈엔",
+          "summary": "라플라스가 겁을 먹어 손이 떨리고 무장이 전개되지 않는다며 NIMPH가 없으면 히어로가 되지 못하는 겁쟁이니까 NIMPH가 필요하다고 말하자, 라플라스를 고철과 다른 최고의 니케로 여겨온 슈엔이 큰 충격을 받는다.",
+          "line_start": 18,
+          "line_end": 42,
+          "quote": "무장이··· 전개되지 않아. 내가··· 거, 겁을 먹은 것 같다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_07__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "슈엔, 지휘관",
+          "summary": "슈엔은 랩쳐가 방주 방어벽까지 오면 원인 조사가 벌어져 에닉이 미실리스를 무너뜨릴 것이라며, 작전이 잘못되면 연구소에서 찍은 영상을 언론에 뿌려 전부 지휘관이 꾸민 일이고 메티스는 이용당했다고 뒤집어씌우겠다고 협박한다.",
+          "line_start": 48,
+          "line_end": 85,
+          "quote": "그거 다 언론에 뿌릴 거야! 그리고 전부 네가 꾸민 일이라고 할 거야. 메티스는 이용당했을 뿐이라고 할 거라고!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_07__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라피, 지휘관",
+          "summary": "라피는 지금 상태로 랩쳐들을 만나봤자 전멸할 뿐이라며 재정비를 건의하고, 지휘관은 쉬었다 갈 만한 곳을 수색하라고 지시한다.",
+          "line_start": 98,
+          "line_end": 109,
+          "quote": "지금은 일단 재정비를 하고 가는 게 나을 것 같습니다. 이 상태로 서둘러 랩쳐들을 만나봤자, 전멸할 뿐일 겁니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_07__clh_001",
+          "keyword": "슈엔의 조작 영상 협박",
+          "category": "item",
+          "detail": "연구소에서 음성 없이 녹화한 영상을 이용해 작전 실패 시 모든 책임을 지휘관에게 전가하려는 슈엔의 보험.",
+          "line_start": 69,
+          "line_end": 81,
+          "quote": "그거 다 언론에 뿌릴 거야! 그리고 전부 네가 꾸민 일이라고 할 거야. 메티스는 이용당했을 뿐이라고 할 거라고!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_07__rln_001",
+          "subject": "슈엔",
+          "target": "라플라스",
+          "relation_or_change": "다른 니케들은 고철이라 부르면서도 라플라스만큼은 자신이 만든 최고의 니케이자 히어로로 특별 대우하며 집착함.",
+          "line_start": 20,
+          "line_end": 24,
+          "quote": "얜 너희랑 근본부터가 달라. 처음부터 히어로였다고. 내가 만든 최고의 니케란 말야!"
+        },
+        {
+          "item_id": "main_18_07__rln_002",
+          "subject": "슈엔",
+          "target": "지휘관",
+          "relation_or_change": "작전이 실패할 경우 연구소 녹화 영상을 언론에 유포해 지휘관이 모든 일을 꾸몄다고 누명을 씌우겠다고 협박함.",
+          "line_start": 74,
+          "line_end": 81,
+          "quote": "그거 다 언론에 뿌릴 거야! 그리고 전부 네가 꾸민 일이라고 할 거야. 메티스는 이용당했을 뿐이라고 할 거라고!"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_07__uec_001",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 5
+        },
+        {
+          "item_id": "main_18_07__uec_002",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 5
+        },
+        {
+          "item_id": "main_18_07__uec_003",
+          "surface_text": "메티스",
+          "suggested_type": "squad",
+          "line_start": 23
+        },
+        {
+          "item_id": "main_18_07__uec_004",
+          "surface_text": "NIMPH",
+          "suggested_type": "concept",
+          "line_start": 32
+        },
+        {
+          "item_id": "main_18_07__uec_005",
+          "surface_text": "미실리스",
+          "suggested_type": "organization",
+          "line_start": 55
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_08",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "fc8b049a683b042a78ef0611046b62541e945017fd8acaf34e27dbc45c14929f",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "은신처에서 맥스웰이 메인터넌스를 마치고 라플라스의 몸과 무장, 에너지 흐름에 아무 이상이 없다고 밝히자, 라플라스는 무장이 전개되지 않는 것이 온전히 자신의 나약함 때문이라며 복도로 나간다. 드레이크는 지휘관에게 라플라스가 있는 곳을 알려주며 위로를 부탁한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_08__pis_001",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_08__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_08__pis_003",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_08__pis_004",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_08__pis_005",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_08__pis_006",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_08__foa_001",
+          "from_speaker": "드레이크",
+          "to_target": "라플라스",
+          "address_term": "멍청한 놈",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "그 멍청한 놈은 오른쪽 복도 구석에 있다."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_08__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰, 라플라스",
+          "summary": "맥스웰이 메인터넌스를 마치고 몸과 무장, 에너지 흐름 모두 정상이라고 알리자, 라플라스는 무장이 전개되지 않는 것이 온전히 자신의 나약함 때문이라며 자책하고 복도로 나간다.",
+          "line_start": 8,
+          "line_end": 15,
+          "quote": "몸 쪽에도 무장 쪽에도 문제없어. 에너지의 흐름도 정상이야. 그렇다는 건, 무장이 전개되지 않는 건···. 온전히 내 나약함 때문이라는 거로군.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_08__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "드레이크, 지휘관",
+          "summary": "드레이크는 복도로 나가며 지휘관에게 라플라스가 오른쪽 복도 구석에 있다고 알려주고 그녀를 부탁한다.",
+          "line_start": 18,
+          "line_end": 30,
+          "quote": "그 멍청한 놈은 오른쪽 복도 구석에 있다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_08__rln_001",
+          "subject": "드레이크",
+          "target": "라플라스",
+          "relation_or_change": "겉으로는 라플라스를 멍청한 놈이라 부르면서도 복도 구석에 있는 라플라스의 위치를 지휘관에게 알려주며 챙김.",
+          "line_start": 20,
+          "line_end": 25,
+          "quote": "그 멍청한 놈은 오른쪽 복도 구석에 있다."
+        }
+      ],
+      "unregistered_entity_candidates": []
+    },
+    {
+      "scene_id": "main_18_09",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "08b8b928c8d9c4c96b9f49f049bbb825d3f5bf8bce2d60ec85dfb2beb9669c0c",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "복도 구석에 쭈그려 앉은 라플라스는 자신이 NIMPH가 없어도 히어로임을 증명하려다 모든 것을 망쳤다며 자책한다. 지휘관은 라플라스가 과거 침식되어 NIMPH가 작동하지 않던 순간에도 모두를 지키기 위해 목숨을 걸었던 진정한 히어로였다고 일깨워 주지만, 라플라스는 여전히 자신은 히어로가 아니라며 도망친다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_09__pis_001",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_09__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_09__pis_003",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_09__pis_004",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_09__mnt_001",
+            "surface_text": "NIMPH",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 29,
+            "line_end": 29,
+            "quote": "NIMPH가 없어도···  히어로라는 걸 증명하고 싶었을 뿐이었는데."
+          },
+          {
+            "item_id": "main_18_09__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 37,
+            "line_end": 37,
+            "quote": "방주를 위험에 빠뜨린 거야."
+          },
+          {
+            "item_id": "main_18_09__mnt_003",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 51,
+            "line_end": 51,
+            "quote": "니케가 되기 전의 난 널 본 적이···."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_09__foa_001",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "아··· 버드 보이인가···."
+        },
+        {
+          "item_id": "main_18_09__foa_002",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "아, 아니야··· 아니다. 버드 보이···."
+        },
+        {
+          "item_id": "main_18_09__foa_003",
+          "from_speaker": "드레이크",
+          "to_target": "라플라스",
+          "address_term": "바보 같은 놈",
+          "line_start": 101,
+          "line_end": 101,
+          "quote": "···바보 같은 놈."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_09__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스는 자신의 모든 용기가 NIMPH에서 나왔으며, NIMPH가 없는데도 히어로가 되길 바라서 방주를 위험에 빠뜨린 나약한 존재에 지나지 않는다고 자책한다.",
+          "line_start": 28,
+          "line_end": 45,
+          "quote": "내가 NIMPH가 없어서,  히어로가 아닌데 히어로가 되길 바래서. 방주를 위험에 빠뜨린 거야.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_09__eac_002",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 침식되는 순간 니케의 NIMPH는 작동하지 않는데도, 과거 침식되었을 때 라플라스가 모두를 지키기 위해 목숨을 걸었던 것을 보았다며 라플라스는 NIMPH가 없을 때도 히어로였다고 말한다.",
+          "line_start": 47,
+          "line_end": 75,
+          "quote": "침식되는 순간 니케의 NIMPH는 작동하지 않아.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_18_09__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 라플라스",
+          "summary": "지휘관이 라플라스에게 손을 뻗으며 분명히 다시 부활할 수 있다고 격려하지만, 라플라스는 자신은 히어로가 아니라며 벌떡 일어나 뛰어가 버린다.",
+          "line_start": 79,
+          "line_end": 95,
+          "quote": "아, 아니야··· 아니다. 버드 보이···. 나는··· 나는···! 히어로가 아냐!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_09__clh_001",
+          "keyword": "침식 시 NIMPH 미작동",
+          "category": "lore_concept",
+          "detail": "니케가 침식되는 순간에는 NIMPH가 작동하지 않으며, 과거 라플라스가 침식 상태에서 모두를 지키려 한 행동은 NIMPH의 명령이 아닌 본인의 의지였음.",
+          "line_start": 64,
+          "line_end": 74,
+          "quote": "침식되는 순간 니케의 NIMPH는 작동하지 않아."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_09__rln_001",
+          "subject": "지휘관",
+          "target": "라플라스",
+          "relation_or_change": "절망에 빠진 라플라스에게 과거 침식 당시의 용기를 상기시키며 그녀가 진정한 히어로라고 끝까지 믿어줌.",
+          "line_start": 79,
+          "line_end": 90,
+          "quote": "라플라스는 히어로야. 지금은 지쳐서 쉬고 있을 뿐이고."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_09__uec_001",
+          "surface_text": "버드 보이",
+          "suggested_type": "alias",
+          "line_start": 10
+        },
+        {
+          "item_id": "main_18_09__uec_002",
+          "surface_text": "NIMPH",
+          "suggested_type": "concept",
+          "line_start": 29
+        },
+        {
+          "item_id": "main_18_09__uec_003",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 37
+        },
+        {
+          "item_id": "main_18_09__uec_004",
+          "surface_text": "니케",
+          "suggested_type": "concept",
+          "line_start": 51
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_10",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "801ea2e033e628c1c5acdace580052659542913973d932f904a65c9eda7b4a14",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "맥스웰과 드레이크는 카운터스에게 사과한 뒤, 유도 신호를 따라 이동하는 랩쳐 무리의 후미를 기습해 수를 줄이고 선두의 로드급을 처치하는 작전을 세운다. 슈엔은 경로를 지원하겠다고 약속하며 라플라스에게 돌아오면 NIMPH를 넣어서라도 다시 히어로로 만들어주겠다고 말하고, 드레이크와 맥스웰은 이제 자신들은 최고의 빌런이라며 전의를 다진다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_10__pis_001",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_10__pis_002",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_10__pis_003",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_10__pis_004",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_10__pis_005",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_10__pis_006",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_10__pis_007",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_18_10__rvo_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "medium": "comm",
+            "line_start": 43,
+            "line_end": 43,
+            "quote": "시끄러워, 고철.  경로만 알려주면 돼?"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_10__mnt_001",
+            "surface_text": "미실리스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "와, 저 미실리스 사람한테 사과받는 거 처음인 거 같아요."
+          },
+          {
+            "item_id": "main_18_10__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 16,
+            "line_end": 16,
+            "quote": "시간이 너무 지체돼서 아무리 서둘러도 랩쳐가 오는 길을 가로막고 전부 처리하는 건 무리야."
+          },
+          {
+            "item_id": "main_18_10__mnt_003",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 17,
+            "line_end": 17,
+            "quote": "우리가 도착할 때쯤이면 방주에서 니케들이 쏟아져 나오고 있을걸?"
+          },
+          {
+            "item_id": "main_18_10__mnt_004",
+            "surface_text": "콜링 시그널",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 20,
+            "line_end": 20,
+            "quote": "사실, 콜링 시그널이 발생했다고 해서."
+          },
+          {
+            "item_id": "main_18_10__mnt_005",
+            "surface_text": "로드급",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 35,
+            "line_end": 35,
+            "quote": "보통 콜링 시그널로 이끌려 오는 녀석들은 선두에 있는 로드급을 잡으면 와해되곤 하니까."
+          },
+          {
+            "item_id": "main_18_10__mnt_006",
+            "surface_text": "메티스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 64,
+            "line_end": 64,
+            "quote": "메티스 소속 니케, 맥스웰이  그동안의 경험을 토대로 말하건대."
+          },
+          {
+            "item_id": "main_18_10__mnt_007",
+            "surface_text": "NIMPH",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 71,
+            "line_end": 71,
+            "quote": "NIMPH든 뭐든 넣어서."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_10__foa_001",
+          "from_speaker": "슈엔",
+          "to_target": "카운터스",
+          "address_term": "고철",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "시끄러워, 고철.  경로만 알려주면 돼?"
+        },
+        {
+          "item_id": "main_18_10__foa_002",
+          "from_speaker": "슈엔",
+          "to_target": "카운터스",
+          "address_term": "고철",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "고철, 너희 입 다물어!"
+        },
+        {
+          "item_id": "main_18_10__foa_003",
+          "from_speaker": "맥스웰",
+          "to_target": "지휘관",
+          "address_term": "베이비",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "우리한테는 베이비가 있으니까."
+        },
+        {
+          "item_id": "main_18_10__foa_004",
+          "from_speaker": "드레이크",
+          "to_target": "일행",
+          "address_term": "네놈들",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "네놈들! 우울해할 시간 없다!"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_10__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰, 드레이크, 카운터스",
+          "summary": "맥스웰과 드레이크는 자신들 때문에 위험한 일에 휘말리게 된 카운터스에게 사과하고, 진실을 미리 말하지 못했던 카운터스와 서로 사과를 주고받는다.",
+          "line_start": 2,
+          "line_end": 13,
+          "quote": "미안. 우리 때문에 이런 위험한 일에 휘말리게 됐네. 진심으로 사과할게.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_10__eac_002",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰은 콜링 시그널이 발생했다고 해서 랩쳐들이 방주의 위치를 아는 것은 아니므로, 신호를 따라가는 무리의 후미를 치며 이목을 끌고 수를 줄인 뒤 선두의 로드급을 잡아 와해시키는 작전을 제시한다.",
+          "line_start": 20,
+          "line_end": 36,
+          "quote": "보통 콜링 시그널로 이끌려 오는 녀석들은 선두에 있는 로드급을 잡으면 와해되곤 하니까.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_10__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "슈엔, 맥스웰, 드레이크",
+          "summary": "슈엔은 랩쳐의 이동 경로를 설정해 알려주기로 하며 라플라스에게 돌아오면 NIMPH든 뭐든 넣어 다시 히어로로 만들어주겠다고 말하고, 드레이크와 맥스웰은 이제 자신들은 히어로가 아니라 방주를 혼돈에 빠뜨린 최고의 빌런이라며 사기를 북돋운다.",
+          "line_start": 66,
+          "line_end": 81,
+          "quote": "우린 이제 히어로가 아니다, 빌런이다! 가서 모두 해치워버리는 거다!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_10__clh_001",
+          "keyword": "콜링 시그널의 유도 원리",
+          "category": "lore_concept",
+          "detail": "콜링 시그널은 랩쳐에게 방주의 위치를 직접 알려주는 것이 아니라 소리가 나는 위치에 무언가 있을 것으로 산정해 몰려가게 하며, 선두의 로드급을 잡으면 무리가 와해됨.",
+          "line_start": 20,
+          "line_end": 35,
+          "quote": "사실, 콜링 시그널이 발생했다고 해서. 랩쳐들이 방주의 위치를 알았다는 이야기는 아니야. 말 그대로 그저 소리가 나는 위치에  무언가가 있을 거라고 산정하고 움직이는 걸 테니까."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_10__rln_001",
+          "subject": "맥스웰",
+          "target": "지휘관",
+          "relation_or_change": "성공 확률이 100%는 아니지만 우리에게는 베이비(지휘관)가 있으니 분명 성공할 것이라며 깊은 신뢰를 보임.",
+          "line_start": 56,
+          "line_end": 62,
+          "quote": "확률이 100%라고 말할 수는 없긴 한데. 우리한테는 베이비가 있으니까."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_10__uec_001",
+          "surface_text": "미실리스",
+          "suggested_type": "organization",
+          "line_start": 4
+        },
+        {
+          "item_id": "main_18_10__uec_002",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 16
+        },
+        {
+          "item_id": "main_18_10__uec_003",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 17
+        },
+        {
+          "item_id": "main_18_10__uec_004",
+          "surface_text": "콜링 시그널",
+          "suggested_type": "concept",
+          "line_start": 20
+        },
+        {
+          "item_id": "main_18_10__uec_005",
+          "surface_text": "로드급",
+          "suggested_type": "concept",
+          "line_start": 35
+        },
+        {
+          "item_id": "main_18_10__uec_006",
+          "surface_text": "베이비",
+          "suggested_type": "alias",
+          "line_start": 57
+        },
+        {
+          "item_id": "main_18_10__uec_007",
+          "surface_text": "메티스",
+          "suggested_type": "squad",
+          "line_start": 64
+        },
+        {
+          "item_id": "main_18_10__uec_008",
+          "surface_text": "NIMPH",
+          "suggested_type": "concept",
+          "line_start": 71
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_11",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "05ca6d881c14206cb55b1c5e2ae0b99f79d74fa492d5da57ebe9a4c2e87ff8a1",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "랩쳐의 수를 줄이며 선두 그룹을 추격하던 중, 맥스웰은 무장이 전개되지 않아 전용 총을 쓸 수 없는 라플라스에게 일반 총을 건네며 라플라스의 정의감과 강함은 진짜였다고 격려한다. 드레이크와 맥스웰, 지휘관의 격려를 받으며 일행은 전방의 랩쳐와 교전에 들어간다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_11__pis_001",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_11__pis_002",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_11__pis_003",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_11__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_11__mnt_001",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "좋아, 이 정도면 랩쳐 수를 줄이면서  잘 따라가고 있는 것 같네."
+          },
+          {
+            "item_id": "main_18_11__mnt_002",
+            "surface_text": "로드급",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "그럼 로드급과 싸우게 되는 건가!"
+          },
+          {
+            "item_id": "main_18_11__mnt_003",
+            "surface_text": "슈엔",
+            "entity_id": "char_슈엔",
+            "entity_type": "character",
+            "line_start": 20,
+            "line_end": 20,
+            "quote": "슈엔의 사랑을 독차지한 주제에 주변에 히어로가 되라며 설교해대서 니케들의 질투를 끌어모으는 피곤한 녀석이지만."
+          },
+          {
+            "item_id": "main_18_11__mnt_004",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 23,
+            "line_end": 23,
+            "quote": "순수하게 수치로만 따졌을 때, 방주 내에서 너보다 강한 니케가 있을까 싶을 정도로 넌 정말 강했거든."
+          },
+          {
+            "item_id": "main_18_11__mnt_005",
+            "surface_text": "NIMPH",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 31,
+            "line_end": 31,
+            "quote": "그러니까 NIMPH를 달라니 뭐니 찡찡거리지 말고. 이걸로 뭐라도 해."
+          },
+          {
+            "item_id": "main_18_11__mnt_006",
+            "surface_text": "미실리스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 42,
+            "line_end": 42,
+            "quote": "미실리스의 최고의 기술력을 이용해. 스스로 알아서 최강이 되는 것."
+          },
+          {
+            "item_id": "main_18_11__mnt_007",
+            "surface_text": "메티스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 43,
+            "line_end": 43,
+            "quote": "그게 우리 메티스의 방식이잖아?"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_11__foa_001",
+          "from_speaker": "드레이크",
+          "to_target": "맥스웰",
+          "address_term": "네놈",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "나도 네놈보다는 높다! 그러니까 나도 평가하지 마!"
+        },
+        {
+          "item_id": "main_18_11__foa_002",
+          "from_speaker": "드레이크",
+          "to_target": "라플라스",
+          "address_term": "양봉업자 같은 놈",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "그렇다! 이 양봉업자 같은 놈!"
+        },
+        {
+          "item_id": "main_18_11__foa_003",
+          "from_speaker": "지휘관",
+          "to_target": "라플라스",
+          "address_term": "히어로",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "뒤에서 엄호할게. 히어로."
+        },
+        {
+          "item_id": "main_18_11__foa_004",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "버드 보이···."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_11__csh_001",
+          "text": "이 장면에서 맥스웰과 드레이크가 라플라스에게 건넨 격려의 말들은 main_18_13에서 라플라스가 패닉을 극복할 때 그대로 회상된다.",
+          "related_scene_ids": [
+            "main_18_13"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_11__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰, 라플라스",
+          "summary": "맥스웰은 전용 총이 무장과 엮여 있어 단독으로 꺼내 쓸 수 없는 라플라스에게 예비 총을 건네며, 라플라스가 부르짖던 정의의 힘과 순수 수치상 방주 내 최강이라 할 만한 강함은 진짜였다고 격려한다.",
+          "line_start": 6,
+          "line_end": 23,
+          "quote": "네 총은 무장이랑 같이 엮여 있으니까. 총만 단독으로 꺼내 쓰는 건 불가능하잖아. 이거라도 들고 싸우라고.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_11__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "드레이크, 맥스웰",
+          "summary": "드레이크는 빌런이 히어로보다 더 위대하다는 것을 보여주겠다며 반박하고 싶으면 앞으로 나오라고 라플라스를 자극하고, 맥스웰은 미실리스의 기술력을 이용해 스스로 최강이 되는 것이 메티스의 방식이라며 앞으로 나선다.",
+          "line_start": 34,
+          "line_end": 44,
+          "quote": "미실리스의 최고의 기술력을 이용해. 스스로 알아서 최강이 되는 것. 그게 우리 메티스의 방식이잖아?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_11__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 라플라스, 드레이크",
+          "summary": "지휘관은 망설이는 라플라스의 등을 밀며 뒤에서 엄호하겠다고 격려하고, 일행은 전방의 랩쳐를 상대로 전투를 시작한다.",
+          "line_start": 49,
+          "line_end": 62,
+          "quote": "포기하지 마. 라플라스의 등을 앞으로 밀었다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_11__rln_001",
+          "subject": "맥스웰",
+          "target": "라플라스",
+          "relation_or_change": "라플라스를 히어로 병 말기에 피곤한 녀석이라 평하면서도 그녀의 정의에 대한 갈망과 방주 내 최강 수준의 무력을 진심으로 인정하며 총을 건네고 멘탈을 케어해 줌.",
+          "line_start": 19,
+          "line_end": 23,
+          "quote": "네가 부르짖던 정의의 힘은. 히어로에 대한 갈망은. 진짜였다고 생각해."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_11__uec_001",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_18_11__uec_002",
+          "surface_text": "로드급",
+          "suggested_type": "concept",
+          "line_start": 4
+        },
+        {
+          "item_id": "main_18_11__uec_003",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 23
+        },
+        {
+          "item_id": "main_18_11__uec_004",
+          "surface_text": "NIMPH",
+          "suggested_type": "concept",
+          "line_start": 31
+        },
+        {
+          "item_id": "main_18_11__uec_005",
+          "surface_text": "미실리스",
+          "suggested_type": "organization",
+          "line_start": 42
+        },
+        {
+          "item_id": "main_18_11__uec_006",
+          "surface_text": "메티스",
+          "suggested_type": "squad",
+          "line_start": 43
+        },
+        {
+          "item_id": "main_18_11__uec_007",
+          "surface_text": "버드 보이",
+          "suggested_type": "alias",
+          "line_start": 59
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_12",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "1c98115e9b5ea41f0b5d7a3baa32b7cd74973a6cce466035a4437a5b25282b46",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "콜링 시그널에 이끌려 온 랩쳐 무리의 선두에서 로드급이 아닌 타일런트급 랩쳐 '스톰 브링어'가 발견된다. 맥스웰이 촬영용 드론을 띄우고 지휘관에게 위험하면 도망치라고 당부하자, 지휘관은 내 곁에 히어로가 있으니 이길 자신이 있다고 답하며 라플라스에게 힘을 실어준다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_12__pis_001",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_12__pis_002",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_12__pis_003",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_12__pis_004",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_12__pis_005",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_12__pis_006",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_12__pis_007",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_12__mnt_001",
+            "surface_text": "타일런트급",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "전방. 타일런트급 랩쳐 발견."
+          },
+          {
+            "item_id": "main_18_12__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "전방. 타일런트급 랩쳐 발견."
+          },
+          {
+            "item_id": "main_18_12__mnt_003",
+            "surface_text": "스톰 브링어",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "코드네임, 스톰 브링어입니다."
+          },
+          {
+            "item_id": "main_18_12__mnt_004",
+            "surface_text": "콜링 시그널",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "와··· 콜링 시그널 효과 엄청나네요. 타일런트급까지 끌어모으다니!"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_12__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "그래. 어차피 물러서 봐야. 지휘관님만 다치니까."
+        },
+        {
+          "item_id": "main_18_12__foa_002",
+          "from_speaker": "맥스웰",
+          "to_target": "지휘관",
+          "address_term": "베이비",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "베이비. 스톰 브링어는 타일런트 중에서도  제법 까다로운 녀석이라."
+        },
+        {
+          "item_id": "main_18_12__foa_003",
+          "from_speaker": "맥스웰",
+          "to_target": "지휘관",
+          "address_term": "베이비",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "베이비가 그렇다면 그런 거겠지."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "main_18_12__chb_001",
+          "choice_line": 36,
+          "options": [
+            {
+              "item_id": "main_18_12__chb_001_opt_01",
+              "option_text": "걱정 마. 난 죽지 않아.",
+              "continuation_summary": "맥스웰이 안 죽을 자신이 있나 보다며 흥미로워한다.",
+              "branch_specific_facts": []
+            },
+            {
+              "item_id": "main_18_12__chb_001_opt_02",
+              "option_text": "당연히 이길 테니 걱정하지 않아.",
+              "continuation_summary": "맥스웰이 웃으며 이길 자신이 있나 보다며 반긴다.",
+              "branch_specific_facts": []
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_12__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라피, 아니스, 네온, 맥스웰, 드레이크",
+          "summary": "전방에서 콜링 시그널에 이끌려 온 타일런트급 랩쳐 '스톰 브링어'가 발견되자, 메티스와 카운터스는 물러설 곳이 없다며 응전을 결의한다.",
+          "line_start": 2,
+          "line_end": 27,
+          "quote": "전방. 타일런트급 랩쳐 발견. 코드네임, 스톰 브링어입니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_12__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰, 지휘관, 라플라스",
+          "summary": "맥스웰은 촬영용 드론을 띄운 뒤 스톰 브링어가 까다로운 상대이니 위험하면 알아서 도망치라고 지휘관에게 당부하고, 지휘관이 내 곁에 히어로가 있으니 자신이 있다고 답하자 라플라스는 손에 쥔 총을 꽉 쥔다.",
+          "line_start": 28,
+          "line_end": 57,
+          "quote": "내 곁에 히어로가 있으니까. 라플라스: ··· ···. 라플라스가 손에 쥔 총을 꽉 쥐었다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_12__uec_001",
+          "surface_text": "타일런트급",
+          "suggested_type": "concept",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_18_12__uec_002",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_18_12__uec_003",
+          "surface_text": "스톰 브링어",
+          "suggested_type": "character",
+          "line_start": 3
+        },
+        {
+          "item_id": "main_18_12__uec_004",
+          "surface_text": "콜링 시그널",
+          "suggested_type": "concept",
+          "line_start": 5
+        },
+        {
+          "item_id": "main_18_12__uec_005",
+          "surface_text": "베이비",
+          "suggested_type": "alias",
+          "line_start": 32
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_13",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "c84a4b5da07bbb7f3fcff170b2c5c481791914acfb1b4e321dcaf7fb6c88a18e",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "일행은 스톰 브링어를 처치하지만 총을 한 번도 쏘지 못한 라플라스가 자책하는 사이 또 다른 랩쳐 대군이 몰려온다. 공포에 질려 총을 난사하던 라플라스가 랩쳐의 표적이 되자 지휘관이 몸을 던져 라플라스를 구하고 배에 중상을 입으며 '히어로는 네 안에 있다'고 격려하고, 전멸 위기 속에서 라플라스는 동료들과 지휘관의 말을 떠올린다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_13__pis_001",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_002",
+            "speaker_label": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_003",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_004",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_005",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_006",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_007",
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_008",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_13__pis_009",
+            "speaker_label": "리안",
+            "entity_id": "char_리안",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_13__mnt_001",
+            "surface_text": "NIMPH",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 14,
+            "line_end": 14,
+            "quote": "···난 결국 NIMPH가 없으면 안 되는 모양이야."
+          },
+          {
+            "item_id": "main_18_13__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 41,
+            "line_end": 41,
+            "quote": "이것들 설마··· 다 랩쳐야?"
+          },
+          {
+            "item_id": "main_18_13__mnt_003",
+            "surface_text": "크로우",
+            "entity_id": "char_크로우",
+            "entity_type": "character",
+            "line_start": 70,
+            "line_end": 70,
+            "quote": "지난번에 크로우에게 맞았던 부위를 또 맞은 것 같다."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_13__foa_001",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "믿어줬는데··· 미안하다.  버드 보이."
+        },
+        {
+          "item_id": "main_18_13__foa_002",
+          "from_speaker": "맥스웰",
+          "to_target": "지휘관",
+          "address_term": "베이비",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "도망가, 라플라스!  베이비를 안고 달려!"
+        },
+        {
+          "item_id": "main_18_13__foa_003",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 63,
+          "line_end": 63,
+          "quote": "지휘관!"
+        },
+        {
+          "item_id": "main_18_13__foa_004",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "버드 보이!"
+        },
+        {
+          "item_id": "main_18_13__foa_005",
+          "from_speaker": "드레이크",
+          "to_target": "라플라스",
+          "address_term": "네놈",
+          "line_start": 123,
+          "line_end": 123,
+          "quote": "[이번 기회에 네놈에게 똑똑히 보여주지.]"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_13__csh_001",
+          "text": "지휘관이 랩쳐의 공격에서 라플라스를 구하고 배를 다친 사건은 main_18_14~main_18_15의 병원 입원 및 main_18_17에서 크로우가 언급하는 배 부상으로 이어진다.",
+          "related_scene_ids": [
+            "main_18_14",
+            "main_18_15",
+            "main_18_17"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_13__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "스톰 브링어 토벌이 끝난 뒤 라플라스는 모두가 싸우는 동안 총을 한 번도 쏴보지 못했다며 결국 자신은 NIMPH가 없으면 안 되는 모양이라고 자책한다.",
+          "line_start": 11,
+          "line_end": 15,
+          "quote": "모두가 저 거대한 걸 잡을 때까지 이 총을 한 번 쏴보지도 못했어. ···난 결국 NIMPH가 없으면 안 되는 모양이야.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_13__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "드레이크, 슈엔, 리안",
+          "summary": "전투가 끝난 줄 알고 방송을 종료했던 슈엔과 리안은 레이더에 무수한 빨간 점으로 잡히는 추가 랩쳐 무리를 보고 경악하며, 현장에도 다시 랩쳐 대군이 들이닥친다.",
+          "line_start": 23,
+          "line_end": 43,
+          "quote": "레이더에서 왜 이상한 신호가··· 왜 저렇게 빨간 점이···! 슈엔: 이거 뭐야, 왜 이래! 슈엔: 이것들 설마··· 다 랩쳐야?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_13__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 라플라스",
+          "summary": "공포에 질려 총을 난사하던 라플라스가 랩쳐의 공격 표적이 되자 지휘관이 몸을 던져 라플라스를 밀쳐내고 대신 피격당해 지난번 크로우에게 맞았던 배 부위에 중상을 입으며, 라플라스의 심장을 가리켜 '히어로는 네 안에 있다'고 격려한다.",
+          "line_start": 46,
+          "line_end": 93,
+          "quote": "앞으로 뛰어나가 라플라스를 밀쳐냈다!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_13__eac_004",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 맥스웰, 드레이크",
+          "summary": "일행이 수세에 몰려 모두가 죽을 것이라는 공포와 도망쳐야 한다는 충동에 시달리던 라플라스는 비틀거리며 일어서서 맥스웰, 드레이크, 지휘관이 해준 말을 떠올린다.",
+          "line_start": 99,
+          "line_end": 132,
+          "quote": "라플라스가 비틀비틀 일어섰다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_13__clh_001",
+          "keyword": "크로우에게 맞았던 배 부상 재발",
+          "category": "past_incident",
+          "detail": "지휘관이 라플라스를 구하다가 지난번 크로우에게 총을 맞았던 배 부위를 다시 피격당함.",
+          "line_start": 69,
+          "line_end": 70,
+          "quote": "배가 뜨겁다. 지난번에 크로우에게 맞았던 부위를 또 맞은 것 같다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_13__rln_001",
+          "subject": "지휘관",
+          "target": "라플라스",
+          "relation_or_change": "랩쳐의 공격으로부터 라플라스를 몸을 던져 구하고 중상을 입은 채로 라플라스의 심장을 가리키며 히어로는 네 안에 있다고 일깨워 줌.",
+          "line_start": 61,
+          "line_end": 93,
+          "quote": "손을 들어 올려 라플라스의 심장을 가리켰다. 히어로는 네 안에 있다."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_13__uec_001",
+          "surface_text": "NIMPH",
+          "suggested_type": "concept",
+          "line_start": 14
+        },
+        {
+          "item_id": "main_18_13__uec_002",
+          "surface_text": "버드 보이",
+          "suggested_type": "alias",
+          "line_start": 15
+        },
+        {
+          "item_id": "main_18_13__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 41
+        },
+        {
+          "item_id": "main_18_13__uec_004",
+          "surface_text": "베이비",
+          "suggested_type": "alias",
+          "line_start": 45
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_14",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "b41d2518246ee38b42d1ecf5e19c7825708ff76042c63159a1aaa8557449a319",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "엔더슨, 잉그리드, 머스탱이 슈엔에게 콜링 시그널로 랩쳐를 끌어들인 일을 추궁하자, 슈엔은 에닉이 자신을 처벌하지 않았으니 방주 시민에게 해를 끼치거나 죄를 지은 것이 아니라고 당당하게 맞선다. 머스탱이 죄를 아는 사람은 어디에나 있다고 경고하자 슈엔은 머스탱의 게임 센터와 토끼들을 노리는 하이에나들이 어슬렁거린다며 비아냥거리고 떠난다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_14__pis_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_14__pis_002",
+            "speaker_label": "잉그리드",
+            "entity_id": "char_잉그리드",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_14__pis_003",
+            "speaker_label": "머스탱",
+            "entity_id": "char_머스탱",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_14__pis_004",
+            "speaker_label": "엔더슨",
+            "entity_id": "char_엔더슨",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_14__mnt_001",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 7,
+            "line_end": 7,
+            "quote": "방주에 몰려드는 랩쳐들을."
+          },
+          {
+            "item_id": "main_18_14__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 7,
+            "line_end": 7,
+            "quote": "방주에 몰려드는 랩쳐들을."
+          },
+          {
+            "item_id": "main_18_14__mnt_003",
+            "surface_text": "메티스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "우. 연. 히. 지상에서 훈련을 하던 우리 메티스가  전부 때려잡고 다시 히어로로 부활했다-!"
+          },
+          {
+            "item_id": "main_18_14__mnt_004",
+            "surface_text": "콜링 시그널",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 12,
+            "line_end": 12,
+            "quote": "네가 콜링 시그널을 사용해 랩쳐를 끌어들였다는 걸  우리가 모를 거 같나?"
+          },
+          {
+            "item_id": "main_18_14__mnt_005",
+            "surface_text": "에닉",
+            "entity_id": "char_에닉",
+            "entity_type": "character",
+            "line_start": 19,
+            "line_end": 19,
+            "quote": "내가 진짜 잘못을 했으면 에닉이 나한테 죄를 물었겠지."
+          },
+          {
+            "item_id": "main_18_14__mnt_006",
+            "surface_text": "미실리스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 21,
+            "line_end": 21,
+            "quote": "에닉이 날 불렀길 했어,  아니면 미실리스의 문을 닫으라고 하길 했어?"
+          },
+          {
+            "item_id": "main_18_14__mnt_007",
+            "surface_text": "ENIKK",
+            "entity_id": "char_에닉",
+            "entity_type": "character",
+            "line_start": 34,
+            "line_end": 34,
+            "quote": "ENIKK이 심판하지 않았다고 해도."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_14__foa_001",
+          "from_speaker": "머스탱",
+          "to_target": "슈엔",
+          "address_term": "You",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "You의 죄를 아는 사람은 어디에나 있Go."
+        },
+        {
+          "item_id": "main_18_14__foa_002",
+          "from_speaker": "잉그리드",
+          "to_target": "지휘관",
+          "address_term": "그 녀석",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "그래서 함께 사고를 친 그 녀석은 어디 있지?"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_14__csh_001",
+          "text": "에닉이 슈엔을 처벌하지 않은 이유에 대한 엔더슨의 해석은 main_18_16에서 지휘관과의 면담을 통해 제시된다.",
+          "related_scene_ids": [
+            "main_18_16"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_14__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드, 슈엔",
+          "summary": "잉그리드가 콜링 시그널로 랩쳐를 끌어들인 일을 추궁하자, 슈엔은 에닉이 자신이나 미실리스를 처벌하지 않았으니 자신이 방주 시민들에게 해를 끼치거나 잘못을 저지른 것이 아니라고 주장한다.",
+          "line_start": 10,
+          "line_end": 26,
+          "quote": "내가 진짜 잘못을 했으면 에닉이 나한테 죄를 물었겠지. 그런데 아니잖아?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_18_14__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "머스탱, 슈엔",
+          "summary": "머스탱은 에닉이 심판하지 않았더라도 슈엔의 죄를 아는 사람들은 어디에나 있으니 자만하지 말라고 경고하고, 슈엔은 머스탱의 게임 센터 주변에 하이에나들이 어슬렁거려 토끼 뱃속의 황금을 다 파먹힐 것이라며 비아냥거린 뒤 떠난다.",
+          "line_start": 32,
+          "line_end": 42,
+          "quote": "게임 센터인지 뭔지 하는 곳에 왠 하이에나들이 어슬렁 거린다던데. 그러다 토끼 뱃속에 있는 황금들을 다 파 먹혀 버릴 테니까!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_14__eac_003",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드, 엔더슨",
+          "summary": "잉그리드가 슈엔과 함께 사고를 친 지휘관이 어디 있는지 묻자 엔더슨은 병원에 있다고 답한다.",
+          "line_start": 46,
+          "line_end": 48,
+          "quote": "그래서 함께 사고를 친 그 녀석은 어디 있지? 병원에 있다고 하더군.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_14__clh_001",
+          "keyword": "에닉의 슈엔 불처벌",
+          "category": "past_incident",
+          "detail": "슈엔이 콜링 시그널로 방주 인근에 랩쳐를 유인했음에도 방주의 AI 에닉이 아무런 처벌을 내리지 않음.",
+          "line_start": 19,
+          "line_end": 25,
+          "quote": "내가 진짜 잘못을 했으면 에닉이 나한테 죄를 물었겠지. 그런데 아니잖아? 에닉이 날 불렀길 했어,  아니면 미실리스의 문을 닫으라고 하길 했어?"
+        },
+        {
+          "item_id": "main_18_14__clh_002",
+          "keyword": "게임 센터의 하이에나와 토끼",
+          "category": "foreshadowing",
+          "detail": "슈엔이 머스탱에게 게임 센터에 하이에나들이 어슬렁거리다 토끼 뱃속의 황금을 파먹힐 것이라고 말해 관련 사건을 예고함.",
+          "line_start": 40,
+          "line_end": 41,
+          "quote": "게임 센터인지 뭔지 하는 곳에 왠 하이에나들이 어슬렁 거린다던데. 그러다 토끼 뱃속에 있는 황금들을 다 파 먹혀 버릴 테니까!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_14__rln_001",
+          "subject": "잉그리드",
+          "target": "슈엔",
+          "relation_or_change": "슈엔이 콜링 시그널로 방주에 랩쳐를 끌어들인 행위를 강하게 규탄하며 분노함.",
+          "line_start": 12,
+          "line_end": 15,
+          "quote": "네가 콜링 시그널을 사용해 랩쳐를 끌어들였다는 걸  우리가 모를 거 같나?"
+        },
+        {
+          "item_id": "main_18_14__rln_002",
+          "subject": "머스탱",
+          "target": "슈엔",
+          "relation_or_change": "에닉이 심판하지 않았더라도 슈엔의 죄를 아는 이들이 죄가 아니라고 인정한 것은 아니라며 자만하지 말라고 경고함.",
+          "line_start": 33,
+          "line_end": 36,
+          "quote": "ENIKK이 심판하지 않았다고 해도. You의 죄를 아는 사람은 어디에나 있Go."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_14__uec_001",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 7
+        },
+        {
+          "item_id": "main_18_14__uec_002",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 7
+        },
+        {
+          "item_id": "main_18_14__uec_003",
+          "surface_text": "메티스",
+          "suggested_type": "squad",
+          "line_start": 8
+        },
+        {
+          "item_id": "main_18_14__uec_004",
+          "surface_text": "콜링 시그널",
+          "suggested_type": "concept",
+          "line_start": 12
+        },
+        {
+          "item_id": "main_18_14__uec_005",
+          "surface_text": "미실리스",
+          "suggested_type": "organization",
+          "line_start": 21
+        },
+        {
+          "item_id": "main_18_14__uec_006",
+          "surface_text": "ENIKK",
+          "suggested_type": "alias",
+          "line_start": 34
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_15",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "0cde0ff16e23b6a191f54211464fe99f9a4efbeab8ed98fcbfc019d62d03e735",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "mixed",
+      "is_plot_critical": true,
+      "summary": "라플라스의 활약으로 시민 단체들이 NIMPH 재이식 요구를 철회하고 메티스를 찬양하는 가운데, 병실로 찾아온 라플라스는 지휘관에게 진심으로 사과한다. 몇 시간 전 라플라스는 슈엔에게 날 위해서라는 이유로 정의에 어긋난 길을 가지 말라며 자신이 절대 무너지지 않는 히어로가 될 테니 다시는 악을 선택하지 않겠다는 약속을 받아냈음을 전하고, 이후 지휘관은 엔더슨의 호출을 받는다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_15__pis_001",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_15__pis_002",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_15__pis_003",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_15__pis_004",
+            "speaker_label": "라플라스",
+            "entity_id": "char_라플라스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_15__pis_005",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_15__pis_006",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_18_15__rvo_001",
+            "speaker_label": "TV 소리",
+            "entity_id": null,
+            "medium": "other",
+            "line_start": 2,
+            "line_end": 5,
+            "quote": "[메티스를 향한 시민들의 찬사가 뜨겁습니다.] [NIMPH가 없어도 인류를 구해낸 진정한 히어로!] [특히, 랩쳐들이 몰려드는 마지막 순간 온 힘을 다해 그들을 물리친 라플라스를 향해.] [방주 시민들의 찬사가 끊이지 않고 있습니다.]"
+          },
+          {
+            "item_id": "main_18_15__rvo_002",
+            "speaker_label": "엔더슨",
+            "entity_id": "char_엔더슨",
+            "medium": "messenger",
+            "line_start": 154,
+            "line_end": 154,
+            "quote": "몸은 어떤가"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_15__mnt_001",
+            "surface_text": "메티스",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "[메티스를 향한 시민들의 찬사가 뜨겁습니다.]"
+          },
+          {
+            "item_id": "main_18_15__mnt_002",
+            "surface_text": "NIMPH",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "[NIMPH가 없어도 인류를 구해낸 진정한 히어로!]"
+          },
+          {
+            "item_id": "main_18_15__mnt_003",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "[특히, 랩쳐들이 몰려드는 마지막 순간 온 힘을 다해 그들을 물리친 라플라스를 향해.]"
+          },
+          {
+            "item_id": "main_18_15__mnt_004",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "[방주 시민들의 찬사가 끊이지 않고 있습니다.]"
+          },
+          {
+            "item_id": "main_18_15__mnt_005",
+            "surface_text": "미실리스 인더스트리",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "[이에 미실리스 인더스트리의 주가가 상승···.]"
+          },
+          {
+            "item_id": "main_18_15__mnt_006",
+            "surface_text": "드레이크",
+            "entity_id": "char_드레이크",
+            "entity_type": "character",
+            "line_start": 36,
+            "line_end": 36,
+            "quote": "드레이크와 맥스웰은 괜찮고?"
+          },
+          {
+            "item_id": "main_18_15__mnt_007",
+            "surface_text": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "entity_type": "character",
+            "line_start": 36,
+            "line_end": 36,
+            "quote": "드레이크와 맥스웰은 괜찮고?"
+          },
+          {
+            "item_id": "main_18_15__mnt_008",
+            "surface_text": "미실리스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 40,
+            "line_end": 40,
+            "quote": "우리는 미실리스의 최신식 기술로 케어를 받아  이전보다 더 건강해진 느낌이다!"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_15__foa_001",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "버드 보이를 빨리 보고 싶은 마음에  히어로 슬라이드를 쓰고 말았다!"
+        },
+        {
+          "item_id": "main_18_15__foa_002",
+          "from_speaker": "슈엔",
+          "to_target": "일반 니케들",
+          "address_term": "고철들",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "넌 역시 내가 만든 최고의 니케야. 다른 고철들이랑은 달라!"
+        },
+        {
+          "item_id": "main_18_15__foa_003",
+          "from_speaker": "라플라스",
+          "to_target": "지휘관",
+          "address_term": "버드 보이",
+          "line_start": 137,
+          "line_end": 137,
+          "quote": "빨리 회복해서 함께 지상을 누비자, 버드 보이!"
+        },
+        {
+          "item_id": "main_18_15__foa_004",
+          "from_speaker": "엔더슨",
+          "to_target": "지휘관",
+          "address_term": "자네",
+          "line_start": 169,
+          "line_end": 169,
+          "quote": "내가 자네의 상관 아닌가"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_15__csh_001",
+          "text": "장면 말미에 엔더슨이 메신저로 지휘관을 자신의 방으로 호출한 일은 바로 다음 장면인 main_18_16의 면담으로 이어진다.",
+          "related_scene_ids": [
+            "main_18_16"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_15__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "TV 소리, 네온, 아니스, 라피",
+          "summary": "마지막 순간 트라우마를 극복하고 랩쳐들을 물리친 라플라스와 메티스의 활약이 방송되면서 시민 단체들은 NIMPH를 심어야 한다는 의견을 철회하고 미실리스 인더스트리의 주가가 상승하며, 지휘관과 카운터스는 병실에서 이를 지켜본다.",
+          "line_start": 2,
+          "line_end": 18,
+          "quote": "[며칠 전 메티스를 비난하던 시민 단체들은 모두 NIMPH를 심어야 한다는 의견을 철회하고.]",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_18_15__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "병문안을 온 라플라스는 슈엔에게 일의 전말을 모두 들었다며 메티스의 리더로서 지휘관에게 고개를 숙여 사과하고, 다시는 슈엔이 이런 부탁을 하지 못하게 막겠다고 말한다.",
+          "line_start": 43,
+          "line_end": 50,
+          "quote": "우리 때문에 이런 위험한 일에 휘말리게 해서 정말로 고맙고 미안했다. 메티스의 리더로서 진심으로 사과한다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_18_15__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "flashback",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 슈엔",
+          "summary": "몇 시간 전 라플라스는 축배를 드는 슈엔에게 날 위해서라는 이유로 정의에 어긋난 길을 가지 말라며 슈엔을 악당으로 생각하고 싶지 않다고 직언하고, 잔을 던지며 화내는 슈엔에게 자신이 절대 쓰러지지 않는 히어로가 될 테니 다시는 정의에 어긋나는 일을 하지 않겠다는 약속을 받아낸다.",
+          "line_start": 51,
+          "line_end": 108,
+          "quote": "제발 메티스를 위해··· 아니, 날 위해서라는 이유로! 정의에 어긋난 길을 가지 마라. 슈엔: ··· ···. 라플라스: 난 널 악당으로 생각하고 싶지 않아.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_15__eac_004",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라플라스, 지휘관",
+          "summary": "라플라스는 아직 랩쳐가 무섭냐는 지휘관의 질문에 무섭지만 히어로이기에 무서워하지 않을 것이라고 답한 뒤, 창문을 열고 밖으로 뛰어내려 퇴장한다.",
+          "line_start": 123,
+          "line_end": 139,
+          "quote": "···무섭다. 하지만! 무서워하지 않을 거다. 난 히어로니까.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_15__eac_005",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨, 지휘관",
+          "summary": "엔더슨이 메신저로 지휘관의 몸 상태를 물으며 자신의 방으로 오라고 호출하고, 지휘관도 마침 할 이야기가 있다며 응한다.",
+          "line_start": 152,
+          "line_end": 186,
+          "quote": "마침 저도 할 얘기가 있습니다",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_15__rln_001",
+          "subject": "라플라스",
+          "target": "슈엔",
+          "relation_or_change": "자신을 히어로로 만들어 준 슈엔에게 감사하면서도 슈엔이 자신을 위해 정의에 어긋난 악당이 되지 않기를 바라며, 자신이 절대 무너지지 않는 히어로가 되는 조건으로 재발 방지 약속을 받아냄.",
+          "line_start": 64,
+          "line_end": 108,
+          "quote": "네가 더는 나를 위해서라는 이유로 악을 선택하지 않도록. 절대 무너지지 않는 히어로가 되겠다."
+        },
+        {
+          "item_id": "main_18_15__rln_002",
+          "subject": "라플라스",
+          "target": "지휘관",
+          "relation_or_change": "슈엔에게 사건의 전말을 전해 듣고 메티스의 리더로서 지휘관에게 깊이 사과하며 앞으로 슈엔의 부당한 요구를 막아주겠다고 약속함.",
+          "line_start": 43,
+          "line_end": 50,
+          "quote": "슈엔이 네게 다신 이런 부탁을 하는 일은 없을 거다. 있다고 해도 내가 전부 막을 거다."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_15__uec_001",
+          "surface_text": "메티스",
+          "suggested_type": "squad",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_18_15__uec_002",
+          "surface_text": "NIMPH",
+          "suggested_type": "concept",
+          "line_start": 3
+        },
+        {
+          "item_id": "main_18_15__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 4
+        },
+        {
+          "item_id": "main_18_15__uec_004",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 5
+        },
+        {
+          "item_id": "main_18_15__uec_005",
+          "surface_text": "미실리스 인더스트리",
+          "suggested_type": "organization",
+          "line_start": 8
+        },
+        {
+          "item_id": "main_18_15__uec_006",
+          "surface_text": "버드 보이",
+          "suggested_type": "alias",
+          "line_start": 26
+        },
+        {
+          "item_id": "main_18_15__uec_007",
+          "surface_text": "미실리스",
+          "suggested_type": "organization",
+          "line_start": 40
+        }
+      ]
+    },
+    {
+      "scene_id": "main_18_16",
+      "title_id": "main_story__chapter_18",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_18.txt",
+      "source_sha256": "4c49720cb0605dd666216ed7b29c4b26dbf8d14a1fdcb19dc0dcdc808bbc86c0",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "엔더슨은 방주처럼 고립된 사회에서는 내부의 부정적 감정이 독처럼 퍼지는 것이 가장 위험하며 강력한 외부의 적은 오히려 인간을 뭉치게 하기에 에닉이 슈엔을 처벌하지 않았을지도 모른다고 말한다. 이어서 지휘관이 필그림에게 들은 언체인드 연구소에 다녀오기 위해 장기 임무를 신청하자, 엔더슨은 사지로 걸어 들어가는 사람에 대한 지원이라며 전초기지로 보급 물자를 보내주겠다고 승인한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_18_16__pis_001",
+            "speaker_label": "엔더슨",
+            "entity_id": "char_엔더슨",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_18_16__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_18_16__mnt_001",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "방주를 인질로 삼아."
+          },
+          {
+            "item_id": "main_18_16__mnt_002",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 9,
+            "line_end": 9,
+            "quote": "니케를 구해보니 어떤가."
+          },
+          {
+            "item_id": "main_18_16__mnt_003",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 30,
+            "line_end": 30,
+            "quote": "방주에 랩쳐를 몰려들게 했습니다."
+          },
+          {
+            "item_id": "main_18_16__mnt_004",
+            "surface_text": "에닉",
+            "entity_id": "char_에닉",
+            "entity_type": "character",
+            "line_start": 49,
+            "line_end": 49,
+            "quote": "그래서 에닉이 슈엔을 처벌하지 않은 걸지도 모르지."
+          },
+          {
+            "item_id": "main_18_16__mnt_005",
+            "surface_text": "슈엔",
+            "entity_id": "char_슈엔",
+            "entity_type": "character",
+            "line_start": 49,
+            "line_end": 49,
+            "quote": "그래서 에닉이 슈엔을 처벌하지 않은 걸지도 모르지."
+          },
+          {
+            "item_id": "main_18_16__mnt_006",
+            "surface_text": "언체인드",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 91,
+            "line_end": 91,
+            "quote": "언체인드를 만들었다는 연구소에 다녀올 생각입니다."
+          },
+          {
+            "item_id": "main_18_16__mnt_007",
+            "surface_text": "언체인드 연구소",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 96,
+            "line_end": 96,
+            "quote": "그 언체인드 연구소는 필그림에게 들은 정보인가?"
+          },
+          {
+            "item_id": "main_18_16__mnt_008",
+            "surface_text": "필그림",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 96,
+            "line_end": 96,
+            "quote": "그 언체인드 연구소는 필그림에게 들은 정보인가?"
+          },
+          {
+            "item_id": "main_18_16__mnt_009",
+            "surface_text": "전초기지",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 104,
+            "line_end": 104,
+            "quote": "알겠네. 전초기지로 보급 물자를 보내 주지."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_18_16__foa_001",
+          "from_speaker": "엔더슨",
+          "to_target": "지휘관",
+          "address_term": "자네",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "사실 자네가 뭐라고 대답하든 중요하지 않아."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_18_16__csh_001",
+          "text": "엔더슨이 약속한 전초기지 보급 물자 지원과 언체인드 연구소 탐사 임무는 main_18_18에서 실제로 지휘관실에 보급품이 도착하는 것으로 이어진다.",
+          "related_scene_ids": [
+            "main_18_18"
+          ]
+        }
+      ],
+      "choice_branches": [
+        {
+          "item_id": "main_18_16__chb_001",
+          "choice_line": 11,
+          "options": [
+            {
+              "item_id": "main_18_16__chb_001_opt_01",
+              "option_text": "···만족스럽습니다.",
+              "continuation_summary": "방주를 인질로 삼아 니케를 구한 결과에 만족스럽다고 답하자 엔더슨이 '흠. 그런가?'라고 반응한다.",
+              "branch_specific_facts": [
+                "지휘관이 이번 결과에 대해 만족스럽다고 답함"
+              ]
+            },
+            {
+              "item_id": "main_18_16__chb_001_opt_02",
+              "option_text": "조금도 만족스럽지 않습니다.",
+              "continuation_summary": "조금도 만족스럽지 않다고 답하자 엔더슨이 '호오. 그렇군.'이라고 반응한다.",
+              "branch_specific_facts": [
+                "지휘관이 이번 결과에 대해 조금도 만족스럽지 않다고 답함"
+              ]
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "main_18_16__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨은 방주처럼 고립된 사회에서 가장 무서운 것은 외부의 적이 아니라 의심, 질투, 모함, 공포 같은 부정적인 감정이 독처럼 퍼져 사회를 무너뜨리는 것이며, 강력한 적은 오히려 인간을 뭉치게 하므로 에닉이 슈엔을 처벌하지 않은 것일지도 모른다고 말한다.",
+          "line_start": 39,
+          "line_end": 49,
+          "quote": "오히려 자연재해와도 같은  강력한 적은 인간을 서로 뭉치게 하기도 하지.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_18_16__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨, 지휘관",
+          "summary": "엔더슨은 지휘관이 옳지 못한 짓을 했더라도 과거로 돌아가면 다시 슈엔을 도울 것임을 확인하고, 찝찝하다면 올바르지 못한 일을 속죄할 방법을 찾아보라고 조언한다.",
+          "line_start": 54,
+          "line_end": 70,
+          "quote": "그래도 정 찝찝하다면 방법을 찾아보게. 자네의 그 올바르지 못한 일을 속죄할 방법을.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_18_16__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 엔더슨",
+          "summary": "지휘관이 필그림에게 들은 언체인드 연구소에 다녀오기 위해 장기 임무를 신청하자, 엔더슨은 사지로 걸어 들어가는 사람에게 이 정도는 해줘야 한다며 전초기지로 평소보다 많은 보급 물자를 보내주겠다고 승인한다.",
+          "line_start": 80,
+          "line_end": 119,
+          "quote": "언체인드를 만들었다는 연구소에 다녀올 생각입니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_18_16__clh_001",
+          "keyword": "고립된 사회와 에닉의 판단",
+          "category": "lore_concept",
+          "detail": "방주처럼 성벽으로 고립된 사회가 내부의 의심·공포로 자멸하는 것을 막기 위해 외부의 적을 통해 대중을 결집시킨 결과를 에닉이 용인했을 가능성.",
+          "line_start": 39,
+          "line_end": 49,
+          "quote": "이 좁은 사회가 무너져버리고 말걸세. 그런 의미에서 이번 일은 그렇게 나쁜 판단이 아니었을지도 몰라. 그래서 에닉이 슈엔을 처벌하지 않은 걸지도 모르지."
+        },
+        {
+          "item_id": "main_18_16__clh_002",
+          "keyword": "언체인드 연구소의 위험성",
+          "category": "foreshadowing",
+          "detail": "지휘관이 언체인드 연구소에 간다고 하자 엔더슨이 곧바로 사지로 걸어 들어가는 사람이라고 표현해 그곳에 대해 이미 알고 있음을 암시함.",
+          "line_start": 109,
+          "line_end": 116,
+          "quote": "고맙긴. 사지로 걸어들어가는 사람에게 이 정도는 해줘야지."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_18_16__rln_001",
+          "subject": "엔더슨",
+          "target": "지휘관",
+          "relation_or_change": "방주에 랩쳐를 끌어들인 지휘관을 비난하지 않고 속죄할 방법을 찾아보라 조언하며, 언체인드 연구소 장기 임무에 대규모 보급 물자를 지원해 줌.",
+          "line_start": 68,
+          "line_end": 109,
+          "quote": "알겠네. 전초기지로 보급 물자를 보내 주지."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_18_16__uec_001",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 8
+        },
+        {
+          "item_id": "main_18_16__uec_002",
+          "surface_text": "니케",
+          "suggested_type": "concept",
+          "line_start": 9
+        },
+        {
+          "item_id": "main_18_16__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 30
+        },
+        {
+          "item_id": "main_18_16__uec_004",
+          "surface_text": "언체인드",
+          "suggested_type": "item",
+          "line_start": 91
+        },
+        {
+          "item_id": "main_18_16__uec_005",
+          "surface_text": "언체인드 연구소",
+          "suggested_type": "location",
+          "line_start": 96
+        },
+        {
+          "item_id": "main_18_16__uec_006",
+          "surface_text": "필그림",
+          "suggested_type": "organization",
+          "line_start": 96
+        },
+        {
+          "item_id": "main_18_16__uec_007",
+          "surface_text": "전초기지",
+          "suggested_type": "location",
+          "line_start": 104
+        }
+      ]
+    },
     {
       "scene_id": "main_18_17",
       "title_id": "main_story__chapter_18",

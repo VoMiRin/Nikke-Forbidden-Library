@@ -1,0 +1,2729 @@
+{
+  "schema_version": "1.2.0",
+  "batch_id": "batch_0001",
+  "scenes": [
+    {
+      "scene_id": "main_00_00",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "작전 구역으로 이동하던 수송기(BA-01)가 추락한 직후, 마리안은 방주와 통신이 두절된 상황에서 심정지 상태인 지휘관을 AED로 소생시킨다. 지휘관이 중앙 정부 니케 관리부 소속임을 확인하고 신체 반응을 점검한 마리안은 몰려오는 랩쳐들에 맞서 지휘관에게 지휘를 요청하고 전투에 돌입한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "BA-01", "entity_id": null, "entity_type": "item", "line_start": 2, "line_end": 2, "quote": "BA-01다운! BA-01다운!" },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 6, "line_end": 6, "quote": "지휘관! 방주와 연락이 닿질 않···!" },
+          { "surface_text": "AED", "entity_id": null, "entity_type": "item", "line_start": 10, "line_end": 10, "quote": "에, AED···! AED!" },
+          { "surface_text": "중앙 정부 니케 관리부", "entity_id": null, "entity_type": "organization", "line_start": 26, "line_end": 26, "quote": "중앙 정부 니케 관리부." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 38, "line_end": 38, "quote": "그 폭발음을 듣고 랩쳐들이 몰려오고 있어요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "마리안", "to_target": "지휘관", "address_term": "지휘관", "line_start": 6, "line_end": 6, "quote": "지휘관! 방주와 연락이 닿질 않···!" },
+        { "from_speaker": "마리안", "to_target": "지휘관", "address_term": "당신", "line_start": 48, "line_end": 48, "quote": "저는 당신을 지키니까요." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "마리안은 대공 화기에 당해 수송기가 추락했다고 설명하지만, main_01_02와 main_01_05에서 해당 지역 랩쳐에게는 대공 화기가 없으며 수송기 내부 폭탄이 마리안의 식별 코드로 기폭되었음이 밝혀진다.",
+          "related_scene_ids": ["main_01_02", "main_01_05"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 지휘관",
+          "summary": "수송기 추락 직후 방주와 연락이 닿지 않는 상황에서 마리안이 심정지 상태인 지휘관에게 AED 쇼크를 가해 소생시키고 소속과 신체 상태(STR)를 확인한다.",
+          "line_start": 6,
+          "line_end": 35,
+          "quote": "지휘관! 방주와 연락이 닿질 않···! ···지휘관? ···!! 시, 심정지···! 에, AED···! AED!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안은 작전 구역으로 이동 중 대공 화기에 당해 수송기가 추락했고 그 폭발음을 듣고 랩쳐들이 몰려오고 있다고 설명한다.",
+          "line_start": 37,
+          "line_end": 38,
+          "quote": "작전 구역으로 이동 중 대공 화기에 당해 수송기가 추락했고, 그 폭발음을 듣고 랩쳐들이 몰려오고 있어요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 지휘관",
+          "summary": "마리안은 무슨 일이 있어도 지휘관을 지키겠다고 다짐하며 지휘관의 지휘 아래 전투 모드로 이행해 랩쳐와 교전을 시작한다.",
+          "line_start": 39,
+          "line_end": 51,
+          "quote": "당황스러우시겠지만, 지금부터 제 지휘를 맡아주셔야 해요. 할 수 있겠어요?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "BA-01 수송기 추락 원인",
+          "category": "past_incident",
+          "detail": "마리안은 이동 중 대공 화기에 당해 수송기 BA-01이 추락했다고 진술함.",
+          "line_start": 2,
+          "line_end": 4,
+          "quote": "BA-01다운! BA-01다운! 응답해 주세요! 추, 추락했다고요!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "추락 직후 심정지 상태인 지휘관을 살려내고, 무슨 일이 있어도 당신을 지키겠다며 헌신적인 태도를 보임.",
+          "line_start": 47,
+          "line_end": 49,
+          "quote": "걱정 마세요. 저는 당신을 지키니까요. 무슨 일이 있어도."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "BA-01", "suggested_type": "item", "line_start": 2 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 6 },
+        { "surface_text": "AED", "suggested_type": "item", "line_start": 10 },
+        { "surface_text": "중앙 정부 니케 관리부", "suggested_type": "organization", "line_start": 26 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 38 }
+      ]
+    },
+    {
+      "scene_id": "main_00_01",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "교전을 마친 뒤 마리안이 다리 고장으로 불편해하자 지휘관이 마리안의 다리에 붕대를 감아준다. 마리안은 니케에게 붕대는 소용이 없다면서도 덕분에 다 나은 것 같다며 지휘관의 상냥함에 감동하고 랑데부 포인트로 이동한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "붕대", "entity_id": null, "entity_type": "item", "line_start": 12, "line_end": 12, "quote": "마리안의 다리에 붕대를 감는다." },
+          { "surface_text": "니케", "entity_id": null, "entity_type": "faction_or_species", "line_start": 15, "line_end": 15, "quote": "···저, 지휘관. 니케한텐 이런 건 아무 소용이···" },
+          { "surface_text": "랑데부 포인트", "entity_id": null, "entity_type": "location", "line_start": 19, "line_end": 19, "quote": "이동하죠. 다행히 랑데부 포인트 인근이라서, 조금만 가면 돼요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "마리안", "to_target": "지휘관", "address_term": "지휘관", "line_start": 15, "line_end": 15, "quote": "···저, 지휘관. 니케한텐 이런 건 아무 소용이···" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "지휘관이 다친 마리안에게 붕대를 감아주는 행동은 main_01_04와 main_01_06에서 마리안이 침식 속에서도 지휘관에게 고마움을 표하는 핵심 매개체가 된다.",
+          "related_scene_ids": ["main_01_04", "main_01_06"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 마리안",
+          "summary": "전투 후 다리가 고장 난 마리안에게 지휘관이 붕대를 감아주고, 마리안은 니케에게 소용없다면서도 고마워하며 인근 랑데부 포인트로 이동하자고 한다.",
+          "line_start": 4,
+          "line_end": 19,
+          "quote": "마리안의 다리에 붕대를 감는다. ···저, 지휘관. 니케한텐 이런 건 아무 소용이···",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "붕대",
+          "category": "item",
+          "detail": "지휘관이 다리가 파손된 마리안에게 감아준 붕대. 물리적 수리 효과는 없으나 마리안이 지휘관을 상냥한 사람으로 인식하는 계기가 됨.",
+          "line_start": 12,
+          "line_end": 18,
+          "quote": "마리안의 다리에 붕대를 감는다. ···저, 지휘관. 니케한텐 이런 건 아무 소용이··· ··· ···. 아니, 아니에요, 덕분에 다 나은 것 같아요."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "다리에 붕대를 감아준 지휘관에게 덕분에 다 나은 것 같다며 상냥한 사람이라고 호감을 표현함.",
+          "line_start": 17,
+          "line_end": 18,
+          "quote": "아니, 아니에요, 덕분에 다 나은 것 같아요. 후후. 상냥한 사람이네요. 지휘관은."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "붕대", "suggested_type": "item", "line_start": 12 },
+        { "surface_text": "니케", "suggested_type": "concept", "line_start": 15 },
+        { "surface_text": "랑데부 포인트", "suggested_type": "location", "line_start": 19 }
+      ]
+    },
+    {
+      "scene_id": "main_00_02",
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "랑데부 포인트로 이동하던 중 마리안은 심정지를 겪어 어지러워하는 지휘관을 걱정하며 팔짱을 끼고 부축해 준다. 곧이어 전방에 우회할 수 없는 랩쳐가 나타나자 마리안은 지휘관을 숙이게 한 뒤 교전에 나선다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "랑데부 포인트", "entity_id": null, "entity_type": "location", "line_start": 2, "line_end": 2, "quote": "곧 랑데부 포인트에 도착해요. 몸은 좀 어떠세요?" },
+          { "surface_text": "니케", "entity_id": null, "entity_type": "faction_or_species", "line_start": 13, "line_end": 13, "quote": "저도 괜찮아요. 사람 한 명 업는 것 정도는 니케에겐 일도 아니니까요." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 31, "line_end": 31, "quote": "전방, 랩쳐 발견." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "마리안", "to_target": "지휘관", "address_term": "지휘관", "line_start": 33, "line_end": 33, "quote": "지휘관. 몸을 숙이고 잠시만 계셔주세요." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 지휘관",
+          "summary": "마리안이 혼자 걸을 수 있다는 지휘관에게 다가와 팔짱을 끼고 부축하며, 전방에 랩쳐가 나타나자 지휘관을 숙이게 하고 전투에 나선다.",
+          "line_start": 21,
+          "line_end": 34,
+          "quote": "마리안이 갑자기 다가와 팔짱을 꼈다. 부축해드릴게요. 그래도 힘들면 언제든 말씀해 주세요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "심정지 후유증으로 어지러워하는 지휘관을 업어주겠다고 제안하고 팔짱을 껴 부축하며 세심하게 챙김.",
+          "line_start": 21,
+          "line_end": 23,
+          "quote": "마리안이 갑자기 다가와 팔짱을 꼈다. 부축해드릴게요. 그래도 힘들면 언제든 말씀해 주세요."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "랑데부 포인트", "suggested_type": "location", "line_start": 2 },
+        { "surface_text": "니케", "suggested_type": "concept", "line_start": 13 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 31 }
+      ]
+    },
+    {
+      "scene_id": "main_00_03",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "마리안과 지휘관은 사격음을 듣고 이동해 랑데부 포인트 인근에서 대기 중이던 라피, 아니스와 합류한다. 라피는 긴급사태임을 들어 지휘관 인식 코드로 스쿼드 04-F의 지휘권을 지휘관에게 변경하고, 실버건 스쿼드 소속 마리안과 함께 전방의 랩쳐와 교전에 들어간다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "랑데부 포인트", "entity_id": null, "entity_type": "location", "line_start": 17, "line_end": 17, "quote": "랑데부 포인트는 여기야. 자리를 벗어나면 작전이 꼬일 수 있어." },
+          { "surface_text": "스쿼드 04-F", "entity_id": null, "entity_type": "squad", "line_start": 38, "line_end": 38, "quote": "스쿼드 04-F의 지휘권 변경 완료." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 40, "line_end": 40, "quote": "긴급사태야. 우리 앞엔 랩쳐가 있고." },
+          { "surface_text": "실버건 스쿼드", "entity_id": null, "entity_type": "squad", "line_start": 50, "line_end": 50, "quote": "실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "댁", "line_start": 24, "line_end": 24, "quote": "니케야 그렇다 치고, 댁 인간 맞지?" },
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "당신", "line_start": 42, "line_end": 42, "quote": "현 시간부로 당신은 우리의 명령권자가 됩니다." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 54, "line_end": 54, "quote": "지휘관님. 어떻게 할까?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 지휘관, 라피, 아니스",
+          "summary": "수송기 추락 폭발을 목격하고 대기하던 라피와 아니스에게 마리안과 지휘관이 무사히 합류한다.",
+          "line_start": 19,
+          "line_end": 24,
+          "quote": "합류하겠습니다! 으악! 깜짝이야! !! 마리안입니다! 지휘관과 함께 랑데부 포인트에 무사히 합류했습니다!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 지휘관",
+          "summary": "라피는 이전 지휘관이 명령을 내릴 수 없는 긴급사태라며 지휘관 인식 코드에 액세스해 스쿼드 04-F의 지휘권을 지휘관에게 변경한다.",
+          "line_start": 35,
+          "line_end": 44,
+          "quote": "지휘관 인식 코드, 액세스. ··· ···. 스쿼드 04-F의 지휘권 변경 완료.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안은 자신이 실버건 스쿼드 소속이며 병과는 기관총 사수라고 밝힌다.",
+          "line_start": 49,
+          "line_end": 50,
+          "quote": "마리안이라 했나? 소속과 병과는? 실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "스쿼드 04-F",
+          "category": "code_or_number",
+          "detail": "카운터스 명명 이전 라피와 아니스가 속해 있던 임시 스쿼드 식별 코드.",
+          "line_start": 36,
+          "line_end": 38,
+          "quote": "지휘관 인식 코드, 액세스. ··· ···. 스쿼드 04-F의 지휘권 변경 완료."
+        },
+        {
+          "keyword": "실버건 스쿼드",
+          "category": "organization",
+          "detail": "마리안의 원 소속 스쿼드.",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "지휘관 인식 코드를 통해 스쿼드 04-F의 정식 명령권자로 등록하고 명령에 복종하기 시작함.",
+          "line_start": 38,
+          "line_end": 42,
+          "quote": "스쿼드 04-F의 지휘권 변경 완료. 라피! 너 누군지도 모르는 인간한테 그렇게 함부로···! 긴급사태야. 우리 앞엔 랩쳐가 있고. 그건··· 그렇지만···! 현 시간부로 당신은 우리의 명령권자가 됩니다."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "랑데부 포인트", "suggested_type": "location", "line_start": 17 },
+        { "surface_text": "스쿼드 04-F", "suggested_type": "squad", "line_start": 38 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 40 },
+        { "surface_text": "실버건 스쿼드", "suggested_type": "squad", "line_start": 50 }
+      ]
+    },
+    {
+      "scene_id": "main_00_04",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "아니스와 라피는 기존 지휘관이 소구경 대인 화기를 들고 랩쳐에게 무모하게 돌격하다가 사망했다고 설명한다. 이어서 아니스가 지휘관의 신원을 검색해 어제 사관학교를 졸업한 신입임을 확인하고, 일행은 인근 시가지로 이동한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 8, "line_end": 8, "quote": "대인 화기를 들고는 랩쳐한테 막 쏴재끼더라고." },
+          { "surface_text": "사관학교", "entity_id": null, "entity_type": "organization", "line_start": 34, "line_end": 34, "quote": "어제 사관학교를 졸업했대." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "마리안", "to_target": "라피, 아니스", "address_term": "두 분", "line_start": 11, "line_end": 11, "quote": "···지켜주지 못하셨군요. 두 분이." },
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "그쪽", "line_start": 17, "line_end": 17, "quote": "실례지만 그쪽은 성함이 어떻게 되십니까." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 32, "line_end": 32, "quote": "···이 지휘관님. 완전 생 신입인데?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "아니스",
+          "summary": "아니스는 기존 지휘관이 먹힐 리 없는 소구경 대인 화기를 들고 랩쳐에게 쏴대며 스스로 죽으러 나섰기 때문에 지키지 못하고 사망했다고 말한다.",
+          "line_start": 6,
+          "line_end": 14,
+          "quote": "응. 기존 지휘관은 죽었어. ··· ···. 대인 화기를 들고는 랩쳐한테 막 쏴재끼더라고.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "아니스, 라피, 지휘관",
+          "summary": "아니스가 지휘관의 이름을 검색해 어제 사관학교를 졸업한 생 신입임을 확인하고, 라피는 위험을 피해 인근 시가지로 이동하자고 제안한다.",
+          "line_start": 17,
+          "line_end": 36,
+          "quote": "···이 지휘관님. 완전 생 신입인데? ···뭐? 어제 사관학교를 졸업했대.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "마리안",
+          "target": "라피, 아니스",
+          "relation_or_change": "기존 지휘관이 사망했다는 말에 두 사람이 지휘관을 지켜주지 못했다며 비판적인 태도를 보임.",
+          "line_start": 11,
+          "line_end": 14,
+          "quote": "···지켜주지 못하셨군요. 두 분이. 아니, 우리는 지휘관을 지켜. 무슨 일이 있어도 지켜. 목숨과 바꿔서라도 지키지. 하지만 자기가 죽는다고 나서는 사람을 지킬 수는 없잖아?"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 8 },
+        { "surface_text": "사관학교", "suggested_type": "organization", "line_start": 34 }
+      ]
+    },
+    {
+      "scene_id": "main_01_00",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "라피는 46시간 전 통신이 두절된 니케 1개 스쿼드 수색 작전을 브리핑하며 초짜 지휘관이 파견된 것에 의문을 표한다. 마리안은 자신이 작전 구역 좌표를 입력받았다며 앞장서고, 지휘관을 초짜라고 부른 라피에게 강하게 항의해 사과를 받아낸다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "니케", "entity_id": null, "entity_type": "faction_or_species", "line_start": 18, "line_end": 18, "quote": "46시간 전. 현 구역을 수색하던 니케 1개 스쿼드가 통신 두절되었습니다." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "당신", "line_start": 11, "line_end": 11, "quote": "어쨌든 현 시간부로 당신은 본 스쿼드의 지휘관이 됩니다." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 22, "line_end": 22, "quote": "혹시 지휘관님, 좌표에 대해 알고 있는 것 있어?" },
+        { "from_speaker": "마리안", "to_target": "라피", "address_term": "당신", "line_start": 34, "line_end": 34, "quote": "그리고 당신, 라피라고 했나요?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "마리안이 작전 투입 전 좌표를 입력받았다며 일행을 안내하는 행동은 main_01_05와 main_01_07에서 침식 코드에 의한 블랙스미스 유인(내비게이션)이었음이 드러난다.",
+          "related_scene_ids": ["main_01_05", "main_01_07"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 아니스",
+          "summary": "라피와 아니스는 46시간 전 현 구역을 수색하던 니케 1개 스쿼드가 통신 두절되어 수색에 투입되었으나 작전 구역 좌표를 알던 기존 지휘관이 사망했다고 설명한다.",
+          "line_start": 17,
+          "line_end": 21,
+          "quote": "46시간 전. 현 구역을 수색하던 니케 1개 스쿼드가 통신 두절되었습니다. 아무런 통신 내역도 남아있지 않아 수색이 필요하다 판단, 우리가 투입되었습니다만.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안은 작전 투입 전에 좌표를 입력받았다며 자신이 앞장서겠다고 말한다.",
+          "line_start": 28,
+          "line_end": 32,
+          "quote": "제가 알고 있어요. 응응. 그럴 줄 알았어. 응. ···응? 작전 투입 전에 입력받았어요. 제가 앞장서겠어요. 따라오시죠.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 라피, 지휘관",
+          "summary": "마리안이 지휘관을 초짜라 부른 라피에게 강하게 항의하자 라피가 지휘관에게 사과하고, 지휘관은 괜찮다며 넘어간다.",
+          "line_start": 34,
+          "line_end": 49,
+          "quote": "지휘관을 지키지도 못했으면서, 초짜니 뭐니 사람 가리지 마세요. 이분들도 우리랑 마찬가지로 목숨을 걸고 인류를 위해 싸우시는 분들이니까요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "마리안의 작전 구역 좌표 숙지",
+          "category": "foreshadowing",
+          "detail": "사망한 기존 지휘관만 알고 있어야 할 작전 구역 좌표를 마리안이 알고 있다며 일행을 이끔.",
+          "line_start": 28,
+          "line_end": 32,
+          "quote": "제가 알고 있어요. 응응. 그럴 줄 알았어. 응. ···응? 작전 투입 전에 입력받았어요. 제가 앞장서겠어요. 따라오시죠."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "마리안",
+          "target": "라피",
+          "relation_or_change": "지휘관을 초짜라고 부른 라피에게 한 번만 더 그런 발언을 하면 가만있지 않겠다며 날을 세움.",
+          "line_start": 36,
+          "line_end": 42,
+          "quote": "지휘관을 지키지도 못했으면서, 초짜니 뭐니 사람 가리지 마세요. 이분들도 우리랑 마찬가지로 목숨을 걸고 인류를 위해 싸우시는 분들이니까요. 그러니 한 번만 더 그런 발언을 한다면, 저도 가만있지 않을 거예요."
+        },
+        {
+          "subject": "아니스",
+          "target": "지휘관",
+          "relation_or_change": "니케의 무례에 화를 내지 않고 괜찮다고 넘기는 지휘관을 보며 기존 지휘관들과 달리 좀 이상하다고 평가함.",
+          "line_start": 48,
+          "line_end": 49,
+          "quote": "세상에. 화를 안 내잖아? 하하. 이번 지휘관님은 좀 이상하네."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "니케", "suggested_type": "concept", "line_start": 18 }
+      ]
+    },
+    {
+      "scene_id": "main_01_01",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "이동 중 마리안이 컨디션 이상과 오작동을 호소하자 라피는 오작동 시 메인터넌스는 필수라며 상의를 벗게 해 점검한다. 라피는 외관상 이상이 없음을 확인하고 일행은 다시 이동한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "니케", "entity_id": null, "entity_type": "faction_or_species", "line_start": 9, "line_end": 9, "quote": "하하. 뭐야. 지휘관님이 니케를 여자로 보기라도 할까 봐?" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 12, "line_end": 12, "quote": "그렇지 지휘관님?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "마리안이 호소한 컨디션 난조와 잠깐의 오작동은 main_01_05와 main_01_07에서 밝혀지는 침식 진행 및 우선순위 혼란의 전조다.",
+          "related_scene_ids": ["main_01_05", "main_01_07"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 라피",
+          "summary": "마리안이 컨디션 이상을 보이자 라피가 필수 사항이라며 마리안의 상의를 벗겨 메인터넌스를 실시하나 이상이 없음을 확인한다.",
+          "line_start": 3,
+          "line_end": 31,
+          "quote": "왜 그래? 상태가 안 좋아 보이는데. ···이상하게 컨디션이 좀···. 메인터넌스를 도와줄게. 상의를 벗어주겠어?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "마리안의 오작동 징후",
+          "category": "foreshadowing",
+          "detail": "마리안이 이동 중 갑작스러운 컨디션 이상을 보이나 일반 메인터넌스 점검에서는 이상이 발견되지 않음.",
+          "line_start": 4,
+          "line_end": 31,
+          "quote": "···이상하게 컨디션이 좀···. 메인터넌스를 도와줄게. 상의를 벗어주겠어?"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "아니스",
+          "target": "지휘관",
+          "relation_or_change": "니케는 피도 눈물도 없는 전투 병기라 인간이 여자로 볼 리 없다고 자조하면서도, 침묵하는 지휘관이 니케를 여자로 보고 있음을 눈치챔.",
+          "line_start": 9,
+          "line_end": 17,
+          "quote": "하하. 뭐야. 지휘관님이 니케를 여자로 보기라도 할까 봐? 걱정 마 걱정 마. 우린 그냥 피도 눈물도 없는 전투 병기니까. ···여자로 볼 리가 없잖아."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "니케", "suggested_type": "concept", "line_start": 9 }
+      ]
+    },
+    {
+      "scene_id": "main_01_02",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "방주 정보부 소속 오퍼레이터 시프티가 지상의 일행과 통신을 연결해 작전 서포트를 시작한다. 시프티가 해당 지역 랩쳐는 대공 화기를 보유하고 있지 않다고 밝히자, 라피는 수송기 블랙박스 데이터 분석 결과를 요청한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 4, "line_end": 4, "quote": "방주에서 지상에. 들리나요? 라피, 아니스." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 4, "line_end": 4, "quote": "방주에서 지상에. 들리나요? 라피, 아니스." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 14, "line_end": 14, "quote": "···해당 지역의 랩쳐는 대공 화기를 보유하고 있지 않은데요. 그래서 수송기를 띄운 건데···." },
+          { "surface_text": "블랙박스", "entity_id": null, "entity_type": "item", "line_start": 16, "line_end": 16, "quote": "시프티. 수송기의 블랙박스 데이터를 보내주겠어?" },
+          { "surface_text": "방주 정보부", "entity_id": null, "entity_type": "organization", "line_start": 21, "line_end": 21, "quote": "지휘관님 안녕하세요? 방주 정보부 소속 오퍼레이터, 시프티라고 합니다." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "시프티", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 21, "line_end": 21, "quote": "지휘관님 안녕하세요? 방주 정보부 소속 오퍼레이터, 시프티라고 합니다." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "시프티가 말한 '해당 지역 랩쳐는 대공 화기를 보유하고 있지 않다'는 사실과 라피가 요청한 블랙박스 데이터는 main_01_05에서 마리안이 내부 폭탄을 기폭시켜 수송기를 추락시켰다는 진실로 이어진다.",
+          "related_scene_ids": ["main_00_00", "main_01_05"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티, 라피, 지휘관",
+          "summary": "방주 정보부 소속 오퍼레이터 시프티가 지상의 스쿼드와 통신을 연결하고 지휘관에게 인사하며 작전 서포트를 개시한다.",
+          "line_start": 4,
+          "line_end": 27,
+          "quote": "방주에서 지상에. 들리나요? 라피, 아니스. 통신이···. 여긴 라피. 시프티, 들려?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티",
+          "summary": "시프티는 해당 지역의 랩쳐가 대공 화기를 보유하고 있지 않아서 수송기를 띄운 것이라고 설명한다.",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "···해당 지역의 랩쳐는 대공 화기를 보유하고 있지 않은데요. 그래서 수송기를 띄운 건데···.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 시프티",
+          "summary": "라피가 시프티에게 수송기의 블랙박스 데이터 전송을 요청하고, 시프티는 분석이 끝나는 대로 보내주겠다고 답한다.",
+          "line_start": 16,
+          "line_end": 19,
+          "quote": "시프티. 수송기의 블랙박스 데이터를 보내주겠어? 어··· 지금 분석 중인데, 끝나면 보내드릴게요. 금방 끝날 거예요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "수송기 블랙박스",
+          "category": "item",
+          "detail": "대공 화기가 없는 지역에서 수송기가 추락한 원인을 밝히기 위해 라피가 시프티에게 분석 및 전송을 요청한 기록 장치.",
+          "line_start": 14,
+          "line_end": 17,
+          "quote": "···해당 지역의 랩쳐는 대공 화기를 보유하고 있지 않은데요. 그래서 수송기를 띄운 건데···. ···뭐? 시프티. 수송기의 블랙박스 데이터를 보내주겠어? 어··· 지금 분석 중인데, 끝나면 보내드릴게요. 금방 끝날 거예요."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "시프티",
+          "target": "지휘관",
+          "relation_or_change": "방주 정보부 소속 오퍼레이터로서 지휘관의 작전을 원격 서포트하기 시작함.",
+          "line_start": 21,
+          "line_end": 22,
+          "quote": "지휘관님 안녕하세요? 방주 정보부 소속 오퍼레이터, 시프티라고 합니다. 현 시간부로 작전을 서포팅 하게 되었습니다. 잘 부탁드려요."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 4 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 14 },
+        { "surface_text": "블랙박스", "suggested_type": "item", "line_start": 16 },
+        { "surface_text": "방주 정보부", "suggested_type": "organization", "line_start": 21 }
+      ]
+    },
+    {
+      "scene_id": "main_01_03",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "전방에서 로드 급 랩쳐 반응이 감지되자 라피와 아니스는 지상 실종 니케 회수율이 0.2%에 불과하다며 퇴각을 권유한다. 그러나 마리안의 호소와 지휘관의 결단으로 수색 작전을 포기하지 않고 로드 급 랩쳐와 교전하기로 결정한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 2, "line_end": 2, "quote": "전방, 하이 클래스 에너지 반응. 로드 급으로 추정됩니다." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "로드 급", "entity_id": null, "entity_type": "concept", "line_start": 2, "line_end": 2, "quote": "전방, 하이 클래스 에너지 반응. 로드 급으로 추정됩니다." },
+          { "surface_text": "니케", "entity_id": null, "entity_type": "faction_or_species", "line_start": 8, "line_end": 8, "quote": "지상에서 행방불명된 니케 회수율은 0.2%야." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "마리안", "to_target": "지휘관", "address_term": "지휘관", "line_start": 18, "line_end": 18, "quote": "···지휘관. 포기하실 건가요?" },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 30, "line_end": 30, "quote": "···지휘관님. 죽을 수도 있는 거 알지?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "아니스",
+          "summary": "아니스는 지상에서 행방불명된 니케 회수율이 0.2%에 불과하며 이번 수색 작전도 구색 맞추기용이라고 말한다.",
+          "line_start": 8,
+          "line_end": 9,
+          "quote": "지상에서 행방불명된 니케 회수율은 0.2%야. 구색을 맞추기 위한 수색 작전인 거, 너도 알잖아.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티",
+          "summary": "시프티는 전방의 로드 급 랩쳐가 중대 급을 지휘하는 개체로, 교전 시 24.35% 확률로 전멸할 수 있다고 분석한다.",
+          "line_start": 15,
+          "line_end": 17,
+          "quote": "위험해요. 중대 급을 지휘하는 객체인 만큼 전투력이 높죠. 시뮬레이션 상으로 승률은 높은 편이긴 한데, 우리 쪽도 피해가 제법···. 24.35% 확률로 전멸할 수도 있고요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 라피, 아니스, 마리안",
+          "summary": "지휘관이 수색 작전을 포기하지 않고 전진하라고 명령하자 라피와 아니스가 이에 따르고, 마리안은 지휘관을 반드시 지키겠다고 나선다.",
+          "line_start": 20,
+          "line_end": 39,
+          "quote": "수색 작전을 포기하고 싶진 않아. 그렇다면 명령을 내려주십시오. 그거면 됩니다. 우린 지휘관의 명령을 따르니까요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "로드 급 랩쳐",
+          "category": "lore_concept",
+          "detail": "중대 급 랩쳐를 지휘하는 하이 클래스 랩쳐 개체.",
+          "line_start": 2,
+          "line_end": 15,
+          "quote": "전방, 하이 클래스 에너지 반응. 로드 급으로 추정됩니다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "아니스",
+          "target": "지휘관",
+          "relation_or_change": "니케는 머리만 멀쩡하면 되지만 인간인 지휘관은 죽을 수 있다며 위험을 경고함.",
+          "line_start": 30,
+          "line_end": 32,
+          "quote": "···지휘관님. 죽을 수도 있는 거 알지? 우리야 머리만 멀쩡하면 되지만, 인간인 지휘관님은 달라. 그래도 괜찮아?"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "로드 급", "suggested_type": "concept", "line_start": 2 },
+        { "surface_text": "니케", "suggested_type": "concept", "line_start": 8 }
+      ]
+    },
+    {
+      "scene_id": "main_01_04",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "로드 급과의 전투에서 지휘관을 감싸다 파손율 17.05%의 부상을 입은 마리안에게 지휘관이 다시 붕대를 감아준다. 아니스는 니케에게 소용없다며 의아해하지만, 마리안은 마음이 채워지는 느낌이라며 고마워한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 2, "line_end": 2, "quote": "상황 종료. 피해 정도를 보고해 주세요." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "붕대", "entity_id": null, "entity_type": "item", "line_start": 13, "line_end": 13, "quote": "마리안에게 붕대를 감아준다." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "마리안", "to_target": "지휘관", "address_term": "지휘관", "line_start": 16, "line_end": 16, "quote": "지휘관···." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 17, "line_end": 17, "quote": "하하. 지휘관님. 뭐해? 니케한텐 그런 건 아무런 소용이 없···." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "지휘관이 감아준 붕대는 main_01_06에서 침식된 마리안이 마지막 순간 지휘관에게 유언으로 남기는 핵심 소재다.",
+          "related_scene_ids": ["main_00_01", "main_01_06"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 지휘관, 아니스",
+          "summary": "전투 후 좌측 쇄골 프레임과 좌안 렌즈 등이 손상되어 파손율 17.05%를 기록한 마리안에게 지휘관이 붕대를 감아주고, 마리안은 마음이 채워지는 느낌이라며 고마워한다.",
+          "line_start": 5,
+          "line_end": 24,
+          "quote": "좌측 쇄골 프레임 파손. 우하단 프로텍터 대파. 좌안 렌즈, 유탄에 의한 자상. 타겟 인식에는 이상 없음.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "붕대",
+          "category": "item",
+          "detail": "파손율 17.05%의 부상을 입은 마리안에게 지휘관이 감아준 붕대. 마리안은 마음이 채워지는 느낌이라며 다른 부위에도 감아달라고 요청함.",
+          "line_start": 13,
+          "line_end": 24,
+          "quote": "마리안에게 붕대를 감아준다. 지휘관···. 하하. 지휘관님. 뭐해? 니케한텐 그런 건 아무런 소용이 없···. 아뇨. 소용 있어요."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "지휘관이 감아준 붕대 덕분에 마음이 채워지는 느낌이라며 깊은 유대감을 보임.",
+          "line_start": 18,
+          "line_end": 24,
+          "quote": "아뇨. 소용 있어요. ···? 마음이··· 채워지는 느낌이거든요."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "붕대", "suggested_type": "item", "line_start": 13 }
+      ]
+    },
+    {
+      "scene_id": "main_01_05",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "목표 좌표에 도착한 직후 시프티가 수송기 블랙박스 해석 결과를 전송하고, 라피는 수송기 내부 폭탄의 기폭 신호 식별 코드가 마리안임을 밝혀내 총구를 겨눈다. 침식 반응과 함께 콜링 시그널을 발신하던 마리안이 타일런트 급 랩쳐 '블랙스미스'의 촉수에 포획되자, 지휘관과 스쿼드는 마리안을 구하기 위해 블랙스미스와 교전에 돌입한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 9, "line_end": 10, "quote": "···라피. 수송기의 블랙박스 해석이 끝났어요. 텍스트로 전송할게요." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "블랙박스", "entity_id": null, "entity_type": "item", "line_start": 10, "line_end": 10, "quote": "수송기의 블랙박스 해석이 끝났어요. 텍스트로 전송할게요." },
+          { "surface_text": "침식", "entity_id": null, "entity_type": "concept", "line_start": 33, "line_end": 33, "quote": "침식 반응 확인! 어, 언제부터···!!" },
+          { "surface_text": "콜링 시그널", "entity_id": null, "entity_type": "concept", "line_start": 41, "line_end": 41, "quote": "콜링 시그널 감지! 저지해주세요!" },
+          { "surface_text": "블랙스미스", "entity_id": null, "entity_type": "character", "line_start": 46, "line_end": 46, "quote": "블랙스미스가 옵니다!" },
+          { "surface_text": "타일런트", "entity_id": null, "entity_type": "concept", "line_start": 52, "line_end": 52, "quote": "코드 네임 블랙스미스! 타일런트 모델 중 하나입니다!" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "마리안", "address_term": "너", "line_start": 17, "line_end": 17, "quote": "수송기를 격추한 게 너야?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "라피와 아니스가 마리안 구출 명령을 내린 지휘관을 보며 나눈 '찾은 것 같아? / 아직은 모르겠어'라는 대화는 두 사람이 찾고 있는 이상적인 지휘관에 대한 단서다.",
+          "related_scene_ids": ["main_01_06", "main_01_07"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피",
+          "summary": "블랙박스 데이터를 확인한 라피는 수송기 내부의 작전용 폭탄이 두 차례 폭발했으며, 그 외부 기폭 신호의 식별 코드가 마리안이라고 밝힌다.",
+          "line_start": 17,
+          "line_end": 23,
+          "quote": "수송기 내부에서 두 차례에 걸쳐 폭발이 발생했어. 이번 작전에 사용할 폭탄이었고, 외부에서의 기폭 신호가 없다면 절대 폭발하지 않지. ···그리고 그 기폭 신호의 식별 코드는. 마리안, 너야.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "마리안, 시프티",
+          "summary": "마리안이 '여기예요'만 반복하며 침식 반응과 콜링 시그널을 일으키고, 직후 나타난 타일런트 모델 003 블랙스미스의 촉수에 휘감겨 포획된다.",
+          "line_start": 28,
+          "line_end": 56,
+          "quote": "마리안은 어디선가 뻗어온 촉수에 휘감겨, 순식간에 건물 너머로 사라졌다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티, 라피",
+          "summary": "시프티와 라피는 블랙스미스가 지상의 니케를 포획해 랩쳐의 부품으로 만드는 특수 개체이지만 포획한 니케를 장시간 보관하므로 마리안과 선발대의 생존 가능성이 있다고 설명한다.",
+          "line_start": 52,
+          "line_end": 66,
+          "quote": "코드 네임 블랙스미스! 타일런트 모델 중 하나입니다! 지상에 올라온 니케들을 포획해, 랩쳐의 부품으로 만드는 특수 개체예요!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 라피, 아니스, 시프티",
+          "summary": "지휘관이 마리안을 구하자고 명령하자 라피와 아니스가 동의하고, 일행은 타일런트 모델 003 블랙스미스와 교전에 돌입한다.",
+          "line_start": 71,
+          "line_end": 89,
+          "quote": "현 시간부로 타일런트 모델 003 블랙스미스와 교전에 진입합니다! 인카운터!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "침식과 콜링 시그널",
+          "category": "lore_concept",
+          "detail": "랩쳐에게 니케의 중추 신경을 빼앗기는 현상(침식) 및 고위 랩쳐를 호출하는 신호(콜링 시그널).",
+          "line_start": 33,
+          "line_end": 41,
+          "quote": "침식 반응 확인! 어, 언제부터···!! 칫···! 마리안에게 무슨 일이 일어난 거지? 랩쳐에게 중추 신경을 빼앗겼어요! 여여여여기기기기예에에에요요요요. 콜링 시그널 감지! 저지해주세요!"
+        },
+        {
+          "keyword": "타일런트 모델 003 블랙스미스",
+          "category": "code_or_number",
+          "detail": "포획한 니케를 장시간 보관하며 랩쳐의 부품으로 만드는 타일런트 급 특수 개체.",
+          "line_start": 52,
+          "line_end": 53,
+          "quote": "코드 네임 블랙스미스! 타일런트 모델 중 하나입니다! 지상에 올라온 니케들을 포획해, 랩쳐의 부품으로 만드는 특수 개체예요!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "마리안을 구하자는 지휘관의 명령에 '해보고 싶어'라고 적극적으로 찬동하며 아니스의 '찾은 것 같아?'라는 물음에 '아직은 모르겠어'라고 답함.",
+          "line_start": 76,
+          "line_end": 80,
+          "quote": "아니스. 해보자. 해보고 싶어. ···찾은 것 같아? 아직은 모르겠어. 좋아. 해보자 그럼."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "블랙박스", "suggested_type": "item", "line_start": 10 },
+        { "surface_text": "침식", "suggested_type": "concept", "line_start": 33 },
+        { "surface_text": "콜링 시그널", "suggested_type": "concept", "line_start": 41 },
+        { "surface_text": "블랙스미스", "suggested_type": "character", "line_start": 46 },
+        { "surface_text": "타일런트", "suggested_type": "concept", "line_start": 52 }
+      ]
+    },
+    {
+      "scene_id": "main_01_06",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "블랙스미스를 격파한 뒤 확인한 결과 선발대는 이미 부품이 뜯겨 전멸했고, 마리안은 침식이 뇌까지 전이되어 처분해야 하는 상태였다. 지휘관이 자결용 권총을 겨누었다가 차마 쏘지 못하고 거두자, 마리안이 스스로 총구를 자신의 머리에 대고 붕대에 대한 감사를 남긴 뒤 방아쇠를 당긴다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "마리안", "entity_id": "char_마리안", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 2, "line_end": 3, "quote": "시뮬레이션 상에서의 승률은 12.4% 였습니다. 훌륭하세요, 지휘관." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "침식", "entity_id": null, "entity_type": "concept", "line_start": 10, "line_end": 10, "quote": "틀렸어. 침식이 뇌까지 전이돼버렸어." },
+          { "surface_text": "자결용 권총", "entity_id": null, "entity_type": "item", "line_start": 14, "line_end": 14, "quote": "자결용 권총입니다. 인간도 사용할 수 있습니다." },
+          { "surface_text": "이레귤러", "entity_id": null, "entity_type": "concept", "line_start": 27, "line_end": 27, "quote": "그대로 방치하면 이레귤러가 될 가능성이 높습니다." },
+          { "surface_text": "붕대", "entity_id": null, "entity_type": "item", "line_start": 41, "line_end": 41, "quote": "붕대··· 고마웠어··· 요···." },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 51, "line_end": 51, "quote": "방주로 복귀해주세요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "시프티", "to_target": "지휘관", "address_term": "지휘관", "line_start": 3, "line_end": 3, "quote": "훌륭하세요, 지휘관." },
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 26, "line_end": 26, "quote": "지휘관. 망설일 시간이 없습니다." },
+        { "from_speaker": "마리안", "to_target": "지휘관", "address_term": "지휘··· 관", "line_start": 40, "line_end": 40, "quote": "지휘··· 관." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 아니스, 시프티",
+          "summary": "블랙스미스 격파 후 선발대가 부품이 모두 뜯겨 전멸했음을 확인하고, 뇌까지 침식이 전이된 마리안을 군법에 따라 지휘관이 자결용 권총으로 직접 처분해야 하는 상황이 된다.",
+          "line_start": 4,
+          "line_end": 21,
+          "quote": "선발대는 전멸. 부품이 모두 뜯겨나갔습니다. 마리안은? 살아는, 있어.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 마리안",
+          "summary": "지휘관이 총을 겨누었다가 거둬들이자, 마리안이 총을 잡아 자신의 머리에 대고 '붕대 고마웠어요'라고 말한 뒤 스스로 방아쇠를 당겨 처분된다.",
+          "line_start": 23,
+          "line_end": 49,
+          "quote": "마리안은 손을 뻗어 겨눠진 총을 잡았다. 그리고 자신의 머리에 가져다 대었다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관",
+          "summary": "처분 확인 후 수색 작전이 종료되자 지휘관은 숨진 마리안의 머리에 붕대를 감아준다.",
+          "line_start": 50,
+          "line_end": 56,
+          "quote": "현 시간부로 수색 작전을 종료합니다. 방주로 복귀해주세요. 마리안의 머리에 붕대를 감아준다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "침식 니케 처분 군법",
+          "category": "lore_concept",
+          "detail": "뇌가 파손되거나 침식된 니케는 이레귤러가 될 가능성이 높아 처분해야 하며, 니케가 니케를 처분할 수 없어 군법에 따라 지휘관이 자결용 권총으로 직접 처분해야 함.",
+          "line_start": 11,
+          "line_end": 27,
+          "quote": "뇌가 파손된 니케는 처분하는 것이 규칙입니다. 군법에 따라 니케의 처분은 지휘관이 직접 해야 합니다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "뇌까지 침식된 상태에서도 차마 쏘지 못하는 지휘관의 총을 잡고 붕대에 대한 고마움을 전하며 스스로 방아쇠를 당김.",
+          "line_start": 34,
+          "line_end": 42,
+          "quote": "마리안은 손을 뻗어 겨눠진 총을 잡았다. 그리고 자신의 머리에 가져다 대었다. !! 지휘··· 관. 붕대··· 고마웠어··· 요···. 마리안은 방아쇠를 당겼다."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "침식", "suggested_type": "concept", "line_start": 10 },
+        { "surface_text": "자결용 권총", "suggested_type": "item", "line_start": 14 },
+        { "surface_text": "이레귤러", "suggested_type": "concept", "line_start": 27 },
+        { "surface_text": "붕대", "suggested_type": "item", "line_start": 41 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 51 }
+      ]
+    },
+    {
+      "scene_id": "main_01_07",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "방주로 복귀하며 시프티와 라피는 마리안의 침식 코드가 블랙스미스에게 니케들을 안내하는 내비게이션이었으며, 수송기 탑승 시점인 방주 내부에서부터 이미 침식 상태였음을 추론한다. 보고를 받은 엔더슨은 신입 지휘관이 3기의 니케로 블랙스미스를 잡은 것에 흥미를 보이며 니케들을 무장 상태로 대동해 사령부로 오라고 호출한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "엔더슨", "entity_id": "char_엔더슨", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "마리안", "entity_id": "char_마리안", "entity_type": "character", "line_start": 2, "line_end": 2, "quote": "시프티. 마리안은." },
+          { "surface_text": "침식 코드", "entity_id": null, "entity_type": "concept", "line_start": 4, "line_end": 4, "quote": "···마리안에게 심어진 침식 코드는 내비게이션이었을 거예요." },
+          { "surface_text": "블랙스미스", "entity_id": null, "entity_type": "character", "line_start": 5, "line_end": 5, "quote": "블랙스미스가 있는 곳으로 니케들을 안내하는 역할이었겠죠." },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 19, "line_end": 19, "quote": "그리고 수송기는 방주에서 왔어." },
+          { "surface_text": "방호벽", "entity_id": null, "entity_type": "item", "line_start": 21, "line_end": 21, "quote": "방주의 방호벽이 뚫린 걸까요?" },
+          { "surface_text": "사령부", "entity_id": null, "entity_type": "organization", "line_start": 40, "line_end": 40, "quote": "···사령부에서 호출이?" },
+          { "surface_text": "중앙 정부", "entity_id": null, "entity_type": "organization", "line_start": 48, "line_end": 48, "quote": "앞으로도 중앙 정부의 충실한 개가 되어 더욱 더 힘써다오~" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "엔더슨", "to_target": "시프티", "address_term": "시프티 양", "line_start": 29, "line_end": 29, "quote": "농담이 늘었군, 시프티 양." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "라피가 제기한 '마리안은 방주에서 수송기에 탑승할 때부터 이미 침식 상태였다'는 의혹에 대해 지휘관이 main_01_08에서 엔더슨에게 직접 질문한다.",
+          "related_scene_ids": ["main_01_08"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티",
+          "summary": "시프티는 마리안에게 심어진 침식 코드가 블랙스미스에게 니케들을 안내하는 내비게이션이었으며, 지휘관을 지키고 복종한다는 최우선 사항과 충돌하다가 블랙스미스 조우 지점에서 침식이 이를 덮어버렸을 것이라고 추정한다.",
+          "line_start": 4,
+          "line_end": 12,
+          "quote": "···마리안에게 심어진 침식 코드는 내비게이션이었을 거예요. 블랙스미스가 있는 곳으로 니케들을 안내하는 역할이었겠죠. 먹이로 바치기 위해.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피",
+          "summary": "라피는 마리안이 방주에서 온 수송기를 격추시켰으므로 탑승할 때부터 침식 상태였으며, 방주의 방호벽은 침식을 쉽게 걸러낼 만큼 견고하다고 지적해 방주 내부의 개입 가능성을 시사한다.",
+          "line_start": 18,
+          "line_end": 24,
+          "quote": "수송기를 격추시켰다는 말은, 탑승할 때부터 침식 상태였다고 보는 게 맞겠지. 그리고 수송기는 방주에서 왔어.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티, 엔더슨, 지휘관, 라피, 아니스",
+          "summary": "시프티의 보고를 받은 엔더슨은 신입 지휘관이 니케 3기로 블랙스미스를 잡은 것에 관심을 보이며, 작전에 참가한 니케들을 무장 상태로 대동해 15시 이후 사령부로 오라고 호출한다.",
+          "line_start": 25,
+          "line_end": 57,
+          "quote": "···이상으로 보고를 마치겠습니다. 블랙스미스를 잡았다고? 대충 던져놓은 신입 지휘관이. 하루 만에. 단 3기의 니케로.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "방주 내부 침식 의혹",
+          "category": "foreshadowing",
+          "detail": "방주의 견고한 방호벽을 통과한 수송기에 탑승할 때부터 마리안이 이미 침식 상태였다는 점에서 방주 내부에서 누군가 침식을 심었을 가능성이 제기됨.",
+          "line_start": 18,
+          "line_end": 22,
+          "quote": "수송기를 격추시켰다는 말은, 탑승할 때부터 침식 상태였다고 보는 게 맞겠지. 그리고 수송기는 방주에서 왔어. !! 방주의 방호벽이 뚫린 걸까요? 아니. 방호벽은 견고해. 침식 정도는 쉽게 걸러낼 거야."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "엔더슨",
+          "target": "지휘관",
+          "relation_or_change": "단 3기의 니케로 하루 만에 블랙스미스를 잡은 신입 지휘관에게 흥미를 느끼고 사령부로 직접 호출함.",
+          "line_start": 26,
+          "line_end": 39,
+          "quote": "블랙스미스를 잡았다고? 대충 던져놓은 신입 지휘관이. 하루 만에. 단 3기의 니케로."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "침식 코드", "suggested_type": "concept", "line_start": 4 },
+        { "surface_text": "블랙스미스", "suggested_type": "character", "line_start": 5 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 19 },
+        { "surface_text": "방호벽", "suggested_type": "item", "line_start": 21 },
+        { "surface_text": "사령부", "suggested_type": "organization", "line_start": 40 },
+        { "surface_text": "중앙 정부", "suggested_type": "organization", "line_start": 48 }
+      ]
+    },
+    {
+      "scene_id": "main_01_08",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "중앙 정부 사령부 부사령관 엔더슨은 지휘관과 라피, 아니스를 만나 시뮬레이션 룸에서 테스트를 받으라고 지시한다. 지휘관이 마리안의 침식이 방주에서 시작된 것 같다고 묻자, 엔더슨은 방호벽은 절대 뚫리지 않는다며 만약 누군가 의도를 갖고 침식을 심어놓았다면 어떻게 할 것인지 떠본다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "엔더슨", "entity_id": "char_엔더슨", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "중앙 정부 사령부", "entity_id": null, "entity_type": "organization", "line_start": 4, "line_end": 4, "quote": "반갑네. 중앙 정부 사령부에서 부사령관을 맡고 있는." },
+          { "surface_text": "시뮬레이션 룸", "entity_id": null, "entity_type": "location", "line_start": 21, "line_end": 21, "quote": "지금 상태 그대로, 시뮬레이션 룸으로 향하게." },
+          { "surface_text": "마리안", "entity_id": "char_마리안", "entity_type": "character", "line_start": 40, "line_end": 40, "quote": "마리안의 침식은 방주에서 시작된 것 같은데,··· 알고 있는 게 있습니까?" },
+          { "surface_text": "침식", "entity_id": null, "entity_type": "concept", "line_start": 40, "line_end": 40, "quote": "마리안의 침식은 방주에서 시작된 것 같은데,··· 알고 있는 게 있습니까?" },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 40, "line_end": 40, "quote": "마리안의 침식은 방주에서 시작된 것 같은데,··· 알고 있는 게 있습니까?" },
+          { "surface_text": "방호벽", "entity_id": null, "entity_type": "item", "line_start": 51, "line_end": 51, "quote": "방주의 방호벽은 최고일세. 절대 뚫리지 않지." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "엔더슨", "to_target": "지휘관, 라피, 아니스", "address_term": "자네들", "line_start": 3, "line_end": 3, "quote": "자네들이군." },
+        { "from_speaker": "지휘관", "to_target": "엔더슨", "address_term": "엔더슨 님", "line_start": 8, "line_end": 8, "quote": "엔더슨 님." },
+        { "from_speaker": "지휘관", "to_target": "엔더슨", "address_term": "엔더슨 선배", "line_start": 10, "line_end": 10, "quote": "엔더슨 선배." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 45, "line_end": 45, "quote": "아니, 지휘관님. 그 얘기를 왜 여기서···!" },
+        { "from_speaker": "엔더슨", "to_target": "지휘관", "address_term": "자네", "line_start": 57, "line_end": 57, "quote": "아, 자네." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "choice_line": 7,
+          "options": [
+            {
+              "option_text": "엔더슨 님.",
+              "continuation_summary": "엔더슨이 최악이라며 그냥 엔더슨이라고 부르라고 한다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "엔더슨 선배.",
+              "continuation_summary": "엔더슨이 최악이라며 그냥 엔더슨이라고 부르라고 한다.",
+              "branch_specific_facts": []
+            }
+          ]
+        },
+        {
+          "choice_line": 61,
+          "options": [
+            {
+              "option_text": "대가를 치르게 할 겁니다.",
+              "continuation_summary": "엔더슨은 일개 지휘관이 어떻게 대가를 치르게 할 셈인지 들어보려다가 시간이 되었다며 말을 멈춘다.",
+              "branch_specific_facts": [
+                "지휘관은 니케에게 의도적으로 침식을 심은 배후에게 대가를 치르게 하겠다고 답한다."
+              ]
+            },
+            {
+              "option_text": "이유를 물어볼 겁니다.",
+              "continuation_summary": "엔더슨은 납득할 수 있는 이유라면 그냥 넘어가겠다는 말처럼 들린다면서도 그저 어떤 대답을 할지 궁금했을 뿐이라고 말한다.",
+              "branch_specific_facts": [
+                "지휘관은 니케에게 의도적으로 침식을 심은 배후에게 이유를 물어보겠다고 답한다."
+              ]
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "엔더슨, 지휘관",
+          "summary": "중앙 정부 사령부 부사령관 엔더슨이 지휘관 일행을 맞이해 자신을 그냥 엔더슨이라 부르게 하고, 현재 무장 상태 그대로 시뮬레이션 룸으로 가서 테스트를 받으라고 지시한다.",
+          "line_start": 4,
+          "line_end": 23,
+          "quote": "반갑네. 중앙 정부 사령부에서 부사령관을 맡고 있는. 엔더슨이라고 하네.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 엔더슨",
+          "summary": "지휘관이 마리안의 침식이 방주에서 시작된 것 같은데 알고 있는 게 있는지 묻자, 엔더슨은 조사 중이라 답할 수 없지만 방주의 방호벽은 절대 뚫리지 않는다고 답한다.",
+          "line_start": 40,
+          "line_end": 51,
+          "quote": "마리안의 침식은 방주에서 시작된 것 같은데,··· 알고 있는 게 있습니까?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "엔더슨, 지휘관",
+          "summary": "엔더슨은 만약 지휘관이 어쩌지 못할 정도로 아득한 무언가가 의도를 가지고 니케에게 침식을 심어놓았다면 어떻게 할 것인지 질문한다.",
+          "line_start": 57,
+          "line_end": 60,
+          "quote": "만약에 누군가가 어떤 의도가 있어서 니케에게 침식을 심어놓았다고 한다면. 그 상대가 자네가 어쩌지 못할 정도로 아득한 무언가라면. 자네는 어떻게 할 텐가.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "침식을 심어놓은 아득한 무언가",
+          "category": "foreshadowing",
+          "detail": "엔더슨은 방주의 방호벽이 절대 뚫리지 않는다며, 누군가 의도를 가지고 니케에게 침식을 심어놓았고 그 상대가 일개 지휘관이 어쩌지 못할 아득한 존재라는 가정을 제시함.",
+          "line_start": 50,
+          "line_end": 60,
+          "quote": "방주의 방호벽은 최고일세. 절대 뚫리지 않지. 그럼, 난 다음 회의가 있으니 자리를 비켜주겠나? 자리에서 일어난다. 아, 자네. 만약에 누군가가 어떤 의도가 있어서 니케에게 침식을 심어놓았다고 한다면."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "엔더슨",
+          "target": "지휘관",
+          "relation_or_change": "권위적인 호칭을 거부하고 그냥 '엔더슨'이라 부르게 하며, 마리안의 침식 배후에 대한 지휘관의 각오를 떠봄.",
+          "line_start": 14,
+          "line_end": 16,
+          "quote": "최악이군. 그냥 엔더슨이라고 부르게. 자네들을 여기까지 부른 이유는 한 가지 테스트를 해보고 싶어서라네."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "중앙 정부 사령부", "suggested_type": "organization", "line_start": 4 },
+        { "surface_text": "시뮬레이션 룸", "suggested_type": "location", "line_start": 21 },
+        { "surface_text": "침식", "suggested_type": "concept", "line_start": 40 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 40 },
+        { "surface_text": "방호벽", "suggested_type": "item", "line_start": 51 }
+      ]
+    },
+    {
+      "scene_id": "main_01_09",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "엘리시온의 CEO 잉그리드가 시뮬레이션 룸에서 지휘관 일행의 전투력 테스트를 주관한다. 훈련에 앞서 잉그리드가 스쿼드 명을 요구하자 지휘관은 스쿼드 이름을 '카운터스'로 명명한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "잉그리드", "entity_id": "char_잉그리드", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "시뮬레이션 룸", "entity_id": null, "entity_type": "location", "line_start": 3, "line_end": 3, "quote": "전투력 테스트는 시뮬레이션 룸에서 진행된다." },
+          { "surface_text": "엘리시온", "entity_id": null, "entity_type": "organization", "line_start": 7, "line_end": 7, "quote": "거기다 저 사람, 엘리시온의 CEO잖아. 여기서 뭐 하는데." },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 14, "line_end": 14, "quote": "방주 기술의 결정체라 불리는 시뮬레이션 룸은 모든 것을 현실 전투와 동일하게 재현해놨다." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 16, "line_end": 16, "quote": "랩쳐와의 전투 역시 완벽히 재현했다." },
+          { "surface_text": "카운터스", "entity_id": null, "entity_type": "squad", "line_start": 25, "line_end": 25, "quote": "카운터스." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "잉그리드", "to_target": "카운터스", "address_term": "제군들", "line_start": 2, "line_end": 2, "quote": "금일. 제군들의 전투력 테스트를 진행할 잉그리드다." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 4, "line_end": 4, "quote": "저기, 지휘관님. 갑자기 이게 무슨 일이야?" },
+        { "from_speaker": "잉그리드", "to_target": "지휘관", "address_term": "지휘관", "line_start": 23, "line_end": 23, "quote": "지휘관, 스쿼드 명을 말해라." },
+        { "from_speaker": "잉그리드", "to_target": "카운터스", "address_term": "카운터스 제군", "line_start": 29, "line_end": 29, "quote": "그럼 카운터스 제군." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "잉그리드",
+          "summary": "엘리시온의 CEO 잉그리드가 방주 기술의 결정체인 시뮬레이션 룸에서 지휘관 일행의 모의 전투 테스트를 진행한다.",
+          "line_start": 2,
+          "line_end": 18,
+          "quote": "금일. 제군들의 전투력 테스트를 진행할 잉그리드다. 전투력 테스트는 시뮬레이션 룸에서 진행된다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "잉그리드, 지휘관",
+          "summary": "잉그리드가 훈련에 앞서 스쿼드 명을 요구하자 지휘관이 스쿼드 명을 '카운터스'라고 정한다.",
+          "line_start": 22,
+          "line_end": 30,
+          "quote": "훈련에 앞서, 제군들의 스쿼드 명을 받겠다. 지휘관, 스쿼드 명을 말해라. 카운터스. 확인했다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "시뮬레이션 룸",
+          "category": "location",
+          "detail": "방주 기술의 결정체라 불리며 돌발 상황과 랩쳐와의 전투를 현실과 동일하게 재현한 모의 전투 시설.",
+          "line_start": 12,
+          "line_end": 16,
+          "quote": "제군들은 지금부터 시뮬레이션 룸에서 모의 전투를 치른다. 이름에서 느껴지는 가벼움은 현 시간부로 모두 잊어라. 방주 기술의 결정체라 불리는 시뮬레이션 룸은 모든 것을 현실 전투와 동일하게 재현해놨다."
+        },
+        {
+          "keyword": "카운터스",
+          "category": "organization",
+          "detail": "지휘관이 시뮬레이션 룸 테스트에 앞서 명명한 지휘관과 라피, 아니스의 스쿼드 명칭.",
+          "line_start": 22,
+          "line_end": 29,
+          "quote": "훈련에 앞서, 제군들의 스쿼드 명을 받겠다. 지휘관, 스쿼드 명을 말해라. 카운터스. 확인했다. 그럼 카운터스 제군."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "잉그리드",
+          "target": "엘리시온",
+          "relation_or_change": "잉그리드는 기업 엘리시온의 CEO임.",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "거기다 저 사람, 엘리시온의 CEO잖아. 여기서 뭐 하는데."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "시뮬레이션 룸", "suggested_type": "location", "line_start": 3 },
+        { "surface_text": "엘리시온", "suggested_type": "organization", "line_start": 7 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 14 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 16 },
+        { "surface_text": "카운터스", "suggested_type": "squad", "line_start": 25 }
+      ]
+    },
+    {
+      "scene_id": "main_01_10",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "시뮬레이션 테스트에서 카운터스가 실전이면 전멸했을 형편없는 성적을 내자, 잉그리드와 엔더슨은 실전에 강한 타입인지 확인하겠다며 가장 어려운 바닷가 도시의 발전소 조사 작전에 동일한 지휘관과 니케를 연속 배정한다. 지휘관과 니케가 서로를 처분하는 트러블 때문에 연속 배정을 피하는 관례와 달라 의구심이 일지만, 지휘관은 라피와 아니스에게 신뢰를 표하며 지상으로 향한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "엔더슨", "entity_id": "char_엔더슨", "is_generic_role": false },
+          { "speaker_label": "잉그리드", "entity_id": "char_잉그리드", "is_generic_role": false },
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "발전소", "entity_id": null, "entity_type": "location", "line_start": 27, "line_end": 27, "quote": "발전소 조사? 그, 바닷가 근처 도시에 있는 그거?" },
+          { "surface_text": "중앙 정부", "entity_id": null, "entity_type": "organization", "line_start": 34, "line_end": 34, "quote": "아 예. 것 참 위대하신 중앙 정부의 강아지 납셨네요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 9, "line_end": 9, "quote": "지휘관님. 뭐 아는 거 없어?" },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "중앙 정부의 강아지", "line_start": 34, "line_end": 34, "quote": "아 예. 것 참 위대하신 중앙 정부의 강아지 납셨네요." },
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 66, "line_end": 66, "quote": "괜찮으시겠습니까? 지휘관." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "choice_line": 67,
+          "options": [
+            {
+              "option_text": "난 너희를 쏘지 않아.",
+              "continuation_summary": "라피는 그건 자신들도 마찬가지라고 답하고, 아니스는 아직은 그렇다고 덧붙인다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "난 너희를 믿어.",
+              "continuation_summary": "아니스는 뭘 보고 믿는지 모르겠다면서도 일단은 지휘관을 믿어보겠다고 답한다.",
+              "branch_specific_facts": []
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "잉그리드, 엔더슨",
+          "summary": "시뮬레이션 테스트 결과가 실전이었으면 바로 전멸했을 정도로 형편없게 나오자, 잉그리드와 엔더슨은 실전과의 괴리를 확인하기 위해 가장 어려운 발전소 조사 임무를 카운터스에게 맡긴다.",
+          "line_start": 16,
+          "line_end": 28,
+          "quote": "결과는 어떻지? 놀라울 정도다. ···그래? 형편없어. 실전이었으면 바로 전멸했겠군.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 아니스",
+          "summary": "라피와 아니스는 작전 중 트러블이나 현장에서 지휘관이 니케를 처분하거나 반대의 일이 벌어지는 경우가 있어 동일한 지휘관과 니케는 최소 3개의 작전 텀을 두고 배정하며 연속 배정되지 않는다고 설명한다.",
+          "line_start": 49,
+          "line_end": 56,
+          "quote": "동일한 지휘관과 니케는 연속해서 작전에 배정되지 않습니다. 보통은 작전 과정에서 트러블이 발생하기 때문이죠.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 라피, 아니스",
+          "summary": "연속 작전 배정에 대한 우려 속에서도 지휘관이 라피와 아니스에게 신뢰를 표하고 일행은 발전소 조사를 위해 지상으로 출발한다.",
+          "line_start": 65,
+          "line_end": 78,
+          "quote": "···명령인 이상 따르겠습니다만. 괜찮으시겠습니까? 지휘관.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "실전과 시뮬레이션 성적의 괴리",
+          "category": "foreshadowing",
+          "detail": "블랙스미스를 격파한 실전 전과와 달리 시뮬레이션 룸에서는 전멸 수준의 형편없는 결과가 나와 잉그리드와 엔더슨이 의문을 품음.",
+          "line_start": 19,
+          "line_end": 22,
+          "quote": "형편없어. 실전이었으면 바로 전멸했겠군. 오, 정말 놀라운 결과로군. 괴리가 너무 커. 실전에 강한 타입인가. 그럼 실전을 맡겨보자고."
+        },
+        {
+          "keyword": "지휘관과 니케 연속 작전 배정 기피 관례",
+          "category": "lore_concept",
+          "detail": "작전 중 트러블이나 상호 처분 사례 때문에 동일한 지휘관과 니케는 최소 3개의 작전 텀을 두며 연속 배정하지 않는 것이 일반적임.",
+          "line_start": 49,
+          "line_end": 55,
+          "quote": "동일한 지휘관과 니케는 연속해서 작전에 배정되지 않습니다. 보통은 작전 과정에서 트러블이 발생하기 때문이죠."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "지휘관",
+          "target": "라피, 아니스",
+          "relation_or_change": "지휘관과 니케가 서로를 처분하기도 하는 불신 구조 속에서 너희를 쏘지 않는다/믿는다고 말하며 상호 신뢰의 첫걸음을 뗌.",
+          "line_start": 66,
+          "line_end": 75,
+          "quote": "괜찮으시겠습니까? 지휘관. 난 너희를 쏘지 않아. 그건 우리도 마찬가지입니다. 아직은 말이지."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "발전소", "suggested_type": "location", "line_start": 27 },
+        { "surface_text": "중앙 정부", "suggested_type": "organization", "line_start": 34 }
+      ]
+    },
+    {
+      "scene_id": "main_01_11",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "지상 파견 직전 엘리시온 소속의 니케 네온이 급작스러운 인사발령으로 카운터스에 합류한다. 네온은 잉그리드 사장으로부터 전력으로 돕되 모든 것을 보고하라는 명령을 받았다며 스스로 스파이임을 밝힌다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 9, "line_end": 9, "quote": "어··· 방금 인사발령이 떨어졌네요." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "엘리시온", "entity_id": null, "entity_type": "organization", "line_start": 6, "line_end": 6, "quote": "···엘리시온의 니케?" },
+          { "surface_text": "잉그리드", "entity_id": "char_잉그리드", "entity_type": "character", "line_start": 20, "line_end": 20, "quote": "잉그리드 님. 그러니까 사장님이 내린 명령은 이거였어요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 10, "line_end": 10, "quote": "지휘관. 혹시 따로 들으신 내용이 있습니까?" },
+        { "from_speaker": "네온", "to_target": "잉그리드", "address_term": "잉그리드 님", "line_start": 20, "line_end": 20, "quote": "잉그리드 님. 그러니까 사장님이 내린 명령은 이거였어요." },
+        { "from_speaker": "네온", "to_target": "잉그리드", "address_term": "사장님", "line_start": 20, "line_end": 20, "quote": "잉그리드 님. 그러니까 사장님이 내린 명령은 이거였어요." },
+        { "from_speaker": "지휘관", "to_target": "네온", "address_term": "스파이", "line_start": 27, "line_end": 27, "quote": "잘 부탁해. 스파이." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "네온, 라피, 아니스, 시프티, 지휘관",
+          "summary": "엘리시온 소속 니케 네온이 급작스러운 인사발령으로 조사 작전에 합류하며, 잉그리드로부터 전력으로 돕되 모든 것을 보고하라는 명령을 받은 스파이라고 자칭한다.",
+          "line_start": 5,
+          "line_end": 30,
+          "quote": "안녕하세요. 네온이라고 해요. ···엘리시온의 니케? 이번 조사 작전에 합류하게 되었어요. 잘 부탁드려요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "네온의 스파이 임무",
+          "category": "foreshadowing",
+          "detail": "엘리시온 CEO 잉그리드가 카운터스의 특이성을 관찰하기 위해 네온에게 전력으로 돕되 모든 것을 보고하라고 명령해 합류시킴.",
+          "line_start": 20,
+          "line_end": 22,
+          "quote": "잉그리드 님. 그러니까 사장님이 내린 명령은 이거였어요. 전력으로 도와주되, 모든 것을 보고하라. 스파이 맞죠 이거?"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "네온",
+          "target": "잉그리드",
+          "relation_or_change": "엘리시온 소속 니케로서 사장 잉그리드로부터 카운터스를 돕고 모든 것을 보고하라는 지시를 받음.",
+          "line_start": 20,
+          "line_end": 21,
+          "quote": "잉그리드 님. 그러니까 사장님이 내린 명령은 이거였어요. 전력으로 도와주되, 모든 것을 보고하라."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "엘리시온", "suggested_type": "organization", "line_start": 6 }
+      ]
+    },
+    {
+      "scene_id": "main_02_00",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "지상에 처음 올라온 네온과 함께 발전소 조사에 나선 일행은 시프티가 에블라 입자를 정화해 스캔한 결과 발전소로 이어진 자가 부상 열차 선로에 고압 전류가 흐르고 있음을 알게 된다. 5년 전 도시 봉쇄 당시 랩쳐 유출을 막기 위해 흘려보낸 전류를 차단하고자 일행은 먼저 제어 센터로 향한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 10, "line_end": 11, "quote": "네, 그러니 서둘러 이동해야 해요. 작전 최종 목표는 발전소의 제어실 조사입니다." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 8, "line_end": 8, "quote": "지상에서 1시간 이내에 랩쳐와 조우할 확률은 100%야." },
+          { "surface_text": "발전소", "entity_id": null, "entity_type": "location", "line_start": 11, "line_end": 11, "quote": "작전 최종 목표는 발전소의 제어실 조사입니다." },
+          { "surface_text": "에블라 입자", "entity_id": null, "entity_type": "concept", "line_start": 13, "line_end": 13, "quote": "에블라 입자 정화 중." },
+          { "surface_text": "자가 부상 열차 선로", "entity_id": null, "entity_type": "location", "line_start": 16, "line_end": 16, "quote": "목적지인 발전소까지 이어진 길을 스캔 한 결과, 자가 부상 열차 선로를 따라가야 하는데." },
+          { "surface_text": "제어 센터", "entity_id": null, "entity_type": "location", "line_start": 36, "line_end": 36, "quote": "예. 있어요. 제어 센터를 맵 상에 마킹하겠습니다." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 37, "line_end": 37, "quote": "지휘관. 준비 완료입니다." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "choice_line": 19,
+          "options": [
+            {
+              "option_text": "··· ···",
+              "continuation_summary": "아니스가 인간이니까 어쩔 수 없다며 그런 걸로 시무룩해하지 말라고 위로한다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "나도 감수할 수 있어. 가자.",
+              "continuation_summary": "아니스가 인간은 죽는다며 뭘 감수한다는 거냐고 타박한다.",
+              "branch_specific_facts": []
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 에블라 입자를 정화해 작전 지역을 스캔하고, 발전소까지 이어진 자가 부상 열차 선로 전체에 고압 전류가 흐르고 있음을 확인한다.",
+          "line_start": 11,
+          "line_end": 18,
+          "quote": "작전 최종 목표는 발전소의 제어실 조사입니다. 작전 지역을 스캔하겠습니다. 에블라 입자 정화 중.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티, 아니스",
+          "summary": "시프티는 5년 전 도시 봉쇄 당시 랩쳐가 외부로 빠져나오지 못하게 의도적으로 선로에 고압 전류를 흘려보냈으며, 도시 내부에 남아있던 인간들도 함께 봉쇄되었음을 암시한다.",
+          "line_start": 28,
+          "line_end": 34,
+          "quote": "5년 전 도시의 봉쇄를 진행하던 중, 랩쳐가 외부로 빠져나오지 않게 하기 위해. 의도적으로 흘려보낸 것으로 나옵니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 시프티, 지휘관",
+          "summary": "일행은 선로의 고압 전류를 먼저 차단하기 위해 시프티가 마킹한 제어 센터로 출발한다.",
+          "line_start": 35,
+          "line_end": 42,
+          "quote": "그럼 먼저 선로의 전류를 차단하자. 외부에서 컨트롤할 방법은 있어? 예. 있어요. 제어 센터를 맵 상에 마킹하겠습니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "에블라 입자",
+          "category": "lore_concept",
+          "detail": "지상 작전 지역 스캔 시 정화 과정을 거쳐 농도를 낮춰야 하는 입자.",
+          "line_start": 12,
+          "line_end": 15,
+          "quote": "작전 지역을 스캔하겠습니다. 에블라 입자 정화 중. 농도 42.43%··· 21.48%···. 에블라 입자 농도 2.01%. 스캔 완료."
+        },
+        {
+          "keyword": "5년 전 도시 봉쇄와 고압 전류 선로",
+          "category": "past_incident",
+          "detail": "5년 전 랩쳐가 도시 외부로 빠져나오지 못하게 봉쇄하며 자가 부상 열차 선로에 고압 전류를 흘려보냈고, 도시 내부에 남아있던 인간들도 버려짐.",
+          "line_start": 29,
+          "line_end": 34,
+          "quote": "5년 전 도시의 봉쇄를 진행하던 중, 랩쳐가 외부로 빠져나오지 않게 하기 위해. 의도적으로 흘려보낸 것으로 나옵니다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "네온",
+          "target": "아니스",
+          "relation_or_change": "네온이 지상에 처음 올라와 지직거리지 않는 하늘을 신기해하자 아니스가 지상에서는 1시간 내 랩쳐 조우 확률이 100%라며 경각심을 줌.",
+          "line_start": 2,
+          "line_end": 9,
+          "quote": "···여기가 지상. 처음이야? 예. 이렇게 넓고, 하늘이 지직거리지 않다니. 말 그대로 색다른 느낌이네요."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 8 },
+        { "surface_text": "발전소", "suggested_type": "location", "line_start": 11 },
+        { "surface_text": "에블라 입자", "suggested_type": "concept", "line_start": 13 },
+        { "surface_text": "자가 부상 열차 선로", "suggested_type": "location", "line_start": 16 },
+        { "surface_text": "제어 센터", "suggested_type": "location", "line_start": 36 }
+      ]
+    },
+    {
+      "scene_id": "main_02_01",
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "이동 중 네온이 갑자기 '아.'라고 말해 일행이 랩쳐 습격으로 오인하고 경계하자, 아니스는 지상에서 '아.' 단독 사용은 금지라는 불문율을 알려준다. 네온이 고압 전류가 흐르는 선로를 고무장화를 신고 건너자고 제안하자 시프티가 기가 막혀하며 만류한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 21, "line_end": 21, "quote": "괜찮지 않아요! 그 정도로 높은 전류가 흐르는 곳엔 사람이 가까이 가기만 해도 ···!" }
+        ],
+        "mentioned_only": [
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 7, "line_end": 7, "quote": "···랩쳐 아냐?" },
+          { "surface_text": "고무장화", "entity_id": null, "entity_type": "item", "line_start": 16, "line_end": 16, "quote": "고무장화를 신으면 되지 않을까요?" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 4, "line_end": 4, "quote": "지휘관! 제 뒤로!" },
+        { "from_speaker": "네온", "to_target": "지휘관", "address_term": "지휘관", "line_start": 26, "line_end": 26, "quote": "지휘관. 혹시···." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "choice_line": 27,
+          "options": [
+            {
+              "option_text": "좋은 생각 같은데···.",
+              "continuation_summary": "네온이 반색하며 호응한다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "안 해.",
+              "continuation_summary": "시프티가 하나도 안 좋은 생각이라며 강하게 동의한다.",
+              "branch_specific_facts": []
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "네온, 아니스, 시프티",
+          "summary": "네온이 갑자기 '아.'라고 말해 일행을 놀라게 한 뒤, 고압 전류 선로를 고무장화를 신고 건너자는 엉뚱한 제안을 해 시프티가 만류한다.",
+          "line_start": 2,
+          "line_end": 24,
+          "quote": "자, 네온. 지상에 나온 니케들에겐 불문율이 있어. [아.] 단독 사용 금지야. 알겠지?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "아니스",
+          "target": "네온",
+          "relation_or_change": "네온의 엉뚱한 고무장화 제안에 혹해 괜찮다고 동조했다가 시프티가 설명을 포기하자 멋쩍어함.",
+          "line_start": 16,
+          "line_end": 24,
+          "quote": "고무장화를 신으면 되지 않을까요? ··· ···. ··· ···. ··· ···. ···괜찮은데? 괜찮지 않아요! 그 정도로 높은 전류가 흐르는 곳엔 사람이 가까이 가기만 해도 ···!"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 7 },
+        { "surface_text": "고무장화", "suggested_type": "item", "line_start": 16 }
+      ]
+    },
+    {
+      "scene_id": "main_02_02",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "제어 센터에 도착한 일행은 지휘관의 핸드폰에 달린 커넥팅 디바이스를 포트에 꽂아 시프티가 원격으로 선로의 전력을 차단하게 한다. 이 과정에서 지휘관이 커넥팅 디바이스와 포트 같은 기초 용어조차 몰라 아니스가 사관학교 졸업 여부를 의심한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 2, "line_end": 2, "quote": "제어 센터 도착. 선로의 전력을 차단하도록 하겠습니다." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "제어 센터", "entity_id": null, "entity_type": "location", "line_start": 2, "line_end": 2, "quote": "제어 센터 도착. 선로의 전력을 차단하도록 하겠습니다." },
+          { "surface_text": "커넥팅 디바이스", "entity_id": null, "entity_type": "item", "line_start": 3, "line_end": 3, "quote": "지휘관. 커넥팅 디바이스를." },
+          { "surface_text": "사관 학교", "entity_id": null, "entity_type": "organization", "line_start": 22, "line_end": 22, "quote": "···사관 학교 졸업한 것, 맞지?" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 3, "line_end": 3, "quote": "지휘관. 커넥팅 디바이스를." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티, 라피, 지휘관",
+          "summary": "제어 센터에서 지휘관이 핸드폰의 커넥팅 디바이스 선을 기계 포트에 연결하여 시프티가 원격으로 선로 전력을 차단한다.",
+          "line_start": 2,
+          "line_end": 25,
+          "quote": "제어 센터 도착. 선로의 전력을 차단하도록 하겠습니다. 지휘관. 커넥팅 디바이스를.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "커넥팅 디바이스와 지휘관의 상식 부재",
+          "category": "foreshadowing",
+          "detail": "오퍼레이터가 지상의 기계를 원격 조종하기 위해 핸드폰에서 뽑아 쓰는 기본 장비인 커넥팅 디바이스와 포트조차 지휘관이 몰라 아니스가 사관학교 졸업 여부를 의아해함.",
+          "line_start": 3,
+          "line_end": 22,
+          "quote": "지휘관. 커넥팅 디바이스를. 커넥팅 디바이스? 어··· 지상의 각종 기계들을 오퍼레이터가 원격으로 조종하기 위해 필요한 기계에요."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "아니스",
+          "target": "지휘관",
+          "relation_or_change": "기초 장비인 커넥팅 디바이스와 포트를 모르는 지휘관을 보며 정말 사관학교를 졸업한 것이 맞는지 의구심을 품음.",
+          "line_start": 21,
+          "line_end": 22,
+          "quote": "···지휘관. 여깁니다. ···사관 학교 졸업한 것, 맞지?"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "제어 센터", "suggested_type": "location", "line_start": 2 },
+        { "surface_text": "커넥팅 디바이스", "suggested_type": "item", "line_start": 3 },
+        { "surface_text": "사관 학교", "suggested_type": "organization", "line_start": 22 }
+      ]
+    },
+    {
+      "scene_id": "main_02_03",
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "전투 직후 아니스가 네온의 무장 밸런스가 불안정할 정도로 화력이 높다고 지적하자, 네온은 이 세상은 화력이 전부라며 '화력 만세'를 외친다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 2, "line_end": 2, "quote": "상황 종료." }
+        ],
+        "mentioned_only": [],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "아니스", "to_target": "네온", "address_term": "네온 너", "line_start": 3, "line_end": 3, "quote": "···아까부터 신경 쓰였는데, 네온 너 말이야." },
+        { "from_speaker": "네온", "to_target": "아니스", "address_term": "아니스", "line_start": 7, "line_end": 7, "quote": "잘 들으세요 아니스." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "네온, 아니스",
+          "summary": "아니스가 화력이 지나치게 높아 밸런스가 맞냐고 묻자, 네온은 오직 화력만이 우리를 지켜준다며 '화력 만세' 구호를 따라 하라고 권하고 아니스는 거절한다.",
+          "line_start": 3,
+          "line_end": 13,
+          "quote": "이 세상은 화력이 전부에요. 오직 화력만이 우릴 지켜준답니다. 불안정한 밸런스를 감안할 정도로, 화력은 가치가 있어요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "네온",
+          "target": "아니스",
+          "relation_or_change": "네온이 자신의 화력 지상주의 철학을 설파하며 '화력 만세'를 외치자 아니스가 질색하며 거절함.",
+          "line_start": 7,
+          "line_end": 13,
+          "quote": "잘 들으세요 아니스. 이 세상은 화력이 전부에요. 오직 화력만이 우릴 지켜준답니다."
+        }
+      ],
+      "unregistered_entity_candidates": []
+    },
+    {
+      "scene_id": "main_02_04",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "얼마 전부터 원인 불명으로 재가동된 발전소 앞에 도착하지만 50기 이상의 랩쳐가 진을 치고 있다. 단 3명의 니케로 조사를 계속하겠다는 말에 아니스가 사지로 내몬다며 반발하고 라피가 하극상은 즉결 처분이라며 제지하지만, 지휘관이 정면 돌파 대신 잠입을 제안해 시프티가 찾은 루트로 향한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 2, "line_end": 2, "quote": "발전소 위치 확보. 진입 가능합니다." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "발전소", "entity_id": null, "entity_type": "location", "line_start": 2, "line_end": 2, "quote": "발전소 위치 확보. 진입 가능합니다." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 3, "line_end": 3, "quote": "50기 이상의 랩쳐가 있는 곳으로 들어가는 걸 진입이라고 부를 수 있다면 그렇지." },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 21, "line_end": 21, "quote": "저 정도 규모라면 방주 내의 모든 시설을 2달은 더 가동할 수 있으니까요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 45, "line_end": 45, "quote": "그 정도는 할 수 있지, 지휘관님? 사지로 내모는 것보단 훨씬 쉽잖아." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티, 아니스",
+          "summary": "시프티와 아니스는 지상에 남은 인간이 공식적으로 0명임에도 발전소가 얼마 전부터 알 수 없는 이유로 가동되었으며, 방주 전체를 2달간 가동할 규모라 대규모 인원이 수차례 조사를 시도했으나 50기 이상의 랩쳐에 전멸했다고 설명한다.",
+          "line_start": 9,
+          "line_end": 21,
+          "quote": "이유는 알 수 없습니다만, 얼마 전부터 가동을 실시했다 해요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "아니스, 라피, 지휘관",
+          "summary": "지휘관이 조사를 계속 진행하자고 하자 아니스가 세 명으로 돌진하면 금방 죽는다며 총알받이 노릇이나 하겠다고 반발하고, 라피는 하극상은 즉결 처분이라며 아니스를 진정시키고 지휘관의 작전을 묻는다.",
+          "line_start": 38,
+          "line_end": 57,
+          "quote": "하극상이라고 판단해도 될까? 그러든지. 하극상은 즉결 처분이야.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 시프티",
+          "summary": "지휘관이 정면 교전 대신 잠입을 제안하자 시프티가 잠입 루트를 찾아 안내한다.",
+          "line_start": 59,
+          "line_end": 68,
+          "quote": "잠입을 해보면 어떨까? ···잠입이요? 어··· 루트가 하나 있긴 한데.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "지상 발전소의 원인 불명 가동",
+          "category": "foreshadowing",
+          "detail": "방주 내 모든 시설을 2달간 가동할 수 있는 규모의 지상 발전소가 인간이 없음에도 얼마 전부터 스스로 가동되기 시작함.",
+          "line_start": 10,
+          "line_end": 21,
+          "quote": "이유는 알 수 없습니다만, 얼마 전부터 가동을 실시했다 해요. 설마 사람이 있는 건···. 공식적으로 지상에 남은 사람의 수는 0명입니다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "라피",
+          "target": "아니스",
+          "relation_or_change": "아니스가 무리한 작전에 분노해 지휘관에게 빈정대자 하극상은 즉결 처분이라며 엄격히 제지하고 지휘관의 작전을 먼저 들어보자며 중재함.",
+          "line_start": 48,
+          "line_end": 54,
+          "quote": "하극상이라고 판단해도 될까? 그러든지. 하극상은 즉결 처분이야. 라피···! 너 어떻게 그런 말을···! 진정하라는 얘기야."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "발전소", "suggested_type": "location", "line_start": 2 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 3 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 21 }
+      ]
+    },
+    {
+      "scene_id": "main_02_05",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "발전소 내부와 이어진 배수로 입구가 무너진 건물 잔해로 막혀 있자, 지휘관은 화력으로 밀어버리자고 지시한다. 네온은 홀로 잔해를 소멸시킨 뒤 모든 것은 화력으로 해결된다는 가르침을 받았다며 지휘관을 '스승님'으로 모시기 시작한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 3, "line_end": 3, "quote": "발전소 내부와 이어진 배수로에요." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "발전소", "entity_id": null, "entity_type": "location", "line_start": 3, "line_end": 3, "quote": "발전소 내부와 이어진 배수로에요." },
+          { "surface_text": "배수로", "entity_id": null, "entity_type": "location", "line_start": 3, "line_end": 3, "quote": "발전소 내부와 이어진 배수로에요." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 25, "line_end": 25, "quote": "인근에 랩쳐 반응은 없습니다. 안전해요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "네온", "to_target": "지휘관", "address_term": "지휘관", "line_start": 37, "line_end": 37, "quote": "지휘관." },
+        { "from_speaker": "네온", "to_target": "지휘관", "address_term": "스승님", "line_start": 45, "line_end": 45, "quote": "다시 한번 잘 부탁드립니다! 스승님!" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 네온, 시프티",
+          "summary": "배수로 입구를 막고 있는 건물 잔해를 화력으로 밀어버리자는 지휘관의 말에 네온이 단독으로 화력을 쏟아부어 잔해를 소멸시킨다.",
+          "line_start": 9,
+          "line_end": 36,
+          "quote": "화력으로 밀어버리자. !! ···괜찮을까? 소리가 너무 클 텐데. 인근에 랩쳐 반응은 없습니다. 안전해요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "네온, 지휘관, 라피",
+          "summary": "네온은 지휘관의 지시로 화력의 극의를 깨달았다며 앞으로 지휘관을 '스승님'으로 모시겠다고 선언한다.",
+          "line_start": 37,
+          "line_end": 51,
+          "quote": "앞으로 스승님으로 모시겠습니다. 다시 한번 잘 부탁드립니다! 스승님!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "네온",
+          "target": "지휘관",
+          "relation_or_change": "화력으로 잔해를 밀어버리자는 지휘관의 말에 감명받아 지휘관을 화력의 길을 인도한 '스승님'으로 부르기 시작함.",
+          "line_start": 41,
+          "line_end": 50,
+          "quote": "정말 감사합니다. 잠시나마 망설였던 저에게 큰 가르침을 주셨군요. 화력의 길을 걷는 자로서, 극의를 마주한 느낌이에요. 그딴 길이 있었구나. 앞으로 스승님으로 모시겠습니다."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "발전소", "suggested_type": "location", "line_start": 3 },
+        { "surface_text": "배수로", "suggested_type": "location", "line_start": 3 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 25 }
+      ]
+    },
+    {
+      "scene_id": "main_02_06",
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "악취가 진동하는 배수로를 기어서 통과하던 중 네온과 아니스는 직접 배수로로 잠입하는 지휘관이 기존 지휘관들과 다르다고 이야기한다. 선두의 라피가 출구 빛을 발견하고 급정거하는 바람에 지휘관의 얼굴이 아니스의 엉덩이에 부딪히는 소동 끝에 발전소 내부에 도착한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "배수로", "entity_id": null, "entity_type": "location", "line_start": 4, "line_end": 4, "quote": "배수로니까. 쌓여있던 것이 많았겠지." },
+          { "surface_text": "니케", "entity_id": null, "entity_type": "faction_or_species", "line_start": 22, "line_end": 22, "quote": "보통 지휘관은 니케 = 병기라는 인식이라서 화력으로 밀어버리는 것을 선호하거든요." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 13, "line_end": 13, "quote": "지휘관. 괜찮으십니까?" },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 30, "line_end": 30, "quote": "자, 잠깐! 지, 지휘관님?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "choice_line": 14,
+          "options": [
+            {
+              "option_text": "냄새나···",
+              "continuation_summary": "아니스가 남의 엉덩이 뒤에서 그런 말을 하지 말라고 투덜댄다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "좋은 것 같아.",
+              "continuation_summary": "아니스가 남의 엉덩이 뒤에서 그런 말을 하지 말라고 투덜댄다.",
+              "branch_specific_facts": []
+            }
+          ]
+        },
+        {
+          "choice_line": 32,
+          "options": [
+            {
+              "option_text": "냄새나···",
+              "continuation_summary": "아니스가 남의 엉덩이에 대고 그런 말 하지 말라며 비명을 지른다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "괜찮으니 신경 쓰지마.",
+              "continuation_summary": "아니스가 자기가 안 괜찮다며 뒤로 물러나라고 소리친다.",
+              "branch_specific_facts": []
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "네온, 아니스",
+          "summary": "네온과 아니스는 보통의 지휘관들이 니케를 병기로만 인식해 자기 몸을 사리고 정면 돌파만 명령하는 것과 달리 지휘관이 배수로 잠입을 택한 것을 의외로 여긴다.",
+          "line_start": 21,
+          "line_end": 24,
+          "quote": "그런데 의외네요. 배수로를 통해서 잠입이라니. 보통 지휘관은 니케 = 병기라는 인식이라서 화력으로 밀어버리는 것을 선호하거든요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 네온, 아니스, 지휘관",
+          "summary": "라피가 출구 빛을 보고 멈추는 바람에 뒤따르던 일행이 연쇄 충돌해 지휘관의 얼굴이 아니스의 엉덩이에 부딪히고, 일행은 서둘러 배수로 밖 발전소 내부로 나간다.",
+          "line_start": 25,
+          "line_end": 44,
+          "quote": "자, 잠깐! 지, 지휘관님? 지, 지금 얼굴이 제 엉덩이에 닿았는데요?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "네온",
+          "target": "지휘관",
+          "relation_or_change": "후각 센서를 끄면 인간에서 멀어지는 것 같아 끄지 않는다고 말하며, 배수로로 함께 잠입하는 지휘관을 보통 지휘관들과 다르다고 평가함.",
+          "line_start": 9,
+          "line_end": 22,
+          "quote": "그걸 끄면 뭔가 인간에서 너무 멀어지는 것 같아서 좀."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "배수로", "suggested_type": "location", "line_start": 4 },
+        { "surface_text": "니케", "suggested_type": "concept", "line_start": 22 }
+      ]
+    },
+    {
+      "scene_id": "main_02_07",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "발전소 내부에 진입한 일행은 전례 없이 랩쳐들이 인간의 기계를 직접 조작해 발전소를 가동하고 있는 광경을 목격한다. 조사 목적을 달성해 복귀하려던 순간 랩쳐에게 발각되어 날아온 빔에 라피의 머리가 절단되어 떨어지고, 타일런트 급 '그레이브 디거'까지 출현하자 일행은 광차를 타고 긴급 탈출한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 15, "line_end": 15, "quote": "지금까진··· 없었습니다." }
+        ],
+        "mentioned_only": [
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 2, "line_end": 2, "quote": "···전방, 랩쳐 발견." },
+          { "surface_text": "발전소", "entity_id": null, "entity_type": "location", "line_start": 7, "line_end": 7, "quote": "···발전소를 조작하고 있는 것 같아." },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 16, "line_end": 16, "quote": "지휘관. 방주로 돌아가는 것을 건의드립니다." },
+          { "surface_text": "타일런트", "entity_id": null, "entity_type": "concept", "line_start": 37, "line_end": 37, "quote": "전방! 타일런트 급이 감지됩니다! 식별 신호! 그레이브 디거로 확정!" },
+          { "surface_text": "그레이브 디거", "entity_id": null, "entity_type": "character", "line_start": 37, "line_end": 37, "quote": "전방! 타일런트 급이 감지됩니다! 식별 신호! 그레이브 디거로 확정!" },
+          { "surface_text": "광차", "entity_id": null, "entity_type": "item", "line_start": 42, "line_end": 42, "quote": "예! 해당 위치의 광차는 아직 가동해요! 선로를 따라 외부로 나갈 수 있습니다!" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 16, "line_end": 16, "quote": "지휘관. 방주로 돌아가는 것을 건의드립니다." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 34, "line_end": 34, "quote": "이봐! 지휘관님! 정신 차려! 놈들이 온다고!" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "랩쳐가 인간의 기계를 조작하는 기현상은 main_02_09에서 잉그리드와 엔더슨이 랩쳐의 진화 및 목적을 논의하는 핵심 단서가 된다.",
+          "related_scene_ids": ["main_02_09"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "지휘관, 라피, 아니스, 네온, 시프티",
+          "summary": "발전소 내부에서 랩쳐들이 기계에 달라붙어 발전소를 직접 조작하고 있는 전례 없는 모습을 목격한다.",
+          "line_start": 4,
+          "line_end": 15,
+          "quote": "···아니스. 잘 봐. 조작하고 있어. ···진짜냐고. 이런 케이스가 있었나요? 지금까진··· 없었습니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 지휘관, 아니스, 네온",
+          "summary": "복귀하려던 중 랩쳐에게 들켜 지휘관을 감싸던 라피가 날아온 빔에 맞아 머리가 떨어져 지휘관의 발밑으로 굴러온다.",
+          "line_start": 24,
+          "line_end": 33,
+          "quote": "좀 전까지 얘기를 나누고 있던 라피는 어디선가 날아온 빔에 맞았고 툭. 하고 떨어져 내 발밑으로 굴러왔다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "시프티, 아니스, 네온",
+          "summary": "땅굴을 파는 타일런트 급 랩쳐 '그레이브 디거'가 감지되자, 일행은 시프티가 안내한 광차를 타고 선로를 따라 외부로 탈출한다.",
+          "line_start": 35,
+          "line_end": 44,
+          "quote": "전방! 타일런트 급이 감지됩니다! 식별 신호! 그레이브 디거로 확정!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "인간의 발전소를 조작하는 랩쳐",
+          "category": "foreshadowing",
+          "detail": "지금까지 보고된 적 없는 기현상으로, 랩쳐들이 기계 앞에 붙어 인간의 발전소를 직접 조작하고 있음.",
+          "line_start": 7,
+          "line_end": 15,
+          "quote": "···발전소를 조작하고 있는 것 같아. 에이. 랩쳐가 인간의 문물을 사용할 리가···. ···아니스. 잘 봐. 조작하고 있어."
+        },
+        {
+          "keyword": "그레이브 디거",
+          "category": "code_or_number",
+          "detail": "발전소 지하에서 출현한 땅굴 파는 타일런트 급 랩쳐.",
+          "line_start": 37,
+          "line_end": 38,
+          "quote": "전방! 타일런트 급이 감지됩니다! 식별 신호! 그레이브 디거로 확정! 그 땅굴 파는 녀석 말이지···!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "랩쳐의 기습 공격 속에서 지휘관을 자신의 뒤로 숨기며 보호하다가 빔에 맞아 머리가 절단됨.",
+          "line_start": 26,
+          "line_end": 33,
+          "quote": "인카운터! 지휘관! 제 뒤로! 푸슝-! 라, 라피!"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 2 },
+        { "surface_text": "발전소", "suggested_type": "location", "line_start": 7 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 16 },
+        { "surface_text": "타일런트", "suggested_type": "concept", "line_start": 37 },
+        { "surface_text": "그레이브 디거", "suggested_type": "character", "line_start": 37 },
+        { "surface_text": "광차", "suggested_type": "item", "line_start": 42 }
+      ]
+    },
+    {
+      "scene_id": "main_02_08",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "광차로 그레이브 디거를 떨쳐낸 뒤 충격으로 멍하니 서 있는 지휘관의 뺨을 아니스가 때려 정신을 차리게 한다. 아니스는 라피는 머리만 들고 가면 살릴 수 있다고 외치고, 지휘관은 전투에 나선 아니스와 네온 대신 생각보다 무거운 라피의 머리를 직접 안고 탈출한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [
+          { "name": "라피", "entity_id": "char_라피", "line_start": 24, "line_end": 25, "quote": "무겁다. 라피는, 생각보다 무거웠다." }
+        ],
+        "remote_or_voice_only": [
+          { "speaker_label": "시프티", "entity_id": "char_시프티", "medium": "comm", "line_start": 5, "line_end": 6, "quote": "곧 외부로 나갈 수 있습니다! 여기서부턴 뛰어가야 해요! 루트 상에 다수의 랩쳐가 있으니 주의하세요!" }
+        ],
+        "mentioned_only": [
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 6, "line_end": 6, "quote": "루트 상에 다수의 랩쳐가 있으니 주의하세요!" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 7, "line_end": 7, "quote": "좋아! 지휘관님! 뛰자!" },
+        { "from_speaker": "네온", "to_target": "지휘관", "address_term": "스승님", "line_start": 22, "line_end": 22, "quote": "스승님. 저, 이것 좀." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "머리가 절단된 채 회수된 라피는 main_02_09에서 수리를 거쳐 main_02_12에서 새 바디로 재정비해 전초기지로 복귀한다.",
+          "related_scene_ids": ["main_02_09", "main_02_12"]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "아니스, 지휘관, 네온",
+          "summary": "충격으로 얼어붙은 지휘관의 뺨을 아니스가 때리며 라피는 머리만 들고 가면 아직 안 죽었다고 일깨우고, 지휘관이 라피의 머리를 직접 안고 탈출한다.",
+          "line_start": 12,
+          "line_end": 25,
+          "quote": "정신 차리라고! 멍하니 있다가 우릴 다 죽일 셈이야!? 라피는 [아직] 안 죽었어! 머리만 들고 가면 어떻게든 된다고!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "니케의 두부 회수와 생존",
+          "category": "lore_concept",
+          "detail": "니케는 몸체가 파괴되더라도 뇌가 든 머리만 무사히 회수하면 죽지 않고 복구할 수 있으며, 머리의 무게가 상당함.",
+          "line_start": 15,
+          "line_end": 25,
+          "quote": "라피는 [아직] 안 죽었어! 머리만 들고 가면 어떻게든 된다고!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "지휘관",
+          "target": "라피",
+          "relation_or_change": "절단된 라피의 머리를 직접 품에 안고 탈출하며 생각보다 무겁다고 느낌.",
+          "line_start": 22,
+          "line_end": 25,
+          "quote": "스승님. 저, 이것 좀. 우리가 들고 있으면 전투에 지장이 생겨서요. 부탁드릴게요. 무겁다. 라피는, 생각보다 무거웠다."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 6 }
+      ]
+    },
+    {
+      "scene_id": "main_02_09",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "엔더슨은 교전 여파로 방주를 2개월간 먹여 살릴 발전소와 자재가 대파된 책임을 물어 지휘관과 카운터스를 척박한 '전초 기지'로 추방 배속시키고, 수리 중인 라피도 완료되는 대로 올려보내겠다고 알린다. 지휘관이 나간 뒤 엔더슨과 잉그리드는 기존과 차원이 다른 스펙의 발전소 랩쳐들을 상대로 탈출한 카운터스를 중앙 정부의 눈을 피해 조사하기 위해 전초기지로 보냈음을 확인하고, 기계를 조작하며 진화하는 랩쳐의 목적을 논의한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "엔더슨", "entity_id": "char_엔더슨", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "잉그리드", "entity_id": "char_잉그리드", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "발전소", "entity_id": null, "entity_type": "location", "line_start": 7, "line_end": 7, "quote": "내가 자네에게 내린 명령은 발전소를 조사하라였지." },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 11, "line_end": 11, "quote": "2개월일세. 무려 2개월이나 방주를 먹여살릴 자원을." },
+          { "surface_text": "전초 기지", "entity_id": null, "entity_type": "location", "line_start": 19, "line_end": 19, "quote": "자네와 휘하 스쿼드는 오늘부로 방주에서 추방당해, [전초 기지]로 배속될 걸세." },
+          { "surface_text": "갱생관", "entity_id": null, "entity_type": "location", "line_start": 23, "line_end": 23, "quote": "[갱생관]이 아닌 게 어딘가. 좋게좋게 생각하게." },
+          { "surface_text": "라피", "entity_id": "char_라피", "entity_type": "character", "line_start": 25, "line_end": 25, "quote": "라피는 어떻게 되었습니까." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 34, "line_end": 34, "quote": "압도적이야. 발전소 내부의 랩쳐들은 그 스펙이 기존과는 차원이 달라." },
+          { "surface_text": "중앙 정부", "entity_id": null, "entity_type": "organization", "line_start": 38, "line_end": 38, "quote": "위대하신 중앙 정부의 눈을 피하기에, 그만한 곳이 또 없지." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "엔더슨", "to_target": "지휘관", "address_term": "자네", "line_start": 2, "line_end": 2, "quote": "자네는 추방일세." }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "엔더슨, 지휘관",
+          "summary": "엔더슨은 교전 여파로 발전소가 연쇄 폭발해 2개월치 방주 자원이 날아간 책임을 물어 지휘관과 스쿼드를 방주에서 추방해 전초 기지로 배속시키고, 수리 중인 라피도 완료 즉시 보내겠다고 통보한다.",
+          "line_start": 2,
+          "line_end": 29,
+          "quote": "자네와 휘하 스쿼드는 오늘부로 방주에서 추방당해, [전초 기지]로 배속될 걸세.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "엔더슨, 잉그리드",
+          "summary": "잉그리드와 엔더슨은 발전소 내부의 압도적인 스펙의 랩쳐들을 따돌리고 탈출한 지휘관 일행에게 무언가 특별한 것이 있다고 보고, 중앙 정부의 눈을 피해 이들을 조사하기 위해 전초 기지로 보냈음을 확인한다.",
+          "line_start": 30,
+          "line_end": 38,
+          "quote": "뭔가 있는 게 분명해. 지금은 감도 안 잡히지만 조사해볼 가치는 차고 넘치지. 뭐, 그러자고 전초 기지로 올린 것 아닌가. 위대하신 중앙 정부의 눈을 피하기에, 그만한 곳이 또 없지.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드는 인간의 기계를 조작한 랩쳐가 진화하고 있으며, 그 목적은 인류를 말살하려는 것이거나 인류를 대신하려는 것 둘 중 하나일 것이라고 추정한다.",
+          "line_start": 39,
+          "line_end": 45,
+          "quote": "인간의 기계를 조작한 랩쳐 말인가? 놈이 진화하고 있다고 보는 게 맞겠지. 뭐가 목적일까. 글쎄. 둘 중 하나지 않을까. 인류를 말살하려는 것이거나. 인류를 대신하려 하는 것이거나.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "전초 기지 배속의 진짜 이유",
+          "category": "foreshadowing",
+          "detail": "표면적으로는 발전소 폭파에 대한 징계성 추방이나, 실제로는 엔더슨과 잉그리드가 중앙 정부의 감시를 피해 카운터스의 이질적인 실전 능력을 보호·조사하기 위해 배치함.",
+          "line_start": 36,
+          "line_end": 38,
+          "quote": "뭔가 있는 게 분명해. 지금은 감도 안 잡히지만 조사해볼 가치는 차고 넘치지. 뭐, 그러자고 전초 기지로 올린 것 아닌가. 위대하신 중앙 정부의 눈을 피하기에, 그만한 곳이 또 없지."
+        },
+        {
+          "keyword": "랩쳐의 진화와 목적",
+          "category": "lore_concept",
+          "detail": "발전소 내부 랩쳐들은 기존과 차원이 다른 스펙을 지녔으며 인간의 기계를 조작하는 등 진화하고 있어, 인류 말살 혹은 인류 대체가 목적일 가능성이 제기됨.",
+          "line_start": 34,
+          "line_end": 45,
+          "quote": "압도적이야. 발전소 내부의 랩쳐들은 그 스펙이 기존과는 차원이 달라."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "엔더슨",
+          "target": "지휘관",
+          "relation_or_change": "겉으로는 발전소 파괴를 질책하며 추방 형식으로 전초 기지에 보내지만, 실제로는 중앙 정부의 눈을 피하게 해 지휘관과 스쿼드를 보호함.",
+          "line_start": 19,
+          "line_end": 38,
+          "quote": "자네와 휘하 스쿼드는 오늘부로 방주에서 추방당해, [전초 기지]로 배속될 걸세."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "발전소", "suggested_type": "location", "line_start": 7 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 11 },
+        { "surface_text": "전초 기지", "suggested_type": "location", "line_start": 19 },
+        { "surface_text": "갱생관", "suggested_type": "location", "line_start": 23 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 34 },
+        { "surface_text": "중앙 정부", "suggested_type": "organization", "line_start": 38 }
+      ]
+    },
+    {
+      "scene_id": "main_02_10",
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "전초 기지에 도착한 아니스는 황무지 같은 환경에 불평하는 반면, 네온은 아무 데나 총을 쏴도 누구도 신경 쓰지 않고 야영 같다며 신나 한다. 일행은 잠을 잘 숙소를 찾아 이동한다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "전초 기지", "entity_id": null, "entity_type": "location", "line_start": 3, "line_end": 3, "quote": "전초 기지라고 하네요." },
+          { "surface_text": "발전소", "entity_id": null, "entity_type": "location", "line_start": 5, "line_end": 5, "quote": "스승님의 호위 겸, 발전소를 부순 일등 공신이라서요?" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "네온", "to_target": "지휘관", "address_term": "스승님", "line_start": 5, "line_end": 5, "quote": "스승님의 호위 겸, 발전소를 부순 일등 공신이라서요?" },
+        { "from_speaker": "네온", "to_target": "아니스", "address_term": "아니스", "line_start": 9, "line_end": 9, "quote": "아니스, 보셨나요? 아무 데나 총을 쏴도 그 누구도 신경 쓰지 않아요!" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "아니스, 네온, 지휘관",
+          "summary": "전초 기지에 도착한 지휘관과 아니스, 네온은 황량한 기지 환경을 둘러본 뒤 숙소를 찾아 나선다.",
+          "line_start": 2,
+          "line_end": 20,
+          "quote": "여기 뭐야. 전초 기지라고 하네요. 아는데, 우리가 왜 이런 곳으로 배정된 건데!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        { "surface_text": "전초 기지", "suggested_type": "location", "line_start": 3 },
+        { "surface_text": "발전소", "suggested_type": "location", "line_start": 5 }
+      ]
+    },
+    {
+      "scene_id": "main_02_11",
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "니케들의 숙소에 도착한 아니스와 네온은 유통기한이 임박한 전투식량뿐이고 샤워실에 물도 나오지 않는 열악한 환경에 낙담한다. 프라이버시를 걱정하던 두 사람은 지휘관실이 따로 있다는 말에 지휘관실을 확인하러 간다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          { "surface_text": "지휘관실", "entity_id": null, "entity_type": "location", "line_start": 26, "line_end": 26, "quote": "걱정 마. 지휘관실은 따로 들었으니까." }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "네온", "to_target": "지휘관", "address_term": "스승님", "line_start": 17, "line_end": 17, "quote": "스승님은 설마 우리와 같이 이 숙소에서 지내시나요?" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "네온, 아니스, 지휘관",
+          "summary": "전초 기지의 니케 숙소에 물도 나오지 않고 전투식량만 있는 열악한 상태를 확인한 아니스와 네온은 지휘관실이 따로 있다는 말을 듣고 지휘관실을 보러 간다.",
+          "line_start": 2,
+          "line_end": 31,
+          "quote": "물이 안 나오는데요! ···열악하다 열악해.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        { "surface_text": "지휘관실", "suggested_type": "location", "line_start": 26 }
+      ]
+    },
+    {
+      "scene_id": "main_02_12",
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "넓고 쾌적하며 물이 잘 나오는 지휘관실을 본 아니스와 네온이 숙소를 바꾸자고 조르던 중, 바디 재정비를 마친 라피가 복귀한다. 배수로 악취가 남은 아니스와 네온이 지휘관실 샤워실을 빌려 씻는 동안 라피는 밖에서 지휘관에게 니케는 인간이 아니라 불멸을 가둔 병기라며 선을 긋고, 밤에 엔더슨이 메신저로 전초기지에서는 니케들과 가까워져 케어에 용이할 것이라 조언한 뒤 다음 날 손님이 찾아온다.",
+      "participants": {
+        "present_in_scene": [
+          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
+          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
+          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
+          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          { "speaker_label": "엔더슨", "entity_id": "char_엔더슨", "medium": "messenger", "line_start": 90, "line_end": 91, "quote": "전초기지는 마음에 드나?" }
+        ],
+        "mentioned_only": [
+          { "surface_text": "전초 기지", "entity_id": null, "entity_type": "location", "line_start": 37, "line_end": 37, "quote": "이곳이 전초 기지군요. 앞으로 우리가 지내게 될." },
+          { "surface_text": "랩쳐", "entity_id": null, "entity_type": "faction_or_species", "line_start": 62, "line_end": 62, "quote": "인류의 적인 랩쳐와 맞서 싸우기 위해, 큰 힘과 불멸을 가둬두고 있는 병기일 뿐입니다." },
+          { "surface_text": "방주", "entity_id": null, "entity_type": "location", "line_start": 100, "line_end": 100, "quote": "방주와 동떨어져 있다는 점을 이용해봐도 좋을걸세" }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        { "from_speaker": "네온", "to_target": "지휘관", "address_term": "스승님", "line_start": 10, "line_end": 10, "quote": "···저는, 스승님께 실망했어요." },
+        { "from_speaker": "아니스", "to_target": "지휘관", "address_term": "지휘관님", "line_start": 21, "line_end": 21, "quote": "그렇게 생각하지 않아? 응? 지휘관님?" },
+        { "from_speaker": "라피", "to_target": "지휘관", "address_term": "지휘관", "line_start": 28, "line_end": 28, "quote": "너무 받아주는 것도 문제가 될 수 있습니다. 지휘관." },
+        { "from_speaker": "라피", "to_target": "아니스, 네온", "address_term": "너희들", "line_start": 45, "line_end": 45, "quote": "너희들. 냄새나." },
+        { "from_speaker": "엔더슨", "to_target": "지휘관", "address_term": "자네", "line_start": 97, "line_end": 97, "quote": "좋든 싫든 이제 자네는 그곳에서 살아야 하네" }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "text": "다음 날 아침 라피가 알린 '손님'은 후속 챕터(main_03_00)에서 전초기지를 방문하는 인물들로 이어진다.",
+          "related_scene_ids": ["main_03_00"]
+        }
+      ],
+      "choice_branches": [
+        {
+          "choice_line": 14,
+          "options": [
+            {
+              "option_text": "··· ···.",
+              "continuation_summary": "아니스가 여럿이 손해 보는 것보다 한 명이 손해 보는 게 낫지 않냐며 계속 숙소를 바꾸자고 설득한다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "좋은 생각이 아닌 것 같은데.",
+              "continuation_summary": "아니스가 여럿이 손해 보는 것보다 한 명이 손해 보는 게 낫지 않냐며 계속 숙소를 바꾸자고 설득한다.",
+              "branch_specific_facts": []
+            }
+          ]
+        },
+        {
+          "choice_line": 22,
+          "options": [
+            {
+              "option_text": "··· ···.",
+              "continuation_summary": "때마침 복귀한 라피가 너무 받아주는 것도 문제가 될 수 있다며 개입한다.",
+              "branch_specific_facts": []
+            },
+            {
+              "option_text": "그렇게 생각하지 않아.",
+              "continuation_summary": "때마침 복귀한 라피가 너무 받아주는 것도 문제가 될 수 있다며 개입한다.",
+              "branch_specific_facts": []
+            }
+          ]
+        },
+        {
+          "choice_line": 68,
+          "options": [
+            {
+              "option_text": "괴물로 보여.",
+              "continuation_summary": "라피는 사실 크게 다르지 않다며 연민도 동정도 느낄 필요 없이 사는 세계가 다른 미지의 괴물로 놔두는 편이 서로 편할 것이라고 답한다.",
+              "branch_specific_facts": [
+                "지휘관이 니케가 괴물로 보인다고 답하자 라피는 연민이나 동정 없이 미지의 괴물로 놔두는 편이 서로 편하다고 말한다."
+              ]
+            },
+            {
+              "option_text": "인간으로 보여.",
+              "continuation_summary": "라피는 인간으로 봐주는 건 감사하지만 시간이 지날수록 다르다는 것을 느끼고 결국 상처받는 건 지휘관이 될 것이라며 명심하라고 답한다.",
+              "branch_specific_facts": [
+                "지휘관이 니케가 인간으로 보인다고 답하자 라피는 시간이 지날수록 다름을 느끼고 결국 상처받는 것은 지휘관이 될 것이라고 경고한다."
+              ]
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피, 아니스, 네온, 지휘관",
+          "summary": "바디 재정비를 마치고 전초 기지로 복귀한 라피가 아니스와 네온에게 냄새가 난다고 지적하자, 지휘관이 지휘관실 샤워실에서 씻으라고 허락하고 라피와 함께 밖으로 나가 기다린다.",
+          "line_start": 28,
+          "line_end": 56,
+          "quote": "바디 재정비 후 복귀했습니다. 이곳이 전초 기지군요. 앞으로 우리가 지내게 될.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "actor_or_speaker": "라피",
+          "summary": "라피는 니케가 인간이 아니라 랩쳐와 맞서 싸우기 위해 큰 힘과 불멸을 가둬두고 있는 병기일 뿐이며 대파된 니케가 다시 나타나는 것은 흔한 일이라고 말한다.",
+          "line_start": 61,
+          "line_end": 67,
+          "quote": "우리 니케는 인간이 아닙니다. 인류의 적인 랩쳐와 맞서 싸우기 위해, 큰 힘과 불멸을 가둬두고 있는 병기일 뿐입니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "actor_or_speaker": "엔더슨, 지휘관",
+          "summary": "밤에 엔더슨이 메신저로 연락해 방주와 달리 전초기지에서는 니케들과의 거리가 가까워져 케어에 용이하니 잘 지내보라고 조언하고, 다음 날 아침 라피가 손님이 왔다고 알린다.",
+          "line_start": 86,
+          "line_end": 133,
+          "quote": "방주와 동떨어져 있다는 점을 이용해봐도 좋을걸세",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "니케의 바디 재정비와 불멸성",
+          "category": "lore_concept",
+          "detail": "대파되거나 머리가 분리된 니케라도 두부가 회수되면 바디 재정비를 통해 다시 복귀할 수 있으며, 라피는 이를 '큰 힘과 불멸을 가둬두고 있는 병기'라고 표현함.",
+          "line_start": 61,
+          "line_end": 63,
+          "quote": "우리 니케는 인간이 아닙니다. 인류의 적인 랩쳐와 맞서 싸우기 위해, 큰 힘과 불멸을 가둬두고 있는 병기일 뿐입니다. 대파된 니케가 아무렇지도 않게 다시 나타나는 건 흔히 있는 일이죠."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "자신의 죽음과 복귀에 복잡한 표정을 짓는 지휘관에게 니케는 인간이 아니라 병기라며 지휘관이 상처받지 않도록 거리를 두려 함.",
+          "line_start": 61,
+          "line_end": 80,
+          "quote": "우리 니케는 인간이 아닙니다. 인류의 적인 랩쳐와 맞서 싸우기 위해, 큰 힘과 불멸을 가둬두고 있는 병기일 뿐입니다."
+        },
+        {
+          "subject": "엔더슨",
+          "target": "지휘관",
+          "relation_or_change": "메신저를 통해 방주와 동떨어진 전초기지의 환경을 활용해 니케들과 가깝게 지내며 케어해 보라고 독려함.",
+          "line_start": 99,
+          "line_end": 116,
+          "quote": "방주와 동떨어져 있다는 점을 이용해봐도 좋을걸세"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        { "surface_text": "전초 기지", "suggested_type": "location", "line_start": 37 },
+        { "surface_text": "랩쳐", "suggested_type": "concept", "line_start": 62 },
+        { "surface_text": "방주", "suggested_type": "location", "line_start": 100 }
+      ]
+    }
+  ]
+}

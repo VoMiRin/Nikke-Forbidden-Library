@@ -1,0 +1,877 @@
+{
+  "schema_version": "1.2.0",
+  "generated_at": "2026-10-15T02:51:20.447Z",
+  "title_id": "main_story__chapter_00",
+  "category": "main_story",
+  "title": "Chapter.00: 추락",
+  "source_file": "public/scripts/main_story/chapter_00.txt",
+  "scene_count": 5,
+  "scenes": [
+    {
+      "scene_id": "main_00_00",
+      "title_id": "main_story__chapter_00",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_00.txt",
+      "source_sha256": "a3ce7e796a95babbc78c5f50af3ec7c0a2de8cff7bf8c9b7b20533128cb3af3f",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "작전 구역으로 이동하던 수송기(BA-01)가 추락한 직후, 마리안은 방주와 통신이 두절된 상황에서 심정지 상태인 지휘관을 AED로 소생시킨다. 지휘관이 중앙 정부 니케 관리부 소속임을 확인하고 신체 반응을 점검한 마리안은 몰려오는 랩쳐들에 맞서 지휘관에게 지휘를 요청하고 전투에 돌입한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_00_00__pis_001",
+            "speaker_label": "마리안",
+            "entity_id": "char_마리안",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_00__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_00_00__mnt_001",
+            "surface_text": "BA-01",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "BA-01다운! BA-01다운!"
+          },
+          {
+            "item_id": "main_00_00__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "지휘관! 방주와 연락이 닿질 않···!"
+          },
+          {
+            "item_id": "main_00_00__mnt_003",
+            "surface_text": "AED",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 10,
+            "line_end": 10,
+            "quote": "에, AED···! AED!"
+          },
+          {
+            "item_id": "main_00_00__mnt_004",
+            "surface_text": "중앙 정부 니케 관리부",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 26,
+            "line_end": 26,
+            "quote": "중앙 정부 니케 관리부."
+          },
+          {
+            "item_id": "main_00_00__mnt_005",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 38,
+            "line_end": 38,
+            "quote": "그 폭발음을 듣고 랩쳐들이 몰려오고 있어요."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_00_00__foa_001",
+          "from_speaker": "마리안",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "지휘관! 방주와 연락이 닿질 않···!"
+        },
+        {
+          "item_id": "main_00_00__foa_002",
+          "from_speaker": "마리안",
+          "to_target": "지휘관",
+          "address_term": "당신",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "저는 당신을 지키니까요."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_00_00__csh_001",
+          "text": "마리안은 대공 화기에 당해 수송기가 추락했다고 설명하지만, main_01_02와 main_01_05에서 해당 지역 랩쳐에게는 대공 화기가 없으며 수송기 내부 폭탄이 마리안의 식별 코드로 기폭되었음이 밝혀진다.",
+          "related_scene_ids": [
+            "main_01_02",
+            "main_01_05"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_00_00__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "마리안, 지휘관",
+          "summary": "수송기 추락 직후 방주와 연락이 닿지 않는 상황에서 마리안이 심정지 상태인 지휘관에게 AED 쇼크를 가해 소생시키고 소속과 신체 상태(STR)를 확인한다.",
+          "line_start": 6,
+          "line_end": 35,
+          "quote": "지휘관! 방주와 연락이 닿질 않···! ···지휘관? ···!! 시, 심정지···! 에, AED···! AED!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_00_00__eac_002",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "마리안",
+          "summary": "마리안은 작전 구역으로 이동 중 대공 화기에 당해 수송기가 추락했고 그 폭발음을 듣고 랩쳐들이 몰려오고 있다고 설명한다.",
+          "line_start": 37,
+          "line_end": 38,
+          "quote": "작전 구역으로 이동 중 대공 화기에 당해 수송기가 추락했고, 그 폭발음을 듣고 랩쳐들이 몰려오고 있어요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_00_00__eac_003",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "마리안, 지휘관",
+          "summary": "마리안은 무슨 일이 있어도 지휘관을 지키겠다고 다짐하며 지휘관의 지휘 아래 전투 모드로 이행해 랩쳐와 교전을 시작한다.",
+          "line_start": 39,
+          "line_end": 51,
+          "quote": "당황스러우시겠지만, 지금부터 제 지휘를 맡아주셔야 해요. 할 수 있겠어요?",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_00_00__clh_001",
+          "keyword": "BA-01 수송기 추락 원인",
+          "category": "past_incident",
+          "detail": "마리안은 이동 중 대공 화기에 당해 수송기 BA-01이 추락했다고 진술함.",
+          "line_start": 2,
+          "line_end": 4,
+          "quote": "BA-01다운! BA-01다운! 응답해 주세요! 추, 추락했다고요!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_00_00__rln_001",
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "추락 직후 심정지 상태인 지휘관을 살려내고, 무슨 일이 있어도 당신을 지키겠다며 헌신적인 태도를 보임.",
+          "line_start": 47,
+          "line_end": 49,
+          "quote": "걱정 마세요. 저는 당신을 지키니까요. 무슨 일이 있어도."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_00_00__uec_001",
+          "surface_text": "BA-01",
+          "suggested_type": "item",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_00_00__uec_002",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 6
+        },
+        {
+          "item_id": "main_00_00__uec_003",
+          "surface_text": "AED",
+          "suggested_type": "item",
+          "line_start": 10
+        },
+        {
+          "item_id": "main_00_00__uec_004",
+          "surface_text": "중앙 정부 니케 관리부",
+          "suggested_type": "organization",
+          "line_start": 26
+        },
+        {
+          "item_id": "main_00_00__uec_005",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 38
+        }
+      ]
+    },
+    {
+      "scene_id": "main_00_01",
+      "title_id": "main_story__chapter_00",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_00.txt",
+      "source_sha256": "aa5f5cdad4f2afd4c159e4bd738f0f7e45b4ad939a0cc733fc60df4313b44126",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "교전을 마친 뒤 마리안이 다리 고장으로 불편해하자 지휘관이 마리안의 다리에 붕대를 감아준다. 마리안은 니케에게 붕대는 소용이 없다면서도 덕분에 다 나은 것 같다며 지휘관의 상냥함에 감동하고 랑데부 포인트로 이동한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_00_01__pis_001",
+            "speaker_label": "마리안",
+            "entity_id": "char_마리안",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_01__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_00_01__mnt_001",
+            "surface_text": "붕대",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 12,
+            "line_end": 12,
+            "quote": "마리안의 다리에 붕대를 감는다."
+          },
+          {
+            "item_id": "main_00_01__mnt_002",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 15,
+            "line_end": 15,
+            "quote": "···저, 지휘관. 니케한텐 이런 건 아무 소용이···"
+          },
+          {
+            "item_id": "main_00_01__mnt_003",
+            "surface_text": "랑데부 포인트",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 19,
+            "line_end": 19,
+            "quote": "이동하죠. 다행히 랑데부 포인트 인근이라서, 조금만 가면 돼요."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_00_01__foa_001",
+          "from_speaker": "마리안",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "···저, 지휘관. 니케한텐 이런 건 아무 소용이···"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_00_01__csh_001",
+          "text": "지휘관이 다친 마리안에게 붕대를 감아주는 행동은 main_01_04와 main_01_06에서 마리안이 침식 속에서도 지휘관에게 고마움을 표하는 핵심 매개체가 된다.",
+          "related_scene_ids": [
+            "main_01_04",
+            "main_01_06"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_00_01__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 마리안",
+          "summary": "전투 후 다리가 고장 난 마리안에게 지휘관이 붕대를 감아주고, 마리안은 니케에게 소용없다면서도 고마워하며 인근 랑데부 포인트로 이동하자고 한다.",
+          "line_start": 4,
+          "line_end": 19,
+          "quote": "마리안의 다리에 붕대를 감는다. ···저, 지휘관. 니케한텐 이런 건 아무 소용이···",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_00_01__clh_001",
+          "keyword": "붕대",
+          "category": "item",
+          "detail": "지휘관이 다리가 파손된 마리안에게 감아준 붕대. 물리적 수리 효과는 없으나 마리안이 지휘관을 상냥한 사람으로 인식하는 계기가 됨.",
+          "line_start": 12,
+          "line_end": 18,
+          "quote": "마리안의 다리에 붕대를 감는다. ···저, 지휘관. 니케한텐 이런 건 아무 소용이··· ··· ···. 아니, 아니에요, 덕분에 다 나은 것 같아요."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_00_01__rln_001",
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "다리에 붕대를 감아준 지휘관에게 덕분에 다 나은 것 같다며 상냥한 사람이라고 호감을 표현함.",
+          "line_start": 17,
+          "line_end": 18,
+          "quote": "아니, 아니에요, 덕분에 다 나은 것 같아요. 후후. 상냥한 사람이네요. 지휘관은."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_00_01__uec_001",
+          "surface_text": "붕대",
+          "suggested_type": "item",
+          "line_start": 12
+        },
+        {
+          "item_id": "main_00_01__uec_002",
+          "surface_text": "니케",
+          "suggested_type": "concept",
+          "line_start": 15
+        },
+        {
+          "item_id": "main_00_01__uec_003",
+          "surface_text": "랑데부 포인트",
+          "suggested_type": "location",
+          "line_start": 19
+        }
+      ]
+    },
+    {
+      "scene_id": "main_00_02",
+      "title_id": "main_story__chapter_00",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_00.txt",
+      "source_sha256": "5f7641bcc8bf2988efbcacd76877d9a3035fd42e3b43d933e5f65c9482bece59",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": false,
+      "summary": "랑데부 포인트로 이동하던 중 마리안은 심정지를 겪어 어지러워하는 지휘관을 걱정하며 팔짱을 끼고 부축해 준다. 곧이어 전방에 우회할 수 없는 랩쳐가 나타나자 마리안은 지휘관을 숙이게 한 뒤 교전에 나선다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_00_02__pis_001",
+            "speaker_label": "마리안",
+            "entity_id": "char_마리안",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_02__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_00_02__mnt_001",
+            "surface_text": "랑데부 포인트",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "곧 랑데부 포인트에 도착해요. 몸은 좀 어떠세요?"
+          },
+          {
+            "item_id": "main_00_02__mnt_002",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 13,
+            "line_end": 13,
+            "quote": "저도 괜찮아요. 사람 한 명 업는 것 정도는 니케에겐 일도 아니니까요."
+          },
+          {
+            "item_id": "main_00_02__mnt_003",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 31,
+            "line_end": 31,
+            "quote": "전방, 랩쳐 발견."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_00_02__foa_001",
+          "from_speaker": "마리안",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "지휘관. 몸을 숙이고 잠시만 계셔주세요."
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_00_02__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "마리안, 지휘관",
+          "summary": "마리안이 혼자 걸을 수 있다는 지휘관에게 다가와 팔짱을 끼고 부축하며, 전방에 랩쳐가 나타나자 지휘관을 숙이게 하고 전투에 나선다.",
+          "line_start": 21,
+          "line_end": 34,
+          "quote": "마리안이 갑자기 다가와 팔짱을 꼈다. 부축해드릴게요. 그래도 힘들면 언제든 말씀해 주세요.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_00_02__rln_001",
+          "subject": "마리안",
+          "target": "지휘관",
+          "relation_or_change": "심정지 후유증으로 어지러워하는 지휘관을 업어주겠다고 제안하고 팔짱을 껴 부축하며 세심하게 챙김.",
+          "line_start": 21,
+          "line_end": 23,
+          "quote": "마리안이 갑자기 다가와 팔짱을 꼈다. 부축해드릴게요. 그래도 힘들면 언제든 말씀해 주세요."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_00_02__uec_001",
+          "surface_text": "랑데부 포인트",
+          "suggested_type": "location",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_00_02__uec_002",
+          "surface_text": "니케",
+          "suggested_type": "concept",
+          "line_start": 13
+        },
+        {
+          "item_id": "main_00_02__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 31
+        }
+      ]
+    },
+    {
+      "scene_id": "main_00_03",
+      "title_id": "main_story__chapter_00",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_00.txt",
+      "source_sha256": "30bf6892adb650d0bdb38bc66b2ec4b9f4379947945caa720f31e050283ed3a8",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "마리안과 지휘관은 사격음을 듣고 이동해 랑데부 포인트 인근에서 대기 중이던 라피, 아니스와 합류한다. 라피는 긴급사태임을 들어 지휘관 인식 코드로 스쿼드 04-F의 지휘권을 지휘관에게 변경하고, 실버건 스쿼드 소속 마리안과 함께 전방의 랩쳐와 교전에 들어간다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_00_03__pis_001",
+            "speaker_label": "마리안",
+            "entity_id": "char_마리안",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_03__pis_002",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_03__pis_003",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_03__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_00_03__mnt_001",
+            "surface_text": "랑데부 포인트",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 17,
+            "line_end": 17,
+            "quote": "랑데부 포인트는 여기야. 자리를 벗어나면 작전이 꼬일 수 있어."
+          },
+          {
+            "item_id": "main_00_03__mnt_002",
+            "surface_text": "스쿼드 04-F",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 38,
+            "line_end": 38,
+            "quote": "스쿼드 04-F의 지휘권 변경 완료."
+          },
+          {
+            "item_id": "main_00_03__mnt_003",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 40,
+            "line_end": 40,
+            "quote": "긴급사태야. 우리 앞엔 랩쳐가 있고."
+          },
+          {
+            "item_id": "main_00_03__mnt_004",
+            "surface_text": "실버건 스쿼드",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 50,
+            "line_end": 50,
+            "quote": "실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_00_03__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "댁",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "니케야 그렇다 치고, 댁 인간 맞지?"
+        },
+        {
+          "item_id": "main_00_03__foa_002",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "당신",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "현 시간부로 당신은 우리의 명령권자가 됩니다."
+        },
+        {
+          "item_id": "main_00_03__foa_003",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "지휘관님. 어떻게 할까?"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_00_03__eac_001",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "마리안, 지휘관, 라피, 아니스",
+          "summary": "수송기 추락 폭발을 목격하고 대기하던 라피와 아니스에게 마리안과 지휘관이 무사히 합류한다.",
+          "line_start": 19,
+          "line_end": 24,
+          "quote": "합류하겠습니다! 으악! 깜짝이야! !! 마리안입니다! 지휘관과 함께 랑데부 포인트에 무사히 합류했습니다!",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_00_03__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "라피, 지휘관",
+          "summary": "라피는 이전 지휘관이 명령을 내릴 수 없는 긴급사태라며 지휘관 인식 코드에 액세스해 스쿼드 04-F의 지휘권을 지휘관에게 변경한다.",
+          "line_start": 35,
+          "line_end": 44,
+          "quote": "지휘관 인식 코드, 액세스. ··· ···. 스쿼드 04-F의 지휘권 변경 완료.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        },
+        {
+          "item_id": "main_00_03__eac_003",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "마리안",
+          "summary": "마리안은 자신이 실버건 스쿼드 소속이며 병과는 기관총 사수라고 밝힌다.",
+          "line_start": 49,
+          "line_end": 50,
+          "quote": "마리안이라 했나? 소속과 병과는? 실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_00_03__clh_001",
+          "keyword": "스쿼드 04-F",
+          "category": "code_or_number",
+          "detail": "카운터스 명명 이전 라피와 아니스가 속해 있던 임시 스쿼드 식별 코드.",
+          "line_start": 36,
+          "line_end": 38,
+          "quote": "지휘관 인식 코드, 액세스. ··· ···. 스쿼드 04-F의 지휘권 변경 완료."
+        },
+        {
+          "item_id": "main_00_03__clh_002",
+          "keyword": "실버건 스쿼드",
+          "category": "organization",
+          "detail": "마리안의 원 소속 스쿼드.",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_00_03__rln_001",
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "지휘관 인식 코드를 통해 스쿼드 04-F의 정식 명령권자로 등록하고 명령에 복종하기 시작함.",
+          "line_start": 38,
+          "line_end": 42,
+          "quote": "스쿼드 04-F의 지휘권 변경 완료. 라피! 너 누군지도 모르는 인간한테 그렇게 함부로···! 긴급사태야. 우리 앞엔 랩쳐가 있고. 그건··· 그렇지만···! 현 시간부로 당신은 우리의 명령권자가 됩니다."
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_00_03__uec_001",
+          "surface_text": "랑데부 포인트",
+          "suggested_type": "location",
+          "line_start": 17
+        },
+        {
+          "item_id": "main_00_03__uec_002",
+          "surface_text": "스쿼드 04-F",
+          "suggested_type": "squad",
+          "line_start": 38
+        },
+        {
+          "item_id": "main_00_03__uec_003",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 40
+        },
+        {
+          "item_id": "main_00_03__uec_004",
+          "surface_text": "실버건 스쿼드",
+          "suggested_type": "squad",
+          "line_start": 50
+        }
+      ]
+    },
+    {
+      "scene_id": "main_00_04",
+      "title_id": "main_story__chapter_00",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_00.txt",
+      "source_sha256": "fd2cabcb8f0778460a2a3125161d577e2adb2b8240d6228ab9fdfdc027260711",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "is_plot_critical": true,
+      "summary": "아니스와 라피는 기존 지휘관이 소구경 대인 화기를 들고 랩쳐에게 무모하게 돌격하다가 사망했다고 설명한다. 이어서 아니스가 지휘관의 신원을 검색해 어제 사관학교를 졸업한 신입임을 확인하고, 일행은 인근 시가지로 이동한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_00_04__pis_001",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_04__pis_002",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_04__pis_003",
+            "speaker_label": "마리안",
+            "entity_id": "char_마리안",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_00_04__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_00_04__mnt_001",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "대인 화기를 들고는 랩쳐한테 막 쏴재끼더라고."
+          },
+          {
+            "item_id": "main_00_04__mnt_002",
+            "surface_text": "사관학교",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 34,
+            "line_end": 34,
+            "quote": "어제 사관학교를 졸업했대."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_00_04__foa_001",
+          "from_speaker": "마리안",
+          "to_target": "라피, 아니스",
+          "address_term": "두 분",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "···지켜주지 못하셨군요. 두 분이."
+        },
+        {
+          "item_id": "main_00_04__foa_002",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "그쪽",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "실례지만 그쪽은 성함이 어떻게 되십니까."
+        },
+        {
+          "item_id": "main_00_04__foa_003",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "···이 지휘관님. 완전 생 신입인데?"
+        }
+      ],
+      "unknown_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_00_04__eac_001",
+          "epistemic_type": "character_claim",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스는 기존 지휘관이 먹힐 리 없는 소구경 대인 화기를 들고 랩쳐에게 쏴대며 스스로 죽으러 나섰기 때문에 지키지 못하고 사망했다고 말한다.",
+          "line_start": 6,
+          "line_end": 14,
+          "quote": "응. 기존 지휘관은 죽었어. ··· ···. 대인 화기를 들고는 랩쳐한테 막 쏴재끼더라고.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        },
+        {
+          "item_id": "main_00_04__eac_002",
+          "epistemic_type": "established_event",
+          "chronology_type": "present",
+          "confidence": null,
+          "actor_or_speaker": "아니스, 라피, 지휘관",
+          "summary": "아니스가 지휘관의 이름을 검색해 어제 사관학교를 졸업한 생 신입임을 확인하고, 라피는 위험을 피해 인근 시가지로 이동하자고 제안한다.",
+          "line_start": 17,
+          "line_end": 36,
+          "quote": "···이 지휘관님. 완전 생 신입인데? ···뭐? 어제 사관학교를 졸업했대.",
+          "branch_specific": false,
+          "branch_option_text": null,
+          "refers_to_past": true
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_00_04__rln_001",
+          "subject": "마리안",
+          "target": "라피, 아니스",
+          "relation_or_change": "기존 지휘관이 사망했다는 말에 두 사람이 지휘관을 지켜주지 못했다며 비판적인 태도를 보임.",
+          "line_start": 11,
+          "line_end": 14,
+          "quote": "···지켜주지 못하셨군요. 두 분이. 아니, 우리는 지휘관을 지켜. 무슨 일이 있어도 지켜. 목숨과 바꿔서라도 지키지. 하지만 자기가 죽는다고 나서는 사람을 지킬 수는 없잖아?"
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_00_04__uec_001",
+          "surface_text": "랩쳐",
+          "suggested_type": "concept",
+          "line_start": 8
+        },
+        {
+          "item_id": "main_00_04__uec_002",
+          "surface_text": "사관학교",
+          "suggested_type": "organization",
+          "line_start": 34
+        }
+      ]
+    }
+  ]
+}
