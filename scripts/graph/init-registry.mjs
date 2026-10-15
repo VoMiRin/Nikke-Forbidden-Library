@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -227,12 +228,58 @@ export const makeEntityId = (speakerLabel, usedIds = new Set()) => {
   return dedupedId;
 };
 
+export const DESCRIPTOR_REVIEW_FILE = 'descriptor_review.json';
+
+/**
+ * 묘사형 화자 사용자 검토 결과(descriptor_review.json)를 읽는다. 없으면 null (휴리스틱만 사용).
+ */
+export const loadDescriptorReview = (dir = GRAPH_DATA_DIR) => {
+  const reviewPath = path.join(dir, DESCRIPTOR_REVIEW_FILE);
+  if (!fsSync.existsSync(reviewPath)) return null;
+  const doc = JSON.parse(fsSync.readFileSync(reviewPath, 'utf8'));
+  return { keep: new Set(doc.keep ?? []), drop: new Set(doc.drop ?? []) };
+};
+
+/**
+ * 휴리스틱 분류에 사용자 검토를 덮어쓴다 (1.6).
+ * - keep: 정체를 가린 인물로 추적 (descriptor_alias)
+ * - drop: 묘사형 라벨이지만 추적하지 않음 (descriptor_excluded, descriptor_speakers 작성 대상 아님)
+ * - 검토하지 않은 새 묘사형 라벨은 descriptor_alias로 두고 review_status: unreviewed로 표시
+ */
+export const applyDescriptorReview = (label, classification, review) => {
+  if (!review || !classification.is_generic_role) return classification;
+  if (review.keep.has(label)) {
+    return {
+      ...classification,
+      category: 'descriptor_alias',
+      reason: '사용자 검토: 정체를 가린 인물로 추적 (1.6)',
+      review_status: 'kept',
+    };
+  }
+  if (classification.category === 'descriptor_alias' && review.drop.has(label)) {
+    return {
+      ...classification,
+      category: 'descriptor_excluded',
+      reason: '사용자 검토: 묘사형 라벨이지만 정체 추적 대상 아님 (1.6)',
+      review_status: 'excluded',
+    };
+  }
+  if (classification.category === 'descriptor_alias') {
+    return { ...classification, review_status: 'unreviewed' };
+  }
+  return classification;
+};
+
 /**
  * 등록된 전체 대본을 스캔하여 generic_roles.json과 entity_registry.json 데이터를 생성한다.
  */
 export const buildInitialRegistry = async (options = {}) => {
   const newScriptsData = options.newScriptsData ?? loadNewScriptsData();
   const scriptsRootDir = options.scriptsRootDir ?? SCRIPTS_ROOT_DIR;
+  const descriptorReview =
+    options.descriptorReview !== undefined
+      ? options.descriptorReview
+      : loadDescriptorReview(options.outDir ?? GRAPH_DATA_DIR);
 
   // 니케 에피소드 및 블라블라 개인방 타이틀은 고유 캐릭터 이름으로 보장
   const knownNamedSet = new Set([
@@ -320,7 +367,11 @@ export const buildInitialRegistry = async (options = {}) => {
 
   for (const label of sortedLabels) {
     const st = speakerStats.get(label);
-    const classification = classifyGenericRole(label, knownNamedSet, st.dialogue_line_count);
+    const classification = applyDescriptorReview(
+      label,
+      classifyGenericRole(label, knownNamedSet, st.dialogue_line_count),
+      descriptorReview
+    );
 
     if (classification.is_generic_role) {
       genericRoles.push({
@@ -329,6 +380,7 @@ export const buildInitialRegistry = async (options = {}) => {
         entity_id: null,
         role_category: classification.category,
         heuristic_reason: classification.reason,
+        ...(classification.review_status ? { review_status: classification.review_status } : {}),
         scene_count: st.scene_count,
         dialogue_line_count: st.dialogue_line_count,
         sources: [...st.sources].sort(),
@@ -368,14 +420,19 @@ export const buildInitialRegistry = async (options = {}) => {
   const descriptorAliases = genericRoles
     .filter((r) => r.role_category === 'descriptor_alias')
     .map((r) => r.speaker_label);
+  const unreviewedDescriptors = genericRoles
+    .filter((r) => r.review_status === 'unreviewed')
+    .map((r) => r.speaker_label);
 
   const genericRolesDoc = {
     schema_version: PASS1_SCHEMA_VERSION,
     description:
-      '일반 역할 명사, 묘사형 별칭(descriptor_alias) 및 미상 화자(???) 초안. Pass 1에서는 is_generic_role: true, entity_id: null로 두며 descriptor_alias는 Pass 2 정체 후보 탐색 대상에 포함한다 (1.6).',
+      '일반 역할 명사, 묘사형 별칭(descriptor_alias) 및 미상 화자(???) 초안. Pass 1에서는 is_generic_role: true, entity_id: null로 두며 descriptor_alias는 Pass 2 정체 후보 탐색 대상에 포함한다. descriptor_alias와 descriptor_excluded는 descriptor_review.json의 사용자 검토를 반영한 결과다 (1.6).',
     total_roles: genericRoles.length,
+    descriptor_review_applied: Boolean(descriptorReview),
     descriptor_alias_count: descriptorAliases.length,
     descriptor_alias_labels: descriptorAliases,
+    unreviewed_descriptor_labels: unreviewedDescriptors,
     role_labels: genericRoles.map((r) => r.speaker_label),
     roles: genericRoles,
   };

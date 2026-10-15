@@ -221,18 +221,24 @@ test('1.4 & 1.6 batch packing and initial registry rules work as specified', asy
     assert.equal(registryDoc.speaker_lookup[mustBeGeneric]?.is_generic_role, true);
   }
 
-  // Check 1.6 descriptor_alias labels (e.g. 인자해 보이는 남자, 검은 물을 덮은 소녀)
+  // Check 1.6 descriptor labels after user review (descriptor_review.json):
+  // kept labels stay descriptor_alias, excluded labels become descriptor_excluded; both remain generic roles
   const rolesByLabel = new Map(genericDoc.roles.map((r) => [r.speaker_label, r]));
-  for (const descLabel of ['인자해 보이는 남자', '검은 물을 덮은 소녀']) {
+  for (const [descLabel, expectedCategory] of [
+    ['검은 물을 덮은 소녀', 'descriptor_alias'],
+    ['양산을 든 여성', 'descriptor_alias'],
+    ['인자해 보이는 남자', 'descriptor_excluded'],
+  ]) {
     const roleEntry = rolesByLabel.get(descLabel);
     assert.ok(roleEntry, `${descLabel} must be in generic_roles.json`);
-    assert.equal(roleEntry.role_category, 'descriptor_alias');
+    assert.equal(roleEntry.role_category, expectedCategory);
     assert.equal(roleEntry.is_generic_role, true);
     assert.equal(roleEntry.entity_id, null);
-    assert.equal(registryDoc.speaker_lookup[descLabel]?.role_category, 'descriptor_alias');
+    assert.equal(registryDoc.speaker_lookup[descLabel]?.role_category, expectedCategory);
     assert.equal(registryDoc.speaker_lookup[descLabel]?.is_generic_role, true);
     assert.equal(registryDoc.speaker_lookup[descLabel]?.entity_id, null);
   }
+  assert.deepEqual(genericDoc.unreviewed_descriptor_labels, []);
 
   for (const mustBeNamed of ['라피', '아니스', '네온', '지휘관', 'D', '리틀 머메이드']) {
     assert.equal(registryDoc.speaker_lookup[mustBeNamed]?.is_generic_role, false);

@@ -14,11 +14,12 @@ import {
 import { validateShard } from './graph/validate-output.mjs';
 import { enrichSceneFromManifest } from './graph/merge-and-index.mjs';
 import { planBatches } from './graph/build-manifest.mjs';
+import { applyDescriptorReview } from './graph/init-registry.mjs';
 
 // 2.4: 1.3.0에서 새로 생기거나 바뀐 검사(2.3의 항 번호)를 실제 파서로 만든 장면에 대해 확인한다.
 
 const DESCRIPTOR_LOOKUP = {
-  '인자해 보이는 남자': { entity_id: null, is_generic_role: true, role_category: 'descriptor_alias' },
+  '양산을 든 여성': { entity_id: null, is_generic_role: true, role_category: 'descriptor_alias' },
 };
 
 const makeInputScene = (sceneId, lines, speakerLookup = null) => {
@@ -388,13 +389,13 @@ test('2.3-13 chronology segments: claims may cross, other items may not', () => 
 });
 
 // 묘사형 화자와 ??? 정체 공개 (2.3의 4·10항)
-const DESC_LINES = ['인자해 보이는 남자: 어서 오게.', '???: 드디어 왔구나.', '라피: 당신은 누구죠?', '???: 나는 머스탱이다.'];
+const DESC_LINES = ['양산을 든 여성: 어서 오게.', '???: 드디어 왔구나.', '라피: 당신은 누구죠?', '???: 나는 머스탱이다.'];
 
 const descScene = () =>
   emptyScene('t13_desc', {
     participants: {
       present_in_scene: [
-        { speaker_label: '인자해 보이는 남자', entity_id: null, is_generic_role: true },
+        { speaker_label: '양산을 든 여성', entity_id: null, is_generic_role: true },
         { speaker_label: '라피', entity_id: null, is_generic_role: false },
       ],
       present_silent: [],
@@ -415,7 +416,7 @@ const descScene = () =>
     ],
     descriptor_speakers: [
       {
-        speaker_label: '인자해 보이는 남자',
+        speaker_label: '양산을 든 여성',
         line_start: 1,
         line_end: 1,
         quote: '어서 오게.',
@@ -482,23 +483,41 @@ test('2.3-5/7 unlabeled recording with several voices', () => {
   assertFails(validateShard(shardOf(scene({ name: null, entity_id: null, voices: [] })), batch), 'DOCUMENT_AUTHOR');
 });
 
-test('2.4 real corpus: coins_in_rush_09 requires descriptor_speakers, bunny_x_777_08 options split by line', async () => {
+test('1.6 descriptor review: kept labels are tracked, excluded labels are not, unreviewed labels are flagged', () => {
+  const review = { keep: new Set(['양산을 든 여성']), drop: new Set(['인자해 보이는 남자']) };
+  const heuristic = { is_generic_role: true, category: 'descriptor_alias', reason: '휴리스틱' };
+  assert.equal(applyDescriptorReview('양산을 든 여성', heuristic, review).category, 'descriptor_alias');
+  assert.equal(applyDescriptorReview('인자해 보이는 남자', heuristic, review).category, 'descriptor_excluded');
+  assert.equal(applyDescriptorReview('새로운 묘사형 라벨', heuristic, review).review_status, 'unreviewed');
+  const named = { is_generic_role: false, category: null, reason: null };
+  assert.deepEqual(applyDescriptorReview('양산을 든 여성', named, review), named);
+});
+
+test('2.4 real corpus: gingerbreadhouse_02 requires descriptor_speakers, coins_in_rush_09 no longer does, bunny_x_777_08 options split by line', async () => {
   const registry = JSON.parse(await fs.readFile(path.join(GRAPH_DATA_DIR, 'entity_registry.json'), 'utf8'));
-  const raw = await fs.readFile(path.join(SCRIPTS_ROOT_DIR, 'event_stories', 'coins_in_rush.txt'), 'utf8');
-  const block = parseChapterTextBlocks(raw).find((b) => b.scene_id === 'coins_in_rush_09');
-  assert.ok(block, 'coins_in_rush_09 must exist');
-  const coinsInput = {
-    scene_id: block.scene_id,
-    numbered_script: buildNumberedScript(block.body_lines),
-    mechanical_ground_truth: extractSceneMechanicalGroundTruth(
-      { scene_id: block.scene_id, category: 'event_stories', title: 'COINS IN RUSH', body_lines: block.body_lines },
-      { speakerLookup: registry.speaker_lookup }
-    ),
+  const realInput = async (file, sceneId, category) => {
+    const raw = await fs.readFile(path.join(SCRIPTS_ROOT_DIR, file), 'utf8');
+    const block = parseChapterTextBlocks(raw).find((b) => b.scene_id === sceneId);
+    assert.ok(block, `${sceneId} must exist`);
+    return {
+      scene_id: sceneId,
+      numbered_script: buildNumberedScript(block.body_lines),
+      mechanical_ground_truth: extractSceneMechanicalGroundTruth(
+        { scene_id: sceneId, category, title: sceneId, body_lines: block.body_lines },
+        { speakerLookup: registry.speaker_lookup }
+      ),
+    };
   };
-  const descLabels = coinsInput.mechanical_ground_truth.speakers.filter((s) => s.is_descriptor_alias).map((s) => s.speaker_label);
-  assert.ok(descLabels.includes('인자해 보이는 남자'));
-  const res = validateShard(shardOf(emptyScene('coins_in_rush_09')), batchOf(coinsInput));
-  assert.ok(res.errors.some((e) => e.rule === 'DESCRIPTOR_SPEAKERS' && e.message.includes('인자해 보이는 남자')));
+  const descLabelsOf = (input) => input.mechanical_ground_truth.speakers.filter((s) => s.is_descriptor_alias).map((s) => s.speaker_label);
+
+  const ginger = await realInput('side_stories/gingerbread_house.txt', 'gingerbreadhouse_02', 'side_stories');
+  assert.deepEqual(descLabelsOf(ginger), ['양산을 든 여성']);
+  const res = validateShard(shardOf(emptyScene('gingerbreadhouse_02')), batchOf(ginger));
+  assert.ok(res.errors.some((e) => e.rule === 'DESCRIPTOR_SPEAKERS' && e.message.includes('양산을 든 여성')));
+
+  // 사용자 검토로 제외된 인자해 보이는 남자는 descriptor_speakers 대상이 아니다
+  const coins = await realInput('event_stories/coins_in_rush.txt', 'coins_in_rush_09', 'event_stories');
+  assert.deepEqual(descLabelsOf(coins), []);
 
   const manifest = JSON.parse(await fs.readFile(path.join(GRAPH_DATA_DIR, 'manifest.json'), 'utf8'));
   const bunny = manifest.scenes['bunny_x_777_08'];

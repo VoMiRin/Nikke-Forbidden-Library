@@ -300,9 +300,11 @@ export const buildPass1IndexAndCandidates = (enrichedScenes, metadata = {}) => {
       });
     }
 
-    // 2-1. 묘사형 화자 역색인 (3절 3항)
+    // 2-1. 묘사형 화자 역색인 (3절 3항). 다른 타이틀의 같은 라벨은 같은 인물로 가정하지 않으므로
+    //      추적 단위는 (라벨, 타이틀)이다 (1.6).
     for (const dsp of scene.descriptor_speakers ?? []) {
       descriptorSpeakersIndex.push({
+        track_key: `${dsp.speaker_label}@${tid}`,
         speaker_label: dsp.speaker_label,
         scene_id: sid,
         title_id: tid,

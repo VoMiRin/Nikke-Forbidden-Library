@@ -560,7 +560,7 @@ export const DEFAULT_PILOT_SCENE_IDS = [
   'main_31_00',
   'hotel_02',
   'hotel_03',
-  'coins_in_rush_09',
+  'gingerbreadhouse_02', // 1.3.0: 묘사형 화자 검토 후 coins_in_rush_09 대신 (양산을 든 여성 → 베르누이아)
   'blabla_onemoretime_001',
   '어느남자의수기_00',
 ];
@@ -589,10 +589,11 @@ export const buildPilotBatches = async (pilotSceneIds = DEFAULT_PILOT_SCENE_IDS,
     selectedScenes.push({ ...found });
   }
 
-  // 15개 장면(합계 ~77.9KB)을 크기에 맞춰 1~2개 배치(~43KB / ~35KB 2개)로 분할하되 쌍 장면(main_30_07~08, hotel_02~03)이 한 배치에 묶이도록 설정
+  // 15개 장면(합계 ~75KB)을 크기에 맞춰 2개 배치(~43KB / ~32KB)로 분할하되 쌍 장면(main_30_07~08, hotel_02~03)이 한 배치에 묶이도록 설정.
+  // 1.3.0에서 coins_in_rush_09(8.8KB)를 gingerbreadhouse_02(5.4KB)로 바꿔 두 번째 배치가 작아졌으므로 최소 크기를 28KB로 둔다.
   const pilotBatches = packScenesIntoBatches(selectedScenes, {
     batchPrefix: options.batchPrefix ?? 'pilot_',
-    minBytes: options.minBytes ?? 34 * 1024,
+    minBytes: options.minBytes ?? 28 * 1024,
     targetBytes: options.targetBytes ?? 44 * 1024,
     maxBytes: options.maxBytes ?? 48 * 1024,
   });
