@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.566Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.631Z",
   "title_id": "lost_relics__어떤소녀의그림일기",
   "category": "lost_relics",
   "title": "어떤 소녀의 그림일기",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "의미를 알 수 없는 그림 낙서가 가득한 그림일기 첫 번째 페이지에 아저씨가 글자를 알려주고 함께 놀아주어 재미있었다고 서툰 맞춤법으로 적혀 있다.",
+      "summary": "의미를 알 수 없는 그림 낙서가 가득한 그림일기 첫 번째 페이지로, 그림일기 작성자가 아저씨에게 글자를 배우고 함께 놀아서 재미있었다고 서툰 글씨로 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -34,60 +35,106 @@
             "entity_id": null,
             "entity_type": "character",
             "line_start": 5,
-            "line_end": 6,
-            "quote": "ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ ㅇㅏㅈㅓㅆ ㅣ 노ㄹㅏㄸㅏ"
+            "line_end": 5,
+            "quote": "ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "어떤소녀의그림일기_00__dca_001",
-          "name": "그림일기를 쓴 소녀",
-          "entity_id": null
+          "name": "그림일기 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "어떤소녀의그림일기_00__csh_001",
+          "text": "어떤 소녀의 그림일기 시리즈(어떤소녀의그림일기_00~03)의 첫 번째 페이지로, 정갈하게쓴기록_03에서 발견된 아이와 연결될 수 있음",
+          "related_scene_ids": [
+            "어떤소녀의그림일기_01",
+            "어떤소녀의그림일기_02",
+            "어떤소녀의그림일기_03",
+            "정갈하게쓴기록_03"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "어떤소녀의그림일기_00__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "그림일기를 쓴 소녀",
-          "summary": "아저씨가 글자를 알려주고 같이 놀아주어서 재미있었다고 일기에 기록한다.",
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 첫 번째 페이지에 의미를 알 수 없는 그림 낙서가 가득 그려져 있다.",
           "line_start": 2,
+          "line_end": 2,
+          "claim_line": null,
+          "quote": "(의미를 알 수 없는 그림 낙서가 가득하다)",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "어떤소녀의그림일기_00__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 작성자가 오늘의 일기에 아저씨가 글자를 알려 주었고 아저씨와 놀아서 재미있었다고 자모가 풀어진 서툰 표기로 적는다.",
+          "line_start": 3,
           "line_end": 7,
-          "quote": "(의미를 알 수 없는 그림 낙서가 가득하다) 오느이 일ㄱㅣ ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ ㅇㅏㅈㅓㅆ ㅣ 노ㄹㅏㄸㅏ ㅈㅐㅁㅣ ㅇㅣㅆㅓ ㄸㅏ",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 5,
+          "quote": "오느이 일ㄱㅣ ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ ㅇㅏㅈㅓㅆ ㅣ 노ㄹㅏㄸㅏ ㅈㅐㅁㅣ ㅇㅣㅆㅓ ㄸㅏ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "어떤소녀의그림일기_00__clh_001",
-          "keyword": "소녀에게 글자를 가르쳐 준 아저씨",
-          "category": "lore_concept",
-          "detail": "웨일리 뱃속에서 발견된 아이로 추정되는 소녀에게 아저씨(정갈하게 쓴 기록 작성자 추정)가 글자를 가르쳐 주고 함께 놀아주었다.",
-          "line_start": 2,
+          "keyword": "서툰 한글 표기 일기",
+          "category": "trait",
+          "subject": "그림일기 작성자",
+          "detail": "아저씨에게 막 글자를 배워 자모가 풀어진 서툰 맞춤법('오느이 일ㄱㅣ', 'ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ')으로 일기를 씀",
+          "line_start": 3,
           "line_end": 7,
-          "quote": "(의미를 알 수 없는 그림 낙서가 가득하다) 오느이 일ㄱㅣ ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ ㅇㅏㅈㅓㅆ ㅣ 노ㄹㅏㄸㅏ ㅈㅐㅁㅣ ㅇㅣㅆㅓ ㄸㅏ"
+          "quote": "오느이 일ㄱㅣ ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ ㅇㅏㅈㅓㅆ ㅣ 노ㄹㅏㄸㅏ ㅈㅐㅁㅣ ㅇㅣㅆㅓ ㄸㅏ",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "어떤소녀의그림일기_00__rln_001",
-          "subject": "그림일기를 쓴 소녀",
-          "target": "아저씨",
-          "relation_or_change": "아저씨에게 글자를 배우고 함께 놀며 친밀하게 따른다.",
+          "subject": "ㅇㅏㅈㅓㅆ ㅣ",
+          "target": "그림일기 작성자",
+          "relation_or_change": "아저씨가 그림일기 작성자에게 글자를 알려 주고 함께 놀아 줌",
+          "epistemic_type": "character_claim",
+          "claimant": "그림일기 작성자",
           "line_start": 5,
-          "line_end": 7,
-          "quote": "ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ ㅇㅏㅈㅓㅆ ㅣ 노ㄹㅏㄸㅏ ㅈㅐㅁㅣ ㅇㅣㅆㅓ ㄸㅏ"
+          "line_end": 6,
+          "claim_line": 5,
+          "quote": "ㅇㅏㅈㅓㅆ ㅣ 그ㅉㅏ ㅇㅏㄹ ㅕ 조ㄸㅏ ㅇㅏㅈㅓㅆ ㅣ 노ㄹㅏㄸㅏ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "어떤소녀의그림일기_00__uec_001",
+          "surface_text": "ㅇㅏㅈㅓㅆ ㅣ",
+          "suggested_type": "character",
+          "line_start": 5
+        }
+      ]
     },
     {
       "scene_id": "어떤소녀의그림일기_01",
@@ -103,8 +150,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "알 수 없는 섬이 그려진 그림일기 두 번째 페이지에 아저씨가 친구에게 줘야 한다며 큰 그림을 그렸고 소녀도 아저씨를 따라 큰 그림을 그리며 놀았다고 적혀 있다.",
+      "summary": "알 수 없는 섬이 그려진 그림일기 두 번째 페이지로, 그림일기 작성자가 아저씨와 놀았으며 아저씨가 친구에게 줘야 한다며 큰 그림을 그리기에 자신도 따라서 큰 그림을 그렸다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -116,8 +164,10 @@
             "entity_id": null,
             "entity_type": "character",
             "line_start": 6,
-            "line_end": 11,
-            "quote": "아저씨랑 노라따 아저씨 그림 그려따 큰 그림 그려따 아저씨 친구 조야한다고 해따 그래서 그림 그린다고 해따 나도 아저씨 따라서 큰 그림 그려따"
+            "line_end": 6,
+            "quote": "아저씨랑 노라따",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "어떤소녀의그림일기_01__mnt_002",
@@ -126,49 +176,110 @@
             "entity_type": "character",
             "line_start": 9,
             "line_end": 9,
-            "quote": "아저씨 친구 조야한다고 해따"
+            "quote": "아저씨 친구 조야한다고 해따",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "어떤소녀의그림일기_01__dca_001",
-          "name": "그림일기를 쓴 소녀",
-          "entity_id": null
+          "name": "그림일기 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "어떤소녀의그림일기_01__csh_001",
+          "text": "어떤 소녀의 그림일기 시리즈(어떤소녀의그림일기_00~03)의 두 번째 페이지",
+          "related_scene_ids": [
+            "어떤소녀의그림일기_00",
+            "어떤소녀의그림일기_02",
+            "어떤소녀의그림일기_03"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "어떤소녀의그림일기_01__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "그림일기를 쓴 소녀",
-          "summary": "아저씨가 친구에게 줘야 한다며 큰 그림을 그렸고, 소녀도 아저씨를 따라 큰 그림을 그리며 재미있게 놀았다.",
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 두 번째 페이지에 알 수 없는 섬이 그려져 있다.",
           "line_start": 2,
+          "line_end": 2,
+          "claim_line": null,
+          "quote": "(알 수 없는 섬이 그려져 있다)",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "어떤소녀의그림일기_01__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 작성자가 아저씨와 놀았으며, 아저씨가 친구에게 줘야 한다며 큰 그림을 그리기에 자신도 아저씨를 따라서 큰 그림을 그렸고 재미있었다고 기록한다.",
+          "line_start": 4,
           "line_end": 12,
-          "quote": "(알 수 없는 섬이 그려져 있다) 오늘이 일기 아저씨랑 노라따 아저씨 그림 그려따 큰 그림 그려따 아저씨 친구 조야한다고 해따 그래서 그림 그린다고 해따 나도 아저씨 따라서 큰 그림 그려따 재미이써따",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 6,
+          "quote": "오늘이 일기 아저씨랑 노라따 아저씨 그림 그려따 큰 그림 그려따 아저씨 친구 조야한다고 해따 그래서 그림 그린다고 해따 나도 아저씨 따라서 큰 그림 그려따 재미이써따",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "어떤소녀의그림일기_01__clh_001",
-          "keyword": "알 수 없는 섬 그림과 아저씨 친구에게 줄 큰 그림",
-          "category": "location",
-          "detail": "일기장에 알 수 없는 섬이 그려져 있고 아저씨가 친구에게 주기 위해 큰 그림을 그렸다.",
+          "keyword": "알 수 없는 섬 그림과 아저씨의 큰 그림",
+          "category": "item",
+          "subject": null,
+          "detail": "일기장에 알 수 없는 섬이 그려져 있으며, 아저씨가 친구에게 줘야 한다며 그린 큰 그림과 소녀가 따라 그린 큰 그림",
           "line_start": 2,
           "line_end": 11,
-          "quote": "(알 수 없는 섬이 그려져 있다) 오늘이 일기 아저씨랑 노라따 아저씨 그림 그려따 큰 그림 그려따 아저씨 친구 조야한다고 해따 그래서 그림 그린다고 해따 나도 아저씨 따라서 큰 그림 그려따"
+          "quote": "(알 수 없는 섬이 그려져 있다) 오늘이 일기 아저씨랑 노라따 아저씨 그림 그려따 큰 그림 그려따 아저씨 친구 조야한다고 해따 그래서 그림 그린다고 해따 나도 아저씨 따라서 큰 그림 그려따",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "어떤소녀의그림일기_01__rln_001",
+          "subject": "아저씨",
+          "target": "아저씨 친구",
+          "relation_or_change": "아저씨가 친구에게 줘야 한다며 큰 그림을 그림",
+          "epistemic_type": "character_claim",
+          "claimant": "그림일기 작성자",
+          "line_start": 7,
+          "line_end": 10,
+          "claim_line": 9,
+          "quote": "아저씨 그림 그려따 큰 그림 그려따 아저씨 친구 조야한다고 해따 그래서 그림 그린다고 해따",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "어떤소녀의그림일기_01__uec_001",
+          "surface_text": "아저씨",
+          "suggested_type": "character",
+          "line_start": 6
+        },
+        {
+          "item_id": "어떤소녀의그림일기_01__uec_002",
+          "surface_text": "아저씨 친구",
+          "suggested_type": "character",
+          "line_start": 9
+        }
+      ]
     },
     {
       "scene_id": "어떤소녀의그림일기_02",
@@ -184,8 +295,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "새싹과 회색 누군가의 모습이 그려진 그림일기 세 번째 페이지에 아저씨와 함께 씨앗을 심고 칭찬을 받았으며 서로 좋아한다고 말해 기분이 좋았다고 적혀 있다.",
+      "summary": "새싹과 회색 누군가의 모습이 그려진 그림일기 세 번째 페이지로, 그림일기 작성자가 아저씨와 함께 씨앗을 심고 칭찬받았으며 아저씨가 자신을 좋다고 했고 자신도 아저씨가 너무 좋다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -197,60 +309,120 @@
             "entity_id": null,
             "entity_type": "character",
             "line_start": 6,
-            "line_end": 12,
-            "quote": "아저씨랑 놀라따 아저씨가 씨앗 시머따 나도 같이 시머따 아저씨가 칭찬해따 기부니가 조아져따 아저씨가 내가 조타고 해따 나도 아저씨가 너무너무 조타"
+            "line_end": 6,
+            "quote": "아저씨랑 놀라따",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "어떤소녀의그림일기_02__dca_001",
-          "name": "그림일기를 쓴 소녀",
-          "entity_id": null
+          "name": "그림일기 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "어떤소녀의그림일기_02__csh_001",
+          "text": "어떤 소녀의 그림일기 시리즈(어떤소녀의그림일기_00~03)의 세 번째 페이지",
+          "related_scene_ids": [
+            "어떤소녀의그림일기_00",
+            "어떤소녀의그림일기_01",
+            "어떤소녀의그림일기_03"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "어떤소녀의그림일기_02__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "그림일기를 쓴 소녀",
-          "summary": "새싹과 회색 누군가의 그림과 함께, 아저씨와 같이 씨앗을 심고 칭찬을 받았으며 아저씨가 자신을 좋다고 해주어 자기도 아저씨가 너무 좋다고 기록한다.",
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 세 번째 페이지에 새싹 그림과 삐뚤빼뚤 그려놓은 회색 누군가의 모습이 그려져 있다.",
           "line_start": 2,
+          "line_end": 2,
+          "claim_line": null,
+          "quote": "(새싹 그림과 삐뚤빼뚤 그려놓은 회색 누군가의 모습이 그려져 있다)",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "어떤소녀의그림일기_02__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 작성자가 아저씨와 놀며 함께 씨앗을 심어 아저씨에게 칭찬을 받아 기분이 좋아졌고, 아저씨가 자신을 좋다고 했으며 자신도 아저씨가 너무너무 좋다고 기록한다.",
+          "line_start": 4,
           "line_end": 13,
-          "quote": "(새싹 그림과 삐뚤빼뚤 그려놓은 회색 누군가의 모습이 그려져 있다) 오늘이 일기 아저씨랑 놀라따 아저씨가 씨앗 시머따 나도 같이 시머따 아저씨가 칭찬해따 기부니가 조아져따 아저씨가 내가 조타고 해따 나도 아저씨가 너무너무 조타 재미이써따",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 7,
+          "quote": "오늘이 일기 아저씨랑 놀라따 아저씨가 씨앗 시머따 나도 같이 시머따 아저씨가 칭찬해따 기부니가 조아져따 아저씨가 내가 조타고 해따 나도 아저씨가 너무너무 조타 재미이써따",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "어떤소녀의그림일기_02__clh_001",
-          "keyword": "새싹·회색 누군가의 그림과 씨앗 심기",
-          "category": "lore_concept",
-          "detail": "소녀의 그림일기에 새싹과 회색 누군가(아저씨 또는 동반 개체)가 그려져 있으며 함께 씨앗을 심으며 깊은 애정을 나누었다.",
+          "keyword": "새싹 그림과 회색 누군가의 그림",
+          "category": "item",
+          "subject": null,
+          "detail": "일기장에 그려진 새싹 그림과 삐뚤빼뚤 그려놓은 회색 누군가의 모습",
           "line_start": 2,
-          "line_end": 12,
-          "quote": "(새싹 그림과 삐뚤빼뚤 그려놓은 회색 누군가의 모습이 그려져 있다) 오늘이 일기 아저씨랑 놀라따 아저씨가 씨앗 시머따 나도 같이 시머따 아저씨가 칭찬해따 기부니가 조아져따 아저씨가 내가 조타고 해따 나도 아저씨가 너무너무 조타"
+          "line_end": 2,
+          "quote": "(새싹 그림과 삐뚤빼뚤 그려놓은 회색 누군가의 모습이 그려져 있다)",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "어떤소녀의그림일기_02__rln_001",
-          "subject": "그림일기를 쓴 소녀",
-          "target": "아저씨",
-          "relation_or_change": "함께 씨앗을 심고 칭찬받으며 서로 매우 좋아한다고 표현할 정도로 깊은 유대를 맺고 있다.",
+          "subject": "아저씨",
+          "target": "그림일기 작성자",
+          "relation_or_change": "아저씨가 그림일기 작성자와 함께 씨앗을 심은 뒤 칭찬하고 좋다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "그림일기 작성자",
           "line_start": 7,
+          "line_end": 11,
+          "claim_line": 11,
+          "quote": "아저씨가 씨앗 시머따 나도 같이 시머따 아저씨가 칭찬해따 기부니가 조아져따 아저씨가 내가 조타고 해따",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "어떤소녀의그림일기_02__rln_002",
+          "subject": "그림일기 작성자",
+          "target": "아저씨",
+          "relation_or_change": "그림일기 작성자가 아저씨를 너무너무 좋아함",
+          "epistemic_type": "character_claim",
+          "claimant": "그림일기 작성자",
+          "line_start": 12,
           "line_end": 12,
-          "quote": "아저씨가 씨앗 시머따 나도 같이 시머따 아저씨가 칭찬해따 기부니가 조아져따 아저씨가 내가 조타고 해따 나도 아저씨가 너무너무 조타"
+          "claim_line": 12,
+          "quote": "나도 아저씨가 너무너무 조타",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "어떤소녀의그림일기_02__uec_001",
+          "surface_text": "아저씨",
+          "suggested_type": "character",
+          "line_start": 6
+        }
+      ]
     },
     {
       "scene_id": "어떤소녀의그림일기_03",
@@ -266,8 +438,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "하얀 머리의 사람과 회색 누군가가 그려진 그림일기 네 번째 페이지에 하얀색인 아저씨 친구가 찾아와 손을 흔들며 인사했고 자신에게도 친구가 생겨 재미있었다고 적혀 있다.",
+      "summary": "하얀 머리의 사람과 회색 누군가의 모습이 그려진 그림일기 네 번째 페이지로, 그림일기 작성자가 하얀색인 아저씨 친구를 처음 만나 서로 손을 흔들며 인사하고 친구가 되었다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -279,8 +452,10 @@
             "entity_id": null,
             "entity_type": "character",
             "line_start": 6,
-            "line_end": 7,
-            "quote": "아저씨랑 놀았따 아저씨 친구 와따"
+            "line_end": 6,
+            "quote": "아저씨랑 놀았따",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "어떤소녀의그림일기_03__mnt_002",
@@ -288,60 +463,111 @@
             "entity_id": null,
             "entity_type": "character",
             "line_start": 7,
-            "line_end": 13,
-            "quote": "아저씨 친구 와따 하얀색이어따 처음 봐따 신기해따 손 흔들어따 안녕해따 나도 같이 안녕해따 아저씨 친구 내 친구"
+            "line_end": 7,
+            "quote": "아저씨 친구 와따",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "어떤소녀의그림일기_03__dca_001",
-          "name": "그림일기를 쓴 소녀",
-          "entity_id": null
+          "name": "그림일기 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "어떤소녀의그림일기_03__csh_001",
+          "text": "어떤 소녀의 그림일기 시리즈(어떤소녀의그림일기_00~03)의 네 번째 페이지",
+          "related_scene_ids": [
+            "어떤소녀의그림일기_00",
+            "어떤소녀의그림일기_01",
+            "어떤소녀의그림일기_02"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "어떤소녀의그림일기_03__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "그림일기를 쓴 소녀",
-          "summary": "하얀 머리를 한 아저씨 친구가 찾아와 손을 흔들며 인사를 나누었고, 아저씨 친구가 곧 자신의 친구라며 친구가 생겨 재미있었다고 기록한다.",
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 네 번째 페이지에 삐뚤빼뚤 하얀 머리의 사람과 회색 누군가의 모습이 그려져 있다.",
           "line_start": 2,
+          "line_end": 2,
+          "claim_line": null,
+          "quote": "(삐뚤빼뚤 하얀 머리의 사람과 회색 누군가의 모습이 그려져 있다)",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "어떤소녀의그림일기_03__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "그림일기 작성자",
+          "summary": "그림일기 작성자가 아저씨와 놀던 중 처음 보는 하얀색인 아저씨 친구가 와서 손을 흔들며 인사하기에 자신도 같이 인사했고, 아저씨 친구가 자신의 친구가 되어 재미있었다고 기록한다.",
+          "line_start": 4,
           "line_end": 15,
-          "quote": "(삐뚤빼뚤 하얀 머리의 사람과 회색 누군가의 모습이 그려져 있다) 오늘이 일기 아저씨랑 놀았따 아저씨 친구 와따 하얀색이어따 처음 봐따 신기해따 손 흔들어따 안녕해따 나도 같이 안녕해따 아저씨 친구 내 친구 나 친구 생겨따 참 재미이써따",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 7,
+          "quote": "오늘이 일기 아저씨랑 놀았따 아저씨 친구 와따 하얀색이어따 처음 봐따 신기해따 손 흔들어따 안녕해따 나도 같이 안녕해따 아저씨 친구 내 친구 나 친구 생겨따 참 재미이써따",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "어떤소녀의그림일기_03__clh_001",
-          "keyword": "하얀 머리의 아저씨 친구 방문",
-          "category": "foreshadowing",
-          "detail": "소녀와 회색 누군가가 있는 곳에 하얀 머리의 아저씨 친구가 찾아와 인사를 나누고 소녀의 친구가 되었다.",
+          "keyword": "하얀 머리의 사람 (아저씨 친구)",
+          "category": "trait",
+          "subject": "아저씨 친구",
+          "detail": "일기장 그림에 하얀 머리의 사람으로 그려져 있으며 본문에서도 하얀색이었다고 묘사된 아저씨의 친구",
           "line_start": 2,
-          "line_end": 14,
-          "quote": "(삐뚤빼뚤 하얀 머리의 사람과 회색 누군가의 모습이 그려져 있다) 오늘이 일기 아저씨랑 놀았따 아저씨 친구 와따 하얀색이어따 처음 봐따 신기해따 손 흔들어따 안녕해따 나도 같이 안녕해따 아저씨 친구 내 친구 나 친구 생겨따"
+          "line_end": 8,
+          "quote": "(삐뚤빼뚤 하얀 머리의 사람과 회색 누군가의 모습이 그려져 있다) 오늘이 일기 아저씨랑 놀았따 아저씨 친구 와따 하얀색이어따",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "어떤소녀의그림일기_03__rln_001",
-          "subject": "그림일기를 쓴 소녀",
+          "subject": "그림일기 작성자",
           "target": "아저씨 친구",
-          "relation_or_change": "찾아온 하얀 머리의 아저씨 친구와 손을 흔들며 인사하고 자신의 새로운 친구로 여긴다.",
+          "relation_or_change": "처음 만난 아저씨 친구와 서로 인사하고 자신의 친구로 여김",
+          "epistemic_type": "character_claim",
+          "claimant": "그림일기 작성자",
           "line_start": 7,
           "line_end": 14,
-          "quote": "아저씨 친구 와따 하얀색이어따 처음 봐따 신기해따 손 흔들어따 안녕해따 나도 같이 안녕해따 아저씨 친구 내 친구 나 친구 생겨따"
+          "claim_line": 13,
+          "quote": "아저씨 친구 와따 하얀색이어따 처음 봐따 신기해따 손 흔들어따 안녕해따 나도 같이 안녕해따 아저씨 친구 내 친구 나 친구 생겨따",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "어떤소녀의그림일기_03__uec_001",
+          "surface_text": "아저씨",
+          "suggested_type": "character",
+          "line_start": 6
+        },
+        {
+          "item_id": "어떤소녀의그림일기_03__uec_002",
+          "surface_text": "아저씨 친구",
+          "suggested_type": "character",
+          "line_start": 7
+        }
+      ]
     }
   ]
 }

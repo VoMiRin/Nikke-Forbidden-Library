@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.564Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.629Z",
   "title_id": "lost_relics__주워갈것들메모",
   "category": "lost_relics",
   "title": "주워갈 것 들 메모",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "화산 근처에 귀한 화룡의 것으로 추정되는 파츠가 다수 있어 챙길 필요가 있으며, 화룡이 어디서 맞고 다닐 리 없으니 자기들끼리 싸운 것 같다고 메모한다.",
+      "summary": "메모 작성자가 화산 근처에 귀한 화룡의 파츠가 다수 있어 챙길 필요가 있다고 기록하며, 화룡이 어디서 맞고 다닐 리 없으니 자기들끼리 싸운 것인지 의아해한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -34,55 +35,103 @@
             "entity_id": null,
             "entity_type": "character",
             "line_start": 2,
+            "line_end": 2,
+            "quote": "화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "주워갈것들메모_00__mnt_002",
+            "surface_text": "화룡 파츠",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 4,
             "line_end": 4,
-            "quote": "화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯. 조금이긴 하지만 귀한 거니까 챙길 필요 있음. 근데 화룡 파츠가 왜 있지?"
+            "quote": "근데 화룡 파츠가 왜 있지?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "주워갈것들메모_00__dca_001",
-          "name": "주워갈 것들 메모 작성자",
-          "entity_id": null
+          "name": "메모 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "주워갈것들메모_00__csh_001",
+          "text": "주워갈 것 들 메모 연작의 첫 장면이다.",
+          "related_scene_ids": [
+            "주워갈것들메모_01",
+            "주워갈것들메모_02"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "주워갈것들메모_00__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "주워갈 것들 메모 작성자",
-          "summary": "화산 근처에 화룡의 것으로 추정되는 귀한 파츠가 있어 챙겨야 하며, 자기들끼리 싸워서 파츠가 떨어진 것 같다고 추측한다.",
+          "actor_or_speaker": "메모 작성자",
+          "summary": "메모 작성자는 화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯하며, 조금이긴 하지만 귀한 것이니 챙길 필요가 있다고 적는다.",
           "line_start": 2,
+          "line_end": 3,
+          "claim_line": 2,
+          "quote": "화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯. 조금이긴 하지만 귀한 거니까 챙길 필요 있음.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "주워갈것들메모_00__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메모 작성자",
+          "summary": "메모 작성자는 화룡이 어디서 맞고 다니지 않을 텐데 왜 화룡 파츠가 있는지 의아해하며 자기들끼리 싸운 것인가 추측한다.",
+          "line_start": 4,
           "line_end": 6,
-          "quote": "화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯. 조금이긴 하지만 귀한 거니까 챙길 필요 있음. 근데 화룡 파츠가 왜 있지? 그게 어디서 맞고 다니진 않을 텐데. 지들끼리 싸웠나 싶음.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 6,
+          "quote": "근데 화룡 파츠가 왜 있지? 그게 어디서 맞고 다니진 않을 텐데. 지들끼리 싸웠나 싶음.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "주워갈것들메모_00__clh_001",
-          "keyword": "화산 근처 화룡 파츠",
+          "keyword": "화산 근처의 화룡 파츠",
           "category": "item",
-          "detail": "화산 근처에 화룡(니힐리스타로 추정)의 파츠가 떨어져 있으며 내분으로 싸운 흔적으로 추정된다.",
+          "subject": null,
+          "detail": "화산 근처에 남겨진 화룡의 것으로 추정되는 다수의 귀한 파츠와 내분 가능성.",
           "line_start": 2,
           "line_end": 6,
-          "quote": "화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯. 조금이긴 하지만 귀한 거니까 챙길 필요 있음. 근데 화룡 파츠가 왜 있지? 그게 어디서 맞고 다니진 않을 텐데. 지들끼리 싸웠나 싶음."
+          "quote": "화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯. 조금이긴 하지만 귀한 거니까 챙길 필요 있음. 근데 화룡 파츠가 왜 있지? 그게 어디서 맞고 다니진 않을 텐데. 지들끼리 싸웠나 싶음.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "주워갈것들메모_00__uec_001",
           "surface_text": "화룡",
-          "suggested_type": "character",
+          "suggested_type": "alias",
           "line_start": 2
+        },
+        {
+          "item_id": "주워갈것들메모_00__uec_002",
+          "surface_text": "화룡 파츠",
+          "suggested_type": "item",
+          "line_start": 4
         }
       ]
     },
@@ -100,8 +149,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "고성 유적 근처에 전갈 파츠와 수다쟁이 파츠가 같은 곳에 있어 조합이 이상하지만 일단 확보하는 게 좋겠다고 메모한다.",
+      "summary": "메모 작성자가 고성 유적에서 다소 떨어진 곳에 전갈 파츠와 수다쟁이 파츠가 함께 있는 것을 이상하게 여기면서도 일단 확보하는 것이 좋겠다고 메모한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -114,66 +164,123 @@
             "entity_type": "location",
             "line_start": 2,
             "line_end": 2,
-            "quote": "고성 유적 근처(라고 하기엔 좀 먼 듯)"
+            "quote": "고성 유적 근처(라고 하기엔 좀 먼 듯)",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "주워갈것들메모_01__mnt_002",
-            "surface_text": "전갈",
+            "surface_text": "전갈 파츠",
             "entity_id": null,
-            "entity_type": "character",
+            "entity_type": "item",
             "line_start": 3,
-            "line_end": 6,
-            "quote": "전갈 파츠랑 수다쟁이 파츠가 있는 것 같음. 왜 있는지는 잘 모르겠지만 일단 확보하는 게 좋을 듯. 생각해 보니 조합도 이상함. 전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지?"
+            "line_end": 3,
+            "quote": "전갈 파츠랑 수다쟁이 파츠가 있는 것 같음.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "주워갈것들메모_01__mnt_003",
+            "surface_text": "수다쟁이 파츠",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "전갈 파츠랑 수다쟁이 파츠가 있는 것 같음.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "주워갈것들메모_01__mnt_004",
+            "surface_text": "전갈",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "주워갈것들메모_01__mnt_005",
             "surface_text": "수다쟁이",
             "entity_id": null,
             "entity_type": "character",
-            "line_start": 3,
+            "line_start": 6,
             "line_end": 6,
-            "quote": "전갈 파츠랑 수다쟁이 파츠가 있는 것 같음. 왜 있는지는 잘 모르겠지만 일단 확보하는 게 좋을 듯. 생각해 보니 조합도 이상함. 전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지?"
+            "quote": "전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "주워갈것들메모_01__dca_001",
-          "name": "주워갈 것들 메모 작성자",
-          "entity_id": null
+          "name": "메모 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "주워갈것들메모_01__csh_001",
+          "text": "주워갈 것 들 메모 연작의 두 번째 장면이다.",
+          "related_scene_ids": [
+            "주워갈것들메모_00",
+            "주워갈것들메모_02"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "주워갈것들메모_01__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "주워갈 것들 메모 작성자",
-          "summary": "고성 유적 근처에 왜 같이 있는지 모를 전갈 파츠와 수다쟁이 파츠가 있어 일단 확보하는 게 좋겠다고 기록한다.",
+          "actor_or_speaker": "메모 작성자",
+          "summary": "메모 작성자는 고성 유적에서 조금 먼 곳에 전갈 파츠와 수다쟁이 파츠가 있는 것 같으며, 왜 있는지는 모르겠지만 일단 확보하는 게 좋을 듯하다고 적는다.",
           "line_start": 2,
+          "line_end": 4,
+          "claim_line": 3,
+          "quote": "고성 유적 근처(라고 하기엔 좀 먼 듯) 전갈 파츠랑 수다쟁이 파츠가 있는 것 같음. 왜 있는지는 잘 모르겠지만 일단 확보하는 게 좋을 듯.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "주워갈것들메모_01__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메모 작성자",
+          "summary": "메모 작성자는 전갈 파츠와 수다쟁이 파츠가 같은 곳에 있는 조합이 이상하다고 의문을 품으며 메모를 남긴다.",
+          "line_start": 5,
           "line_end": 7,
-          "quote": "고성 유적 근처(라고 하기엔 좀 먼 듯) 전갈 파츠랑 수다쟁이 파츠가 있는 것 같음. 왜 있는지는 잘 모르겠지만 일단 확보하는 게 좋을 듯. 생각해 보니 조합도 이상함. 전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지? 아무튼 메모.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 6,
+          "quote": "생각해 보니 조합도 이상함. 전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지? 아무튼 메모.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "주워갈것들메모_01__clh_001",
-          "keyword": "고성 유적 근처 전갈·수다쟁이 파츠",
+          "keyword": "고성 유적 근처의 전갈 파츠와 수다쟁이 파츠",
           "category": "item",
-          "detail": "고성 유적(크라운 왕국 인근 추정) 근처에 전갈(인디빌리아 추정) 파츠와 수다쟁이(토커티브 추정) 파츠가 함께 남아 있어 수거 대상으로 지목됨.",
+          "subject": null,
+          "detail": "고성 유적에서 다소 떨어진 같은 장소에 전갈 파츠와 수다쟁이 파츠가 함께 남겨져 있음.",
           "line_start": 2,
           "line_end": 6,
-          "quote": "고성 유적 근처(라고 하기엔 좀 먼 듯) 전갈 파츠랑 수다쟁이 파츠가 있는 것 같음. 왜 있는지는 잘 모르겠지만 일단 확보하는 게 좋을 듯. 생각해 보니 조합도 이상함. 전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지?"
+          "quote": "고성 유적 근처(라고 하기엔 좀 먼 듯) 전갈 파츠랑 수다쟁이 파츠가 있는 것 같음. 왜 있는지는 잘 모르겠지만 일단 확보하는 게 좋을 듯. 생각해 보니 조합도 이상함. 전갈이랑 수다쟁이 파츠가 왜 같은 곳에 있지?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "주워갈것들메모_01__uec_001",
@@ -183,15 +290,27 @@
         },
         {
           "item_id": "주워갈것들메모_01__uec_002",
-          "surface_text": "전갈",
-          "suggested_type": "character",
+          "surface_text": "전갈 파츠",
+          "suggested_type": "item",
           "line_start": 3
         },
         {
           "item_id": "주워갈것들메모_01__uec_003",
-          "surface_text": "수다쟁이",
-          "suggested_type": "character",
+          "surface_text": "수다쟁이 파츠",
+          "suggested_type": "item",
           "line_start": 3
+        },
+        {
+          "item_id": "주워갈것들메모_01__uec_004",
+          "surface_text": "전갈",
+          "suggested_type": "alias",
+          "line_start": 6
+        },
+        {
+          "item_id": "주워갈것들메모_01__uec_005",
+          "surface_text": "수다쟁이",
+          "suggested_type": "alias",
+          "line_start": 6
         }
       ]
     },
@@ -209,8 +328,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": false,
-      "summary": "북부 아래에 뭔가 있는 것은 확실하지만 파봐야 알 것 같고 어떻게 해야 할지 감이 안 와 나중에 날을 잡고 파봐야겠다고 메모한다.",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "메모 작성자가 북부 아래에 무언가 있는 것은 확실하지만 파봐야 알 것 같다며, 나중에 날을 잡고 파보아야겠다고 메모한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -218,43 +338,58 @@
         "mentioned_only": [],
         "document_author": {
           "item_id": "주워갈것들메모_02__dca_001",
-          "name": "주워갈 것들 메모 작성자",
-          "entity_id": null
+          "name": "메모 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "주워갈것들메모_02__csh_001",
+          "text": "주워갈 것 들 메모 연작의 세 번째 장면이다.",
+          "related_scene_ids": [
+            "주워갈것들메모_00",
+            "주워갈것들메모_01"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "주워갈것들메모_02__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "주워갈 것들 메모 작성자",
-          "summary": "북부 아래에 뭔가 있는 것은 확실하나 어떻게 파야 할지 감이 오지 않아 나중에 날을 잡고 파보기로 한다.",
+          "actor_or_speaker": "메모 작성자",
+          "summary": "메모 작성자는 무언가 있는 것은 확실하지만 파봐야 알 것 같고 어떻게 해야 할지 감도 오지 않는다며, 나중에 날을 잡고 파봐야 할 듯하다고 적는다.",
           "line_start": 2,
           "line_end": 4,
+          "claim_line": 2,
           "quote": "아 뭔가 있는 건 확실한데 잘 모르겠음. 파봐야 알 것 같은데 솔직히 어떻게 해야 할지 감도 안 옴. 나중에 한 번 날 잡고 파봐야 할 듯.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "주워갈것들메모_02__clh_001",
-          "keyword": "북부 아래 매장물",
+          "keyword": "북부 아래에 묻힌 무언가",
           "category": "foreshadowing",
-          "detail": "북부 지하에 정체불명의 무언가가 묻혀 있으나 발굴 방법을 몰라 보류 중이다.",
+          "subject": null,
+          "detail": "메모(부제 북부 아래)에 무언가 있는 것이 확실하여 나중에 날을 잡고 파봐야 한다고 기록됨.",
           "line_start": 2,
           "line_end": 4,
-          "quote": "아 뭔가 있는 건 확실한데 잘 모르겠음. 파봐야 알 것 같은데 솔직히 어떻게 해야 할지 감도 안 옴. 나중에 한 번 날 잡고 파봐야 할 듯."
+          "quote": "아 뭔가 있는 건 확실한데 잘 모르겠음. 파봐야 알 것 같은데 솔직히 어떻게 해야 할지 감도 안 옴. 나중에 한 번 날 잡고 파봐야 할 듯.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -271,8 +406,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "방주 근처 땅 아래에 엄청 귀한 것이 깊게 묻혀 있으며, 주위에 랩쳐가 많고 방주 근처라 매우 위험하지만 감수할 가치가 차고 넘친다고 메모한다.",
+      "summary": "메모 작성자가 방주 근처 땅 아래에 깊게 묻혀 있고 주위에 랩쳐가 많아 위험하지만, 위험을 감수할 가치가 차고 넘칠 만큼 엄청나게 귀한 무언가가 있는 것 같다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -284,64 +420,104 @@
             "entity_id": null,
             "entity_type": "location",
             "line_start": 2,
-            "line_end": 5,
-            "quote": "방주 근처 땅 아래에 뭐가 있는 거 같음. 어어어엄청 귀한 건 확실함. 근데 너무 깊게 묻혀있고 주위에 랩쳐가 너무 많음. 방주 근처기도 해서 너무 위험함."
+            "line_end": 2,
+            "quote": "방주 근처 땅 아래에 뭐가 있는 거 같음.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "주워갈것들메모_03__mnt_002",
             "surface_text": "랩쳐",
             "entity_id": null,
-            "entity_type": "organization",
+            "entity_type": "faction_or_species",
             "line_start": 4,
             "line_end": 4,
-            "quote": "근데 너무 깊게 묻혀있고 주위에 랩쳐가 너무 많음."
+            "quote": "근데 너무 깊게 묻혀있고 주위에 랩쳐가 너무 많음.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "주워갈것들메모_03__dca_001",
-          "name": "주워갈 것들 메모 작성자",
-          "entity_id": null
+          "name": "메모 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "주워갈것들메모_03__csh_001",
+          "text": "주워갈 것들 메모 시리즈(주워갈것들메모_00~03)의 네 번째 기록으로, 귀한 재료를 수집하는 기록들과 연결됨",
+          "related_scene_ids": [
+            "주워갈것들메모_00",
+            "주워갈것들메모_01",
+            "주워갈것들메모_02"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "주워갈것들메모_03__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "주워갈 것들 메모 작성자",
-          "summary": "방주 근처 땅 아래에 엄청나게 귀한 것이 깊게 묻혀 있으며, 랩쳐가 많고 방주 근처라 위험하지만 위험을 감수할 가치가 충분하다고 판단한다.",
+          "actor_or_speaker": "메모 작성자",
+          "summary": "메모 작성자가 방주 근처 땅 아래에 엄청나게 귀한 무언가가 있는 것 같다고 기록한다.",
           "line_start": 2,
+          "line_end": 3,
+          "claim_line": 2,
+          "quote": "방주 근처 땅 아래에 뭐가 있는 거 같음. 어어어엄청 귀한 건 확실함.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "주워갈것들메모_03__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메모 작성자",
+          "summary": "메모 작성자가 그것이 너무 깊게 묻혀 있고 주위에 랩쳐가 너무 많으며 방주 근처라 위험하지만, 위험을 감수할 가치는 차고 넘치는 듯하다고 기록한다.",
+          "line_start": 4,
           "line_end": 6,
-          "quote": "방주 근처 땅 아래에 뭐가 있는 거 같음. 어어어엄청 귀한 건 확실함. 근데 너무 깊게 묻혀있고 주위에 랩쳐가 너무 많음. 방주 근처기도 해서 너무 위험함. 근데 위험을 감수할 가치는 차고 넘치는 듯.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 4,
+          "quote": "근데 너무 깊게 묻혀있고 주위에 랩쳐가 너무 많음. 방주 근처기도 해서 너무 위험함. 근데 위험을 감수할 가치는 차고 넘치는 듯.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "주워갈것들메모_03__clh_001",
-          "keyword": "방주 근처 지하의 귀한 것",
+          "keyword": "방주 근처 땅 아래의 귀한 것",
           "category": "foreshadowing",
-          "detail": "방주 인근 지하 깊은 곳에 다수의 랩쳐가 지키는 엄청나게 귀한 목표물이 존재하며 위험을 무릅쓰고 확보할 가치가 있다고 평가됨.",
+          "subject": null,
+          "detail": "방주 근처 땅 아래 깊숙한 곳에 묻혀 있으며 주위에 랩쳐가 많아 위험하지만 감수할 가치가 충분한 엄청나게 귀한 대상",
           "line_start": 2,
           "line_end": 6,
-          "quote": "방주 근처 땅 아래에 뭐가 있는 거 같음. 어어어엄청 귀한 건 확실함. 근데 너무 깊게 묻혀있고 주위에 랩쳐가 너무 많음. 방주 근처기도 해서 너무 위험함. 근데 위험을 감수할 가치는 차고 넘치는 듯."
+          "quote": "방주 근처 땅 아래에 뭐가 있는 거 같음. 어어어엄청 귀한 건 확실함. 근데 너무 깊게 묻혀있고 주위에 랩쳐가 너무 많음. 방주 근처기도 해서 너무 위험함. 근데 위험을 감수할 가치는 차고 넘치는 듯.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "주워갈것들메모_03__uec_001",
           "surface_text": "방주",
           "suggested_type": "location",
           "line_start": 2
+        },
+        {
+          "item_id": "주워갈것들메모_03__uec_002",
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 4
         }
       ]
     }

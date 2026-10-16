@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.551Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.615Z",
   "title_id": "lost_relics__특이랩쳐보고서-후",
   "category": "lost_relics",
   "title": "특이 랩쳐 보고서 - 후",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": true,
-      "summary": "야생동물을 먹은 랩쳐가 기운을 차린 듯 일어나고, 작성자는 멀리서 다가오는 지휘관과 니케 스쿼드마저 자신의 환각이라 여긴다.",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "보고서 작성자는 기운을 차린 듯 일어나는 랩쳐와 멀리서 다가오는 지휘관 및 니케 스쿼드를 모두 자신이 보는 환각이라고 여긴다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -35,36 +36,40 @@
             "entity_type": "character",
             "line_start": 5,
             "line_end": 5,
-            "quote": "저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이다."
+            "quote": "저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "특이랩쳐보고서-후_00__mnt_002",
-            "surface_text": "니케 스쿼드",
+            "surface_text": "니케",
             "entity_id": null,
-            "entity_type": "squad",
+            "entity_type": "faction_or_species",
             "line_start": 5,
             "line_end": 5,
-            "quote": "저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이다."
+            "quote": "저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "특이랩쳐보고서-후_00__dca_001",
-          "name": "특이 랩쳐 보고서 작성자",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "특이랩쳐보고서-후_00__csh_001",
-          "text": "특이 랩쳐 보고서 06으로, 포식 후 기운을 차린 랩쳐가 다가오는 지휘관과 니케 스쿼드를 덮치는 07~09로 이어진다.",
+          "text": "특이랩쳐보고서-전_00에서 보낸 구조 신호와 특이랩쳐보고서-전_04의 랩쳐 포식 장면에서 이어지는 후속 기록이다.",
           "related_scene_ids": [
-            "특이랩쳐보고서-전_04",
-            "특이랩쳐보고서-후_01",
-            "특이랩쳐보고서-후_02",
-            "특이랩쳐보고서-후_03"
+            "특이랩쳐보고서-전_00",
+            "특이랩쳐보고서-전_04"
           ]
         }
       ],
@@ -73,30 +78,35 @@
         {
           "item_id": "특이랩쳐보고서-후_00__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "특이 랩쳐 보고서 작성자",
-          "summary": "작성자는 야생동물을 먹은 랩쳐가 기운을 차린 듯 일어나고 저 멀리서 지휘관과 니케 스쿼드가 다가오고 있으나, 구조 신호가 닿았을 리 없으니 모두 환각일 것이라 여긴다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자는 놈이 기운을 차린 듯 일어나는 것이 자신의 상식을 벗어난 일이라며 스스로 환각을 보고 있는 것이라 주장한다.",
           "line_start": 2,
-          "line_end": 6,
-          "quote": "놈이 [기운을 차린 듯]일어난다. 이건 내 상식을 벗어났다. 머리가 어떻게 된 것이 분명하다. 나는 분명 환각을 보고 있는 거다. 저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이다. 내 구조 신호가 닿았을 리가 없다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
-        }
-      ],
-      "clues_and_hooks": [
+          "line_end": 4,
+          "claim_line": 2,
+          "quote": "놈이 [기운을 차린 듯]일어난다. 이건 내 상식을 벗어났다. 머리가 어떻게 된 것이 분명하다. 나는 분명 환각을 보고 있는 거다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
         {
-          "item_id": "특이랩쳐보고서-후_00__clh_001",
-          "keyword": "포식 후 재가동된 랩쳐와 구조대의 접근",
-          "category": "past_incident",
-          "detail": "야생동물을 먹은 1세대 랩쳐가 동력을 회복해 일어났으며, 구조 신호를 받고 접근하던 지휘관과 니케 스쿼드가 현장에 도착했다.",
-          "line_start": 2,
+          "item_id": "특이랩쳐보고서-후_00__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자는 자신의 구조 신호가 닿았을 리가 없다며 저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이라고 주장한다.",
+          "line_start": 5,
           "line_end": 6,
-          "quote": "놈이 [기운을 차린 듯]일어난다. 이건 내 상식을 벗어났다. 머리가 어떻게 된 것이 분명하다. 나는 분명 환각을 보고 있는 거다. 저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이다. 내 구조 신호가 닿았을 리가 없다."
+          "claim_line": 5,
+          "quote": "저 멀리서 다가오고 있는 지휘관과 니케 스쿼드 역시 환각이다. 내 구조 신호가 닿았을 리가 없다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -113,8 +123,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": true,
-      "summary": "작성자는 랩쳐가 또다시 무언가(다가온 구조대)를 잡아먹는 광경을 보며 왜 랩쳐가 먹는지 패닉에 빠진다.",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "보고서 작성자는 랩쳐가 무언가를 분명히 먹고 있는 모습을 보며 랩쳐가 왜 먹는지 혼란스러워한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -127,26 +138,29 @@
             "entity_type": "faction_or_species",
             "line_start": 4,
             "line_end": 4,
-            "quote": "왜? 랩쳐가 왜 먹지? 그럴 수 있는 건가? 그래도 되나?"
+            "quote": "왜? 랩쳐가 왜 먹지? 그럴 수 있는 건가? 그래도 되나?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "특이랩쳐보고서-후_01__dca_001",
-          "name": "특이 랩쳐 보고서 작성자",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "특이랩쳐보고서-후_01__csh_001",
-          "text": "특이 랩쳐 보고서 07로, 이전 장면(06)에서 다가오던 지휘관과 니케 스쿼드를 랩쳐가 잡아먹고 변이하는 08로 이어진다.",
+          "text": "특이랩쳐보고서-후_00에서 다가오던 지휘관과 니케 스쿼드가 나타난 이후 랩쳐가 대상을 포식하는 후속 기록이다.",
           "related_scene_ids": [
             "특이랩쳐보고서-후_00",
-            "특이랩쳐보고서-후_02",
-            "특이랩쳐보고서-후_03"
+            "특이랩쳐보고서-후_02"
           ]
         }
       ],
@@ -155,30 +169,21 @@
         {
           "item_id": "특이랩쳐보고서-후_01__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "특이 랩쳐 보고서 작성자",
-          "summary": "작성자는 랩쳐가 분명히 무언가를 먹고 있다며 왜 랩쳐가 먹는지, 그럴 수 있는 것인지 혼란스러워한다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자는 놈이 분명 먹고 있다며, 랩쳐가 왜 먹는지, 그럴 수 있는 것인지 경악하며 의문을 표한다.",
           "line_start": 2,
           "line_end": 4,
+          "claim_line": 2,
           "quote": "먹는다. 놈이 먹는다. 먹고 있다. 저건 분명 먹고 있는 거다. 왜? 랩쳐가 왜 먹지? 그럴 수 있는 건가? 그래도 되나?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [
-        {
-          "item_id": "특이랩쳐보고서-후_01__clh_001",
-          "keyword": "특이 랩쳐의 포식 행위",
-          "category": "lore_concept",
-          "detail": "특이 랩쳐가 접근한 대상(지휘관 및 니케 스쿼드)을 직접 포식하는 장면이 기록되어 있다.",
-          "line_start": 2,
-          "line_end": 4,
-          "quote": "먹는다. 놈이 먹는다. 먹고 있다. 저건 분명 먹고 있는 거다. 왜? 랩쳐가 왜 먹지? 그럴 수 있는 건가? 그래도 되나?"
-        }
-      ],
+      "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -195,8 +200,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": true,
-      "summary": "포식을 마친 랩쳐가 웃으면서 몸에 무언가 돋아나고 외형이 바뀌는 변이를 일으킨다.",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "보고서 작성자는 그 개체가 웃으면서 몸에서 무언가 돋아나고 바뀌는 변이를 일으키자 경악한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -204,19 +210,20 @@
         "mentioned_only": [],
         "document_author": {
           "item_id": "특이랩쳐보고서-후_02__dca_001",
-          "name": "특이 랩쳐 보고서 작성자",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "특이랩쳐보고서-후_02__csh_001",
-          "text": "특이 랩쳐 보고서 08로, 포식 후 웃으며 신체가 변이하는 특이 랩쳐(토커티브/수다쟁이 암시)의 탄생 과정을 묘사한다.",
+          "text": "특이랩쳐보고서-후_01에서 포식을 마친 랩쳐가 변이를 일으키는 장면이다.",
           "related_scene_ids": [
-            "특이랩쳐보고서-후_00",
             "특이랩쳐보고서-후_01",
             "특이랩쳐보고서-후_03"
           ]
@@ -227,30 +234,34 @@
         {
           "item_id": "특이랩쳐보고서-후_02__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "특이 랩쳐 보고서 작성자",
-          "summary": "작성자는 랩쳐가 분명히 웃고 있으며 몸에서 무언가 돋아나고 외형이 바뀌고 있다고 경악하며 기록한다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자는 놈이 분명 웃고 있으며 무언가 돋아나고 바뀌며 변하고 있다고 기록한다.",
           "line_start": 2,
           "line_end": 4,
+          "claim_line": 2,
           "quote": "놈은 웃는다. 분명 웃고 있다. 변한다. 뭔가 돋아난다. 바뀐다. 저건 뭐지? 저게 대체 뭐지?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "특이랩쳐보고서-후_02__clh_001",
-          "keyword": "웃으며 외형이 변이하는 특이 랩쳐",
-          "category": "foreshadowing",
-          "detail": "포식을 마친 1세대 랩쳐가 웃음을 짓고 신체에 무언가 돋아나며 외형이 변이하는 현상(토커티브 등 지성·변이 개체 암시)이 기록되었다.",
+          "keyword": "웃으며 변이하는 개체",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "포식한 개체가 분명하게 웃으면서 몸에서 무언가 돋아나고 형태가 바뀌는 변이를 일으킴.",
           "line_start": 2,
           "line_end": 4,
-          "quote": "놈은 웃는다. 분명 웃고 있다. 변한다. 뭔가 돋아난다. 바뀐다. 저건 뭐지? 저게 대체 뭐지?"
+          "quote": "놈은 웃는다. 분명 웃고 있다. 변한다. 뭔가 돋아난다. 바뀐다. 저건 뭐지? 저게 대체 뭐지?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -267,8 +278,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": true,
-      "summary": "보고서 작성자가 변이한 특이 랩쳐에게 자신마저 잡아먹히며 짧은 마지막 기록을 남긴다.",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "보고서 작성자는 자신이 먹힌다는 짧은 마지막 기록을 남긴다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -276,20 +288,20 @@
         "mentioned_only": [],
         "document_author": {
           "item_id": "특이랩쳐보고서-후_03__dca_001",
-          "name": "특이 랩쳐 보고서 작성자",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "특이랩쳐보고서-후_03__csh_001",
-          "text": "특이 랩쳐 보고서 시리즈(01~09)의 마지막 장면으로, 기록자 본인도 변이한 랩쳐에게 포식당하며 끝난다.",
+          "text": "특이랩쳐보고서-후_02에서 변이한 개체에게 보고서 작성자마저 먹히는 마지막 기록이다.",
           "related_scene_ids": [
-            "특이랩쳐보고서-후_00",
-            "특이랩쳐보고서-후_01",
             "특이랩쳐보고서-후_02"
           ]
         }
@@ -299,30 +311,21 @@
         {
           "item_id": "특이랩쳐보고서-후_03__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "특이 랩쳐 보고서 작성자",
-          "summary": "작성자는 자신이 특이 랩쳐에게 먹힌다는 마지막 한마디를 남긴다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자는 자신이 먹힌다고 기록한다.",
           "line_start": 2,
           "line_end": 2,
+          "claim_line": 2,
           "quote": "아. 먹힌다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [
-        {
-          "item_id": "특이랩쳐보고서-후_03__clh_001",
-          "keyword": "특이 랩쳐 보고서 작성자의 피식",
-          "category": "past_incident",
-          "detail": "동굴에서 특이 랩쳐를 관찰하던 보고서 작성자 역시 결국 랩쳐에게 잡아먹히며 기록이 끊겼다.",
-          "line_start": 2,
-          "line_end": 2,
-          "quote": "아. 먹힌다."
-        }
-      ],
+      "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     }
   ]

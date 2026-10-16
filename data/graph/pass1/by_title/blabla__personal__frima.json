@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.578Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.654Z",
   "title_id": "blabla__personal__frima",
   "category": "blabla",
   "title": "프림",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "프림이 메시지 입력이 귀찮다며 지휘관을 '여'라는 한 글자 호칭으로 부르기로 정하고 짧게 첫인사를 나눈다.",
+      "summary": "프림이 메시지 치기가 귀찮다며 지휘관을 '여'라고 줄여 부르기로 하고 첫인사를 마친다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -32,17 +33,17 @@
             "speaker_label": "프림",
             "entity_id": "char_프림",
             "medium": "messenger",
-            "line_start": 26,
-            "line_end": 37,
-            "quote": "그렇 메시지 넘 귀찮"
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "여"
           },
           {
             "item_id": "blabla_frima_001__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 24,
-            "line_end": 24,
+            "line_start": 23,
+            "line_end": 25,
             "quote": "여는 나를 부르는 말이야?"
           }
         ],
@@ -55,12 +56,15 @@
           "from_speaker": "프림",
           "to_target": "지휘관",
           "address_term": "여",
-          "line_start": 48,
-          "line_end": 51,
-          "quote": "여 괜찮?"
+          "line_start": 47,
+          "line_end": 52,
+          "quote": "여 괜찮?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -71,16 +75,12 @@
             {
               "item_id": "blabla_frima_001__chb_001_opt_01",
               "option_text": "여?",
-              "continuation_summary": "프림이 '응, 여'라고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "프림이 맞다고 답하며 다시 '여'라고 부른다."
             },
             {
               "item_id": "blabla_frima_001__chb_001_opt_02",
               "option_text": "여",
-              "continuation_summary": "프림이 지휘관에게 센스가 좋다고 칭찬한다.",
-              "branch_specific_facts": [
-                "지휘관이 '여'라고 맞받아치자 프림이 센스가 좋다고 칭찬한다."
-              ]
+              "continuation_summary": "프림이 지휘관의 센스가 좋다고 칭찬한다."
             }
           ]
         }
@@ -89,44 +89,138 @@
         {
           "item_id": "blabla_frima_001__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 메시지 치기가 너무 귀찮다며 지휘관을 부르는 호칭을 '여'로 정하고 지휘관도 이를 수락한다.",
-          "line_start": 24,
-          "line_end": 55,
-          "quote": "여는 나를 부르는 말이야? 그렇 메시지 넘 귀찮",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "프림이 지휘관에게 '여'라고 첫 메시지를 보낸다.",
+          "line_start": 3,
+          "line_end": 5,
+          "claim_line": null,
+          "quote": "여",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_frima_001__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 '잘 부'라고 줄여 말하며 앞으로 잘 부탁한다는 인사를 마친다.",
-          "line_start": 60,
-          "line_end": 75,
-          "quote": "잘 부 잘 부탁한다는 거야? ㅇㅋ 인사 끝 ㅂㅂ",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
-        }
-      ],
-      "clues_and_hooks": [],
-      "relationship_and_lore_notes": [
+          "summary": "지휘관이 '여?'라고 되묻자 프림이 맞다며 다시 '여'라고 부른다.",
+          "line_start": 6,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "여? 응 여",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 7,
+            "option_text": "여?"
+          }
+        },
         {
-          "item_id": "blabla_frima_001__rln_001",
-          "subject": "프림",
-          "target": "지휘관",
-          "relation_or_change": "메신저 입력이 귀찮다는 이유로 지휘관을 '여'라고 부르기로 합의한다.",
-          "line_start": 24,
-          "line_end": 54,
-          "quote": "여는 나를 부르는 말이야? 그렇 메시지 넘 귀찮"
+          "item_id": "blabla_frima_001__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "지휘관이 '여'라고 답하자 프림이 센스가 좋다고 평가한다.",
+          "line_start": 16,
+          "line_end": 20,
+          "claim_line": 18,
+          "quote": "여 센스 굿",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 7,
+            "option_text": "여"
+          }
+        },
+        {
+          "item_id": "blabla_frima_001__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 프림에게 '여'가 자신을 부르는 말이냐고 묻는다.",
+          "line_start": 23,
+          "line_end": 25,
+          "claim_line": null,
+          "quote": "여는 나를 부르는 말이야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_001__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 '여'가 지휘관을 부르는 말이 맞으며 메시지 치기가 너무 귀찮다고 말한다.",
+          "line_start": 26,
+          "line_end": 37,
+          "claim_line": 27,
+          "quote": "그렇 메시지 넘 귀찮",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_001__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 프림에게 귀찮으면 이제 메시지를 그만 써도 된다고 말한다.",
+          "line_start": 38,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "그럼 이제 그만 써도 돼",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_001__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 지휘관을 '여'라고 부르는 것이 괜찮은지 묻고 지휘관이 괜찮다고 허락한다.",
+          "line_start": 41,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "오 좋음 여 괜찮? 괜찮아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_001__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 '잘 부'라고 줄여 잘 부탁한다는 인사를 건네고 지휘관과 작별 인사를 나눈다.",
+          "line_start": 56,
+          "line_end": 79,
+          "claim_line": null,
+          "quote": "ㅇㅋㅇ 잘 부 잘 부탁한다는 거야? ㅇㅋ 인사 끝 ㅂㅂ ㅂㅂㅂㅂ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_frima_001__clh_001",
+          "keyword": "극단적인 축약어와 단답형 말투",
+          "category": "trait",
+          "subject": "프림",
+          "detail": "메시지 치는 것을 귀찮아해 지휘관을 '여'로 부르고 '잘 부'처럼 말을 극단적으로 줄여 쓴다.",
+          "line_start": 26,
+          "line_end": 37,
+          "quote": "그렇 메시지 넘 귀찮",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -143,8 +237,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "카페 소파에 누워 있는 프림이 자판기가 멀다며 지휘관에게 프림 커피 배달을 요청했다가, 배달비 이야기가 나오자 손해라며 직접 뽑아 마신다.",
+      "summary": "카페 소파에 누워 있던 프림이 자판기가 멀다며 지휘관에게 프림 커피 배달을 요청했다가, 배달비가 손해라며 결국 직접 뽑아 마신다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -154,18 +249,18 @@
             "speaker_label": "프림",
             "entity_id": "char_프림",
             "medium": "messenger",
-            "line_start": 21,
-            "line_end": 26,
-            "quote": "프림 커피 배달 좀"
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "여"
           },
           {
             "item_id": "blabla_frima_002__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 48,
-            "line_end": 48,
-            "quote": "지금 어디 있어?"
+            "line_start": 15,
+            "line_end": 17,
+            "quote": "배달?"
           }
         ],
         "mentioned_only": [
@@ -174,45 +269,44 @@
             "surface_text": "프림 커피",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 22,
-            "line_end": 22,
-            "quote": "프림 커피"
+            "line_start": 21,
+            "line_end": 26,
+            "quote": "프림 커피 배달 좀",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_frima_002__mnt_002",
             "surface_text": "카페",
             "entity_id": null,
             "entity_type": "location",
-            "line_start": 63,
-            "line_end": 63,
-            "quote": "카페 안에 있으면 직접 뽑으면 되지 않아?"
+            "line_start": 50,
+            "line_end": 55,
+            "quote": "카페 소파 위",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_frima_002__mnt_003",
-            "surface_text": "자판기",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 72,
-            "line_end": 75,
-            "quote": "자판기 너무 멈"
-          },
-          {
-            "item_id": "blabla_frima_002__mnt_004",
             "surface_text": "슈가",
             "entity_id": "char_슈가",
             "entity_type": "character",
-            "line_start": 78,
-            "line_end": 78,
-            "quote": "슈가나 밀크에게 시켜"
+            "line_start": 77,
+            "line_end": 79,
+            "quote": "슈가나 밀크에게 시켜",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "blabla_frima_002__mnt_005",
+            "item_id": "blabla_frima_002__mnt_004",
             "surface_text": "밀크",
             "entity_id": "char_밀크",
             "entity_type": "character",
-            "line_start": 78,
-            "line_end": 78,
-            "quote": "슈가나 밀크에게 시켜"
+            "line_start": 77,
+            "line_end": 79,
+            "quote": "슈가나 밀크에게 시켜",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -223,21 +317,26 @@
           "from_speaker": "프림",
           "to_target": "지휘관",
           "address_term": "여",
-          "line_start": 4,
-          "line_end": 10,
-          "quote": "여 여 배달"
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "여",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_frima_002__foa_002",
           "from_speaker": "지휘관",
           "to_target": "프림",
-          "address_term": "프림",
-          "line_start": 105,
-          "line_end": 105,
-          "quote": "프림?"
+          "address_term": "여",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "여",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -248,14 +347,12 @@
             {
               "item_id": "blabla_frima_002__chb_001_opt_01",
               "option_text": "프림 커피를 프림에게 배달해 달라는 거야?",
-              "continuation_summary": "프림이 맞다고 긍정한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_frima_002__chb_001_opt_02",
               "option_text": "프림 커피를 다른 사람에게 배달해 달라는 거야?",
-              "continuation_summary": "프림이 아니라고 부정하며 자기 자신에게 배달해 달라는 뜻이라고 정정한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "프림이 다른 사람이 아니라 자신에게 배달해 달라는 것이라고 정정한다."
             }
           ]
         }
@@ -264,68 +361,195 @@
         {
           "item_id": "blabla_frima_002__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 카페 소파 위에 이미 누워 있어 자판기가 너무 멀다며 지휘관에게 프림 커피 배달을 요청한다.",
-          "line_start": 22,
-          "line_end": 75,
-          "quote": "이미 누움 자판기 너무 멈",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "프림이 지휘관에게 프림 커피를 배달해 달라고 요청한다.",
+          "line_start": 3,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "여 여 배달 가능? 배달? ㅇㅇ 프림 커피 배달 좀",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_frima_002__eac_002",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "프림",
-          "summary": "프림이 슈가와 밀크는 모두 외출해서 카페에 없다고 말한다.",
-          "line_start": 81,
-          "line_end": 84,
-          "quote": "슈가 나감 밀크 나감",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 프림 커피를 프림에게 배달해 달라는 것인지 묻는다.",
+          "line_start": 27,
+          "line_end": 30,
+          "claim_line": null,
+          "quote": "프림 커피를 프림에게 배달해 달라는 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 28,
+            "option_text": "프림 커피를 프림에게 배달해 달라는 거야?"
+          }
         },
         {
           "item_id": "blabla_frima_002__eac_003",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "지휘관이 배달비를 묻자 프림은 잠시 답장을 하지 않다가 배달비가 너무 손해라며 직접 커피를 뽑았다고 알린다.",
-          "line_start": 93,
-          "line_end": 126,
+          "summary": "지휘관이 다른 사람에게 배달해 달라는 것이냐고 묻자 프림이 자신에게 배달해 달라는 것이라고 답한다.",
+          "line_start": 31,
+          "line_end": 41,
+          "claim_line": null,
+          "quote": "프림 커피를 다른 사람에게 배달해 달라는 거야? ㄴㄴㄴㄴㄴ 나 프림 커피를 프림에게 배달해 달라는 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 28,
+            "option_text": "프림 커피를 다른 사람에게 배달해 달라는 거야?"
+          }
+        },
+        {
+          "item_id": "blabla_frima_002__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 자신에게 배달해 달라는 것이 맞으며 지금 카페 소파 위에 있다고 말한다.",
+          "line_start": 44,
+          "line_end": 55,
+          "claim_line": 51,
+          "quote": "ㅇㅇㅇ 지금 어디 있어? 카페 소파 위",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 카페 안에 있으면 직접 뽑으면 되지 않냐고 묻는다.",
+          "line_start": 56,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "??? ?? 카페 안에 있으면 직접 뽑으면 되지 않아?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 이미 소파에 누웠고 자판기가 너무 멀다고 말한다.",
+          "line_start": 65,
+          "line_end": 76,
+          "claim_line": 69,
+          "quote": "이미 누움 자판기 너무 멈",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 프림에게 슈가나 밀크에게 시키라고 권한다.",
+          "line_start": 77,
+          "line_end": 79,
+          "claim_line": null,
+          "quote": "슈가나 밀크에게 시켜",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 슈가와 밀크 모두 외출했고 자판기가 너무 멀다고 말한다.",
+          "line_start": 80,
+          "line_end": 91,
+          "claim_line": 81,
+          "quote": "슈가 나감 밀크 나감 자판기 너무 멈",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 배달비가 얼마냐고 묻자 프림이 물음표만 남긴 채 답장을 멈춘다.",
+          "line_start": 92,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "배달비는 얼마야? ?????? ??? ···프림의 답장이 오질 않는다",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 다시 연락이 닿은 프림에게 프림 커피 배달이 어떻게 됐는지 묻는다.",
+          "line_start": 104,
+          "line_end": 112,
+          "claim_line": null,
+          "quote": "프림? 여 프림 커피 배달은 어떻게 됐어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 배달비는 너무 손해라서 커피를 직접 뽑았다고 말한다.",
+          "line_start": 113,
+          "line_end": 127,
+          "claim_line": 117,
           "quote": "직접 뽑음 배달비 너무 손해",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_002__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 자야 한다며 지휘관과 작별 인사를 나눈다.",
+          "line_start": 128,
+          "line_end": 139,
+          "claim_line": null,
+          "quote": "나 자야 됨 ㅂㅂ ㅂㅂ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
-      "relationship_and_lore_notes": [
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
         {
-          "item_id": "blabla_frima_002__rln_001",
-          "subject": "프림",
-          "target": "슈가",
-          "relation_or_change": "카페에서 함께 지내는 동료로, 지휘관이 심부름을 시키라고 언급한다.",
-          "line_start": 78,
-          "line_end": 84,
-          "quote": "슈가나 밀크에게 시켜 슈가 나감 밀크 나감"
+          "item_id": "blabla_frima_002__uec_001",
+          "surface_text": "프림 커피",
+          "suggested_type": "item",
+          "line_start": 22
         },
         {
-          "item_id": "blabla_frima_002__rln_002",
-          "subject": "프림",
-          "target": "밀크",
-          "relation_or_change": "카페에서 함께 지내는 동료로, 지휘관이 심부름을 시키라고 언급한다.",
-          "line_start": 78,
-          "line_end": 84,
-          "quote": "슈가나 밀크에게 시켜 슈가 나감 밀크 나감"
+          "item_id": "blabla_frima_002__uec_002",
+          "surface_text": "카페",
+          "suggested_type": "location",
+          "line_start": 51
         }
-      ],
-      "unregistered_entity_candidates": []
+      ]
     },
     {
       "scene_id": "blabla_frima_003",
@@ -341,8 +565,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "프림이 지상에서 랩쳐가 사라져 임무를 안 해도 되는 길몽을 꿨다며 지휘관에게 온라인 복권 대리 구매를 부탁하지만, 숫자 10개를 적기 귀찮아 꿈에서 본 숫자를 말하지 않는 바람에 꽝이 된다.",
+      "summary": "프림이 지상에 랩쳐가 없어져 임무를 안 해도 되는 길몽을 꿨다며 지휘관에게 복권 구매를 부탁하지만, 숫자 10개를 치기 귀찮아 꿈에서 본 번호를 알려주지 않아 결국 꽝이 된다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -352,8 +577,8 @@
             "speaker_label": "프림",
             "entity_id": "char_프림",
             "medium": "messenger",
-            "line_start": 4,
-            "line_end": 10,
+            "line_start": 3,
+            "line_end": 11,
             "quote": "꿈 복권 사야됨"
           },
           {
@@ -361,8 +586,8 @@
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 13,
-            "line_end": 13,
+            "line_start": 12,
+            "line_end": 14,
             "quote": "길몽 꿨어?"
           }
         ],
@@ -372,27 +597,33 @@
             "surface_text": "복권",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 54,
-            "line_end": 54,
-            "quote": "나한테 복권 사오라는 거야?"
+            "line_start": 6,
+            "line_end": 11,
+            "quote": "복권 사야됨",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_frima_003__mnt_002",
             "surface_text": "지상",
             "entity_id": null,
             "entity_type": "location",
-            "line_start": 19,
-            "line_end": 25,
-            "quote": "지상 랩쳐 없어짐"
+            "line_start": 18,
+            "line_end": 26,
+            "quote": "지상 랩쳐 없어짐",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_frima_003__mnt_003",
             "surface_text": "랩쳐",
             "entity_id": null,
             "entity_type": "faction_or_species",
-            "line_start": 19,
-            "line_end": 25,
-            "quote": "지상 랩쳐 없어짐"
+            "line_start": 18,
+            "line_end": 26,
+            "quote": "지상 랩쳐 없어짐",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -403,21 +634,32 @@
           "from_speaker": "프림",
           "to_target": "지휘관",
           "address_term": "여",
-          "line_start": 69,
-          "line_end": 72,
-          "quote": "여 천사?"
+          "line_start": 68,
+          "line_end": 76,
+          "quote": "여 천사? 사랑",
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "심부름은 대가 없이 해줄게"
+          }
         },
         {
           "item_id": "blabla_frima_003__foa_002",
           "from_speaker": "프림",
           "to_target": "지휘관",
           "address_term": "천사",
-          "line_start": 69,
-          "line_end": 72,
-          "quote": "여 천사?"
+          "line_start": 68,
+          "line_end": 76,
+          "quote": "여 천사? 사랑",
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "심부름은 대가 없이 해줄게"
+          }
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -428,14 +670,12 @@
             {
               "item_id": "blabla_frima_003__chb_001_opt_01",
               "option_text": "중요한 건 그쪽이었나",
-              "continuation_summary": "프림이 임무를 안 해도 되는 것이 중요하다며 당연하다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "프림이 임무를 안 해도 되는 것이 중요한 게 당연하다고 답한다."
             },
             {
               "item_id": "blabla_frima_003__chb_001_opt_02",
               "option_text": "지상 탈환이라니 엄청난 길몽이군",
-              "continuation_summary": "프림이 길몽이 맞다며 긍정의 답장을 보낸다.",
-              "branch_specific_facts": []
+              "continuation_summary": "프림이 긍정한다."
             }
           ]
         },
@@ -446,18 +686,12 @@
             {
               "item_id": "blabla_frima_003__chb_002_opt_01",
               "option_text": "심부름은 대가 없이 해줄게",
-              "continuation_summary": "프림이 지휘관을 천사라고 부르며 사랑을 표한다.",
-              "branch_specific_facts": [
-                "지휘관이 대가 없이 복권 심부름을 해주겠다고 하자 프림이 천사라며 감동한다."
-              ]
+              "continuation_summary": "프림이 지휘관에게 천사냐며 사랑을 표한다."
             },
             {
               "item_id": "blabla_frima_003__chb_002_opt_02",
               "option_text": "최소 25%는 되어야",
-              "continuation_summary": "프림이 탐욕이 과하다고 거절한 뒤 지휘관이 제시한 당첨금 15% 조건에 합의한다.",
-              "branch_specific_facts": [
-                "지휘관과 프림이 복권 당첨 시 당첨금의 15%를 나누기로 거래한다."
-              ]
+              "continuation_summary": "프림이 탐욕이 과하다고 거절하자 지휘관이 15%를 제안해 합의한다."
             }
           ]
         },
@@ -468,18 +702,12 @@
             {
               "item_id": "blabla_frima_003__chb_003_opt_01",
               "option_text": "16 22 34 7 40",
-              "continuation_summary": "지휘관이 복권 번호로 '16 22 34 7 40'을 찍었다고 알리자 프림이 꿈에서 본 번호와 다르다며 망했다고 한다.",
-              "branch_specific_facts": [
-                "지휘관이 복권 번호로 16, 22, 34, 7, 40을 선택했다."
-              ]
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_frima_003__chb_003_opt_02",
               "option_text": "3 18 31 9 22",
-              "continuation_summary": "지휘관이 복권 번호로 '3 18 31 9 22'를 찍었다고 알리자 프림이 꿈에서 본 번호와 다르다며 망했다고 한다.",
-              "branch_specific_facts": [
-                "지휘관이 복권 번호로 3, 18, 31, 9, 22를 선택했다."
-              ]
+              "continuation_summary": null
             }
           ]
         }
@@ -487,50 +715,252 @@
       "events_and_claims": [
         {
           "item_id": "blabla_frima_003__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 꿈에서 지상에 랩쳐가 없어져 임무를 하지 않아도 되는 길몽을 꿨다고 말한다.",
-          "line_start": 19,
-          "line_end": 31,
-          "quote": "지상 랩쳐 없어짐 임무 안 해도 됨",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "프림이 꿈을 꿨다며 복권을 사야 된다고 말하자 지휘관이 길몽을 꿨냐고 묻는다.",
+          "line_start": 3,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "꿈 복권 사야됨 길몽 꿨어?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_frima_003__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "프림이 복권 당첨 시 지분을 주겠다며 복권 구매 심부름을 요청하고, 지휘관이 온라인으로 복권을 구매한다.",
-          "line_start": 54,
-          "line_end": 98,
-          "quote": "온라인으로 복권을 구매했다···.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "프림",
+          "summary": "프림이 지상에 랩쳐가 없어져서 임무를 안 해도 되는 길몽을 꿨다고 말한다.",
+          "line_start": 15,
+          "line_end": 32,
+          "claim_line": 19,
+          "quote": "ㅇㅇ 지상 랩쳐 없어짐 임무 안 해도 됨",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_frima_003__eac_003",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 숫자 10개를 쓰기 귀찮아서 꿈을 꾸고 떠오른 번호를 미리 알려주지 않았다고 말하며, 결국 복권은 꽝으로 끝난다.",
-          "line_start": 121,
-          "line_end": 160,
-          "quote": "꿈 꾸고 떠오른 거랑 다름",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "지휘관이 중요한 건 임무를 안 해도 되는 쪽이었냐고 하자 프림이 당연하다고 답한다.",
+          "line_start": 33,
+          "line_end": 42,
+          "claim_line": 40,
+          "quote": "중요한 건 그쪽이었나 ㅇㅇ 당연",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "중요한 건 그쪽이었나"
+          }
+        },
+        {
+          "item_id": "blabla_frima_003__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "지휘관이 지상 탈환이라니 엄청난 길몽이라고 하자 프림이 동의한다.",
+          "line_start": 43,
+          "line_end": 47,
+          "claim_line": 45,
+          "quote": "지상 탈환이라니 엄청난 길몽이군 ㅇㅇㅇ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "지상 탈환이라니 엄청난 길몽이군"
+          }
+        },
+        {
+          "item_id": "blabla_frima_003__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 지휘관에게 복권 구매 심부름을 부탁하며 당첨 시 10%를 주겠다고 제안한다.",
+          "line_start": 50,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "그럼 ㄱ 나한테 복권 사오라는 거야? ㅇ 당첨시 10퍼",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_003__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 복권 심부름을 대가 없이 해주겠다고 말한다.",
+          "line_start": 65,
+          "line_end": 67,
+          "claim_line": null,
+          "quote": "심부름은 대가 없이 해줄게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "심부름은 대가 없이 해줄게"
+          }
+        },
+        {
+          "item_id": "blabla_frima_003__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 대가 없이 심부름을 해주겠다는 지휘관에게 천사냐며 사랑한다고 말한다.",
+          "line_start": 68,
+          "line_end": 77,
+          "claim_line": 75,
+          "quote": "여 천사? 사랑",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "심부름은 대가 없이 해줄게"
+          }
+        },
+        {
+          "item_id": "blabla_frima_003__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 당첨금의 최소 25%를 요구했다가 프림이 탐욕이 과하다고 하자 15%로 낮춰 합의한다.",
+          "line_start": 78,
+          "line_end": 91,
+          "claim_line": null,
+          "quote": "최소 25%는 되어야 탐욕 과함 15%는 어때? 딜",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "최소 25%는 되어야"
+          }
+        },
+        {
+          "item_id": "blabla_frima_003__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 온라인으로 복권을 구매하고 프림이 몇 번을 찍었는지 묻는다.",
+          "line_start": 94,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "그럼 ㄱ 온라인으로 복권을 구매했다···. 몇 번 찍음?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_003__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 복권 번호로 16, 22, 34, 7, 40을 찍었다고 답한다.",
+          "line_start": 105,
+          "line_end": 106,
+          "claim_line": null,
+          "quote": "16 22 34 7 40",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 104,
+            "option_text": "16 22 34 7 40"
+          }
+        },
+        {
+          "item_id": "blabla_frima_003__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 복권 번호로 3, 18, 31, 9, 22를 찍었다고 답한다.",
+          "line_start": 107,
+          "line_end": 108,
+          "claim_line": null,
+          "quote": "3 18 31 9 22",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 104,
+            "option_text": "3 18 31 9 22"
+          }
+        },
+        {
+          "item_id": "blabla_frima_003__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 지휘관이 찍은 번호가 자신이 꿈을 꾸고 떠오른 번호와 달라 망했다고 말한다.",
+          "line_start": 111,
+          "line_end": 131,
+          "claim_line": 130,
+          "quote": "아 망함 ?? 꿈 꾸고 떠오른 거랑 다름",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_003__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "지휘관이 왜 진작 번호를 말해주지 않았냐고 묻자 프림이 숫자를 10개나 써야 해서 귀찮았다고 답한다.",
+          "line_start": 132,
+          "line_end": 149,
+          "claim_line": 145,
+          "quote": "왜 진작 말해주지 않았어? 숫자 10개나 써야됨 귀찮 ;;",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_003__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 어쩔 수 없다며 자러 가고, 결국 복권 당첨 결과는 꽝으로 끝난다.",
+          "line_start": 150,
+          "line_end": 161,
+          "claim_line": null,
+          "quote": "어쩔 수 없 자러 감 ㅅㄱ ···결국 당첨 결과는 꽝이었다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
-      "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_frima_003__rln_001",
+          "subject": "프림",
+          "target": "지휘관",
+          "relation_or_change": "대가 없이 심부름을 해주겠다는 지휘관에게 천사냐며 사랑한다고 호감을 표현함",
+          "epistemic_type": "character_claim",
+          "claimant": "프림",
+          "line_start": 67,
+          "line_end": 77,
+          "claim_line": 75,
+          "quote": "심부름은 대가 없이 해줄게 여 천사? 사랑",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "심부름은 대가 없이 해줄게"
+          }
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_frima_003__uec_001",
+          "surface_text": "복권",
+          "suggested_type": "item",
+          "line_start": 7
+        }
+      ]
     },
     {
       "scene_id": "blabla_frima_004",
@@ -546,8 +976,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "프림이 옷에 냄새가 나 전부 벗었는데 세탁기가 고장 나고 남은 옷도 없다며 지휘관에게 옷을 배달해 달라고 부탁한다.",
+      "summary": "프림이 옷에서 냄새가 나 전부 벗었는데 남은 옷이 없고 세탁기도 고장 났다며 지휘관에게 평소 입는 스타일의 옷 배달을 부탁한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -557,17 +988,17 @@
             "speaker_label": "프림",
             "entity_id": "char_프림",
             "medium": "messenger",
-            "line_start": 16,
-            "line_end": 22,
-            "quote": "전부 벗음 냄새 남"
+            "line_start": 3,
+            "line_end": 11,
+            "quote": "옷 옷?? 없어"
           },
           {
             "item_id": "blabla_frima_004__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 25,
-            "line_end": 25,
+            "line_start": 24,
+            "line_end": 26,
             "quote": "다른 옷으로 갈아입으면 되잖아"
           }
         ],
@@ -577,27 +1008,33 @@
             "surface_text": "세탁기",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 37,
-            "line_end": 40,
-            "quote": "세탁기 고장 남"
+            "line_start": 36,
+            "line_end": 41,
+            "quote": "세탁기 고장 남",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_frima_004__mnt_002",
             "surface_text": "오프 숄더",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 84,
-            "line_end": 84,
-            "quote": "오프 숄더"
+            "line_start": 83,
+            "line_end": 88,
+            "quote": "오프 숄더 데미지 데님 팬츠",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_frima_004__mnt_003",
             "surface_text": "데미지 데님 팬츠",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 87,
-            "line_end": 87,
-            "quote": "데미지 데님 팬츠"
+            "line_start": 83,
+            "line_end": 88,
+            "quote": "오프 숄더 데미지 데님 팬츠",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -608,12 +1045,15 @@
           "from_speaker": "프림",
           "to_target": "지휘관",
           "address_term": "여",
-          "line_start": 64,
-          "line_end": 67,
-          "quote": "여는 어떤 옷"
+          "line_start": 63,
+          "line_end": 71,
+          "quote": "여는 어떤 옷 취향?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -624,14 +1064,12 @@
             {
               "item_id": "blabla_frima_004__chb_001_opt_01",
               "option_text": "청순한 느낌?",
-              "continuation_summary": "지휘관이 청순한 느낌의 옷을 꼽지만 프림은 평상시 스타일인 오프 숄더와 데미지 데님 팬츠를 요구한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_frima_004__chb_001_opt_02",
               "option_text": "섹시한 느낌",
-              "continuation_summary": "지휘관이 섹시한 느낌의 옷을 꼽지만 프림은 평상시 스타일인 오프 숄더와 데미지 데님 팬츠를 요구한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         }
@@ -640,35 +1078,172 @@
         {
           "item_id": "blabla_frima_004__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 옷에서 냄새가 나 전부 벗었는데 세탁기가 고장 나고 남은 옷도 없다고 말한다.",
-          "line_start": 16,
-          "line_end": 40,
-          "quote": "전부 벗음 냄새 남",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "프림이 옷에서 냄새가 나서 전부 벗어 옷이 없다고 말한다.",
+          "line_start": 3,
+          "line_end": 23,
+          "claim_line": 19,
+          "quote": "옷 옷?? 없어 없다고? 전부 벗음 냄새 남",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_frima_004__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 지휘관에게 옷 취향을 물은 뒤 평상시와 같은 스타일인 오프 숄더와 데미지 데님 팬츠를 배달해 달라고 부탁하고 자러 간다.",
-          "line_start": 64,
-          "line_end": 99,
-          "quote": "오프 숄더 데미지 데님 팬츠",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 다른 옷으로 갈아입으면 되지 않냐고 하자 프림이 남은 옷이 없다고 답한다.",
+          "line_start": 24,
+          "line_end": 32,
+          "claim_line": 31,
+          "quote": "다른 옷으로 갈아입으면 되잖아 남은 옷 없음",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_004__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "지휘관이 세탁은 어쩌냐고 묻자 프림이 세탁기가 고장 나서 큰일이라고 답한다.",
+          "line_start": 33,
+          "line_end": 44,
+          "claim_line": 40,
+          "quote": "세탁은?? 세탁기 고장 남 큰일",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_004__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 지휘관에게 옷 배달을 부탁하며 어떤 옷이 취향인지 묻는다.",
+          "line_start": 45,
+          "line_end": 72,
+          "claim_line": null,
+          "quote": "그럼 어떡해 옷 배달 부탁 아무거나 보내면 돼? 음 여는 어떤 옷 취향?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_004__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 옷 취향으로 청순한 느낌을 꼽는다.",
+          "line_start": 74,
+          "line_end": 75,
+          "claim_line": null,
+          "quote": "청순한 느낌?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 73,
+            "option_text": "청순한 느낌?"
+          }
+        },
+        {
+          "item_id": "blabla_frima_004__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 옷 취향으로 섹시한 느낌을 꼽는다.",
+          "line_start": 76,
+          "line_end": 77,
+          "claim_line": null,
+          "quote": "섹시한 느낌",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 73,
+            "option_text": "섹시한 느낌"
+          }
+        },
+        {
+          "item_id": "blabla_frima_004__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 오프 숄더와 데미지 데님 팬츠를 부탁한다.",
+          "line_start": 80,
+          "line_end": 88,
+          "claim_line": null,
+          "quote": "ㅇㅋ 오프 숄더 데미지 데님 팬츠",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_004__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 프림이 요청한 옷은 평상시와 똑같은 스타일이 아니냐고 반문한다.",
+          "line_start": 89,
+          "line_end": 91,
+          "claim_line": 90,
+          "quote": "그건 평상시랑 똑같은 스타일 아냐?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_004__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 옷 배달을 부탁하며 미리 감사 인사를 남기고 자러 간 뒤, 지휘관이 따로 프림에게 옷을 주러 가기로 한다.",
+          "line_start": 92,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "부탁함 미리ㄳ 자러 감 ···시간을 내서 따로 프림에게 옷을 주러 가야겠다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_frima_004__clh_001",
+          "keyword": "오프 숄더와 데미지 데님 팬츠 복장",
+          "category": "trait",
+          "subject": "프림",
+          "detail": "평상시 스타일로 오프 숄더와 데미지 데님 팬츠를 입는다.",
+          "line_start": 83,
+          "line_end": 91,
+          "quote": "오프 숄더 데미지 데님 팬츠 그건 평상시랑 똑같은 스타일 아냐?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_frima_004__uec_001",
+          "surface_text": "세탁기",
+          "suggested_type": "item",
+          "line_start": 37
+        },
+        {
+          "item_id": "blabla_frima_004__uec_002",
+          "surface_text": "오프 숄더",
+          "suggested_type": "item",
+          "line_start": 84
+        },
+        {
+          "item_id": "blabla_frima_004__uec_003",
+          "surface_text": "데미지 데님 팬츠",
+          "suggested_type": "item",
+          "line_start": 87
+        }
+      ]
     },
     {
       "scene_id": "blabla_frima_005",
@@ -684,8 +1259,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "독서 중이던 프림이 클라이막스인데도 페이지 넘기기가 귀찮다며 지휘관에게 와서 넘겨달라고 요청했다가, 입으로 바람을 불어 페이지를 넘기는 데 성공한다.",
+      "summary": "독서 중이던 프림이 페이지 넘기기가 귀찮다며 지휘관을 부르려다, 입으로 바람을 불어 페이지를 넘기는 데 성공한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -695,44 +1271,38 @@
             "speaker_label": "프림",
             "entity_id": "char_프림",
             "medium": "messenger",
-            "line_start": 28,
-            "line_end": 31,
-            "quote": "지금 독서 중"
+            "line_start": 24,
+            "line_end": 32,
+            "quote": "ㅇㅇ 지금 독서 중"
           },
           {
             "item_id": "blabla_frima_005__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 16,
-            "line_end": 16,
+            "line_start": 15,
+            "line_end": 17,
             "quote": "ㅇㅇ적당히 읽긴 하지"
           }
         ],
-        "mentioned_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_frima_005__mnt_001",
+            "surface_text": "책",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 9,
+            "line_end": 14,
+            "quote": "책 읽음?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
         "document_author": null
       },
-      "forms_of_address": [
-        {
-          "item_id": "blabla_frima_005__foa_001",
-          "from_speaker": "프림",
-          "to_target": "지휘관",
-          "address_term": "여",
-          "line_start": 4,
-          "line_end": 10,
-          "quote": "여 여 책"
-        },
-        {
-          "item_id": "blabla_frima_005__foa_002",
-          "from_speaker": "지휘관",
-          "to_target": "프림",
-          "address_term": "프림",
-          "line_start": 22,
-          "line_end": 22,
-          "quote": "프림은 책 읽어?"
-        }
-      ],
+      "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -740,34 +1310,175 @@
         {
           "item_id": "blabla_frima_005__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "독서 중이던 프림이 책의 클라이막스 부분이 궁금하지만 페이지 넘기기가 귀찮다며 지휘관에게 와서 넘겨달라고 요청한다.",
-          "line_start": 28,
-          "line_end": 70,
-          "quote": "페이지 넘기는 거 귀찮음 와서 넘겨",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "프림이 지휘관에게 인사를 건네고 책을 읽는지 묻는다.",
+          "line_start": 3,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "여 여 책 읽음?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_frima_005__eac_002",
           "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 책을 적당히 읽는다고 답한다.",
+          "line_start": 15,
+          "line_end": 20,
+          "claim_line": 16,
+          "quote": "ㅇㅇ적당히 읽긴 하지 아 ㄹㅇ?",
+          "refers_to_past": false,
           "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_003",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "프림",
-          "summary": "프림이 입으로 '후' 하고 바람을 불자 책 페이지가 넘어갔다고 알린다.",
-          "line_start": 82,
-          "line_end": 94,
-          "quote": "후 하고 부니까 페이지 넘어감",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 책을 읽느냐고 묻자 프림이 지금 독서 중이라고 답한다.",
+          "line_start": 21,
+          "line_end": 32,
+          "claim_line": 31,
+          "quote": "프림은 책 읽어? ㅇㅇ 지금 독서 중",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 프림이 독서를 좋아하다니 의외라고 평한다.",
+          "line_start": 33,
+          "line_end": 35,
+          "claim_line": 34,
+          "quote": "프림이 독서를 좋아하다니 의외네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 다음 페이지가 너무 궁금하다고 말한다.",
+          "line_start": 36,
+          "line_end": 44,
+          "claim_line": 43,
+          "quote": "여 다음 페이지 너무 궁금",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그냥 읽으면 되지 않느냐고 묻는다.",
+          "line_start": 45,
+          "line_end": 47,
+          "claim_line": null,
+          "quote": "?? 읽으면 되잖아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 지금 읽는 부분이 무려 클라이막스라고 말한다.",
+          "line_start": 48,
+          "line_end": 53,
+          "claim_line": 52,
+          "quote": "무려 클라이막스",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 어서 읽으라고 권한다.",
+          "line_start": 54,
+          "line_end": 56,
+          "claim_line": null,
+          "quote": "ㅇㅇ읽어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 페이지 넘기는 것이 귀찮다며 지휘관에게 와서 넘겨달라고 요청한다.",
+          "line_start": 57,
+          "line_end": 71,
+          "claim_line": null,
+          "quote": "페이지 넘기는 거 귀찮음 와서 넘겨",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신이 가는 것보다 프림이 직접 넘기는 게 더 빠르지 않겠냐고 반문한다.",
+          "line_start": 72,
+          "line_end": 74,
+          "claim_line": null,
+          "quote": "프림이 직접 넘기는 게 내가 가는 것보다 빠르지 않을까?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 입으로 '후' 하고 불었더니 페이지가 넘어갔다고 말한다.",
+          "line_start": 75,
+          "line_end": 95,
+          "claim_line": 94,
+          "quote": "아 아? 후 하고 부니까 페이지 넘어감",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_frima_005__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 즐거운 독서를 하라고 인사하자 프림이 수긍한다.",
+          "line_start": 96,
+          "line_end": 101,
+          "claim_line": null,
+          "quote": "···즐거운 독서 하렴 ㅇㅋ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     }
   ]

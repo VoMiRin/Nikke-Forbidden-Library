@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.558Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.622Z",
   "title_id": "lost_relics__반드시사수하라",
   "category": "lost_relics",
   "title": "반드시 사수하라",
@@ -21,26 +21,36 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "전투 중 녹음된 것으로 추정되는 음성 파일이라는 설명 문구다.",
+      "summary": "전투 중 녹음된 것으로 추정되는 음성 파일에 대한 설명이다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
         "remote_or_voice_only": [],
-        "mentioned_only": [],
-        "document_author": {
-          "item_id": "반드시사수하라_00__dca_001",
-          "name": "음성 파일 기록 설명문",
-          "entity_id": null
-        }
+        "mentioned_only": [
+          {
+            "item_id": "반드시사수하라_00__mnt_001",
+            "surface_text": "음성 파일",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 1,
+            "line_end": 1,
+            "quote": "전투 중 녹음된 것으로 추정되는 음성 파일",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "반드시사수하라_00__csh_001",
-          "text": "반드시 사수하라 시리즈(녹음 1~4)의 도입 설명 장면이다.",
+          "text": "이어지는 녹음 파일(반드시사수하라_01~04)의 도입 설명이다.",
           "related_scene_ids": [
             "반드시사수하라_01",
             "반드시사수하라_02",
@@ -53,32 +63,43 @@
       "events_and_claims": [
         {
           "item_id": "반드시사수하라_00__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "음성 파일 기록 설명문",
-          "summary": "해당 기록이 전투 중 녹음된 것으로 추정되는 음성 파일임을 안내한다.",
+          "actor_or_speaker": "지문",
+          "summary": "전투 중 녹음된 것으로 추정되는 음성 파일이 제시된다.",
           "line_start": 1,
           "line_end": 1,
+          "claim_line": null,
           "quote": "전투 중 녹음된 것으로 추정되는 음성 파일",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "반드시사수하라_00__clh_001",
-          "keyword": "전투 중 녹음된 음성 파일",
+          "keyword": "음성 파일",
           "category": "item",
-          "detail": "하모니 큐브가 있는 방주 후보군 지역에서 전투 중 녹음된 음성 파일 모음의 표제다.",
+          "subject": null,
+          "detail": "전투 중 녹음된 것으로 추정되는 음성 기록물이다.",
           "line_start": 1,
           "line_end": 1,
-          "quote": "전투 중 녹음된 것으로 추정되는 음성 파일"
+          "quote": "전투 중 녹음된 것으로 추정되는 음성 파일",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "반드시사수하라_00__uec_001",
+          "surface_text": "음성 파일",
+          "suggested_type": "item",
+          "line_start": 1
+        }
+      ]
     },
     {
       "scene_id": "반드시사수하라_01",
@@ -94,8 +115,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "고래(마더 웨일) 때문에 방주 후보군 지역으로 떨어진 니케가 지휘관이 녹아 사망했다는 보고를 받고, 주위 랩쳐를 정리하며 지상에 드물게 남은 하모니 큐브를 반드시 지키라고 명령한다.",
+      "summary": "녹음 속 화자가 고래 때문에 도달한 방주 후보군에서 하모니 큐브를 발견하고, 지휘관이 녹았다는 소식을 들은 뒤 주변 랩쳐를 정리하며 지상에 드문 하모니 큐브를 사수하라고 지시한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -108,7 +130,9 @@
             "entity_type": "item",
             "line_start": 2,
             "line_end": 2,
-            "quote": "하, 하모니 큐브 발견! 하모니 큐브 발견!"
+            "quote": "하, 하모니 큐브 발견! 하모니 큐브 발견!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "반드시사수하라_01__mnt_002",
@@ -117,101 +141,204 @@
             "entity_type": "location",
             "line_start": 3,
             "line_end": 3,
-            "quote": "젠장···! 여기 방주 후보군이었잖아···!"
+            "quote": "젠장···! 여기 방주 후보군이었잖아···!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "반드시사수하라_01__mnt_003",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "젠장···! 여기 방주 후보군이었잖아···!",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "반드시사수하라_01__mnt_004",
             "surface_text": "고래",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 4,
             "line_end": 4,
-            "quote": "망할 놈의 고래는 왜 우리를 이런 곳으로···!"
+            "quote": "망할 놈의 고래는 왜 우리를 이런 곳으로···!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "반드시사수하라_01__mnt_004",
+            "item_id": "반드시사수하라_01__mnt_005",
             "surface_text": "지휘관",
             "entity_id": null,
             "entity_type": "character",
             "line_start": 5,
             "line_end": 5,
-            "quote": "지휘관은!"
+            "quote": "지휘관은!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "반드시사수하라_01__mnt_005",
+            "item_id": "반드시사수하라_01__mnt_006",
+            "surface_text": "인간",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "노, 녹았다고? 하여간 이래서 인간은···!",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "반드시사수하라_01__mnt_007",
             "surface_text": "랩쳐",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 7,
             "line_end": 7,
-            "quote": "일단 주위의 랩쳐를 정리해!"
+            "quote": "일단 주위의 랩쳐를 정리해!",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "반드시사수하라_01__mnt_008",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 9,
+            "line_end": 9,
+            "quote": "지상에 남아있는 하모니 큐브는 드물다고!",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "반드시사수하라_01__dca_001",
-          "name": "하모니 큐브 사수 니케 (녹음자)",
-          "entity_id": null
+          "name": "녹음 속 화자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "반드시사수하라_01__csh_001",
-          "text": "하모니 큐브가 있는 방주 후보군 지역에 불시착해 전투를 벌인 니케 부대의 기록으로, 반드시사수하라_02~04 및 하모니큐브관찰일지_00~03과 연결된다.",
-          "related_scene_ids": [
-            "반드시사수하라_00",
-            "반드시사수하라_02",
-            "반드시사수하라_03",
-            "반드시사수하라_04",
-            "하모니큐브관찰일지_00"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "반드시사수하라_01__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자는 고래 때문에 떨어진 이곳이 하모니 큐브가 있는 방주 후보군 지역임을 확인하고, 지휘관이 녹아 사망했다는 소식에 탄식한다.",
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 하모니 큐브를 발견했다고 외친다.",
           "line_start": 2,
-          "line_end": 6,
-          "quote": "하, 하모니 큐브 발견! 하모니 큐브 발견! 젠장···! 여기 방주 후보군이었잖아···! 망할 놈의 고래는 왜 우리를 이런 곳으로···! 지휘관은! 노, 녹았다고? 하여간 이래서 인간은···!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "line_end": 2,
+          "claim_line": null,
+          "quote": "하, 하모니 큐브 발견! 하모니 큐브 발견!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "반드시사수하라_01__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자가 주위의 랩쳐를 정리하고 지상에 드물게 남아 있는 하모니 큐브를 반드시 사수하라고 부대원들에게 명령한다.",
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 현재 위치가 방주 후보군이며 고래가 자신들을 이곳으로 데려왔다고 말한다.",
+          "line_start": 3,
+          "line_end": 4,
+          "claim_line": 3,
+          "quote": "젠장···! 여기 방주 후보군이었잖아···! 망할 놈의 고래는 왜 우리를 이런 곳으로···!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "반드시사수하라_01__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 지휘관의 안부를 묻는다.",
+          "line_start": 5,
+          "line_end": 5,
+          "claim_line": null,
+          "quote": "지휘관은!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "반드시사수하라_01__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 지휘관이 녹았다는 말을 듣고 인간은 이래서 안 된다며 탄식한다.",
+          "line_start": 5,
+          "line_end": 6,
+          "claim_line": 6,
+          "quote": "지휘관은! 노, 녹았다고? 하여간 이래서 인간은···!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "반드시사수하라_01__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 주위의 랩쳐를 정리하고 하모니 큐브를 반드시 지키라고 명령한다.",
           "line_start": 7,
           "line_end": 10,
+          "claim_line": null,
           "quote": "일단 주위의 랩쳐를 정리해! 하모니 큐브를 지켜야 한다! 지상에 남아있는 하모니 큐브는 드물다고! 반드시 지켜!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "반드시사수하라_01__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 지상에 남아있는 하모니 큐브는 드물다고 말한다.",
+          "line_start": 8,
+          "line_end": 9,
+          "claim_line": 9,
+          "quote": "하모니 큐브를 지켜야 한다! 지상에 남아있는 하모니 큐브는 드물다고!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "반드시사수하라_01__clh_001",
-          "keyword": "방주 후보군의 하모니 큐브 발견과 지휘관의 사망",
-          "category": "past_incident",
-          "detail": "고래(마더 웨일)로 인해 방주 후보군 지역에 떨어진 부대에서 지휘관이 녹아 사망하고, 생존 니케들이 지상의 하모니 큐브 사수에 나섰다.",
+          "keyword": "하모니 큐브",
+          "category": "item",
+          "subject": null,
+          "detail": "지상에 드물게 남아있는 장치로, 방주 후보군에서 발견되어 부대가 사수에 나선다.",
           "line_start": 2,
-          "line_end": 10,
-          "quote": "하, 하모니 큐브 발견! 하모니 큐브 발견! 젠장···! 여기 방주 후보군이었잖아···! 망할 놈의 고래는 왜 우리를 이런 곳으로···! 지휘관은! 노, 녹았다고? 하여간 이래서 인간은···! 일단 주위의 랩쳐를 정리해! 하모니 큐브를 지켜야 한다! 지상에 남아있는 하모니 큐브는 드물다고! 반드시 지켜!"
+          "line_end": 3,
+          "quote": "하, 하모니 큐브 발견! 하모니 큐브 발견! 젠장···! 여기 방주 후보군이었잖아···!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "반드시사수하라_01__clh_002",
+          "keyword": "방주 후보군과 녹은 지휘관",
+          "category": "location",
+          "subject": null,
+          "detail": "고래에 의해 부대가 도달한 방주 후보군으로, 인간인 지휘관이 녹아버린 위험한 환경이다.",
+          "line_start": 3,
+          "line_end": 6,
+          "quote": "젠장···! 여기 방주 후보군이었잖아···! 망할 놈의 고래는 왜 우리를 이런 곳으로···! 지휘관은! 노, 녹았다고? 하여간 이래서 인간은···!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "반드시사수하라_01__uec_001",
@@ -224,6 +351,12 @@
           "surface_text": "방주 후보군",
           "suggested_type": "location",
           "line_start": 3
+        },
+        {
+          "item_id": "반드시사수하라_01__uec_003",
+          "surface_text": "고래",
+          "suggested_type": "faction_or_species",
+          "line_start": 4
         }
       ]
     },
@@ -241,8 +374,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "전투 종료 후 대원들이 무사함을 확인한 녹음자는 방주와 연락을 시도하지만 통신 권외임을 알고 통신할 방법을 찾으라고 지시한다.",
+      "summary": "녹음 속 화자가 전투 종료 후 방주와의 연락을 시도하지만 통신 권외임을 확인하고, 현 상태를 알릴 통신 방법을 찾으라고 지시한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -255,72 +389,84 @@
             "entity_type": "location",
             "line_start": 4,
             "line_end": 4,
-            "quote": "이대로 지켜내면서 방주와의 연락을 시도한다!"
+            "quote": "이대로 지켜내면서 방주와의 연락을 시도한다!",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "반드시사수하라_02__dca_001",
-          "name": "하모니 큐브 사수 니케 (녹음자)",
-          "entity_id": null
+          "name": "녹음 속 화자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "반드시사수하라_02__csh_001",
-          "text": "반드시 사수하라 녹음 2로, 통신 권외 상황에서 다음 녹음(03)의 하모니 큐브 연산 능력 활용 시도로 이어진다.",
-          "related_scene_ids": [
-            "반드시사수하라_01",
-            "반드시사수하라_03",
-            "반드시사수하라_04"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "반드시사수하라_02__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자는 상황이 종료된 후 대원들이 생각보다 멀쩡하다고 확인하나, 방주와의 연락이 통신 권외로 불가능하다는 보고에 얼마나 멀리 온 것이냐며 놀란다.",
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 상황 종료를 선언하고 대원들이 멀쩡함을 확인한 뒤 방주와의 연락을 시도한다.",
           "line_start": 2,
-          "line_end": 6,
-          "quote": "상황 종료! 좋아···! 생각보다 다들 멀쩡해···! 이대로 지켜내면서 방주와의 연락을 시도한다! 뭐? 권외? ···얼마나 멀리 온 거냐 우리들은···!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "line_end": 4,
+          "claim_line": null,
+          "quote": "상황 종료! 좋아···! 생각보다 다들 멀쩡해···! 이대로 지켜내면서 방주와의 연락을 시도한다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "반드시사수하라_02__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자가 이곳의 상태를 방주에 알려야 한다며 통신할 방법을 찾으라고 지시한다.",
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 통신이 권외라는 말을 듣고 자신들이 아주 멀리 왔다고 말한다.",
+          "line_start": 5,
+          "line_end": 6,
+          "claim_line": 5,
+          "quote": "뭐? 권외? ···얼마나 멀리 온 거냐 우리들은···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "반드시사수하라_02__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 이곳의 상태를 알리기 위해 통신할 방법을 찾으라고 지시한다.",
           "line_start": 7,
           "line_end": 8,
+          "claim_line": null,
           "quote": "통신할 방법을 찾아라! 여기 상태를 알려야 해!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "반드시사수하라_02__clh_001",
-          "keyword": "통신 권외의 방주 후보군 지역",
+          "keyword": "통신 권외",
           "category": "location",
-          "detail": "하모니 큐브가 발견된 방주 후보군 지역은 방주에서 매우 멀리 떨어져 일반 통신이 닿지 않는 권외 지역이다.",
+          "subject": null,
+          "detail": "하모니 큐브가 발견된 방주 후보군이 방주와의 일반 통신이 닿지 않을 만큼 멀리 떨어진 권외 지역이다.",
           "line_start": 4,
-          "line_end": 8,
-          "quote": "이대로 지켜내면서 방주와의 연락을 시도한다! 뭐? 권외? ···얼마나 멀리 온 거냐 우리들은···! 통신할 방법을 찾아라! 여기 상태를 알려야 해!"
+          "line_end": 6,
+          "quote": "이대로 지켜내면서 방주와의 연락을 시도한다! 뭐? 권외? ···얼마나 멀리 온 거냐 우리들은···!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -337,8 +483,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "녹음자는 하모니 큐브의 연산 능력을 활용하면 방주와의 통신도 가능할 것이라며 진을 치고 하모니 큐브를 확보하라고 명령한다.",
+      "summary": "녹음 속 화자가 하모니 큐브의 연산 능력을 활용하면 방주와 통신할 수 있을 것이라며 현 위치에 진을 치고 하모니 큐브를 확보하라고 지시한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -351,7 +498,9 @@
             "entity_type": "item",
             "line_start": 2,
             "line_end": 2,
-            "quote": "이대로 여기에 진을 치고 하모니 큐브를 확보한다!"
+            "quote": "이대로 여기에 진을 치고 하모니 큐브를 확보한다!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "반드시사수하라_03__mnt_002",
@@ -360,73 +509,78 @@
             "entity_type": "location",
             "line_start": 3,
             "line_end": 3,
-            "quote": "이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다!"
+            "quote": "이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다!",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "반드시사수하라_03__dca_001",
-          "name": "하모니 큐브 사수 니케 (녹음자)",
-          "entity_id": null
+          "name": "녹음 속 화자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "반드시사수하라_03__csh_001",
-          "text": "반드시 사수하라 녹음 3으로, 하모니 큐브 확보 직후 녹음 4에서 굴삭기 형태 랩쳐(그레이브 디거)의 기습을 받게 된다.",
-          "related_scene_ids": [
-            "반드시사수하라_01",
-            "반드시사수하라_02",
-            "반드시사수하라_04"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "반드시사수하라_03__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자는 하모니 큐브의 연산 능력을 활용하면 방주와의 통신도 가능할 것이라 주장한다.",
-          "line_start": 3,
-          "line_end": 3,
-          "quote": "이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 현 위치에 진을 치고 서둘러 하모니 큐브를 확보하라고 지시한다.",
+          "line_start": 2,
+          "line_end": 4,
+          "claim_line": null,
+          "quote": "이대로 여기에 진을 치고 하모니 큐브를 확보한다! 이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다! 서둘러!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "반드시사수하라_03__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자가 이곳에 진을 치고 서둘러 하모니 큐브를 확보하라고 명령한다.",
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 하모니 큐브의 연산 능력을 활용하면 방주와의 통신도 가능할 것이라고 주장한다.",
           "line_start": 2,
-          "line_end": 4,
-          "quote": "이대로 여기에 진을 치고 하모니 큐브를 확보한다! 이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다! 서둘러!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 3,
+          "claim_line": 3,
+          "quote": "이대로 여기에 진을 치고 하모니 큐브를 확보한다! 이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "반드시사수하라_03__clh_001",
-          "keyword": "하모니 큐브의 연산 능력을 이용한 장거리 통신",
+          "keyword": "하모니 큐브의 연산 능력",
           "category": "lore_concept",
-          "detail": "하모니 큐브는 높은 연산 능력을 지니고 있어 통신 권외 지역에서도 방주와의 통신 수단으로 활용될 수 있다고 언급된다.",
+          "subject": null,
+          "detail": "하모니 큐브의 연산 능력을 활용하면 통신 권외 지역에서도 방주와 통신할 수 있을 것으로 언급된다.",
           "line_start": 2,
           "line_end": 3,
-          "quote": "이대로 여기에 진을 치고 하모니 큐브를 확보한다! 이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다!"
+          "quote": "이대로 여기에 진을 치고 하모니 큐브를 확보한다! 이 녀석의 연산 능력을 활용하면 방주와의 통신도 가능할 거다!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "반드시사수하라_03__uec_001",
+          "surface_text": "하모니 큐브",
+          "suggested_type": "item",
+          "line_start": 2
+        }
+      ]
     },
     {
       "scene_id": "반드시사수하라_04",
@@ -442,78 +596,93 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "굴삭기 형태의 거대한 존재가 나타나자 녹음자는 경악하며 사격을 명령하다가 비명을 지르며 당한다.",
+      "summary": "녹음 속 화자가 굴삭기처럼 생긴 믿기 힘든 존재의 등장에 경악하며 사격을 명령하다가 비명을 지르며 당한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
         "remote_or_voice_only": [],
-        "mentioned_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "반드시사수하라_04__mnt_001",
+            "surface_text": "굴삭기",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "굴삭기··· 인가?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
         "document_author": {
           "item_id": "반드시사수하라_04__dca_001",
-          "name": "하모니 큐브 사수 니케 (녹음자)",
-          "entity_id": null
+          "name": "녹음 속 화자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "반드시사수하라_04__csh_001",
-          "text": "반드시 사수하라의 마지막 녹음으로, 굴삭기 형태의 랩쳐(그레이브 디거)에게 부대가 습격당하며 이후 하모니큐브관찰일지_00~03의 생존 니케 기록으로 이어진다.",
-          "related_scene_ids": [
-            "반드시사수하라_01",
-            "반드시사수하라_02",
-            "반드시사수하라_03",
-            "하모니큐브관찰일지_00"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "반드시사수하라_04__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자는 눈앞에 나타난 굴삭기 같은 괴물체를 보고 저딴 게 말이 되느냐며 경악한다.",
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 눈앞의 대상이 굴삭기인지 의아해하며 저런 것이 말이 되느냐고 경악한다.",
           "line_start": 2,
           "line_end": 5,
+          "claim_line": 3,
           "quote": "···뭐, 뭐야, 저거. 굴삭기··· 인가? 농담이겠지···! 저딴 게 말이나 되냐고···!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "반드시사수하라_04__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "하모니 큐브 사수 니케 (녹음자)",
-          "summary": "녹음자가 다급하게 쏘라고 외치다가 비명을 지른다.",
+          "actor_or_speaker": "녹음 속 화자",
+          "summary": "녹음 속 화자가 다급하게 사격을 명령하다가 비명을 지른다.",
           "line_start": 6,
           "line_end": 8,
+          "claim_line": null,
           "quote": "쏴! 쏴! 쏘라고! 쏴! 흐, 흐아···! 흐아아아아-!!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "반드시사수하라_04__clh_001",
-          "keyword": "굴삭기 형태의 괴물체(그레이브 디거) 습격",
-          "category": "past_incident",
-          "detail": "하모니 큐브를 확보하던 부대가 굴삭기 형태의 거대 랩쳐에게 습격당해 전멸 위기에 처했다.",
+          "keyword": "굴삭기",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "하모니 큐브를 확보하던 부대 앞에 나타난 굴삭기 형태의 정체불명 위협으로, 사격 명령 직후 부대를 덮친다.",
           "line_start": 2,
           "line_end": 8,
-          "quote": "···뭐, 뭐야, 저거. 굴삭기··· 인가? 농담이겠지···! 저딴 게 말이나 되냐고···! 쏴! 쏴! 쏘라고! 쏴! 흐, 흐아···! 흐아아아아-!!"
+          "quote": "···뭐, 뭐야, 저거. 굴삭기··· 인가? 농담이겠지···! 저딴 게 말이나 되냐고···! 쏴! 쏴! 쏘라고! 쏴! 흐, 흐아···! 흐아아아아-!!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "반드시사수하라_04__uec_001",
+          "surface_text": "굴삭기",
+          "suggested_type": "item",
+          "line_start": 3
+        }
+      ]
     }
   ]
 }

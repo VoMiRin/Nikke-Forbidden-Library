@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.546Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.610Z",
   "title_id": "lost_relics__모바일_보이스피싱_광고_모음_zip",
   "category": "lost_relics",
   "title": "모바일_보이스피싱_광고_모음.zip",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "희망은행 명의로 발송된 웹발신 광고 문자로, 외계인의 습격과 재난 상황 속에서도 미래를 대비하라며 최고 연 25.5% 금리의 희망 Future 적금 가입을 유도한다.",
+      "summary": "희망은행 명의로 외계인의 습격과 재난 상황 이후를 대비하라며 최고 연 25.5% 금리의 '희망 Future 적금' 가입을 유도하는 보이스피싱 문자 광고다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -35,7 +36,9 @@
             "entity_type": "organization",
             "line_start": 3,
             "line_end": 3,
-            "quote": "(광고) [희망은행] 희망 Future 적금☆"
+            "quote": "(광고) [희망은행] 희망 Future 적금☆",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_00__mnt_002",
@@ -44,63 +47,117 @@
             "entity_type": "faction_or_species",
             "line_start": 6,
             "line_end": 6,
-            "quote": "외계인의 습격으로 고민하고 계신 고객님을 위한!"
-          },
-          {
-            "item_id": "모바일_보이스피싱_광고_모음.zip_00__mnt_003",
-            "surface_text": "희망 Future 적금",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 3,
-            "line_end": 3,
-            "quote": "(광고) [희망은행] 희망 Future 적금☆"
+            "quote": "외계인의 습격으로 고민하고 계신 고객님을 위한!",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "모바일_보이스피싱_광고_모음.zip_00__dca_001",
           "name": "희망은행 광고 발신자",
-          "entity_id": null
+          "entity_id": null,
+          "voices": []
         }
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_00__foa_001",
+          "from_speaker": "희망은행 광고 발신자",
+          "to_target": "수신자",
+          "address_term": "단골 고객님",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "단골 고객님!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_00__foa_002",
+          "from_speaker": "희망은행 광고 발신자",
+          "to_target": "수신자",
+          "address_term": "고객님",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "고객님 위기는 계속되지 않습니다.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_00__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "희망은행 광고 발신자",
-          "summary": "발신자가 외계인의 습격으로 고민하는 고객을 대상으로 재난 상황 종료 후 일상 복귀를 대비하라며 최고 연 25.5% 조건의 희망 Future 적금 가입과 고객센터(6888-0000) 문의를 권유한다.",
-          "line_start": 3,
+          "summary": "발신자가 외계인의 습격으로 고민하는 고객을 위한 특별 적금 서비스라며 재난 상황이 끝난 뒤 일상을 되찾기 위해 적금하라고 권유한다.",
+          "line_start": 2,
+          "line_end": 13,
+          "claim_line": 6,
+          "quote": "[web발신] (광고) [희망은행] 희망 Future 적금☆ 위기일수록 미래를 대비해야 하는 법입니다! 단골 고객님! 외계인의 습격으로 고민하고 계신 고객님을 위한! ☆특별한 적금 서비스☆ 고객님 위기는 계속되지 않습니다. 우리는 계속해서 살아갈 것입니다. 재난 상황이 끝나고, 빠르게 일상생활을 찾을 수 있도록! 미래를 위해, 희망을 위해★ 지금 적금하세요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_00__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "희망은행 광고 발신자",
+          "summary": "발신자가 최고 연 25.5%(12개월 만기, 세전) 조건을 제시하며 희망은행 고객센터(6888-0000)로 문의하라고 안내한다.",
+          "line_start": 14,
           "line_end": 15,
-          "quote": "(광고) [희망은행] 희망 Future 적금☆ 위기일수록 미래를 대비해야 하는 법입니다! 단골 고객님! 외계인의 습격으로 고민하고 계신 고객님을 위한! ☆특별한 적금 서비스☆ 고객님 위기는 계속되지 않습니다. 우리는 계속해서 살아갈 것입니다. 재난 상황이 끝나고, 빠르게 일상생활을 찾을 수 있도록! 미래를 위해, 희망을 위해★ 지금 적금하세요! ※ 최고 연 25.5%(12개월 만기, 세금 납부 전) ※ 기타 자세한 내용은 희망은행 고객센터 6888-0000로 문의하세요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 14,
+          "quote": "※ 최고 연 25.5%(12개월 만기, 세금 납부 전) ※ 기타 자세한 내용은 희망은행 고객센터 6888-0000로 문의하세요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_00__clh_001",
-          "keyword": "희망은행 희망 Future 적금 광고",
-          "category": "past_incident",
-          "detail": "랩쳐를 외계인으로 부르던 침공 초기 재난 상황을 틈타 연 25.5% 고금리를 미끼로 발송된 보이스피싱·스팸 문자다.",
+          "keyword": "희망 Future 적금",
+          "category": "item",
+          "subject": null,
+          "detail": "외계인 습격 재난 상황에서 최고 연 25.5% 금리를 내세워 가입을 유도하는 보이스피싱 광고 상품.",
           "line_start": 3,
           "line_end": 15,
-          "quote": "(광고) [희망은행] 희망 Future 적금☆ 위기일수록 미래를 대비해야 하는 법입니다! 단골 고객님! 외계인의 습격으로 고민하고 계신 고객님을 위한! ☆특별한 적금 서비스☆ 고객님 위기는 계속되지 않습니다. 우리는 계속해서 살아갈 것입니다. 재난 상황이 끝나고, 빠르게 일상생활을 찾을 수 있도록! 미래를 위해, 희망을 위해★ 지금 적금하세요! ※ 최고 연 25.5%(12개월 만기, 세금 납부 전) ※ 기타 자세한 내용은 희망은행 고객센터 6888-0000로 문의하세요."
+          "quote": "(광고) [희망은행] 희망 Future 적금☆ 위기일수록 미래를 대비해야 하는 법입니다! 단골 고객님! 외계인의 습격으로 고민하고 계신 고객님을 위한! ☆특별한 적금 서비스☆ 고객님 위기는 계속되지 않습니다. 우리는 계속해서 살아갈 것입니다. 재난 상황이 끝나고, 빠르게 일상생활을 찾을 수 있도록! 미래를 위해, 희망을 위해★ 지금 적금하세요! ※ 최고 연 25.5%(12개월 만기, 세금 납부 전) ※ 기타 자세한 내용은 희망은행 고객센터 6888-0000로 문의하세요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_00__clh_002",
+          "keyword": "6888-0000",
+          "category": "code_or_number",
+          "subject": null,
+          "detail": "희망은행 고객센터 문의 전화번호.",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "※ 기타 자세한 내용은 희망은행 고객센터 6888-0000로 문의하세요.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_00__uec_001",
           "surface_text": "희망은행",
           "suggested_type": "organization",
           "line_start": 3
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_00__uec_002",
+          "surface_text": "외계인",
+          "suggested_type": "faction_or_species",
+          "line_start": 6
         }
       ]
     },
@@ -118,8 +175,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "미래투자TV 명의의 주식 스팸 문자로, 외계인 등장으로 인한 폭락장에서 정부가 방주 이주를 위해 통조림을 대량 매입 중이라며 VIP 종목 무료 공유를 미끼로 답장을 유도한다.",
+      "summary": "미래투자TV 명의로 외계인 등장에 따른 폭락장에서 정부가 방주 이주를 위해 통조림을 대량 매입 중이라며 VIP 종목 무료 공유를 미끼로 답변을 유도하는 주식 피싱 문자다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -132,7 +190,9 @@
             "entity_type": "organization",
             "line_start": 3,
             "line_end": 3,
-            "quote": "(광고)미래투자TV"
+            "quote": "(광고)미래투자TV",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_01__mnt_002",
@@ -141,7 +201,9 @@
             "entity_type": "faction_or_species",
             "line_start": 4,
             "line_end": 4,
-            "quote": "갑작스러운 외계인의 등장!"
+            "quote": "갑작스러운 외계인의 등장!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_01__mnt_003",
@@ -150,7 +212,9 @@
             "entity_type": "organization",
             "line_start": 12,
             "line_end": 12,
-            "quote": "▶ 정부에서 방주 이주를 위해 대량 매입 중"
+            "quote": "▶ 정부에서 방주 이주를 위해 대량 매입 중",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_01__mnt_004",
@@ -159,17 +223,21 @@
             "entity_type": "location",
             "line_start": 12,
             "line_end": 12,
-            "quote": "▶ 정부에서 방주 이주를 위해 대량 매입 중"
+            "quote": "▶ 정부에서 방주 이주를 위해 대량 매입 중",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "모바일_보이스피싱_광고_모음.zip_01__dca_001",
           "name": "미래투자TV 광고 발신자",
-          "entity_id": null
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -177,50 +245,98 @@
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_01__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "미래투자TV 광고 발신자",
-          "summary": "발신자는 갑작스러운 외계인 등장으로 무기한 폭락장이 이어지는 가운데 정부가 방주 이주를 위해 통조림을 대량 매입 중이라 통조림 관련주가 매수가 대비 20% 이상 상승했다고 주장한다.",
-          "line_start": 4,
-          "line_end": 13,
-          "quote": "갑작스러운 외계인의 등장! 그로인한 무기한 폭락장에 힘드셨죠? 오늘 \"미래\"라고 답변해 주신 분들께 2주간 VIP종목 무료로 공유합니다. --------- [긴급 일정주] ▶ 통조림 관련주 ▶ 정부에서 방주 이주를 위해 대량 매입 중 ▶ 현재 매수가 대비 20% 이상 상승",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "발신자가 갑작스러운 외계인의 등장으로 인한 무기한 폭락장을 언급하며 '미래'라고 답변하면 2주간 VIP 종목을 무료로 공유하겠다고 권유한다.",
+          "line_start": 2,
+          "line_end": 7,
+          "claim_line": 4,
+          "quote": "[web발신] (광고)미래투자TV 갑작스러운 외계인의 등장! 그로인한 무기한 폭락장에 힘드셨죠? 오늘 \"미래\"라고 답변해 주신 분들께 2주간 VIP종목 무료로 공유합니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_01__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "미래투자TV 광고 발신자",
-          "summary": "발신자가 오늘 \"미래\"라고 답변하면 2주간 VIP 종목을 무료로 공유하겠다며 답장을 요청한다.",
-          "line_start": 6,
-          "line_end": 17,
-          "quote": "오늘 \"미래\"라고 답변해 주신 분들께 2주간 VIP종목 무료로 공유합니다. --------- [긴급 일정주] ▶ 통조림 관련주 ▶ 정부에서 방주 이주를 위해 대량 매입 중 ▶ 현재 매수가 대비 20% 이상 상승 --------- 기회는 무료입니다! 검증이후 입회하시면 됩니다! \"미래\"라고 답변 주세요",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "발신자가 긴급 일정주로 통조림 관련주를 제시하며 정부가 방주 이주를 위해 대량 매입 중이고 현재 매수가 대비 20% 이상 상승했다고 주장한다.",
+          "line_start": 10,
+          "line_end": 13,
+          "claim_line": 12,
+          "quote": "[긴급 일정주] ▶ 통조림 관련주 ▶ 정부에서 방주 이주를 위해 대량 매입 중 ▶ 현재 매수가 대비 20% 이상 상승",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_01__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미래투자TV 광고 발신자",
+          "summary": "발신자가 기회는 무료이며 검증 이후 입회하면 된다고 강조하며 '미래'라고 답변하라고 요청한다.",
+          "line_start": 15,
+          "line_end": 19,
+          "claim_line": 16,
+          "quote": "기회는 무료입니다! 검증이후 입회하시면 됩니다! \"미래\"라고 답변 주세요 무료 수신거부 111-2234-5678",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_01__clh_001",
-          "keyword": "방주 이주 대비 통조림 대량 매입",
-          "category": "past_incident",
-          "detail": "외계인(랩쳐) 침공과 정부의 방주 이주 준비 소식을 주식 리딩방 스팸 광고에 악용한 사례다.",
-          "line_start": 10,
+          "keyword": "방주 이주",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "외계인 등장 이후 정부의 방주 이주 및 통조림 대량 매입 소문이 주식 피싱 광고 소재로 쓰인다.",
+          "line_start": 11,
           "line_end": 13,
-          "quote": "[긴급 일정주] ▶ 통조림 관련주 ▶ 정부에서 방주 이주를 위해 대량 매입 중 ▶ 현재 매수가 대비 20% 이상 상승"
+          "quote": "▶ 통조림 관련주 ▶ 정부에서 방주 이주를 위해 대량 매입 중 ▶ 현재 매수가 대비 20% 이상 상승",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_01__clh_002",
+          "keyword": "111-2234-5678",
+          "category": "code_or_number",
+          "subject": null,
+          "detail": "미래투자TV 광고의 무료 수신거부 번호.",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "무료 수신거부 111-2234-5678",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_01__uec_001",
           "surface_text": "미래투자TV",
           "suggested_type": "organization",
           "line_start": 3
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_01__uec_002",
+          "surface_text": "외계인",
+          "suggested_type": "faction_or_species",
+          "line_start": 4
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_01__uec_003",
+          "surface_text": "정부",
+          "suggested_type": "organization",
+          "line_start": 12
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_01__uec_004",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 12
         }
       ]
     },
@@ -238,8 +354,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "휴먼카드 명의의 단기카드대출 스팸 문자로, 쉘터에 들어가도 현금은 필요하다며 신용등급 무관 3~7% 저금리 대출 상품을 안내한다.",
+      "summary": "휴먼카드 명의로 재난 상황에 대비해 정부지원 상품 조건이 완화되었고 쉘터에서도 현금이 필요하다며 저금리 단기카드대출을 권유하는 피싱 문자다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -252,7 +369,9 @@
             "entity_type": "organization",
             "line_start": 3,
             "line_end": 3,
-            "quote": "(광고)[휴먼카드] 단기카드대출(현금서비스)"
+            "quote": "(광고)[휴먼카드] 단기카드대출(현금서비스)",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_02__mnt_002",
@@ -261,7 +380,9 @@
             "entity_type": "organization",
             "line_start": 8,
             "line_end": 8,
-            "quote": "재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었습니다."
+            "quote": "재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_02__mnt_003",
@@ -270,17 +391,44 @@
             "entity_type": "location",
             "line_start": 9,
             "line_end": 9,
-            "quote": "쉘터에 들어가도 현금은 필요한 법입니다."
+            "quote": "쉘터에 들어가도 현금은 필요한 법입니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "모바일_보이스피싱_광고_모음.zip_02__dca_001",
           "name": "휴먼카드 광고 발신자",
-          "entity_id": null
+          "entity_id": null,
+          "voices": []
         }
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_02__foa_001",
+          "from_speaker": "휴먼카드 광고 발신자",
+          "to_target": "수신자",
+          "address_term": "단골고객님",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "단골고객님!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_02__foa_002",
+          "from_speaker": "휴먼카드 광고 발신자",
+          "to_target": "수신자",
+          "address_term": "고객님",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "고객님만을 위한 특별한 혜택을 만나보세요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -288,50 +436,66 @@
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_02__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "휴먼카드 광고 발신자",
-          "summary": "발신자는 급격한 재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었으며 신용등급과 무관하게 3~7% 저금리로 대환·통합 대출 진행이 가능하다고 주장한다.",
-          "line_start": 7,
-          "line_end": 16,
-          "quote": "급격한 재난 상황으로 인해 힘드시죠? 재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었습니다. 쉘터에 들어가도 현금은 필요한 법입니다. 고객님만을 위한 특별한 혜택을 만나보세요. [요약] - 신용등급 관계없이 진행 가능 - 3~7%의 저금리 - 대환//통합 가능 - 기존 카드론// 금융기관대출보유자 진행가능",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "발신자가 급격한 재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었으며 쉘터에 들어가도 현금이 필요하다고 주장하며 단기카드대출을 권유한다.",
+          "line_start": 2,
+          "line_end": 10,
+          "claim_line": 8,
+          "quote": "[web발신] (광고)[휴먼카드] 단기카드대출(현금서비스) 이용안내 단골고객님! 급격한 재난 상황으로 인해 힘드시죠? 재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었습니다. 쉘터에 들어가도 현금은 필요한 법입니다. 고객님만을 위한 특별한 혜택을 만나보세요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_02__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "휴먼카드 광고 발신자",
-          "summary": "발신자가 쉘터에 들어가도 현금이 필요하다며 단기카드대출(현금서비스) 이용과 문의(0001-2000)를 안내한다.",
-          "line_start": 3,
+          "summary": "발신자가 신용등급 무관, 3~7% 저금리, 대환·통합 및 기존 대출 보유자 진행 가능 조건과 문의 번호(0001-2000)를 안내한다.",
+          "line_start": 12,
           "line_end": 18,
-          "quote": "(광고)[휴먼카드] 단기카드대출(현금서비스) 이용안내 단골고객님! 급격한 재난 상황으로 인해 힘드시죠? 재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었습니다. 쉘터에 들어가도 현금은 필요한 법입니다. 고객님만을 위한 특별한 혜택을 만나보세요. [요약] - 신용등급 관계없이 진행 가능 - 3~7%의 저금리 - 대환//통합 가능 - 기존 카드론// 금융기관대출보유자 진행가능 [문의] 0001-2000",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 13,
+          "quote": "[요약] - 신용등급 관계없이 진행 가능 - 3~7%의 저금리 - 대환//통합 가능 - 기존 카드론// 금융기관대출보유자 진행가능 [문의] 0001-2000",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_02__clh_001",
-          "keyword": "휴먼카드 재난 대출 스팸 광고",
-          "category": "past_incident",
-          "detail": "재난으로 인한 쉘터 대피 상황에서도 현금이 필요하다며 정부지원 완화를 사칭한 대출 보이스피싱 문자다.",
-          "line_start": 8,
-          "line_end": 16,
-          "quote": "재난 상황에 대비해 정부지원 상품 조건이 대폭 완화되었습니다. 쉘터에 들어가도 현금은 필요한 법입니다. 고객님만을 위한 특별한 혜택을 만나보세요. [요약] - 신용등급 관계없이 진행 가능 - 3~7%의 저금리 - 대환//통합 가능 - 기존 카드론// 금융기관대출보유자 진행가능"
+          "keyword": "0001-2000",
+          "category": "code_or_number",
+          "subject": null,
+          "detail": "휴먼카드 단기카드대출 광고의 문의 전화번호.",
+          "line_start": 17,
+          "line_end": 18,
+          "quote": "[문의] 0001-2000",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_02__uec_001",
           "surface_text": "휴먼카드",
           "suggested_type": "organization",
           "line_start": 3
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_02__uec_002",
+          "surface_text": "정부",
+          "suggested_type": "organization",
+          "line_start": 8
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_02__uec_003",
+          "surface_text": "쉘터",
+          "suggested_type": "location",
+          "line_start": 9
         }
       ]
     },
@@ -349,8 +513,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "방주 당첨권 마지막 1장을 미끼로 피싱 링크(xttp://arrkk.oo) 접속을 유도하는 스미싱 광고 문자다.",
+      "summary": "외계인 침략 확산으로 정부가 이번 달 내 방주로 이동을 준비 중이라며 마지막 1장 남은 방주 당첨권을 받으라고 피싱 링크 접속을 유도하는 광고 문자다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -363,7 +528,9 @@
             "entity_type": "faction_or_species",
             "line_start": 4,
             "line_end": 4,
-            "quote": "외계인 침략 급속도 확산"
+            "quote": "외계인 침략 급속도 확산",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_03__mnt_002",
@@ -372,7 +539,9 @@
             "entity_type": "organization",
             "line_start": 5,
             "line_end": 5,
-            "quote": "정부 인류를 위한 마지막 선택"
+            "quote": "정부 인류를 위한 마지막 선택",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "모바일_보이스피싱_광고_모음.zip_03__mnt_003",
@@ -381,26 +550,21 @@
             "entity_type": "location",
             "line_start": 6,
             "line_end": 6,
-            "quote": "이번 달 내 방주로 이동 준비 중"
-          },
-          {
-            "item_id": "모바일_보이스피싱_광고_모음.zip_03__mnt_004",
-            "surface_text": "방주 당첨권",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 7,
-            "line_end": 7,
-            "quote": "방주 당첨권 마지막 1장"
+            "quote": "이번 달 내 방주로 이동 준비 중",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "모바일_보이스피싱_광고_모음.zip_03__dca_001",
           "name": "방주 추첨권 광고 발신자",
-          "entity_id": null
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -408,50 +572,66 @@
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_03__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "방주 추첨권 광고 발신자",
-          "summary": "발신자는 외계인 침략이 급속도로 확산되어 정부가 이번 달 내로 방주 이동을 준비 중이며 방주 당첨권 마지막 1장이 남았다고 주장한다.",
-          "line_start": 4,
-          "line_end": 8,
-          "quote": "외계인 침략 급속도 확산 정부 인류를 위한 마지막 선택 이번 달 내 방주로 이동 준비 중 방주 당첨권 마지막 1장 이번이 진짜 마지막 기회입니다",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "발신자가 외계인 침략이 급속도로 확산되어 정부가 이번 달 내 방주로 이동을 준비 중이라고 주장한다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": 6,
+          "quote": "[web발신] (광고)방주_당첨권_마지막_기회 외계인 침략 급속도 확산 정부 인류를 위한 마지막 선택 이번 달 내 방주로 이동 준비 중",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_03__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "방주 추첨권 광고 발신자",
-          "summary": "발신자가 생존을 위해 지금 방주 당첨권을 받아 가라며 피싱 URL(xttp://arrkk.oo)을 제시한다.",
+          "summary": "발신자가 방주 당첨권 마지막 1장이 남았으며 생존을 위해 링크(xttp://arrkk.oo)에서 받아 가라고 유도한다.",
           "line_start": 7,
           "line_end": 10,
+          "claim_line": 7,
           "quote": "방주 당첨권 마지막 1장 이번이 진짜 마지막 기회입니다 생존을 위해 지금 받아 가세요 xttp://arrkk.oo",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_03__clh_001",
-          "keyword": "방주 당첨권 스미싱 문자 (xttp://arrkk.oo)",
-          "category": "past_incident",
-          "detail": "정부의 방주 이주 직전 생존 절박함을 노려 방주 당첨권 마지막 기회를 사칭한 피싱 링크 문자다.",
-          "line_start": 3,
+          "keyword": "방주 당첨권",
+          "category": "item",
+          "subject": null,
+          "detail": "방주 이주를 미끼로 피싱 사이트(xttp://arrkk.oo) 접속을 유도하는 소재.",
+          "line_start": 7,
           "line_end": 10,
-          "quote": "(광고)방주_당첨권_마지막_기회 외계인 침략 급속도 확산 정부 인류를 위한 마지막 선택 이번 달 내 방주로 이동 준비 중 방주 당첨권 마지막 1장 이번이 진짜 마지막 기회입니다 생존을 위해 지금 받아 가세요 xttp://arrkk.oo"
+          "quote": "방주 당첨권 마지막 1장 이번이 진짜 마지막 기회입니다 생존을 위해 지금 받아 가세요 xttp://arrkk.oo",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "모바일_보이스피싱_광고_모음.zip_03__uec_001",
-          "surface_text": "방주 당첨권",
-          "suggested_type": "item",
-          "line_start": 7
+          "surface_text": "외계인",
+          "suggested_type": "faction_or_species",
+          "line_start": 4
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_03__uec_002",
+          "surface_text": "정부",
+          "suggested_type": "organization",
+          "line_start": 5
+        },
+        {
+          "item_id": "모바일_보이스피싱_광고_모음.zip_03__uec_003",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 6
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.577Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.652Z",
   "title_id": "special_stories__liars_end",
   "category": "special_stories",
   "title": "LIAR'S END",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "만우절을 맞은 지휘관이 메신저로 지휘관실에 불이 났거나 창문에 이상한 것이 있다는 거짓말을 보내 라피와 아니스를 차례로 불러내 전등 끄기와 커튼 치기를 시키고, 네온의 구조 요청 메시지는 만우절 장난으로 여겨 무시한다.",
+      "summary": "작년 만우절에 당했던 지휘관이 올해는 먼저 거짓말을 하기로 결심하고 메신저로 라피와 아니스를 속여 전등과 커튼 심부름을 시킨 뒤, 숙소에 이상한 사람이 들어왔다는 네온의 메시지는 무시하고 외출한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -51,38 +52,33 @@
             "speaker_label": "네온",
             "entity_id": "char_네온",
             "medium": "messenger",
-            "line_start": 113,
-            "line_end": 113,
-            "quote": "숙소에 이상한 사람이"
+            "line_start": 106,
+            "line_end": 107,
+            "quote": "  [MSG SENDER=\"네온\"]\n    스승님"
           }
         ],
         "mentioned_only": [
           {
             "item_id": "liars_end_00__mnt_001",
-            "surface_text": "만우절",
-            "entity_id": null,
-            "entity_type": "event",
-            "line_start": 5,
-            "line_end": 5,
-            "quote": "만우절에 대해 크게 인지하지 못하고 있었던 나는"
-          },
-          {
-            "item_id": "liars_end_00__mnt_002",
             "surface_text": "지휘관실",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 37,
             "line_end": 37,
-            "quote": "분명 지휘관실에 불이···."
+            "quote": "라피: 분명 지휘관실에 불이···.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "liars_end_00__mnt_003",
+            "item_id": "liars_end_00__mnt_002",
             "surface_text": "숙소",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 113,
             "line_end": 113,
-            "quote": "숙소에 이상한 사람이"
+            "quote": "    숙소에 이상한 사람이",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -95,7 +91,9 @@
           "address_term": "지휘관",
           "line_start": 31,
           "line_end": 31,
-          "quote": "지휘관! 괜찮으십니···!"
+          "quote": "라피: 지휘관! 괜찮으십니···!",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "liars_end_00__foa_002",
@@ -104,7 +102,9 @@
           "address_term": "지휘관님",
           "line_start": 75,
           "line_end": 75,
-          "quote": "지휘관님!"
+          "quote": "아니스: 지휘관님!",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "liars_end_00__foa_003",
@@ -112,75 +112,147 @@
           "to_target": "지휘관",
           "address_term": "스승님",
           "line_start": 107,
-          "line_end": 110,
-          "quote": "스승님 큰일 났어요"
+          "line_end": 107,
+          "quote": "    스승님",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "liars_end_00__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
-          "confidence": null,
+          "epistemic_type": "established_event",
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 작년 4월 1일 만우절에는 동료들의 거짓말에 속수무책으로 당했지만 올해는 자신이 먼저 거짓말을 하겠다고 결심한다.",
-          "line_start": 4,
-          "line_end": 8,
-          "quote": "작년. 4월 1일. 만우절에 대해 크게 인지하지 못하고 있었던 나는 속수무책으로 동료들의 거짓말에 당하고 말았다. 하지만 올해는 다르다. 내 쪽에서 먼저 거짓말한다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "작년 4월 1일 만우절에 동료들의 거짓말에 당했던 지휘관이 올해는 자신이 먼저 거짓말을 하기로 결심한다.",
+          "line_start": 2,
+          "line_end": 11,
+          "claim_line": null,
+          "quote": "오늘은 그날이다.\n기다리고 기다리던 그날.\n작년. 4월 1일.\n만우절에 대해 크게 인지하지 못하고 있었던 나는\n속수무책으로 동료들의 거짓말에 당하고 말았다.\n하지만 올해는 다르다.\n내 쪽에서 먼저 거짓말한다.\n···이런 짓에 무슨 의미가 있나 싶어 한참을 고민했지만.\n재밌을 것 같으니 그냥 하기로 했다.\n그럼 첫 번째로···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_00__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 메신저로 지휘관실에 불이 났다고 거짓말해 라피를 달려오게 한 뒤 불이 너무 밝으니 전등을 꺼달라고 하고, 달력을 본 라피는 싸늘한 시선으로 불을 끄고 나간다.",
-          "line_start": 26,
-          "line_end": 50,
-          "quote": "지히ㅜ관실에 불!!!!!!!!!! 두다다다다--!! 지잉- 지휘관! 괜찮으십니···! ···? 불 좀 꺼줘. 분명 지휘관실에 불이···. 응. 불이 너무 밝아서. 불 좀 꺼줘. ··· ···. 라피는 내 침대 옆 달력을 잠깐 쳐다보았다. 예. 탁. 라피는 싸늘한 시선으로 지휘관실의 불을 끄고 나갔다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 메신저로 라피에게 지휘관실에 불이 났다고 다급한 메시지를 보낸다.",
+          "line_start": 12,
+          "line_end": 28,
+          "claim_line": null,
+          "quote": "[MESSENGER_START TITLE=\"라피\" PARTICIPANTS=\"지휘관,라피\"]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    라ㅍㅣ!!!!!!!!!!!!!\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    무슨 일이십니까?\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    불!! 불!!!\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    예?\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    지히ㅜ관실에 불!!!!!!!!!!\n  [MSG_END]\n[MESSENGER_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_00__eac_003",
           "epistemic_type": "established_event",
+          "actor_or_speaker": "라피",
+          "summary": "달려온 라피에게 지휘관이 전등 불이 너무 밝아서 꺼달라는 뜻이었다고 말하자, 라피가 침대 옆 달력을 확인한 뒤 싸늘한 시선으로 불을 끄고 나간다.",
+          "line_start": 29,
+          "line_end": 52,
+          "claim_line": null,
+          "quote": "두다다다다--!!\n지잉-\n라피: 지휘관! 괜찮으십니···!\n라피: ···?\n[CHOICE_START]\n  [OPTION TEXT=\"불 좀 꺼줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 분명 지휘관실에 불이···.\n[CHOICE_START]\n  [OPTION TEXT=\"응. 불이 너무 밝아서.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"불 좀 꺼줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ··· ···.\n라피는 내 침대 옆 달력을 잠깐 쳐다보았다.\n라피: 예.\n탁.\n라피는 싸늘한 시선으로 지휘관실의 불을 끄고 나갔다.\n···조금 양심의 가책이···.\n하지만 나는 멈추지 않는다.",
+          "refers_to_past": false,
           "chronology_type": "present",
-          "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 메신저로 방 창문에 이상한 것이 있다며 살려달라고 거짓말해 아니스를 불러낸 뒤 햇빛이 들어오니 커튼을 쳐달라고 장난을 친다.",
-          "line_start": 61,
-          "line_end": 102,
-          "quote": "내 방 창문에서 뭔가 이상한 게 ??? 으아아 살려줘 지금가ㅔㄹ 두다다다다--!! 지잉- 지휘관님! 아니스! 차, 창문에 뭐가 있는데!? 창문에서 햇빛이 너무 들어와서, 커튼 좀 쳐줘. ···뭐? 커튼 좀 쳐달라고. ··· ···. 진짜 그것 때문에 부른 거야? 뭐야. 지휘관님 괜찮아? 응. 만우절~ ··· ···. 아아~ 이렇게 나오시겠다 이거지? 알겠어, 알겠어. 챠륵- 잘~ 알겠습니다~ 아니스는 지휘관실을 나갔다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_00__eac_004",
-          "epistemic_type": "character_claim",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메신저로 아니스에게 방 창문에 이상한 것이 있다며 살려달라고 메시지를 보낸다.",
+          "line_start": 53,
+          "line_end": 72,
+          "claim_line": null,
+          "quote": "[MESSENGER_START TITLE=\"아니스\" PARTICIPANTS=\"지휘관,아니스\"]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    아니스 큰일 났어\n  [MSG_END]\n  [MSG SENDER=\"아니스\"]\n    ??? 왜??\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    내 방 창문에서 뭔가 이상한 게\n  [MSG_END]\n  [MSG SENDER=\"아니스\"]\n    ???\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    으아아 살려줘\n  [MSG_END]\n  [MSG SENDER=\"아니스\"]\n    지금가ㅔㄹ\n  [MSG_END]\n[MESSENGER_END]",
+          "refers_to_past": false,
           "chronology_type": "present",
-          "confidence": null,
-          "actor_or_speaker": "네온",
-          "summary": "네온이 메신저로 숙소에 이상한 사람이 나타났다며 비명 메시지를 보내지만 지휘관은 무시하고 외출한다.",
-          "line_start": 107,
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_00__eac_005",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "달려온 아니스에게 지휘관이 창문에서 햇빛이 너무 들어오니 커튼을 쳐달라고 하자 아니스가 황당해한다.",
+          "line_start": 73,
+          "line_end": 92,
+          "claim_line": null,
+          "quote": "두다다다다--!!\n지잉-\n아니스: 지휘관님!\n[CHOICE_START]\n  [OPTION TEXT=\"아니스!\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 차, 창문에 뭐가 있는데!?\n[CHOICE_START]\n  [OPTION TEXT=\"창문에서 햇빛이 너무 들어와서, 커튼 좀 쳐줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: ···뭐?\n[CHOICE_START]\n  [OPTION TEXT=\"커튼 좀 쳐달라고.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: ··· ···.\n아니스: 진짜 그것 때문에 부른 거야?\n아니스: 뭐야. 지휘관님 괜찮아?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_00__eac_006",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "아니스",
+          "summary": "지휘관이 만우절이라고 밝히자 아니스는 이렇게 나오겠다 이거냐며 커튼을 치고 지휘관실을 나간다.",
+          "line_start": 93,
+          "line_end": 104,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"응. 만우절~\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: ··· ···.\n아니스: 아아~ 이렇게 나오시겠다 이거지?\n아니스: 알겠어, 알겠어.\n챠륵-\n아니스: 잘~ 알겠습니다~\n아니스는 지휘관실을 나갔다.\n··· ···.\n좋았어. 성공했다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_00__eac_007",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "네온이 메신저로 숙소에 이상한 사람이 나타났다며 비명 메시지를 보내지만, 지휘관은 이를 무시해도 되겠다고 여기고 외출한다.",
+          "line_start": 105,
           "line_end": 120,
-          "quote": "스승님 큰일 났어요 숙소에 이상한 사람이 꺄아아아악 음. 이건 무시해도 되겠군. 그럼 외출해 볼까.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "[MESSENGER_START TITLE=\"네온\" PARTICIPANTS=\"네온\"]\n  [MSG SENDER=\"네온\"]\n    스승님\n  [MSG_END]\n  [MSG SENDER=\"네온\"]\n    큰일 났어요\n  [MSG_END]\n  [MSG SENDER=\"네온\"]\n    숙소에 이상한 사람이\n  [MSG_END]\n  [MSG SENDER=\"네온\"]\n    꺄아아아악\n  [MSG_END]\n[MESSENGER_END]\n음. 이건 무시해도 되겠군.\n그럼 외출해 볼까.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         }
       ],
-      "clues_and_hooks": [],
+      "clues_and_hooks": [
+        {
+          "item_id": "liars_end_00__clh_001",
+          "keyword": "네온의 숙소 침입자 메시지",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "네온이 메신저로 숙소에 이상한 사람이 있다며 비명을 남겼으나 지휘관이 만우절 장난으로 여기고 무시한다.",
+          "line_start": 105,
+          "line_end": 120,
+          "quote": "[MESSENGER_START TITLE=\"네온\" PARTICIPANTS=\"네온\"]\n  [MSG SENDER=\"네온\"]\n    스승님\n  [MSG_END]\n  [MSG SENDER=\"네온\"]\n    큰일 났어요\n  [MSG_END]\n  [MSG SENDER=\"네온\"]\n    숙소에 이상한 사람이\n  [MSG_END]\n  [MSG SENDER=\"네온\"]\n    꺄아아아악\n  [MSG_END]\n[MESSENGER_END]\n음. 이건 무시해도 되겠군.\n그럼 외출해 볼까.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "liars_end_00__uec_001",
+          "surface_text": "지휘관실",
+          "suggested_type": "location",
+          "line_start": 37
+        },
+        {
+          "item_id": "liars_end_00__uec_002",
+          "surface_text": "숙소",
+          "suggested_type": "location",
+          "line_start": 113
+        }
+      ]
     },
     {
       "scene_id": "liars_end_01",
@@ -196,8 +268,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "만우절 장난에 나선 지휘관이 슈가에게는 밀크가 카페의 설탕을 다 치웠다고 거짓말하고, 미카에게는 핫소스 사탕을 먹이며, 은화에게는 볼륨감이 좋아졌다고 놀렸다가 살해 협박을 받고 도망친다.",
+      "summary": "만우절을 맞아 무차별 거짓말에 나선 지휘관이 슈가에게는 밀크가 설탕을 다 치웠다고 속이고, 미카에게는 핫소스 사탕을 주고, 은화에게는 볼륨감이 생겼다고 거짓말했다가 쫓겨 도망친다.",
       "participants": {
         "present_in_scene": [
           {
@@ -235,34 +308,42 @@
             "entity_type": "character",
             "line_start": 13,
             "line_end": 13,
-            "quote": "밀크가 카페에서 설탕 다 치워버리던데, 괜찮아?"
+            "quote": "  [OPTION TEXT=\"밀크가 카페에서 설탕 다 치워버리던데, 괜찮아?\"]",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "liars_end_01__mnt_002",
+            "surface_text": "카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 13,
+            "line_end": 13,
+            "quote": "  [OPTION TEXT=\"밀크가 카페에서 설탕 다 치워버리던데, 괜찮아?\"]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "liars_end_01__mnt_003",
             "surface_text": "블랙 타이푼",
             "entity_id": null,
             "entity_type": "item",
             "line_start": 22,
             "line_end": 22,
-            "quote": "가자. 블랙 타이푼. 우리의 숙적이 생겨난 것 같으니까."
+            "quote": "슈가: 가자. 블랙 타이푼. 우리의 숙적이 생겨난 것 같으니까.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "liars_end_01__mnt_003",
+            "item_id": "liars_end_01__mnt_004",
             "surface_text": "벨로타",
             "entity_id": "char_벨로타",
             "entity_type": "character",
             "line_start": 33,
             "line_end": 33,
-            "quote": "헤헤. 안 그래도 오늘 벨로타가 핫소스가 들어간 사탕을 줘서 힘들었거든요."
-          },
-          {
-            "item_id": "liars_end_01__mnt_004",
-            "surface_text": "전투 교본",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 47,
-            "line_end": 47,
-            "quote": "그렇게 한가하면 전투 교본이라도 한 장 더···."
+            "quote": "미카: 헤헤. 안 그래도 오늘 벨로타가 핫소스가 들어간 사탕을 줘서 힘들었거든요.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -275,7 +356,9 @@
           "address_term": "파트너",
           "line_start": 11,
           "line_end": 11,
-          "quote": "안녕 파트너. 좋은 아침이네."
+          "quote": "슈가: 안녕 파트너. 좋은 아침이네.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "liars_end_01__foa_002",
@@ -284,7 +367,9 @@
           "address_term": "아저씨",
           "line_start": 37,
           "line_end": 37,
-          "quote": "아, 아저씨. 이 사탕 핫소스 들어간 거예요?"
+          "quote": "미카: 아, 아저씨. 이 사탕 핫소스 들어간 거예요?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "liars_end_01__foa_003",
@@ -293,90 +378,139 @@
           "address_term": "삼류",
           "line_start": 45,
           "line_end": 45,
-          "quote": "뭐냐 삼류."
+          "quote": "은화: 뭐냐 삼류.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "liars_end_01__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
-          "confidence": null,
+          "epistemic_type": "established_event",
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 슈가에게 밀크가 밀크 커피의 세계를 만들겠다며 카페에서 설탕을 다 치워버렸다고 만우절 거짓말을 한다.",
-          "line_start": 13,
-          "line_end": 18,
-          "quote": "밀크가 카페에서 설탕 다 치워버리던데, 괜찮아? ···뭐? 응. 다 치워버렸어. 밀크 커피의 세계를 만들겠다고.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "만우절을 맞아 무차별 거짓말을 하기로 한 지휘관이 슈가에게 인사를 건넨다.",
+          "line_start": 2,
+          "line_end": 11,
+          "claim_line": null,
+          "quote": "오늘의 나는 무차별 거짓말쟁이다.\n상대가 누구든, 어떤 상황이든 거짓말을 하고 말겠다.\n평소 때라면 난리가 났겠지만, 오늘은 특별한 날.\n모든 거짓말이 용서되는 날이니까!\n그럼, 시작해 보자.\n[CHOICE_START]\n  [OPTION TEXT=\"안녕. 슈가.\"]\n  [OPTION_END]\n[CHOICE_END]\n슈가: 안녕 파트너. 좋은 아침이네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_01__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "슈가",
-          "summary": "거짓말을 믿은 슈가가 지휘관이 만우절이라고 말하기도 전에 블랙 타이푼을 타고 쏜살같이 달려가 버린다.",
-          "line_start": 22,
-          "line_end": 25,
-          "quote": "가자. 블랙 타이푼. 우리의 숙적이 생겨난 것 같으니까. 고! 블랙 타이푼! 부아아아앙-!! 부아아아앙-- 만우절이라고 하기도 전에 슈가는 쏜살같이 달려가버렸다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 밀크가 밀크 커피의 세계를 만들겠다며 카페의 설탕을 다 치워버렸다고 거짓말하자, 슈가가 만우절이라는 말을 듣기도 전에 블랙 타이푼을 타고 달려가 버린다.",
+          "line_start": 12,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"밀크가 카페에서 설탕 다 치워버리던데, 괜찮아?\"]\n  [OPTION_END]\n[CHOICE_END]\n슈가: ···뭐?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 다 치워버렸어. 밀크 커피의 세계를 만들겠다고.\"]\n  [OPTION_END]\n[CHOICE_END]\n슈가: ··· ···.\n슈가: 가자. 블랙 타이푼. 우리의 숙적이 생겨난 것 같으니까.\n슈가: 고! 블랙 타이푼! 부아아아앙-!!\n부아아아앙--\n만우절이라고 하기도 전에 슈가는 쏜살같이 달려가버렸다.\n뭐, 괜찮겠지. 오늘은 만우절이니까!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_01__eac_003",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "미카",
-          "summary": "미카가 오늘 벨로타에게 핫소스가 들어간 사탕을 받아 힘들었다고 말한다.",
-          "line_start": 33,
+          "summary": "지휘관이 미카에게 사탕을 건네자, 미카는 오늘 벨로타가 핫소스가 들어간 사탕을 줘서 힘들었다며 기쁘게 받아먹는다.",
+          "line_start": 27,
           "line_end": 33,
-          "quote": "헤헤. 안 그래도 오늘 벨로타가 핫소스가 들어간 사탕을 줘서 힘들었거든요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 33,
+          "quote": "지나가던 미카에게 사탕을 건넸다.\n[CHOICE_START]\n  [OPTION TEXT=\"미카. 사탕 먹을래?\"]\n  [OPTION_END]\n[CHOICE_END]\n미카: 예? 예, 먹을래요!\n미카: 헤헤. 안 그래도 오늘 벨로타가 핫소스가 들어간 사탕을 줘서 힘들었거든요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_01__eac_004",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 미카에게 핫소스가 들어간 사탕을 건네 먹이는 만우절 장난을 친다.",
-          "line_start": 27,
-          "line_end": 41,
-          "quote": "지나가던 미카에게 사탕을 건넸다. 미카. 사탕 먹을래? 예? 예, 먹을래요! 헤헤. 안 그래도 오늘 벨로타가 핫소스가 들어간 사탕을 줘서 힘들었거든요. 냠냠냠··· 응? ···? ??? 아, 아저씨. 이 사탕 핫소스 들어간 거예요? 응. 만우절~",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "사탕을 먹은 미카가 핫소스가 들어간 사탕이냐고 묻자 지휘관이 만우절이라고 답하고, 미카는 힘없이 걸어간다.",
+          "line_start": 34,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "미카: 냠냠냠··· 응?\n미카: ···?\n미카: ???\n미카: 아, 아저씨. 이 사탕 핫소스 들어간 거예요?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 만우절~\"]\n  [OPTION_END]\n[CHOICE_END]\n미카: 우으으···.\n미카: 우으으으으···.\n미카는 터덜거리며 걸어갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_01__eac_005",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 은화에게 오늘따라 볼륨감이 있다고 거짓말해 은화가 트레이닝 효과인가 하고 믿게 만든 뒤 만우절이라고 밝혔다가 살해 위협을 받고 도망친다.",
-          "line_start": 49,
-          "line_end": 64,
-          "quote": "은화. 오늘따라 뭔가 볼륨감이···.. 드디어 미쳐버린 거냐. 아니. 진짜 그런데? ··· ···. ···트레이닝이 효과가 있던 건가. 응. 만우절~ 죽여주마. 삼류. 부리나케 도망갔다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "은화가 어슬렁거리는 지휘관을 타박하자 지휘관이 오늘따라 볼륨감이 있다고 거짓말하고, 은화는 트레이닝이 효과가 있던 건가라며 잠시 믿는다.",
+          "line_start": 45,
+          "line_end": 58,
+          "claim_line": null,
+          "quote": "은화: 뭐냐 삼류.\n은화: 이 시간에 왜 여기서 어슬렁거리고 있어?\n은화: 그렇게 한가하면 전투 교본이라도 한 장 더···.\n[CHOICE_START]\n  [OPTION TEXT=\"은화. 오늘따라 뭔가 볼륨감이···..\"]\n  [OPTION_END]\n[CHOICE_END]\n은화: 드디어 미쳐버린 거냐.\n[CHOICE_START]\n  [OPTION TEXT=\"아니. 진짜 그런데?\"]\n  [OPTION_END]\n[CHOICE_END]\n은화: ··· ···.\n은화: ···트레이닝이 효과가 있던 건가.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_01__eac_006",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "은화",
+          "summary": "지휘관이 만우절이라고 밝히자 은화가 죽여주겠다며 화를 내고, 공터까지 도망친 지휘관은 숨을 고르며 재밌어한다.",
+          "line_start": 59,
+          "line_end": 74,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"응. 만우절~\"]\n  [OPTION_END]\n[CHOICE_END]\n은화: 죽여주마. 삼류.\n부리나케 도망갔다.\n한참을 도망가던 나는 공터에 멈춰서 숨을 가다듬었다.\n[CHOICE_START]\n  [OPTION TEXT=\"후우···! 후우···!\"]\n  [OPTION_END]\n[CHOICE_END]\n··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"재밌어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         }
       ],
-      "clues_and_hooks": [],
+      "clues_and_hooks": [
+        {
+          "item_id": "liars_end_01__clh_001",
+          "keyword": "블랙 타이푼",
+          "category": "item",
+          "subject": null,
+          "detail": "슈가가 이름을 부르며 타고 달리는 애마.",
+          "line_start": 22,
+          "line_end": 24,
+          "quote": "슈가: 가자. 블랙 타이푼. 우리의 숙적이 생겨난 것 같으니까.\n슈가: 고! 블랙 타이푼! 부아아아앙-!!\n부아아아앙--",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "liars_end_01__clh_002",
+          "keyword": "핫소스가 들어간 사탕",
+          "category": "item",
+          "subject": null,
+          "detail": "만우절에 벨로타와 지휘관이 각각 미카에게 먹인 매운 사탕.",
+          "line_start": 27,
+          "line_end": 41,
+          "quote": "지나가던 미카에게 사탕을 건넸다.\n[CHOICE_START]\n  [OPTION TEXT=\"미카. 사탕 먹을래?\"]\n  [OPTION_END]\n[CHOICE_END]\n미카: 예? 예, 먹을래요!\n미카: 헤헤. 안 그래도 오늘 벨로타가 핫소스가 들어간 사탕을 줘서 힘들었거든요.\n미카: 냠냠냠··· 응?\n미카: ···?\n미카: ???\n미카: 아, 아저씨. 이 사탕 핫소스 들어간 거예요?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 만우절~\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "liars_end_01__uec_001",
+          "surface_text": "카페",
+          "suggested_type": "location",
+          "line_start": 13
+        },
+        {
+          "item_id": "liars_end_01__uec_002",
           "surface_text": "블랙 타이푼",
           "suggested_type": "item",
           "line_start": 22
@@ -397,8 +531,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "메이드 카페에서 지휘관이 케이크가 목에 걸린 척하다가 '아메리카노'를 주문하는 만우절 장난으로 메이드 포유를 놀리자, 화가 난 코코아가 괴식 오므라이스로 복수하려 하나 지휘관의 유도 끝에 스스로 한 입 먹고 쓰러진다.",
+      "summary": "메이드 카페에서 지휘관이 케이크가 목에 걸린 척 만우절 장난을 치자, 화가 난 코코아가 복수용 특제 오므라이스를 만들어 내오지만 지휘관의 유도에 넘어가 자신이 먹고 쓰러진다.",
       "participants": {
         "present_in_scene": [
           {
@@ -436,16 +571,9 @@
             "entity_type": "location",
             "line_start": 6,
             "line_end": 6,
-            "quote": "메이드 카페에 마싯는 거 머그러 왔어?"
-          },
-          {
-            "item_id": "liars_end_02__mnt_002",
-            "surface_text": "쫑긋쫑긋 ♪ 바니바니 케이크",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 14,
-            "line_end": 14,
-            "quote": "쫑긋쫑긋 ♪ 바니바니 케이크로 부탁해."
+            "quote": "코코아: 메이드 카페에 마싯는 거 머그러 왔어?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -458,7 +586,9 @@
           "address_term": "주인님",
           "line_start": 4,
           "line_end": 4,
-          "quote": "와아~ 주인님 어서 오세요!"
+          "quote": "소다: 와아~ 주인님 어서 오세요!",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "liars_end_02__foa_002",
@@ -467,7 +597,9 @@
           "address_term": "주인",
           "line_start": 5,
           "line_end": 5,
-          "quote": "주인, 어서 와!"
+          "quote": "코코아: 주인, 어서 와!",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "liars_end_02__foa_003",
@@ -476,10 +608,13 @@
           "address_term": "주인님",
           "line_start": 48,
           "line_end": 48,
-          "quote": "주인님 어디 편찮으세요?!"
+          "quote": "에이드: 주인님 어디 편찮으세요?!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -487,49 +622,154 @@
         {
           "item_id": "liars_end_02__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 케이크를 먹고 목을 감싸 쥔 채 고통스러운 비명을 지르며 에이드, 소다, 코코아를 놀라게 했다가 '아메리카노 한 잔'을 주문하는 만우절 장난을 친다.",
-          "line_start": 37,
-          "line_end": 75,
-          "quote": "난 메이드들이 만들어준 케이크를 한입 먹었고. 윽···! 챙그랑-! 들고 있던 포크를 그대로 놓친 채 목을 감싸 쥐었다. !! 호에엥-! 주인님, 괜찮으세요?! 주인! 왜 그래?! 주인님 어디 편찮으세요?! 아··· 아아···! 설마 목에 케이크가 걸리신 건가요?! 소다, 얼른 119를···! 흐에에엥··· 네에!! 주, 주인···! 죽으면 안대애···! ···아··· 아아아아아아!!!!!!!!!!!!!!!!!!!!!!! 흐에에에엥-! 119 번호가 뭐죠오?! 아!!!!!!!!! 메리카노 한잔도 부탁해. 호, 호엥? 예···? 지금 뭐라고···. ···메리카노가 뭐지? !! 주인님, 설마 지금 저희를 속이신 건가요?! 응~ 오늘 만우절~",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "메이드 카페를 찾은 지휘관이 에이드, 소다, 코코아에게 쫑긋쫑긋 ♪ 바니바니 케이크를 주문한다.",
+          "line_start": 2,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "딸랑-\n에이드: 어서 오세요~\n소다: 와아~ 주인님 어서 오세요!\n코코아: 주인, 어서 와!\n코코아: 메이드 카페에 마싯는 거 머그러 왔어?\n[CHOICE_START]\n  [OPTION TEXT=\"응.\"]\n  [OPTION_END]\n[CHOICE_END]\n에이드: 무엇을 만들어 드릴까요?\n소다: 헤헤 말씀만 하세요오~\n[CHOICE_START]\n  [OPTION TEXT=\"쫑긋쫑긋 ♪ 바니바니 케이크로 부탁해.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: 웅! 아주 마싯게 만드러 주께!\n[CHOICE_START]\n  [OPTION TEXT=\"고마워.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_02__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "코코아",
-          "summary": "만우절 장난에 분개한 코코아가 지휘관이 사과 의미로 주문한 오므라이스를 자신이 만들겠다며 음흉한 미소를 짓고 특제 오므라이스를 만들어 온다.",
-          "line_start": 94,
-          "line_end": 105,
-          "quote": "에이드. 주인의 오므라이스는 내가 만드러 줄 테니. 에이드는 소다랑 다른 일 해. 코코아가? 하실 수 있겠어요오~? 웅. 나만 미더. 주인. 코코아가 특별히 맛있게 만들어주께. 흐. 흐. 흐. 코코아는 음흉한 미소를 지으며 부엌으로 들어갔다. 잠시 후. 주인. 코코아가만든 특제 오므라이스 나와써.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "소다가 케이크를 내오고 코코아가 그 위에 케첩을 뿌려주자 지휘관이 먹기 시작한다.",
+          "line_start": 22,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "잠시 후.\n소다: 쫑긋쫑긋 ♪ 바니바니 케이크 나왔습니다아~\n소다: 맛있게 드세요오~\n코코아: 잠시만 주인!\n코코아: 내가 케첩 뿌려주께.\n뿌직- 뿌지직-!\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: 이제 먹어도 돼!\n[CHOICE_START]\n  [OPTION TEXT=\"잘 먹을게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_02__eac_003",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 코코아에게 특제 오므라이스를 먼저 한 입 먹게 한 뒤 맛있다는 대답을 듣고 오므라이스를 전부 코코아에게 양보하고 떠나자 코코아가 괴로워하며 쓰러진다.",
-          "line_start": 123,
-          "line_end": 175,
-          "quote": "얼른 한 입만 먹어줘. 나는 코코아에게 숟가락을 쥐여줬고. ··· ···. ···정말 머거? 응. ···정말? 응. 으··· 으···! 코코아는 두 눈을 질끈 감은채, 오므라이스를 한입 떠먹었다. 우물우물- 어때? 하하··· 하··· 마··· 마··· 마시따···! 정말? 그럼 코코아가 다 먹으면 되겠다. !! 난 코코아가 먹는 거만 봐도 배부르거든. 그 대신 이건 내가 계산할게. 흐어어엇···!!! 후후후. 찡긋-☆ 그럼 이만! 에이드··· 소다··· 도와조···. 이건··· 둘이 먹다··· 하나가 죽을 맛이야···. 털썩-!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "케이크를 한입 먹은 지휘관이 포크를 놓치고 목을 감싸 쥐자, 에이드와 소다, 코코아가 목에 케이크가 걸린 줄 알고 119를 부르려 하며 다급해한다.",
+          "line_start": 37,
+          "line_end": 56,
+          "claim_line": null,
+          "quote": "난 메이드들이 만들어준 케이크를 한입 먹었고.\n[CHOICE_START]\n  [OPTION TEXT=\"윽···!\"]\n  [OPTION_END]\n[CHOICE_END]\n챙그랑-!\n들고 있던 포크를 그대로 놓친 채 목을 감싸 쥐었다.\n에이드: !!\n소다: 호에엥-!\n소다: 주인님, 괜찮으세요?!\n코코아: 주인! 왜 그래?!\n에이드: 주인님 어디 편찮으세요?!\n[CHOICE_START]\n  [OPTION TEXT=\"아··· 아아···!\"]\n  [OPTION_END]\n[CHOICE_END]\n에이드: 설마 목에 케이크가 걸리신 건가요?!\n에이드: 소다, 얼른 119를···!\n소다: 흐에에엥··· 네에!!\n코코아: 주, 주인···! 죽으면 안대애···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_02__eac_004",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 비명을 지르듯 아아아아아라고 외치더니 메리카노 한잔도 부탁한다고 말하며 만우절 장난이었음을 밝힌다.",
+          "line_start": 57,
+          "line_end": 77,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···아··· 아아아아아아!!!!!!!!!!!!!!!!!!!!!!!\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 흐에에에엥-! 119 번호가 뭐죠오?!\n[CHOICE_START]\n  [OPTION TEXT=\"아!!!!!!!!!\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"메리카노 한잔도 부탁해.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 호, 호엥?\n에이드: 예···? 지금 뭐라고···.\n코코아: ···메리카노가 뭐지?\n에이드: !! 주인님, 설마 지금 저희를 속이신 건가요?!\n[CHOICE_START]\n  [OPTION TEXT=\"응~ 오늘 만우절~\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_02__eac_005",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "소다와 에이드, 코코아가 그런 거짓말은 하면 안 된다며 원망하고 분노하자, 지휘관이 사과의 의미로 오므라이스 한 개를 주문한다.",
+          "line_start": 78,
+          "line_end": 92,
+          "claim_line": null,
+          "quote": "소다: 흐, 흐엥!\n소다: 진짜 주인님 잘못되시는 줄 알고 얼마나 마음 졸였는지 아세요오?!\n코코아: ?? 그럼 주인 괜차는 거야?\n에이드: 주인님, 이런 거짓말은 아무리 만우절이라도 하면 안 돼요.\n코코아: 헛···! 거짓말···!!\n코코아: 쒸익··· 쒸이이익···!!\n소다: 흐에에엥··· 정말 너무하셨어요오.\n[CHOICE_START]\n  [OPTION TEXT=\"히히히.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"사과의 의미로 오므라이스 한 개 부탁할게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_02__eac_006",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 에이드와 소다 대신 자신이 지휘관의 오므라이스를 만들겠다고 나선 뒤 음흉한 미소를 지으며 부엌으로 들어가 특제 오므라이스를 만들어 내온다.",
+          "line_start": 93,
+          "line_end": 106,
+          "claim_line": null,
+          "quote": "에이드: 휴우··· 알겠···.\n코코아: 에이드.\n코코아: 주인의 오므라이스는 내가 만드러 줄 테니.\n코코아: 에이드는 소다랑 다른 일 해.\n에이드: 코코아가?\n소다: 하실 수 있겠어요오~?\n코코아: 웅. 나만 미더.\n코코아: 주인.\n코코아: 코코아가 특별히 맛있게 만들어주께.\n코코아: 흐. 흐. 흐.\n코코아는 음흉한 미소를 지으며 부엌으로 들어갔다.\n잠시 후.\n코코아: 주인. 코코아가만든 특제 오므라이스 나와써.\n탁-!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_02__eac_007",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "오므라이스를 본 지휘관이 혼자 먹기엔 너무 많다며 코코아에게 숟가락을 쥐여주고 먼저 한 입만 먹어달라고 권한다.",
+          "line_start": 107,
+          "line_end": 128,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: 왜 안 머거?\n[CHOICE_START]\n  [OPTION TEXT=\"코코아가 한입 먹어줬으면 좋겠어.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: ··· ···엇.\n코코아: 코코아는 갠차나. 주인 머거, 주인꺼자나.\n[CHOICE_START]\n  [OPTION TEXT=\"혼자 먹기엔 너무 많은 거 같아서.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"얼른 한 입만 먹어줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n나는 코코아에게 숟가락을 쥐여줬고.\n코코아: ··· ···.\n코코아: ···정말 머거?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_02__eac_008",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "코코아",
+          "summary": "지휘관의 거듭된 권유에 코코아가 눈을 질끈 감고 오므라이스를 한입 떠먹은 뒤 억지로 맛있다고 말한다.",
+          "line_start": 129,
+          "line_end": 149,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"응.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: ···정말?\n[CHOICE_START]\n  [OPTION TEXT=\"응.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: 으··· 으···!\n코코아는 두 눈을 질끈 감은채, 오므라이스를 한입 떠먹었다.\n우물우물-\n[CHOICE_START]\n  [OPTION TEXT=\"어때?\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: 하하··· 하··· 마··· 마··· 마시따···!\n[CHOICE_START]\n  [OPTION TEXT=\"정말?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_02__eac_009",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 코코아가 먹는 것만 봐도 배부르다며 계산만 하고 떠나버리자, 코코아가 둘이 먹다 하나가 죽을 맛이라며 에이드와 소다에게 도움을 청하고 쓰러진다.",
+          "line_start": 150,
+          "line_end": 177,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그럼 코코아가 다 먹으면 되겠다.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: !!\n[CHOICE_START]\n  [OPTION TEXT=\"난 코코아가 먹는 거만 봐도 배부르거든.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그 대신 이건 내가 계산할게.\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: 흐어어엇···!!!\n[CHOICE_START]\n  [OPTION TEXT=\"후후후.\"]\n  [OPTION_END]\n[CHOICE_END]\n찡긋-☆\n[CHOICE_START]\n  [OPTION TEXT=\"그럼 이만!\"]\n  [OPTION_END]\n[CHOICE_END]\n코코아: 에이드··· 소다··· 도와조···.\n코코아: 이건··· 둘이 먹다··· 하나가 죽을 맛이야···.\n털썩-!\n에이드: 코코아!\n소다: 흐에에엥!! 코코아아아-!!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         }
       ],
-      "clues_and_hooks": [],
+      "clues_and_hooks": [
+        {
+          "item_id": "liars_end_02__clh_001",
+          "keyword": "코코아의 특제 오므라이스",
+          "category": "item",
+          "subject": null,
+          "detail": "지휘관의 만우절 거짓말에 복수하기 위해 코코아가 음흉한 미소를 지으며 만든 오므라이스로, 결국 코코아 자신이 먹고 쓰러진다.",
+          "line_start": 95,
+          "line_end": 106,
+          "quote": "코코아: 주인의 오므라이스는 내가 만드러 줄 테니.\n코코아: 에이드는 소다랑 다른 일 해.\n에이드: 코코아가?\n소다: 하실 수 있겠어요오~?\n코코아: 웅. 나만 미더.\n코코아: 주인.\n코코아: 코코아가 특별히 맛있게 만들어주께.\n코코아: 흐. 흐. 흐.\n코코아는 음흉한 미소를 지으며 부엌으로 들어갔다.\n잠시 후.\n코코아: 주인. 코코아가만든 특제 오므라이스 나와써.\n탁-!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "liars_end_02__uec_001",
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 6
+        }
+      ]
     },
     {
       "scene_id": "liars_end_03",
@@ -545,8 +785,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "관측소의 델타에게 지휘관이 지상에 공룡이 나타났다는 만우절 거짓말을 하자, 이미 눈치챈 델타가 오히려 관측기에 공룡과 익룡이 보인다며 맞장난을 쳐 지휘관을 역으로 속인다.",
+      "summary": "지휘관이 델타에게 지상에 공룡이 나타났다고 만우절 거짓말을 하지만, 처음부터 지휘관의 표정을 보고 눈치챈 델타가 오히려 공룡과 익룡이 보인다며 맞장구를 쳐 지휘관을 역으로 속인다.",
       "participants": {
         "present_in_scene": [
           {
@@ -567,12 +808,14 @@
         "mentioned_only": [
           {
             "item_id": "liars_end_03__mnt_001",
-            "surface_text": "지상 관측기",
+            "surface_text": "지상",
             "entity_id": null,
-            "entity_type": "item",
-            "line_start": 49,
-            "line_end": 49,
-            "quote": "델타는 빠르게 지상 관측기를 사용해 둘러보기 시작했다."
+            "entity_type": "location",
+            "line_start": 18,
+            "line_end": 18,
+            "quote": "  [OPTION TEXT=\"지상에서 엄청난 게 발견됐어.\"]",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "liars_end_03__mnt_002",
@@ -581,7 +824,9 @@
             "entity_type": "faction_or_species",
             "line_start": 63,
             "line_end": 63,
-            "quote": "매번 랩쳐만 잡다가."
+            "quote": "델타: 매번 랩쳐만 잡다가.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "liars_end_03__mnt_003",
@@ -590,7 +835,9 @@
             "entity_type": "location",
             "line_start": 87,
             "line_end": 87,
-            "quote": "처음부터 지휘관이 싱글벙글 웃으면서 관측소를 들어오길래 바로 눈치챘습니다."
+            "quote": "델타: 처음부터 지휘관이 싱글벙글 웃으면서 관측소를 들어오길래 바로 눈치챘습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "liars_end_03__mnt_004",
@@ -599,7 +846,9 @@
             "entity_type": "character",
             "line_start": 93,
             "line_end": 93,
-            "quote": "나중에 시그널 오면 한번 더 써먹어야겠습니다."
+            "quote": "델타: 나중에 시그널 오면 한번 더 써먹어야겠습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -612,10 +861,13 @@
           "address_term": "지휘관",
           "line_start": 3,
           "line_end": 3,
-          "quote": "어서 오십쇼, 지휘관."
+          "quote": "델타: 어서 오십쇼, 지휘관.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -626,18 +878,12 @@
             {
               "item_id": "liars_end_03__chb_001_opt_01",
               "option_text": "트리케라톱스.",
-              "continuation_summary": "델타가 그게 무엇이냐고 묻자 지휘관이 공룡이라고 설명한다.",
-              "branch_specific_facts": [
-                "지휘관이 지상에서 트리케라톱스가 발견됐다고 거짓말한다."
-              ]
+              "continuation_summary": null
             },
             {
               "item_id": "liars_end_03__chb_001_opt_02",
               "option_text": "콤프소그나투스.",
-              "continuation_summary": "델타가 그게 무엇이냐고 묻자 지휘관이 공룡이라고 설명한다.",
-              "branch_specific_facts": [
-                "지휘관이 지상에서 콤프소그나투스가 발견됐다고 거짓말한다."
-              ]
+              "continuation_summary": null
             }
           ]
         }
@@ -645,60 +891,165 @@
       "events_and_claims": [
         {
           "item_id": "liars_end_03__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
-          "confidence": null,
+          "epistemic_type": "established_event",
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 델타에게 지상에서 공룡이 발견됐다고 만우절 거짓말을 하며 관측기계로 확인해 보라고 한다.",
-          "line_start": 18,
-          "line_end": 45,
-          "quote": "지상에서 엄청난 게 발견됐어. 뭐가 발견됐길래 그러십니까? 트리케라톱스. 콤프소그나투스. ?? 그게 뭡니까? 공룡. ????? 잘못 들었지 말입니다. 공룡이라고. 예? 공룡이? 지상? ???? 이해를 못했지 말입니다. 공룡이 어떻게 지상에 있는 겁니까? 관측기계로 확인해 봐.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "관측소에 들어온 지휘관이 델타에게 비상사태라며 지상에서 엄청난 것이 발견되었다고 말한다.",
+          "line_start": 3,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "델타: 어서 오십쇼, 지휘관.\n[CHOICE_START]\n  [OPTION TEXT=\"델타!\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"지금 비상사태야!\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 예? 갑자기 무슨 말씀이십니까.\n[CHOICE_START]\n  [OPTION TEXT=\"지금 이렇게 한가롭게 있을 때가 아냐.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"지상에서 엄청난 게 발견됐어.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 뭐가 발견됐길래 그러십니까?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_03__eac_002",
-          "epistemic_type": "character_claim",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지상에 공룡이 나타났으니 관측기계로 확인해 보라고 하자, 델타가 의아해하면서도 지상 관측기로 둘러보기 시작한다.",
+          "line_start": 28,
+          "line_end": 49,
+          "claim_line": null,
+          "quote": "델타: ??\n델타: 그게 뭡니까?\n[CHOICE_START]\n  [OPTION TEXT=\"공룡.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: ?????\n델타: 잘못 들었지 말입니다.\n[CHOICE_START]\n  [OPTION TEXT=\"공룡이라고.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 예? 공룡이? 지상?\n델타: ????\n델타: 이해를 못했지 말입니다.\n델타: 공룡이 어떻게 지상에 있는 겁니까?\n[CHOICE_START]\n  [OPTION TEXT=\"관측기계로 확인해 봐.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 알겠습니다!!\n델타는 빠르게 지상 관측기를 사용해 둘러보기 시작했다.",
+          "refers_to_past": false,
           "chronology_type": "present",
-          "confidence": null,
-          "actor_or_speaker": "델타",
-          "summary": "지상 관측기를 들여다본 델타가 지상에 공룡과 날아다니는 익룡이 있다며 특대형 그물망을 준비해 포획하러 가자고 맞거짓말을 한다.",
-          "line_start": 54,
-          "line_end": 65,
-          "quote": "오···! 지휘관, 공룡을 어떻게 찾으신 겁니까? 공룡은 실제로 처음 보는데 신기합니다. 날아다니는 익룡도 있지 말입니다. 바로 임무 나갈 준비 하면 되는 겁니까? ??????? 매번 랩쳐만 잡다가. 공룡을 잡는 건 처음이라 긴장되지 말입니다. 쉽게 포획할 수 있게 특대형 그물망도 준비하겠습니다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_03__eac_003",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "델타",
-          "summary": "델타의 말에 속아 직접 관측기를 확인한 지휘관이 아무것도 없음을 보자, 델타는 처음부터 눈치채고 만우절 거짓말을 했다고 밝힌다.",
-          "line_start": 70,
-          "line_end": 87,
-          "quote": "나는 델타의 말을 믿을 수 없어 관측기를 사용하여 지상을 둘러봤고. ···아무것도 없는데? 관측기 너머로는 당연히 아무것도 보이지 않았다. 예, 만우절이라 거짓말했지 말입니다. !! 제법인데? 다들 제가 딱딱하고 재미없는 캐릭터라 생각하시는데. 그건 크나큰 오해이지 말입니다. 언제부터 알고 있었던 거야? 처음부터 지휘관이 싱글벙글 웃으면서 관측소를 들어오길래 바로 눈치챘습니다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
-        }
-      ],
-      "clues_and_hooks": [],
-      "relationship_and_lore_notes": [
+          "summary": "지휘관이 만우절이라고 밝히려던 순간, 델타가 오히려 공룡과 날아다니는 익룡이 보인다며 포획용 특대형 그물망을 준비해 임무에 나가겠다고 맞장구친다.",
+          "line_start": 50,
+          "line_end": 65,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"히히히. 오늘은 만···!\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 오···!\n델타: 지휘관, 공룡을 어떻게 찾으신 겁니까?\n델타: 공룡은 실제로 처음 보는데 신기합니다.\n델타: 날아다니는 익룡도 있지 말입니다.\n델타: 바로 임무 나갈 준비 하면 되는 겁니까?\n[CHOICE_START]\n  [OPTION TEXT=\"???????\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 매번 랩쳐만 잡다가.\n델타: 공룡을 잡는 건 처음이라 긴장되지 말입니다.\n델타: 쉽게 포획할 수 있게 특대형 그물망도 준비하겠습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
         {
-          "item_id": "liars_end_03__rln_001",
-          "subject": "델타",
-          "target": "시그널",
-          "relation_or_change": "델타는 공룡 발견 만우절 장난이 재미있었다며 나중에 시그널이 오면 한 번 더 써먹겠다고 한다.",
-          "line_start": 92,
+          "item_id": "liars_end_03__eac_004",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "델타",
+          "summary": "당황한 지휘관이 직접 관측기로 지상을 확인하지만 아무것도 보이지 않고, 델타가 만우절이라 거짓말을 했다고 밝힌다.",
+          "line_start": 66,
+          "line_end": 80,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···잠시만.\"]\n  [OPTION_END]\n[CHOICE_END]\n나는 델타의 말을 믿을 수 없어 관측기를 사용하여 지상을 둘러봤고.\n[CHOICE_START]\n  [OPTION TEXT=\"···아무것도 없는데?\"]\n  [OPTION_END]\n[CHOICE_END]\n관측기 너머로는 당연히 아무것도 보이지 않았다.\n델타: 예, 만우절이라 거짓말했지 말입니다.\n[CHOICE_START]\n  [OPTION TEXT=\"!! 제법인데?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_03__eac_005",
+          "epistemic_type": "character_claim",
+          "actor_or_speaker": "델타",
+          "summary": "델타가 다들 자신을 딱딱하고 재미없는 캐릭터라고 생각하지만 그것은 크나큰 오해라고 말한다.",
+          "line_start": 81,
+          "line_end": 82,
+          "claim_line": 82,
+          "quote": "델타: 다들 제가 딱딱하고 재미없는 캐릭터라 생각하시는데.\n델타: 그건 크나큰 오해이지 말입니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_03__eac_006",
+          "epistemic_type": "character_claim",
+          "actor_or_speaker": "델타",
+          "summary": "지휘관이 언제부터 알고 있었냐고 묻자, 델타는 처음부터 지휘관이 싱글벙글 웃으면서 관측소에 들어오길래 바로 눈치챘다고 답한다.",
+          "line_start": 83,
+          "line_end": 87,
+          "claim_line": 87,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"언제부터 알고 있었던 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 처음부터 지휘관이 싱글벙글 웃으면서 관측소를 들어오길래 바로 눈치챘습니다.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_03__eac_007",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "델타",
+          "summary": "지휘관이 탄식하자 델타는 그래도 재밌었다며 나중에 시그널이 오면 이 거짓말을 한 번 더 써먹겠다고 말한다.",
+          "line_start": 88,
           "line_end": 93,
-          "quote": "그래도 재밌었습니다. 나중에 시그널 오면 한번 더 써먹어야겠습니다."
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"앗.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 그래도 재밌었습니다.\n델타: 나중에 시그널 오면 한번 더 써먹어야겠습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_03__eac_008",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 시그널에게 거짓말을 써먹은 후기를 알려달라고 요청하자, 델타가 알겠다며 다음 만우절도 기대하겠다고 답한다.",
+          "line_start": 94,
+          "line_end": 99,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"후기 알려줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 알겠습니다.\n델타: 다음 만우절도 기대하고 있겠지 말입니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         }
       ],
-      "unregistered_entity_candidates": []
+      "clues_and_hooks": [
+        {
+          "item_id": "liars_end_03__clh_001",
+          "keyword": "델타의 말투",
+          "category": "trait",
+          "subject": "델타",
+          "detail": "문장 끝에 ~지 말입니다, ~십쇼를 붙이는 군대식 말투를 사용한다.",
+          "line_start": 34,
+          "line_end": 43,
+          "quote": "델타: ?????\n델타: 잘못 들었지 말입니다.\n[CHOICE_START]\n  [OPTION TEXT=\"공룡이라고.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 예? 공룡이? 지상?\n델타: ????\n델타: 이해를 못했지 말입니다.\n델타: 공룡이 어떻게 지상에 있는 겁니까?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "liars_end_03__clh_002",
+          "keyword": "지상 관측기",
+          "category": "item",
+          "subject": null,
+          "detail": "관측소에서 지상을 관측하는 데 사용하는 기계.",
+          "line_start": 45,
+          "line_end": 49,
+          "quote": "  [OPTION TEXT=\"관측기계로 확인해 봐.\"]\n  [OPTION_END]\n[CHOICE_END]\n델타: 알겠습니다!!\n델타는 빠르게 지상 관측기를 사용해 둘러보기 시작했다.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "liars_end_03__uec_001",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 18
+        },
+        {
+          "item_id": "liars_end_03__uec_002",
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 63
+        },
+        {
+          "item_id": "liars_end_03__uec_003",
+          "surface_text": "관측소",
+          "suggested_type": "location",
+          "line_start": 87
+        }
+      ]
     },
     {
       "scene_id": "liars_end_04",
@@ -714,8 +1065,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "경찰서에서 지휘관이 신입 경찰관으로 일하게 됐다는 만우절 거짓말을 했다가 미란다에게 유치장 대청소를 떠맡게 되고, 폴리가 경찰서 내 만우절 거짓말을 업무방해죄로 고소하겠다고 했다는 말에 엔더슨에게 방금 해고됐다는 거짓말로 위기를 모면하고 도망친다.",
+      "summary": "지휘관이 경찰서의 미란다와 키리에게 오늘부로 경찰관이 되었다고 만우절 거짓말을 했다가 신입 인수인계로 유치장 청소를 하게 되고, 폴리가 거짓말쟁이를 업무 방해죄로 고소하겠다고 했다는 말에 해고당했다며 도망친다.",
       "participants": {
         "present_in_scene": [
           {
@@ -747,7 +1099,9 @@
             "entity_type": "character",
             "line_start": 6,
             "line_end": 6,
-            "quote": "안녕. 폴리는?"
+            "quote": "  [OPTION TEXT=\"안녕. 폴리는?\"]",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "liars_end_04__mnt_002",
@@ -756,7 +1110,9 @@
             "entity_type": "location",
             "line_start": 10,
             "line_end": 10,
-            "quote": "경찰서엔 어쩐 일이십니까?"
+            "quote": "미란다: 경찰서엔 어쩐 일이십니까?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "liars_end_04__mnt_003",
@@ -765,7 +1121,9 @@
             "entity_type": "location",
             "line_start": 57,
             "line_end": 57,
-            "quote": "우선 유치장 청소부터 하시면 됩니다!"
+            "quote": "미란다: 우선 유치장 청소부터 하시면 됩니다!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "liars_end_04__mnt_004",
@@ -774,7 +1132,9 @@
             "entity_type": "character",
             "line_start": 131,
             "line_end": 131,
-            "quote": "엔더슨 부사령관이."
+            "quote": "  [OPTION TEXT=\"엔더슨 부사령관이.\"]",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -787,7 +1147,9 @@
           "address_term": "지휘관",
           "line_start": 3,
           "line_end": 3,
-          "quote": "어? 지휘관?"
+          "quote": "미란다: 어? 지휘관?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "liars_end_04__foa_002",
@@ -796,98 +1158,234 @@
           "address_term": "지휘관",
           "line_start": 4,
           "line_end": 4,
-          "quote": "지휘관, 안녕하세요!"
+          "quote": "키리: 지휘관, 안녕하세요!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "liars_end_04__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
-          "confidence": null,
+          "epistemic_type": "established_event",
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관이 미란다와 키리에게 오늘부로 경찰관이 되어 경찰서에서 함께 일하게 됐다고 만우절 거짓말을 한다.",
-          "line_start": 12,
-          "line_end": 19,
-          "quote": "오늘부로 너희와 함께 경찰서에서 일하게 됐어. ···예? ···에? 그게 무슨 말씀이십니까? 지휘관이 경찰관이 된 겁니까? 맞아.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "폴리가 순찰을 나간 사이 경찰서를 찾은 지휘관이 미란다와 키리에게 오늘부로 경찰서에서 함께 일하게 되었다고 거짓말한다.",
+          "line_start": 3,
+          "line_end": 22,
+          "claim_line": null,
+          "quote": "미란다: 어? 지휘관?\n키리: 지휘관, 안녕하세요!\n[CHOICE_START]\n  [OPTION TEXT=\"안녕. 폴리는?\"]\n  [OPTION_END]\n[CHOICE_END]\n미란다: 방금 막 순찰 나갔습니다!\n미란다: 경찰서엔 어쩐 일이십니까?\n[CHOICE_START]\n  [OPTION TEXT=\"오늘부로 너희와 함께 경찰서에서 일하게 됐어.\"]\n  [OPTION_END]\n[CHOICE_END]\n키리: ···예?\n미란다: ···에?\n미란다: 그게 무슨 말씀이십니까? 지휘관이 경찰관이 된 겁니까?\n[CHOICE_START]\n  [OPTION TEXT=\"맞아.\"]\n  [OPTION_END]\n[CHOICE_END]\n미란다: 예? 정말입니까?!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_04__eac_002",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
-          "confidence": null,
           "actor_or_speaker": "키리",
-          "summary": "키리가 며칠 전 폴리에게서 신입 경찰이 들어올 수도 있다는 대외비 이야기를 얼핏 들었다며 지휘관의 거짓말을 믿는다.",
-          "line_start": 26,
-          "line_end": 28,
-          "quote": "며칠 전에 폴리한테서 새로운 신입 경찰이 들어올 수도 있다고 얼핏 들었거든요. 그게 지휘관이었나보네요! 아직까진 확정난 건 아니라서 대외비라고 했었거든요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "키리가 며칠 전 폴리에게서 새로운 신입 경찰이 들어올 수도 있다는 대외비 이야기를 얼핏 들었다며 그것이 지휘관이었나 보다고 믿는다.",
+          "line_start": 23,
+          "line_end": 32,
+          "claim_line": 26,
+          "quote": "키리: ···아!\n미란다: ?? 키리 뭐 들은 거 있으십니까?\n키리: 네!!\n키리: 며칠 전에 폴리한테서 새로운 신입 경찰이 들어올 수도 있다고 얼핏 들었거든요.\n키리: 그게 지휘관이었나보네요!\n키리: 아직까진 확정난 건 아니라서 대외비라고 했었거든요.\n[CHOICE_START]\n  [OPTION TEXT=\"??\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_04__eac_003",
           "epistemic_type": "established_event",
+          "actor_or_speaker": "지휘관",
+          "summary": "미란다가 자신들의 지휘는 누가 맡냐고 묻자 지휘관이 다른 신입 지휘관이 들어올 것이라고 둘러대고, 미란다와 키리는 지휘관과 함께 일하는 건 똑같다며 반긴다.",
+          "line_start": 33,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "미란다: 그럼 저희의 지휘는 누가 맡는 겁니까?\n[CHOICE_START]\n  [OPTION TEXT=\"···어.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"아마 다른 신입 지휘관이 들어올걸?\"]\n  [OPTION_END]\n[CHOICE_END]\n미란다: 아, 그렇습니까?!\n미란다: 지휘관과 함께 일하는 건 똑같으니 전 뭐든 좋습니다!\n키리: 헤헤, 저도요!",
+          "refers_to_past": false,
           "chronology_type": "present",
-          "confidence": null,
-          "actor_or_speaker": "미란다",
-          "summary": "미란다가 신입 인수인계라며 원래 자신의 담당인 유치장 창틀·바닥·벽 낙서 청소를 지휘관에게 시킨다.",
-          "line_start": 57,
-          "line_end": 65,
-          "quote": "우선 유치장 청소부터 하시면 됩니다! 원래 제 담당이지만. 지금은 인수인계를 받는 거니까 지휘관이 하시면 됩니다! 우선 창틀부터 깨끗하게 닦은 뒤에. 빗자루로 바닥을 쓸고. 대걸레로 바닥을 닦고. 마지막으로 벽에 있는 낙서를 지우시면 됩니다! 어? 미란다. 원래 그렇게까진 안 했잖아요. 지휘관은 신입이기 때문에 한 번 배울 때 제대로 배워야 합니다!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_04__eac_004",
-          "epistemic_type": "character_claim",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "키리",
+          "summary": "키리가 폴리가 오기 전까지 업무 인수인계를 해드리자며 미란다에게 지휘관의 인수인계를 부탁하고 지휘관이 얼떨결에 따라간다.",
+          "line_start": 45,
+          "line_end": 56,
+          "claim_line": null,
+          "quote": "키리: 음··· 그럼 폴리 오기 전까지 아무것도 안 하고 있을 순 없으니.\n키리: 업무 인수인계부터 해드리는 게 맞겠죠?\n키리: 저도 처음 왔을 때 바로 인수인계 받았었으니까요!\n키리: 제가 지금 맡은 업무가 많아서··· 괜찮다면 미란다가 해주실래요?\n미란다: 넵! 알겠습니다!\n미란다: 지휘관 이쪽으로 오시면 됩니다!\n[CHOICE_START]\n  [OPTION TEXT=\"···어? 어··· 알겠어.\"]\n  [OPTION_END]\n[CHOICE_END]\n생각보다 너무 자연스럽게 일이 흘러가고 있다.\n···적당히 타이밍 보고 거짓말이라고 말해줘야겠다.",
+          "refers_to_past": false,
           "chronology_type": "present",
-          "confidence": null,
-          "actor_or_speaker": "미란다",
-          "summary": "미란다가 폴리가 이번 만우절에 경찰서에서 거짓말을 하는 사람을 업무 방해죄로 고소할 거라고 했다고 전한다.",
-          "line_start": 104,
-          "line_end": 106,
-          "quote": "하긴. 키리 말도 맞습니다! 안 그래도 폴리가 이번 만우절에 누군가 경찰서에서 거짓말을 하면. 업무 방해죄로 고소할거라고 했습니다!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "in_branch_option": null,
+          "confidence": null
         },
         {
           "item_id": "liars_end_04__eac_005",
           "epistemic_type": "established_event",
+          "actor_or_speaker": "미란다",
+          "summary": "미란다가 신입은 한 번 배울 때 제대로 배워야 한다며 원래 자신의 담당인 유치장 창틀 닦기, 바닥 쓸고 닦기, 벽 낙서 지우기까지 지휘관에게 시킨다.",
+          "line_start": 57,
+          "line_end": 76,
+          "claim_line": null,
+          "quote": "미란다: 우선 유치장 청소부터 하시면 됩니다!\n미란다: 원래 제 담당이지만.\n미란다: 지금은 인수인계를 받는 거니까 지휘관이 하시면 됩니다!\n미란다: 우선 창틀부터 깨끗하게 닦은 뒤에.\n미란다: 빗자루로 바닥을 쓸고.\n미란다: 대걸레로 바닥을 닦고.\n미란다: 마지막으로 벽에 있는 낙서를 지우시면 됩니다!\n키리: 어? 미란다. 원래 그렇게까진 안 했잖아요.\n미란다: 지휘관은 신입이기 때문에 한 번 배울 때 제대로 배워야 합니다!\n키리: 아! 그렇군요~\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n미란다: 아무튼 다 하면 저를 불러주십쇼!\n미란다: 깨끗하게 부탁드립니다!\n[CHOICE_START]\n  [OPTION TEXT=\"···어··· 알겠어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
           "chronology_type": "present",
-          "confidence": null,
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_04__eac_006",
+          "epistemic_type": "character_claim",
+          "actor_or_speaker": "미란다",
+          "summary": "지휘관이 청소를 하던 중 거짓말이었다고 밝히려 하자, 미란다와 키리가 오늘이 만우절이라는 것을 떠올리며 작년과 달리 오늘은 유독 조용하다고 이야기한다.",
+          "line_start": 77,
+          "line_end": 92,
+          "claim_line": 90,
+          "quote": "···몇 분 후.\n난 어느 순간 미란다가 시킨 일을 하고 있었고.\n···뭔가 잘못되어가고 있다는 걸 강하게 느끼고 있었다.\n이제 슬슬 거짓말이었다고 말을···.\n미란다: 참!\n미란다: 오늘 만우절인 거 다들 알고 있으셨습니까?\n[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]\n키리: 앗! 그렇네요! 생각해보니 오늘 만우절이었네요!\n키리: 너무 평화로워서 까먹고 있었어요.\n미란다: 저도 방금 생각났습니다!\n미란다: 작년엔 이런저런 장난이 많았던 거 같은데, 오늘은 유독 조용한 것 같습니다!\n키리: 그러게요! 엄청 조용하네요.\n미란다: 이럴 때 누군가가 거짓말을 해주면 재밌을 것 같긴 합니다!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_04__eac_007",
+          "epistemic_type": "character_claim",
+          "actor_or_speaker": "키리",
+          "summary": "지휘관이 사실을 말하려던 순간, 키리는 바보가 아닌 이상 만우절에 경찰을 속이면 안 된다는 상식을 어기는 사람은 없을 것이라고 말한다.",
+          "line_start": 93,
+          "line_end": 99,
+          "claim_line": 98,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···사실.\"]\n  [OPTION_END]\n[CHOICE_END]\n키리: 에이~ 그래도 바보가 아닌 이상.\n키리: 만우절에 경찰한테 거짓말하는 사람이 있을까요?\n키리: 경찰을 속이면 안 된다는 건. 누구나 다 아는 상식일 테니까요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_04__eac_008",
+          "epistemic_type": "character_claim",
+          "actor_or_speaker": "미란다",
+          "summary": "미란다가 폴리가 이번 만우절에 누군가 경찰서에서 거짓말을 하면 업무 방해죄로 고소할 거라고 했다고 전한다.",
+          "line_start": 100,
+          "line_end": 106,
+          "claim_line": 106,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n미란다: 하긴. 키리 말도 맞습니다!\n미란다: 안 그래도 폴리가 이번 만우절에 누군가 경찰서에서 거짓말을 하면.\n미란다: 업무 방해죄로 고소할거라고 했습니다!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_04__eac_009",
+          "epistemic_type": "established_event",
+          "actor_or_speaker": "키리",
+          "summary": "고소 이야기에 땀을 흘리며 굳어버린 지휘관을 키리가 걱정하며 부른다.",
+          "line_start": 107,
+          "line_end": 123,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···아하.\"]\n  [OPTION_END]\n[CHOICE_END]\n키리: 어? 지휘관 괜찮으세요?\n키리: 땀이 많이 나는데···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n키리: 지휘관?\n[CHOICE_START]\n  [OPTION TEXT=\"어!\"]\n  [OPTION_END]\n[CHOICE_END]\n키리: ??\n미란다: ??",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
+        },
+        {
+          "item_id": "liars_end_04__eac_010",
+          "epistemic_type": "established_event",
           "actor_or_speaker": "지휘관",
-          "summary": "고소당할까 봐 당황한 지휘관이 엔더슨 부사령관에게 방금 해고되어 본업으로 돌아가야 한다고 둘러대고 경찰서를 빠져나온다.",
-          "line_start": 125,
+          "summary": "지휘관은 방금 엔더슨 부사령관에게 잘려서 급하게 본업으로 돌아가야 한다고 거짓말로 둘러댄 뒤 쫓기듯 경찰서를 빠져나온다.",
+          "line_start": 124,
           "line_end": 142,
-          "quote": "나 방금 잘렸어. 네? 갑자기요? 예? 누가 자른 겁니까? 엔더슨 부사령관이. 급하게 다시 본업으로 돌아가야 할 거 같아. 그럼 다음에 또 올게. 당황스러운 표정으로 날 바라보는 미란다와 키리를 뒤로한 채. 나는 쫓기듯 경찰서를 빠져나왔다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"나 방금 잘렸어.\"]\n  [OPTION_END]\n[CHOICE_END]\n키리: 네? 갑자기요?\n미란다: 예? 누가 자른 겁니까?\n[CHOICE_START]\n  [OPTION TEXT=\"엔더슨 부사령관이.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"급하게 다시 본업으로 돌아가야 할 거 같아.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그럼 다음에 또 올게.\"]\n  [OPTION_END]\n[CHOICE_END]\n당황스러운 표정으로 날 바라보는 미란다와 키리를 뒤로한 채. 나는 쫓기듯 경찰서를 빠져나왔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "confidence": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "liars_end_04__clh_001",
-          "keyword": "신입 경찰 충원 대외비",
+          "keyword": "신입 경찰 충원 대외비 소식",
           "category": "foreshadowing",
-          "detail": "키리가 며칠 전 폴리에게서 아직 확정되지 않은 대외비라며 새로운 신입 경찰이 들어올 수도 있다고 들은 이야기.",
-          "line_start": 26,
+          "subject": null,
+          "detail": "키리가 며칠 전 폴리에게서 새로운 신입 경찰이 들어올 수도 있다는 아직 확정되지 않은 대외비 소식을 얼핏 들었다고 언급한다.",
+          "line_start": 25,
           "line_end": 28,
-          "quote": "며칠 전에 폴리한테서 새로운 신입 경찰이 들어올 수도 있다고 얼핏 들었거든요. 그게 지휘관이었나보네요! 아직까진 확정난 건 아니라서 대외비라고 했었거든요."
+          "quote": "키리: 네!!\n키리: 며칠 전에 폴리한테서 새로운 신입 경찰이 들어올 수도 있다고 얼핏 들었거든요.\n키리: 그게 지휘관이었나보네요!\n키리: 아직까진 확정난 건 아니라서 대외비라고 했었거든요.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "liars_end_04__rln_001",
+          "subject": "미란다",
+          "target": "지휘관",
+          "relation_or_change": "미란다가 지휘관이 경찰관이 되어도 함께 일하는 건 똑같으니 뭐든 좋다고 호감을 밝힘",
+          "epistemic_type": "character_claim",
+          "claimant": "미란다",
+          "line_start": 42,
+          "line_end": 43,
+          "claim_line": 43,
+          "quote": "미란다: 아, 그렇습니까?!\n미란다: 지휘관과 함께 일하는 건 똑같으니 전 뭐든 좋습니다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "liars_end_04__rln_002",
+          "subject": "키리",
+          "target": "지휘관",
+          "relation_or_change": "키리도 미란다의 말에 동의하며 지휘관과 함께 일하는 것이 좋다고 호감을 밝힘",
+          "epistemic_type": "character_claim",
+          "claimant": "키리",
+          "line_start": 43,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "미란다: 지휘관과 함께 일하는 건 똑같으니 전 뭐든 좋습니다!\n키리: 헤헤, 저도요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "liars_end_04__rln_003",
+          "subject": "엔더슨",
+          "target": "지휘관",
+          "relation_or_change": "지휘관이 엔더슨을 부사령관으로 지칭함",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 130,
+          "line_end": 133,
+          "claim_line": 131,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"엔더슨 부사령관이.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "liars_end_04__uec_001",
+          "surface_text": "경찰서",
+          "suggested_type": "location",
+          "line_start": 10
+        },
+        {
+          "item_id": "liars_end_04__uec_002",
+          "surface_text": "유치장",
+          "suggested_type": "location",
+          "line_start": 57
+        }
+      ]
     }
   ]
 }

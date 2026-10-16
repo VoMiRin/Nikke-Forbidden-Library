@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.579Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.656Z",
   "title_id": "blabla__personal__harran",
   "category": "blabla",
   "title": "하란",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "지상의 하란이 땅굴에서 닿은 지휘관의 메신저 신호에 흥미를 느끼고, 자신을 상위 포식자로서 존경하거나 섬기는 대가로 지휘관이 위기에 처했을 때 언제든 달려가 지켜주겠다고 약속한다.",
+      "summary": "하란이 피식자인 지휘관에게 상위 포식자인 자신을 즐겁게 하고 경외감을 바치라고 요구하며, 존경과 섬김을 대가로 위기 시 언제 어디든 달려가 지켜주겠다고 약속한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -32,17 +33,17 @@
             "speaker_label": "하란",
             "entity_id": "char_하란",
             "medium": "messenger",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "간만에 재미있는 일이 생겼구나"
+            "line_start": 3,
+            "line_end": 11,
+            "quote": "간만에 재미있는 일이 생겼구나 땅굴의 미약한 신호가 내게까지 닿다니 내게 뭔가 기원할 일이라도 생긴 것이니?"
           },
           {
             "item_id": "blabla_harran_001__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 36,
-            "line_end": 36,
+            "line_start": 35,
+            "line_end": 37,
             "quote": "어떻게 해야 너를 즐겁게 할 수 있어?"
           }
         ],
@@ -52,18 +53,22 @@
             "surface_text": "땅굴",
             "entity_id": null,
             "entity_type": "location",
-            "line_start": 7,
-            "line_end": 7,
-            "quote": "땅굴의 미약한 신호가 내게까지 닿다니"
+            "line_start": 6,
+            "line_end": 8,
+            "quote": "땅굴의 미약한 신호가 내게까지 닿다니",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_harran_001__mnt_002",
             "surface_text": "지상",
             "entity_id": null,
             "entity_type": "location",
-            "line_start": 86,
-            "line_end": 86,
-            "quote": "지상의 상위 포식자로서 나를 지켜줘"
+            "line_start": 85,
+            "line_end": 87,
+            "quote": "지상의 상위 포식자로서 나를 지켜줘",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -74,30 +79,37 @@
           "from_speaker": "하란",
           "to_target": "지휘관",
           "address_term": "인간",
-          "line_start": 42,
-          "line_end": 42,
-          "quote": "담이 큰 인간이로구나"
+          "line_start": 41,
+          "line_end": 43,
+          "quote": "담이 큰 인간이로구나",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_harran_001__foa_002",
           "from_speaker": "하란",
           "to_target": "지휘관",
           "address_term": "피식자",
-          "line_start": 51,
-          "line_end": 51,
-          "quote": "네가 피식자로서 상위 포식자인 나에게"
+          "line_start": 50,
+          "line_end": 52,
+          "quote": "네가 피식자로서 상위 포식자인 나에게",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_harran_001__foa_003",
           "from_speaker": "지휘관",
           "to_target": "하란",
-          "address_term": "상위 포식자",
-          "line_start": 86,
-          "line_end": 86,
-          "quote": "지상의 상위 포식자로서 나를 지켜줘"
+          "address_term": "지상의 상위 포식자",
+          "line_start": 85,
+          "line_end": 87,
+          "quote": "지상의 상위 포식자로서 나를 지켜줘",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -108,14 +120,12 @@
             {
               "item_id": "blabla_harran_001__chb_001_opt_01",
               "option_text": "전투를 지원해 주었으면 해",
-              "continuation_summary": "하란이 지휘관이 원하는 바는 이해하지만 특별히 흥미가 끌리지 않는다며 자신을 즐겁게 해 보라고 요구한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_harran_001__chb_001_opt_02",
               "option_text": "지상 탈환을 도와주었으면 해",
-              "continuation_summary": "하란이 지휘관이 원하는 바는 이해하지만 특별히 흥미가 끌리지 않는다며 자신을 즐겁게 해 보라고 요구한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         },
@@ -126,14 +136,12 @@
             {
               "item_id": "blabla_harran_001__chb_002_opt_01",
               "option_text": "요컨대 재치 있는 말동무가 되면 된다는 거야?",
-              "continuation_summary": "하란이 거기에 약간의 경외감과 동경이 더해지면 완벽하겠다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_harran_001__chb_002_opt_02",
               "option_text": "요컨대 네 기분을 잘 맞춰주면 된다는 거야?",
-              "continuation_summary": "하란이 거기에 약간의 경외감과 동경이 더해지면 완벽하겠다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         },
@@ -144,18 +152,12 @@
             {
               "item_id": "blabla_harran_001__chb_003_opt_01",
               "option_text": "나의 존경",
-              "continuation_summary": "지휘관이 대가로 존경을 바치겠다고 하자 하란이 강자에게 굽힐 줄 아는 마음가짐이 마음에 든다며 소원을 들어주기로 한다.",
-              "branch_specific_facts": [
-                "지휘관이 하란에게 자신을 지켜주는 대가로 존경을 바치기로 한다."
-              ]
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_harran_001__chb_003_opt_02",
               "option_text": "나의 섬김",
-              "continuation_summary": "지휘관이 대가로 섬김을 바치겠다고 하자 하란이 강자에게 굽힐 줄 아는 마음가짐이 마음에 든다며 소원을 들어주기로 한다.",
-              "branch_specific_facts": [
-                "지휘관이 하란에게 자신을 지켜주는 대가로 섬김을 바치기로 한다."
-              ]
+              "continuation_summary": null
             }
           ]
         }
@@ -164,41 +166,202 @@
         {
           "item_id": "blabla_harran_001__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "하란",
-          "summary": "하란이 땅굴의 미약한 신호가 자신에게 닿았다며 지휘관에게 피식자로서 상위 포식자인 자신의 환심을 사고 경외감을 보이라고 요구한다.",
-          "line_start": 7,
-          "line_end": 77,
-          "quote": "땅굴의 미약한 신호가 내게까지 닿다니",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "하란이 땅굴의 미약한 신호가 자신에게까지 닿았다며 지휘관에게 기원할 일이 생겼는지 묻는다.",
+          "line_start": 3,
+          "line_end": 12,
+          "claim_line": null,
+          "quote": "간만에 재미있는 일이 생겼구나 땅굴의 미약한 신호가 내게까지 닿다니 내게 뭔가 기원할 일이라도 생긴 것이니?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_harran_001__eac_002",
           "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 하란에게 전투를 지원해 달라고 요청한다.",
+          "line_start": 14,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "전투를 지원해 주었으면 해",
+          "refers_to_past": false,
           "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 13,
+            "option_text": "전투를 지원해 주었으면 해"
+          }
+        },
+        {
+          "item_id": "blabla_harran_001__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 하란에게 지상 탈환을 도와달라고 요청한다.",
+          "line_start": 16,
+          "line_end": 17,
+          "claim_line": null,
+          "quote": "지상 탈환을 도와주었으면 해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 13,
+            "option_text": "지상 탈환을 도와주었으면 해"
+          }
+        },
+        {
+          "item_id": "blabla_harran_001__eac_004",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "하란",
-          "summary": "지휘관이 지상의 상위 포식자로서 자신을 지켜달라고 기원하고 대가를 약속하자, 하란은 위기 시 언제 어느 곳이든 달려가 주겠다고 약속하며 대가를 잊으면 재난으로 바뀔 것이라 경고한다.",
-          "line_start": 86,
-          "line_end": 133,
-          "quote": "나를 부른다면 언제 어느 곳이든 달려가 주겠다",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "하란이 지휘관의 요청은 흥미를 끌지 못한다며 한 번 더 소원을 빌 기회를 줄 테니 자신을 즐겁게 해 보라고 요구한다.",
+          "line_start": 20,
+          "line_end": 37,
+          "claim_line": null,
+          "quote": "그러니? 네가 원하는 바는 이해하겠다만 그것이 특별히 내 흥미를 잡아 끌진 못하는구나 한번 더 소원을 빌 기회를 줄 테니 이번에는 좀 더 나를 즐겁게 만들어 보련? 어떻게 해야 너를 즐겁게 할 수 있어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_001__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 지휘관에게 피식자로서 상위 포식자인 자신에게 재치 있는 말을 지어내고 환심을 살 행동을 하면 된다고 말한다.",
+          "line_start": 38,
+          "line_end": 65,
+          "claim_line": 51,
+          "quote": "그걸 내게 묻는 것이니? 담이 큰 인간이로구나 하지만 의외로 흥미가 동하니 용서해 주마 나를 즐겁게 할 방법은 간단하단다 네가 피식자로서 상위 포식자인 나에게 최선을 다해 재치 있는 말을 지어내고 환심을 살 수 있는 행동을 하면 되는 것이지 구체적인 내용까지는 내게 묻지 말렴 그것을 떠올려내는 건 너의 몫이니까",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_001__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 재치 있는 말동무가 되면 된다는 것인지 묻는다.",
+          "line_start": 67,
+          "line_end": 68,
+          "claim_line": null,
+          "quote": "요컨대 재치 있는 말동무가 되면 된다는 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "요컨대 재치 있는 말동무가 되면 된다는 거야?"
+          }
+        },
+        {
+          "item_id": "blabla_harran_001__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 기분을 잘 맞춰주면 된다는 것인지 묻는다.",
+          "line_start": 69,
+          "line_end": 70,
+          "claim_line": null,
+          "quote": "요컨대 네 기분을 잘 맞춰주면 된다는 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 66,
+            "option_text": "요컨대 네 기분을 잘 맞춰주면 된다는 거야?"
+          }
+        },
+        {
+          "item_id": "blabla_harran_001__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "하란이 경외감과 동경이 더해지면 완벽하다며 다시 소원을 묻자, 지휘관이 지상의 상위 포식자로서 자신을 지켜달라고 기원하고 하란이 그 대가를 묻는다.",
+          "line_start": 73,
+          "line_end": 97,
+          "claim_line": null,
+          "quote": "거기에 약간의 경외감과 동경이 더해지면 한결 더 완벽하겠구나 그럼 마지막으로 한번 더 네게 물으마 나에게 무엇을 기원하겠니? 지상의 상위 포식자로서 나를 지켜줘 흐음 드디어 그럴듯한 어휘를 구사하게 됐구나 그렇다면 그 대가로 내게 바칠 것은?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_001__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 하란에게 대가로 자신의 존경을 바치겠다고 답한다.",
+          "line_start": 99,
+          "line_end": 100,
+          "claim_line": null,
+          "quote": "나의 존경",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 98,
+            "option_text": "나의 존경"
+          }
+        },
+        {
+          "item_id": "blabla_harran_001__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 하란에게 대가로 자신의 섬김을 바치겠다고 답한다.",
+          "line_start": 101,
+          "line_end": 102,
+          "claim_line": null,
+          "quote": "나의 섬김",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 98,
+            "option_text": "나의 섬김"
+          }
+        },
+        {
+          "item_id": "blabla_harran_001__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 강자에게 굽힐 줄 아는 마음가짐이 마음에 든다며 지휘관이 위기에 빠져 자신을 부르면 언제 어느 곳이든 달려가 주겠다고 약속한다.",
+          "line_start": 105,
+          "line_end": 125,
+          "claim_line": 124,
+          "quote": "아직 부족한 점은 많아 보인다만 강자에게 굽힐 줄 아는 그 마음가짐이 마음에 드는구나 좋다 네가 원하는 바를 들어 주마 네가 나를 필요로 할 때 네가 위기에 빠졌을 때 나를 부른다면 언제 어느 곳이든 달려가 주겠다",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_001__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 약속한 대가를 잊는 순간 자신의 호의가 더없이 큰 재난으로 바뀔 것이라고 경고하자 지휘관이 명심하겠다고 답한다.",
+          "line_start": 126,
+          "line_end": 137,
+          "claim_line": null,
+          "quote": "다만 이것 하나만은 마음 깊이 새겨 두렴 네가 배은망덕하게도 약속한 대가를 잊는 순간 나의 호의 또한 더없이 큰 재난으로 바뀔 것임을 명심할게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "blabla_harran_001__clh_001",
-          "keyword": "땅굴",
-          "category": "location",
-          "detail": "하란이 방주를 가리켜 부르는 명칭으로, 방주의 미약한 통신 신호가 지상의 하란에게 닿았다.",
-          "line_start": 7,
-          "line_end": 7,
-          "quote": "땅굴의 미약한 신호가 내게까지 닿다니"
+          "keyword": "상위 포식자 자칭",
+          "category": "trait",
+          "subject": "하란",
+          "detail": "스스로를 지상의 상위 포식자로 칭하고 상대를 피식자로 부르며 경외감과 동경을 요구한다.",
+          "line_start": 50,
+          "line_end": 58,
+          "quote": "네가 피식자로서 상위 포식자인 나에게 최선을 다해 재치 있는 말을 지어내고 환심을 살 수 있는 행동을 하면 되는 것이지",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
@@ -206,13 +369,42 @@
           "item_id": "blabla_harran_001__rln_001",
           "subject": "하란",
           "target": "지휘관",
-          "relation_or_change": "자신을 지상의 상위 포식자, 지휘관을 피식자로 규정하며, 존경과 섬김을 대가로 위기 시 언제든 달려가 지켜주기로 계약한다.",
-          "line_start": 51,
-          "line_end": 133,
-          "quote": "네가 피식자로서 상위 포식자인 나에게"
+          "relation_or_change": "자신을 상위 포식자, 지휘관을 피식자로 규정하며 재치 있는 말과 환심을 살 행동 및 경외감과 동경을 요구함",
+          "epistemic_type": "character_claim",
+          "claimant": "하란",
+          "line_start": 50,
+          "line_end": 58,
+          "claim_line": 51,
+          "quote": "네가 피식자로서 상위 포식자인 나에게 최선을 다해 재치 있는 말을 지어내고 환심을 살 수 있는 행동을 하면 되는 것이지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_001__rln_002",
+          "subject": "하란",
+          "target": "지휘관",
+          "relation_or_change": "지휘관이 바치는 존경 또는 섬김을 대가로 위기에 빠졌을 때 부르면 언제 어느 곳이든 달려가 지켜주기로 약속하되, 약속한 대가를 잊는 순간 호의가 재난으로 바뀔 것이라는 조건을 둠",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 105,
+          "line_end": 137,
+          "claim_line": null,
+          "quote": "아직 부족한 점은 많아 보인다만 강자에게 굽힐 줄 아는 그 마음가짐이 마음에 드는구나 좋다 네가 원하는 바를 들어 주마 네가 나를 필요로 할 때 네가 위기에 빠졌을 때 나를 부른다면 언제 어느 곳이든 달려가 주겠다 다만 이것 하나만은 마음 깊이 새겨 두렴 네가 배은망덕하게도 약속한 대가를 잊는 순간 나의 호의 또한 더없이 큰 재난으로 바뀔 것임을 명심할게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_harran_001__uec_001",
+          "surface_text": "땅굴",
+          "suggested_type": "location",
+          "line_start": 7
+        }
+      ]
     },
     {
       "scene_id": "blabla_harran_002",
@@ -228,8 +420,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "하란이 자신의 까마귀 이름을 지어 달라고 지휘관에게 시켰다가, 지휘관이 '깜장이' 혹은 '깍깍이'를 제안하자 어이없어하며 다시 진지하게 생각해 보고하라고 명한다.",
+      "summary": "하란이 자신의 까마귀 이름을 지어보라고 지휘관에게 시켰다가, 지휘관이 '깜장이'나 '깍깍이'를 제안하자 형편없다며 다시 진지하게 생각해서 보고하라고 지시한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -239,17 +432,17 @@
             "speaker_label": "하란",
             "entity_id": "char_하란",
             "medium": "messenger",
-            "line_start": 7,
-            "line_end": 7,
-            "quote": "나와 함께 중요한 일 하나 하겠니?"
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "지금 하는 일이 없다면 나와 함께 중요한 일 하나 하겠니?"
           },
           {
             "item_id": "blabla_harran_002__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 10,
-            "line_end": 10,
+            "line_start": 9,
+            "line_end": 11,
             "quote": "중요한 일?"
           }
         ],
@@ -259,15 +452,30 @@
             "surface_text": "까마귀",
             "entity_id": null,
             "entity_type": "character",
-            "line_start": 33,
-            "line_end": 33,
-            "quote": "그렇다면 우리 까마귀 이름을"
+            "line_start": 32,
+            "line_end": 37,
+            "quote": "그렇다면 우리 까마귀 이름을 한번 지어 보렴",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "blabla_harran_002__foa_001",
+          "from_speaker": "하란",
+          "to_target": "지휘관",
+          "address_term": "너",
+          "line_start": 15,
+          "line_end": 17,
+          "quote": "너 혹시 이름 짓는데 소질 있니?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -278,14 +486,12 @@
             {
               "item_id": "blabla_harran_002__chb_001_opt_01",
               "option_text": "작명가가 따로 없지",
-              "continuation_summary": "하란이 믿음은 안 가지만 자신감이 넘친다며 까마귀 이름을 지어 보라고 한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_harran_002__chb_001_opt_02",
               "option_text": "지휘관을 하지 않았다면 업으로 삼았을 거야",
-              "continuation_summary": "하란이 믿음은 안 가지만 자신감이 넘친다며 까마귀 이름을 지어 보라고 한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         },
@@ -296,18 +502,12 @@
             {
               "item_id": "blabla_harran_002__chb_002_opt_01",
               "option_text": "깜장이",
-              "continuation_summary": "지휘관이 까마귀 이름으로 '깜장이'를 제안하자 하란이 형편없다며 기각한다.",
-              "branch_specific_facts": [
-                "지휘관이 하란의 까마귀 이름으로 '깜장이'를 제안했다."
-              ]
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_harran_002__chb_002_opt_02",
               "option_text": "깍깍이",
-              "continuation_summary": "지휘관이 까마귀 이름으로 '깍깍이'를 제안하자 하란이 형편없다며 기각한다.",
-              "branch_specific_facts": [
-                "지휘관이 하란의 까마귀 이름으로 '깍깍이'를 제안했다."
-              ]
+              "continuation_summary": null
             }
           ]
         }
@@ -316,35 +516,155 @@
         {
           "item_id": "blabla_harran_002__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "하란",
-          "summary": "하란이 자신의 까마귀에게 이름을 하나 지어주겠다며 지휘관에게 작명을 시킨다.",
-          "line_start": 33,
-          "line_end": 48,
-          "quote": "그렇다면 우리 까마귀 이름을 한번 지어 보렴",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "하란이 지휘관에게 중요한 일을 함께 하자며 이름 짓는 데 소질이 있는지 묻는다.",
+          "line_start": 3,
+          "line_end": 18,
+          "claim_line": null,
+          "quote": "지금 하는 일이 없다면 나와 함께 중요한 일 하나 하겠니? 중요한 일? 아주 중요한 일이란다 너 혹시 이름 짓는데 소질 있니?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_harran_002__eac_002",
-          "epistemic_type": "established_event",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신이 작명가가 따로 없을 만큼 이름 짓기에 소질이 있다고 주장한다.",
+          "line_start": 20,
+          "line_end": 21,
+          "claim_line": 20,
+          "quote": "작명가가 따로 없지",
+          "refers_to_past": false,
           "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 19,
+            "option_text": "작명가가 따로 없지"
+          }
+        },
+        {
+          "item_id": "blabla_harran_002__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지휘관을 하지 않았다면 작명을 업으로 삼았을 것이라고 주장한다.",
+          "line_start": 22,
+          "line_end": 23,
+          "claim_line": 22,
+          "quote": "지휘관을 하지 않았다면 업으로 삼았을 거야",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 19,
+            "option_text": "지휘관을 하지 않았다면 업으로 삼았을 거야"
+          }
+        },
+        {
+          "item_id": "blabla_harran_002__eac_004",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "하란",
-          "summary": "지휘관이 제안한 까마귀 이름이 형편없다며 하란이 기각하고, 시간을 더 줄 테니 진지하게 생각해서 다시 보고하라고 지시한다.",
-          "line_start": 59,
-          "line_end": 86,
-          "quote": "네게 조금 더 시간을 줄 테니 진지하게 생각해서 나에게 보고하거라",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "하란이 자신의 까마귀 이름을 하나 지어보라고 지휘관에게 지시한다.",
+          "line_start": 26,
+          "line_end": 50,
+          "claim_line": null,
+          "quote": "흐음 자신감이 꽤나 넘치는구나 별로 믿음은 안가지만 말이야 그렇다면 우리 까마귀 이름을 한번 지어 보렴 까마귀 이름? 그렇단다 하나쯤은 지어 두는 것도 나쁘지 않겠다 싶어서 말이야 혹시 지금 생각나는 거 있으면 한번 말해보렴",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_002__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 까마귀 이름으로 '깜장이'를 제안한다.",
+          "line_start": 52,
+          "line_end": 53,
+          "claim_line": null,
+          "quote": "깜장이",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 51,
+            "option_text": "깜장이"
+          }
+        },
+        {
+          "item_id": "blabla_harran_002__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 까마귀 이름으로 '깍깍이'를 제안한다.",
+          "line_start": 54,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "깍깍이",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 51,
+            "option_text": "깍깍이"
+          }
+        },
+        {
+          "item_id": "blabla_harran_002__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 지휘관이 지은 까마귀 이름이 형편없다고 혹평하고, 지휘관은 나름 멋진 이름이라 생각한다고 맞선다.",
+          "line_start": 58,
+          "line_end": 75,
+          "claim_line": 71,
+          "quote": "너 지금 진심으로 하는 말이니? 설사 그렇다 해도 그게 우리 까마귀에게 어울린다고 생각하는 거야? 처음에도 네 말을 다 믿진 않았지만 이렇게나 형편없을 줄은 몰랐구나 나름 멋진 이름이라 생각해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_002__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 어이없어하며 시간을 더 줄 테니 진지하게 생각해서 보고하라고 지시하고 지휘관이 알겠다고 답한다.",
+          "line_start": 76,
+          "line_end": 93,
+          "claim_line": null,
+          "quote": "하하 너무 당당해서 웃음이 절로 나오는구나 이 어이없음을 어떻게 해야 할지 네게 조금 더 시간을 줄 테니 진지하게 생각해서 나에게 보고하거라 알겠어 그래 잘 생각해 보렴",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
-      "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_harran_002__rln_001",
+          "subject": "하란",
+          "target": "까마귀",
+          "relation_or_change": "하란이 데리고 있는 까마귀로, 아직 이름이 없어 이름을 지어주려 함",
+          "epistemic_type": "character_claim",
+          "claimant": "하란",
+          "line_start": 32,
+          "line_end": 46,
+          "claim_line": 33,
+          "quote": "그렇다면 우리 까마귀 이름을 한번 지어 보렴 까마귀 이름? 그렇단다 하나쯤은 지어 두는 것도 나쁘지 않겠다 싶어서 말이야",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_harran_002__uec_001",
+          "surface_text": "까마귀",
+          "suggested_type": "character",
+          "line_start": 33
+        }
+      ]
     },
     {
       "scene_id": "blabla_harran_003",
@@ -360,8 +680,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "하란이 네일 아트를 해보려 한다며 지휘관에게 자신에게 어울리는 색을 물어보고, 다 한 뒤 다시 연락하겠다고 한다.",
+      "summary": "하란이 네일 아트를 해보려 한다며 지휘관에게 어울리는 색을 묻고, 지휘관이 고른 색을 참고해 네일 아트를 한 뒤 다시 연락하겠다고 한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -371,25 +692,38 @@
             "speaker_label": "하란",
             "entity_id": "char_하란",
             "medium": "messenger",
-            "line_start": 10,
-            "line_end": 10,
-            "quote": "나한테 어떤 색이 어울린다고 생각하니?"
+            "line_start": 3,
+            "line_end": 11,
+            "quote": "너의 안목을 믿을 수는 없지만 딱히 물어볼 곳이 없어서 그런데 나한테 어떤 색이 어울린다고 생각하니?"
           },
           {
             "item_id": "blabla_harran_003__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 13,
-            "line_end": 13,
+            "line_start": 12,
+            "line_end": 14,
             "quote": "염색이라도 하려고?"
           }
         ],
         "mentioned_only": [],
         "document_author": null
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "blabla_harran_003__foa_001",
+          "from_speaker": "하란",
+          "to_target": "지휘관",
+          "address_term": "너",
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "너의 안목을 믿을 수는 없지만",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -400,18 +734,12 @@
             {
               "item_id": "blabla_harran_003__chb_001_opt_01",
               "option_text": "분홍색",
-              "continuation_summary": "지휘관이 입고 있는 옷과 잘 어울릴 것 같다며 분홍색을 추천하자 하란은 무난하고 정석적인 대답이라고 평한다.",
-              "branch_specific_facts": [
-                "지휘관이 하란의 옷과 어울린다며 분홍색 네일 아트를 추천했다."
-              ]
+              "continuation_summary": "지휘관이 입고 있는 옷과 잘 어울릴 것 같다고 이유를 말하자 하란이 정석적인 대답이라고 평한다."
             },
             {
               "item_id": "blabla_harran_003__chb_001_opt_02",
               "option_text": "하늘색",
-              "continuation_summary": "지휘관이 포인트가 될 것 같다며 하늘색을 추천하자 하란은 의외의 색이라 튀어 보일까 걱정된다고 평한다.",
-              "branch_specific_facts": [
-                "지휘관이 포인트가 된다며 하늘색 네일 아트를 추천했다."
-              ]
+              "continuation_summary": "지휘관이 포인트가 돼서 잘 어울릴 것 같다고 이유를 말하자 하란이 너무 튀어 보일까 걱정된다고 한다."
             }
           ]
         }
@@ -420,34 +748,117 @@
         {
           "item_id": "blabla_harran_003__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "하란",
-          "summary": "하란이 머리색은 바꿀 생각이 없고 네일 아트를 해볼 예정이라며 지휘관에게 어울리는 색을 추천받는다.",
-          "line_start": 16,
-          "line_end": 31,
-          "quote": "네일 아트를 해볼 거란다",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "하란이 지휘관의 안목을 믿을 수는 없지만 물어볼 곳이 없다며 자신에게 어떤 색이 어울리는지 묻는다.",
+          "line_start": 3,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "너의 안목을 믿을 수는 없지만 딱히 물어볼 곳이 없어서 그런데 나한테 어떤 색이 어울린다고 생각하니? 염색이라도 하려고?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_harran_003__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "하란",
-          "summary": "하란이 지휘관의 색 추천을 참고하겠다며 네일 아트를 마친 뒤 다시 연락하겠다고 약속한다.",
-          "line_start": 75,
-          "line_end": 78,
-          "quote": "나쁘진 않으니 참고 정도는 해줄게 다 하고 나면 다시 연락하마",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "하란이 지금 머리색은 자신에게 딱 어울리는 색이라 바꿀 생각이 전혀 없으며 네일 아트를 해볼 것이라고 말한다.",
+          "line_start": 15,
+          "line_end": 33,
+          "claim_line": 28,
+          "quote": "안됐지만 염색은 아니야 지금 내 머리색은 나에게 딱 어울리는 컬러라서 바꿀 생각은 전혀 없단다 그럼 색은 왜 묻는 거야? 네일 아트를 해볼 거란다 그러니 나한테 어울릴만한 색을 말해보겠니?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_harran_003__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 분홍색이 입고 있는 옷과 잘 어울릴 것 같다고 추천한다.",
+          "line_start": 35,
+          "line_end": 47,
+          "claim_line": 46,
+          "quote": "분홍색 분홍색이라 나에게는 꽤나 무난한 색이구나 왜 분홍색이 잘 어울릴 거라 생각했니? 입고 있는 옷과 잘 어울릴 것 같아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "분홍색"
+          }
+        },
+        {
+          "item_id": "blabla_harran_003__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 입고 있는 옷과 잘 어울릴 것 같다는 지휘관의 말에 너무 정석적인 대답이라고 평한다.",
+          "line_start": 48,
+          "line_end": 50,
+          "claim_line": 49,
+          "quote": "흠 너무 정석적인 대답이지만",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "분홍색"
+          }
+        },
+        {
+          "item_id": "blabla_harran_003__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 하늘색이 포인트가 돼서 잘 어울릴 것 같다고 추천한다.",
+          "line_start": 52,
+          "line_end": 64,
+          "claim_line": 63,
+          "quote": "하늘색 하늘색이라 조금 의외의 색이구나 왜 하늘색이 잘 어울릴 거라 생각했니? 포인트가 돼서 잘 어울릴 것 같아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "하늘색"
+          }
+        },
+        {
+          "item_id": "blabla_harran_003__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 하늘색은 너무 튀어 보일까 봐 걱정된다고 말한다.",
+          "line_start": 65,
+          "line_end": 67,
+          "claim_line": 66,
+          "quote": "흠 너무 튀어 보일까 봐 걱정되긴 하지만",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "하늘색"
+          }
+        },
+        {
+          "item_id": "blabla_harran_003__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "하란",
+          "summary": "하란이 지휘관의 의견을 참고해 주겠다며 네일 아트를 다 하고 나면 다시 연락하겠다고 약속한다.",
+          "line_start": 71,
+          "line_end": 82,
+          "claim_line": null,
+          "quote": "뭐 나쁘진 않으니 참고 정도는 해줄게 다 하고 나면 다시 연락하마 예쁜 결과 기대할게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     }
   ]

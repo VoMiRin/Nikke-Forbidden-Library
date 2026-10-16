@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.560Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.624Z",
   "title_id": "lost_relics__말뚝프로젝트보고서",
   "category": "lost_relics",
   "title": "말뚝 프로젝트 보고서",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "말뚝 프로젝트 no.14 보고서로, 좌표 지정을 위해 바닥에 지지할 수 있는 납작한 디자인의 원반을 제작했으나 GPS 내장을 위해 추가 연구가 필요하다고 기록한다.",
+      "summary": "말뚝 프로젝트 no.14 보고서에서 좌표 지정을 위해 바닥에 지지하는 납작한 디자인의 원반을 채용했으며 GPS 내장을 위해 추가 연구가 필요하다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -35,59 +36,95 @@
             "entity_type": "item",
             "line_start": 2,
             "line_end": 2,
-            "quote": "좌표 지정을 위해 바닥에 지지할 수 있는 원반을 제작."
+            "quote": "좌표 지정을 위해 바닥에 지지할 수 있는 원반을 제작.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "말뚝프로젝트보고서_00__mnt_002",
+            "surface_text": "GPS",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "단, 해당 디자인 안에 GPS를 내장하려면 조금 더 연구가 필요함.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "말뚝프로젝트보고서_00__dca_001",
-          "name": "말뚝 프로젝트 연구원",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "말뚝프로젝트보고서_00__csh_001",
-          "text": "지상 거점(전초기지 등) 자동 구축을 위한 말뚝 프로젝트 보고서 시리즈(no.14, 21, 30, 30-1)의 첫 번째 문서다.",
-          "related_scene_ids": [
-            "말뚝프로젝트보고서_01",
-            "말뚝프로젝트보고서_02",
-            "말뚝프로젝트보고서_03"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "말뚝프로젝트보고서_00__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "말뚝 프로젝트 연구원",
-          "summary": "작성자는 좌표 지정을 위해 바닥에 지지할 수 있는 납작한 디자인의 원반을 제작·채용했으며, 디자인 안에 GPS를 내장하려면 추가 연구가 필요하다고 보고한다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 좌표 지정을 위해 바닥에 지지하는 원반을 제작하고, 테스트를 거쳐 휴대하기 쉽고 다양한 지형에서 버티는 납작한 디자인을 채용했다고 보고한다.",
           "line_start": 2,
+          "line_end": 4,
+          "claim_line": 2,
+          "quote": "좌표 지정을 위해 바닥에 지지할 수 있는 원반을 제작. 여러 테스트를 통해, 휴대가 용이하고 다양한 형태의 지형에서 잘 버틸 수 있는 납작한 디자인을 채용.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_00__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 납작한 원반 디자인 안에 GPS를 내장하려면 추가 연구가 필요하다고 보고한다.",
+          "line_start": 5,
           "line_end": 5,
-          "quote": "좌표 지정을 위해 바닥에 지지할 수 있는 원반을 제작. 여러 테스트를 통해, 휴대가 용이하고 다양한 형태의 지형에서 잘 버틸 수 있는 납작한 디자인을 채용. 단, 해당 디자인 안에 GPS를 내장하려면 조금 더 연구가 필요함.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 5,
+          "quote": "단, 해당 디자인 안에 GPS를 내장하려면 조금 더 연구가 필요함.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "말뚝프로젝트보고서_00__clh_001",
-          "keyword": "말뚝 프로젝트 no.14 (좌표 지정용 원반 제작)",
+          "keyword": "좌표 지정용 원반",
           "category": "item",
-          "detail": "말뚝 발사 좌표를 지정하기 위해 다양한 지형에서 버틸 수 있는 납작한 원반이 제작되었다.",
+          "subject": null,
+          "detail": "말뚝 프로젝트에서 좌표 지정을 위해 바닥에 설치하는 납작한 디자인의 원반이다.",
           "line_start": 2,
           "line_end": 5,
-          "quote": "좌표 지정을 위해 바닥에 지지할 수 있는 원반을 제작. 여러 테스트를 통해, 휴대가 용이하고 다양한 형태의 지형에서 잘 버틸 수 있는 납작한 디자인을 채용. 단, 해당 디자인 안에 GPS를 내장하려면 조금 더 연구가 필요함."
+          "quote": "좌표 지정을 위해 바닥에 지지할 수 있는 원반을 제작. 여러 테스트를 통해, 휴대가 용이하고 다양한 형태의 지형에서 잘 버틸 수 있는 납작한 디자인을 채용. 단, 해당 디자인 안에 GPS를 내장하려면 조금 더 연구가 필요함.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "말뚝프로젝트보고서_00__uec_001",
+          "surface_text": "말뚝 프로젝트",
+          "suggested_type": "event",
+          "line_start": 2
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_00__uec_002",
+          "surface_text": "원반",
+          "suggested_type": "item",
+          "line_start": 2
+        }
+      ]
     },
     {
       "scene_id": "말뚝프로젝트보고서_01",
@@ -103,8 +140,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "말뚝 프로젝트 no.21 보고서로, 원반 좌표로 테스트용 말뚝을 3회 발사했으나 모두 조종 실수로 실패해 연구원 3명이 부상당하자 오퍼레이터 필수 교육 과정 추가를 제안한다.",
+      "summary": "말뚝 프로젝트 no.21 보고서에서 원반 좌표로 테스트용 말뚝을 3회 발사했으나 모두 조종 실수로 실패해 연구원 3명이 부상당했으며, 오퍼레이터 필수 교육 과정 추가를 제안한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -117,82 +155,100 @@
             "entity_type": "item",
             "line_start": 2,
             "line_end": 2,
-            "quote": "원반을 둔 좌표로 테스트용 말뚝을 3회 발사."
+            "quote": "원반을 둔 좌표로 테스트용 말뚝을 3회 발사.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "말뚝프로젝트보고서_01__mnt_002",
-            "surface_text": "말뚝",
+            "surface_text": "테스트용 말뚝",
             "entity_id": null,
             "entity_type": "item",
             "line_start": 2,
             "line_end": 2,
-            "quote": "원반을 둔 좌표로 테스트용 말뚝을 3회 발사."
+            "quote": "원반을 둔 좌표로 테스트용 말뚝을 3회 발사.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "말뚝프로젝트보고서_01__mnt_003",
+            "surface_text": "오퍼레이터",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "오퍼레이터 필수 교육 과정으로 추가하는 것을 제안.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "말뚝프로젝트보고서_01__dca_001",
-          "name": "말뚝 프로젝트 연구원",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "말뚝프로젝트보고서_01__csh_001",
-          "text": "말뚝 프로젝트 두 번째 보고서(no.21)로, 말뚝 발사 조종을 오퍼레이터 필수 교육 과정에 넣자는 제안을 담고 있다.",
-          "related_scene_ids": [
-            "말뚝프로젝트보고서_00",
-            "말뚝프로젝트보고서_02",
-            "말뚝프로젝트보고서_03"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "말뚝프로젝트보고서_01__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "말뚝 프로젝트 연구원",
-          "summary": "작성자는 원반 좌표로 테스트용 말뚝을 3회 발사했으나 조종 실수로 모두 실패해 근처 연구원 3명이 부상당했다고 보고한다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 원반 좌표로 테스트용 말뚝을 3회 발사했으나 모두 조종 실수로 실패했고 근처 연구원 3명이 부상당했다고 보고한다.",
           "line_start": 2,
           "line_end": 4,
+          "claim_line": 2,
           "quote": "원반을 둔 좌표로 테스트용 말뚝을 3회 발사. 3회 모두 조종 실수로 인하여 테스트 실패. 근처에 있던 연구원들 3명 부상.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "말뚝프로젝트보고서_01__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "말뚝 프로젝트 연구원",
-          "summary": "작성자가 말뚝 조종을 오퍼레이터 필수 교육 과정으로 추가할 것을 제안한다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 말뚝 조종을 오퍼레이터 필수 교육 과정으로 추가할 것을 제안한다.",
           "line_start": 5,
           "line_end": 5,
+          "claim_line": null,
           "quote": "오퍼레이터 필수 교육 과정으로 추가하는 것을 제안.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "말뚝프로젝트보고서_01__clh_001",
-          "keyword": "말뚝 발사 테스트 실패 및 오퍼레이터 필수 교육 제안",
-          "category": "past_incident",
-          "detail": "테스트용 말뚝 3회 발사가 조종 실수로 실패해 연구원 3명이 다치면서 오퍼레이터 필수 교육 과정 추가가 제안되었다.",
+          "keyword": "테스트용 말뚝 발사",
+          "category": "item",
+          "subject": null,
+          "detail": "원반이 설치된 좌표로 발사하는 말뚝으로, 오퍼레이터의 조종이 필요하며 실수 시 인명 피해가 발생한다.",
           "line_start": 2,
           "line_end": 5,
-          "quote": "원반을 둔 좌표로 테스트용 말뚝을 3회 발사. 3회 모두 조종 실수로 인하여 테스트 실패. 근처에 있던 연구원들 3명 부상. 오퍼레이터 필수 교육 과정으로 추가하는 것을 제안."
+          "quote": "원반을 둔 좌표로 테스트용 말뚝을 3회 발사. 3회 모두 조종 실수로 인하여 테스트 실패. 근처에 있던 연구원들 3명 부상. 오퍼레이터 필수 교육 과정으로 추가하는 것을 제안.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "말뚝프로젝트보고서_01__uec_001",
+          "surface_text": "테스트용 말뚝",
+          "suggested_type": "item",
+          "line_start": 2
+        }
+      ]
     },
     {
       "scene_id": "말뚝프로젝트보고서_02",
@@ -208,8 +264,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "말뚝 프로젝트 no.30 보고서로, 지상 사막 지역(PBZ 188.83)과 숲 지역(SBV 85.1)에서 구축을 시도했으나 단순 유기물만으로는 재료가 부족하고 랩쳐 습격으로 부대 손실이 발생해 테스트를 일시 중지한다.",
+      "summary": "말뚝 프로젝트 no.30 보고서에서 지상 PBZ 188.83 사막 지역과 SBV 85.1 숲 지역에서 최종 테스트를 진행했으나 재료 부족 및 랩쳐 습격으로 구축에 실패하고, 단순 유기물만으로는 재료가 부족함을 확인해 테스트를 일시 중지한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -217,50 +274,88 @@
         "mentioned_only": [
           {
             "item_id": "말뚝프로젝트보고서_02__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "최종 테스트를 위하여 지상으로 이동.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "말뚝프로젝트보고서_02__mnt_002",
             "surface_text": "PBZ 188.83",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 4,
             "line_end": 4,
-            "quote": "PBZ 188.83 / 사막 지역 - 구축 불가."
+            "quote": "PBZ 188.83 / 사막 지역 - 구축 불가.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "말뚝프로젝트보고서_02__mnt_002",
+            "item_id": "말뚝프로젝트보고서_02__mnt_003",
+            "surface_text": "사막 지역",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "PBZ 188.83 / 사막 지역 - 구축 불가.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "말뚝프로젝트보고서_02__mnt_004",
             "surface_text": "랩쳐",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 5,
             "line_end": 5,
-            "quote": "사유 : 재료 부족 및 랩쳐 습격으로 인한 부대 손실."
+            "quote": "사유 : 재료 부족 및 랩쳐 습격으로 인한 부대 손실.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "말뚝프로젝트보고서_02__mnt_003",
+            "item_id": "말뚝프로젝트보고서_02__mnt_005",
             "surface_text": "SBV 85.1",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 7,
             "line_end": 7,
-            "quote": "SBV 85.1 / 재료 수급을 위하여 양분이 풍부한 숲으로 이동 - 구축 진행 중 강제 중단."
+            "quote": "SBV 85.1 / 재료 수급을 위하여 양분이 풍부한 숲으로 이동 - 구축 진행 중 강제 중단.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "말뚝프로젝트보고서_02__mnt_006",
+            "surface_text": "숲",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 7,
+            "line_end": 7,
+            "quote": "SBV 85.1 / 재료 수급을 위하여 양분이 풍부한 숲으로 이동 - 구축 진행 중 강제 중단.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "말뚝프로젝트보고서_02__dca_001",
-          "name": "말뚝 프로젝트 연구원",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "말뚝프로젝트보고서_02__csh_001",
-          "text": "사막 지역(PBZ 188.83)에서 재료 부족 및 랩쳐 습격으로 중단된 후, 다음 문서(no.30-1)에서 해당 좌표 부근의 재구축 신호(무기물이나 니케 바디 등을 흡수해 재가동된 정황)가 포착된다.",
+          "text": "말뚝프로젝트보고서_03에서 이 보고서의 PBZ 188.83 좌표 부근에서 재구축 신호가 발생한다.",
           "related_scene_ids": [
-            "말뚝프로젝트보고서_00",
-            "말뚝프로젝트보고서_01",
-            "말뚝프로젝트보고서_03",
-            "하모니큐브관찰일지_02"
+            "말뚝프로젝트보고서_03"
           ]
         }
       ],
@@ -269,31 +364,74 @@
         {
           "item_id": "말뚝프로젝트보고서_02__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "말뚝 프로젝트 연구원",
-          "summary": "작성자는 최종 테스트를 위해 지상으로 이동해 PBZ 188.83(사막 지역)에서 재료 부족 및 랩쳐 습격으로 구축에 실패하고, SBV 85.1(숲)에서도 단순 유기물만으로는 재료가 부족해 구축이 강제 중단되었다고 보고한다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 최종 테스트를 위해 지상으로 이동했으나 PBZ 188.83 사막 지역에서 재료 부족과 랩쳐 습격에 따른 부대 손실로 구축이 불가능했다고 보고한다.",
           "line_start": 2,
+          "line_end": 5,
+          "claim_line": 4,
+          "quote": "최종 테스트를 위하여 지상으로 이동. PBZ 188.83 / 사막 지역 - 구축 불가. 사유 : 재료 부족 및 랩쳐 습격으로 인한 부대 손실.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_02__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 재료 수급을 위해 SBV 85.1 숲으로 이동했으나 단순 유기물만으로는 재료가 부족해 구축이 강제 중단되었으며 테스트를 일시 중지했다고 보고한다.",
+          "line_start": 7,
           "line_end": 12,
-          "quote": "최종 테스트를 위하여 지상으로 이동. PBZ 188.83 / 사막 지역 - 구축 불가. 사유 : 재료 부족 및 랩쳐 습격으로 인한 부대 손실. SBV 85.1 / 재료 수급을 위하여 양분이 풍부한 숲으로 이동 - 구축 진행 중 강제 중단. 사유 : 재료 부족 비고 : 단순 유기물만으로는 재료 부족 확인. 테스트 일시 중지.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 7,
+          "quote": "SBV 85.1 / 재료 수급을 위하여 양분이 풍부한 숲으로 이동 - 구축 진행 중 강제 중단. 사유 : 재료 부족 비고 : 단순 유기물만으로는 재료 부족 확인. 테스트 일시 중지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "말뚝프로젝트보고서_02__clh_001",
-          "keyword": "PBZ 188.83(사막) 및 SBV 85.1(숲) 말뚝 구축 실패",
+          "keyword": "PBZ 188.83",
           "category": "code_or_number",
-          "detail": "말뚝 프로젝트의 재구축 시스템은 사막이나 단순 유기물(숲)만으로는 재료가 부족해 작동하지 않음이 확인되었다.",
+          "subject": null,
+          "detail": "사막 지역 좌표로, 재료 부족과 랩쳐 습격으로 인한 부대 손실 때문에 구축에 실패한 지점이다.",
           "line_start": 4,
+          "line_end": 5,
+          "quote": "PBZ 188.83 / 사막 지역 - 구축 불가. 사유 : 재료 부족 및 랩쳐 습격으로 인한 부대 손실.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_02__clh_002",
+          "keyword": "SBV 85.1 및 구축 재료 조건",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "양분이 풍부한 숲(SBV 85.1)에서도 단순 유기물만으로는 구축 재료가 부족하여 중단되었다.",
+          "line_start": 7,
           "line_end": 10,
-          "quote": "PBZ 188.83 / 사막 지역 - 구축 불가. 사유 : 재료 부족 및 랩쳐 습격으로 인한 부대 손실. SBV 85.1 / 재료 수급을 위하여 양분이 풍부한 숲으로 이동 - 구축 진행 중 강제 중단. 사유 : 재료 부족 비고 : 단순 유기물만으로는 재료 부족 확인."
+          "quote": "SBV 85.1 / 재료 수급을 위하여 양분이 풍부한 숲으로 이동 - 구축 진행 중 강제 중단. 사유 : 재료 부족 비고 : 단순 유기물만으로는 재료 부족 확인.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "말뚝프로젝트보고서_02__uec_001",
+          "surface_text": "PBZ 188.83",
+          "suggested_type": "location",
+          "line_start": 4
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_02__uec_002",
+          "surface_text": "SBV 85.1",
+          "suggested_type": "location",
+          "line_start": 7
+        }
+      ]
     },
     {
       "scene_id": "말뚝프로젝트보고서_03",
@@ -309,8 +447,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "말뚝 프로젝트 no.30-1 보고서로, 무너진 도시(NJK 2.00)에서는 풍부한 재료 덕분에 구축에 성공했으며, 이전 테스트의 사막 좌표(PBZ 188.83) 부근에서 의문의 재구축 신호가 발생해 확인이 필요하다고 기록한다.",
+      "summary": "말뚝 프로젝트 no.30-1 보고서에서 재료가 풍부한 NJK 2.00 무너진 도시에서 구축에 성공해 1차 테스트를 완료했으며, 이전 테스트 지점인 PBZ 188.83 좌표 부근에서 재구축 신호가 발생해 확인이 필요하다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -318,40 +457,68 @@
         "mentioned_only": [
           {
             "item_id": "말뚝프로젝트보고서_03__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "no.30 테스트를 이어가기 위해 다시 지상으로 이동.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "말뚝프로젝트보고서_03__mnt_002",
             "surface_text": "NJK 2.00",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 4,
             "line_end": 4,
-            "quote": "NJK 2.00 / 무너진 도시 - 구축 성공 / 재료 풍부"
+            "quote": "NJK 2.00 / 무너진 도시 - 구축 성공 / 재료 풍부",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "말뚝프로젝트보고서_03__mnt_002",
+            "item_id": "말뚝프로젝트보고서_03__mnt_003",
+            "surface_text": "무너진 도시",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "NJK 2.00 / 무너진 도시 - 구축 성공 / 재료 풍부",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "말뚝프로젝트보고서_03__mnt_004",
             "surface_text": "PBZ 188.83",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 6,
             "line_end": 6,
-            "quote": "비고 : no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호 발생. 확인 필요."
+            "quote": "비고 : no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호 발생. 확인 필요.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "말뚝프로젝트보고서_03__dca_001",
-          "name": "말뚝 프로젝트 연구원",
-          "entity_id": null
+          "name": "보고서 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "말뚝프로젝트보고서_03__csh_001",
-          "text": "무너진 도시(NJK 2.00)에서의 구축 성공(전초기지 등)과 함께, 부대 손실이 있었던 PBZ 188.83 사막 좌표에서 뒤늦게 재구축 신호가 발생한 미스터리를 남긴다.",
+          "text": "말뚝프로젝트보고서_02에서 재료 부족 및 랩쳐 습격으로 부대 손실을 입고 실패했던 PBZ 188.83 좌표 부근에서 재구축 신호가 발생한 것은 하모니큐브관찰일지_00~03에서 주변 건물과 니케 바디를 재료로 재구축을 수행한 하모니 큐브와 연결될 수 있다.",
           "related_scene_ids": [
-            "말뚝프로젝트보고서_00",
-            "말뚝프로젝트보고서_01",
             "말뚝프로젝트보고서_02",
+            "하모니큐브관찰일지_00",
+            "하모니큐브관찰일지_01",
             "하모니큐브관찰일지_02",
             "하모니큐브관찰일지_03"
           ]
@@ -362,31 +529,74 @@
         {
           "item_id": "말뚝프로젝트보고서_03__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "말뚝 프로젝트 연구원",
-          "summary": "작성자는 NJK 2.00(무너진 도시)에서 풍부한 재료로 구축에 성공해 1차 테스트를 완료했으나, 이전 no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호가 발생해 확인이 필요하다고 보고한다.",
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 no.30 테스트를 이어가기 위해 다시 지상으로 이동하여 재료가 풍부한 NJK 2.00 무너진 도시에서 구축에 성공했다고 보고한다.",
           "line_start": 2,
+          "line_end": 4,
+          "claim_line": 4,
+          "quote": "no.30 테스트를 이어가기 위해 다시 지상으로 이동. NJK 2.00 / 무너진 도시 - 구축 성공 / 재료 풍부",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_03__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "보고서 작성자",
+          "summary": "보고서 작성자가 no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호가 발생해 확인이 필요하며 테스트를 1차 완료했다고 보고한다.",
+          "line_start": 6,
           "line_end": 8,
-          "quote": "no.30 테스트를 이어가기 위해 다시 지상으로 이동. NJK 2.00 / 무너진 도시 - 구축 성공 / 재료 풍부 비고 : no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호 발생. 확인 필요. 테스트 1차 완료.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 6,
+          "quote": "비고 : no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호 발생. 확인 필요. 테스트 1차 완료.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "말뚝프로젝트보고서_03__clh_001",
-          "keyword": "NJK 2.00(무너진 도시) 구축 성공 및 PBZ 188.83 재구축 신호",
+          "keyword": "NJK 2.00",
           "category": "code_or_number",
-          "detail": "무너진 도시(NJK 2.00)에서는 말뚝 구축에 성공했으며, 부대 손실 후 방치된 PBZ 188.83 사막 좌표 부근에서 정체불명의 재구축 신호가 발생했다.",
+          "subject": null,
+          "detail": "무너진 도시 좌표로, 인공 구조물 등 재료가 풍부하여 구축에 성공한 지점이다.",
           "line_start": 4,
-          "line_end": 8,
-          "quote": "NJK 2.00 / 무너진 도시 - 구축 성공 / 재료 풍부 비고 : no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호 발생. 확인 필요. 테스트 1차 완료."
+          "line_end": 4,
+          "quote": "NJK 2.00 / 무너진 도시 - 구축 성공 / 재료 풍부",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_03__clh_002",
+          "keyword": "PBZ 188.83 재구축 신호",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "이전 테스트에서 재료 부족 및 부대 손실로 구축에 실패했던 PBZ 188.83 좌표 부근에서 원인 불명의 재구축 신호가 발생했다.",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "비고 : no.30 테스트의 PBZ 188.83 좌표 부근에서 재구축 신호 발생. 확인 필요.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "말뚝프로젝트보고서_03__uec_001",
+          "surface_text": "NJK 2.00",
+          "suggested_type": "location",
+          "line_start": 4
+        },
+        {
+          "item_id": "말뚝프로젝트보고서_03__uec_002",
+          "surface_text": "PBZ 188.83",
+          "suggested_type": "location",
+          "line_start": 6
+        }
+      ]
     }
   ]
 }

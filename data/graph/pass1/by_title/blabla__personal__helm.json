@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.580Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.657Z",
   "title_id": "blabla__personal__helm",
   "category": "blabla",
   "title": "헬름",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "이지스 스쿼드와 어드마이어 호의 함장 헬름이 지휘관에게 첫인사를 건네고, 이지스 스쿼드가 하는 일을 보여주겠다며 나중에 선상 파티에 오라고 초대한다.",
+      "summary": "이지스 스쿼드와 어드마이어 호의 함장 헬름이 지휘관에게 첫인사를 건네고, 이지스 스쿼드가 하는 일을 보러 선상 파티에 오라고 초대한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -32,17 +33,17 @@
             "speaker_label": "헬름",
             "entity_id": "char_헬름",
             "medium": "messenger",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해"
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해 귀관과 함께 싸울 수 있어서 영광이야"
           },
           {
             "item_id": "blabla_helm_001__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 19,
-            "line_end": 19,
+            "line_start": 18,
+            "line_end": 20,
             "quote": "잘 부탁해"
           }
         ],
@@ -52,36 +53,44 @@
             "surface_text": "이지스 스쿼드",
             "entity_id": null,
             "entity_type": "squad",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해"
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_001__mnt_002",
             "surface_text": "어드마이어 호",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해"
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_001__mnt_003",
             "surface_text": "블라블라",
             "entity_id": null,
-            "entity_type": "item",
-            "line_start": 28,
-            "line_end": 28,
-            "quote": "블라블라 같은 건 잘 하지 않으니까"
+            "entity_type": "concept",
+            "line_start": 27,
+            "line_end": 29,
+            "quote": "블라블라 같은 건 잘 하지 않으니까",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_001__mnt_004",
             "surface_text": "선상 파티",
             "entity_id": null,
             "entity_type": "event",
-            "line_start": 95,
-            "line_end": 95,
-            "quote": "나중에 시간이 난다면 선상 파티에 와보도록 해"
+            "line_start": 94,
+            "line_end": 96,
+            "quote": "나중에 시간이 난다면 선상 파티에 와보도록 해",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -92,12 +101,15 @@
           "from_speaker": "헬름",
           "to_target": "지휘관",
           "address_term": "귀관",
-          "line_start": 7,
-          "line_end": 7,
-          "quote": "귀관과 함께 싸울 수 있어서 영광이야"
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "귀관과 함께 싸울 수 있어서 영광이야",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -108,14 +120,12 @@
             {
               "item_id": "blabla_helm_001__chb_001_opt_01",
               "option_text": "나와 계속 채팅해서 숙련도를 높이자",
-              "continuation_summary": "헬름이 그것도 즐겁겠지만 자신에게는 더 중요한 일이 많다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 그것도 즐겁겠지만 자신에게는 더 중요한 일이 많다고 답한다."
             },
             {
               "item_id": "blabla_helm_001__chb_001_opt_02",
               "option_text": "그런 건 별로 중요하지 않아",
-              "continuation_summary": "헬름이 동의하며 세상에는 채팅보다 더 중요한 일이 많다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 맞다며 세상엔 그것보다 더 중요한 일이 많다고 동의한다."
             }
           ]
         },
@@ -126,14 +136,12 @@
             {
               "item_id": "blabla_helm_001__chb_002_opt_01",
               "option_text": "배를 타는 것 아닌가?",
-              "continuation_summary": "헬름이 맞긴 하지만 직접 말하기는 뭐하다며 선상 파티에 와보라고 한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_helm_001__chb_002_opt_02",
               "option_text": "해군 아닌가?",
-              "continuation_summary": "헬름이 맞긴 하지만 직접 말하기는 뭐하다며 선상 파티에 와보라고 한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         }
@@ -142,54 +150,175 @@
         {
           "item_id": "blabla_helm_001__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 자신을 이지스 스쿼드와 어드마이어 호의 함장으로 소개하며 블라블라 같은 채팅 문화에는 익숙하지 않다고 말한다.",
-          "line_start": 4,
-          "line_end": 31,
-          "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 자신이 이지스 스쿼드와 어드마이어 호의 함장을 맡고 있다고 소개하며 지휘관과 함께 싸울 수 있어 영광이라고 인사한다.",
+          "line_start": 3,
+          "line_end": 11,
+          "claim_line": 4,
+          "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해 귀관과 함께 싸울 수 있어서 영광이야 앞으로 잘 부탁해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_001__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 이지스 스쿼드가 실제로 하는 일을 직접 말하기는 자랑스럽지 않다며, 나중에 선상 파티에 와서 직접 보라고 지휘관을 초대한다.",
-          "line_start": 72,
-          "line_end": 101,
-          "quote": "나중에 시간이 난다면 선상 파티에 와보도록 해",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 오타를 내자 헬름이 블라블라를 잘 하지 않아 요즘 채팅 문화를 잘 모른다고 말한다.",
+          "line_start": 12,
+          "line_end": 33,
+          "claim_line": 31,
+          "quote": "잘 부탁하낟 ?? 잘 부탁해 아 오타였군 난 또 다른 의미가 있는 줄 알았어 블라블라 같은 건 잘 하지 않으니까 요즘 채팅 문화에 대해 잘 몰라",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_001__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 계속 채팅해서 숙련도를 높이자고 제안하자 헬름이 그것도 즐겁겠지만 더 중요한 일이 많다고 답한다.",
+          "line_start": 35,
+          "line_end": 42,
+          "claim_line": 40,
+          "quote": "나와 계속 채팅해서 숙련도를 높이자 그것도 나름 즐겁겠지만 나한텐 그것보다 더 중요한 일이 많아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "나와 계속 채팅해서 숙련도를 높이자"
+          }
+        },
+        {
+          "item_id": "blabla_helm_001__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 채팅 문화는 중요하지 않다고 하자 헬름이 세상엔 더 중요한 일이 많다고 동의한다.",
+          "line_start": 43,
+          "line_end": 50,
+          "claim_line": 48,
+          "quote": "그런 건 별로 중요하지 않아 맞아 세상엔 그것보다 더 중요한 일이 많지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "그런 건 별로 중요하지 않아"
+          }
+        },
+        {
+          "item_id": "blabla_helm_001__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 중요한 일의 예를 묻자 헬름이 조롱하는 줄 오해했다가 이지스 스쿼드가 무슨 일을 하는지 정말 모르는구나라며 사과한다.",
+          "line_start": 53,
+          "line_end": 74,
+          "claim_line": null,
+          "quote": "예를 들면? 정말 몰라서 물어보는 거야? 아니면 그냥 조롱하는 건가? ?? 아 미안해 정말 모르는구나 이지스 스쿼드가 무슨 일을 하는지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_001__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 이지스 스쿼드는 배를 타는 곳 아니냐고 묻는다.",
+          "line_start": 76,
+          "line_end": 77,
+          "claim_line": 76,
+          "quote": "배를 타는 것 아닌가?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 75,
+            "option_text": "배를 타는 것 아닌가?"
+          }
+        },
+        {
+          "item_id": "blabla_helm_001__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 이지스 스쿼드는 해군이 아니냐고 묻는다.",
+          "line_start": 78,
+          "line_end": 79,
+          "claim_line": 78,
+          "quote": "해군 아닌가?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 75,
+            "option_text": "해군 아닌가?"
+          }
+        },
+        {
+          "item_id": "blabla_helm_001__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 맞긴 하지만 자랑스럽게 할 얘기는 아니라며 나중에 선상 파티에 와서 이지스 스쿼드가 무엇을 하는지 직접 보라고 초대한다.",
+          "line_start": 82,
+          "line_end": 108,
+          "claim_line": null,
+          "quote": "맞아 맞긴 맞는데 흠 이건 딱히 얘기하고 싶지 않아 부끄러운 건 아니지만 자랑스럽게 할 얘기는 또 아니라서 나중에 시간이 난다면 선상 파티에 와보도록 해 그러면 우리 이지스 스쿼드가 뭘 하는지 볼 수 있을 거야 기회가 되면 꼭 가볼게 그래 그럼 수고해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "blabla_helm_001__clh_001",
-          "keyword": "선상 파티",
-          "category": "lore_concept",
-          "detail": "해군 스쿼드인 이지스 스쿼드가 어드마이어 호에서 실제로 수행하는 주요 업무로, 헬름은 이를 직접 언급하기 부끄러워한다.",
-          "line_start": 92,
-          "line_end": 98,
-          "quote": "나중에 시간이 난다면 선상 파티에 와보도록 해 그러면 우리 이지스 스쿼드가 뭘 하는지 볼 수 있을 거야"
+          "keyword": "이지스 스쿼드의 선상 파티 업무",
+          "category": "organization",
+          "subject": null,
+          "detail": "이지스 스쿼드는 해군이지만 부끄럽진 않아도 자랑스럽게 말하긴 어려운 선상 파티 관련 업무를 하고 있다.",
+          "line_start": 91,
+          "line_end": 99,
+          "quote": "부끄러운 건 아니지만 자랑스럽게 할 얘기는 또 아니라서 나중에 시간이 난다면 선상 파티에 와보도록 해 그러면 우리 이지스 스쿼드가 뭘 하는지 볼 수 있을 거야",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "blabla_helm_001__rln_001",
           "subject": "헬름",
-          "target": "지휘관",
-          "relation_or_change": "지휘관을 '귀관'이라 부르며, 지휘관의 단순 오타('잘 부탁하낟')에도 다른 깊은 의미가 있는 줄 알고 진지하게 반응한다.",
-          "line_start": 7,
-          "line_end": 25,
-          "quote": "귀관과 함께 싸울 수 있어서 영광이야"
+          "target": "이지스 스쿼드",
+          "relation_or_change": "이지스 스쿼드 소속이며 함장을 맡고 있음",
+          "epistemic_type": "character_claim",
+          "claimant": "헬름",
+          "line_start": 3,
+          "line_end": 5,
+          "claim_line": 4,
+          "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_001__rln_002",
+          "subject": "헬름",
+          "target": "어드마이어 호",
+          "relation_or_change": "어드마이어 호의 함장을 맡고 있음",
+          "epistemic_type": "character_claim",
+          "claimant": "헬름",
+          "line_start": 3,
+          "line_end": 5,
+          "claim_line": 4,
+          "quote": "이지스 스쿼드와 어드마이어 호의 함장을 맡고 있는 헬름이라고 해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "blabla_helm_001__uec_001",
@@ -202,6 +331,12 @@
           "surface_text": "어드마이어 호",
           "suggested_type": "item",
           "line_start": 4
+        },
+        {
+          "item_id": "blabla_helm_001__uec_003",
+          "surface_text": "선상 파티",
+          "suggested_type": "event",
+          "line_start": 95
         }
       ]
     },
@@ -219,8 +354,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "헬름이 기부 물품으로 받은 끈 달린 작은 삼각형 천 세트의 정체를 몰라 지휘관에게 물었다가 수영복임을 알게 되고, 직접 입어본 뒤 면적이 너무 작다며 당황해 옷 위에 입었다고 변명한다.",
+      "summary": "헬름이 기부 물품으로 받은 끈 달린 작은 삼각형 세트의 정체를 지휘관에게 묻고, 수영복이라는 말을 듣고 직접 입어본 뒤 당황하며 옷 위에 입었다고 변명한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -230,17 +366,17 @@
             "speaker_label": "헬름",
             "entity_id": "char_헬름",
             "medium": "messenger",
-            "line_start": 7,
-            "line_end": 7,
-            "quote": "기부 물품 중 도저히 쓰임새를 알 수 없는 걸 받았는데"
+            "line_start": 3,
+            "line_end": 11,
+            "quote": "귀관 기부 물품 중 도저히 쓰임새를 알 수 없는 걸 받았는데 혹시 이것에 대해 알고 있는 게 있어?"
           },
           {
             "item_id": "blabla_helm_002__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 13,
-            "line_end": 13,
+            "line_start": 12,
+            "line_end": 14,
             "quote": "어떻게 생긴 물건이야?"
           }
         ],
@@ -250,9 +386,11 @@
             "surface_text": "수영복",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 80,
-            "line_end": 80,
-            "quote": "수영복이라고?"
+            "line_start": 79,
+            "line_end": 81,
+            "quote": "수영복이라고?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -263,12 +401,15 @@
           "from_speaker": "헬름",
           "to_target": "지휘관",
           "address_term": "귀관",
-          "line_start": 95,
-          "line_end": 95,
-          "quote": "귀관의 말이 진짜일지도 몰라"
+          "line_start": 3,
+          "line_end": 8,
+          "quote": "귀관 기부 물품 중 도저히 쓰임새를 알 수 없는 걸 받았는데",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -279,18 +420,12 @@
             {
               "item_id": "blabla_helm_002__chb_001_opt_01",
               "option_text": "재질은?",
-              "continuation_summary": "헬름이 촉감과 광택으로 보아 방수 재질인 것 같다고 답한다.",
-              "branch_specific_facts": [
-                "기부받은 물품은 촉감과 광택상 방수 재질이다."
-              ]
+              "continuation_summary": "헬름이 촉감이나 광택으로 보아 방수 재질 같다고 답한다."
             },
             {
               "item_id": "blabla_helm_002__chb_001_opt_02",
               "option_text": "크기는?",
-              "continuation_summary": "헬름이 끈 둘레가 하나는 상체 정도, 하나는 골반 정도라고 답한다.",
-              "branch_specific_facts": [
-                "기부받은 물품의 끈 둘레는 하나는 상체 정도, 하나는 골반 정도이다."
-              ]
+              "continuation_summary": "헬름이 끈 둘레가 하나는 상체 정도, 하나는 골반 정도 같다고 답한다."
             }
           ]
         },
@@ -301,14 +436,12 @@
             {
               "item_id": "blabla_helm_002__chb_002_opt_01",
               "option_text": "수영복인 것 같아",
-              "continuation_summary": "헬름이 처음에는 믿지 않다가 끈의 형태와 삼각형의 위치를 보고 직접 입어보겠다고 한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_helm_002__chb_002_opt_02",
               "option_text": "전술적 입수 장비인 것 같아",
-              "continuation_summary": "지휘관이 전술적 입수 장비라고 답하지만 헬름은 수영복이라는 말로 알아듣고 직접 입어보겠다고 한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         }
@@ -316,49 +449,187 @@
       "events_and_claims": [
         {
           "item_id": "blabla_helm_002__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 기부 물품으로 받은 손바닥보다 작은 삼각형 천이 달린 끈 세트의 용도를 지휘관에게 묻고, 군사 대외비일지 모른다며 사진 전송을 거절한다.",
-          "line_start": 7,
-          "line_end": 60,
-          "quote": "기부 물품 중 도저히 쓰임새를 알 수 없는 걸 받았는데",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 기부 물품 중 끈에 삼각형이 두 개 달린 것과 하나 달린 것이 한 세트인 정체불명의 물건을 받았다며 지휘관에게 알고 있는 게 있는지 묻는다.",
+          "line_start": 3,
+          "line_end": 23,
+          "claim_line": 7,
+          "quote": "귀관 기부 물품 중 도저히 쓰임새를 알 수 없는 걸 받았는데 혹시 이것에 대해 알고 있는 게 있어? 어떻게 생긴 물건이야? 아마 두 개가 한 세트인 것 같은데 하나는 끈에 삼각형이 두 개 달려있고 하나는 끈에 삼각형이 하나 달려있어",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_002__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "지휘관의 말을 들은 헬름이 직접 물품을 착용해 보고 진짜 수영복이었음을 확인한 뒤, 면적과 끈이 너무 작아 편하지 않다고 평한다.",
-          "line_start": 95,
-          "line_end": 122,
-          "quote": "착의해 볼 테니 잠시만 기다려 줘",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 사진을 찍어 보내달라고 하자 헬름이 군사 물건일 경우 대외비를 노출할 수 있다며 거절한다.",
+          "line_start": 24,
+          "line_end": 33,
+          "claim_line": 31,
+          "quote": "그냥 사진 찍어 보내주면 안 돼? 군사적인 물건일 수도 있으니까 잘못하면 대외비를 노출할 수도 있어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_002__eac_003",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "지휘관이 그것을 직접 입었냐고 묻자 헬름은 당황해 오타를 내며 옷 위에 입었으니 이상한 상상은 하지 말라고 주장한다.",
-          "line_start": 125,
-          "line_end": 149,
-          "quote": "옷 위에 이벘ㅓㅇ 입었어 그러니 이상한 상상은 하지 말았으면 해",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 재질을 묻자 헬름이 촉감과 광택으로 보아 방수 재질인 것 같다고 답한다.",
+          "line_start": 35,
+          "line_end": 42,
+          "claim_line": 40,
+          "quote": "재질은? 자세히는 모르겠지만 촉감이나 광택으로 보건대 방수 재질인 것 같아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "재질은?"
+          }
+        },
+        {
+          "item_id": "blabla_helm_002__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 크기를 묻자 헬름이 끈 둘레가 하나는 상체 정도, 하나는 골반 정도인 것 같다고 답한다.",
+          "line_start": 43,
+          "line_end": 50,
+          "claim_line": 48,
+          "quote": "크기는? 크기라고 정의하긴 좀 애매한 것 같은데 끈 둘레가 하나는 상체 정도, 하나는 골반 정도인 것 같아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "크기는?"
+          }
+        },
+        {
+          "item_id": "blabla_helm_002__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 붙어 있는 삼각형의 크기가 손바닥보다 좀 작다며 짐작 가는 게 없냐고 묻는다.",
+          "line_start": 53,
+          "line_end": 68,
+          "claim_line": 60,
+          "quote": "아 그리고 붙어있는 삼각형의 크기가 아주 작아 손바닥 보다 좀 작은 정도야 ···설마 헬름이 말하는 물건은···. 짐작 가는 게 없어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_002__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그 물건이 수영복인 것 같다고 말한다.",
+          "line_start": 70,
+          "line_end": 71,
+          "claim_line": 70,
+          "quote": "수영복인 것 같아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 69,
+            "option_text": "수영복인 것 같아"
+          }
+        },
+        {
+          "item_id": "blabla_helm_002__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그 물건이 전술적 입수 장비인 것 같다고 말한다.",
+          "line_start": 72,
+          "line_end": 73,
+          "claim_line": 72,
+          "quote": "전술적 입수 장비인 것 같아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 69,
+            "option_text": "전술적 입수 장비인 것 같아"
+          }
+        },
+        {
+          "item_id": "blabla_helm_002__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 수영복이라는 말에 반신반의하다가 끈의 형태와 삼각형 위치를 보고 직접 착의해 보겠다며 자리를 비운다.",
+          "line_start": 76,
+          "line_end": 105,
+          "claim_line": null,
+          "quote": "뭐? 수영복이라고? 귀관 아무리 내가 세상 물정에 어둡다고 해도 아니 잠깐 이 끈의 형태와 삼각형의 위치 귀관의 말이 진짜일지도 몰라 착의해 볼 테니 잠시만 기다려 줘 뭐라고? 헬름은 한참 동안 답장이 없다···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_002__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 직접 입어본 뒤 정말 수영복이었지만 면적과 끈이 너무 작아 편한 느낌은 아니라고 말한다.",
+          "line_start": 106,
+          "line_end": 123,
+          "claim_line": 107,
+          "quote": "정말 수영복이었어 그런데 이건 음 면적이 좀 너무 끈도 좀 작은 것 같기도 하고 편한 느낌은 아니네 수영복은 편안해야 하는데 이건",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_002__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 그걸 입은 거냐고 묻자 헬름이 당황해 오타를 내며 옷 위에 입었으니 이상한 상상은 하지 말라고 주장한다.",
+          "line_start": 124,
+          "line_end": 150,
+          "claim_line": 143,
+          "quote": "그걸 입은 거야? 아 음 그게 아 그래 옷 위에 이벘ㅓㅇ 입었어 그러니 이상한 상상은 하지 말았으면 해 정말이야",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_002__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 알겠다고 하자 헬름이 알았으면 됐다며 빨리 쉬라고 말한다.",
+          "line_start": 151,
+          "line_end": 165,
+          "claim_line": null,
+          "quote": "알겠어 그래 알았으면 됐어 쉬도록 해 빨리",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_helm_002__clh_001",
+          "keyword": "기부받은 비키니 수영복",
+          "category": "item",
+          "subject": null,
+          "detail": "헬름이 기부 물품으로 끈에 손바닥보다 작은 삼각형이 달린 비키니 수영복을 받아 직접 입어보았다.",
+          "line_start": 15,
+          "line_end": 23,
+          "quote": "아마 두 개가 한 세트인 것 같은데 하나는 끈에 삼각형이 두 개 달려있고 하나는 끈에 삼각형이 하나 달려있어",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -375,8 +646,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "헬름이 수영장에서 연습하던 중 라이프 토닉 스쿼드의 폴크방에게 수영 시합 신청을 받았다며, 수영을 못 하는 육상 선수 폴크방은 물속에서 달리기로 했다고 지휘관에게 알린다.",
+      "summary": "헬름이 수영장에서 연습하던 중 라이프 토닉 스쿼드의 폴크방에게 수영 시합 요청을 받았다며, 물속에서 달리는 폴크방과 시합하기로 했다고 지휘관을 초대한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -386,17 +658,17 @@
             "speaker_label": "헬름",
             "entity_id": "char_헬름",
             "medium": "messenger",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "귀관은 수영을 좀 하는 편이야?"
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "귀관은 수영을 좀 하는 편이야? 참고로 말하면 나는 훌륭한 편이야"
           },
           {
             "item_id": "blabla_helm_003__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 16,
-            "line_end": 16,
+            "line_start": 15,
+            "line_end": 17,
             "quote": "갑자기 수영은 왜?"
           }
         ],
@@ -406,45 +678,55 @@
             "surface_text": "수영장",
             "entity_id": null,
             "entity_type": "location",
-            "line_start": 19,
-            "line_end": 19,
-            "quote": "수영장에서 수영 연습을 하고 있었는데"
+            "line_start": 18,
+            "line_end": 20,
+            "quote": "수영장에서 수영 연습을 하고 있었는데",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_003__mnt_002",
             "surface_text": "라이프 토닉 스쿼드",
             "entity_id": null,
             "entity_type": "squad",
-            "line_start": 22,
-            "line_end": 22,
-            "quote": "라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어"
+            "line_start": 21,
+            "line_end": 23,
+            "quote": "라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_003__mnt_003",
             "surface_text": "폴크방",
             "entity_id": "char_폴크방",
             "entity_type": "character",
-            "line_start": 22,
-            "line_end": 22,
-            "quote": "라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어"
+            "line_start": 21,
+            "line_end": 23,
+            "quote": "라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_003__mnt_004",
             "surface_text": "이지스 스쿼드",
             "entity_id": null,
             "entity_type": "squad",
-            "line_start": 40,
-            "line_end": 40,
-            "quote": "이지스 스쿼드가 어떤 스쿼드인지"
+            "line_start": 39,
+            "line_end": 41,
+            "quote": "이지스 스쿼드가 어떤 스쿼드인지",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_003__mnt_005",
             "surface_text": "니케",
             "entity_id": null,
             "entity_type": "faction_or_species",
-            "line_start": 52,
-            "line_end": 52,
-            "quote": "니케는 기본적으로 수영을 못 하니까"
+            "line_start": 51,
+            "line_end": 53,
+            "quote": "니케는 기본적으로 수영을 못 하니까",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -455,12 +737,15 @@
           "from_speaker": "헬름",
           "to_target": "지휘관",
           "address_term": "귀관",
-          "line_start": 4,
-          "line_end": 4,
-          "quote": "귀관은 수영을 좀 하는 편이야?"
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "귀관은 수영을 좀 하는 편이야?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -468,80 +753,118 @@
         {
           "item_id": "blabla_helm_003__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 수영장에서 연습하던 중 라이프 토닉 스쿼드의 폴크방이 체육인의 피가 끓는다며 수영 시합을 요청해 왔다고 말한다.",
-          "line_start": 19,
-          "line_end": 31,
-          "quote": "라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "헬름이 지휘관에게 수영을 하는 편인지 물으며 자신의 수영 실력은 객관적으로도 훌륭하다고 자랑한다.",
+          "line_start": 3,
+          "line_end": 17,
+          "claim_line": 13,
+          "quote": "귀관은 수영을 좀 하는 편이야? 참고로 말하면 나는 훌륭한 편이야 스스로 이런 말 하긴 부끄러울 수도 있지만 내 수영 실력은 객관적으로 봐도 훌륭해 갑자기 수영은 왜?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_003__eac_002",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 일반적인 니케는 기본적으로 수영을 못 하지만 자신은 수영 실력이 훌륭하며, 육상 선수인 폴크방은 물속에서 달리기로 했다고 설명한다.",
-          "line_start": 52,
-          "line_end": 73,
-          "quote": "니케는 기본적으로 수영을 못 하니까",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 수영장에서 연습하던 중 라이프 토닉 스쿼드의 폴크방이 체육인의 피가 끓는다며 수영 시합을 요청해 와서 이지스 스쿼드의 실력을 증명해 주겠다고 말한다.",
+          "line_start": 18,
+          "line_end": 44,
+          "claim_line": 28,
+          "quote": "수영장에서 수영 연습을 하고 있었는데 라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어 한참 동안 그렇게 보더니 나한테 수영 시합을 요청해왔어 체육인의 피가 끓는다고 하면서 마침 나도 수영으로 상대가 없어서 무료했거든 이 기회에 한 번 증명해 줘야겠어 이지스 스쿼드가 어떤 스쿼드인지 왜 해군이라 불리는지 말이야",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_003__eac_003",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 지휘관에게 시간 나면 수영 시합을 구경하러 오라고 초대하고 지휘관이 꼭 가겠다고 약속한다.",
-          "line_start": 79,
-          "line_end": 85,
-          "quote": "아무튼 시간 나면 구경하러 와",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 니케는 기본적으로 수영을 못 해서 수영 시합은 꿈꿀 수도 없었다며 신나 한다.",
+          "line_start": 45,
+          "line_end": 56,
+          "claim_line": 52,
+          "quote": "신나 보여 물론 신나 니케는 기본적으로 수영을 못 하니까 수영 시합 같은 건 꿈꿀 수도 없거든",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_003__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 폴크방도 수영을 못 하지 않냐고 묻자 헬름이 육상 선수인 폴크방은 물속에서 달리기로 했다고 답한다.",
+          "line_start": 57,
+          "line_end": 77,
+          "claim_line": 70,
+          "quote": "?? 왜 그래? 폴크방도 수영을 못 하긴 마찬가지 아니야? 아 그건 폴크방은 물속에서 달리기로 했어 폴크방은 육상 선수니까 그게 맞지 그게 맞는 거구나",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_003__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 지휘관에게 시간 나면 시합을 구경하러 오라고 초대하고 연습하러 간다.",
+          "line_start": 78,
+          "line_end": 92,
+          "claim_line": null,
+          "quote": "아무튼 시간 나면 구경하러 와 재밌을 거야 꼭 갈게 그럼 난 연습하러 가볼게 ···여러 가지 의미로 재밌는 시합이 될 것 같다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "blabla_helm_003__clh_001",
-          "keyword": "니케의 수영 불가 설정",
+          "keyword": "니케의 수영 불가 설정과 헬름의 예외적 수영 능력",
           "category": "lore_concept",
-          "detail": "니케는 기본적으로 수영을 하지 못하지만, 해군 스쿼드인 이지스 스쿼드의 헬름은 예외적으로 수영을 할 수 있다.",
-          "line_start": 52,
-          "line_end": 55,
-          "quote": "니케는 기본적으로 수영을 못 하니까 수영 시합 같은 건 꿈꿀 수도 없거든"
+          "subject": null,
+          "detail": "니케는 기본적으로 수영을 못하지만 헬름은 예외적으로 수영을 할 수 있다.",
+          "line_start": 51,
+          "line_end": 56,
+          "quote": "니케는 기본적으로 수영을 못 하니까 수영 시합 같은 건 꿈꿀 수도 없거든",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "blabla_helm_003__rln_001",
-          "subject": "헬름",
-          "target": "폴크방",
-          "relation_or_change": "수영장에서 헬름의 수영 연습을 지켜보던 폴크방이 시합을 신청해, 헬름은 수영으로, 육상 선수인 폴크방은 물속 달리기로 대결하기로 한다.",
-          "line_start": 22,
-          "line_end": 73,
-          "quote": "라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어"
+          "subject": "폴크방",
+          "target": "라이프 토닉 스쿼드",
+          "relation_or_change": "라이프 토닉 스쿼드 소속이며 육상 선수임",
+          "epistemic_type": "character_claim",
+          "claimant": "헬름",
+          "line_start": 21,
+          "line_end": 23,
+          "claim_line": 22,
+          "quote": "라이프 토닉 스쿼드의 폴크방이 나를 지켜보고 있었어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "blabla_helm_003__uec_001",
-          "surface_text": "라이프 토닉 스쿼드",
-          "suggested_type": "squad",
-          "line_start": 22
+          "surface_text": "수영장",
+          "suggested_type": "location",
+          "line_start": 19
         },
         {
           "item_id": "blabla_helm_003__uec_002",
-          "surface_text": "이지스 스쿼드",
+          "surface_text": "라이프 토닉 스쿼드",
           "suggested_type": "squad",
-          "line_start": 40
+          "line_start": 22
         }
       ]
     },
@@ -559,8 +882,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "헬름이 어제 입었던 수영복의 끈이 너무 가늘고 면적이 작아 하루 종일 노심초사했다고 털어놓으며, 앞으로 수영복에 문제가 생기면 지휘관이 가장 먼저 발견해 살짝 귀띔해 달라고 부탁한다.",
+      "summary": "헬름이 어제 입은 수영복의 끈이 풀리거나 천이 틀어질까 봐 하루 종일 노심초사했다고 털어놓으며, 앞으로 수영복에 문제가 생기면 지휘관이 가장 먼저 귀띔해 달라고 부탁한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -570,17 +894,17 @@
             "speaker_label": "헬름",
             "entity_id": "char_헬름",
             "medium": "messenger",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "미안한데 귀관"
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "미안한데 귀관 혹시 어제 나 괜찮았어?"
           },
           {
             "item_id": "blabla_helm_004__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 53,
-            "line_end": 53,
+            "line_start": 52,
+            "line_end": 54,
             "quote": "문제라니?"
           }
         ],
@@ -590,9 +914,11 @@
             "surface_text": "수영복",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 133,
-            "line_end": 133,
-            "quote": "내 수영복에 문제가 생긴 걸 발견하면"
+            "line_start": 26,
+            "line_end": 31,
+            "quote": "내 수영복 문제 없었냐는 질문이었어",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -603,21 +929,15 @@
           "from_speaker": "헬름",
           "to_target": "지휘관",
           "address_term": "귀관",
-          "line_start": 4,
-          "line_end": 4,
-          "quote": "미안한데 귀관"
-        },
-        {
-          "item_id": "blabla_helm_004__foa_002",
-          "from_speaker": "지휘관",
-          "to_target": "헬름",
-          "address_term": "헬름",
-          "line_start": 34,
-          "line_end": 34,
-          "quote": "헬름의 수영복으로 말하자면 아주 완벽하지"
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "미안한데 귀관",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -628,14 +948,12 @@
             {
               "item_id": "blabla_helm_004__chb_001_opt_01",
               "option_text": "??",
-              "continuation_summary": "헬름이 마음이 급해서 설명을 못 했다며 수영복에 문제가 없었는지 묻는 질문이었다고 설명한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 마음이 급해서 설명을 못 했다고 말한다."
             },
             {
               "item_id": "blabla_helm_004__chb_001_opt_02",
               "option_text": "ㅇㅇ 아주 멀쩡했어",
-              "continuation_summary": "헬름이 그런 뜻이 아니라며 수영복에 문제가 없었는지 묻는 질문이었다고 설명한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 그런 뜻이 아니라고 정정한다."
             }
           ]
         },
@@ -646,14 +964,12 @@
             {
               "item_id": "blabla_helm_004__chb_002_opt_01",
               "option_text": "헬름의 수영복으로 말하자면 아주 완벽하지",
-              "continuation_summary": "헬름이 한동안 답장이 없다가 다행이라고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "blabla_helm_004__chb_002_opt_02",
               "option_text": "계속 물 뿌리고 싶은 걸 참느라 혼났어",
-              "continuation_summary": "헬름이 한동안 답장이 없다가 다행이라고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         },
@@ -664,14 +980,12 @@
             {
               "item_id": "blabla_helm_004__chb_003_opt_01",
               "option_text": "미안하지만 너무 인상깊은 고민이라서",
-              "continuation_summary": "헬름이 잊어달라고 재차 부탁한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 잊어달라고 재차 요구한다."
             },
             {
               "item_id": "blabla_helm_004__chb_003_opt_02",
               "option_text": "그래 ㅋㅋㅋ",
-              "continuation_summary": "헬름이 웃지 말라며 잊어달라고 부탁한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 웃지 말라고 한다."
             }
           ]
         }
@@ -679,31 +993,217 @@
       "events_and_claims": [
         {
           "item_id": "blabla_helm_004__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 어제 입은 수영복의 끈이 너무 가늘고 가려주는 면적이 작아 하루 종일 거울과 핸드폰 카메라로 확인하며 노심초사했다고 털어놓는다.",
-          "line_start": 56,
-          "line_end": 80,
-          "quote": "가려주는 천이 살짝 틀어지면 어쩌나 하고 하루종일 노심초사했거든",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "헬름이 지휘관에게 어제 자신이 괜찮았는지 묻는다.",
+          "line_start": 3,
+          "line_end": 9,
+          "claim_line": null,
+          "quote": "미안한데 귀관 혹시 어제 나 괜찮았어?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_004__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 방금 털어놓은 고민을 잊어달라고 한 뒤, 만약 자신의 수영복에 문제가 생기면 다른 사람보다 먼저 지휘관이 발견해 살짝 귀띔해 달라고 부탁한다.",
-          "line_start": 92,
-          "line_end": 157,
-          "quote": "내 수영복에 문제가 생긴 걸 발견하면 괜히 모른척 넘어가주려 하지 말고 나한테 살짝 귀띔해줬으면 좋겠어···",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 영문을 몰라 하자 헬름이 마음이 급해 설명을 못 했다고 말한다.",
+          "line_start": 11,
+          "line_end": 18,
+          "claim_line": 16,
+          "quote": "?? 아 마음이 급해서 설명을 못 했구나",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "??"
+          }
+        },
+        {
+          "item_id": "blabla_helm_004__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 아주 멀쩡했다고 답하자 헬름이 그런 뜻이 아니라고 정정한다.",
+          "line_start": 19,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "ㅇㅇ 아주 멀쩡했어 아니 그런 뜻이 아니라",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "ㅇㅇ 아주 멀쩡했어"
+          }
+        },
+        {
+          "item_id": "blabla_helm_004__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 어제 자신의 수영복에 문제가 없었는지 묻는다.",
+          "line_start": 26,
+          "line_end": 32,
+          "claim_line": null,
+          "quote": "내 수영복 문제 없었냐는 질문이었어",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_004__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 헬름의 수영복이 아주 완벽했다고 칭찬한다.",
+          "line_start": 34,
+          "line_end": 35,
+          "claim_line": 34,
+          "quote": "헬름의 수영복으로 말하자면 아주 완벽하지",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 33,
+            "option_text": "헬름의 수영복으로 말하자면 아주 완벽하지"
+          }
+        },
+        {
+          "item_id": "blabla_helm_004__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 헬름에게 계속 물을 뿌리고 싶은 것을 참느라 혼났다고 말한다.",
+          "line_start": 36,
+          "line_end": 37,
+          "claim_line": 36,
+          "quote": "계속 물 뿌리고 싶은 걸 참느라 혼났어",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 33,
+            "option_text": "계속 물 뿌리고 싶은 걸 참느라 혼났어"
+          }
+        },
+        {
+          "item_id": "blabla_helm_004__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "한동안 답장이 없던 헬름이 그 외의 문제는 없었던 것 같아 다행이라고 말하자 지휘관이 무슨 문제냐고 묻는다.",
+          "line_start": 40,
+          "line_end": 54,
+          "claim_line": null,
+          "quote": "···헬름은 한동안 답장이 없다. 그랬구나 그랬다면 다행이야 그 외의 문제는 없었던 것 같아서 문제라니?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_004__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 수영복 끈이 너무 가늘고 가려주는 면적이 작아 끈이 풀어지거나 천이 틀어질까 봐 하루 종일 거울과 휴대폰 카메라로 확인하며 노심초사했다고 털어놓는다.",
+          "line_start": 55,
+          "line_end": 84,
+          "claim_line": 71,
+          "quote": "끈··· 너무 가늘잖아 가려주는 면적도 지나치게 작고 그래서 혹시라도 끈이 풀어지거나 가려주는 천이 살짝 틀어지면 어쩌나 하고 하루종일 노심초사했거든 그래서 계속 문제가 없는지 확인하려고 거울도 보고 핸드폰 카메라로 계속 비춰보고 음",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_004__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 남성인 지휘관에게 털어놓을 고민은 아니었다며 방금 한 말을 전부 잊어달라고 요청한다.",
+          "line_start": 85,
+          "line_end": 94,
+          "claim_line": null,
+          "quote": "생각해보니 남성인 귀관에게 털어놓을 고민은 아니었던 것 같아 방금 한 말은 전부 다 잊어주지 않을래?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_004__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 너무 인상 깊은 고민이라고 하자 헬름이 잊어달라고 재차 말한다.",
+          "line_start": 96,
+          "line_end": 100,
+          "claim_line": null,
+          "quote": "미안하지만 너무 인상깊은 고민이라서 잊어줘",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 95,
+            "option_text": "미안하지만 너무 인상깊은 고민이라서"
+          }
+        },
+        {
+          "item_id": "blabla_helm_004__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 웃으며 알겠다고 하자 헬름이 웃지 말라고 한다.",
+          "line_start": 101,
+          "line_end": 105,
+          "claim_line": null,
+          "quote": "그래 ㅋㅋㅋ 웃지마",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 95,
+            "option_text": "그래 ㅋㅋㅋ"
+          }
+        },
+        {
+          "item_id": "blabla_helm_004__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 부탁이라고 하자 지휘관이 들어주겠다고 답하고, 헬름이 엎드려 절받기 같지만 고맙다고 말한다.",
+          "line_start": 108,
+          "line_end": 122,
+          "claim_line": null,
+          "quote": "부탁이야 부탁이라면 들어줘야지 그래 왠지 엎드려 절받기 같지만 고마워",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_004__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 만약 다른 사람보다 먼저 자신의 수영복에 문제가 생긴 걸 발견하면 모른 척하지 말고 살짝 귀띔해 달라고 부탁하고 지휘관이 그렇게 하겠다고 답한다.",
+          "line_start": 123,
+          "line_end": 143,
+          "claim_line": null,
+          "quote": "그리고 혹시 혹시 말인데 다른 사람보다 먼저 귀관이 내 수영복에 문제가 생긴 걸 발견하면 괜히 모른척 넘어가주려 하지 말고 나한테 살짝 귀띔해줬으면 좋겠어··· 그래 ㅋㅋ 그렇게 할게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_004__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 지휘관만 믿겠다며 문제가 생기면 추궁할 테니 자신의 수영복 차림을 꼭 잘 살펴봐 달라고 당부하고 지휘관이 접수한다.",
+          "line_start": 144,
+          "line_end": 161,
+          "claim_line": 148,
+          "quote": "좋아 귀관만 믿을게 혹시라도 문제가 생기면 귀관을 추궁할 테니까 꼭 잘 살펴봐주고 있어야 해 접수했어 ···안 그래도 자극적인 헬름의 수영복 차림을 더 자세히 보고 있어야 하게 생겼다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
@@ -712,12 +1212,19 @@
           "item_id": "blabla_helm_004__rln_001",
           "subject": "헬름",
           "target": "지휘관",
-          "relation_or_change": "남성에게 털어놓기 부끄러운 수영복 노출 고민을 털어놓고, 문제가 생기면 다른 사람보다 먼저 발견해 귀띔해 달라며 지휘관에게만 의지하는 모습을 보인다.",
-          "line_start": 86,
-          "line_end": 154,
-          "quote": "다른 사람보다 먼저 귀관이 내 수영복에 문제가 생긴 걸 발견하면"
+          "relation_or_change": "수영복에 문제가 생기면 다른 사람보다 먼저 살짝 귀띔해 달라고 부탁하며 지휘관만 믿겠다고 신뢰를 표현함",
+          "epistemic_type": "character_claim",
+          "claimant": "헬름",
+          "line_start": 144,
+          "line_end": 155,
+          "claim_line": 148,
+          "quote": "좋아 귀관만 믿을게 혹시라도 문제가 생기면 귀관을 추궁할 테니까 꼭 잘 살펴봐주고 있어야 해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -734,8 +1241,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "헬름이 물을 말리는 기능이 있는 겉옷 때문에 사람들이 자꾸 자신에게 물을 뿌려 고민이라고 상담하던 중, 또다시 물을 뿌리고 도망간 앵커를 잡으러 간다.",
+      "summary": "헬름이 사람들이 자신에게 자꾸 물을 뿌려대서 수영복을 바꿀까 고민하지만 지휘관의 만류로 그냥 견디기로 하고, 그 와중에 또 물을 뿌리고 간 앵커에게 따지러 간다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -745,56 +1253,59 @@
             "speaker_label": "헬름",
             "entity_id": "char_헬름",
             "medium": "messenger",
-            "line_start": 7,
-            "line_end": 7,
-            "quote": "다들 대체 뭐가 문제인 걸까?"
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "정말 다들 대체 뭐가 문제인 걸까?"
           },
           {
             "item_id": "blabla_helm_005__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 146,
-            "line_end": 146,
-            "quote": "그럼 이제 어떻게 할 거야?"
+            "line_start": 9,
+            "line_end": 11,
+            "quote": "왜?"
           }
         ],
         "mentioned_only": [
           {
             "item_id": "blabla_helm_005__mnt_001",
-            "surface_text": "겉옷",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 16,
-            "line_end": 16,
-            "quote": "겉옷에 물을 말리는 기능이 없었다면 정말"
-          },
-          {
-            "item_id": "blabla_helm_005__mnt_002",
             "surface_text": "수영복",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 152,
-            "line_end": 152,
-            "quote": "수영복을 바꾸는 것도 안 되고"
+            "line_start": 77,
+            "line_end": 82,
+            "quote": "아무래도 다른 수영복을 자비로 구매하는 편이 좋을까···?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "blabla_helm_005__mnt_003",
+            "item_id": "blabla_helm_005__mnt_002",
             "surface_text": "앵커",
             "entity_id": "char_앵커",
             "entity_type": "character",
-            "line_start": 208,
-            "line_end": 208,
-            "quote": "앵커가 또 물을 ㅃㅃ뿌리고 갔어!"
+            "line_start": 192,
+            "line_end": 194,
+            "quote": "앵커도 마스트도 이 일로 날 놀리기만 해서",
+            "chronology_type": "present",
+            "in_branch_option": {
+              "choice_line": 161,
+              "option_text": "ㅜㅜ 정말 힘들겠네"
+            }
           },
           {
-            "item_id": "blabla_helm_005__mnt_004",
+            "item_id": "blabla_helm_005__mnt_003",
             "surface_text": "마스트",
             "entity_id": "char_마스트",
             "entity_type": "character",
-            "line_start": 193,
-            "line_end": 193,
-            "quote": "앵커도 마스트도 이 일로 날 놀리기만 해서"
+            "line_start": 192,
+            "line_end": 194,
+            "quote": "앵커도 마스트도 이 일로 날 놀리기만 해서",
+            "chronology_type": "present",
+            "in_branch_option": {
+              "choice_line": 161,
+              "option_text": "ㅜㅜ 정말 힘들겠네"
+            }
           }
         ],
         "document_author": null
@@ -805,21 +1316,18 @@
           "from_speaker": "헬름",
           "to_target": "지휘관",
           "address_term": "귀관",
-          "line_start": 96,
-          "line_end": 99,
-          "quote": "귀관 이렇게 막무가내인 모습은 처음 봐"
-        },
-        {
-          "item_id": "blabla_helm_005__foa_002",
-          "from_speaker": "지휘관",
-          "to_target": "헬름",
-          "address_term": "헬름",
-          "line_start": 131,
-          "line_end": 131,
-          "quote": "헬름은 정말 몸매가 좋으니까 수영복에 상관없이"
+          "line_start": 95,
+          "line_end": 97,
+          "quote": "귀관",
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 84,
+            "option_text": "그건 절대로 안 돼"
+          }
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -830,14 +1338,12 @@
             {
               "item_id": "blabla_helm_005__chb_001_opt_01",
               "option_text": "오히려 그 기능이 신기해서 다들 더 그러는 것 아닐까?",
-              "continuation_summary": "헬름이 일리 있는 추론이지만 겉옷을 벗으면 노출이 심한 차림을 공개하게 되어 부담스럽다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 일리 있는 추론이지만 겉옷을 벗으면 노출이 많은 차림을 공개하게 돼 부담스럽다고 답한다."
             },
             {
               "item_id": "blabla_helm_005__chb_001_opt_02",
               "option_text": "물을 뿌릴 때마다 네가 너무 부끄러워해서 그런 것 아닐까?",
-              "continuation_summary": "헬름이 기부받은 옷이라 감사히 입고 있지만 드러난 곳이 많은 디자인이라 부담스럽다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 기부받은 옷이라 입고는 있지만 드러난 곳이 많은 디자인이라 부담스러워 어쩔 수 없다고 답한다."
             }
           ]
         },
@@ -848,18 +1354,12 @@
             {
               "item_id": "blabla_helm_005__chb_002_opt_01",
               "option_text": "그건 절대로 안 돼",
-              "continuation_summary": "지휘관이 다른 수영복 구매를 만류하자 헬름이 막무가내인 모습은 처음 본다면서도 명령으로 생각하고 따르겠다고 한다.",
-              "branch_specific_facts": [
-                "지휘관이 다른 수영복을 사지 말라고 간절히 말하자 헬름이 명령으로 여기고 수용한다."
-              ]
+              "continuation_summary": "지휘관이 간절하게 원하지 않는다고 막무가내로 만류하자 헬름이 명령이라 생각하고 따르기로 한다."
             },
             {
               "item_id": "blabla_helm_005__chb_002_opt_02",
               "option_text": "딱히 의미는 없을 거라고 봐",
-              "continuation_summary": "지휘관이 헬름은 몸매가 좋아 수영복에 상관없다고 칭찬하자 헬름이 얼굴이 홧홧해진다며 부끄러워한다.",
-              "branch_specific_facts": [
-                "지휘관이 헬름의 몸매를 칭찬하자 헬름이 얼굴이 홧홧해진다며 부끄러워한다."
-              ]
+              "continuation_summary": "지휘관이 헬름의 몸매가 좋아 수영복에 상관없다고 말하자 헬름이 부끄러워하며 제지한다."
             }
           ]
         },
@@ -870,16 +1370,12 @@
             {
               "item_id": "blabla_helm_005__chb_003_opt_01",
               "option_text": "그냥 다른 사람들에게 행복을 주고 있는 거라고 생각해",
-              "continuation_summary": "헬름이 물을 뿌리는 행위에서 행복을 얻는 것은 다 큰 어른이 할 일이 아니라고 반박한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 물을 뿌려 행복을 얻더라도 다 큰 어른이 할 일은 아니라고 반박한다."
             },
             {
               "item_id": "blabla_helm_005__chb_003_opt_02",
               "option_text": "ㅜㅜ 정말 힘들겠네",
-              "continuation_summary": "헬름이 앵커와 마스트는 이 일로 자신을 놀리기만 했는데 지휘관이나마 공감해 줘서 다행이라고 고마워한다.",
-              "branch_specific_facts": [
-                "앵커와 마스트가 물 뿌리기 장난으로 헬름을 놀리기만 했다."
-              ]
+              "continuation_summary": "헬름이 앵커와 마스트는 놀리기만 했는데 지휘관이나마 공감해 줘서 다행이라고 고마워한다."
             }
           ]
         }
@@ -888,58 +1384,212 @@
         {
           "item_id": "blabla_helm_005__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 겉옷에 물을 말리는 기능이 있어 사람들이 자신을 볼 때마다 물을 뿌려대며, 기부받은 수영복은 노출이 많아 부담스럽다고 호소한다.",
-          "line_start": 13,
-          "line_end": 69,
-          "quote": "날 볼 때마다 물을 못 뿌려서 난리잖아 겉옷에 물을 말리는 기능이 없었다면 정말 하루종일 젖은 채로 다녔을 거야",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 사람들이 자신을 볼 때마다 물을 뿌려대서 겉옷에 물을 말리는 기능이 없었다면 하루 종일 젖은 채로 다녔을 것이라고 토로한다.",
+          "line_start": 3,
+          "line_end": 30,
+          "claim_line": 13,
+          "quote": "정말 다들 대체 뭐가 문제인 걸까? 왜? 날 볼 때마다 물을 못 뿌려서 난리잖아 겉옷에 물을 말리는 기능이 없었다면 정말 하루종일 젖은 채로 다녔을 거야 음··· ?? 그건 무슨 반응이야?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_005__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 지휘관의 반응에 따라 다른 수영복을 자비로 구매하는 것을 포기하고 그냥 견디기로 결정한다.",
-          "line_start": 78,
-          "line_end": 158,
-          "quote": "수영복을 바꾸는 것도 안 되고 말린다고 장난을 관둘 사람들도 아니니까 그냥 견디는 수밖에 없을 것 같아",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "지휘관이 겉옷의 건조 기능이 신기해서 더 물을 뿌리는 것 아니냐고 추측하자, 헬름이 그렇다고 겉옷을 벗으면 노출이 많은 차림을 공개하게 돼 부담스럽다고 말한다.",
+          "line_start": 32,
+          "line_end": 51,
+          "claim_line": 49,
+          "quote": "오히려 그 기능이 신기해서 다들 더 그러는 것 아닐까? 일리 있는 추론이네 하지만 그렇다고 겉옷을 벗고 다녔다간 그 여러모로 많이 드러낸 차림을 대대적으로 공개하고 다니게 되는 거잖아 그런 건 좀 신경이 쓰인달까 부담스러워",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 31,
+            "option_text": "오히려 그 기능이 신기해서 다들 더 그러는 것 아닐까?"
+          }
         },
         {
           "item_id": "blabla_helm_005__eac_003",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "대화 도중 앵커가 또다시 헬름에게 물을 뿌리고 도망가자, 헬름은 오타를 연발하며 앵커에게 따지러 간다며 대화를 중단한다.",
-          "line_start": 202,
-          "line_end": 220,
-          "quote": "앵커가 또 물을 ㅃㅃ뿌리고 갔어!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
-        }
-      ],
-      "clues_and_hooks": [],
-      "relationship_and_lore_notes": [
+          "summary": "지휘관이 물을 뿌릴 때마다 부끄러워해서 그런 것 아니냐고 추측하자, 헬름이 기부받은 옷이라 감사히 입고 있지만 드러난 곳이 많은 디자인이라 부담스럽다고 말한다.",
+          "line_start": 52,
+          "line_end": 71,
+          "claim_line": 69,
+          "quote": "물을 뿌릴 때마다 네가 너무 부끄러워해서 그런 것 아닐까? 그건 어쩔 수 없잖아 기부 받은 옷이라서 일단 감사한 마음으로 입고는 있지만 너무 여러모로 드러난 곳이 많은 디자인이라 생각보다 더 부담스러운걸",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 31,
+            "option_text": "물을 뿌릴 때마다 네가 너무 부끄러워해서 그런 것 아닐까?"
+          }
+        },
         {
-          "item_id": "blabla_helm_005__rln_001",
-          "subject": "앵커",
-          "target": "헬름",
-          "relation_or_change": "물을 말리는 기능이 있는 겉옷을 입은 헬름에게 장난으로 계속 물을 뿌리고 도망간다.",
-          "line_start": 208,
-          "line_end": 214,
-          "quote": "앵커가 또 물을 ㅃㅃ뿌리고 갔어!"
+          "item_id": "blabla_helm_005__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 다른 수영복을 자비로 구매하는 편이 좋을지 지휘관에게 묻는다.",
+          "line_start": 74,
+          "line_end": 83,
+          "claim_line": null,
+          "quote": "음 아무래도 다른 수영복을 자비로 구매하는 편이 좋을까···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_005__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신이 간절히 원하지 않는다며 다른 수영복을 사는 것은 절대 안 된다고 만류한다.",
+          "line_start": 85,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "그건 절대로 안 돼 응? 왜? 내가 그걸 원하지 않으니까 뭐? 귀관 이렇게 막무가내인 모습은 처음 봐 그만큼 간절한 거라고 생각해줘",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 84,
+            "option_text": "그건 절대로 안 돼"
+          }
+        },
+        {
+          "item_id": "blabla_helm_005__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 의미는 모르겠지만 지휘관의 명령이라 생각하고 수영복을 바꾸지 않겠다고 수락한다.",
+          "line_start": 104,
+          "line_end": 113,
+          "claim_line": null,
+          "quote": "음;; 그래 알겠어 여전히 의미는 모르겠지만 명령이라고 생각하고 들을게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 84,
+            "option_text": "그건 절대로 안 돼"
+          }
+        },
+        {
+          "item_id": "blabla_helm_005__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 헬름은 몸매가 좋아서 수영복을 바꿔도 딱히 의미가 없을 것이라고 말한다.",
+          "line_start": 114,
+          "line_end": 132,
+          "claim_line": 131,
+          "quote": "딱히 의미는 없을 거라고 봐 왜?? 내 입으로 말하긴 좀 그래 ?? 그렇게 말하니까 더 궁금해지는데 무슨 말을 해도 추궁하지 않을 테니까 말해봐 헬름은 정말 몸매가 좋으니까 수영복에 상관없이",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 84,
+            "option_text": "딱히 의미는 없을 거라고 봐"
+          }
+        },
+        {
+          "item_id": "blabla_helm_005__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 지휘관의 몸매 칭찬에 얼굴이 홧홧해져서 문자를 못 하겠다며 그만하라고 제지한다.",
+          "line_start": 133,
+          "line_end": 142,
+          "claim_line": 140,
+          "quote": "그만!!! 안 되겠어 얼굴이 홧홧해져서 문자를 못 하겠네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 84,
+            "option_text": "딱히 의미는 없을 거라고 봐"
+          }
+        },
+        {
+          "item_id": "blabla_helm_005__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 수영복을 바꿀 수도 없고 말린다고 장난을 관둘 사람들도 아니니 그냥 견디기로 결정한다.",
+          "line_start": 145,
+          "line_end": 160,
+          "claim_line": null,
+          "quote": "그럼 이제 어떻게 할 거야? 글쎄 수영복을 바꾸는 것도 안 되고 말린다고 장난을 관둘 사람들도 아니니까 그냥 견디는 수밖에 없을 것 같아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_005__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 다른 사람들에게 행복을 주고 있는 거라 생각하라고 하자, 헬름이 자신에게 물을 뿌려 행복을 얻더라도 다 큰 어른이 할 일은 아니라고 반박한다.",
+          "line_start": 162,
+          "line_end": 184,
+          "claim_line": 176,
+          "quote": "그냥 다른 사람들에게 행복을 주고 있는 거라고 생각해 귀관 자꾸 영문 모를 소릴 하지 말아줘 가령 정말 내게 물을 뿌리는 행위에서 실제로 행복을 얻는 사람이 있다고 해도 그건 다 큰 어른이 할 일은 아니라고 봐 흠; ㅋㅋ 그렇구나 그래",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 161,
+            "option_text": "그냥 다른 사람들에게 행복을 주고 있는 거라고 생각해"
+          }
+        },
+        {
+          "item_id": "blabla_helm_005__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 힘들겠다고 위로하자 헬름이 앵커와 마스트도 이 일로 자신을 놀리기만 해서 지휘관이라면 다를까 기대하며 문자했다고 말한다.",
+          "line_start": 185,
+          "line_end": 198,
+          "claim_line": 193,
+          "quote": "ㅜㅜ 정말 힘들겠네 그래도 귀관이나마 공감해줘서 다행이야 앵커도 마스트도 이 일로 날 놀리기만 해서 귀관이라면 다르지 않을까 기대하며 문자한 거였거든",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 161,
+            "option_text": "ㅜㅜ 정말 힘들겠네"
+          }
+        },
+        {
+          "item_id": "blabla_helm_005__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "문자 도중 앵커가 또 물을 뿌리고 가자 헬름이 오타를 내며 앵커에게 따지고 오겠다고 한 뒤 연락이 끊긴다.",
+          "line_start": 201,
+          "line_end": 221,
+          "claim_line": 208,
+          "quote": "그래서 말인데ㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔ 아 정말 앵커가 또 물을 ㅃㅃ뿌리고 갔어! 나 잠시 앵커에게 따그ㅡㅁ듷갸ㅔ 무ㅗㅓㅇㅁ노 하고 올게 앵커에게 뭘 한다고? ···헬름은 더 이상 답장하지 않는다.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_helm_005__clh_001",
+          "keyword": "물 말리는 기능이 있는 헬름의 겉옷",
+          "category": "item",
+          "subject": null,
+          "detail": "헬름이 수영복 위에 입은 겉옷에는 물을 말리는 기능이 있다.",
+          "line_start": 15,
+          "line_end": 20,
+          "quote": "겉옷에 물을 말리는 기능이 없었다면 정말 하루종일 젖은 채로 다녔을 거야",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -956,8 +1606,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "헬름이 해양 생물인 불가사리에 대한 공포증을 극복하고 싶다며 지휘관에게 도움을 청하고, 사진 검색에는 실패하지만 지휘관이 제안한 불가사리 키링을 선물로 받기로 하며 의욕을 보인다.",
+      "summary": "불가사리를 두려워하는 헬름이 지휘관에게 극복 방법을 상담하다가, 사진 보기와 기억 떠올리기에 실패한 뒤 지휘관이 선물로 제안한 불가사리 커플 키링을 기쁘게 받아들인다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -967,56 +1618,64 @@
             "speaker_label": "헬름",
             "entity_id": "char_헬름",
             "medium": "messenger",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "불가사리를 극복하고 싶어"
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "불가사리를 극복하고 싶어 방법을 알려줘"
           },
           {
             "item_id": "blabla_helm_006__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 10,
-            "line_end": 10,
+            "line_start": 9,
+            "line_end": 11,
             "quote": "드디어 결심한 거야?"
           }
         ],
         "mentioned_only": [
           {
             "item_id": "blabla_helm_006__mnt_001",
-            "surface_text": "불가사리",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 4,
-            "line_end": 4,
-            "quote": "불가사리를 극복하고 싶어"
-          },
-          {
-            "item_id": "blabla_helm_006__mnt_002",
             "surface_text": "앵커",
             "entity_id": "char_앵커",
             "entity_type": "character",
-            "line_start": 16,
-            "line_end": 16,
-            "quote": "한때는 앵커가 알아서 불가사리나 해양 생물들에"
+            "line_start": 15,
+            "line_end": 20,
+            "quote": "한때는 앵커가 알아서 불가사리나 해양 생물들에 질려 주길 바란 적도 있었어",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_helm_006__mnt_002",
+            "surface_text": "불가사리",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "불가사리를 극복하고 싶어",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_006__mnt_003",
             "surface_text": "마스트",
             "entity_id": "char_마스트",
             "entity_type": "character",
-            "line_start": 37,
-            "line_end": 37,
-            "quote": "마스트에게 말하자니 더 신나서 놀릴 것 같고"
+            "line_start": 36,
+            "line_end": 38,
+            "quote": "마스트에게 말하자니 더 신나서 놀릴 것 같고",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "blabla_helm_006__mnt_004",
             "surface_text": "불가사리 키링",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 132,
-            "line_end": 132,
-            "quote": "불가사리 키링이라는 게 있네"
+            "line_start": 131,
+            "line_end": 133,
+            "quote": "불가사리 키링이라는 게 있네",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -1027,12 +1686,15 @@
           "from_speaker": "헬름",
           "to_target": "지휘관",
           "address_term": "귀관",
-          "line_start": 34,
-          "line_end": 34,
-          "quote": "그런데 도움을 요청할 사람이 귀관밖에 없었어"
+          "line_start": 33,
+          "line_end": 35,
+          "quote": "그런데 도움을 요청할 사람이 귀관밖에 없었어",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -1043,14 +1705,12 @@
             {
               "item_id": "blabla_helm_006__chb_001_opt_01",
               "option_text": "매일 불가사리를 마주하는 건 어때?",
-              "continuation_summary": "헬름이 시작부터 난이도가 너무 높다고 하자 지휘관이 사진으로 도전해 보라고 권한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "헬름이 시작부터 난이도가 너무 높다고 하자 지휘관이 사진 정도로 도전해 보라고 권한다."
             },
             {
               "item_id": "blabla_helm_006__chb_001_opt_02",
               "option_text": "매일 불가사리의 사진을 보는 건 어때?",
-              "continuation_summary": "헬름이 그 정도는 할 수 있을 것 같다며 검색을 시도한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         }
@@ -1059,68 +1719,210 @@
         {
           "item_id": "blabla_helm_006__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 앵커가 불가사리나 해양 생물에 질려 주길 바랐으나 그럴 일이 없어 자신이 불가사리 공포증을 극복하기로 결심했으며, 마스트는 놀릴 것 같아 지휘관에게만 도움을 청했다고 말한다.",
-          "line_start": 4,
-          "line_end": 40,
-          "quote": "한때는 앵커가 알아서 불가사리나 해양 생물들에 질려 주길 바란 적도 있었어",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "summary": "헬름이 한때는 앵커가 불가사리나 해양 생물에 질려 주길 바랐으나 그런 일은 일어나지 않았다며, 차라리 자신을 바꿔 불가사리를 극복하겠다고 말한다.",
+          "line_start": 3,
+          "line_end": 29,
+          "claim_line": 16,
+          "quote": "불가사리를 극복하고 싶어 방법을 알려줘 드디어 결심한 거야? 그래 한때는 앵커가 알아서 불가사리나 해양 생물들에 질려 주길 바란 적도 있었어 하지만 그런 일은 절대로 일어나지 않았지 그러니 차라리 나 자신을 바꾸는 게 빠를 것 같아서 큰 결심을 했네",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_006__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 불가사리 사진을 검색해 보지만 딱딱하면서도 물컹한 느낌을 견디지 못해 실패하고, 긍정적인 기억을 떠올리는 방법도 미끄럽고 기분 나빴던 기억뿐이라 실패한다.",
-          "line_start": 78,
-          "line_end": 123,
-          "quote": "뭘 떠올려도 미끄럽고 기분나빴던 기억뿐이야",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 마스트는 더 신나서 놀릴 것 같고 앵커에게 말하는 건 어불성설이라 도움을 요청할 사람이 지휘관밖에 없었다고 말하자 지휘관이 이해한다고 답한다.",
+          "line_start": 30,
+          "line_end": 47,
+          "claim_line": 34,
+          "quote": "그렇지? 그런데 도움을 요청할 사람이 귀관밖에 없었어 마스트에게 말하자니 더 신나서 놀릴 것 같고 앵커에게 말하는 건 어불성설이고 안 그래? 이해해 ㅋㅋ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_006__eac_003",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "지휘관이 불가사리 키링을 같이 맞춰보자고 제안한 뒤 선물로 주겠다고 하자, 헬름은 커플 키링 같은 거냐고 의식하면서도 기쁜 마음으로 기다리겠다고 답한다.",
-          "line_start": 132,
-          "line_end": 201,
-          "quote": "불가사리 키링이라는 게 있네",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 불가사리를 두려워하지 않을 수 있는 루틴을 짜주면 매일 꾸준히 실천할 자신이 있다며 지금부터 어떻게 하면 될지 묻는다.",
+          "line_start": 48,
+          "line_end": 59,
+          "claim_line": 58,
+          "quote": "그래서 내가 지금부터 뭘 어떻게 하면 될까? 불가사리를 두려워하지 않을 수 있는 루틴 뭐 그런 걸 짜주면 매일매일 꾸준히 실천할 자신이 있는데",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_006__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 매일 불가사리를 마주하라고 제안했다가 헬름이 난이도가 너무 높다고 하자 사진으로 도전해 보라고 권한다.",
+          "line_start": 62,
+          "line_end": 72,
+          "claim_line": null,
+          "quote": "매일 불가사리를 마주하는 건 어때? 그건 시작부터 너무 난이도가 높지 않아? 그렇다면 사진 정도로 도전해봐",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 61,
+            "option_text": "매일 불가사리를 마주하는 건 어때?"
+          }
+        },
+        {
+          "item_id": "blabla_helm_006__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 매일 불가사리의 사진을 보는 것을 제안한다.",
+          "line_start": 73,
+          "line_end": 74,
+          "claim_line": null,
+          "quote": "매일 불가사리의 사진을 보는 건 어때?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 61,
+            "option_text": "매일 불가사리의 사진을 보는 건 어때?"
+          }
+        },
+        {
+          "item_id": "blabla_helm_006__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 불가사리 사진을 검색해 보지만 스크린 너머로 전해지는 딱딱하면서도 물컹한 느낌을 견딜 수 없다며 다른 방법을 묻는다.",
+          "line_start": 77,
+          "line_end": 106,
+          "claim_line": 99,
+          "quote": "음 그러네 나도 그 정도는 할 수 있을 것 같아 잠깐 검색해보고 올게 ···헬름은 한동안 답장이 없다. 아 안되겠어 스크린 너머로 전해져오는 그 딱딱하면서도 물컹한 해양 생물의 느낌을 도저히 견딜 수가 없을 것 같아 혹시 다른 방법은 없을까?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_006__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 불가사리에 대한 긍정적인 기억을 떠올려보라고 제안하지만, 헬름은 미끄럽고 기분 나빴던 기억뿐이라고 답한다.",
+          "line_start": 107,
+          "line_end": 127,
+          "claim_line": 123,
+          "quote": "불가사리에 대한 긍정적인 기억을 반복해서 떠올려보는 건? 그것도 나쁘지 않은 생각이네 좋아 그럼 지금 바로 잠깐 그런 기억 따윈 없는 것 같은데? 뭘 떠올려도 미끄럽고 기분나빴던 기억뿐이야 음",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_006__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 불가사리를 검색해 본 뒤 불가사리 키링을 같이 맞춰보자고 제안하고, 싫으면 인형도 괜찮다고 덧붙인다.",
+          "line_start": 128,
+          "line_end": 145,
+          "claim_line": null,
+          "quote": "···잠시 [불가사리]에 대해 검색해 보았다. 불가사리 키링이라는 게 있네 뭐? 이걸 같이 맞춰보는 건 어때? 설마 커플 키링 같은 걸 말하는 거야? 싫으면 인형 같은 것도 괜찮지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_006__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 싫다는 말은 한 적 없다며 키링 정도면 작고 무해해 시작으로 나쁘지 않고 상태가 더 좋아지면 인형까지도 욕심내볼 수 있을 것 같다고 말한다.",
+          "line_start": 146,
+          "line_end": 163,
+          "claim_line": 156,
+          "quote": "아니 싫다는 말은 한 적 없어 그래 키링 정도면 작고 무해하니까 시작으로는 나쁘지 않을 것 같네 그 덕에 상태가 더 좋아지면 인형까지도 욕심내볼 수 있을 것 같고",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_006__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "지휘관이 갑자기 의욕적이게 된 것 같다고 하자 헬름이 불가사리를 보고 기분이 나쁠 때마다 그 키링을 보면 다시 기분이 좋아질 것 같아 좋은 아이디어라고 생각한 것뿐이라고 답한다.",
+          "line_start": 164,
+          "line_end": 178,
+          "claim_line": 174,
+          "quote": "갑자기 아주 의욕적이게 된 것 같은데 그냥 좋은 아이디어라고 생각한 것뿐이야 불가사리를 보고 기분이 나쁠 때마다 그 키링을 보면 다시 기분이 좋아질 것 같아서",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_006__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "헬름이 키링이나 인형을 보내주면 사례하겠다고 하자 지휘관이 선물이라며 사양하고, 헬름은 기쁜 마음으로 기다리겠다고 답한다.",
+          "line_start": 179,
+          "line_end": 205,
+          "claim_line": null,
+          "quote": "아 아무튼 그렇게 된 거니까 시간 될 때 키링이든 인형이든 보내주면 나도 적절히 사례할게 아냐 ㅋㅋ 그냥 선물이니까 괜찮아 알겠어 그런 거라면 어쩔 수 없지 그럼 기쁜 마음으로 기다리고 있을게 ···조만간 온라인 쇼핑몰을 좀 뒤져봐야겠다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_helm_006__clh_001",
+          "keyword": "불가사리 및 해양 생물 공포·혐오",
+          "category": "trait",
+          "subject": "헬름",
+          "detail": "불가사리의 딱딱하면서도 물컹하고 미끄러운 느낌을 극도로 두려워하고 기분 나빠한다.",
+          "line_start": 95,
+          "line_end": 103,
+          "quote": "스크린 너머로 전해져오는 그 딱딱하면서도 물컹한 해양 생물의 느낌을 도저히 견딜 수가 없을 것 같아",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "relationship_and_lore_notes": [
         {
           "item_id": "blabla_helm_006__rln_001",
           "subject": "헬름",
-          "target": "앵커",
-          "relation_or_change": "해양 생물과 불가사리를 좋아하는 앵커 때문에 자신이 불가사리 공포증을 극복하려고 노력한다.",
-          "line_start": 16,
-          "line_end": 40,
-          "quote": "한때는 앵커가 알아서 불가사리나 해양 생물들에 질려 주길 바란 적도 있었어"
-        },
-        {
-          "item_id": "blabla_helm_006__rln_002",
-          "subject": "헬름",
           "target": "지휘관",
-          "relation_or_change": "불가사리 키링을 같이 맞추자는 지휘관의 제안을 커플 키링으로 의식하며 호감을 보인다.",
-          "line_start": 138,
-          "line_end": 201,
-          "quote": "설마 커플 키링 같은 걸 말하는 거야?"
+          "relation_or_change": "마스트나 앵커에게는 말할 수 없는 불가사리 극복 고민을 두고 도움을 요청할 사람이 지휘관밖에 없었다며 의지함",
+          "epistemic_type": "character_claim",
+          "claimant": "헬름",
+          "line_start": 33,
+          "line_end": 41,
+          "claim_line": 34,
+          "quote": "그런데 도움을 요청할 사람이 귀관밖에 없었어 마스트에게 말하자니 더 신나서 놀릴 것 같고 앵커에게 말하는 건 어불성설이고",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_helm_006__uec_001",
+          "surface_text": "불가사리",
+          "suggested_type": "item",
+          "line_start": 4
+        },
+        {
+          "item_id": "blabla_helm_006__uec_002",
+          "surface_text": "불가사리 키링",
+          "suggested_type": "item",
+          "line_start": 132
+        }
+      ]
     },
     {
       "scene_id": "blabla_helm_007",
@@ -1136,8 +1938,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "헬름이 어드마이어 호 유지비를 자신의 급여로 메우느라 평소 군복만 입는다며 사복에 대한 고민을 털어놓고, 다음 휴일에 지휘관과 함께 옷을 사러 가기로 약속한다.",
+      "summary": "어드마이어 호 유지비를 급여로 메우느라 평소 군복만 입던 헬름이 복장 고민을 털어놓자, 지휘관이 지금 모습도 잘 어울린다며 다음 휴일에 함께 옷을 사러 가자고 약속한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -1147,17 +1950,17 @@
             "speaker_label": "헬름",
             "entity_id": "char_헬름",
             "medium": "messenger",
-            "line_start": 7,
-            "line_end": 7,
-            "quote": "잠깐 물어보고 싶은 게 있는데"
+            "line_start": 3,
+            "line_end": 11,
+            "quote": "귀관 잠깐 물어보고 싶은 게 있는데 시간 괜찮아?"
           },
           {
             "item_id": "blabla_helm_007__rvo_002",
             "speaker_label": "지휘관",
             "entity_id": "char_지휘관",
             "medium": "messenger",
-            "line_start": 13,
-            "line_end": 13,
+            "line_start": 12,
+            "line_end": 14,
             "quote": "응 괜찮아"
           }
         ],
@@ -1167,18 +1970,11 @@
             "surface_text": "어드마이어 호",
             "entity_id": null,
             "entity_type": "item",
-            "line_start": 67,
-            "line_end": 67,
-            "quote": "우리는 어드마이어 호의 유지에 많은 돈이 들잖아?"
-          },
-          {
-            "item_id": "blabla_helm_007__mnt_002",
-            "surface_text": "군복",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 79,
-            "line_end": 79,
-            "quote": "지금도 잘 알겠지만 평소에는 군복만 입고 있고"
+            "line_start": 66,
+            "line_end": 68,
+            "quote": "우리는 어드마이어 호의 유지에 많은 돈이 들잖아?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -1189,84 +1985,121 @@
           "from_speaker": "헬름",
           "to_target": "지휘관",
           "address_term": "귀관",
-          "line_start": 19,
-          "line_end": 19,
-          "quote": "귀관은 여성의 복장에 대해"
-        },
-        {
-          "item_id": "blabla_helm_007__foa_002",
-          "from_speaker": "지휘관",
-          "to_target": "헬름",
-          "address_term": "헬름",
-          "line_start": 94,
-          "line_end": 94,
-          "quote": "헬름은 지금 모습이 가장 잘 어울리는 것 같은데"
+          "line_start": 3,
+          "line_end": 8,
+          "quote": "귀관 잠깐 물어보고 싶은 게 있는데",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "blabla_helm_007__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "헬름이 어드마이어 호 유지에 많은 돈이 들어 기부만으로 부족한 부분을 자신의 급여로 메우다 보니 옷차림에 신경 쓸 여유가 없어 평소 군복만 입는다고 밝힌다.",
-          "line_start": 67,
-          "line_end": 82,
-          "quote": "우리는 어드마이어 호의 유지에 많은 돈이 들잖아? 기부만으로는 부족한 게 있다 보니 종종 내 급여로 메우기도 해",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 지휘관에게 시간이 괜찮은지 확인한 뒤 여성의 복장에 대해 어떤 취향을 갖고 있는지 묻는다.",
+          "line_start": 3,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "귀관 잠깐 물어보고 싶은 게 있는데 시간 괜찮아? 응 괜찮아 다행이네 귀관은 여성의 복장에 대해 어떤 취향을 갖고 있는지 물어보고 싶어 복장의 취향?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "blabla_helm_007__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "여분 옷을 사두는 게 좋을지 고민하는 헬름에게 지휘관이 함께 가서 골라주겠다고 제안하고, 헬름은 패션 센스가 별로라며 다음 휴일에 같이 가자고 약속한다.",
-          "line_start": 103,
-          "line_end": 127,
-          "quote": "그럼 다음 휴일에 부탁할게 이야기 들어줘서 고마워",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "헬름이 캐주얼하고 활동적인 옷, 하늘하늘하고 귀여운 옷, 깔끔한 커리어우먼 스타일, 각 잡힌 군복 등의 예시를 든다.",
+          "line_start": 27,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "응 캐주얼하고 활동적인 옷이 좋다거나 하늘하늘하고 귀여운 옷이 좋다거나 깔끔한 커리어우먼 같은 스타일이 멋지다거나 혹은 각 잡힌 군복이 최고라거나",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_007__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 본인에게 어울리는 옷이 제일이라고 답한다.",
+          "line_start": 45,
+          "line_end": 62,
+          "claim_line": 46,
+          "quote": "본인에게 어울리는 옷이 제일이지 않을까? 그 말은 즉 입는 사람에 따라 다르다고 이해하면 될까? 그렇지 음 무슨 일 있어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_007__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 어드마이어 호 유지비가 기부만으로는 부족해 자신의 급여로 메우다 보니 옷차림에 신경 쓸 여유가 없어 평소 군복만 입거나 가끔 기부받은 옷을 입는다고 털어놓는다.",
+          "line_start": 63,
+          "line_end": 92,
+          "claim_line": 73,
+          "quote": "별일이 있는 건 아니고 우리는 어드마이어 호의 유지에 많은 돈이 들잖아? 기부만으로는 부족한 게 있다 보니 종종 내 급여로 메우기도 해 그렇게 하다 보면 옷차림에 신경 쓸 여유도 없어져서 지금도 잘 알겠지만 평소에는 군복만 입고 있고 가끔 기부받은 옷들을 입긴 하지만 뭐랄까 다른 사람들 눈에는 차려입은 쪽이 좀 더 멋지고 믿음직스러워 보이는 걸까 싶어서",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_007__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 헬름은 지금 군복 모습이 가장 잘 어울리는 것 같다고 말하고, 헬름도 군복이 좋아서 입는 것이라 불만은 없지만 여분 옷을 사둘지 고민한다.",
+          "line_start": 93,
+          "line_end": 104,
+          "claim_line": 94,
+          "quote": "헬름은 지금 모습이 가장 잘 어울리는 것 같은데 그래? 나도 군복이 좋아서 입는 거니까 딱히 불만은 없어 그래도 다른 옷들을 여분으로 사두는 게 좋을까",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_helm_007__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 함께 가서 어울릴 만한 옷을 골라주겠다고 제안하자, 헬름이 자신은 패션 센스가 별로라며 다음 휴일에 부탁하겠다고 고마워한다.",
+          "line_start": 105,
+          "line_end": 128,
+          "claim_line": null,
+          "quote": "그럼 같이 가서 사자 귀관과 함께? ㅇㅇ헬름에게 어울릴 만한 옷을 골라줄게 그렇게 해주면 나야 고맙지 관심이 없다 보니 패션 센스도 완전 별로거든 그럼 다음 휴일에 부탁할게 이야기 들어줘서 고마워",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "blabla_helm_007__clh_001",
-          "keyword": "어드마이어 호 유지비",
-          "category": "lore_concept",
-          "detail": "어드마이어 호 유지에 막대한 비용이 들어 기부금만으로 부족할 때 함장인 헬름이 자신의 급여로 메우고 있다.",
-          "line_start": 67,
-          "line_end": 73,
-          "quote": "우리는 어드마이어 호의 유지에 많은 돈이 들잖아? 기부만으로는 부족한 게 있다 보니 종종 내 급여로 메우기도 해"
+          "keyword": "어드마이어 호 유지비 문제와 헬름의 사비 충당",
+          "category": "organization",
+          "subject": null,
+          "detail": "어드마이어 호의 유지에 많은 돈이 들어 기부금만으로는 부족하며, 헬름이 종종 자신의 급여로 부족분을 메우고 있다.",
+          "line_start": 66,
+          "line_end": 74,
+          "quote": "우리는 어드마이어 호의 유지에 많은 돈이 들잖아? 기부만으로는 부족한 게 있다 보니 종종 내 급여로 메우기도 해",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "blabla_helm_007__rln_001",
-          "subject": "헬름",
-          "target": "지휘관",
-          "relation_or_change": "여성 복장 취향을 물으며 사복 고민을 상담하고 다음 휴일에 함께 옷을 사러 가기로 약속한다.",
-          "line_start": 19,
-          "line_end": 125,
-          "quote": "그럼 다음 휴일에 부탁할게"
-        }
-      ],
-      "unregistered_entity_candidates": [
-        {
-          "item_id": "blabla_helm_007__uec_001",
-          "surface_text": "어드마이어 호",
-          "suggested_type": "item",
-          "line_start": 67
-        }
-      ]
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": []
     }
   ]
 }

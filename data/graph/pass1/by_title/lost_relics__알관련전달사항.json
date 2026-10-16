@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.563Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.627Z",
   "title_id": "lost_relics__알관련전달사항",
   "category": "lost_relics",
   "title": "알 관련 전달 사항",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": false,
-      "summary": "글로 써놓으면 동료들이 읽지 않아 알 관련 전달 사항을 음성 녹음(01.wav)으로 남기며 나중에 물어볼 테니 꼭 들으라고 당부한다.",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "녹음 작성자가 글로 써놓은 것을 동료들이 읽지 않아 음성으로 남긴다며, 나중에 물어볼 테니 꼭 들으라고 당부한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -30,43 +31,70 @@
         "mentioned_only": [],
         "document_author": {
           "item_id": "알관련전달사항_00__dca_001",
-          "name": "알 관련 전달 사항 녹음자",
-          "entity_id": null
+          "name": "녹음 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "알관련전달사항_00__foa_001",
+          "from_speaker": "녹음 작성자",
+          "to_target": "녹음 수신자들",
+          "address_term": "너희",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "글로 써놓으니까 너희가 하도 안 읽어서 음성으로 남겨놓고 있어.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "알관련전달사항_00__foa_002",
+          "from_speaker": "녹음 작성자",
+          "to_target": "녹음 수신자들",
+          "address_term": "너희들",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "하··· 너희들이 퍽이나 듣겠다. 그래도 안 해놓는 것보단 낫겠지.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "알관련전달사항_00__csh_001",
+          "text": "글로 써놓은 것을 동료들이 읽지 않아 음성으로 남긴다는 언급은 '충격! 다크 매터란 무엇인가!' 문서 작성자와 이어진다.",
+          "related_scene_ids": [
+            "충격다크매터란무엇인가_03",
+            "알관련전달사항_01",
+            "알관련전달사항_02",
+            "알관련전달사항_03"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "알관련전달사항_00__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "알 관련 전달 사항 녹음자",
-          "summary": "글로 써놓으면 동료들이 읽지 않아 알 관련 전달 사항을 음성으로 녹음해 남기며 나중에 물어볼 테니 꼭 들으라고 당부한다.",
+          "actor_or_speaker": "녹음 작성자",
+          "summary": "녹음 작성자는 글로 써놓으니 동료들이 전혀 읽지 않아 음성으로 남겨둔다며, 나중에 물어볼 테니 꼭 들으라고 말하면서도 동료들이 퍽이나 듣겠다고 한탄한다.",
           "line_start": 2,
           "line_end": 5,
+          "claim_line": 3,
           "quote": "아아. 녹음되고 있나? 응. 되고 있네. 글로 써놓으니까 너희가 하도 안 읽어서 음성으로 남겨놓고 있어. 그러니 꼭 들어. 나중에 진짜 물어볼 테니까, 알겠지? 하··· 너희들이 퍽이나 듣겠다. 그래도 안 해놓는 것보단 낫겠지.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [
-        {
-          "item_id": "알관련전달사항_00__clh_001",
-          "keyword": "알 관련 전달 사항 음성 녹음",
-          "category": "lore_concept",
-          "detail": "동료들이 글을 읽지 않아 음성 파일(01.wav)로 전달 사항을 남기면서도 안 들을 것 같다고 한숨 쉬는 연구자의 성향.",
-          "line_start": 3,
-          "line_end": 5,
-          "quote": "글로 써놓으니까 너희가 하도 안 읽어서 음성으로 남겨놓고 있어. 그러니 꼭 들어. 나중에 진짜 물어볼 테니까, 알겠지? 하··· 너희들이 퍽이나 듣겠다. 그래도 안 해놓는 것보단 낫겠지."
-        }
-      ],
+      "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -83,8 +111,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": false,
-      "summary": "알의 내용물이 완성되기 전에는 매우 약하므로 큰 충격을 주거나 건드리지 말고, 노래나 좋은 말이나 음식도 주지 말고 완성되어 알아서 튀어나올 때까지 가만히 냅두라고 신신당부한다.",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "녹음 작성자가 알의 내용물이 완성되기 전에는 매우 약해 큰 충격이 가해지면 안 된다며, 노래를 불러주거나 음식을 주지 말고 완성되어 알아서 튀어나올 때까지 가만히 놔두라고 신신당부한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -96,49 +125,81 @@
             "entity_id": null,
             "entity_type": "item",
             "line_start": 2,
-            "line_end": 5,
-            "quote": "당연하겠지만 알에는 큰 충격이 가해지면 안 돼. 내용물이 완성되기 전에는 진짜 약하니까, 괜히 건드리거나 주위에서 날뛰지 마. 완성되면 지들이 알아서 알에서 튀어나오니까 그냥 가만히 냅둬."
+            "line_end": 2,
+            "quote": "당연하겠지만 알에는 큰 충격이 가해지면 안 돼.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "알관련전달사항_01__dca_001",
-          "name": "알 관련 전달 사항 녹음자",
-          "entity_id": null
+          "name": "녹음 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "알관련전달사항_01__csh_001",
+          "text": "알 관련 전달 사항 음성 녹음 연작의 두 번째 장면이다.",
+          "related_scene_ids": [
+            "알관련전달사항_00",
+            "알관련전달사항_02",
+            "알관련전달사항_03"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "알관련전달사항_01__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "알 관련 전달 사항 녹음자",
-          "summary": "알의 내용물이 완성되기 전에는 매우 약하므로 충격을 주거나 주위에서 날뛰지 말고, 노래·좋은 말·음식을 주지 말며 알아서 튀어나올 때까지 가만히 두라고 부탁한다.",
+          "actor_or_speaker": "녹음 작성자",
+          "summary": "녹음 작성자는 알의 내용물이 완성되기 전에는 매우 약하므로 큰 충격을 주거나 건드리지 말아야 하며, 완성되면 알아서 알에서 튀어나온다고 설명한다.",
           "line_start": 2,
+          "line_end": 5,
+          "claim_line": 2,
+          "quote": "당연하겠지만 알에는 큰 충격이 가해지면 안 돼. 내용물이 완성되기 전에는 진짜 약하니까, 괜히 건드리거나 주위에서 날뛰지 마. 완성되면 지들이 알아서 알에서 튀어나오니까 그냥 가만히 냅둬.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "알관련전달사항_01__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "녹음 작성자",
+          "summary": "녹음 작성자는 알에게 노래를 불러주거나 좋은 말을 해주거나 음식을 주지 말고 제발 그냥 가만히 놔두라고 부탁한다.",
+          "line_start": 6,
           "line_end": 7,
-          "quote": "당연하겠지만 알에는 큰 충격이 가해지면 안 돼. 내용물이 완성되기 전에는 진짜 약하니까, 괜히 건드리거나 주위에서 날뛰지 마. 완성되면 지들이 알아서 알에서 튀어나오니까 그냥 가만히 냅둬. 노래도 불러주지 마. 좋은 말도 해주지 마. 음식도 주지 마. 그냥 냅둬. 제발 좀. 부탁 좀 하자. 응?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 6,
+          "quote": "노래도 불러주지 마. 좋은 말도 해주지 마. 음식도 주지 마. 그냥 냅둬. 제발 좀. 부탁 좀 하자. 응?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "알관련전달사항_01__clh_001",
-          "keyword": "알 보관 주의사항",
-          "category": "item",
-          "detail": "완성되기 전에는 충격에 취약하고 완성되면 내용물이 스스로 알에서 튀어나오며, 동료들이 알에 노래를 불러주거나 음식을 주는 기행을 벌이는 정황.",
+          "keyword": "알",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "내용물이 완성되기 전에는 충격에 매우 약하지만, 완성되면 내용물이 스스로 깨고 튀어나오는 알.",
           "line_start": 2,
-          "line_end": 7,
-          "quote": "당연하겠지만 알에는 큰 충격이 가해지면 안 돼. 내용물이 완성되기 전에는 진짜 약하니까, 괜히 건드리거나 주위에서 날뛰지 마. 완성되면 지들이 알아서 알에서 튀어나오니까 그냥 가만히 냅둬. 노래도 불러주지 마. 좋은 말도 해주지 마. 음식도 주지 마. 그냥 냅둬. 제발 좀. 부탁 좀 하자. 응?"
+          "line_end": 5,
+          "quote": "당연하겠지만 알에는 큰 충격이 가해지면 안 돼. 내용물이 완성되기 전에는 진짜 약하니까, 괜히 건드리거나 주위에서 날뛰지 마. 완성되면 지들이 알아서 알에서 튀어나오니까 그냥 가만히 냅둬.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "알관련전달사항_01__uec_001",
@@ -162,8 +223,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "은색 물과 다크 매터를 섞으면 녹아들어 간 것의 특징이 그대로 남는 용해액이 되므로, 좋아 보이는 재료를 바로바로 가져와 섞어 실험해 보자고 전한다.",
+      "summary": "녹음 작성자가 은색 물과 다크 매터를 섞으면 녹아든 것의 특징이 그대로 남는 용해액이 된다며, 실험을 위해 좋아 보이는 것을 바로 가져오라고 말한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -173,86 +235,122 @@
             "item_id": "알관련전달사항_02__mnt_001",
             "surface_text": "은색 물",
             "entity_id": null,
-            "entity_type": "item",
+            "entity_type": "concept",
             "line_start": 2,
-            "line_end": 3,
-            "quote": "그때 말했던 은색 물 있지? 그거랑 다크 매터랑 섞으면 용해액이 돼."
+            "line_end": 2,
+            "quote": "그때 말했던 은색 물 있지?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "알관련전달사항_02__mnt_002",
             "surface_text": "다크 매터",
             "entity_id": null,
-            "entity_type": "item",
+            "entity_type": "concept",
             "line_start": 3,
             "line_end": 3,
-            "quote": "그거랑 다크 매터랑 섞으면 용해액이 돼."
+            "quote": "그거랑 다크 매터랑 섞으면 용해액이 돼.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "알관련전달사항_02__mnt_003",
             "surface_text": "용해액",
             "entity_id": null,
-            "entity_type": "item",
+            "entity_type": "concept",
             "line_start": 3,
-            "line_end": 4,
-            "quote": "그거랑 다크 매터랑 섞으면 용해액이 돼. 녹아들어 간 것의 특징이 그대로 남아있어서,"
+            "line_end": 3,
+            "quote": "그거랑 다크 매터랑 섞으면 용해액이 돼.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "알관련전달사항_02__dca_001",
-          "name": "알 관련 전달 사항 녹음자",
-          "entity_id": null
+          "name": "녹음 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "알관련전달사항_02__csh_001",
+          "text": "알 관련 전달 사항 음성 녹음 연작의 세 번째 장면이다.",
+          "related_scene_ids": [
+            "알관련전달사항_00",
+            "알관련전달사항_01",
+            "알관련전달사항_03"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "알관련전달사항_02__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "알 관련 전달 사항 녹음자",
-          "summary": "은색 물과 다크 매터를 섞으면 녹아들어 간 것의 특징이 그대로 남는 용해액이 되므로 좋아 보이는 것들을 가져와 섞어 실험해 보자고 한다.",
+          "actor_or_speaker": "녹음 작성자",
+          "summary": "녹음 작성자는 이전에 말했던 은색 물과 다크 매터를 섞으면 녹아들어 간 것의 특징이 그대로 남는 용해액이 되어 이것저것 섞으며 실험해 볼 수 있을 것 같다고 설명한다.",
           "line_start": 2,
+          "line_end": 5,
+          "claim_line": 3,
+          "quote": "그때 말했던 은색 물 있지? 그거랑 다크 매터랑 섞으면 용해액이 돼. 녹아들어 간 것의 특징이 그대로 남아있어서, 이것저것 섞어가면서 실험해 볼 수 있을 것 같아.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "알관련전달사항_02__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "녹음 작성자",
+          "summary": "녹음 작성자는 좋아 보이는 것이 있으면 바로 가져와서 섞으면 무엇이 만들어지는지 시험해 보자고 요청한다.",
+          "line_start": 6,
           "line_end": 7,
-          "quote": "그때 말했던 은색 물 있지? 그거랑 다크 매터랑 섞으면 용해액이 돼. 녹아들어 간 것의 특징이 그대로 남아있어서, 이것저것 섞어가면서 실험해 볼 수 있을 것 같아. 그러니 좋아 보이는 게 있으면 바로바로 가져와. 섞어서 뭐가 만들어지는 한번 보자.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 6,
+          "quote": "그러니 좋아 보이는 게 있으면 바로바로 가져와. 섞어서 뭐가 만들어지는 한번 보자.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "알관련전달사항_02__clh_001",
-          "keyword": "은색 물과 다크 매터 혼합 용해액",
+          "keyword": "은색 물과 다크 매터 용해액",
           "category": "lore_concept",
-          "detail": "은색 물과 다크 매터를 섞어 만든 용해액은 녹아든 물질의 특징을 그대로 보존하여 다양한 조합 실험이 가능하다.",
+          "subject": null,
+          "detail": "은색 물과 다크 매터를 섞어 만든 용해액은 녹아든 대상의 특징을 그대로 보존하여 조합 실험에 사용된다.",
           "line_start": 2,
           "line_end": 5,
-          "quote": "그때 말했던 은색 물 있지? 그거랑 다크 매터랑 섞으면 용해액이 돼. 녹아들어 간 것의 특징이 그대로 남아있어서, 이것저것 섞어가면서 실험해 볼 수 있을 것 같아."
+          "quote": "그때 말했던 은색 물 있지? 그거랑 다크 매터랑 섞으면 용해액이 돼. 녹아들어 간 것의 특징이 그대로 남아있어서, 이것저것 섞어가면서 실험해 볼 수 있을 것 같아.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "알관련전달사항_02__uec_001",
           "surface_text": "은색 물",
-          "suggested_type": "item",
+          "suggested_type": "concept",
           "line_start": 2
         },
         {
           "item_id": "알관련전달사항_02__uec_002",
           "surface_text": "다크 매터",
-          "suggested_type": "item",
+          "suggested_type": "concept",
           "line_start": 3
         },
         {
           "item_id": "알관련전달사항_02__uec_003",
           "surface_text": "용해액",
-          "suggested_type": "item",
+          "suggested_type": "concept",
           "line_start": 3
         }
       ]
@@ -271,8 +369,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "실험 결과 용해액에 녹아든 특징은 141개까지도 한계 없이 반영되지만 개별 성능이 엉망이 되므로, 이제부터는 양보다 질로 필요한 것만 선택과 집중해서 가져오라고 지시한다.",
+      "summary": "녹음 작성자가 141개까지 특징을 섞어 실험해 본 결과 개수는 모두 반영되지만 개별 성능은 엉망이라며, 앞으로는 양보다 질을 우선해 필요한 것만 가져오라고 지시한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -280,43 +379,76 @@
         "mentioned_only": [],
         "document_author": {
           "item_id": "알관련전달사항_03__dca_001",
-          "name": "알 관련 전달 사항 녹음자",
-          "entity_id": null
+          "name": "녹음 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "알관련전달사항_03__csh_001",
+          "text": "알 관련 전달 사항 음성 녹음 연작의 마지막 장면이며, 수집 지침은 할일 목록 장면들과 연결된다.",
+          "related_scene_ids": [
+            "알관련전달사항_00",
+            "알관련전달사항_01",
+            "알관련전달사항_02",
+            "할일목록_01",
+            "할일목록_02",
+            "할일목록_03"
+          ]
+        }
+      ],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "알관련전달사항_03__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "알 관련 전달 사항 녹음자",
-          "summary": "용해액 실험에서 141개의 특징까지 그대로 반영되었으나 개별 성능은 엉망이었음을 밝히며, 앞으로는 아무거나 집어오지 말고 양보다 질로 필요한 것만 가져오라고 지시한다.",
+          "actor_or_speaker": "녹음 작성자",
+          "summary": "녹음 작성자는 지금까지 141개까지 실험해 본 결과 녹아든 것의 특징이 한계 없이 그대로 다 반영되지만, 특징 하나하나의 성능은 그냥 달려 있는 수준으로 엉망이라고 밝힌다.",
           "line_start": 2,
+          "line_end": 5,
+          "claim_line": 4,
+          "quote": "일단 지금까지의 실험 결과로는, 녹아들어 간 것의 특징이 몇 개가 되든 그대로 반영돼. 한계는 딱히 없어 보여. 141개까지 실험해 봤는데 그대로 다 반영되더라. 물론 특징 하나하나의 성능은 엉망이야. 그냥 달려있다 정도?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "알관련전달사항_03__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "녹음 작성자",
+          "summary": "녹음 작성자는 선택과 집중이 요점이라며, 이제부터는 아무거나 막 집어오지 말고 양보다 질을 택해 필요한 것만 집어오라고 당부한다.",
+          "line_start": 6,
           "line_end": 9,
-          "quote": "일단 지금까지의 실험 결과로는, 녹아들어 간 것의 특징이 몇 개가 되든 그대로 반영돼. 한계는 딱히 없어 보여. 141개까지 실험해 봤는데 그대로 다 반영되더라. 물론 특징 하나하나의 성능은 엉망이야. 그냥 달려있다 정도? 그러니 요점은, 선택과 집중이라는 거야. 그러니 이제부터는 아무거나 막 집어오는 것보단, 필요한 것만 집어오는 게 좋겠어. 알겠지? 이제 양보단 질이야.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 8,
+          "quote": "그러니 요점은, 선택과 집중이라는 거야. 그러니 이제부터는 아무거나 막 집어오는 것보단, 필요한 것만 집어오는 게 좋겠어. 알겠지? 이제 양보단 질이야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "알관련전달사항_03__clh_001",
-          "keyword": "용해액 특징 반영 한계와 선택과 집중",
+          "keyword": "141개 특징 반영 실험",
           "category": "lore_concept",
-          "detail": "녹아든 특징의 개수에는 한계가 없으나(141개 실험 완료) 많이 섞을수록 개별 성능이 떨어지므로 양보다 질 위주의 선별 투입이 필요하다.",
+          "subject": null,
+          "detail": "녹아든 대상의 특징을 141개까지 반영하는 실험이 성공했으나 개별 특징의 성능이 떨어져 양보다 질 위주의 수집으로 방향을 바꿈.",
           "line_start": 2,
           "line_end": 9,
-          "quote": "일단 지금까지의 실험 결과로는, 녹아들어 간 것의 특징이 몇 개가 되든 그대로 반영돼. 한계는 딱히 없어 보여. 141개까지 실험해 봤는데 그대로 다 반영되더라. 물론 특징 하나하나의 성능은 엉망이야. 그냥 달려있다 정도? 그러니 요점은, 선택과 집중이라는 거야. 그러니 이제부터는 아무거나 막 집어오는 것보단, 필요한 것만 집어오는 게 좋겠어. 알겠지? 이제 양보단 질이야."
+          "quote": "일단 지금까지의 실험 결과로는, 녹아들어 간 것의 특징이 몇 개가 되든 그대로 반영돼. 한계는 딱히 없어 보여. 141개까지 실험해 봤는데 그대로 다 반영되더라. 물론 특징 하나하나의 성능은 엉망이야. 그냥 달려있다 정도? 그러니 요점은, 선택과 집중이라는 거야. 그러니 이제부터는 아무거나 막 집어오는 것보단, 필요한 것만 집어오는 게 좋겠어. 알겠지? 이제 양보단 질이야.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     }
   ]

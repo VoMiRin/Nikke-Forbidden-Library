@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.557Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T16:13:57.621Z",
   "title_id": "lost_relics__조난일지",
   "category": "lost_relics",
   "title": "조난 일지",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": true,
-      "summary": "방주 외곽 도시에서 조난당한 작성자가 특이 사항 없이 구조 신호를 계속 발신 중이라고 기록한다.",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "일지 작성자가 방주 외곽 도시에서 조난당해 특이 사항 없이 구조 신호를 계속 발신 중이라고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -30,64 +31,73 @@
         "mentioned_only": [
           {
             "item_id": "조난일지_00__mnt_001",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "방주 외곽 도시에서 조난.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "조난일지_00__mnt_002",
             "surface_text": "방주 외곽 도시",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 2,
             "line_end": 2,
-            "quote": "방주 외곽 도시에서 조난."
+            "quote": "방주 외곽 도시에서 조난.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "조난일지_00__dca_001",
-          "name": "조난 일지 작성자 (니케)",
-          "entity_id": null
+          "name": "조난 일지 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "조난일지_00__csh_001",
-          "text": "방주 외곽 도시에서 조난 후 수정(크리스탈)에 잠식되어 가는 과정을 기록한 조난 일지 시리즈(00~03)의 첫 번째 조각이다.",
-          "related_scene_ids": [
-            "조난일지_01",
-            "조난일지_02",
-            "조난일지_03"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "조난일지_00__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "조난 일지 작성자 (니케)",
-          "summary": "작성자는 방주 외곽 도시에서 조난되었으며 특이 사항 없이 구조 신호를 계속 발신 중이라고 기록한다.",
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "방주 외곽 도시에서 조난되었으며 특이 사항 없이 구조 신호를 계속 발신 중이라고 기록한다.",
           "line_start": 2,
           "line_end": 4,
+          "claim_line": 2,
           "quote": "방주 외곽 도시에서 조난. 특이 사항 없음. 구조 신호 계속 발신 중.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [
-        {
-          "item_id": "조난일지_00__clh_001",
-          "keyword": "방주 외곽 도시 조난",
-          "category": "location",
-          "detail": "방주 외곽 도시에서 스쿼드가 조난되어 구조 신호를 발신하기 시작했다.",
-          "line_start": 2,
-          "line_end": 4,
-          "quote": "방주 외곽 도시에서 조난. 특이 사항 없음. 구조 신호 계속 발신 중."
-        }
-      ],
+      "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "조난일지_00__uec_001",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 2
+        },
+        {
+          "item_id": "조난일지_00__uec_002",
+          "surface_text": "방주 외곽 도시",
+          "suggested_type": "location",
+          "line_start": 2
+        }
+      ]
     },
     {
       "scene_id": "조난일지_01",
@@ -103,8 +113,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": true,
-      "summary": "조난 지역에서 수정이 발견되었으나 아직 특이 사항이 없어 구조 신호를 계속 발신 중이라고 기록한다.",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "일지 작성자가 수정을 발견했으며 특이 사항 없이 구조 신호를 계속 발신 중이라고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -117,60 +128,64 @@
             "entity_type": "item",
             "line_start": 2,
             "line_end": 2,
-            "quote": "수정 발견."
+            "quote": "수정 발견.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "조난일지_01__dca_001",
-          "name": "조난 일지 작성자 (니케)",
-          "entity_id": null
+          "name": "조난 일지 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "조난일지_01__csh_001",
-          "text": "조난 일지 두 번째 조각으로, 처음 발견된 수정이 세 번째·네 번째 조각에서 일대와 스쿼드 멤버를 잠식한다.",
-          "related_scene_ids": [
-            "조난일지_00",
-            "조난일지_02",
-            "조난일지_03",
-            "저주받은보석.txt_01"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "조난일지_01__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "조난 일지 작성자 (니케)",
-          "summary": "작성자는 수정을 발견했으나 특이 사항은 없으며 구조 신호를 계속 발신 중이라고 기록한다.",
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "수정을 발견했으나 특이 사항은 없으며 구조 신호를 계속 발신 중이라고 기록한다.",
           "line_start": 2,
           "line_end": 4,
+          "claim_line": 2,
           "quote": "수정 발견. 특이 사항 없음. 구조 신호 계속 발신 중.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "조난일지_01__clh_001",
-          "keyword": "방주 외곽 도시의 수정 발견",
+          "keyword": "조난지의 수정",
           "category": "item",
-          "detail": "방주 외곽 도시 조난 현장에서 수정이 처음 발견되었다.",
+          "subject": null,
+          "detail": "조난 일지 작성자가 조난 중 발견한 수정",
           "line_start": 2,
           "line_end": 4,
-          "quote": "수정 발견. 특이 사항 없음. 구조 신호 계속 발신 중."
+          "quote": "수정 발견. 특이 사항 없음. 구조 신호 계속 발신 중.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "조난일지_01__uec_001",
+          "surface_text": "수정",
+          "suggested_type": "item",
+          "line_start": 2
+        }
+      ]
     },
     {
       "scene_id": "조난일지_02",
@@ -186,8 +201,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "스쿼드 멤버와 일대가 수정으로 뒤덮이고 지휘관은 도주했으며 구조 신호기에까지 수정이 침투했다고 기록한다.",
+      "summary": "조난 일지 작성자가 수정을 발견한 뒤 스쿼드 멤버와 일대가 수정으로 뒤덮이고 지휘관이 도주했으며 구조 신호기에도 수정이 침투했다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -197,48 +213,66 @@
             "item_id": "조난일지_02__mnt_001",
             "surface_text": "수정",
             "entity_id": null,
-            "entity_type": "item",
+            "entity_type": "concept",
             "line_start": 2,
             "line_end": 2,
-            "quote": "수정 발견."
+            "quote": "수정 발견.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "조난일지_02__mnt_002",
+            "surface_text": "스쿼드",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "스쿼드 멤버 및 일대가 수정으로 뒤덮임.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "조난일지_02__mnt_003",
             "surface_text": "지휘관",
             "entity_id": null,
             "entity_type": "character",
             "line_start": 4,
             "line_end": 4,
-            "quote": "지휘관 도주."
+            "quote": "지휘관 도주.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "조난일지_02__mnt_003",
+            "item_id": "조난일지_02__mnt_004",
             "surface_text": "구조 신호기",
             "entity_id": null,
             "entity_type": "item",
             "line_start": 5,
             "line_end": 5,
-            "quote": "구조 신호기에 수정 침투."
+            "quote": "구조 신호기에 수정 침투.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "조난일지_02__dca_001",
-          "name": "조난 일지 작성자 (니케)",
-          "entity_id": null
+          "name": "조난 일지 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "조난일지_02__csh_001",
-          "text": "수정이 스쿼드 멤버와 구조 신호기(전자기기/전력원)를 뒤덮고 지휘관이 도주한 세 번째 조각으로, 조난일지_03으로 이어진다.",
+          "text": "조난 일지 시리즈(조난일지_00~03)의 세 번째 조각으로, 수정 침식과 지휘관의 도주를 기록한다.",
           "related_scene_ids": [
             "조난일지_00",
             "조난일지_01",
-            "조난일지_03",
-            "하모니큐브관찰일지_01"
+            "조난일지_03"
           ]
         }
       ],
@@ -247,31 +281,76 @@
         {
           "item_id": "조난일지_02__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "조난 일지 작성자 (니케)",
-          "summary": "작성자는 스쿼드 멤버 및 일대가 수정으로 뒤덮였고 지휘관이 도주했으며 구조 신호기에 수정이 침투했다고 기록한다.",
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "조난 일지 작성자가 수정을 발견했으며 스쿼드 멤버와 일대가 수정으로 뒤덮였다고 기록한다.",
           "line_start": 2,
+          "line_end": 3,
+          "claim_line": 3,
+          "quote": "수정 발견. 스쿼드 멤버 및 일대가 수정으로 뒤덮임.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "조난일지_02__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "조난 일지 작성자가 지휘관이 도주했다고 기록한다.",
+          "line_start": 4,
+          "line_end": 4,
+          "claim_line": 4,
+          "quote": "지휘관 도주.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "조난일지_02__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "조난 일지 작성자가 구조 신호기에 수정이 침투했다고 기록한다.",
+          "line_start": 5,
           "line_end": 5,
-          "quote": "수정 발견. 스쿼드 멤버 및 일대가 수정으로 뒤덮임. 지휘관 도주. 구조 신호기에 수정 침투.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 5,
+          "quote": "구조 신호기에 수정 침투.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "조난일지_02__clh_001",
-          "keyword": "스쿼드 및 구조 신호기의 수정 침식",
+          "keyword": "수정",
           "category": "lore_concept",
-          "detail": "수정이 스쿼드 멤버와 일대를 뒤덮고 전력을 사용하는 구조 신호기에까지 침투했다.",
+          "subject": null,
+          "detail": "스쿼드 멤버와 주변 일대를 뒤덮고 구조 신호기에까지 침투하는 성질을 지닌다.",
           "line_start": 2,
           "line_end": 5,
-          "quote": "수정 발견. 스쿼드 멤버 및 일대가 수정으로 뒤덮임. 지휘관 도주. 구조 신호기에 수정 침투."
+          "quote": "수정 발견. 스쿼드 멤버 및 일대가 수정으로 뒤덮임. 지휘관 도주. 구조 신호기에 수정 침투.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "조난일지_02__uec_001",
+          "surface_text": "수정",
+          "suggested_type": "concept",
+          "line_start": 2
+        },
+        {
+          "item_id": "조난일지_02__uec_002",
+          "surface_text": "구조 신호기",
+          "suggested_type": "item",
+          "line_start": 5
+        }
+      ]
     },
     {
       "scene_id": "조난일지_03",
@@ -287,8 +366,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "수정의 확장 속도가 매우 빨라 작성자의 체내에도 수정이 침투했으며, 도주했던 지휘관은 외상 없이 사망한 상태로 발견되었고 권총에 잔여 탄환 1발이 남아 있음을 기록한다.",
+      "summary": "조난 일지 작성자가 빠르게 확장하는 수정이 자신의 체내에 침투했으며, 외상 없이 사망한 지휘관과 잔여 탄환 1발이 남은 권총을 발견했다고 기록한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -298,10 +378,12 @@
             "item_id": "조난일지_03__mnt_001",
             "surface_text": "수정",
             "entity_id": null,
-            "entity_type": "item",
+            "entity_type": "concept",
             "line_start": 2,
             "line_end": 2,
-            "quote": "수정 발견. 확장 속도 매우 빠름."
+            "quote": "수정 발견. 확장 속도 매우 빠름.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "조난일지_03__mnt_002",
@@ -310,27 +392,39 @@
             "entity_type": "character",
             "line_start": 4,
             "line_end": 4,
-            "quote": "지휘관 발견. 사망 상태. 외상은 보이지 않음."
+            "quote": "지휘관 발견. 사망 상태. 외상은 보이지 않음.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "조난일지_03__mnt_003",
+            "surface_text": "권총",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "권총 확인. 잔여 탄환 1발.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "조난일지_03__dca_001",
-          "name": "조난 일지 작성자 (니케)",
-          "entity_id": null
+          "name": "조난 일지 작성자",
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [
         {
           "item_id": "조난일지_03__csh_001",
-          "text": "조난 일지의 마지막 조각으로, 체내 수정 침투 현상은 저주받은보석.txt_03의 니케 내부 수정 잠식과 일치한다.",
+          "text": "조난일지_02에서 도주했던 지휘관이 사망 상태로 발견되며, 체내에 수정이 침투한 작성자가 잔여 탄환 1발이 남은 권총을 확인한다.",
           "related_scene_ids": [
-            "조난일지_00",
-            "조난일지_01",
-            "조난일지_02",
-            "저주받은보석.txt_03"
+            "조난일지_02"
           ]
         }
       ],
@@ -339,31 +433,88 @@
         {
           "item_id": "조난일지_03__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "조난 일지 작성자 (니케)",
-          "summary": "작성자는 수정의 확장 속도가 매우 빨라 자신의 체내에도 수정이 침투했으며, 외상 없이 사망한 지휘관과 잔여 탄환 1발이 남은 권총을 확인했다고 기록한다.",
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "조난 일지 작성자가 확장 속도가 매우 빠른 수정을 발견했고 자신의 체내에 수정이 침투했다고 기록한다.",
           "line_start": 2,
+          "line_end": 3,
+          "claim_line": 3,
+          "quote": "수정 발견. 확장 속도 매우 빠름. 체내에 수정 침투.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "조난일지_03__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "조난 일지 작성자가 외상이 보이지 않는 사망 상태의 지휘관을 발견했다고 기록한다.",
+          "line_start": 4,
+          "line_end": 4,
+          "claim_line": 4,
+          "quote": "지휘관 발견. 사망 상태. 외상은 보이지 않음.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "조난일지_03__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "조난 일지 작성자",
+          "summary": "조난 일지 작성자가 권총을 확인하여 잔여 탄환이 1발 남아 있음을 기록한다.",
+          "line_start": 5,
           "line_end": 5,
-          "quote": "수정 발견. 확장 속도 매우 빠름. 체내에 수정 침투. 지휘관 발견. 사망 상태. 외상은 보이지 않음. 권총 확인. 잔여 탄환 1발.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 5,
+          "quote": "권총 확인. 잔여 탄환 1발.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "조난일지_03__clh_001",
-          "keyword": "체내 수정 침투와 지휘관의 사망 (잔여 탄환 1발)",
-          "category": "past_incident",
-          "detail": "작성자의 체내에 수정이 침투한 가운데 도주했던 지휘관이 외상 없이 사망한 채 발견되었고, 작성자(또는 지휘관)의 권총에 탄환 1발이 남아 있었다.",
+          "keyword": "수정",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "확장 속도가 매우 빠르며 체내에 침투하는 물질로, 지휘관이 외상 없이 사망한 정황과 함께 기록된다.",
           "line_start": 2,
+          "line_end": 4,
+          "quote": "수정 발견. 확장 속도 매우 빠름. 체내에 수정 침투. 지휘관 발견. 사망 상태. 외상은 보이지 않음.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "조난일지_03__clh_002",
+          "keyword": "권총",
+          "category": "item",
+          "subject": null,
+          "detail": "체내에 수정이 침투한 작성자가 사망한 지휘관 곁에서 확인한 잔여 탄환 1발짜리 권총이다.",
+          "line_start": 3,
           "line_end": 5,
-          "quote": "수정 발견. 확장 속도 매우 빠름. 체내에 수정 침투. 지휘관 발견. 사망 상태. 외상은 보이지 않음. 권총 확인. 잔여 탄환 1발."
+          "quote": "체내에 수정 침투. 지휘관 발견. 사망 상태. 외상은 보이지 않음. 권총 확인. 잔여 탄환 1발.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": []
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "조난일지_03__uec_001",
+          "surface_text": "수정",
+          "suggested_type": "concept",
+          "line_start": 2
+        },
+        {
+          "item_id": "조난일지_03__uec_002",
+          "surface_text": "권총",
+          "suggested_type": "item",
+          "line_start": 5
+        }
+      ]
     }
   ]
 }
