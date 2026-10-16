@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 
@@ -10,8 +11,10 @@ import {
   buildNumberedScript,
   extractSceneMechanicalGroundTruth,
   parseChapterTextBlocks,
+  planSceneParts,
 } from './graph/lib.mjs';
-import { validateShard } from './graph/validate-output.mjs';
+import { validateShard, validateShardFile } from './graph/validate-output.mjs';
+import { combineParts, partPathOf } from './graph/batch-parts.mjs';
 import { enrichSceneFromManifest } from './graph/merge-and-index.mjs';
 import { planBatches } from './graph/build-manifest.mjs';
 import { applyDescriptorReview } from './graph/init-registry.mjs';
@@ -624,4 +627,85 @@ test('2.3-21 coverage gap: long uncovered dialogue needs extraction or a reviewe
     reviewed_gaps: [{ line_start: 2, line_end: 13, reason: '인사말뿐이다.' }],
   });
   assertFails(validateShard(shardOf(overlapping), gapBatch()), 'COVERAGE_GAP');
+});
+
+const wideBatch = (speakerOf) =>
+  batchOf(
+    makeInputScene('t13_gap', [
+      '[SCENE START]',
+      ...Array.from({ length: 20 }, (_, i) => `${speakerOf(i)}: 대사 ${i + 1}번입니다.`),
+      '[SCENE END]',
+    ])
+  );
+const wideWarnings = (res) => res.warnings.filter((w) => w.rule === 'WIDE_RANGE');
+
+test('2.3-22 wide range: an item covering 20+ dialogue lines by 2+ speakers warns but still passes', () => {
+  const twoSpeakers = (i) => (i % 2 === 0 ? '라피' : '아니스');
+  const whole = event({ line_start: 2, line_end: 21, quote: '대사 1번입니다.' });
+
+  const res = validateShard(shardOf(gapScene({ events_and_claims: [whole] })), wideBatch(twoSpeakers));
+  assertValid(res);
+  assert.equal(wideWarnings(res).length, 1);
+  assert.match(wideWarnings(res)[0].path, /events_and_claims\[0\]$/);
+
+  const note = {
+    subject: '라피',
+    target: '아니스',
+    relation_or_change: '관계',
+    epistemic_type: 'established_event',
+    claimant: null,
+    line_start: 2,
+    line_end: 21,
+    claim_line: null,
+    quote: '대사 1번입니다.',
+    refers_to_past: false,
+  };
+  assert.equal(wideWarnings(validateShard(shardOf(gapScene({ relationship_and_lore_notes: [note] })), wideBatch(twoSpeakers))).length, 1);
+
+  // 대사 19줄은 경고 없음
+  const nineteen = event({ line_start: 2, line_end: 20, quote: '대사 1번입니다.' });
+  assert.equal(wideWarnings(validateShard(shardOf(gapScene({ events_and_claims: [nineteen] })), wideBatch(twoSpeakers))).length, 0);
+
+  // 20줄 이상이어도 화자가 하나면 경고 없음
+  const solo = validateShard(
+    shardOf(gapScene({ events_and_claims: [whole], participants: { ...gapScene().participants, present_in_scene: present('라피') } })),
+    wideBatch(() => '라피')
+  );
+  assertValid(solo);
+  assert.equal(wideWarnings(solo).length, 0);
+});
+
+test('5 Pass 1 parts: batches over 20 scenes split evenly, parts validate alone and combine in batch order', async () => {
+  const ids = (n) => Array.from({ length: n }, (_, i) => `s${i + 1}`);
+  assert.deepEqual(planSceneParts(ids(20)).map((p) => p.length), [20]);
+  assert.deepEqual(planSceneParts(ids(30)).map((p) => p.length), [15, 15]);
+  assert.deepEqual(planSceneParts(ids(41)).map((p) => p.length), [14, 14, 13]);
+  assert.deepEqual(planSceneParts(ids(117)).flat(), ids(117));
+
+  // 장면 21개짜리 배치 → 11개, 10개
+  const sceneIds = ids(21).map((id) => `t13_part_${id}`);
+  const batchInput = { ...batchOf(...sceneIds.map((id) => makeInputScene(id, ['[SCENE START]', '[SCENE END]']))), batch_id: 'batch_parts' };
+  const part1 = { schema_version: PASS1_SCHEMA_VERSION, batch_id: 'batch_parts', scenes: sceneIds.slice(0, 11).map((id) => emptyScene(id)) };
+  const part2 = { schema_version: PASS1_SCHEMA_VERSION, batch_id: 'batch_parts', scenes: sceneIds.slice(11).reverse().map((id) => emptyScene(id)) };
+
+  const combined = combineParts(batchInput, [part1, part2]);
+  assert.deepEqual(combined.scenes.map((s) => s.scene_id), sceneIds);
+  assert.throws(() => combineParts(batchInput, [part1]), /Expected 2 part/);
+  assert.throws(() => combineParts(batchInput, [part1, { ...part2, scenes: part2.scenes.slice(1) }]), /missing/);
+  assert.throws(() => combineParts(batchInput, [part2, part1]), /missing/);
+
+  const graphDir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-parts-'));
+  try {
+    await fs.mkdir(path.join(graphDir, 'pass1', 'batches'), { recursive: true });
+    await fs.mkdir(path.join(graphDir, 'pass1', 'parts'), { recursive: true });
+    await fs.writeFile(path.join(graphDir, 'pass1', 'batches', 'batch_parts.json'), JSON.stringify(batchInput));
+    await fs.writeFile(partPathOf('batch_parts', 1, graphDir), JSON.stringify(part1));
+    assertValid(await validateShardFile('batch_parts', { part: 1, graphDir }));
+    // 부분 2에 부분 1의 장면을 쓰면 장면 누락으로 실패한다
+    await fs.writeFile(partPathOf('batch_parts', 2, graphDir), JSON.stringify(part1));
+    assert.equal((await validateShardFile('batch_parts', { part: 2, graphDir })).valid, false);
+    await assert.rejects(validateShardFile('batch_parts', { part: 3, graphDir }), /part 3 does not exist/);
+  } finally {
+    await fs.rm(graphDir, { recursive: true, force: true });
+  }
 });

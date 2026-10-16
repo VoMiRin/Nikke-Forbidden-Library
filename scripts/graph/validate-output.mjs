@@ -11,6 +11,7 @@ import {
   resolveBranchOption,
   chronologiesInRange,
 } from './lib.mjs';
+import { partPathOf, planBatchParts, readBatchInput } from './batch-parts.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -46,6 +47,10 @@ export const DENSITY_WARNING_MIN_DIALOGUE_LINES = 60;
 // 2.3의 21항 공백 구간: 근거 항목 범위에 안 걸린 대사가 이만큼 연속되면 reviewed_gaps로 검토 사유가 있어야 한다
 export const COVERAGE_GAP_MIN_DIALOGUE_LINES = 10;
 export const COVERAGE_ITEM_FIELDS = ['events_and_claims', 'clues_and_hooks', 'relationship_and_lore_notes'];
+
+// 2.3의 22항 넓은 범위 경고: 한 항목이 대사를 이만큼 덮고 화자가 둘 이상이면 다른 화자의 주장이 묻혔는지 다시 보게 한다
+export const WIDE_RANGE_MIN_DIALOGUE_LINES = 20;
+export const WIDE_RANGE_ITEM_FIELDS = ['events_and_claims', 'relationship_and_lore_notes'];
 
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
@@ -1713,6 +1718,24 @@ export const validateShard = (shardData, batchInput) => {
     }
     flushRun();
 
+    // 22. 넓은 범위: 21항을 넓은 범위로 통과하면서 그 안의 다른 화자 주장을 빠뜨리지 않았는지 다시 보게 한다(경고)
+    for (const field of WIDE_RANGE_ITEM_FIELDS) {
+      if (!Array.isArray(scene[field])) continue;
+      scene[field].forEach((item, idx) => {
+        if (!isPositiveInt(item?.line_start) || !isPositiveInt(item?.line_end) || item.line_end < item.line_start) return;
+        const inside = dialogueLines.filter((line) => line >= item.line_start && line <= item.line_end);
+        if (inside.length < WIDE_RANGE_MIN_DIALOGUE_LINES) return;
+        const speakers = [...new Set(inside.map((line) => mgt.line_speaker[line]))];
+        if (speakers.length < 2) return;
+        addWarning(
+          'WIDE_RANGE',
+          sid,
+          `${sceneBasePath}.${field}[${idx}]`,
+          `L${item.line_start}~L${item.line_end} covers ${inside.length} dialogue lines by ${speakers.length} speakers (${speakers.join(', ')}). Re-read it: split out other speakers' claims or separate events buried in it. Leave it if it is really one event`
+        );
+      });
+    }
+
     // unregistered_entity_candidates 검증
     if (!Array.isArray(scene.unregistered_entity_candidates)) {
       addError(
@@ -1769,6 +1792,27 @@ export const validateShardFile = async (shardArg, options = {}) => {
   const graphDir = options.graphDir ?? GRAPH_DATA_DIR;
   let shardPath = shardArg;
 
+  // 부분 샤드: 배치 입력 중 그 부분에 계획된 장면만 대조한다 (5절 Pass 1)
+  if (options.part) {
+    const batchId = shardArg;
+    const batchInput = await readBatchInput(batchId, graphDir);
+    const plan = planBatchParts(batchInput);
+    const planned = plan.find((p) => p.part === options.part);
+    if (!planned) throw new Error(`${batchId} has ${plan.length} part(s); part ${options.part} does not exist`);
+    shardPath = partPathOf(batchId, options.part, graphDir);
+    const shardData = JSON.parse(await fs.readFile(shardPath, 'utf8'));
+    const partInput = {
+      ...batchInput,
+      scenes: batchInput.scenes.filter((s) => planned.scene_ids.includes(s.scene_id)),
+    };
+    return {
+      shardPath,
+      batchInputPath: path.join(graphDir, 'pass1', 'batches', `${batchId}.json`),
+      batchId: `${batchId} part ${options.part}/${plan.length}`,
+      ...validateShard(shardData, partInput),
+    };
+  }
+
   if (!shardArg.endsWith('.json') && !fsSync.existsSync(shardArg)) {
     shardPath = path.join(graphDir, 'pass1', 'shards', `${shardArg}.json`);
   } else {
@@ -1799,12 +1843,14 @@ export const validateShardFile = async (shardArg, options = {}) => {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   const target = process.argv[2];
-  if (!target) {
-    console.error('Usage: node scripts/graph/validate-output.mjs <shard-json-path-or-batch-id>');
+  const partIdx = process.argv.indexOf('--part');
+  const part = partIdx > 0 ? Number(process.argv[partIdx + 1]) : null;
+  if (!target || (partIdx > 0 && !Number.isInteger(part))) {
+    console.error('Usage: node scripts/graph/validate-output.mjs <shard-json-path-or-batch-id> [--part <n>]');
     process.exit(1);
   }
 
-  validateShardFile(target)
+  validateShardFile(target, { part })
     .then((res) => {
       if (res.warnings.length > 0) {
         for (const w of res.warnings) {

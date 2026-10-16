@@ -17,6 +17,24 @@ export const GRAPH_DATA_DIR = path.join(ROOT_DIR, 'data', 'graph');
 // Pass 1 샤드·배치 입력·병합 산출물의 스키마 버전 (4절)
 export const PASS1_SCHEMA_VERSION = '1.3.0';
 
+// 5절 Pass 1: 서브에이전트 한 번에 맡기는 장면 수 상한
+export const MAX_SCENES_PER_CALL = 20;
+
+// 장면 목록을 순서대로, 크기가 고르게 상한 이하 묶음으로 나눈다 (예: 30개 → 15개, 15개)
+export const planSceneParts = (sceneIds, maxPerPart = MAX_SCENES_PER_CALL) => {
+  const partCount = Math.max(1, Math.ceil(sceneIds.length / maxPerPart));
+  const baseSize = Math.floor(sceneIds.length / partCount);
+  const extra = sceneIds.length % partCount;
+  const parts = [];
+  let start = 0;
+  for (let i = 0; i < partCount; i++) {
+    const size = baseSize + (i < extra ? 1 : 0);
+    parts.push(sceneIds.slice(start, start + size));
+    start += size;
+  }
+  return parts;
+};
+
 export const CATEGORY_NAMES = {
   main_story: '메인 스토리',
   event_stories: '이벤트 스토리',

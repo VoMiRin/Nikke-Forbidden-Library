@@ -7,8 +7,10 @@ import { GRAPH_DATA_DIR, writeJsonAtomic } from './lib.mjs';
 const __filename = fileURLToPath(import.meta.url);
 
 // 8절 4단계 파일럿 보고 중 기계적으로 셀 수 있는 항목을 모은다.
-// 1.3.0 샤드를 shards_1.2.0의 1.2.0 샤드와 비교한다. 비교는 양쪽에 모두 있는 장면만 한다
+// 기본은 1.3.0 샤드를 shards_1.2.0의 1.2.0 샤드와 비교한다. 비교는 양쪽에 모두 있는 장면만 한다
 // (pilot_0002는 1.3.0에서 coins_in_rush_09를 gingerbreadhouse_02로 바꿨다).
+// --baseline-dir로 다른 기준 폴더(예: 1.3.0 1차 실행 shards_1.3.0_run1)와 비교할 수 있다.
+// 그 폴더의 샤드가 같은 배치 ID면 --same-batch-ids를 준다.
 export const PILOT_COMPARISONS = [
   { batch_id: 'batch_0001', baseline: 'batch_0001' },
   { batch_id: 'pilot_full_0025', baseline: 'batch_0025' },
@@ -66,6 +68,13 @@ export const summarizeBatch = (shard, baselineShard = null, examplesPerType = 5)
     descriptor_speakers: scenes.reduce((acc, s) => acc + (s.descriptor_speakers?.length ?? 0), 0),
     trait_clues: scenes.reduce((acc, s) => acc + (s.clues_and_hooks ?? []).filter((c) => c.category === 'trait').length, 0),
     mixed_scenes: scenes.filter((s) => s.chronology_type === 'mixed').length,
+    reviewed_gaps: scenes.flatMap((s) =>
+      (s.reviewed_gaps ?? []).map((g) => ({
+        scene_id: s.scene_id,
+        lines: `${g.line_start}~${g.line_end}`,
+        reason: g.reason,
+      }))
+    ),
   };
 
   if (baselineShard) {
@@ -76,19 +85,22 @@ export const summarizeBatch = (shard, baselineShard = null, examplesPerType = 5)
     const baseNotes = baseScenes.flatMap((s) =>
       (s.relationship_and_lore_notes ?? []).map((n) => ({ scene_id: s.scene_id, n }))
     );
-    // 1.2.0 메모 중 같은 장면에 줄 범위가 겹치는 1.3.0 메모가 없는 것: 빠지면 안 되는 관계인지 사람이 확인할 대상
+    // 기준 메모 중 같은 장면에 줄 범위가 겹치는 현재 메모가 없는 것: 빠지면 안 되는 관계인지 사람이 확인할 대상
     const dropped = baseNotes.filter(
       ({ scene_id: sid, n }) => !notes.some((x) => x.scene_id === sid && rangesOverlap(x.n, n))
     );
     summary.baseline = {
       compared_scenes: baseScenes.length,
       scenes_without_baseline: scenesOnlyInCurrent.map((s) => s.scene_id),
-      relationship_notes_1_3_0_in_compared_scenes: comparedNotes.length,
-      relationship_notes_1_2_0: baseNotes.length,
+      relationship_notes_in_compared_scenes: comparedNotes.length,
+      relationship_notes_baseline: baseNotes.length,
       change: comparedNotes.length - baseNotes.length,
-      events_and_claims_1_2_0: baseScenes.reduce((acc, s) => acc + (s.events_and_claims?.length ?? 0), 0),
-      dropped_1_2_0_notes_count: dropped.length,
-      dropped_1_2_0_notes: dropped.map(({ scene_id: sid, n }) => noteExample(sid, n)),
+      events_and_claims_in_compared_scenes: scenes
+        .filter((s) => baseScenes.some((b) => b.scene_id === s.scene_id))
+        .reduce((acc, s) => acc + (s.events_and_claims?.length ?? 0), 0),
+      events_and_claims_baseline: baseScenes.reduce((acc, s) => acc + (s.events_and_claims?.length ?? 0), 0),
+      dropped_baseline_notes_count: dropped.length,
+      dropped_baseline_notes: dropped.map(({ scene_id: sid, n }) => noteExample(sid, n)),
     };
   }
   return summary;
@@ -97,9 +109,12 @@ export const summarizeBatch = (shard, baselineShard = null, examplesPerType = 5)
 export const buildPilotReport = async (options = {}) => {
   const graphDir = options.graphDir ?? GRAPH_DATA_DIR;
   const shardsDir = path.join(graphDir, 'pass1', 'shards');
-  const baselineDir = path.join(graphDir, 'pass1', 'shards_1.2.0');
+  const baselineDirName = options.baselineDir ?? 'shards_1.2.0';
+  const baselineDir = path.join(graphDir, 'pass1', baselineDirName);
   const batches = {};
-  for (const { batch_id: id, baseline } of options.comparisons ?? PILOT_COMPARISONS) {
+  for (const comparison of options.comparisons ?? PILOT_COMPARISONS) {
+    const id = comparison.batch_id;
+    const baseline = options.sameBatchIds ? id : comparison.baseline;
     const shard = await readJsonIfExists(path.join(shardsDir, `${id}.json`));
     if (!shard) {
       batches[id] = { missing: true };
@@ -117,13 +132,15 @@ export const buildPilotReport = async (options = {}) => {
       { position: 'back', events_per_100_lines: 4.5 },
     ],
   };
-  return { generated_at: new Date().toISOString(), batches, density };
+  return { generated_at: new Date().toISOString(), baseline_dir: `pass1/${baselineDirName}`, batches, density };
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
-  buildPilotReport()
+  const args = process.argv.slice(2);
+  const optionValue = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : undefined);
+  buildPilotReport({ baselineDir: optionValue('--baseline-dir'), sameBatchIds: args.includes('--same-batch-ids') })
     .then(async (report) => {
-      const outPath = path.join(GRAPH_DATA_DIR, 'pilot', 'pilot_report_1.3.0.json');
+      const outPath = path.join(GRAPH_DATA_DIR, 'pilot', optionValue('--out') ?? 'pilot_report_1.3.0.json');
       await writeJsonAtomic(outPath, report);
       for (const [id, b] of Object.entries(report.batches)) {
         if (b.missing) {
@@ -131,10 +148,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           continue;
         }
         const base = b.baseline
-          ? `, 1.2.0 notes ${b.baseline.relationship_notes_1_2_0} (${b.baseline.change >= 0 ? '+' : ''}${b.baseline.change}), dropped-to-review ${b.baseline.dropped_1_2_0_notes_count}`
+          ? `, baseline notes ${b.baseline.relationship_notes_baseline} (${b.baseline.change >= 0 ? '+' : ''}${b.baseline.change}), dropped-to-review ${b.baseline.dropped_baseline_notes_count}`
           : '';
         const types = Object.entries(b.relationship_notes_by_type).map(([k, v]) => `${k}=${v.count}`).join(' ');
-        console.log(`[pilot-report] ${id}: notes ${b.relationship_notes} [${types}]${base}`);
+        console.log(`[pilot-report] ${id}: notes ${b.relationship_notes} [${types}]${base}, reviewed gaps ${b.reviewed_gaps.length}`);
       }
       console.log(`[pilot-report] Written: ${outPath}`);
     })
