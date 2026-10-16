@@ -16,7 +16,16 @@ import {
   sha256,
 } from './graph/lib.mjs';
 import { validateShard, validateShardFile } from './graph/validate-output.mjs';
-import { buildPartInput, combineParts, nextPendingBatches, partInputPathOf, partPathOf, pickReviewScenes } from './graph/batch-parts.mjs';
+import {
+  buildPartInput,
+  buildReviewInput,
+  combineParts,
+  nextPendingBatches,
+  partInputPathOf,
+  partPathOf,
+  pickReviewScenes,
+  waveNameOf,
+} from './graph/batch-parts.mjs';
 import { enrichSceneFromManifest } from './graph/merge-and-index.mjs';
 import { planBatches } from './graph/build-manifest.mjs';
 import { applyDescriptorReview } from './graph/init-registry.mjs';
@@ -1053,4 +1062,34 @@ test('5 Pass 1 waves: review sample is picked mechanically from the wave', () =>
   const picked = pickReviewScenes(withDocs);
   assert.equal(picked.at(-1).scene_id, 'c2');
   assert.equal(picked.at(-1).document_text, 3);
+});
+
+test('5 Pass 1 waves: review input carries whole scene objects and marks samples that were not merged', () => {
+  assert.equal(waveNameOf(['batch_0002', 'batch_0003', 'batch_0011']), 'wave_0002-0011');
+  const inputScene = (id) => ({ scene_id: id, numbered_script: '[L0001] 라피: 가자.', mechanical_ground_truth: { unknowns: [] } });
+  const shardScene = (id) => ({ scene_id: id, events_and_claims: [{ summary: `${id} 사건` }] });
+  const review = buildReviewInput({
+    wave: 'wave_0002-0004',
+    reviewScenes: [
+      { batch_id: 'batch_0002', scene_id: 'a1', reason: '??? 줄 최다' },
+      { batch_id: 'batch_0003', scene_id: 'b1', reason: '대사 줄 최다(다른 배치)' },
+      { batch_id: 'batch_0004', scene_id: 'c1', reason: '마지막 배치 뒤쪽 3분의 1' },
+      { batch_id: 'batch_0002', scene_id: 'a9', reason: '대사 줄 최다' },
+    ],
+    batchInputs: {
+      batch_0002: { scenes: [inputScene('a1')] },
+      batch_0003: { scenes: [inputScene('b1')] },
+      batch_0004: { scenes: [inputScene('c1')] },
+    },
+    shards: { batch_0002: { scenes: [shardScene('a1')] }, batch_0003: { scenes: [shardScene('b1')] } },
+    mergedBatchIds: ['batch_0002'],
+  });
+  assert.deepEqual(
+    review.scenes.map((s) => [s.scene_id, s.status]),
+    [['a1', 'ok'], ['b1', 'not_merged'], ['c1', 'no_shard'], ['a9', 'scene_missing']]
+  );
+  assert.deepEqual(review.scenes[0].input_scene, inputScene('a1'));
+  assert.deepEqual(review.scenes[0].extraction, shardScene('a1'));
+  assert.equal(review.scenes[2].extraction, null);
+  assert.equal(review.scenes[0].source.shard, 'data/graph/pass1/shards/batch_0002.json');
 });
