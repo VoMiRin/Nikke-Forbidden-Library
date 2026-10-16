@@ -497,7 +497,14 @@ export const mergeValidatedShards = async (options = {}) => {
 
   for (const fileName of shardFiles) {
     const shardPath = path.join(shardsDir, fileName);
-    const shardData = JSON.parse(await fs.readFile(shardPath, 'utf8'));
+    // 깨진 샤드 하나 때문에 전체 병합이 멈추지 않게, 읽지 못한 파일은 건너뛰고 보고한다
+    let shardData;
+    try {
+      shardData = JSON.parse(await fs.readFile(shardPath, 'utf8'));
+    } catch (err) {
+      skippedBatches.push({ batch_id: path.basename(fileName, '.json'), reason: `Unreadable shard JSON: ${err.message}` });
+      continue;
+    }
     const batchId = shardData.batch_id || path.basename(fileName, '.json');
     const batchInputPath = path.join(batchesDir, `${batchId}.json`);
 

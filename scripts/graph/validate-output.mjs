@@ -1829,7 +1829,7 @@ export const validateShard = (shardData, batchInput) => {
 
     // 24. 정체를 미리 씀: 같은 장면에서 ???·묘사형 화자의 정체가 밝혀지기 전 줄의 항목에 밝혀진 이름을 쓰면 경고한다(3절 9항).
     // 공개 줄 전에 그 이름이 이미 자기 라벨로 말했으면 가려진 정체가 아니므로 보지 않는다.
-    // 요약류 필드는 그 항목 끝 줄까지의 원문에 이름이 아직 나오지 않았을 때만 본다(다른 인물이 이름을 먼저 부른 경우 제외)
+    // 그 항목 끝 줄까지의 원문에 이름이 이미 나왔으면(다른 인물이 그 이름을 말함) 그 인물을 가리킨 것일 수 있으므로 보지 않는다(wordless_02 L43)
     const revealLineByName = new Map();
     for (const list of [scene.unknown_speakers, scene.descriptor_speakers]) {
       for (const entry of Array.isArray(list) ? list : []) {
@@ -1854,18 +1854,19 @@ export const validateShard = (shardData, batchInput) => {
         scene[field].forEach((item, idx) => {
           if (!isPositiveInt(item?.line_end) || item.line_end >= revealLine) return;
           const textBefore = rawLines.slice(0, item.line_end).join('\n');
+          if (textBefore.includes(name)) return;
           const used = [
             ...idFields.filter(
               (k) => isNonEmptyString(item[k]) && item[k].split(MULTI_ENTITY_SEPARATOR_RE).map((n) => n.trim()).includes(name)
             ),
-            ...textFields.filter((k) => isNonEmptyString(item[k]) && item[k].includes(name) && !textBefore.includes(name)),
+            ...textFields.filter((k) => isNonEmptyString(item[k]) && item[k].includes(name)),
           ];
           if (used.length === 0) return;
           addWarning(
             'PREMATURE_IDENTITY',
             sid,
             `${sceneBasePath}.${field}[${idx}]`,
-            `L${item.line_start}~L${item.line_end} uses "${name}" in ${used.join(', ')}, but that identity is only revealed at L${revealLine}. Use the speaker label of that point (e.g. ???) and leave the link to resolved_in_same_scene_to`
+            `L${item.line_start}~L${item.line_end} uses "${name}" in ${used.join(', ')}, but that identity is only revealed at L${revealLine} and the name does not appear in the text up to L${item.line_end}. Re-read it: if this identifies the hidden speaker with later information, use the speaker label of that point (e.g. ???). If it refers to someone already named before, keep it and report the line`
           );
         });
       }

@@ -777,8 +777,11 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
       );
     });
 
+    // 읽을 수 없는 샤드는 건너뛰고 나머지는 병합한다(5절 회차: 실패 배치만 빼고 병합)
+    await fs.writeFile(path.join(shardsDir, 'batch_0002.json'), '{broken');
     const mergeResult = await mergeValidatedShards({ graphDir: tmpDir, pilot: false });
     assert.deepEqual(mergeResult.mergedBatchIds, ['batch_0001']);
+    assert.match(mergeResult.skippedBatches.find((b) => b.batch_id === 'batch_0002').reason, /Unreadable shard JSON/);
     assert.equal(mergeResult.mergedScenesCount, 1);
 
     const indexDoc = JSON.parse(await fs.readFile(path.join(tmpDir, 'pass1_index.json'), 'utf8'));

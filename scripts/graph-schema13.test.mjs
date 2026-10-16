@@ -1001,6 +1001,14 @@ test('2.3-24 premature identity: a name revealed later in the scene must not be 
   const early = validateShard(shardOf(scene('지엔')), batch);
   assert.equal(warnings(early).length, 1, JSON.stringify(early.errors));
   assert.equal(warnings(validateShard(shardOf(scene('???')), batch)).length, 0);
+
+  // 공개 전에 다른 인물이 그 이름을 이미 말했으면 그 인물을 가리킨 것일 수 있어 경고하지 않는다
+  const namedBefore = ['[SCENE START]', '마나: 지엔이 올 거예요.', '???: 방주 깊은 곳의 어둠을 조심해요.', '지엔: 지엔이에요.', '[SCENE END]'];
+  const batch2 = batchOf(makeInputScene('t13_reveal', namedBefore));
+  const s2 = scene('지엔');
+  s2.unknown_speakers[0] = { ...s2.unknown_speakers[0], unknown_id: batch2.scenes[0].mechanical_ground_truth.unknowns[0].unknown_id, line: 3 };
+  s2.events_and_claims[0] = { ...s2.events_and_claims[0], line_start: 3, line_end: 3, claim_line: 3 };
+  assert.equal(warnings(validateShard(shardOf(s2), batch2)).length, 0);
 });
 
 test('5 Pass 1 waves: next pending batches in number order, skipping merged and pilot batches', () => {
@@ -1034,4 +1042,15 @@ test('5 Pass 1 waves: review sample is picked mechanically from the wave', () =>
     pickReviewScenes(wave).map((r) => r.scene_id),
     ['a1', 'b1', 'b3'] // ??? 최다 a1, 다른 배치의 대사 최다 b1, 마지막 배치 뒤쪽 b3
   );
+
+  // 화자 없는 문서 장면이 있으면 본문 줄이 가장 많은 문서 장면을 하나 더 고른다
+  const doc = (id, lines) => ({
+    scene_id: id,
+    numbered_script: buildNumberedScript(lines),
+    mechanical_ground_truth: { unknowns: [], line_speaker: {} },
+  });
+  const withDocs = [...wave, { batch_id: 'batch_c', scenes: [doc('c1', ['기록 1', '기록 2']), doc('c2', ['기록 1', '-----', '기록 2', '기록 3'])] }];
+  const picked = pickReviewScenes(withDocs);
+  assert.equal(picked.at(-1).scene_id, 'c2');
+  assert.equal(picked.at(-1).document_text, 3);
 });

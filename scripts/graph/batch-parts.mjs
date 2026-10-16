@@ -3,7 +3,7 @@ import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
-import { GRAPH_DATA_DIR, PASS1_SCHEMA_VERSION, planSceneParts, writeJsonAtomic } from './lib.mjs';
+import { GRAPH_DATA_DIR, PASS1_SCHEMA_VERSION, countedLinesOf, planSceneParts, writeJsonAtomic } from './lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -75,7 +75,8 @@ export const nextPendingBatches = (progressDoc, count) =>
 
 /**
  * 회차의 독립 표본 검토 장면을 기계적으로 고른다(5절 Pass 1 본 실행 회차).
- * 1) ??? 줄이 가장 많은 장면, 2) 대사 줄이 가장 많은 장면(다른 배치에서), 3) 회차 마지막 배치의 뒤쪽 3분의 1에서 대사 줄이 가장 많은 장면.
+ * 1) ??? 줄이 가장 많은 장면, 2) 대사 줄이 가장 많은 장면(다른 배치에서), 3) 회차 마지막 배치의 뒤쪽 3분의 1에서 대사 줄이 가장 많은 장면,
+ * 4) 회차에 화자 없는 문서 장면이 있으면 본문 줄이 가장 많은 문서 장면(문서 형식은 대사 기준으로는 뽑히지 않는다).
  * 같은 값이면 배치·장면 순서가 앞선 것. 이미 고른 장면은 건너뛴다.
  */
 export const pickReviewScenes = (batchInputs) => {
@@ -86,6 +87,13 @@ export const pickReviewScenes = (batchInputs) => {
       unknowns: scene.mechanical_ground_truth?.unknowns?.length ?? 0,
       dialogue: Object.keys(scene.mechanical_ground_truth?.line_speaker ?? {}).length,
       back: idx >= Math.floor((input.scenes.length * 2) / 3),
+      document_text: (() => {
+        const rawLines = String(scene.numbered_script ?? '')
+          .split('\n')
+          .map((line) => line.replace(/^\[L\d+\]\s?/, ''));
+        const counted = countedLinesOf(scene.mechanical_ground_truth, rawLines);
+        return counted.mode === 'text' ? counted.lines.length : 0;
+      })(),
     }))
   );
   const picked = [];
@@ -100,6 +108,7 @@ export const pickReviewScenes = (batchInputs) => {
   const last = batchInputs.at(-1)?.batch_id;
   take(rows.filter((r) => r.batch_id === last && r.back), 'dialogue', '마지막 배치 뒤쪽 3분의 1');
   if (picked.length < 3) take(rows, 'dialogue', '대사 줄 최다');
+  take(rows, 'document_text', '화자 없는 문서 본문 줄 최다');
   return picked;
 };
 
@@ -148,6 +157,17 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
       if (!Number.isInteger(count) || count < 1) throw new Error(usage);
       const progressDoc = JSON.parse(await fs.readFile(path.join(GRAPH_DATA_DIR, 'progress.json'), 'utf8'));
       const ids = nextPendingBatches(progressDoc, count);
+      // 중단된 회차를 이어 돌릴 때: 출력이 있고 지금 검증을 통과하면 다시 돌리지 않는다(done), 실패하거나 읽을 수 없으면 다시 돌린다(rerun)
+      const { validateShardFile } = await import('./validate-output.mjs');
+      const statusOf = async (outPath, validate) => {
+        if (!fsSync.existsSync(outPath)) return 'new';
+        try {
+          return (await validate()).valid ? 'done' : 'rerun';
+        } catch {
+          return 'rerun';
+        }
+      };
+      const statusCount = { new: 0, done: 0, rerun: 0 };
       let call = 0;
       let scenes = 0;
       let bytes = 0;
@@ -158,9 +178,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
         const plan = planBatchParts(input);
         scenes += input.scenes.length;
         bytes += input.body_bytes ?? 0;
+        const shardOut = path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`);
+        const combinedStatus = await statusOf(shardOut, () => validateShardFile(id));
         if (plan.length === 1) {
           call += 1;
-          console.log(`call ${call}: ${id} (${input.scenes.length} scenes)`);
+          statusCount[combinedStatus] += 1;
+          console.log(`call ${call}: ${id} (${input.scenes.length} scenes) [${combinedStatus}]`);
           console.log(`  input    ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'batches', `${id}.json`))}`);
           console.log(`  output   ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`))}`);
           console.log(`  validate node scripts/graph/validate-output.mjs ${id}`);
@@ -170,13 +193,17 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           call += 1;
           const inputPath = partInputPathOf(id, part);
           await writeJsonAtomic(inputPath, buildPartInput(input, part));
-          console.log(`call ${call}: ${id} part ${part}/${plan.length} (${partIds.length} scenes)`);
+          const status =
+            combinedStatus === 'done' ? 'done' : await statusOf(partPathOf(id, part), () => validateShardFile(id, { part }));
+          statusCount[status] += 1;
+          console.log(`call ${call}: ${id} part ${part}/${plan.length} (${partIds.length} scenes) [${status}]`);
           console.log(`  input    ${rel(inputPath)}`);
           console.log(`  output   ${rel(partPathOf(id, part))}`);
           console.log(`  validate node scripts/graph/validate-output.mjs ${id} --part ${part}`);
         }
       }
       console.log(`[batch-parts] next ${ids.length} batch(es): ${ids.join(', ')} — ${scenes} scenes, ${bytes} body bytes, ${call} call(s)`);
+      console.log(`[batch-parts] calls to run: new ${statusCount.new}, rerun ${statusCount.rerun}; reuse (done): ${statusCount.done}`);
       console.log('[batch-parts] review sample:');
       for (const r of pickReviewScenes(inputs)) {
         console.log(`  ${r.scene_id} (${r.batch_id}) — ${r.reason}: ??? ${r.unknowns}, dialogue ${r.dialogue}`);

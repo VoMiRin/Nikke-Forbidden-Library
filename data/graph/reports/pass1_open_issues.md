@@ -71,7 +71,7 @@
 | `wordless_03` | `events_and_claims[20]` L59~61 | 답의 요약에서 대상("유니의 처벌")이 빠짐 | 2회차 2.3 (2) |
 | `vesti_04` | `events_and_claims[11]` L148 | 답의 요약에서 무엇에 대한 이유인지(질문 대상)가 빠짐 | 2회차 2.3 (4) |
 
-## 5. 검증기 24항(`PREMATURE_IDENTITY`) 경고 (5건)
+## 5. 검증기 24항(`PREMATURE_IDENTITY`) 경고 (4건)
 
 2026-10-17에 추가한 검사로 지금 샤드에서 나온 경고다. 고치지 않았다.
 
@@ -79,4 +79,5 @@
 |---|---|---|---|
 | `wisdom_spring_12` | `batch_0125` | `relationship_and_lore_notes[0]` L15~20, `clues_and_hooks[0]` L7~9, `clues_and_hooks[2]` L18~20 | `지엔` (L37) |
 | `romantic_valentine_00` | `batch_0125` | `clues_and_hooks[0]` L12~21 | `관리자 스윗 조니` (L44) |
-| `wordless_02` | `batch_0215` | `relationship_and_lore_notes[6]` L45~53 | `유니` (L74) |
+
+처음 판정 조건으로는 `wordless_02` `relationship_and_lore_notes[6]`(`유니`)도 걸렸지만, L43에서 미하라가 이미 유니를 이름으로 말한 뒤라 맞는 항목이었다(GPT 검토 지적). 조건을 고쳐 뺐다.
