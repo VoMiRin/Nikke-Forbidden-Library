@@ -144,6 +144,12 @@ export const prepareRepair = async (batchId, { graphDir = GRAPH_DATA_DIR, manife
   const batchInputPath = batchInputPathOf(batchId, graphDir);
   const shardPath = shardPathOf(batchId, graphDir);
   if (!fsSync.existsSync(shardPath)) throw new Error(`${batchId}: no shard at ${shardPath}`);
+  // 이전 회차의 보수 출력·후보가 남아 있으면 새 보수 입력과 섞인다
+  for (const leftover of [repairOutputPathOf(batchId, graphDir), repairCandidatePathOf(batchId, graphDir)]) {
+    if (fsSync.existsSync(leftover)) {
+      throw new Error(`${batchId}: ${path.basename(leftover)} from a previous repair round is still there; move it away first`);
+    }
+  }
   const originalInput = await readJson(batchInputPath);
   const shard = await readJson(shardPath);
 

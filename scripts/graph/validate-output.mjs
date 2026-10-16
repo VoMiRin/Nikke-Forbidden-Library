@@ -63,6 +63,8 @@ export const WIDE_RANGE_ITEM_FIELDS = ['events_and_claims', 'relationship_and_lo
 // 2.3의 23항 주장 범위의 다른 화자: character_claim 범위 안에 주장 화자가 아닌 화자의 발화 차례가 이만큼 있으면 경고한다.
 // 2차례(질문 둘)까지는 문맥으로 넣는 경우가 많아 분류별 10배치에서 경고의 절반가량이 그런 사례였다
 export const CLAIM_OTHER_SPEAKER_TURNS_WARN = 3;
+// 그 화자 자신의 항목이 주장 화자의 차례를 이만큼 덮으면 자기 항목으로 치지 않는다(질문 앞뒤 문맥 한 차례는 괜찮다)
+export const OWN_ITEM_MAX_CLAIMANT_TURNS = 2;
 
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
@@ -1775,6 +1777,18 @@ export const validateShard = (shardData, batchInput) => {
           ownItems.push({ key: `${field}[${idx}]`, names, start: item.line_start, end: item.line_end });
         });
       }
+      // 같은 화자가 이어 말한 줄은 한 차례로 센다(메신저 SENDER 줄과 본문 줄 포함)
+      const turnsIn = (start, end) => {
+        const turns = [];
+        for (const line of dialogueLines) {
+          if (line < start || line > end) continue;
+          const speaker = mgt.line_speaker[line];
+          const last = turns[turns.length - 1];
+          if (last && last.speaker === speaker) last.lines.push(line);
+          else turns.push({ speaker, lines: [line] });
+        }
+        return turns;
+      };
       for (const [field, speakerField] of speakerFields) {
         if (!Array.isArray(scene[field])) continue;
         scene[field].forEach((item, idx) => {
@@ -1782,16 +1796,12 @@ export const validateShard = (shardData, batchInput) => {
           if (!isPositiveInt(item.line_start) || !isPositiveInt(item.line_end) || item.line_end < item.line_start) return;
           const claimant = item[speakerField];
           if (!isNonEmptyString(claimant) || lineSpeakerAt(mgt, item.claim_line) !== claimant) return;
-          // 같은 화자가 이어 말한 줄은 한 차례로 센다(메신저 SENDER 줄과 본문 줄 포함)
-          const turns = [];
-          for (const line of dialogueLines) {
-            if (line < item.line_start || line > item.line_end) continue;
-            const speaker = mgt.line_speaker[line];
-            const last = turns[turns.length - 1];
-            if (last && last.speaker === speaker) last.lines.push(line);
-            else turns.push({ speaker, lines: [line] });
-          }
+          const turns = turnsIn(item.line_start, item.line_end);
           const selfKey = `${field}[${idx}]`;
+          // 주장 화자의 말을 두 차례 이상 함께 덮는 항목은 그 화자 자신의 항목으로 치지 않는다.
+          // 질문 여러 개를 상대의 답까지 덮는 넓은 항목 하나로 묶어 경고만 피하는 것을 막는다(분류별 10배치 보수 wordless_03)
+          const coversClaimant = (own) =>
+            turnsIn(own.start, own.end).filter((t) => t.speaker === claimant).length >= OWN_ITEM_MAX_CLAIMANT_TURNS;
           const buried = turns.filter(
             (turn) =>
               turn.speaker !== claimant &&
@@ -1800,7 +1810,8 @@ export const validateShard = (shardData, batchInput) => {
                 (own) =>
                   own.key !== selfKey &&
                   own.names.includes(turn.speaker) &&
-                  turn.lines.some((line) => line >= own.start && line <= own.end)
+                  turn.lines.some((line) => line >= own.start && line <= own.end) &&
+                  !coversClaimant(own)
               )
           );
           if (buried.length < CLAIM_OTHER_SPEAKER_TURNS_WARN) return;

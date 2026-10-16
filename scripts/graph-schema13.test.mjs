@@ -800,6 +800,18 @@ test('2.3-23 claim range with other speakers: 3+ turns no item of their own cove
   });
   assert.equal(claimWarnings(validateShard(shardOf(claimScene([rapiClaim(8), neon])), claimBatch())).length, 0);
 
+  // 네온의 항목이라도 라피의 말을 두 차례 이상 함께 덮으면(L3~L5) 네온 자신의 항목으로 치지 않는다
+  const overlay = event({
+    actor_or_speaker: '네온',
+    summary: '네온이 반대한다.',
+    line_start: 3,
+    line_end: 5,
+    quote: '저는 반대예요.',
+  });
+  assert.equal(claimWarnings(validateShard(shardOf(claimScene([rapiClaim(8), overlay])), claimBatch())).length, 1);
+  // 라피의 앞 말 한 차례를 문맥으로 함께 덮는 것(L3~L4)은 괜찮다
+  assert.equal(claimWarnings(validateShard(shardOf(claimScene([rapiClaim(8), { ...overlay, line_end: 4 }])), claimBatch())).length, 0);
+
   // 말줄임표만 있는 차례(아니스 L7)는 세지 않는다: L3~L8은 네온 L4, 마리안 L6 두 차례
   const tail = { ...rapiClaim(8), line_start: 3, claim_line: 3, quote: '네. 지휘관의 명령입니다.' };
   assert.equal(claimWarnings(validateShard(shardOf(claimScene([tail])), claimBatch())).length, 0);
@@ -944,6 +956,9 @@ test('5 Pass 1 repair: only scenes with errors or CLAIM_OTHER_SPEAKERS are repai
     await fs.writeFile(inputFile, JSON.stringify(movedInput));
     await assert.rejects(checkRepair('batch_rep', { graphDir }), /changed since prepare/);
     await fs.writeFile(inputFile, JSON.stringify(batchInput));
+
+    // 보수 출력이 남아 있으면 다음 회차 prepare는 멈춘다
+    await assert.rejects(prepareRepair('batch_rep', { graphDir, manifestScenes }), /previous repair round/);
 
     // 보수 출력에 오류가 있으면 실패
     const broken = { ...output, scenes: [{ scene_id: 't13_claim', events_and_claims: [{ ...rapiClaim(1), quote: '없는 대사입니다.' }] }] };
