@@ -974,3 +974,31 @@ test('5 Pass 1 repair: only scenes with errors or CLAIM_OTHER_SPEAKERS are repai
   assert.deepEqual(jobs.flatMap((j) => j.batch_ids).sort(), ['a', 'b', 'c', 'd', 'e']);
   assert.ok(Math.max(...jobs.map((j) => j.input_bytes)) <= 256);
 });
+
+test('2.3-24 premature identity: a name revealed later in the scene must not be used before the reveal line', () => {
+  // L2~3 ??? 가 말하고, L4에서 지엔이라고 밝혀진다
+  const lines = ['[SCENE START]', '???: 방주 깊은 곳의 어둠을 조심해요.', '마나: 누구시죠?', '지엔: 지엔이에요. 잘 부탁해요.', '[SCENE END]'];
+  const batch = batchOf(makeInputScene('t13_reveal', lines));
+  const unknownId = batch.scenes[0].mechanical_ground_truth.unknowns[0].unknown_id;
+  const scene = (actor) =>
+    emptyScene('t13_reveal', {
+      participants: { present_in_scene: present('마나', '지엔'), present_silent: [], remote_or_voice_only: [], mentioned_only: [], document_author: null },
+      unknown_speakers: [
+        {
+          unknown_id: unknownId,
+          line: 2,
+          quote: '방주 깊은 곳의 어둠을 조심해요.',
+          speaking_style: '느긋한 존댓말',
+          contextual_clues: [],
+          resolved_in_same_scene_to: { surface_text: '지엔', entity_id: null, line_start: 4, line_end: 4, quote: '지엔: 지엔이에요. 잘 부탁해요.' },
+        },
+      ],
+      events_and_claims: [
+        event({ epistemic_type: 'character_claim', actor_or_speaker: actor, summary: '어둠을 조심하라고 경고한다.', line_start: 2, line_end: 2, claim_line: 2, quote: '방주 깊은 곳의 어둠을 조심해요.' }),
+      ],
+    });
+  const warnings = (res) => res.warnings.filter((w) => w.rule === 'PREMATURE_IDENTITY');
+  const early = validateShard(shardOf(scene('지엔')), batch);
+  assert.equal(warnings(early).length, 1, JSON.stringify(early.errors));
+  assert.equal(warnings(validateShard(shardOf(scene('???')), batch)).length, 0);
+});

@@ -1827,6 +1827,50 @@ export const validateShard = (shardData, batchInput) => {
       }
     }
 
+    // 24. 정체를 미리 씀: 같은 장면에서 ???·묘사형 화자의 정체가 밝혀지기 전 줄의 항목에 밝혀진 이름을 쓰면 경고한다(3절 9항).
+    // 공개 줄 전에 그 이름이 이미 자기 라벨로 말했으면 가려진 정체가 아니므로 보지 않는다.
+    // 요약류 필드는 그 항목 끝 줄까지의 원문에 이름이 아직 나오지 않았을 때만 본다(다른 인물이 이름을 먼저 부른 경우 제외)
+    const revealLineByName = new Map();
+    for (const list of [scene.unknown_speakers, scene.descriptor_speakers]) {
+      for (const entry of Array.isArray(list) ? list : []) {
+        const res = entry?.resolved_in_same_scene_to;
+        if (!res || !isNonEmptyString(res.surface_text) || !isPositiveInt(res.line_start)) continue;
+        const prev = revealLineByName.get(res.surface_text);
+        revealLineByName.set(res.surface_text, prev ? Math.min(prev, res.line_start) : res.line_start);
+      }
+    }
+    const premature = [
+      ['events_and_claims', ['actor_or_speaker'], ['summary']],
+      ['relationship_and_lore_notes', ['subject', 'target', 'claimant'], ['relation_or_change']],
+      ['clues_and_hooks', ['subject'], ['detail', 'keyword']],
+    ];
+    for (const [name, revealLine] of revealLineByName) {
+      const spokeBefore = Object.entries(mgt.line_speaker ?? {}).some(
+        ([line, speaker]) => speaker === name && Number(line) < revealLine
+      );
+      if (spokeBefore) continue;
+      for (const [field, idFields, textFields] of premature) {
+        if (!Array.isArray(scene[field])) continue;
+        scene[field].forEach((item, idx) => {
+          if (!isPositiveInt(item?.line_end) || item.line_end >= revealLine) return;
+          const textBefore = rawLines.slice(0, item.line_end).join('\n');
+          const used = [
+            ...idFields.filter(
+              (k) => isNonEmptyString(item[k]) && item[k].split(MULTI_ENTITY_SEPARATOR_RE).map((n) => n.trim()).includes(name)
+            ),
+            ...textFields.filter((k) => isNonEmptyString(item[k]) && item[k].includes(name) && !textBefore.includes(name)),
+          ];
+          if (used.length === 0) return;
+          addWarning(
+            'PREMATURE_IDENTITY',
+            sid,
+            `${sceneBasePath}.${field}[${idx}]`,
+            `L${item.line_start}~L${item.line_end} uses "${name}" in ${used.join(', ')}, but that identity is only revealed at L${revealLine}. Use the speaker label of that point (e.g. ???) and leave the link to resolved_in_same_scene_to`
+          );
+        });
+      }
+    }
+
     // unregistered_entity_candidates 검증
     if (!Array.isArray(scene.unregistered_entity_candidates)) {
       addError(
