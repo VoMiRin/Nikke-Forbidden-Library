@@ -43,6 +43,10 @@ export const NARRATION_CLAIMANT = '지문';
 // 2.3의 20항 밀도 경고 기준
 export const DENSITY_WARNING_MIN_DIALOGUE_LINES = 60;
 
+// 2.3의 21항 공백 구간: 근거 항목 범위에 안 걸린 대사가 이만큼 연속되면 reviewed_gaps로 검토 사유가 있어야 한다
+export const COVERAGE_GAP_MIN_DIALOGUE_LINES = 10;
+export const COVERAGE_ITEM_FIELDS = ['events_and_claims', 'clues_and_hooks', 'relationship_and_lore_notes'];
+
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
   'recording',
@@ -269,7 +273,7 @@ export const quoteCoversLine = (quote, rawLine, rawSliceLines = []) => {
 };
 
 /**
- * 단일 배치 샤드 JSON을 해당 배치 입력 데이터(batchInput)와 대조해 2.3의 1~20항을 검증한다.
+ * 단일 배치 샤드 JSON을 해당 배치 입력 데이터(batchInput)와 대조해 2.3의 1~21항을 검증한다.
  */
 export const validateShard = (shardData, batchInput) => {
   const errors = [];
@@ -1630,6 +1634,84 @@ export const validateShard = (shardData, batchInput) => {
         }
       });
     }
+
+    // 21. 공백 구간: 근거 항목 범위에 안 걸린 대사가 연속으로 많으면 다시 읽고 추출하거나 reviewed_gaps에 사유를 남긴다
+    const dialogueLines = Object.keys(mgt.line_speaker ?? {})
+      .map(Number)
+      .filter(Number.isInteger)
+      .sort((a, b) => a - b);
+    const coveredLines = new Set();
+    for (const field of COVERAGE_ITEM_FIELDS) {
+      if (!Array.isArray(scene[field])) continue;
+      for (const item of scene[field]) {
+        if (isPositiveInt(item?.line_start) && isPositiveInt(item?.line_end) && item.line_end >= item.line_start) {
+          for (let line = item.line_start; line <= item.line_end; line++) coveredLines.add(line);
+        }
+      }
+    }
+    const reviewedGaps = scene.reviewed_gaps ?? [];
+    const validGaps = [];
+    if (!Array.isArray(reviewedGaps)) {
+      addError('SCHEMA_VALIDATION', sid, `${sceneBasePath}.reviewed_gaps`, 'reviewed_gaps must be an array');
+    } else {
+      reviewedGaps.forEach((gap, idx) => {
+        const gPath = `${sceneBasePath}.reviewed_gaps[${idx}]`;
+        if (!gap || typeof gap !== 'object') {
+          addError('SCHEMA_VALIDATION', sid, gPath, 'Item must be an object');
+          return;
+        }
+        if (
+          !isPositiveInt(gap.line_start) ||
+          !isPositiveInt(gap.line_end) ||
+          gap.line_start > gap.line_end ||
+          gap.line_end > totalLines
+        ) {
+          addError(
+            'SCHEMA_VALIDATION',
+            sid,
+            gPath,
+            `Invalid range L${gap.line_start}~L${gap.line_end} (scene has ${totalLines} lines)`
+          );
+          return;
+        }
+        if (!isNonEmptyString(gap.reason)) {
+          addError('COVERAGE_GAP', sid, `${gPath}.reason`, 'reason is required: say why nothing in this range needs extracting');
+        }
+        const coveredInside = dialogueLines.filter(
+          (line) => line >= gap.line_start && line <= gap.line_end && coveredLines.has(line)
+        );
+        if (coveredInside.length > 0) {
+          addError(
+            'COVERAGE_GAP',
+            sid,
+            gPath,
+            `reviewed gap L${gap.line_start}~L${gap.line_end} contains dialogue lines already covered by items (L${coveredInside.join(', L')}); narrow it to the uncovered run`
+          );
+        }
+        validGaps.push(gap);
+      });
+    }
+    let run = [];
+    const flushRun = () => {
+      if (run.length >= COVERAGE_GAP_MIN_DIALOGUE_LINES) {
+        const first = run[0];
+        const last = run[run.length - 1];
+        if (!validGaps.some((gap) => gap.line_start <= first && gap.line_end >= last)) {
+          addError(
+            'COVERAGE_GAP',
+            sid,
+            `${sceneBasePath}.reviewed_gaps`,
+            `Dialogue lines L${first}~L${last} (${run.length} dialogue lines) are not covered by any ${COVERAGE_ITEM_FIELDS.join(' / ')} range. Re-read them and extract what is there, or add a reviewed_gaps entry saying why nothing needs extracting`
+          );
+        }
+      }
+      run = [];
+    };
+    for (const line of dialogueLines) {
+      if (coveredLines.has(line)) flushRun();
+      else run.push(line);
+    }
+    flushRun();
 
     // unregistered_entity_candidates 검증
     if (!Array.isArray(scene.unregistered_entity_candidates)) {

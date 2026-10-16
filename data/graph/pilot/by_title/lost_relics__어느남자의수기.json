@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-14T14:30:17.892Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T00:35:24.738Z",
   "title_id": "lost_relics__어느남자의수기",
   "category": "lost_relics",
   "title": "어느 남자의 수기",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "수기 작성자는 벙커에 들어온 지 4개월이 지났으며 식량과 전기가 유지되고 있으니, 군대가 랩쳐를 쓸어버리고 자신을 구출해 줄 날까지 버티겠다고 기록한다.",
+      "summary": "벙커에 들어온 지 4개월이 지난 수기 작성자가 식량과 전기가 충분한 상태에서 군대가 랩쳐를 쓸어버리고 자신을 구해줄 날을 기다리며 버티겠다고 다짐한다.",
       "participants": {
         "present_in_scene": [],
         "present_silent": [],
@@ -35,7 +36,9 @@
             "entity_type": "location",
             "line_start": 2,
             "line_end": 2,
-            "quote": "벙커에 들어온 지 어언 4개월이 지났다."
+            "quote": "벙커에 들어온 지 어언 4개월이 지났다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "어느남자의수기_00__mnt_002",
@@ -44,7 +47,9 @@
             "entity_type": "organization",
             "line_start": 4,
             "line_end": 4,
-            "quote": "이대로 조금만 더 버티면 군대가 날 구해줄 거다."
+            "quote": "이대로 조금만 더 버티면 군대가 날 구해줄 거다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "어느남자의수기_00__mnt_003",
@@ -53,17 +58,21 @@
             "entity_type": "faction_or_species",
             "line_start": 5,
             "line_end": 5,
-            "quote": "저 랩쳐라는 벌레 같은 기계들을 모조리 쓸어버리고"
+            "quote": "저 랩쳐라는 벌레 같은 기계들을 모조리 쓸어버리고",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": {
           "item_id": "어느남자의수기_00__dca_001",
           "name": "수기 작성자",
-          "entity_id": null
+          "entity_id": null,
+          "voices": []
         }
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -71,41 +80,44 @@
         {
           "item_id": "어느남자의수기_00__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "수기 작성자",
-          "summary": "수기 작성자는 벙커에 들어온 지 4개월이 지났으며 보존식 식량이 충분하고 전기도 계속 들어온다고 기록한다.",
+          "summary": "수기 작성자는 자신이 벙커에 들어온 지 4개월이 지났으며, 보존식이지만 식량이 충분하고 전기도 계속 들어온다고 기록한다.",
           "line_start": 2,
           "line_end": 3,
-          "quote": "벙커에 들어온 지 어언 4개월이 지났다. 보존식이긴 하지만 식량은 충분하고, 전기도 계속 들어온다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 2,
+          "quote": "벙커에 들어온 지 어언 4개월이 지났다.\n보존식이긴 하지만 식량은 충분하고, 전기도 계속 들어온다.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "어느남자의수기_00__eac_002",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "수기 작성자",
-          "summary": "수기 작성자는 조금만 더 버티면 군대가 벌레 같은 기계들인 랩쳐를 모조리 쓸어버리고 자신을 바깥으로 구출해 줄 것이라 믿으며 버티겠다고 다짐한다.",
+          "summary": "수기 작성자는 조금만 더 버티면 군대가 벌레 같은 기계인 랩쳐들을 모조리 쓸어버리고 자신을 구해줄 것이라며 그때까지 버텨보자고 다짐한다.",
           "line_start": 4,
           "line_end": 7,
-          "quote": "이대로 조금만 더 버티면 군대가 날 구해줄 거다. 저 랩쳐라는 벌레 같은 기계들을 모조리 쓸어버리고 나를 다시 바깥으로 끄집어내 줄 것이다. 그날이 올 때까지 어떻게든 잘 버텨보자.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 4,
+          "quote": "이대로 조금만 더 버티면 군대가 날 구해줄 거다.\n저 랩쳐라는 벌레 같은 기계들을 모조리 쓸어버리고\n나를 다시 바깥으로 끄집어내 줄 것이다.\n그날이 올 때까지 어떻게든 잘 버텨보자.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "어느남자의수기_00__clh_001",
-          "keyword": "랩쳐 침공 초기 벙커 고립",
+          "keyword": "벙커 은신 4개월차 수기",
           "category": "past_incident",
-          "detail": "수기 작성자가 '랩쳐라는 벌레 같은 기계들'이라 지칭하며 벙커에 대피해 4개월째 군대의 구조를 기다리고 있는 기록이다.",
+          "subject": null,
+          "detail": "랩쳐를 피해 식량과 전기가 공급되는 벙커로 대피한 지 4개월이 지난 남자의 초기 기록",
           "line_start": 2,
-          "line_end": 7,
-          "quote": "벙커에 들어온 지 어언 4개월이 지났다."
+          "line_end": 6,
+          "quote": "벙커에 들어온 지 어언 4개월이 지났다.\n보존식이긴 하지만 식량은 충분하고, 전기도 계속 들어온다.\n이대로 조금만 더 버티면 군대가 날 구해줄 거다.\n저 랩쳐라는 벌레 같은 기계들을 모조리 쓸어버리고\n나를 다시 바깥으로 끄집어내 줄 것이다.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],

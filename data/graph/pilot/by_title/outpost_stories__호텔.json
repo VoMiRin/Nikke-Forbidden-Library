@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-14T14:30:17.889Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T00:35:24.735Z",
   "title_id": "outpost_stories__호텔",
   "category": "outpost_stories",
   "title": "호텔",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "전초기지의 무인 호텔로 휴가를 온 지휘관이 옆방의 바이올린 소음(율리아)을 시작으로 벽 파괴 굉음(도라), 시한폭탄 경고음(크로우)의 원인을 차례로 추적한 끝에, 크로우가 위층 투숙객의 층간소음과 TV 소음 때문에 시한폭탄을 설치했으며 그 위층 투숙객이 바로 들뜬 지휘관 자신이었음을 깨닫고 사과한다.",
+      "summary": "무인 호텔로 호캉스를 온 지휘관이 옆 방들의 연쇄 소음을 추적하며 율리아, 도라, 크로우를 차례로 만나고, 결국 크로우의 윗층에서 뛰어다니고 TV를 크게 틀어 소음 사태를 촉발한 장본인이 자신이었음을 깨닫고 사과한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -66,7 +67,9 @@
             "entity_type": "location",
             "line_start": 4,
             "line_end": 4,
-            "quote": "그런 의미에서 이 호텔은 완벽하다."
+            "quote": "그런 의미에서 이 호텔은 완벽하다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "hotel_02__mnt_002",
@@ -75,7 +78,9 @@
             "entity_type": "location",
             "line_start": 6,
             "line_end": 6,
-            "quote": "전초기지 내에서도 인지도가 없어, 놀라울 만큼 조용하다."
+            "quote": "전초기지 내에서도 인지도가 없어, 놀라울 만큼 조용하다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "hotel_02__mnt_003",
@@ -84,7 +89,9 @@
             "entity_type": "location",
             "line_start": 112,
             "line_end": 112,
-            "quote": "아우터 림에서 어렵사리 여기까지 찾아왔는데 말이지."
+            "quote": "아우터 림에서 어렵사리 여기까지 찾아왔는데 말이지.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "hotel_02__mnt_004",
@@ -93,7 +100,9 @@
             "entity_type": "item",
             "line_start": 120,
             "line_end": 120,
-            "quote": "마침 갖고 있던 시한 폭탄으로 말이지."
+            "quote": "마침 갖고 있던 시한 폭탄으로 말이지.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -106,25 +115,20 @@
           "address_term": "마에스트로",
           "line_start": 28,
           "line_end": 28,
-          "quote": "···놀랐습니다, 마에스트로."
+          "quote": "···놀랐습니다, 마에스트로.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__foa_002",
-          "from_speaker": "지휘관",
-          "to_target": "본인",
-          "address_term": "성난 옆옆 방 투숙객",
-          "line_start": 60,
-          "line_end": 60,
-          "quote": "성난 옆옆 방 투숙객이야."
-        },
-        {
-          "item_id": "hotel_02__foa_003",
           "from_speaker": "크로우",
           "to_target": "지휘관",
           "address_term": "지휘관",
           "line_start": 105,
           "line_end": 105,
-          "quote": "···지휘관? 반가운 얼굴을 여기서 다 보는군."
+          "quote": "···지휘관? 반가운 얼굴을 여기서 다 보는군.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [
@@ -132,113 +136,164 @@
           "item_id": "hotel_02__unk_001",
           "unknown_id": "unk_hotel_02_L0007",
           "quote": "···끼이이익~♪",
-          "speaking_style": "날카로운 현악기 마찰음",
+          "speaking_style": "날카로운 현악기 불협화음 소리",
           "target_addressed": null,
           "contextual_clues": [
-            "지휘관의 옆방에서 들려오는 날카로운 악기 연주 소음이다."
+            "지휘관의 옆 방에서 들려오는 날카로운 악기 연주 소리"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "율리아",
             "entity_id": "char_율리아",
             "line_start": 28,
             "line_end": 29,
-            "quote": "···놀랐습니다, 마에스트로. 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은."
-          }
+            "quote": "율리아: ···놀랐습니다, 마에스트로.\n율리아: 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 7,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_002",
           "unknown_id": "unk_hotel_02_L0009",
           "quote": "끼리리릭끽끽~♯ 끼이익~♪ 끽~♭",
-          "speaking_style": "불협화음 현악기 연주음",
+          "speaking_style": "날카로운 현악기 불협화음 소리",
           "target_addressed": null,
           "contextual_clues": [
-            "지휘관의 옆방에서 이어지는 날카로운 연주 소음이다."
+            "옆 방에서 계속 들려오는 불협화음 연주 소리"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "율리아",
             "entity_id": "char_율리아",
             "line_start": 28,
             "line_end": 29,
-            "quote": "···놀랐습니다, 마에스트로. 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은."
-          }
+            "quote": "율리아: ···놀랐습니다, 마에스트로.\n율리아: 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 9,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_003",
           "unknown_id": "unk_hotel_02_L0013",
           "quote": "··· ···.",
           "speaking_style": "침묵",
-          "target_addressed": "지휘관",
+          "target_addressed": null,
           "contextual_clues": [
-            "지휘관이 옆방 벽을 치자 잠시 멈칫한 반응이다."
+            "지휘관이 옆 방 벽을 치자 잠시 멈춘 반응"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "율리아",
             "entity_id": "char_율리아",
             "line_start": 28,
             "line_end": 29,
-            "quote": "···놀랐습니다, 마에스트로. 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은."
+            "quote": "율리아: ···놀랐습니다, 마에스트로.\n율리아: 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 13,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "옆 방 벽을 친다."
           }
         },
         {
           "item_id": "hotel_02__unk_004",
           "unknown_id": "unk_hotel_02_L0014",
           "quote": "끼이익···♪",
-          "speaking_style": "현악기 마찰음",
+          "speaking_style": "악기 연주음",
           "target_addressed": null,
           "contextual_clues": [
-            "지휘관이 옆방 벽을 친 직후 다시 시작된 연주 소음이다."
+            "벽을 친 직후 다시 시작된 연주 소리"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "율리아",
             "entity_id": "char_율리아",
             "line_start": 28,
             "line_end": 29,
-            "quote": "···놀랐습니다, 마에스트로. 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은."
+            "quote": "율리아: ···놀랐습니다, 마에스트로.\n율리아: 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 14,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "옆 방 벽을 친다."
           }
         },
         {
           "item_id": "hotel_02__unk_005",
           "unknown_id": "unk_hotel_02_L0015",
           "quote": "끼뤼리이↗이이↗이이↗이이이익~♪",
-          "speaking_style": "격렬한 현악기 마찰음",
+          "speaking_style": "격렬해진 불협화음 연주 소리",
           "target_addressed": null,
           "contextual_clues": [
-            "지휘관이 벽을 친 뒤 한층 더 격렬해진 옆방의 연주 소음이다."
+            "벽을 친 뒤 오히려 더 격렬해진 옆 방 연주 소음"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "율리아",
             "entity_id": "char_율리아",
             "line_start": 28,
             "line_end": 29,
-            "quote": "···놀랐습니다, 마에스트로. 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은."
+            "quote": "율리아: ···놀랐습니다, 마에스트로.\n율리아: 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 15,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "옆 방 벽을 친다."
           }
         },
         {
           "item_id": "hotel_02__unk_006",
           "unknown_id": "unk_hotel_02_L0026",
           "quote": "···잠시만 기다려 주십시오.",
-          "speaking_style": "정중한 격식체(하십쇼체)",
+          "speaking_style": "격식 있고 정중한 존댓말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "옆방 문을 두드리자 안에서 정중하게 응답한다."
+            "문을 두드린 지휘관에게 잠시 기다려 달라고 정중히 답함"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "율리아",
             "entity_id": "char_율리아",
             "line_start": 28,
             "line_end": 29,
-            "quote": "···놀랐습니다, 마에스트로. 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은."
-          }
+            "quote": "율리아: ···놀랐습니다, 마에스트로.\n율리아: 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 26,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_007",
           "unknown_id": "unk_hotel_02_L0027",
           "quote": "이 선율만 마저 흘려보내고 맞이하겠습니다.",
-          "speaking_style": "정중한 격식체와 음악가다운 어휘('선율')",
+          "speaking_style": "음악적 비유를 쓰는 정중한 존댓말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "자신의 연주를 '선율'이라 표현하며 문을 열기 전 마무리를 예고한다."
+            "자신의 연주를 '선율'이라 부르며 마저 연주하고 맞이하겠다고 함"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "율리아",
             "entity_id": "char_율리아",
             "line_start": 28,
             "line_end": 29,
-            "quote": "···놀랐습니다, 마에스트로. 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은."
-          }
+            "quote": "율리아: ···놀랐습니다, 마에스트로.\n율리아: 이런 외진 호텔에, 제 선율을 듣고 계신 분이 있을 줄은.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 27,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_008",
@@ -247,30 +302,42 @@
           "speaking_style": "침묵",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "제2의 소음 발원지 객실 문을 두드리자 경계하며 침묵한다."
+            "제2의 소음 발원지 객실 문을 두드리자 잠시 침묵함"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "도라",
             "entity_id": "char_도라",
-            "line_start": 65,
+            "line_start": 67,
             "line_end": 68,
-            "quote": "음 그러니까 그거야. 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든."
-          }
+            "quote": "도라: 음 그러니까 그거야.\n도라: 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 57,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_009",
           "unknown_id": "unk_hotel_02_L0058",
           "quote": "···누구? 여기서 손님을 더 부른 기억은 없는데.",
-          "speaking_style": "차분한 반말",
+          "speaking_style": "차분하고 친근한 반말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "객실 안에서 손님을 불러 은밀히 거래 중임을 암시한다."
+            "객실 안에서 다른 손님과 먼저 만나고 있었음을 암시함"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "도라",
             "entity_id": "char_도라",
-            "line_start": 65,
+            "line_start": 67,
             "line_end": 68,
-            "quote": "음 그러니까 그거야. 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든."
-          }
+            "quote": "도라: 음 그러니까 그거야.\n도라: 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 58,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_010",
@@ -279,14 +346,20 @@
           "speaking_style": "놀람",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "성난 옆옆 방 투숙객이라는 지휘관의 대답에 놀란다."
+            "옆옆 방 투숙객이라는 말에 놀람"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "도라",
             "entity_id": "char_도라",
-            "line_start": 65,
+            "line_start": 67,
             "line_end": 68,
-            "quote": "음 그러니까 그거야. 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든."
-          }
+            "quote": "도라: 음 그러니까 그거야.\n도라: 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 63,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_011",
@@ -295,80 +368,120 @@
           "speaking_style": "능숙하고 여유 있는 반말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "방 안의 은밀한 거래 현장을 정리한 뒤 문을 열겠다고 말한다."
+            "방 안의 거래 현장을 정리하고 문을 열어주겠다고 함"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "도라",
             "entity_id": "char_도라",
-            "line_start": 65,
+            "line_start": 67,
             "line_end": 68,
-            "quote": "음 그러니까 그거야. 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든."
-          }
+            "quote": "도라: 음 그러니까 그거야.\n도라: 에티켓을 못 지킨 건 미안한데, 이쪽에도 나름의 사정이 있었거든.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 64,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_012",
           "unknown_id": "unk_hotel_02_L0093",
           "quote": "···짜증나게도 두들겨대는군. 뭐하는 놈이냐.",
-          "speaking_style": "거칠고 신경질적인 반말('~군', '~냐')",
+          "speaking_style": "거칠고 공격적인 반말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "제3의 소음 발원지 객실 안에서 노크 소리에 거칠게 반응한다."
+            "제3의 소음 발원지 객실 안에서 노크 소리에 짜증을 냄"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "크로우",
             "entity_id": "char_크로우",
             "line_start": 105,
             "line_end": 106,
-            "quote": "···지휘관? 반가운 얼굴을 여기서 다 보는군. 곧 날아갈 호텔에는 무슨 볼일이냐."
-          }
+            "quote": "크로우: ···지휘관? 반가운 얼굴을 여기서 다 보는군.\n크로우: 곧 날아갈 호텔에는 무슨 볼일이냐.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 93,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__unk_013",
           "unknown_id": "unk_hotel_02_L0097",
           "quote": "잠깐, 이 목소리는···.",
-          "speaking_style": "독백조 반말",
+          "speaking_style": "낮고 거친 반말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "용건을 말하는 지휘관의 목소리를 듣고 아는 사람임을 눈치챈다."
+            "용건을 말하는 지휘관의 목소리를 듣고 아는 사람임을 눈치챔"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "크로우",
             "entity_id": "char_크로우",
             "line_start": 105,
             "line_end": 106,
-            "quote": "···지휘관? 반가운 얼굴을 여기서 다 보는군. 곧 날아갈 호텔에는 무슨 볼일이냐."
+            "quote": "크로우: ···지휘관? 반가운 얼굴을 여기서 다 보는군.\n크로우: 곧 날아갈 호텔에는 무슨 볼일이냐.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 97,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 94,
+            "option_text": "용건을 말한다."
           }
         },
         {
           "item_id": "hotel_02__unk_014",
           "unknown_id": "unk_hotel_02_L0100",
           "quote": "하··· 예의는 개나 줘버렸군.",
-          "speaking_style": "거칠고 공격적인 반말",
+          "speaking_style": "거칠고 냉소적인 반말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "문을 계속 두들기는 지휘관에게 불쾌감을 드러낸다."
+            "문을 계속 두들기자 예의가 없다며 분노함"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "크로우",
             "entity_id": "char_크로우",
             "line_start": 105,
             "line_end": 106,
-            "quote": "···지휘관? 반가운 얼굴을 여기서 다 보는군. 곧 날아갈 호텔에는 무슨 볼일이냐."
+            "quote": "크로우: ···지휘관? 반가운 얼굴을 여기서 다 보는군.\n크로우: 곧 날아갈 호텔에는 무슨 볼일이냐.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 100,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 94,
+            "option_text": "문을 계속 두들긴다."
           }
         },
         {
           "item_id": "hotel_02__unk_015",
           "unknown_id": "unk_hotel_02_L0101",
           "quote": "기다리고 있어. 두들긴 횟수만큼 후려쳐줄 테니까.",
-          "speaking_style": "폭력적이고 위협적인 반말",
+          "speaking_style": "위협적이고 거친 반말",
           "target_addressed": "지휘관",
           "contextual_clues": [
-            "문을 두들긴 횟수만큼 때려주겠다고 위협하며 문을 열기 직전의 대사다."
+            "문을 두들긴 횟수만큼 때려주겠다고 위협함"
           ],
           "resolved_in_same_scene_to": {
+            "surface_text": "크로우",
             "entity_id": "char_크로우",
             "line_start": 105,
             "line_end": 106,
-            "quote": "···지휘관? 반가운 얼굴을 여기서 다 보는군. 곧 날아갈 호텔에는 무슨 볼일이냐."
+            "quote": "크로우: ···지휘관? 반가운 얼굴을 여기서 다 보는군.\n크로우: 곧 날아갈 호텔에는 무슨 볼일이냐.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          "line": 101,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 94,
+            "option_text": "문을 계속 두들긴다."
           }
         }
       ],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [
         {
           "item_id": "hotel_02__ssg_001",
@@ -382,7 +495,7 @@
             "unk_hotel_02_L0027"
           ],
           "confidence": "확인된 사실",
-          "reason": "모두 지휘관의 옆방에서 바이올린 소음을 내고 노크에 응답한 뒤 문을 열고 나온 율리아의 연주음 및 대사다."
+          "reason": "첫 번째 옆 방에서 악기를 연주하다가 문을 열고 나온 율리아의 소리 및 대사다."
         },
         {
           "item_id": "hotel_02__ssg_002",
@@ -393,7 +506,7 @@
             "unk_hotel_02_L0064"
           ],
           "confidence": "확인된 사실",
-          "reason": "모두 제2의 소음 발원지 객실에서 노크에 응답하고 거래 자리를 정리한 뒤 문을 연 도라의 대사다."
+          "reason": "제2의 소음 발원지 객실 안에서 응답하고 문을 연 도라의 대사다."
         },
         {
           "item_id": "hotel_02__ssg_003",
@@ -404,7 +517,7 @@
             "unk_hotel_02_L0101"
           ],
           "confidence": "확인된 사실",
-          "reason": "모두 제3의 소음 발원지 객실에서 노크에 거칠게 반응한 뒤 문을 열고 나온 크로우의 대사다."
+          "reason": "제3의 소음 발원지 객실 안에서 노크에 반응한 뒤 문을 열고 나온 크로우의 대사다."
         }
       ],
       "cross_scene_hints": [],
@@ -416,16 +529,12 @@
             {
               "item_id": "hotel_02__chb_001_opt_01",
               "option_text": "옆 방 벽을 친다.",
-              "continuation_summary": "벽을 치자 옆방의 연주 소음이 오히려 더 격렬해지고, 결국 옆방에 직접 찾아간다.",
-              "branch_specific_facts": [
-                "지휘관이 옆방 벽을 치자 옆방 투숙객(율리아)의 연주 소음이 오히려 더 격렬해진다."
-              ]
+              "continuation_summary": "지휘관이 옆 방 벽을 치자 오히려 연주 소음이 더 격렬해지고, 결국 옆 방에 직접 찾아간다."
             },
             {
               "item_id": "hotel_02__chb_001_opt_02",
               "option_text": "옆 방에 찾아가 본다.",
-              "continuation_summary": "곧바로 옆방으로 찾아가 문을 두드린다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         },
@@ -436,18 +545,12 @@
             {
               "item_id": "hotel_02__chb_002_opt_01",
               "option_text": "용건을 말한다.",
-              "continuation_summary": "소음 때문에 왔다고 정중하게 용건을 밝히자 방 안의 인물(크로우)이 목소리를 알아채고 문을 연다.",
-              "branch_specific_facts": [
-                "크로우가 문 너머로 지휘관의 목소리를 알아듣는다."
-              ]
+              "continuation_summary": "소음 때문에 왔다고 정중하게 용건을 밝히자 방 안의 인물이 지휘관의 목소리를 알아챈다."
             },
             {
               "item_id": "hotel_02__chb_002_opt_02",
               "option_text": "문을 계속 두들긴다.",
-              "continuation_summary": "방 안의 인물(크로우)이 예의가 없다며 두들긴 횟수만큼 후려쳐주겠다고 위협하며 문을 연다.",
-              "branch_specific_facts": [
-                "크로우가 문을 두들긴 횟수만큼 후려쳐주겠다고 위협한다."
-              ]
+              "continuation_summary": "방 안의 인물이 예의가 없다며 두들긴 횟수만큼 후려쳐주겠다고 화를 낸다."
             }
           ]
         }
@@ -456,90 +559,77 @@
         {
           "item_id": "hotel_02__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "율리아",
-          "summary": "율리아는 자신의 옆방에서 들려오는 굉음 때문에 자신의 바이올린 선율도 날카로워졌다고 설명한다.",
-          "line_start": 36,
-          "line_end": 41,
-          "quote": "조금 전까지만 해도 저는 봄볕처럼 부드러운 음악을 연주하고 있었습니다. 하지만 그럴 때마다 제 옆 방에서···. 펑--!! 화산이 터지는 듯, 천둥이 치는 듯. 폭포수가 떨어지는 듯. 콰콰쾅--!! 와장창!! 차마 견딜 수 없는 굉음이 들려온 탓에, 제 선율도 뒤따라 날카로워지고 만 것입니다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "지휘관",
+          "summary": "장기 임무에서 해방된 지휘관이 방해받지 않고 쉬기 위해 전초기지 내 무인 호텔로 호캉스를 왔으나 옆 방의 날카로운 연주 소음에 시달린다.",
+          "line_start": 2,
+          "line_end": 9,
+          "claim_line": null,
+          "quote": "호캉스를 왔다.\n기나긴 장기 임무에서 해방되어, 누구에게도 방해 받지 않고 휴식하기 위해서.\n그런 의미에서 이 호텔은 완벽하다.\n프론트 직원부터 시작해 지배인까지. 스태프가 전혀 없는 무인 시스템일 뿐만 아니라.\n전초기지 내에서도 인지도가 없어, 놀라울 만큼 조용하다.\n???: ···끼이이익~♪\n···그렇다. 그야말로 놀라울 만큼···.\n???: 끼리리릭끽끽~♯ 끼이익~♪ 끽~♭",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "도라",
-          "summary": "도라는 호텔에서 수상한 남자와 은밀히 물건을 거래하려다 벽 사이에서 들리는 '삐- 삐- 삐-' 소음을 트랩이나 감시 카메라로 의심해 벽을 부수면서 굉음을 냈다고 밝힌다.",
-          "line_start": 69,
-          "line_end": 75,
-          "quote": "우린 원래 이 호텔에서 은밀히 물건을 거래하려 했어. 그런데 자꾸 근처 방에서 수상쩍은 소음이 들리는 거야. 삐- 삐- 삐- 그건 적 조직이 설치한 트랩일 수도, 정부 요원이 설치한 감시 카메라일 수도 있었지. 가능하면 조용히 처리하려 했는데, 하필이면 소음이 벽 사이에서 나더라고. 그래서 벽을 부수지 않고서는 어쩔 도리가 없었어. 그 과정에서 약간의 추가적인 소음이 발생한 건 사과할게.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "율리아",
+          "summary": "율리아는 원래 봄볕처럼 부드러운 음악을 연주하고 있었으나 옆 방에서 들려오는 굉음 때문에 자신의 선율도 날카로워졌다고 주장한다.",
+          "line_start": 35,
+          "line_end": 41,
+          "claim_line": 41,
+          "quote": "율리아: ···그런 것은 아닙니다.\n율리아: 조금 전까지만 해도 저는 봄볕처럼 부드러운 음악을 연주하고 있었습니다.\n율리아: 하지만 그럴 때마다 제 옆 방에서···.\n펑--!!\n율리아: 화산이 터지는 듯, 천둥이 치는 듯. 폭포수가 떨어지는 듯.\n콰콰쾅--!! 와장창!!\n율리아: 차마 견딜 수 없는 굉음이 들려온 탓에, 제 선율도 뒤따라 날카로워지고 만 것입니다.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__eac_003",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "크로우",
-          "summary": "크로우는 아우터 림에서 무인 호텔을 찾아왔으나 위층 투숙객이 몇 시간 동안 미친 듯이 뛰어대고 TV를 최대 볼륨으로 틀어놓자 호텔을 날려버리기 위해 시한폭탄을 작동시켰다고 밝힌다.",
-          "line_start": 111,
-          "line_end": 120,
-          "quote": "이 호텔의 보이지 않는 직원들이 워낙 출중한 서비스를 제공한다기에. 아우터 림에서 어렵사리 여기까지 찾아왔는데 말이지. 웬 얼빠진 놈이 윗층에서 미친 듯이 펄펄 뛰어대고, TV를 최대 볼륨으로 틀어 젖히는 게 아니겠냐. 그것도 몇 시간 동안이나 말이지. 기왕이면 원만하게 해결하려고, 프런트에 전화했더니. 아뿔싸. 여긴 직원이 없었던 거야. 그래서 그냥 깔끔하게 다 날려 버리기로 했다. 삐- 삐- 삐- 마침 갖고 있던 시한 폭탄으로 말이지.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "도라",
+          "summary": "도라는 호텔에서 은밀히 물건을 거래하려 했으나 벽 사이에서 나는 소음을 적 조직의 트랩이나 정부 요원의 감시 카메라로 의심해 벽을 부쉈다고 설명한다.",
+          "line_start": 69,
+          "line_end": 75,
+          "claim_line": 74,
+          "quote": "도라: 우린 원래 이 호텔에서 은밀히 물건을 거래하려 했어.\n도라: 그런데 자꾸 근처 방에서 수상쩍은 소음이 들리는 거야.\n삐- 삐- 삐-\n도라: 그건 적 조직이 설치한 트랩일 수도, 정부 요원이 설치한 감시 카메라일 수도 있었지.\n도라: 가능하면 조용히 처리하려 했는데, 하필이면 소음이 벽 사이에서 나더라고.\n도라: 그래서 벽을 부수지 않고서는 어쩔 도리가 없었어.\n도라: 그 과정에서 약간의 추가적인 소음이 발생한 건 사과할게.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_02__eac_004",
-          "epistemic_type": "established_event",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "크로우",
+          "summary": "크로우는 아우터 림에서 이 호텔까지 찾아왔으나 윗층 투숙객이 몇 시간 동안 뛰어대고 TV를 최대 볼륨으로 틀어 시한 폭탄으로 호텔을 날려 버리기로 했다고 말한다.",
+          "line_start": 111,
+          "line_end": 120,
+          "claim_line": 118,
+          "quote": "크로우: 이 호텔의 보이지 않는 직원들이 워낙 출중한 서비스를 제공한다기에.\n크로우: 아우터 림에서 어렵사리 여기까지 찾아왔는데 말이지.\n크로우: 웬 얼빠진 놈이 윗층에서 미친 듯이 펄펄 뛰어대고,\n크로우: TV를 최대 볼륨으로 틀어 젖히는 게 아니겠냐.\n크로우: 그것도 몇 시간 동안이나 말이지.\n크로우: 기왕이면 원만하게 해결하려고, 프런트에 전화했더니.\n크로우: 아뿔싸. 여긴 직원이 없었던 거야.\n크로우: 그래서 그냥 깔끔하게 다 날려 버리기로 했다.\n삐- 삐- 삐-\n크로우: 마침 갖고 있던 시한 폭탄으로 말이지.",
+          "refers_to_past": true,
           "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "hotel_02__eac_005",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "지휘관",
-          "summary": "지휘관은 크로우 객실의 호수를 보고 모든 연쇄 소음 사건의 발단이 된 위층 투숙객이 간만의 휴가에 지나치게 들떴던 자신임을 깨닫고 크로우에게 사과한다.",
+          "summary": "지휘관이 크로우 객실의 호수를 통해 모든 소음 사건을 연쇄적으로 일으킨 윗층 투숙객이 자신이었음을 깨닫고 간만의 휴가라 지나치게 들떴다며 크로우에게 사과한다.",
           "line_start": 121,
           "line_end": 136,
-          "quote": "미안해. 네가 갑자기 왜. 간만의 휴가라서, 지나치게 들떠 버렸어.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "··· ··· 크로우 객실의 호수를 통해 추측해 보건대.\n이 모든 소음 사건을 연쇄적으로 발생시킨 문제의 윗층 투숙객은···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n크로우: 음? 표정이 왜 그 모양이야.\n[CHOICE_START]\n  [OPTION TEXT=\"미안해.\"]\n  [OPTION_END]\n[CHOICE_END]\n크로우: 네가 갑자기 왜.\n[CHOICE_START]\n  [OPTION TEXT=\"간만의 휴가라서, 지나치게 들떠 버렸어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "clues_and_hooks": [
-        {
-          "item_id": "hotel_02__clh_001",
-          "keyword": "전초기지 무인 호텔",
-          "category": "location",
-          "detail": "프론트 직원부터 지배인까지 스태프가 전혀 없는 무인 시스템으로 운영되는 전초기지 내 호텔이다.",
-          "line_start": 4,
-          "line_end": 6,
-          "quote": "프론트 직원부터 시작해 지배인까지. 스태프가 전혀 없는 무인 시스템일 뿐만 아니라. 전초기지 내에서도 인지도가 없어, 놀라울 만큼 조용하다."
-        }
-      ],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "hotel_02__rln_001",
-          "subject": "율리아",
-          "target": "지휘관",
-          "relation_or_change": "율리아는 지휘관을 '마에스트로'라고 부른다.",
-          "line_start": 28,
-          "line_end": 28,
-          "quote": "···놀랐습니다, 마에스트로."
-        }
-      ],
-      "unregistered_entity_candidates": [
-        {
-          "item_id": "hotel_02__uec_001",
-          "surface_text": "아우터 림",
-          "suggested_type": "location",
-          "line_start": 112
-        }
-      ]
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": []
     },
     {
       "scene_id": "hotel_03",
@@ -555,8 +645,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "지휘관과 헬름이 샤워실이 가동된다는 호텔 객실을 찾았다가 무단 투숙 중이던 아니스와 마주친다. 직후 아무도 없는 샤워실에서 저절로 물줄기가 쏟아지고 젖은 발소리가 다가오며, 헬름이 문을 열어 물에 젖은 손바닥 자국을 목격하자 셋은 서둘러 호텔을 빠져나온다.",
+      "summary": "지휘관과 헬름이 샤워실이 가동된다는 무인 호텔 객실을 찾았다가 무단 투숙 중이던 아니스와 마주치고, 아무도 없는 샤워실에서 물소리와 젖은 발소리가 들리는 괴현상 끝에 헬름이 샤워실 안의 젖은 손바닥 자국을 목격하자 셋이 함께 호텔을 빠져나온다.",
       "participants": {
         "present_in_scene": [
           {
@@ -588,16 +679,9 @@
             "entity_type": "location",
             "line_start": 3,
             "line_end": 3,
-            "quote": "두 사람의 발자국 소리만 호텔 복도에 울려 퍼졌다."
-          },
-          {
-            "item_id": "hotel_03__mnt_002",
-            "surface_text": "샤워실",
-            "entity_id": null,
-            "entity_type": "location",
-            "line_start": 43,
-            "line_end": 43,
-            "quote": "난 그저 샤워실을 사용하고 싶어서 온 것뿐이야."
+            "quote": "두 사람의 발자국 소리만 호텔 복도에 울려 퍼졌다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -610,7 +694,9 @@
           "address_term": "지휘관님",
           "line_start": 36,
           "line_end": 36,
-          "quote": "···지휘관님?"
+          "quote": "···지휘관님?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_03__foa_002",
@@ -619,74 +705,117 @@
           "address_term": "귀관",
           "line_start": 46,
           "line_end": 46,
-          "quote": "귀관의 방에서 샤워를 하라고?"
-        },
-        {
-          "item_id": "hotel_03__foa_003",
-          "from_speaker": "헬름",
-          "to_target": "아니스",
-          "address_term": "아니스",
-          "line_start": 47,
-          "line_end": 47,
-          "quote": "농담이 지나쳐 아니스. 남자의 방에서 샤워라니, 있을 수 없는 일이야."
+          "quote": "귀관의 방에서 샤워를 하라고?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "hotel_03__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "아니스",
-          "summary": "호화로운 곳에서 자보고 싶어 호텔 객실에 무단 투숙 중이던 아니스가 샤워실을 쓰러 온 지휘관과 헬름을 보고 두 사람의 관계를 오해한다.",
-          "line_start": 27,
-          "line_end": 47,
-          "quote": "···호텔이라는 곳에서 한 번 자보고 싶어서 그냥···. 무단 투숙이라는 게 궁금했다고 할까 응. 호화로운 곳에서 좀 자보고 싶었다고 할까 응.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "아니스가 호화로운 호텔에서 자보고 싶어 무단 투숙을 하고 있었다고 말한다.",
+          "line_start": 25,
+          "line_end": 28,
+          "claim_line": 28,
+          "quote": "헬름: 아니스? 여기서 뭘···.\n아니스: 아 그냥 나는 그···.\n아니스: ···호텔이라는 곳에서 한 번 자보고 싶어서 그냥···.\n아니스: 무단 투숙이라는 게 궁금했다고 할까 응. 호화로운 곳에서 좀 자보고 싶었다고 할까 응.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "hotel_03__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "헬름",
-          "summary": "아무도 없고 바닥도 마른 샤워실에서 반복해 물줄기 소리와 젖은 발소리가 들리자, 귀신은 없다고 주장하던 헬름이 직접 문을 열어 물에 젖은 손바닥 자국을 목격하고 지휘관·아니스와 함께 호텔을 탈출한다.",
-          "line_start": 66,
-          "line_end": 129,
-          "quote": "···물에 젖은 손바닥 자국.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "아니스가 대낮부터 지휘관과 헬름이 둘이서 호텔에 온 것을 오해하자, 헬름은 이 방의 샤워실이 가동된다고 해서 샤워실을 쓰러 왔을 뿐이라며 사용 허락을 구한다.",
+          "line_start": 41,
+          "line_end": 50,
+          "claim_line": null,
+          "quote": "아니스: 미, 미친 거 아냐!? 무슨 대낮부터 둘이서 이렇게 본격적으로 장소까지 엄선해서는···!\n헬름: ···무슨 생각을 하는지는 모르겠지만, 아냐.\n헬름: 난 그저 샤워실을 사용하고 싶어서 온 것뿐이야.\n아니스: 야! 웃기지 마! 지휘관님 방에서 하면 되는 걸 뭘 여기까지 손잡고 와서는!\n헬름: ??\n헬름: 귀관의 방에서 샤워를 하라고?\n헬름: 농담이 지나쳐 아니스. 남자의 방에서 샤워라니, 있을 수 없는 일이야.\n아니스: ··· ···.\n헬름: 이 방의 샤워실이 한 번씩 가동된다고 해서 와봤는데.\n헬름: 실례가 안된다면 사용해도 될까?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "hotel_03__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "갑자기 샤워기 물줄기 소리가 두 차례나 들려오지만 아니스가 샤워실 문을 열어 확인해 보면 안에는 아무도 없고 바닥도 말라 있다.",
+          "line_start": 52,
+          "line_end": 80,
+          "claim_line": null,
+          "quote": "쏴아아아---\n갑자기 샤워기의 물줄기가 쏟아져 나오는 소리가 들렸다.\n아니스: ···?\n헬름: ···?\n아니스: 뭐야. 샤워실에 누가 있었어?\n아니스: 이봐~! 누군지는 모르겠지만 이곳은 주인 없는 호텔이야~!\n아니스: 함부로 시설을 막 쓰고 그러면 안 돼~!\n헬름: ··· ···.\n쏴아아아---\n아니스: 어어? 들은 척도 안 하네?\n지잉-\n아니스는 샤워실 문을 열었다.\n아니스: 이봐. 내 말 안 들···.\n아니스: ···려?\n샤워실 안에는 아무도 없었다.\n헬름: ···아무도 없다고?\n아니스: 어? 방금 샤워기 소리 들리지 않았어?\n헬름: 들었어.\n아니스: 바닥도 멀쩡하네.\n아니스: 뭐지. 샤워실을 맘껏 쓰고 싶어서 환청이 들리나.\n지잉-\n샤워실 문이 닫혔다.\n아니스: 아무튼 쓸 거면 최대한 조용···.\n쏴아아아---\n아니스: ··· ···.\n헬름: ··· ···.\n아니스: 야! 너 누구야!\n지잉-\n여전히 샤워실 안에는 아무도 없었고, 바닥은 말라있었다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "hotel_03__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "젖은 발로 바닥을 밟는 듯한 소리가 점점 빨라지자 헬름은 세상에 귀신은 없다며 직접 샤워실 문을 열었다가 닫고는 나가자고 말한다.",
+          "line_start": 97,
+          "line_end": 117,
+          "claim_line": null,
+          "quote": "찰박. 찰박.\n찰박. 찰박. 찰박. 찰박. 찰박. 찰박.\n찰박. 찰박. 찰박. 찰박. 찰박. 찰박. 찰박. 찰박. 찰박. 찰박. 찰박. 찰박.\n아니스: 흐아아아아--!!\n헬름: 아니스. 진정해.\n아니스: 진정하게 생겼냐고-!\n헬름: 세상에 귀신같은 건 없어.\n헬름: 지금 이 소린 분명 과학적인 그거의 작용으로 인해 생겨난 일이야.\n아니스: 너도 뭔지 모르겠다는 말을 유식하게 하지 말아 줄래?\n헬름: 내가 열어볼게. 그러면 되지?\n아니스: 아, 안 하는 게 좋을 것 같은데.\n헬름: 믿어, 아니스.\n헬름: 세상에 귀신같은 건 없어.\n지잉-\n헬름: ··· ···.\n아니스: 뭐, 뭐가 있어?\n헬름: ··· ···.\n아니스: 아, 아무것도 없지? 과학적인 그거의 작용으로 생겨난 일이겠지?\n지잉-\n샤워실 문이 닫혔다.\n헬름: ···나가자.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "hotel_03__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "헬름",
+          "summary": "헬름이 샤워실 안에 물에 젖은 손바닥 자국이 있었다고 말한다.",
+          "line_start": 119,
+          "line_end": 121,
+          "claim_line": 121,
+          "quote": "아니스: ···뭐였는데?\n찰박. 찰박.\n헬름: ···물에 젖은 손바닥 자국.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "hotel_03__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관과 헬름, 아니스 셋은 아무 소리도 내지 않고 호텔을 빠져나온다.",
+          "line_start": 128,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "헬름: ···나가자.\n우리 셋은 아무런 소리도 내지 않고 호텔을 빠져나왔다.\n호텔의 샤워실은 사용하지 않는 편이 좋겠다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "hotel_03__clh_001",
-          "keyword": "샤워실의 물에 젖은 손바닥 자국",
+          "keyword": "호텔 샤워실의 젖은 손바닥 자국",
           "category": "foreshadowing",
-          "detail": "주인 없는 호텔 객실의 빈 샤워실에서 물소리와 젖은 발소리가 나고 물에 젖은 손바닥 자국이 발견되는 괴현상이 일어난다.",
+          "subject": null,
+          "detail": "아무도 없는 호텔 샤워실에서 물소리와 젖은 발소리가 들린 뒤 헬름이 샤워실 안에서 물에 젖은 손바닥 자국을 목격함",
           "line_start": 117,
-          "line_end": 122,
-          "quote": "···물에 젖은 손바닥 자국."
+          "line_end": 121,
+          "quote": "헬름: ···나가자.\n찰박.\n아니스: ···뭐였는데?\n찰박. 찰박.\n헬름: ···물에 젖은 손바닥 자국.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "hotel_03__rln_001",
-          "subject": "헬름",
-          "target": "지휘관",
-          "relation_or_change": "헬름은 지휘관을 '귀관'이라 부르며 남자의 방에서 샤워하는 것은 있을 수 없는 일이라며 선을 긋는다.",
-          "line_start": 46,
-          "line_end": 47,
-          "quote": "귀관의 방에서 샤워를 하라고? 농담이 지나쳐 아니스. 남자의 방에서 샤워라니, 있을 수 없는 일이야."
-        }
-      ],
+      "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": []
     }
   ]

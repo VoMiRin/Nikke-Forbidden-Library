@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-14T14:30:17.885Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-16T00:35:24.731Z",
   "title_id": "side_stories__second_affection",
   "category": "side_stories",
   "title": "SECOND AFFECTION",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "전날 마신 술이 깨지 않아 두통과 속쓰림을 호소하며 지휘관을 찾는 마리안을 데리고 스노우 화이트, 홍련, 라푼젤이 이동하던 중 대형 랩쳐와 조우한다. 스노우 화이트가 세븐스 드워프를 전개해 선공에 나서고 라푼젤의 백업 아래 홍련이 합류해 랩쳐를 몰아붙인다.",
+      "summary": "숙취에 시달리는 마리안과 함께 이동하던 스노우 화이트, 홍련, 라푼젤이 큰 랩쳐를 발견하고 교전에 돌입한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -60,7 +61,9 @@
             "entity_type": "character",
             "line_start": 5,
             "line_end": 5,
-            "quote": "으··· 지휘관. 나 아파요···."
+            "quote": "마리안: 으··· 지휘관. 나 아파요···.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "second_affection_08__mnt_002",
@@ -69,7 +72,9 @@
             "entity_type": "faction_or_species",
             "line_start": 11,
             "line_end": 11,
-            "quote": "랩쳐 발견."
+            "quote": "스노우 화이트: 랩쳐 발견.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "second_affection_08__mnt_003",
@@ -78,7 +83,9 @@
             "entity_type": "item",
             "line_start": 20,
             "line_end": 20,
-            "quote": "세븐스 드워프 레디."
+            "quote": "스노우 화이트: 세븐스 드워프 레디.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -91,7 +98,9 @@
           "address_term": "지휘관",
           "line_start": 5,
           "line_end": 5,
-          "quote": "으··· 지휘관. 나 아파요···."
+          "quote": "마리안: 으··· 지휘관. 나 아파요···.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_08__foa_002",
@@ -100,7 +109,9 @@
           "address_term": "라푼젤",
           "line_start": 27,
           "line_end": 27,
-          "quote": "그럼 백업을 부탁하네, 라푼젤."
+          "quote": "홍련: 그럼 백업을 부탁하네, 라푼젤.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_08__foa_003",
@@ -109,49 +120,58 @@
           "address_term": "스노우 화이트",
           "line_start": 28,
           "line_end": 28,
-          "quote": "감세. 스노우 화이트."
+          "quote": "홍련: 감세. 스노우 화이트.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "second_affection_08__csh_001",
-          "text": "부제 '두 번째 애정 : 9 [A]' 장면으로, 직후 이어지는 second_affection_09('두 번째 애정 : 9 [B]')에서 전투가 '클리어.'로 종료되며 순서대로 연결된다 (병렬 갈래 아님).",
-          "related_scene_ids": [
-            "second_affection_09"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "second_affection_08__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "마리안",
-          "summary": "마리안이 다음 날 아침까지 술이 깨지 않아 두통과 속쓰림을 호소하며 지휘관을 찾은 채로 스노우 화이트, 홍련, 라푼젤과 함께 이동한다.",
-          "line_start": 2,
+          "summary": "술이 덜 깬 마리안이 두통과 속쓰림을 호소하며 지휘관을 찾으면서도 스노우 화이트, 홍련, 라푼젤과 함께 걸어간다.",
+          "line_start": 3,
           "line_end": 9,
-          "quote": "마리안: 으··· 지휘관. 나 아파요···. 라푼젤: ···아직 술이 안 깨는 모양인데요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "마리안: 으으··· 머리 아파요···.\n마리안: 속도 너무 안 좋아요···.\n마리안: 으··· 지휘관. 나 아파요···.\n라푼젤: ···아직 술이 안 깨는 모양인데요.\n마리안: 으으··· 으으으으···.\n홍련: 것 참. 그런데도 걸어다니는게 용하군.\n넷은 말없이 걸어갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_08__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "스노우 화이트",
-          "summary": "이동한 지 한 시간 만에 대형 랩쳐가 나타나자 스노우 화이트가 세븐스 드워프를 가동해 단독 선공에 나서고, 피해를 입자 라푼젤의 수리·백업과 홍련의 가세로 함께 몰아친다.",
+          "summary": "일행이 큰 랩쳐를 발견하자 스노우 화이트가 먼저 달려나가 세븐스 드워프를 가동하고 교전을 시작한다.",
           "line_start": 11,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "스노우 화이트: 랩쳐 발견.\n홍련: 큰 녀석이군.\n라푼젤: 포메이션은 어떻게 갈까요?\n스노우 화이트: 먼저 간다.\n스노우 화이트는 달려갔다.\n홍련: 것 참 뭐가 저렇게 급한 겐지.\n라푼젤: 저희도 가죠.\n홍련: 그럼세.\n스노우 화이트: 랩쳐는 모두 죽인다. 그뿐이다.\n스노우 화이트: 세븐스 드워프 레디.\n스노우 화이트: 인카운터.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "second_affection_08__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "스노우 화이트",
+          "summary": "스노우 화이트가 랩쳐와 싸우며 피해를 입자 라푼젤이 수리와 백업을 맡기로 하고 홍련과 스노우 화이트가 합세해 랩쳐를 몰아친다.",
+          "line_start": 22,
           "line_end": 33,
-          "quote": "스노우 화이트: 세븐스 드워프 레디. 스노우 화이트: 인카운터.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "홍련: 기세 좋게 뛰쳐나가더니 꽤나 애먹는 모양이군.\n스노우 화이트: 아니. 곧 잡는다.\n라푼젤: 그런 것치곤 피해가 좀 있네요.\n스노우 화이트: 네가 고쳐줄 것 아닌가?\n라푼젤: 물론이죠.\n홍련: 그럼 백업을 부탁하네, 라푼젤.\n홍련: 감세. 스노우 화이트.\n스노우 화이트: 가자.\n홍련: 곧 끝나겠군.\n스노우 화이트: 그럼 단숨에 몰아친다.\n라푼젤: 그래도 마지막까지 방심하지 말아요.\n스노우 화이트: 물론이다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
@@ -159,23 +179,28 @@
           "item_id": "second_affection_08__clh_001",
           "keyword": "세븐스 드워프",
           "category": "item",
-          "detail": "스노우 화이트가 대형 랩쳐와의 교전에서 전개하는 무장.",
+          "subject": null,
+          "detail": "스노우 화이트가 전투 시 가동하는 무장",
           "line_start": 20,
-          "line_end": 21,
-          "quote": "세븐스 드워프 레디. 인카운터."
-        }
-      ],
-      "relationship_and_lore_notes": [
+          "line_end": 20,
+          "quote": "스노우 화이트: 세븐스 드워프 레디.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
         {
-          "item_id": "second_affection_08__rln_001",
+          "item_id": "second_affection_08__clh_002",
+          "keyword": "랩쳐 섬멸 구호",
+          "category": "trait",
           "subject": "스노우 화이트",
-          "target": "라푼젤",
-          "relation_or_change": "전투 중 입은 피해를 라푼젤이 고쳐줄 것이라 당연히 신뢰하며 선공에 나서고, 홍련과 라푼젤이 호흡을 맞춰 지원한다.",
-          "line_start": 24,
-          "line_end": 28,
-          "quote": "스노우 화이트: 네가 고쳐줄 것 아닌가? 라푼젤: 물론이죠."
+          "detail": "'랩쳐는 모두 죽인다. 그뿐이다.'라고 말하며 전투 개시 때 '세븐스 드워프 레디. 인카운터.'라는 구호를 사용함",
+          "line_start": 19,
+          "line_end": 21,
+          "quote": "스노우 화이트: 랩쳐는 모두 죽인다. 그뿐이다.\n스노우 화이트: 세븐스 드워프 레디.\n스노우 화이트: 인카운터.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "second_affection_08__uec_001",
@@ -199,8 +224,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "랩쳐 토벌을 마친 뒤 마리안이 머물 위치가 뇌 스캔 등으로 노출되는 위험을 막기 위해 홍련과 라푼젤은 각자 헤어지고, 스노우 화이트만 마리안을 데리고 거대한 고성에 도착한다. 성에서 기다리던 차임은 이주 만에 연락도 없이 온 스노우 화이트를 타박하다가 아가씨가 기다린다며 마리안을 부축하지만, 숙취에 시달리던 마리안이 차임에게 구토하고 만다.",
+      "summary": "랩쳐를 처치한 뒤 뇌 스캔 위험을 우려해 홍련과 라푼젤은 각자 흩어지고, 스노우 화이트가 홀로 마리안을 데리고 고성에 도착해 기다리던 차임에게 마리안을 인계한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -244,7 +270,9 @@
             "entity_type": "faction_or_species",
             "line_start": 4,
             "line_end": 4,
-            "quote": "그나저나 지금까지 조용하던 랩쳐가 갑자기 나타나다니···."
+            "quote": "홍련: 그나저나 지금까지 조용하던 랩쳐가 갑자기 나타나다니···.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "second_affection_09__mnt_002",
@@ -253,7 +281,9 @@
             "entity_type": "character",
             "line_start": 33,
             "line_end": 33,
-            "quote": "으으··· 머리 아파···. 업어줘요··· 지휘관···."
+            "quote": "마리안: 으으··· 머리 아파···. 업어줘요··· 지휘관···.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "second_affection_09__mnt_003",
@@ -262,7 +292,9 @@
             "entity_type": "location",
             "line_start": 40,
             "line_end": 40,
-            "quote": "스노우 화이트와 마리안의 앞에는 거대한 고성이 우뚝 솟아 있었다."
+            "quote": "스노우 화이트와 마리안의 앞에는 거대한 고성이 우뚝 솟아 있었다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "second_affection_09__mnt_004",
@@ -271,7 +303,9 @@
             "entity_type": "character",
             "line_start": 54,
             "line_end": 54,
-            "quote": "아가씨가 기다리고 계신다."
+            "quote": "차임: 아가씨가 기다리고 계신다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -284,7 +318,9 @@
           "address_term": "스노우 화이트",
           "line_start": 12,
           "line_end": 12,
-          "quote": "그럼 스노우 화이트. 뒤는 부탁하네."
+          "quote": "홍련: 그럼 스노우 화이트. 뒤는 부탁하네.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__foa_002",
@@ -293,7 +329,9 @@
           "address_term": "마리안",
           "line_start": 15,
           "line_end": 15,
-          "quote": "마리안. 저랑 홍련은 여기서 헤어져야 해요."
+          "quote": "라푼젤: 마리안. 저랑 홍련은 여기서 헤어져야 해요.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__foa_003",
@@ -302,7 +340,9 @@
           "address_term": "스노우 화이트",
           "line_start": 18,
           "line_end": 18,
-          "quote": "스노우 화이트. 괜찮겠어요?"
+          "quote": "라푼젤: 스노우 화이트. 괜찮겠어요?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__foa_004",
@@ -311,7 +351,9 @@
           "address_term": "지휘관",
           "line_start": 33,
           "line_end": 33,
-          "quote": "으으··· 머리 아파···. 업어줘요··· 지휘관···."
+          "quote": "마리안: 으으··· 머리 아파···. 업어줘요··· 지휘관···.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__foa_005",
@@ -320,122 +362,169 @@
           "address_term": "네 이놈",
           "line_start": 41,
           "line_end": 41,
-          "quote": "네 이놈----!!"
-        },
-        {
-          "item_id": "second_affection_09__foa_006",
-          "from_speaker": "차임",
-          "to_target": "마리안",
-          "address_term": "이 아이",
-          "line_start": 50,
-          "line_end": 50,
-          "quote": "이 아이더냐?"
+          "quote": "차임: 네 이놈----!!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "second_affection_09__csh_001",
-          "text": "second_affection_08('두 번째 애정 : 9 [A]')의 랩쳐 교전 직후 이어지는 후반부 파트('9 [B]')다.",
-          "related_scene_ids": [
-            "second_affection_08"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "second_affection_09__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "홍련",
-          "summary": "홍련은 지금까지 조용하던 랩쳐가 갑자기 나타난 것에 무언가 이유가 있을 것이라 의문을 제기한다.",
-          "line_start": 4,
+          "actor_or_speaker": "스노우 화이트",
+          "summary": "일행이 랩쳐를 처치하고, 홍련은 지금까지 조용하던 랩쳐가 갑자기 나타난 것에 이유가 있을지 의문을 제기한다.",
+          "line_start": 2,
           "line_end": 5,
-          "quote": "그나저나 지금까지 조용하던 랩쳐가 갑자기 나타나다니···. 뭔가 이유가 있을 거라 생각하는가?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "스노우 화이트: 클리어.\n홍련: 제법 애를 먹이는군.\n홍련: 그나저나 지금까지 조용하던 랩쳐가 갑자기 나타나다니···.\n홍련: 뭔가 이유가 있을 거라 생각하는가?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "스노우 화이트",
-          "summary": "마리안이 머물 위치를 모두가 알면 뇌 스캔을 당했을 때 위험하므로 홍련과 라푼젤은 여기서 헤어져 각자의 할 일로 돌아가고, 스노우 화이트만 마리안을 데리고 이동한다.",
-          "line_start": 23,
-          "line_end": 38,
-          "quote": "스노우 화이트: 마리안이 머물 위치를 모두가 알 필요는 없다. 라푼젤: ···예. 만에 하나 뇌라도 스캔당하면 위험하니까요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "스노우 화이트는 뇌 스캔 위험에 대비해 마리안이 머물 위치를 모두가 알 필요는 없다며 홍련과 라푼젤을 돌려보내고 혼자 마리안을 데려가기로 한다.",
+          "line_start": 12,
+          "line_end": 30,
+          "claim_line": null,
+          "quote": "홍련: 그럼 스노우 화이트. 뒤는 부탁하네.\n라푼젤: 부탁할게요.\n스노우 화이트: 그래.\n라푼젤: 마리안. 저랑 홍련은 여기서 헤어져야 해요.\n마리안: 으으···.\n홍련: ···이거야 원. 걸어 다니는 시체가 따로 없군그래.\n라푼젤: 스노우 화이트. 괜찮겠어요?\n스노우 화이트: 문제없다.\n홍련: ···역시 끝까지 함께 가는 것이 낫지 않겠나?\n홍련: 마리안이 정신을 차리면 난리가 날 걸세.\n스노우 화이트: 안돼.\n스노우 화이트: 우리는 할 일이 있다. 다 같이 움직이는 것은 효율이 안 좋아.\n스노우 화이트: 이쯤에서 할 일로 돌아가야 해.\n스노우 화이트: 그리고.\n스노우 화이트: 마리안이 머물 위치를 모두가 알 필요는 없다.\n라푼젤: ···예. 만에 하나 뇌라도 스캔당하면 위험하니까요.\n홍련: 뭐··· 어디에 둘지 대충 짐작은 간다만.\n홍련: ···알겠네. 그럼 끝까지 잘 부탁하네.\n스노우 화이트: 그래.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__eac_003",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "차임",
-          "summary": "고성에 도착한 스노우 화이트에게 차임이 일주일이면 온다더니 이주가 지났고 만들어 놓은 음식도 다 버렸다며 호통친다.",
-          "line_start": 41,
-          "line_end": 44,
-          "quote": "일주일이면 온다더니 벌써 이주가 지나지 않았더냐!! 만들어 놓은 음식도 다 버리고, 언제 오나 싶어 성밖만 바라봤다!!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "라푼젤",
+          "summary": "라푼젤과 홍련이 술에 취해 지휘관을 찾는 마리안과 작별하고 서로 반대 방향으로 떠난다.",
+          "line_start": 31,
+          "line_end": 37,
+          "claim_line": null,
+          "quote": "라푼젤이 마리안에게 다가갔다.\n라푼젤: 또 봐요. 마리안.\n마리안: 으으··· 머리 아파···. 업어줘요··· 지휘관···.\n라푼젤: ··· ···.\n홍련: ···가세.\n라푼젤: 예.\n홍련과 라푼젤은 서로 반대 방향으로 걸어갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__eac_004",
           "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "스노우 화이트",
+          "summary": "스노우 화이트가 마리안의 손을 잡고 세 시간가량 걸어 거대한 고성에 도착하자, 차임이 일주일이면 온다더니 이주가 지났다며 화를 낸다.",
+          "line_start": 38,
+          "line_end": 46,
+          "claim_line": null,
+          "quote": "스노우 화이트는 한참 동안 그 모습을 바라보다가, 마리안의 손을 잡고 걷기 시작했다.\n그러길 세 시간가량.\n스노우 화이트와 마리안의 앞에는 거대한 고성이 우뚝 솟아 있었다.\n차임: 네 이놈----!!\n차임: 일주일이면 온다더니 벌써 이주가 지나지 않았더냐!!\n차임: 만들어 놓은 음식도 다 버리고, 언제 오나 싶어 성밖만 바라봤다!!\n차임: 근데 또 온다고 얘기도 안 하고 갑자기 이리 오면 어떡하느냐!!\n스노우 화이트: 사정이 있었다.\n차임: 당연히 그렇겠지! 그래도 말은 해줘야 할 것 아니더냐!!",
+          "refers_to_past": false,
           "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "second_affection_09__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "차임",
+          "summary": "차임이 스노우 화이트가 데려온 아이가 마리안임을 확인하고 아가씨가 기다리고 있으니 일단 성 안으로 들어오라고 안내한다.",
+          "line_start": 50,
+          "line_end": 54,
+          "claim_line": null,
+          "quote": "차임: 이 아이더냐?\n스노우 화이트: 그래.\n차임: 흠···.\n차임: 일단 들어오너라.\n차임: 아가씨가 기다리고 계신다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "second_affection_09__eac_006",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "마리안",
-          "summary": "차임이 아가씨가 기다린다며 속이 이상하다는 마리안의 팔을 자신의 어깨에 걸쳐 부축하자, 충격으로 마리안이 차임에게 구토한다.",
-          "line_start": 53,
+          "summary": "속이 이상하다고 호소하던 마리안이 자신을 부축한 차임에게 구토를 한다.",
+          "line_start": 55,
           "line_end": 68,
-          "quote": "차임이 마리안의 팔을 잡고 자신의 어깨에 걸쳤다. 그 작은 충격 때문일까. 마리안: 으에에엑···.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "마리안: 어으··· 잠깐만요···!\n마리안: 저 속이 좀··· 이상해요···!\n차임: !! 왜 이러는 게냐!\n차임: 오는 길에 무슨 일이 있었더냐!?\n스노우 화이트: 많은 일이 있었다.\n차임: 빠, 빨리 안으로 들어가자꾸나!\n차임: 대단한 건 없어도 간단한 응급조치 정도는···!\n차임이 마리안의 팔을 잡고 자신의 어깨에 걸쳤다.\n그 작은 충격 때문일까.\n마리안: 으에에엑···.\n차임: ··· ···.\n마리안: 으으··· 미안해요···.\n차임: 히이···.\n차임: 히이이이···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "second_affection_09__clh_001",
-          "keyword": "뇌 스캔",
+          "keyword": "뇌 스캔 위험",
           "category": "lore_concept",
-          "detail": "니케가 포획되거나 조사받을 때 뇌를 스캔당하면 알고 있는 위치 정보가 누출될 수 있어, 마리안의 은신처를 소수만 알기로 한다.",
+          "subject": null,
+          "detail": "니케가 뇌를 스캔당하면 알고 있는 거처 위치가 노출될 위험이 있음",
           "line_start": 26,
           "line_end": 27,
-          "quote": "스노우 화이트: 마리안이 머물 위치를 모두가 알 필요는 없다. 라푼젤: ···예. 만에 하나 뇌라도 스캔당하면 위험하니까요."
+          "quote": "스노우 화이트: 마리안이 머물 위치를 모두가 알 필요는 없다.\n라푼젤: ···예. 만에 하나 뇌라도 스캔당하면 위험하니까요.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "second_affection_09__clh_002",
-          "keyword": "거대한 고성",
+          "keyword": "거대한 고성과 아가씨",
           "category": "location",
-          "detail": "스노우 화이트가 마리안을 데리고 세 시간가량 걸어 도착한 성으로, 차임과 '아가씨'가 머물며 마리안을 맡기기로 한 거처.",
+          "subject": null,
+          "detail": "차임과 '아가씨'가 머물며 스노우 화이트가 마리안을 데려다 맡긴 거대한 고성",
           "line_start": 40,
           "line_end": 54,
-          "quote": "스노우 화이트와 마리안의 앞에는 거대한 고성이 우뚝 솟아 있었다."
+          "quote": "스노우 화이트와 마리안의 앞에는 거대한 고성이 우뚝 솟아 있었다.\n차임: 네 이놈----!!\n차임: 일주일이면 온다더니 벌써 이주가 지나지 않았더냐!!\n차임: 만들어 놓은 음식도 다 버리고, 언제 오나 싶어 성밖만 바라봤다!!\n차임: 근데 또 온다고 얘기도 안 하고 갑자기 이리 오면 어떡하느냐!!\n스노우 화이트: 사정이 있었다.\n차임: 당연히 그렇겠지! 그래도 말은 해줘야 할 것 아니더냐!!\n마리안: 으··· 시끄러··· 머리 아파요···.\n차임: 시시시 시끄럽다고!? 지금 내가 이렇게 중요한 얘기를 하고 있···!\n차임: ··· ···.\n차임: 이 아이더냐?\n스노우 화이트: 그래.\n차임: 흠···.\n차임: 일단 들어오너라.\n차임: 아가씨가 기다리고 계신다.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "second_affection_09__rln_001",
-          "subject": "스노우 화이트",
+          "subject": "마리안",
+          "target": "스노우 화이트",
+          "relation_or_change": "홍련, 라푼젤과 헤어지고 스노우 화이트가 단독으로 마리안을 인솔해 거처로 데려감",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 26,
+          "line_end": 38,
+          "claim_line": null,
+          "quote": "스노우 화이트: 마리안이 머물 위치를 모두가 알 필요는 없다.\n라푼젤: ···예. 만에 하나 뇌라도 스캔당하면 위험하니까요.\n홍련: 뭐··· 어디에 둘지 대충 짐작은 간다만.\n홍련: ···알겠네. 그럼 끝까지 잘 부탁하네.\n스노우 화이트: 그래.\n라푼젤이 마리안에게 다가갔다.\n라푼젤: 또 봐요. 마리안.\n마리안: 으으··· 머리 아파···. 업어줘요··· 지휘관···.\n라푼젤: ··· ···.\n홍련: ···가세.\n라푼젤: 예.\n홍련과 라푼젤은 서로 반대 방향으로 걸어갔다.\n스노우 화이트는 한참 동안 그 모습을 바라보다가, 마리안의 손을 잡고 걷기 시작했다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "second_affection_09__rln_002",
+          "subject": "마리안",
           "target": "차임",
-          "relation_or_change": "스노우 화이트가 마리안의 보호를 위해 차임과 '아가씨'가 있는 고성으로 마리안을 데려와 인계한다.",
+          "relation_or_change": "스노우 화이트의 인도로 차임과 아가씨가 있는 고성에 맡겨짐",
+          "epistemic_type": "established_event",
+          "claimant": null,
           "line_start": 50,
           "line_end": 54,
-          "quote": "차임: 이 아이더냐? 스노우 화이트: 그래. 차임: 흠···. 차임: 일단 들어오너라. 차임: 아가씨가 기다리고 계신다."
+          "claim_line": null,
+          "quote": "차임: 이 아이더냐?\n스노우 화이트: 그래.\n차임: 흠···.\n차임: 일단 들어오너라.\n차임: 아가씨가 기다리고 계신다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unregistered_entity_candidates": [
         {
           "item_id": "second_affection_09__uec_001",
+          "surface_text": "고성",
+          "suggested_type": "location",
+          "line_start": 40
+        },
+        {
+          "item_id": "second_affection_09__uec_002",
           "surface_text": "아가씨",
           "suggested_type": "alias",
           "line_start": 54

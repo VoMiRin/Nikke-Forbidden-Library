@@ -578,3 +578,50 @@ test('8-1 scene-level reuse: hash, schema version and descriptor labels decide r
     assert.ok(Number(b.batch_id.slice(6)) > 7, `${b.batch_id} must not reuse an existing number`);
   }
 });
+
+// 대사 12줄(L2~L13)이 이어지는 장면
+const GAP_LINES = [
+  '[SCENE START]',
+  ...Array.from({ length: 12 }, (_, i) => `${i % 2 === 0 ? '라피' : '아니스'}: 대사 ${i + 1}번입니다.`),
+  '[SCENE END]',
+];
+
+const gapScene = (overrides = {}) =>
+  emptyScene('t13_gap', {
+    participants: {
+      present_in_scene: present('라피', '아니스'),
+      present_silent: [],
+      remote_or_voice_only: [],
+      mentioned_only: [],
+      document_author: null,
+    },
+    ...overrides,
+  });
+
+const gapBatch = () => batchOf(makeInputScene('t13_gap', GAP_LINES));
+
+test('2.3-21 coverage gap: long uncovered dialogue needs extraction or a reviewed_gaps reason', () => {
+  assertFails(validateShard(shardOf(gapScene()), gapBatch()), 'COVERAGE_GAP');
+
+  const reviewed = gapScene({
+    reviewed_gaps: [{ line_start: 2, line_end: 13, reason: '같은 인사말만 반복되고 사건·주장·관계가 없다.' }],
+  });
+  assertValid(validateShard(shardOf(reviewed), gapBatch()));
+
+  const noReason = gapScene({ reviewed_gaps: [{ line_start: 2, line_end: 13, reason: '' }] });
+  assertFails(validateShard(shardOf(noReason), gapBatch()), 'COVERAGE_GAP');
+
+  const partial = gapScene({ reviewed_gaps: [{ line_start: 2, line_end: 8, reason: '인사말뿐이다.' }] });
+  assertFails(validateShard(shardOf(partial), gapBatch()), 'COVERAGE_GAP');
+
+  // 항목이 앞 3줄을 덮으면 남은 공백은 9줄이라 기준(10줄) 미만이다
+  const firstItem = event({ line_start: 2, line_end: 4, quote: '대사 1번입니다. 대사 2번입니다. 대사 3번입니다.' });
+  assertValid(validateShard(shardOf(gapScene({ events_and_claims: [firstItem] })), gapBatch()));
+
+  // 이미 항목이 덮은 줄을 reviewed_gaps에 넣으면 실패
+  const overlapping = gapScene({
+    events_and_claims: [firstItem],
+    reviewed_gaps: [{ line_start: 2, line_end: 13, reason: '인사말뿐이다.' }],
+  });
+  assertFails(validateShard(shardOf(overlapping), gapBatch()), 'COVERAGE_GAP');
+});

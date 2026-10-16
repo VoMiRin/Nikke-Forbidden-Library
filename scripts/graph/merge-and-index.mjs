@@ -156,6 +156,7 @@ export const enrichSceneFromManifest = (rawScene, manifestScene, mechanicalGroun
     events_and_claims: eventsAndClaims,
     clues_and_hooks: attachEvidence(cleanScene.clues_and_hooks, 'clh'),
     relationship_and_lore_notes: relationshipNotes,
+    reviewed_gaps: Array.isArray(cleanScene.reviewed_gaps) ? cleanScene.reviewed_gaps : [],
     unregistered_entity_candidates: attachItemIds(
       cleanScene.unregistered_entity_candidates,
       'uec'
