@@ -11,6 +11,8 @@ const __filename = fileURLToPath(import.meta.url);
 // (pilot_0002는 1.3.0에서 coins_in_rush_09를 gingerbreadhouse_02로 바꿨다).
 // --baseline-dir로 다른 기준 폴더(예: 1.3.0 1차 실행 shards_1.3.0_run1)와 비교할 수 있다.
 // 그 폴더의 샤드가 같은 배치 ID면 --same-batch-ids를 준다.
+// --batches로 파일럿 4개 대신 다른 배치(예: 본 실행 분류별 10배치)를 같은 배치 ID의 기준과 비교한다.
+// --out-dir는 data/graph/ 아래 출력 폴더다(기본 pilot).
 export const PILOT_COMPARISONS = [
   { batch_id: 'batch_0001', baseline: 'batch_0001' },
   { batch_id: 'pilot_full_0025', baseline: 'batch_0025' },
@@ -138,9 +140,18 @@ export const buildPilotReport = async (options = {}) => {
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   const args = process.argv.slice(2);
   const optionValue = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : undefined);
-  buildPilotReport({ baselineDir: optionValue('--baseline-dir'), sameBatchIds: args.includes('--same-batch-ids') })
+  const batchIds = optionValue('--batches')?.split(',').filter(Boolean);
+  buildPilotReport({
+    baselineDir: optionValue('--baseline-dir'),
+    sameBatchIds: args.includes('--same-batch-ids'),
+    comparisons: batchIds?.map((id) => ({ batch_id: id, baseline: id })),
+  })
     .then(async (report) => {
-      const outPath = path.join(GRAPH_DATA_DIR, 'pilot', optionValue('--out') ?? 'pilot_report_1.3.0.json');
+      const outPath = path.join(
+        GRAPH_DATA_DIR,
+        optionValue('--out-dir') ?? 'pilot',
+        optionValue('--out') ?? 'pilot_report_1.3.0.json'
+      );
       await writeJsonAtomic(outPath, report);
       for (const [id, b] of Object.entries(report.batches)) {
         if (b.missing) {
