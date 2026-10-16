@@ -11,8 +11,14 @@ import {
   chronologyAtLine,
   descriptorLabelsOf,
   emptyProgressDoc,
+  countedLinesOf,
 } from './lib.mjs';
-import { validateShard, FORBIDDEN_SCENE_FIELDS, FORBIDDEN_ITEM_FIELDS } from './validate-output.mjs';
+import {
+  validateShard,
+  extractRawLinesFromNumberedScript,
+  FORBIDDEN_SCENE_FIELDS,
+  FORBIDDEN_ITEM_FIELDS,
+} from './validate-output.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -166,7 +172,7 @@ export const enrichSceneFromManifest = (rawScene, manifestScene, mechanicalGroun
 
 /**
  * 배치 안 장면 위치(앞·중간·뒤 3등분)별 events_and_claims 밀도를 계산한다 (2.3의 20항).
- * 밀도는 대사 100줄당 항목 수다.
+ * 밀도는 대사 100줄당 항목 수다. 대사 줄이 없는 장면(화자 라벨 없는 문서 등)은 본문 줄을 센다.
  */
 export const computeBatchDensity = (shardScenes, batchInput) => {
   const gtById = new Map((batchInput?.scenes ?? []).map((s) => [s.scene_id, s]));
@@ -178,9 +184,10 @@ export const computeBatchDensity = (shardScenes, batchInput) => {
   const n = shardScenes.length;
   shardScenes.forEach((scene, idx) => {
     const third = thirds[Math.min(2, Math.floor((idx * 3) / Math.max(1, n)))];
-    const lineSpeaker = gtById.get(scene.scene_id)?.mechanical_ground_truth?.line_speaker ?? {};
+    const gtScene = gtById.get(scene.scene_id);
+    const rawLines = extractRawLinesFromNumberedScript(gtScene?.numbered_script);
     third.events += Array.isArray(scene.events_and_claims) ? scene.events_and_claims.length : 0;
-    third.dialogue_lines += Object.keys(lineSpeaker).length;
+    third.dialogue_lines += countedLinesOf(gtScene?.mechanical_ground_truth, rawLines).lines.length;
   });
   return thirds.map((t) => ({
     ...t,

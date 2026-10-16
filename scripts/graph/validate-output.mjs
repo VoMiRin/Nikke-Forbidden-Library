@@ -10,8 +10,16 @@ import {
   getBranchingOptionRanges,
   resolveBranchOption,
   chronologiesInRange,
+  countedLinesOf,
 } from './lib.mjs';
-import { partPathOf, planBatchParts, readBatchInput } from './batch-parts.mjs';
+import {
+  buildPartInput,
+  partInputMismatch,
+  partInputPathOf,
+  partPathOf,
+  planBatchParts,
+  readBatchInput,
+} from './batch-parts.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -51,6 +59,10 @@ export const COVERAGE_ITEM_FIELDS = ['events_and_claims', 'clues_and_hooks', 're
 // 2.3의 22항 넓은 범위 경고: 한 항목이 대사를 이만큼 덮고 화자가 둘 이상이면 다른 화자의 주장이 묻혔는지 다시 보게 한다
 export const WIDE_RANGE_MIN_DIALOGUE_LINES = 20;
 export const WIDE_RANGE_ITEM_FIELDS = ['events_and_claims', 'relationship_and_lore_notes'];
+
+// 2.3의 23항 주장 범위의 다른 화자: character_claim 범위 안에 주장 화자가 아닌 화자의 발화 차례가 이만큼 있으면 경고한다.
+// 2차례(질문 둘)까지는 문맥으로 넣는 경우가 많아 분류별 10배치에서 경고의 절반가량이 그런 사례였다
+export const CLAIM_OTHER_SPEAKER_TURNS_WARN = 3;
 
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
@@ -1525,14 +1537,14 @@ export const validateShard = (shardData, batchInput) => {
         }
       });
 
-      // 20. 밀도 경고 (실패 아님)
-      const dialogueLineCount = Object.keys(mgt.line_speaker ?? {}).length;
-      if (dialogueLineCount >= DENSITY_WARNING_MIN_DIALOGUE_LINES && scene.events_and_claims.length === 0) {
+      // 20. 밀도 경고 (실패 아님). 화자 라벨 없는 장면은 본문 줄을 센다
+      const counted = countedLinesOf(mgt, rawLines);
+      if (counted.lines.length >= DENSITY_WARNING_MIN_DIALOGUE_LINES && scene.events_and_claims.length === 0) {
         addWarning(
           'DENSITY',
           sid,
           `${sceneBasePath}.events_and_claims`,
-          `Scene has ${dialogueLineCount} dialogue lines but no events_and_claims`
+          `Scene has ${counted.lines.length} ${counted.mode === 'text' ? 'text' : 'dialogue'} lines but no events_and_claims`
         );
       }
     }
@@ -1640,11 +1652,11 @@ export const validateShard = (shardData, batchInput) => {
       });
     }
 
-    // 21. 공백 구간: 근거 항목 범위에 안 걸린 대사가 연속으로 많으면 다시 읽고 추출하거나 reviewed_gaps에 사유를 남긴다
-    const dialogueLines = Object.keys(mgt.line_speaker ?? {})
-      .map(Number)
-      .filter(Number.isInteger)
-      .sort((a, b) => a - b);
+    // 21. 공백 구간: 근거 항목 범위에 안 걸린 대사가 연속으로 많으면 다시 읽고 추출하거나 reviewed_gaps에 사유를 남긴다.
+    // 대사 줄이 없는 장면(화자 라벨 없는 문서 등)은 본문 줄을 센다
+    const { mode: countMode, lines: dialogueLines } = countedLinesOf(mgt, rawLines);
+    const countedNoun = countMode === 'text' ? 'text lines' : 'dialogue lines';
+    const CountedNoun = countMode === 'text' ? 'Text lines' : 'Dialogue lines';
     const coveredLines = new Set();
     for (const field of COVERAGE_ITEM_FIELDS) {
       if (!Array.isArray(scene[field])) continue;
@@ -1690,7 +1702,7 @@ export const validateShard = (shardData, batchInput) => {
             'COVERAGE_GAP',
             sid,
             gPath,
-            `reviewed gap L${gap.line_start}~L${gap.line_end} contains dialogue lines already covered by items (L${coveredInside.join(', L')}); narrow it to the uncovered run`
+            `reviewed gap L${gap.line_start}~L${gap.line_end} contains ${countedNoun} already covered by items (L${coveredInside.join(', L')}); narrow it to the uncovered run`
           );
         }
         validGaps.push(gap);
@@ -1706,7 +1718,7 @@ export const validateShard = (shardData, batchInput) => {
             'COVERAGE_GAP',
             sid,
             `${sceneBasePath}.reviewed_gaps`,
-            `Dialogue lines L${first}~L${last} (${run.length} dialogue lines) are not covered by any ${COVERAGE_ITEM_FIELDS.join(' / ')} range. Re-read them and extract what is there, or add a reviewed_gaps entry saying why nothing needs extracting`
+            `${CountedNoun} L${first}~L${last} (${run.length} ${countedNoun}) are not covered by any ${COVERAGE_ITEM_FIELDS.join(' / ')} range. Re-read them and extract what is there, or add a reviewed_gaps entry saying why nothing needs extracting`
           );
         }
       }
@@ -1725,6 +1737,16 @@ export const validateShard = (shardData, batchInput) => {
         if (!isPositiveInt(item?.line_start) || !isPositiveInt(item?.line_end) || item.line_end < item.line_start) return;
         const inside = dialogueLines.filter((line) => line >= item.line_start && line <= item.line_end);
         if (inside.length < WIDE_RANGE_MIN_DIALOGUE_LINES) return;
+        if (countMode === 'text') {
+          // 화자 라벨 없는 장면: 화자 수를 알 수 없으므로 줄 수만 본다
+          addWarning(
+            'WIDE_RANGE',
+            sid,
+            `${sceneBasePath}.${field}[${idx}]`,
+            `L${item.line_start}~L${item.line_end} covers ${inside.length} text lines of an unlabeled document. Re-read it: split out separate claims, entries or voices buried in it. Leave it if it is really one event`
+          );
+          return;
+        }
         const speakers = [...new Set(inside.map((line) => mgt.line_speaker[line]))];
         if (speakers.length < 2) return;
         addWarning(
@@ -1734,6 +1756,64 @@ export const validateShard = (shardData, batchInput) => {
           `L${item.line_start}~L${item.line_end} covers ${inside.length} dialogue lines by ${speakers.length} speakers (${speakers.join(', ')}). Re-read it: split out other speakers' claims or separate events buried in it. Leave it if it is really one event`
         );
       });
+    }
+
+    // 23. 주장 범위의 다른 화자: 한 사람의 character_claim 범위에 다른 화자의 말이 여러 차례 들어 있고
+    // 그 말을 그 화자 자신의 항목이 따로 다루지 않으면, 묻힌 주장·질문·반박이 없는지 다시 보게 한다(경고).
+    // 문맥으로 넣은 질문 몇 차례는 괜찮다. 글자 없이 말줄임표만 있는 차례(`··· ···.`)는 세지 않는다
+    const speakerFields = [
+      ['events_and_claims', 'actor_or_speaker'],
+      ['relationship_and_lore_notes', 'claimant'],
+    ];
+    if (countMode === 'dialogue') {
+      const ownItems = [];
+      for (const [field, speakerField] of speakerFields) {
+        if (!Array.isArray(scene[field])) continue;
+        scene[field].forEach((item, idx) => {
+          if (!isPositiveInt(item?.line_start) || !isPositiveInt(item?.line_end) || !isNonEmptyString(item[speakerField])) return;
+          const names = item[speakerField].split(MULTI_ENTITY_SEPARATOR_RE).map((n) => n.trim());
+          ownItems.push({ key: `${field}[${idx}]`, names, start: item.line_start, end: item.line_end });
+        });
+      }
+      for (const [field, speakerField] of speakerFields) {
+        if (!Array.isArray(scene[field])) continue;
+        scene[field].forEach((item, idx) => {
+          if (item?.epistemic_type !== 'character_claim') return;
+          if (!isPositiveInt(item.line_start) || !isPositiveInt(item.line_end) || item.line_end < item.line_start) return;
+          const claimant = item[speakerField];
+          if (!isNonEmptyString(claimant) || lineSpeakerAt(mgt, item.claim_line) !== claimant) return;
+          // 같은 화자가 이어 말한 줄은 한 차례로 센다(메신저 SENDER 줄과 본문 줄 포함)
+          const turns = [];
+          for (const line of dialogueLines) {
+            if (line < item.line_start || line > item.line_end) continue;
+            const speaker = mgt.line_speaker[line];
+            const last = turns[turns.length - 1];
+            if (last && last.speaker === speaker) last.lines.push(line);
+            else turns.push({ speaker, lines: [line] });
+          }
+          const selfKey = `${field}[${idx}]`;
+          const buried = turns.filter(
+            (turn) =>
+              turn.speaker !== claimant &&
+              turn.lines.some((line) => /[\p{L}\p{N}]/u.test(extractUtteranceTextFromRawLine(rawLines[line - 1]))) &&
+              !ownItems.some(
+                (own) =>
+                  own.key !== selfKey &&
+                  own.names.includes(turn.speaker) &&
+                  turn.lines.some((line) => line >= own.start && line <= own.end)
+              )
+          );
+          if (buried.length < CLAIM_OTHER_SPEAKER_TURNS_WARN) return;
+          addWarning(
+            'CLAIM_OTHER_SPEAKERS',
+            sid,
+            `${sceneBasePath}.${selfKey}`,
+            `character_claim by "${claimant}" (L${item.line_start}~L${item.line_end}) also holds ${buried.length} turns by other speakers that no item of their own covers (${buried
+              .map((t) => `${t.speaker} L${t.lines[0]}`)
+              .join(', ')}). Re-read them: give their own claims, questions or rebuttals separate items. Leave it if they are only context for this claim`
+          );
+        });
+      }
     }
 
     // unregistered_entity_candidates 검증
@@ -1801,15 +1881,25 @@ export const validateShardFile = async (shardArg, options = {}) => {
     if (!planned) throw new Error(`${batchId} has ${plan.length} part(s); part ${options.part} does not exist`);
     shardPath = partPathOf(batchId, options.part, graphDir);
     const shardData = JSON.parse(await fs.readFile(shardPath, 'utf8'));
-    const partInput = {
-      ...batchInput,
-      scenes: batchInput.scenes.filter((s) => planned.scene_ids.includes(s.scene_id)),
-    };
+    const result = validateShard(shardData, buildPartInput(batchInput, options.part));
+    // 서브에이전트가 읽은 담당 입력이 지금 배치 입력과 다르면 옛 입력으로 추출한 것이다
+    const partInputPath = partInputPathOf(batchId, options.part, graphDir);
+    if (fsSync.existsSync(partInputPath)) {
+      const mismatch = partInputMismatch(
+        batchInput,
+        options.part,
+        JSON.parse(await fs.readFile(partInputPath, 'utf8'))
+      );
+      if (mismatch) {
+        result.errors.push({ rule: 'PART_INPUT', scene_id: null, path: partInputPath, message: mismatch });
+        result.valid = false;
+      }
+    }
     return {
       shardPath,
       batchInputPath: path.join(graphDir, 'pass1', 'batches', `${batchId}.json`),
       batchId: `${batchId} part ${options.part}/${plan.length}`,
-      ...validateShard(shardData, partInput),
+      ...result,
     };
   }
 

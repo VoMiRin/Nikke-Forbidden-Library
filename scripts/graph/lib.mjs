@@ -97,6 +97,7 @@ export const DOCUMENT_FIELD_LABELS = new Set([
   'https',
   '댓글',
   'RE',
+  'FB', // 긴급뉴스대본_FB_3_final_2.pdf: 대본 수정 지시 항목명
 ]);
 
 /**
@@ -230,6 +231,37 @@ export const buildNumberedScript = (bodyLines) => (
     .join('\n')
 );
 
+// 대사도 본문도 아닌 제어 태그 줄 (1.2)
+export const CONTROL_TAG_LINE_RE =
+  /^\[(?:SCENE\s+(?:START|END)|CHOICE_START|CHOICE_END|CHOICE_PROMPT|OPTION(?:\s|_END)|NEXT_SUBCHAPTER_BUTTON|NEXT_ROUTE|NEXT_TARGET|MESSENGER_START|MESSENGER_END|MSG(?:\s|_END)|IMAGE:|STICKER:)/i;
+
+/**
+ * 화자 라벨 없는 장면에서 검사 기준으로 세는 본문 줄인지 판별한다 (2.3의 20~22항).
+ * 빈 줄, 제어 태그, 글자·숫자가 없는 구분선(`-----`, `***`)은 세지 않는다.
+ */
+export const isDocumentTextLine = (rawLine) => {
+  const trimmed = String(rawLine ?? '').trim();
+  if (!trimmed || CONTROL_TAG_LINE_RE.test(trimmed)) return false;
+  return /[\p{L}\p{N}]/u.test(trimmed);
+};
+
+/**
+ * 공백·밀도·넓은 범위 검사(2.3의 20~22항)가 세는 줄.
+ * 대사 줄(line_speaker)이 있으면 대사 줄, 하나도 없는 장면(화자 라벨 없는 문서 등)은 본문 줄이다.
+ */
+export const countedLinesOf = (mechanicalGroundTruth, rawLines) => {
+  const dialogueLines = Object.keys(mechanicalGroundTruth?.line_speaker ?? {})
+    .map(Number)
+    .filter(Number.isInteger)
+    .sort((a, b) => a - b);
+  if (dialogueLines.length > 0) return { mode: 'dialogue', lines: dialogueLines };
+  const textLines = [];
+  (rawLines ?? []).forEach((line, idx) => {
+    if (isDocumentTextLine(line)) textLines.push(idx + 1);
+  });
+  return { mode: 'text', lines: textLines };
+};
+
 /**
  * 일반 대사 줄에서 화자 라벨과 대사 텍스트를 판별한다 (1.2).
  * 메신저 블록 외부 줄에만 사용한다.
@@ -239,7 +271,7 @@ export const parseDialogueLine = (rawLine, options = {}) => {
   if (!trimmed) return null;
 
   // 제어 태그 줄 제외
-  if (/^\[(?:SCENE\s+(?:START|END)|CHOICE_START|CHOICE_END|CHOICE_PROMPT|OPTION(?:\s|_END)|NEXT_SUBCHAPTER_BUTTON|NEXT_ROUTE|NEXT_TARGET|MESSENGER_START|MESSENGER_END|MSG(?:\s|_END)|IMAGE:|STICKER:)/i.test(trimmed)) {
+  if (CONTROL_TAG_LINE_RE.test(trimmed)) {
     return null;
   }
 

@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
@@ -12,12 +13,22 @@ import {
   extractSceneMechanicalGroundTruth,
   parseChapterTextBlocks,
   planSceneParts,
+  sha256,
 } from './graph/lib.mjs';
 import { validateShard, validateShardFile } from './graph/validate-output.mjs';
-import { combineParts, partPathOf } from './graph/batch-parts.mjs';
+import { buildPartInput, combineParts, partInputPathOf, partPathOf } from './graph/batch-parts.mjs';
 import { enrichSceneFromManifest } from './graph/merge-and-index.mjs';
 import { planBatches } from './graph/build-manifest.mjs';
 import { applyDescriptorReview } from './graph/init-registry.mjs';
+import {
+  checkRepair,
+  planRepairJobs,
+  prepareRepair,
+  refreshBatchInput,
+  repairInputPathOf,
+  repairOutputPathOf,
+  spliceRepair,
+} from './graph/repair-pass1.mjs';
 
 // 2.4: 1.3.0에서 새로 생기거나 바뀐 검사(2.3의 항 번호)를 실제 파서로 만든 장면에 대해 확인한다.
 
@@ -675,6 +686,125 @@ test('2.3-22 wide range: an item covering 20+ dialogue lines by 2+ speakers warn
   assert.equal(wideWarnings(solo).length, 0);
 });
 
+// 화자 라벨 없는 기록물: 본문 12줄(L1~L12)과 구분선
+const DOC_LINES = [
+  '연구 일지',
+  '-----',
+  ...Array.from({ length: 11 }, (_, i) => `${i + 1}일차. 실험체의 상태를 기록했다.`),
+];
+
+const docScene = (overrides = {}) =>
+  emptyScene('t13_docgap', {
+    participants: {
+      present_in_scene: [],
+      present_silent: [],
+      remote_or_voice_only: [],
+      mentioned_only: [],
+      document_author: { name: '연구원', entity_id: null, voices: [] },
+    },
+    ...overrides,
+  });
+
+const docBatch = (lines = DOC_LINES) => batchOf(makeInputScene('t13_docgap', lines));
+
+test('2.3-20/21/22 unlabeled documents: text lines stand in for dialogue lines', () => {
+  // 대사 줄이 없어도 본문 12줄(구분선 제외)이 비어 있으면 공백 구간이다
+  const res = validateShard(shardOf(docScene()), docBatch());
+  assertFails(res, 'COVERAGE_GAP');
+  assert.match(res.errors.find((e) => e.rule === 'COVERAGE_GAP').message, /Text lines L1~L13 \(12 text lines\)/);
+
+  // 항목이 본문 3줄(L1, L3, L4)을 덮으면 남은 공백은 9줄이다
+  const firstItem = event({
+    actor_or_speaker: '연구원',
+    line_start: 1,
+    line_end: 4,
+    quote: '1일차. 실험체의 상태를 기록했다.',
+  });
+  assertValid(validateShard(shardOf(docScene({ events_and_claims: [firstItem] })), docBatch()));
+
+  // 본문 20줄 이상을 한 항목으로 덮으면 화자 수와 관계없이 경고한다
+  const longLines = Array.from({ length: 20 }, (_, i) => `${i + 1}일차. 실험체의 상태를 기록했다.`);
+  const whole = event({ actor_or_speaker: '연구원', line_start: 1, line_end: 20, quote: '1일차. 실험체의 상태를 기록했다.' });
+  const wide = validateShard(shardOf(docScene({ events_and_claims: [whole] })), docBatch(longLines));
+  assertValid(wide);
+  assert.equal(wide.warnings.filter((w) => w.rule === 'WIDE_RANGE').length, 1);
+
+  // 본문 60줄 이상인데 사건이 없으면 밀도 경고
+  const sixty = Array.from({ length: 60 }, (_, i) => `${i + 1}일차. 실험체의 상태를 기록했다.`);
+  const reviewedAll = docScene({ reviewed_gaps: [{ line_start: 1, line_end: 60, reason: '같은 문장이 반복된다.' }] });
+  const dense = validateShard(shardOf(reviewedAll), docBatch(sixty));
+  assertValid(dense);
+  assert.equal(dense.warnings.filter((w) => w.rule === 'DENSITY').length, 1);
+});
+
+test('1.2 document field labels: "FB :" in a news script is not a speaker', () => {
+  const input = makeInputScene('t13_fb', ['방주에 랩쳐가 침공했습니다.', 'FB : 자세한 내용 전달 불필요.']);
+  assert.deepEqual(input.mechanical_ground_truth.speakers, []);
+  assert.deepEqual(input.mechanical_ground_truth.line_speaker, {});
+});
+
+// 라피의 주장 범위 안에 아니스·네온·마리안의 말이 끼어 있는 장면
+const CLAIM_LINES = [
+  '라피: 이번 작전은 제가 맡겠습니다.',
+  '아니스: 정말?',
+  '라피: 네. 지휘관의 명령입니다.',
+  '네온: 저는 반대예요.',
+  '라피: 그래도 따르겠습니다.',
+  '마리안: 저도 같이 갈게요.',
+  '아니스: ··· ···.',
+  '라피: 출발하죠.',
+];
+const claimBatch = () => batchOf(makeInputScene('t13_claim', CLAIM_LINES));
+const claimScene = (items) =>
+  emptyScene('t13_claim', {
+    participants: {
+      present_in_scene: present('라피', '아니스', '네온', '마리안'),
+      present_silent: [],
+      remote_or_voice_only: [],
+      mentioned_only: [],
+      document_author: null,
+    },
+    events_and_claims: items,
+  });
+const rapiClaim = (lineEnd) =>
+  event({
+    epistemic_type: 'character_claim',
+    actor_or_speaker: '라피',
+    summary: '라피가 작전을 맡겠다고 말한다.',
+    line_start: 1,
+    line_end: lineEnd,
+    claim_line: 1,
+    quote: '이번 작전은 제가 맡겠습니다.',
+  });
+const claimWarnings = (res) => res.warnings.filter((w) => w.rule === 'CLAIM_OTHER_SPEAKERS');
+
+test('2.3-23 claim range with other speakers: 3+ turns no item of their own covers warn but still pass', () => {
+  // 아니스 L2, 네온 L4, 마리안 L6 세 차례
+  const res = validateShard(shardOf(claimScene([rapiClaim(8)])), claimBatch());
+  assertValid(res);
+  assert.equal(claimWarnings(res).length, 1);
+  assert.match(claimWarnings(res)[0].message, /3 turns .*아니스 L2, 네온 L4, 마리안 L6/);
+
+  // 두 차례까지는 경고 없음 (L1~L5: 아니스 L2, 네온 L4)
+  assert.equal(claimWarnings(validateShard(shardOf(claimScene([rapiClaim(5)])), claimBatch())).length, 0);
+
+  // 네온의 반대를 네온 자신의 항목으로 따로 적으면 그 차례는 묻힌 것이 아니다
+  const neon = event({
+    epistemic_type: 'character_claim',
+    actor_or_speaker: '네온',
+    summary: '네온이 반대한다.',
+    line_start: 4,
+    line_end: 4,
+    claim_line: 4,
+    quote: '저는 반대예요.',
+  });
+  assert.equal(claimWarnings(validateShard(shardOf(claimScene([rapiClaim(8), neon])), claimBatch())).length, 0);
+
+  // 말줄임표만 있는 차례(아니스 L7)는 세지 않는다: L3~L8은 네온 L4, 마리안 L6 두 차례
+  const tail = { ...rapiClaim(8), line_start: 3, claim_line: 3, quote: '네. 지휘관의 명령입니다.' };
+  assert.equal(claimWarnings(validateShard(shardOf(claimScene([tail])), claimBatch())).length, 0);
+});
+
 test('5 Pass 1 parts: batches over 20 scenes split evenly, parts validate alone and combine in batch order', async () => {
   const ids = (n) => Array.from({ length: n }, (_, i) => `s${i + 1}`);
   assert.deepEqual(planSceneParts(ids(20)).map((p) => p.length), [20]);
@@ -705,7 +835,127 @@ test('5 Pass 1 parts: batches over 20 scenes split evenly, parts validate alone 
     await fs.writeFile(partPathOf('batch_parts', 2, graphDir), JSON.stringify(part1));
     assert.equal((await validateShardFile('batch_parts', { part: 2, graphDir })).valid, false);
     await assert.rejects(validateShardFile('batch_parts', { part: 3, graphDir }), /part 3 does not exist/);
+
+    // 담당 입력이 지금 배치 입력과 다르면(옛 입력으로 추출) 실패한다
+    await fs.mkdir(path.dirname(partInputPathOf('batch_parts', 1, graphDir)), { recursive: true });
+    await fs.writeFile(partInputPathOf('batch_parts', 1, graphDir), JSON.stringify(buildPartInput(batchInput, 1)));
+    assertValid(await validateShardFile('batch_parts', { part: 1, graphDir }));
+    const stale = buildPartInput(batchInput, 1);
+    stale.scenes[0] = { ...stale.scenes[0], numbered_script: '[L0001] 바뀌기 전 원문' };
+    await fs.writeFile(partInputPathOf('batch_parts', 1, graphDir), JSON.stringify(stale));
+    assertFails(await validateShardFile('batch_parts', { part: 1, graphDir }), 'PART_INPUT');
   } finally {
     await fs.rm(graphDir, { recursive: true, force: true });
   }
+});
+
+test('5 Pass 1 part inputs: each part holds only its scenes, unchanged, with recounted totals', async () => {
+  // 실제 배치: 유실물 117장면 → 6부분
+  const batchInput = JSON.parse(await fs.readFile(path.join(GRAPH_DATA_DIR, 'pass1', 'batches', 'batch_0236.json'), 'utf8'));
+  const inputs = [1, 2, 3, 4, 5, 6].map((part) => buildPartInput(batchInput, part));
+  assert.throws(() => buildPartInput(batchInput, 7), /no part 7/);
+
+  // 부분을 이으면 배치 장면 순서와 같고, 장면 객체는 원본과 완전히 같다
+  const joined = inputs.flatMap((p) => p.scenes);
+  assert.deepEqual(joined.map((s) => s.scene_id), batchInput.scenes.map((s) => s.scene_id));
+  joined.forEach((scene, idx) => assert.deepStrictEqual(scene, batchInput.scenes[idx]));
+
+  for (const input of inputs) {
+    assert.equal(input.batch_id, 'batch_0236');
+    assert.equal(input.part_count, 6);
+    assert.equal(input.scene_count, input.scenes.length);
+    assert.equal(input.body_bytes, input.scenes.reduce((acc, s) => acc + s.body_bytes, 0));
+  }
+  assert.equal(inputs.reduce((acc, p) => acc + p.body_bytes, 0), batchInput.body_bytes);
+  assert.equal(inputs.reduce((acc, p) => acc + p.unknown_count, 0), batchInput.unknown_count);
+});
+
+test('5 Pass 1 repair: only scenes with errors or CLAIM_OTHER_SPEAKERS are repaired, others cannot change', async () => {
+  // 장면 둘: t13_claim(경고 있음), t13_qa(문제 없음)
+  const batchInput = { ...batchOf(makeInputScene('t13_claim', CLAIM_LINES), makeInputScene('t13_qa', QA_LINES)), batch_id: 'batch_rep' };
+  const shard = { ...shardOf(claimScene([rapiClaim(8)]), qaScene()), batch_id: 'batch_rep' };
+  const bodyHash = (lines) => sha256(lines.join('\n'));
+  const manifestScenes = {
+    t13_claim: { source_sha256: bodyHash(CLAIM_LINES), mechanical_ground_truth: batchInput.scenes[0].mechanical_ground_truth },
+    t13_qa: { source_sha256: bodyHash(QA_LINES), mechanical_ground_truth: batchInput.scenes[1].mechanical_ground_truth },
+  };
+
+  // 기계 추출값이 바뀐 장면만 새로 고치고, 원문이 바뀐 장면은 보수 대상이 아니다
+  const changedMgt = { ...manifestScenes, t13_qa: { ...manifestScenes.t13_qa, mechanical_ground_truth: { ...manifestScenes.t13_qa.mechanical_ground_truth, line_speaker: {} } } };
+  assert.deepEqual(refreshBatchInput(batchInput, changedMgt).changedSceneIds, ['t13_qa']);
+  assert.deepEqual(refreshBatchInput(batchInput, manifestScenes).changedSceneIds, []);
+  assert.throws(
+    () => refreshBatchInput(batchInput, { ...manifestScenes, t13_qa: { ...manifestScenes.t13_qa, source_sha256: 'x' } }),
+    /source text changed/
+  );
+
+  const graphDir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-repair-'));
+  try {
+    for (const dir of ['batches', 'shards']) await fs.mkdir(path.join(graphDir, 'pass1', dir), { recursive: true });
+    await fs.writeFile(path.join(graphDir, 'pass1', 'batches', 'batch_rep.json'), JSON.stringify(batchInput));
+    await fs.writeFile(path.join(graphDir, 'pass1', 'shards', 'batch_rep.json'), JSON.stringify(shard));
+
+    const prepared = await prepareRepair('batch_rep', { graphDir, manifestScenes });
+    assert.deepEqual([...prepared.issues.keys()], ['t13_claim']);
+    const repairInput = JSON.parse(await fs.readFile(repairInputPathOf('batch_rep', graphDir), 'utf8'));
+    assert.deepEqual(repairInput.scenes.map((s) => s.scene_id), ['t13_claim']);
+    assert.equal(repairInput.scenes[0].issues[0].rule, 'CLAIM_OTHER_SPEAKERS');
+    assert.deepEqual(repairInput.scenes[0].current_output, shard.scenes[0]);
+    assert.ok(fsSync.existsSync(path.join(graphDir, 'pass1', 'repairs', 'original', 'batch_rep.shard.json')));
+
+    // 대상 장면만, 바꾼 필드만 쓴다
+    const fixed = {
+      scene_id: 't13_claim',
+      events_and_claims: [
+        { ...rapiClaim(1) },
+        event({ epistemic_type: 'character_claim', actor_or_speaker: '네온', summary: '네온이 반대한다.', line_start: 4, line_end: 4, claim_line: 4, quote: '저는 반대예요.' }),
+      ],
+    };
+    const output = { schema_version: PASS1_SCHEMA_VERSION, batch_id: 'batch_rep', scenes: [fixed] };
+    assert.throws(() => spliceRepair(shard, repairInput, { ...output, scenes: [fixed, qaScene()] }), /not a target \[t13_qa\]/);
+    assert.throws(() => spliceRepair(shard, repairInput, { ...output, scenes: [] }), /missing \[t13_claim\]/);
+    assert.throws(() => spliceRepair(shard, repairInput, { ...output, scenes: [{ ...fixed, notes: 'x' }] }), /fields the scene does not have: notes/);
+    const spliced = spliceRepair(shard, repairInput, output);
+    assert.deepEqual(spliced.scenes[1], shard.scenes[1]);
+    // 쓰지 않은 필드는 지금 결과 그대로
+    assert.deepEqual(spliced.scenes[0].participants, shard.scenes[0].participants);
+    assert.deepEqual(spliced.scenes[0].events_and_claims, fixed.events_and_claims);
+
+    await fs.writeFile(repairOutputPathOf('batch_rep', graphDir), JSON.stringify(output));
+    const checked = await checkRepair('batch_rep', { graphDir });
+    assertValid(checked);
+    assert.equal(checked.warnings.filter((w) => w.rule === 'CLAIM_OTHER_SPEAKERS').length, 0);
+
+    assert.deepEqual(checked.candidate.scenes.map((s) => s.scene_id), ['t13_claim']);
+    assert.deepEqual(checked.candidate.scenes[0].events_and_claims, fixed.events_and_claims);
+
+    // prepare 뒤 대상 장면의 샤드가 바뀌었으면(다른 수정이 들어옴) 옛 보수 출력으로 덮어쓰지 않는다
+    const shardFile = path.join(graphDir, 'pass1', 'shards', 'batch_rep.json');
+    const edited = { ...shard, scenes: [{ ...shard.scenes[0], summary: '다른 수정이 들어왔다.' }, shard.scenes[1]] };
+    await fs.writeFile(shardFile, JSON.stringify(edited));
+    await assert.rejects(checkRepair('batch_rep', { graphDir }), /changed since prepare for t13_claim/);
+    // 대상이 아닌 장면이 바뀐 것은 막지 않는다(그 장면은 지금 샤드 그대로 남는다)
+    await fs.writeFile(shardFile, JSON.stringify({ ...shard, scenes: [shard.scenes[0], { ...shard.scenes[1], summary: '다른 장면 수정.' }] }));
+    assertValid(await checkRepair('batch_rep', { graphDir }));
+    // 배치 입력의 기계 추출값이 바뀌어도 다시 prepare해야 한다
+    await fs.writeFile(shardFile, JSON.stringify(shard));
+    const inputFile = path.join(graphDir, 'pass1', 'batches', 'batch_rep.json');
+    const movedInput = { ...batchInput, scenes: [{ ...batchInput.scenes[0], mechanical_ground_truth: { ...batchInput.scenes[0].mechanical_ground_truth, unknowns: [{ line: 1 }] } }, batchInput.scenes[1]] };
+    await fs.writeFile(inputFile, JSON.stringify(movedInput));
+    await assert.rejects(checkRepair('batch_rep', { graphDir }), /changed since prepare/);
+    await fs.writeFile(inputFile, JSON.stringify(batchInput));
+
+    // 보수 출력에 오류가 있으면 실패
+    const broken = { ...output, scenes: [{ scene_id: 't13_claim', events_and_claims: [{ ...rapiClaim(1), quote: '없는 대사입니다.' }] }] };
+    await fs.writeFile(repairOutputPathOf('batch_rep', graphDir), JSON.stringify(broken));
+    assert.equal((await checkRepair('batch_rep', { graphDir })).valid, false);
+  } finally {
+    await fs.rm(graphDir, { recursive: true, force: true });
+  }
+
+  // 작업 묶기: 배치를 쪼개지 않고, 크기 합 / 상한만큼의 작업에 고르게
+  const jobs = planRepairJobs({ a: 250, b: 170, c: 120, d: 40, e: 10, f: 0 }, 256);
+  assert.equal(jobs.length, 3);
+  assert.deepEqual(jobs.flatMap((j) => j.batch_ids).sort(), ['a', 'b', 'c', 'd', 'e']);
+  assert.ok(Math.max(...jobs.map((j) => j.input_bytes)) <= 256);
 });
