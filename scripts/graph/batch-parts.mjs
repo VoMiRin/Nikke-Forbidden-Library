@@ -64,6 +64,46 @@ export const partInputMismatch = (batchInput, part, partInput) => {
 };
 
 /**
+ * progress.json에서 아직 끝나지 않은 본 실행 배치를 번호 순으로 count개 고른다(5절 Pass 1 본 실행 회차).
+ */
+export const nextPendingBatches = (progressDoc, count) =>
+  Object.values(progressDoc.batches ?? {})
+    .filter((b) => !b.is_pilot && b.status === 'pending')
+    .map((b) => b.batch_id)
+    .sort((a, b) => Number(a.slice(6)) - Number(b.slice(6)))
+    .slice(0, count);
+
+/**
+ * 회차의 독립 표본 검토 장면을 기계적으로 고른다(5절 Pass 1 본 실행 회차).
+ * 1) ??? 줄이 가장 많은 장면, 2) 대사 줄이 가장 많은 장면(다른 배치에서), 3) 회차 마지막 배치의 뒤쪽 3분의 1에서 대사 줄이 가장 많은 장면.
+ * 같은 값이면 배치·장면 순서가 앞선 것. 이미 고른 장면은 건너뛴다.
+ */
+export const pickReviewScenes = (batchInputs) => {
+  const rows = batchInputs.flatMap((input) =>
+    input.scenes.map((scene, idx) => ({
+      batch_id: input.batch_id,
+      scene_id: scene.scene_id,
+      unknowns: scene.mechanical_ground_truth?.unknowns?.length ?? 0,
+      dialogue: Object.keys(scene.mechanical_ground_truth?.line_speaker ?? {}).length,
+      back: idx >= Math.floor((input.scenes.length * 2) / 3),
+    }))
+  );
+  const picked = [];
+  const take = (candidates, key, reason) => {
+    const best = candidates
+      .filter((r) => !picked.some((p) => p.scene_id === r.scene_id))
+      .reduce((a, r) => (a === null || r[key] > a[key] ? r : a), null);
+    if (best && best[key] > 0) picked.push({ ...best, reason });
+  };
+  take(rows, 'unknowns', '??? 줄 최다');
+  take(rows.filter((r) => !picked.some((p) => p.batch_id === r.batch_id)), 'dialogue', '대사 줄 최다(다른 배치)');
+  const last = batchInputs.at(-1)?.batch_id;
+  take(rows.filter((r) => r.batch_id === last && r.back), 'dialogue', '마지막 배치 뒤쪽 3분의 1');
+  if (picked.length < 3) take(rows, 'dialogue', '대사 줄 최다');
+  return picked;
+};
+
+/**
  * 부분 샤드들을 배치 입력의 장면 순서대로 합쳐 하나의 샤드를 만든다.
  * 부분마다 계획된 장면이 정확히 한 번씩 있어야 한다.
  */
@@ -97,9 +137,52 @@ export const combineParts = (batchInput, partShards) => {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   const [command, batchId] = process.argv.slice(2);
-  const usage = 'Usage: node scripts/graph/batch-parts.mjs <plan|combine> <batch_id>';
+  const usage =
+    'Usage: node scripts/graph/batch-parts.mjs <plan|combine> <batch_id>\n' +
+    '       node scripts/graph/batch-parts.mjs next <count>   (다음 미완료 배치 count개의 호출 목록, 나뉘는 배치는 담당 입력도 만든다)';
+  const rel = (p) => path.relative(process.cwd(), p);
 
   const run = async () => {
+    if (command === 'next') {
+      const count = Number(batchId);
+      if (!Number.isInteger(count) || count < 1) throw new Error(usage);
+      const progressDoc = JSON.parse(await fs.readFile(path.join(GRAPH_DATA_DIR, 'progress.json'), 'utf8'));
+      const ids = nextPendingBatches(progressDoc, count);
+      let call = 0;
+      let scenes = 0;
+      let bytes = 0;
+      const inputs = [];
+      for (const id of ids) {
+        const input = await readBatchInput(id);
+        inputs.push(input);
+        const plan = planBatchParts(input);
+        scenes += input.scenes.length;
+        bytes += input.body_bytes ?? 0;
+        if (plan.length === 1) {
+          call += 1;
+          console.log(`call ${call}: ${id} (${input.scenes.length} scenes)`);
+          console.log(`  input    ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'batches', `${id}.json`))}`);
+          console.log(`  output   ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`))}`);
+          console.log(`  validate node scripts/graph/validate-output.mjs ${id}`);
+          continue;
+        }
+        for (const { part, scene_ids: partIds } of plan) {
+          call += 1;
+          const inputPath = partInputPathOf(id, part);
+          await writeJsonAtomic(inputPath, buildPartInput(input, part));
+          console.log(`call ${call}: ${id} part ${part}/${plan.length} (${partIds.length} scenes)`);
+          console.log(`  input    ${rel(inputPath)}`);
+          console.log(`  output   ${rel(partPathOf(id, part))}`);
+          console.log(`  validate node scripts/graph/validate-output.mjs ${id} --part ${part}`);
+        }
+      }
+      console.log(`[batch-parts] next ${ids.length} batch(es): ${ids.join(', ')} — ${scenes} scenes, ${bytes} body bytes, ${call} call(s)`);
+      console.log('[batch-parts] review sample:');
+      for (const r of pickReviewScenes(inputs)) {
+        console.log(`  ${r.scene_id} (${r.batch_id}) — ${r.reason}: ??? ${r.unknowns}, dialogue ${r.dialogue}`);
+      }
+      return;
+    }
     if (!batchId || !['plan', 'combine'].includes(command)) throw new Error(usage);
     const batchInput = await readBatchInput(batchId);
     const plan = planBatchParts(batchInput);

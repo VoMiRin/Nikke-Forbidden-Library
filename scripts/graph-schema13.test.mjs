@@ -16,7 +16,7 @@ import {
   sha256,
 } from './graph/lib.mjs';
 import { validateShard, validateShardFile } from './graph/validate-output.mjs';
-import { buildPartInput, combineParts, partInputPathOf, partPathOf } from './graph/batch-parts.mjs';
+import { buildPartInput, combineParts, nextPendingBatches, partInputPathOf, partPathOf, pickReviewScenes } from './graph/batch-parts.mjs';
 import { enrichSceneFromManifest } from './graph/merge-and-index.mjs';
 import { planBatches } from './graph/build-manifest.mjs';
 import { applyDescriptorReview } from './graph/init-registry.mjs';
@@ -1001,4 +1001,37 @@ test('2.3-24 premature identity: a name revealed later in the scene must not be 
   const early = validateShard(shardOf(scene('지엔')), batch);
   assert.equal(warnings(early).length, 1, JSON.stringify(early.errors));
   assert.equal(warnings(validateShard(shardOf(scene('???')), batch)).length, 0);
+});
+
+test('5 Pass 1 waves: next pending batches in number order, skipping merged and pilot batches', () => {
+  const progress = {
+    batches: {
+      batch_0010: { batch_id: 'batch_0010', status: 'pending' },
+      batch_0002: { batch_id: 'batch_0002', status: 'pending' },
+      batch_0001: { batch_id: 'batch_0001', status: 'merged' },
+      batch_0003: { batch_id: 'batch_0003', status: 'failed' },
+      pilot_0001: { batch_id: 'pilot_0001', status: 'pending', is_pilot: true },
+      batch_0004: { batch_id: 'batch_0004', status: 'pending' },
+    },
+  };
+  assert.deepEqual(nextPendingBatches(progress, 2), ['batch_0002', 'batch_0004']);
+  assert.deepEqual(nextPendingBatches(progress, 10), ['batch_0002', 'batch_0004', 'batch_0010']);
+});
+
+test('5 Pass 1 waves: review sample is picked mechanically from the wave', () => {
+  const scene = (id, unknowns, dialogue) => ({
+    scene_id: id,
+    mechanical_ground_truth: {
+      unknowns: Array.from({ length: unknowns }, (_, i) => ({ line: i + 1 })),
+      line_speaker: Object.fromEntries(Array.from({ length: dialogue }, (_, i) => [String(i + 1), '라피'])),
+    },
+  });
+  const wave = [
+    { batch_id: 'batch_a', scenes: [scene('a1', 5, 10), scene('a2', 0, 90), scene('a3', 0, 20)] },
+    { batch_id: 'batch_b', scenes: [scene('b1', 0, 40), scene('b2', 1, 30), scene('b3', 0, 35)] },
+  ];
+  assert.deepEqual(
+    pickReviewScenes(wave).map((r) => r.scene_id),
+    ['a1', 'b1', 'b3'] // ??? 최다 a1, 다른 배치의 대사 최다 b1, 마지막 배치 뒤쪽 b3
+  );
 });
