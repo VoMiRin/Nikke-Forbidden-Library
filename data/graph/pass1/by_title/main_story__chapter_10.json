@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.469Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-17T03:25:27.058Z",
   "title_id": "main_story__chapter_10",
   "category": "main_story",
   "title": "Chapter.10: 동료",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "카운터스는 엘리시온의 최강 스쿼드인 앱솔루트(은화, 엠마, 베스티)와 합류하여 공동 작전에 나서고, 아니스는 카운터스를 삼류 취급하며 발밑에 총까지 쏘는 은화에게 기죽지 않고 맞받아친다. 엠마와 베스티는 기억 소거가 먹히지 않아 과거 기억을 간직한 라피와 반갑게 재회하고, 훈련에서 복귀한 진짜 시프티가 오퍼레이터로 합류한다.",
+      "summary": "카운터스와 앱솔루트 스쿼드(은화, 엠마, 베스티), 그리고 합숙 훈련에서 복귀한 진짜 시프티가 연합 작전을 위해 모인다. 은화와 아니스가 날 선 신경전을 벌이는 가운데, 엠마와 베스티는 라피가 기억 소거 후에도 자신들과의 과거를 기억하고 있음을 확인하고 기뻐한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -75,9 +76,9 @@
             "speaker_label": "시프티",
             "entity_id": "char_시프티",
             "medium": "comm",
-            "line_start": 82,
-            "line_end": 82,
-            "quote": "그러니까 아니라고 몇 번을 말씀드려요. 저 그때 합숙 훈련 중이었다고요."
+            "line_start": 59,
+            "line_end": 59,
+            "quote": "시프티: 여러분. 들리시나요?"
           }
         ],
         "mentioned_only": [
@@ -88,7 +89,9 @@
             "entity_type": "squad",
             "line_start": 23,
             "line_end": 23,
-            "quote": "어째서 우리 앱솔루트 스쿼드가 이런 삼류 스쿼드의 호위를 맡게 된 거지."
+            "quote": "은화: 어째서 우리 앱솔루트 스쿼드가 이런 삼류 스쿼드의 호위를 맡게 된 거지.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_10_00__mnt_002",
@@ -97,43 +100,31 @@
             "entity_type": "character",
             "line_start": 36,
             "line_end": 36,
-            "quote": "그리고 잉그리드가 직접 부탁한 거잖아."
+            "quote": "엠마: 그리고 잉그리드가 직접 부탁한 거잖아.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_10_00__mnt_003",
-            "surface_text": "기억 소거",
-            "entity_id": null,
-            "entity_type": "concept",
-            "line_start": 64,
-            "line_end": 64,
-            "quote": "그런데 기억 소거가 안 먹힌다는 얘기. 진짜야?"
-          },
-          {
-            "item_id": "main_10_00__mnt_004",
-            "surface_text": "샤워실",
-            "entity_id": null,
-            "entity_type": "location",
-            "line_start": 67,
-            "line_end": 67,
-            "quote": "···샤워실."
-          },
-          {
-            "item_id": "main_10_00__mnt_005",
             "surface_text": "슈엔",
             "entity_id": "char_슈엔",
             "entity_type": "character",
             "line_start": 81,
             "line_end": 81,
-            "quote": "엇. 슈엔이다."
+            "quote": "아니스: 엇. 슈엔이다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_00__mnt_006",
+            "item_id": "main_10_00__mnt_004",
             "surface_text": "미실리스",
             "entity_id": null,
             "entity_type": "organization",
             "line_start": 83,
             "line_end": 83,
-            "quote": "미실리스는 똥이다 해봐."
+            "quote": "아니스: 미실리스는 똥이다 해봐.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -143,49 +134,60 @@
           "item_id": "main_10_00__foa_001",
           "from_speaker": "은화",
           "to_target": "카운터스",
-          "address_term": "머저리들",
+          "address_term": "머저리들아",
           "line_start": 26,
           "line_end": 26,
-          "quote": "조용히 해라 머저리들아."
+          "quote": "은화: 조용히 해라 머저리들아.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_00__foa_002",
-          "from_speaker": "아니스",
-          "to_target": "은화",
-          "address_term": "저쪽의 성격 나쁜 아이",
-          "line_start": 40,
-          "line_end": 40,
-          "quote": "오. 저쪽의 성격 나쁜 아이는 사장님을 들먹이면 조용해지는구나?"
+          "from_speaker": "시프티",
+          "to_target": "카운터스 및 앱솔루트 스쿼드",
+          "address_term": "여러분",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "시프티: 저··· 여러분?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_00__foa_003",
-          "from_speaker": "아니스",
-          "to_target": "잉그리드",
-          "address_term": "사장님",
-          "line_start": 40,
-          "line_end": 40,
-          "quote": "오. 저쪽의 성격 나쁜 아이는 사장님을 들먹이면 조용해지는구나?"
-        },
-        {
-          "item_id": "main_10_00__foa_004",
           "from_speaker": "은화",
           "to_target": "아니스",
           "address_term": "쓰레기",
           "line_start": 41,
           "line_end": 41,
-          "quote": "말을 섞어줬다고 같은 수준이 됐다고 착각하지 마, 쓰레기."
+          "quote": "은화: 말을 섞어줬다고 같은 수준이 됐다고 착각하지 마, 쓰레기.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__foa_004",
+          "from_speaker": "은화",
+          "to_target": "아니스",
+          "address_term": "이 쓰레기야",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "은화: 뭐 이 쓰레기야?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_00__foa_005",
           "from_speaker": "아니스",
           "to_target": "은화",
-          "address_term": "인격파탄자",
+          "address_term": "이 인격파탄자야",
           "line_start": 52,
           "line_end": 52,
-          "quote": "뭐 이 인격파탄자야."
+          "quote": "아니스: 뭐 이 인격파탄자야.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -193,67 +195,237 @@
         {
           "item_id": "main_10_00__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "은화, 아니스, 베스티",
-          "summary": "은화가 카운터스를 삼류 스쿼드라 부르며 아니스의 발밑에 총을 쏘고 위협하지만, 아니스가 조금도 밀리지 않고 인격파탄자라고 맞받아쳐 베스티의 감탄을 산다.",
-          "line_start": 41,
-          "line_end": 57,
-          "quote": "탕-! 아니스의 발바닥에서 연기가 피어올랐다. ··· ···. 더 지껄여봐. 다음엔 머리다. 쐈냐 방금? 보면 모르냐. 안구부터 갈아끼우지그래. 그래. 네 눈알을 빼서 나한테 끼우면 되겠네. 뭐 이 쓰레기야? 뭐 이 인격파탄자야.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "지휘관",
+          "summary": "카운터스와 앱솔루트 스쿼드가 어색한 침묵 속에 모인 자리에서 아니스가 인원이 너무 많지 않냐며 빠져도 되냐고 묻자 지휘관이 절대 안 된다고 막는다.",
+          "line_start": 2,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "은화: ··· ···.\n라피: ··· ···.\n베스티: ··· ···.\n네온: ··· ···.\n엠마: ··· ···.\n아니스: ··· ···.\n시프티: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 그···.\n아니스: 우리 좀 많지 않아?\n은화: 그럼 네가 빠져.\n아니스: 오, 그래도 돼?\n[CHOICE_START]\n  [OPTION TEXT=\"절대 안 돼.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 그렇다는데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_00__eac_002",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "엠마, 라피, 베스티",
-          "summary": "엠마가 라피에게 처음 만난 곳이 샤워실이었음을 물어 기억 소거가 먹히지 않았다는 사실을 확인하고, 베스티는 라피가 자신들을 잊지 않아 다행이라며 기뻐한다.",
-          "line_start": 64,
-          "line_end": 79,
-          "quote": "그런데 기억 소거가 안 먹힌다는 얘기. 진짜야? 진짜야. 우리가 처음 만난 곳은? ···샤워실.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "은화",
+          "summary": "은화가 왜 앱솔루트 스쿼드가 삼류 스쿼드의 호위를 맡아야 하냐며 머저리들이라고 모욕하자 네온과 아니스가 능청스럽게 맞장구쳐 베스티가 웃음을 터뜨린다.",
+          "line_start": 22,
+          "line_end": 32,
+          "claim_line": null,
+          "quote": "은화: 이해할 수가 없어.\n은화: 어째서 우리 앱솔루트 스쿼드가 이런 삼류 스쿼드의 호위를 맡게 된 거지.\n네온: 삼류라뇨! 저흰 그 정도로 수준이 높지 않아요!\n아니스: 맞아 맞아!\n은화: 조용히 해라 머저리들아.\n네온: 머저리라뇨! 저흰 그렇게 똑똑하지 않아요!\n아니스: 맞아 맞아!\n은화: ··· ···.\n베스티: 푸흐···!\n은화: 재밌나 보네.\n베스티: 아, 아니. 미안.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_00__eac_003",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "시프티, 아니스",
-          "summary": "합숙 훈련에서 복귀한 진짜 시프티가 오퍼레이터로 통신에 참여하고, 아니스는 슈엔이 아닌지 확인한다며 미실리스 욕을 해보라고 놀린다.",
+          "actor_or_speaker": "라피",
+          "summary": "라피가 호위가 아니라 공동 작전이라고 반박하자 은화는 카운터스가 자신들과 공동 작전을 할 수준이냐며 무시한다.",
+          "line_start": 33,
+          "line_end": 34,
+          "claim_line": 33,
+          "quote": "라피: 호위가 아냐. 공동 작전이다.\n은화: 눈이 있으면 잘 봐. 너희가 우리와 공동 작전을 할 정도의 수준이야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마는 눈에 보이는 게 전부가 아니며 잉그리드가 직접 부탁한 일이라며 자꾸 그러면 이르겠다고 은화를 말린다.",
+          "line_start": 35,
+          "line_end": 38,
+          "claim_line": 36,
+          "quote": "엠마: 에이~ 눈에 보이는 게 전부가 아니라는 거 잘 알면서.\n엠마: 그리고 잉그리드가 직접 부탁한 거잖아.\n엠마: 자꾸 그러면 이른다?\n은화: ···쯧.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 사장님(잉그리드)을 들먹이면 조용해진다며 은화를 놀리자 은화가 아니스의 발밑에 총을 쏘며 위협하고, 아니스는 굴하지 않고 은화와 독설을 주고받는다.",
+          "line_start": 39,
+          "line_end": 52,
+          "claim_line": null,
+          "quote": "시프티: 저··· 여러분?\n아니스: 오. 저쪽의 성격 나쁜 아이는 사장님을 들먹이면 조용해지는구나?\n은화: 말을 섞어줬다고 같은 수준이 됐다고 착각하지 마, 쓰레기.\n아니스: 어머. 나 너무 심한 말 들어서 충격 먹었어.\n아니스: 사장님한테 일러버릴꼬야.\n탕-!\n아니스의 발바닥에서 연기가 피어올랐다.\n아니스: ··· ···.\n은화: 더 지껄여봐. 다음엔 머리다.\n아니스: 쐈냐 방금?\n은화: 보면 모르냐. 안구부터 갈아끼우지그래.\n아니스: 그래. 네 눈알을 빼서 나한테 끼우면 되겠네.\n은화: 뭐 이 쓰레기야?\n아니스: 뭐 이 인격파탄자야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마가 은화에게 기세로 밀리지 않는 사람을 처음 봤다고 감탄하고, 베스티도 그런 아니스를 멋지다고 평가한다.",
+          "line_start": 53,
+          "line_end": 58,
+          "claim_line": 54,
+          "quote": "엠마: 와. 나 처음 봤어.\n엠마: 은화한테 안 밀리는 사람.\n베스티: ··· ···.\n엠마: 응? 베스티. 왜 그래?\n베스티: ···멋져.\n엠마: 아하. 멋지구나.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "시프티가 통신이 들리는지 부르는 사이, 네온은 불평불만 많은 아니스지만 이럴 땐 정말 의지가 된다고 말하고 엠마도 크게 동의한다.",
+          "line_start": 59,
+          "line_end": 61,
+          "claim_line": 60,
+          "quote": "시프티: 여러분. 들리시나요?\n네온: ···불평불만 많은 아니스지만, 이럴 땐 정말 의지가 되네요.\n엠마: 후후. 그거, 나 엄청 동의해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 이동하자고 하자 엠마는 기억 소거가 안 먹힌다는 말이 진짜인지 확인하려 처음 만난 곳과 첫 마디를 묻고, 라피는 처음 만난 곳은 샤워실이며 첫 마디는 말 못 한다고 답한다.",
+          "line_start": 62,
+          "line_end": 70,
+          "claim_line": 65,
+          "quote": "라피: 슬슬 이동하자.\n엠마: 어머. 첫 만남의 기쁨 때문에 넋 놓고 있었어.\n엠마: 그런데 기억 소거가 안 먹힌다는 얘기. 진짜야?\n라피: 진짜야.\n엠마: 우리가 처음 만난 곳은?\n라피: ···샤워실.\n엠마: 내가 가장 먼저 꺼낸 말은?\n라피: ··· ···.\n라피: 말 못 해.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마는 잉그리드에게 들었을 때는 반신반의했는데 진짜 기억이 그대로라며 놀라고, 네온이 첫 마디가 무엇이었는지 묻자 엠마와 라피 모두 비밀이라며 알려주지 않는다.",
+          "line_start": 71,
+          "line_end": 76,
+          "claim_line": 71,
+          "quote": "엠마: 어머. 진짜 기억이 그대로네? 잉그리드한테 들었을 땐 반신반의했는데.\n네온: 응? 뭐라고 했는데요?\n엠마: 후후. 비밀.\n네온: 라피. 뭐라고 했어요?\n라피: 말할 수 없어.\n네온: ···뭘까.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "베스티",
+          "summary": "베스티가 라피에게 자신들을 잊지 않아서 다행이라고 말하고 라피가 긍정의 뜻을 표한다.",
+          "line_start": 77,
+          "line_end": 79,
+          "claim_line": 78,
+          "quote": "베스티: 그래도 다행이야.\n베스티: 우리를··· 안 잊어서. 그치? 라피.\n라피: ···응.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 통신으로 주목을 요청하자 아니스가 슈엔 아니냐며 놀리고, 시프티는 그때 합숙 훈련 중이었다고 해명한 뒤 일행에게 이동을 지시한다.",
           "line_start": 80,
           "line_end": 89,
-          "quote": "주목해 주세요!! 엇. 슈엔이다. 그러니까 아니라고 몇 번을 말씀드려요. 저 그때 합숙 훈련 중이었다고요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "시프티: 주목해 주세요!!\n아니스: 엇. 슈엔이다.\n시프티: 그러니까 아니라고 몇 번을 말씀드려요. 저 그때 합숙 훈련 중이었다고요.\n아니스: 미실리스는 똥이다 해봐.\n시프티: 아 유치해서 정말.\n아니스: 이거 슈엔 맞네.\n시프티: 아니라고요!\n라피: 시프티. 작전 개요를.\n시프티: ···일단 이동부터 하시죠.\n시프티: 이곳에 너무 오래 머물러서, 슬슬 이동해야 해요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_10_00__rln_001",
-          "subject": "라피",
-          "target": "엠마, 베스티",
-          "relation_or_change": "과거 앱솔루트 스쿼드에서 함께했던 동료 사이로, 라피가 샤워실에서의 첫 만남 등 옛 기억을 그대로 간직하고 있음을 확인함.",
-          "line_start": 66,
-          "line_end": 79,
-          "quote": "우리가 처음 만난 곳은? ···샤워실. 내가 가장 먼저 꺼낸 말은? ··· ···. 말 못 해. 어머. 진짜 기억이 그대로네? 잉그리드한테 들었을 땐 반신반의했는데."
+          "subject": "은화",
+          "target": "앱솔루트 스쿼드",
+          "relation_or_change": "은화는 앱솔루트 스쿼드 소속이다.",
+          "epistemic_type": "character_claim",
+          "claimant": "은화",
+          "line_start": 23,
+          "line_end": 23,
+          "claim_line": 23,
+          "quote": "은화: 어째서 우리 앱솔루트 스쿼드가 이런 삼류 스쿼드의 호위를 맡게 된 거지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_00__rln_002",
           "subject": "베스티",
           "target": "아니스",
-          "relation_or_change": "은화의 총격과 폭언에도 전혀 밀리지 않고 맞받아치는 아니스를 보고 멋지다며 동경하게 됨.",
+          "relation_or_change": "베스티는 은화에게 말로 밀리지 않고 맞서는 아니스를 멋지다고 생각한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "베스티",
           "line_start": 53,
           "line_end": 58,
-          "quote": "와. 나 처음 봤어. 은화한테 안 밀리는 사람. ··· ···. 응? 베스티. 왜 그래? ···멋져."
+          "claim_line": 57,
+          "quote": "엠마: 와. 나 처음 봤어.\n엠마: 은화한테 안 밀리는 사람.\n베스티: ··· ···.\n엠마: 응? 베스티. 왜 그래?\n베스티: ···멋져.\n엠마: 아하. 멋지구나.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__rln_003",
+          "subject": "네온",
+          "target": "아니스",
+          "relation_or_change": "네온은 아니스가 평소 불평불만은 많아도 은화와 맞설 때처럼 정말 의지가 된다고 말하며 엠마도 동의한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "네온",
+          "line_start": 60,
+          "line_end": 61,
+          "claim_line": 60,
+          "quote": "네온: ···불평불만 많은 아니스지만, 이럴 땐 정말 의지가 되네요.\n엠마: 후후. 그거, 나 엄청 동의해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__rln_004",
+          "subject": "라피",
+          "target": "엠마",
+          "relation_or_change": "라피와 엠마는 과거 샤워실에서 처음 만났던 구면이며, 라피는 기억 소거 처치 이후에도 그 기억을 간직하고 있다.",
+          "epistemic_type": "character_claim",
+          "claimant": "라피",
+          "line_start": 64,
+          "line_end": 71,
+          "claim_line": 67,
+          "quote": "엠마: 그런데 기억 소거가 안 먹힌다는 얘기. 진짜야?\n라피: 진짜야.\n엠마: 우리가 처음 만난 곳은?\n라피: ···샤워실.\n엠마: 내가 가장 먼저 꺼낸 말은?\n라피: ··· ···.\n라피: 말 못 해.\n엠마: 어머. 진짜 기억이 그대로네? 잉그리드한테 들었을 땐 반신반의했는데.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_00__rln_005",
+          "subject": "베스티",
+          "target": "라피",
+          "relation_or_change": "베스티는 라피가 과거 인연이 있는 자신들을 잊지 않아서 다행이라고 여긴다.",
+          "epistemic_type": "character_claim",
+          "claimant": "베스티",
+          "line_start": 77,
+          "line_end": 79,
+          "claim_line": 78,
+          "quote": "베스티: 그래도 다행이야.\n베스티: 우리를··· 안 잊어서. 그치? 라피.\n라피: ···응.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_10_00__uec_001",
@@ -263,18 +435,6 @@
         },
         {
           "item_id": "main_10_00__uec_002",
-          "surface_text": "기억 소거",
-          "suggested_type": "concept",
-          "line_start": 64
-        },
-        {
-          "item_id": "main_10_00__uec_003",
-          "surface_text": "샤워실",
-          "suggested_type": "location",
-          "line_start": 67
-        },
-        {
-          "item_id": "main_10_00__uec_004",
           "surface_text": "미실리스",
           "suggested_type": "organization",
           "line_start": 83
@@ -295,8 +455,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "시프티는 과거 앱솔루트와 메티스가 헬레틱을 격추했을 때 생긴 반경 4km 크레이터의 불길이 천연가스 소진으로 꺼졌으며, 작전 목표는 크레이터 중심부에서 헬레틱의 파편을 회수하는 것이라고 브리핑한다. 이동 중 아니스와 은화가 신경전을 벌이다가 은화가 마리안과 라피의 과거 이탈을 거론하며 라피에게 배신자라고 화를 내고, 베스티는 아니스에게 말싸움 잘하는 법을 알려달라고 부탁한다.",
+      "summary": "시프티는 과거 앱솔루트와 메티스가 헬레틱을 격추했을 때 생겨 3달간 불타오르던 반경 4km 크레이터의 불길이 최근 꺼졌다며 중심부에서 헬레틱의 파편을 회수하는 것이 목표라고 브리핑한다. 이동 중 은화가 카운터스와 맞선 헬레틱이 과거 동료였던 배신자라고 도발하고 라피를 배신자라 부르며 자리를 뜬 뒤, 베스티는 아니스에게 말싸움 잘하는 법을 알려달라고 부탁한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -345,7 +506,7 @@
             "medium": "comm",
             "line_start": 2,
             "line_end": 2,
-            "quote": "이번 작전의 목표는 헬레틱의 파편을 수집하는 거예요."
+            "quote": "시프티: 이번 작전의 목표는 헬레틱의 파편을 수집하는 거예요."
           }
         ],
         "mentioned_only": [
@@ -356,70 +517,53 @@
             "entity_type": "faction_or_species",
             "line_start": 2,
             "line_end": 2,
-            "quote": "이번 작전의 목표는 헬레틱의 파편을 수집하는 거예요."
+            "quote": "시프티: 이번 작전의 목표는 헬레틱의 파편을 수집하는 거예요.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_10_01__mnt_002",
-            "surface_text": "헬레틱의 파편",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 2,
-            "line_end": 2,
-            "quote": "이번 작전의 목표는 헬레틱의 파편을 수집하는 거예요."
-          },
-          {
-            "item_id": "main_10_01__mnt_003",
             "surface_text": "앱솔루트 스쿼드",
             "entity_id": null,
             "entity_type": "squad",
             "line_start": 3,
             "line_end": 3,
-            "quote": "과거 앱솔루트 스쿼드와 메티스 스쿼드가 연합해 헬레틱과 교전, 승리했으나."
+            "quote": "시프티: 과거 앱솔루트 스쿼드와 메티스 스쿼드가 연합해 헬레틱과 교전, 승리했으나.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_01__mnt_004",
+            "item_id": "main_10_01__mnt_003",
             "surface_text": "메티스 스쿼드",
             "entity_id": null,
             "entity_type": "squad",
             "line_start": 3,
             "line_end": 3,
-            "quote": "과거 앱솔루트 스쿼드와 메티스 스쿼드가 연합해 헬레틱과 교전, 승리했으나."
+            "quote": "시프티: 과거 앱솔루트 스쿼드와 메티스 스쿼드가 연합해 헬레틱과 교전, 승리했으나.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_01__mnt_005",
-            "surface_text": "거대 크레이터",
-            "entity_id": null,
-            "entity_type": "location",
-            "line_start": 5,
-            "line_end": 5,
-            "quote": "그 여파로 거대 크레이터가 생성, 반경 4km가 3달 동안 불타올랐습니다."
-          },
-          {
-            "item_id": "main_10_01__mnt_006",
+            "item_id": "main_10_01__mnt_004",
             "surface_text": "방주",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 8,
             "line_end": 8,
-            "quote": "즉, 연합 작전의 목표는 크레이터의 중심부로 진입해 헬레틱의 파편을 방주로 가져온다가 됩니다."
+            "quote": "시프티: 즉, 연합 작전의 목표는 크레이터의 중심부로 진입해 헬레틱의 파편을 방주로 가져온다가 됩니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_01__mnt_007",
+            "item_id": "main_10_01__mnt_005",
             "surface_text": "에블라 입자",
             "entity_id": null,
             "entity_type": "concept",
             "line_start": 13,
             "line_end": 13,
-            "quote": "에블라 입자 농도는 낮겠네. 불길이 그렇게 오래 유지됐으면."
-          },
-          {
-            "item_id": "main_10_01__mnt_008",
-            "surface_text": "정화 시퀀스",
-            "entity_id": null,
-            "entity_type": "concept",
-            "line_start": 15,
-            "line_end": 15,
-            "quote": "정화 시퀀스도 필요 없으니, 빠르게 처리하자."
+            "quote": "은화: 에블라 입자 농도는 낮겠네. 불길이 그렇게 오래 유지됐으면.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -429,22 +573,27 @@
           "item_id": "main_10_01__foa_001",
           "from_speaker": "은화",
           "to_target": "카운터스",
-          "address_term": "삼류들",
+          "address_term": "이 삼류들",
           "line_start": 16,
           "line_end": 16,
-          "quote": "이 삼류들과 조금이라도 같이 있고 싶지 않으니까."
+          "quote": "은화: 이 삼류들과 조금이라도 같이 있고 싶지 않으니까.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_01__foa_002",
           "from_speaker": "은화",
           "to_target": "라피",
-          "address_term": "이 배신자 자식",
+          "address_term": "이 배신자 자식아",
           "line_start": 42,
           "line_end": 42,
-          "quote": "내 이름 부르지 마 이 배신자 자식아!"
+          "quote": "은화: 내 이름 부르지 마 이 배신자 자식아!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -452,116 +601,207 @@
         {
           "item_id": "main_10_01__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "시프티",
-          "summary": "시프티는 과거 앱솔루트와 메티스가 헬레틱을 격추했을 때 폭발로 반경 4km의 거대 크레이터가 생성되어 3달간 불타올랐으나, 최근 지하 천연가스가 소진되어 불길이 사그라들었으므로 중심부에서 헬레틱의 파편을 회수하는 것이 목표라고 브리핑한다.",
+          "summary": "시프티가 과거 앱솔루트와 메티스 스쿼드가 헬레틱을 격추했을 때 폭발로 반경 4km 크레이터가 생겨 3달간 불타올랐으나 지하 천연가스 소진으로 불길이 꺼졌다며, 크레이터 중심부에서 헬레틱의 파편을 방주로 회수하는 것이 작전 목표라고 설명한다.",
           "line_start": 2,
           "line_end": 10,
-          "quote": "이번 작전의 목표는 헬레틱의 파편을 수집하는 거예요. 과거 앱솔루트 스쿼드와 메티스 스쿼드가 연합해 헬레틱과 교전, 승리했으나. 헬레틱이 격추되면서 일어난 폭발이 너무 커 일대를 초토화 시켰고. 그 여파로 거대 크레이터가 생성, 반경 4km가 3달 동안 불타올랐습니다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 8,
+          "quote": "시프티: 이번 작전의 목표는 헬레틱의 파편을 수집하는 거예요.\n시프티: 과거 앱솔루트 스쿼드와 메티스 스쿼드가 연합해 헬레틱과 교전, 승리했으나.\n시프티: 헬레틱이 격추되면서 일어난 폭발이 너무 커 일대를 초토화 시켰고.\n시프티: 그 여파로 거대 크레이터가 생성, 반경 4km가 3달 동안 불타올랐습니다.\n시프티: 그 때문에 헬레틱의 파편이 있을 것이라 예상되는 크레이터 중심부까지의 루트가 막혀있었습니다.\n시프티: 하지만 최근, 불길이 사그라들어 진입이 가능해졌어요.\n시프티: 즉, 연합 작전의 목표는 크레이터의 중심부로 진입해 헬레틱의 파편을 방주로 가져온다가 됩니다.\n라피: 불길이 사그라든 이유는?\n시프티: 지하의 천연가스가 모두 소진된 것으로 판단하고 있습니다.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_01__eac_002",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "엠마",
-          "summary": "엠마는 과거 헬레틱과의 교전에서 앱솔루트와 메티스 모두 폐기 직전까지 갔으며 마침 번개가 떨어지지 않았으면 전멸했을 것이라고 말한다.",
-          "line_start": 21,
-          "line_end": 24,
-          "quote": "앱솔루트 스쿼드는 물론 메티스 스쿼드까지 폐기 직전까지 갔었어. ··· ···. 운도 많이 따라줬거든. 번개가 마침 거기 떨어지지 않았으면 아마. 다 죽었을 거야.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "은화",
+          "summary": "은화가 시프티에게 루트와 목표 지점 마킹을 지시하고 불길이 오래 유지돼 에블라 입자 농도가 낮아 정화 시퀀스가 필요 없으니 빠르게 처리하자고 한다.",
+          "line_start": 11,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "은화: 루트 및 목표 지점을 마킹해.\n시프티: 예. 마킹 완료했습니다.\n은화: 에블라 입자 농도는 낮겠네. 불길이 그렇게 오래 유지됐으면.\n시프티: 어··· 예. 맞습니다.\n은화: 정화 시퀀스도 필요 없으니, 빠르게 처리하자.\n은화: 이 삼류들과 조금이라도 같이 있고 싶지 않으니까.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_01__eac_003",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "은화, 아니스, 라피, 베스티",
-          "summary": "은화가 카운터스와 함께 작전했던 동료가 헬레틱이 된 일을 거론하며 도발하자 라피가 제지하고, 은화는 라피에게 배신자라고 소리친 뒤 혼자 앞서 걸어가며 베스티는 아니스에게 말싸움 잘하는 법을 알려달라고 청한다.",
-          "line_start": 37,
-          "line_end": 54,
-          "quote": "은화. 그 이상은 말하지 않는 게 좋을 것 같아. 내 이름 부르지 마 이 배신자 자식아!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 은화에게 헬레틱과 싸워본 소감을 묻지만 은화는 네가 알 것 없다며 대답을 거부한다.",
+          "line_start": 17,
+          "line_end": 20,
+          "claim_line": null,
+          "quote": "아니스: 어땠어?\n은화: 뭐가.\n아니스: 헬레틱. 싸워보니 어땠냐고.\n은화: 네가 알 것 없어.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_01__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마는 거짓 정보로 동료를 위험에 빠뜨릴 수 없다며, 당시 앱솔루트와 메티스 모두 폐기 직전까지 갔고 번개가 떨어지는 운이 따라주지 않았으면 다 죽었을 것이라고 알려준다.",
+          "line_start": 21,
+          "line_end": 26,
+          "claim_line": 21,
+          "quote": "엠마: 앱솔루트 스쿼드는 물론 메티스 스쿼드까지 폐기 직전까지 갔었어.\n은화: ··· ···.\n엠마: 운도 많이 따라줬거든. 번개가 마침 거기 떨어지지 않았으면 아마.\n엠마: 다 죽었을 거야.\n은화: 쓸데없는 소리 하지 마.\n엠마: 거짓 정보로 동료를 위험에 빠트릴 순 없잖아.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_01__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "은화가 카운터스 같은 쓰레기들과는 동료가 아니라고 하자 엠마는 카운터스도 헬레틱과 싸워 이겼다고 말하고, 은화가 운이 좋았을 것이라고 하자 아니스가 너희들처럼이라며 받아친다.",
+          "line_start": 27,
+          "line_end": 30,
+          "claim_line": 28,
+          "quote": "은화: 누가 동료라는 거야. 난 저런 쓰레기들이랑은 동료 안 해.\n엠마: 그런데, 얘들도 헬레틱이랑 싸워서 이겼는걸?\n은화: ···운이 좋았겠지.\n아니스: 그래. 너희들처럼.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_01__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "은화가 같은 수준이라 생각하지 말라고 하자, 아니스는 자신들은 폐기 직전까지 가지도 않았고 메티스와 연합하지도 않았다며 카운터스가 더 강하다고 도발한다.",
+          "line_start": 31,
+          "line_end": 34,
+          "claim_line": 32,
+          "quote": "은화: 같은 수준이라 생각하지 말라고 했을 텐데.\n아니스: 폐기 직전까지 갔다고 했어? 우린 그 정도는 아니었거든.\n아니스: 메티스랑 연합도 안 했었고.\n아니스: 어? 뭐야? 우리가 더 강하네?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_01__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "은화가 카운터스와 싸운 헬레틱은 과거 함께 작전을 했던 동료라 불쌍해서 봐준 것이라며, 동료가 배신자로 돌아섰을 때 기분이 어땠냐고 조롱한다.",
+          "line_start": 35,
+          "line_end": 40,
+          "claim_line": 37,
+          "quote": "은화: 아는 사이라서 봐준 거였겠지.\n아니스: ···뭐?\n은화: 그 헬레틱. 너희랑 작전을 같이 했었다며.\n은화: 그래서 봐준 거야. 너희들이 불쌍해서.\n은화: 기분이 어땠지? 과거 동료가 배신자로 돌아섰을 때 기분 말이야.\n아니스: ···너.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_01__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "라피가 그 이상 말하지 말라고 경고하자, 은화는 라피에게 내 이름을 부르지 말라며 배신자 자식이라고 폭언한 뒤 혼자 앞서 걸어간다.",
+          "line_start": 41,
+          "line_end": 48,
+          "claim_line": null,
+          "quote": "라피: 은화. 그 이상은 말하지 않는 게 좋을 것 같아.\n은화: 내 이름 부르지 마 이 배신자 자식아!\n베스티: 히익···!\n엠마: ··· ···.\n라피: ··· ···.\n은화: ···빌어먹을.\n은화: 재수가 없으려니까.\n은화는 혼자 걸어갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_01__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "베스티",
+          "summary": "은화가 가버린 뒤 베스티가 아니스에게 다가와 말싸움 잘하는 법을 알려달라고 부탁한다.",
+          "line_start": 49,
+          "line_end": 56,
+          "claim_line": null,
+          "quote": "아니스: 쟤 진짜 성격 장난 아니네.\n네온: 아니스가 긁어서 더 그런 것 같은데요.\n아니스: 긁긴 누가. 잘 지내보려고 말도 걸고 하는데 저게 자꾸 삐딱하게 굴잖아.\n베스티: 저··· 아니스.\n아니스: 응?\n베스티: 마, 말싸움 잘 하는 법 좀 알려줘···!\n아니스: ··· ···.\n아니스: 응?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_10_01__clh_001",
-          "keyword": "헬레틱 격추 크레이터와 번개",
-          "category": "past_incident",
-          "detail": "앱솔루트와 메티스가 헬레틱과 싸울 당시 두 스쿼드 모두 폐기 직전까지 몰렸으나 마침 떨어진 번개 덕분에 승리했고, 격추 폭발로 반경 4km 크레이터가 3달간 불타오름.",
-          "line_start": 3,
-          "line_end": 24,
-          "quote": "앱솔루트 스쿼드는 물론 메티스 스쿼드까지 폐기 직전까지 갔었어. ··· ···. 운도 많이 따라줬거든. 번개가 마침 거기 떨어지지 않았으면 아마. 다 죽었을 거야."
+          "keyword": "에블라 입자",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "불길이 오랫동안 유지된 곳에서는 농도가 낮아져 정화 시퀀스가 필요 없는 입자.",
+          "line_start": 13,
+          "line_end": 15,
+          "quote": "은화: 에블라 입자 농도는 낮겠네. 불길이 그렇게 오래 유지됐으면.\n시프티: 어··· 예. 맞습니다.\n은화: 정화 시퀀스도 필요 없으니, 빠르게 처리하자.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_10_01__rln_001",
           "subject": "은화",
+          "target": "카운터스",
+          "relation_or_change": "은화는 카운터스를 삼류 쓰레기라 부르며 동료로 인정하지 않는다.",
+          "epistemic_type": "character_claim",
+          "claimant": "은화",
+          "line_start": 26,
+          "line_end": 27,
+          "claim_line": 27,
+          "quote": "엠마: 거짓 정보로 동료를 위험에 빠트릴 순 없잖아.\n은화: 누가 동료라는 거야. 난 저런 쓰레기들이랑은 동료 안 해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_01__rln_002",
+          "subject": "은화",
           "target": "라피",
-          "relation_or_change": "라피가 자기 이름을 부르며 말리자 배신자 자식이라며 격렬한 분노와 배신감을 드러냄.",
+          "relation_or_change": "은화는 라피를 '배신자 자식'이라고 부르며 강한 적개심을 드러낸다.",
+          "epistemic_type": "character_claim",
+          "claimant": "은화",
           "line_start": 41,
           "line_end": 42,
-          "quote": "은화. 그 이상은 말하지 않는 게 좋을 것 같아. 내 이름 부르지 마 이 배신자 자식아!"
+          "claim_line": 42,
+          "quote": "라피: 은화. 그 이상은 말하지 않는 게 좋을 것 같아.\n은화: 내 이름 부르지 마 이 배신자 자식아!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_10_01__uec_001",
           "surface_text": "헬레틱",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 2
         },
         {
           "item_id": "main_10_01__uec_002",
-          "surface_text": "헬레틱의 파편",
-          "suggested_type": "item",
-          "line_start": 2
-        },
-        {
-          "item_id": "main_10_01__uec_003",
           "surface_text": "앱솔루트 스쿼드",
           "suggested_type": "squad",
           "line_start": 3
         },
         {
-          "item_id": "main_10_01__uec_004",
+          "item_id": "main_10_01__uec_003",
           "surface_text": "메티스 스쿼드",
           "suggested_type": "squad",
           "line_start": 3
         },
         {
-          "item_id": "main_10_01__uec_005",
-          "surface_text": "거대 크레이터",
-          "suggested_type": "location",
-          "line_start": 5
-        },
-        {
-          "item_id": "main_10_01__uec_006",
+          "item_id": "main_10_01__uec_004",
           "surface_text": "방주",
           "suggested_type": "location",
           "line_start": 8
         },
         {
-          "item_id": "main_10_01__uec_007",
+          "item_id": "main_10_01__uec_005",
           "surface_text": "에블라 입자",
           "suggested_type": "concept",
           "line_start": 13
-        },
-        {
-          "item_id": "main_10_01__uec_008",
-          "surface_text": "정화 시퀀스",
-          "suggested_type": "concept",
-          "line_start": 15
         }
       ]
     },
@@ -579,8 +819,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "베스티는 맨날 은화에게 욕만 먹는다며 아니스에게 말싸움에서 이기는 법을 배우려 하고, 자신이 은화보다 강해서 은화가 손을 대도 괜찮다고 말한다. 그때 시프티가 9시 방향에서 랩쳐 42기가 접근 중이라고 알리자 베스티는 금방 다 죽이고 오겠다며 단독으로 달려나간다.",
+      "summary": "베스티는 맨날 은화에게 욕만 먹어 말로 이겨보고 싶다며 자신이 은화보다 강하다고 말한다. 시프티가 랩쳐 42기의 접근을 알리자 베스티는 말싸움 비법을 빨리 듣기 위해 단신으로 달려 나가고, 엠마는 베스티가 아주 강하다며 아니스를 안심시킨다.",
       "participants": {
         "present_in_scene": [
           {
@@ -611,7 +852,7 @@
             "medium": "comm",
             "line_start": 15,
             "line_end": 16,
-            "quote": "9시 방향! 랩쳐 42기! 5분 뒤에 사거리로 들어옵니다!"
+            "quote": "시프티: 9시 방향! 랩쳐 42기!\n시프티: 5분 뒤에 사거리로 들어옵니다!"
           }
         ],
         "mentioned_only": [
@@ -622,7 +863,9 @@
             "entity_type": "character",
             "line_start": 2,
             "line_end": 2,
-            "quote": "아하. 그러니까 베스티 너는 맨날 은화한테 욕만 먹으니까."
+            "quote": "아니스: 아하. 그러니까 베스티 너는 맨날 은화한테 욕만 먹으니까.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_10_02__mnt_002",
@@ -631,13 +874,28 @@
             "entity_type": "faction_or_species",
             "line_start": 15,
             "line_end": 15,
-            "quote": "9시 방향! 랩쳐 42기!"
+            "quote": "시프티: 9시 방향! 랩쳐 42기!",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "main_10_02__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "베스티",
+          "address_term": "너",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "아니스: 아하. 그러니까 베스티 너는 맨날 은화한테 욕만 먹으니까.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -645,30 +903,58 @@
         {
           "item_id": "main_10_02__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "베스티, 엠마",
-          "summary": "베스티와 엠마는 베스티가 은화보다 훨씬 강하다고 말한다.",
-          "line_start": 9,
-          "line_end": 10,
-          "quote": "아··· 그, 그건 괜찮아. 내가 은화보다 강하니까.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 맨날 은화에게 욕만 먹어 한 번쯤 말로 이겨보고 싶다는 베스티의 말을 정리하며, 은화의 성격상 손을 댈 것 같은데 괜찮겠냐고 걱정한다.",
+          "line_start": 2,
+          "line_end": 8,
+          "claim_line": 8,
+          "quote": "아니스: 아하. 그러니까 베스티 너는 맨날 은화한테 욕만 먹으니까.\n아니스: 한 번쯤은 말로 이겨보고 싶다, 이거지?\n베스티: 으, 응.\n아니스: ···어려운 일은 아닌데.\n아니스: 너, 괜찮겠어?\n베스티: 응? 뭐가?\n아니스: 쟤, 성격 보니까 손도 댈 것 같은데.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_02__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "시프티, 베스티, 엠마",
-          "summary": "시프티가 9시 방향 랩쳐 42기 접근을 알리자, 말싸움 비법을 빨리 듣고 싶어 하는 베스티가 금방 다 죽여버리고 오겠다며 단독으로 달려나간다.",
+          "actor_or_speaker": "베스티",
+          "summary": "베스티는 자신이 은화보다 강하니까 괜찮다며 말싸움 잘하는 법을 알려달라고 재촉하고, 아니스가 설명을 시작하려 한다.",
+          "line_start": 9,
+          "line_end": 14,
+          "claim_line": 10,
+          "quote": "베스티: 아··· 그, 그건 괜찮아.\n베스티: 내가 은화보다 강하니까.\n아니스: ···??\n베스티: 그러니까 알려줘. 말싸움 잘 하는 법.\n아니스: 음··· 좋아. 잘 들어.\n아니스: 일단 가장 먼저 해야 될 일은···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_02__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "베스티",
+          "summary": "시프티가 9시 방향에서 랩쳐 42기가 접근 중이라고 알리자, 베스티는 금방 다 죽여버리고 올 테니 말싸움 법을 바로 알려달라며 혼자 달려 나간다.",
           "line_start": 15,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "시프티: 9시 방향! 랩쳐 42기!\n시프티: 5분 뒤에 사거리로 들어옵니다!\n엠마: 어머. 전투가 일어나겠네.\n베스티: 내, 내가 갔다 올게.\n아니스: 갔다 오다니, 뭘?\n베스티: 금방 올 테니까, 바로 알려줘. 알았지?\n베스티: 금방 죽이고 올테니까.\n베스티: 다 죽여버릴 테니까.\n베스티는 달려갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_02__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "단독 진입을 걱정하는 아니스에게 엠마는 베스티가 아주 강하므로 저 정도 랩쳐는 아무 문제 없다고 말한다.",
+          "line_start": 24,
           "line_end": 28,
-          "quote": "금방 올 테니까, 바로 알려줘. 알았지? 금방 죽이고 올테니까. 다 죽여버릴 테니까. 베스티는 달려갔다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 28,
+          "quote": "아니스: 어? 어어?\n엠마: 후후. 걱정 마. 저 정도면 아무 문제 없어.\n아니스: 아니, 단독 진입이라니 너무 무모하잖아! 당장 지원을···!\n엠마: 괜찮아.\n엠마: 베스티는 강하거든. 아주.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
@@ -677,17 +963,24 @@
           "item_id": "main_10_02__rln_001",
           "subject": "베스티",
           "target": "은화",
-          "relation_or_change": "평소 은화에게 욕만 먹어 말싸움으로 이겨보고 싶어 하지만, 실제 무력은 자신이 은화보다 위라고 인식함.",
+          "relation_or_change": "베스티는 평소 은화에게 늘 욕을 먹어 한 번쯤 말로 이겨보고 싶어 하지만, 무력으로는 자신이 은화보다 강하다고 말한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "베스티",
           "line_start": 2,
           "line_end": 10,
-          "quote": "아하. 그러니까 베스티 너는 맨날 은화한테 욕만 먹으니까. 한 번쯤은 말로 이겨보고 싶다, 이거지? 으, 응. ···어려운 일은 아닌데. 너, 괜찮겠어? 응? 뭐가? 쟤, 성격 보니까 손도 댈 것 같은데. 아··· 그, 그건 괜찮아. 내가 은화보다 강하니까."
+          "claim_line": 10,
+          "quote": "아니스: 아하. 그러니까 베스티 너는 맨날 은화한테 욕만 먹으니까.\n아니스: 한 번쯤은 말로 이겨보고 싶다, 이거지?\n베스티: 으, 응.\n아니스: ···어려운 일은 아닌데.\n아니스: 너, 괜찮겠어?\n베스티: 응? 뭐가?\n아니스: 쟤, 성격 보니까 손도 댈 것 같은데.\n베스티: 아··· 그, 그건 괜찮아.\n베스티: 내가 은화보다 강하니까.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_10_02__uec_001",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 15
         }
       ]
@@ -706,8 +999,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "랩쳐들을 순식간에 전멸시키고 돌아온 베스티를 보며 엠마는 베스티가 앱솔루트에서 가장 강하다고 알려준다. 아니스는 베스티에게 말싸움 비법으로 은화의 가슴 크기를 공격하는 말을 귓속말로 알려주고, 베스티가 이를 그대로 실행하자 은화는 태연한 척 넘기면서도 뒤에서 엠마에게 신경 쓰는 기색을 보인다.",
+      "summary": "랩쳐 무리를 혼자 쓸어버리고 돌아온 베스티에 대해 엠마는 앱솔루트에서 가장 강할 것이라 설명한다. 아니스가 귀띔해 준 대로 베스티가 은화에게 가슴이 작다고 도발하지만 은화가 태연하게 넘기자, 뒤돌아선 은화는 엠마에게 신경 쓰이는 기색을 보인다.",
       "participants": {
         "present_in_scene": [
           {
@@ -745,13 +1039,28 @@
             "entity_type": "squad",
             "line_start": 4,
             "line_end": 4,
-            "quote": "최약체 아니었어? 앱솔루트에서."
+            "quote": "아니스: 최약체 아니었어? 앱솔루트에서.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "main_10_03__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "베스티",
+          "address_term": "너",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "베스티: 너, 너무 심한 말 같아.\n아니스: 그렇다는 말은 너도 그 사실에 동의한다는 얘기지?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -759,30 +1068,72 @@
         {
           "item_id": "main_10_03__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "엠마",
-          "summary": "엠마는 소심해 보이는 베스티가 앱솔루트에서 가장 강하며, 카운터스의 전투력도 상위 10%에 들 정도로 수준이 높다고 평가한다.",
-          "line_start": 4,
-          "line_end": 6,
-          "quote": "최약체 아니었어? 앱솔루트에서. 후후. 그럴 리가. 가장 강할걸?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "단신으로 전투를 마치고 돌아온 베스티를 보고 놀란 아니스가 앱솔루트 최약체가 아니었냐고 묻자, 엠마는 베스티가 앱솔루트에서 가장 강할 것이라고 답한다.",
+          "line_start": 2,
+          "line_end": 10,
+          "claim_line": 6,
+          "quote": "베스티: 다, 다녀왔어.\n아니스: ···얘 뭐야?\n아니스: 최약체 아니었어? 앱솔루트에서.\n엠마: 후후. 그럴 리가.\n엠마: 가장 강할걸?\n아니스: ···보기랑 너무 다른 거 아냐?\n베스티: 미, 미안.\n아니스: 아니. 사과할 것 까진···.\n베스티: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_03__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "아니스, 베스티, 은화, 엠마",
-          "summary": "아니스가 속삭여 준 대로 베스티가 은화에게 가슴이 작다고 쏘아붙이자, 은화는 헛소리라며 넘기고 걸어가면서도 엠마에게 어떻게 생각하느냐고 은근히 묻는다.",
-          "line_start": 23,
-          "line_end": 45,
-          "quote": "조, 조용히 해. 가, 가슴도 쬐끄만한게! 푸후! ··· ···. 헛소리할 시간 있으면 빨리 움직여.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 베스티의 귀에 말싸움에서 이기는 대사를 속삭여 알려준다.",
+          "line_start": 11,
+          "line_end": 18,
+          "claim_line": null,
+          "quote": "아니스: ···좋아. 그럼 말싸움에서 이기는 방법 알려줄게.\n아니스: 내가 하는 말 그대로 따라 하면 이길 수 있어.\n아니스는 베스티의 귀에 대고 속삭였다.\n베스티: 헉···!\n베스티: 너, 너무 심한 말 같아.\n아니스: 그렇다는 말은 너도 그 사실에 동의한다는 얘기지?\n베스티: ··· ···.\n아니스: 다음에 기회가 오면 바로 써먹어보자고.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_03__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "베스티",
+          "summary": "은화가 빨리 움직이라고 재촉하자 베스티가 아니스에게 배운 대로 가슴도 조그만 게 조용히 하라고 외치지만, 은화가 헛소리 말고 움직이라고 반응해 도로 사과한다.",
+          "line_start": 19,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "은화: 꾸물거리지 마. 전투가 끝났으면 바로 움직이라고.\n은화: 시간이 그렇게 남아도는 것 같아?\n아니스: 빨리도 그 기회가 왔네. 지금 지금.\n베스티: 으, 응.\n은화: 뭐 하냐고. 빨리 안 움직여?\n베스티: 조, 조용히 해.\n베스티: 가, 가슴도 쬐끄만한게!\n엠마: 푸후!\n은화: ··· ···.\n은화: 헛소리할 시간 있으면 빨리 움직여.\n베스티: 어? 으, 응. 미안.\n은화는 걸어가버렸다.\n엠마: 같이 가~\n엠마는 은화를 뒤를 따라갔다.\n베스티: ···아니스. 잘 안됐어.\n아니스: ···그러네. 미안.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_03__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "은화가 엠마에게 어떻게 생각하냐고 묻자 엠마는 카운터스의 전투력이 상위 10%에 들 정도로 높다고 답한다.",
+          "line_start": 35,
+          "line_end": 38,
+          "claim_line": 38,
+          "quote": "은화: 엠마.\n엠마: 응? 왜?\n은화: 어떻게 생각해?\n엠마: 음··· 생각보다 수준이 엄청 높아. 전투력만으로 보면 상위 10%에 들지도.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_03__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "은화가 전투력 얘기가 아니라고 하자, 엠마는 은화가 베스티의 말 때문에 가슴 크기를 신경 쓰고 있음을 깨닫고 만져보기 전까진 모르겠다며 놀린다.",
+          "line_start": 39,
+          "line_end": 49,
+          "claim_line": null,
+          "quote": "은화: 아니. 그거 말고.\n엠마: 응? 그럼?\n은화: ··· ···.\n엠마: ···?\n엠마: ···어머.\n엠마: 세상에. 은화가 그런 거에 신경 쓰고 있는 줄은 몰랐네.\n은화: 대답이나 해.\n엠마: 후후. 만져보기 전까진 모르겠는데~?\n은화: 됐어 그러면.\n엠마: 우후후. 후후후후.\n은화: ···가까이 오지 마.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
@@ -790,13 +1141,20 @@
         {
           "item_id": "main_10_03__rln_001",
           "subject": "베스티",
-          "target": "아니스",
-          "relation_or_change": "아니스가 가르쳐 준 대사를 그대로 따라 하며 은화에게 처음으로 말대꾸를 시도함.",
-          "line_start": 11,
-          "line_end": 25,
-          "quote": "조, 조용히 해. 가, 가슴도 쬐끄만한게!"
+          "target": "앱솔루트",
+          "relation_or_change": "베스티는 앱솔루트 소속이며, 엠마에 따르면 앱솔루트 내에서 가장 강하다.",
+          "epistemic_type": "character_claim",
+          "claimant": "엠마",
+          "line_start": 4,
+          "line_end": 6,
+          "claim_line": 6,
+          "quote": "아니스: 최약체 아니었어? 앱솔루트에서.\n엠마: 후후. 그럴 리가.\n엠마: 가장 강할걸?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_10_03__uec_001",
@@ -820,8 +1178,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
-      "is_plot_critical": false,
-      "summary": "네온은 큰 무기를 쓰는 엠마에게 동질감을 느끼며 화력을 끌어올리는 마음가짐을 전수하려 한다. 이동 중 누군가 뒤를 미행하고 있음을 감지한 라피와 은화는 수신호로 8시 방향 2.5km 후방의 3명을 확인하고 좀 더 끌어들이기로 합의하며, 시프티는 라피와 앱솔루트의 과거 인연을 언급하려다 말을 아낀다.",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "네온과 엠마가 화력에 관해 대화를 나누며 친해지고, 시프티는 지휘관에게 카운터스와 앱솔루트가 잘 지내 다행이라고 말한다. 지휘관이 지상에 올라왔을 때부터 신경 쓰이는 기척을 언급하려 하자 은화가 말을 막고 라피와 수신호로 후방 2.5km 거리의 미행자 3명을 파악한 뒤 좀 더 끌어들이기로 한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -864,7 +1223,7 @@
             "medium": "comm",
             "line_start": 25,
             "line_end": 26,
-            "quote": "다들, 묘하게 잘 지내네요. 저 사실 걱정 많이 했거든요. 앱솔루트 분들이 보통이 아니라는 얘기를 너무 많이 들어서."
+            "quote": "시프티: 다들, 묘하게 잘 지내네요.\n시프티: 저 사실 걱정 많이 했거든요. 앱솔루트 분들이 보통이 아니라는 얘기를 너무 많이 들어서."
           }
         ],
         "mentioned_only": [
@@ -875,7 +1234,9 @@
             "entity_type": "organization",
             "line_start": 11,
             "line_end": 11,
-            "quote": "엘리시온에서 지급해 주는 그대로 사용하니까."
+            "quote": "엠마: 엘리시온에서 지급해 주는 그대로 사용하니까.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_10_04__mnt_002",
@@ -884,7 +1245,9 @@
             "entity_type": "squad",
             "line_start": 26,
             "line_end": 26,
-            "quote": "저 사실 걱정 많이 했거든요. 앱솔루트 분들이 보통이 아니라는 얘기를 너무 많이 들어서."
+            "quote": "시프티: 저 사실 걱정 많이 했거든요. 앱솔루트 분들이 보통이 아니라는 얘기를 너무 많이 들어서.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -892,35 +1255,20 @@
       "forms_of_address": [
         {
           "item_id": "main_10_04__foa_001",
-          "from_speaker": "네온",
-          "to_target": "엠마",
-          "address_term": "동지",
-          "line_start": 6,
-          "line_end": 6,
-          "quote": "아뇨. 드디어 동지를 만난 것 같아서요."
-        },
-        {
-          "item_id": "main_10_04__foa_002",
           "from_speaker": "시프티",
           "to_target": "지휘관",
           "address_term": "지휘관",
           "line_start": 34,
           "line_end": 34,
-          "quote": "그런데 지휘관은 전혀 끼질 않네요. 쑥스러워서 그러세요?"
+          "quote": "시프티: 그런데 지휘관은 전혀 끼질 않네요. 쑥스러워서 그러세요?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "main_10_04__csh_001",
-          "text": "라피와 은화가 수신호로 확인한 8시 방향 2.5km 거리의 미행자 3명은 main_10_06과 main_11_00에서 메티스 스쿼드로 밝혀진다.",
-          "related_scene_ids": [
-            "main_10_06",
-            "main_11_00"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [
         {
           "item_id": "main_10_04__chb_001",
@@ -929,14 +1277,12 @@
             {
               "item_id": "main_10_04__chb_001_opt_01",
               "option_text": "서로 잘 지내면 좋은 거지.",
-              "continuation_summary": "카운터스와 앱솔루트가 잘 어울리는 모습을 긍정적으로 바라본다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "main_10_04__chb_001_opt_02",
               "option_text": "사실 나도 속으로 걱정 많이 했어.",
-              "continuation_summary": "시프티도 예전에 만났을 때 좋은 이야기를 나누지 않았으니 걱정할 만했다며 공감한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "시프티가 예전에 만났을 때 딱히 좋은 얘기를 나누지 않았다며 지휘관의 걱정에 공감한다."
             }
           ]
         },
@@ -947,14 +1293,12 @@
             {
               "item_id": "main_10_04__chb_002_opt_01",
               "option_text": "예전에?",
-              "continuation_summary": "시프티가 남의 이야기를 자신이 함부로 하기는 그렇다며 말을 아낀다.",
-              "branch_specific_facts": []
+              "continuation_summary": "시프티가 남의 얘기를 자기가 막 하긴 좀 그렇다며 말을 아낀다."
             },
             {
               "item_id": "main_10_04__chb_002_opt_02",
               "option_text": "미안. 라피한테 들을게.",
-              "continuation_summary": "시프티도 남의 이야기를 자신이 함부로 하기는 그렇다며 수긍한다.",
-              "branch_specific_facts": []
+              "continuation_summary": "시프티가 남의 얘기를 자기가 막 하긴 좀 그렇다며 수긍한다."
             }
           ]
         }
@@ -963,54 +1307,173 @@
         {
           "item_id": "main_10_04__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "네온, 엠마",
-          "summary": "네온과 엠마가 무기와 화력을 주제로 대화를 나누며 친해진다.",
-          "line_start": 17,
-          "line_end": 23,
-          "quote": "네온이 화력의 전문가처럼 보여서 부탁하는 거야. 알려주면 엄청 도움 될 것 같아. ··· ···. 알겠습니다. 제가 지금껏 쌓은 화력의 진수를 전수해드릴게요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "네온",
+          "summary": "네온이 큰 무기를 쓰는 엠마를 화력 동지로 반기며 탄과 장비를 묻지만, 엠마는 엘리시온에서 지급해 준 것 중 가장 강해 보이는 걸 고른 것뿐이라고 답한다.",
+          "line_start": 2,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "네온: 엠마는 엄청 큰 무기를 사용하시네요.\n엠마: 응. 화력이 괜찮거든, 이 무기.\n네온: !!\n엠마: 어머. 나 뭔가 잘 못 말했어?\n네온: 아뇨. 드디어 동지를 만난 것 같아서요.\n엠마: ??\n네온: 탄은 뭘 사용하시나요? 그리고 추가 장비는요?\n엠마: 음··· 미안해. 나 그런 건 잘 몰라서.\n네온: 아···.\n엠마: 엘리시온에서 지급해 주는 그대로 사용하니까.\n엠마: 그중 가장 강해 보이는 걸 고른 것뿐이거든.\n네온: 그렇··· 군요.\n엠마: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_04__eac_002",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "지휘관, 은화, 라피",
-          "summary": "지휘관이 지상에 올라왔을 때부터 신경 쓰이는 기척을 언급하려 하자 은화가 말을 막고, 라피와 은화는 수신호로 8시 방향 2.5km 거리에 있는 3명을 확인한 뒤 좀 더 끌어들이기로 한다.",
-          "line_start": 43,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마가 요즘 화력이 아쉬운 것 같다며 화력 전문가처럼 보이는 네온에게 조언을 부탁하고, 네온은 첫 번째 방법이 마음가짐이라며 화력의 진수를 전수하겠다고 나선다.",
+          "line_start": 15,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "엠마: 그런데 요즘 화력이 좀 아쉬운 것 같은데, 끌어올릴 수 있는 방법이 있을까?\n네온: 예?\n엠마: 네온이 화력의 전문가처럼 보여서 부탁하는 거야.\n엠마: 알려주면 엄청 도움 될 것 같아.\n네온: ··· ···.\n네온: 알겠습니다. 제가 지금껏 쌓은 화력의 진수를 전수해드릴게요.\n엠마: 후후. 부탁할게.\n네온: 먼저, 화력을 끌어올리는 첫 번째 방법. 그것은 마음가짐입니다.\n엠마: 어? 마음가짐 부터야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_04__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 앱솔루트가 보통이 아니라는 말을 많이 들어 걱정했는데 다들 묘하게 잘 지낸다고 말한다.",
+          "line_start": 24,
+          "line_end": 29,
+          "claim_line": 26,
+          "quote": "시프티: ··· ···.\n시프티: 다들, 묘하게 잘 지내네요.\n시프티: 저 사실 걱정 많이 했거든요. 앱솔루트 분들이 보통이 아니라는 얘기를 너무 많이 들어서.\n[CHOICE_START]\n  [OPTION TEXT=\"서로 잘 지내면 좋은 거지.\"]\n  [OPTION_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 27,
+            "option_text": "서로 잘 지내면 좋은 거지."
+          }
+        },
+        {
+          "item_id": "main_10_04__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "지휘관이 속으로 걱정을 많이 했다고 하자, 시프티는 예전에 만났을 때 딱히 좋은 얘기를 나누지 않았다며 공감한다.",
+          "line_start": 30,
+          "line_end": 31,
+          "claim_line": 31,
+          "quote": "  [OPTION TEXT=\"사실 나도 속으로 걱정 많이 했어.\"]\n    시프티: 그렇죠? 예전에 만났을 때 딱히 좋은 얘긴 안 나눴으니까요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 27,
+            "option_text": "사실 나도 속으로 걱정 많이 했어."
+          }
+        },
+        {
+          "item_id": "main_10_04__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "지휘관이 지상에 올라왔을 때부터 신경 쓰이는 것이 있다고 말하려 하자 은화가 제지하고, 라피와 은화는 수신호로 8시 방향 2.5km 거리에 무장 불명의 3명이 따라붙었음을 확인한 뒤 좀 더 끌어들이기로 합의한다.",
+          "line_start": 34,
           "line_end": 54,
-          "quote": "라피와 은화는 수신호로 대화를 주고받았다. (8시 방향. 거리는 2.5km) (3명. 무장은 파악 불가. 저격 가능.) (지금은 안돼. 좀 더 끌어들이자.) (라져.)",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "시프티: 그런데 지휘관은 전혀 끼질 않네요. 쑥스러워서 그러세요?\n[CHOICE_START]\n  [OPTION TEXT=\"조금 신경 쓰이는 게 있어서···.\"]\n  [OPTION_END]\n[CHOICE_END]\n시프티: 신경 쓰인다면 어떤···.\n시프티: 아, 설마 엠마가?\n시프티: 그렇죠~ 여러 가지 의미로 어른이니까요~\n[CHOICE_START]\n  [OPTION TEXT=\"그게 아니라 지상에 올라왔을 때부터···.\"]\n  [OPTION_END]\n[CHOICE_END]\n은화: 조용.\n은화: 더 말하지 마.\n라피: ··· ···.\n라피와 은화는 수신호로 대화를 주고받았다.\n라피: (8시 방향. 거리는 2.5km)\n은화: (3명. 무장은 파악 불가. 저격 가능.)\n라피: (지금은 안돼. 좀 더 끌어들이자.)\n은화: (라져.)\n둘은 태연하게 앞으로 걸어갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_04__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 라피와 은화가 전투에서는 믿을 수 있는 동료인가 보다며 앱솔루트와 라피의 과거 인연을 꺼내려다 말을 아낀다.",
+          "line_start": 55,
+          "line_end": 61,
+          "claim_line": 57,
+          "quote": "시프티: ···그렇게 잡아먹을 것처럼 하더니.\n시프티: 전투에서는 믿을 수 있는 동료인가 봐요.\n시프티: 아, 혹시 그거 아시나요? 앱솔루트와 라피는 예전에···.\n[CHOICE_START]\n  [OPTION TEXT=\"예전에?\"]\n    시프티: 음··· 아니에요. 남의 얘기를 제가 막 하기도 좀 그렇네요.\n  [OPTION_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 58,
+            "option_text": "예전에?"
+          }
+        },
+        {
+          "item_id": "main_10_04__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 라피에게 직접 듣겠다고 하자 시프티도 남의 얘기를 자기가 하긴 그렇다며 이동하자고 한다.",
+          "line_start": 62,
+          "line_end": 66,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"미안. 라피한테 들을게.\"]\n    시프티: 음··· 그렇죠. 남의 얘기를 제가 막 하기도 좀 그렇네요.\n  [OPTION_END]\n[CHOICE_END]\n시프티: 이동하죠. 지휘관.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 58,
+            "option_text": "미안. 라피한테 들을게."
+          }
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_10_04__clh_001",
-          "keyword": "2.5km 후방의 미행자 3명",
+          "keyword": "8시 방향 미행자 3명",
           "category": "foreshadowing",
-          "detail": "지상에 올라왔을 때부터 일행을 따라오던 8시 방향 2.5km 거리의 정체불명 3명. 라피와 은화가 수신호로 파악하고 좀 더 끌어들이기로 함.",
-          "line_start": 49,
+          "subject": null,
+          "detail": "지상에 올라왔을 때부터 8시 방향 2.5km 거리에서 무장 파악이 안 되는 3명이 일행을 따라오고 있으며, 라피와 은화는 이들을 좀 더 끌어들이기로 한다.",
+          "line_start": 43,
           "line_end": 53,
-          "quote": "라피와 은화는 수신호로 대화를 주고받았다. (8시 방향. 거리는 2.5km) (3명. 무장은 파악 불가. 저격 가능.) (지금은 안돼. 좀 더 끌어들이자.) (라져.)"
+          "quote": "  [OPTION TEXT=\"그게 아니라 지상에 올라왔을 때부터···.\"]\n  [OPTION_END]\n[CHOICE_END]\n은화: 조용.\n은화: 더 말하지 마.\n라피: ··· ···.\n라피와 은화는 수신호로 대화를 주고받았다.\n라피: (8시 방향. 거리는 2.5km)\n은화: (3명. 무장은 파악 불가. 저격 가능.)\n라피: (지금은 안돼. 좀 더 끌어들이자.)\n은화: (라져.)",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_04__clh_002",
+          "keyword": "앱솔루트와 라피의 과거",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "시프티가 앱솔루트와 라피의 과거 관계를 언급하려다 남의 이야기라며 말을 멈춘다.",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "시프티: 아, 혹시 그거 아시나요? 앱솔루트와 라피는 예전에···.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_10_04__rln_001",
+          "subject": "네온",
+          "target": "엠마",
+          "relation_or_change": "네온은 큰 무기를 쓰는 엠마를 화력 동지로 여기고, 엠마의 부탁으로 화력을 끌어올리는 법을 전수해 주기로 한다.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 6,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "네온: 아뇨. 드디어 동지를 만난 것 같아서요.\n엠마: ??\n네온: 탄은 뭘 사용하시나요? 그리고 추가 장비는요?\n엠마: 음··· 미안해. 나 그런 건 잘 몰라서.\n네온: 아···.\n엠마: 엘리시온에서 지급해 주는 그대로 사용하니까.\n엠마: 그중 가장 강해 보이는 걸 고른 것뿐이거든.\n네온: 그렇··· 군요.\n엠마: ··· ···.\n엠마: 그런데 요즘 화력이 좀 아쉬운 것 같은데, 끌어올릴 수 있는 방법이 있을까?\n네온: 예?\n엠마: 네온이 화력의 전문가처럼 보여서 부탁하는 거야.\n엠마: 알려주면 엄청 도움 될 것 같아.\n네온: ··· ···.\n네온: 알겠습니다. 제가 지금껏 쌓은 화력의 진수를 전수해드릴게요.\n엠마: 후후. 부탁할게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_04__rln_002",
           "subject": "라피",
-          "target": "은화",
-          "relation_or_change": "평소 날 선 태도와 달리 전투 상황에서는 말 한마디 없이 수신호만으로 완벽하게 호흡을 맞출 정도로 깊은 전술적 신뢰가 남아 있음.",
-          "line_start": 49,
-          "line_end": 56,
-          "quote": "라피와 은화는 수신호로 대화를 주고받았다. (8시 방향. 거리는 2.5km) (3명. 무장은 파악 불가. 저격 가능.) (지금은 안돼. 좀 더 끌어들이자.) (라져.) 둘은 태연하게 앞으로 걸어갔다. ···그렇게 잡아먹을 것처럼 하더니. 전투에서는 믿을 수 있는 동료인가 봐요."
+          "target": "앱솔루트",
+          "relation_or_change": "시프티는 라피와 은화가 전투에서 수신호로 호흡을 맞추는 모습을 보며 믿을 수 있는 동료인가 보다라고 평가하고, 과거 앱솔루트와 라피 사이에 인연이 있었음을 시사한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "시프티",
+          "line_start": 55,
+          "line_end": 57,
+          "claim_line": 56,
+          "quote": "시프티: ···그렇게 잡아먹을 것처럼 하더니.\n시프티: 전투에서는 믿을 수 있는 동료인가 봐요.\n시프티: 아, 혹시 그거 아시나요? 앱솔루트와 라피는 예전에···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_10_04__uec_001",
@@ -1040,8 +1503,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "시프티가 전방 2km 깊이의 크랙을 등지고 야영할 것을 권유하자, 은화는 카운터스에게 데코이를 뿌리고 오라고 지시하면서 라피는 남으라고 한다. 아니스는 은화의 말을 꼬투리 잡아 베스티에게 말싸움 시범을 보인 뒤, 라피가 앱솔루트와 밀린 이야기를 나눌 수 있도록 네온만 데리고 자리를 비켜준다.",
+      "summary": "시프티가 깊이 2km의 크랙을 등지고 야영할 것을 권하자 은화는 카운터스에게 데코이를 뿌리고 오라고 지시한다. 아니스는 꼬투리 잡기로 은화를 약 올리는 시범을 베스티에게 보여준 뒤, 은화가 라피는 남으라고 하자 네온만 데리고 데코이를 설치하러 간다.",
       "participants": {
         "present_in_scene": [
           {
@@ -1080,9 +1544,11 @@
             "item_id": "main_10_05__psl_001",
             "name": "라피",
             "entity_id": "char_라피",
-            "line_start": 20,
+            "line_start": 19,
             "line_end": 20,
-            "quote": "아니. 라피는 남는다. 둘이 갔다 와."
+            "quote": "아니스: 네온, 라피. 가자.\n은화: 아니. 라피는 남는다. 둘이 갔다 와.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "remote_or_voice_only": [
@@ -1093,42 +1559,50 @@
             "medium": "comm",
             "line_start": 2,
             "line_end": 3,
-            "quote": "전방, 깊이 2km의 크랙입니다. 아래쪽에 랩쳐의 반응은 없어요. 크랙을 등지고 야영할 것을 추천드립니다."
+            "quote": "시프티: 전방, 깊이 2km의 크랙입니다.\n시프티: 아래쪽에 랩쳐의 반응은 없어요. 크랙을 등지고 야영할 것을 추천드립니다."
           }
         ],
         "mentioned_only": [
           {
             "item_id": "main_10_05__mnt_001",
-            "surface_text": "크랙",
-            "entity_id": null,
-            "entity_type": "location",
-            "line_start": 2,
-            "line_end": 2,
-            "quote": "전방, 깊이 2km의 크랙입니다."
-          },
-          {
-            "item_id": "main_10_05__mnt_002",
             "surface_text": "랩쳐",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 3,
             "line_end": 3,
-            "quote": "아래쪽에 랩쳐의 반응은 없어요. 크랙을 등지고 야영할 것을 추천드립니다."
+            "quote": "시프티: 아래쪽에 랩쳐의 반응은 없어요. 크랙을 등지고 야영할 것을 추천드립니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_05__mnt_003",
+            "item_id": "main_10_05__mnt_002",
             "surface_text": "데코이",
             "entity_id": null,
             "entity_type": "item",
             "line_start": 4,
             "line_end": 4,
-            "quote": "너희들. 데코이를 뿌리고 와."
+            "quote": "은화: 너희들. 데코이를 뿌리고 와.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "main_10_05__foa_001",
+          "from_speaker": "은화",
+          "to_target": "카운터스",
+          "address_term": "너희들",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "은화: 너희들. 데코이를 뿌리고 와.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -1136,45 +1610,58 @@
         {
           "item_id": "main_10_05__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "은화, 아니스, 네온",
-          "summary": "은화가 야영 준비를 위해 데코이를 뿌리고 오라면서 라피는 남으라고 지시하자, 아니스는 밀린 이야기를 나누라며 네온과 둘이서만 데코이를 설치하러 간다.",
-          "line_start": 19,
-          "line_end": 26,
-          "quote": "네온, 라피. 가자. 아니. 라피는 남는다. 둘이 갔다 와. ···뭐, 좋아. 갔다 오지 뭐. 밀린 얘기들 나누셔.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 전방 깊이 2km의 크랙 아래쪽에 랩쳐 반응이 없다며 크랙을 등지고 야영할 것을 추천한다.",
+          "line_start": 2,
+          "line_end": 3,
+          "claim_line": null,
+          "quote": "시프티: 전방, 깊이 2km의 크랙입니다.\n시프티: 아래쪽에 랩쳐의 반응은 없어요. 크랙을 등지고 야영할 것을 추천드립니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_05__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "은화가 데코이를 뿌리고 오라고 지시하자 아니스가 말꼬리를 잡으며 은화를 화나게 만든 뒤 베스티에게 꼬투리 잡기 시범을 설명한다.",
+          "line_start": 4,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "은화: 너희들. 데코이를 뿌리고 와.\n아니스: 우리가?\n은화: 그래. 너희들.\n아니스: 지금?\n은화: 지금.\n아니스: 왜?\n은화: 야영 해야 할 것 아냐.\n아니스: 야영을?\n은화: ··· ···.\n아니스: 봤지? 이건 꼬투리 잡기라고, 단순히 상대를 화나게 할 때 좋아.\n베스티: 으, 응. 효과 엄청 좋다. 은화가 저렇게 화내는 건 처음 봤어.\n베스티: 아니스 대단하네.\n아니스: 하하. 별말씀을.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_05__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "은화가 라피는 남고 아니스와 네온 둘만 다녀오라고 지시하자, 아니스는 밀린 얘기들을 나누라며 네온을 데리고 데코이를 설치하러 간다.",
+          "line_start": 17,
+          "line_end": 27,
+          "claim_line": null,
+          "quote": "은화: 가.\n아니스: 예예. 갑니다 가요.\n아니스: 네온, 라피. 가자.\n은화: 아니. 라피는 남는다. 둘이 갔다 와.\n아니스: ···뭐, 좋아. 갔다 오지 뭐.\n아니스: 밀린 얘기들 나누셔.\n네온: 엇, 저도 얘기 나누고 싶은데요.\n아니스: 나중에 해. 나중에.\n엠마: 잘 갔다 와~\n아니스와 네온은 걸어갔다.\n은화: 그럼 우린 이 앞을 정리한 후 야영지를 확보한다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "main_10_05__rln_001",
-          "subject": "은화",
-          "target": "라피",
-          "relation_or_change": "데코이 설치를 보내면서 라피만 따로 남겨 과거 앱솔루트 이탈에 대해 대화를 나누려 함.",
-          "line_start": 19,
-          "line_end": 22,
-          "quote": "네온, 라피. 가자. 아니. 라피는 남는다. 둘이 갔다 와. ···뭐, 좋아. 갔다 오지 뭐. 밀린 얘기들 나누셔."
-        }
-      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_10_05__uec_001",
-          "surface_text": "크랙",
-          "suggested_type": "location",
-          "line_start": 2
-        },
-        {
-          "item_id": "main_10_05__uec_002",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 3
         },
         {
-          "item_id": "main_10_05__uec_003",
+          "item_id": "main_10_05__uec_002",
           "surface_text": "데코이",
           "suggested_type": "item",
           "line_start": 4
@@ -1195,8 +1682,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "엠마와 베스티가 라피에게 앱솔루트 복귀를 권하는 가운데 은화는 왜 말도 없이 스쿼드를 떠났는지 추궁한다. 라피는 과거 타일런트 급 5기가 출현한 작전에서 유탄으로 민간인이 사망했을 때 슬픔 대신 경위서 걱정부터 한 자신에게 충격을 받아 떠났다고 고백하고, 데코이를 설치하고 돌아온 아니스와 네온이 쓰러진 메티스 스쿼드 3명을 데려온다.",
+      "summary": "앱솔루트 대원들과 단둘이 남은 자리에서 라피는 과거 작전 중 유탄으로 죽은 인간을 보고도 경위서 생각만 한 자신의 무감각함에 충격받아 스쿼드를 떠났다고 고백한다. 은화는 말도 없이 서류 한 장으로 떠난 라피에게 소중한 동료를 그렇게 다루지 않는다며 격분하고, 그 직후 데코이를 설치하고 돌아온 아니스와 네온이 쓰러진 메티스 스쿼드 대원 3명을 데려온다.",
       "participants": {
         "present_in_scene": [
           {
@@ -1241,66 +1729,69 @@
         "mentioned_only": [
           {
             "item_id": "main_10_06__mnt_001",
-            "surface_text": "앱솔루트",
-            "entity_id": null,
-            "entity_type": "squad",
-            "line_start": 5,
-            "line_end": 5,
-            "quote": "다시 돌아올 생각 없어? 앱솔루트로."
-          },
-          {
-            "item_id": "main_10_06__mnt_002",
             "surface_text": "앱솔루트 스쿼드",
             "entity_id": null,
             "entity_type": "squad",
             "line_start": 7,
             "line_end": 7,
-            "quote": "앱솔루트 스쿼드는 저 쓰레기가 나가고 난 후 더 완벽해졌어."
+            "quote": "은화: 앱솔루트 스쿼드는 저 쓰레기가 나가고 난 후 더 완벽해졌어.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_06__mnt_003",
+            "item_id": "main_10_06__mnt_002",
             "surface_text": "타일런트 급",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 25,
             "line_end": 25,
-            "quote": "타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?"
+            "quote": "라피: 타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_06__mnt_004",
+            "item_id": "main_10_06__mnt_003",
             "surface_text": "방주",
             "entity_id": null,
             "entity_type": "location",
             "line_start": 25,
             "line_end": 25,
-            "quote": "타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?"
+            "quote": "라피: 타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_06__mnt_005",
+            "item_id": "main_10_06__mnt_004",
             "surface_text": "랩쳐",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 60,
             "line_end": 60,
-            "quote": "랩쳐한테 나 여기 있습니다라고 광고하려고?"
+            "quote": "아니스: 랩쳐한테 나 여기 있습니다라고 광고하려고?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_06__mnt_006",
+            "item_id": "main_10_06__mnt_005",
             "surface_text": "데코이",
             "entity_id": null,
             "entity_type": "item",
             "line_start": 63,
             "line_end": 63,
-            "quote": "데코이는 다 뿌려놓고 왔어?"
+            "quote": "엠마: 데코이는 다 뿌려놓고 왔어?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_10_06__mnt_007",
+            "item_id": "main_10_06__mnt_006",
             "surface_text": "메티스",
             "entity_id": null,
             "entity_type": "squad",
             "line_start": 72,
             "line_end": 72,
-            "quote": "메티스···?"
+            "quote": "라피: 메티스···?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -1308,15 +1799,29 @@
       "forms_of_address": [
         {
           "item_id": "main_10_06__foa_001",
+          "from_speaker": "베스티",
+          "to_target": "라피",
+          "address_term": "네가",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "베스티: 작전 중에 계속 힐끔거렸거든. 네가 언제나 있던 포지션을.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_06__foa_002",
           "from_speaker": "은화",
           "to_target": "라피",
-          "address_term": "저 쓰레기",
-          "line_start": 7,
-          "line_end": 7,
-          "quote": "앱솔루트 스쿼드는 저 쓰레기가 나가고 난 후 더 완벽해졌어."
+          "address_term": "너",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "은화: 너한테 우린 뭐였냐.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -1324,116 +1829,197 @@
         {
           "item_id": "main_10_06__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "라피",
-          "summary": "라피는 과거 방주 근처에 타일런트 급 5기가 나타난 작전에서 유탄으로 민간인이 사망했을 때, 인간의 죽음을 슬퍼하지 않고 경위서 쓸 생각부터 한 자신이 망가졌다고 느껴 앱솔루트를 관두었다고 고백한다.",
-          "line_start": 25,
-          "line_end": 46,
-          "quote": "타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나? 응. 기억나. 엄청 힘든 작전이었지. 그때 라피랑 은화가 없었으면 큰일 났을 거야. 난 그때 인간을 죽였어.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "은화",
+          "summary": "엠마가 라피에게 앱솔루트로 돌아올 생각이 없냐고 묻자, 은화는 라피가 자기 변덕으로 나간 뒤 앱솔루트 스쿼드가 더 완벽해졌다며 다시 받아줄 수 없다고 반대한다.",
+          "line_start": 3,
+          "line_end": 10,
+          "claim_line": 8,
+          "quote": "엠마: 라피.\n라피: 응.\n엠마: 다시 돌아올 생각 없어? 앱솔루트로.\n은화: 누구 마음대로.\n은화: 앱솔루트 스쿼드는 저 쓰레기가 나가고 난 후 더 완벽해졌어.\n은화: 자기 변덕으로 나간걸, 다시 받아줄 정도로 내가 호인으로 보여?\n엠마: 음~ 호인처럼 보이진 않네 확실히.\n은화: 꿈도 꾸지 마.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_06__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "은화, 라피",
-          "summary": "은화는 서류 한 장으로 라피의 탈퇴를 통보받았던 설움을 터뜨리며 소중한 동료를 그렇게 다루는 법은 없다고 소리친다.",
-          "line_start": 49,
-          "line_end": 58,
-          "quote": "너한테 우린 뭐였냐. 대답해봐. 너한테 우린 뭐였지? 소중한··· 동료. 개소리 집어치워!! 그 누구도! 소중한 동료를 그렇게 다루지 않아!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "베스티",
+          "summary": "베스티는 은화가 작전 중 라피가 늘 있던 포지션을 계속 힐끔거릴 만큼 가장 그리워할 것이라며, 라피와 은화가 호흡을 맞추던 모습이 멋졌으니 돌아왔으면 좋겠다고 말한다.",
+          "line_start": 11,
+          "line_end": 17,
+          "claim_line": 14,
+          "quote": "베스티: 라피. 은화가 저렇게 말은 해도 제일 그리워할 거야.\n베스티: 작전 중에 계속 힐끔거렸거든. 네가 언제나 있던 포지션을.\n은화: 조용히 해.\n베스티: 나도 라피가 돌아왔으면 좋겠어.\n베스티: 둘이 같이 호흡을 맞춘 모습은, 진짜 멋졌거든.\n은화: 조용히 하라고!\n베스티: 미, 미안.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_06__eac_003",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "네온, 라피",
-          "summary": "데코이를 설치하고 돌아온 네온과 아니스가 오는 길에 주웠다며 쓰러진 메티스 스쿼드 3명을 바닥에 내려놓는다.",
-          "line_start": 64,
+          "actor_or_speaker": "은화",
+          "summary": "은화가 라피에게 왜 갑자기 앱솔루트를 버리고 때려치우고 나갔는지 이유를 추궁하고, 라피는 과거 타일런트급 5기가 방주 근처에 나타났던 작전을 꺼낸다.",
+          "line_start": 18,
+          "line_end": 27,
+          "claim_line": null,
+          "quote": "은화: 하나 물어보자.\n은화: 왜 그랬어?\n라피: ··· ···.\n은화: 왜 우릴 버리, 젠장. 왜 갑자기 때려치우고 나갔냐고.\n라피: ··· ···.\n은화: 입 다물고 있는 게 취미냐.\n은화: 말을 해.\n라피: 타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?\n엠마: 응. 기억나. 엄청 힘든 작전이었지.\n베스티: 그때 라피랑 은화가 없었으면 큰일 났을 거야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_06__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피는 타일런트급 5기와의 작전 당시 자신의 유탄에 맞아 몸통 절반이 없어진 채 죽어가는 민간인 인간을 보며 슬퍼하기는커녕 경위서를 쓰겠다는 생각만 했던 자신이 망가졌다고 느껴, 인간도 니케도 아닌 자신이 무엇인지 알 수 없어 앱솔루트를 관두었다고 고백한다.",
+          "line_start": 28,
+          "line_end": 46,
+          "claim_line": 44,
+          "quote": "라피: 난 그때 인간을 죽였어.\n베스티: 어···?\n라피: 유탄이었어. 하지만 죽었지.\n엠마: 작전 중 민간인이 휘말리는 사고는 일어날 수 있는 일이야.\n엠마: 그걸로 책임을 묻지는 않는다는 거, 잘 알잖아.\n라피: 알아. 그런데.\n라피: 몸통 절반이 없어진 상태로, 피를 쏟아내고 있는 그 인간을 보면서.\n라피: 내가 무슨 생각을 한 줄 알아?\n라피: 아, 경위서를 쓰겠군.\n엠마: ··· ···.\n베스티: ··· ···.\n라피: 망가진 거야. 머리가. 심장이.\n라피: 인간을 지키기 위해 만들어진 나라는 존재가.\n라피: 인간의 죽음을 비통해하지 않고, 그저 귀찮은 일로 취급해버린 게.\n라피: 너무···.\n라피: 이상하다고 생각했어.\n라피: 그래서 관둔 거야. 내가 뭔지 알 수가 없어서.\n라피: 인간도 아니고, 그렇다고 니케도 아닌.\n라피: 내가 뭔지 알 수가 없어서.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_06__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "은화는 라피가 동료들에게 말 한마디 없이 서류 한 장으로 탈퇴를 통보했던 것에 분통을 터뜨리며 자신들이 뭐였냐고 묻고, 라피가 소중한 동료였다고 답하자 소중한 동료를 그렇게 다루지 않는다며 일갈한다.",
+          "line_start": 47,
+          "line_end": 58,
+          "claim_line": 57,
+          "quote": "은화: 그래서 용병처럼 떠도는 삼류가 된 거냐?\n라피: ··· ···.\n은화: 우리 기분 같은 건 생각도 하지 않고, 그냥 네 기분이 나빠서 나갔다고?\n은화: 말 한마디 하지 않고. 그냥, 아무 미련도 없다는 듯이 휙.\n은화: 서류 쪼가리로 네가 나갔다는 사실을 접한 내 기분이 어땠을 것 같은데.\n엠마: 은화···.\n은화: 너한테 우린 뭐였냐.\n은화: 대답해봐. 너한테 우린 뭐였지?\n라피: 소중한··· 동료.\n은화: 개소리 집어치워!!\n은화: 그 누구도! 소중한 동료를 그렇게 다루지 않아!\n라피: ··· ···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_06__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "은화의 물음에 라피는 앱솔루트 대원들이 자신에게 소중한 동료였다고 답한다.",
+          "line_start": 53,
+          "line_end": 55,
+          "claim_line": 55,
+          "quote": "은화: 너한테 우린 뭐였냐.\n은화: 대답해봐. 너한테 우린 뭐였지?\n라피: 소중한··· 동료.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_06__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "데코이를 설치하고 돌아온 아니스가 밤중에 소리 지르지 말라고 핀잔을 주자 은화가 사과하고, 네온은 오는 길에 주웠다며 쓰러진 메티스 스쿼드 니케 3명을 바닥에 내려놓는다.",
+          "line_start": 59,
           "line_end": 72,
-          "quote": "오는 길에 이상한 걸 주웠어요. 이상한 걸 주웠다고? 툭. 툭. 툭. 셋의 니케가 쓰러진 채로 바닥에 널브러졌다. 으앗. 니, 니케? ···어머. 잠깐. 이 녀석들···. 메티스···?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "아니스: 어허. 누가 이런 밤중에 소릴 질러?\n아니스: 랩쳐한테 나 여기 있습니다라고 광고하려고?\n은화: ···미안하다. 너무 흥분했어.\n아니스: ···얘 사과도 할 줄 아네?\n엠마: 데코이는 다 뿌려놓고 왔어?\n네온: 예. 문제없이 다 세팅했는데.\n네온: 오는 길에 이상한 걸 주웠어요.\n엠마: 이상한 걸 주웠다고?\n툭. 툭. 툭.\n셋의 니케가 쓰러진 채로 바닥에 널브러졌다.\n베스티: 으앗. 니, 니케?\n엠마: ···어머. 잠깐.\n은화: 이 녀석들···.\n라피: 메티스···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_10_06__clh_001",
-          "keyword": "라피의 앱솔루트 스쿼드 탈퇴 사유",
+          "keyword": "타일런트 급 다섯 기 작전과 라피의 탈퇴",
           "category": "past_incident",
-          "detail": "방주 근처 타일런트 급 5기 출현 작전 당시 유탄으로 사망한 민간인을 보며 슬픔 대신 경위서 작성을 떠올린 자신의 정체성에 혼란을 느껴 앱솔루트를 떠남.",
+          "subject": null,
+          "detail": "라피가 앱솔루트 소속이던 시절 방주 근처에 타일런트급 5기가 나타난 작전에서 유탄으로 민간인이 사망했고, 그때 경위서 생각만 한 자신에게 회의를 느껴 앱솔루트를 탈퇴했다.",
           "line_start": 25,
           "line_end": 46,
-          "quote": "몸통 절반이 없어진 상태로, 피를 쏟아내고 있는 그 인간을 보면서. 내가 무슨 생각을 한 줄 알아? 아, 경위서를 쓰겠군."
+          "quote": "라피: 타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?\n엠마: 응. 기억나. 엄청 힘든 작전이었지.\n베스티: 그때 라피랑 은화가 없었으면 큰일 났을 거야.\n라피: 난 그때 인간을 죽였어.\n베스티: 어···?\n라피: 유탄이었어. 하지만 죽었지.\n엠마: 작전 중 민간인이 휘말리는 사고는 일어날 수 있는 일이야.\n엠마: 그걸로 책임을 묻지는 않는다는 거, 잘 알잖아.\n라피: 알아. 그런데.\n라피: 몸통 절반이 없어진 상태로, 피를 쏟아내고 있는 그 인간을 보면서.\n라피: 내가 무슨 생각을 한 줄 알아?\n라피: 아, 경위서를 쓰겠군.\n엠마: ··· ···.\n베스티: ··· ···.\n라피: 망가진 거야. 머리가. 심장이.\n라피: 인간을 지키기 위해 만들어진 나라는 존재가.\n라피: 인간의 죽음을 비통해하지 않고, 그저 귀찮은 일로 취급해버린 게.\n라피: 너무···.\n라피: 이상하다고 생각했어.\n라피: 그래서 관둔 거야. 내가 뭔지 알 수가 없어서.\n라피: 인간도 아니고, 그렇다고 니케도 아닌.\n라피: 내가 뭔지 알 수가 없어서.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_10_06__rln_001",
-          "subject": "은화",
-          "target": "라피",
-          "relation_or_change": "작전 중에도 늘 라피가 있던 포지션을 힐끔거릴 만큼 라피를 그리워했으며, 말 한마디 없이 서류로만 탈퇴를 접했던 상처와 애증을 드러냄.",
-          "line_start": 11,
-          "line_end": 15,
-          "quote": "라피. 은화가 저렇게 말은 해도 제일 그리워할 거야. 작전 중에 계속 힐끔거렸거든. 네가 언제나 있던 포지션을."
+          "subject": "라피",
+          "target": "앱솔루트 스쿼드",
+          "relation_or_change": "라피는 과거 앱솔루트 스쿼드 소속이었으나, 작전 중 유탄으로 사망한 민간인을 보고 무감각했던 자신에게 회의를 느껴 동료들에게 말 한마디 없이 서류로 탈퇴했다.",
+          "epistemic_type": "character_claim",
+          "claimant": "라피",
+          "line_start": 44,
+          "line_end": 55,
+          "claim_line": 44,
+          "quote": "라피: 그래서 관둔 거야. 내가 뭔지 알 수가 없어서.\n라피: 인간도 아니고, 그렇다고 니케도 아닌.\n라피: 내가 뭔지 알 수가 없어서.\n은화: 그래서 용병처럼 떠도는 삼류가 된 거냐?\n라피: ··· ···.\n은화: 우리 기분 같은 건 생각도 하지 않고, 그냥 네 기분이 나빠서 나갔다고?\n은화: 말 한마디 하지 않고. 그냥, 아무 미련도 없다는 듯이 휙.\n은화: 서류 쪼가리로 네가 나갔다는 사실을 접한 내 기분이 어땠을 것 같은데.\n엠마: 은화···.\n은화: 너한테 우린 뭐였냐.\n은화: 대답해봐. 너한테 우린 뭐였지?\n라피: 소중한··· 동료.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_10_06__rln_002",
-          "subject": "라피",
-          "target": "앱솔루트 스쿼드",
-          "relation_or_change": "과거 앱솔루트 동료들을 여전히 소중한 동료로 여기고 있다고 고백함.",
-          "line_start": 53,
+          "subject": "베스티",
+          "target": "라피",
+          "relation_or_change": "베스티는 라피가 앱솔루트로 다시 돌아왔으면 좋겠다고 말하며, 은화 역시 작전 중 라피의 옛 포지션을 계속 힐끔거릴 만큼 라피를 가장 그리워할 것이라고 말한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "베스티",
+          "line_start": 11,
+          "line_end": 15,
+          "claim_line": 14,
+          "quote": "베스티: 라피. 은화가 저렇게 말은 해도 제일 그리워할 거야.\n베스티: 작전 중에 계속 힐끔거렸거든. 네가 언제나 있던 포지션을.\n은화: 조용히 해.\n베스티: 나도 라피가 돌아왔으면 좋겠어.\n베스티: 둘이 같이 호흡을 맞춘 모습은, 진짜 멋졌거든.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_10_06__rln_003",
+          "subject": "은화",
+          "target": "라피",
+          "relation_or_change": "은화는 라피가 자신들에게 말 한마디 없이 서류 한 장으로 앱솔루트를 떠난 것에 큰 배신감과 상처를 입었으며, 소중한 동료를 그렇게 다루지 않는다고 화를 낸다.",
+          "epistemic_type": "character_claim",
+          "claimant": "은화",
+          "line_start": 49,
           "line_end": 57,
-          "quote": "너한테 우린 뭐였냐. 대답해봐. 너한테 우린 뭐였지? 소중한··· 동료. 개소리 집어치워!! 그 누구도! 소중한 동료를 그렇게 다루지 않아!"
+          "claim_line": 51,
+          "quote": "은화: 우리 기분 같은 건 생각도 하지 않고, 그냥 네 기분이 나빠서 나갔다고?\n은화: 말 한마디 하지 않고. 그냥, 아무 미련도 없다는 듯이 휙.\n은화: 서류 쪼가리로 네가 나갔다는 사실을 접한 내 기분이 어땠을 것 같은데.\n엠마: 은화···.\n은화: 너한테 우린 뭐였냐.\n은화: 대답해봐. 너한테 우린 뭐였지?\n라피: 소중한··· 동료.\n은화: 개소리 집어치워!!\n은화: 그 누구도! 소중한 동료를 그렇게 다루지 않아!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_10_06__uec_001",
-          "surface_text": "앱솔루트",
-          "suggested_type": "squad",
-          "line_start": 5
-        },
-        {
-          "item_id": "main_10_06__uec_002",
           "surface_text": "앱솔루트 스쿼드",
           "suggested_type": "squad",
           "line_start": 7
         },
         {
-          "item_id": "main_10_06__uec_003",
+          "item_id": "main_10_06__uec_002",
           "surface_text": "타일런트 급",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 25
         },
         {
-          "item_id": "main_10_06__uec_004",
+          "item_id": "main_10_06__uec_003",
           "surface_text": "방주",
           "suggested_type": "location",
           "line_start": 25
         },
         {
-          "item_id": "main_10_06__uec_005",
+          "item_id": "main_10_06__uec_004",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 60
         },
         {
-          "item_id": "main_10_06__uec_006",
+          "item_id": "main_10_06__uec_005",
           "surface_text": "데코이",
           "suggested_type": "item",
           "line_start": 63
         },
         {
-          "item_id": "main_10_06__uec_007",
+          "item_id": "main_10_06__uec_006",
           "surface_text": "메티스",
           "suggested_type": "squad",
           "line_start": 72

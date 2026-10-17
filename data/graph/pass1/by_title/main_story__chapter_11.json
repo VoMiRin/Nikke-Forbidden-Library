@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.471Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-17T03:25:27.059Z",
   "title_id": "main_story__chapter_11",
   "category": "main_story",
   "title": "Chapter.11: 최강",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "코어 외에 전기를 보조 동력으로 쓰는 메티스 스쿼드(라플라스, 드레이크, 맥스웰)는 비상용 배터리를 나눠 받고 깨어난다. 맥스웰은 미실리스의 앱솔루트 전담 정보부를 통해 앱솔루트의 이동 경로를 파악한 슈엔이 헬레틱의 파편을 수거하라며 자신들을 보냈다고 솔직하게 밝히고, 메티스 일행은 일방적으로 야영지에 합류해 잠이 든다.",
+      "summary": "보조 동력 배터리가 방전돼 쓰러졌던 메티스 스쿼드(라플라스, 드레이크, 맥스웰)가 비상용 배터리를 받고 깨어난다. 맥스웰은 미실리스의 앱솔루트 전담 정보부를 통해 앱솔루트의 이동 목적지가 과거 헬레틱 교전지임을 알아낸 슈엔이 헬레틱 파편 수거를 위해 자신들을 보냈다고 밝히고 일행에 멋대로 합류해 잠을 청한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -101,57 +102,47 @@
         "mentioned_only": [
           {
             "item_id": "main_11_00__mnt_001",
-            "surface_text": "코어",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 21,
-            "line_end": 21,
-            "quote": "우린 코어 이외에도 전기를 보조 동력으로 쓰고 있으니까."
-          },
-          {
-            "item_id": "main_11_00__mnt_002",
             "surface_text": "슈엔",
             "entity_id": "char_슈엔",
             "entity_type": "character",
             "line_start": 25,
             "line_end": 25,
-            "quote": "시키니까 하는 거지 뭐. 슈엔이 언제 우리 사정 봐줬나."
+            "quote": "맥스웰: 시키니까 하는 거지 뭐. 슈엔이 언제 우리 사정 봐줬나.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_00__mnt_003",
+            "item_id": "main_11_00__mnt_002",
             "surface_text": "미실리스",
             "entity_id": null,
             "entity_type": "organization",
             "line_start": 45,
             "line_end": 45,
-            "quote": "왜 우릴 미행했지? 미실리스의 개들아."
+            "quote": "은화: 왜 우릴 미행했지? 미실리스의 개들아.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_00__mnt_004",
-            "surface_text": "헬레틱의 파편",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 50,
-            "line_end": 50,
-            "quote": "헬레틱의 파편을 수거하러."
-          },
-          {
-            "item_id": "main_11_00__mnt_005",
-            "surface_text": "앱솔루트 전담 정보부",
-            "entity_id": null,
-            "entity_type": "organization",
-            "line_start": 54,
-            "line_end": 54,
-            "quote": "미실리스에는 앱솔루트 전담 정보부가 있어. 너희가 어디 가서 뭘 하는지 다 보고가 들어온다고."
-          },
-          {
-            "item_id": "main_11_00__mnt_006",
+            "item_id": "main_11_00__mnt_003",
             "surface_text": "헬레틱",
             "entity_id": null,
             "entity_type": "faction_or_species",
-            "line_start": 56,
-            "line_end": 56,
-            "quote": "그랬더니 과거 헬레틱과 교전한 장소라는 결론이 나온 거지."
+            "line_start": 50,
+            "line_end": 50,
+            "quote": "맥스웰: 헬레틱의 파편을 수거하러.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_11_00__mnt_004",
+            "surface_text": "앱솔루트",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 54,
+            "line_end": 54,
+            "quote": "맥스웰: 미실리스에는 앱솔루트 전담 정보부가 있어. 너희가 어디 가서 뭘 하는지 다 보고가 들어온다고.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -160,122 +151,248 @@
         {
           "item_id": "main_11_00__foa_001",
           "from_speaker": "은화",
-          "to_target": "메티스 스쿼드",
-          "address_term": "미실리스의 개들",
+          "to_target": "메티스",
+          "address_term": "덜떨어진 녀석들",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "은화: 덜떨어진 녀석들 같으니. 지상에 올라오면서 배터리 점검도 안 해?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__foa_002",
+          "from_speaker": "드레이크",
+          "to_target": "엠마",
+          "address_term": "네놈",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "드레이크: ···네놈. 크군.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__foa_003",
+          "from_speaker": "은화",
+          "to_target": "메티스",
+          "address_term": "미실리스의 개들아",
           "line_start": 45,
           "line_end": 45,
-          "quote": "왜 우릴 미행했지? 미실리스의 개들아."
+          "quote": "은화: 왜 우릴 미행했지? 미실리스의 개들아.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_11_00__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "라플라스, 맥스웰",
-          "summary": "라플라스와 맥스웰은 메티스 스쿼드가 코어 외에도 전기를 보조 동력으로 쓰는데 이전 작전이 끝나자마자 슈엔의 지시로 바로 올라오느라 배터리가 방전되었다고 설명한다.",
-          "line_start": 17,
-          "line_end": 25,
-          "quote": "우린 코어 이외에도 전기를 보조 동력으로 쓰고 있으니까. 아무래도 일반 니케들보단 신경 쓸 것이 더 많지. 그것도 그렇고, 작전이 끝나자마자 바로 올라온 게 제일 크지.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "아니스",
+          "summary": "깨어난 메티스 스쿼드까지 합류해 어색한 침묵이 흐르자 아니스가 인원이 더 많아졌다고 중얼거린다.",
+          "line_start": 2,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "라플라스: ··· ···.\n드레이크: ··· ···.\n맥스웰: ··· ···.\n은화: ··· ···.\n라피: ··· ···.\n베스티: ··· ···.\n네온: ··· ···.\n엠마: ··· ···.\n아니스: ··· ···.\n시프티: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 더 많아졌잖아···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_00__eac_002",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "맥스웰",
-          "summary": "맥스웰은 미실리스의 앱솔루트 전담 정보부를 통해 앱솔루트의 이동 경로를 파악한 슈엔이 헬레틱의 파편을 수거하라며 메티스를 파견했다고 밝힌다.",
-          "line_start": 50,
-          "line_end": 58,
-          "quote": "미실리스에는 앱솔루트 전담 정보부가 있어. 너희가 어디 가서 뭘 하는지 다 보고가 들어온다고. 너희가 이쪽으로 향하길래 왜 그럴까 조사를 했고. 그랬더니 과거 헬레틱과 교전한 장소라는 결론이 나온 거지. 땅에 붙어있던 불도 다 꺼진 상태고. 그럼 뭐 목표는 하나지 않겠어? 헬레틱의 파편이 목표라는 걸 알아낸 슈엔이 우릴 보낸 거지.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "라플라스",
+          "summary": "비상용 배터리를 나눠 받고 깨어난 메티스 스쿼드에게 은화가 배터리 점검도 안 했냐고 타박하자, 라플라스는 자신들이 코어 이외에도 전기를 보조 동력으로 쓰고 있어 일반 니케보다 신경 쓸 것이 많다고 설명한다.",
+          "line_start": 17,
+          "line_end": 22,
+          "claim_line": 21,
+          "quote": "맥스웰: 이야~ 큰일 날뻔했네.\n맥스웰: 그 시점에서 배터리가 딱하고 떨어질 줄은 생각도 못 했지 뭐야.\n라플라스: 비상용 배터리를 나눠준 것, 고맙다.\n은화: 덜떨어진 녀석들 같으니. 지상에 올라오면서 배터리 점검도 안 해?\n라플라스: 우린 코어 이외에도 전기를 보조 동력으로 쓰고 있으니까.\n라플라스: 아무래도 일반 니케들보단 신경 쓸 것이 더 많지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_00__eac_003",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "맥스웰, 드레이크, 라플라스",
-          "summary": "메티스 스쿼드 3명은 은화의 항의에도 아랑곳하지 않고 야영지에서 차례로 코를 골며 잠들어 버린다.",
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰이 이전 작전이 끝나자마자 슈엔의 지시로 바로 지상에 올라온 탓이 크다고 말하고, 드레이크는 시키는 대로 따르다니 돼지와 다름없다고 호통치면서도 정작 슈엔은 무섭다고 꼬리를 내린다.",
+          "line_start": 23,
+          "line_end": 29,
+          "claim_line": 23,
+          "quote": "맥스웰: 그것도 그렇고, 작전이 끝나자마자 바로 올라온 게 제일 크지.\n아니스: 바로? 너무 구르는 거 아냐?\n맥스웰: 시키니까 하는 거지 뭐. 슈엔이 언제 우리 사정 봐줬나.\n드레이크: 하! 시키는 대로 따르다니, 돼지와 다름없지 않나!\n맥스웰: 그럼 네가 한마디 하던가.\n드레이크: 슈엔은 무서워.\n맥스웰: ···에휴.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "아니스가 히어로 실격이라고 지적하자 라플라스는 특훈을 선언하며 진정한 정의는 가슴에서 나온다고 외치고, 네온과 드레이크는 가슴이 큰 엠마를 보며 엉뚱한 소동을 벌인다.",
+          "line_start": 30,
+          "line_end": 43,
+          "claim_line": null,
+          "quote": "라플라스: 그만. 자기 관리도 히어로의 덕목 중 하나다.\n라플라스: 우리가 아무리 힘들고 지쳐있더라도, 악당은 기다려주지 않아.\n아니스: 히어로 실격이네 그럼.\n라플라스: !!\n라플라스: 일반 니케에게 이런 일침을 당하다니! 아직도 갈 길이 멀었단 말인가···!!\n라플라스: 너희들! 내려가면 특훈이다!\n맥스웰: 배터리 용량을 늘려야지 무슨 특훈이야?\n라플라스: 장비에 의존하지 마라! 진정한 정의란 가슴에서 나오는 것이다!\n네온: 그럼 여기 정의의 화신이 있어요.\n엠마: 어머.\n드레이크: ···네놈. 크군.\n드레이크: 나에게도 내놔라! 어서!\n엠마: 음~ 줄 수 있는 게 아니라서. 미안해.\n드레이크: 아쉽군.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "은화가 왜 미행했냐고 추궁하자 맥스웰은 슈엔이 도와주라고 시켰다고 농담했다가 헬레틱의 파편을 수거하러 왔다고 밝힌다.",
+          "line_start": 44,
+          "line_end": 50,
+          "claim_line": 50,
+          "quote": "은화: 다들 닥쳐.\n은화: 왜 우릴 미행했지? 미실리스의 개들아.\n맥스웰: 슈엔이 시켰어. 너흴 도와주라고.\n은화: 네 입에서 나온 말 중에 제일 재밌었다. 그걸 믿으라고?\n맥스웰: 그렇지? 너무 뻔했지?\n은화: 왜 왔어?\n맥스웰: 헬레틱의 파편을 수거하러.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "아니스가 정보가 샜다고 의심하자 맥스웰은 미실리스의 앱솔루트 전담 정보부가 이동 경로를 조사해 불이 꺼진 과거 헬레틱 교전지로 향한다는 사실을 알아내고 슈엔이 자신들을 파견한 것이라고 설명한다.",
+          "line_start": 51,
+          "line_end": 58,
+          "claim_line": 54,
+          "quote": "라피: ··· ···.\n아니스: ···정보가 샌 모양이네.\n맥스웰: 정확히는 알아낸 거지.\n맥스웰: 미실리스에는 앱솔루트 전담 정보부가 있어. 너희가 어디 가서 뭘 하는지 다 보고가 들어온다고.\n맥스웰: 너희가 이쪽으로 향하길래 왜 그럴까 조사를 했고.\n맥스웰: 그랬더니 과거 헬레틱과 교전한 장소라는 결론이 나온 거지.\n맥스웰: 땅에 붙어있던 불도 다 꺼진 상태고. 그럼 뭐 목표는 하나지 않겠어?\n맥스웰: 헬레틱의 파편이 목표라는 걸 알아낸 슈엔이 우릴 보낸 거지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "엠마가 자신들이 엄청 주목받고 있다고 감탄하고 은화가 옹졸한 짓이라고 비난하자, 라플라스는 정보 활용은 전술의 기본이라 옹졸하다는 말은 어울리지 않는다고 반박한다.",
+          "line_start": 59,
+          "line_end": 61,
+          "claim_line": 61,
+          "quote": "엠마: 와. 우리 엄청 주목받고 있나 봐.\n은화: 옹졸한 짓을 아무렇지도 않게 하네.\n라플라스: 정보 활용은 전술의 기본이다. 옹졸하다는 말은 어울리지 않지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "은화가 멋대로 합류하지 말라고 경고하지만 맥스웰과 드레이크는 아랑곳하지 않고 잠들고, 불침번을 서겠다던 라플라스마저 바로 잠든다.",
           "line_start": 62,
-          "line_end": 74,
-          "quote": "내가 불침번을 서겠다! 약한 이를 지키는 것이 히어로의 사명이니까! 다들 안심하고 숙면을 취하도록! 쿨···.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 75,
+          "claim_line": null,
+          "quote": "맥스웰: 긴 얘기는 됐고, 잠이나 자자.\n맥스웰: 내일부터 열심히 찾아봐야 되니까.\n은화: 이봐. 멋대로 합류하지 마.\n맥스웰: 쿨···.\n은화: ··· ···.\n드레이크: 베개를 내놔라! 난 베개가 없으면 잠을 못 잔다!\n네온: 어··· 저희도 딱히 베개는 없어서···.\n드레이크: 그럼 할 수 없지.\n드레이크: 자겠다.\n드레이크: 쿨···.\n라플라스: 내가 불침번을 서겠다! 약한 이를 지키는 것이 히어로의 사명이니까!\n라플라스: 다들 안심하고 숙면을 취하도록!\n라플라스: 쿨···.\n아니스: 가지가지 하네 정말.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_11_00__clh_001",
-          "keyword": "메티스 스쿼드의 전기 보조 동력",
+          "keyword": "메티스 보조 동력 배터리",
           "category": "lore_concept",
-          "detail": "메티스 스쿼드는 일반 니케들과 달리 코어 이외에도 전기를 보조 동력으로 사용하여 배터리 충전과 관리가 필요함.",
+          "subject": null,
+          "detail": "메티스 스쿼드 대원들은 일반 니케와 달리 코어 이외에도 전기를 보조 동력으로 사용하며 배터리가 방전되면 쓰러진다.",
           "line_start": 18,
           "line_end": 22,
-          "quote": "우린 코어 이외에도 전기를 보조 동력으로 쓰고 있으니까. 아무래도 일반 니케들보단 신경 쓸 것이 더 많지."
+          "quote": "맥스웰: 그 시점에서 배터리가 딱하고 떨어질 줄은 생각도 못 했지 뭐야.\n라플라스: 비상용 배터리를 나눠준 것, 고맙다.\n은화: 덜떨어진 녀석들 같으니. 지상에 올라오면서 배터리 점검도 안 해?\n라플라스: 우린 코어 이외에도 전기를 보조 동력으로 쓰고 있으니까.\n라플라스: 아무래도 일반 니케들보단 신경 쓸 것이 더 많지.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_00__clh_002",
-          "keyword": "앱솔루트 전담 정보부",
-          "category": "organization",
-          "detail": "미실리스 내부에 존재하는 부서로, 라이벌 엘리시온의 최강 스쿼드인 앱솔루트의 동향을 상시 감시·보고함.",
-          "line_start": 54,
-          "line_end": 58,
-          "quote": "미실리스에는 앱솔루트 전담 정보부가 있어. 너희가 어디 가서 뭘 하는지 다 보고가 들어온다고."
+          "keyword": "히어로",
+          "category": "trait",
+          "subject": "라플라스",
+          "detail": "라플라스는 자신을 히어로로 칭하며 약한 이를 지키고 악당에 맞서는 히어로의 사명과 덕목을 반복해서 강조한다.",
+          "line_start": 30,
+          "line_end": 37,
+          "quote": "라플라스: 그만. 자기 관리도 히어로의 덕목 중 하나다.\n라플라스: 우리가 아무리 힘들고 지쳐있더라도, 악당은 기다려주지 않아.\n아니스: 히어로 실격이네 그럼.\n라플라스: !!\n라플라스: 일반 니케에게 이런 일침을 당하다니! 아직도 갈 길이 멀었단 말인가···!!\n라플라스: 너희들! 내려가면 특훈이다!\n맥스웰: 배터리 용량을 늘려야지 무슨 특훈이야?\n라플라스: 장비에 의존하지 마라! 진정한 정의란 가슴에서 나오는 것이다!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_11_00__rln_001",
-          "subject": "맥스웰, 드레이크",
+          "subject": "맥스웰",
           "target": "슈엔",
-          "relation_or_change": "작전이 끝나자마자 사정도 봐주지 않고 지상으로 내모는 슈엔을 두려워하며 어쩔 수 없이 명령에 따름.",
-          "line_start": 25,
+          "relation_or_change": "맥스웰과 드레이크 등 메티스 스쿼드는 미실리스 CEO 슈엔의 지시를 받아 움직이며, 드레이크는 슈엔을 무서워한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "맥스웰",
+          "line_start": 23,
           "line_end": 28,
-          "quote": "시키니까 하는 거지 뭐. 슈엔이 언제 우리 사정 봐줬나. 하! 시키는 대로 따르다니, 돼지와 다름없지 않나! 그럼 네가 한마디 하던가. 슈엔은 무서워."
+          "claim_line": 25,
+          "quote": "맥스웰: 그것도 그렇고, 작전이 끝나자마자 바로 올라온 게 제일 크지.\n아니스: 바로? 너무 구르는 거 아냐?\n맥스웰: 시키니까 하는 거지 뭐. 슈엔이 언제 우리 사정 봐줬나.\n드레이크: 하! 시키는 대로 따르다니, 돼지와 다름없지 않나!\n맥스웰: 그럼 네가 한마디 하던가.\n드레이크: 슈엔은 무서워.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__rln_002",
+          "subject": "드레이크",
+          "target": "슈엔",
+          "relation_or_change": "드레이크는 슈엔이 무섭다며 슈엔에게 항의하지 못한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "드레이크",
+          "line_start": 26,
+          "line_end": 28,
+          "claim_line": 28,
+          "quote": "드레이크: 하! 시키는 대로 따르다니, 돼지와 다름없지 않나!\n맥스웰: 그럼 네가 한마디 하던가.\n드레이크: 슈엔은 무서워.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_00__rln_003",
+          "subject": "미실리스",
+          "target": "앱솔루트",
+          "relation_or_change": "미실리스에는 앱솔루트 전담 정보부가 있어 앱솔루트의 동향을 상시 감시하고 보고한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "맥스웰",
+          "line_start": 54,
+          "line_end": 58,
+          "claim_line": 54,
+          "quote": "맥스웰: 미실리스에는 앱솔루트 전담 정보부가 있어. 너희가 어디 가서 뭘 하는지 다 보고가 들어온다고.\n맥스웰: 너희가 이쪽으로 향하길래 왜 그럴까 조사를 했고.\n맥스웰: 그랬더니 과거 헬레틱과 교전한 장소라는 결론이 나온 거지.\n맥스웰: 땅에 붙어있던 불도 다 꺼진 상태고. 그럼 뭐 목표는 하나지 않겠어?\n맥스웰: 헬레틱의 파편이 목표라는 걸 알아낸 슈엔이 우릴 보낸 거지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_11_00__uec_001",
-          "surface_text": "코어",
-          "suggested_type": "item",
-          "line_start": 21
-        },
-        {
-          "item_id": "main_11_00__uec_002",
           "surface_text": "미실리스",
           "suggested_type": "organization",
           "line_start": 45
         },
         {
-          "item_id": "main_11_00__uec_003",
-          "surface_text": "헬레틱의 파편",
-          "suggested_type": "item",
+          "item_id": "main_11_00__uec_002",
+          "surface_text": "헬레틱",
+          "suggested_type": "faction_or_species",
           "line_start": 50
         },
         {
-          "item_id": "main_11_00__uec_004",
-          "surface_text": "앱솔루트 전담 정보부",
-          "suggested_type": "organization",
+          "item_id": "main_11_00__uec_003",
+          "surface_text": "앱솔루트",
+          "suggested_type": "squad",
           "line_start": 54
-        },
-        {
-          "item_id": "main_11_00__uec_005",
-          "surface_text": "헬레틱",
-          "suggested_type": "concept",
-          "line_start": 56
         }
       ]
     },
@@ -293,8 +410,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "20년 전에 건설된 노후 다리 앞에서 시프티는 니케 9기가 한꺼번에 건너면 위험하니 나눠 이동하라고 권한다. 서로 뒤를 맡기기 꺼려하는 신경전 끝에 메티스 스쿼드가 먼저 건너되 뒤통수를 방지하기 위해 지휘관과 라피가 동행하기로 한다.",
+      "summary": "20년 전에 건설된 다리 앞에서 시프티는 니케 9기가 동시에 건너면 위험하니 나눠서 이동하라고 권고한다. 실랑이 끝에 메티스 스쿼드가 먼저 건너기로 하되 뒤통수를 맞지 않기 위해 지휘관의 동행을 요구하고, 라피도 지휘관 보호를 위해 함께 건너기로 한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -367,7 +485,7 @@
             "medium": "comm",
             "line_start": 3,
             "line_end": 5,
-            "quote": "어··· 일단 데이터 상으로는 20년 전에 건설된 다리인데요. 화물 차량의 주된 이동로였다고 해요. 니케 9기면··· 좀 위험할 것 같으니 나눠서 이동하시는 걸 추천드릴게요."
+            "quote": "시프티: 어··· 일단 데이터 상으로는 20년 전에 건설된 다리인데요.\n시프티: 화물 차량의 주된 이동로였다고 해요.\n시프티: 니케 9기면··· 좀 위험할 것 같으니 나눠서 이동하시는 걸 추천드릴게요."
           }
         ],
         "mentioned_only": [
@@ -378,7 +496,9 @@
             "entity_type": "squad",
             "line_start": 14,
             "line_end": 14,
-            "quote": "먼저 건너 가. 앱솔루트 및 카운터스 여러분."
+            "quote": "맥스웰: 먼저 건너 가. 앱솔루트 및 카운터스 여러분.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_01__mnt_002",
@@ -387,44 +507,92 @@
             "entity_type": "squad",
             "line_start": 14,
             "line_end": 14,
-            "quote": "먼저 건너 가. 앱솔루트 및 카운터스 여러분."
+            "quote": "맥스웰: 먼저 건너 가. 앱솔루트 및 카운터스 여러분.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "main_11_01__foa_001",
+          "from_speaker": "맥스웰",
+          "to_target": "앱솔루트 및 카운터스",
+          "address_term": "앱솔루트 및 카운터스 여러분",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "맥스웰: 먼저 건너 가. 앱솔루트 및 카운터스 여러분.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_11_01__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "시프티, 라플라스, 맥스웰, 지휘관, 라피",
-          "summary": "니케 9기가 동시에 건너기엔 위험한 20년 된 다리 앞에서 라플라스가 먼저 건너겠다고 나서고, 맥스웰이 뒤통수 방지를 위해 지휘관 동행을 요구하자 라피도 함께 건너기로 한다.",
-          "line_start": 22,
-          "line_end": 43,
-          "quote": "우리가 먼저 건너겠다! 히어로라면 응당, 힘없는 자들을 위해 가장 먼저 위험에 맞서는 것이니까! 대신. 지휘관이랑 함께 갈 거야.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "시프티",
+          "summary": "아니스가 다리를 다 같이 건널 수 있는지 묻자, 시프티는 데이터상 20년 전 건설된 화물 차량 이동로라 니케 9기가 한꺼번에 건너면 위험할 수 있으니 나눠서 이동하라고 권고한다.",
+          "line_start": 2,
+          "line_end": 5,
+          "claim_line": 5,
+          "quote": "아니스: 이 다리. 우리 다 건널 수 있는 거야?\n시프티: 어··· 일단 데이터 상으로는 20년 전에 건설된 다리인데요.\n시프티: 화물 차량의 주된 이동로였다고 해요.\n시프티: 니케 9기면··· 좀 위험할 것 같으니 나눠서 이동하시는 걸 추천드릴게요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_01__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "지휘관이 니케의 무게가 그 정도냐며 놀라자 라피가 니케의 평균 중량을 설명하려 하고, 엠마가 급히 말을 막는다.",
+          "line_start": 6,
+          "line_end": 13,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···그 정도라고?\"]\n  [OPTION_END]\n[CHOICE_END]\n엠마: ··· ···.\n네온: ··· ···.\n라피: 객체마다 차이는 있습니다만, 보통···.\n엠마: 잠시만. 말 안 해도 될 것 같아.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_01__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "맥스웰이 앱솔루트와 카운터스에게 먼저 건너라고 하지만 은화가 미행하던 자들을 뒤에 두고 가기 싫다고 거절하자, 라플라스가 히어로로서 먼저 위험에 맞서겠다며 메티스가 먼저 건너겠다고 나선다.",
+          "line_start": 14,
+          "line_end": 24,
+          "claim_line": null,
+          "quote": "맥스웰: 먼저 건너 가. 앱솔루트 및 카운터스 여러분.\n아니스: 우리가?\n드레이크: 가라면 갈 것이지 말이 많다! 시키는 대로 해라!\n아니스: 우리가 네 부하야?\n드레이크: 그건 아니지.\n아니스: 아 정말 맞춰주기 힘드네.\n맥스웰: 그러지 말고 먼저 가 줘라.\n은화: 미행이나 하는 녀석들을 뒤에 두고 가고 싶진 않아.\n라플라스: 다들 그만!\n라플라스: 우리가 먼저 건너겠다!\n라플라스: 히어로라면 응당, 힘없는 자들을 위해 가장 먼저 위험에 맞서는 것이니까!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_01__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰이 은화 등이 뒤통수를 칠 수도 있다며 지휘관과 함께 건너겠다고 요구하고, 지휘관이 동의하자 라피도 만일의 사태에 대비해 동행하기로 한다.",
+          "line_start": 25,
+          "line_end": 48,
+          "claim_line": null,
+          "quote": "맥스웰: 대신.\n맥스웰: 지휘관이랑 함께 갈 거야.\n아니스: 아니, 왜?\n맥스웰: 너희가 우리 뒤통수를 칠수도 있는 거잖아?\n베스티: 우, 우리는 그런 비겁한 짓 안 해.\n맥스웰: 알지 알지. 베스티는 절대 그런 일 안 하지.\n맥스웰: 그런데 안 그런 애가 있어서.\n은화: ···쯧.\n[CHOICE_START]\n  [OPTION TEXT=\"알았어. 내가 같이 갈게.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 반대입니다.\n[CHOICE_START]\n  [OPTION TEXT=\"괜찮아. 별일 없을 거야.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 그럼 저도 동행하겠습니다.\n맥스웰: 그래그래. 셋이나 넷이나 크게 차이는 안 나겠지 뭐.\n아니스: ···괜찮겠어?\n라피: 혹시나 싶어서야. 큰일은 없겠지.\n아니스: 그럼 다행이겠지만.\n맥스웰: 자자. 눈물 나는 이별은 거기까지 하고, 가볼까?\n라플라스: 출격이다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "main_11_01__rln_001",
-          "subject": "맥스웰",
-          "target": "베스티, 은화",
-          "relation_or_change": "베스티는 비겁한 짓을 하지 않을 것이라 믿으면서도 은화는 뒤통수를 칠 수 있다며 경계함.",
-          "line_start": 28,
-          "line_end": 32,
-          "quote": "너희가 우리 뒤통수를 칠수도 있는 거잖아? 우, 우리는 그런 비겁한 짓 안 해. 알지 알지. 베스티는 절대 그런 일 안 하지. 그런데 안 그런 애가 있어서. ···쯧."
-        }
-      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_11_01__uec_001",
@@ -454,8 +622,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "메티스 스쿼드와 지휘관, 라피가 다리를 건넌 직후 라플라스가 공중의 랩쳐 부대를 격추하면서 떨어진 잔해에 다리가 무너져 내린다. 회선이 지휘관 인근으로 한정돼 반대편 일행에게 해명할 방법이 없는 상황에서 드레이크가 파편 독점을 외치며 도발하자, 격분한 은화와 베스티가 다리 건너편에서 저격과 로켓탄 포격을 가해 오고 일행은 자리를 피한다.",
+      "summary": "메티스 스쿼드와 지휘관, 라피가 다리를 건넌 직후 라플라스가 공중의 랩쳐 부대를 격추해 떨어진 잔해 때문에 다리가 무너진다. 통신 회선마저 지휘관 인근으로 한정돼 오해를 풀지 못한 채 건너편의 은화와 베스티가 저격과 로켓탄을 퍼붓자, 맥스웰 일행은 서둘러 도망친다.",
       "participants": {
         "present_in_scene": [
           {
@@ -490,23 +659,29 @@
             "entity_id": "char_지휘관",
             "line_start": 25,
             "line_end": 25,
-            "quote": "어··· 회선이 지휘관 인근으로 한정돼서, 저쪽에 연락할 방법이 없어요."
+            "quote": "시프티: 어··· 회선이 지휘관 인근으로 한정돼서, 저쪽에 연락할 방법이 없어요.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_02__psl_002",
             "name": "은화",
             "entity_id": "char_은화",
-            "line_start": 29,
+            "line_start": 28,
             "line_end": 29,
-            "quote": "···은화가 저격한 모양이다."
+            "quote": "파공음과 함께 라플라스의 머리칼이 흩날렸다.\n···은화가 저격한 모양이다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_02__psl_003",
             "name": "베스티",
             "entity_id": "char_베스티",
-            "line_start": 36,
+            "line_start": 35,
             "line_end": 36,
-            "quote": "···베스티가 쏜 로켓탄이 바로 앞에서 폭발했다."
+            "quote": "콰앙-!\n···베스티가 쏜 로켓탄이 바로 앞에서 폭발했다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "remote_or_voice_only": [
@@ -517,7 +692,7 @@
             "medium": "comm",
             "line_start": 25,
             "line_end": 25,
-            "quote": "어··· 회선이 지휘관 인근으로 한정돼서, 저쪽에 연락할 방법이 없어요."
+            "quote": "시프티: 어··· 회선이 지휘관 인근으로 한정돼서, 저쪽에 연락할 방법이 없어요."
           }
         ],
         "mentioned_only": [
@@ -528,16 +703,20 @@
             "entity_type": "faction_or_species",
             "line_start": 6,
             "line_end": 6,
-            "quote": "라플라스가 쏜 광탄이 공중의 랩쳐 부대에게 명중했다."
+            "quote": "라플라스가 쏜 광탄이 공중의 랩쳐 부대에게 명중했다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_02__mnt_002",
-            "surface_text": "헬레틱의 파편",
+            "surface_text": "헬레틱",
             "entity_id": null,
-            "entity_type": "item",
+            "entity_type": "faction_or_species",
             "line_start": 16,
             "line_end": 16,
-            "quote": "훌륭하다! 헬레틱의 파편은 우리의 것이라는 선전포고로군!"
+            "quote": "드레이크: 훌륭하다! 헬레틱의 파편은 우리의 것이라는 선전포고로군!",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_02__mnt_003",
@@ -546,7 +725,9 @@
             "entity_type": "squad",
             "line_start": 33,
             "line_end": 33,
-            "quote": "하하하! 멍청한 놈들! 헬레틱의 파편은 우리 메티스의 것이다!"
+            "quote": "드레이크: 하하하! 멍청한 놈들! 헬레틱의 파편은 우리 메티스의 것이다!",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -554,33 +735,62 @@
       "forms_of_address": [
         {
           "item_id": "main_11_02__foa_001",
+          "from_speaker": "맥스웰",
+          "to_target": "라플라스",
+          "address_term": "너",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "맥스웰: 너 이게 무슨 미친 짓이야!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_02__foa_002",
           "from_speaker": "드레이크",
           "to_target": "라플라스",
           "address_term": "리더",
           "line_start": 17,
           "line_end": 17,
-          "quote": "역시 리더! 난 널 인정한다!"
+          "quote": "드레이크: 역시 리더! 난 널 인정한다!",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
-          "item_id": "main_11_02__foa_002",
+          "item_id": "main_11_02__foa_003",
+          "from_speaker": "드레이크",
+          "to_target": "앱솔루트 및 카운터스",
+          "address_term": "멍청한 놈들",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "드레이크: 하하하! 멍청한 놈들! 헬레틱의 파편은 우리 메티스의 것이다!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_02__foa_004",
           "from_speaker": "맥스웰",
           "to_target": "드레이크",
           "address_term": "이 멍청아",
           "line_start": 34,
           "line_end": 34,
-          "quote": "도발하지 마 이 멍청아!"
+          "quote": "맥스웰: 도발하지 마 이 멍청아!",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
-          "item_id": "main_11_02__foa_003",
+          "item_id": "main_11_02__foa_005",
           "from_speaker": "맥스웰",
           "to_target": "라플라스",
           "address_term": "인마",
           "line_start": 40,
           "line_end": 40,
-          "quote": "네 잘못이잖아 인마!"
+          "quote": "맥스웰: 네 잘못이잖아 인마!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -588,55 +798,90 @@
         {
           "item_id": "main_11_02__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "라플라스, 맥스웰",
-          "summary": "다리를 건넌 직후 라플라스가 쏜 광탄에 격추된 공중 랩쳐 부대의 잔해가 다리 위로 추락해 다리가 낭떠러지 아래로 무너지면서, 반대편 일행이 합류하려면 8km를 돌아와야 하는 상황이 된다.",
-          "line_start": 3,
-          "line_end": 19,
-          "quote": "라플라스가 쏜 광탄이 공중의 랩쳐 부대에게 명중했다. 폭음과 함께 떨어진 랩쳐들의 잔해는 다리 위에 곤두박질쳤고. 콰앙-! 쿠구구구···. 다리는 깊은 낭떠러지 밑으로 사라졌다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "라플라스",
+          "summary": "일행이 다리를 건넌 직후 라플라스가 공중의 랩쳐 부대에 광탄을 쏴 격추하고, 떨어진 랩쳐 잔해에 맞아 다리가 낭떠러지 밑으로 무너져 내린다.",
+          "line_start": 2,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "맥스웰: 좋아. 다 건너왔다.\n라플라스: 음!? 이 기운···!\n라플라스: 거기다!\n푸슈슝-!\n라플라스가 쏜 광탄이 공중의 랩쳐 부대에게 명중했다.\n폭음과 함께 떨어진 랩쳐들의 잔해는 다리 위에 곤두박질쳤고.\n콰앙-!\n쿠구구구···.\n다리는 깊은 낭떠러지 밑으로 사라졌다.\n맥스웰: ··· ···.\n라플라스: ··· ···.\n라피: ··· ···.\n맥스웰: 너 이게 무슨 미친 짓이야!\n라플라스: 고, 고의가 아니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_02__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "시프티, 드레이크, 은화, 베스티, 맥스웰",
-          "summary": "통신 회선이 지휘관 인근으로 한정돼 반대편에 사고임을 해명할 수 없는 가운데 드레이크가 파편 독점을 외치며 도발하자, 은화의 저격과 베스티의 로켓탄 포격이 날아와 일행이 도주한다.",
+          "actor_or_speaker": "맥스웰",
+          "summary": "드레이크가 다리 붕괴를 선전포고로 착각해 라플라스를 칭찬하고 저쪽 잘못이라고 우기자, 맥스웰은 아무도 속이려 한 게 아니라며 합류하려면 8km나 돌아와야 한다고 다그친다.",
+          "line_start": 16,
+          "line_end": 23,
+          "claim_line": 19,
+          "quote": "드레이크: 훌륭하다! 헬레틱의 파편은 우리의 것이라는 선전포고로군!\n드레이크: 역시 리더! 난 널 인정한다!\n맥스웰: 와 이거 난리 났네···!\n맥스웰: 합류하려면 8km는 돌아와야 된다고!\n드레이크: 뭐가 문제지?\n맥스웰: 문제가 한두 개가 아닌 게 문제야!\n드레이크: 속아 넘어간 저쪽 잘못이다!\n맥스웰: 아무도 속이려고 하지 않았다고!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_02__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "맥스웰이 시프티에게 사고였다고 건너편에 연락해 달라고 요청하지만, 시프티는 회선이 지휘관 인근으로 한정돼 저쪽에 연락할 방법이 없다고 답한다.",
           "line_start": 24,
-          "line_end": 37,
-          "quote": "어··· 회선이 지휘관 인근으로 한정돼서, 저쪽에 연락할 방법이 없어요.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 26,
+          "claim_line": 25,
+          "quote": "맥스웰: 시프티! 저쪽에 연락해 줘! 우린 그 어떤 불순한 의도를 가지지 않았고, 사고였다고!\n시프티: 어··· 회선이 지휘관 인근으로 한정돼서, 저쪽에 연락할 방법이 없어요.\n맥스웰: 그러니까 그걸 어떻게 좀···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_02__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "건너편의 은화가 라플라스 쪽으로 저격하고 드레이크의 도발에 베스티가 로켓탄까지 쏘자, 맥스웰은 사고였다고 항변하는 라플라스를 타박하며 일단 도망치자고 한다.",
+          "line_start": 27,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "푸슝-!\n파공음과 함께 라플라스의 머리칼이 흩날렸다.\n···은화가 저격한 모양이다.\n저 멀리 일행들이 격양된 몸짓으로 고래고래 소리를 지르고 있다.\n거리가 멀어서 무슨 말인지는 들리지 않지만\n어쩐지 무슨 말을 하고 있는지 알 수 있을 것 같았다.\n드레이크: 하하하! 멍청한 놈들! 헬레틱의 파편은 우리 메티스의 것이다!\n맥스웰: 도발하지 마 이 멍청아!\n콰앙-!\n···베스티가 쏜 로켓탄이 바로 앞에서 폭발했다.\n맥스웰: ···일단, 튀자.\n라플라스: 아니! 물러설 수 없다! 우리의 정의를 증명해야 해!\n라플라스: 이건 사고였다! 누구의 잘못도 아냐!\n맥스웰: 네 잘못이잖아 인마!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_11_02__rln_001",
-          "subject": "앱솔루트 스쿼드",
-          "target": "메티스 스쿼드",
-          "relation_or_change": "라플라스의 실수로 다리가 무너지고 드레이크가 도발하자, 뒤통수를 맞았다고 오해한 은화와 베스티가 실제 저격과 로켓탄 공격을 퍼부으며 적대감이 폭발함.",
-          "line_start": 28,
-          "line_end": 36,
-          "quote": "파공음과 함께 라플라스의 머리칼이 흩날렸다. ···은화가 저격한 모양이다. 저 멀리 일행들이 격양된 몸짓으로 고래고래 소리를 지르고 있다. 거리가 멀어서 무슨 말인지는 들리지 않지만 어쩐지 무슨 말을 하고 있는지 알 수 있을 것 같았다. 하하하! 멍청한 놈들! 헬레틱의 파편은 우리 메티스의 것이다! 도발하지 마 이 멍청아! 콰앙-! ···베스티가 쏜 로켓탄이 바로 앞에서 폭발했다."
+          "subject": "라플라스",
+          "target": "메티스",
+          "relation_or_change": "드레이크는 라플라스를 메티스의 리더라고 부르며 인정한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "드레이크",
+          "line_start": 16,
+          "line_end": 17,
+          "claim_line": 17,
+          "quote": "드레이크: 훌륭하다! 헬레틱의 파편은 우리의 것이라는 선전포고로군!\n드레이크: 역시 리더! 난 널 인정한다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_11_02__uec_001",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 6
         },
         {
           "item_id": "main_11_02__uec_002",
-          "surface_text": "헬레틱의 파편",
-          "suggested_type": "item",
+          "surface_text": "헬레틱",
+          "suggested_type": "faction_or_species",
           "line_start": 16
         },
         {
@@ -661,8 +906,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "엘리시온의 잉그리드 사장이 오퍼레이터 룸에 찾아와 메티스가 앱솔루트의 작전을 방해한 경위를 추궁하자, 슈엔이 난입해 자신이 시킨 일이라며 메티스를 두둔하고 잉그리드와 충돌한다. 통신이 끝난 뒤 맥스웰은 슈엔에게 메티스란 결국 체면을 세워 줄 '성능 좋은 장난감'일 뿐이라고 자조하며, 일행은 헬레틱의 파편 수색에 나선다.",
+      "summary": "엘리시온의 잉그리드가 오퍼레이터 룸으로 찾아와 메티스의 앱솔루트 작전 방해를 추궁하자 슈엔이 난입해 메티스를 감싸며 잉그리드와 충돌한다. 맥스웰은 슈엔에게 메티스는 체면을 세워 줄 성능 좋은 장난감일 뿐이라고 말하고, 라플라스는 헬레틱의 파편을 찾아 앱솔루트와 공적을 반으로 나누자고 외친다.",
       "participants": {
         "present_in_scene": [
           {
@@ -699,16 +945,16 @@
             "medium": "comm",
             "line_start": 2,
             "line_end": 3,
-            "quote": "저··· 메티스 분들? 방주··· 정확히는 엘리시온에서 계속 연락이 오는데요. 작전 방해 의도가 뭔지 해명하라고···."
+            "quote": "시프티: 저··· 메티스 분들?\n시프티: 방주··· 정확히는 엘리시온에서 계속 연락이 오는데요. 작전 방해 의도가 뭔지 해명하라고···."
           },
           {
             "item_id": "main_11_03__rvo_002",
             "speaker_label": "잉그리드",
             "entity_id": "char_잉그리드",
             "medium": "comm",
-            "line_start": 14,
+            "line_start": 11,
             "line_end": 14,
-            "quote": "해명해라. 어째서 앱솔루트의 작전을 방해한 거지?"
+            "quote": "잉그리드: 실례하지.\n라피: ···교관?\n맥스웰: 으엑···. 오퍼레이터 룸까지 찾아간 거야? 단단히 화가 나셨구만.\n잉그리드: 해명해라. 어째서 앱솔루트의 작전을 방해한 거지?"
           },
           {
             "item_id": "main_11_03__rvo_003",
@@ -716,8 +962,8 @@
             "entity_id": "char_슈엔",
             "medium": "comm",
             "line_start": 27,
-            "line_end": 27,
-            "quote": "아 거 엄청 쫑알 쫑알 대시네."
+            "line_end": 30,
+            "quote": "슈엔: 아 거 엄청 쫑알 쫑알 대시네.\n시프티: 저기··· 오퍼레이터 룸은 기본적으로 1인 사용이 원칙인데요.\n잉그리드: 마침 잘 왔군. 메티스가 한 일에 대해 추궁하고 있던 중이다.\n슈엔: 얘들아. 그런 거 안 해도 괜찮아. 내가 다 알아서 할게."
           }
         ],
         "mentioned_only": [
@@ -728,7 +974,9 @@
             "entity_type": "squad",
             "line_start": 2,
             "line_end": 2,
-            "quote": "저··· 메티스 분들?"
+            "quote": "저··· 메티스 분들?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_002",
@@ -737,7 +985,9 @@
             "entity_type": "location",
             "line_start": 3,
             "line_end": 3,
-            "quote": "방주··· 정확히는 엘리시온에서 계속 연락이 오는데요. 작전 방해 의도가 뭔지 해명하라고···."
+            "quote": "방주··· 정확히는 엘리시온에서 계속 연락이 오는데요. 작전 방해 의도가 뭔지 해명하라고···.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_003",
@@ -746,7 +996,9 @@
             "entity_type": "organization",
             "line_start": 3,
             "line_end": 3,
-            "quote": "방주··· 정확히는 엘리시온에서 계속 연락이 오는데요. 작전 방해 의도가 뭔지 해명하라고···."
+            "quote": "방주··· 정확히는 엘리시온에서 계속 연락이 오는데요. 작전 방해 의도가 뭔지 해명하라고···.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_004",
@@ -755,7 +1007,9 @@
             "entity_type": "location",
             "line_start": 13,
             "line_end": 13,
-            "quote": "으엑···. 오퍼레이터 룸까지 찾아간 거야? 단단히 화가 나셨구만."
+            "quote": "으엑···. 오퍼레이터 룸까지 찾아간 거야? 단단히 화가 나셨구만.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_005",
@@ -764,7 +1018,9 @@
             "entity_type": "squad",
             "line_start": 14,
             "line_end": 14,
-            "quote": "해명해라. 어째서 앱솔루트의 작전을 방해한 거지?"
+            "quote": "해명해라. 어째서 앱솔루트의 작전을 방해한 거지?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_006",
@@ -773,7 +1029,9 @@
             "entity_type": "item",
             "line_start": 17,
             "line_end": 17,
-            "quote": "헬레틱의 파편을 메티스 단독으로 입수했다는 걸로 하고 싶은 건가?"
+            "quote": "헬레틱의 파편을 메티스 단독으로 입수했다는 걸로 하고 싶은 건가?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_007",
@@ -782,7 +1040,9 @@
             "entity_type": "organization",
             "line_start": 26,
             "line_end": 26,
-            "quote": "이 건은 중앙 정부에 정식으로 보고를 올리겠다. 도저히 그냥 넘어갈 수가 없···."
+            "quote": "이 건은 중앙 정부에 정식으로 보고를 올리겠다. 도저히 그냥 넘어갈 수가 없···.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_008",
@@ -791,7 +1051,9 @@
             "entity_type": "organization",
             "line_start": 39,
             "line_end": 39,
-            "quote": "CEO라는게 이래서야. 미사일스의 미래가 어둡군."
+            "quote": "CEO라는게 이래서야. 미사일스의 미래가 어둡군.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_03__mnt_009",
@@ -800,7 +1062,9 @@
             "entity_type": "faction_or_species",
             "line_start": 56,
             "line_end": 56,
-            "quote": "슈엔이 니케를 저렇게 대하는 건 처음 보니까."
+            "quote": "슈엔이 니케를 저렇게 대하는 건 처음 보니까.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -813,202 +1077,491 @@
           "address_term": "메티스 분들",
           "line_start": 2,
           "line_end": 2,
-          "quote": "저··· 메티스 분들?"
+          "quote": "저··· 메티스 분들?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__foa_002",
           "from_speaker": "라피",
           "to_target": "잉그리드",
           "address_term": "교관",
-          "line_start": 12,
+          "line_start": 11,
           "line_end": 12,
-          "quote": "···교관?"
+          "quote": "잉그리드: 실례하지.\n라피: ···교관?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__foa_003",
           "from_speaker": "맥스웰",
           "to_target": "잉그리드",
           "address_term": "사장님",
-          "line_start": 16,
+          "line_start": 15,
           "line_end": 16,
-          "quote": "아니, 사장님. 그게 아니라요."
+          "quote": "잉그리드: 불순한 의도가 있었다고 생각하면 되겠나?\n맥스웰: 아니, 사장님. 그게 아니라요.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__foa_004",
-          "from_speaker": "잉그리드",
-          "to_target": "슈엔",
-          "address_term": "네놈",
-          "line_start": 31,
-          "line_end": 31,
-          "quote": "네놈이 자꾸 그렇게 싸고도니까 작전 방해 같은 짓을 아무렇지도 않게 하는 거다."
+          "from_speaker": "맥스웰",
+          "to_target": "드레이크",
+          "address_term": "네가",
+          "line_start": 22,
+          "line_end": 23,
+          "quote": "드레이크: 뭐야. 겁먹은 건가. 한심하군!\n맥스웰: 그럼 네가 설득해봐 좀.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__foa_005",
           "from_speaker": "슈엔",
-          "to_target": "앱솔루트",
-          "address_term": "고철들",
-          "line_start": 32,
-          "line_end": 32,
-          "quote": "좀 하면 어때? 방심한 네 고철들 잘못이지. 그렇지 메티스?"
+          "to_target": "메티스",
+          "address_term": "얘들아",
+          "line_start": 29,
+          "line_end": 30,
+          "quote": "잉그리드: 마침 잘 왔군. 메티스가 한 일에 대해 추궁하고 있던 중이다.\n슈엔: 얘들아. 그런 거 안 해도 괜찮아. 내가 다 알아서 할게.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__foa_006",
+          "from_speaker": "잉그리드",
+          "to_target": "슈엔",
+          "address_term": "네놈",
+          "line_start": 30,
+          "line_end": 31,
+          "quote": "슈엔: 얘들아. 그런 거 안 해도 괜찮아. 내가 다 알아서 할게.\n잉그리드: 네놈이 자꾸 그렇게 싸고도니까 작전 방해 같은 짓을 아무렇지도 않게 하는 거다.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__foa_007",
+          "from_speaker": "슈엔",
+          "to_target": "메티스",
+          "address_term": "메티스",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "좀 하면 어때? 방심한 네 고철들 잘못이지. 그렇지 메티스?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__foa_008",
+          "from_speaker": "슈엔",
+          "to_target": "메티스",
+          "address_term": "너흰",
+          "line_start": 33,
+          "line_end": 34,
+          "quote": "맥스웰: 어··· 우리가 잘못한 게 없다고는 말 못···.\n슈엔: 조용. 너흰 사과할 필요 없어. 앞으로도.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__foa_009",
           "from_speaker": "슈엔",
           "to_target": "잉그리드",
           "address_term": "아줌마",
           "line_start": 38,
           "line_end": 38,
-          "quote": "그러니까 자꾸 늙는 거야, 아줌마."
+          "quote": "그러니까 자꾸 늙는 거야, 아줌마.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
-          "item_id": "main_11_03__foa_007",
-          "from_speaker": "맥스웰",
-          "to_target": "슈엔",
-          "address_term": "그 녀석",
-          "line_start": 64,
-          "line_end": 64,
-          "quote": "우린 그 녀석에게 성능 좋은 장난감."
+          "item_id": "main_11_03__foa_010",
+          "from_speaker": "슈엔",
+          "to_target": "잉그리드",
+          "address_term": "너",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "너 한 번만 더 미사일스라고 부르면···!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "main_11_03__csh_001",
-          "text": "슈엔이 메티스를 유독 감싸는 모습과 맥스웰이 말한 '자랑하고 싶은 성능 좋은 장난감'이라는 평가는 main_12_10에서 침식된 메티스를 살리기 위해 슈엔이 언체인드를 갈구하는 집착과 이어진다.",
-          "related_scene_ids": [
-            "main_12_09",
-            "main_12_10"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_11_03__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "잉그리드, 슈엔, 시프티",
-          "summary": "잉그리드가 시프티의 오퍼레이터 룸에 찾아와 메티스의 앱솔루트 작전 방해를 추궁하자, 뒤이어 들어온 슈엔이 자신이 시킨 일이라며 메티스에게 헬레틱의 파편 수색을 지시하고 잉그리드와 밖으로 나가 맞붙는다.",
-          "line_start": 11,
-          "line_end": 51,
-          "quote": "해명해라. 어째서 앱솔루트의 작전을 방해한 거지? 불순한 의도가 있었다고 생각하면 되겠나?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 메티스에게 엘리시온에서 작전 방해 의도를 해명하라는 연락이 계속 온다고 전한다.",
+          "line_start": 2,
+          "line_end": 3,
+          "claim_line": 3,
+          "quote": "시프티: 저··· 메티스 분들?\n시프티: 방주··· 정확히는 엘리시온에서 계속 연락이 오는데요. 작전 방해 의도가 뭔지 해명하라고···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__eac_002",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "맥스웰",
-          "summary": "맥스웰은 슈엔이 배터리가 간당간당한 상태의 메티스를 막무가내로 지상에 올려보냈다며, 메티스는 슈엔에게 체면을 세워 줄 성능 좋은 장난감일 뿐이라고 말한다.",
-          "line_start": 60,
-          "line_end": 67,
-          "quote": "우리가 니케라는 근본 말이야. 니케 치곤 아낀다 수준인 거지. 배터리가 간당간당한 상태인데도 막무가내로 올려보낸 것만 봐도 알잖아?",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
-        }
-      ],
-      "clues_and_hooks": [
+          "summary": "맥스웰이 라플라스에게 작전 방해 건을 해명하라고 시킨다.",
+          "line_start": 4,
+          "line_end": 4,
+          "claim_line": null,
+          "quote": "라플라스. 해명해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
         {
-          "item_id": "main_11_03__clh_001",
-          "keyword": "성능 좋은 장난감",
-          "category": "lore_concept",
-          "detail": "맥스웰이 정의한 슈엔과 메티스의 관계. 슈엔이 다른 니케들과 달리 메티스를 총애하는 것처럼 보여도 결국 자신의 체면을 세워 줄 자랑거리용 장난감으로 여긴다는 인식.",
-          "line_start": 64,
+          "item_id": "main_11_03__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스가 작전 방해는 고의가 아닌 사고라고 주장하며 그렇게 전해달라고 한다.",
+          "line_start": 4,
+          "line_end": 5,
+          "claim_line": 5,
+          "quote": "맥스웰: 라플라스. 해명해.\n라플라스: 고의가 아닌 사고라고 전해주도록.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 고의가 아닌 사고라고 계속 전했는데도 엘리시온 측에서 계속 해명을 요구한다고 말하며, 더 계속 말하라는 라플라스에게 자신은 같은 말만 반복하는 로봇이 아니고 수련하고 싶지도 않다고 반발한다.",
+          "line_start": 6,
+          "line_end": 10,
+          "claim_line": 6,
+          "quote": "시프티: 계속 그렇게 말했는데, 계속 해명하라고 하시는데요.\n라플라스: 그럼 더 계속 말해라!\n시프티: 저는 오퍼레이터지 같은 말만 반복하는 로봇이 아니라고요!\n라플라스: 반복 숙달은 수련의 기본이다!\n시프티: 저는 수련하고 싶지 않아요!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스가 시프티에게 계속 같은 말을 반복하라고 지시하며 반복 숙달은 수련의 기본이라고 주장한다.",
+          "line_start": 6,
+          "line_end": 9,
+          "claim_line": 9,
+          "quote": "시프티: 계속 그렇게 말했는데, 계속 해명하라고 하시는데요.\n라플라스: 그럼 더 계속 말해라!\n시프티: 저는 오퍼레이터지 같은 말만 반복하는 로봇이 아니라고요!\n라플라스: 반복 숙달은 수련의 기본이다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 오퍼레이터 룸에 찾아와 왜 앱솔루트의 작전을 방해했는지 해명하라고 추궁하고, 맥스웰은 불순한 의도가 아니라고 부인한다.",
+          "line_start": 11,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "잉그리드: 실례하지.\n라피: ···교관?\n맥스웰: 으엑···. 오퍼레이터 룸까지 찾아간 거야? 단단히 화가 나셨구만.\n잉그리드: 해명해라. 어째서 앱솔루트의 작전을 방해한 거지?\n잉그리드: 불순한 의도가 있었다고 생각하면 되겠나?\n맥스웰: 아니, 사장님. 그게 아니라요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 헬레틱의 파편을 메티스 단독으로 입수하려는 것인지, 앱솔루트를 골탕 먹이거나 엘리시온에 도전·파멸시키려는 것인지 연달아 추궁한다.",
+          "line_start": 17,
+          "line_end": 20,
+          "claim_line": null,
+          "quote": "잉그리드: 헬레틱의 파편을 메티스 단독으로 입수했다는 걸로 하고 싶은 건가?\n잉그리드: 아니면 앱솔루트를 그저 골탕 먹이고 싶을 뿐이었나?\n잉그리드: 그것도 아니면 우리 엘리시온에게 도전하고 싶은 건가?\n잉그리드: 그것조차 아니라면 엘리시온을 파멸시키고 싶었던 건가?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰이 잉그리드가 엄청 화났다며 겁먹었냐고 비웃는 드레이크에게 직접 설득해보라고 시킨다.",
+          "line_start": 21,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "맥스웰: ···망했다. 엄청 화났잖아.\n드레이크: 뭐야. 겁먹은 건가. 한심하군!\n맥스웰: 그럼 네가 설득해봐 좀.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "맥스웰이 잉그리드를 설득해보라고 하자 드레이크는 잉그리드가 상대하기 좀 어렵다며 발을 뺀다.",
+          "line_start": 23,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "맥스웰: 그럼 네가 설득해봐 좀.\n드레이크: 잉그리드는 상대하기 좀 어려워서.\n맥스웰: 아으 짜증.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 메티스의 작전 방해 건을 중앙 정부에 정식으로 보고하겠다고 선언한다.",
+          "line_start": 26,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "이 건은 중앙 정부에 정식으로 보고를 올리겠다. 도저히 그냥 넘어갈 수가 없···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 오퍼레이터 룸에 들어와 메티스에게 자신이 다 알아서 하겠다고 말한다.",
+          "line_start": 27,
+          "line_end": 30,
+          "claim_line": null,
+          "quote": "슈엔: 아 거 엄청 쫑알 쫑알 대시네.\n시프티: 저기··· 오퍼레이터 룸은 기본적으로 1인 사용이 원칙인데요.\n잉그리드: 마침 잘 왔군. 메티스가 한 일에 대해 추궁하고 있던 중이다.\n슈엔: 얘들아. 그런 거 안 해도 괜찮아. 내가 다 알아서 할게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 오퍼레이터 룸은 기본적으로 1인 사용이 원칙이라고 말한다.",
+          "line_start": 28,
+          "line_end": 28,
+          "claim_line": 28,
+          "quote": "저기··· 오퍼레이터 룸은 기본적으로 1인 사용이 원칙인데요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 슈엔이 자꾸 메티스를 싸고도니까 작전 방해 같은 짓을 아무렇지도 않게 하는 것이라고 비판하며 사과가 아닌 해명을 요구한다.",
+          "line_start": 31,
+          "line_end": 35,
+          "claim_line": 31,
+          "quote": "잉그리드: 네놈이 자꾸 그렇게 싸고도니까 작전 방해 같은 짓을 아무렇지도 않게 하는 거다.\n슈엔: 좀 하면 어때? 방심한 네 고철들 잘못이지. 그렇지 메티스?\n맥스웰: 어··· 우리가 잘못한 게 없다고는 말 못···.\n슈엔: 조용. 너흰 사과할 필요 없어. 앞으로도.\n잉그리드: 사과는 필요 없다. 해명이 필요할 뿐이다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 작전 방해는 방심한 잉그리드 쪽 니케들의 잘못이라고 주장하며, 맥스웰의 말을 막고 메티스에게 앞으로도 사과할 필요가 없다고 지시한 뒤 자기가 시킨 일이라고 말한다.",
+          "line_start": 32,
+          "line_end": 38,
+          "claim_line": 36,
+          "quote": "슈엔: 좀 하면 어때? 방심한 네 고철들 잘못이지. 그렇지 메티스?\n맥스웰: 어··· 우리가 잘못한 게 없다고는 말 못···.\n슈엔: 조용. 너흰 사과할 필요 없어. 앞으로도.\n잉그리드: 사과는 필요 없다. 해명이 필요할 뿐이다.\n슈엔: 내가 시켰어. 됐어?\n슈엔: 뭐 어쩔 건데. 진짜 별것도 아닌 걸로 걸고넘어지고 있어.\n슈엔: 그러니까 자꾸 늙는 거야, 아줌마.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰이 메티스에게도 잘못한 게 없다고는 말 못 한다고 인정하려 한다.",
+          "line_start": 32,
+          "line_end": 33,
+          "claim_line": 33,
+          "quote": "슈엔: 좀 하면 어때? 방심한 네 고철들 잘못이지. 그렇지 메티스?\n맥스웰: 어··· 우리가 잘못한 게 없다고는 말 못···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 미실리스를 '미사일스'라고 반복해 부르며 횡포를 알리는 기자 회견을 준비하겠다고 도발한다.",
+          "line_start": 39,
+          "line_end": 45,
+          "claim_line": null,
+          "quote": "잉그리드: CEO라는게 이래서야. 미사일스의 미래가 어둡군.\n슈엔: 내가 미사일스라고 부르지 말랬지!\n잉그리드: 돌아가서 기자 회견을 준비해야겠군. 미사일스의 횡포를 알리는 내용으로.\n슈엔: 너 한 번만 더 미사일스라고 부르면···!\n잉그리드: 미사일스.\n슈엔: ··· ···.\n잉그리드: 미사일스.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 메티스에게 헬레틱의 파편을 꼭 찾아오라고 지시하고 잉그리드와 끝장을 보겠다며 밖으로 불러낸다.",
+          "line_start": 46,
+          "line_end": 53,
+          "claim_line": null,
+          "quote": "슈엔: 너 따라나와.\n잉그리드: 바라던 바다.\n슈엔: 메티스. 이쪽의 일은 내가 다~ 알아서 할 테니까.\n슈엔: 헬레틱의 파편을 꼭 찾아오도록 해. 알았지?\n슈엔: 너, 나와. 아주 끝장을 내버릴 테니까.\n잉그리드: 미리 말해놓지만 난 상대가 어린아이라도 최선을 다한다.\n시프티: ··· ···.\n시프티: 좁아···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 슈엔이 니케를 저렇게 대하는 것은 처음 본다며 메티스가 총애를 받고 있다고 평가한다.",
+          "line_start": 54,
+          "line_end": 56,
+          "claim_line": 56,
+          "quote": "라피: 총애를 받고 있네.\n맥스웰: 아, 우리?\n라피: 슈엔이 니케를 저렇게 대하는 건 처음 보니까.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰이 메티스가 우수해서 니케 치고는 아낌을 받는 수준일 뿐 배터리가 간당간당한 상태에서도 막무가내로 지상에 올려보냈다며, 슈엔에게 메티스는 예전부터 체면을 세워 줄 성능 좋은 장난감에 불과하다고 말한다.",
+          "line_start": 57,
           "line_end": 67,
-          "quote": "우린 그 녀석에게 성능 좋은 장난감. 자기의 체면을 세워 줄 자랑하고 싶은 장난감. 그 이상도 이하도 아니야. 그 녀석은, 예전부터 그랬으니까."
+          "claim_line": 64,
+          "quote": "맥스웰: 뭐, 그렇지. 내 입으로 말하긴 그렇지만 우린 우수하니까.\n맥스웰: 그래도 근본은 안 바뀌어.\n라피: 근본?\n맥스웰: 우리가 니케라는 근본 말이야.\n맥스웰: 니케 치곤 아낀다 수준인 거지.\n맥스웰: 배터리가 간당간당한 상태인데도 막무가내로 올려보낸 것만 봐도 알잖아?\n라피: ··· ···.\n맥스웰: 우린 그 녀석에게 성능 좋은 장난감.\n맥스웰: 자기의 체면을 세워 줄 자랑하고 싶은 장난감.\n맥스웰: 그 이상도 이하도 아니야.\n맥스웰: 그 녀석은, 예전부터 그랬으니까.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스가 무거운 얘기를 그만두라며 헬레틱의 파편을 찾으러 가고 공적은 앱솔루트와 정확히 반으로 나누겠다고 선언한다.",
+          "line_start": 68,
+          "line_end": 71,
+          "claim_line": null,
+          "quote": "라플라스: 무거운 얘기는 그만둬라! 우리에게 필요한 것은 용기다!\n라플라스: 가자! 헬레틱의 파편을 찾는 거다!\n라플라스: 물론! 그 공적은 앱솔루트와 함께 나눈다! 정확히 반으로!\n라플라스: 그것이 정의! 빛나는 정의니까!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 라플라스가 공적 배분에서 자신들(카운터스)을 당연하다는 듯이 제외한다고 지적한다.",
+          "line_start": 70,
+          "line_end": 72,
+          "claim_line": 72,
+          "quote": "라플라스: 물론! 그 공적은 앱솔루트와 함께 나눈다! 정확히 반으로!\n라플라스: 그것이 정의! 빛나는 정의니까!\n라피: ···우리는 당연하다는 듯이 제외하네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "clues_and_hooks": [],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_11_03__rln_001",
-          "subject": "슈엔",
-          "target": "메티스",
-          "relation_or_change": "잉그리드의 추궁 앞에서 메티스는 앞으로도 사과할 필요가 없다며 감싸고, 헬레틱의 파편을 꼭 찾아오라고 당부함.",
-          "line_start": 34,
-          "line_end": 49,
-          "quote": "조용. 너흰 사과할 필요 없어. 앞으로도."
+          "subject": "잉그리드",
+          "target": "엘리시온",
+          "relation_or_change": "잉그리드가 엘리시온을 '우리 엘리시온'이라 부르고 맥스웰이 잉그리드를 사장님이라 불러 엘리시온의 사장임이 드러남",
+          "epistemic_type": "character_claim",
+          "claimant": "잉그리드",
+          "line_start": 16,
+          "line_end": 19,
+          "claim_line": 19,
+          "quote": "맥스웰: 아니, 사장님. 그게 아니라요.\n잉그리드: 헬레틱의 파편을 메티스 단독으로 입수했다는 걸로 하고 싶은 건가?\n잉그리드: 아니면 앱솔루트를 그저 골탕 먹이고 싶을 뿐이었나?\n잉그리드: 그것도 아니면 우리 엘리시온에게 도전하고 싶은 건가?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__rln_002",
-          "subject": "잉그리드",
-          "target": "슈엔",
-          "relation_or_change": "메티스의 작전 방해를 감싸는 슈엔을 비판하며 미실리스를 일부러 '미사일스'라고 불러 슈엔을 도발함.",
-          "line_start": 39,
-          "line_end": 45,
-          "quote": "CEO라는게 이래서야. 미사일스의 미래가 어둡군. 내가 미사일스라고 부르지 말랬지!"
+          "subject": "슈엔",
+          "target": "메티스",
+          "relation_or_change": "슈엔이 메티스의 앱솔루트 작전 방해를 자기가 시켰다고 감싸며 앞으로도 사과할 필요가 없다고 함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 30,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "슈엔: 얘들아. 그런 거 안 해도 괜찮아. 내가 다 알아서 할게.\n잉그리드: 네놈이 자꾸 그렇게 싸고도니까 작전 방해 같은 짓을 아무렇지도 않게 하는 거다.\n슈엔: 좀 하면 어때? 방심한 네 고철들 잘못이지. 그렇지 메티스?\n맥스웰: 어··· 우리가 잘못한 게 없다고는 말 못···.\n슈엔: 조용. 너흰 사과할 필요 없어. 앞으로도.\n잉그리드: 사과는 필요 없다. 해명이 필요할 뿐이다.\n슈엔: 내가 시켰어. 됐어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_03__rln_003",
           "subject": "맥스웰",
           "target": "슈엔",
-          "relation_or_change": "슈엔이 메티스를 아끼는 듯 굴어도 배터리가 부족한 채로 지상에 올린 점을 들어 자신들을 자랑용 장난감으로 여긴다고 냉소함.",
-          "line_start": 61,
+          "relation_or_change": "맥스웰은 슈엔이 메티스를 니케 치고 아끼는 수준일 뿐, 배터리가 부족한데도 막무가내로 올려보내는 등 예전부터 자기 체면을 세워 줄 성능 좋은 장난감으로만 여긴다고 평가함",
+          "epistemic_type": "character_claim",
+          "claimant": "맥스웰",
+          "line_start": 60,
           "line_end": 67,
-          "quote": "니케 치곤 아낀다 수준인 거지. 배터리가 간당간당한 상태인데도 막무가내로 올려보낸 것만 봐도 알잖아?"
+          "claim_line": 64,
+          "quote": "맥스웰: 우리가 니케라는 근본 말이야.\n맥스웰: 니케 치곤 아낀다 수준인 거지.\n맥스웰: 배터리가 간당간당한 상태인데도 막무가내로 올려보낸 것만 봐도 알잖아?\n라피: ··· ···.\n맥스웰: 우린 그 녀석에게 성능 좋은 장난감.\n맥스웰: 자기의 체면을 세워 줄 자랑하고 싶은 장난감.\n맥스웰: 그 이상도 이하도 아니야.\n맥스웰: 그 녀석은, 예전부터 그랬으니까.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__rln_004",
+          "subject": "슈엔",
+          "target": "미사일스",
+          "relation_or_change": "잉그리드가 슈엔을 미사일스의 CEO라고 부름",
+          "epistemic_type": "character_claim",
+          "claimant": "잉그리드",
+          "line_start": 39,
+          "line_end": 40,
+          "claim_line": 39,
+          "quote": "잉그리드: CEO라는게 이래서야. 미사일스의 미래가 어둡군.\n슈엔: 내가 미사일스라고 부르지 말랬지!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_03__rln_005",
+          "subject": "슈엔",
+          "target": "메티스",
+          "relation_or_change": "라피는 슈엔이 니케를 저렇게 대하는 건 처음 본다며 메티스가 총애를 받고 있다고 평가함",
+          "epistemic_type": "character_claim",
+          "claimant": "라피",
+          "line_start": 54,
+          "line_end": 56,
+          "claim_line": 56,
+          "quote": "라피: 총애를 받고 있네.\n맥스웰: 아, 우리?\n라피: 슈엔이 니케를 저렇게 대하는 건 처음 보니까.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "unregistered_entity_candidates": [
-        {
-          "item_id": "main_11_03__uec_001",
-          "surface_text": "메티스",
-          "suggested_type": "squad",
-          "line_start": 2
-        },
-        {
-          "item_id": "main_11_03__uec_002",
-          "surface_text": "방주",
-          "suggested_type": "location",
-          "line_start": 3
-        },
-        {
-          "item_id": "main_11_03__uec_003",
-          "surface_text": "엘리시온",
-          "suggested_type": "organization",
-          "line_start": 3
-        },
-        {
-          "item_id": "main_11_03__uec_004",
-          "surface_text": "오퍼레이터 룸",
-          "suggested_type": "location",
-          "line_start": 13
-        },
-        {
-          "item_id": "main_11_03__uec_005",
-          "surface_text": "앱솔루트",
-          "suggested_type": "squad",
-          "line_start": 14
-        },
-        {
-          "item_id": "main_11_03__uec_006",
-          "surface_text": "헬레틱의 파편",
-          "suggested_type": "item",
-          "line_start": 17
-        },
-        {
-          "item_id": "main_11_03__uec_007",
-          "surface_text": "중앙 정부",
-          "suggested_type": "organization",
-          "line_start": 26
-        },
-        {
-          "item_id": "main_11_03__uec_008",
-          "surface_text": "미사일스",
-          "suggested_type": "organization",
-          "line_start": 39
-        },
-        {
-          "item_id": "main_11_03__uec_009",
-          "surface_text": "니케",
-          "suggested_type": "concept",
-          "line_start": 56
-        }
-      ]
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": []
     },
     {
       "scene_id": "main_11_04",
@@ -1024,8 +1577,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "목적 지점에 가까워질수록 랩쳐 수가 이전 대비 312% 급증하자 일행은 랩쳐들도 헬레틱의 파편을 노리고 있다고 판단한다. 라플라스는 카운터스와 지휘관의 작전 기록을 보고 두 사람이 전우 관계임을 짚어내면서도, 니케가 인간의 도움을 받는 것은 히어로 실격이라며 모든 니케는 히어로가 되어야 한다고 주장한다.",
+      "summary": "목적 지점으로 갈수록 랩쳐 밀도가 이전 대비 312% 상승해 난전이 예상되는 가운데, 라피는 지휘관을 지키겠다고 다짐한다. 라플라스는 카운터스의 작전 수행 내역을 보고 지휘관과 라피가 전우 같다고 말하면서도, 니케가 인간에게 도움을 받는 것은 히어로 실격이며 니케와 인간은 전우가 될 수 없다고 주장한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -1066,9 +1620,9 @@
             "speaker_label": "시프티",
             "entity_id": "char_시프티",
             "medium": "comm",
-            "line_start": 5,
+            "line_start": 4,
             "line_end": 6,
-            "quote": "예. ···이전 대비 312% 상승했습니다."
+            "quote": "라피: 시프티. 이전과 현재의 랩쳐 분포도를 대조해 줘.\n시프티: 예.\n시프티: ···이전 대비 312% 상승했습니다."
           }
         ],
         "mentioned_only": [
@@ -1079,7 +1633,9 @@
             "entity_type": "faction_or_species",
             "line_start": 3,
             "line_end": 3,
-            "quote": "예상치를 웃도는군. 랩쳐의 수가."
+            "quote": "예상치를 웃도는군. 랩쳐의 수가.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_04__mnt_002",
@@ -1088,7 +1644,9 @@
             "entity_type": "item",
             "line_start": 8,
             "line_end": 8,
-            "quote": "놈들도 노리고 있다고 보는 게 맞겠지. 헬레틱의 파편을."
+            "quote": "놈들도 노리고 있다고 보는 게 맞겠지. 헬레틱의 파편을.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_04__mnt_003",
@@ -1097,7 +1655,9 @@
             "entity_type": "faction_or_species",
             "line_start": 36,
             "line_end": 36,
-            "quote": "?? 니케와 지휘관의 관계야."
+            "quote": "?? 니케와 지휘관의 관계야.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_11_04__mnt_004",
@@ -1106,7 +1666,9 @@
             "entity_type": "squad",
             "line_start": 53,
             "line_end": 53,
-            "quote": "카운터스. 너흰 지휘관의, 즉 인간의 도움을 받은 적이 수 번 있더군."
+            "quote": "카운터스. 너흰 지휘관의, 즉 인간의 도움을 받은 적이 수 번 있더군.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -1119,7 +1681,9 @@
           "address_term": "지휘관",
           "line_start": 29,
           "line_end": 29,
-          "quote": "예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다."
+          "quote": "예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_04__foa_002",
@@ -1128,7 +1692,9 @@
           "address_term": "넌",
           "line_start": 35,
           "line_end": 35,
-          "quote": "···라피. 넌 지휘관과 무슨 관계지?"
+          "quote": "···라피. 넌 지휘관과 무슨 관계지?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_04__foa_003",
@@ -1137,123 +1703,347 @@
           "address_term": "카운터스",
           "line_start": 53,
           "line_end": 53,
-          "quote": "카운터스. 너흰 지휘관의, 즉 인간의 도움을 받은 적이 수 번 있더군."
+          "quote": "카운터스. 너흰 지휘관의, 즉 인간의 도움을 받은 적이 수 번 있더군.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__foa_004",
+          "from_speaker": "라플라스",
+          "to_target": "카운터스",
+          "address_term": "너흰",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "카운터스. 너흰 지휘관의, 즉 인간의 도움을 받은 적이 수 번 있더군.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_11_04__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "시프티, 라피",
-          "summary": "시프티는 목적 지점 인근의 랩쳐 분포도가 이전 대비 312% 상승했으며 접근할수록 밀도가 높아진다고 보고하고, 라피는 랩쳐들도 헬레틱의 파편을 노리고 있다고 판단한다.",
-          "line_start": 4,
-          "line_end": 16,
-          "quote": "시프티. 이전과 현재의 랩쳐 분포도를 대조해 줘. 예. ···이전 대비 312% 상승했습니다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "라피",
+          "summary": "랩쳐의 수가 예상치를 웃돈다는 라플라스의 말에 라피가 시프티에게 이전과 현재의 랩쳐 분포도를 대조해 달라고 요청한다.",
+          "line_start": 2,
+          "line_end": 4,
+          "claim_line": null,
+          "quote": "라플라스: 으음···!\n라플라스: 예상치를 웃도는군. 랩쳐의 수가.\n라피: 시프티. 이전과 현재의 랩쳐 분포도를 대조해 줘.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_04__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "지휘관, 라피",
-          "summary": "맥스웰이 난전일 때 지휘관 사망률이 가장 높다고 말하자 지휘관은 동료들이 지켜줄 것이라 답하고, 라피는 무슨 일이 있어도 지휘관을 지키겠다고 다짐한다.",
-          "line_start": 19,
-          "line_end": 34,
-          "quote": "내 동료들이 지켜줄 테니까. 예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "시프티",
+          "summary": "라피의 요청으로 분포도를 대조한 시프티가 랩쳐의 수가 이전 대비 312% 상승했다고 보고한다.",
+          "line_start": 4,
+          "line_end": 7,
+          "claim_line": 6,
+          "quote": "라피: 시프티. 이전과 현재의 랩쳐 분포도를 대조해 줘.\n시프티: 예.\n시프티: ···이전 대비 312% 상승했습니다.\n맥스웰: 사암 배액~? 많다고는 생각했는데 너무 많은 것 아냐?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_04__eac_003",
           "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 회수가 목적인지는 알 수 없으나 랩쳐들도 헬레틱의 파편을 노리고 있다고 추측한다.",
+          "line_start": 8,
+          "line_end": 9,
+          "claim_line": 8,
+          "quote": "라피: 놈들도 노리고 있다고 보는 게 맞겠지. 헬레틱의 파편을.\n라피: 회수가 목적인지는 알 수 없겠지만.",
+          "refers_to_past": false,
           "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_004",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "라플라스",
-          "summary": "라플라스는 카운터스와 지휘관의 작전 수행 내역을 살펴본 결과 전우에 가까웠다고 평하면서도, 니케는 인간을 지키는 히어로여야 하므로 인간의 도움을 받는 것은 히어로 실격이라고 주장한다.",
-          "line_start": 38,
-          "line_end": 58,
-          "quote": "니케와 인간은 전우가 될 수 없다. 니케는 인간을 지키는 존재. 도움을 받는다는 일 따위 있을 수 없다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
-        }
-      ],
-      "clues_and_hooks": [
+          "summary": "라플라스가 랩쳐들에게 헬레틱의 파편을 절대 넘겨주지 않겠다고 외치고, 파편이 오직 우리 것이라는 드레이크의 말을 부정한다.",
+          "line_start": 10,
+          "line_end": 13,
+          "claim_line": null,
+          "quote": "라플라스: 비열한 악의 무리들! 헬레틱의 파편은 절대 넘겨주지 않는다!\n드레이크: 그렇다! 헬레틱의 파편은 오직 우리의 것이다!\n라플라스: 그건 아냐.\n드레이크: 아니면 어쩔 수 없고.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
         {
-          "item_id": "main_11_04__clh_001",
-          "keyword": "라플라스의 히어로관",
-          "category": "lore_concept",
-          "detail": "라플라스는 니케와 인간이 전우가 될 수 없으며, 니케는 일방적으로 인간을 지키는 히어로가 되어야만 지상을 탈환할 수 있다고 믿음.",
+          "item_id": "main_11_04__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 목적 지점에 근접할수록 랩쳐의 밀도가 높아지고 있어 난전이 될 가능성이 높다고 보고한다.",
+          "line_start": 14,
+          "line_end": 16,
+          "claim_line": 15,
+          "quote": "라피: 시프티. 목적 지점 인근의···.\n시프티: 예. 목적 지점에 근접할수록 랩쳐의 밀도가 높아지고 있어요.\n시프티: 난전이 될 가능성이 높습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰이 목적 지점에 무언가 있긴 있다는 뜻이라고 말하며, 지휘관의 사망률이 가장 높을 때가 난전이라고 언급한다.",
+          "line_start": 17,
+          "line_end": 19,
+          "claim_line": 19,
+          "quote": "맥스웰: 뭐가 있긴 있다는 얘기네.\n맥스웰: 그리고 난전이라···.\n맥스웰: 그거 알아? 지휘관의 사망률이 가장 높을 때가 난전이야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 동료들이 자신을 지켜줄 것이므로 죽지 않는다고 말한다.",
+          "line_start": 21,
+          "line_end": 26,
+          "claim_line": 26,
+          "quote": "[OPTION TEXT=\"난 죽지 않아.\"]\n[OPTION_END]\n[CHOICE_END]\n맥스웰: 흐음···. 무슨 자신감이래?\n[CHOICE_START]\n[OPTION TEXT=\"내 동료들이 지켜줄 테니까.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 무슨 일이 있어도 지휘관은 자기가 지키겠다고 다짐하고 지휘관은 믿겠다고 답한다.",
+          "line_start": 29,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "라피: 예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다.\n[CHOICE_START]\n[OPTION TEXT=\"그래. 믿을게.\"]\n[OPTION_END]\n[CHOICE_END]\n라피: 예.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스가 지휘관과 라피의 작전 수행 내역을 살펴본 결과 단순한 지휘관과 니케의 관계가 아니라 전우에 가까운 느낌이었다고 말한다.",
+          "line_start": 35,
+          "line_end": 42,
+          "claim_line": 41,
+          "quote": "라플라스: ···라피. 넌 지휘관과 무슨 관계지?\n라피: ?? 니케와 지휘관의 관계야.\n라플라스: 아냐. 그런 걸 물어본 게 아니다.\n라플라스: 실례되는 행동이지만, 둘의 작전 수행 내역을 살펴봤다.\n라플라스: 그 결과. 단순한 지휘관과 니케의 관계라고는 생각되지 않아.\n맥스웰: 오~ 뭐야 뭐야? 설마 둘이···?\n라플라스: 나의 감상으로는···. 전우에 가까운 느낌이었다.\n라플라스: 내가 느낀 바가 맞나?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 자신과 지휘관은 니케와 지휘관의 관계라고 답한다.",
+          "line_start": 35,
+          "line_end": 36,
+          "claim_line": 36,
+          "quote": "라플라스: ···라피. 넌 지휘관과 무슨 관계지?\n라피: ?? 니케와 지휘관의 관계야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 라피와 자신이 전우에 가깝다는 라플라스의 감상이 맞다고 인정한다.",
+          "line_start": 41,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "라플라스: 나의 감상으로는···. 전우에 가까운 느낌이었다.\n라플라스: 내가 느낀 바가 맞나?\n[CHOICE_START]\n[OPTION TEXT=\"맞아.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스가 니케와 인간이 전우라는 말을 비웃음 사기 딱 좋은 얘기라고 일축하고 드레이크가 웃자 맥스웰이 제지한다.",
+          "line_start": 47,
+          "line_end": 50,
+          "claim_line": null,
+          "quote": "라플라스: 니케와 인간이 전우라···.\n라플라스: 비웃음 사기 딱 좋은 얘기군.\n드레이크: 하하하.\n맥스웰: 그러지 좀 마 제발.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "라플라스가 니케는 인간을 지키는 존재이므로 인간과 전우가 될 수 없고, 지휘관의 도움을 수 번 받은 카운터스는 히어로 실격이며 모든 니케는 지상 탈환을 위해 히어로가 되어야 한다고 주장한다.",
           "line_start": 51,
           "line_end": 58,
-          "quote": "니케와 인간은 전우가 될 수 없다. 니케는 인간을 지키는 존재. 도움을 받는다는 일 따위 있을 수 없다."
+          "claim_line": 53,
+          "quote": "라플라스: 니케와 인간은 전우가 될 수 없다.\n라플라스: 니케는 인간을 지키는 존재. 도움을 받는다는 일 따위 있을 수 없다.\n라플라스: 카운터스. 너흰 지휘관의, 즉 인간의 도움을 받은 적이 수 번 있더군.\n라플라스: 그래서는 안 돼. 도움을 받다니. 지켜지다니.\n라플라스: 히어로 실격이다.\n라피: 난 히어로가 아냐.\n라플라스: 모든 니케는 히어로가 되어야 해!\n라플라스: 그래야만 한다! 그래야 지상을 탈환할 수 있어!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 자신은 히어로가 아니라고 말한다.",
+          "line_start": 55,
+          "line_end": 56,
+          "claim_line": 56,
+          "quote": "라플라스: 히어로 실격이다.\n라피: 난 히어로가 아냐.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰이 라플라스가 한 번씩 이상한 소리를 하니 이해해 달라며 사과하고 라플라스를 밀며 걸어간다.",
+          "line_start": 59,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "맥스웰: ··· ···.\n맥스웰: 미안. 라플라스는 한 번씩 이상한 소릴 하거든.\n맥스웰: 이해해 줘.\n라플라스: 이상한 소리가 아니다! 내가 수없이 말하지만···!\n맥스웰: 예예. 알겠습니다.\n맥스웰은 라플라스를 밀면서 걸어갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 니케는 인간을 지키기 위해 만들어진 존재이므로 동료나 전우는 애초에 성립이 안 될지도 모른다며 라플라스의 말이 틀린 말은 아니라고 수긍한다.",
+          "line_start": 65,
+          "line_end": 67,
+          "claim_line": 66,
+          "quote": "라피: ··· ···.\n라피: 틀린 말은 아닙니다. 니케는 인간을 지키기 위해 만들어진 존재.\n라피: 동료니, 전우니 하는 것은 애초에 성립이 안 될지도 모르죠.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "드레이크가 분위기가 너무 무거운 것 같아서 웃었다고 말하고, 라피는 고맙다고 인사한다.",
+          "line_start": 68,
+          "line_end": 73,
+          "claim_line": null,
+          "quote": "드레이크: 후후···!\n라피: ??\n드레이크: 후후후후후!\n라피: 뭐가 우습지?\n드레이크: 분위기가 너무 무거운 것 같아서 웃었다!\n라피: ···그래. 고마워.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "clues_and_hooks": [],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_11_04__rln_001",
-          "subject": "라피",
-          "target": "지휘관",
-          "relation_or_change": "지휘관이 동료들을 믿는다고 말하자 무슨 일이 있어도 지휘관을 지키겠다고 약속함.",
-          "line_start": 26,
-          "line_end": 34,
-          "quote": "내 동료들이 지켜줄 테니까. 예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다."
+          "subject": "지휘관",
+          "target": "카운터스",
+          "relation_or_change": "지휘관이 카운터스를 자신을 지켜줄 동료들이라고 부름",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 25,
+          "line_end": 29,
+          "claim_line": 26,
+          "quote": "[CHOICE_START]\n[OPTION TEXT=\"내 동료들이 지켜줄 테니까.\"]\n[OPTION_END]\n[CHOICE_END]\n라피: 예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_04__rln_002",
-          "subject": "라플라스",
-          "target": "라피",
-          "relation_or_change": "작전 수행 내역을 통해 라피와 지휘관이 전우 같은 관계임을 알아채지만, 인간의 도움을 받은 카운터스는 히어로 실격이라고 비판함.",
-          "line_start": 38,
-          "line_end": 55,
-          "quote": "실례되는 행동이지만, 둘의 작전 수행 내역을 살펴봤다. 그 결과. 단순한 지휘관과 니케의 관계라고는 생각되지 않아."
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "라피가 무슨 일이 있어도 지휘관을 지키겠다고 다짐하고 지휘관은 라피를 믿겠다고 답함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 29,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "라피: 예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다.\n[CHOICE_START]\n[OPTION TEXT=\"그래. 믿을게.\"]\n[OPTION_END]\n[CHOICE_END]\n라피: 예.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_04__rln_003",
-          "subject": "드레이크",
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "라플라스가 둘의 작전 수행 내역을 보고 단순한 지휘관과 니케가 아니라 전우에 가까운 느낌이었다고 평가함",
+          "epistemic_type": "character_claim",
+          "claimant": "라플라스",
+          "line_start": 38,
+          "line_end": 42,
+          "claim_line": 41,
+          "quote": "라플라스: 실례되는 행동이지만, 둘의 작전 수행 내역을 살펴봤다.\n라플라스: 그 결과. 단순한 지휘관과 니케의 관계라고는 생각되지 않아.\n맥스웰: 오~ 뭐야 뭐야? 설마 둘이···?\n라플라스: 나의 감상으로는···. 전우에 가까운 느낌이었다.\n라플라스: 내가 느낀 바가 맞나?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__rln_004",
+          "subject": "지휘관",
           "target": "라피",
-          "relation_or_change": "라플라스의 말에 분위기가 무거워지자 일부러 크게 웃어 분위기를 풀어주려 하고, 라피가 이에 고마워함.",
-          "line_start": 68,
-          "line_end": 73,
-          "quote": "뭐가 우습지? 분위기가 너무 무거운 것 같아서 웃었다! ···그래. 고마워."
+          "relation_or_change": "지휘관이 라피와 자신이 전우에 가깝다는 라플라스의 말에 맞다고 동의함",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 41,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "라플라스: 나의 감상으로는···. 전우에 가까운 느낌이었다.\n라플라스: 내가 느낀 바가 맞나?\n[CHOICE_START]\n[OPTION TEXT=\"맞아.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_04__rln_005",
+          "subject": "라피",
+          "target": "지휘관",
+          "relation_or_change": "라피는 자신과 지휘관이 니케와 지휘관의 관계이며, 니케는 인간을 지키기 위해 만들어진 존재이므로 동료나 전우는 애초에 성립이 안 될지도 모른다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "라피",
+          "line_start": 66,
+          "line_end": 67,
+          "claim_line": 67,
+          "quote": "라피: 틀린 말은 아닙니다. 니케는 인간을 지키기 위해 만들어진 존재.\n라피: 동료니, 전우니 하는 것은 애초에 성립이 안 될지도 모르죠.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "unregistered_entity_candidates": [
-        {
-          "item_id": "main_11_04__uec_001",
-          "surface_text": "랩쳐",
-          "suggested_type": "concept",
-          "line_start": 3
-        },
-        {
-          "item_id": "main_11_04__uec_002",
-          "surface_text": "헬레틱의 파편",
-          "suggested_type": "item",
-          "line_start": 8
-        },
-        {
-          "item_id": "main_11_04__uec_003",
-          "surface_text": "니케",
-          "suggested_type": "concept",
-          "line_start": 36
-        },
-        {
-          "item_id": "main_11_04__uec_004",
-          "surface_text": "카운터스",
-          "suggested_type": "squad",
-          "line_start": 53
-        }
-      ]
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": []
     },
     {
       "scene_id": "main_11_05",
@@ -1269,8 +2059,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "목표 좌표에 도착해 앱솔루트 및 아니스·네온과 합류하기 위해 쏜 신호탄이 은화의 저격에 부서진다. 시프티가 현 위치가 과거 대비 200m 솟아오른 가공 지형이며 아래에 재머가 있다고 분석한 직후, 지면에서 튀어나온 촉수가 라피와 메티스의 몸을 꿰뚫고 상하에서 약 100여 기의 랩쳐가 포위해 전투가 벌어졌다.",
+      "summary": "목표 지점에 도착해 라피가 합류용 신호탄을 쏘자 은화가 탄환으로 신호탄을 부순다. 시프티가 현 위치가 과거 대비 200m 솟아오른 가공 지형이며 아래에 재머가 있을 가능성이 높다고 분석하는 순간, 지면에서 촉수가 솟아올라 라피와 메티스를 꿰뚫고 약 100여 기의 랩쳐가 상공과 지면에서 포위한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -1319,84 +2110,80 @@
         "mentioned_only": [
           {
             "item_id": "main_11_05__mnt_001",
-            "surface_text": "신호탄",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 3,
-            "line_end": 3,
-            "quote": "지휘관. 신호탄을 쏘겠습니다."
-          },
-          {
-            "item_id": "main_11_05__mnt_002",
             "surface_text": "앱솔루트",
             "entity_id": null,
             "entity_type": "squad",
             "line_start": 4,
             "line_end": 4,
-            "quote": "앱솔루트 및 아니스, 네온과 합류해야 합니다."
+            "quote": "앱솔루트 및 아니스, 네온과 합류해야 합니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_05__mnt_003",
+            "item_id": "main_11_05__mnt_002",
             "surface_text": "아니스",
             "entity_id": "char_아니스",
             "entity_type": "character",
             "line_start": 4,
             "line_end": 4,
-            "quote": "앱솔루트 및 아니스, 네온과 합류해야 합니다."
+            "quote": "앱솔루트 및 아니스, 네온과 합류해야 합니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_05__mnt_004",
+            "item_id": "main_11_05__mnt_003",
             "surface_text": "네온",
             "entity_id": "char_네온",
             "entity_type": "character",
             "line_start": 4,
             "line_end": 4,
-            "quote": "앱솔루트 및 아니스, 네온과 합류해야 합니다."
+            "quote": "앱솔루트 및 아니스, 네온과 합류해야 합니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_05__mnt_005",
+            "item_id": "main_11_05__mnt_004",
             "surface_text": "은화",
             "entity_id": "char_은화",
             "entity_type": "character",
             "line_start": 14,
             "line_end": 14,
-            "quote": "···은화가 신호탄을 발견했습니다."
+            "quote": "···은화가 신호탄을 발견했습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_05__mnt_006",
+            "item_id": "main_11_05__mnt_005",
             "surface_text": "헬레틱",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 22,
             "line_end": 22,
-            "quote": "그렇지? 헬레틱과 싸웠던 곳이 이렇게 멀쩡할 리가."
+            "quote": "그렇지? 헬레틱과 싸웠던 곳이 이렇게 멀쩡할 리가.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_05__mnt_007",
+            "item_id": "main_11_05__mnt_006",
             "surface_text": "메티스",
             "entity_id": null,
             "entity_type": "squad",
             "line_start": 33,
             "line_end": 33,
-            "quote": "지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다."
+            "quote": "지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_11_05__mnt_008",
+            "item_id": "main_11_05__mnt_007",
             "surface_text": "랩쳐",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 41,
             "line_end": 41,
-            "quote": "시프티! 랩쳐의 반응은!?"
-          },
-          {
-            "item_id": "main_11_05__mnt_009",
-            "surface_text": "재머",
-            "entity_id": null,
-            "entity_type": "item",
-            "line_start": 44,
-            "line_end": 44,
-            "quote": "가공 지형 아래에 재머 존재 가능성 높음!"
+            "quote": "시프티! 랩쳐의 반응은!?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -1409,149 +2196,187 @@
           "address_term": "지휘관",
           "line_start": 3,
           "line_end": 3,
-          "quote": "지휘관. 신호탄을 쏘겠습니다."
-        },
-        {
-          "item_id": "main_11_05__foa_002",
-          "from_speaker": "라플라스",
-          "to_target": "랩쳐",
-          "address_term": "악당 놈들",
-          "line_start": 56,
-          "line_end": 56,
-          "quote": "비겁한 악당 놈들···! 매복이라니 부끄러운 줄 알아라!"
+          "quote": "지휘관. 신호탄을 쏘겠습니다.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "main_11_05__csh_001",
-          "text": "지면에서 솟아 나와 라피와 메티스의 몸을 꿰뚫은 촉수는 main_12_07과 main_12_09에서 메티스를 침식시키고 NIMPH가 없는 라피에게는 통하지 않았던 침식 촉수로 밝혀진다.",
-          "related_scene_ids": [
-            "main_11_06",
-            "main_12_07",
-            "main_12_09"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_11_05__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "라피",
-          "summary": "라피가 앱솔루트 및 아니스·네온과 합류하기 위해 신호탄을 쏘아 올리자 어디선가 날아온 탄환이 신호탄을 부수고, 라피는 은화가 신호탄을 발견했다고 말한다.",
-          "line_start": 3,
-          "line_end": 15,
-          "quote": "빛과 연기를 머금은 신호탄이 하늘 높이 쏘아졌다. 퍽. 신호탄이 어디선가 날아온 탄환에 부서졌다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "목표 지점에 도착한 라피가 앱솔루트 및 아니스, 네온과 합류하기 위해 지휘관의 동의를 받아 하늘 높이 신호탄을 쏘아 올렸으나 어디선가 날아온 탄환에 신호탄이 부서진다.",
+          "line_start": 2,
+          "line_end": 13,
+          "claim_line": null,
+          "quote": "시프티: 목표 지점, 도착했습니다.\n라피: 지휘관. 신호탄을 쏘겠습니다.\n라피: 앱솔루트 및 아니스, 네온과 합류해야 합니다.\n[CHOICE_START]\n[OPTION TEXT=\"부탁해.\"]\n[OPTION_END]\n[CHOICE_END]\n라피: 라져.\n푸슝-!\n빛과 연기를 머금은 신호탄이 하늘 높이 쏘아졌다.\n퍽.\n신호탄이 어디선가 날아온 탄환에 부서졌다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_05__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "시프티, 라피, 맥스웰, 드레이크, 라플라스",
-          "summary": "시프티가 현 위치가 가공 지형임을 알아챈 직후 지면에서 솟아 나온 촉수가 라피와 메티스 전원의 몸을 꿰뚫고, 라플라스가 촉수를 끊어낸다.",
-          "line_start": 29,
-          "line_end": 40,
-          "quote": "!! 가공 지형입니다! 뭣···! 푸슈슈슉-!! !! 지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "라피",
+          "summary": "라피가 은화가 신호탄을 발견했으며 아직 화가 많이 난 모양이라고 말하자 맥스웰이 무릎 꿇는 연습이나 해놔야겠다고 반응한다.",
+          "line_start": 14,
+          "line_end": 16,
+          "claim_line": 14,
+          "quote": "라피: ···은화가 신호탄을 발견했습니다.\n라피: 그리고 아직 화가 많이 난 모양이군요.\n맥스웰: ···무릎 꿇는 연습이나 해놔야겠네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_05__eac_003",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "시프티",
-          "summary": "시프티는 가공 지형 아래에 재머가 존재할 가능성이 높으며 과거 대비 현 위치의 지면이 약 200m 솟아 있다고 분석한다.",
-          "line_start": 44,
-          "line_end": 48,
-          "quote": "가공 지형 아래에 재머 존재 가능성 높음! 지형의 규모는? 과거와 현재의 지면 상태를 비교 분석해보겠습니다! 분석 완료! 과, 과거 대비 현 위치의 지면이 200m 가량 솟아있습니다!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "summary": "목표 지점에 아무것도 없자 시프티가 좌표상으로는 틀림없다고 확인한다.",
+          "line_start": 17,
+          "line_end": 19,
+          "claim_line": 19,
+          "quote": "라플라스: 그런데 이곳. 목표 지점인데 아무것도 없군.\n맥스웰: 시프티. 제대로 확인한 것 맞아?\n시프티: 예. 좌표상으로는 틀림없어요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_05__eac_004",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "시프티, 라피, 메티스",
-          "summary": "상공과 지면 아래에서 약 100여 기의 랩쳐가 나타나 일행을 포위하자 메티스와 라피가 교전에 돌입한다.",
+          "actor_or_speaker": "맥스웰",
+          "summary": "지형이 너무 평평하자 맥스웰은 헬레틱과 싸웠던 곳이 이렇게 멀쩡할 리 없으며 그때 자신들도 죽을 뻔해 제대로 된 기억이 남아있을 리 없다고 말한다.",
+          "line_start": 20,
+          "line_end": 25,
+          "claim_line": 22,
+          "quote": "맥스웰: ···이상한데.\n라피: 너무 평평해.\n맥스웰: 그렇지? 헬레틱과 싸웠던 곳이 이렇게 멀쩡할 리가.\n라피: 기억은 안 나는 건가?\n맥스웰: 좀 봐주라. 그때 우리도 죽을 뻔했다고.\n맥스웰: 제대로 된 기억이 남아있을 리가 없지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_05__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "좌표가 더미 데이터냐는 라피의 의문에 시프티가 지형의 모습과 인근 환경을 매칭해 보고 가공 지형임을 알아낸다.",
+          "line_start": 26,
+          "line_end": 29,
+          "claim_line": 29,
+          "quote": "라피: ···좌표가 더미 데이터인가.\n시프티: 음··· 지형의 모습이랑 인근의 환경을 매칭해볼게요.\n시프티: ··· ···.\n시프티: !! 가공 지형입니다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_05__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫자 라플라스가 정확한 조준으로 촉수들을 끊어내고, 맥스웰·드레이크·라플라스 모두 피해가 경미하다고 보고한다.",
+          "line_start": 30,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "맥스웰: 뭣···!\n푸슈슈슉-!!\n라피: !!\n지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다.\n라플라스: 이딴 얕은수를!\n푸슈슝-!\n라플라스는 정확한 조준으로 촉수들을 끊어냈다.\n라피: 다들! 피해 상황은!\n맥스웰: 경미!\n드레이크: 생채기!\n라플라스: 나도 문제없다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_05__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "라피가 랩쳐의 반응을 묻자 시프티는 랩쳐 반응이 없으며 가공 지형 아래에 재머가 존재할 가능성이 높다고 보고한다.",
+          "line_start": 41,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "라피: 시프티! 랩쳐의 반응은!?\n시프티: 래, 랩쳐 반응 없음!\n라플라스: 뭣이···!?\n시프티: 가공 지형 아래에 재머 존재 가능성 높음!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_05__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "지형의 규모를 묻는 라피에게 시프티가 과거와 현재의 지면 상태를 비교 분석해 현 위치의 지면이 과거 대비 200m 가량 솟아있다고 보고한다.",
+          "line_start": 45,
+          "line_end": 48,
+          "claim_line": 48,
+          "quote": "라피: 지형의 규모는?\n시프티: 과거와 현재의 지면 상태를 비교 분석해보겠습니다!\n시프티: 분석 완료!\n시프티: 과, 과거 대비 현 위치의 지면이 200m 가량 솟아있습니다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_05__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "지면이 200m 솟아있다는 보고에 맥스웰이 무엇을 숨겨놓았냐고 말하고 라피는 적들도 본격적이라는 뜻이라고 판단한다.",
+          "line_start": 49,
+          "line_end": 50,
+          "claim_line": 50,
+          "quote": "맥스웰: 이것들 뭘 그렇게 꽁꽁 숨겨놓으셨을까? 응?\n라피: ···저쪽도 본격적이라는 얘긴가.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_05__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라플라스",
+          "summary": "상공과 지면을 뚫고 약 100여 기의 랩쳐가 나타나 일행을 포위하자 메티스와 라피가 교전에 돌입한다.",
           "line_start": 51,
           "line_end": 64,
-          "quote": "상공에 랩쳐 다수! 투콰쾅- 수많은 랩쳐들이 지면을 뚫고 튀어나왔다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "시프티: 상공에 랩쳐 다수!\n투콰쾅-\n수많은 랩쳐들이 지면을 뚫고 튀어나왔다.\n라피: 위와 아래에서 포위하겠다는 건가. 시프티. 총규모는?\n시프티: 육안으로 확인 결과 약 100여 기입니다!\n라플라스: 비겁한 악당 놈들···! 매복이라니 부끄러운 줄 알아라!\n맥스웰: 뭐, 그래도 모습을 드러내 줬으니 다행이지?\n라플라스: 물론이다!\n드레이크: 하하! 그래! 이 정도는 나와줘야 싸워볼 맛이 나지!\n맥스웰: 탄환과 전력은 충분해. 가볼까?\n라플라스: 아아! 가자!\n라플라스: 각오해라 악당 놈들!\n라플라스: 네놈들의 사악한 음모는, 우리 메티스가 뿜어내는 정의의 빛 앞에 사라질 것이다!\n라플라스: 인카운터!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_11_05__clh_001",
-          "keyword": "지면에서 솟아 나온 촉수",
-          "category": "foreshadowing",
-          "detail": "가공 지형에서 기습적으로 솟아 나와 라피와 메티스의 몸을 꿰뚫은 촉수. 직후에는 경미한 생채기로 여겨졌으나 메티스 침식의 원인이 됨.",
-          "line_start": 33,
-          "line_end": 40,
-          "quote": "지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다. 이딴 얕은수를! 푸슈슝-! 라플라스는 정확한 조준으로 촉수들을 끊어냈다."
+          "keyword": "가공 지형과 200m 융기",
+          "category": "location",
+          "subject": null,
+          "detail": "헬레틱과 싸웠던 목표 지점의 지면이 과거 대비 200m 가량 솟아오른 가공 지형으로 바뀌어 있으며 그 아래에 재머가 있을 가능성이 높음",
+          "line_start": 44,
+          "line_end": 48,
+          "quote": "시프티: 가공 지형 아래에 재머 존재 가능성 높음!\n라피: 지형의 규모는?\n시프티: 과거와 현재의 지면 상태를 비교 분석해보겠습니다!\n시프티: 분석 완료!\n시프티: 과, 과거 대비 현 위치의 지면이 200m 가량 솟아있습니다!",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_05__clh_002",
-          "keyword": "200m 솟아오른 가공 지형",
-          "category": "location",
-          "detail": "과거 헬레틱과 싸웠던 목표 지점의 지면이 과거 대비 약 200m 솟아오른 가공 지형으로 바뀌어 있으며 아래에 재머가 존재함.",
-          "line_start": 44,
-          "line_end": 48,
-          "quote": "가공 지형 아래에 재머 존재 가능성 높음! 지형의 규모는? 과거와 현재의 지면 상태를 비교 분석해보겠습니다! 분석 완료! 과, 과거 대비 현 위치의 지면이 200m 가량 솟아있습니다!"
+          "keyword": "지면에서 솟아난 촉수",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "가공 지형에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫음",
+          "line_start": 31,
+          "line_end": 36,
+          "quote": "푸슈슈슉-!!\n라피: !!\n지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다.\n라플라스: 이딴 얕은수를!\n푸슈슝-!\n라플라스는 정확한 조준으로 촉수들을 끊어냈다.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
-      "unregistered_entity_candidates": [
-        {
-          "item_id": "main_11_05__uec_001",
-          "surface_text": "신호탄",
-          "suggested_type": "item",
-          "line_start": 3
-        },
-        {
-          "item_id": "main_11_05__uec_002",
-          "surface_text": "앱솔루트",
-          "suggested_type": "squad",
-          "line_start": 4
-        },
-        {
-          "item_id": "main_11_05__uec_003",
-          "surface_text": "헬레틱",
-          "suggested_type": "concept",
-          "line_start": 22
-        },
-        {
-          "item_id": "main_11_05__uec_004",
-          "surface_text": "메티스",
-          "suggested_type": "squad",
-          "line_start": 33
-        },
-        {
-          "item_id": "main_11_05__uec_005",
-          "surface_text": "랩쳐",
-          "suggested_type": "concept",
-          "line_start": 41
-        },
-        {
-          "item_id": "main_11_05__uec_006",
-          "surface_text": "재머",
-          "suggested_type": "item",
-          "line_start": 44
-        }
-      ]
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": []
     },
     {
       "scene_id": "main_11_06",
@@ -1567,8 +2392,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "전투 승리 직후 라플라스는 촉수에 찔린 부위가 살짝 마비되는 느낌을 받지만 대수롭지 않게 넘긴다. 곧이어 가공 지면이 무너지자 라피가 지휘관을 끌어안고 일행 모두가 지하로 추락한다.",
+      "summary": "전투 승리 직후 라플라스는 아까 촉수에 찔린 부위가 살짝 마비되는 느낌을 받지만 대수롭지 않게 넘긴다. 곧 지면이 무너지며 라피가 지휘관을 끌어안은 채 일행 전원이 아래로 추락한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -1597,7 +2423,9 @@
             "entity_id": "char_지휘관",
             "line_start": 16,
             "line_end": 17,
-            "quote": "라피: 지휘관! 라피는 나를 꽈악 끌어안았다."
+            "quote": "라피: 지휘관!\n라피는 나를 꽈악 끌어안았다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "remote_or_voice_only": [
@@ -1608,7 +2436,7 @@
             "medium": "comm",
             "line_start": 13,
             "line_end": 15,
-            "quote": "지, 지면 불안정! 곧 무너집니다! 쳇···! 너무 날뛰었나! 전원! 낙하대비!"
+            "quote": "시프티: 지, 지면 불안정! 곧 무너집니다!\n맥스웰: 쳇···! 너무 날뛰었나!\n시프티: 전원! 낙하대비!"
           }
         ],
         "mentioned_only": [],
@@ -1617,88 +2445,81 @@
       "forms_of_address": [
         {
           "item_id": "main_11_06__foa_001",
-          "from_speaker": "라플라스",
-          "to_target": "랩쳐",
-          "address_term": "악당 놈들",
-          "line_start": 3,
-          "line_end": 3,
-          "quote": "보았느냐 악당 놈들! 정의는 승리한···!"
-        },
-        {
-          "item_id": "main_11_06__foa_002",
           "from_speaker": "라피",
           "to_target": "지휘관",
           "address_term": "지휘관",
           "line_start": 16,
           "line_end": 16,
-          "quote": "지휘관!"
+          "quote": "지휘관!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "main_11_06__csh_001",
-          "text": "라플라스가 느낀 '촉수에 찔린 부분의 마비감'은 단순한 독이 아니라 main_12_07에서 밝혀지는 메티스 침식의 초기 증상이다.",
-          "related_scene_ids": [
-            "main_11_05",
-            "main_12_07"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_11_06__eac_001",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "라플라스, 맥스웰",
-          "summary": "라플라스는 좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이라며 독을 쓴 것 같다고 말하고, 맥스웰은 자신은 괜찮은 것 같다고 답한다.",
-          "line_start": 6,
+          "actor_or_speaker": "라플라스",
+          "summary": "전투 승리 후 라플라스가 좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이라며 랩쳐가 독을 쓴 것 같다고 말하지만 이 정도는 아무렇지도 않다고 넘긴다.",
+          "line_start": 2,
           "line_end": 10,
-          "quote": "좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이야. 비열한 악당 놈들. 독을 쓴 건가···!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "claim_line": 6,
+          "quote": "라플라스: 완전 승리!\n라플라스: 보았느냐 악당 놈들! 정의는 승리한···!\n라플라스: ···음?\n맥스웰: ···왜 그래?\n라플라스: 좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이야.\n라플라스: 비열한 악당 놈들. 독을 쓴 건가···!\n맥스웰: 그래? 난 괜찮은 것 같은데.\n라플라스: 뭐, 그 정도인 거다. 비열한 수단의 한계인 셈이지.\n라플라스: 이 정도는 아무렇지도 않다.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_11_06__eac_002",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "시프티, 라피, 지휘관",
-          "summary": "지면이 불안정해지며 무너지자 라피가 지휘관을 꽉 끌어안고 일행 전원이 아래로 추락한다.",
+          "actor_or_speaker": "맥스웰",
+          "summary": "맥스웰은 촉수에 찔린 부위가 마비된다는 라플라스의 말에 자신은 괜찮은 것 같다고 답한다.",
+          "line_start": 6,
+          "line_end": 8,
+          "claim_line": 8,
+          "quote": "라플라스: 좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이야.\n라플라스: 비열한 악당 놈들. 독을 쓴 건가···!\n맥스웰: 그래? 난 괜찮은 것 같은데.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_11_06__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "지면이 불안정해져 무너지자 시프티가 낙하 대비를 외치고, 라피가 지휘관을 꽉 끌어안은 채 일행이 아래로 추락한다.",
           "line_start": 11,
           "line_end": 20,
-          "quote": "지, 지면 불안정! 곧 무너집니다! 쳇···! 너무 날뛰었나! 전원! 낙하대비! 지휘관! 라피는 나를 꽈악 끌어안았다. 무너집니다! 쿠콰아앙--!! 거대한 굉음과 함께, 우린 아래로 떨어졌다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "쿠구구구···!\n라플라스: ···뭐지?\n시프티: 지, 지면 불안정! 곧 무너집니다!\n맥스웰: 쳇···! 너무 날뛰었나!\n시프티: 전원! 낙하대비!\n라피: 지휘관!\n라피는 나를 꽈악 끌어안았다.\n시프티: 무너집니다!\n쿠콰아앙--!!\n거대한 굉음과 함께, 우린 아래로 떨어졌다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_11_06__clh_001",
-          "keyword": "촉수에 찔린 부위의 마비감",
+          "keyword": "촉수 피격 부위의 마비감",
           "category": "foreshadowing",
-          "detail": "라플라스가 촉수에 찔린 부위가 마비되는 느낌을 호소하나 독으로 치부하고 넘김.",
+          "subject": null,
+          "detail": "라플라스가 좀 전 촉수에 찔린 부위가 살짝 마비되는 느낌을 받음",
           "line_start": 6,
           "line_end": 8,
-          "quote": "좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이야. 비열한 악당 놈들. 독을 쓴 건가···! 그래? 난 괜찮은 것 같은데."
+          "quote": "라플라스: 좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이야.\n라플라스: 비열한 악당 놈들. 독을 쓴 건가···!\n맥스웰: 그래? 난 괜찮은 것 같은데.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "main_11_06__rln_001",
-          "subject": "라피",
-          "target": "지휘관",
-          "relation_or_change": "지면이 붕괴하자 지휘관을 보호하기 위해 즉시 꽉 끌어안고 함께 낙하함.",
-          "line_start": 16,
-          "line_end": 17,
-          "quote": "지휘관! 라피는 나를 꽈악 끌어안았다."
-        }
-      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     }
   ]

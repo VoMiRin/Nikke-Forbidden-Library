@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2.0",
-  "generated_at": "2026-10-15T02:51:20.455Z",
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-17T03:25:27.037Z",
   "title_id": "main_story__chapter_03",
   "category": "main_story",
   "title": "Chapter.03: 감각",
@@ -21,8 +21,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "지상에 도착한 카운터스와 워드리스는 시프티와 통신을 시도하지만, 미하라는 슈엔이 이미 통신망을 모두 차단해 놓은 비밀 작전이라고 밝히며 랩쳐 포획 포인트로 일행을 안내한다.",
+      "summary": "지상에 도착한 카운터스가 시프티와 통신을 시도하나 미하라가 슈엔이 통신망을 차단한 비밀 작전이라고 밝히고, 랩쳐 포획 전문 스쿼드인 워드리스가 목표 지점까지 안내하겠다고 나선다.",
       "participants": {
         "present_in_scene": [
           {
@@ -56,100 +57,200 @@
             "is_generic_role": false
           }
         ],
-        "present_silent": [
-          {
-            "item_id": "main_03_00__psl_001",
-            "name": "유니",
-            "entity_id": "char_유니",
-            "line_start": 14,
-            "line_end": 14,
-            "quote": "그걸 위한 스쿼드니까. 나와 유니는."
-          }
-        ],
+        "present_silent": [],
         "remote_or_voice_only": [],
         "mentioned_only": [
           {
             "item_id": "main_03_00__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "라피: 지상 도착 완료했습니다. 시프티와 연결을 진행하겠습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_03_00__mnt_002",
             "surface_text": "시프티",
             "entity_id": "char_시프티",
             "entity_type": "character",
             "line_start": 2,
             "line_end": 2,
-            "quote": "지상 도착 완료했습니다. 시프티와 연결을 진행하겠습니다."
+            "quote": "라피: 지상 도착 완료했습니다. 시프티와 연결을 진행하겠습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_03_00__mnt_002",
+            "item_id": "main_03_00__mnt_003",
             "surface_text": "슈엔",
             "entity_id": "char_슈엔",
             "entity_type": "character",
             "line_start": 7,
             "line_end": 7,
-            "quote": "그건 안될걸? 슈엔이 통신망을 다 차단해놨거든."
+            "quote": "미하라: 그건 안될걸? 슈엔이 통신망을 다 차단해놨거든.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
-            "item_id": "main_03_00__mnt_003",
+            "item_id": "main_03_00__mnt_004",
             "surface_text": "랩쳐",
             "entity_id": null,
             "entity_type": "faction_or_species",
             "line_start": 13,
             "line_end": 13,
-            "quote": "특정 랩쳐를 포획하라고 했던 것 같은데요. 그게 가능한가요?"
+            "quote": "네온: 특정 랩쳐를 포획하라고 했던 것 같은데요. 그게 가능한가요?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_03_00__mnt_005",
+            "surface_text": "유니",
+            "entity_id": "char_유니",
+            "entity_type": "character",
+            "line_start": 14,
+            "line_end": 14,
+            "quote": "미하라: 그걸 위한 스쿼드니까. 나와 유니는.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_03_00__eac_001",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "미하라",
-          "summary": "라피가 시프티와 통신 연결을 시도하려 하자 미하라는 슈엔이 통신망을 모두 차단해 놓은 비밀 작전이라고 말한다.",
+          "actor_or_speaker": "라피",
+          "summary": "지상에 도착한 라피가 시프티와 연결을 진행하겠다고 보고하고 지휘관이 이를 승인한다.",
           "line_start": 2,
-          "line_end": 11,
-          "quote": "그건 안될걸? 슈엔이 통신망을 다 차단해놨거든.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 4,
+          "claim_line": null,
+          "quote": "라피: 지상 도착 완료했습니다. 시프티와 연결을 진행하겠습니다.\n부탁할게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_00__eac_002",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
           "actor_or_speaker": "미하라",
-          "summary": "미하라가 자신과 유니는 특정 랩쳐를 포획하기 위한 스쿼드라고 설명하며 포인트까지 안내하겠다고 한다.",
+          "summary": "미하라가 슈엔이 통신망을 다 차단해 놓아서 시프티와 연결할 수 없다고 말한다.",
+          "line_start": 7,
+          "line_end": 7,
+          "claim_line": 7,
+          "quote": "미하라: 그건 안될걸? 슈엔이 통신망을 다 차단해놨거든.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_00__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 이번 작전이 단순한 작전이 아니라고 판단한다.",
+          "line_start": 8,
+          "line_end": 9,
+          "claim_line": 9,
+          "quote": "라피: ··· ···.\n라피: 이 작전. 단순한 작전이 아니군.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_00__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 이번 작전이 이른바 비밀 작전이라고 말한다.",
+          "line_start": 10,
+          "line_end": 11,
+          "claim_line": 11,
+          "quote": "미하라: 후후. 맞아. 이른바.\n미하라: 비.밀.작.전. 이라는 거지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_00__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 비밀 작전이라는 말에 구린 냄새가 풀풀 난다고 평한다.",
+          "line_start": 12,
+          "line_end": 12,
+          "claim_line": 12,
+          "quote": "아니스: 구린 냄새가 풀풀 나는데.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_00__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "네온이 특정 랩쳐를 포획하는 것이 가능하냐고 묻자 미하라는 자신과 유니는 그것을 위한 스쿼드라고 답한다.",
           "line_start": 13,
+          "line_end": 14,
+          "claim_line": 14,
+          "quote": "네온: 특정 랩쳐를 포획하라고 했던 것 같은데요. 그게 가능한가요?\n미하라: 그걸 위한 스쿼드니까. 나와 유니는.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_00__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 포인트까지 안내하겠다며 이동하자고 제안한다.",
+          "line_start": 15,
           "line_end": 16,
-          "quote": "그걸 위한 스쿼드니까. 나와 유니는.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "미하라: 일단 이동할까?\n미하라: 포인트까지 안내할게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_03_00__clh_001",
-          "keyword": "통신망 차단 비밀 작전",
+          "keyword": "통신망 차단과 비밀 작전",
           "category": "foreshadowing",
-          "detail": "슈엔이 오퍼레이터 시프티와의 통신망을 모두 차단한 채 지상에서 랩쳐 포획 비밀 작전을 강행시킨다.",
+          "subject": null,
+          "detail": "슈엔이 오퍼레이터 시프티와의 통신망을 차단한 채 워드리스와 카운터스를 투입해 특정 랩쳐 포획을 진행하는 비밀 작전이다.",
           "line_start": 7,
-          "line_end": 11,
-          "quote": "그건 안될걸? 슈엔이 통신망을 다 차단해놨거든."
+          "line_end": 14,
+          "quote": "미하라: 그건 안될걸? 슈엔이 통신망을 다 차단해놨거든.\n라피: ··· ···.\n라피: 이 작전. 단순한 작전이 아니군.\n미하라: 후후. 맞아. 이른바.\n미하라: 비.밀.작.전. 이라는 거지.\n아니스: 구린 냄새가 풀풀 나는데.\n네온: 특정 랩쳐를 포획하라고 했던 것 같은데요. 그게 가능한가요?\n미하라: 그걸 위한 스쿼드니까. 나와 유니는.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_03_00__uec_001",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_03_00__uec_002",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 13
         }
       ]
@@ -168,8 +269,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "이동 중 지휘관이 총에 맞은 미하라의 배를 걱정하며 붕대를 감아주려 하자, 미하라와 유니는 미하라가 맞는 것과 상처를 좋아해 남이 상처를 건드리는 것을 싫어한다며 사양한다.",
+      "summary": "이동 중 지휘관이 총에 맞았던 미하라에게 붕대를 감아주려 하나, 미하라와 유니는 미하라가 맞는 것과 상처를 좋아해 남이 상처를 건드리는 것을 싫어한다며 사양한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -211,24 +313,18 @@
       "forms_of_address": [
         {
           "item_id": "main_03_01__foa_001",
-          "from_speaker": "아니스",
-          "to_target": "지휘관",
-          "address_term": "지휘관님",
-          "line_start": 21,
-          "line_end": 21,
-          "quote": "아, 우리 지휘관님은 붕대를 감아주는 게 취미거든."
-        },
-        {
-          "item_id": "main_03_01__foa_002",
           "from_speaker": "미하라",
           "to_target": "지휘관",
           "address_term": "지휘관",
           "line_start": 31,
           "line_end": 31,
-          "quote": "지휘관. 마음만 받을게."
+          "quote": "미하라: 지휘관. 마음만 받을게.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -239,14 +335,12 @@
             {
               "item_id": "main_03_01__chb_001_opt_01",
               "option_text": "총에 맞은 곳은 괜찮아?",
-              "continuation_summary": "네온이 총에 맞았으니 걱정된다고 맞장구치고, 미하라는 맞는 것을 좋아한다며 괜찮다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "main_03_01__chb_001_opt_02",
               "option_text": "배가 아파 보이는데.",
-              "continuation_summary": "네온이 총에 맞았으니 걱정된다고 맞장구치고, 미하라는 맞는 것을 좋아한다며 괜찮다고 답한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         }
@@ -255,40 +349,152 @@
         {
           "item_id": "main_03_01__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "지휘관, 미하라, 유니",
-          "summary": "지휘관이 미하라에게 붕대를 감아주려 하자 미하라는 자신의 상처를 건드리지 말라며 사양하고, 유니는 미하라가 상처를 좋아해 남이 건드리는 것을 싫어한다고 설명한다.",
+          "actor_or_speaker": "네온",
+          "summary": "네온과 아니스가 미하라에게 어디까지 가는 것인지 묻고, 미하라는 왜 그렇게 보채냐며 농담한다.",
+          "line_start": 2,
+          "line_end": 5,
+          "claim_line": null,
+          "quote": "네온: 어디까지 가는 건가요?\n미하라: 어머. 뭘 그렇게 보채고 있어?\n미하라: 그렇게 서두르면 남자친구가 싫어할걸?\n아니스: 아니, 어디까지 가는지는 알아야 할 것 아냐.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_01__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 미하라에게 총에 맞은 곳은 괜찮은지 묻는다.",
+          "line_start": 7,
+          "line_end": 7,
+          "claim_line": null,
+          "quote": "총에 맞은 곳은 괜찮아?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 6,
+            "option_text": "총에 맞은 곳은 괜찮아?"
+          }
+        },
+        {
+          "item_id": "main_03_01__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 미하라에게 배가 아파 보인다고 말한다.",
+          "line_start": 9,
+          "line_end": 9,
+          "claim_line": 9,
+          "quote": "배가 아파 보이는데.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 6,
+            "option_text": "배가 아파 보이는데."
+          }
+        },
+        {
+          "item_id": "main_03_01__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "네온이 총에 맞았으니 걱정하자 미하라는 맞는 것을 좋아한다며 괜찮다고 답한다.",
+          "line_start": 12,
+          "line_end": 15,
+          "claim_line": 14,
+          "quote": "네온: 그러게요. 아무래도 총에 맞았으니까.\n미하라: 후후. 괜찮아.\n미하라: 좋아하거든. 맞는 거.\n아니스: ??",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_01__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 미하라에게 붕대를 감아주려 하자 미하라가 뭐 하는 거냐고 묻는다.",
           "line_start": 17,
+          "line_end": 20,
+          "claim_line": null,
+          "quote": "미하라에게 붕대를 감아준다.\n미하라: 어머. 뭐 하는 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_01__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 미하라에게 지휘관은 붕대를 감아주는 것이 취미라고 말한다.",
+          "line_start": 21,
+          "line_end": 21,
+          "claim_line": 21,
+          "quote": "아니스: 아, 우리 지휘관님은 붕대를 감아주는 게 취미거든.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_01__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 지휘관에게 자신의 상처는 건드리지 말아 달라며 치료를 거절한다.",
+          "line_start": 22,
+          "line_end": 27,
+          "claim_line": null,
+          "quote": "미하라: 미안. 건들지 말아 줘.\n??\n미하라: 내 상처는 건드리지 마.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_01__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "유니",
+          "summary": "유니가 미하라는 상처를 좋아해서 남이 건드리는 것을 싫어한다고 설명한다.",
+          "line_start": 28,
+          "line_end": 28,
+          "claim_line": 28,
+          "quote": "유니: 응. 미하라는 상처를 좋아하니까, 남이 건드는 거 싫어해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_01__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "아니스가 무슨 말이냐며 의아해하자 미하라는 그냥 그렇게만 알아두라며 지휘관에게 마음만 받겠다고 말한다.",
+          "line_start": 29,
           "line_end": 31,
-          "quote": "응. 미하라는 상처를 좋아하니까, 남이 건드는 거 싫어해.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "아니스: ···무슨 말이야 대체?\n미하라: 그냥 그렇게만 알아둬.\n미하라: 지휘관. 마음만 받을게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_03_01__clh_001",
-          "keyword": "미하라의 고통과 상처 기호",
-          "category": "lore_concept",
-          "detail": "미하라는 총에 맞는 고통과 자신의 상처를 좋아해 타인이 치료하거나 건드리는 것을 거부한다.",
+          "keyword": "맞는 것과 상처를 좋아하는 성향",
+          "category": "trait",
+          "subject": "미하라",
+          "detail": "미하라는 맞는 것과 자신의 상처를 좋아하여 타인이 상처를 건드리거나 붕대를 감아주는 것을 거부한다.",
           "line_start": 13,
           "line_end": 28,
-          "quote": "좋아하거든. 맞는 거."
+          "quote": "미하라: 후후. 괜찮아.\n미하라: 좋아하거든. 맞는 거.\n아니스: ??\n미하라에게 붕대를 감아준다.\n미하라: 어머. 뭐 하는 거야?\n아니스: 아, 우리 지휘관님은 붕대를 감아주는 게 취미거든.\n미하라: 미안. 건들지 말아 줘.\n??\n미하라: 내 상처는 건드리지 마.\n유니: 응. 미하라는 상처를 좋아하니까, 남이 건드는 거 싫어해.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "main_03_01__rln_001",
-          "subject": "미하라",
-          "target": "지휘관",
-          "relation_or_change": "붕대를 감아주려는 지휘관의 배려에 상처는 건드리지 말라며 마음만 받겠다고 말한다.",
-          "line_start": 27,
-          "line_end": 31,
-          "quote": "내 상처는 건드리지 마. 응. 미하라는 상처를 좋아하니까, 남이 건드는 거 싫어해. ···무슨 말이야 대체? 그냥 그렇게만 알아둬. 지휘관. 마음만 받을게."
-        }
-      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": []
     },
     {
@@ -305,8 +511,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "유니가 신호가 잡히지 않는 특수 랩쳐 코드네임 토커티브의 특이한 발자국을 찾아내고, 미하라는 첫 작전 사망률 70%를 뚫고 살아남은 지휘관을 쓸만하다고 여긴 슈엔이 지금까지 40명 이상의 지휘관을 일회용으로 소모한 것처럼 부려먹는 것이라고 알려준다.",
+      "summary": "유니가 포획 대상인 특수 랩쳐 토커티브의 발자국을 찾아내고, 미하라는 슈엔이 토커티브 추적에 40명이 넘는 일회용 지휘관을 소모시켰으며 지휘관 일행은 생존 확률을 뚫어 투입된 것이라고 밝힌다.",
       "participants": {
         "present_in_scene": [
           {
@@ -356,7 +563,9 @@
             "entity_type": "faction_or_species",
             "line_start": 9,
             "line_end": 9,
-            "quote": "···이 시대에 발자국으로 랩쳐를 추적한다고? 세상에, 무슨 원시시대 사람이세요?"
+            "quote": "아니스: ···이 시대에 발자국으로 랩쳐를 추적한다고? 세상에, 무슨 원시시대 사람이세요?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_02__mnt_002",
@@ -364,8 +573,10 @@
             "entity_id": "char_토커티브",
             "entity_type": "character",
             "line_start": 10,
-            "line_end": 12,
-            "quote": "토커티브는 신호가 안 잡히는걸. 토커티브? 랩쳐의 이름인가요? 그래. 코드 네임 토커티브."
+            "line_end": 10,
+            "quote": "유니: 토커티브는 신호가 안 잡히는걸.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_02__mnt_003",
@@ -374,7 +585,9 @@
             "entity_type": "character",
             "line_start": 31,
             "line_end": 31,
-            "quote": "그래서 슈엔인지 슈크림인지가 우릴 부려먹는다?"
+            "quote": "아니스: 그래서 슈엔인지 슈크림인지가 우릴 부려먹는다?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_02__mnt_004",
@@ -383,7 +596,9 @@
             "entity_type": "organization",
             "line_start": 43,
             "line_end": 43,
-            "quote": "3대 회사의 CEO는 방주에서도 특별 취급을 받고 있습니다."
+            "quote": "라피: 3대 회사의 CEO는 방주에서도 특별 취급을 받고 있습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_02__mnt_005",
@@ -392,7 +607,9 @@
             "entity_type": "location",
             "line_start": 43,
             "line_end": 43,
-            "quote": "3대 회사의 CEO는 방주에서도 특별 취급을 받고 있습니다."
+            "quote": "라피: 3대 회사의 CEO는 방주에서도 특별 취급을 받고 있습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -400,33 +617,18 @@
       "forms_of_address": [
         {
           "item_id": "main_03_02__foa_001",
-          "from_speaker": "아니스",
-          "to_target": "지휘관",
-          "address_term": "지휘관님",
-          "line_start": 30,
-          "line_end": 30,
-          "quote": "아하. 그 기적의 확률을 뚫은 게 우리 지휘관님이다?"
-        },
-        {
-          "item_id": "main_03_02__foa_002",
-          "from_speaker": "아니스",
-          "to_target": "슈엔",
-          "address_term": "슈엔인지 슈크림인지",
-          "line_start": 31,
-          "line_end": 31,
-          "quote": "그래서 슈엔인지 슈크림인지가 우릴 부려먹는다?"
-        },
-        {
-          "item_id": "main_03_02__foa_003",
           "from_speaker": "라피",
           "to_target": "지휘관",
           "address_term": "지휘관",
           "line_start": 42,
           "line_end": 42,
-          "quote": "지휘관. 죄송합니다만, 작전을 거부할 순 없습니다."
+          "quote": "라피: 지휘관. 죄송합니다만, 작전을 거부할 순 없습니다.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
@@ -434,86 +636,205 @@
         {
           "item_id": "main_03_02__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "유니, 미하라",
-          "summary": "유니가 신호가 잡히지 않는 토커티브의 특이한 발자국을 찾아낸다.",
+          "actor_or_speaker": "유니",
+          "summary": "유니가 흔적을 찾아내고 미하라에게 상을 줄 거냐고 묻자 미하라는 아직 상 받을 정도는 아니라며 나중으로 미룬다.",
           "line_start": 2,
-          "line_end": 10,
-          "quote": "토커티브는 신호가 안 잡히는걸.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "유니: 미하라! 여기 있어!\n미하라: 그렇네. 잘 했어 유니.\n유니: 헤헤. 유니한테 상 줄 거야?\n미하라: 그건 나중에. 아직 상 받을 정도는 아니니까.\n유니: 응. 알았어.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_02__eac_002",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "미하라",
-          "summary": "미하라가 추적 대상은 어떤 랩쳐의 규격에도 부합하지 않는 특수 개체 코드 네임 토커티브이며, 몇 달 전부터 포획 명령만 받았을 뿐 이유나 교전 이력은 모르고 한 번도 만나본 적이 없다고 설명한다.",
-          "line_start": 12,
-          "line_end": 23,
-          "quote": "그래. 코드 네임 토커티브. 그 어떤 랩쳐의 규격에도 부합되지 않는 특수 객체.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "유니",
+          "summary": "아니스가 이 시대에 발자국으로 랩쳐를 추적하냐며 놀라자 유니는 토커티브는 신호가 잡히지 않는다고 답한다.",
+          "line_start": 7,
+          "line_end": 10,
+          "claim_line": 10,
+          "quote": "아니스: 뭔데 이게? 발자국?\n유니: 맞아. 유니가 찾았어.\n아니스: ···이 시대에 발자국으로 랩쳐를 추적한다고? 세상에, 무슨 원시시대 사람이세요?\n유니: 토커티브는 신호가 안 잡히는걸.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_02__eac_003",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "미하라, 라피",
-          "summary": "미하라가 지휘관의 첫 작전 사망 확률이 70%이고 두 번째 작전까지 살아남은 지휘관이 쓸만해 보여 슈엔이 투입한 것이며, 지금까지 일회용으로 소모된 지휘관이 40명은 넘을 것이라고 말한다.",
-          "line_start": 26,
-          "line_end": 36,
-          "quote": "이렇게 일회용으로 사용된 지휘관이, 지금까지 몇 명이나 있었지? 모르긴 몰라도. 40명은 넘을 거야.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "미하라",
+          "summary": "네온이 토커티브가 랩쳐의 이름이냐고 묻자 미하라는 어떤 랩쳐의 규격에도 부합하지 않는 특수 객체 코드네임 토커티브를 잡으러 온 것이라고 설명한다.",
+          "line_start": 11,
+          "line_end": 14,
+          "claim_line": 13,
+          "quote": "네온: 토커티브? 랩쳐의 이름인가요?\n미하라: 그래. 코드 네임 토커티브.\n미하라: 그 어떤 랩쳐의 규격에도 부합되지 않는 특수 객체.\n미하라: 우린 그 녀석을 잡으러 온 거야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_02__eac_004",
           "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "라피가 포획 이유와 특징 및 교전 이력을 묻자 미하라는 몇 달 전부터 잡으라고만 했을 뿐 이유도 모르고 실제로 본 적도 없다고 답한다.",
+          "line_start": 15,
+          "line_end": 18,
+          "claim_line": 16,
+          "quote": "라피: 이유는?\n미하라: 그것까진 모르겠네. 몇 달 전부터 그걸 잡으라고만 했지, 이유까진 안 알려줬거든.\n라피: 특징은 있나? 교전 이력은?\n미하라: 아무것도 몰라. 실제로 본 적도 없으니까.",
+          "refers_to_past": true,
           "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_005",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "라피",
-          "summary": "라피가 3대 회사의 CEO는 방주에서도 특별 취급을 받아 일개 지휘관과 스쿼드가 작전을 거부할 수 없다고 말한다.",
-          "line_start": 42,
+          "summary": "네온과 아니스가 막막한 상황을 각각 잘못된 속담으로 비유하자 라피가 둘 다 틀렸다고 지적한다.",
+          "line_start": 19,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "네온: 언 발에 바늘 놓기로군요.\n아니스: 모래사장에서 오줌 누기겠지.\n라피: ···둘 다 틀렸어.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 토커티브의 발자국 자체가 특이해서 추적은 가능하지만 아직 한 번도 만나본 적은 없다고 말한다.",
+          "line_start": 22,
+          "line_end": 23,
+          "claim_line": 22,
+          "quote": "미하라: 발자국 자체가 워낙 특이해서 추적은 가능해.\n미하라: 그런데 아직까지 한 번도 만나본 적이 없네.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "라피가 왜 자신들이 추적에 투입되었는지 묻자 미하라는 첫 작전 사망 확률 70%와 두 번째 작전까지 살아남아 쓸만해 보이기 때문이라고 답한다.",
+          "line_start": 24,
+          "line_end": 29,
+          "claim_line": 26,
+          "quote": "라피: ···왜 우리가 추적에 투입된거지?\n미하라: ··· ···.\n미하라: 너희가 쓸만해 보이니까.\n미하라: 지휘관이 첫 작전에서 사망할 확률이 얼마나 되는지 알아?\n라피: ···70%.\n미하라: 두 번째 작전까지 가면 사망 확률은 더 올라가겠지?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "아니스가 기적의 확률을 뚫은 지휘관 때문에 슈엔이 자신들을 부려먹는 것이냐고 묻자 미하라가 정답이라고 인정한다.",
+          "line_start": 30,
+          "line_end": 32,
+          "claim_line": 32,
+          "quote": "아니스: 아하. 그 기적의 확률을 뚫은 게 우리 지휘관님이다?\n아니스: 그래서 슈엔인지 슈크림인지가 우릴 부려먹는다?\n미하라: 정답이야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "라피가 지금까지 이렇게 일회용으로 사용된 지휘관이 몇 명이나 있었는지 묻자 미하라는 40명은 넘을 것이라고 답한다.",
+          "line_start": 33,
+          "line_end": 37,
+          "claim_line": 36,
+          "quote": "라피: 몇 명이지?\n미하라: 응?\n라피: 이렇게 일회용으로 사용된 지휘관이, 지금까지 몇 명이나 있었지?\n미하라: 모르긴 몰라도. 40명은 넘을 거야.\n라피: ··· ···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스와 네온이 CEO의 권력에 혀를 내두르며 우리도 회사나 차릴까라고 농담을 주고받는다.",
+          "line_start": 38,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "아니스: 굉장하네. 나도 CEO나 할걸.\n네온: 우리도 회사나 차릴까요?\n아니스: 그럴까?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 지휘관에게 3대 회사의 CEO는 방주에서도 특별 취급을 받아 일개 지휘관과 휘하 스쿼드가 작전을 거부할 수 없으며 주의하는 수밖에 없다고 보고한다.",
+          "line_start": 41,
           "line_end": 45,
-          "quote": "3대 회사의 CEO는 방주에서도 특별 취급을 받고 있습니다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": 43,
+          "quote": "라피: ··· ···.\n라피: 지휘관. 죄송합니다만, 작전을 거부할 순 없습니다.\n라피: 3대 회사의 CEO는 방주에서도 특별 취급을 받고 있습니다.\n라피: ···일개 지휘관과 휘하 스쿼드가 어떻게 할 수는 없습니다.\n라피: 주의하는 것 말고는 방법이 없는 상황입니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_02__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 작전을 진행하자고 결정하자 라피가 복창하고 미하라가 발자국을 따라 추적을 계속하자고 말한다.",
+          "line_start": 47,
+          "line_end": 52,
+          "claim_line": null,
+          "quote": "···그래. 작전을 진행하자.\n라피: ···라져.\n미하라: ··· ···.\n미하라: 자, 그럼 이 발자국을 따라서 추적을 계속해볼까?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_03_02__clh_001",
-          "keyword": "코드 네임 토커티브",
-          "category": "code_or_number",
-          "detail": "신호가 잡히지 않고 어떤 랩쳐의 규격에도 부합하지 않는 특수 개체로, 특이한 발자국을 남기며 슈엔이 몇 달 전부터 비밀리에 포획을 지시했다.",
+          "keyword": "코드네임 토커티브",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "신호가 잡히지 않고 어떤 랩쳐의 규격에도 부합하지 않는 특수 개체 랩쳐로, 특이한 발자국을 통해서만 추적이 가능하다.",
           "line_start": 10,
-          "line_end": 16,
-          "quote": "그래. 코드 네임 토커티브. 그 어떤 랩쳐의 규격에도 부합되지 않는 특수 객체."
+          "line_end": 23,
+          "quote": "유니: 토커티브는 신호가 안 잡히는걸.\n네온: 토커티브? 랩쳐의 이름인가요?\n미하라: 그래. 코드 네임 토커티브.\n미하라: 그 어떤 랩쳐의 규격에도 부합되지 않는 특수 객체.\n미하라: 우린 그 녀석을 잡으러 온 거야.\n라피: 이유는?\n미하라: 그것까진 모르겠네. 몇 달 전부터 그걸 잡으라고만 했지, 이유까진 안 알려줬거든.\n라피: 특징은 있나? 교전 이력은?\n미하라: 아무것도 몰라. 실제로 본 적도 없으니까.\n네온: 언 발에 바늘 놓기로군요.\n아니스: 모래사장에서 오줌 누기겠지.\n라피: ···둘 다 틀렸어.\n미하라: 발자국 자체가 워낙 특이해서 추적은 가능해.\n미하라: 그런데 아직까지 한 번도 만나본 적이 없네.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_02__clh_002",
-          "keyword": "일회용 지휘관 40명 이상",
+          "keyword": "일회용으로 소모된 지휘관 40명 이상",
           "category": "past_incident",
-          "detail": "슈엔의 작전에 일회용으로 동원되어 소모된 지휘관이 지금까지 40명이 넘는다.",
-          "line_start": 35,
+          "subject": null,
+          "detail": "슈엔이 몇 달 전부터 토커티브 포획 작전에 일회용으로 투입한 지휘관이 지금까지 40명이 넘는다.",
+          "line_start": 16,
           "line_end": 36,
-          "quote": "이렇게 일회용으로 사용된 지휘관이, 지금까지 몇 명이나 있었지? 모르긴 몰라도. 40명은 넘을 거야."
+          "quote": "미하라: 그것까진 모르겠네. 몇 달 전부터 그걸 잡으라고만 했지, 이유까진 안 알려줬거든.\n라피: 특징은 있나? 교전 이력은?\n미하라: 아무것도 몰라. 실제로 본 적도 없으니까.\n네온: 언 발에 바늘 놓기로군요.\n아니스: 모래사장에서 오줌 누기겠지.\n라피: ···둘 다 틀렸어.\n미하라: 발자국 자체가 워낙 특이해서 추적은 가능해.\n미하라: 그런데 아직까지 한 번도 만나본 적이 없네.\n라피: ···왜 우리가 추적에 투입된거지?\n미하라: ··· ···.\n미하라: 너희가 쓸만해 보이니까.\n미하라: 지휘관이 첫 작전에서 사망할 확률이 얼마나 되는지 알아?\n라피: ···70%.\n미하라: 두 번째 작전까지 가면 사망 확률은 더 올라가겠지?\n아니스: 아하. 그 기적의 확률을 뚫은 게 우리 지휘관님이다?\n아니스: 그래서 슈엔인지 슈크림인지가 우릴 부려먹는다?\n미하라: 정답이야.\n라피: 몇 명이지?\n미하라: 응?\n라피: 이렇게 일회용으로 사용된 지휘관이, 지금까지 몇 명이나 있었지?\n미하라: 모르긴 몰라도. 40명은 넘을 거야.",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_03_02__uec_001",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 9
         },
         {
@@ -544,8 +865,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "발자국이 끊어진 곳에서 유니가 벽을 밟고 이동한 흔적을 찾아내자, 미하라는 토커티브가 벽을 타고 이동하며 추적을 눈치채고 있다고 판단하고 유니에게 상으로 자신의 종아리를 강하게 꼬집게 해 고통을 즐긴다.",
+      "summary": "끊어진 토커티브의 발자국이 벽면으로 이어진 것을 유니가 발견해 토커티브가 벽면 기동 능력과 추적 인지 능력을 지녔음이 드러나고, 유니는 상으로 미하라의 종아리를 꼬집으며 고통을 주고받는다.",
       "participants": {
         "present_in_scene": [
           {
@@ -595,7 +917,9 @@
             "entity_type": "faction_or_species",
             "line_start": 10,
             "line_end": 10,
-            "quote": "···벽면을 딛고 기동할 수 있다고? 랩쳐가?"
+            "quote": "라피: ···벽면을 딛고 기동할 수 있다고? 랩쳐가?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_03__mnt_002",
@@ -604,7 +928,9 @@
             "entity_type": "character",
             "line_start": 12,
             "line_end": 12,
-            "quote": "정보 갱신이네. 토커티브는 벽을 타고 이동할 수 있어."
+            "quote": "미하라: 정보 갱신이네. 토커티브는 벽을 타고 이동할 수 있어.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -617,10 +943,13 @@
           "address_term": "스승님",
           "line_start": 30,
           "line_end": 30,
-          "quote": "스승님. 이게 무슨 일일까요?"
+          "quote": "네온: 스승님. 이게 무슨 일일까요?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -631,14 +960,12 @@
             {
               "item_id": "main_03_03__chb_001_opt_01",
               "option_text": "취향에는 여러 형태가 있는 법.",
-              "continuation_summary": "라피가 지휘관이 그런 쪽으로 잘 알고 있다며 반응하고 네온이 무슨 뜻인지 되묻는다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "main_03_03__chb_001_opt_02",
               "option_text": "서로가 서로한테 상을 준거야.",
-              "continuation_summary": "라피가 지휘관이 그런 쪽으로 잘 알고 있다며 반응하고 네온이 무슨 뜻인지 되묻는다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         }
@@ -647,73 +974,197 @@
         {
           "item_id": "main_03_03__eac_001",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "유니, 미하라",
-          "summary": "유니가 벽에 찍힌 발자국을 발견하고, 미하라는 토커티브가 벽을 타고 이동할 수 있으며 자신들의 추적을 눈치채고 있다고 판단한다.",
-          "line_start": 7,
-          "line_end": 13,
-          "quote": "정보 갱신이네. 토커티브는 벽을 타고 이동할 수 있어. ···그리고, 우리가 추적하고 있다는 걸 눈치채고 있고.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "미하라",
+          "summary": "유니와 미하라가 발자국이 끊어진 것을 확인하고 복귀할지 고민하자 라피가 맥 빠진다고 말한다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "유니: 응? 미하라, 이거 봐.\n미하라: ···발자국이 끊어졌네.\n유니: 그럼 우린 어떡해?\n미하라: 흠··· 글쎄. 복귀할까?\n라피: ···맥 빠지는군.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_03__eac_002",
           "epistemic_type": "character_claim",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "미하라",
-          "summary": "네온이 토커티브에게 지능이 있는 것 같다고 말하자 미하라는 랩쳐는 지능이 없으며 추적이 붙었을 때 따돌리는 알고리즘 정도일 것이라고 주장한다.",
-          "line_start": 14,
-          "line_end": 16,
-          "quote": "후후. 그럴 리가. 랩쳐는 지능이 없어. 추적이 붙었을 때 따돌려라. 그 정도 알고리즘이겠지.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "유니",
+          "summary": "유니가 벽의 흔적을 가리키며 토커티브가 벽을 밟으면서 이동한 것 같다고 말한다.",
+          "line_start": 7,
+          "line_end": 9,
+          "claim_line": 9,
+          "quote": "유니: 어? 미하라, 저기 벽.\n미하라: ··· ···.\n유니: 벽을 밟으면서 이동했나 봐.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_03__eac_003",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "유니, 미하라",
-          "summary": "유니가 상을 달라고 조르자 미하라가 통각 센서를 끄겠다고 말한 뒤 유니에게 자신의 종아리를 강하게 꼬집게 하며 아픔을 즐긴다.",
+          "actor_or_speaker": "아니스",
+          "summary": "라피가 랩쳐가 벽면을 딛고 기동할 수 있냐고 놀라자 아니스는 랩쳐는 기본적으로 4족 보행이라 벽면 기동은 안 된다고 말한다.",
+          "line_start": 10,
+          "line_end": 11,
+          "claim_line": 11,
+          "quote": "라피: ···벽면을 딛고 기동할 수 있다고? 랩쳐가?\n아니스: 안되잖아 그거. 기본적으로 4족 보행 아니었어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_03__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 토커티브는 벽을 타고 이동할 수 있으며 자신들이 추적하고 있다는 것을 눈치채고 있다고 판단한다.",
+          "line_start": 12,
+          "line_end": 13,
+          "claim_line": 12,
+          "quote": "미하라: 정보 갱신이네. 토커티브는 벽을 타고 이동할 수 있어.\n미하라: ···그리고, 우리가 추적하고 있다는 걸 눈치채고 있고.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_03__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "네온이 지능이 있다는 것처럼 들린다고 말하자 미하라는 랩쳐는 지능이 없으며 추적이 붙었을 때 따돌리라는 정도의 알고리즘일 것이라고 답한다.",
+          "line_start": 14,
+          "line_end": 16,
+          "claim_line": 15,
+          "quote": "네온: ···지능이 있다는 것처럼 들리는데요.\n미하라: 후후. 그럴 리가. 랩쳐는 지능이 없어.\n미하라: 추적이 붙었을 때 따돌려라. 그 정도 알고리즘이겠지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_03__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "유니",
+          "summary": "유니가 상을 달라고 조르자 미하라가 이번엔 상 받을 만한 일을 했다며 통각 센서를 끄겠다고 하고, 유니가 미하라의 종아리를 강하게 꼬집는다.",
           "line_start": 17,
-          "line_end": 28,
-          "quote": "유니는 미하라의 종아리 부분 일부를 강하게 꼬집었다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 24,
+          "claim_line": null,
+          "quote": "유니: 미하라! 상 줘! 상!\n미하라: 아, 그렇네. 이번엔 상 받을만한 일을 했네.\n유니: 응!\n미하라: 그래. 그럼 받아 가.\n미하라: 통각 센서를 끌게.\n유니는 미하라의 종아리 부분 일부를 강하게 꼬집었다.\n미하라: 으읏···!\n유니: 히히···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_03__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "유니가 아파하는 미하라를 보며 좋아하자 아니스와 네온이 혼란스러워하며 지휘관에게 이게 무슨 일인지 묻는다.",
+          "line_start": 25,
+          "line_end": 30,
+          "claim_line": null,
+          "quote": "아니스: ···뭐 하는 거야?\n네온: 꼬집고 있는데요?\n유니: 미하라. 많이 아파? 응?\n미하라: 응···! 많이···! 아파···!\n아니스: 아, 잠깐. 나 지금 머리가 좀 혼란스러운데.\n네온: 스승님. 이게 무슨 일일까요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_03__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 미하라와 유니의 행동을 두고 취향에는 여러 형태가 있는 법이라고 답한다.",
+          "line_start": 32,
+          "line_end": 32,
+          "claim_line": 32,
+          "quote": "취향에는 여러 형태가 있는 법.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 31,
+            "option_text": "취향에는 여러 형태가 있는 법."
+          }
+        },
+        {
+          "item_id": "main_03_03__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 미하라와 유니가 서로에게 상을 준 것이라고 설명한다.",
+          "line_start": 34,
+          "line_end": 34,
+          "claim_line": 34,
+          "quote": "서로가 서로한테 상을 준거야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 31,
+            "option_text": "서로가 서로한테 상을 준거야."
+          }
+        },
+        {
+          "item_id": "main_03_03__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 지휘관이 그런 쪽으로 잘 알고 있다고 말하자 네온이 그런 쪽이 무엇이냐고 되묻는다.",
+          "line_start": 37,
+          "line_end": 39,
+          "claim_line": 37,
+          "quote": "라피: ···잘 알고 계시는군요. 그런 쪽으로.\n네온: 예? 그런 쪽이 뭔가요?\n라피: ···그건.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_03__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "유니가 좀 더 아프게 해도 되냐고 묻자 미하라는 너무 열중하면 안 된다며 상은 여기까지라고 제지하고, 유니는 더 열심히 하겠다고 답한다.",
+          "line_start": 40,
+          "line_end": 43,
+          "claim_line": null,
+          "quote": "유니: 미하라, 좀 더 아프게 해도 돼?\n미하라: 후, 후후···. 아니, 상은 여기까지.\n미하라: 너무 열중하면 안 돼. 알고 있지?\n유니: 응. 유니 더 열심히 할게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_03_03__clh_001",
-          "keyword": "토커티브의 벽면 이동과 추적 인지",
-          "category": "foreshadowing",
-          "detail": "기본적으로 4족 보행인 일반 랩쳐와 달리 벽면을 밟고 이동하며 추적자의 존재를 눈치채고 흔적을 끊는다.",
-          "line_start": 9,
-          "line_end": 14,
-          "quote": "정보 갱신이네. 토커티브는 벽을 타고 이동할 수 있어. ···그리고, 우리가 추적하고 있다는 걸 눈치채고 있고."
-        }
-      ],
-      "relationship_and_lore_notes": [
+          "keyword": "토커티브의 벽면 기동과 추적 인지",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "토커티브는 일반적인 4족 보행 랩쳐와 달리 벽면을 밟고 이동할 수 있으며 추적을 눈치채고 따돌리는 행동을 보인다.",
+          "line_start": 7,
+          "line_end": 16,
+          "quote": "유니: 어? 미하라, 저기 벽.\n미하라: ··· ···.\n유니: 벽을 밟으면서 이동했나 봐.\n라피: ···벽면을 딛고 기동할 수 있다고? 랩쳐가?\n아니스: 안되잖아 그거. 기본적으로 4족 보행 아니었어?\n미하라: 정보 갱신이네. 토커티브는 벽을 타고 이동할 수 있어.\n미하라: ···그리고, 우리가 추적하고 있다는 걸 눈치채고 있고.\n네온: ···지능이 있다는 것처럼 들리는데요.\n미하라: 후후. 그럴 리가. 랩쳐는 지능이 없어.\n미하라: 추적이 붙었을 때 따돌려라. 그 정도 알고리즘이겠지.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
         {
-          "item_id": "main_03_03__rln_001",
-          "subject": "미하라",
-          "target": "유니",
-          "relation_or_change": "공을 세운 유니에게 상으로 자신의 몸을 꼬집어 아프게 하는 것을 허락하며 가학·피학적 유대를 공유한다.",
+          "item_id": "main_03_03__clh_002",
+          "keyword": "고통을 주는 상",
+          "category": "trait",
+          "subject": "유니",
+          "detail": "유니는 미하라에게 상으로 미하라의 종아리를 강하게 꼬집어 고통을 주는 것을 즐긴다.",
           "line_start": 17,
           "line_end": 28,
-          "quote": "미하라. 많이 아파? 응? 응···! 많이···! 아파···!"
+          "quote": "유니: 미하라! 상 줘! 상!\n미하라: 아, 그렇네. 이번엔 상 받을만한 일을 했네.\n유니: 응!\n미하라: 그래. 그럼 받아 가.\n미하라: 통각 센서를 끌게.\n유니는 미하라의 종아리 부분 일부를 강하게 꼬집었다.\n미하라: 으읏···!\n유니: 히히···.\n아니스: ···뭐 하는 거야?\n네온: 꼬집고 있는데요?\n유니: 미하라. 많이 아파? 응?\n미하라: 응···! 많이···! 아파···!",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_03_03__uec_001",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 10
         }
       ]
@@ -732,8 +1183,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": false,
-      "summary": "주위에 벽도 없는 곳에서 발자국이 다시 끊기자 지휘관이 상하 방향을 경계하고, 직후 랩쳐들이 강습해 교전이 시작된다.",
+      "summary": "주위에 벽이 없는 곳에서 발자국이 다시 끊어지자 지휘관이 기습 방향을 외치고, 곧바로 랩쳐가 강습해 전투가 벌어졌다.",
       "participants": {
         "present_in_scene": [
           {
@@ -771,13 +1223,16 @@
             "entity_type": "faction_or_species",
             "line_start": 12,
             "line_end": 12,
-            "quote": "랩쳐! 강습합니다!"
+            "quote": "라피: 랩쳐! 강습합니다!",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
       "forms_of_address": [],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [
@@ -788,14 +1243,12 @@
             {
               "item_id": "main_03_04__chb_001_opt_01",
               "option_text": "공중!",
-              "continuation_summary": "라피가 강습하는 랩쳐를 발견하고 교전을 선언한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             },
             {
               "item_id": "main_03_04__chb_001_opt_02",
               "option_text": "지하!",
-              "continuation_summary": "라피가 강습하는 랩쳐를 발견하고 교전을 선언한다.",
-              "branch_specific_facts": []
+              "continuation_summary": null
             }
           ]
         }
@@ -803,26 +1256,75 @@
       "events_and_claims": [
         {
           "item_id": "main_03_04__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "라피, 지휘관",
-          "summary": "주위에 아무것도 없는 곳에서 발자국이 끊긴 직후 랩쳐들이 강습해 교전이 벌어진다.",
+          "actor_or_speaker": "아니스",
+          "summary": "라피가 발자국이 다시 끊어졌다고 알리자 아니스가 주위에 아무것도 없어 벽을 타고 가진 않았을 것 같다고 말한다.",
           "line_start": 2,
+          "line_end": 4,
+          "claim_line": 3,
+          "quote": "라피: ···발자국이 다시 끊어졌어.\n아니스: 주위에 뭐 아무것도 없네. 벽을 타고 가진 않았을 것 같고.\n네온: 그렇다는 말은···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_04__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 공중에서의 기습을 경계하라고 외친다.",
+          "line_start": 6,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "공중!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 5,
+            "option_text": "공중!"
+          }
+        },
+        {
+          "item_id": "main_03_04__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지하에서의 기습을 경계하라고 외친다.",
+          "line_start": 8,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "지하!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 5,
+            "option_text": "지하!"
+          }
+        },
+        {
+          "item_id": "main_03_04__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 랩쳐가 강습한다며 전투 개시를 선언한다.",
+          "line_start": 11,
           "line_end": 13,
-          "quote": "랩쳐! 강습합니다! 인카운터!",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "라피: !!\n라피: 랩쳐! 강습합니다!\n라피: 인카운터!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_03_04__uec_001",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 12
         }
       ]
@@ -841,8 +1343,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "전투 직후 뒤에 남은 랩쳐가 라피의 머리를 겨누자 유니가 상대의 특정 감각을 끄는 능력으로 공격을 빗나가게 한다. 라피는 랩쳐 포획용이라는 워드리스의 능력이 인간과 니케, 랩쳐 모두에게 통하는 점을 추궁하고, 슈엔이 왜 그런 능력을 부여했는지 모른다는 미하라의 말에 워드리스를 불신하며 선두에 세운다.",
+      "summary": "유니가 라피의 머리를 겨눈 랩쳐의 감각을 꺼 공격을 빗나가게 하자, 라피는 랩쳐와 니케와 인간 모두에게 통하는 워드리스의 능력에 의문을 품고 경계하며 워드리스를 선두에 세운다.",
       "participants": {
         "present_in_scene": [
           {
@@ -886,7 +1389,9 @@
             "entity_type": "faction_or_species",
             "line_start": 3,
             "line_end": 3,
-            "quote": "끊어진 흔적. 강습이라는 수단을 사용한 랩쳐."
+            "quote": "라피: 끊어진 흔적. 강습이라는 수단을 사용한 랩쳐.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_05__mnt_002",
@@ -895,7 +1400,9 @@
             "entity_type": "character",
             "line_start": 42,
             "line_end": 42,
-            "quote": "우릴 만든 건 슈엔이야."
+            "quote": "미하라: 우릴 만든 건 슈엔이야.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_05__mnt_003",
@@ -904,7 +1411,9 @@
             "entity_type": "organization",
             "line_start": 44,
             "line_end": 44,
-            "quote": "미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지."
+            "quote": "미하라: 미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_05__mnt_004",
@@ -913,96 +1422,302 @@
             "entity_type": "squad",
             "line_start": 51,
             "line_end": 51,
-            "quote": "포메이션을 수정하겠어. 앞으로 선두는 워드리스가 맡는다."
+            "quote": "라피: 포메이션을 수정하겠어. 앞으로 선두는 워드리스가 맡는다.",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
       },
-      "forms_of_address": [],
+      "forms_of_address": [
+        {
+          "item_id": "main_03_05__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "라피",
+          "address_term": "너",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "아니스: 라피 너 또 머리 날아갈뻔했다, 응?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__foa_002",
+          "from_speaker": "라피",
+          "to_target": "워드리스",
+          "address_term": "너흰",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "라피: ···너흰 뭐냐.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__foa_003",
+          "from_speaker": "라피",
+          "to_target": "미하라",
+          "address_term": "네가",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "라피: 네가 원하지 않은 능력이 붙었을 리 없···.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
       "cross_scene_hints": [],
       "choice_branches": [],
       "events_and_claims": [
         {
           "item_id": "main_03_05__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "유니, 네온, 라피",
-          "summary": "뒤에 남아 라피의 머리를 겨누던 랩쳐를 유니가 감각 차단 능력으로 휘청거리게 해 공격을 빗나가게 하고 네온이 격파한다.",
-          "line_start": 6,
-          "line_end": 15,
-          "quote": "빠지직! 포신을 겨누고 있던 랩쳐가 휘청거렸다.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "라피",
+          "summary": "전투 종료 후 라피가 끊어진 흔적과 강습 수단을 근거로 랩쳐가 자신들의 추적을 의식하고 있다고 확신한다.",
+          "line_start": 2,
+          "line_end": 4,
+          "claim_line": 4,
+          "quote": "라피: 상황 종료.\n라피: 끊어진 흔적. 강습이라는 수단을 사용한 랩쳐.\n라피: 확실해. 랩쳐는 우리의 추적을 의식하고 있어.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_05__eac_002",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "미하라, 라피",
-          "summary": "미하라는 유니의 능력이 상대의 특정 감각을 꺼버리는 것이며 자신들의 능력은 니케, 인간, 랩쳐 모두에게 먹히지만 자신들을 만든 슈엔이 이유를 설명해주지 않아 자세한 것은 모른다고 말한다.",
-          "line_start": 22,
-          "line_end": 49,
-          "quote": "확실한 건 우리 능력은 니케, 인간, 랩쳐 모두에게 먹혀.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": true
+          "actor_or_speaker": "유니",
+          "summary": "뒤에 남아 있던 랩쳐가 라피의 머리를 겨누자 유니가 능력으로 랩쳐를 휘청거리게 해 공격을 빗나가게 만들고 네온이 포격해 처치한다.",
+          "line_start": 5,
+          "line_end": 17,
+          "claim_line": null,
+          "quote": "기잉-\n네온: !! 라피! 뒤에 남았어요!\n라피: !!\n미하라: 유니!\n유니: 응!\n빠지직!\n포신을 겨누고 있던 랩쳐가 휘청거렸다.\n푸슝-!\n아니스: 빗나갔다!\n네온: 화아려어억-!!\n콰콰콰쾅!\n아니스: 후우··· 큰일 날뻔했네.\n아니스: 라피 너 또 머리 날아갈뻔했다, 응?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_05__eac_003",
-          "epistemic_type": "established_event",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "라피가 랩쳐의 공격이 빗나간 것이 포획 능력과 관계있는지 묻자 미하라는 유니의 능력은 상대의 특정 감각을 끄는 것이고 자신의 능력은 감각을 교환하는 것이라고 설명한다.",
+          "line_start": 18,
+          "line_end": 24,
+          "claim_line": 22,
+          "quote": "라피: ···방금.\n라피: 랩쳐의 포신은 정확히 내 머리를 겨누고 있었어.\n라피: 무슨 짓을 한 거지? 랩쳐 포획 능력과 관계가 있는 건가?\n미하라: 흐응. 눈치 빨라.\n미하라: 유니의 능력은 상대의 특정 감각을 꺼버리는 거야.\n유니: 응! 빠지직! 하고 쏴서 끌 수 있어!\n미하라: 내 능력은, 겪어봐서 알겠지만 감각을 교환하는 거고.",
+          "refers_to_past": false,
           "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "라피가 니케용 능력이 아니었냐고 묻자 미하라는 이 능력으로 랩쳐를 무력화한 뒤 포획한다고 답한다.",
+          "line_start": 25,
+          "line_end": 26,
+          "claim_line": 26,
+          "quote": "라피: 니케 용 능력이 아니었다는 얘긴가?\n미하라: 맞아. 이걸 사용해서 랩쳐를 무력화 시킨 다음, 포회···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_005",
+          "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "라피",
-          "summary": "라피가 자기 자신이 무엇인지도 모르는 니케에게 등을 맡길 수 없다며 포메이션을 수정해 워드리스를 선두에 세운다.",
+          "summary": "라피가 랩쳐에게 감각이 있냐며 왜 랩쳐용으로 개발된 능력이 니케와 인간에게까지 먹히는지, 너희 정체가 무엇인지 추궁한다.",
+          "line_start": 27,
+          "line_end": 33,
+          "claim_line": null,
+          "quote": "라피: 랩쳐에게 감각이 있나?\n미하라: ···?\n라피: 랩쳐용으로 개발된 능력이 왜 니케는 물론 인간에게까지 먹히는 거지?\n미하라: ··· ···.\n라피: ···너흰 뭐냐.\n미하라: 어머. 무서워라. 라피는 막 밀어붙이는 스타일이구나?\n라피: 대답해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "유니",
+          "summary": "유니가 라피에게 미하라한테 뭐라고 하지 말라며 반발하자 미하라가 유니를 진정시킨다.",
+          "line_start": 34,
+          "line_end": 35,
+          "claim_line": null,
+          "quote": "유니: 미, 미하라한테 뭐라고 하지 마!\n미하라: 유니. 괜찮아.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 자세한 건 자신들도 모르지만 자신들의 능력은 니케와 인간과 랩쳐 모두에게 먹힌다고 답한다.",
+          "line_start": 36,
+          "line_end": 38,
+          "claim_line": 38,
+          "quote": "미하라: ··· ···.\n미하라: 자세한 건 우리도 몰라.\n미하라: 확실한 건 우리 능력은 니케, 인간, 랩쳐 모두에게 먹혀.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 니케의 신체는 인간일 때의 이상향을 기반으로 만들어지므로 원하지 않은 능력이 붙었을 리 없다며 미하라가 거짓말을 한다고 지적한다.",
+          "line_start": 39,
+          "line_end": 41,
+          "claim_line": 40,
+          "quote": "라피: 거짓말을 하는군.\n라피: 니케의 신체는 인간일 때의 이상향을 기반으로 만들어져.\n라피: 네가 원하지 않은 능력이 붙었을 리 없···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 자신들을 만든 것은 미실리스 인더스트리의 CEO 슈엔이며 슈엔이 자신들에게 무슨 짓을 어떻게 왜 했는지 친절하게 설명해 줄 리 없다고 반문한다.",
+          "line_start": 42,
+          "line_end": 45,
+          "claim_line": 42,
+          "quote": "미하라: 우릴 만든 건 슈엔이야.\n라피: ··· ···.\n미하라: 미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지.\n미하라: 친절하게 설명해 줄 것 같아?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 슈엔이 친절하게 설명해 줄 리 없다는 미하라의 말에 수긍한다.",
+          "line_start": 44,
+          "line_end": 46,
+          "claim_line": 46,
+          "quote": "미하라: 미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지.\n미하라: 친절하게 설명해 줄 것 같아?\n아니스: 그건, 그렇지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 자신들이 아는 것은 이 능력으로 랩쳐를 포획한다는 것뿐이며 그 외에는 아무것도 모른다고 말한다.",
+          "line_start": 47,
+          "line_end": 49,
+          "claim_line": 49,
+          "quote": "미하라: 우리가 아는 건, 우리에겐 이런 능력이 있고.\n미하라: 이걸 이용해 랩쳐를 포획하는 거야.\n미하라: 그것 말고는 아무것도 몰라.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 자기 자신이 뭔지도 모르는 니케에게 등을 맡길 수 없다며 워드리스가 선두를 맡도록 포메이션을 수정하고 미하라가 이에 따른다.",
           "line_start": 50,
-          "line_end": 56,
-          "quote": "포메이션을 수정하겠어. 앞으로 선두는 워드리스가 맡는다. ···라피. 자기 자신이 뭔지도 모르는 니케에게 등을 맡길 순 없어.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 57,
+          "claim_line": null,
+          "quote": "라피: ···그래. 알겠어.\n라피: 포메이션을 수정하겠어. 앞으로 선두는 워드리스가 맡는다.\n네온: ···라피.\n라피: 자기 자신이 뭔지도 모르는 니케에게 등을 맡길 순 없어.\n미하라: ···라져.\n미하라: 흔적은 이어지고 있어. 계속 추적하자.\n미하라: 물론, 우리가 앞장서는 걸로.\n라피: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_03_05__clh_001",
-          "keyword": "워드리스의 감각 조작 능력",
+          "keyword": "유니와 미하라의 감각 제어 능력",
           "category": "lore_concept",
-          "detail": "유니는 상대의 특정 감각을 끄고 미하라는 감각을 교환하며, 이 능력은 인간, 니케, 랩쳐 모두에게 통한다.",
-          "line_start": 22,
+          "subject": null,
+          "detail": "유니는 상대의 특정 감각을 끄고 미하라는 감각을 교환하며, 랩쳐 포획용이라는 이 능력은 니케와 인간과 랩쳐 모두에게 통한다.",
+          "line_start": 20,
           "line_end": 38,
-          "quote": "유니의 능력은 상대의 특정 감각을 꺼버리는 거야."
+          "quote": "라피: 무슨 짓을 한 거지? 랩쳐 포획 능력과 관계가 있는 건가?\n미하라: 흐응. 눈치 빨라.\n미하라: 유니의 능력은 상대의 특정 감각을 꺼버리는 거야.\n유니: 응! 빠지직! 하고 쏴서 끌 수 있어!\n미하라: 내 능력은, 겪어봐서 알겠지만 감각을 교환하는 거고.\n라피: 니케 용 능력이 아니었다는 얘긴가?\n미하라: 맞아. 이걸 사용해서 랩쳐를 무력화 시킨 다음, 포회···.\n라피: 랩쳐에게 감각이 있나?\n미하라: ···?\n라피: 랩쳐용으로 개발된 능력이 왜 니케는 물론 인간에게까지 먹히는 거지?\n미하라: ··· ···.\n라피: ···너흰 뭐냐.\n미하라: 어머. 무서워라. 라피는 막 밀어붙이는 스타일이구나?\n라피: 대답해.\n유니: 미, 미하라한테 뭐라고 하지 마!\n미하라: 유니. 괜찮아.\n미하라: ··· ···.\n미하라: 자세한 건 우리도 몰라.\n미하라: 확실한 건 우리 능력은 니케, 인간, 랩쳐 모두에게 먹혀.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_05__clh_002",
-          "keyword": "니케 신체와 인간 시절 이상향",
+          "keyword": "니케 신체의 이상향 기반 제작과 슈엔의 개입",
           "category": "lore_concept",
-          "detail": "니케의 신체는 인간일 때의 이상향을 기반으로 만들어진다.",
+          "subject": null,
+          "detail": "라피는 니케의 신체가 인간 시절의 이상향을 기반으로 만들어져 원치 않은 능력이 붙을 수 없다고 지적하나, 미하라는 슈엔이 자신들을 만들며 무슨 짓을 했는지 모른다고 말한다.",
           "line_start": 40,
-          "line_end": 41,
-          "quote": "니케의 신체는 인간일 때의 이상향을 기반으로 만들어져."
+          "line_end": 45,
+          "quote": "라피: 니케의 신체는 인간일 때의 이상향을 기반으로 만들어져.\n라피: 네가 원하지 않은 능력이 붙었을 리 없···.\n미하라: 우릴 만든 건 슈엔이야.\n라피: ··· ···.\n미하라: 미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지.\n미하라: 친절하게 설명해 줄 것 같아?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "relationship_and_lore_notes": [
         {
           "item_id": "main_03_05__rln_001",
+          "subject": "슈엔",
+          "target": "미하라",
+          "relation_or_change": "미하라를 만든 제작자임",
+          "epistemic_type": "character_claim",
+          "claimant": "미하라",
+          "line_start": 42,
+          "line_end": 44,
+          "claim_line": 42,
+          "quote": "미하라: 우릴 만든 건 슈엔이야.\n라피: ··· ···.\n미하라: 미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__rln_002",
+          "subject": "슈엔",
+          "target": "유니",
+          "relation_or_change": "유니를 만든 제작자임",
+          "epistemic_type": "character_claim",
+          "claimant": "미하라",
+          "line_start": 42,
+          "line_end": 44,
+          "claim_line": 42,
+          "quote": "미하라: 우릴 만든 건 슈엔이야.\n라피: ··· ···.\n미하라: 미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_05__rln_003",
           "subject": "라피",
           "target": "워드리스",
-          "relation_or_change": "인간과 니케, 랩쳐 모두에게 먹히는 워드리스의 능력을 추궁한 뒤 등을 맡길 수 없다며 워드리스를 선두에 세워 경계한다.",
+          "relation_or_change": "자기 자신이 뭔지도 모르는 니케에게 등을 맡길 수 없다며 불신하여 워드리스를 선두에 세움",
+          "epistemic_type": "character_claim",
+          "claimant": "라피",
           "line_start": 51,
           "line_end": 53,
-          "quote": "포메이션을 수정하겠어. 앞으로 선두는 워드리스가 맡는다. ···라피. 자기 자신이 뭔지도 모르는 니케에게 등을 맡길 순 없어."
+          "claim_line": 53,
+          "quote": "라피: 포메이션을 수정하겠어. 앞으로 선두는 워드리스가 맡는다.\n네온: ···라피.\n라피: 자기 자신이 뭔지도 모르는 니케에게 등을 맡길 순 없어.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_03_05__uec_001",
           "surface_text": "랩쳐",
-          "suggested_type": "concept",
+          "suggested_type": "faction_or_species",
           "line_start": 3
         },
         {
@@ -1033,8 +1748,9 @@
       },
       "mechanical_validated": true,
       "chronology_type": "present",
+      "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "에블라 입자 농도가 짙은 위험 구역 앞에서 흔적이 끊기자 미하라가 복귀를 제안하지만, 슈엔이 메신저로 연락해 전초기지 지휘관의 방에서 카운터스 친필과 지휘관 결재 사인이 담긴 날조된 방주 테러 계획서가 나왔다며 추적을 계속하라고 협박한다.",
+      "summary": "에블라 입자 농도가 짙은 위험 지역 앞에서 미하라가 복귀를 제안하나, 슈엔이 메신저로 연락해 전초 기지 지휘관 방에서 조작된 방주 테러 계획서가 나왔다고 협박하며 토커티브 추적을 강요한다.",
       "participants": {
         "present_in_scene": [
           {
@@ -1069,9 +1785,9 @@
             "speaker_label": "슈엔",
             "entity_id": "char_슈엔",
             "medium": "messenger",
-            "line_start": 65,
-            "line_end": 66,
-            "quote": "거기서 방주 테러 계획서가 나왔더라?"
+            "line_start": 15,
+            "line_end": 32,
+            "quote": "야\n야\n야\n오\n이제 되네\n추적은?"
           }
         ],
         "mentioned_only": [
@@ -1082,7 +1798,9 @@
             "entity_type": "concept",
             "line_start": 3,
             "line_end": 3,
-            "quote": "이 앞은 에블라 입자 농도가 짙어. 위험도가 높다는 얘기지."
+            "quote": "라피: 이 앞은 에블라 입자 농도가 짙어. 위험도가 높다는 얘기지.",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_06__mnt_002",
@@ -1091,7 +1809,9 @@
             "entity_type": "location",
             "line_start": 60,
             "line_end": 60,
-            "quote": "너 그 전초 기지"
+            "quote": "너 그 전초 기지",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_06__mnt_003",
@@ -1100,7 +1820,9 @@
             "entity_type": "location",
             "line_start": 66,
             "line_end": 66,
-            "quote": "거기서 방주 테러 계획서가 나왔더라?"
+            "quote": "거기서 방주 테러 계획서가 나왔더라?",
+            "chronology_type": "present",
+            "in_branch_option": null
           },
           {
             "item_id": "main_03_06__mnt_004",
@@ -1109,7 +1831,9 @@
             "entity_type": "item",
             "line_start": 66,
             "line_end": 66,
-            "quote": "거기서 방주 테러 계획서가 나왔더라?"
+            "quote": "거기서 방주 테러 계획서가 나왔더라?",
+            "chronology_type": "present",
+            "in_branch_option": null
           }
         ],
         "document_author": null
@@ -1122,38 +1846,48 @@
           "address_term": "지휘관",
           "line_start": 5,
           "line_end": 5,
-          "quote": "지휘관. 이쯤에서 마무리할까?"
+          "quote": "미하라: 지휘관. 이쯤에서 마무리할까?",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_06__foa_002",
           "from_speaker": "슈엔",
-          "to_target": "카운터스",
-          "address_term": "고철들",
-          "line_start": 81,
-          "line_end": 81,
-          "quote": "네 고철들의 친필로 잘 적혀져 있더라고"
+          "to_target": "지휘관",
+          "address_term": "야",
+          "line_start": 15,
+          "line_end": 17,
+          "quote": "야",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_06__foa_003",
+          "from_speaker": "슈엔",
+          "to_target": "지휘관",
+          "address_term": "너",
+          "line_start": 59,
+          "line_end": 61,
+          "quote": "너 그 전초 기지",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_06__foa_004",
           "from_speaker": "네온",
           "to_target": "지휘관",
           "address_term": "스승님",
           "line_start": 110,
           "line_end": 110,
-          "quote": "스승님. 뭔가요?"
+          "quote": "네온: 스승님. 뭔가요?",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "unknown_speakers": [],
+      "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [
-        {
-          "item_id": "main_03_06__csh_001",
-          "text": "슈엔이 조작해 협박 수단으로 쓴 방주 테러 계획서는 main_04_09에서도 토커티브 조우 사실을 함구하라는 협박에 다시 사용된다.",
-          "related_scene_ids": [
-            "main_04_09"
-          ]
-        }
-      ],
+      "cross_scene_hints": [],
       "choice_branches": [
         {
           "item_id": "main_03_06__chb_001",
@@ -1162,14 +1896,12 @@
             {
               "item_id": "main_03_06__chb_001_opt_01",
               "option_text": "잘 되고 있음",
-              "continuation_summary": "슈엔이 다행이라며 안 그래도 알려줄 것이 있어서 연락했다고 말을 잇는다.",
-              "branch_specific_facts": []
+              "continuation_summary": "슈엔이 다행이라며 알려줄 것이 있다고 말한다."
             },
             {
               "item_id": "main_03_06__chb_001_opt_02",
               "option_text": "복귀준비 중",
-              "continuation_summary": "슈엔이 비웃으며 그러든지 마음대로 하라면서 그전에 알려줄 것이 있다고 말을 잇는다.",
-              "branch_specific_facts": []
+              "continuation_summary": "슈엔이 비웃으며 그러든지라고 한 뒤 그전에 알려줄 것이 있다고 말한다."
             }
           ]
         }
@@ -1177,78 +1909,213 @@
       "events_and_claims": [
         {
           "item_id": "main_03_06__eac_001",
-          "epistemic_type": "established_event",
-          "chronology_type": "present",
+          "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "미하라, 라피",
-          "summary": "에블라 입자 농도가 짙은 위험 구역 앞에서 흔적이 끊기자 미하라가 리스크가 크다며 복귀를 제안한다.",
+          "actor_or_speaker": "라피",
+          "summary": "미하라가 흔적이 끊겼다고 말하자 라피가 이 앞은 에블라 입자 농도가 짙어 위험도가 높다고 경고한다.",
           "line_start": 2,
-          "line_end": 10,
-          "quote": "흔적이 끊겼네. 이 앞은 에블라 입자 농도가 짙어. 위험도가 높다는 얘기지.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "line_end": 3,
+          "claim_line": 3,
+          "quote": "미하라: 흔적이 끊겼네.\n라피: 이 앞은 에블라 입자 농도가 짙어. 위험도가 높다는 얘기지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_06__eac_002",
-          "epistemic_type": "character_claim",
-          "chronology_type": "present",
+          "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "슈엔",
-          "summary": "슈엔이 메신저로 전초기지 지휘관의 방에서 카운터스의 친필과 지휘관의 결재 사인이 적힌 상세한 방주 테러 계획서가 나왔다고 주장하며, 추적을 잘 마치고 오면 처분해 주겠다고 협박한다.",
-          "line_start": 60,
-          "line_end": 96,
-          "quote": "추적 잘 마치고 오면 처분해 줄게",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "actor_or_speaker": "미하라",
+          "summary": "미하라가 단순 추적이라기엔 리스크가 커지고 있다며 지휘관에게 복귀를 제안한다.",
+          "line_start": 4,
+          "line_end": 10,
+          "claim_line": null,
+          "quote": "미하라: 흐음~ 이걸 어쩐다.\n미하라: 지휘관. 이쯤에서 마무리할까?\n복귀하자는 얘기야?\n미하라: 그래. 단순 추적이라고 하기엔 리스크가 커지고 있으니까.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_06__eac_003",
           "epistemic_type": "established_event",
-          "chronology_type": "present",
           "confidence": null,
-          "actor_or_speaker": "지휘관, 미하라, 라피",
-          "summary": "슈엔의 협박 메시지를 받은 지휘관이 복귀 대신 추적을 계속하기로 결정한다.",
-          "line_start": 115,
+          "actor_or_speaker": "슈엔",
+          "summary": "차단된 줄 알았던 핸드폰이 울리며 슈엔이 메신저로 연락해 추적 상황을 묻는다.",
+          "line_start": 11,
+          "line_end": 32,
+          "claim_line": null,
+          "quote": "지잉-\n핸드폰이 울린다.\n통신은 모두 단절되었다고 했는데, 누가?\n야\n야\n야\n오\n이제 되네\n추적은?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_06__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 슈엔의 추적 상황 질문에 메신저로 잘 되고 있다고 답한다.",
+          "line_start": 35,
+          "line_end": 35,
+          "claim_line": 35,
+          "quote": "잘 되고 있음",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "잘 되고 있음"
+          }
+        },
+        {
+          "item_id": "main_03_06__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 추적이 잘 되고 있다는 지휘관의 답에 다행이라며 알려줄 것이 있다고 말한다.",
+          "line_start": 36,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "오 그래?\n다행이네\n안 그래도 알려줄게 있어서",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "잘 되고 있음"
+          }
+        },
+        {
+          "item_id": "main_03_06__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 슈엔의 추적 상황 질문에 메신저로 복귀 준비 중이라고 답한다.",
+          "line_start": 46,
+          "line_end": 46,
+          "claim_line": 46,
+          "quote": "복귀준비 중",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "복귀준비 중"
+          }
+        },
+        {
+          "item_id": "main_03_06__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 복귀 준비 중이라는 지휘관의 답에 그러든지라며 그전에 알려줄 것이 있다고 말한다.",
+          "line_start": 47,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "ㅋㅋ\n그러든지\n그전에 알려줄게 있어서",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "복귀준비 중"
+          }
+        },
+        {
+          "item_id": "main_03_06__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 전초 기지의 지휘관 방에서 방주 테러 계획서가 나왔다고 말하자 지휘관이 의문을 표한다.",
+          "line_start": 59,
+          "line_end": 70,
+          "claim_line": 66,
+          "quote": "너 그 전초 기지\n네 방\n거기서 방주 테러 계획서가 나왔더라?\n??",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_06__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 방주 테러 계획서에 침투 루트와 폭파 계획이 카운터스 니케들의 친필로 상세히 적혀 있고 결재 라인에 지휘관의 사인이 있다고 주장한다.",
+          "line_start": 71,
+          "line_end": 85,
+          "claim_line": 81,
+          "quote": "응\n엄청 상세해\n침투 루트부터 시작해서 어딜 어떻게 터트릴지\n네 고철들의 친필로 잘 적혀져 있더라고\n결재 라인에 네 사인이 있고",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_06__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 테러 계획서 같은 것을 계획한 적도 적은 적도 없다고 반박한다.",
+          "line_start": 86,
+          "line_end": 88,
+          "claim_line": 87,
+          "quote": "그런 걸 계획한 적도, 적은 적도 없다",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_06__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 계획서가 분명히 있으며 자신 말고는 아무도 못 본 것 같으니 추적을 잘 마치고 오면 처분해 주겠다고 협박한 뒤 일방적으로 통신을 끊는다.",
+          "line_start": 89,
+          "line_end": 109,
+          "claim_line": null,
+          "quote": "있다니까?\n다행히 나 말고는 아무도 못 본거 같으니까\n추적 잘 마치고 오면 처분해 줄게\n알았지?\n그럼 고생해\nㅋ\n통신 신호가 잡히지 않는다.\n통신이 끊어진 모양이다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_03_06__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "네온과 미하라가 무슨 일인지 묻자 지휘관이 추적을 계속해야 한다고 답하고 라피가 이에 따라 이동을 재개한다.",
+          "line_start": 110,
           "line_end": 121,
-          "quote": "···추적, 계속해야 하는 거지? ···그래. ··· ···. 알겠습니다. 가시죠.",
-          "branch_specific": false,
-          "branch_option_text": null,
-          "refers_to_past": false
+          "claim_line": null,
+          "quote": "네온: 스승님. 뭔가요?\n··· ···.\n미하라: ···추적, 계속해야 하는 거지?\n···그래.\n라피: ··· ···.\n라피: 알겠습니다. 가시죠.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
       "clues_and_hooks": [
         {
           "item_id": "main_03_06__clh_001",
-          "keyword": "에블라 입자",
+          "keyword": "에블라 입자 농도와 위험도",
           "category": "lore_concept",
-          "detail": "지상에 분포하는 입자로 농도가 짙을수록 위험도가 높다.",
+          "subject": null,
+          "detail": "지상의 에블라 입자 농도가 짙은 구역은 위험도가 높다.",
           "line_start": 3,
           "line_end": 3,
-          "quote": "이 앞은 에블라 입자 농도가 짙어. 위험도가 높다는 얘기지."
+          "quote": "라피: 이 앞은 에블라 입자 농도가 짙어. 위험도가 높다는 얘기지.",
+          "chronology_type": "present",
+          "in_branch_option": null
         },
         {
           "item_id": "main_03_06__clh_002",
-          "keyword": "방주 테러 계획서",
+          "keyword": "방주 테러 계획서 협박",
           "category": "item",
-          "detail": "슈엔이 지휘관과 카운터스를 협박하기 위해 전초기지 지휘관의 방에서 발견되었다고 주장한 날조 문서로, 침투 루트와 폭파 계획이 카운터스 친필과 지휘관 결재 사인으로 적혀 있다고 한다.",
-          "line_start": 66,
-          "line_end": 88,
-          "quote": "거기서 방주 테러 계획서가 나왔더라?"
+          "subject": null,
+          "detail": "슈엔이 전초 기지의 지휘관 방에서 니케들의 친필과 지휘관의 결재 사인이 적힌 방주 테러 계획서가 나왔다며 추적을 마치고 오면 처분해 주겠다고 협박한다.",
+          "line_start": 59,
+          "line_end": 97,
+          "quote": "너 그 전초 기지\n네 방\n거기서 방주 테러 계획서가 나왔더라?\n??\n응\n엄청 상세해\n침투 루트부터 시작해서 어딜 어떻게 터트릴지\n네 고철들의 친필로 잘 적혀져 있더라고\n결재 라인에 네 사인이 있고\n그런 걸 계획한 적도, 적은 적도 없다\n있다니까?\n다행히 나 말고는 아무도 못 본거 같으니까\n추적 잘 마치고 오면 처분해 줄게",
+          "chronology_type": "present",
+          "in_branch_option": null
         }
       ],
-      "relationship_and_lore_notes": [
-        {
-          "item_id": "main_03_06__rln_001",
-          "subject": "슈엔",
-          "target": "지휘관",
-          "relation_or_change": "날조된 방주 테러 계획서를 빌미로 지휘관이 복귀하지 못하고 위험 구역으로 추적을 계속하도록 협박한다.",
-          "line_start": 65,
-          "line_end": 96,
-          "quote": "추적 잘 마치고 오면 처분해 줄게"
-        }
-      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
       "unregistered_entity_candidates": [
         {
           "item_id": "main_03_06__uec_001",
