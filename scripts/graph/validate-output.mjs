@@ -66,6 +66,23 @@ export const CLAIM_OTHER_SPEAKER_TURNS_WARN = 3;
 // 그 화자 자신의 항목이 주장 화자의 차례를 이만큼 덮으면 자기 항목으로 치지 않는다(질문 앞뒤 문맥 한 차례는 괜찮다)
 export const OWN_ITEM_MAX_CLAIMANT_TURNS = 2;
 
+// 2.3의 25항 장면에 없는 이름: 등록 원문의 이만큼 넘는 장면에 나오는 이름은 세계관 일반어로 보고 검사하지 않는다(약 2%).
+// 이름이 다른 낱말의 일부인 경우(`나가`, `사라`)도 이 기준으로 빠진다
+export const TERM_COMMON_MAX_SCENES = 100;
+export const TERM_ITEM_FIELDS = [
+  ['events_and_claims', ['summary']],
+  ['relationship_and_lore_notes', ['subject', 'target', 'relation_or_change']],
+  ['clues_and_hooks', ['subject', 'detail', 'keyword']],
+];
+// 이름 끝의 이런 낱말은 장면에 없어도 된다(`메티스 스쿼드` → 장면은 `메티스`, `로드 급 랩쳐` → 장면은 `로드 급`)
+export const TERM_GENERIC_TOKENS = new Set(['스쿼드', '급', '랩쳐', '니케']);
+const termTokens = (term) => {
+  const tokens = term.split(/\s+/);
+  const specific = tokens.filter((tok) => !TERM_GENERIC_TOKENS.has(tok));
+  return specific.length > 0 ? specific : tokens;
+};
+const HANGUL_SYLLABLE_RE = /[가-힣]/;
+
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
   'recording',
@@ -294,7 +311,8 @@ export const quoteCoversLine = (quote, rawLine, rawSliceLines = []) => {
 /**
  * 단일 배치 샤드 JSON을 해당 배치 입력 데이터(batchInput)와 대조해 2.3의 1~21항을 검증한다.
  */
-export const validateShard = (shardData, batchInput) => {
+// options.termLexicon: 25항의 이름 목록({ terms: Map<이름, 출처>, sceneCountOf(이름) }). 없으면 25항은 검사하지 않는다
+export const validateShard = (shardData, batchInput, options = {}) => {
   const errors = [];
   const warnings = [];
 
@@ -1872,6 +1890,45 @@ export const validateShard = (shardData, batchInput) => {
       }
     }
 
+    // 25. 장면에 없는 이름: 요약에 쓴 등록 인물·고유명사가 그 장면 원문과 제목에 없으면, 다른 장면이나 사전 지식에서
+    // 가져온 것인지 다시 보게 한다(경고, 3절 6항). main_09_13의 "데이터 센터"는 앞 장면 main_09_12에서 나온 말이었다
+    if (options.termLexicon) {
+      const sceneText = [gtScene.title, gtScene.sub_title, ...rawLines].filter(isNonEmptyString).join('\n').replace(/\s+/g, '');
+      // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다
+      const inScene = (term) => termTokens(term).every((token) => sceneText.includes(token));
+      // 앞 글자가 한글이면 다른 낱말의 일부다(`장소라고`의 `소라`)
+      const usedIn = (text, term) => {
+        for (let i = text.indexOf(term); i >= 0; i = text.indexOf(term, i + 1)) {
+          if (i === 0 || !HANGUL_SYLLABLE_RE.test(text[i - 1])) return true;
+        }
+        return false;
+      };
+      const textsToCheck = [['summary', scene.summary]];
+      for (const [field, keys] of TERM_ITEM_FIELDS) {
+        if (!Array.isArray(scene[field])) continue;
+        scene[field].forEach((item, idx) => {
+          const text = keys.map((k) => item?.[k]).filter(isNonEmptyString).join('\n');
+          if (text) textsToCheck.push([`${field}[${idx}]`, text]);
+        });
+      }
+      for (const [key, text] of textsToCheck) {
+        if (!isNonEmptyString(text)) continue;
+        const found = [...options.termLexicon.terms.keys()].filter((term) => usedIn(text, term) && !inScene(term));
+        // 긴 이름 안의 짧은 이름은 따로 세지 않는다(`메티스 스쿼드`의 `메티스`)
+        const terms = found
+          .filter((term) => !found.some((other) => other !== term && other.includes(term)))
+          .filter((term) => options.termLexicon.sceneCountOf(term) <= TERM_COMMON_MAX_SCENES);
+        for (const term of terms) {
+          addWarning(
+            'TERM_NOT_IN_SCENE',
+            sid,
+            `${sceneBasePath}.${key}`,
+            `uses "${term}" (${options.termLexicon.terms.get(term)}), which appears in other scenes but not in this scene's text or title. Re-read it: if it comes from another scene or prior knowledge, write only what this scene says (links to other scenes go in cross_scene_hints). If this scene says it in other words, keep it and report the line`
+          );
+        }
+      }
+    }
+
     // unregistered_entity_candidates 검증
     if (!Array.isArray(scene.unregistered_entity_candidates)) {
       addError(
@@ -1920,6 +1977,62 @@ export const validateShard = (shardData, batchInput) => {
   };
 };
 
+// 25항 이름 목록: 등록 인물(일반 역할 제외)과, 병합된 결과·이 샤드에서 미등록 엔티티 후보로 적힌 표기.
+// 흔한 이름을 거르는 장면 수는 배치 입력 전체(등록 원문의 모든 장면)에서 처음 필요할 때 센다
+const corpusTextsByDir = new Map();
+const corpusSceneTexts = (graphDir) => {
+  if (!corpusTextsByDir.has(graphDir)) {
+    const batchesDir = path.join(graphDir, 'pass1', 'batches');
+    const texts = [];
+    const files = fsSync.existsSync(batchesDir) ? fsSync.readdirSync(batchesDir) : [];
+    for (const file of files.filter((f) => /^batch_\d+\.json$/.test(f)).sort()) {
+      const batch = JSON.parse(fsSync.readFileSync(path.join(batchesDir, file), 'utf8'));
+      for (const s of batch.scenes ?? []) {
+        texts.push([s.title, s.sub_title, s.numbered_script].filter(isNonEmptyString).join('\n').replace(/\s+/g, ''));
+      }
+    }
+    corpusTextsByDir.set(graphDir, texts);
+  }
+  return corpusTextsByDir.get(graphDir);
+};
+
+export const loadTermLexicon = async (graphDir, shardData) => {
+  const terms = new Map();
+  const add = (term, source) => {
+    if (!isNonEmptyString(term)) return;
+    const t = term.trim();
+    if (t.length < 2 || /[\[\]?]/.test(t) || terms.has(t)) return;
+    terms.set(t, source);
+  };
+  const registryPath = path.join(graphDir, 'entity_registry.json');
+  if (fsSync.existsSync(registryPath)) {
+    const registry = JSON.parse(await fs.readFile(registryPath, 'utf8'));
+    for (const e of registry.entities ?? []) {
+      if (e.is_generic_role) continue;
+      for (const name of [e.canonical_name, ...(e.surface_labels ?? [])]) add(name, 'registered character');
+    }
+  }
+  const candidatesPath = path.join(graphDir, 'unregistered_entity_candidates.json');
+  if (fsSync.existsSync(candidatesPath)) {
+    const merged = JSON.parse(await fs.readFile(candidatesPath, 'utf8'));
+    for (const c of merged.candidates ?? []) add(c.surface_text, `${c.suggested_type} name`);
+  }
+  for (const s of shardData?.scenes ?? []) {
+    for (const c of Array.isArray(s?.unregistered_entity_candidates) ? s.unregistered_entity_candidates : []) {
+      add(c?.surface_text, `${c?.suggested_type} name`);
+    }
+  }
+  const counts = new Map();
+  const sceneCountOf = (term) => {
+    if (!counts.has(term)) {
+      const tokens = termTokens(term);
+      counts.set(term, corpusSceneTexts(graphDir).filter((text) => tokens.every((tok) => text.includes(tok))).length);
+    }
+    return counts.get(term);
+  };
+  return { terms, sceneCountOf };
+};
+
 /**
  * CLI 실행: 샤드 파일 경로 또는 배치 ID를 받아 검증한다.
  * 하나라도 실패하면 Exit Code 1을 반환한다 (2.3).
@@ -1937,7 +2050,9 @@ export const validateShardFile = async (shardArg, options = {}) => {
     if (!planned) throw new Error(`${batchId} has ${plan.length} part(s); part ${options.part} does not exist`);
     shardPath = partPathOf(batchId, options.part, graphDir);
     const shardData = JSON.parse(await fs.readFile(shardPath, 'utf8'));
-    const result = validateShard(shardData, buildPartInput(batchInput, options.part));
+    const result = validateShard(shardData, buildPartInput(batchInput, options.part), {
+      termLexicon: await loadTermLexicon(graphDir, shardData),
+    });
     // 서브에이전트가 읽은 담당 입력이 지금 배치 입력과 다르면 옛 입력으로 추출한 것이다
     const partInputPath = partInputPathOf(batchId, options.part, graphDir);
     if (fsSync.existsSync(partInputPath)) {
@@ -1977,7 +2092,7 @@ export const validateShardFile = async (shardArg, options = {}) => {
   }
 
   const batchInput = JSON.parse(await fs.readFile(batchInputPath, 'utf8'));
-  const result = validateShard(shardData, batchInput);
+  const result = validateShard(shardData, batchInput, { termLexicon: await loadTermLexicon(graphDir, shardData) });
 
   return {
     shardPath,

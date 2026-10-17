@@ -98,7 +98,7 @@ Claude가 원문과 대조한 것:
 
 | 장면 | 항목 | 지적 | 판정 |
 |---|---|---|---|
-| `main_09_13` | 장면 `summary`, `events_and_claims[0]` L2~15 | "데이터 센터에서" — 원문에는 "데이터베이스"만 있음 | 맞음(사전 지식 혼입) |
+| `main_09_13` | 장면 `summary`, `events_and_claims[0]` L2~15 | "데이터 센터에서" — 원문에는 "데이터베이스"만 있음 | 맞음. 사전 지식이 아니라 앞 장면 `main_09_12`의 노벨 대사("데이터 센터에서 열심히 일하고 있는 것입니다")에서 가져온 장면 밖 내용 |
 | `main_07_06` | `events_and_claims[4]` L16~22 | "숨을 거두던 목소리" — 원문은 말끝이 끊어질 뿐 사망 서술 없음 | 맞음(원문에 없는 결과) |
 | `main_18_15` | `events_and_claims[10]` L64~74 | L74 "난 널 악당으로"를 "자신을 악당으로"로 적어 대상이 뒤집힘 | 맞음 |
 | `main_07_06` | `relationship_and_lore_notes` | `모더니아` → `마리안` 동일 인물 메모 없음 | 맞음(3절 3항 보강) |
@@ -106,6 +106,54 @@ Claude가 원문과 대조한 것:
 | `main_18_15` | `events_and_claims` L147~170 | 지휘관 "아직 멀었습니다"(L160)가 엔더슨 항목에 묶임 | 위와 같음. 요약에 "아직 멀었다는 지휘관에게"가 있음 |
 | `main_18_15` | `forms_of_address` | L68 슈엔 "얘 좀 봐"를 호칭 누락으로 지적 | 애매함. 상대를 직접 부른 것인지 3인칭으로 가리킨 것인지(3절 10항) 판단이 갈림 |
 
-- 위 판정 중 앞의 세 건과 메신저 1~2차례 묶음은 3절 3·6항 보강(2026-10-17)의 근거다. 이미 병합된 220장면에는 보강 전 규칙이 적용돼 있다.
+- 위 판정 중 앞의 세 건과 메신저 1~2차례 묶음은 3절 3·6항 보강과 2.3의 25항(2026-10-17)의 근거다. 이미 병합된 220장면에는 보강 전 규칙이 적용돼 있다.
 - 나머지 지적은 대조하지 않았다.
 
+## 7. 2.3의 25항(`TERM_NOT_IN_SCENE`) 경고 (71건)
+
+2026-10-17에 추가한 검사로 병합된 20배치(472장면)에서 나온 경고다. 고치지 않았다. 표본 11장면을 원문과 대조해 9장면은 원문에 없는 이름, 2장면(`blabla_flora_001`, `main_06_05`)은 원문의 다른 말을 옮긴 것이었다(명세 2.3의 25항).
+
+| 장면 | 배치 | 이름(항목) |
+|---|---|---|
+| `main_01_05` | `batch_0001` | `타일런트급` (`summary`) |
+| `main_01_06` | `batch_0001` | `블랙스미스` (`summary`) |
+| `main_01_10` | `batch_0001` | `상부` (`events_and_claims[1]`, `clues_and_hooks[0]`) |
+| `main_02_06` | `batch_0001` | `발전소` (`summary`); `기존 지휘관` (`summary`) |
+| `main_03_00` | `batch_0002` | `워드리스` (`summary`, `clues_and_hooks[0]`) |
+| `main_03_06` | `batch_0002` | `토커티브` (`summary`) |
+| `main_04_00` | `batch_0002` | `워드리스` (`events_and_claims[4]`) |
+| `main_04_03` | `batch_0002` | `워드리스` (`summary`, `events_and_claims[2]`, `relationship_and_lore_notes[2]`) |
+| `main_04_04` | `batch_0002` | `감각 교환` (`summary`) |
+| `main_04_07` | `batch_0002` | `토커티브` (`summary`) |
+| `main_04_13` | `batch_0002` | `기억 소거` (`summary`, `relationship_and_lore_notes[0]`) |
+| `main_05_04` | `batch_0003` | `북부` (`clues_and_hooks[2]`) |
+| `main_05_07` | `batch_0003` | `벙커` (`summary`, `events_and_claims[0]`) |
+| `main_05_10` | `batch_0003` | `언리미티드` (`summary`) |
+| `main_05_12` | `batch_0003` | `연구 기지` (`summary`, `events_and_claims[3]`) |
+| `main_05_13` | `batch_0003` | `연구 기지` (`summary`, `events_and_claims[0]`, `events_and_claims[4]`) |
+| `main_06_00` | `batch_0003` | `연구 기지` (`summary`, `events_and_claims[0]`) |
+| `main_06_01` | `batch_0003` | `연구 기지` (`clues_and_hooks[1]`) |
+| `main_06_02` | `batch_0003` | `연구 기지` (`clues_and_hooks[3]`) |
+| `main_06_04` | `batch_0003` | `연구 기지` (`relationship_and_lore_notes[0]`) |
+| `main_06_05` | `batch_0003` | `순례자` (`summary`, `events_and_claims[0]`) |
+| `main_07_00` | `batch_0003` | `모더니아` (`summary`, `events_and_claims[0]`); `토커티브` (`summary`) |
+| `main_09_00` | `batch_0004` | `기억 소거` (`summary`) |
+| `main_09_13` | `batch_0005` | `데이터 센터` (`summary`, `events_and_claims[0]`) |
+| `main_13_00` | `batch_0006` | `총력전` (`summary`) |
+| `main_13_06` | `batch_0006` | `모더니아` (`summary`) |
+| `main_15_02` | `batch_0008` | `달란트` (`summary`) |
+| `main_16_01` | `batch_0009` | `이그조틱` (`summary`, `events_and_claims[5]`, `events_and_claims[10]`, `relationship_and_lore_notes[0]`) |
+| `main_16_07` | `batch_0009` | `이그조틱` (`events_and_claims[9]`, `events_and_claims[10]`, `events_and_claims[14]`, `events_and_claims[15]`, `relationship_and_lore_notes[1]`, `relationship_and_lore_notes[2]`, `clues_and_hooks[0]`) |
+| `main_16_09` | `batch_0009` | `이그조틱` (`summary`) |
+| `main_16_10` | `batch_0009` | `마의 지대` (`clues_and_hooks[1]`) |
+| `main_16_18` | `batch_0009` | `이그조틱` (`summary`, `relationship_and_lore_notes[0]`, `clues_and_hooks[0]`, `clues_and_hooks[1]`) |
+| `main_18_10` | `batch_0011` | `고철들` (`events_and_claims[6]`) |
+| `main_18_13` | `batch_0011` | `스톰 브링어` (`summary`, `events_and_claims[0]`) |
+| `romantic_valentine_02` | `batch_0125` | `노이즈` (`clues_and_hooks[0]`) |
+| `second_affection_16` | `batch_0215` | `왕국` (`summary`) |
+| `wordless_06` | `batch_0215` | `갱생관` (`summary`) |
+| `세르반_00` | `batch_0226` | `사관학교` (`relationship_and_lore_notes[0]`) |
+| `세르반_03` | `batch_0226` | `경찰서` (`events_and_claims[15]`) |
+| `반드시사수하라_02` | `batch_0236` | `하모니 큐브` (`clues_and_hooks[0]`); `방주 후보군` (`clues_and_hooks[0]`) |
+| `반드시사수하라_04` | `batch_0236` | `하모니 큐브` (`clues_and_hooks[0]`) |
+| `blabla_flora_001` | `batch_0395` | `장미` (`clues_and_hooks[0]`) |

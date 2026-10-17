@@ -15,7 +15,7 @@ import {
   planSceneParts,
   sha256,
 } from './graph/lib.mjs';
-import { validateShard, validateShardFile } from './graph/validate-output.mjs';
+import { loadTermLexicon, validateShard, validateShardFile } from './graph/validate-output.mjs';
 import {
   buildPartInput,
   buildReviewInput,
@@ -1018,6 +1018,82 @@ test('2.3-24 premature identity: a name revealed later in the scene must not be 
   s2.unknown_speakers[0] = { ...s2.unknown_speakers[0], unknown_id: batch2.scenes[0].mechanical_ground_truth.unknowns[0].unknown_id, line: 3 };
   s2.events_and_claims[0] = { ...s2.events_and_claims[0], line_start: 3, line_end: 3, claim_line: 3 };
   assert.equal(warnings(validateShard(shardOf(s2), batch2)).length, 0);
+});
+
+test('2.3-25 names not in the scene: warn on rare names only, ignoring word parts, spacing and generic tails', () => {
+  const lines = ['[SCENE START]', '엑시아: 안-녕-', '노벨: 메티스가 온 것입니다. 여기는 데이터베이스인 것입니다.', '[SCENE END]'];
+  const batch = batchOf(makeInputScene('t13_term', lines));
+  const lexicon = {
+    terms: new Map([
+      ['데이터 센터', 'location name'],
+      ['이그조틱', 'squad name'],
+      ['메티스 스쿼드', 'squad name'],
+      ['나가', 'registered character'],
+      ['소라', 'registered character'],
+    ]),
+    sceneCountOf: (term) => (term === '나가' ? 1383 : 5),
+  };
+  const scene = (summary, eventSummary = '엑시아가 인사한다.') =>
+    emptyScene('t13_term', {
+      summary,
+      participants: { present_in_scene: present('엑시아', '노벨'), present_silent: [], remote_or_voice_only: [], mentioned_only: [], document_author: null },
+      events_and_claims: [event({ actor_or_speaker: '엑시아', summary: eventSummary, line_start: 2, line_end: 2, quote: '안-녕-' })],
+    });
+  const termWarnings = (s, b = batch) =>
+    validateShard(shardOf(s), b, { termLexicon: lexicon }).warnings.filter((w) => w.rule === 'TERM_NOT_IN_SCENE');
+
+  const leaked = termWarnings(scene('데이터 센터에서 엑시아를 만난다.', '이그조틱이 나간다.'));
+  assert.deepEqual(leaked.map((w) => w.path), ['$.scenes[0].summary', '$.scenes[0].events_and_claims[0]']);
+  assert.match(leaked[0].message, /"데이터 센터"/);
+  assert.match(leaked[1].message, /"이그조틱"/); // `나간다`의 `나가`는 흔한 이름이라 보지 않는다
+
+  // 끝의 일반 낱말(스쿼드), 다른 낱말의 일부(장소라고), 이름 목록이 없을 때는 경고하지 않는다
+  assert.equal(termWarnings(scene('메티스 스쿼드가 온다.', '엑시아가 이 장소라고 말한다.')).length, 0);
+  assert.equal(
+    validateShard(shardOf(scene('데이터 센터에서 만난다.')), batch).warnings.filter((w) => w.rule === 'TERM_NOT_IN_SCENE').length,
+    0
+  );
+
+  // 띄어쓰기만 다르면 장면에 있는 것이다
+  const spaced = batchOf(makeInputScene('t13_term', ['[SCENE START]', '엑시아: 안-녕-', '노벨: 데이터센터인 것입니다.', '[SCENE END]']));
+  assert.equal(termWarnings(scene('데이터 센터에서 만난다.'), spaced).length, 0);
+});
+
+test('2.3-25 term lexicon: registry names without generic roles, merged and own candidates, corpus scene counts', async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-terms-'));
+  try {
+    await fs.mkdir(path.join(dir, 'pass1', 'batches'), { recursive: true });
+    await fs.writeFile(
+      path.join(dir, 'entity_registry.json'),
+      JSON.stringify({
+        entities: [
+          { canonical_name: '모더니아', surface_labels: ['모더니아'], is_generic_role: false },
+          { canonical_name: '병사', surface_labels: ['병사'], is_generic_role: true },
+          { canonical_name: '[블랙로즈]', surface_labels: ['[블랙로즈]'], is_generic_role: false },
+        ],
+      })
+    );
+    await fs.writeFile(
+      path.join(dir, 'unregistered_entity_candidates.json'),
+      JSON.stringify({ candidates: [{ surface_text: '데이터 센터', suggested_type: 'location' }] })
+    );
+    const batchFile = (id, scripts) =>
+      fs.writeFile(
+        path.join(dir, 'pass1', 'batches', `${id}.json`),
+        JSON.stringify({ scenes: scripts.map((s, i) => ({ scene_id: `${id}_${i}`, title: 't', sub_title: '', numbered_script: s })) })
+      );
+    await batchFile('batch_0001', ['[L0001] 노벨: 데이터센터인 것입니다.', '[L0001] 라피: 모더니아.']);
+    await batchFile('batch_0002', ['[L0001] 엑시아: 데이터 센터.']);
+    await batchFile('pilot_0001', ['[L0001] 엑시아: 데이터 센터.']); // 파일럿 배치는 세지 않는다
+    const shard = shardOf(emptyScene('x', { unregistered_entity_candidates: [{ surface_text: '실버건', suggested_type: 'squad', line_start: 1 }] }));
+
+    const lexicon = await loadTermLexicon(dir, shard);
+    assert.deepEqual([...lexicon.terms.keys()].sort(), ['데이터 센터', '모더니아', '실버건']);
+    assert.equal(lexicon.sceneCountOf('데이터 센터'), 2);
+    assert.equal(lexicon.sceneCountOf('모더니아'), 1);
+  } finally {
+    await fs.rm(dir, { recursive: true, force: true });
+  }
 });
 
 test('5 Pass 1 waves: next pending batches in number order, skipping merged and pilot batches', () => {
