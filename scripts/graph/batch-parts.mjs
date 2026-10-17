@@ -3,11 +3,18 @@ import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
-import { GRAPH_DATA_DIR, PASS1_SCHEMA_VERSION, countedLinesOf, planSceneParts, writeJsonAtomic } from './lib.mjs';
+import {
+  GRAPH_DATA_DIR,
+  PASS1_SCHEMA_VERSION,
+  countedLinesOf,
+  planSceneParts,
+  splitLinesOf,
+  writeJsonAtomic,
+} from './lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
-// 5절 Pass 1: 장면이 상한(20개)을 넘는 배치는 서브에이전트 호출만 나눠 돌리고 하나의 샤드로 합친다.
+// 5절 Pass 1: 장면 수(20개)나 줄 수(700줄) 상한을 넘는 배치는 서브에이전트 호출만 나눠 돌리고 하나의 샤드로 합친다.
 // 부분 샤드는 병합기가 읽지 않도록 pass1/shards/ 밖의 pass1/parts/에 둔다.
 // 부분마다 그 부분 장면만 담은 담당 입력(pass1/part_inputs/)을 만들어, 서브에이전트가 다른 부분의 장면을 읽지 않게 한다.
 
@@ -20,11 +27,18 @@ export const partInputPathOf = (batchId, partNo, graphDir = GRAPH_DATA_DIR) =>
 export const readBatchInput = async (batchId, graphDir = GRAPH_DATA_DIR) =>
   JSON.parse(await fs.readFile(path.join(graphDir, 'pass1', 'batches', `${batchId}.json`), 'utf8'));
 
-export const planBatchParts = (batchInput) =>
-  planSceneParts((batchInput.scenes ?? []).map((s) => s.scene_id)).map((sceneIds, idx) => ({
+export const planBatchParts = (batchInput) => {
+  const scenes = batchInput.scenes ?? [];
+  const linesById = new Map(scenes.map((s) => [s.scene_id, splitLinesOf(s)]));
+  return planSceneParts(
+    scenes.map((s) => s.scene_id),
+    { lineCounts: scenes.map((s) => linesById.get(s.scene_id)) }
+  ).map((sceneIds, idx) => ({
     part: idx + 1,
     scene_ids: sceneIds,
+    line_count: sceneIds.reduce((sum, id) => sum + linesById.get(id), 0),
   }));
+};
 
 /**
  * 부분 하나의 담당 입력. 장면 객체는 배치 입력 그대로 두고, 집계 값만 그 부분 장면으로 다시 센다.
@@ -198,6 +212,13 @@ const countRules = (list) =>
  * 3) 병합하고(통과한 샤드만 병합된다), 4) 독립 검토 입력을 만든다. 배치마다 결과를 따로 출력한다.
  * 일부 배치가 실패해도 나머지는 끝까지 처리한다. 실패한 배치는 pending으로 남아 다음 회차에 다시 골라진다.
  */
+// 앞 검증에 없던 경고만 돌려준다. 규칙·장면·경로·메시지가 모두 같으면 같은 경고다.
+export const newWarnings = (before, after) => {
+  const keyOf = (w) => [w.rule, w.scene_id, w.path, w.message].join('\u0000');
+  const seen = new Set(before.map(keyOf));
+  return after.filter((w) => !seen.has(keyOf(w)));
+};
+
 const finishWave = async (rel) => {
   const planPath = wavePlanPathOf();
   if (!fsSync.existsSync(planPath)) {
@@ -269,6 +290,15 @@ const finishWave = async (rel) => {
   const warnings = rows.flatMap((row) => row.warnings.map((w) => ({ batch_id: row.batch_id, ...w })));
   console.log(`[finish] 경고 ${warnings.length}건:`);
   for (const w of warnings) console.log(`  [WARN][${w.rule}] ${w.batch_id} (${w.scene_id ?? 'batch'}) ${w.path}: ${w.message}`);
+  // 2.3의 25항은 병합된 미등록 후보를 이름 목록에 넣으므로, 같은 회차 다른 배치가 올린 이름은 병합 뒤에야 보인다
+  const afterMerge = [];
+  for (const row of rows) {
+    if (!mergedIds.has(row.batch_id)) continue;
+    const res = await tryValidate(row.batch_id);
+    afterMerge.push(...newWarnings(row.warnings, res.warnings).map((w) => ({ batch_id: row.batch_id, ...w })));
+  }
+  console.log(`[finish] 병합 뒤 다시 검증한 새 경고 ${afterMerge.length}건${afterMerge.length > 0 ? ':' : ''}`);
+  for (const w of afterMerge) console.log(`  [WARN][${w.rule}] ${w.batch_id} (${w.scene_id ?? 'batch'}) ${w.path}: ${w.message}`);
   const errors = rows.flatMap((row) => row.errors.map((e) => ({ batch_id: row.batch_id, ...e })));
   if (errors.length > 0) {
     console.log(`[finish] 남은 오류 ${errors.length}건:`);
@@ -351,22 +381,22 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
         if (plan.length === 1) {
           call += 1;
           statusCount[combinedStatus] += 1;
-          calls.push({ call, batch_id: id, part: null, scene_count: input.scenes.length, status: combinedStatus });
-          console.log(`call ${call}: ${id} (${input.scenes.length} scenes) [${combinedStatus}]`);
+          calls.push({ call, batch_id: id, part: null, scene_count: input.scenes.length, line_count: plan[0].line_count, status: combinedStatus });
+          console.log(`call ${call}: ${id} (${input.scenes.length} scenes, ${plan[0].line_count} lines) [${combinedStatus}]`);
           console.log(`  input    ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'batches', `${id}.json`))}`);
           console.log(`  output   ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`))}`);
           console.log(`  validate node scripts/graph/validate-output.mjs ${id}`);
           continue;
         }
-        for (const { part, scene_ids: partIds } of plan) {
+        for (const { part, scene_ids: partIds, line_count: lineCount } of plan) {
           call += 1;
           const inputPath = partInputPathOf(id, part);
           await writeJsonAtomic(inputPath, buildPartInput(input, part));
           const status =
             combinedStatus === 'done' ? 'done' : await statusOf(partPathOf(id, part), () => validateShardFile(id, { part }));
           statusCount[status] += 1;
-          calls.push({ call, batch_id: id, part, scene_count: partIds.length, status });
-          console.log(`call ${call}: ${id} part ${part}/${plan.length} (${partIds.length} scenes) [${status}]`);
+          calls.push({ call, batch_id: id, part, scene_count: partIds.length, line_count: lineCount, status });
+          console.log(`call ${call}: ${id} part ${part}/${plan.length} (${partIds.length} scenes, ${lineCount} lines) [${status}]`);
           console.log(`  input    ${rel(inputPath)}`);
           console.log(`  output   ${rel(partPathOf(id, part))}`);
           console.log(`  validate node scripts/graph/validate-output.mjs ${id} --part ${part}`);
@@ -404,14 +434,14 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
 
     if (command === 'plan') {
       if (plan.length === 1) {
-        console.log(`[batch-parts] ${batchId}: ${plan[0].scene_ids.length} scenes, no split needed`);
+        console.log(`[batch-parts] ${batchId}: ${plan[0].scene_ids.length} scenes, ${plan[0].line_count} lines, no split needed`);
         return;
       }
       console.log(`[batch-parts] ${batchId}: ${batchInput.scenes.length} scenes → ${plan.length} parts`);
-      for (const { part, scene_ids: ids } of plan) {
+      for (const { part, scene_ids: ids, line_count: lineCount } of plan) {
         const inputPath = partInputPathOf(batchId, part);
         await writeJsonAtomic(inputPath, buildPartInput(batchInput, part));
-        console.log(`  part ${part} (${ids.length} scenes)`);
+        console.log(`  part ${part} (${ids.length} scenes, ${lineCount} lines)`);
         console.log(`    input  ${path.relative(process.cwd(), inputPath)}`);
         console.log(`    output ${path.relative(process.cwd(), partPathOf(batchId, part))}`);
         console.log(`    ${ids.join(', ')}`);

@@ -14,12 +14,14 @@ import {
   parseChapterTextBlocks,
   planSceneParts,
   sha256,
+  splitLinesOf,
 } from './graph/lib.mjs';
 import { loadTermLexicon, validateShard, validateShardFile } from './graph/validate-output.mjs';
 import {
   buildPartInput,
   buildReviewInput,
   combineParts,
+  newWarnings,
   nextPendingBatches,
   partInputPathOf,
   partPathOf,
@@ -826,12 +828,56 @@ test('2.3-23 claim range with other speakers: 3+ turns no item of their own cove
   assert.equal(claimWarnings(validateShard(shardOf(claimScene([tail])), claimBatch())).length, 0);
 });
 
-test('5 Pass 1 parts: batches over 20 scenes split evenly, parts validate alone and combine in batch order', async () => {
+test('5 Pass 1 parts: batches over 20 scenes or 700 lines split, parts validate alone and combine in batch order', async () => {
   const ids = (n) => Array.from({ length: n }, (_, i) => `s${i + 1}`);
   assert.deepEqual(planSceneParts(ids(20)).map((p) => p.length), [20]);
   assert.deepEqual(planSceneParts(ids(30)).map((p) => p.length), [15, 15]);
   assert.deepEqual(planSceneParts(ids(41)).map((p) => p.length), [14, 14, 13]);
   assert.deepEqual(planSceneParts(ids(117)).flat(), ids(117));
+
+  // 줄 수 상한(700줄): 장면 수로 고르게 나눈 계획이 상한을 지키면 그대로, 아니면 줄 수가 고르게 나눈다
+  const sizes = (lineCounts) => planSceneParts(ids(lineCounts.length), { lineCounts }).map((p) => p.length);
+  assert.deepEqual(sizes([100, 100, 100, 100, 100, 100, 100]), [7]); // 700줄
+  assert.deepEqual(sizes([100, 100, 100, 100, 100, 100, 101]), [4, 3]); // 701줄 → 400, 301
+  assert.deepEqual(sizes([50, 50, 50, 50, 400, 400]), [5, 1]); // 600, 400
+  assert.deepEqual(sizes([400, 400, 400]), [1, 1, 1]); // 둘씩 묶으면 800줄
+  assert.deepEqual(sizes([1000, 100, 100]), [1, 2]); // 상한을 넘는 장면 하나는 혼자 한 부분
+  assert.deepEqual(sizes([2000, 2000]), [1, 1]);
+  // 장면 수 상한도 함께 지킨다: 30장면 각 30줄(900줄) → 15장면 450줄씩
+  assert.deepEqual(sizes(Array(30).fill(30)), [15, 15]);
+  // 장면 21개를 11개·10개로 나누면 앞 부분이 770줄이므로 줄 수로 나눈다: 420줄, 450줄
+  assert.deepEqual(sizes([...Array(11).fill(70), ...Array(10).fill(10)]), [6, 15]);
+  for (const counts of [[300, 300, 300, 300, 300], Array(45).fill(40), [10, 900, 10, 10, 650, 60]]) {
+    const parts = planSceneParts(ids(counts.length), { lineCounts: counts });
+    assert.deepEqual(parts.flat(), ids(counts.length));
+    let i = 0;
+    for (const part of parts) {
+      const sum = counts.slice(i, i + part.length).reduce((a, b) => a + b, 0);
+      assert.ok(part.length <= 20 && (part.length === 1 || sum <= 700), `${part.length} scenes, ${sum} lines`);
+      i += part.length;
+    }
+  }
+
+  // 세는 줄: 대사(선택지·메신저 발신 줄 포함)·지문·말줄임표. 빈 줄과 제어 태그는 세지 않는다
+  const counted = {
+    numbered_script: buildNumberedScript([
+      '[SCENE START]',
+      '라피: 지휘관님.',
+      '아니스와 네온이 도로시에게 총구를 겨눴다.',
+      '··· ···.',
+      '',
+      '[CHOICE_START]',
+      '  [OPTION TEXT="돌아가자."]',
+      '  [OPTION_END]',
+      '[CHOICE_END]',
+      '[MSG SENDER="택티컬티택"]',
+      '나다',
+      '[MSG_END]',
+      '[SCENE END]',
+    ]),
+    mechanical_ground_truth: { line_speaker: { 2: '라피', 7: '지휘관', 10: '택티컬티택', 11: '택티컬티택' } },
+  };
+  assert.equal(splitLinesOf(counted), 6);
 
   // 장면 21개짜리 배치 → 11개, 10개
   const sceneIds = ids(21).map((id) => `t13_part_${id}`);
@@ -1168,4 +1214,12 @@ test('5 Pass 1 waves: review input carries whole scene objects and marks samples
   assert.deepEqual(review.scenes[0].extraction, shardScene('a1'));
   assert.equal(review.scenes[2].extraction, null);
   assert.equal(review.scenes[0].source.shard, 'data/graph/pass1/shards/batch_0002.json');
+});
+
+test('5 Pass 1 finish: warnings that appear only after merging are reported separately', () => {
+  const w = (scene, name) => ({ rule: 'TERM_NOT_IN_SCENE', scene_id: scene, path: `$.scenes[0].summary`, message: `uses "${name}"` });
+  const before = [w('main_23_21', '이그조틱')];
+  const after = [w('main_23_21', '이그조틱'), w('main_23_22', '3대 기업')];
+  assert.deepEqual(newWarnings(before, after), [w('main_23_22', '3대 기업')]);
+  assert.deepEqual(newWarnings(after, before), []);
 });

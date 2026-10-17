@@ -20,18 +20,82 @@ export const PASS1_SCHEMA_VERSION = '1.3.0';
 // 5절 Pass 1: 서브에이전트 한 번에 맡기는 장면 수 상한
 export const MAX_SCENES_PER_CALL = 20;
 
-// 장면 목록을 순서대로, 크기가 고르게 상한 이하 묶음으로 나눈다 (예: 30개 → 15개, 15개)
-export const planSceneParts = (sceneIds, maxPerPart = MAX_SCENES_PER_CALL) => {
-  const partCount = Math.max(1, Math.ceil(sceneIds.length / maxPerPart));
-  const baseSize = Math.floor(sceneIds.length / partCount);
-  const extra = sceneIds.length % partCount;
-  const parts = [];
-  let start = 0;
-  for (let i = 0; i < partCount; i++) {
-    const size = baseSize + (i < extra ? 1 : 0);
-    parts.push(sceneIds.slice(start, start + size));
+// 5절 Pass 1: 서브에이전트 한 번에 맡기는 줄 수 상한(splitLinesOf로 센 줄). 장면 하나가 넘으면 그 장면만 한 부분이 된다.
+export const MAX_LINES_PER_CALL = 700;
+
+/**
+ * 장면 목록을 순서대로, 장면 수와 줄 수가 상한 이하인 묶음으로 나눈다.
+ * 장면 수로 고르게 나눈 계획(예: 30개 → 15개, 15개)이 줄 수 상한을 지키면 그것을 쓴다.
+ * 아니면 가장 적은 부분 수로, 가장 큰 부분의 줄 수를, 그다음 장면 수를 가장 작게 한다.
+ */
+export const planSceneParts = (
+  sceneIds,
+  { lineCounts = [], maxScenes = MAX_SCENES_PER_CALL, maxLines = MAX_LINES_PER_CALL } = {}
+) => {
+  const n = sceneIds.length;
+  if (n === 0) return [[]];
+  const lines = sceneIds.map((_, i) => lineCounts[i] ?? 0);
+  const total = lines.reduce((a, b) => a + b, 0);
+  // 장면 수로만 고르게 나눈 계획이 줄 수 상한도 지키면 그대로 쓴다(줄 수 상한 전에 나뉜 배치의 부분 계획이 바뀌지 않게)
+  const evenCount = Math.max(1, Math.ceil(n / maxScenes));
+  const even = [];
+  for (let i = 0, start = 0; i < evenCount; i++) {
+    const size = Math.floor(n / evenCount) + (i < n % evenCount ? 1 : 0);
+    even.push([start, start + size]);
     start += size;
   }
+  const linesOf = ([a, b]) => lines.slice(a, b).reduce((x, y) => x + y, 0);
+  if (even.every((range) => range[1] - range[0] === 1 || linesOf(range) <= maxLines)) {
+    return even.map(([a, b]) => sceneIds.slice(a, b));
+  }
+  // 한 부분: 장면 maxScenes개 이하, 줄 cap 이하(장면 하나뿐이면 줄 수와 관계없이 된다). 이 조건은 부분의 일부에도 성립하므로 앞에서부터 채우는 것이 최소 부분 수다.
+  const minParts = (from, cap, scenesCap) => {
+    let parts = 0;
+    let count = 0;
+    let sum = 0;
+    for (let i = from; i < n; i++) {
+      if (count > 0 && (count + 1 > scenesCap || sum + lines[i] > cap)) {
+        parts += 1;
+        count = 0;
+        sum = 0;
+      }
+      count += 1;
+      sum += lines[i];
+    }
+    return parts + (count > 0 ? 1 : 0);
+  };
+  const smallest = (lo, hi, ok) => {
+    while (lo < hi) {
+      const mid = Math.floor((lo + hi) / 2);
+      if (ok(mid)) hi = mid;
+      else lo = mid + 1;
+    }
+    return lo;
+  };
+  // 장면 하나가 상한을 넘어도 장면은 쪼개지 않으므로 부분 수는 장면 수를 넘지 않는다
+  let k = Math.min(n, Math.max(1, Math.ceil(n / maxScenes), Math.ceil(total / maxLines)));
+  let cap = smallest(0, total, (c) => minParts(0, c, maxScenes) <= k);
+  while (cap > maxLines && k < n) {
+    k += 1;
+    cap = smallest(0, total, (c) => minParts(0, c, maxScenes) <= k);
+  }
+  const scenesCap = smallest(Math.ceil(n / k), maxScenes, (s) => minParts(0, cap, s) <= k);
+  // 앞 부분부터, 남은 장면을 남은 부분 수로 나눌 수 있는 한 가장 길게 잡는다
+  const parts = [];
+  let start = 0;
+  for (let p = k; p > 1; p--) {
+    let best = start + 1;
+    let sum = 0;
+    for (let end = start + 1; end <= n - (p - 1); end++) {
+      sum += lines[end - 1];
+      const size = end - start;
+      if (size > 1 && (size > scenesCap || sum > cap)) break;
+      if (minParts(end, cap, scenesCap) <= p - 1) best = end;
+    }
+    parts.push(sceneIds.slice(start, best));
+    start = best;
+  }
+  parts.push(sceneIds.slice(start));
   return parts;
 };
 
@@ -260,6 +324,22 @@ export const countedLinesOf = (mechanicalGroundTruth, rawLines) => {
     if (isDocumentTextLine(line)) textLines.push(idx + 1);
   });
   return { mode: 'text', lines: textLines };
+};
+
+/**
+ * 배치를 호출 단위로 나눌 때 세는 장면의 줄 수(5절 Pass 1). 서브에이전트가 읽어야 할 분량이다.
+ * 대사 줄(line_speaker, 선택지·메신저 발신 줄 포함)과 지문·말줄임표 줄을 모두 세고, 빈 줄과 제어 태그 줄만 뺀다.
+ */
+export const splitLinesOf = (scene) => {
+  const lineSpeaker = scene?.mechanical_ground_truth?.line_speaker ?? {};
+  let count = 0;
+  for (const line of String(scene?.numbered_script ?? '').split('\n')) {
+    const m = /^\[L(\d+)\]\s?(.*)$/.exec(line);
+    if (!m) continue;
+    const text = m[2].trim();
+    if (Object.hasOwn(lineSpeaker, String(Number(m[1]))) || (text && !CONTROL_TAG_LINE_RE.test(text))) count += 1;
+  }
+  return count;
 };
 
 /**
