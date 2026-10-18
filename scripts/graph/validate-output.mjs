@@ -11,6 +11,7 @@ import {
   resolveBranchOption,
   chronologiesInRange,
   countedLinesOf,
+  CONTROL_TAG_LINE_RE,
 } from './lib.mjs';
 import {
   buildPartInput,
@@ -131,6 +132,14 @@ export const CLUE_CATEGORY_ENUM = new Set([
   'organization',
   'trait',
 ]);
+
+// 27·28항이 보는 참여자 갈래와 그 항목의 표기 필드
+const ENTITY_PARTICIPANT_FIELDS = [
+  ['present_in_scene', 'speaker_label'],
+  ['present_silent', 'name'],
+  ['remote_or_voice_only', 'speaker_label'],
+  ['mentioned_only', 'surface_text'],
+];
 
 export const UNREGISTERED_ENTITY_TYPE_ENUM = new Set([
   'character',
@@ -312,6 +321,7 @@ export const quoteCoversLine = (quote, rawLine, rawSliceLines = []) => {
  * 단일 배치 샤드 JSON을 해당 배치 입력 데이터(batchInput)와 대조해 2.3의 1~21항을 검증한다.
  */
 // options.termLexicon: 25항의 이름 목록({ terms: Map<이름, 출처>, sceneCountOf(이름) }). 없으면 25항은 검사하지 않는다
+// options.registry: 27·28항의 레지스트리({ ids, labelsById, idByLabel }, loadEntityRegistry). 없으면 27·28항은 검사하지 않는다
 export const validateShard = (shardData, batchInput, options = {}) => {
   const errors = [];
   const warnings = [];
@@ -1832,7 +1842,21 @@ export const validateShard = (shardData, batchInput, options = {}) => {
                   !coversClaimant(own)
               )
           );
-          if (buried.length < CLAIM_OTHER_SPEAKER_TURNS_WARN) return;
+          if (buried.length < CLAIM_OTHER_SPEAKER_TURNS_WARN) {
+            // 26. 주장 범위가 다른 화자의 말로 끝남: 23항이 세지 않는 1~2차례 중, 범위의 마지막 발화(말줄임표만 있는 차례는 건너뜀)가
+            // 다른 화자의 것이고 그 화자 자신의 항목이 없으면 경고한다. 3회차 독립 검토의 타 화자 묶음 11건 대부분이 이 꼴이었다
+            const lastSpoken = [...turns]
+              .reverse()
+              .find((turn) => turn.lines.some((line) => /[\p{L}\p{N}]/u.test(extractUtteranceTextFromRawLine(rawLines[line - 1]))));
+            if (!lastSpoken || !buried.includes(lastSpoken)) return;
+            addWarning(
+              'CLAIM_ENDS_OTHER_SPEAKER',
+              sid,
+              `${sceneBasePath}.${selfKey}`,
+              `character_claim by "${claimant}" (L${item.line_start}~L${item.line_end}) ends with ${lastSpoken.speaker} L${lastSpoken.lines[0]}, and no item of ${lastSpoken.speaker}'s own covers it. Re-read it: give that reply its own item (agreement, confirmation or rebuttal is ${lastSpoken.speaker}'s character_claim; an action only is an established_event), or end this range before it. Leave it if it adds nothing to the scene`
+            );
+            return;
+          }
           addWarning(
             'CLAIM_OTHER_SPEAKERS',
             sid,
@@ -1870,21 +1894,31 @@ export const validateShard = (shardData, batchInput, options = {}) => {
       for (const [field, idFields, textFields] of premature) {
         if (!Array.isArray(scene[field])) continue;
         scene[field].forEach((item, idx) => {
-          if (!isPositiveInt(item?.line_end) || item.line_end >= revealLine) return;
-          const textBefore = rawLines.slice(0, item.line_end).join('\n');
+          if (!isPositiveInt(item?.line_end)) return;
+          // 관계 메모의 주장은 주장한 줄 시점으로 본다. 범위가 공개 줄까지 이어져도 claim_line이 그 앞이면
+          // subject·target·claimant만 본다(4회차 main_39_04 L108~114: L112의 ??? 주장에 L114에서 밝혀진 나유타를 subject로 씀)
+          const claimBefore =
+            field === 'relationship_and_lore_notes' &&
+            item.epistemic_type === 'character_claim' &&
+            isPositiveInt(item.claim_line) &&
+            item.claim_line < revealLine;
+          if (item.line_end >= revealLine && !claimBefore) return;
+          const until = item.line_end < revealLine ? item.line_end : item.claim_line;
+          const textBefore = rawLines.slice(0, until).join('\n');
           if (textBefore.includes(name)) return;
           const used = [
             ...idFields.filter(
               (k) => isNonEmptyString(item[k]) && item[k].split(MULTI_ENTITY_SEPARATOR_RE).map((n) => n.trim()).includes(name)
             ),
-            ...textFields.filter((k) => isNonEmptyString(item[k]) && item[k].includes(name)),
+            ...(item.line_end < revealLine ? textFields : []).filter((k) => isNonEmptyString(item[k]) && item[k].includes(name)),
           ];
           if (used.length === 0) return;
+          const where = item.line_end < revealLine ? `L${item.line_start}~L${item.line_end}` : `Claim at L${item.claim_line} (L${item.line_start}~L${item.line_end})`;
           addWarning(
             'PREMATURE_IDENTITY',
             sid,
             `${sceneBasePath}.${field}[${idx}]`,
-            `L${item.line_start}~L${item.line_end} uses "${name}" in ${used.join(', ')}, but that identity is only revealed at L${revealLine} and the name does not appear in the text up to L${item.line_end}. Re-read it: if this identifies the hidden speaker with later information, use the speaker label of that point (e.g. ???). If it refers to someone already named before, keep it and report the line`
+            `${where} uses "${name}" in ${used.join(', ')}, but that identity is only revealed at L${revealLine} and the name does not appear in the text up to L${until}. Re-read it: if this identifies the hidden speaker with later information, use the speaker label of that point (e.g. ???). If it refers to someone already named before, keep it and report the line`
           );
         });
       }
@@ -1926,6 +1960,54 @@ export const validateShard = (shardData, batchInput, options = {}) => {
             `uses "${term}" (${options.termLexicon.terms.get(term)}), which appears in other scenes but not in this scene's text or title. Re-read it: if it comes from another scene or prior knowledge, write only what this scene says (links to other scenes go in cross_scene_hints). If this scene says it in other words, keep it and report the line`
           );
         }
+      }
+    }
+
+    // 27·28. entity_id: 레지스트리에 없는 ID는 실패, 등록 ID인데 그 표기가 그 인물의 이름을 담지 않으면 경고(3절 2항).
+    // 4회차에 레지스트리에 없는 ID가 40건 나왔고(`char_스노우 화이트`, `loc_방주`), 사전 지식으로 붙인 ID도 있었다(`금장발` → `char_라푼젤`)
+    if (options.registry) {
+      const { ids, labelsById, idByLabel } = options.registry;
+      const participants = scene.participants && typeof scene.participants === 'object' ? scene.participants : {};
+      const linked = [];
+      for (const [key, textKey] of ENTITY_PARTICIPANT_FIELDS) {
+        if (!Array.isArray(participants[key])) continue;
+        participants[key].forEach((p, idx) => linked.push([`participants.${key}[${idx}]`, p, p?.[textKey]]));
+      }
+      const da = participants.document_author;
+      if (da && typeof da === 'object') linked.push(['participants.document_author', da, da.name]);
+      for (const key of ['unknown_speakers', 'descriptor_speakers']) {
+        if (!Array.isArray(scene[key])) continue;
+        scene[key].forEach((entry, idx) => {
+          const res = entry?.resolved_in_same_scene_to;
+          if (res && typeof res === 'object') linked.push([`${key}[${idx}].resolved_in_same_scene_to`, res, res.surface_text]);
+        });
+      }
+      for (const [rel, obj, surface] of linked) {
+        if (!isNonEmptyString(obj?.entity_id)) continue;
+        const id = obj.entity_id;
+        const shown = isNonEmptyString(surface) ? surface.trim() : null;
+        if (!ids.has(id)) {
+          const known = shown ? idByLabel.get(shown) : undefined;
+          addError(
+            'ENTITY_ID_NOT_IN_REGISTRY',
+            sid,
+            `${sceneBasePath}.${rel}.entity_id`,
+            known
+              ? `"${id}" is not in the entity registry. "${shown}" is registered as "${known}": use that id`
+              : `"${id}" is not in the entity registry (it lists characters only). Set entity_id to null and add ${shown ? `"${shown}"` : 'its name'} to unregistered_entity_candidates`
+          );
+          continue;
+        }
+        if (!shown) continue;
+        const flat = shown.replace(/\s+/g, '');
+        const labels = labelsById.get(id) ?? [];
+        if (labels.some((label) => flat === label || (label.length >= 2 && flat.includes(label)))) continue;
+        addWarning(
+          'ENTITY_ID_SURFACE_MISMATCH',
+          sid,
+          `${sceneBasePath}.${rel}.entity_id`,
+          `"${shown}" is linked to "${id}", but it contains none of that entity's registered names (${labels.join(', ')}). Re-read it: if only prior knowledge links them, set entity_id to null and add "${shown}" to unregistered_entity_candidates. If this scene shows they are the same, keep it and report the line`
+        );
       }
     }
 
@@ -2033,6 +2115,52 @@ export const loadTermLexicon = async (graphDir, shardData) => {
   return { terms, sceneCountOf };
 };
 
+// 27·28항의 레지스트리. 이름은 띄어쓰기를 지우고 비교한다. 레지스트리가 없으면 null(검사 안 함)
+export const loadEntityRegistry = async (graphDir) => {
+  const registryPath = path.join(graphDir, 'entity_registry.json');
+  if (!fsSync.existsSync(registryPath)) return null;
+  const registry = JSON.parse(await fs.readFile(registryPath, 'utf8'));
+  const ids = new Set();
+  const labelsById = new Map();
+  const idByLabel = new Map();
+  for (const e of registry.entities ?? []) {
+    if (!isNonEmptyString(e?.entity_id)) continue;
+    ids.add(e.entity_id);
+    const names = [e.canonical_name, ...(e.surface_labels ?? [])].filter(isNonEmptyString).map((n) => n.trim());
+    labelsById.set(e.entity_id, [...new Set(names.map((n) => n.replace(/\s+/g, '')))]);
+    for (const n of names) if (!idByLabel.has(n)) idByLabel.set(n, e.entity_id);
+  }
+  return { ids, labelsById, idByLabel };
+};
+
+// 진단(2.3에 넣기 전 시험, 5절 finish): 지문 없이 대사만으로 된 여러 화자 established_event.
+// 안에 묻힌 평가·추측·전언·과거 진술은 그 화자의 character_claim이어야 한다(3절 6항). 4회차 표본 10개 중 3~4개가 그랬다
+export const DIALOGUE_EVENT_MIN_TURNS = 4;
+export const dialogueOnlyEvents = (scene, gtScene) => {
+  const lineSpeaker = gtScene?.mechanical_ground_truth?.line_speaker ?? {};
+  const rawLines = Array.isArray(gtScene?.body_lines)
+    ? gtScene.body_lines
+    : extractRawLinesFromNumberedScript(gtScene?.numbered_script);
+  const found = [];
+  (Array.isArray(scene?.events_and_claims) ? scene.events_and_claims : []).forEach((item, idx) => {
+    if (item?.epistemic_type !== 'established_event' || !isPositiveInt(item.line_start) || !isPositiveInt(item.line_end)) return;
+    const turns = [];
+    for (let line = item.line_start; line <= item.line_end; line += 1) {
+      const speaker = lineSpeaker[line];
+      if (speaker === undefined) {
+        const text = String(rawLines[line - 1] ?? '').trim();
+        if (text && !CONTROL_TAG_LINE_RE.test(text)) return;
+        continue;
+      }
+      if (turns[turns.length - 1] !== speaker) turns.push(speaker);
+    }
+    const speakers = [...new Set(turns)];
+    if (turns.length < DIALOGUE_EVENT_MIN_TURNS || speakers.length < 2) return;
+    found.push({ path: `events_and_claims[${idx}]`, line_start: item.line_start, line_end: item.line_end, turns: turns.length, speakers, summary: item.summary });
+  });
+  return found;
+};
+
 /**
  * CLI 실행: 샤드 파일 경로 또는 배치 ID를 받아 검증한다.
  * 하나라도 실패하면 Exit Code 1을 반환한다 (2.3).
@@ -2052,6 +2180,7 @@ export const validateShardFile = async (shardArg, options = {}) => {
     const shardData = JSON.parse(await fs.readFile(shardPath, 'utf8'));
     const result = validateShard(shardData, buildPartInput(batchInput, options.part), {
       termLexicon: await loadTermLexicon(graphDir, shardData),
+      registry: await loadEntityRegistry(graphDir),
     });
     // 서브에이전트가 읽은 담당 입력이 지금 배치 입력과 다르면 옛 입력으로 추출한 것이다
     const partInputPath = partInputPathOf(batchId, options.part, graphDir);
@@ -2092,7 +2221,10 @@ export const validateShardFile = async (shardArg, options = {}) => {
   }
 
   const batchInput = JSON.parse(await fs.readFile(batchInputPath, 'utf8'));
-  const result = validateShard(shardData, batchInput, { termLexicon: await loadTermLexicon(graphDir, shardData) });
+  const result = validateShard(shardData, batchInput, {
+    termLexicon: await loadTermLexicon(graphDir, shardData),
+    registry: await loadEntityRegistry(graphDir),
+  });
 
   return {
     shardPath,

@@ -15,6 +15,7 @@ import {
 } from './lib.mjs';
 import {
   validateShard,
+  loadEntityRegistry,
   extractRawLinesFromNumberedScript,
   FORBIDDEN_SCENE_FIELDS,
   FORBIDDEN_ITEM_FIELDS,
@@ -476,6 +477,7 @@ export const mergeValidatedShards = async (options = {}) => {
   const manifestDoc = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
   const manifestScenes = manifestDoc.scenes ?? {};
   const manifestTitlesById = new Map((manifestDoc.titles ?? []).map((t) => [t.title_id, t]));
+  const registry = await loadEntityRegistry(graphDir);
 
   const shardsDir = options.shardsDir ?? path.join(graphDir, 'pass1', 'shards');
   const batchesDir = options.batchesDir ?? path.join(graphDir, 'pass1', 'batches');
@@ -517,7 +519,7 @@ export const mergeValidatedShards = async (options = {}) => {
     }
 
     const batchInput = JSON.parse(await fs.readFile(batchInputPath, 'utf8'));
-    const validation = validateShard(shardData, batchInput);
+    const validation = validateShard(shardData, batchInput, { registry });
 
     // 통과한 샤드만 병합 대상에 포함한다 (5절)
     if (!validation.valid) {

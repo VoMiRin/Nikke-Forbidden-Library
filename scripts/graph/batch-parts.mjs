@@ -172,8 +172,9 @@ export const reviewInputPathOf = (wave, graphDir = GRAPH_DATA_DIR) =>
  * 독립 검토 입력. 검토 장면마다 배치 입력의 장면 객체 전체(원문·기계 추출값)와 샤드의 같은 장면 객체 전체를 그대로 담는다.
  * 검토자가 큰 배치·샤드 파일에서 장면을 직접 찾아 읽지 않게 하기 위함이다(대본은 JSON 한 줄이라 파일 줄 범위로는 고를 수 없다).
  * 병합되지 않은 배치의 장면이나 결과에 없는 장면은 status로 표시한다.
+ * diagnose(장면, 입력 장면)를 주면 그 결과를 diagnostics에 담아 검토자가 항목마다 판정하게 한다(시험 중인 진단).
  */
-export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, mergedBatchIds }) => ({
+export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, mergedBatchIds, diagnose = null }) => ({
   wave,
   scenes: reviewScenes.map((r) => {
     const inputScene = batchInputs[r.batch_id]?.scenes?.find((s) => s.scene_id === r.scene_id) ?? null;
@@ -197,6 +198,7 @@ export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, merg
       },
       input_scene: inputScene,
       extraction,
+      ...(diagnose ? { diagnostics: { dialogue_only_events: extraction && inputScene ? diagnose(extraction, inputScene) : [] } } : {}),
     };
   }),
 });
@@ -225,7 +227,7 @@ const finishWave = async (rel) => {
     throw new Error(`No wave plan at ${rel(planPath)}; run "batch-parts.mjs next <count>" first`);
   }
   const wavePlan = JSON.parse(await fs.readFile(planPath, 'utf8'));
-  const { validateShardFile } = await import('./validate-output.mjs');
+  const { validateShardFile, dialogueOnlyEvents, DIALOGUE_EVENT_MIN_TURNS } = await import('./validate-output.mjs');
   const { mergeValidatedShards } = await import('./merge-and-index.mjs');
   const shardPathOf = (id) => path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`);
   const tryValidate = async (id, options) => {
@@ -320,24 +322,41 @@ const finishWave = async (rel) => {
   }
 
   const shards = {};
-  for (const { batch_id: id } of wavePlan.review_scenes) {
+  for (const id of new Set([...wavePlan.batch_ids, ...wavePlan.review_scenes.map((r) => r.batch_id)])) {
     try {
       shards[id] = JSON.parse(await fs.readFile(shardPathOf(id), 'utf8'));
     } catch {
       // 샤드가 없거나 깨졌으면 검토 입력에 no_shard로 표시된다
     }
   }
+
+  // 시험 중인 진단(2.3의 경고가 아니다). 서브에이전트에게는 보이지 않고, 독립 검토자가 표본 장면의 항목을 판정한다
+  console.log(`[finish] 진단(시험, 경고 아님): 지문 없이 대사만으로 된 여러 화자 사건(${DIALOGUE_EVENT_MIN_TURNS}차례 이상)`);
+  let diagnosed = 0;
+  for (const id of wavePlan.batch_ids) {
+    if (!mergedIds.has(id) || !shards[id]) continue;
+    const inputById = new Map((batchInputs[id]?.scenes ?? []).map((s) => [s.scene_id, s]));
+    const counts = shards[id].scenes.map((s) => dialogueOnlyEvents(s, inputById.get(s.scene_id)).length);
+    const n = counts.reduce((a, b) => a + b, 0);
+    diagnosed += n;
+    console.log(`  ${id}: ${n}건`);
+  }
+  console.log(`  합계 ${diagnosed}건`);
   const reviewInput = buildReviewInput({
     wave: wavePlan.wave,
     reviewScenes: wavePlan.review_scenes,
     batchInputs,
     shards,
     mergedBatchIds: merged.mergedBatchIds,
+    diagnose: dialogueOnlyEvents,
   });
   const reviewPath = reviewInputPathOf(wavePlan.wave);
   await writeJsonAtomic(reviewPath, reviewInput);
   console.log(`[finish] 독립 검토 입력: ${rel(reviewPath)}`);
-  for (const s of reviewInput.scenes) console.log(`  ${s.scene_id} (${s.batch_id}) — ${s.reason}: ${s.status}`);
+  for (const s of reviewInput.scenes) {
+    const diag = s.diagnostics?.dialogue_only_events?.length ?? 0;
+    console.log(`  ${s.scene_id} (${s.batch_id}) — ${s.reason}: ${s.status}${s.status === 'ok' ? `, 진단 항목 ${diag}건` : ''}`);
+  }
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {

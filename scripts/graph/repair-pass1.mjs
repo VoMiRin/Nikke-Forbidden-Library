@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
 import { GRAPH_DATA_DIR, PASS1_SCHEMA_VERSION, sha256, writeJsonAtomic } from './lib.mjs';
-import { extractRawLinesFromNumberedScript, validateShard } from './validate-output.mjs';
+import { extractRawLinesFromNumberedScript, loadEntityRegistry, validateShard } from './validate-output.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -60,8 +60,8 @@ export const refreshBatchInput = (batchInput, manifestScenes) => {
 /**
  * 샤드를 배치 입력으로 다시 검증해 장면별 보수 사유를 모은다.
  */
-export const collectRepairIssues = (shard, batchInput) => {
-  const result = validateShard(shard, batchInput);
+export const collectRepairIssues = (shard, batchInput, options = {}) => {
+  const result = validateShard(shard, batchInput, options);
   const issues = new Map();
   const add = (severity, entry) => {
     if (!entry.scene_id) throw new Error(`${batchInput.batch_id}: batch-level ${entry.rule} error cannot be repaired by scene: ${entry.message}`);
@@ -165,7 +165,7 @@ export const prepareRepair = async (batchId, { graphDir = GRAPH_DATA_DIR, manife
   const { batchInput, changedSceneIds } = refreshBatchInput(originalInput, manifestScenes);
   if (changedSceneIds.length > 0) await writeJsonAtomic(batchInputPath, batchInput);
 
-  const issues = collectRepairIssues(shard, batchInput);
+  const issues = collectRepairIssues(shard, batchInput, { registry: await loadEntityRegistry(graphDir) });
   const inputPath = repairInputPathOf(batchId, graphDir);
   if (issues.size > 0) {
     await writeJsonAtomic(inputPath, buildRepairInput(batchInput, shard, issues));
@@ -209,7 +209,7 @@ export const checkRepair = async (batchId, { graphDir = GRAPH_DATA_DIR } = {}) =
   }
   const repaired = spliceRepair(shard, repairInput, await readJson(outputPath));
   const targets = new Set(repairInput.scenes.map((s) => s.scene_id));
-  const result = validateShard(repaired, batchInput);
+  const result = validateShard(repaired, batchInput, { registry: await loadEntityRegistry(graphDir) });
   return {
     repaired,
     candidate: {

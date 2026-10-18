@@ -16,7 +16,13 @@ import {
   sha256,
   splitLinesOf,
 } from './graph/lib.mjs';
-import { loadTermLexicon, validateShard, validateShardFile } from './graph/validate-output.mjs';
+import {
+  dialogueOnlyEvents,
+  loadEntityRegistry,
+  loadTermLexicon,
+  validateShard,
+  validateShardFile,
+} from './graph/validate-output.mjs';
 import {
   buildPartInput,
   buildReviewInput,
@@ -828,6 +834,43 @@ test('2.3-23 claim range with other speakers: 3+ turns no item of their own cove
   assert.equal(claimWarnings(validateShard(shardOf(claimScene([tail])), claimBatch())).length, 0);
 });
 
+test('2.3-26 claim range ending with another speaker: warn when no item of their own covers it', () => {
+  const endWarnings = (res) => res.warnings.filter((w) => w.rule === 'CLAIM_ENDS_OTHER_SPEAKER');
+  const run = (items) => validateShard(shardOf(claimScene(items)), claimBatch());
+
+  // L1~L2: 아니스의 "정말?"로 끝난다
+  const res = run([rapiClaim(2)]);
+  assertValid(res);
+  assert.equal(endWarnings(res).length, 1);
+  assert.match(endWarnings(res)[0].message, /ends with 아니스 L2/);
+
+  // 라피의 말로 끝나면 경고 없음(L1~L3, 가운데 아니스 L2는 이 경고가 보지 않는다)
+  assert.equal(endWarnings(run([rapiClaim(3)])).length, 0);
+
+  // L3~L4: 네온의 반대로 끝나지만 네온 자신의 항목이 있으면 경고 없음
+  const mid = { ...rapiClaim(4), line_start: 3, claim_line: 3, quote: '네. 지휘관의 명령입니다.' };
+  assert.equal(endWarnings(run([mid])).length, 1);
+  const neon = event({
+    epistemic_type: 'character_claim',
+    actor_or_speaker: '네온',
+    summary: '네온이 반대한다.',
+    line_start: 4,
+    line_end: 4,
+    claim_line: 4,
+    quote: '저는 반대예요.',
+  });
+  assert.equal(endWarnings(run([mid, neon])).length, 0);
+
+  // 끝의 말줄임표만 있는 차례(아니스 L7)는 건너뛰고 그 앞 마리안 L6을 마지막 발화로 본다
+  const tail = { ...rapiClaim(7), line_start: 5, claim_line: 5, quote: '그래도 따르겠습니다.' };
+  assert.match(endWarnings(run([tail]))[0].message, /ends with 마리안 L6/);
+
+  // 23항이 경고하는 범위(세 차례)는 이 경고를 따로 내지 않는다
+  const wide = run([rapiClaim(6)]);
+  assert.equal(claimWarnings(wide).length, 1);
+  assert.equal(endWarnings(wide).length, 0);
+});
+
 test('5 Pass 1 parts: batches over 20 scenes or 700 lines split, parts validate alone and combine in batch order', async () => {
   const ids = (n) => Array.from({ length: n }, (_, i) => `s${i + 1}`);
   assert.deepEqual(planSceneParts(ids(20)).map((p) => p.length), [20]);
@@ -1064,6 +1107,136 @@ test('2.3-24 premature identity: a name revealed later in the scene must not be 
   s2.unknown_speakers[0] = { ...s2.unknown_speakers[0], unknown_id: batch2.scenes[0].mechanical_ground_truth.unknowns[0].unknown_id, line: 3 };
   s2.events_and_claims[0] = { ...s2.events_and_claims[0], line_start: 3, line_end: 3, claim_line: 3 };
   assert.equal(warnings(validateShard(shardOf(s2), batch2)).length, 0);
+
+  // 관계 메모의 주장은 claim_line 시점으로 본다: 범위가 공개 줄(L4)까지 이어져도 L2의 주장에 지엔을 subject로 쓰면 경고
+  const note = (subject) => ({
+    subject,
+    target: '방주',
+    relation_or_change: '방주 깊은 곳을 안다고 말한다',
+    epistemic_type: 'character_claim',
+    claimant: '???',
+    line_start: 2,
+    line_end: 4,
+    claim_line: 2,
+    quote: '방주 깊은 곳의 어둠을 조심해요.',
+    refers_to_past: false,
+  });
+  const withNote = (subject) => {
+    const s3 = scene('???');
+    s3.relationship_and_lore_notes = [note(subject)];
+    return validateShard(shardOf(s3), batch);
+  };
+  const noteWarned = warnings(withNote('지엔'));
+  assert.equal(noteWarned.length, 1, JSON.stringify(withNote('지엔').errors));
+  assert.match(noteWarned[0].message, /Claim at L2 \(L2~L4\) uses "지엔" in subject/);
+  assert.equal(warnings(withNote('???')).length, 0);
+  // 사건·주장 항목은 그대로 끝 줄로 본다
+  const s4 = scene('???');
+  s4.events_and_claims[0] = { ...s4.events_and_claims[0], summary: '지엔이 어둠을 조심하라고 한다.', line_end: 4, quote: '방주 깊은 곳의 어둠을 조심해요.' };
+  assert.equal(warnings(validateShard(shardOf(s4), batch)).length, 0);
+});
+
+test('2.3-27/28 entity ids: ids outside the registry fail, registered ids on unrelated names warn', async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-registry-'));
+  try {
+    await fs.writeFile(
+      path.join(dir, 'entity_registry.json'),
+      JSON.stringify({
+        entities: [
+          { entity_id: 'char_라피', canonical_name: '라피', surface_labels: ['라피'] },
+          { entity_id: 'char_스노우_화이트', canonical_name: '스노우 화이트', surface_labels: ['스노우 화이트'] },
+        ],
+      })
+    );
+    const registry = await loadEntityRegistry(dir);
+    assert.equal(await loadEntityRegistry(path.join(dir, 'none')), null);
+    const lines = ['[SCENE START]', '라피: 스노우 화이트와 백설, 방주 이야기야.', '[SCENE END]'];
+    const batch = batchOf(makeInputScene('t13_ids', lines));
+    const mention = (surface_text, entity_id, entity_type = 'character') => ({
+      surface_text,
+      entity_id,
+      entity_type,
+      line_start: 2,
+      line_end: 2,
+      quote: '스노우 화이트와 백설, 방주 이야기야.',
+    });
+    const run = (mentions, present_in_scene = [{ speaker_label: '라피', entity_id: 'char_라피', is_generic_role: false }]) =>
+      validateShard(
+        shardOf(
+          emptyScene('t13_ids', {
+            participants: { present_in_scene, present_silent: [], remote_or_voice_only: [], mentioned_only: mentions, document_author: null },
+            events_and_claims: [
+              event({ epistemic_type: 'character_claim', summary: '이야기한다.', line_start: 2, line_end: 2, claim_line: 2, quote: '스노우 화이트와 백설, 방주 이야기야.' }),
+            ],
+          })
+        ),
+        batch,
+        { registry }
+      );
+    const idErrors = (res) => res.errors.filter((e) => e.rule === 'ENTITY_ID_NOT_IN_REGISTRY');
+    const idWarnings = (res) => res.warnings.filter((w) => w.rule === 'ENTITY_ID_SURFACE_MISMATCH');
+
+    assertValid(run([mention('스노우 화이트', 'char_스노우_화이트'), mention('방주', null, 'location')]));
+    // 등록 이름의 ID 표기 오류는 정식 ID를 알려 준다
+    const typo = idErrors(run([mention('스노우 화이트', 'char_스노우 화이트')]));
+    assert.equal(typo.length, 1);
+    assert.match(typo[0].message, /use that id/);
+    assert.match(typo[0].message, /char_스노우_화이트/);
+    // 레지스트리에 없는 대상은 null과 후보 목록으로
+    const unknown = idErrors(run([mention('방주', 'loc_방주', 'location')]));
+    assert.match(unknown[0].message, /Set entity_id to null and add "방주" to unregistered_entity_candidates/);
+    // 등록 ID이지만 표기가 그 인물의 이름을 담지 않으면 경고만
+    const prior = run([mention('백설', 'char_스노우_화이트')]);
+    assertValid(prior);
+    assert.equal(idWarnings(prior).length, 1);
+    // 조사·호칭이 붙은 표기는 이름을 담고 있으면 통과
+    assert.equal(idWarnings(run([mention('스노우 화이트와', 'char_스노우_화이트')])).length, 0);
+    // 화자 갈래의 ID도 본다. 레지스트리 없이 검증하면 보지 않는다
+    assertFails(run([], [{ speaker_label: '라피', entity_id: 'char_rapi', is_generic_role: false }]), 'ENTITY_ID_NOT_IN_REGISTRY');
+    assertValid(
+      validateShard(
+        shardOf(emptyScene('t13_ids', {
+          participants: { present_in_scene: present('라피'), present_silent: [], remote_or_voice_only: [], mentioned_only: [mention('방주', 'loc_방주', 'location')], document_author: null },
+          events_and_claims: [event({ epistemic_type: 'character_claim', summary: '이야기한다.', line_start: 2, line_end: 2, claim_line: 2, quote: '스노우 화이트와 백설, 방주 이야기야.' })],
+        })),
+        batch
+      )
+    );
+  } finally {
+    await fs.rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('5 finish diagnostic: dialogue-only established_event with 4+ turns by 2+ speakers', () => {
+  const lines = [
+    '[SCENE START]',
+    '아니스: 나는 진짜야.',
+    '네온: ··· ···.',
+    '아니스: 진짜 아이돌이었다니까.',
+    '네온: 거짓말하지 마세요.',
+    '네온이 고개를 돌린다.',
+    '[SCENE END]',
+  ];
+  const input = makeInputScene('t13_diag', lines);
+  const scene = (items) => emptyScene('t13_diag', { events_and_claims: items });
+  const ev = (line_start, line_end, extra = {}) => event({ actor_or_speaker: '네온', line_start, line_end, quote: '나는 진짜야.', ...extra });
+  assert.deepEqual(
+    dialogueOnlyEvents(scene([ev(2, 5)]), input).map((d) => [d.path, d.turns, d.speakers]),
+    [['events_and_claims[0]', 4, ['아니스', '네온']]]
+  );
+  assert.equal(dialogueOnlyEvents(scene([ev(2, 6)]), input).length, 0); // 지문이 있으면 대상 아님
+  assert.equal(dialogueOnlyEvents(scene([ev(2, 4)]), input).length, 0); // 3차례
+  assert.equal(dialogueOnlyEvents(scene([ev(2, 5, { epistemic_type: 'character_claim', claim_line: 5 })]), input).length, 0);
+
+  const review = buildReviewInput({
+    wave: 'wave_t',
+    reviewScenes: [{ batch_id: 'batch_0001', scene_id: 't13_diag', reason: 'r' }],
+    batchInputs: { batch_0001: { scenes: [input] } },
+    shards: { batch_0001: { scenes: [scene([ev(2, 5)])] } },
+    mergedBatchIds: ['batch_0001'],
+    diagnose: dialogueOnlyEvents,
+  });
+  assert.equal(review.scenes[0].diagnostics.dialogue_only_events[0].line_end, 5);
 });
 
 test('2.3-25 names not in the scene: warn on rare names only, ignoring word parts, spacing and generic tails', () => {

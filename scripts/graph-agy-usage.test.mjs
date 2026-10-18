@@ -78,6 +78,29 @@ test('5 agy usage: only the latest request of the supervisor and the subagents i
     assert.deepEqual(pinned.rows.map((r) => r.session), ['sup2', SUB_NEW]);
     assert.equal(pinned.from_step, 0);
 
+    // 세션 안에서 복구된 오류와 10분 넘게 걸린 도구 스텝도 센다
+    const SUB_ERR = '00000000-0000-0000-0000-000000000003';
+    await writeSession(brainDir, 'sup3', [{ step_index: 0, type: 'USER_INPUT', content: '이번 요청' }, created(1, SUB_ERR)]);
+    await writeSession(brainDir, SUB_ERR, [
+      { step_index: 0, type: 'SYSTEM_MESSAGE', content: '추출 서브에이전트 batch_0025.part1.json' },
+      { step_index: 1, type: 'ERROR_MESSAGE', content: 'Error: Your previous response was cut off because it exceeded the output token limit' },
+      { step_index: 2, type: 'ERROR_MESSAGE', content: 'Error: The stream was interrupted. Please continue the task you were working on.' },
+      { step_index: 3, type: 'GENERIC', status: 'INVALID', content: 'Error invalid tool call: unknown tool' },
+      {
+        step_index: 4,
+        type: 'GENERIC',
+        status: 'DONE',
+        content: 'Created At: 2026-10-18T16:48:19+09:00\nCompleted At: 2026-10-18T17:33:12+09:00\nCreated file ...',
+      },
+      { step_index: 5, type: 'GENERIC', status: 'DONE', content: 'Created At: 2026-10-18T17:34:17+09:00\nCompleted At: 2026-10-18T17:34:31+09:00\n...' },
+    ]);
+    const withErrors = collectRunUsage({ brainDir, supervisor: 'sup3' });
+    assert.deepEqual(withErrors.rows[1].errors, { cutoff: 1, interrupted: 1, tool: 1, other: 0 });
+    assert.deepEqual(withErrors.rows[1].long_waits, [{ step: 4, minutes: 45 }]);
+    const table = formatUsageTable(withErrors);
+    assert.match(table, /출력 잘림 1, 스트림 끊김 1, 도구 실패 1 \| 스텝 4 45분 \|/);
+    assert.match(table, /\*\*합계\*\* .*\| 출력 잘림 1, 스트림 끊김 1, 도구 실패 1 \| 1회 \|/);
+
     // 이전 요청 구간을 지정하면 그때 만든 서브에이전트를 센다
     const earlier = collectRunUsage({ brainDir, supervisor: 'sup', fromStep: -1, toStep: 2 });
     assert.deepEqual(earlier.rows.map((r) => r.session), ['sup', SUB_OLD]);
