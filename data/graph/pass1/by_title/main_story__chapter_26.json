@@ -1,11 +1,11 @@
 {
   "schema_version": "1.3.0",
-  "generated_at": "2026-10-17T15:23:34.649Z",
+  "generated_at": "2026-10-18T12:48:27.017Z",
   "title_id": "main_story__chapter_26",
   "category": "main_story",
   "title": "Chapter.26: 귀환",
   "source_file": "public/scripts/main_story/chapter_26.txt",
-  "scene_count": 14,
+  "scene_count": 18,
   "scenes": [
     {
       "scene_id": "main_26_00",
@@ -7726,6 +7726,1330 @@
           "surface_text": "갓데시움",
           "suggested_type": "concept",
           "line_start": 40
+        }
+      ]
+    },
+    {
+      "scene_id": "main_26_14",
+      "title_id": "main_story__chapter_26",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_26.txt",
+      "source_sha256": "abd138326f079a093239b6426f593d2c1fe7c16426dc727024b89461ccd0e85b",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "지휘관이 첫 지상 탈환 장소로 레드 후드의 고향을 지목하자 엔더슨이 입지 조건을 검토한 뒤 허가하고 광학미채와 주둔지 설치를 지시한다. 방주 사정상 주둔지 물자 지원이 어렵지만 지휘관의 말을 무조건 따라야 할 뒷배를 활용하라고 조언한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_26_14__pis_001",
+            "speaker_label": "엔더슨",
+            "entity_id": "char_엔더슨",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_14__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_26_14__mnt_001",
+            "surface_text": "레드 후드",
+            "entity_id": "char_레드_후드",
+            "entity_type": "character",
+            "line_start": 14,
+            "line_end": 14,
+            "quote": "···화면엔 레드 후드의 고향이 비쳤다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_14__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 17,
+            "line_end": 17,
+            "quote": "엔더슨: 그래. 방주와의 거리는 도보로 일주일 이상 거리에.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_14__mnt_003",
+            "surface_text": "광학미채",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 33,
+            "line_end": 33,
+            "quote": "엔더슨: 광학미채를 그곳에 설치하고 지상 주둔지로 삼게나.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_14__mnt_004",
+            "surface_text": "3대 회사",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 46,
+            "line_end": 46,
+            "quote": "엔더슨: 광학미채 기술은 이미 3대 회사에 공유되어, 완성까지 되었지만.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_26_14__foa_001",
+          "from_speaker": "엔더슨",
+          "to_target": "지휘관",
+          "address_term": "자네",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "엔더슨: 자네. 내가 무리한 명령을 내렸다고 해서 아무 곳이나 찍은 건 아니겠지.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_26_14__csh_001",
+          "text": "엔더슨이 언급한 '방주에서 가장 큰 재력과 기술을 가지고 있지만 지휘관의 말을 무조건적으로 따라야 할 뒷배'는 다음 장면(main_26_15)의 슈엔(미실리스)을 가리킨다.",
+          "related_scene_ids": [
+            "main_26_15"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_26_14__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "엔더슨이 첫 탈환 장소를 찾았느냐고 묻자 지휘관이 찾았다고 답한다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "엔더슨: ···찾았다고?\n[CHOICE_START]\n  [OPTION TEXT=\"예.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "엔더슨이 자신이 무리한 명령을 내렸다고 해서 아무 곳이나 찍은 것은 아니겠냐고 확인하자 지휘관이 아니라고 답한다.",
+          "line_start": 7,
+          "line_end": 11,
+          "claim_line": null,
+          "quote": "엔더슨: 자네. 내가 무리한 명령을 내렸다고 해서 아무 곳이나 찍은 건 아니겠지.\n[CHOICE_START]\n  [OPTION TEXT=\"···아닙니다.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "엔더슨이 어디 한번 보자고 하자 지휘관이 지도를 열어 화면에 레드 후드의 고향을 띄운다.",
+          "line_start": 12,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "엔더슨: 흠··· 그럼 어디 한 번 봅세.\n지도를 열어 화면에 띄웠다.\n···화면엔 레드 후드의 고향이 비쳤다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨이 화면에 비친 레드 후드의 고향이 방주에서 도보로 일주일 이상 거리이고, 옥수수 농사 흔적이 있어 토지 상태가 양호하며, 강과 산을 끼고 바다까지 멀지 않은 데다 면적도 크지 않아 적절하다고 평가한다.",
+          "line_start": 15,
+          "line_end": 24,
+          "claim_line": 17,
+          "quote": "엔더슨: ···이곳은.\n엔더슨: ··· ···.\n엔더슨: 그래. 방주와의 거리는 도보로 일주일 이상 거리에.\n엔더슨: 옥수수 농사의 흔적이 있어 토지 상태는 양호하고.\n엔더슨: 옆에는 강을 끼고 있군.\n엔더슨: 마을 뒤에는 산이 있어 덕을 좀 볼 수 있겠어.\n엔더슨: 바다까지의 거리도 멀지 않아.\n엔더슨: 면적이 그리 크지 않은 것도 한몫하겠군.\n엔더슨: ··· ···.\n엔더슨: 적절해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "엔더슨이 레드 후드의 고향을 탈환할 첫 번째 지상으로 하겠느냐고 묻자 지휘관이 그렇다고 답한다.",
+          "line_start": 25,
+          "line_end": 30,
+          "claim_line": null,
+          "quote": "엔더슨: 그럼.\n엔더슨: 이곳을 자네가 탈환할 첫 번째 지상으로 하겠나?\n[CHOICE_START]\n  [OPTION TEXT=\"예.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨이 첫 지상 탈환지를 허가하며 그곳(레드 후드의 고향)에 광학미채를 설치해 지상 주둔지로 삼고, 여유가 되는 대로 엘리베이터를 설치해 각지로 주둔지를 넓혀가라고 지시한다.",
+          "line_start": 31,
+          "line_end": 35,
+          "claim_line": null,
+          "quote": "엔더슨: ···좋네.\n엔더슨: 허가하지.\n엔더슨: 광학미채를 그곳에 설치하고 지상 주둔지로 삼게나.\n엔더슨: 여유가 되는대로 엘리베이터도 설치하도록 하지.\n엔더슨: 그곳을 중심으로 해 각지로 주둔지를 넓혀가게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨이 주둔지라는 점을 곳곳에 찍어 선으로 잇고, 지상 확보가 어느 정도 되면 병력과 물자를 대량 투입해 각종 시설과 방어선을 구축하는 과정을 수십·수백 번 반복하면 지상을 되찾게 될 것이라고 설명한다.",
+          "line_start": 36,
+          "line_end": 40,
+          "claim_line": 36,
+          "quote": "엔더슨: 점을 곳곳에 찍어, 점 사이를 선으로 잇는다는 개념으로 보면 될걸세.\n엔더슨: 그리고 어느 정도 지상 확보가 되었다고 판단될 경우.\n엔더슨: 병력 및 물자를 대량으로 투입, 각종 시설과 방어선을 구축할걸세.\n엔더슨: ···그것이 수십 번, 수백 번 반복되다 보면.\n엔더슨: 지상을 되찾게 되겠지.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 엔더슨의 지상 탈환 및 주둔지 확장 계획에 알겠다고 답한다.",
+          "line_start": 41,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"알겠습니다.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨이 지금 방주 상태가 좋지 않아, 광학미채 기술은 이미 3대 회사에 공유되어 완성되었지만 지상을 기본적인 주둔지로 만들기 위한 지원까지는 어려운 상태라고 말한다.",
+          "line_start": 45,
+          "line_end": 47,
+          "claim_line": 46,
+          "quote": "엔더슨: 단, 자네도 알다시피 지금 방주 상태가 말이 아닐세.\n엔더슨: 광학미채 기술은 이미 3대 회사에 공유되어, 완성까지 되었지만.\n엔더슨: 지상을 기본적인 주둔지로 만들기 위한 지원까지는 어려운 상태지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "지휘관이 그럼 일단 광학미채만이라도 설치하느냐고 묻자, 엔더슨은 아니라고 부정하며 지원이 어렵다고 했지 불가능하다고는 하지 않았다고 답한다.",
+          "line_start": 48,
+          "line_end": 53,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그럼 일단 광학미채만이라도 설치합니까?\"]\n  [OPTION_END]\n[CHOICE_END]\n엔더슨: 아아. 아닐세.\n엔더슨: 어렵다고 했지 불가능하다고는 하지 않았네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "지휘관이 무슨 뜻인지 묻자, 엔더슨은 지휘관에게 방주에서 가장 큰 재력과 기술을 가지고 있으면서 지휘관의 말을 무조건적으로 따라야 할 최고의 뒷배가 있지 않느냐고 말한다.",
+          "line_start": 54,
+          "line_end": 60,
+          "claim_line": 58,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···무슨···?\"]\n  [OPTION_END]\n[CHOICE_END]\n엔더슨: 자네에겐 지금 최고의 뒷배가 있지 않은가.\n엔더슨: 방주에서 가장 큰 재력과 기술을 가지고 있지만,\n엔더슨: 자네의 말을 무조건적으로 따라야 할 뒷배가.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_26_14__clh_001",
+          "keyword": "레드 후드의 고향",
+          "category": "location",
+          "subject": null,
+          "detail": "첫 번째 지상 탈환지로 선정된 레드 후드의 고향은 방주에서 도보로 일주일 이상 거리이며, 옥수수 농사 흔적이 있어 토지가 양호하고 강과 산을 끼고 있으며 바다와도 멀지 않은 작은 마을이다.",
+          "line_start": 14,
+          "line_end": 22,
+          "quote": "···화면엔 레드 후드의 고향이 비쳤다.\n엔더슨: ···이곳은.\n엔더슨: ··· ···.\n엔더슨: 그래. 방주와의 거리는 도보로 일주일 이상 거리에.\n엔더슨: 옥수수 농사의 흔적이 있어 토지 상태는 양호하고.\n엔더슨: 옆에는 강을 끼고 있군.\n엔더슨: 마을 뒤에는 산이 있어 덕을 좀 볼 수 있겠어.\n엔더슨: 바다까지의 거리도 멀지 않아.\n엔더슨: 면적이 그리 크지 않은 것도 한몫하겠군.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__clh_002",
+          "keyword": "광학미채",
+          "category": "item",
+          "subject": null,
+          "detail": "지상 주둔지에 설치할 광학미채 기술이 이미 3대 회사에 공유되어 완성되었다.",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "엔더슨: 광학미채 기술은 이미 3대 회사에 공유되어, 완성까지 되었지만.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_14__clh_003",
+          "keyword": "최고의 뒷배",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "엔더슨이 지휘관에게 방주에서 가장 큰 재력과 기술을 가졌으면서 지휘관의 말을 무조건적으로 따라야 할 최고의 뒷배가 있다고 언급한다.",
+          "line_start": 58,
+          "line_end": 60,
+          "quote": "엔더슨: 자네에겐 지금 최고의 뒷배가 있지 않은가.\n엔더슨: 방주에서 가장 큰 재력과 기술을 가지고 있지만,\n엔더슨: 자네의 말을 무조건적으로 따라야 할 뒷배가.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_26_14__uec_001",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 17
+        },
+        {
+          "item_id": "main_26_14__uec_002",
+          "surface_text": "광학미채",
+          "suggested_type": "item",
+          "line_start": 33
+        },
+        {
+          "item_id": "main_26_14__uec_003",
+          "surface_text": "3대 회사",
+          "suggested_type": "organization",
+          "line_start": 46
+        }
+      ]
+    },
+    {
+      "scene_id": "main_26_15",
+      "title_id": "main_story__chapter_26",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_26.txt",
+      "source_sha256": "3d2c54aa8ab5a4a423c72c6650b9b67ef92cb644744c9b50d497d42b1319d8f5",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "지휘관이 슈엔에게 광학미채와 지상 주둔 물자 지원을 요구하자, 슈엔은 에닉에게 잘 말해 달라는 조건으로 지원을 약속한다. 슈엔은 지상 영구 탈환을 공표할 때 미실리스가 도왔다고 말해 달라고 요청하지만 지휘관이 다음으로 미루자 결국 물자를 준비해 주기로 하고, 지휘관은 마리안을 위해 방주에서 힘을 키울 기회로 삼겠다고 다짐한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_26_15__pis_001",
+            "speaker_label": "슈엔",
+            "entity_id": "char_슈엔",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_15__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_26_15__mnt_001",
+            "surface_text": "광학미채",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "슈엔: 광학미채랑 지상 주둔 물자를 지원해달라고?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_15__mnt_002",
+            "surface_text": "에닉",
+            "entity_id": "char_에닉",
+            "entity_type": "character",
+            "line_start": 28,
+            "line_end": 28,
+            "quote": "슈엔: 대신 에닉이 물어보면 잘 말해줘야 해.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_15__mnt_003",
+            "surface_text": "미실리스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 49,
+            "line_end": 49,
+            "quote": "슈엔: 그, 그럼 미실리스가 도와줬다고 얘기해 줘.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_15__mnt_004",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 65,
+            "line_end": 65,
+            "quote": "방주에서 힘을 가질 수 있는 절호의 기회.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_15__mnt_005",
+            "surface_text": "마리안",
+            "entity_id": "char_마리안",
+            "entity_type": "character",
+            "line_start": 67,
+            "line_end": 67,
+            "quote": "그렇다면 언젠가는 반드시··· 마리안을···.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_26_15__foa_001",
+          "from_speaker": "슈엔",
+          "to_target": "지휘관",
+          "address_term": "야",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "슈엔: 야. 지금 그럴 때가 아니···.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__foa_002",
+          "from_speaker": "슈엔",
+          "to_target": "지휘관",
+          "address_term": "너",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "슈엔: 근데 너. 이거 공표할 거야?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_26_15__csh_001",
+          "text": "지휘관이 마리안을 위해 방주에서 힘을 기르겠다고 다짐하는 독백(L64~67)은 main_27_01에서 엔더슨에게 '힘을 키워서 마리안을 방주로 데려오고 싶다'고 직접 밝히는 대사로 이어진다.",
+          "related_scene_ids": [
+            "main_27_01"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_26_15__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "슈엔이 지휘관의 광학미채 및 지상 주둔 물자 지원 요청에 지금 그럴 때가 아니라며 난색을 표하자 지휘관이 되묻는다.",
+          "line_start": 2,
+          "line_end": 7,
+          "claim_line": null,
+          "quote": "슈엔: 광학미채랑 지상 주둔 물자를 지원해달라고?\n슈엔: 야. 지금 그럴 때가 아니···.\n[CHOICE_START]\n  [OPTION TEXT=\"그래?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 지금 승전 행사를 준비하고 있다며 행사가 끝난 뒤에 도와주면 안 되겠느냐고 묻는다.",
+          "line_start": 8,
+          "line_end": 10,
+          "claim_line": 9,
+          "quote": "슈엔: ··· ···.\n슈엔: 가, 갑자기 그러면 어떡해. 지금 승전 행사를 준비하고 있는데.\n슈엔: 이거 끝나고 도와주면 안 돼?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "지휘관이 승전 행사에 누가 참석하는지 묻자, 슈엔은 군 간부들과 사업체 대표들이 참석한다고 답한다.",
+          "line_start": 11,
+          "line_end": 16,
+          "claim_line": 16,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"승전 행사에는 누가 참석하는데?\"]\n  [OPTION_END]\n[CHOICE_END]\n슈엔: ··· ···.\n슈엔: 군 간부들이랑 사업체 대표들이야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "지휘관이 승전 행사를 꼭 해야 하느냐고 묻자, 슈엔은 로비라서 중요하다고 답하고 지휘관이 수긍한다.",
+          "line_start": 17,
+          "line_end": 25,
+          "claim_line": 21,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···그거 꼭 해야 해?\"]\n  [OPTION_END]\n[CHOICE_END]\n슈엔: ···로비라서, 중요해.\n[CHOICE_START]\n  [OPTION TEXT=\"그렇구나.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 광학미채와 지상 주둔 물자를 지원해 주겠다고 승낙하면서 대신 에닉이 물어보면 잘 말해 달라고 약속을 요구하고, 지휘관이 약속하자 고마워한다.",
+          "line_start": 26,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "슈엔: ···아, 알겠어.\n슈엔: 지원해 줄게. 지원해 주면 되잖아.\n슈엔: 대신 에닉이 물어보면 잘 말해줘야 해.\n슈엔: 야, 약속해 줘.\n[CHOICE_START]\n  [OPTION TEXT=\"약속할게.\"]\n  [OPTION_END]\n[CHOICE_END]\n슈엔: 그, 그래. 고마워.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "슈엔이 지상 영구 탈환을 공표할 것인지 묻자, 지휘관이 잠시 침묵한 뒤 공표하는 게 좋겠다고 답한다.",
+          "line_start": 35,
+          "line_end": 48,
+          "claim_line": null,
+          "quote": "슈엔: 근데 너. 이거 공표할 거야?\n[CHOICE_START]\n  [OPTION TEXT=\"뭘?\"]\n  [OPTION_END]\n[CHOICE_END]\n슈엔: 지상 영구 탈환 말이야.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"응. 하는 게 좋겠어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "슈엔이 지상 영구 탈환을 공표할 때 미실리스가 도와줬다고 얘기해 주면 더 후하게 지원해 주겠다고 제안하지만, 지휘관은 침묵 끝에 다음에 하겠다고 거절한다.",
+          "line_start": 49,
+          "line_end": 58,
+          "claim_line": null,
+          "quote": "슈엔: 그, 그럼 미실리스가 도와줬다고 얘기해 줘.\n슈엔: 그럼 더 빵빵하게 지원해 줄게.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"다음에 할게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 지휘관의 거절에 날강도도 아니고 너무한 것 아니냐며 반발하다가, 이내 한숨을 쉬며 지휘관이 하고 싶은 대로 하라고 체념한다.",
+          "line_start": 59,
+          "line_end": 63,
+          "claim_line": null,
+          "quote": "슈엔: 뭐?\n슈엔: 너, 너 진짜 너무한 거 아냐? 날강도도 아니고 지금 이게···.\n슈엔: ···후우···.\n슈엔: 아니다. 너 하고 싶은 대로 해.\n슈엔: 하아··· 젠장···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "지휘관이 독백으로, 이번 일이 방주에서 힘을 가질 수 있는 절호의 기회라고 판단하며 욕심내지 않고 천천히 나아가 언젠가 반드시 마리안을 되찾겠다고 생각한다.",
+          "line_start": 64,
+          "line_end": 67,
+          "claim_line": 65,
+          "quote": "···절호의 기회다.\n방주에서 힘을 가질 수 있는 절호의 기회.\n욕심내지 말고, 천천히 가자.\n그렇다면 언젠가는 반드시··· 마리안을···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "슈엔",
+          "summary": "슈엔이 엘리베이터 앞에 지원 물자를 준비해 놓을 테니 가지고 올라가라고 말하자 지휘관이 잘 쓰겠다고 답한다.",
+          "line_start": 68,
+          "line_end": 73,
+          "claim_line": null,
+          "quote": "슈엔: 준비는 엘리베이터 앞에 해놓을게.\n슈엔: 그거 가지고 올라가.\n[CHOICE_START]\n  [OPTION TEXT=\"그래. 잘 쓸게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_26_15__clh_001",
+          "keyword": "에닉",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "슈엔이 에닉이 물어보면 잘 말해 달라는 조건으로 지휘관의 물자 지원 요구를 들어줄 만큼 에닉의 처분에 매여 있다.",
+          "line_start": 26,
+          "line_end": 34,
+          "quote": "슈엔: ···아, 알겠어.\n슈엔: 지원해 줄게. 지원해 주면 되잖아.\n슈엔: 대신 에닉이 물어보면 잘 말해줘야 해.\n슈엔: 야, 약속해 줘.\n[CHOICE_START]\n  [OPTION TEXT=\"약속할게.\"]\n  [OPTION_END]\n[CHOICE_END]\n슈엔: 그, 그래. 고마워.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__clh_002",
+          "keyword": "마리안",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "지휘관이 방주에서 힘을 가질 수 있는 절호의 기회를 살려 천천히 힘을 키우면 언젠가 반드시 마리안을 어떻게든 할 수 있을 것이라 다짐한다.",
+          "line_start": 64,
+          "line_end": 67,
+          "quote": "···절호의 기회다.\n방주에서 힘을 가질 수 있는 절호의 기회.\n욕심내지 말고, 천천히 가자.\n그렇다면 언젠가는 반드시··· 마리안을···.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "main_26_15__rln_001",
+          "subject": "슈엔",
+          "target": "지휘관",
+          "relation_or_change": "슈엔이 에닉이 물어보면 잘 말해 달라는 조건으로 지휘관에게 광학미채와 지상 주둔 물자를 지원하기로 약속하고 지휘관이 이에 동의한다.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 26,
+          "line_end": 33,
+          "claim_line": null,
+          "quote": "슈엔: ···아, 알겠어.\n슈엔: 지원해 줄게. 지원해 주면 되잖아.\n슈엔: 대신 에닉이 물어보면 잘 말해줘야 해.\n슈엔: 야, 약속해 줘.\n[CHOICE_START]\n  [OPTION TEXT=\"약속할게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_15__rln_002",
+          "subject": "슈엔",
+          "target": "지휘관",
+          "relation_or_change": "지휘관이 미실리스가 도와줬다고 말해 달라는 요청을 다음으로 미루자 슈엔이 날강도라며 반발하면서도 결국 지휘관이 하고 싶은 대로 하라며 굴복한다.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 49,
+          "line_end": 63,
+          "claim_line": null,
+          "quote": "슈엔: 그, 그럼 미실리스가 도와줬다고 얘기해 줘.\n슈엔: 그럼 더 빵빵하게 지원해 줄게.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"다음에 할게.\"]\n  [OPTION_END]\n[CHOICE_END]\n슈엔: 뭐?\n슈엔: 너, 너 진짜 너무한 거 아냐? 날강도도 아니고 지금 이게···.\n슈엔: ···후우···.\n슈엔: 아니다. 너 하고 싶은 대로 해.\n슈엔: 하아··· 젠장···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_26_15__uec_001",
+          "surface_text": "광학미채",
+          "suggested_type": "item",
+          "line_start": 2
+        },
+        {
+          "item_id": "main_26_15__uec_002",
+          "surface_text": "미실리스",
+          "suggested_type": "organization",
+          "line_start": 49
+        },
+        {
+          "item_id": "main_26_15__uec_003",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 65
+        }
+      ]
+    },
+    {
+      "scene_id": "main_26_16",
+      "title_id": "main_story__chapter_26",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_26.txt",
+      "source_sha256": "6563d9f9b833ddf86b7ce27406de23e9030d1a34c34ad9027b875b3cf4c7aef4",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "카운터스가 슈엔에게 받은 광학미채 장치를 펼치고 라피가 광학미채의 작동 원리와 특수 재료 고갈에 대해 설명한다. 발전기를 연결해 장치를 가동하자 유사 콜링 시그널에 끌려온 침식 유발 구형 랩쳐 '울트라'가 나타나고, 라피가 자신감을 보이며 교전을 시작한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_26_16__pis_001",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_16__pis_002",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_16__pis_003",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_16__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "main_26_16__mnt_001",
+            "surface_text": "슈엔",
+            "entity_id": "char_슈엔",
+            "entity_type": "character",
+            "line_start": 7,
+            "line_end": 7,
+            "quote": "슈엔이 준 대형 캐리어만 한 상자가 요란하게 열렸다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_16__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 17,
+            "line_end": 17,
+            "quote": "라피: 작동되면 유사 콜링 시그널이 발생되어서, 주위의 랩쳐들을 끌어들일 거야.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_16__mnt_003",
+            "surface_text": "광학미채",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 18,
+            "line_end": 18,
+            "quote": "라피: 그렇게 해서 이 일대가 정리되면, 광학미채가 가동돼.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_16__mnt_004",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 23,
+            "line_end": 23,
+            "quote": "라피: 제작에 특수한 재료가 들어간다고 해. 방주 인근의 것들은 이미 오래전 바닥났고.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_16__mnt_005",
+            "surface_text": "에덴",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 24,
+            "line_end": 24,
+            "quote": "라피: ···에덴이 모두 사용했을 것이라 보고 있어.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_16__mnt_006",
+            "surface_text": "울트라",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 37,
+            "line_end": 37,
+            "quote": "라피: 코드 네임 울트라 확인! 침식 유발 개체니 다들 주의해!",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_26_16__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "네온",
+          "address_term": "너",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "아니스: 아오 너 설명해 줄 때 뭘 들은 거야?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__foa_002",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "라피: 그럼 지휘관. 준비는 모두 끝났습니다.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_26_16__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 PUSH라고 적힌 버튼을 누르자 슈엔이 준 대형 캐리어만 한 상자가 열리며 지면에 앵커를 박아 고정한 뒤 약 10m 높이의 안테나 기둥을 확장시킨다.",
+          "line_start": 2,
+          "line_end": 10,
+          "claim_line": null,
+          "quote": "아니스: 어··· 이거 누르면 되는 거겠지?\n네온: 그렇지 않을까요? PUSH라고 적혀있으니까.\n아니스: 에잇.\n꾸욱-\n철컹 철컹 철컹!\n슈엔이 준 대형 캐리어만 한 상자가 요란하게 열렸다.\n지면에 앵커를 박아 몸체를 고정시킨 뒤, 하늘을 향해 안테나같이 생긴 기둥을 계속 확장시켰다.\n끝까지 확장된 안테나의 높이는 10m는 되어 보였다.\n아니스: ···우와 이게 이렇게까지 올라가네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "네온이 이제 끝이냐고 묻자, 라피는 전력이 공급되어야 작동하므로 발전기를 연결해야 한다고 답한다.",
+          "line_start": 11,
+          "line_end": 13,
+          "claim_line": 12,
+          "quote": "네온: 그럼 이제 끝인가요?\n라피: 아니. 발전기를 연결해야 해.\n라피: 전력이 공급되어야 작동할 거야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 발전기를 연결하면 진짜 끝이냐고 묻고 아니스가 설명할 때 뭘 들었냐며 핀잔을 주자, 네온이 아니스가 우쭐거리기 전에 설명해 달라고 라피에게 요청한다.",
+          "line_start": 14,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "네온: 그럼 진짜 끝인가요?\n아니스: 아오 너 설명해 줄 때 뭘 들은 거야?\n네온: 라피. 설명해 줘요. 아니스가 우쭐거리기 전에.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 장치가 작동되면 유사 콜링 시그널로 주위 랩쳐들을 끌어들여 일대가 정리된 뒤 광학미채가 가동되며, 랩쳐에게 아무것도 없는 것처럼 보이게 할 뿐 아니라 열 감지·청각·방향 센서에도 노이즈를 일으켜 이곳을 찾거나 우연히 오지 못하게 만든다고 설명한다.",
+          "line_start": 17,
+          "line_end": 21,
+          "claim_line": 17,
+          "quote": "라피: 작동되면 유사 콜링 시그널이 발생되어서, 주위의 랩쳐들을 끌어들일 거야.\n라피: 그렇게 해서 이 일대가 정리되면, 광학미채가 가동돼.\n라피: 그럼 광학미채가 영향을 미치는 모든 곳은 랩쳐가 보기엔 아무것도 없는 것으로 보이는 거야.\n라피: 랩쳐의 열 감지 센서와 청각 센서에도 노이즈를 발생시켜, 이곳을 절대 찾을 수 없게 만들어.\n라피: 방향 센서에도 노이즈를 발생시켜 우연이라도 이곳으로 오지 못하게 한다고 해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "아니스가 이런 광학미채만 있으면 지상 탈환이 쉬운 것 아니냐고 말하자, 라피는 제작에 특수한 재료가 들어가는데 방주 인근의 재료는 이미 오래전에 바닥났고 에덴이 모두 사용했을 것이라 보고 있다고 설명한다.",
+          "line_start": 22,
+          "line_end": 25,
+          "claim_line": 23,
+          "quote": "아니스: 굉장하네. 이런 것만 있으면 그냥 지상 탈환 껌인 거 아냐?\n라피: 제작에 특수한 재료가 들어간다고 해. 방주 인근의 것들은 이미 오래전 바닥났고.\n라피: ···에덴이 모두 사용했을 것이라 보고 있어.\n아니스: 역시. 그렇게 쉬울 리가 없지.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 준비 완료를 보고하고 지휘관의 지시에 따라 발전기를 연결해 장치를 가동하자, 신호음이 울리며 랩쳐가 접근한다.",
+          "line_start": 26,
+          "line_end": 35,
+          "claim_line": null,
+          "quote": "라피: 그럼 지휘관. 준비는 모두 끝났습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"응. 발전기를 연결하자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 라져.\n웅웅웅웅웅-\n··· ···.\n삐이이이잇---!!\n네온: ···옵니다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 접근한 랩쳐가 코드 네임 '울트라'임을 확인하고 침식 유발 개체이니 주의하라고 경고한다.",
+          "line_start": 36,
+          "line_end": 37,
+          "claim_line": 37,
+          "quote": "라피: ···저건.\n라피: 코드 네임 울트라 확인! 침식 유발 개체니 다들 주의해!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 오래된 동네라 오래된 것들이 나온다며 울트라가 아직 움직이느냐고 놀란다.",
+          "line_start": 38,
+          "line_end": 38,
+          "claim_line": 38,
+          "quote": "아니스: 거 참 오래된 동네니 오래된 것들이 나오는구만! 저게 아직 움직여?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 울트라를 잡지에서 본 적이 있으며 엄청 강하다고 들었다고 말한다.",
+          "line_start": 39,
+          "line_end": 39,
+          "claim_line": 39,
+          "quote": "네온: 헉! 저 저거 잡지에서 본 적 있어요! 엄청 강하다고 하던데요?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 울트라는 그래 봤자 구형이라며 잡을 수 있고, 자신이라면 더더욱 잡을 수 있다고 장담한다.",
+          "line_start": 40,
+          "line_end": 41,
+          "claim_line": 40,
+          "quote": "라피: 그래봤자 구형이야. 잡을 수 있어.\n라피: ···나라면, 더더욱.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "네온이 라피가 저렇게 자신 있어 하는 것은 처음 본다고 놀라고, 아니스가 한번 믿어보자며 다 함께 울트라와의 교전을 시작한다.",
+          "line_start": 42,
+          "line_end": 46,
+          "claim_line": null,
+          "quote": "네온: 와 라피가 저렇게 자신 있어 하는 거 처음 봐요.\n아니스: 그럼 어디 한 번 믿어보자고!\n아니스: 가자!\n네온: 예!\n라피: 인카운터!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_26_16__clh_001",
+          "keyword": "광학미채",
+          "category": "item",
+          "subject": null,
+          "detail": "유사 콜링 시그널로 주변 랩쳐를 끌어들여 일대가 정리되면 광학미채가 가동되며, 시각 위장뿐 아니라 열 감지·청각·방향 센서에 노이즈를 발생시켜 랩쳐의 접근을 원천 차단한다.",
+          "line_start": 17,
+          "line_end": 21,
+          "quote": "라피: 작동되면 유사 콜링 시그널이 발생되어서, 주위의 랩쳐들을 끌어들일 거야.\n라피: 그렇게 해서 이 일대가 정리되면, 광학미채가 가동돼.\n라피: 그럼 광학미채가 영향을 미치는 모든 곳은 랩쳐가 보기엔 아무것도 없는 것으로 보이는 거야.\n라피: 랩쳐의 열 감지 센서와 청각 센서에도 노이즈를 발생시켜, 이곳을 절대 찾을 수 없게 만들어.\n라피: 방향 센서에도 노이즈를 발생시켜 우연이라도 이곳으로 오지 못하게 한다고 해.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__clh_002",
+          "keyword": "에덴",
+          "category": "location",
+          "subject": null,
+          "detail": "광학미채 제작에 들어가는 방주 인근의 특수한 재료는 이미 오래전에 바닥났으며, 에덴이 모두 사용했을 것으로 추정된다.",
+          "line_start": 23,
+          "line_end": 24,
+          "quote": "라피: 제작에 특수한 재료가 들어간다고 해. 방주 인근의 것들은 이미 오래전 바닥났고.\n라피: ···에덴이 모두 사용했을 것이라 보고 있어.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__clh_003",
+          "keyword": "울트라",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "코드 네임 울트라는 침식을 유발하는 오래된 구형 랩쳐로, 라피가 '나라면 더더욱 잡을 수 있다'며 특별한 자신감을 보인다.",
+          "line_start": 37,
+          "line_end": 41,
+          "quote": "라피: 코드 네임 울트라 확인! 침식 유발 개체니 다들 주의해!\n아니스: 거 참 오래된 동네니 오래된 것들이 나오는구만! 저게 아직 움직여?\n네온: 헉! 저 저거 잡지에서 본 적 있어요! 엄청 강하다고 하던데요?\n라피: 그래봤자 구형이야. 잡을 수 있어.\n라피: ···나라면, 더더욱.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_16__clh_004",
+          "keyword": "인카운터!",
+          "category": "trait",
+          "subject": "라피",
+          "detail": "라피가 교전을 시작할 때 '인카운터!'라는 구호를 외친다.",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "라피: 인카운터!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_26_16__uec_001",
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 17
+        },
+        {
+          "item_id": "main_26_16__uec_002",
+          "surface_text": "광학미채",
+          "suggested_type": "item",
+          "line_start": 18
+        },
+        {
+          "item_id": "main_26_16__uec_003",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 23
+        },
+        {
+          "item_id": "main_26_16__uec_004",
+          "surface_text": "에덴",
+          "suggested_type": "location",
+          "line_start": 24
+        },
+        {
+          "item_id": "main_26_16__uec_005",
+          "surface_text": "울트라",
+          "suggested_type": "character",
+          "line_start": 37
+        }
+      ]
+    },
+    {
+      "scene_id": "main_26_17",
+      "title_id": "main_story__chapter_26",
+      "category": "main_story",
+      "source_file": "public/scripts/main_story/chapter_26.txt",
+      "source_sha256": "d6189db998877bf0c89a8a210024eb0d34df469685aff4919576c6a4a6b9d3a8",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "전투 종료 직후 약 300기의 랩쳐 무리와 마더 웨일이 나타나지만, 외형이 달라진 마더 웨일이 급강하해 랩쳐 무리를 전멸시키고 착지한다. 직후 지휘관에게 랩칠리언의 안부 문자가 도착한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "main_26_17__pis_001",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_17__pis_002",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_17__pis_003",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "main_26_17__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "main_26_17__rvo_001",
+            "speaker_label": "랩칠리언",
+            "entity_id": "char_랩칠리언",
+            "medium": "messenger",
+            "line_start": 51,
+            "line_end": 59,
+            "quote": "  [MSG SENDER=\"랩칠리언\"]\n    안녕! 친구들!\n  [MSG_END]\n  [MSG SENDER=\"랩칠리언\"]\n    너무 오랜만이다!\n  [MSG_END]\n  [MSG SENDER=\"랩칠리언\"]\n    잘 지냈니?\n  [MSG_END]"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "main_26_17__mnt_001",
+            "surface_text": "마더 웨일",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 24,
+            "line_end": 24,
+            "quote": "아니스: 마, 마더 웨일!?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "main_26_17__mnt_002",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 33,
+            "line_end": 33,
+            "quote": "그리고 몰려오는 랩쳐 무리로 급강하를 시작했다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "main_26_17__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "네온",
+          "address_term": "야",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "아니스: 야! 네가 이상한 말을 해서 엄청 몰려오잖아!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__foa_002",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "라피: 지휘관! 지금은 일단 후퇴를···!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__foa_003",
+          "from_speaker": "랩칠리언",
+          "to_target": "지휘관",
+          "address_term": "친구들",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "    안녕! 친구들!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "main_26_17__csh_001",
+          "text": "외형이 달라진 마더 웨일의 착지와 랩칠리언의 문자 뒤 이어지는 구체적인 재회 상황은 main_27_00의 3주 전 회상 구간(L55~235)에서 다뤄진다.",
+          "related_scene_ids": [
+            "main_27_00"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "main_26_17__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 상황 종료를 선언하고 네온이 더 나오지만 않으면 끝이라고 말한 직후 땅이 울리며 랩쳐들이 몰려오자, 아니스가 네온을 타박하고 네온이 사과한다.",
+          "line_start": 2,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "라피: 상황 종료.\n아니스: 후우~ 힘들다.\n네온: 그래도 이 정도면 되게 할만하네요.\n네온: 더 나오지만 않으면 이제 끝···.\n쿠구구궁···.\n아니스: 야! 네가 이상한 말을 해서 엄청 몰려오잖아!\n네온: 죄송해요···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 몰려오는 랩쳐의 수가 대략 300기 정도로 파악되며 불가능하진 않겠지만 승리를 장담할 수 없다고 보고하며 지휘관에게 어떻게 할지 묻는다.",
+          "line_start": 9,
+          "line_end": 11,
+          "claim_line": 9,
+          "quote": "라피: ···수는 대략 300 정도로 파악됩니다.\n라피: 불가능하지는 않겠습니다만, 승리를 장담할 순 없습니다.\n라피: 어떡하시겠습니까?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "지휘관이 전투 준비를 지시하려던 순간 상공에 거대한 마더 웨일이 나타나고, 네온과 아니스는 앵커도 없는데 장치 성능이 얼마나 좋길래 마더 웨일까지 불렀냐며 경악한다.",
+          "line_start": 12,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"다들 준비ㅎ···!\"]\n  [OPTION_END]\n[CHOICE_END]\n삐이이잇---\n먼 곳에서 익숙한 소리가 들려왔다.\n하늘을 올려다본다.\n경이로움을 느낄 정도의 거대한 것이, 우리 위를 날고 있다.\n아니스: 마, 마더 웨일!?\n네온: 세상에! 저희 지금 앵커도 없는데!\n아니스: 아니 이거 성능이 얼마나 좋은 거냐고! 저런 것까지 부르고 난리야!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "라피가 지휘관에게 일단 후퇴하자고 건의하지만, 지휘관은 잠깐 기다리라며 뭔가 이상하다고 말한다.",
+          "line_start": 27,
+          "line_end": 31,
+          "claim_line": null,
+          "quote": "라피: 지휘관! 지금은 일단 후퇴를···!\n[CHOICE_START]\n  [OPTION TEXT=\"···잠깐. 뭔가 이상해.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "마더 웨일",
+          "summary": "하늘을 날던 마더 웨일이 방향을 틀어 몰려오는 랩쳐 무리로 급강하하며 지면을 긁고, 벌린 입안으로 랩쳐 무리를 빨아들이거나 거체로 깔아뭉개 전멸시킨 뒤 멈춰 선다.",
+          "line_start": 32,
+          "line_end": 42,
+          "claim_line": null,
+          "quote": "하늘을 날던 마더 웨일이 방향을 튼다.\n그리고 몰려오는 랩쳐 무리로 급강하를 시작했다.\n아니스: ···뭐야···.\n쿠구구구구-!!\n거의 추락하듯 지면을 긁는 마더 웨일.\n크게 벌린 입안으로 랩쳐의 무리가 빨려 들어가고, 그 거체에 깔린 랩쳐들이 산산조각 난다.\n저건 랩쳐 입장에서는 운석이나 다름없다.\n큰 진동과 함께 자욱한 먼지가 피어올랐고.\n한참을 미끄러지던 마더 웨일의 움직임이 멈췄다.\n추락, 아니 착지한 마더 웨일 이외는 아무것도 남아있지 않았다.\n네온: 뭐, 뭐죠 이건···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 착지한 마더 웨일의 외형이 기존과 뭔가 다르다며 신형일 가능성이 높으니 주의하라고 지휘관에게 보고한다.",
+          "line_start": 43,
+          "line_end": 45,
+          "claim_line": 44,
+          "quote": "라피: ···지휘관.\n라피: 저 마더 웨일. 외형이 뭔가 다릅니다.\n라피: 신형일 가능성이 높으니 주의를···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "main_26_17__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "랩칠리언",
+          "summary": "지휘관에게 랩칠리언으로부터 '안녕! 친구들! 너무 오랜만이다! 잘 지냈니?'라는 메신저 문자가 도착하고 지휘관이 당황한다.",
+          "line_start": 46,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "지잉-\n??\n지잉-\n문자? 이럴 때에?\n[MESSENGER_START TITLE=\"랩칠리언\" PARTICIPANTS=\"지휘관,랩칠리언\"]\n  [MSG SENDER=\"랩칠리언\"]\n    안녕! 친구들!\n  [MSG_END]\n  [MSG SENDER=\"랩칠리언\"]\n    너무 오랜만이다!\n  [MSG_END]\n  [MSG SENDER=\"랩칠리언\"]\n    잘 지냈니?\n  [MSG_END]\n[MESSENGER_END]\n[CHOICE_START]\n  [OPTION TEXT=\"···어?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "main_26_17__clh_001",
+          "keyword": "마더 웨일",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "외형이 기존과 달라진 마더 웨일이 나타나 카운터스를 공격하는 대신 몰려오는 랩쳐 무리를 전멸시키고 착지한 직후, 랩칠리언에게서 문자가 온다.",
+          "line_start": 32,
+          "line_end": 60,
+          "quote": "하늘을 날던 마더 웨일이 방향을 튼다.\n그리고 몰려오는 랩쳐 무리로 급강하를 시작했다.\n아니스: ···뭐야···.\n쿠구구구구-!!\n거의 추락하듯 지면을 긁는 마더 웨일.\n크게 벌린 입안으로 랩쳐의 무리가 빨려 들어가고, 그 거체에 깔린 랩쳐들이 산산조각 난다.\n저건 랩쳐 입장에서는 운석이나 다름없다.\n큰 진동과 함께 자욱한 먼지가 피어올랐고.\n한참을 미끄러지던 마더 웨일의 움직임이 멈췄다.\n추락, 아니 착지한 마더 웨일 이외는 아무것도 남아있지 않았다.\n네온: 뭐, 뭐죠 이건···.\n라피: ···지휘관.\n라피: 저 마더 웨일. 외형이 뭔가 다릅니다.\n라피: 신형일 가능성이 높으니 주의를···.\n지잉-\n??\n지잉-\n문자? 이럴 때에?\n[MESSENGER_START TITLE=\"랩칠리언\" PARTICIPANTS=\"지휘관,랩칠리언\"]\n  [MSG SENDER=\"랩칠리언\"]\n    안녕! 친구들!\n  [MSG_END]\n  [MSG SENDER=\"랩칠리언\"]\n    너무 오랜만이다!\n  [MSG_END]\n  [MSG SENDER=\"랩칠리언\"]\n    잘 지냈니?\n  [MSG_END]\n[MESSENGER_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "main_26_17__uec_001",
+          "surface_text": "마더 웨일",
+          "suggested_type": "character",
+          "line_start": 24
+        },
+        {
+          "item_id": "main_26_17__uec_002",
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 33
         }
       ]
     }
