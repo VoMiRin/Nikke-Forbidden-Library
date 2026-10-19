@@ -1,0 +1,1993 @@
+{
+  "schema_version": "1.3.0",
+  "batch_id": "batch_0100",
+  "scenes": [
+    {
+      "scene_id": "d.ark_hero_10",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "지휘관과 엑시아는 일레그가 갇힌 M.M.R.의 버려진 시설 골목에서 박스에 숨어 있던 트로니와 합류해 게임 패드를 건네고, 엑시아의 해킹과 트로니가 개조한 게임 패드 기능으로 건물 내부에 잠입한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "트로니",
+            "entity_id": "char_트로니",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [
+          {
+            "name": "안드로이드",
+            "entity_id": null,
+            "line_start": 2,
+            "line_end": 3,
+            "quote": "엑시아의 안내에 따라 인적 없는 골목에 진입하니,\n보초를 서는 안드로이드들이 보였다."
+          }
+        ],
+        "remote_or_voice_only": [
+          {
+            "speaker_label": "엑시아",
+            "entity_id": "char_엑시아",
+            "medium": "comm",
+            "line_start": 110,
+            "line_end": 111,
+            "quote": "오퍼레이터 화면 속 엑시아의 동공이 미친 듯이 흔들린다.\n엑시아: 그야말로- 최고의- 게임 패드-"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "surface_text": "중앙정부군",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 92,
+            "line_end": 92,
+            "quote": "엑시아: 무엇보다 건물 안의 보초는- 인간인 중앙정부군으로 이루어져 있습니다-"
+          },
+          {
+            "surface_text": "M.M.R.",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 96,
+            "line_end": 96,
+            "quote": "엑시아: 여긴- M.M.R.의 버려진 시설이더군요-"
+          },
+          {
+            "surface_text": "일레그",
+            "entity_id": "char_일레그",
+            "entity_type": "character",
+            "line_start": 97,
+            "line_end": 97,
+            "quote": "엑시아: 일레그가 갇혀 있을 만한 포인트로- 지금부터 안내하겠습니다-"
+          },
+          {
+            "surface_text": "미실리스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 112,
+            "line_end": 112,
+            "quote": "엑시아: 미실리스-는 그냥 미사일스나 하라는- 과거의 발언을 취소하겠습니다-"
+          },
+          {
+            "surface_text": "BOOM",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 114,
+            "line_end": 114,
+            "quote": "트로니: 주변 전자기기에 BOOM 원격으로 설치하는 거랑,"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "엑시아",
+          "to_target": "지휘관",
+          "address_term": "뉴비",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "엑시아: 뉴비- 골목 끝에 있는 건물 보이십니까-"
+        },
+        {
+          "from_speaker": "엑시아",
+          "to_target": "지휘관, 트로니",
+          "address_term": "두 분",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "엑시아: 두 분- 뛸 준비 됐나요-"
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 엑시아의 안내를 받아 안드로이드들이 보초를 서는 골목에 진입하고, 안 들키고 목표 건물에 들어갈 방법을 묻는다.",
+          "line_start": 2,
+          "line_end": 12,
+          "claim_line": null,
+          "quote": "엑시아의 안내에 따라 인적 없는 골목에 진입하니,\n보초를 서는 안드로이드들이 보였다.\n엑시아: 뉴비- 골목 끝에 있는 건물 보이십니까-\n엑시아: 좌표는 저기를 가리키고 있습니다-\n[CHOICE_START]\n  [OPTION TEXT=\"보초가 삼엄하네.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"안 들키고 건물 안에 들어갈 방법 뭐 없을까?\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 잠입 액션 게임처럼 버려진 박스를 뒤집어쓰고 이동하라고 제안한다.",
+          "line_start": 14,
+          "line_end": 22,
+          "claim_line": null,
+          "quote": "엑시아: 뉴비- 오퍼레이터로서 제안합니다-\n엑시아: 여기선- 버려진 박스를 쓰는 겁니다-\n[CHOICE_START]\n  [OPTION TEXT=\"??\"]\n  [OPTION_END]\n[CHOICE_END]\n엑시아: 잠입 액션 게임- 안 해보셨습니까-\n엑시아: 박스 뒤집어쓰고 이동하면-\n엑시아: 그 누구도 뉴비를 발견 못할 겁니다-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 옆에 버려진 박스를 열자 그 안에 쪼그려 앉아 있던 트로니가 발견되어 지휘관과 엑시아가 온 것에 놀란다.",
+          "line_start": 23,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "마침 옆에 버려진 박스가 보인다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···일단 내가 들어갈 순 있는지 봐볼까.\"]\n  [OPTION_END]\n[CHOICE_END]\n몸을 감출 순 있을까 싶어서 박스를 여니,\n그 안에 쪼그려 앉은 트로니가 보였다.\n트로니: 지휘관··· 박스 다시 덮어줘···.\n트로니: ··· ···?!\n트로니: 지휘관? 왜 여기에?\n엑시아: 와- 이걸 진짜로 할 줄이야-\n트로니: 엑시아까지···?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 트로니를 도우러 왔다며 선물을 전해줘야 한다고 말하고 트로니에게 게임 패드를 건넨다.",
+          "line_start": 36,
+          "line_end": 47,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"트로니, 도우러 왔어.\"]\n  [OPTION_END]\n[CHOICE_END]\n트로니: 응?\n[CHOICE_START]\n  [OPTION TEXT=\"트로니에게 게임 패드를 건넨다.\"]\n  [OPTION_END]\n[CHOICE_END]\n트로니: 이건···.\n[CHOICE_START]\n  [OPTION TEXT=\"선물, 전해줘야지.\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 트로니에게 이 일에 엮이면 위험하다는 말은 이미 지휘관과 한바탕 하고 왔으니 하지 말라고 말한다.",
+          "line_start": 49,
+          "line_end": 52,
+          "claim_line": 51,
+          "quote": "엑시아: 트로니- 그리고 말입니다-\n엑시아: 이 일에 엮이면 위험하다- 이런 말은 하지 마세요-\n엑시아: 이미 뉴비랑 그걸로 한바탕 하고 왔으니까요-\n트로니: ··· ···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "지휘관이 안 받을 거냐고 묻자 박스에서 나온 트로니가 게임 패드를 받아 들고 고마워하며 꼭 전해주겠다고 약속한다.",
+          "line_start": 54,
+          "line_end": 59,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"그래서 트로니, 안 받을 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n엉거주춤 박스에서 나온 트로니가 게임 패드를 받아 들었다.\n트로니: ···고마워. 꼭 전해줄게.\n엑시아: 네- 반드시 전해주는 겁니다-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 보초들의 시선을 끌기 위해 엑시아에게 해킹이 가능한지 묻는다.",
+          "line_start": 61,
+          "line_end": 70,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"그럼 원점으로 돌아와서.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"보초들의 시선을 어떻게 끌까인데.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"엑시아, 혹시 해킹은 불가능할까?\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 지휘관이 박스에 들어갈까 고민하는 동안 해킹 준비를 끝내 두었으며, 감시용 안드로이드 기기는 해킹 후 10초 내로 시스템이 복구될 것이라고 설명한다.",
+          "line_start": 72,
+          "line_end": 76,
+          "claim_line": 75,
+          "quote": "엑시아: 그거라면 문제없습니다-\n엑시아: 뉴비가- 박스 안에 들어갈까 고민하는 동안-\n엑시아: 해킹 준비- 끝내놨으니까요-\n엑시아: 감시용 안드로이드 기기는 해킹 후 10초 내로 시스템이 복구될 겁니다-\n엑시아: 두 분- 뛸 준비 됐나요-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 적 시스템에 침투해 광역 해킹을 완료하고, 지휘관과 트로니가 무사히 건물 안으로 들어온다.",
+          "line_start": 78,
+          "line_end": 87,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"트로니, 준비 됐어?\"]\n  [OPTION_END]\n[CHOICE_END]\n트로니: 응···!\n엑시아: 적 시스템에 침투- 광역 해킹 완- 료-\n엑시아: 지금부턴- 게이머의 시간입니다-!\n엑시아의 도움으로 무사히 건물 안에 들어왔다.\n엑시아: 1 스테이지 클리어-\n엑시아: 지금부터 2 스테이지로 돌입합니다-\n엑시아: 어떻게든 적과 마주치지 않도록 주의합시다-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "엑시아가 적과 마주치지 않도록 주의하자고 하자 지휘관이 이런 곳에서 포위당하면 위험할 테니 주의하겠다고 동의한다.",
+          "line_start": 87,
+          "line_end": 90,
+          "claim_line": 89,
+          "quote": "엑시아: 어떻게든 적과 마주치지 않도록 주의합시다-\n[CHOICE_START]\n  [OPTION TEXT=\"응. 이런 곳에서 포위당하면 위험할 테니까.\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 건물 안의 보초는 인간인 중앙정부군으로 이루어져 있어 조우하면 싸워보지도 못하고 즉사하는 패턴이니 주의하라고 경고한다.",
+          "line_start": 92,
+          "line_end": 93,
+          "claim_line": 92,
+          "quote": "엑시아: 무엇보다 건물 안의 보초는- 인간인 중앙정부군으로 이루어져 있습니다-\n엑시아: 적과 조우하면 싸워보지도 못하고 반드시 즉사하는 패턴이니- 주의- 또 주의-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "트로니가 주의하겠다고 답하자, 엑시아가 CCTV 화면과 건물 설계도를 확보해 두었으며 이곳은 M.M.R.의 버려진 시설이라면서 일레그가 갇혀 있을 만한 지점으로 안내하겠다고 말한다.",
+          "line_start": 94,
+          "line_end": 97,
+          "claim_line": 96,
+          "quote": "트로니: 응. 주의할게.\n엑시아: CCTV 화면이랑- 건물 설계도는 확보해 두었습니다-\n엑시아: 여긴- M.M.R.의 버려진 시설이더군요-\n엑시아: 일레그가 갇혀 있을 만한 포인트로- 지금부터 안내하겠습니다-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 게임 패드의 커맨드를 조작해 건물 전체의 불을 끈다.",
+          "line_start": 98,
+          "line_end": 105,
+          "claim_line": null,
+          "quote": "트로니: 그, 그전에.\n트로니: 잠깐만 기다려줄 수 있어?\n트로니가 게임 패드를 조작했다.\n트로니: 왼쪽. 오른쪽. A. 그리고 B.\n트로니: 됐다.\n트로니가 조작을 마치자,\n우웅-\n건물의 모든 불이 꺼졌다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 게임할 준비를 마치고 누웠을 때 불을 끄러 일어나기 귀찮을 때를 대비해 소등 기능을 추가했다고 설명한다.",
+          "line_start": 106,
+          "line_end": 109,
+          "claim_line": 108,
+          "quote": "엑시아: 트로니- 그 게임 패드 뭡니까-\n트로니: 게임할 준비 다 하고 누웠는데,\n트로니: 불 끄러 다시 일어나기 귀찮을 때를 대비해서.\n트로니: 기능 하나 추가해 봤는데. 이상해···?",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 최고의 게임 패드라며 미실리스는 미사일스나 하라던 과거 발언을 취소하겠다고 감탄하고 다른 기능을 묻는다.",
+          "line_start": 110,
+          "line_end": 113,
+          "claim_line": 112,
+          "quote": "오퍼레이터 화면 속 엑시아의 동공이 미친 듯이 흔들린다.\n엑시아: 그야말로- 최고의- 게임 패드-\n엑시아: 미실리스-는 그냥 미사일스나 하라는- 과거의 발언을 취소하겠습니다-\n엑시아: 트로니- 또 다른 기능은 뭐가 있습니까-",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 게임 패드에 주변 전자기기에 BOOM을 원격 설치하는 기능과 자동 페어링 기능이 있다고 답한 뒤 일단 일레그부터 구하러 가자고 말한다.",
+          "line_start": 114,
+          "line_end": 118,
+          "claim_line": 114,
+          "quote": "트로니: 주변 전자기기에 BOOM 원격으로 설치하는 거랑,\n엑시아: !!\n트로니: 자동으로 페어링 해주는 거랑.\n엑시아: !!!\n트로니: 아···! 이, 일단 일레그부터···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 게임 패드에 현혹될 뻔했다며 2 스테이지 공략 개시를 선언한다.",
+          "line_start": 119,
+          "line_end": 121,
+          "claim_line": null,
+          "quote": "엑시아: 아, 하마터면 게임 패드에 현혹될 뻔했습니다-\n엑시아: 그럼 바로 시작하죠-\n엑시아: 2 스테이지 공략 개시입니다-",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "게임 패드",
+          "category": "item",
+          "subject": null,
+          "detail": "트로니가 일레그에게 선물하기 위해 개조한 게임 패드로, 원격 소등, 주변 전자기기 BOOM 원격 설치, 자동 페어링 기능이 들어 있다.",
+          "line_start": 100,
+          "line_end": 116,
+          "quote": "트로니가 게임 패드를 조작했다.\n트로니: 왼쪽. 오른쪽. A. 그리고 B.\n트로니: 됐다.\n트로니가 조작을 마치자,\n우웅-\n건물의 모든 불이 꺼졌다.\n엑시아: 트로니- 그 게임 패드 뭡니까-\n트로니: 게임할 준비 다 하고 누웠는데,\n트로니: 불 끄러 다시 일어나기 귀찮을 때를 대비해서.\n트로니: 기능 하나 추가해 봤는데. 이상해···?\n오퍼레이터 화면 속 엑시아의 동공이 미친 듯이 흔들린다.\n엑시아: 그야말로- 최고의- 게임 패드-\n엑시아: 미실리스-는 그냥 미사일스나 하라는- 과거의 발언을 취소하겠습니다-\n엑시아: 트로니- 또 다른 기능은 뭐가 있습니까-\n트로니: 주변 전자기기에 BOOM 원격으로 설치하는 거랑,\n엑시아: !!\n트로니: 자동으로 페어링 해주는 거랑."
+        },
+        {
+          "keyword": "M.M.R.의 버려진 시설",
+          "category": "location",
+          "subject": null,
+          "detail": "일레그가 감금되어 있고 외부에는 안드로이드 보초, 내부에는 인간 중앙정부군 보초가 배치된 M.M.R.의 버려진 시설.",
+          "line_start": 92,
+          "line_end": 97,
+          "quote": "엑시아: 무엇보다 건물 안의 보초는- 인간인 중앙정부군으로 이루어져 있습니다-\n엑시아: 적과 조우하면 싸워보지도 못하고 반드시 즉사하는 패턴이니- 주의- 또 주의-\n트로니: 응. 주의할게.\n엑시아: CCTV 화면이랑- 건물 설계도는 확보해 두었습니다-\n엑시아: 여긴- M.M.R.의 버려진 시설이더군요-\n엑시아: 일레그가 갇혀 있을 만한 포인트로- 지금부터 안내하겠습니다-"
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "안드로이드",
+          "suggested_type": "faction_or_species",
+          "line_start": 3
+        },
+        {
+          "surface_text": "중앙정부군",
+          "suggested_type": "organization",
+          "line_start": 92
+        },
+        {
+          "surface_text": "M.M.R.",
+          "suggested_type": "organization",
+          "line_start": 96
+        },
+        {
+          "surface_text": "미실리스",
+          "suggested_type": "organization",
+          "line_start": 112
+        },
+        {
+          "surface_text": "BOOM",
+          "suggested_type": "item",
+          "line_start": 114
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "d.ark_hero_11",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "심문을 마치고 구금된 일레그에게 메이든이 찾아와 테러 계획을 혼자 뒤집어쓰지 말고 진실을 말해 달라고 설득하지만, 일레그는 트로니와 메이든이 엮이지 않길 바라며 거절하고 밖에서 BOOM 폭발음이 들려온다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "일레그",
+            "entity_id": "char_일레그",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "메이든",
+            "entity_id": "char_메이든",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 28,
+            "line_end": 28,
+            "quote": "메이든: 방주 테러 계획은 사실 일레그 혼자 세웠다는 이야기를요."
+          },
+          {
+            "surface_text": "트로니",
+            "entity_id": "char_트로니",
+            "entity_type": "character",
+            "line_start": 32,
+            "line_end": 32,
+            "quote": "일레그: 아무것도 모르는 트로니 씨도 하마터면 테러범으로 몰릴 뻔했거든여."
+          },
+          {
+            "surface_text": "BOOM",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 60,
+            "line_end": 60,
+            "quote": "BOOM의 폭발음이."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "일레그",
+          "to_target": "메이든",
+          "address_term": "메이든 씨",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "일레그: 메이든 씨···?"
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "심문이 끝난 뒤 홀로 남겨진 일레그가 이 일이 자신 하나로 끝났으면 좋겠다고 중얼거린다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": 6,
+          "quote": "한편. 오래도록 이어진 심문이 끝나고.\n홀로 남겨진 일레그는 피곤한 기색으로 구석에 기대앉았다.\n일레그: 흐아아··· 이제 어떻게 되려나여···.\n일레그: ··· ···.\n일레그: 저 하나로 끝났으면 좋겠는데 말이져···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "잠겨 있던 문이 열리고 메이든이 들어오자 일레그는 심문이 끝난 게 아니냐며 자신이 여기까지인 거냐고 묻고, 메이든은 일레그와 이야기하고 싶어서 왔다고 답한다.",
+          "line_start": 7,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "그때, 잠겨 있던 문이 열리고.\n메이든: 일레그, 들어갈게요.\n메이든이 조심스럽게 들어왔다.\n일레그: 메이든 씨···?\n일레그: 심문은 끝난 거 아니었나여?\n일레그: 아니면··· 저, 여기까지인가여?\n메이든: ···아니요.\n메이든: 그냥 일레그랑 이야기하고 싶어서 왔어요.\n메이든: 괜찮을까요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 마음대로 하라며 앉을 공간이 있다고 말하자 메이든이 옆에 쪼그려 앉고, 침묵 끝에 일레그가 하고 싶은 이야기가 무엇인지 묻는다.",
+          "line_start": 16,
+          "line_end": 25,
+          "claim_line": null,
+          "quote": "일레그: 저랑 이야기를여?\n메이든: 무, 물론 괜찮을 리 없겠죠···.\n일레그: 맘대로 하세여.\n일레그: 좀 더럽긴 해도, 잘 찾아보면 앉을 공간은 있을 거예여.\n일레그: 뭐, 제가 할 말은 아닌 것 같긴 한데 말이져. 히히히.\n메이든: 그럼···.\n메이든이 조심스럽게 일레그 옆에 쪼그려 앉았다.\n한동안 둘 사이에 어색한 침묵이 흘렀다.\n먼저 입을 연 건 일레그였다.\n일레그: 그래서 하고 싶은 이야기가 뭔가여?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 일레그가 심문에서 방주 테러 계획을 혼자 세웠다고 진술했다는 이야기를 전해 들었다고 말한다.",
+          "line_start": 26,
+          "line_end": 28,
+          "claim_line": 28,
+          "quote": "메이든: 아, 네. 그랬죠. 하고 싶은 이야기.\n메이든: ··· ···일레그가 심문에서 한 이야기 전해 들었어요.\n메이든: 방주 테러 계획은 사실 일레그 혼자 세웠다는 이야기를요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 자신은 극악무도한 범죄자이고 아무것도 모르는 트로니도 하마터면 테러범으로 몰릴 뻔했다며 메이든에게 자신과 엮이지 말고 조심하라고 말한다.",
+          "line_start": 29,
+          "line_end": 32,
+          "claim_line": 29,
+          "quote": "일레그: 맞아여. 전 아주 극악무도한 범죄자거든여.\n일레그: 메이든 씨도 조심하는 게 좋을 걸여.\n일레그: 괜히 저랑 엮여서 좋을 게 없으니까여.\n일레그: 아무것도 모르는 트로니 씨도 하마터면 테러범으로 몰릴 뻔했거든여.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 다른 사람들에게 부탁해 일레그의 마지막 순간까지 함께하게 되었다고 밝히며, 둘뿐이니 솔직하게 이야기해 달라고 설득한다.",
+          "line_start": 33,
+          "line_end": 38,
+          "claim_line": 35,
+          "quote": "메이든: 일레그, 지금 여기엔 저희 둘 뿐이에요.\n메이든: 다른 분들한테 부탁해서 제가 일레그를···.\n메이든: ···일레그의 마지막 순간까지 함께하게 되었거든요.\n메이든: 그러니 솔직하게 이야기하셔도 돼요.\n메이든: 아니, 솔직하게 이야기해 주세요.\n메이든: 그럼 제가 어떻게든···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 메이든도 테러범으로 몰리고 싶냐며, 자신이 모든 것을 뒤집어쓰고 트로니의 혐의라도 풀어주는 것이 최선이라고 주장한다.",
+          "line_start": 39,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "일레그: 제가 방금 말했잖아여.\n일레그: 괜히 저랑 엮여서 좋을 게 없다고여.\n일레그: 아니면 메이든 씨도 테러범으로 몰리고 싶은 거예여?\n메이든: 네?\n일레그: 이게 최선이에여.\n일레그: 제가 모든 걸 뒤집어쓰고, 트로니 씨의 혐의라도 풀어주는 게 최선이라고여.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 일레그가 테러를 계획한 적이 없다는 것을 분명히 안다며 지금이라도 오해가 있었다고 이의를 제기하자고 말한다.",
+          "line_start": 45,
+          "line_end": 49,
+          "claim_line": 48,
+          "quote": "메이든: 일레그, 그게 최선일 리 없잖아요···.\n메이든: 지금 뭐가 어떻게 돌아가고 있는 건진 모르겠지만.\n메이든: 이거 하나만큼은 분명하게 알고 있어요.\n메이든: 일레그, 테러 같은 건 계획한 적 없잖아요.\n메이든: 지금이라도 뭔가 오해가 있었다고 이의를 제기하고···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 이의를 제기해도 달라지는 것은 없다고 반박한다.",
+          "line_start": 50,
+          "line_end": 50,
+          "claim_line": 50,
+          "quote": "일레그: 메이든 씨, 그런다고 달라지는 건 없어여.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 그러면 적어도 일레그가 폐기 처리될 일은 없을 것이라며 외친다.",
+          "line_start": 51,
+          "line_end": 52,
+          "claim_line": 51,
+          "quote": "메이든: 그럼 적어도 일레그가 폐기 처리 될 일은 없겠죠!\n메이든의 외침에 일레그가 눈을 질끈 감았다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 사과하며 메이든이 이 일에 엮이는 것을 원치 않는다고 말한다.",
+          "line_start": 53,
+          "line_end": 54,
+          "claim_line": 54,
+          "quote": "일레그: ··· ···죄송해여.\n일레그: 전 메이든 씨가 이 일에 엮이는 걸 원치 않아여.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "메이든과 일레그의 마음이 평행선을 그리는 가운데 밖에서 8비트 BOOM 폭발음이 들려오자 일레그가 트로니를 떠올린다.",
+          "line_start": 55,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "메이든: 뭐라고요···?\n일레그와 메이든의 마음은 서로에게 전해지지 않고 평행선만을 그렸다.\n쾅-!\n그때, 밖에서 8비트 폭발음이 들려왔다.\n일레그라면 듣자마자 무슨 소리인지 바로 알 수밖에 없는.\nBOOM의 폭발음이.\n일레그: 트로니 씨···?",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "일레그",
+          "target": "트로니",
+          "relation_or_change": "트로니의 테러 혐의를 풀어주기 위해 방주 테러 계획을 자신이 혼자 세운 것으로 전부 뒤집어쓰려 함",
+          "epistemic_type": "character_claim",
+          "claimant": "일레그",
+          "line_start": 43,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "일레그: 이게 최선이에여.\n일레그: 제가 모든 걸 뒤집어쓰고, 트로니 씨의 혐의라도 풀어주는 게 최선이라고여.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "메이든",
+          "target": "일레그",
+          "relation_or_change": "일레그가 테러를 계획한 적이 없다고 믿으며 이의를 제기하라고 설득함",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 47,
+          "line_end": 49,
+          "claim_line": 48,
+          "quote": "메이든: 이거 하나만큼은 분명하게 알고 있어요.\n메이든: 일레그, 테러 같은 건 계획한 적 없잖아요.\n메이든: 지금이라도 뭔가 오해가 있었다고 이의를 제기하고···.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "일레그",
+          "target": "메이든",
+          "relation_or_change": "메이든이 테러범으로 몰리거나 이 일에 엮이는 것을 원치 않는다며 거리를 둠",
+          "epistemic_type": "character_claim",
+          "claimant": "일레그",
+          "line_start": 53,
+          "line_end": 54,
+          "claim_line": 54,
+          "quote": "일레그: ··· ···죄송해여.\n일레그: 전 메이든 씨가 이 일에 엮이는 걸 원치 않아여.",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 28
+        },
+        {
+          "surface_text": "BOOM",
+          "suggested_type": "item",
+          "line_start": 60
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "d.ark_hero_12",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "트로니와 지휘관은 일레그가 갇힌 방 앞 복도에서 언령으로 체포 명령을 수행하려는 익스터너 스쿼드의 메이든과 마주치지만, 진정한 히어로로서 친구에게 손을 내밀겠다는 트로니의 진심에 메이든은 길을 비켜주고 사장님에게 임무 실패를 보고한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "트로니",
+            "entity_id": "char_트로니",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "메이든",
+            "entity_id": "char_메이든",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "speaker_label": "엑시아",
+            "entity_id": "char_엑시아",
+            "medium": "comm",
+            "line_start": 16,
+            "line_end": 20,
+            "quote": "엑시아: 우측 복도로 진입해서 계단으로 올라가세요-\n트로니: 응. 안은 생각보다 깨끗···.\n엑시아: 트로니- 플래그 세우진 마세요-\n엑시아는 오퍼레이터 역할을 충실히 임해,\n우리가 최단 루트로 이동할 수 있도록 만들었다."
+          }
+        ],
+        "mentioned_only": [
+          {
+            "surface_text": "슈엔",
+            "entity_id": "char_슈엔",
+            "entity_type": "character",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "트로니: 이건 게임하는 중에, 슈엔 님께 연락이 올 때를 대비해서 넣은 기능."
+          },
+          {
+            "surface_text": "BOOM",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "원격으로 설치한 BOOM을 한 번에 실행하는 등."
+          },
+          {
+            "surface_text": "일레그",
+            "entity_id": "char_일레그",
+            "entity_type": "character",
+            "line_start": 10,
+            "line_end": 10,
+            "quote": "트로니는 일레그를 생각하며 게임 패드에 추가해 둔 수많은 기능을 활용해,"
+          },
+          {
+            "surface_text": "중앙정부군",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 11,
+            "line_end": 11,
+            "quote": "중앙정부군의 시선을 다른 곳으로 돌려 우리가 앞으로 전진할 수 있도록 만들었고."
+          },
+          {
+            "surface_text": "익스터너 스쿼드",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 44,
+            "line_end": 44,
+            "quote": "아무래도 이 일엔 익스터너 스쿼드도 휘말린 듯하다."
+          },
+          {
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 67,
+            "line_end": 67,
+            "quote": "메이든: 지금 멈춘다면, 트로니는 [방주의 히어로]로 남을 수 있어요."
+          },
+          {
+            "surface_text": "아크레인저",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 89,
+            "line_end": 89,
+            "quote": "트로니: 아크레인저처럼 사람들을 구해주는 멋진 히어로가 될 거예요!"
+          },
+          {
+            "surface_text": "동력원",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 122,
+            "line_end": 122,
+            "quote": "그날. 방주의 동력원을 본 뒤로."
+          },
+          {
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 195,
+            "line_end": 195,
+            "quote": "이레귤러가 된 니케를 제압 혹은 사살하기 위해 만들어져,"
+          },
+          {
+            "surface_text": "사장님",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 205,
+            "line_end": 205,
+            "quote": "메이든: 사장님. 메이든입니다."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "트로니",
+          "to_target": "슈엔",
+          "address_term": "슈엔 님",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "트로니: 이건 게임하는 중에, 슈엔 님께 연락이 올 때를 대비해서 넣은 기능."
+        },
+        {
+          "from_speaker": "메이든",
+          "to_target": "트로니",
+          "address_term": "당신",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "메이든: 트로니, 일레그의 진술로 인해 당신의 테러 혐의는 풀렸습니다."
+        },
+        {
+          "from_speaker": "메이든",
+          "to_target": "일레그, 트로니",
+          "address_term": "두 분",
+          "line_start": 134,
+          "line_end": 134,
+          "quote": "메이든: 두 분이, 방주에 위험이 되는 존재일리 없다고요."
+        },
+        {
+          "from_speaker": "지휘관",
+          "to_target": "메이든",
+          "address_term": "네",
+          "line_start": 158,
+          "line_end": 158,
+          "quote": "  [OPTION TEXT=\"네가 돌아올 곳은 꼭 지켜낼 테니까.\"]"
+        },
+        {
+          "from_speaker": "메이든",
+          "to_target": "사장님",
+          "address_term": "사장님",
+          "line_start": 205,
+          "line_end": 205,
+          "quote": "메이든: 사장님. 메이든입니다."
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 게임 패드의 기능으로 스프링클러 작동, 통신 마비, BOOM 동시 실행을 일으켜 중앙정부군의 시선을 돌린다.",
+          "line_start": 2,
+          "line_end": 11,
+          "claim_line": null,
+          "quote": "스프링클러를 작동시킨다던가.\n트로니: 이건 게임하다 더워질 때를 대비해서 넣은 기능이야.\n엑시아: 오-\n통신을 마비시킨다던가.\n트로니: 이건 게임하는 중에, 슈엔 님께 연락이 올 때를 대비해서 넣은 기능.\n엑시아: 오오-\n원격으로 설치한 BOOM을 한 번에 실행하는 등.\n쾅-!\n트로니는 일레그를 생각하며 게임 패드에 추가해 둔 수많은 기능을 활용해,\n중앙정부군의 시선을 다른 곳으로 돌려 우리가 앞으로 전진할 수 있도록 만들었고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 잠긴 문을 열고 중앙정부군이 없는 최단 루트로 안내해 일레그가 갇힌 방 앞 복도까지 도착한다.",
+          "line_start": 12,
+          "line_end": 27,
+          "claim_line": null,
+          "quote": "잠긴 문을 열어주고.\n트로니: 엑시아, 여기 잠긴 문 열어줄 수 있어?\n엑시아: 다행히도 제가 자물쇠를 여는 기술이 있습니다-\n중앙정부군이 없는 통로로 안내하는 등.\n엑시아: 우측 복도로 진입해서 계단으로 올라가세요-\n트로니: 응. 안은 생각보다 깨끗···.\n엑시아: 트로니- 플래그 세우진 마세요-\n엑시아는 오퍼레이터 역할을 충실히 임해,\n우리가 최단 루트로 이동할 수 있도록 만들었다.\n둘의 활약으로 우린 목적지까지 무사히 다다를 수 있었다.\n엑시아: 2 스테이지 클리어-\n엑시아: 이제 그 복도만 지나면 일레그가 갇혀 있는 방이 나옵니다-\n엑시아: 최대한 빠르게 움직여주세요-\n[CHOICE_START]\n  [OPTION TEXT=\"알겠어.\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "트로니가 가리킨 어두운 복도 반대편에 고개를 숙인 메이든이 서 있으며, 메이든은 다들 여길 어떻게 알았냐고 중얼거린다.",
+          "line_start": 29,
+          "line_end": 42,
+          "claim_line": null,
+          "quote": "트로니: 지휘관, 잠깐.\n[CHOICE_START]\n  [OPTION TEXT=\"응?\"]\n  [OPTION_END]\n[CHOICE_END]\n트로니: 저기···.\n트로니가 가리킨 곳.\n어두운 복도, 반대편.\n엑시아: 메이든-?\n그곳엔 고개를 푹 숙인 메이든이 있었다.\n메이든: 다들··· 여긴 어떻게 알고···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "지휘관이 독백으로 이 일에 익스터너 스쿼드도 휘말린 듯하다고 추측한다.",
+          "line_start": 44,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "아무래도 이 일엔 익스터너 스쿼드도 휘말린 듯하다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "트로니가 일레그를 구하러 온 거냐고 묻자 마스크를 벗은 메이든이 고개를 들고, 지휘관은 트로니에게 물러서라고 말한다.",
+          "line_start": 45,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "트로니: 메이든도 일레그를 구하러 온 거야?\n메이든: 일레그를 구하러 왔냐고요···.\n자조적으로 중얼거리던 메이든이 고개를 들었다.\n그런 메이든은 마스크를 벗고 있었다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···!\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"트로니, 물러서.\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 타겟을 확보했다며 명령에 따라 현 시간부로 언령을 사용한다고 선언한다.",
+          "line_start": 57,
+          "line_end": 60,
+          "claim_line": null,
+          "quote": "트로니: 응?\n메이든: 타겟을··· 확보했습니다···.\n메이든: 명령에 따라 현 시간부로 [언령]을 사용합니다.\n트로니: 메이든···?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 일레그의 진술로 트로니의 테러 혐의는 풀렸지만 자신에게 내려진 명령은 아직 철회되지 않았다고 밝히고, 더 다가오면 명령대로 체포할 수밖에 없으니 방주의 히어로로 남을 수 있게 돌아가 달라고 경고한다.",
+          "line_start": 61,
+          "line_end": 68,
+          "claim_line": 61,
+          "quote": "메이든: 트로니, 일레그의 진술로 인해 당신의 테러 혐의는 풀렸습니다.\n메이든: 그러나 아직 제게 내려진 명령은 철회되지 않았습니다.\n트로니: 지금 뭐라고···.\n메이든: 트로니, 경고할게요.\n메이든: 거기서 더 다가오는 순간, 전 명령대로 당신을 체포할 수밖에 없어요.\n메이든: 여기서 멈춰요.\n메이든: 지금 멈춘다면, 트로니는 [방주의 히어로]로 남을 수 있어요.\n메이든: 그러니, 제발··· 돌아가 주세요···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "지휘관이 메이든과 이야기해 볼 테니 맡겨 달라고 하지만, 트로니는 도망쳐서 해결되는 건 없다며 메이든 앞으로 한 발 나아간다.",
+          "line_start": 70,
+          "line_end": 82,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"트로니, 여긴 나한테 맡겨줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"내가 메이든하고 이야기해 볼게.\"]\n  [OPTION_END]\n[CHOICE_END]\n트로니: ··· ···.\n트로니가 고개를 저었다.\n트로니: 아니, 지휘관.\n트로니: 도망쳐서 해결되는 건 아무것도 없어.\n그리곤 한 발 앞으로 나아갔다.\n소중한 친구를 위해, 또 다른 소중한 친구의 앞으로.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 어렸을 적 꿈이 진짜 하늘과 넓은 세상을 보는 것이었으나 바깥세상을 두려워해 어두운 방 안에 틀어박히게 되었다고 회상한다.",
+          "line_start": 83,
+          "line_end": 106,
+          "claim_line": 93,
+          "quote": "트로니: 있잖아, 메이든.\n트로니: 내가 어렸을 때, 그런 질문을 받곤 했어.\n트로니: 너는 꿈이 뭐니?\n트로니: 누군가는 답했어.\n트로니: 의사요! 사람들을 고쳐주는 의사가 될래요!\n트로니: 다른 누군가는 이렇게 답했어.\n트로니: 아크레인저처럼 사람들을 구해주는 멋진 히어로가 될 거예요!\n트로니: 나? 난 어떻게 답했냐고?\n트로니: 내 대답은 항상 똑같았어.\n트로니: 저 높은 하늘을 바라보며 말했지.\n트로니: 제 꿈은 하늘을 보는 거예요!\n트로니: 무슨 꿈이 그러냐고?\n트로니: 그러게. 다른 애들도 그렇게 말하면서 웃더라.\n트로니: 그럴 때마다 난 다짐하고, 또 다짐했어.\n트로니: 언젠가, 진짜 하늘을 보고 말 거라고.\n트로니: 환한 빛이 비치는 아래, 넓은 세상을 보고 말 거라고.\n트로니: 그땐 몰랐지.\n트로니: 환한 빛을 쫓던 내가 다다른 곳이,\n트로니: 게임기에서 비추는 빛만이 전부인 어두컴컴한 방 안일 줄은.\n트로니: 넓은 세상을 보고 싶어 하던 내가,\n트로니: 바깥세상을 두려워하게 될 줄은.\n트로니: ··· ···.\n트로니: 이야기의 주인공인줄 알았던 내가,\n트로니: 실은 아무것도 아니었다는 걸. 어떻게 알았겠어?",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "메이든이 침묵 속에 듣는 가운데, 트로니가 그런 자신에게 빛나는 존재라며 두려움을 충분히 이겨낼 수 있다고 끊임없이 손을 내밀어 준 친구(일레그)가 있다고 말한다.",
+          "line_start": 107,
+          "line_end": 113,
+          "claim_line": 113,
+          "quote": "메이든: ··· ···.\n트로니: 그런데 말이지.\n트로니: 그런 나한테 빛나는 존재라고.\n트로니: 어두컴컴한 방 안에 틀어박혀 있는 건, 어울리지 않다고.\n트로니: 지금 트로니, 널 무섭게 하는 게 뭐든 간에.\n트로니: 트로니, 너라면 충분히 이겨낼 수 있다고.\n트로니: 끊임없이 손을 내밀어준 친구가 있어.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "방주의 동력원을 본 뒤로 자신을 응시하는 시선의 무게를 견뎌낸 트로니가, 자신을 다시 주인공으로 만들어 준 친구에게 손도 못 내미는 방주의 히어로로 남지 않겠다며 메이든에게 일레그에게 보내 달라고 부탁한다.",
+          "line_start": 114,
+          "line_end": 131,
+          "claim_line": null,
+          "quote": "트로니는 메이든의 눈을 바라보았다.\n그런 트로니의 눈에 언젠가 봤던 풍경이 비치고 있었다.\n삐이이이-------\n이윽고 귀를 찢는 듯한 굉음이 들리고.\n붉게 물든 공간 속.\n트로니를 응시하는 수많은 시선이 드러났다.\n그들은 묻고 있었다.\n트로니, 넌 히어로가 맞냐고.\n그날. 방주의 동력원을 본 뒤로.\n어딜 가나 본인을 응시하는 시선의 무게를 견뎌내며,\n트로니는 당당하게 선언했다.\n트로니: 나는 방주의 히어로가 아니야.\n트로니: 날 다시 이야기의 주인공으로 만들어준 친구에게 손도 못 내미는,\n트로니: 그런 히어로로 남진 않을 거야.\n트로니: 누군가의 기대에 따르는 것이 아닌,\n트로니: 본인의 신념을, 진심을 전하기 위해 행동하는 자야말로 진정한 히어로니까.\n트로니: 그러니 부탁할게, 메이든.\n트로니: 우릴 일레그에게 보내줘.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 처음부터 일레그와 트로니 두 사람이 방주에 위험이 되는 존재나 이레귤러일 리 없다고 생각했다며 말을 잇지 못하고 눈물을 흘린다.",
+          "line_start": 132,
+          "line_end": 137,
+          "claim_line": 134,
+          "quote": "트로니의 이야기를 들은 메이든의 몸이 떨리기 시작했다.\n메이든: 처음부터 알고 있었어요.\n메이든: 두 분이, 방주에 위험이 되는 존재일리 없다고요.\n메이든: 이레귤러일리 없다고 생각했는데도···.\n메이든: 그런데도 전···.\n메이든: 저는···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "트로니가 우는 메이든의 머리를 쓰다듬자 메이든은 일레그가 저 안에 있으니 혼자 모든 걸 떠안지 않도록 손을 내밀어 달라며 길을 비켜주고, 트로니는 고마워하며 방을 향해 달려간다.",
+          "line_start": 138,
+          "line_end": 149,
+          "claim_line": null,
+          "quote": "톡-\n트로니가 까치발 들어 메이든의 머리에 손을 얹었다.\n메이든: ··· ···!\n트로니: 미, 미안. 메이든이 우는 걸 보니까 나도 모르게 손이 가서.\n자신의 머리를 쓰다듬는 트로니를 보며 메이든이 말했다.\n메이든: 트로니, 일레그는 저 안에 있어요.\n메이든: 저 안에 갇혀서 혼자 모든 걸 떠안지 않도록.\n메이든: 손을 내밀어 주세요.\n트로니: 응. 알겠어.\n메이든: 가보세요, 일레그가 기다리고 있어요.\n트로니: 고마워.\n메이든에게 살짝 고개를 숙여 보인 트로니가 복도 끝의 방을 향해 달려갔다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메이든이 지휘관에게 일레그와 트로니를 부탁하려 하자, 지휘관은 메이든이 돌아올 곳을 꼭 지켜낼 테니 언제든 다시 돌아오라고 약속한다.",
+          "line_start": 150,
+          "line_end": 165,
+          "claim_line": null,
+          "quote": "그 모습을 한동안 바라보던 메이든이 비틀거리며 다가왔다.\n메이든: 저··· 염치없다는 건 알지만.\n메이든: 일레그랑 트로니, 두 분을···.\n[CHOICE_START]\n  [OPTION TEXT=\"메이든, 염치없어도 돼.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"네가 돌아올 곳은 꼭 지켜낼 테니까.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"언제든 다시 돌아와.\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 제가 그래도 될까요···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "지휘관과 엑시아가 레이드 마지막 페이즈와 일레그와의 승부를 언급하며 돌아오라고 격려하자, 메이든은 지휘관에게 이제 방해꾼은 없을 테니 일레그에게 가라고 말하고 복도 밖으로 사라진다.",
+          "line_start": 167,
+          "line_end": 192,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"음.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"돌아오지 않으면 엑시아가 엄청 화낼걸?\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"아직 레이드 마지막 페이즈 보지도 못했잖아?\"]\n  [OPTION_END]\n[CHOICE_END]\n엑시아: 맞습니다- 일레그와의 승부도 끝을 낸다면서요-\n메이든: 하하, 네··· 그랬죠···.\n메이든: 그랬어요···.\n메이든: ··· ···.\n메이든: 지휘관도 걱정 말고 일레그한테 가세요.\n메이든: 방해꾼은 이제 없을 거예요.\n메이든은 날 지나쳐, 복도 밖으로 사라졌다.\n엑시아: 다시 볼 수 있을까요-\n[CHOICE_START]\n  [OPTION TEXT=\"응, 다시 볼 수 있을 거야.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그럼 우리도 엔딩을 보러 가볼까?\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "극비 스쿼드인 익스터너 스쿼드에서 소속감을 느껴본 적 없던 메이든은 본모습을 포용해 준 엑시아, 일레그, 트로니를 떠올리며 사장님에게 전화해 임무 실패를 보고한다.",
+          "line_start": 194,
+          "line_end": 207,
+          "claim_line": null,
+          "quote": "익스터너 스쿼드.\n이레귤러가 된 니케를 제압 혹은 사살하기 위해 만들어져,\n그 존재 자체가 극비에 부쳐진 스쿼드.\n때문에 메이든은 지금껏 소속감이란 걸 느껴본 적이 없었다.\n메이든은 언제나 바라왔다.\n소속감을 느껴볼 수 있기를.\n어딘가에 소속되어, 관계를 확장해 나갈 수 있기를.\n자신의 [본모습]을 있는 그대로 포용해 줄 이들을 만날 수 있기를.\n그래서였다.\n엑시아, 일레그, 트로니에게 메이든이 마음을 연 건.\n고개를 흔들곤, 메이든은 휴대폰을 들어 올렸다.\n메이든: 사장님. 메이든입니다.\n메이든: 죄송합니다.\n메이든: 임무는 실패했습니다.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "익스터너 스쿼드와 언령",
+          "category": "organization",
+          "subject": null,
+          "detail": "이레귤러가 된 니케를 제압 혹은 사살하기 위해 만들어져 존재 자체가 극비에 부쳐진 스쿼드로, 소속된 메이든은 마스크를 벗고 [언령]을 사용한다.",
+          "line_start": 48,
+          "line_end": 59,
+          "quote": "그런 메이든은 마스크를 벗고 있었다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···!\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"트로니, 물러서.\"]\n  [OPTION_END]\n[CHOICE_END]\n트로니: 응?\n메이든: 타겟을··· 확보했습니다···.\n메이든: 명령에 따라 현 시간부로 [언령]을 사용합니다."
+        },
+        {
+          "keyword": "방주의 동력원 트라우마",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "트로니가 방주의 동력원을 본 날 이후로 귀를 찢는 굉음과 함께 붉게 물든 공간 속 수많은 시선이 자신을 응시하는 환각을 겪고 있다.",
+          "line_start": 115,
+          "line_end": 123,
+          "quote": "그런 트로니의 눈에 언젠가 봤던 풍경이 비치고 있었다.\n삐이이이-------\n이윽고 귀를 찢는 듯한 굉음이 들리고.\n붉게 물든 공간 속.\n트로니를 응시하는 수많은 시선이 드러났다.\n그들은 묻고 있었다.\n트로니, 넌 히어로가 맞냐고.\n그날. 방주의 동력원을 본 뒤로.\n어딜 가나 본인을 응시하는 시선의 무게를 견뎌내며,"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "트로니",
+          "target": "일레그",
+          "relation_or_change": "어두운 방에 틀어박혀 바깥세상을 두려워하던 자신에게 끊임없이 손을 내밀어 다시 이야기의 주인공으로 만들어 준 소중한 친구로 여기며 구하러 나섬",
+          "epistemic_type": "character_claim",
+          "claimant": "트로니",
+          "line_start": 108,
+          "line_end": 131,
+          "claim_line": 113,
+          "quote": "트로니: 그런데 말이지.\n트로니: 그런 나한테 빛나는 존재라고.\n트로니: 어두컴컴한 방 안에 틀어박혀 있는 건, 어울리지 않다고.\n트로니: 지금 트로니, 널 무섭게 하는 게 뭐든 간에.\n트로니: 트로니, 너라면 충분히 이겨낼 수 있다고.\n트로니: 끊임없이 손을 내밀어준 친구가 있어.\n트로니는 메이든의 눈을 바라보았다.\n그런 트로니의 눈에 언젠가 봤던 풍경이 비치고 있었다.\n삐이이이-------\n이윽고 귀를 찢는 듯한 굉음이 들리고.\n붉게 물든 공간 속.\n트로니를 응시하는 수많은 시선이 드러났다.\n그들은 묻고 있었다.\n트로니, 넌 히어로가 맞냐고.\n그날. 방주의 동력원을 본 뒤로.\n어딜 가나 본인을 응시하는 시선의 무게를 견뎌내며,\n트로니는 당당하게 선언했다.\n트로니: 나는 방주의 히어로가 아니야.\n트로니: 날 다시 이야기의 주인공으로 만들어준 친구에게 손도 못 내미는,\n트로니: 그런 히어로로 남진 않을 거야.\n트로니: 누군가의 기대에 따르는 것이 아닌,\n트로니: 본인의 신념을, 진심을 전하기 위해 행동하는 자야말로 진정한 히어로니까.\n트로니: 그러니 부탁할게, 메이든.\n트로니: 우릴 일레그에게 보내줘.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "메이든",
+          "target": "익스터너 스쿼드",
+          "relation_or_change": "이레귤러 니케를 제압·사살하는 극비 스쿼드인 익스터너 스쿼드 소속이나, 그로 인해 소속감을 느껴본 적이 없었음",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 194,
+          "line_end": 197,
+          "claim_line": null,
+          "quote": "익스터너 스쿼드.\n이레귤러가 된 니케를 제압 혹은 사살하기 위해 만들어져,\n그 존재 자체가 극비에 부쳐진 스쿼드.\n때문에 메이든은 지금껏 소속감이란 걸 느껴본 적이 없었다.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "메이든",
+          "target": "엑시아",
+          "relation_or_change": "자신의 본모습을 있는 그대로 포용해 주어 마음을 연 관계",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 198,
+          "line_end": 203,
+          "claim_line": null,
+          "quote": "메이든은 언제나 바라왔다.\n소속감을 느껴볼 수 있기를.\n어딘가에 소속되어, 관계를 확장해 나갈 수 있기를.\n자신의 [본모습]을 있는 그대로 포용해 줄 이들을 만날 수 있기를.\n그래서였다.\n엑시아, 일레그, 트로니에게 메이든이 마음을 연 건.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "메이든",
+          "target": "일레그",
+          "relation_or_change": "자신의 본모습을 있는 그대로 포용해 주어 마음을 연 관계",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 198,
+          "line_end": 203,
+          "claim_line": null,
+          "quote": "메이든은 언제나 바라왔다.\n소속감을 느껴볼 수 있기를.\n어딘가에 소속되어, 관계를 확장해 나갈 수 있기를.\n자신의 [본모습]을 있는 그대로 포용해 줄 이들을 만날 수 있기를.\n그래서였다.\n엑시아, 일레그, 트로니에게 메이든이 마음을 연 건.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "메이든",
+          "target": "트로니",
+          "relation_or_change": "자신의 본모습을 있는 그대로 포용해 주어 마음을 연 관계",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 198,
+          "line_end": 203,
+          "claim_line": null,
+          "quote": "메이든은 언제나 바라왔다.\n소속감을 느껴볼 수 있기를.\n어딘가에 소속되어, 관계를 확장해 나갈 수 있기를.\n자신의 [본모습]을 있는 그대로 포용해 줄 이들을 만날 수 있기를.\n그래서였다.\n엑시아, 일레그, 트로니에게 메이든이 마음을 연 건.",
+          "refers_to_past": true
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "BOOM",
+          "suggested_type": "item",
+          "line_start": 8
+        },
+        {
+          "surface_text": "중앙정부군",
+          "suggested_type": "organization",
+          "line_start": 11
+        },
+        {
+          "surface_text": "익스터너 스쿼드",
+          "suggested_type": "squad",
+          "line_start": 44
+        },
+        {
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 67
+        },
+        {
+          "surface_text": "아크레인저",
+          "suggested_type": "concept",
+          "line_start": 89
+        },
+        {
+          "surface_text": "동력원",
+          "suggested_type": "item",
+          "line_start": 122
+        },
+        {
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 195
+        },
+        {
+          "surface_text": "사장님",
+          "suggested_type": "character",
+          "line_start": 205
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "d.ark_hero_13",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "트로니는 동력원의 환영을 이겨내고 감금된 일레그에게 달려가 진심을 전하며 손을 맞잡고, 현장에 나타난 책임자 에테르는 지휘관에게 일레그와 트로니의 뒷배가 되어 달라는 조건으로 두 사람의 기억 소거가 완료되었다고 허위 보고하겠다는 거래를 제안한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "트로니",
+            "entity_id": "char_트로니",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "일레그",
+            "entity_id": "char_일레그",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "에테르",
+            "entity_id": "char_에테르",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "동력원",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "동력원에서 뿜어져 나오는 빛에 의해 붉게 물든 공간."
+          },
+          {
+            "surface_text": "M.M.R.",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 76,
+            "line_end": 76,
+            "quote": "에테르: 우리 M.M.R.의 높으신 분께서 명령했다고."
+          },
+          {
+            "surface_text": "일렉트릭 쇼크 스쿼드",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 77,
+            "line_end": 77,
+            "quote": "에테르: 일렉트릭 쇼크 스쿼드 전원을 체포하라고 말이지."
+          },
+          {
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 89,
+            "line_end": 89,
+            "quote": "에테르: 가능성을 보여준 니케한텐 상을 주는 게 당연한 거 아니겠어?"
+          },
+          {
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 99,
+            "line_end": 99,
+            "quote": "에테르: 그 둘이 다시 방주의 비밀을 파헤칠 일은 없을 거라고."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "일레그",
+          "to_target": "트로니",
+          "address_term": "트로니 씨",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "일레그: 트로니 씨···?"
+        },
+        {
+          "from_speaker": "지휘관",
+          "to_target": "에테르",
+          "address_term": "네",
+          "line_start": 67,
+          "line_end": 67,
+          "quote": "  [OPTION TEXT=\"네가 왜 여기에 있는 거야?\"]"
+        },
+        {
+          "from_speaker": "에테르",
+          "to_target": "지휘관",
+          "address_term": "7호",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "에테르: 7호, 그런 의미에서 나랑 거래 하나 안 할래?"
+        },
+        {
+          "from_speaker": "에테르",
+          "to_target": "지휘관",
+          "address_term": "네",
+          "line_start": 91,
+          "line_end": 91,
+          "quote": "에테르: 네가 손해 볼 건 없을 거야."
+        },
+        {
+          "from_speaker": "지휘관",
+          "to_target": "에테르",
+          "address_term": "너",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "  [OPTION TEXT=\"··· ···에테르, 너 목적이 뭐야?\"]"
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 복도를 달리며 동력원의 붉은 빛과 수많은 시신들이 앞을 막아서는 환영에 두려움을 느끼지만, 일레그를 잃지 않기 위해 머리를 흔들어 환영을 떨쳐내고 방문을 열어 손을 내민다.",
+          "line_start": 2,
+          "line_end": 18,
+          "claim_line": null,
+          "quote": "트로니가 복도를 달린다.\n한 걸음 내딛을수록 복도는 붉게 물들어갔고,\n얼마 안 가 트로니는 완전히 붉게 물든 공간을 달리고 있었다.\n동력원에서 뿜어져 나오는 빛에 의해 붉게 물든 공간.\n그곳에 널브러진 수많은 시신들이 트로니 앞을 막아섰다.\n두려움이 온몸을 휘감았지만,\n트로니는 멈추지 않았다.\n아니, 멈출 수 없었다.\n지금 멈추었다간, 그보다 더 두려운 일이 트로니에게 닥칠 테니.\n일레그가 트로니 곁에서 영영 떠나가게 될 테니.\n절대 멈추어선 안 됐다.\n트로니가 머리를 흔들자, 다시 원래의 복도가 나타났다.\n트로니는 멈추지 않고 계속 달려 나갔다.\n언젠가 오랜 시간 두려움 속에 갇혀 있던 본인을 배웅해 줬던,\n일레그의 마음에 대한 보답을 하기 위해.\n트로니는 굳게 닫힌 방문을 활짝 열며 손을 내밀었다.\n트로니: 일레그. 나 왔어.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 일레그에게 전해주려던 게임 패드가 오는 길에 망가진 것을 발견한다.",
+          "line_start": 19,
+          "line_end": 24,
+          "claim_line": null,
+          "quote": "일레그: 트로니 씨···?\n일레그: 여긴 왜··· 왜 온 거예여···.\n트로니: 이거, 일레그한테 전해주려고···.\n일레그를 위해 만든 게임 패드는 언뜻 보기에도 상태가 좋지 않다.\n트로니: 했는데··· 어라? 망가졌다···?\n트로니: 오, 오는 길에 망가졌나···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 게임 패드가 중요한 게 아니라며 트로니는 여기 있으면 안 되니 지금이라도 피하라고 만류한다.",
+          "line_start": 25,
+          "line_end": 27,
+          "claim_line": 26,
+          "quote": "일레그: 그게 중요한 게 아니잖아여.\n일레그: 트로니 씨는 여기 있으면 안 돼여.\n일레그: 지금이라도 늦지 않았을 수도 있으니···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 자신의 진심을 일레그에게 전하는 것이 제일 중요하다고 답한다.",
+          "line_start": 28,
+          "line_end": 31,
+          "claim_line": 31,
+          "quote": "트로니: 아니.\n트로니: 나한텐 이게 제일 중요한 걸.\n일레그: 녜?\n트로니: 내 진심을 일레그한테 전하는 거 말이야. 헤헤.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 동력원의 정체를 숨기려는 세력에게 쫓겨 소리소문 없이 사라질 수도 있는 일이 무섭지 않냐고 묻는다.",
+          "line_start": 32,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "일레그: 트로니 씨···.\n일레그: ··· ···.\n일레그: 앞으로 일어날 일들이 무섭진 않으세여?\n일레그: 동력원의 정체를 숨기려는 세력에게 쫓기는 신세가 되는 계.\n일레그: 그래서 언제든 소리소문 없이 사라질 수도 있다는 게 말이에여.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "트로니가 일레그가 해 주었던 말처럼 얼마나 시간이 걸리든 두려움을 반드시 이겨낼 수 있다며 손을 잡으라고 하고, 일레그가 그 손을 붙잡으며 서로 앞으로도 잘 부탁한다고 인사한다.",
+          "line_start": 37,
+          "line_end": 58,
+          "claim_line": null,
+          "quote": "트로니: 일레그가 말해줬잖아.\n트로니: 지금 날 무섭게 하는 게 뭐든 간에.\n트로니: 난 충분히 이겨낼 수 있다고.\n트로니: 몇 달이든, 몇 년이든.\n트로니: 얼마나 많은 시간이 걸리든 간에, 난 반드시 이겨낼 거라고.\n일레그: ··· ···!\n트로니: 무서워도 상관없어.\n트로니: 난 반드시 이겨낼 수 있으니까.\n트로니: 그러니, 일레그.\n트로니: 내 손을 잡아.\n어렸을 적, 일레그를 방밖으로 이끌었던 목소리는.\n다시 한번 손을 내밀었고.\n일레그는 미소 지으며 그를 붙잡았다.\n트로니: 일레그.\n일레그: 녜, 녜!\n트로니: 앞으로도 잘 부탁해.\n트로니: 헤헤.\n일레그: ··· ···.\n일레그: 녜, 저도··· 저도 잘 부탁드려여. 히히히.\n[CHOICE_START]\n  [OPTION TEXT=\"이번에도 전해져서 다행이다.\"]\n  [OPTION_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에테르",
+          "summary": "현장에 나타난 에테르가 왜 여기 있냐는 지휘관의 물음에 책임자가 현장을 보러 오는 것은 당연하다고 답한다.",
+          "line_start": 60,
+          "line_end": 70,
+          "claim_line": 70,
+          "quote": "에테르: 그러게.\n에테르: 멋진 우정이지?\n[CHOICE_START]\n  [OPTION TEXT=\"에테르···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"네가 왜 여기에 있는 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 음~ 책임자가 현장을 보러 오는 건 당연한 거 아니야?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에테르",
+          "summary": "지휘관이 책임자냐고 되묻자 에테르는 M.M.R.의 높으신 분이 일렉트릭 쇼크 스쿼드 전원 체포를 명령했으며 그 명령을 받은 것이 자신이라고 밝힌다.",
+          "line_start": 72,
+          "line_end": 82,
+          "claim_line": 77,
+          "quote": "  [OPTION TEXT=\"책임자?\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 내가 말하지 않았나?\n에테르: 우리 M.M.R.의 높으신 분께서 명령했다고.\n에테르: 일렉트릭 쇼크 스쿼드 전원을 체포하라고 말이지.\n[CHOICE_START]\n  [OPTION TEXT=\"설마 그 명령을 받은 게···.\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 정답.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에테르",
+          "summary": "에테르가 가능성을 보여준 니케에게 상을 주는 셈 치고 두 사람을 방해할 생각은 없다며 지휘관에게 거래를 제안한다.",
+          "line_start": 83,
+          "line_end": 95,
+          "claim_line": 90,
+          "quote": "에테르: 뭐, 그렇다고 걱정하진 마.\n에테르: 저 둘을 방해할 생각은 없으니까.\n[CHOICE_START]\n  [OPTION TEXT=\"뭐?\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 가능성을 보여준 니케한텐 상을 주는 게 당연한 거 아니겠어?\n에테르: 7호, 그런 의미에서 나랑 거래 하나 안 할래?\n에테르: 네가 손해 볼 건 없을 거야.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에테르",
+          "summary": "에테르가 거래에 응하면 M.M.R.로 돌아가 일레그와 트로니의 기억 소거가 끝나 다시 방주의 비밀을 파헤칠 일은 없을 거라고 보고하겠으며, 폐기 처리를 따져도 쓸 카드가 있다고 말한다.",
+          "line_start": 96,
+          "line_end": 102,
+          "claim_line": 98,
+          "quote": "에테르: 7호가 거래에 응해주면,\n에테르: 난 M.M.R.로 돌아가서 이렇게 보고할 거야.\n에테르: 일레그랑 트로니의 기억 소거는 끝났으니,\n에테르: 그 둘이 다시 방주의 비밀을 파헤칠 일은 없을 거라고.\n에테르: 뭐, 둘 중 하나는 폐기 처리하기로 한 거 아니었냐고 뭐라 하면.\n에테르: 그땐 나도 쓸 카드가 있으니, 그 부분은 걱정 말고.\n에테르: 어때, 7호. 구미가 당기지 않아?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에테르",
+          "summary": "지휘관이 거래 조건을 묻자 에테르는 일레그와 트로니가 지금까지처럼 방주의 비밀을 파헤칠 수 있도록 뒷배가 되어 두 사람을 지켜 달라고 요구한다.",
+          "line_start": 104,
+          "line_end": 110,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"거래에 응하면, 난 뭘 해야 하지?\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 간단해.\n에테르: 일레그랑 트로니의 뒷배가 되어줘.\n에테르: 지금까지처럼 방주의 비밀을 파헤칠 수 있도록.\n에테르: 저 둘을 지켜줘.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에테르",
+          "summary": "지휘관이 목적을 묻자 에테르는 니케가 명령을 어기고 어디까지 할 수 있는지 그 가능성을 보고 싶을 뿐이라고 답한다.",
+          "line_start": 112,
+          "line_end": 118,
+          "claim_line": 117,
+          "quote": "  [OPTION TEXT=\"··· ···에테르, 너 목적이 뭐야?\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 나?\n에테르: 난 니케의 가능성을 보고 싶을 뿐이야.\n에테르: 과연, 니케가 명령을 어기고 어디까지 할 수 있는지.\n에테르: 뭐, 그런 가능성?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에테르",
+          "summary": "에테르가 동의한 것으로 알고 M.M.R.의 높으신 분께 보고하러 가겠다며, 더 귀찮은 세력이 일레그와 트로니를 지켜보고 있다고 흘린 뒤 두 사람의 가능성을 기대하겠다고 전해 달라고 말한다.",
+          "line_start": 120,
+          "line_end": 129,
+          "claim_line": 126,
+          "quote": "  [OPTION TEXT=\"가능성이라고···.\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 그럼 동의했다는 걸로 알고.\n에테르: 난 우리 M.M.R.의 높으신 분께 보고하러 가볼게~\n에테르: 7호도 내가 부탁한 일 잊지 마~\n에테르: 쉽진 않을 거야. 더 귀찮은 세력이 일레그랑 트로니를 지켜보고···\n에테르: 아니다. 신경 쓰지 마. 그냥 피차 열심히 하자는 말이었어~\n에테르: 참. 둘한텐 전해줘.\n에테르: 앞으로 또 어떤 가능성을 보여줄지 기대하고 있겠다고.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "동력원의 수많은 시신",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "트로니가 본 동력원 공간에는 붉은 빛과 함께 수많은 시신들이 널브러져 있었다.",
+          "line_start": 4,
+          "line_end": 6,
+          "quote": "얼마 안 가 트로니는 완전히 붉게 물든 공간을 달리고 있었다.\n동력원에서 뿜어져 나오는 빛에 의해 붉게 물든 공간.\n그곳에 널브러진 수많은 시신들이 트로니 앞을 막아섰다."
+        },
+        {
+          "keyword": "더 귀찮은 세력",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "에테르가 M.M.R. 외에 더 귀찮은 세력이 일레그와 트로니를 지켜보고 있다고 언급하다가 말을 멈춘다.",
+          "line_start": 126,
+          "line_end": 127,
+          "quote": "에테르: 쉽진 않을 거야. 더 귀찮은 세력이 일레그랑 트로니를 지켜보고···\n에테르: 아니다. 신경 쓰지 마. 그냥 피차 열심히 하자는 말이었어~"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "트로니",
+          "target": "일레그",
+          "relation_or_change": "어렸을 적 일레그를 방 밖으로 이끌었던 것처럼 다시 손을 내밀어 일레그와 함께 두려움을 이겨내기로 다짐함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 43,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "트로니: 무서워도 상관없어.\n트로니: 난 반드시 이겨낼 수 있으니까.\n트로니: 그러니, 일레그.\n트로니: 내 손을 잡아.\n어렸을 적, 일레그를 방밖으로 이끌었던 목소리는.\n다시 한번 손을 내밀었고.\n일레그는 미소 지으며 그를 붙잡았다.\n트로니: 일레그.\n일레그: 녜, 녜!\n트로니: 앞으로도 잘 부탁해.\n트로니: 헤헤.\n일레그: ··· ···.\n일레그: 녜, 저도··· 저도 잘 부탁드려여. 히히히.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "에테르",
+          "target": "M.M.R.",
+          "relation_or_change": "M.M.R. 소속으로 높으신 분에게 일렉트릭 쇼크 스쿼드 전원 체포 명령을 받은 현장 책임자",
+          "epistemic_type": "character_claim",
+          "claimant": "에테르",
+          "line_start": 70,
+          "line_end": 77,
+          "claim_line": 76,
+          "quote": "에테르: 음~ 책임자가 현장을 보러 오는 건 당연한 거 아니야?\n[CHOICE_START]\n  [OPTION TEXT=\"책임자?\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 내가 말하지 않았나?\n에테르: 우리 M.M.R.의 높으신 분께서 명령했다고.\n에테르: 일렉트릭 쇼크 스쿼드 전원을 체포하라고 말이지.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "에테르",
+          "target": "지휘관",
+          "relation_or_change": "지휘관이 일레그와 트로니의 뒷배가 되어 방주의 비밀을 계속 파헤치도록 지켜주는 대가로, M.M.R.에 두 사람의 기억 소거가 끝났다고 허위 보고하겠다는 거래를 맺음",
+          "epistemic_type": "character_claim",
+          "claimant": "에테르",
+          "line_start": 96,
+          "line_end": 110,
+          "claim_line": 98,
+          "quote": "에테르: 7호가 거래에 응해주면,\n에테르: 난 M.M.R.로 돌아가서 이렇게 보고할 거야.\n에테르: 일레그랑 트로니의 기억 소거는 끝났으니,\n에테르: 그 둘이 다시 방주의 비밀을 파헤칠 일은 없을 거라고.\n에테르: 뭐, 둘 중 하나는 폐기 처리하기로 한 거 아니었냐고 뭐라 하면.\n에테르: 그땐 나도 쓸 카드가 있으니, 그 부분은 걱정 말고.\n에테르: 어때, 7호. 구미가 당기지 않아?\n[CHOICE_START]\n  [OPTION TEXT=\"거래에 응하면, 난 뭘 해야 하지?\"]\n  [OPTION_END]\n[CHOICE_END]\n에테르: 간단해.\n에테르: 일레그랑 트로니의 뒷배가 되어줘.\n에테르: 지금까지처럼 방주의 비밀을 파헤칠 수 있도록.\n에테르: 저 둘을 지켜줘.",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "동력원",
+          "suggested_type": "item",
+          "line_start": 5
+        },
+        {
+          "surface_text": "M.M.R.",
+          "suggested_type": "organization",
+          "line_start": 76
+        },
+        {
+          "surface_text": "일렉트릭 쇼크 스쿼드",
+          "suggested_type": "squad",
+          "line_start": 77
+        },
+        {
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 89
+        },
+        {
+          "surface_text": "7호",
+          "suggested_type": "alias",
+          "line_start": 90
+        },
+        {
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 99
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "d.ark_hero_14",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "지상에 올라와 처음으로 진짜 하늘을 본 트로니는 수정 지역 탐색을 떠나는 일레그를 배웅하며, 기억 소거를 당한 척 행동하면서 방주에서 동력원이 폭주하지 않도록 지켜보겠다고 약속한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "트로니",
+            "entity_id": "char_트로니",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "일레그",
+            "entity_id": "char_일레그",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "이터널 스카이",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 9,
+            "line_end": 9,
+            "quote": "트로니: [이터널 스카이] 보는 거랑 느낌이 엄청 달라."
+          },
+          {
+            "surface_text": "아크레인저 블랙",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 10,
+            "line_end": 10,
+            "quote": "트로니: 이래서 아크레인저 블랙이 그렇게 말한 거구나."
+          },
+          {
+            "surface_text": "지휘관",
+            "entity_id": "char_지휘관",
+            "entity_type": "character",
+            "line_start": 23,
+            "line_end": 23,
+            "quote": "트로니: 지휘관이 그랬잖아."
+          },
+          {
+            "surface_text": "수정 지역",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 28,
+            "line_end": 28,
+            "quote": "일레그: 수정 지역 탐색하는 동안에,"
+          },
+          {
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 29,
+            "line_end": 29,
+            "quote": "일레그: 뭔가 수상한 목적으로 저희한테 접근하려는 니케는 없는지."
+          },
+          {
+            "surface_text": "동력원",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 35,
+            "line_end": 35,
+            "quote": "일레그: 드디어 새로운 동력원을 찾을 수도 있는 거잖아여!"
+          },
+          {
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 37,
+            "line_end": 37,
+            "quote": "일레그: 그럼 트로니 씨, 방주는 부탁할게여."
+          },
+          {
+            "surface_text": "메이든",
+            "entity_id": "char_메이든",
+            "entity_type": "character",
+            "line_start": 40,
+            "line_end": 40,
+            "quote": "트로니: 응, 메이든한테 연락 오면 알려줄게."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "일레그",
+          "to_target": "트로니",
+          "address_term": "트로니 씨",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "일레그: 그럼 트로니 씨. 이만 작별할 시간이에여."
+        },
+        {
+          "from_speaker": "트로니",
+          "to_target": "일레그",
+          "address_term": "네",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "트로니: 네가 무엇을 위해 싸우는지."
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "지상에 올라온 트로니와 일레그가 높고 넓은 하늘을 올려다보며 이터널 스카이와 다르다고 감탄하고, 트로니는 지상의 하늘을 보며 싸워온 이유를 되새기게 된다는 아크레인저 블랙의 명대사를 인용한다.",
+          "line_start": 2,
+          "line_end": 17,
+          "claim_line": null,
+          "quote": "트로니: 와아···.\n트로니: 와아아···!\n트로니: 일레그, 보여?\n일레그: 녜. 잘 보여여.\n지상. 트로니와 일레그가 하늘을 올려다보고 있다.\n트로니: 엄청 높고···.\n트로니: 또 엄청 넓다···.\n트로니: [이터널 스카이] 보는 거랑 느낌이 엄청 달라.\n트로니: 이래서 아크레인저 블랙이 그렇게 말한 거구나.\n트로니: 저 끝없는 하늘을 바라보면.\n트로니: 미지의 위협으로 가득 찬 지상이\n트로니: 실은 아름다움으로 가득 차 있다는 걸.\n트로니: 두려움을 이겨내며 지금껏 싸워온 이유가\n트로니: 실은 가까이에 있었다는 걸, 되새기게 된다고.\n일레그: 히히히, 명대사는 명대사인 이유가 있는 법이져.\n트로니: 응. 진짜 예쁘다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "일레그가 마중 나와 준 트로니에게 작별 인사를 하며 돌아갈 때 조심하라고 하자, 트로니는 다시 저번 같은 일을 당하지 않으려면 기억 소거를 당한 것처럼 보여야 한다고 지휘관이 말했음을 일깨운다.",
+          "line_start": 18,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "일레그: 흠흠.\n일레그: 그럼 트로니 씨. 이만 작별할 시간이에여.\n일레그: 위험한데 여기까지 마중 나와줘서 고마워여.\n일레그: 돌아갈 때도 조심, 또 조심하세여.\n트로니: 그··· 일레그도 조심해···.\n트로니: 지휘관이 그랬잖아.\n트로니: 우린 기억 소거 당한 것처럼 보여야 한다고.\n트로니: 그래야 또 저번처럼 그런 일 안 당할 테니까.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "일레그",
+          "summary": "일레그가 수정 지역을 탐색하는 동안 수상한 목적으로 접근하려는 니케가 없는지 주의해 지켜보겠다고 답하며, 위험한 일이 생기면 지휘관과 트로니가 구해줄 것이고 새로운 동력원을 찾을 수도 있어 설렌다고 말한다.",
+          "line_start": 26,
+          "line_end": 35,
+          "claim_line": 35,
+          "quote": "일레그: 녜. 그랬져.\n일레그: 히히히, 너무 걱정하진 마세여.\n일레그: 수정 지역 탐색하는 동안에,\n일레그: 뭔가 수상한 목적으로 저희한테 접근하려는 니케는 없는지.\n일레그: 주의해서 지켜볼 테니까여.\n트로니: 그래도··· 혹시 모르니까.\n일레그: 뭐, 저한테 위험한 일 생기면 지휘관 씨랑 트로니 씨가 구해줄 테니까.\n일레그: 크게 걱정은 안 돼여.\n일레그: 오히려 설레는 걸여.\n일레그: 드디어 새로운 동력원을 찾을 수도 있는 거잖아여!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "트로니",
+          "summary": "일레그가 방주를 부탁하고 탐색 지원을 위해 떠나자, 트로니는 동력원이 폭주하지 않도록 계속 지켜보고 메이든에게 연락이 오면 알려주겠다고 약속한 뒤 일레그를 응원하는 말을 중얼거린다.",
+          "line_start": 36,
+          "line_end": 48,
+          "claim_line": null,
+          "quote": "트로니: 응. 꼭 찾았으면 좋겠다.\n일레그: 그럼 트로니 씨, 방주는 부탁할게여.\n트로니: 알겠어. 여기서 동력원이 폭주하지 않도록 계속 지켜볼게.\n트로니: 또···.\n트로니: 응, 메이든한테 연락 오면 알려줄게.\n일레그: ···알겠어여.\n일레그: 다녀올게여.\n탐색 지원을 위해 떠나는 일레그에게 손을 흔들어주며 트로니는 중얼거렸다.\n트로니: 그러니 주저앉지 말고 일어서라.\n트로니: 고개 들어 하늘을 보아라.\n트로니: 네가 무엇을 위해 싸우는지.\n트로니: 우리가 무엇을 위해 싸우는지 보아라.\n트로니: 그럼 그 어떤 두려움도 이겨낼 수 있을 테니.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "수정 지역 탐색과 새로운 동력원",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "일레그가 새로운 동력원을 찾기 위해 지상의 수정 지역 탐색 지원에 나서고, 트로니는 방주에 남아 기존 동력원이 폭주하지 않도록 감시하기로 한다.",
+          "line_start": 28,
+          "line_end": 38,
+          "quote": "일레그: 수정 지역 탐색하는 동안에,\n일레그: 뭔가 수상한 목적으로 저희한테 접근하려는 니케는 없는지.\n일레그: 주의해서 지켜볼 테니까여.\n트로니: 그래도··· 혹시 모르니까.\n일레그: 뭐, 저한테 위험한 일 생기면 지휘관 씨랑 트로니 씨가 구해줄 테니까.\n일레그: 크게 걱정은 안 돼여.\n일레그: 오히려 설레는 걸여.\n일레그: 드디어 새로운 동력원을 찾을 수도 있는 거잖아여!\n트로니: 응. 꼭 찾았으면 좋겠다.\n일레그: 그럼 트로니 씨, 방주는 부탁할게여.\n트로니: 알겠어. 여기서 동력원이 폭주하지 않도록 계속 지켜볼게."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "일레그",
+          "target": "지휘관",
+          "relation_or_change": "자신에게 위험한 일이 생기면 구해줄 것이라 믿고 의지함",
+          "epistemic_type": "character_claim",
+          "claimant": "일레그",
+          "line_start": 32,
+          "line_end": 33,
+          "claim_line": 32,
+          "quote": "일레그: 뭐, 저한테 위험한 일 생기면 지휘관 씨랑 트로니 씨가 구해줄 테니까.\n일레그: 크게 걱정은 안 돼여.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "일레그",
+          "target": "트로니",
+          "relation_or_change": "자신에게 위험한 일이 생기면 구해줄 것이라 믿고 방주를 맡기며 떠남",
+          "epistemic_type": "character_claim",
+          "claimant": "일레그",
+          "line_start": 32,
+          "line_end": 37,
+          "claim_line": 32,
+          "quote": "일레그: 뭐, 저한테 위험한 일 생기면 지휘관 씨랑 트로니 씨가 구해줄 테니까.\n일레그: 크게 걱정은 안 돼여.\n일레그: 오히려 설레는 걸여.\n일레그: 드디어 새로운 동력원을 찾을 수도 있는 거잖아여!\n트로니: 응. 꼭 찾았으면 좋겠다.\n일레그: 그럼 트로니 씨, 방주는 부탁할게여.",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "이터널 스카이",
+          "suggested_type": "concept",
+          "line_start": 9
+        },
+        {
+          "surface_text": "아크레인저 블랙",
+          "suggested_type": "character",
+          "line_start": 10
+        },
+        {
+          "surface_text": "수정 지역",
+          "suggested_type": "location",
+          "line_start": 28
+        },
+        {
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 29
+        },
+        {
+          "surface_text": "동력원",
+          "suggested_type": "item",
+          "line_start": 35
+        },
+        {
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 37
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "golden_coin_rush_00",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "머스탱이 주최한 테트라 골든 칩 이벤트에서 777 스쿼드가 우승해 골든 칩을 수여받는 모습을 구경한 메이드 포 유 스쿼드는 내년에 구경 오자고 약속하지만, 1년 후 열린 쟁탈전에서 소다가 메이드 포 유 대표로 참가해 우승을 다짐한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "머스탱",
+            "entity_id": "char_머스탱",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "관객들",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "speaker_label": "블랑",
+            "entity_id": "char_블랑",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "소다",
+            "entity_id": "char_소다",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "에이드",
+            "entity_id": "char_에이드",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "코코아",
+            "entity_id": "char_코코아",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "777 Squad",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "머스탱: 777 Squad 입니Da~!!"
+          },
+          {
+            "surface_text": "테트라 라인",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 12,
+            "line_end": 12,
+            "quote": "블랑: 테트라 라인에 언제나 행운이 가득하기를 바랄게요~!"
+          },
+          {
+            "surface_text": "GOLDEN CHIP",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 16,
+            "line_end": 16,
+            "quote": "머스탱: Me가 그려진 GOLDEN CHIP을 전달하겠어Yo!"
+          },
+          {
+            "surface_text": "TETRA GOLDEN CHIP EVENT",
+            "entity_id": null,
+            "entity_type": "event",
+            "line_start": 26,
+            "line_end": 26,
+            "quote": "머스탱: 그럼 Me와 TETRA GOLDEN CHIP EVENT는."
+          },
+          {
+            "surface_text": "TETRA GOLDEN CHIP 쟁! 탈! 전!",
+            "entity_id": null,
+            "entity_type": "event",
+            "line_start": 50,
+            "line_end": 50,
+            "quote": "머스탱: TETRA GOLDEN CHIP 쟁! 탈! 전!"
+          },
+          {
+            "surface_text": "메이드 포 유",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 61,
+            "line_end": 61,
+            "quote": "소다: 메이드 포 유의 대표로서 말이에요오오···!"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "머스탱",
+          "to_target": "블랑",
+          "address_term": "Blanc",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "머스탱: 그럼 대표로 Blanc의 소감을 한 번 들어볼까Yo?!"
+        },
+        {
+          "from_speaker": "블랑",
+          "to_target": "관객들",
+          "address_term": "여러분들",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "블랑: 멋진 승부를 함께 해 주신 여러분들께 진심으로 감사의 인사를 드리고 싶습니다."
+        },
+        {
+          "from_speaker": "블랑",
+          "to_target": "머스탱",
+          "address_term": "사장님",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "블랑: 와~! 감사합니다 사장님!"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "관객들",
+          "address_term": "Everyone",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "머스탱: Everyone 알고 있겠지Man!"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "관객들",
+          "address_term": "Everybody",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "머스탱: Everybody! Say Entertainment!"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "관객들",
+          "address_term": "Me의 사랑스러운 Girls",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "머스탱: Hello, Me의 사랑스러운 Girls~!"
+        },
+        {
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "소다: 그, 그럼요! 괜찮아요 주인님!"
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "테트라 라인의 CEO 머스탱이 올해의 우승 스쿼드로 777 스쿼드를 발표하고, 대표로 나선 블랑이 관객들에게 우승 소감과 감사 인사를 전한다.",
+          "line_start": 2,
+          "line_end": 13,
+          "claim_line": null,
+          "quote": "머스탱: Ja!\n머스탱: 올 해의 우승 Squad는-\n머스탱: 바로바로오오오~!!!\n머스탱: 777 Squad 입니Da~!!\n관객들: 와아아아~!!!\n머스탱: 그럼 대표로 Blanc의 소감을 한 번 들어볼까Yo?!\n블랑: 네~!\n블랑: 으음~\n블랑: 멋진 승부를 함께 해 주신 여러분들께 진심으로 감사의 인사를 드리고 싶습니다.\n블랑: 정말 즐거운 시간이었습니다!\n블랑: 테트라 라인에 언제나 행운이 가득하기를 바랄게요~!\n짝짝짝-!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 올해의 우승자인 777 스쿼드의 블랑에게 자신이 그려진 손바닥만 한 골든 칩을 건넨다.",
+          "line_start": 14,
+          "line_end": 18,
+          "claim_line": null,
+          "quote": "머스탱: Perfect~!\n머스탱: 올 해의 Winner인 777 Squad에게.\n머스탱: Me가 그려진 GOLDEN CHIP을 전달하겠어Yo!\n블랑: 와~! 감사합니다 사장님!\n머스탱은 손바닥 만한 빛나는 금색 칩을 블랑에게 건네주었다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 골든 칩을 가진 스쿼드는 일 년에 딱 한 번 자신에게 어떤 소원이든 바랄 수 있으니 잃어버리지 않게 잘 보관하라고 설명한다.",
+          "line_start": 19,
+          "line_end": 22,
+          "claim_line": 21,
+          "quote": "머스탱: Everyone 알고 있겠지Man!\n머스탱: 이 CHIP을 가지고 있는 Squad는, 일 년에 딱 한 번.\n머스탱: Me에게 어떤 소원이든 바랄 수 있Jyo.\n머스탱: 그러니 잃어버리지 않게 잘 보관하세Yo, Blanc~!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 연승무패를 기록 중인 777 스쿼드를 칭찬하며 1년 뒤 테트라 골든 칩 이벤트로 다시 돌아오겠다고 선언하고 관객들과 함께 구호를 외친다.",
+          "line_start": 23,
+          "line_end": 33,
+          "claim_line": null,
+          "quote": "블랑: 네에~!\n머스탱: 과Yeon···.\n머스탱: 연승무패 행진을 기록하고 있는 이 Lucky Girl들을 누가 말릴 수 있을까Yo!\n머스탱: 그럼 Me와 TETRA GOLDEN CHIP EVENT는.\n머스탱: 1년 뒤에, 더 화려하고 즐겁고 아름답게 Come Back 할 테니.\n머스탱: My Girl들도 더 분발해 주세Yo~!\n머스탱: 그럼 지금까지!\n머스탱: 테트라 라인의 C! E! O!\n머스탱: 머스탱이었습니Da!\n머스탱: Everybody! Say Entertainment!\n관객들: 와아아아~ 엔~터테인먼트!!!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "경기를 끝까지 구경한 소다와 에이드가 다들 게임을 잘한다며 다음엔 자신들도 참가해 볼지 이야기한다.",
+          "line_start": 35,
+          "line_end": 39,
+          "claim_line": null,
+          "quote": "소다: 와아아···.\n소다: 다들 게임을 정말 잘하시네요~!\n소다: 시간 가는 줄도 모르고 결국 마지막까지 다 봐버렸어요 헤헤~\n에이드: 그러게, 재미있어 보인다.\n에이드: 다음엔 우리도 참가해 볼까?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 프로 메이드가 나서면 게임이 너무 쉬워지고 자신들이 큰돈이 필요한 것도 아니라며 참가에 반대한다.",
+          "line_start": 40,
+          "line_end": 42,
+          "claim_line": 41,
+          "quote": "코코아: 안대.\n코코아: 프로 메이드가 나서버리면 게임이 너무 쉬워지자나.\n코코아: 우리가 그러케 큰돈이 필요한 것도 아니고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "소다와 에이드가 코코아의 말에 수긍하며 내년에도 다 같이 구경하러 오자고 약속한다.",
+          "line_start": 43,
+          "line_end": 45,
+          "claim_line": null,
+          "quote": "소다: 아~ 그건 그렇네요.\n에이드: 그럼 내년에도 다 같이 구경하러 오자.\n소다: 네! 너무 좋아요~!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "1년 후 다시 열린 테트라 골든 칩 쟁탈전에서 긴장한 소다가 지휘관에게 메이드 포 유의 대표로서 이번 이벤트에서 반드시 우승하겠다고 다짐한다.",
+          "line_start": 46,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "···그리고 1년 후.\n머스탱: Hello, Me의 사랑스러운 Girls~!\n머스탱: 올 해도 어김없이 돌아왔습니Da!\n머스탱: 바로바로~\n머스탱: TETRA GOLDEN CHIP 쟁! 탈! 전!\n소다: ··· ···.\n소다: 후우우···.\n[CHOICE_START]\n  [OPTION TEXT=\"소다, 많이 긴장한 것 같은데 괜찮아?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 흐에에···?!\n소다: 그, 그럼요! 괜찮아요 주인님!\n소다: ···지켜봐 주세요.\n소다: 저는 이번 이벤트에서 반드시 우승하고 말 테니까요!\n소다: 메이드 포 유의 대표로서 말이에요오오···!",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "GOLDEN CHIP",
+          "category": "item",
+          "subject": null,
+          "detail": "테트라 골든 칩 이벤트 우승 스쿼드에게 수여되는 머스탱이 그려진 손바닥만 한 금색 칩으로, 소유한 스쿼드는 1년에 한 번 머스탱에게 어떤 소원이든 빌 수 있다.",
+          "line_start": 15,
+          "line_end": 22,
+          "quote": "머스탱: 올 해의 Winner인 777 Squad에게.\n머스탱: Me가 그려진 GOLDEN CHIP을 전달하겠어Yo!\n블랑: 와~! 감사합니다 사장님!\n머스탱은 손바닥 만한 빛나는 금색 칩을 블랑에게 건네주었다.\n머스탱: Everyone 알고 있겠지Man!\n머스탱: 이 CHIP을 가지고 있는 Squad는, 일 년에 딱 한 번.\n머스탱: Me에게 어떤 소원이든 바랄 수 있Jyo.\n머스탱: 그러니 잃어버리지 않게 잘 보관하세Yo, Blanc~!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "블랑",
+          "target": "777 Squad",
+          "relation_or_change": "777 Squad의 대표로 우승 소감을 말하고 골든 칩을 전달받음",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 5,
+          "line_end": 18,
+          "claim_line": null,
+          "quote": "머스탱: 777 Squad 입니Da~!!\n관객들: 와아아아~!!!\n머스탱: 그럼 대표로 Blanc의 소감을 한 번 들어볼까Yo?!\n블랑: 네~!\n블랑: 으음~\n블랑: 멋진 승부를 함께 해 주신 여러분들께 진심으로 감사의 인사를 드리고 싶습니다.\n블랑: 정말 즐거운 시간이었습니다!\n블랑: 테트라 라인에 언제나 행운이 가득하기를 바랄게요~!\n짝짝짝-!\n머스탱: Perfect~!\n머스탱: 올 해의 Winner인 777 Squad에게.\n머스탱: Me가 그려진 GOLDEN CHIP을 전달하겠어Yo!\n블랑: 와~! 감사합니다 사장님!\n머스탱은 손바닥 만한 빛나는 금색 칩을 블랑에게 건네주었다.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "머스탱",
+          "target": "테트라 라인",
+          "relation_or_change": "테트라 라인의 CEO(사장)",
+          "epistemic_type": "character_claim",
+          "claimant": "머스탱",
+          "line_start": 29,
+          "line_end": 31,
+          "claim_line": 30,
+          "quote": "머스탱: 그럼 지금까지!\n머스탱: 테트라 라인의 C! E! O!\n머스탱: 머스탱이었습니Da!",
+          "refers_to_past": false
+        },
+        {
+          "subject": "소다",
+          "target": "메이드 포 유",
+          "relation_or_change": "메이드 포 유 소속으로 스쿼드 대표로서 테트라 골든 칩 쟁탈전에 참가함",
+          "epistemic_type": "character_claim",
+          "claimant": "소다",
+          "line_start": 59,
+          "line_end": 61,
+          "claim_line": 61,
+          "quote": "소다: ···지켜봐 주세요.\n소다: 저는 이번 이벤트에서 반드시 우승하고 말 테니까요!\n소다: 메이드 포 유의 대표로서 말이에요오오···!",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "777 Squad",
+          "suggested_type": "squad",
+          "line_start": 5
+        },
+        {
+          "surface_text": "테트라 라인",
+          "suggested_type": "organization",
+          "line_start": 12
+        },
+        {
+          "surface_text": "GOLDEN CHIP",
+          "suggested_type": "item",
+          "line_start": 16
+        },
+        {
+          "surface_text": "TETRA GOLDEN CHIP EVENT",
+          "suggested_type": "event",
+          "line_start": 26
+        },
+        {
+          "surface_text": "TETRA GOLDEN CHIP 쟁! 탈! 전!",
+          "suggested_type": "event",
+          "line_start": 50
+        },
+        {
+          "surface_text": "메이드 포 유",
+          "suggested_type": "squad",
+          "line_start": 61
+        }
+      ],
+      "reviewed_gaps": []
+    }
+  ]
+}
