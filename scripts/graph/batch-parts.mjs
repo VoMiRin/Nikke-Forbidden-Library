@@ -229,14 +229,28 @@ const finishWave = async (rel) => {
   const wavePlan = JSON.parse(await fs.readFile(planPath, 'utf8'));
   const { validateShardFile, dialogueOnlyEvents, DIALOGUE_EVENT_MIN_TURNS } = await import('./validate-output.mjs');
   const { mergeValidatedShards } = await import('./merge-and-index.mjs');
+  const { fileHashOf, formatWaveCallSummary, readValidationLog, recordValidation, summarizeWaveCalls, validationLogPathOf } = await import(
+    './validation-log.mjs'
+  );
   const shardPathOf = (id) => path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`);
-  const tryValidate = async (id, options) => {
+  // finish의 검증도 기록하지만(actor finish), 추출자의 재검증 횟수에는 넣지 않는다
+  const tryValidate = async (id, options = {}) => {
+    const part = options.part ?? null;
     try {
-      return await validateShardFile(id, options);
+      const res = await validateShardFile(id, options);
+      await recordValidation({ actor: 'finish', batchId: id, part, res, wavePlan });
+      return res;
     } catch (err) {
+      await recordValidation({ actor: 'finish', batchId: id, part, fatal: err.message, wavePlan });
       return { valid: false, errors: [{ rule: 'UNREADABLE', scene_id: null, path: '', message: err.message }], warnings: [] };
     }
   };
+
+  // 추출자 검증 기록은 finish가 파일을 쓰기 전에 센다. 마지막 기록의 출력 해시가 지금 출력 파일과 다르면 그 뒤에 출력이 바뀐 것이다
+  const log = await readValidationLog();
+  const callSummary = summarizeWaveCalls(wavePlan, log.records, {
+    currentOutputHash: (call) => fileHashOf(call.part ? partPathOf(call.batch_id, call.part) : shardPathOf(call.batch_id)),
+  });
 
   console.log(`[finish] ${wavePlan.wave}: ${wavePlan.batch_ids.join(', ')} (plan ${rel(planPath)}, ${wavePlan.created_at})`);
   const batchInputs = {};
@@ -284,6 +298,9 @@ const finishWave = async (rel) => {
   const merged = await mergeValidatedShards();
   const mergedIds = new Set(merged.mergedBatchIds);
 
+  console.log(`[finish] 호출별 추출자 검증 기록(${rel(validationLogPathOf())}):`);
+  for (const line of formatWaveCallSummary(callSummary)) console.log(line);
+  if (log.broken > 0) console.log(`  읽지 못한 기록 줄 ${log.broken}개`);
   console.log('[finish] 배치별 결과:');
   for (const row of rows) {
     const steps = [row.combine, row.validation, mergedIds.has(row.batch_id) ? '병합됨' : '병합 안 됨(pending)'].filter(Boolean);
@@ -375,11 +392,16 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
       const ids = nextPendingBatches(progressDoc, count);
       // 중단된 회차를 이어 돌릴 때: 출력이 있고 지금 검증을 통과하면 다시 돌리지 않는다(done), 실패하거나 읽을 수 없으면 다시 돌린다(rerun)
       const { validateShardFile } = await import('./validate-output.mjs');
-      const statusOf = async (outPath, validate) => {
+      const { recordValidation } = await import('./validation-log.mjs');
+      const newPlan = { wave: ids.length > 0 ? waveNameOf(ids) : null, created_at: new Date().toISOString(), batch_ids: ids };
+      const statusOf = async (outPath, id, part = null) => {
         if (!fsSync.existsSync(outPath)) return 'new';
         try {
-          return (await validate()).valid ? 'done' : 'rerun';
-        } catch {
+          const res = await validateShardFile(id, part ? { part } : {});
+          await recordValidation({ actor: 'next', batchId: id, part, res, wavePlan: newPlan });
+          return res.valid ? 'done' : 'rerun';
+        } catch (err) {
+          await recordValidation({ actor: 'next', batchId: id, part, fatal: err.message, wavePlan: newPlan });
           return 'rerun';
         }
       };
@@ -396,7 +418,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
         scenes += input.scenes.length;
         bytes += input.body_bytes ?? 0;
         const shardOut = path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`);
-        const combinedStatus = await statusOf(shardOut, () => validateShardFile(id));
+        const combinedStatus = await statusOf(shardOut, id);
         if (plan.length === 1) {
           call += 1;
           statusCount[combinedStatus] += 1;
@@ -404,7 +426,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           console.log(`call ${call}: ${id} (${input.scenes.length} scenes, ${plan[0].line_count} lines) [${combinedStatus}]`);
           console.log(`  input    ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'batches', `${id}.json`))}`);
           console.log(`  output   ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`))}`);
-          console.log(`  validate node scripts/graph/validate-output.mjs ${id}`);
+          console.log(`  validate node scripts/graph/validate-output.mjs ${id} --run 1`);
           continue;
         }
         for (const { part, scene_ids: partIds, line_count: lineCount } of plan) {
@@ -412,13 +434,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           const inputPath = partInputPathOf(id, part);
           await writeJsonAtomic(inputPath, buildPartInput(input, part));
           const status =
-            combinedStatus === 'done' ? 'done' : await statusOf(partPathOf(id, part), () => validateShardFile(id, { part }));
+            combinedStatus === 'done' ? 'done' : await statusOf(partPathOf(id, part), id, part);
           statusCount[status] += 1;
           calls.push({ call, batch_id: id, part, scene_count: partIds.length, line_count: lineCount, status });
           console.log(`call ${call}: ${id} part ${part}/${plan.length} (${partIds.length} scenes, ${lineCount} lines) [${status}]`);
           console.log(`  input    ${rel(inputPath)}`);
           console.log(`  output   ${rel(partPathOf(id, part))}`);
-          console.log(`  validate node scripts/graph/validate-output.mjs ${id} --part ${part}`);
+          console.log(`  validate node scripts/graph/validate-output.mjs ${id} --part ${part} --run 1`);
         }
       }
       console.log(`[batch-parts] next ${ids.length} batch(es): ${ids.join(', ')} — ${scenes} scenes, ${bytes} body bytes, ${call} call(s)`);
@@ -429,10 +451,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
         console.log(`  ${r.scene_id} (${r.batch_id}) — ${r.reason}: ??? ${r.unknowns}, dialogue ${r.dialogue}`);
       }
       if (ids.length > 0) {
-        const wave = waveNameOf(ids);
+        const { wave } = newPlan;
         await writeJsonAtomic(wavePlanPathOf(), {
           wave,
-          created_at: new Date().toISOString(),
+          created_at: newPlan.created_at,
           batch_ids: ids,
           scene_count: scenes,
           body_bytes: bytes,

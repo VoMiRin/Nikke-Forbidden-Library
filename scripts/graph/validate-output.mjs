@@ -2237,15 +2237,33 @@ export const validateShardFile = async (shardArg, options = {}) => {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   const target = process.argv[2];
-  const partIdx = process.argv.indexOf('--part');
-  const part = partIdx > 0 ? Number(process.argv[partIdx + 1]) : null;
-  if (!target || (partIdx > 0 && !Number.isInteger(part))) {
-    console.error('Usage: node scripts/graph/validate-output.mjs <shard-json-path-or-batch-id> [--part <n>]');
+  const flagValue = (flag) => {
+    const idx = process.argv.indexOf(flag);
+    return idx > 0 ? Number(process.argv[idx + 1]) : null;
+  };
+  const part = flagValue('--part');
+  const run = flagValue('--run');
+  const isBadFlag = (flag, value) => process.argv.includes(flag) && !(Number.isInteger(value) && value > 0);
+  if (!target || isBadFlag('--part', part) || isBadFlag('--run', run)) {
+    console.error('Usage: node scripts/graph/validate-output.mjs <shard-json-path-or-batch-id> [--part <n>] [--run <n>]');
     process.exit(1);
   }
+  // 검증 기록(validation-log.mjs): 이 명령은 추출 서브에이전트가 실행하는 검증이다. --run은 같은 호출을 다시 돌릴 때 감독관이 올리는 실행 번호다
+  const { recordValidation } = await import('./validation-log.mjs');
+  const isPath = target.endsWith('.json');
+  const record = (fields) =>
+    recordValidation({
+      actor: 'extractor',
+      batchId: isPath ? path.basename(target, '.json') : target,
+      part,
+      run,
+      shardPath: isPath ? path.resolve(target) : null,
+      ...fields,
+    });
 
   validateShardFile(target, { part })
-    .then((res) => {
+    .then(async (res) => {
+      await record({ res });
       if (res.warnings.length > 0) {
         for (const w of res.warnings) {
           console.warn(`[WARN][${w.rule}] (${w.scene_id ?? 'batch'}) ${w.path}: ${w.message}`);
@@ -2264,7 +2282,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
         `[PASS] ${res.batchId}: mechanical validation succeeded (${res.warnings.length} warning(s)).`
       );
     })
-    .catch((err) => {
+    .catch(async (err) => {
+      await record({ fatal: err.message || String(err) });
       console.error('[validate-output] Fatal error:', err.message || err);
       process.exit(1);
     });
