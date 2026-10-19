@@ -7,15 +7,39 @@
       "chronology_type": "present",
       "chronology_segments": [],
       "is_plot_critical": true,
-      "summary": "시뮬레이션 테스트 직후 엔더슨과 잉그리드는 카운터스에 가장 어려운 발전소 조사 작전을 맡기고, 지휘관이 연속 배정된 가운데 오퍼레이터 시프티가 합류하여 함께 지상으로 향한다.",
+      "summary": "테스트 직후 엔더슨과 잉그리드는 카운터스에 가장 어려운 발전소 조사 작전을 맡기고, 지휘관이 연속 배정된 가운데 오퍼레이터 시프티가 합류하여 함께 지상으로 향한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
-          { "speaker_label": "엔더슨", "entity_id": "char_엔더슨", "is_generic_role": false },
-          { "speaker_label": "잉그리드", "entity_id": "char_잉그리드", "is_generic_role": false },
-          { "speaker_label": "시프티", "entity_id": "char_시프티", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "엔더슨",
+            "entity_id": "char_엔더슨",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "잉그리드",
+            "entity_id": "char_잉그리드",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "시프티",
+            "entity_id": "char_시프티",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [],
@@ -108,7 +132,14 @@
       "unknown_speakers": [],
       "descriptor_speakers": [],
       "same_scene_speaker_groups": [],
-      "cross_scene_hints": [],
+      "cross_scene_hints": [
+        {
+          "text": "이 장면의 테스트(부제, L6, L16)는 앞 장면 main_01_09 L2~3, L12~18에서 잉그리드가 시뮬레이션 룸에서 진행한 전투력 테스트다.",
+          "related_scene_ids": [
+            "main_01_09"
+          ]
+        }
+      ],
       "choice_branches": [
         {
           "choice_line": 67,
@@ -162,22 +193,44 @@
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "라피",
-          "summary": "라피는 공을 세운 것은 맞으니 나쁜 일은 아닐 것이라고 말하고 아니스는 일단 대기하자고 한다.",
+          "summary": "라피는 공을 세운 것은 맞으니 나쁜 일은 아닐 것이라고 추측한다.",
           "line_start": 14,
-          "line_end": 15,
+          "line_end": 14,
           "claim_line": 14,
-          "quote": "라피: 나쁜 일은 아닐 겁니다. 공을 세운 건 맞으니까. 아니스: 흠··· 일단은 대기하는 수밖에 없나?",
+          "quote": "라피: 나쁜 일은 아닐 겁니다. 공을 세운 건 맞으니까.",
           "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스는 일단 대기하는 수밖에 없겠다고 말한다.",
+          "line_start": 15,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "아니스: 흠··· 일단은 대기하는 수밖에 없나?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨이 잉그리드에게 테스트 결과를 묻는다.",
+          "line_start": 16,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "엔더슨: 결과는 어떻지?",
+          "refers_to_past": false
         },
         {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "잉그리드",
           "summary": "잉그리드는 테스트 결과가 실전이었으면 바로 전멸했을 정도로 형편없으며, 실전 결과와의 괴리가 너무 커 실전에 강한 타입인지 의문을 표한다.",
-          "line_start": 16,
+          "line_start": 17,
           "line_end": 21,
           "claim_line": 19,
-          "quote": "엔더슨: 결과는 어떻지? 잉그리드: 놀라울 정도다. 엔더슨: ···그래? 잉그리드: 형편없어. 실전이었으면 바로 전멸했겠군. 엔더슨: 오, 정말 놀라운 결과로군. 잉그리드: 괴리가 너무 커. 실전에 강한 타입인가.",
+          "quote": "잉그리드: 놀라울 정도다. 엔더슨: ···그래? 잉그리드: 형편없어. 실전이었으면 바로 전멸했겠군. 엔더슨: 오, 정말 놀라운 결과로군. 잉그리드: 괴리가 너무 커. 실전에 강한 타입인가.",
           "refers_to_past": true
         },
         {
@@ -373,7 +426,7 @@
           "keyword": "수상한 결과",
           "category": "past_incident",
           "subject": null,
-          "detail": "직전 작전에서 카운터스가 상부 보기에 수상한 실전 결과를 내어 시뮬레이션 테스트와 고난도 발전소 조사 작전 배정의 계기가 됨.",
+          "detail": "직전 작전에서 카운터스가 상부 보기에 수상한 실전 결과를 내어 테스트와 고난도 발전소 조사 작전 배정의 계기가 됨.",
           "line_start": 6,
           "line_end": 7,
           "quote": "라피: 테스트겠지. 말 그대로. 라피: 저들이 보기엔 우리가 [수상한] 결과를 낸 건 맞으니까."
@@ -544,8 +597,16 @@
         }
       ],
       "unregistered_entity_candidates": [
-        { "surface_text": "발전소", "suggested_type": "location", "line_start": 27 },
-        { "surface_text": "중앙 정부", "suggested_type": "organization", "line_start": 34 }
+        {
+          "surface_text": "발전소",
+          "suggested_type": "location",
+          "line_start": 27
+        },
+        {
+          "surface_text": "중앙 정부",
+          "suggested_type": "organization",
+          "line_start": 34
+        }
       ]
     },
     {
@@ -556,11 +617,31 @@
       "summary": "지상 파견 직전 엘리시온 소속 니케 네온이 급작스러운 인사발령으로 합류하며, 잉그리드에게서 전력으로 돕되 모든 것을 보고하라는 명령을 받은 스파이라고 스스로 밝힌다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "시프티", "entity_id": "char_시프티", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "시프티",
+            "entity_id": "char_시프티",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [],
@@ -754,7 +835,11 @@
         }
       ],
       "unregistered_entity_candidates": [
-        { "surface_text": "엘리시온", "suggested_type": "organization", "line_start": 6 }
+        {
+          "surface_text": "엘리시온",
+          "suggested_type": "organization",
+          "line_start": 6
+        }
       ]
     },
     {
@@ -765,10 +850,26 @@
       "summary": "지상에 처음 올라온 네온과 함께 발전소 제어실로 향하던 일행은 5년 전 도시 봉쇄 당시 랩쳐 차단용으로 흘려보낸 선로의 고압 전류를 발견하고, 먼저 제어 센터에서 전류를 차단하기로 한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false }
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -983,9 +1084,21 @@
       ],
       "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": [
-        { "surface_text": "발전소", "suggested_type": "location", "line_start": 11 },
-        { "surface_text": "에블라 입자", "suggested_type": "concept", "line_start": 13 },
-        { "surface_text": "제어 센터", "suggested_type": "location", "line_start": 36 }
+        {
+          "surface_text": "발전소",
+          "suggested_type": "location",
+          "line_start": 11
+        },
+        {
+          "surface_text": "에블라 입자",
+          "suggested_type": "concept",
+          "line_start": 13
+        },
+        {
+          "surface_text": "제어 센터",
+          "suggested_type": "location",
+          "line_start": 36
+        }
       ]
     },
     {
@@ -996,10 +1109,26 @@
       "summary": "네온이 무심코 내뱉은 '아.'에 일행이 랩쳐 기습으로 오인해 경계하고, 이어 네온이 고압 전류 선로를 고무장화를 신고 넘어가자고 제안하자 시프티가 반박한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -1165,10 +1294,26 @@
       "summary": "제어 센터에 도착한 일행은 커넥팅 디바이스와 포트가 무엇인지 모르는 지휘관을 도와 선로의 전력을 차단하고 도시 내부로 향한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false }
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -1319,9 +1464,21 @@
       ],
       "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": [
-        { "surface_text": "제어 센터", "suggested_type": "location", "line_start": 2 },
-        { "surface_text": "커넥팅 디바이스", "suggested_type": "item", "line_start": 3 },
-        { "surface_text": "사관 학교", "suggested_type": "organization", "line_start": 22 }
+        {
+          "surface_text": "제어 센터",
+          "suggested_type": "location",
+          "line_start": 2
+        },
+        {
+          "surface_text": "커넥팅 디바이스",
+          "suggested_type": "item",
+          "line_start": 3
+        },
+        {
+          "surface_text": "사관 학교",
+          "suggested_type": "organization",
+          "line_start": 22
+        }
       ]
     },
     {
@@ -1332,8 +1489,16 @@
       "summary": "전투 종료 후 아니스가 네온의 높은 화력과 밸런스를 지적하자, 네온은 이 세상은 화력이 전부라며 '화력 만세' 구호를 따라 하라고 권하고 아니스는 거절한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -1374,25 +1539,47 @@
       "choice_branches": [],
       "events_and_claims": [
         {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 교전 상황 종료를 알린다.",
+          "line_start": 2,
+          "line_end": 2,
+          "claim_line": null,
+          "quote": "시프티: 상황 종료.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 네온에게 화력이 너무 높은 것 아니냐며 밸런스가 괜찮은지 묻는다.",
+          "line_start": 3,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "아니스: ···아까부터 신경 쓰였는데, 네온 너 말이야. 아니스: 화력이 너무 높은 거 아냐? 네온: 화력은 높으면 높을수록 좋은 거니까요. 아니스: 밸런스 괜찮은 거야?",
+          "refers_to_past": false
+        },
+        {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "네온",
-          "summary": "상황 종료 후 아니스가 네온의 화력이 너무 높아 밸런스가 괜찮은지 묻자, 네온은 이 세상은 화력이 전부이고 불안정한 밸런스를 감안할 가치가 있다고 주장한다.",
-          "line_start": 2,
-          "line_end": 10,
+          "summary": "네온은 화력은 높을수록 좋으며, 이 세상은 화력이 전부여서 불안정한 밸런스를 감안할 정도로 가치가 있다고 주장한다.",
+          "line_start": 5,
+          "line_end": 9,
           "claim_line": 8,
-          "quote": "시프티: 상황 종료. 아니스: ···아까부터 신경 쓰였는데, 네온 너 말이야. 아니스: 화력이 너무 높은 거 아냐? 네온: 화력은 높으면 높을수록 좋은 거니까요. 아니스: 밸런스 괜찮은 거야? 네온: 잘 들으세요 아니스. 네온: 이 세상은 화력이 전부에요. 오직 화력만이 우릴 지켜준답니다. 네온: 불안정한 밸런스를 감안할 정도로, 화력은 가치가 있어요. 아니스: 아, 예.",
+          "quote": "네온: 화력은 높으면 높을수록 좋은 거니까요. 아니스: 밸런스 괜찮은 거야? 네온: 잘 들으세요 아니스. 네온: 이 세상은 화력이 전부에요. 오직 화력만이 우릴 지켜준답니다. 네온: 불안정한 밸런스를 감안할 정도로, 화력은 가치가 있어요.",
           "refers_to_past": false
         },
         {
           "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "네온",
-          "summary": "네온이 모두에게 '화력 만세'를 따라 해보라고 권유하나 아니스가 싫다고 거절한다.",
-          "line_start": 11,
+          "summary": "아니스가 건성으로 대답하자 네온은 모두에게 '화력 만세'를 따라 해보라고 권유하고, 아니스는 싫다고 거절한다.",
+          "line_start": 10,
           "line_end": 13,
           "claim_line": null,
-          "quote": "네온: 자, 모두들 따라해보세요. 네온: 화력 만세. 아니스: 싫어.",
+          "quote": "아니스: 아, 예. 네온: 자, 모두들 따라해보세요. 네온: 화력 만세. 아니스: 싫어.",
           "refers_to_past": false
         }
       ],
@@ -1418,10 +1605,26 @@
       "summary": "50기 이상의 랩쳐가 장악한 발전소가 얼마 전부터 스스로 가동되고 있음을 확인한 뒤, 정면 돌파에 반발하는 아니스를 진정시키고 지휘관의 제안에 따라 잠입 루트로 향한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -1627,7 +1830,11 @@
       ],
       "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": [
-        { "surface_text": "발전소", "suggested_type": "location", "line_start": 2 }
+        {
+          "surface_text": "발전소",
+          "suggested_type": "location",
+          "line_start": 2
+        }
       ]
     },
     {
@@ -1638,10 +1845,26 @@
       "summary": "발전소로 이어진 배수로 입구가 잔해로 막혀 있자 지휘관이 화력으로 밀어버리자고 지시하고, 단독으로 잔해를 날려버린 네온이 감격하여 지휘관을 스승님으로 모시겠다고 선언한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -1775,8 +1998,16 @@
         }
       ],
       "unregistered_entity_candidates": [
-        { "surface_text": "발전소", "suggested_type": "location", "line_start": 3 },
-        { "surface_text": "배수로", "suggested_type": "location", "line_start": 3 }
+        {
+          "surface_text": "발전소",
+          "suggested_type": "location",
+          "line_start": 3
+        },
+        {
+          "surface_text": "배수로",
+          "suggested_type": "location",
+          "line_start": 3
+        }
       ]
     },
     {
@@ -1787,10 +2018,26 @@
       "summary": "악취가 진동하는 배수로를 기어 이동하며 후각 센서와 기존 지휘관들의 인식에 대해 이야기하던 중, 선두의 라피가 급정지해 소동이 일어난 뒤 발전소 내부에 도착한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [],
@@ -1986,7 +2233,11 @@
       ],
       "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": [
-        { "surface_text": "배수로", "suggested_type": "location", "line_start": 4 }
+        {
+          "surface_text": "배수로",
+          "suggested_type": "location",
+          "line_start": 4
+        }
       ]
     },
     {
@@ -1997,10 +2248,26 @@
       "summary": "발전소 내부에서 랩쳐들이 직접 기계를 조작하는 초유의 사태를 목격한 뒤 복귀하려던 일행은 랩쳐에게 발각되어 라피가 빔에 맞아 목이 떨어지고, 타일런트급 그레이브 디거가 출현하자 광차를 타고 탈출한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false },
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -2167,9 +2434,21 @@
       ],
       "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": [
-        { "surface_text": "발전소", "suggested_type": "location", "line_start": 7 },
-        { "surface_text": "타일런트 급", "suggested_type": "concept", "line_start": 37 },
-        { "surface_text": "그레이브 디거", "suggested_type": "character", "line_start": 37 }
+        {
+          "surface_text": "발전소",
+          "suggested_type": "location",
+          "line_start": 7
+        },
+        {
+          "surface_text": "타일런트 급",
+          "suggested_type": "concept",
+          "line_start": 37
+        },
+        {
+          "surface_text": "그레이브 디거",
+          "suggested_type": "character",
+          "line_start": 37
+        }
       ]
     },
     {
@@ -2180,9 +2459,21 @@
       "summary": "광차로 추격을 떨쳐낸 뒤 충격에 빠진 지휘관의 뺨을 때려 정신을 차리게 한 아니스는 니케는 머리만 들고 가면 살릴 수 있다고 말하고, 지휘관이 라피의 머리를 들고 탈출한다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [
           {
@@ -2306,9 +2597,21 @@
       "summary": "엔더슨은 발전소 대파 책임을 물어 지휘관과 휘하 스쿼드를 방주에서 추방해 전초 기지로 배속시키고, 지휘관이 떠난 뒤 잉그리드와 함께 중앙 정부의 눈을 피해 카운터스의 이질적인 전투력과 진화하는 랩쳐를 조사할 뜻을 밝힌다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "엔더슨", "entity_id": "char_엔더슨", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
-          { "speaker_label": "잉그리드", "entity_id": "char_잉그리드", "is_generic_role": false }
+          {
+            "speaker_label": "엔더슨",
+            "entity_id": "char_엔더슨",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "잉그리드",
+            "entity_id": "char_잉그리드",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [],
@@ -2430,14 +2733,36 @@
           "refers_to_past": false
         },
         {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨이 잉그리드에게 발전소에서의 교전 데이터 분석 결과를 말해달라고 요청한다.",
+          "line_start": 30,
+          "line_end": 32,
+          "claim_line": null,
+          "quote": "엔더슨: 발전소에서의 교전 데이터는? 잉그리드: 분석은 끝났다. 엔더슨: 말해주게.",
+          "refers_to_past": false
+        },
+        {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "잉그리드",
-          "summary": "잉그리드는 발전소 내부 랩쳐들의 스펙이 기존과 차원이 다름에도 따돌리고 탈출한 교전 데이터가 실전에 강한 타입이라기에도 너무 이질적이며 조사할 가치가 충분하다고 분석한다.",
-          "line_start": 30,
+          "summary": "잉그리드는 발전소 내부 랩쳐들의 스펙이 기존과 차원이 달라 압도적이며, 지휘관 일행은 실전에 강한 타입이라기에도 너무 이질적이어서 조사해볼 가치가 충분하다고 분석한다.",
+          "line_start": 33,
           "line_end": 36,
           "claim_line": 34,
-          "quote": "엔더슨: 발전소에서의 교전 데이터는? 잉그리드: 분석은 끝났다. 엔더슨: 말해주게. 잉그리드: 실전에 강한 타입. 이라고 하기에도 너무 이질적이군. 잉그리드: 압도적이야. 발전소 내부의 랩쳐들은 그 스펙이 기존과는 차원이 달라. 엔더슨: 따돌리고 탈출까지 했단 말이지. 그것들을 상대로. 잉그리드: 뭔가 있는 게 분명해. 지금은 감도 안 잡히지만 조사해볼 가치는 차고 넘치지.",
+          "quote": "잉그리드: 실전에 강한 타입. 이라고 하기에도 너무 이질적이군. 잉그리드: 압도적이야. 발전소 내부의 랩쳐들은 그 스펙이 기존과는 차원이 달라. 엔더슨: 따돌리고 탈출까지 했단 말이지. 그것들을 상대로. 잉그리드: 뭔가 있는 게 분명해. 지금은 감도 안 잡히지만 조사해볼 가치는 차고 넘치지.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨은 지휘관 일행이 기존과 차원이 다른 스펙의 발전소 내부 랩쳐들을 상대로 따돌리고 탈출까지 해냈다고 짚는다.",
+          "line_start": 34,
+          "line_end": 35,
+          "claim_line": 35,
+          "quote": "잉그리드: 압도적이야. 발전소 내부의 랩쳐들은 그 스펙이 기존과는 차원이 달라. 엔더슨: 따돌리고 탈출까지 했단 말이지. 그것들을 상대로.",
           "refers_to_past": true
         },
         {
@@ -2522,10 +2847,26 @@
         }
       ],
       "unregistered_entity_candidates": [
-        { "surface_text": "발전소", "suggested_type": "location", "line_start": 7 },
-        { "surface_text": "전초 기지", "suggested_type": "location", "line_start": 19 },
-        { "surface_text": "갱생관", "suggested_type": "location", "line_start": 23 },
-        { "surface_text": "중앙 정부", "suggested_type": "organization", "line_start": 38 }
+        {
+          "surface_text": "발전소",
+          "suggested_type": "location",
+          "line_start": 7
+        },
+        {
+          "surface_text": "전초 기지",
+          "suggested_type": "location",
+          "line_start": 19
+        },
+        {
+          "surface_text": "갱생관",
+          "suggested_type": "location",
+          "line_start": 23
+        },
+        {
+          "surface_text": "중앙 정부",
+          "suggested_type": "organization",
+          "line_start": 38
+        }
       ]
     },
     {
@@ -2536,9 +2877,21 @@
       "summary": "황무지 같은 전초 기지에 도착한 아니스와 네온은 열악한 환경에 대해 이야기하며 숙소를 찾는다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [],
@@ -2579,25 +2932,58 @@
       "choice_branches": [],
       "events_and_claims": [
         {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "전초 기지에 도착한 아니스가 왜 이런 황무지 같은 곳으로 배정된 것이냐며 불평한다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "아니스: 여기 뭐야. 네온: 전초 기지라고 하네요. 아니스: 아는데, 우리가 왜 이런 곳으로 배정된 건데! 네온: 스승님의 호위 겸, 발전소를 부순 일등 공신이라서요? 아니스: 그래도 그렇지 이런 황무지 같은 곳에서 어떻게···.",
+          "refers_to_past": false
+        },
+        {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "네온",
-          "summary": "왜 이런 전초 기지로 배정된 것이냐는 아니스의 불평에 네온은 스승님의 호위 겸 발전소를 부순 일등 공신이라서 그렇다고 답한다.",
-          "line_start": 2,
-          "line_end": 6,
+          "summary": "네온은 자신들이 스승님의 호위 겸 발전소를 부순 일등 공신이라서 전초 기지로 배정된 것이라고 말한다.",
+          "line_start": 4,
+          "line_end": 5,
           "claim_line": 5,
-          "quote": "아니스: 여기 뭐야. 네온: 전초 기지라고 하네요. 아니스: 아는데, 우리가 왜 이런 곳으로 배정된 건데! 네온: 스승님의 호위 겸, 발전소를 부순 일등 공신이라서요? 아니스: 그래도 그렇지 이런 황무지 같은 곳에서 어떻게···.",
+          "quote": "아니스: 아는데, 우리가 왜 이런 곳으로 배정된 건데! 네온: 스승님의 호위 겸, 발전소를 부순 일등 공신이라서요?",
           "refers_to_past": true
         },
         {
           "epistemic_type": "established_event",
           "confidence": null,
           "actor_or_speaker": "네온",
-          "summary": "네온이 허공에 총을 쏘며 아무도 신경 쓰지 않는다고 좋아하고, 아니스는 실수였다고 해도 지은 죄가 있으니 어쩔 수 없다며 체념한다.",
+          "summary": "네온이 허공에 총을 쏘며 아무 데나 총을 쏴도 누구도 신경 쓰지 않는다고 말하자 아니스가 건성으로 맞장구친다.",
           "line_start": 7,
+          "line_end": 10,
+          "claim_line": null,
+          "quote": "탕-! 아니스: 으악! 네온: 아니스, 보셨나요? 아무 데나 총을 쏴도 그 누구도 신경 쓰지 않아요! 아니스: 와. 대단해.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스는 실수였다고는 해도 지은 죄가 없는 것은 아니니 어쩔 수 없다고 체념한다.",
+          "line_start": 12,
+          "line_end": 12,
+          "claim_line": 12,
+          "quote": "아니스: 뭐 어쩔 수 없네. 실수였다고는 해도 지은 죄가 없는 건 아니니까.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 야영 같아서 두근거리지 않느냐고 묻자 아니스는 심장이 너무 빨리 뛰어 죽을 것 같다고 응수한다.",
+          "line_start": 13,
           "line_end": 14,
           "claim_line": null,
-          "quote": "탕-! 아니스: 으악! 네온: 아니스, 보셨나요? 아무 데나 총을 쏴도 그 누구도 신경 쓰지 않아요! 아니스: 와. 대단해. 아니스: ··· ···. 아니스: 뭐 어쩔 수 없네. 실수였다고는 해도 지은 죄가 없는 건 아니니까. 네온: 그렇죠? 그리고 야영 같아서 되게 두근거리지 않나요? 아니스: 심장이 너무 빨리 뛰어서 죽을 것 같긴 하네.",
+          "quote": "네온: 그렇죠? 그리고 야영 같아서 되게 두근거리지 않나요? 아니스: 심장이 너무 빨리 뛰어서 죽을 것 같긴 하네.",
           "refers_to_past": false
         },
         {
@@ -2613,10 +2999,31 @@
         }
       ],
       "clues_and_hooks": [],
-      "relationship_and_lore_notes": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "네온",
+          "target": "지휘관",
+          "relation_or_change": "지휘관을 스승님이라 부르며, 스승님의 호위 겸 발전소를 부순 일등 공신으로 전초 기지에 배정되었다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "네온",
+          "line_start": 4,
+          "line_end": 5,
+          "claim_line": 5,
+          "quote": "아니스: 아는데, 우리가 왜 이런 곳으로 배정된 건데! 네온: 스승님의 호위 겸, 발전소를 부순 일등 공신이라서요?",
+          "refers_to_past": true
+        }
+      ],
       "unregistered_entity_candidates": [
-        { "surface_text": "전초 기지", "suggested_type": "location", "line_start": 3 },
-        { "surface_text": "발전소", "suggested_type": "location", "line_start": 5 }
+        {
+          "surface_text": "전초 기지",
+          "suggested_type": "location",
+          "line_start": 3
+        },
+        {
+          "surface_text": "발전소",
+          "suggested_type": "location",
+          "line_start": 5
+        }
       ]
     },
     {
@@ -2627,9 +3034,21 @@
       "summary": "창고처럼 열악한 숙소에 들어선 아니스와 네온은 간당간당한 전투식량과 물이 나오지 않는 샤워실을 확인하고, 지휘관실이 따로 있다는 말에 직접 보러 간다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false }
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [],
@@ -2687,11 +3106,22 @@
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "네온",
-          "summary": "네온과 아니스는 지휘관이 자신들과 같은 숙소에서 함께 지내면 프라이버시에 큰 문제가 있다고 걱정한다.",
+          "summary": "네온은 스승님이 자신들과 같이 이 숙소에서 지내는지 물으며, 아무리 그래도 같이 지내는 것은 큰 문제라고 걱정한다.",
           "line_start": 15,
-          "line_end": 24,
+          "line_end": 23,
           "claim_line": 18,
-          "quote": "네온: 그리고 걱정인 것이 또 있어요. 아니스: ···뭔데. 네온: 스승님은 설마 우리와 같이 이 숙소에서 지내시나요? 네온: 만약 그렇다고 하면 큰 문제에요. [CHOICE_START] [OPTION TEXT=\"왜?\"] [OPTION_END] [CHOICE_END] 네온: 아무리 그래도 같이 지내는 건 좀 뭐랄까. 아니스: 프라이버시에 문제가 있지, 응.",
+          "quote": "네온: 그리고 걱정인 것이 또 있어요. 아니스: ···뭔데. 네온: 스승님은 설마 우리와 같이 이 숙소에서 지내시나요? 네온: 만약 그렇다고 하면 큰 문제에요. [CHOICE_START] [OPTION TEXT=\"왜?\"] [OPTION_END] [CHOICE_END] 네온: 아무리 그래도 같이 지내는 건 좀 뭐랄까.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스는 지휘관과 같은 숙소에서 함께 지내는 것은 프라이버시에 문제가 있다고 동의한다.",
+          "line_start": 23,
+          "line_end": 24,
+          "claim_line": 24,
+          "quote": "네온: 아무리 그래도 같이 지내는 건 좀 뭐랄까. 아니스: 프라이버시에 문제가 있지, 응.",
           "refers_to_past": false
         },
         {
@@ -2709,7 +3139,11 @@
       "clues_and_hooks": [],
       "relationship_and_lore_notes": [],
       "unregistered_entity_candidates": [
-        { "surface_text": "지휘관실", "suggested_type": "location", "line_start": 26 }
+        {
+          "surface_text": "지휘관실",
+          "suggested_type": "location",
+          "line_start": 26
+        }
       ]
     },
     {
@@ -2720,10 +3154,26 @@
       "summary": "쾌적한 지휘관실을 보고 부러워하던 아니스·네온 앞에 바디 재정비를 마친 라피가 복귀해 니케는 인간이 아닌 병기라며 지휘관에게 선을 긋고, 밤에 엔더슨의 격려 메시지를 받은 뒤 다음 날 손님이 찾아온다.",
       "participants": {
         "present_in_scene": [
-          { "speaker_label": "아니스", "entity_id": "char_아니스", "is_generic_role": false },
-          { "speaker_label": "네온", "entity_id": "char_네온", "is_generic_role": false },
-          { "speaker_label": "지휘관", "entity_id": "char_지휘관", "is_generic_role": false },
-          { "speaker_label": "라피", "entity_id": "char_라피", "is_generic_role": false }
+          {
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          }
         ],
         "present_silent": [],
         "remote_or_voice_only": [
@@ -3132,7 +3582,11 @@
         }
       ],
       "unregistered_entity_candidates": [
-        { "surface_text": "전초 기지", "suggested_type": "location", "line_start": 37 }
+        {
+          "surface_text": "전초 기지",
+          "suggested_type": "location",
+          "line_start": 37
+        }
       ]
     }
   ]

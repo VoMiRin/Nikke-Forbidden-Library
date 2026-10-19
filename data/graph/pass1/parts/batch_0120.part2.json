@@ -1,0 +1,4001 @@
+{
+  "schema_version": "1.3.0",
+  "batch_id": "batch_0120",
+  "scenes": [
+    {
+      "scene_id": "ice_dragon_saga_12",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "볼륨이 피리를 불어 잠든 프림을 깨우고, 길로틴이 즉사의 마안과 마계흑룡파를 사용해 프림에게 인정받아 용사의 검을 계승하지만, 마안의 반동으로 기절한 뒤 이레귤러를 쓰러뜨린다며 폭주해 메이든과 지휘관을 공격하다 다시 쓰러진다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "볼륨",
+            "entity_id": "char_볼륨",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "길로틴",
+            "entity_id": "char_길로틴",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "프림",
+            "entity_id": "char_프림",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "메이든",
+            "entity_id": "char_메이든",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 45,
+            "line_end": 45,
+            "quote": "  [OPTION TEXT=\"니케를 교체한다.\"]"
+          },
+          {
+            "surface_text": "편익의 마왕",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 74,
+            "line_end": 74,
+            "quote": "길로틴: 와라, 편익의 마왕이여!!"
+          },
+          {
+            "surface_text": "용사의 검",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 85,
+            "line_end": 87,
+            "quote": "프림: 용사의 검. 계승.\n프림: 축하.\n[시스템 : 용사의 검을 획득했습니다.]"
+          },
+          {
+            "surface_text": "즉사의 마안",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 92,
+            "line_end": 92,
+            "quote": "길로틴: [즉사의 마안]을 쓰면···."
+          },
+          {
+            "surface_text": "이레귤러",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 107,
+            "line_end": 108,
+            "quote": "길로틴: 이레귤러는···.\n길로틴: 전부··· 쓰러뜨린다···."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "길로틴",
+          "to_target": "지휘관",
+          "address_term": "벗이여",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "길로틴: 벗이여, 지시를!"
+        },
+        {
+          "from_speaker": "프림",
+          "to_target": "길로틴",
+          "address_term": "너",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "프림: 너. 인정."
+        },
+        {
+          "from_speaker": "메이든",
+          "to_target": "길로틴",
+          "address_term": "당신",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "메이든: 기, 길로틴··· 당신 또 눈을···!"
+        },
+        {
+          "from_speaker": "메이든",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "메이든: 지휘관. 물러서세요."
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "choice_line": 37,
+          "options": [
+            {
+              "option_text": "싸운다.",
+              "continuation_summary": null
+            },
+            {
+              "option_text": "가방을 연다.",
+              "continuation_summary": "가방에 어제 길로틴이 먹다 남은 음식이 메이든 몰래 숨겨져 있는 것을 보고 못 본 척하며 길로틴의 전투에 집중하기로 한다."
+            },
+            {
+              "option_text": "니케를 교체한다.",
+              "continuation_summary": "강한 니케와 약한 니케는 사람이 멋대로 정하는 것이며 강한 지휘관이라면 좋아하는 니케로 이길 수 있도록 열심히 해야 한다고 생각하며 길로틴에게 맡기기로 한다."
+            },
+            {
+              "option_text": "도망친다.",
+              "continuation_summary": "도망쳐서 도착한 곳에 낙원이란 있을 수 없다고 생각하며 맞서 싸우기로 한다."
+            }
+          ]
+        },
+        {
+          "choice_line": 62,
+          "options": [
+            {
+              "option_text": "유열!",
+              "continuation_summary": "시스템 메시지로 길로틴의 공격력이 올랐다고 출력된다."
+            },
+            {
+              "option_text": "흑화!",
+              "continuation_summary": "시스템 메시지로 길로틴이 검은 오오라에 둘러싸이고 기분이 좋아졌다고 출력된다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 좋은 무대가 있다더니 이런 돌덩이 앞이었냐며 불평한다.",
+          "line_start": 2,
+          "line_end": 4,
+          "claim_line": 4,
+          "quote": "볼륨: Oh my God~\n볼륨: 좋은 무대가 있다더니.\n볼륨: What? 이런 돌덩이 앞이었어?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 볼륨에게 한 번만 부탁한다고 요청한다.",
+          "line_start": 6,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"볼륨, 한 번만 부탁할게.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 대신 다음 공연 때 다 같이 자신의 매니저 역할을 해달라고 조건을 건다.",
+          "line_start": 9,
+          "line_end": 10,
+          "claim_line": null,
+          "quote": "볼륨: Huh···.\n볼륨: 대신 다음 공연 때 다 같이 내 매니저 역할 해주는 거야. Understand?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 여기서도 매니저냐고 반응한 뒤 일단 알겠다고 승낙한다.",
+          "line_start": 12,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"여기서도 매니저인가.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"일단 알겠어.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "용사 일행에 새로 합류한 음유시인 볼륨이 공연을 시작하겠다며 코를 골며 자고 있는 프림 앞에 다가가 피리를 불어 프림을 깨운다.",
+          "line_start": 19,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "볼륨: Bang~ 그럼 공연을 시작해 볼까?\n나레이션: 용사 일행에 새로이 합류한 음유시인은 프림 앞에 다가가 피리를 불었습니다.\n[시스템 : 프림은 기분 좋게 코를 골고 있다.]\n[시스템 : 볼륨이 피리를 불었다.]\n[시스템 : 프림은 눈을 떴다.]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 프림이 정말 깨어났다고 말한다.",
+          "line_start": 24,
+          "line_end": 24,
+          "claim_line": 24,
+          "quote": "길로틴: 저, 정말 깨어났군.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "깨어난 프림이 튀어나와 잠을 방해받았으니 죽음뿐이라고 선언한다.",
+          "line_start": 25,
+          "line_end": 28,
+          "claim_line": null,
+          "quote": "[시스템 : 야생의 프림이 튀어나왔다.]\n프림: 여.\n프림: 잠. 방해.\n프림: 죽음뿐.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 프림이 용사의 자질을 시험하겠다는 것이냐며 자신이 나서겠다고 선언한다.",
+          "line_start": 29,
+          "line_end": 30,
+          "claim_line": null,
+          "quote": "길로틴: 용사의 자질을 시험하겠다는 건가.\n길로틴: 여기선 내가 나서지.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 길로틴에게 맡기겠다고 답한다.",
+          "line_start": 32,
+          "line_end": 32,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"응. 맡길게.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 프림에게 승부를 선언하며 지휘관(벗)에게 지시를 요청한다.",
+          "line_start": 35,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "길로틴: 크큭, 승부다. 프림!\n길로틴: 벗이여, 지시를!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 싸운다는 지시를 내린다.",
+          "line_start": 38,
+          "line_end": 38,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"싸운다.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 가방을 열어 메이든 몰래 길로틴이 숨겨둔 어제 먹다 남은 음식을 발견하고 못 본 척하며 길로틴의 전투에 집중하기로 한다.",
+          "line_start": 40,
+          "line_end": 43,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"가방을 연다.\"]\n    어제 길로틴이 먹다 남은 음식이 있다.\n    메이든 몰래 길로틴이 숨겨둔 거니 못 본 척 하자.\n    지금은 길로틴의 전투에 집중하자.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 니케를 교체하려다가 좋아하는 니케로 이길 수 있도록 열심히 해야 한다고 생각하며 길로틴에게 맡기기로 한다.",
+          "line_start": 45,
+          "line_end": 51,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"니케를 교체한다.\"]\n    강한 니케.\n    약한 니케.\n    그런 건 사람이 멋대로 정하는 것.\n    정말 강한 지휘관이라면 좋아하는 니케로\n    이길 수 있도록 열심히 해야 한다.\n    여기선 길로틴에게 맡기자.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "지휘관이 독백으로 강한 니케와 약한 니케는 사람이 멋대로 정하는 것이며 정말 강한 지휘관이라면 좋아하는 니케로 이길 수 있도록 열심히 해야 한다고 생각한다.",
+          "line_start": 46,
+          "line_end": 50,
+          "claim_line": 49,
+          "quote": "    강한 니케.\n    약한 니케.\n    그런 건 사람이 멋대로 정하는 것.\n    정말 강한 지휘관이라면 좋아하는 니케로\n    이길 수 있도록 열심히 해야 한다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 도망치려다가 도망쳐서 도착한 곳에 낙원은 있을 수 없다며 맞서 싸우기로 한다.",
+          "line_start": 53,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"도망친다.\"]\n    도망쳐서 도착한 곳에 낙원이란 있을 수 없다.\n    여기선 맞서 싸우자.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 길로틴에게 가라고 지시한다.",
+          "line_start": 59,
+          "line_end": 59,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"가라, 길로틴!\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 유열을 외치자 시스템 메시지로 길로틴의 공격력이 올랐다고 출력된다.",
+          "line_start": 63,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"유열!\"]\n    [시스템 : 길로틴의 공격력이 올랐다.]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 흑화를 외치자 시스템 메시지로 길로틴이 검은 오오라에 둘러싸이고 기분이 좋아졌다고 출력된다.",
+          "line_start": 66,
+          "line_end": 68,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"흑화!\"]\n    [시스템 : 길로틴이 검은 오오라에 둘러싸인다.]\n    [시스템 : 길로틴은 기분이 좋아졌다.]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 한바탕 날뛰어 보겠다며 편익의 마왕을 부르고 마계흑룡파를 외친다.",
+          "line_start": 72,
+          "line_end": 75,
+          "claim_line": null,
+          "quote": "길로틴: 한바탕 날뛰어 볼까. 크큭.\n길로틴: 때가 왔다!\n길로틴: 와라, 편익의 마왕이여!!\n길로틴: 마. 계. 흑. 룡. 파!!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 길로틴이 쓰려는 기술을 보고 잠깐이라며 제지하려 한다.",
+          "line_start": 77,
+          "line_end": 77,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"자, 잠깐! 그건···!\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 마계흑룡파를 사용하자 오른쪽 눈에서 검은 연기가 흘러나와 용의 형체가 되어 프림을 관통한다.",
+          "line_start": 80,
+          "line_end": 82,
+          "claim_line": null,
+          "quote": "[시스템 : 마계흑룡파를 사용합니다.]\n나레이션: 길로틴의 오른쪽 눈에서 검은 연기가 흘러나오더니,\n나레이션: 곧 용의 형체가 되어 프림을 관통하였습니다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프림",
+          "summary": "프림이 아픔을 호소하며 길로틴을 인정하고 용사의 검을 계승해 준 뒤 축하하며 다시 자러 간다.",
+          "line_start": 83,
+          "line_end": 89,
+          "claim_line": null,
+          "quote": "프림: 아픔.\n프림: 너. 인정.\n프림: 용사의 검. 계승.\n프림: 축하.\n[시스템 : 용사의 검을 획득했습니다.]\n프림: 다시 자러 감.\n프림: 쿨.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 길로틴에게 또 눈을 쓴 것이냐며 다그친다.",
+          "line_start": 90,
+          "line_end": 90,
+          "claim_line": null,
+          "quote": "메이든: 기, 길로틴··· 당신 또 눈을···!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 즉사의 마안을 쓰면 자신도 화력을 낼 수 있다고 말하지 않았냐고 답한다.",
+          "line_start": 91,
+          "line_end": 93,
+          "claim_line": 92,
+          "quote": "길로틴: 후후, 내가 말하지 않았나···.\n길로틴: [즉사의 마안]을 쓰면···.\n길로틴: 나도 화력을···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "이세계에 온 뒤 두 번째로 마안에 봉인된 힘을 사용한 반동 때문에 길로틴이 쓰러져 기절하고, 시스템 메시지로 편익의 마왕이 일시적으로 깨어나 모든 의지를 빼앗긴다고 출력된다.",
+          "line_start": 94,
+          "line_end": 99,
+          "claim_line": null,
+          "quote": "털썩-\n메이든: 길로틴?\n나레이션: 이세계에 오고 나서 벌써 두 번째.\n나레이션: 마안에 봉인된 힘을 사용한 반동으로 길로틴은 기절하고 말았습니다.\n[시스템 : 편익의 마왕이 일시적으로 깨어납니다.]\n[시스템 : 모든 의지를 빼앗깁니다.]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 길로틴에게 괜찮은지 묻는다.",
+          "line_start": 101,
+          "line_end": 101,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"길로틴, 괜찮아?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 뭔가 이상하다며 지휘관에게 물러서라고 경고한다.",
+          "line_start": 104,
+          "line_end": 105,
+          "claim_line": 105,
+          "quote": "메이든: 지휘관. 물러서세요.\n메이든: 뭔가 이상해요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "의지를 빼앗긴 길로틴이 명령대로 이레귤러는 전부 쓰러뜨린다고 중얼거린다.",
+          "line_start": 106,
+          "line_end": 108,
+          "claim_line": null,
+          "quote": "길로틴: 명령대로···.\n길로틴: 이레귤러는···.\n길로틴: 전부··· 쓰러뜨린다···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "지휘관이 놀라는 사이 메이든이 아이스 배리어를 펼쳐 얼음 결계로 길로틴이 휘두른 검을 막아낸다.",
+          "line_start": 110,
+          "line_end": 116,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"···!!\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 아이스 배리어.\n휘익-!\n쩌저적-\n길로틴이 휘두른 검은 메이든이 만든 얼음 결계에 막혔다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 지휘관에게 오래 버티지 못한다며 이 틈에 자신의 뒤로 오라고 말한다.",
+          "line_start": 117,
+          "line_end": 118,
+          "claim_line": 117,
+          "quote": "메이든: 지휘관··· 오래 버티진 못해요···.\n메이든: 이 틈에··· 제 뒤로 와요···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "지휘관과 메이든이 부르는 가운데 길로틴이 이레귤러는 전부라고 중얼거리다 다시 쓰러진다.",
+          "line_start": 120,
+          "line_end": 127,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"길로틴···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 지휘관!\n길로틴: 이레귤러는···.\n길로틴: 전부···.\n길로틴: ··· ···.\n털썩-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 숨을 몰아쉬며 길로틴이 기절한 것 같다고 말하고 지휘관에게 괜찮은지 묻는다.",
+          "line_start": 128,
+          "line_end": 130,
+          "claim_line": 129,
+          "quote": "메이든: 하아, 하아···.\n메이든: 기절한 것 같네요···.\n메이든: 지휘관, 괜찮으세요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메이든 덕분에 자신은 괜찮다며 길로틴은 괜찮은 것인지 묻는다.",
+          "line_start": 132,
+          "line_end": 136,
+          "claim_line": 132,
+          "quote": "  [OPTION TEXT=\"덕분에 난 괜찮은데···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"길로틴은 괜찮은 걸까?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 길로틴이 이레귤러가 되었는지 아닌지에 대한 최종 판단을 내리는 것은 지휘관이라고 말한다.",
+          "line_start": 139,
+          "line_end": 141,
+          "claim_line": 141,
+          "quote": "메이든: ··· ···.\n메이든: 길로틴이 이레귤러가 되었는지 아닌지.\n메이든: 그 최종 판단을 내리는 건 지휘관이에요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "지휘관이 침묵하자 메이든은 그 판단이 어찌 되든 일단 길로틴이 능력을 쓰지 못하도록 막아야겠다고 말한다.",
+          "line_start": 143,
+          "line_end": 147,
+          "claim_line": 147,
+          "quote": "  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 그 판단이 어찌 되든.\n메이든: 일단 길로틴이 능력을 쓰지 못하도록 막아야겠네요.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "프림의 단답형 말투",
+          "category": "trait",
+          "subject": "프림",
+          "detail": "짧은 단어와 명사로만 끊어 말하며 잠을 방해받는 것을 극도로 싫어하는 특징.",
+          "line_start": 26,
+          "line_end": 28,
+          "quote": "프림: 여.\n프림: 잠. 방해.\n프림: 죽음뿐."
+        },
+        {
+          "keyword": "즉사의 마안",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "길로틴의 오른쪽 눈에 봉인된 힘. 마계흑룡파를 사용하면 검은 연기가 용의 형체가 되어 적을 관통하지만, 반동으로 기절하고 편익의 마왕이 일시적으로 깨어나 의지를 빼앗기며 이레귤러를 쓰러뜨린다고 폭주함.",
+          "line_start": 80,
+          "line_end": 99,
+          "quote": "[시스템 : 마계흑룡파를 사용합니다.]\n나레이션: 길로틴의 오른쪽 눈에서 검은 연기가 흘러나오더니,\n나레이션: 곧 용의 형체가 되어 프림을 관통하였습니다.\n프림: 아픔.\n프림: 너. 인정.\n프림: 용사의 검. 계승.\n프림: 축하.\n[시스템 : 용사의 검을 획득했습니다.]\n프림: 다시 자러 감.\n프림: 쿨.\n메이든: 기, 길로틴··· 당신 또 눈을···!\n길로틴: 후후, 내가 말하지 않았나···.\n길로틴: [즉사의 마안]을 쓰면···.\n길로틴: 나도 화력을···.\n털썩-\n메이든: 길로틴?\n나레이션: 이세계에 오고 나서 벌써 두 번째.\n나레이션: 마안에 봉인된 힘을 사용한 반동으로 길로틴은 기절하고 말았습니다.\n[시스템 : 편익의 마왕이 일시적으로 깨어납니다.]\n[시스템 : 모든 의지를 빼앗깁니다.]"
+        },
+        {
+          "keyword": "용사의 검",
+          "category": "item",
+          "subject": null,
+          "detail": "길로틴이 프림에게 인정받아 계승·획득한 검.",
+          "line_start": 84,
+          "line_end": 87,
+          "quote": "프림: 너. 인정.\n프림: 용사의 검. 계승.\n프림: 축하.\n[시스템 : 용사의 검을 획득했습니다.]"
+        },
+        {
+          "keyword": "아이스 배리어",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "메이든이 얼음 결계를 만들어 공격을 막아내는 방어 기술.",
+          "line_start": 113,
+          "line_end": 116,
+          "quote": "메이든: 아이스 배리어.\n휘익-!\n쩌저적-\n길로틴이 휘두른 검은 메이든이 만든 얼음 결계에 막혔다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "지휘관",
+          "target": "볼륨",
+          "relation_or_change": "볼륨이 공연을 해주는 조건으로 다음 공연 때 다 같이 볼륨의 매니저 역할을 해주기로 일단 승낙함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 9,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "볼륨: Huh···.\n볼륨: 대신 다음 공연 때 다 같이 내 매니저 역할 해주는 거야. Understand?\n[CHOICE_START]\n  [OPTION TEXT=\"여기서도 매니저인가.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"일단 알겠어.\"]",
+          "refers_to_past": false
+        },
+        {
+          "subject": "길로틴",
+          "target": "지휘관",
+          "relation_or_change": "지휘관을 벗이라 부르며 전투 지시를 요청함",
+          "epistemic_type": "character_claim",
+          "claimant": "길로틴",
+          "line_start": 36,
+          "line_end": 36,
+          "claim_line": 36,
+          "quote": "길로틴: 벗이여, 지시를!",
+          "refers_to_past": false
+        },
+        {
+          "subject": "프림",
+          "target": "길로틴",
+          "relation_or_change": "길로틴의 실력을 인정하고 용사의 검을 계승해 줌",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 84,
+          "line_end": 86,
+          "claim_line": null,
+          "quote": "프림: 너. 인정.\n프림: 용사의 검. 계승.\n프림: 축하.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "지휘관",
+          "target": "길로틴",
+          "relation_or_change": "길로틴이 이레귤러가 되었는지 아닌지 최종 판단을 내리는 위치에 있다고 언급됨",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 140,
+          "line_end": 141,
+          "claim_line": 141,
+          "quote": "메이든: 길로틴이 이레귤러가 되었는지 아닌지.\n메이든: 그 최종 판단을 내리는 건 지휘관이에요.",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 45
+        },
+        {
+          "surface_text": "편익의 마왕",
+          "suggested_type": "concept",
+          "line_start": 74
+        },
+        {
+          "surface_text": "용사의 검",
+          "suggested_type": "item",
+          "line_start": 85
+        },
+        {
+          "surface_text": "즉사의 마안",
+          "suggested_type": "concept",
+          "line_start": 92
+        },
+        {
+          "surface_text": "이레귤러",
+          "suggested_type": "concept",
+          "line_start": 107
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "ice_dragon_saga_13",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "메이든은 지휘관에게 자신이 익스터너 스쿼드로서도 게이머로서도 어디에도 속할 수 없어 이번 임무를 끝으로 기억소거를 받기로 사장님과 약속했다고 털어놓고, 직후 머스탱·사쿠라·로산나·목단이 이끄는 [조직]이 용사 일행을 잡기 위해 마을을 습격한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "메이든",
+            "entity_id": "char_메이든",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "사쿠라",
+            "entity_id": "char_사쿠라",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "머스탱",
+            "entity_id": "char_머스탱",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "로산나",
+            "entity_id": "char_로산나",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "목단",
+            "entity_id": "char_목단",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "익스터너 스쿼드",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 6,
+            "line_end": 8,
+            "quote": "메이든: 익스터너 스쿼드 소속 니케 메이든은 공과 사를 구분해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 냉정 침착해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 방주를 위해 싸워야 한다···."
+          },
+          {
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 6,
+            "line_end": 8,
+            "quote": "메이든: 익스터너 스쿼드 소속 니케 메이든은 공과 사를 구분해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 냉정 침착해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 방주를 위해 싸워야 한다···."
+          },
+          {
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "메이든: 익스터너 스쿼드 소속 니케 메이든은 방주를 위해 싸워야 한다···."
+          },
+          {
+            "surface_text": "길로틴",
+            "entity_id": "char_길로틴",
+            "entity_type": "character",
+            "line_start": 19,
+            "line_end": 19,
+            "quote": "메이든: 길로틴은 깨어났나요?"
+          },
+          {
+            "surface_text": "베스티",
+            "entity_id": "char_베스티",
+            "entity_type": "character",
+            "line_start": 21,
+            "line_end": 21,
+            "quote": "  [OPTION TEXT=\"아직. 베스티랑 볼륨은?\"]"
+          },
+          {
+            "surface_text": "볼륨",
+            "entity_id": "char_볼륨",
+            "entity_type": "character",
+            "line_start": 21,
+            "line_end": 21,
+            "quote": "  [OPTION TEXT=\"아직. 베스티랑 볼륨은?\"]"
+          },
+          {
+            "surface_text": "시뮬레이션",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 38,
+            "line_end": 38,
+            "quote": "  [OPTION TEXT=\"시뮬레이션 안에 들어오고 메이든이 그랬잖아.\"]"
+          },
+          {
+            "surface_text": "사장님",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 58,
+            "line_end": 58,
+            "quote": "메이든: 사장님하고 약속했어요."
+          },
+          {
+            "surface_text": "기억소거",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 59,
+            "line_end": 59,
+            "quote": "메이든: 이번 임무를 끝으로 기억소거를 받기로요."
+          },
+          {
+            "surface_text": "조직",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 106,
+            "line_end": 106,
+            "quote": "목단: [조직]의 힘을 보여주자고~!"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "메이든",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "메이든: 제가 지휘관을 보는 건 이번 임무가 마지막이거든요."
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "사쿠라",
+          "address_term": "사쿠Ra",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "머스탱: Very Good입니다, 사쿠Ra."
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "로산나",
+          "address_term": "My Queen",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "머스탱: Ja, 그럼 My Queen~!"
+        },
+        {
+          "from_speaker": "로산나",
+          "to_target": "목단, 사쿠라",
+          "address_term": "얘들아",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "로산나: 자, 얘들아. 다 쓸어버리자."
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메이든에게 교대 시간이라고 알린다.",
+          "line_start": 3,
+          "line_end": 3,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"메이든, 교대 시간이야.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 익스터너 스쿼드 소속 니케 메이든은 공과 사를 구분하고 냉정 침착해야 하며 방주를 위해 싸워야 한다고 되뇌인다.",
+          "line_start": 6,
+          "line_end": 8,
+          "claim_line": 6,
+          "quote": "메이든: 익스터너 스쿼드 소속 니케 메이든은 공과 사를 구분해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 냉정 침착해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 방주를 위해 싸워야 한다···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메이든을 다시 불러 정신을 차리게 한 뒤 교대할 시간이 됐다고 알린다.",
+          "line_start": 10,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"메이든?\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: ··· ···아?\n[CHOICE_START]\n  [OPTION TEXT=\"교대할 시간 됐어.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 벌써 그렇게 됐냐며 길로틴이 깨어났는지 묻는다.",
+          "line_start": 18,
+          "line_end": 19,
+          "claim_line": null,
+          "quote": "메이든: 벌써 그렇게 됐군요.\n메이든: 길로틴은 깨어났나요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 길로틴은 아직 깨어나지 않았다고 답하며 베스티와 볼륨에 대해 묻는다.",
+          "line_start": 21,
+          "line_end": 21,
+          "claim_line": 21,
+          "quote": "  [OPTION TEXT=\"아직. 베스티랑 볼륨은?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 베스티와 볼륨은 돌려보냈고 내일 아침에 오겠다고 했다고 전한 뒤 가보겠다고 말한다.",
+          "line_start": 24,
+          "line_end": 27,
+          "claim_line": 24,
+          "quote": "메이든: 돌려보냈어요.\n메이든: 내일 아침에 오겠대요.\n메이든: ··· ···.\n메이든: 그럼 가볼게요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메이든을 불러 세우며 궁금한 것이 있다고 말한다.",
+          "line_start": 29,
+          "line_end": 33,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"잠깐.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"메이든, 궁금한 게 있어.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 무엇이 궁금한지 묻는다.",
+          "line_start": 36,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "메이든: 뭔가요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 시뮬레이션 안에 들어오고 나서 메이든이 마지막으로 즐겨보자고 하지 않았냐고 말한다.",
+          "line_start": 38,
+          "line_end": 42,
+          "claim_line": 42,
+          "quote": "  [OPTION TEXT=\"시뮬레이션 안에 들어오고 메이든이 그랬잖아.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"마지막으로 즐겨보자고.\"]",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 그랬었다고 인정한다.",
+          "line_start": 45,
+          "line_end": 45,
+          "claim_line": 45,
+          "quote": "메이든: ···그랬었죠.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그 말의 의미가 궁금했었다고 말한다.",
+          "line_start": 47,
+          "line_end": 47,
+          "claim_line": 47,
+          "quote": "  [OPTION TEXT=\"그 의미가 궁금했었어.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 별거 없다며 말 그대로 자신이 지휘관을 보는 것은 이번 임무가 마지막이라고 밝힌다.",
+          "line_start": 50,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "메이든: 별 거 없는데요.\n메이든: 말 그대로예요.\n메이든: 제가 지휘관을 보는 건 이번 임무가 마지막이거든요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 마지막이라는 말에 되묻는다.",
+          "line_start": 54,
+          "line_end": 54,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"마지막이라니.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 사장님과 이번 임무를 끝으로 기억소거를 받기로 약속했다고 밝힌다.",
+          "line_start": 57,
+          "line_end": 59,
+          "claim_line": 59,
+          "quote": "메이든: 그게요.\n메이든: 사장님하고 약속했어요.\n메이든: 이번 임무를 끝으로 기억소거를 받기로요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 기억소거라는 말에 놀란다.",
+          "line_start": 61,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"뭐?!\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 자신이 직접 부탁한 것이니 오해하지 말라고 덧붙인다.",
+          "line_start": 64,
+          "line_end": 65,
+          "claim_line": 65,
+          "quote": "메이든: 아, 오해는 마세요.\n메이든: 제가 직접 부탁한 거니까요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 왜 그런 부탁을 했는지 묻는다.",
+          "line_start": 67,
+          "line_end": 67,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"왜 그런 부탁을···?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 지금의 자신은 익스터너 스쿼드로서 임무를 수행할 수도, 게이머로서 즐겁게 게임을 할 수도 없어 아무 곳에도 속할 수 없기 때문에 기억소거를 받기로 했다고 설명한다.",
+          "line_start": 70,
+          "line_end": 75,
+          "claim_line": 75,
+          "quote": "메이든: 음.\n메이든: 지금의 전 아무 곳에도 속할 수 없으니까요.\n메이든: 익스터너 스쿼드로서 임무를 수행할 수도.\n메이든: 게이머로서 즐겁게 게임을 할 수도 없으니까요.\n메이든: 그래서예요.\n메이든: 그래서 기억소거를 받기로 했어요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "지휘관이 침묵하자 메이든은 자신이 하는 게임 랭킹 1등을 다 찍어두는 등 자신이 있었다는 흔적은 여기저기에 남겨뒀으니 너무 걱정하지 말라고 말한다.",
+          "line_start": 77,
+          "line_end": 83,
+          "claim_line": 82,
+          "quote": "  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 그래도요.\n메이든: 너무 걱정 하진 마세요.\n메이든: 제가 있었단 흔적은 여기저기에 남겨뒀으니까요.\n메이든: 일단 제가 하는 게임 랭킹 1등은 다 찍어뒀거든요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "지휘관이 메이든에게 할 말이 있다고 운을 떼자 폭발음이 두 차례 울리고, 메이든은 지휘관에게 여기 있으라고 한 뒤 무슨 일인지 보고 오겠다고 나선다.",
+          "line_start": 85,
+          "line_end": 95,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"메이든, 할 말이 있는데···.\"]\n  [OPTION_END]\n[CHOICE_END]\n펑-!\n[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 지휘관, 여기 있어요.\n메이든: 무슨 일인지 제가 보고 올게요.\n펑-!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "사쿠라",
+          "summary": "사쿠라가 마을로 향하는 길은 뚫었다고 보고한다.",
+          "line_start": 96,
+          "line_end": 96,
+          "claim_line": 96,
+          "quote": "사쿠라: 마을로 향하는 길은 뚫었습니다.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 사쿠라를 칭찬하고 로산나(My Queen)에게 용사라 불리는 자들을 자신 앞으로 데려오라고 지시한다.",
+          "line_start": 97,
+          "line_end": 99,
+          "claim_line": null,
+          "quote": "머스탱: Very Good입니다, 사쿠Ra.\n머스탱: Ja, 그럼 My Queen~!\n머스탱: Me 앞으로 용사라 불리는 Ja들을 데려오세Yo!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "로산나",
+          "summary": "로산나가 용사라 불리는 자들의 생사 여부를 묻는다.",
+          "line_start": 100,
+          "line_end": 100,
+          "claim_line": null,
+          "quote": "로산나: 생사 여부는?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 생사 여부는 당연히 상관없다고 답한다.",
+          "line_start": 101,
+          "line_end": 102,
+          "claim_line": 102,
+          "quote": "머스탱: 당연히.\n머스탱: 상관없습니Da.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "로산나",
+          "summary": "로산나가 일일이 신경 쓸 것 없어서 좋다며 다 쓸어버리자고 지시한다.",
+          "line_start": 103,
+          "line_end": 104,
+          "claim_line": null,
+          "quote": "로산나: 일일이 신경 쓸 것 없어서 좋네.\n로산나: 자, 얘들아. 다 쓸어버리자.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "목단",
+          "summary": "목단이 자신들도 가자며 [조직]의 힘을 보여주자고 외친다.",
+          "line_start": 105,
+          "line_end": 106,
+          "claim_line": null,
+          "quote": "목단: 좋아, 우리도 가자.\n목단: [조직]의 힘을 보여주자고~!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "사쿠라",
+          "summary": "사쿠라가 가자며 호응한다.",
+          "line_start": 107,
+          "line_end": 107,
+          "claim_line": null,
+          "quote": "사쿠라: ···가시죠.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 오늘 밤은 길고 어두울 것이라며 이제부터 자신들의 시간이라고 외친다.",
+          "line_start": 108,
+          "line_end": 111,
+          "claim_line": 110,
+          "quote": "머스탱: Yes!!\n머스탱: 오늘 밤은 Very Very Very Long하고 Dark하겠군Yo!\n머스탱: 이제부턴 우리의 시간입니Da!\n머스탱: Enter---------------tainment-----!!!!",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "메이든의 기억소거 약속과 게임 랭킹 1등 흔적",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "메이든이 이번 임무를 끝으로 기억소거를 받기로 사장님과 약속했으며, 자신이 있었다는 흔적으로 하는 게임 랭킹 1등을 모두 찍어두었다고 밝힘.",
+          "line_start": 57,
+          "line_end": 83,
+          "quote": "메이든: 그게요.\n메이든: 사장님하고 약속했어요.\n메이든: 이번 임무를 끝으로 기억소거를 받기로요.\n[CHOICE_START]\n  [OPTION TEXT=\"뭐?!\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 아, 오해는 마세요.\n메이든: 제가 직접 부탁한 거니까요.\n[CHOICE_START]\n  [OPTION TEXT=\"왜 그런 부탁을···?\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 음.\n메이든: 지금의 전 아무 곳에도 속할 수 없으니까요.\n메이든: 익스터너 스쿼드로서 임무를 수행할 수도.\n메이든: 게이머로서 즐겁게 게임을 할 수도 없으니까요.\n메이든: 그래서예요.\n메이든: 그래서 기억소거를 받기로 했어요.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 그래도요.\n메이든: 너무 걱정 하진 마세요.\n메이든: 제가 있었단 흔적은 여기저기에 남겨뒀으니까요.\n메이든: 일단 제가 하는 게임 랭킹 1등은 다 찍어뒀거든요."
+        },
+        {
+          "keyword": "[조직]",
+          "category": "organization",
+          "subject": null,
+          "detail": "머스탱, 사쿠라, 로산나, 목단이 속한 집단으로 용사라 불리는 자들을 생사 불문하고 잡아들이기 위해 마을을 습격함.",
+          "line_start": 96,
+          "line_end": 111,
+          "quote": "사쿠라: 마을로 향하는 길은 뚫었습니다.\n머스탱: Very Good입니다, 사쿠Ra.\n머스탱: Ja, 그럼 My Queen~!\n머스탱: Me 앞으로 용사라 불리는 Ja들을 데려오세Yo!\n로산나: 생사 여부는?\n머스탱: 당연히.\n머스탱: 상관없습니Da.\n로산나: 일일이 신경 쓸 것 없어서 좋네.\n로산나: 자, 얘들아. 다 쓸어버리자.\n목단: 좋아, 우리도 가자.\n목단: [조직]의 힘을 보여주자고~!\n사쿠라: ···가시죠.\n머스탱: Yes!!\n머스탱: 오늘 밤은 Very Very Very Long하고 Dark하겠군Yo!\n머스탱: 이제부턴 우리의 시간입니Da!\n머스탱: Enter---------------tainment-----!!!!"
+        },
+        {
+          "keyword": "머스탱의 한영 혼용 말투와 Entertainment 구호",
+          "category": "trait",
+          "subject": "머스탱",
+          "detail": "영어 단어와 알파벳 어미(사쿠Ra, 입니Da, 군Yo)를 섞어 쓰고 Entertainment를 길게 늘여 외치는 고유 표현.",
+          "line_start": 97,
+          "line_end": 111,
+          "quote": "머스탱: Very Good입니다, 사쿠Ra.\n머스탱: Ja, 그럼 My Queen~!\n머스탱: Me 앞으로 용사라 불리는 Ja들을 데려오세Yo!\n로산나: 생사 여부는?\n머스탱: 당연히.\n머스탱: 상관없습니Da.\n로산나: 일일이 신경 쓸 것 없어서 좋네.\n로산나: 자, 얘들아. 다 쓸어버리자.\n목단: 좋아, 우리도 가자.\n목단: [조직]의 힘을 보여주자고~!\n사쿠라: ···가시죠.\n머스탱: Yes!!\n머스탱: 오늘 밤은 Very Very Very Long하고 Dark하겠군Yo!\n머스탱: 이제부턴 우리의 시간입니Da!\n머스탱: Enter---------------tainment-----!!!!"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "메이든",
+          "target": "익스터너 스쿼드",
+          "relation_or_change": "익스터너 스쿼드 소속 니케로서 공과 사를 구분하고 냉정 침착해야 한다고 되뇌임",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 6,
+          "line_end": 8,
+          "claim_line": 6,
+          "quote": "메이든: 익스터너 스쿼드 소속 니케 메이든은 공과 사를 구분해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 냉정 침착해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 방주를 위해 싸워야 한다···.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "메이든",
+          "target": "방주",
+          "relation_or_change": "익스터너 스쿼드 소속 니케로서 방주를 위해 싸워야 한다고 되뇌임",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 6,
+          "line_end": 8,
+          "claim_line": 8,
+          "quote": "메이든: 익스터너 스쿼드 소속 니케 메이든은 공과 사를 구분해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 냉정 침착해야 한다···.\n메이든: 익스터너 스쿼드 소속 니케 메이든은 방주를 위해 싸워야 한다···.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "메이든",
+          "target": "지휘관",
+          "relation_or_change": "지휘관을 보는 것은 이번 임무가 마지막이라고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 50,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "메이든: 별 거 없는데요.\n메이든: 말 그대로예요.\n메이든: 제가 지휘관을 보는 건 이번 임무가 마지막이거든요.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "메이든",
+          "target": "사장님",
+          "relation_or_change": "메이든이 직접 부탁하여 이번 임무를 끝으로 기억소거를 받기로 약속함",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 57,
+          "line_end": 65,
+          "claim_line": 59,
+          "quote": "메이든: 그게요.\n메이든: 사장님하고 약속했어요.\n메이든: 이번 임무를 끝으로 기억소거를 받기로요.\n[CHOICE_START]\n  [OPTION TEXT=\"뭐?!\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 아, 오해는 마세요.\n메이든: 제가 직접 부탁한 거니까요.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "메이든",
+          "target": "익스터너 스쿼드",
+          "relation_or_change": "지금의 자신은 익스터너 스쿼드로서 임무를 수행할 수 없어 아무 곳에도 속할 수 없기에 기억소거를 받기로 했다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 71,
+          "line_end": 75,
+          "claim_line": 72,
+          "quote": "메이든: 지금의 전 아무 곳에도 속할 수 없으니까요.\n메이든: 익스터너 스쿼드로서 임무를 수행할 수도.\n메이든: 게이머로서 즐겁게 게임을 할 수도 없으니까요.\n메이든: 그래서예요.\n메이든: 그래서 기억소거를 받기로 했어요.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "머스탱",
+          "target": "로산나",
+          "relation_or_change": "로산나를 My Queen이라 부르며 용사라 불리는 자들을 생사 상관없이 자신 앞으로 데려오라고 지시함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 98,
+          "line_end": 104,
+          "claim_line": null,
+          "quote": "머스탱: Ja, 그럼 My Queen~!\n머스탱: Me 앞으로 용사라 불리는 Ja들을 데려오세Yo!\n로산나: 생사 여부는?\n머스탱: 당연히.\n머스탱: 상관없습니Da.\n로산나: 일일이 신경 쓸 것 없어서 좋네.\n로산나: 자, 얘들아. 다 쓸어버리자.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "목단",
+          "target": "조직",
+          "relation_or_change": "[조직]의 힘을 보여주자며 마을 습격에 나섬",
+          "epistemic_type": "character_claim",
+          "claimant": "목단",
+          "line_start": 105,
+          "line_end": 106,
+          "claim_line": 106,
+          "quote": "목단: 좋아, 우리도 가자.\n목단: [조직]의 힘을 보여주자고~!",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "익스터너 스쿼드",
+          "suggested_type": "squad",
+          "line_start": 6
+        },
+        {
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 6
+        },
+        {
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 8
+        },
+        {
+          "surface_text": "시뮬레이션",
+          "suggested_type": "concept",
+          "line_start": 38
+        },
+        {
+          "surface_text": "사장님",
+          "suggested_type": "character",
+          "line_start": 58
+        },
+        {
+          "surface_text": "기억소거",
+          "suggested_type": "concept",
+          "line_start": 59
+        },
+        {
+          "surface_text": "조직",
+          "suggested_type": "organization",
+          "line_start": 106
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "ice_dragon_saga_14",
+      "chronology_type": "mixed",
+      "chronology_segments": [
+        {
+          "line_start": 2,
+          "line_end": 40,
+          "chronology_type": "flashback"
+        }
+      ],
+      "is_plot_critical": true,
+      "summary": "길로틴은 이레귤러의 말에 망설이다 하나뿐인 벗 클로이를 다치게 하고 시민들이 사망한 총기 난사 사건 뒤 잉그리드 앞에서 자책하던 과거를 회상하다 깨어나고, 마을을 습격해 메이든과 대치하던 사쿠라를 일격에 베어 넘긴다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "잉그리드",
+            "entity_id": "char_잉그리드",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "길로틴",
+            "entity_id": "char_길로틴",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "메이든",
+            "entity_id": "char_메이든",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "사쿠라",
+            "entity_id": "char_사쿠라",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "speaker_label": "뉴스 앵커",
+            "entity_id": null,
+            "medium": "other",
+            "line_start": 2,
+            "line_end": 8,
+            "quote": "뉴스 앵커: 다음 소식입니다.\n뉴스 앵커: 지난밤 9시경, 도심에서 총기 난사 사건이 발생했습니다.\n뉴스 앵커: 현재까지 시민 8명이 숨지고, 20여 명이 중상을 입은 것으로 파악된 가운데.\n뉴스 앵커: 시민들은 사건이 발생한 거리에 모여 규탄의 목소리를 높이고 있습니다.\n뉴스 앵커: 학살극을 벌인 니케는 현장에서 폐기되었으나,\n뉴스 앵커: 거리로 나온 시민들의 분노는 한동안 가라앉지 않을 것으로 보입니다.\n뉴스 앵커: 한편, 일부 니케포비아 단체에서 주도한 시위가 폭력 시위로 번지며 또 다른 피해가 속출···."
+          }
+        ],
+        "mentioned_only": [
+          {
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "뉴스 앵커: 학살극을 벌인 니케는 현장에서 폐기되었으나,"
+          },
+          {
+            "surface_text": "니케포비아 단체",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "뉴스 앵커: 한편, 일부 니케포비아 단체에서 주도한 시위가 폭력 시위로 번지며 또 다른 피해가 속출···."
+          },
+          {
+            "surface_text": "클로이",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 15,
+            "line_end": 15,
+            "quote": "길로틴: 클로이가 다치고··· 사람들이 죽었다···."
+          },
+          {
+            "surface_text": "이레귤러",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 16,
+            "line_end": 16,
+            "quote": "길로틴: 이레귤러의 말이 헛소리라는 걸 알면서도···."
+          },
+          {
+            "surface_text": "익스터너 스쿼드",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 29,
+            "line_end": 29,
+            "quote": "길로틴: 익스터너 스쿼드? 아니면 언제나처럼의 일상?"
+          },
+          {
+            "surface_text": "조직",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 86,
+            "line_end": 86,
+            "quote": "사쿠라: [조직]은."
+          },
+          {
+            "surface_text": "아이스로즈",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 97,
+            "line_end": 97,
+            "quote": "사쿠라: 아, 세간에서는 [아이스로즈]로 불리던가요?"
+          },
+          {
+            "surface_text": "사천왕",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 101,
+            "line_end": 101,
+            "quote": "사쿠라: 메이든, 그대는 사천왕 머스탱 님이 원하는 것을 가지고 있습니다."
+          },
+          {
+            "surface_text": "머스탱",
+            "entity_id": "char_머스탱",
+            "entity_type": "character",
+            "line_start": 101,
+            "line_end": 101,
+            "quote": "사쿠라: 메이든, 그대는 사천왕 머스탱 님이 원하는 것을 가지고 있습니다."
+          },
+          {
+            "surface_text": "사이코뮤",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 105,
+            "line_end": 105,
+            "quote": "메이든: 이래 봬도 절 PVP에서 꺾은 건, [사이코뮤]뿐이니까요."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "잉그리드",
+          "to_target": "길로틴",
+          "address_term": "제군",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "잉그리드: 제군은 계속 그 자리에 가만히 멈춰있을 건가."
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "지휘관",
+          "address_term": "벗",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "길로틴: 벗이었나."
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "지휘관",
+          "address_term": "벗이여",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "길로틴: 벗이여, 지금 밖에서 무슨 일이 벌어지고 있는 거지?"
+        },
+        {
+          "from_speaker": "사쿠라",
+          "to_target": "메이든",
+          "address_term": "그대",
+          "line_start": 101,
+          "line_end": 101,
+          "quote": "사쿠라: 메이든, 그대는 사천왕 머스탱 님이 원하는 것을 가지고 있습니다."
+        },
+        {
+          "from_speaker": "메이든",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "메이든: 지휘관?"
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "사쿠라",
+          "address_term": "사쿠라여",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "길로틴: 사쿠라여, 그대는 빛의 속도로 베여 본 적 있나?"
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "사쿠라",
+          "address_term": "그대",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "길로틴: 사쿠라여, 그대는 빛의 속도로 베여 본 적 있나?"
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "뉴스 앵커",
+          "summary": "뉴스 앵커가 지난밤 9시경 도심에서 니케의 총기 난사 사건이 발생해 시민 8명이 숨지고 20여 명이 중상을 입었으며, 학살극을 벌인 니케는 현장에서 폐기되었으나 시민들의 규탄과 일부 니케포비아 단체의 폭력 시위로 피해가 속출하고 있다고 보도한다.",
+          "line_start": 2,
+          "line_end": 8,
+          "claim_line": 3,
+          "quote": "뉴스 앵커: 다음 소식입니다.\n뉴스 앵커: 지난밤 9시경, 도심에서 총기 난사 사건이 발생했습니다.\n뉴스 앵커: 현재까지 시민 8명이 숨지고, 20여 명이 중상을 입은 것으로 파악된 가운데.\n뉴스 앵커: 시민들은 사건이 발생한 거리에 모여 규탄의 목소리를 높이고 있습니다.\n뉴스 앵커: 학살극을 벌인 니케는 현장에서 폐기되었으나,\n뉴스 앵커: 거리로 나온 시민들의 분노는 한동안 가라앉지 않을 것으로 보입니다.\n뉴스 앵커: 한편, 일부 니케포비아 단체에서 주도한 시위가 폭력 시위로 번지며 또 다른 피해가 속출···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 길로틴을 찾아내 여기 있었냐며 이만 돌아가자고 말한다.",
+          "line_start": 9,
+          "line_end": 12,
+          "claim_line": null,
+          "quote": "잉그리드: 여기 있었군.\n잉그리드: 이만 돌아가지.\n길로틴: ··· ···.\n잉그리드: 길로틴?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 이레귤러의 말이 헛소리라는 것을 알면서도 자신이 망설인 탓에 클로이가 다치고 사람들이 죽었다며 자책한다.",
+          "line_start": 13,
+          "line_end": 17,
+          "claim_line": 15,
+          "quote": "길로틴: ··· ···잉그리드.\n길로틴: 내가 망설인 탓에···.\n길로틴: 클로이가 다치고··· 사람들이 죽었다···.\n길로틴: 이레귤러의 말이 헛소리라는 걸 알면서도···.\n길로틴: 알면서도··· 난 망설이고 말았어···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "잉그리드가 침묵하는 가운데 길로틴이 그 결과로 사람들이 죽고 거리가 혼란에 빠졌으며 하나뿐인 벗 클로이를 자기 손으로 다치게 만들어 모든 것을 망쳤다고 자책한다.",
+          "line_start": 18,
+          "line_end": 24,
+          "claim_line": 22,
+          "quote": "잉그리드: ··· ···.\n길로틴: 그 결과가 어떻지?\n길로틴: 사람들은 죽고··· 거리는 혼란에 빠졌어···.\n길로틴: 그리고···.\n길로틴: 하나뿐인 벗, 클로이를··· 내 손으로 다치게 만들었다···.\n길로틴: 이 손으로 모든 걸 망쳤어···.\n길로틴: 모든 걸···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 분명 말했을 것이라며 이만 돌아간다고 말한다.",
+          "line_start": 25,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "잉그리드: 길로틴, 분명 말했을 텐데.\n잉그리드: 이만 돌아간다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 자신에게 주어진 단 하나의 임무조차 다하지 못했고 단 하나의 벗조차 지키지 못해 남은 것이 아무것도 없는데 익스터너 스쿼드나 일상 중 대체 어디로 돌아간다는 말이냐고 반문한다.",
+          "line_start": 27,
+          "line_end": 33,
+          "claim_line": 30,
+          "quote": "길로틴: 돌아간다···?\n길로틴: 어디로 말이지?\n길로틴: 익스터너 스쿼드? 아니면 언제나처럼의 일상?\n길로틴: 내게 주어진 단 하나의 임무조차 다하지 못했고,\n길로틴: 내 곁에 남은 단 하나의 벗조차 지키지 못했는데···.\n길로틴: 이제 내게 남은 건 아무것도 없는데···.\n길로틴: 대체 어디로 돌아간단 말인가···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 길로틴에게 계속 그 자리에 가만히 멈춰서 더는 앞으로 나아가지 않을 것이냐고 추궁한다.",
+          "line_start": 34,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "잉그리드: 그렇다면, 길로틴.\n잉그리드: 제군은 계속 그 자리에 가만히 멈춰있을 건가.\n잉그리드: 더는 앞으로 나아가지 않을 건가.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 자신에게 남은 것은 아무것도 없는데 어디로 무엇을 위해 나아가냐고 반문한다.",
+          "line_start": 37,
+          "line_end": 39,
+          "claim_line": 38,
+          "quote": "길로틴: 말하지 않았나···.\n길로틴: 내게 남은 건 아무것도 없다고···.\n길로틴: 그런 내가 어디로, 무엇을 위해 나아간단···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "잉그리드",
+          "summary": "잉그리드가 헛소리는 집어치우고 자신의 질문에 답하라며 길로틴을 부른다.",
+          "line_start": 40,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "잉그리드: 헛소리는 집어치우고 내 질문에 답해라! 길로-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 길로틴을 부른다.",
+          "line_start": 42,
+          "line_end": 42,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"-틴!\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 황급히 일어나다 단단한 무언가에 얼굴을 부딪히고 적의 기습이라고 외친다.",
+          "line_start": 45,
+          "line_end": 48,
+          "claim_line": null,
+          "quote": "길로틴: !!\n나레이션: 길로틴이 황급히 일어나자, 단단한 무언가가 얼굴을 가격했습니다.\n길로틴: 커, 컥!\n길로틴: 적, 적의 기습이다!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 길로틴이 일어난 것을 확인하며 갑자기 일어날 줄 몰랐다고 사과한다.",
+          "line_start": 50,
+          "line_end": 54,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"길로틴?! 일어났구나.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"미안, 이렇게 갑자기 일어날 줄은 몰랐어.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 상대가 벗(지휘관)이었음을 알아본다.",
+          "line_start": 57,
+          "line_end": 57,
+          "claim_line": 57,
+          "quote": "길로틴: 벗이었나.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 갑옷에 세게 부딪힌 것 같은데 괜찮은지 묻는다.",
+          "line_start": 59,
+          "line_end": 59,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"갑옷에 좀 세게 부딪힌 거 같은데, 괜찮아?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 걱정 말라며 괜찮다고 답하려다 자신이 동료의 품에 안겨 있다는 것을 깨닫고 말을 멈춘다.",
+          "line_start": 62,
+          "line_end": 65,
+          "claim_line": null,
+          "quote": "길로틴: 크큭, 걱정 마라. 이 몸은 당연히 괜찮···.\n나레이션: 그 순간, 길로틴은 깨달았습니다.\n나레이션: 동료의 품에 안겨있는 자신의 모습을 말이죠.\n길로틴: ··· ···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 침묵하는 길로틴에게 괜찮은 것이 맞는지 다시 묻는다.",
+          "line_start": 67,
+          "line_end": 67,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"저, 길로틴? 괜찮은 거 맞지?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 헛기침을 하며 조금 가까운 것 같다면서 자신은 아무렇지도 않지만 혹여나 벗(지휘관)이 불편할까 봐 그런 것이라고 말한다.",
+          "line_start": 70,
+          "line_end": 74,
+          "claim_line": 74,
+          "quote": "길로틴: ··· ···음, 크흠. 크흠흠.\n길로틴: 그러니까 말이다···.\n길로틴: 그 뭐랄까···.\n길로틴: 조금 가까운 것 같은데 말이다···.\n길로틴: 무, 물론 난 아무렇지도 않다만, 혹여나 벗이 불편할까···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "총성이 울리자 길로틴이 지휘관(벗)에게 밖에서 무슨 일이 벌어지고 있는지 묻는다.",
+          "line_start": 75,
+          "line_end": 77,
+          "claim_line": null,
+          "quote": "탕-! 투두두두-\n길로틴: 이 소리는···!\n길로틴: 벗이여, 지금 밖에서 무슨 일이 벌어지고 있는 거지?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 아이스 배리어를 펼쳐 사방에서 날아드는 총알을 얼음 결계로 막아낸다.",
+          "line_start": 78,
+          "line_end": 81,
+          "claim_line": null,
+          "quote": "메이든: 아이스 배리어.\n탕-! 투두두두-\n쩌저적-\n사방에서 날아드는 총알이 얼음 결계에 박혔다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 안전지대인 마을에서 PVP를 하지 않는 기본적인 규칙조차 지키지 않는다며 몰상식한 게이머라고 비판하고 닉네임이 붉은색으로 바뀌어도 상관없냐고 따진다.",
+          "line_start": 82,
+          "line_end": 85,
+          "claim_line": 84,
+          "quote": "메이든: 하아아···.\n메이든: 안전지대인 마을에서 PVP는 하지 않는다.\n메이든: 이런 기본적인 규칙조차 지키지 않다니, 몰상식한 게이머네요.\n메이든: 닉네임이 붉은색으로 바뀌어도 상관없는 걸까요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "사쿠라",
+          "summary": "사쿠라가 [조직]은 억압에서 잉태되고 차별 속에서 몸집을 부풀려 언젠가 업보로 파멸에 빠질 세상의 모든 악과도 같은 존재라며, 기본적인 규칙은 중요치 않으니 마음 가는 대로 하겠다고 선언한다.",
+          "line_start": 86,
+          "line_end": 93,
+          "claim_line": 90,
+          "quote": "사쿠라: [조직]은.\n사쿠라: 억압이라는 부모에게서 잉태되어\n사쿠라: 차별이라는 요람 속에서 그 몸집을 부풀렸으며\n사쿠라: 언젠가 그 업보로 인해 파멸이라는 무덤에 빠지게 될\n사쿠라: 세상의 모든 악과도 같은 존재입니다.\n사쿠라: 기본적인 규칙?\n사쿠라: 그런 건 제게 중요치 않습니다.\n사쿠라: 그러니 이 사쿠라, 마음 가는 데로 할 것입니다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 사쿠라의 말을 듣고 길로틴이 할 법한 말이라며 질색한다.",
+          "line_start": 94,
+          "line_end": 95,
+          "claim_line": 95,
+          "quote": "메이든: 우와아···.\n메이든: 뭔가요? 그 길로틴이 할 법한 말은···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "사쿠라",
+          "summary": "사쿠라가 메이든을 부르며 세간에서는 [아이스로즈]로 불리냐고 묻는다.",
+          "line_start": 96,
+          "line_end": 97,
+          "claim_line": 97,
+          "quote": "사쿠라: ···메이든.\n사쿠라: 아, 세간에서는 [아이스로즈]로 불리던가요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 아니라며 다른 법사와 착각한 것 같다고 부인한다.",
+          "line_start": 98,
+          "line_end": 99,
+          "claim_line": 99,
+          "quote": "메이든: 아닌데요!\n메이든: 다른 법사랑 착각하신 것 같은데요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "사쿠라",
+          "summary": "사쿠라가 호칭은 중요하지 않다며 메이든이 사천왕 머스탱이 원하는 것을 가지고 있으니 용사를 순순히 넘겨주지 않으면 힘으로 빼앗겠다고 위협한다.",
+          "line_start": 100,
+          "line_end": 102,
+          "claim_line": null,
+          "quote": "사쿠라: 후후. 그래요. 호칭은 중요하지 않겠죠.\n사쿠라: 메이든, 그대는 사천왕 머스탱 님이 원하는 것을 가지고 있습니다.\n사쿠라: 용사를 순순히 넘겨주지 않으면 힘으로 빼앗겠습니다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 해보라며 각오를 단단히 하라고 맞서고 자신을 PVP에서 꺾은 것은 [사이코뮤]뿐이라고 주장한다.",
+          "line_start": 103,
+          "line_end": 105,
+          "claim_line": 105,
+          "quote": "메이든: ···해보시던가요.\n메이든: 각오는 단단히 하세요.\n메이든: 이래 봬도 절 PVP에서 꺾은 건, [사이코뮤]뿐이니까요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "사쿠라",
+          "summary": "사쿠라가 손을 들자 주변 조직원들이 일제히 총을 장전하고, 사쿠라는 달이 아름답고 아직 밤이 길다며 자신과 조금 더 어울려 달라고 말한다.",
+          "line_start": 106,
+          "line_end": 110,
+          "claim_line": null,
+          "quote": "철컥-\n사쿠라가 손을 들자, 주변에 있던 조직원들이 일제히 총을 장전했다.\n사쿠라: 달이 아름답군요.\n사쿠라: 아직 밤은 깁니다.\n사쿠라: 조금 더 이 사쿠라와 어울려주시길.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 사쿠라의 말을 이렇게 다시 들을 줄은 몰랐다고 반응한다.",
+          "line_start": 112,
+          "line_end": 112,
+          "claim_line": 112,
+          "quote": "  [OPTION TEXT=\"그 말을 이렇게 다시 들을 줄은 몰랐는데···.\"]",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "여관 2층에서 돌진한 길로틴이 메이든에게 비키라고 한 뒤 속도는 곧 위력이라며 단칼에 사쿠라를 일격필살로 베어 넘긴다.",
+          "line_start": 115,
+          "line_end": 122,
+          "claim_line": null,
+          "quote": "메이든: 지휘관?\n길로틴: 비켜라, 메이든.\n메이든: !!\n길로틴: 속도는 곧 위력.\n길로틴: 사쿠라여, 그대는 빛의 속도로 베여 본 적 있나?\n나레이션: 그야말로 일격필살!\n나레이션: 여관 이층에서부터 돌진한 길로틴은 단칼에 사쿠라를 베어 넘겼습니다.\n[시스템 : DESTROYED]",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "도심 총기 난사 사건과 클로이 부상",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "길로틴이 이레귤러의 말에 망설인 탓에 하나뿐인 벗 클로이를 자기 손으로 다치게 만들고 시민 8명이 사망·20여 명이 중상을 입은 사건.",
+          "line_start": 2,
+          "line_end": 24,
+          "quote": "뉴스 앵커: 다음 소식입니다.\n뉴스 앵커: 지난밤 9시경, 도심에서 총기 난사 사건이 발생했습니다.\n뉴스 앵커: 현재까지 시민 8명이 숨지고, 20여 명이 중상을 입은 것으로 파악된 가운데.\n뉴스 앵커: 시민들은 사건이 발생한 거리에 모여 규탄의 목소리를 높이고 있습니다.\n뉴스 앵커: 학살극을 벌인 니케는 현장에서 폐기되었으나,\n뉴스 앵커: 거리로 나온 시민들의 분노는 한동안 가라앉지 않을 것으로 보입니다.\n뉴스 앵커: 한편, 일부 니케포비아 단체에서 주도한 시위가 폭력 시위로 번지며 또 다른 피해가 속출···.\n잉그리드: 여기 있었군.\n잉그리드: 이만 돌아가지.\n길로틴: ··· ···.\n잉그리드: 길로틴?\n길로틴: ··· ···잉그리드.\n길로틴: 내가 망설인 탓에···.\n길로틴: 클로이가 다치고··· 사람들이 죽었다···.\n길로틴: 이레귤러의 말이 헛소리라는 걸 알면서도···.\n길로틴: 알면서도··· 난 망설이고 말았어···.\n잉그리드: ··· ···.\n길로틴: 그 결과가 어떻지?\n길로틴: 사람들은 죽고··· 거리는 혼란에 빠졌어···.\n길로틴: 그리고···.\n길로틴: 하나뿐인 벗, 클로이를··· 내 손으로 다치게 만들었다···.\n길로틴: 이 손으로 모든 걸 망쳤어···.\n길로틴: 모든 걸···."
+        },
+        {
+          "keyword": "아이스로즈",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "사쿠라가 메이든이 세간에서 불리는 이름이라고 언급한 법사 호칭.",
+          "line_start": 96,
+          "line_end": 99,
+          "quote": "사쿠라: ···메이든.\n사쿠라: 아, 세간에서는 [아이스로즈]로 불리던가요?\n메이든: 아닌데요!\n메이든: 다른 법사랑 착각하신 것 같은데요."
+        },
+        {
+          "keyword": "사이코뮤",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "메이든이 자신을 PVP에서 꺾은 유일한 상대라고 밝힌 이름.",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "메이든: 이래 봬도 절 PVP에서 꺾은 건, [사이코뮤]뿐이니까요."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "길로틴",
+          "target": "클로이",
+          "relation_or_change": "클로이를 하나뿐인 벗이라 칭하며, 자신의 망설임 때문에 자기 손으로 다치게 만들고 지키지 못했다고 자책함",
+          "epistemic_type": "character_claim",
+          "claimant": "길로틴",
+          "line_start": 14,
+          "line_end": 24,
+          "claim_line": 22,
+          "quote": "길로틴: 내가 망설인 탓에···.\n길로틴: 클로이가 다치고··· 사람들이 죽었다···.\n길로틴: 이레귤러의 말이 헛소리라는 걸 알면서도···.\n길로틴: 알면서도··· 난 망설이고 말았어···.\n잉그리드: ··· ···.\n길로틴: 그 결과가 어떻지?\n길로틴: 사람들은 죽고··· 거리는 혼란에 빠졌어···.\n길로틴: 그리고···.\n길로틴: 하나뿐인 벗, 클로이를··· 내 손으로 다치게 만들었다···.\n길로틴: 이 손으로 모든 걸 망쳤어···.\n길로틴: 모든 걸···.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "길로틴",
+          "target": "익스터너 스쿼드",
+          "relation_or_change": "자신이 돌아갈 곳으로 익스터너 스쿼드를 언급함",
+          "epistemic_type": "character_claim",
+          "claimant": "길로틴",
+          "line_start": 27,
+          "line_end": 30,
+          "claim_line": 29,
+          "quote": "길로틴: 돌아간다···?\n길로틴: 어디로 말이지?\n길로틴: 익스터너 스쿼드? 아니면 언제나처럼의 일상?\n길로틴: 내게 주어진 단 하나의 임무조차 다하지 못했고,",
+          "refers_to_past": false
+        },
+        {
+          "subject": "메이든",
+          "target": "아이스로즈",
+          "relation_or_change": "사쿠라가 메이든이 세간에서 [아이스로즈]로 불린다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "사쿠라",
+          "line_start": 96,
+          "line_end": 97,
+          "claim_line": 97,
+          "quote": "사쿠라: ···메이든.\n사쿠라: 아, 세간에서는 [아이스로즈]로 불리던가요?",
+          "refers_to_past": false
+        },
+        {
+          "subject": "메이든",
+          "target": "아이스로즈",
+          "relation_or_change": "메이든이 자신이 [아이스로즈]라는 것을 부인하며 다른 법사와 착각한 것 같다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 98,
+          "line_end": 99,
+          "claim_line": 99,
+          "quote": "메이든: 아닌데요!\n메이든: 다른 법사랑 착각하신 것 같은데요.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "사쿠라",
+          "target": "머스탱",
+          "relation_or_change": "머스탱을 사천왕 머스탱 님이라 부르며 그가 원하는 용사를 빼앗으려 함",
+          "epistemic_type": "character_claim",
+          "claimant": "사쿠라",
+          "line_start": 101,
+          "line_end": 102,
+          "claim_line": 101,
+          "quote": "사쿠라: 메이든, 그대는 사천왕 머스탱 님이 원하는 것을 가지고 있습니다.\n사쿠라: 용사를 순순히 넘겨주지 않으면 힘으로 빼앗겠습니다.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "사이코뮤",
+          "target": "메이든",
+          "relation_or_change": "과거 PVP에서 메이든을 유일하게 꺾은 상대라고 언급됨",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 105,
+          "line_end": 105,
+          "claim_line": 105,
+          "quote": "메이든: 이래 봬도 절 PVP에서 꺾은 건, [사이코뮤]뿐이니까요.",
+          "refers_to_past": true
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 6
+        },
+        {
+          "surface_text": "니케포비아 단체",
+          "suggested_type": "organization",
+          "line_start": 8
+        },
+        {
+          "surface_text": "클로이",
+          "suggested_type": "character",
+          "line_start": 15
+        },
+        {
+          "surface_text": "이레귤러",
+          "suggested_type": "concept",
+          "line_start": 16
+        },
+        {
+          "surface_text": "익스터너 스쿼드",
+          "suggested_type": "squad",
+          "line_start": 29
+        },
+        {
+          "surface_text": "조직",
+          "suggested_type": "organization",
+          "line_start": 86
+        },
+        {
+          "surface_text": "아이스로즈",
+          "suggested_type": "alias",
+          "line_start": 97
+        },
+        {
+          "surface_text": "사천왕",
+          "suggested_type": "organization",
+          "line_start": 101
+        },
+        {
+          "surface_text": "사이코뮤",
+          "suggested_type": "character",
+          "line_start": 105
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "ice_dragon_saga_15",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "메이든은 길로틴에게 즉사의 마안을 다시 쓰지 말라고 당부한 뒤 지휘관·길로틴과 함께 사천왕 머스탱이 있는 협회로 향하고, 길목에서 은화·율하가 목단을, 드레이크·프리바티가 로산나를 막아준 덕분에 협회에 도착해 머스탱과 대면한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "길로틴",
+            "entity_id": "char_길로틴",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "메이든",
+            "entity_id": "char_메이든",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "엠마",
+            "entity_id": "char_엠마",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "은화",
+            "entity_id": "char_은화",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "목단",
+            "entity_id": "char_목단",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "율하",
+            "entity_id": "char_율하",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "로산나",
+            "entity_id": "char_로산나",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "드레이크",
+            "entity_id": "char_드레이크",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "프리바티",
+            "entity_id": "char_프리바티",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "머스탱",
+            "entity_id": "char_머스탱",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "사쿠라",
+            "entity_id": "char_사쿠라",
+            "entity_type": "character",
+            "line_start": 20,
+            "line_end": 20,
+            "quote": "메이든: 음··· 사쿠라가 그랬죠? 사천왕 머스탱 님이라고."
+          },
+          {
+            "surface_text": "사천왕",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 20,
+            "line_end": 21,
+            "quote": "메이든: 음··· 사쿠라가 그랬죠? 사천왕 머스탱 님이라고.\n메이든: 후우우··· 사천왕이라···."
+          },
+          {
+            "surface_text": "용사의 검",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 25,
+            "line_end": 25,
+            "quote": "길로틴: 용사의 검을 얻었기에, 적들이 습격했다는 뜻인가···."
+          },
+          {
+            "surface_text": "협회",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 44,
+            "line_end": 44,
+            "quote": "엠마: 사천왕이라면 협회에 있을 거야."
+          },
+          {
+            "surface_text": "춤추는 유희의 지배자",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 53,
+            "line_end": 53,
+            "quote": "길로틴: 큭. [춤추는 유희의 지배자]인가."
+          },
+          {
+            "surface_text": "아이스로즈",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 66,
+            "line_end": 66,
+            "quote": "길로틴: [아이스로즈]여, 그건 무슨 의미···."
+          },
+          {
+            "surface_text": "즉사의 마안",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 73,
+            "line_end": 73,
+            "quote": "메이든: [즉사의 마안]은 이제 쓰지 마세요. 알겠죠?"
+          },
+          {
+            "surface_text": "라플라스",
+            "entity_id": "char_라플라스",
+            "entity_type": "character",
+            "line_start": 115,
+            "line_end": 115,
+            "quote": "로산나: 용사 라플라스의 동료가 왜 아직도 살아있는 거지?"
+          },
+          {
+            "surface_text": "조직",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 140,
+            "line_end": 140,
+            "quote": "드레이크: 이대로 패배하고 [조직]에게 붙잡힐 수밖에."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "메이든",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "메이든: 지휘관, 잘 싸우시던데요."
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "메이든",
+          "address_term": "[아이스로즈]여",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "길로틴: [아이스로즈]여, 그건 무슨 의미···."
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "메이든, 지휘관",
+          "address_term": "그대들",
+          "line_start": 74,
+          "line_end": 74,
+          "quote": "길로틴: 그렇지만 이 힘을 쓰지 않으면, 그대들이 위험에 처했을 때···."
+        },
+        {
+          "from_speaker": "엠마",
+          "to_target": "길로틴, 메이든, 지휘관",
+          "address_term": "용사님들",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "엠마: 후후. 용사님들, 잠시만~"
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "메이든",
+          "address_term": "메이든이여",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "길로틴: 메이든이여, 지금 상황이 긴박하다고 했지?"
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "엠마",
+          "address_term": "엠마여",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "길로틴: 그럼 엠마여."
+        },
+        {
+          "from_speaker": "엠마",
+          "to_target": "길로틴",
+          "address_term": "용사님",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "엠마: 어머, 용사님?"
+        },
+        {
+          "from_speaker": "은화",
+          "to_target": "목단",
+          "address_term": "네",
+          "line_start": 108,
+          "line_end": 108,
+          "quote": "은화: 이런 데서 시간을 낭비하니, 네가 바보란 소리를 듣는 거다."
+        },
+        {
+          "from_speaker": "은화",
+          "to_target": "율하",
+          "address_term": "재판장",
+          "line_start": 110,
+          "line_end": 110,
+          "quote": "은화: 재판장, 나머지를 맡아라."
+        },
+        {
+          "from_speaker": "로산나",
+          "to_target": "드레이크",
+          "address_term": "넌",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "로산나: 뭐야, 넌."
+        },
+        {
+          "from_speaker": "드레이크",
+          "to_target": "프리바티",
+          "address_term": "넌",
+          "line_start": 135,
+          "line_end": 135,
+          "quote": "드레이크: 프리바티 넌 마법의 주문만 걸어주면 된다."
+        },
+        {
+          "from_speaker": "드레이크",
+          "to_target": "프리바티",
+          "address_term": "네놈",
+          "line_start": 139,
+          "line_end": 139,
+          "quote": "드레이크: 프리바티, 네놈이 세계의 기대를 저버리겠다면."
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "길로틴, 메이든, 지휘관",
+          "address_term": "You들",
+          "line_start": 155,
+          "line_end": 155,
+          "quote": "머스탱: You들이 오기만을 말이Jyo."
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 어느 정도 정리된 것 같다고 말한다.",
+          "line_start": 2,
+          "line_end": 2,
+          "claim_line": 2,
+          "quote": "길로틴: 어느 정도는 정리된 것 같군.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 지휘관에게 잘 싸우더라고 칭찬한다.",
+          "line_start": 3,
+          "line_end": 3,
+          "claim_line": 3,
+          "quote": "메이든: 지휘관, 잘 싸우시던데요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 뭔가 생각하는 대로 몸이 움직이더라고 답한다.",
+          "line_start": 5,
+          "line_end": 5,
+          "claim_line": 5,
+          "quote": "  [OPTION TEXT=\"뭔가 생각하는 대로 몸이 움직이더라고.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 최종보스는 길로틴 없이도 클리어할 수 있겠다며 이참에 단둘이서 엔딩을 보는 것은 어떠냐고 제안한다.",
+          "line_start": 8,
+          "line_end": 10,
+          "claim_line": null,
+          "quote": "메이든: 그런가요?\n메이든: 그럼 최종보스는 길로틴 없이도 어떻게든 클리어할 수 있겠네요.\n메이든: 이참에 단둘이서 엔딩을 보는 건 어때요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 침묵한 뒤 이제 어떻게 할지 묻는다.",
+          "line_start": 12,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그래서 이제 어떻게 하지?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 자신의 프러포즈를 간단히 무시한다며, 사쿠라가 언급한 사천왕 머스탱에 대해 게임에서 최강의 무기를 얻으면 조우 이벤트가 따라오는 법인데 예상하지 못해 게이머로서 면목이 없다고 말한다.",
+          "line_start": 19,
+          "line_end": 24,
+          "claim_line": 23,
+          "quote": "메이든: 제 프러포즈는 간단히 무시하시는군요···.\n메이든: 음··· 사쿠라가 그랬죠? 사천왕 머스탱 님이라고.\n메이든: 후우우··· 사천왕이라···.\n메이든: 게임에서 최강의 무기를 얻으면,\n메이든: 한 번 사용해 볼 수 있도록 조우 이벤트가 따라오는 법인데.\n메이든: 이런 단순한 이벤트 하나 예상 못하다니, 게이머로서 면목이 없네요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 용사의 검을 얻었기에 적들이 습격했다는 뜻이냐고 이해한다.",
+          "line_start": 25,
+          "line_end": 25,
+          "claim_line": 25,
+          "quote": "길로틴: 용사의 검을 얻었기에, 적들이 습격했다는 뜻인가···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 지금 쳐들어온 사천왕은 전투력 측정기에 불과하며 주어진 시간이 하루밖에 안 남았으니 마을을 습격한 사천왕부터 잡으러 가자고 제안한다.",
+          "line_start": 26,
+          "line_end": 37,
+          "claim_line": 34,
+          "quote": "메이든: 너무 걱정은 마세요.\n메이든: 지금 쳐들어온 사천왕은 전투력 측정기에 불과할 테니까요.\n메이든: 아마 쓰러뜨리면 다른 사천왕이 나타나서···\n메이든: 놈은 우리 중 최약체다.\n메이든: 내 전투력은 9000을 넘지.\n메이든: 무려 53만이다!\n메이든: ···뭐, 이런 대사를 할 걸요.\n메이든: 아무튼.\n메이든: 저희에게 주어진 시간이 하루밖에 안 남았으니.\n메이든: 본격적으로 움직여보죠.\n메이든: 사천왕을 잡고, 최종 보스까지 단숨에 물리치는 거예요.\n메이든: 우선 마을을 습격한 사천왕부터 잡으러 가볼까요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 어디로 가면 될지 묻는다.",
+          "line_start": 39,
+          "line_end": 39,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"음··· 어디로 가면 될까?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 잠시 침묵한 뒤 그러게 어디로 가야 할지 모르겠다고 반응한다.",
+          "line_start": 42,
+          "line_end": 43,
+          "claim_line": 43,
+          "quote": "메이든: ··· ···.\n메이든: ···그러게요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마가 아까부터 협회 쪽에서 Entertainment라는 이상한 목소리가 들렸다며 사천왕이라면 협회에 있을 것이라고 알려준다.",
+          "line_start": 44,
+          "line_end": 47,
+          "claim_line": 44,
+          "quote": "엠마: 사천왕이라면 협회에 있을 거야.\n엠마: 아까부터 그쪽에서 이상한 목소리가 들렸거든.\n엠마: Enter--tainment-----!\n엠마: ···라는 것 같던데~",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그 목소리의 주인공이 머스탱이라고 알아차린다.",
+          "line_start": 49,
+          "line_end": 49,
+          "claim_line": 49,
+          "quote": "  [OPTION TEXT=\"머스탱이네.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 머스탱 사장님일 것이라고 동의한다.",
+          "line_start": 52,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "메이든: 머스탱 사장님이겠군요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 [춤추는 유희의 지배자]라며 같은 파멸 속성인 자신으로서는 상성이 좋지 않다고 말한다.",
+          "line_start": 53,
+          "line_end": 54,
+          "claim_line": 54,
+          "quote": "길로틴: 큭. [춤추는 유희의 지배자]인가.\n길로틴: 같은 파멸 속성인 나로서는 상성이 좋지 않군.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 길로틴의 말에 건성으로 맞장구친다.",
+          "line_start": 55,
+          "line_end": 55,
+          "claim_line": 55,
+          "quote": "메이든: 예. 뭐. 그러시겠죠.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방침이 정해진 것 같다며 협회로 가자고 한다.",
+          "line_start": 57,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"방침은 정해진 것 같네.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"가자, 협회로.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 출발하기 전에 확인할 것이 있다며 길로틴에게 원래대로 돌아온 것이 맞는지 묻는다.",
+          "line_start": 64,
+          "line_end": 65,
+          "claim_line": null,
+          "quote": "메이든: 참. 출발하기 전에 하나 확인할 게 있어요.\n메이든: 길로틴, 원래대로 돌아온 거죠?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 메이든을 [아이스로즈]라고 부르며 그게 무슨 의미냐고 되묻는다.",
+          "line_start": 66,
+          "line_end": 66,
+          "claim_line": null,
+          "quote": "길로틴: [아이스로즈]여, 그건 무슨 의미···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 언제나의 길로틴이라고 판단한다.",
+          "line_start": 67,
+          "line_end": 67,
+          "claim_line": 67,
+          "quote": "메이든: 언제나의 길로틴이네요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 다행히도 원래대로 돌아왔다고 동의한다.",
+          "line_start": 69,
+          "line_end": 69,
+          "claim_line": 69,
+          "quote": "  [OPTION TEXT=\"응, 다행히도.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 길로틴에게 [즉사의 마안]은 이제 쓰지 말라고 다시 당부한다.",
+          "line_start": 72,
+          "line_end": 73,
+          "claim_line": null,
+          "quote": "메이든: 길로틴, 다시 한번 당부드리는데요.\n메이든: [즉사의 마안]은 이제 쓰지 마세요. 알겠죠?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 그 힘을 쓰지 않으면 메이든과 지휘관(그대들)이 위험에 처했을 때 어쩌냐고 망설인다.",
+          "line_start": 74,
+          "line_end": 74,
+          "claim_line": 74,
+          "quote": "길로틴: 그렇지만 이 힘을 쓰지 않으면, 그대들이 위험에 처했을 때···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 길로틴의 이름을 힘주어 부르며 압박한다.",
+          "line_start": 75,
+          "line_end": 75,
+          "claim_line": null,
+          "quote": "메이든: 길. 로. 틴.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 긍정적으로 검토해 보겠다고 답한다.",
+          "line_start": 76,
+          "line_end": 76,
+          "claim_line": null,
+          "quote": "길로틴: ···긍정적으로 검토해 보마.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메이든이 한숨을 쉬자 지휘관이 이제 진짜 출발해도 되는 것인지 묻는다.",
+          "line_start": 77,
+          "line_end": 79,
+          "claim_line": null,
+          "quote": "메이든: 하아···.\n[CHOICE_START]\n  [OPTION TEXT=\"그러면··· 이제 진짜 출발해도 되는 거지?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마가 피곤할 테니 허기를 달래줄 요리를 가져올 때까지 기다리고 있으라고 권한다.",
+          "line_start": 82,
+          "line_end": 84,
+          "claim_line": null,
+          "quote": "엠마: 후후. 용사님들, 잠시만~\n엠마: 한차례 전투를 치러서 피곤할 것 같은데 여기서 기다리고 있어.\n엠마: 허기를 달래줄 요리를 가져올 테니까~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 놀라며 메이든에게 지금 상황이 긴박하다고 하지 않았냐고 묻는다.",
+          "line_start": 85,
+          "line_end": 86,
+          "claim_line": null,
+          "quote": "길로틴: !!\n길로틴: 메이든이여, 지금 상황이 긴박하다고 했지?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 지금 당장 출발해도 모자랄 정도로 긴박하다고 맞장구친다.",
+          "line_start": 87,
+          "line_end": 87,
+          "claim_line": 87,
+          "quote": "메이든: 예, 긴박하죠. 지금 당장 출발해도 모자랄 정도로요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 엠마에게 이만 가보도록 하겠다고 인사하고 떠난다.",
+          "line_start": 88,
+          "line_end": 89,
+          "claim_line": null,
+          "quote": "길로틴: 그럼 엠마여.\n길로틴: 우린 이만 가보도록 하겠다!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엠마",
+          "summary": "엠마가 이번에도 가버렸다며 무사히 모험을 마치기를 바란다.",
+          "line_start": 90,
+          "line_end": 92,
+          "claim_line": 91,
+          "quote": "엠마: 어머, 용사님?\n엠마: 이번에도 가버렸네~\n엠마: 후후. 무사히 모험 마치시길.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "협회로 향하는 길목에서 은화가 목단에게 여기서 얼쩡거리지 말고 꺼지라고 말한다.",
+          "line_start": 93,
+          "line_end": 97,
+          "claim_line": null,
+          "quote": "나레이션: 협회로 향하는 길.\n나레이션: 마을 곳곳에선 전투가 벌어지고 있었습니다.\n나레이션: 어딘가에선 짜증 가득 섞인 전투가.\n은화: 말했을 텐데.\n은화: 여기서 얼쩡거리지 말고 꺼지라고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "목단",
+          "summary": "목단이 방금 도착해 이제 겨우 활약할 기회가 생겼는데 뭐 하지도 못하고 벌써 퇴장할 수는 없다고 반발한다.",
+          "line_start": 98,
+          "line_end": 104,
+          "claim_line": 103,
+          "quote": "목단: 와···.\n목단: 너무한 거 아니야?\n목단: 나 여기 방금 도착했어.\n목단: 방금 도착했다고오~\n목단: 이제 겨우 활약할 기회가 생겼는데,\n목단: 뭐 하지도 못하고 벌써 퇴장할 순 없어!\n목단: 암, 안 되고 말고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "율하",
+          "summary": "율하가 귀찮게 군다며 자신들은 용사 일행이 아니라고 말한다.",
+          "line_start": 105,
+          "line_end": 106,
+          "claim_line": 106,
+          "quote": "율하: 하아··· 귀찮게 굴긴.\n율하: 우린 용사 일행이 아니라니까.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "은화가 이런 데서 시간을 낭비하니 목단이 바보란 소리를 듣는 것이라고 비난한다.",
+          "line_start": 107,
+          "line_end": 108,
+          "claim_line": 108,
+          "quote": "은화: 쯧.\n은화: 이런 데서 시간을 낭비하니, 네가 바보란 소리를 듣는 거다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "은화",
+          "summary": "목단이 반발하자 은화가 율하를 재판장이라 부르며 나머지를 맡으라고 지시하고 저 삼류 놈(목단)은 자신이 직접 교육하겠다고 나선다.",
+          "line_start": 109,
+          "line_end": 111,
+          "claim_line": null,
+          "quote": "목단: 뭐어?\n은화: 재판장, 나머지를 맡아라.\n은화: 저 삼류 놈은 내가 직접 교육할 테니.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "율하",
+          "summary": "율하가 자신은 재판장이 아니라고 항변한다.",
+          "line_start": 112,
+          "line_end": 112,
+          "claim_line": 112,
+          "quote": "율하: 그러니까 난 재판장이 아니라고···!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "로산나",
+          "summary": "또 다른 곳에서 로산나가 드레이크에게 그때 전부 제거된 줄 알았던 용사 라플라스의 동료가 왜 아직도 살아있냐고 묻는다.",
+          "line_start": 113,
+          "line_end": 116,
+          "claim_line": 115,
+          "quote": "나레이션: 또 다른 곳에선 낯 뜨거운 전투가.\n로산나: 뭐야, 넌.\n로산나: 용사 라플라스의 동료가 왜 아직도 살아있는 거지?\n로산나: 그때 전부 제거된 거 아니었나?",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "드레이크가 자신은 용사의 동료가 아니라 빌런이기 때문이라고 답한다.",
+          "line_start": 117,
+          "line_end": 118,
+          "claim_line": 118,
+          "quote": "드레이크: 당연한 걸 묻는군.\n드레이크: 그야 난 용사의 동료가 아니라, 빌런이기 때문이다!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "로산나가 어이없어하자 드레이크는 이곳은 자신이 점령하기로 마음먹었으니 어설픈 빌런 짓은 그만하고 물러나라고 선언한다.",
+          "line_start": 119,
+          "line_end": 122,
+          "claim_line": null,
+          "quote": "로산나: ···뭐?\n드레이크: 여기서 어설픈 빌런 짓은 그만하고 물러나라!\n드레이크: 이곳은 내가 점령하기로 마음먹었으니 말이다!\n드레이크: 후하하하하!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "로산나",
+          "summary": "로산나가 이대로 지나칠 수 없다며 상대해 줄 테니 덤비라고 응수한다.",
+          "line_start": 123,
+          "line_end": 125,
+          "claim_line": null,
+          "quote": "로산나: 뭐라는 거야.\n로산나: 어찌 됐든, 이대로 지나칠 순 없겠네.\n로산나: 덤벼. 상대해 줄 테니까.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "드레이크가 프리바티에게 준비는 됐는지 묻는다.",
+          "line_start": 126,
+          "line_end": 126,
+          "claim_line": null,
+          "quote": "드레이크: 후후후. 프리바티, 준비는 됐겠지?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "프리바티가 자신을 말하는 것이냐며 당황해 되묻는다.",
+          "line_start": 127,
+          "line_end": 127,
+          "claim_line": null,
+          "quote": "프리바티: 저, 저요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "드레이크가 아까 프리바티가 저런 양아치 정도는 혼자서도 충분하다고 말하지 않았냐고 주장한다.",
+          "line_start": 128,
+          "line_end": 129,
+          "claim_line": 129,
+          "quote": "드레이크: 아까 그리 말하지 않았나.\n드레이크: 저런 양아치 정도는 혼자서도 충분하다고 말이다.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "프리바티가 자신이 언제 그랬냐고 부인하며 침묵하는 로산나를 보고 화가 많이 난 것 같다고 걱정한다.",
+          "line_start": 130,
+          "line_end": 132,
+          "claim_line": 130,
+          "quote": "프리바티: 제, 제가 언제요?!\n로산나: ··· ···.\n프리바티: 화가 좀 많이 난 것 같은데요···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "드레이크가 상대는 자신이 할 테니 프리바티는 마법의 주문만 걸어주면 된다고 말한다.",
+          "line_start": 133,
+          "line_end": 135,
+          "claim_line": null,
+          "quote": "드레이크: 후후후. 걱정 마라.\n드레이크: 상대는 내가 할 테니.\n드레이크: 프리바티 넌 마법의 주문만 걸어주면 된다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "프리바티가 마법의 주문은 진짜 싫다고 거절하려 한다.",
+          "line_start": 136,
+          "line_end": 137,
+          "claim_line": 137,
+          "quote": "프리바티: 마, 마, 마법의 주문이요?\n프리바티: 그, 그건 진짜 싫은데요···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "드레이크가 세계의 기대를 저버리겠다면 이대로 패배하고 [조직]에게 붙잡힐 수밖에 없다고 압박한다.",
+          "line_start": 138,
+          "line_end": 140,
+          "claim_line": 140,
+          "quote": "드레이크: 그럼 어쩔 수 없지.\n드레이크: 프리바티, 네놈이 세계의 기대를 저버리겠다면.\n드레이크: 이대로 패배하고 [조직]에게 붙잡힐 수밖에.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "프리바티가 마지못해 맛있어져라 몽글몽글 큥이라는 주문을 외우자 시스템 메시지로 드레이크의 모든 능력치가 올랐다고 출력된다.",
+          "line_start": 141,
+          "line_end": 147,
+          "claim_line": null,
+          "quote": "프리바티: 으, 으으, 으으으···!\n프리바티: 아, 알겠어요. 하면 되잖아요. 하면.\n프리바티: 후우우···.\n프리바티: 마, 마, 마··· 맛있어져라!\n프리바티: 몽글··· 몽글···.\n프리바티: 큥~~~~~~~~~♡!!\n[시스템 : 프리바티의 주문에 드레이크의 모든 능력치가 올랐다.]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "드레이크",
+          "summary": "드레이크가 기뻐하며 로산나에게 싸움을 건다.",
+          "line_start": 148,
+          "line_end": 149,
+          "claim_line": null,
+          "quote": "드레이크: 후하하하! 이거다, 프리바티!\n드레이크: 좋아. 싸움이다, 로산나!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "[조직]에 맞선 모험가들 덕분에 용사 일행이 수월히 협회에 도착해 첫 번째 사천왕 머스탱과 만나고, 머스탱은 일행이 오기만을 기다리고 있었다며 환영한다.",
+          "line_start": 150,
+          "line_end": 156,
+          "claim_line": null,
+          "quote": "나레이션: 용감히 [조직]에 맞선 모험가들 덕분에.\n나레이션: 용사 일행은 수월히 협회에 도착할 수 있었습니다.\n나레이션: 그리고 그곳에서 그들은 첫 번째 사천왕과 만나게 되었습니다.\n머스탱: Oh, 드D어 드D어 오셨군Yo!\n머스탱: 기다리고 있었습니Da.\n머스탱: You들이 오기만을 말이Jyo.\n머스탱: Enter----tainment---!!!!",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "춤추는 유희의 지배자",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "길로틴이 사천왕 머스탱을 부르는 이명으로, 자신과 같은 파멸 속성이라고 주장함.",
+          "line_start": 53,
+          "line_end": 54,
+          "quote": "길로틴: 큭. [춤추는 유희의 지배자]인가.\n길로틴: 같은 파멸 속성인 나로서는 상성이 좋지 않군."
+        },
+        {
+          "keyword": "엠마의 요리 회피",
+          "category": "trait",
+          "subject": "엠마",
+          "detail": "엠마가 허기를 달래줄 요리를 가져오겠다고 하자 길로틴과 메이든이 긴박한 상황을 핑계로 급히 도망치는 특징.",
+          "line_start": 82,
+          "line_end": 92,
+          "quote": "엠마: 후후. 용사님들, 잠시만~\n엠마: 한차례 전투를 치러서 피곤할 것 같은데 여기서 기다리고 있어.\n엠마: 허기를 달래줄 요리를 가져올 테니까~\n길로틴: !!\n길로틴: 메이든이여, 지금 상황이 긴박하다고 했지?\n메이든: 예, 긴박하죠. 지금 당장 출발해도 모자랄 정도로요.\n길로틴: 그럼 엠마여.\n길로틴: 우린 이만 가보도록 하겠다!\n엠마: 어머, 용사님?\n엠마: 이번에도 가버렸네~\n엠마: 후후. 무사히 모험 마치시길."
+        },
+        {
+          "keyword": "프리바티의 마법의 주문",
+          "category": "trait",
+          "subject": "프리바티",
+          "detail": "부끄러워하면서도 맛있어져라 몽글몽글 큥 주문을 외워 드레이크의 모든 능력치를 올리는 특징.",
+          "line_start": 135,
+          "line_end": 147,
+          "quote": "드레이크: 프리바티 넌 마법의 주문만 걸어주면 된다.\n프리바티: 마, 마, 마법의 주문이요?\n프리바티: 그, 그건 진짜 싫은데요···.\n드레이크: 그럼 어쩔 수 없지.\n드레이크: 프리바티, 네놈이 세계의 기대를 저버리겠다면.\n드레이크: 이대로 패배하고 [조직]에게 붙잡힐 수밖에.\n프리바티: 으, 으으, 으으으···!\n프리바티: 아, 알겠어요. 하면 되잖아요. 하면.\n프리바티: 후우우···.\n프리바티: 마, 마, 마··· 맛있어져라!\n프리바티: 몽글··· 몽글···.\n프리바티: 큥~~~~~~~~~♡!!\n[시스템 : 프리바티의 주문에 드레이크의 모든 능력치가 올랐다.]"
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "메이든",
+          "target": "지휘관",
+          "relation_or_change": "길로틴 없이 단둘이서 최종보스를 클리어하고 엔딩을 보자고 제안(프러포즈)하나 지휘관이 무시함",
+          "epistemic_type": "character_claim",
+          "claimant": "메이든",
+          "line_start": 8,
+          "line_end": 19,
+          "claim_line": 19,
+          "quote": "메이든: 그런가요?\n메이든: 그럼 최종보스는 길로틴 없이도 어떻게든 클리어할 수 있겠네요.\n메이든: 이참에 단둘이서 엔딩을 보는 건 어때요?\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그래서 이제 어떻게 하지?\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: 제 프러포즈는 간단히 무시하시는군요···.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "머스탱",
+          "target": "춤추는 유희의 지배자",
+          "relation_or_change": "길로틴이 머스탱을 [춤추는 유희의 지배자]라 부르며 자신과 같은 파멸 속성이라 상성이 좋지 않다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "길로틴",
+          "line_start": 52,
+          "line_end": 54,
+          "claim_line": 53,
+          "quote": "메이든: 머스탱 사장님이겠군요.\n길로틴: 큭. [춤추는 유희의 지배자]인가.\n길로틴: 같은 파멸 속성인 나로서는 상성이 좋지 않군.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "메이든",
+          "target": "아이스로즈",
+          "relation_or_change": "길로틴이 메이든을 [아이스로즈]라고 부름",
+          "epistemic_type": "character_claim",
+          "claimant": "길로틴",
+          "line_start": 66,
+          "line_end": 66,
+          "claim_line": 66,
+          "quote": "길로틴: [아이스로즈]여, 그건 무슨 의미···.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "율하",
+          "target": "재판장",
+          "relation_or_change": "은화가 율하를 재판장이라 부르며 나머지를 맡으라고 함",
+          "epistemic_type": "character_claim",
+          "claimant": "은화",
+          "line_start": 110,
+          "line_end": 111,
+          "claim_line": 110,
+          "quote": "은화: 재판장, 나머지를 맡아라.\n은화: 저 삼류 놈은 내가 직접 교육할 테니.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "율하",
+          "target": "재판장",
+          "relation_or_change": "율하가 자신은 재판장이 아니라고 부인함",
+          "epistemic_type": "character_claim",
+          "claimant": "율하",
+          "line_start": 112,
+          "line_end": 112,
+          "claim_line": 112,
+          "quote": "율하: 그러니까 난 재판장이 아니라고···!",
+          "refers_to_past": false
+        },
+        {
+          "subject": "드레이크",
+          "target": "라플라스",
+          "relation_or_change": "로산나가 드레이크를 과거 전부 제거된 줄 알았던 용사 라플라스의 동료라고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "로산나",
+          "line_start": 115,
+          "line_end": 116,
+          "claim_line": 115,
+          "quote": "로산나: 용사 라플라스의 동료가 왜 아직도 살아있는 거지?\n로산나: 그때 전부 제거된 거 아니었나?",
+          "refers_to_past": true
+        },
+        {
+          "subject": "드레이크",
+          "target": "라플라스",
+          "relation_or_change": "드레이크가 자신은 용사의 동료가 아니라 빌런이라고 주장함",
+          "epistemic_type": "character_claim",
+          "claimant": "드레이크",
+          "line_start": 117,
+          "line_end": 118,
+          "claim_line": 118,
+          "quote": "드레이크: 당연한 걸 묻는군.\n드레이크: 그야 난 용사의 동료가 아니라, 빌런이기 때문이다!",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "사천왕",
+          "suggested_type": "organization",
+          "line_start": 20
+        },
+        {
+          "surface_text": "용사의 검",
+          "suggested_type": "item",
+          "line_start": 25
+        },
+        {
+          "surface_text": "협회",
+          "suggested_type": "location",
+          "line_start": 44
+        },
+        {
+          "surface_text": "춤추는 유희의 지배자",
+          "suggested_type": "alias",
+          "line_start": 53
+        },
+        {
+          "surface_text": "아이스로즈",
+          "suggested_type": "alias",
+          "line_start": 66
+        },
+        {
+          "surface_text": "즉사의 마안",
+          "suggested_type": "concept",
+          "line_start": 73
+        },
+        {
+          "surface_text": "조직",
+          "suggested_type": "organization",
+          "line_start": 140
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "ice_dragon_saga_16",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "사천왕 머스탱이 지휘관에게 1대1 댄스 배틀을 걸어오자 난입한 볼륨이 총을 쏴 단숨에 머스탱을 쓰러뜨리고, 촌장은 길로틴에게 클로이가 만족할 최고의 결말을 위해 맥스웰이 만든 북쪽 포탈을 타고 마왕성으로 가 백빙룡과 겨울의 저주를 끝내달라고 부탁하며 볼륨과 베스티는 파티에서 이탈한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "머스탱",
+            "entity_id": "char_머스탱",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "길로틴",
+            "entity_id": "char_길로틴",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "메이든",
+            "entity_id": "char_메이든",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "볼륨",
+            "entity_id": "char_볼륨",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "촌장",
+            "entity_id": "char_촌장",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "조직",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 7,
+            "line_end": 7,
+            "quote": "머스탱: [조직]의 통제 아래 놓인 Perfect한 세상이 탄생하는겁니Da."
+          },
+          {
+            "surface_text": "춤추는 유희의 지배자",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 13,
+            "line_end": 13,
+            "quote": "길로틴: 춤추는 유희의 지배자, 머스탱이여."
+          },
+          {
+            "surface_text": "길로틴 드 메피스토",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 14,
+            "line_end": 14,
+            "quote": "길로틴: 이 길로틴 드 메피스토에게 그런 협박이 통할 것 같나!"
+          },
+          {
+            "surface_text": "사천왕",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 53,
+            "line_end": 53,
+            "quote": "나레이션: 사천왕 머스탱은 달빛을 조명 삼아 화려한 춤사위를 이어나갔습니다."
+          },
+          {
+            "surface_text": "협회",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 92,
+            "line_end": 92,
+            "quote": "나레이션: 협회 저 안쪽에서 일렉 기타 소리가 울려 퍼졌습니다."
+          },
+          {
+            "surface_text": "겨울의 저주",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 137,
+            "line_end": 139,
+            "quote": "촌장: 지금 중요한 건, 자네도 알다시피 [겨울의 저주] 쪽이라네.\n촌장: 사천왕이 말했듯, 앞으로 하루.\n촌장: 하루 뒤면 [겨울의 저주]가 온 세상을 뒤덮고 말 테니까."
+          },
+          {
+            "surface_text": "백빙룡",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 142,
+            "line_end": 142,
+            "quote": "촌장: 자네는 한시 빨리 백빙룡을 쓰러뜨리고 [겨울의 저주]를 끝내주게."
+          },
+          {
+            "surface_text": "클로이",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 145,
+            "line_end": 146,
+            "quote": "촌장: 클로이가 납득할 만한,\n촌장: 클로이가 만족할 만한 최고의 결말로 말이다."
+          },
+          {
+            "surface_text": "마왕성",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 155,
+            "line_end": 158,
+            "quote": "촌장: 좋아, 그러면 마왕성으로 향하는 길을 알려주겠네.\n촌장: 마을의 북쪽.\n촌장: 용사 라플라스의 동료, 맥스웰이 만들어둔 포탈이 하나 있는데.\n촌장: 그 포탈을 타면 곧장 마왕성 앞으로 갈 수 있다네."
+          },
+          {
+            "surface_text": "라플라스",
+            "entity_id": "char_라플라스",
+            "entity_type": "character",
+            "line_start": 157,
+            "line_end": 157,
+            "quote": "촌장: 용사 라플라스의 동료, 맥스웰이 만들어둔 포탈이 하나 있는데."
+          },
+          {
+            "surface_text": "맥스웰",
+            "entity_id": "char_맥스웰",
+            "entity_type": "character",
+            "line_start": 157,
+            "line_end": 157,
+            "quote": "촌장: 용사 라플라스의 동료, 맥스웰이 만들어둔 포탈이 하나 있는데."
+          },
+          {
+            "surface_text": "포탈",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 157,
+            "line_end": 159,
+            "quote": "촌장: 용사 라플라스의 동료, 맥스웰이 만들어둔 포탈이 하나 있는데.\n촌장: 그 포탈을 타면 곧장 마왕성 앞으로 갈 수 있다네.\n촌장: 자네들이 이용할 수 있도록, 포탈은 열어두도록 하지."
+          },
+          {
+            "surface_text": "베스티",
+            "entity_id": "char_베스티",
+            "entity_type": "character",
+            "line_start": 169,
+            "line_end": 169,
+            "quote": "  [OPTION TEXT=\"그럼 다 같이 베스티를 찾은 다음에 마왕성으로 출발하자.\"]"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "머스탱",
+          "to_target": "길로틴, 메이든, 지휘관",
+          "address_term": "You들",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "머스탱: 여기서 You들에게 제안할게Yo-!"
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "머스탱",
+          "address_term": "춤추는 유희의 지배자",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "길로틴: 춤추는 유희의 지배자, 머스탱이여."
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "머스탱",
+          "address_term": "머스탱이여",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "길로틴: 춤추는 유희의 지배자, 머스탱이여."
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "머스탱",
+          "address_term": "네놈",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "길로틴: 그리고 네놈이 직접 상대를 지목할 수 있게 양보까지 해 주겠다!"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "지휘관",
+          "address_term": "갑옷 기사",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "머스탱: Okay. 그럼 거기 갑옷 기사, 앞으로 나오시Jyo!"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "지휘관",
+          "address_term": "You",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "머스탱: Yes, You가 Me의 첫 번째 상대입니Da."
+        },
+        {
+          "from_speaker": "메이든",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "메이든: ···지휘관, 혹시 기대하고 있었나요?"
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "지휘관",
+          "address_term": "벗이여",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "길로틴: 벗이여, 할 수 있다."
+        },
+        {
+          "from_speaker": "길로틴",
+          "to_target": "지휘관",
+          "address_term": "너",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "길로틴: 내가 믿는 너를 믿어라!"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "메이든",
+          "address_term": "You",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "    머스탱: 이제 You, 메이든의 차례입니Da!!"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "볼륨",
+          "address_term": "Girl",
+          "line_start": 96,
+          "line_end": 96,
+          "quote": "머스탱: What? 좋아Yo, 그럼 Girl이 Me를 상대해보시Jyo!"
+        },
+        {
+          "from_speaker": "볼륨",
+          "to_target": "지휘관",
+          "address_term": "매니저",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "볼륨: 매니저, 괜찮겠어?"
+        },
+        {
+          "from_speaker": "머스탱",
+          "to_target": "볼륨",
+          "address_term": "You",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "머스탱: 이제 You의 차례입니Da."
+        },
+        {
+          "from_speaker": "촌장",
+          "to_target": "길로틴",
+          "address_term": "용사여",
+          "line_start": 135,
+          "line_end": 135,
+          "quote": "촌장: 용사여, 그럴 필요는 없네."
+        },
+        {
+          "from_speaker": "촌장",
+          "to_target": "길로틴",
+          "address_term": "자네",
+          "line_start": 137,
+          "line_end": 137,
+          "quote": "촌장: 지금 중요한 건, 자네도 알다시피 [겨울의 저주] 쪽이라네."
+        },
+        {
+          "from_speaker": "촌장",
+          "to_target": "길로틴",
+          "address_term": "용사 길로틴",
+          "line_start": 140,
+          "line_end": 140,
+          "quote": "촌장: 용사 길로틴!"
+        },
+        {
+          "from_speaker": "촌장",
+          "to_target": "길로틴, 메이든, 지휘관",
+          "address_term": "자네들",
+          "line_start": 159,
+          "line_end": 159,
+          "quote": "촌장: 자네들이 이용할 수 있도록, 포탈은 열어두도록 하지."
+        },
+        {
+          "from_speaker": "볼륨",
+          "to_target": "길로틴, 메이든, 지휘관",
+          "address_term": "매니저들",
+          "line_start": 177,
+          "line_end": 177,
+          "quote": "볼륨: 매니저들은 곧장 마왕성으로 가."
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "choice_line": 67,
+          "options": [
+            {
+              "option_text": "↓ ↓ ↑ ↑ → ← → ← A B",
+              "continuation_summary": "머스탱이 자신이 제일 싫어하는 것이 치트 플레이어라며 용서할 수 없다고 분노한다."
+            },
+            {
+              "option_text": "→ N ↓ ↘ RP",
+              "continuation_summary": "머스탱이 신성한 댄스 배틀에서 그런 위험한 기술을 쓰려 하다니 용서할 수 없다고 분노한다."
+            },
+            {
+              "option_text": "↑ ↓ ↑ ↓ ← →",
+              "continuation_summary": "갑옷 기사(지휘관)가 머스탱이 선보인 춤선에 따라 똑같이 춤을 추자 머스탱이 완벽하다고 극찬하며 다음 차례로 메이든을 지목하고, 메이든은 무희 직업 스킬은 안 찍었다며 당황한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 앞으로 하루만 있으면 겨울의 저주(Curse)가 완성되어 모두가 얼어붙고 [조직]의 통제 아래 놓인 완벽한 세상이 탄생한다며, 자신을 방해하면 앞길은 지옥이 될 것이라고 경고한다.",
+          "line_start": 2,
+          "line_end": 10,
+          "claim_line": 5,
+          "quote": "머스탱: Ja.\n머스탱: 여기서 You들에게 제안할게Yo-!\n머스탱: 알고 있겠지Man, 앞으로 Only One Day.\n머스탱: One Day만 있으면, 겨울의 Curse가 완성됩니Da-!!\n머스탱: Everyone이 Ggong-Ggong 얼어붙어,\n머스탱: [조직]의 통제 아래 놓인 Perfect한 세상이 탄생하는겁니Da.\n머스탱: 그러니 Me를 방해하지 마세Yo.\n머스탱: Man에 하나 Me를 방해한다Myeon.\n머스탱: You들의 앞은 지옥이 될겁니Da.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 춤추는 유희의 지배자 머스탱에게 이 길로틴 드 메피스토에게 그런 협박이 통할 것 같냐고 일축한다.",
+          "line_start": 11,
+          "line_end": 14,
+          "claim_line": 14,
+          "quote": "길로틴: ··· ···쿡.\n길로틴: 크큭. 크하하하하!\n길로틴: 춤추는 유희의 지배자, 머스탱이여.\n길로틴: 이 길로틴 드 메피스토에게 그런 협박이 통할 것 같나!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 부하들을 뒤로 물리고 1대1로 상대하겠다고 선언한다.",
+          "line_start": 15,
+          "line_end": 19,
+          "claim_line": null,
+          "quote": "머스탱: Hmm-\n머스탱: OK. Stop.\n머스탱: 그러Myeon, You들에게 Mercy를 베풀어드리Jyo!!\n머스탱: 이번에는 Special하게 Me의 사랑스러운 Girls를 뒤로 물리Go~\n머스탱: One-by-One으로 상대하겠습니Da-!!!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 정정당당하게 자신들도 한 명만 내보내겠다며 머스탱이 직접 상대를 지목할 수 있게 양보하겠다고 말한다.",
+          "line_start": 20,
+          "line_end": 22,
+          "claim_line": null,
+          "quote": "길로틴: 꼴에 정정당당하게 승부하겠다는 건가.\n길로틴: 좋다. 우리도 정정당당하게 한 명만 내보내지.\n길로틴: 그리고 네놈이 직접 상대를 지목할 수 있게 양보까지 해 주겠다!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 게임에는 상대방을 다운시켜서 다 같이 총공격하는 좋은 전략이 있다고 조언한다.",
+          "line_start": 23,
+          "line_end": 23,
+          "claim_line": 23,
+          "quote": "메이든: 그··· 길로틴. 게임에는 상대방을 다운시켜서 다 같이 총공격한다는 좋은 전략이···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 용사가 되어 비겁한 짓을 할 수 없다며 머스탱에게 첫 번째 상대를 지목하라고 말한다.",
+          "line_start": 24,
+          "line_end": 25,
+          "claim_line": null,
+          "quote": "길로틴: 용사가 되어서 그런 비겁한 짓을 할 순 없다!\n길로틴: 자. 머스탱이여, 네놈의 첫 번째 상대는 누구지?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 갑옷 기사(지휘관)를 첫 번째 상대로 지목해 앞으로 나오라고 한다.",
+          "line_start": 26,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "머스탱: Okay. 그럼 거기 갑옷 기사, 앞으로 나오시Jyo!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신을 말하는 것이 맞는지 확인한다.",
+          "line_start": 28,
+          "line_end": 28,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"나, 나? 나 말하는 거지?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 지휘관이 자신의 첫 번째 상대가 맞다고 확인해 준다.",
+          "line_start": 31,
+          "line_end": 31,
+          "claim_line": null,
+          "quote": "머스탱: Yes, You가 Me의 첫 번째 상대입니Da.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 드디어 제대로 싸워보는구나라며 각오를 다진다.",
+          "line_start": 33,
+          "line_end": 33,
+          "claim_line": 33,
+          "quote": "  [OPTION TEXT=\"후우··· 좋아. 드디어 제대로 싸워보는구나.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 지휘관에게 혹시 기대하고 있었는지 묻는다.",
+          "line_start": 36,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "메이든: ···지휘관, 혹시 기대하고 있었나요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 평소엔 뒤에서 지휘만 해서 조금 설레긴 한다며 상대가 머스탱인 게 찝찝해도 전력을 다하고 오겠다고 답한다.",
+          "line_start": 38,
+          "line_end": 42,
+          "claim_line": 38,
+          "quote": "  [OPTION TEXT=\"평소엔 뒤에서 지휘만 해서 그런지, 조금 설레긴 하네.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"상대가 머스탱인 게 좀 찝찝하긴 해도, 전력을 다하고 올게.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 용사의 동료다운 좋은 기세라며 지휘관과 자신의 댄스 배틀을 시작하자고 선언한다.",
+          "line_start": 45,
+          "line_end": 47,
+          "claim_line": null,
+          "quote": "머스탱: 용사의 동료다운 좋은 기세군Yo!\n머스탱: Ja! 그럼~\n머스탱: You & Me의 Dance Battle을 시작해보Jyo!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 댄스라는 말에 당황해 되묻는다.",
+          "line_start": 49,
+          "line_end": 49,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"댄스, 뭐?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 위·아래·위·아래·왼쪽·오른쪽 순서로 화려한 춤사위를 선보인 뒤 지휘관에게 자신의 춤을 따라올 수 있겠냐며 차례를 넘긴다.",
+          "line_start": 52,
+          "line_end": 56,
+          "claim_line": null,
+          "quote": "나레이션: 위. 아래. 위. 아래. 왼쪽. 그리고 오른쪽.\n나레이션: 사천왕 머스탱은 달빛을 조명 삼아 화려한 춤사위를 이어나갔습니다.\n머스탱: Me의 Dance Time은 여기까G~!\n머스탱: 이제 You의 차례입니Da.\n머스탱: Me의 Dance를 따라올 수 있겠습니Gga?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자기 차례라고 해도 어찌할지 몰라 망설인다.",
+          "line_start": 58,
+          "line_end": 58,
+          "claim_line": 58,
+          "quote": "  [OPTION TEXT=\"내 차례라고 해도···.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 지휘관(벗)에게 할 수 있다며 자신이 믿는 너를 믿으라고 격려한다.",
+          "line_start": 61,
+          "line_end": 62,
+          "claim_line": 62,
+          "quote": "길로틴: 벗이여, 할 수 있다.\n길로틴: 내가 믿는 너를 믿어라!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 일단 해보겠다고 나선다.",
+          "line_start": 64,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"하아··· 일단 해볼게.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 댄스 배틀에서 ↓ ↓ ↑ ↑ → ← → ← A B를 선택한다.",
+          "line_start": 68,
+          "line_end": 68,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"↓ ↓ ↑ ↑ → ← → ← A B\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 자신이 제일 싫어하는 것이 치트 플레이어라며 용서할 수 없다고 분노한다.",
+          "line_start": 69,
+          "line_end": 72,
+          "claim_line": 71,
+          "quote": "    머스탱: Oh Noooooo0oooo--!!\n    머스탱: You, Me가 제일 싫어하는 게 뭔지 아나Yo?\n    머스탱: 바로 Cheat Player입니Da!\n    머스탱: 용서할 수 없어Yo!!!!!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 댄스 배틀에서 → N ↓ ↘ RP를 선택한다.",
+          "line_start": 74,
+          "line_end": 74,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"→ N ↓ ↘ RP\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 신성한 댄스 배틀에서 그런 위험한 기술을 쓰려 하다니 용서할 수 없다고 분노한다.",
+          "line_start": 75,
+          "line_end": 78,
+          "claim_line": 77,
+          "quote": "    머스탱: Oh Noooooo0oooo--!!\n    머스탱: You, Me가 모를 거라고 생각했나Yo?\n    머스탱: 신성한 Dance Battle에서 그런 Dangerous한 기술을 쓰려고 하다Ni.\n    머스탱: 용서할 수 없어Yo!!!!!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "갑옷 기사(지휘관)가 사천왕 머스탱이 먼저 선보인 춤선(↑ ↓ ↑ ↓ ← →)에 따라 똑같이 춤을 춘다.",
+          "line_start": 80,
+          "line_end": 81,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"↑ ↓ ↑ ↓ ← →\"]\n    나레이션: 갑옷 기사는 사천왕이 먼저 선보인 춤선에 따라 똑같이 춤을 췄습니다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 완벽하다고 극찬하며 다음 스테이지로 메이든의 차례라고 지목한다.",
+          "line_start": 82,
+          "line_end": 86,
+          "claim_line": null,
+          "quote": "    머스탱: Oh My God.\n    머스탱: Perfect~!\n    머스탱: Perfect해Yo!!\n    머스탱: 그럼 Next Stage!\n    머스탱: 이제 You, 메이든의 차례입니Da!!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 자신은 무희 직업 쪽 스킬은 안 찍었다며 당황한다.",
+          "line_start": 87,
+          "line_end": 87,
+          "claim_line": 87,
+          "quote": "    메이든: 저, 저요? 무희 직업 쪽 스킬은 안 찍었는데···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "협회 안쪽에서 일렉 기타 소리가 울려 퍼지자 머스탱이 방해꾼이냐고 묻는다.",
+          "line_start": 90,
+          "line_end": 93,
+          "claim_line": null,
+          "quote": "나레이션: 그때였습니다.\n자가장-\n나레이션: 협회 저 안쪽에서 일렉 기타 소리가 울려 퍼졌습니다.\n머스탱: 방해꾼인가Yo?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 다음 공연까지 조용히 시간을 죽이려 했는데 도저히 못 봐주겠어서 나섰다고 말한다.",
+          "line_start": 94,
+          "line_end": 95,
+          "claim_line": 95,
+          "quote": "볼륨: 다음 공연까지 조용히 시간을 죽이려고 했는데.\n볼륨: 도저히 못 봐주겠어서 말이야.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 볼륨에게 자신을 상대해 보라고 제안한다.",
+          "line_start": 96,
+          "line_end": 96,
+          "claim_line": null,
+          "quote": "머스탱: What? 좋아Yo, 그럼 Girl이 Me를 상대해보시Jyo!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 수락하며 지휘관(매니저)에게 괜찮겠는지 묻는다.",
+          "line_start": 97,
+          "line_end": 98,
+          "claim_line": null,
+          "quote": "볼륨: Hmm. Okay.\n볼륨: 매니저, 괜찮겠어?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신보다는 볼륨이 상대하는 게 낫지 않겠냐며 동의한다.",
+          "line_start": 100,
+          "line_end": 100,
+          "claim_line": 100,
+          "quote": "  [OPTION TEXT=\"아무래도 나보단 볼륨이 상대하는 게 낫지 않을까?\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 귀찮으니까 빨리 끝내달라고 머스탱에게 재촉한다.",
+          "line_start": 103,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "볼륨: 그렇다는데. 귀찮으니까 빨리 끝내줄래?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 자신의 최고의 춤을 상대해 보라며 더욱 화려한 춤사위를 선보인 뒤 볼륨에게 따라올 수 있겠냐고 묻는다.",
+          "line_start": 104,
+          "line_end": 112,
+          "claim_line": null,
+          "quote": "머스탱: 어디 한번 상대해보시Jyo.\n머스탱: Me의 Best Dance를 말입니Da!!!\n머스탱: Entertainment!!\n나레이션: 왼쪽. 오른쪽. 위. 왼쪽. 그리고 오른쪽.\n나레이션: 아래. 위. 위. 오른쪽. 그리고 다시 오른쪽.\n나레이션: 사천왕 머스탱은 이번엔 좀 더 화려하게, 그리고 좀 더 엔터테인먼트 하게 춤사위를 이어나갔습니다.\n머스탱: 후우··· 후우···.\n머스탱: 이제 You의 차례입니Da.\n머스탱: Me의 Best Dance를 따라올 수 있겠습니Gga?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 먼저 총을 쏴 머스탱을 맞힌다.",
+          "line_start": 113,
+          "line_end": 116,
+          "claim_line": null,
+          "quote": "볼륨: You know that?\n탕-!\n볼륨: Volume shot first.\n볼륨: Bang-!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "총에 맞은 머스탱이 자신이 당하다니라며 신음한다.",
+          "line_start": 117,
+          "line_end": 117,
+          "claim_line": 117,
+          "quote": "머스탱: 컥. 커헉··· Me가 당하다Ni···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 인생은 애들 장난이 아니라 실전이라고 말한다.",
+          "line_start": 118,
+          "line_end": 119,
+          "claim_line": 118,
+          "quote": "볼륨: Hey, 인생은 실전이야.\n볼륨: 애들 장난이 아니라고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 자신은 최약체에 불과하니 곧 자신보다 더 강한 사천왕이 나타날 것이라고 말하며 쓰러진다.",
+          "line_start": 120,
+          "line_end": 123,
+          "claim_line": 121,
+          "quote": "머스탱: You··· 곧 Me보다 더 Strong한 사천왕이 나타날 겁니Da···.\n머스탱: Me는 최약체에 불과하니까Yo··· ···.\n머스탱: Enter··· tain··· ment··· ···.\n[시스템 : 사천왕 머스탱이 쓰러졌습니다.]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 정말 허무했다고 평한다.",
+          "line_start": 124,
+          "line_end": 124,
+          "claim_line": 124,
+          "quote": "메이든: ··· ···정말 허무했네요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메이든의 말에 그러게라며 동의한다.",
+          "line_start": 126,
+          "line_end": 126,
+          "claim_line": 126,
+          "quote": "  [OPTION TEXT=\"··· ···그러게.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 정정당당하게 승부한다고 했는데라며 아쉬워한다.",
+          "line_start": 129,
+          "line_end": 129,
+          "claim_line": 129,
+          "quote": "길로틴: ··· ···정정당당하게 승부한다고 했는데.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "촌장",
+          "summary": "촌장이 나타나 감사 인사를 전한다.",
+          "line_start": 130,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "촌장: 고맙네. 정말 고맙네.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 여전히 [조직]의 잔당이 마을에 남아 있으니 자신이 전부 처리하고 오겠다고 말한다.",
+          "line_start": 131,
+          "line_end": 134,
+          "claim_line": null,
+          "quote": "길로틴: 감사 인사를 받긴 아직 일러.\n길로틴: 여전히 [조직]의 잔당이 마을에 남아 있으니 말이다.\n길로틴: 잠시만 기다리고 있어라.\n길로틴: 이 몸이 전부 처리하고 올 테니.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "촌장",
+          "summary": "촌장이 사천왕 머스탱이 쓰러진 이상 잔당 처리는 협회의 모험가로도 충분하며, 하루 뒤면 [겨울의 저주]가 온 세상을 뒤덮으니 한시 빨리 백빙룡을 쓰러뜨리고 저주를 끝내달라고 부탁한다.",
+          "line_start": 135,
+          "line_end": 142,
+          "claim_line": 136,
+          "quote": "촌장: 용사여, 그럴 필요는 없네.\n촌장: 사천왕 머스탱이 쓰러진 이상, 잔당 처리는 우리 협회의 모험가로도 충분해.\n촌장: 지금 중요한 건, 자네도 알다시피 [겨울의 저주] 쪽이라네.\n촌장: 사천왕이 말했듯, 앞으로 하루.\n촌장: 하루 뒤면 [겨울의 저주]가 온 세상을 뒤덮고 말 테니까.\n촌장: 용사 길로틴!\n촌장: 마을은 모험가들이 지키고 있을 테니,\n촌장: 자네는 한시 빨리 백빙룡을 쓰러뜨리고 [겨울의 저주]를 끝내주게.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "촌장",
+          "summary": "촌장이 길로틴에게 무엇보다 이 이야기를 클로이가 납득하고 만족할 만한 최고의 결말로 끝내야 하지 않냐고 말한다.",
+          "line_start": 143,
+          "line_end": 146,
+          "claim_line": 144,
+          "quote": "촌장: 무엇보다, 길로틴.\n촌장: 자네는 이 이야기를 최고의 결말로 끝내야만 하지 않는가.\n촌장: 클로이가 납득할 만한,\n촌장: 클로이가 만족할 만한 최고의 결말로 말이다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "촌장",
+          "summary": "길로틴이 놀라자 촌장은 이야기가 시작된 뒤 오랜 시간이 흘렀는데 클로이를 위한 최고의 결말을 준비해 뒀냐고 묻는다.",
+          "line_start": 147,
+          "line_end": 149,
+          "claim_line": null,
+          "quote": "길로틴: ··· ···!!\n촌장: 이 이야기가 시작된 뒤로 오랜 시간이 흘렀어.\n촌장: 길로틴, 클로이를 위한 최고의 결말은 준비해 뒀겠지?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "길로틴이 침묵하다가 자신은 아직 준비가 되지 않았다고 중얼거린다.",
+          "line_start": 150,
+          "line_end": 151,
+          "claim_line": 151,
+          "quote": "길로틴: ··· ···.\n길로틴: 난··· 아직 준비가···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 안 좋은 기억이 떠오른다며 사람 앞에 두고 속삭이는 것을 그만둬 달라고 요청한다.",
+          "line_start": 152,
+          "line_end": 153,
+          "claim_line": 153,
+          "quote": "메이든: 저기··· 사람 앞에 두고 속삭이는 건 그만두실래요?\n메이든: 왠지 안 좋은 기억이 떠올라서···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "촌장",
+          "summary": "촌장이 사과한 뒤 마을 북쪽에 용사 라플라스의 동료 맥스웰이 만들어둔 포탈을 타면 곧장 마왕성 앞으로 갈 수 있다며 포탈을 열어두겠다고 알려준다.",
+          "line_start": 154,
+          "line_end": 159,
+          "claim_line": 157,
+          "quote": "촌장: 흠흠. 미안하네.\n촌장: 좋아, 그러면 마왕성으로 향하는 길을 알려주겠네.\n촌장: 마을의 북쪽.\n촌장: 용사 라플라스의 동료, 맥스웰이 만들어둔 포탈이 하나 있는데.\n촌장: 그 포탈을 타면 곧장 마왕성 앞으로 갈 수 있다네.\n촌장: 자네들이 이용할 수 있도록, 포탈은 열어두도록 하지.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 이른바 숏컷 루트라며 이해한다.",
+          "line_start": 160,
+          "line_end": 160,
+          "claim_line": 160,
+          "quote": "메이든: 흠. 이른바 숏컷 루트란 거군요. 이해했어요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "촌장",
+          "summary": "촌장이 마왕성의 입구는 앞으로 나아갈 용기 있는 자에게만 열린다고 알려준다.",
+          "line_start": 161,
+          "line_end": 163,
+          "claim_line": 162,
+          "quote": "촌장: 단, 누구나 마왕성에 들어갈 수 있는 건 아니야.\n촌장: 마왕성의 입구는 앞으로 나아갈 용기 있는 자에게만 열린다네.\n촌장: 이 점 알아두게나.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 마왕성 입구의 조건을 숙지하고 다 같이 베스티를 찾은 다음에 마왕성으로 출발하자고 제안한다.",
+          "line_start": 165,
+          "line_end": 169,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"앞으로 나아갈 용기 있는 자에게만 열린다··· 알겠어.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그럼 다 같이 베스티를 찾은 다음에 마왕성으로 출발하자.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 자신의 무대를 망친 놈들을 직접 처리하며 마을을 정리하고 혼자 베스티를 찾아 합류할 테니 매니저들은 곧장 마왕성으로 가라고 말한다.",
+          "line_start": 172,
+          "line_end": 178,
+          "claim_line": null,
+          "quote": "볼륨: No, 매니저.\n볼륨: 베스티는 나 혼자 찾아. Not your business.\n볼륨: 안 그래도 여기 남아서 마을을 정리할 생각이었거든.\n볼륨: 내 무대를 망친 놈들은 내 손으로 직접 처리해야지 않겠어?\n볼륨: 마을을 정리하는 대로, 베스티랑 같이 합류할 테니.\n볼륨: 매니저들은 곧장 마왕성으로 가.\n볼륨: Understand?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메이든",
+          "summary": "메이든이 지휘관에게 남은 시간이 얼마 없으니 볼륨 말대로 하자고 권한다.",
+          "line_start": 179,
+          "line_end": 179,
+          "claim_line": 179,
+          "quote": "메이든: 지휘관, 남은 시간이 얼마 없어요. 볼륨 말대로 해요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 승낙하며 볼륨에게 베스티를 맡기고 조심하라고 당부한다.",
+          "line_start": 181,
+          "line_end": 185,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"··· ···알겠어. 베스티는 맡길게.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"조심해야 해.\"]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "볼륨",
+          "summary": "볼륨이 걱정하지 말라며 지금부터 제일 위험한 곳으로 떠나는 매니저들 걱정이나 하라고 말한다.",
+          "line_start": 188,
+          "line_end": 190,
+          "claim_line": 190,
+          "quote": "볼륨: Don't worry.\n볼륨: 매니저들 걱정이나 하라고.\n볼륨: 지금부터 제일 위험한 곳으로 떠나는 거니까.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "길로틴",
+          "summary": "여정의 끝이 어떻게 될지 전부 다 알면서도 용사 길로틴과 일행은 백빙룡을 쓰러뜨리기 위해 마왕성으로 떠나고, 볼륨과 베스티는 파티에서 이탈한다.",
+          "line_start": 191,
+          "line_end": 196,
+          "claim_line": null,
+          "quote": "나레이션: 백빙룡을 쓰러뜨리고 멸망해 가는 세상을 구해라!\n나레이션: 막대한 사명을 짊어지게 된 용사는 일행과 함께 마왕성으로 떠났습니다.\n나레이션: 여정의 끝이 어떻게 될지.\n나레이션: 전부 다 알면서도 말이죠.\n[시스템 : 볼륨이 파티에서 이탈합니다.]\n[시스템 : 베스티가 파티에서 이탈합니다.]",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "겨울의 저주",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "하루 뒤면 온 세상을 뒤덮는 저주로, 백빙룡을 쓰러뜨려야 끝낼 수 있음.",
+          "line_start": 137,
+          "line_end": 142,
+          "quote": "촌장: 지금 중요한 건, 자네도 알다시피 [겨울의 저주] 쪽이라네.\n촌장: 사천왕이 말했듯, 앞으로 하루.\n촌장: 하루 뒤면 [겨울의 저주]가 온 세상을 뒤덮고 말 테니까.\n촌장: 용사 길로틴!\n촌장: 마을은 모험가들이 지키고 있을 테니,\n촌장: 자네는 한시 빨리 백빙룡을 쓰러뜨리고 [겨울의 저주]를 끝내주게."
+        },
+        {
+          "keyword": "길로틴 드 메피스토",
+          "category": "trait",
+          "subject": "길로틴",
+          "detail": "길로틴이 스스로를 부르는 중2병 풍의 풀네임.",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "길로틴: 이 길로틴 드 메피스토에게 그런 협박이 통할 것 같나!"
+        },
+        {
+          "keyword": "클로이를 위한 최고의 결말",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "촌장이 길로틴에게 이 이야기를 클로이가 납득하고 만족할 만한 최고의 결말로 끝내야 한다고 말하며, 길로틴은 아직 준비가 되지 않았다고 망설임.",
+          "line_start": 143,
+          "line_end": 151,
+          "quote": "촌장: 무엇보다, 길로틴.\n촌장: 자네는 이 이야기를 최고의 결말로 끝내야만 하지 않는가.\n촌장: 클로이가 납득할 만한,\n촌장: 클로이가 만족할 만한 최고의 결말로 말이다.\n길로틴: ··· ···!!\n촌장: 이 이야기가 시작된 뒤로 오랜 시간이 흘렀어.\n촌장: 길로틴, 클로이를 위한 최고의 결말은 준비해 뒀겠지?\n길로틴: ··· ···.\n길로틴: 난··· 아직 준비가···."
+        },
+        {
+          "keyword": "마왕성 포탈과 입장 조건",
+          "category": "location",
+          "subject": null,
+          "detail": "마을 북쪽에 용사 라플라스의 동료 맥스웰이 만들어둔 마왕성 직행 포탈. 마왕성 입구는 앞으로 나아갈 용기 있는 자에게만 열림.",
+          "line_start": 155,
+          "line_end": 163,
+          "quote": "촌장: 좋아, 그러면 마왕성으로 향하는 길을 알려주겠네.\n촌장: 마을의 북쪽.\n촌장: 용사 라플라스의 동료, 맥스웰이 만들어둔 포탈이 하나 있는데.\n촌장: 그 포탈을 타면 곧장 마왕성 앞으로 갈 수 있다네.\n촌장: 자네들이 이용할 수 있도록, 포탈은 열어두도록 하지.\n메이든: 흠. 이른바 숏컷 루트란 거군요. 이해했어요.\n촌장: 단, 누구나 마왕성에 들어갈 수 있는 건 아니야.\n촌장: 마왕성의 입구는 앞으로 나아갈 용기 있는 자에게만 열린다네.\n촌장: 이 점 알아두게나."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "길로틴",
+          "target": "길로틴 드 메피스토",
+          "relation_or_change": "길로틴이 스스로를 길로틴 드 메피스토라고 칭함",
+          "epistemic_type": "character_claim",
+          "claimant": "길로틴",
+          "line_start": 13,
+          "line_end": 14,
+          "claim_line": 14,
+          "quote": "길로틴: 춤추는 유희의 지배자, 머스탱이여.\n길로틴: 이 길로틴 드 메피스토에게 그런 협박이 통할 것 같나!",
+          "refers_to_past": false
+        },
+        {
+          "subject": "길로틴",
+          "target": "지휘관",
+          "relation_or_change": "지휘관을 벗이라 부르며 자신이 믿는 너를 믿으라고 신뢰를 표함",
+          "epistemic_type": "character_claim",
+          "claimant": "길로틴",
+          "line_start": 61,
+          "line_end": 62,
+          "claim_line": 62,
+          "quote": "길로틴: 벗이여, 할 수 있다.\n길로틴: 내가 믿는 너를 믿어라!",
+          "refers_to_past": false
+        },
+        {
+          "subject": "길로틴",
+          "target": "클로이",
+          "relation_or_change": "촌장이 길로틴에게 이 이야기를 클로이가 납득하고 만족할 만한 최고의 결말로 끝내야 한다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "촌장",
+          "line_start": 143,
+          "line_end": 146,
+          "claim_line": 146,
+          "quote": "촌장: 무엇보다, 길로틴.\n촌장: 자네는 이 이야기를 최고의 결말로 끝내야만 하지 않는가.\n촌장: 클로이가 납득할 만한,\n촌장: 클로이가 만족할 만한 최고의 결말로 말이다.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "맥스웰",
+          "target": "라플라스",
+          "relation_or_change": "촌장이 맥스웰을 용사 라플라스의 동료라고 언급함",
+          "epistemic_type": "character_claim",
+          "claimant": "촌장",
+          "line_start": 157,
+          "line_end": 157,
+          "claim_line": 157,
+          "quote": "촌장: 용사 라플라스의 동료, 맥스웰이 만들어둔 포탈이 하나 있는데.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "볼륨",
+          "target": "지휘관",
+          "relation_or_change": "지휘관 일행을 매니저들이라 부르며 마을 정리와 베스티 수색을 위해 남고 파티에서 이탈함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 172,
+          "line_end": 195,
+          "claim_line": null,
+          "quote": "볼륨: No, 매니저.\n볼륨: 베스티는 나 혼자 찾아. Not your business.\n볼륨: 안 그래도 여기 남아서 마을을 정리할 생각이었거든.\n볼륨: 내 무대를 망친 놈들은 내 손으로 직접 처리해야지 않겠어?\n볼륨: 마을을 정리하는 대로, 베스티랑 같이 합류할 테니.\n볼륨: 매니저들은 곧장 마왕성으로 가.\n볼륨: Understand?\n메이든: 지휘관, 남은 시간이 얼마 없어요. 볼륨 말대로 해요.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···알겠어. 베스티는 맡길게.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"조심해야 해.\"]\n  [OPTION_END]\n[CHOICE_END]\n볼륨: Don't worry.\n볼륨: 매니저들 걱정이나 하라고.\n볼륨: 지금부터 제일 위험한 곳으로 떠나는 거니까.\n나레이션: 백빙룡을 쓰러뜨리고 멸망해 가는 세상을 구해라!\n나레이션: 막대한 사명을 짊어지게 된 용사는 일행과 함께 마왕성으로 떠났습니다.\n나레이션: 여정의 끝이 어떻게 될지.\n나레이션: 전부 다 알면서도 말이죠.\n[시스템 : 볼륨이 파티에서 이탈합니다.]",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "조직",
+          "suggested_type": "organization",
+          "line_start": 7
+        },
+        {
+          "surface_text": "춤추는 유희의 지배자",
+          "suggested_type": "alias",
+          "line_start": 13
+        },
+        {
+          "surface_text": "길로틴 드 메피스토",
+          "suggested_type": "alias",
+          "line_start": 14
+        },
+        {
+          "surface_text": "사천왕",
+          "suggested_type": "organization",
+          "line_start": 53
+        },
+        {
+          "surface_text": "협회",
+          "suggested_type": "location",
+          "line_start": 92
+        },
+        {
+          "surface_text": "겨울의 저주",
+          "suggested_type": "concept",
+          "line_start": 137
+        },
+        {
+          "surface_text": "백빙룡",
+          "suggested_type": "character",
+          "line_start": 142
+        },
+        {
+          "surface_text": "클로이",
+          "suggested_type": "character",
+          "line_start": 145
+        },
+        {
+          "surface_text": "마왕성",
+          "suggested_type": "location",
+          "line_start": 155
+        },
+        {
+          "surface_text": "포탈",
+          "suggested_type": "item",
+          "line_start": 157
+        }
+      ],
+      "reviewed_gaps": []
+    }
+  ]
+}

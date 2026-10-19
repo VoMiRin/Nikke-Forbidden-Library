@@ -2280,14 +2280,36 @@
           "refers_to_past": false
         },
         {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 마리안에게 무슨 일이 일어난 것인지 묻는다.",
+          "line_start": 35,
+          "line_end": 38,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"마리안에게 무슨 일이 일어난 거지?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "시프티",
           "summary": "시프티가 마리안이 랩쳐에게 중추 신경을 빼앗겼으며 콜링 시그널이 감지되었다고 저지를 요청한다.",
-          "line_start": 35,
-          "line_end": 42,
+          "line_start": 39,
+          "line_end": 41,
           "claim_line": 39,
-          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"마리안에게 무슨 일이 일어난 거지?\"]\n  [OPTION_END]\n[CHOICE_END]\n시프티: 랩쳐에게 중추 신경을 빼앗겼어요!\n마리안: 여여여여기기기기예에에에요요요요.\n시프티: 콜링 시그널 감지! 저지해주세요!\n라피: 쏘겠습니다! 명령을!",
+          "quote": "시프티: 랩쳐에게 중추 신경을 빼앗겼어요!\n마리안: 여여여여기기기기예에에에요요요요.\n시프티: 콜링 시그널 감지! 저지해주세요!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 마리안을 쏘겠다며 지휘관에게 사격 명령을 요청한다.",
+          "line_start": 42,
+          "line_end": 42,
+          "claim_line": null,
+          "quote": "라피: 쏘겠습니다! 명령을!",
           "refers_to_past": false
         },
         {
@@ -2883,23 +2905,78 @@
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "라피",
-          "summary": "라피가 마리안이 수송기를 격추시켰다면 방주에서 수송기에 탑승할 때부터 침식 상태였을 것이며, 방주의 견고한 방호벽은 침식을 쉽게 걸러낸다고 지적한다.",
+          "summary": "라피가 마리안의 침식이 언제부터 시작되었는지 의문을 제기하며, 방주에서 온 수송기를 격추시켰다면 탑승할 때부터 침식 상태였다고 보는 것이 맞다고 추론한다.",
           "line_start": 13,
-          "line_end": 24,
+          "line_end": 19,
           "claim_line": 18,
-          "quote": "라피: ···언제부터였을까.\n시프티: 네?\n라피: 침식이 시작된 게, 언제부터였을까.\n시프티: 그야, 작전 중에···.\n시프티: 아.\n라피: 수송기를 격추시켰다는 말은, 탑승할 때부터 침식 상태였다고 보는 게 맞겠지.\n라피: 그리고 수송기는 방주에서 왔어.\n시프티: !!\n시프티: 방주의 방호벽이 뚫린 걸까요?\n라피: 아니. 방호벽은 견고해. 침식 정도는 쉽게 걸러낼 거야.\n아니스: ···라피. 무슨 말을 하고 싶은 거야?\n라피: ···글쎄.",
+          "quote": "라피: ···언제부터였을까.\n시프티: 네?\n라피: 침식이 시작된 게, 언제부터였을까.\n시프티: 그야, 작전 중에···.\n시프티: 아.\n라피: 수송기를 격추시켰다는 말은, 탑승할 때부터 침식 상태였다고 보는 게 맞겠지.\n라피: 그리고 수송기는 방주에서 왔어.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "시프티",
+          "summary": "시프티가 방주의 방호벽이 뚫린 것인지 묻는다.",
+          "line_start": 20,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "시프티: !!\n시프티: 방주의 방호벽이 뚫린 걸까요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 방주의 방호벽은 견고해서 침식 정도는 쉽게 걸러낼 것이라며 방호벽이 뚫렸을 가능성을 부정한다.",
+          "line_start": 22,
+          "line_end": 22,
+          "claim_line": 22,
+          "quote": "라피: 아니. 방호벽은 견고해. 침식 정도는 쉽게 걸러낼 거야.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 라피에게 무슨 말을 하고 싶은 것이냐고 묻자 라피는 대답을 흐린다.",
+          "line_start": 23,
+          "line_end": 24,
+          "claim_line": null,
+          "quote": "아니스: ···라피. 무슨 말을 하고 싶은 거야?\n라피: ···글쎄.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "시프티의 보고를 받은 엔더슨이 대충 던져놓은 신입 지휘관이 하루 만에 단 3기의 니케로 블랙스미스를 잡았다는 사실에 놀라며 되묻는다.",
+          "line_start": 25,
+          "line_end": 27,
+          "claim_line": 27,
+          "quote": "시프티: ···이상으로 보고를 마치겠습니다.\n엔더슨: 블랙스미스를 잡았다고?\n엔더슨: 대충 던져놓은 신입 지휘관이. 하루 만에. 단 3기의 니케로.",
           "refers_to_past": true
         },
         {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "시프티",
-          "summary": "시프티가 엔더슨에게 신입 지휘관이 하루 만에 3기의 니케로 블랙스미스를 잡았으며 1기는 교전 중 파괴되었다고 보고한다.",
-          "line_start": 25,
-          "line_end": 31,
+          "summary": "시프티가 신입 지휘관이 단 3기의 니케로 블랙스미스를 잡은 것이 맞으며, 1기는 교전 중에 파괴되었다고 보고한다.",
+          "line_start": 26,
+          "line_end": 28,
           "claim_line": 28,
-          "quote": "시프티: ···이상으로 보고를 마치겠습니다.\n엔더슨: 블랙스미스를 잡았다고?\n엔더슨: 대충 던져놓은 신입 지휘관이. 하루 만에. 단 3기의 니케로.\n시프티: 예. 그렇습니다. 1기는 교전 중에 파괴되었지만요.\n엔더슨: 농담이 늘었군, 시프티 양.\n시프티: 교전 데이터를 전송할까요?\n엔더슨: 아아. 아니. 그럴 필요까진 없네.",
+          "quote": "엔더슨: 블랙스미스를 잡았다고?\n엔더슨: 대충 던져놓은 신입 지휘관이. 하루 만에. 단 3기의 니케로.\n시프티: 예. 그렇습니다. 1기는 교전 중에 파괴되었지만요.",
           "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엔더슨",
+          "summary": "엔더슨이 농담이 늘었다며 반응하자 시프티가 교전 데이터를 전송할지 묻고, 엔더슨은 그럴 필요까지는 없다고 답한다.",
+          "line_start": 29,
+          "line_end": 31,
+          "claim_line": null,
+          "quote": "엔더슨: 농담이 늘었군, 시프티 양.\n시프티: 교전 데이터를 전송할까요?\n엔더슨: 아아. 아니. 그럴 필요까진 없네.",
+          "refers_to_past": false
         },
         {
           "epistemic_type": "established_event",
@@ -2913,14 +2990,25 @@
           "refers_to_past": false
         },
         {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "사령부에서 호출이 왔느냐는 라피의 물음에 지휘관이 라피와 아니스도 함께 오라고 했다고 전한다.",
+          "line_start": 40,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "라피: ···사령부에서 호출이?\n[CHOICE_START]\n  [OPTION TEXT=\"라피와 아니스도 함께 오라고 했어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "아니스",
-          "summary": "지휘관이 사령부 호출을 전하자 아니스는 1개 스쿼드도 안 되는 전력으로 블랙스미스를 잡은 공로를 치하하려는 것이라 추측한다.",
-          "line_start": 40,
+          "summary": "아니스는 이번 호출이 1개 스쿼드도 안 되는 전력으로 블랙스미스를 잡은 것을 칭찬하며 앞으로도 중앙 정부의 충실한 개로서 힘써달라고 하려는 것이라 추측한다.",
+          "line_start": 45,
           "line_end": 49,
           "claim_line": 47,
-          "quote": "라피: ···사령부에서 호출이?\n[CHOICE_START]\n  [OPTION TEXT=\"라피와 아니스도 함께 오라고 했어.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 음··· 이거 왠지 그거 같은데?\n라피: 그거?\n아니스: 1개 스쿼드도 안되는 전력으로 블랙스미스를 잡다니~ 대단하구나~\n아니스: 앞으로도 중앙 정부의 충실한 개가 되어 더욱 더 힘써다오~\n아니스: 뭐 이런 거?",
+          "quote": "아니스: 음··· 이거 왠지 그거 같은데?\n라피: 그거?\n아니스: 1개 스쿼드도 안되는 전력으로 블랙스미스를 잡다니~ 대단하구나~\n아니스: 앞으로도 중앙 정부의 충실한 개가 되어 더욱 더 힘써다오~\n아니스: 뭐 이런 거?",
           "refers_to_past": false
         },
         {
@@ -3195,14 +3283,25 @@
           "refers_to_past": false
         },
         {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 그 이야기를 하려고 여기까지 부른 것이냐고 묻고, 라피가 제지하려 하자 궁금한 것은 물어봐야 한다고 맞선다.",
+          "line_start": 24,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "아니스: 음··· 그 얘길 하려고 여기까지 부른 거야?\n라피: 아니스.\n아니스: 왜? 궁금한 건 물어봐야지.",
+          "refers_to_past": false
+        },
+        {
           "epistemic_type": "character_claim",
           "confidence": null,
           "actor_or_speaker": "엔더슨",
-          "summary": "그 말을 하려고 불렀냐는 아니스의 질문에 엔더슨은 직접 한 번 보고 싶었을 뿐 다른 뜻은 없다고 답한다.",
-          "line_start": 24,
+          "summary": "엔더슨은 지휘관 일행을 직접 한 번 보고 싶었을 뿐 다른 뜻은 없다고 답한다.",
+          "line_start": 27,
           "line_end": 30,
           "claim_line": 27,
-          "quote": "아니스: 음··· 그 얘길 하려고 여기까지 부른 거야?\n라피: 아니스.\n아니스: 왜? 궁금한 건 물어봐야지.\n엔더슨: 자네들을 직접 한 번 보고 싶었네.\n엔더슨: 다른 뜻은 없어.\n아니스: ··· ···.\n엔더슨: 자, 그럼 다음에 또 보도록 하지.",
+          "quote": "엔더슨: 자네들을 직접 한 번 보고 싶었네.\n엔더슨: 다른 뜻은 없어.\n아니스: ··· ···.\n엔더슨: 자, 그럼 다음에 또 보도록 하지.",
           "refers_to_past": false
         },
         {
