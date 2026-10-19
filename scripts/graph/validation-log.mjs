@@ -127,7 +127,36 @@ const RETRY_KIND = {
 };
 
 /**
- * 추출 실행 하나(회차 계획·배치·부분·run 번호)의 추출자 검증 기록을 센다.
+ * 감독관이 호출을 새 서브에이전트로 다시 돌린다는 표시(batch-parts.mjs rerun). 검증 기록이 아니다.
+ * 실행 번호는 이 표시로 센다: 회차 계획·배치·부분이 같은 표시가 n개 앞에 있으면 그 뒤의 추출자 검증은 실행 n+1이다.
+ * 서브에이전트가 받는 검증 명령에는 실행 번호가 없다. 8·9회차에 문맥이 압축된 서브에이전트 4개가 같은 세션에서 `--run`을 올려,
+ * 한 추출 작업이 두 실행으로 나뉘어 세어졌기 때문이다.
+ */
+export const buildRerunMarker = ({ wavePlan, call, now = new Date() }) => ({
+  recorded_at: now.toISOString(),
+  actor: 'rerun',
+  wave: wavePlan.wave,
+  wave_plan_created_at: wavePlan.created_at,
+  batch_id: call.batch_id,
+  part: call.part ?? null,
+  call: call.call,
+});
+
+const isRecordOfCall = (r, wavePlan, call) =>
+  r.wave === wavePlan.wave &&
+  r.wave_plan_created_at === wavePlan.created_at &&
+  r.batch_id === call.batch_id &&
+  (r.part ?? null) === (call.part ?? null);
+
+// 이 호출의 실행 번호별 시작 시각: [실행 2 시작, 실행 3 시작, …]
+export const rerunStartsOf = (wavePlan, call, records) =>
+  records
+    .filter((r) => r.actor === 'rerun' && isRecordOfCall(r, wavePlan, call))
+    .map((r) => r.recorded_at)
+    .sort();
+
+/**
+ * 추출 실행 하나(회차 계획·배치·부분·실행 번호)의 추출자 검증 기록을 센다.
  * 재검증은 직전 추출자 검증 결과로 나눈다: 실패·읽기 실패 뒤 → 실패 후 재검증, 경고 있는 통과 뒤 → 경고 상태에서 재검증,
  * 경고 없는 통과 뒤 → 추가 확인. next·finish의 검증은 이 계산에 넣지 않는다.
  * 예: 실패 → 실패 → 경고만 있음 → 경고 없음 = 검증 4회, 실패 후 재검증 2회, 경고 상태에서 재검증 1회.
@@ -139,35 +168,32 @@ export const summarizeRun = (records) => {
 };
 
 /**
- * 회차 계획의 호출마다 추출자 검증 기록을 run 번호별로 묶는다.
- * 기록이 없는 호출은 runs가 비어 있다("기록 없음"이지 0회 통과가 아니다). [done]으로 재사용한 호출은 이번 회차에 추출하지 않았다.
+ * 회차 계획의 호출마다 추출자 검증 기록을 실행 번호별로 묶는다.
+ * 실행 번호는 rerun 표시로 센다. 기록에 `run`이 적힌 것(9회차까지 `--run`으로 남긴 기록)은 그 값을 쓴다.
+ * 기록이 없는 호출은 runs가 비어 있다("기록 없음"이지 0회 통과가 아니다). 다시 돌렸는데 그 뒤 기록이 없는 실행은 validations 0이다.
+ * [done]으로 재사용한 호출은 이번 회차에 추출하지 않았다.
  * 마지막 검증 뒤에 출력 파일이 바뀌었으면 changed_after_last에 표시한다(그 기록은 지금 파일의 결과가 아니다).
  */
 export const summarizeWaveCalls = (wavePlan, records, { currentOutputHash = () => null } = {}) =>
   (wavePlan.calls ?? []).map((call) => {
-    const mine = records.filter(
-      (r) =>
-        r.actor === 'extractor' &&
-        r.wave === wavePlan.wave &&
-        r.wave_plan_created_at === wavePlan.created_at &&
-        r.batch_id === call.batch_id &&
-        (r.part ?? null) === (call.part ?? null)
-    );
-    const byRun = new Map();
-    for (const r of mine) {
-      const key = r.run ?? null;
+    const starts = rerunStartsOf(wavePlan, call, records);
+    const runOf = (r) => r.run ?? 1 + starts.filter((t) => t <= r.recorded_at).length;
+    const byRun = new Map(starts.map((_, i) => [i + 2, []]));
+    for (const r of records) {
+      if (r.actor !== 'extractor' || !isRecordOfCall(r, wavePlan, call)) continue;
+      const key = runOf(r);
       if (!byRun.has(key)) byRun.set(key, []);
       byRun.get(key).push(r);
     }
     const runs = [...byRun.entries()]
-      .sort(([a], [b]) => (a ?? Infinity) - (b ?? Infinity))
+      .sort(([a], [b]) => a - b)
       .map(([run, list]) => ({ run, ...summarizeRun(list) }));
-    const lastHash = runs.at(-1)?.last.output_sha256 ?? null;
+    const lastHash = runs.filter((r) => r.validations > 0).at(-1)?.last.output_sha256 ?? null;
     const nowHash = currentOutputHash(call);
     return {
       ...call,
       runs,
-      changed_after_last: runs.length > 0 && nowHash !== lastHash,
+      changed_after_last: runs.some((r) => r.validations > 0) && nowHash !== lastHash,
     };
   });
 
@@ -194,10 +220,11 @@ export const formatWaveCallSummary = (summary) =>
     }
     return [
       `  ${label}${call.changed_after_last ? ' — 마지막 검증 뒤 출력이 바뀜' : ''}`,
-      ...call.runs.map(
-        (r) =>
-          `    run ${r.run ?? '번호 없음'}: 검증 ${r.validations}회 (실패 후 재검증 ${r.after_fail}, 경고 상태에서 재검증 ${r.after_warn}, 추가 확인 ${r.extra_check})` +
-          ` | 첫 결과 ${formatRecordResult(r.first)} | 마지막 ${formatRecordResult(r.last)}`
+      ...call.runs.map((r) =>
+        r.validations === 0
+          ? `    run ${r.run}: 다시 돌렸지만 검증 기록 없음`
+          : `    run ${r.run}: 검증 ${r.validations}회 (실패 후 재검증 ${r.after_fail}, 경고 상태에서 재검증 ${r.after_warn}, 추가 확인 ${r.extra_check})` +
+            ` | 첫 결과 ${formatRecordResult(r.first)} | 마지막 ${formatRecordResult(r.last)}`
       ),
     ];
   });

@@ -513,11 +513,32 @@ const finishWave = async (rel) => {
   console.log(`  추출자가 보지 못한 경고: ${unseenWarnings.length}건, ${reviewInput.warning_scenes.length}장면(검토자가 경고마다 판정한다)`);
 };
 
+// 서브에이전트가 실행할 검증 명령. 실행 번호는 넣지 않는다(서브에이전트가 바꿀 수 없게, 감독관의 rerun 표시로 센다)
+export const validateCommandOf = (call) =>
+  `node scripts/graph/validate-output.mjs ${call.batch_id}${call.part ? ` --part ${call.part}` : ''}`;
+
+/**
+ * 감독관이 호출 하나를 새 서브에이전트로 처음부터 다시 돌릴 때(지시서 2절). 검증 기록에 표시를 남겨,
+ * 그 뒤의 추출자 검증을 다음 실행으로 센다. 같은 세션에서 고친 뒤 다시 검증하는 것은 같은 실행이다.
+ */
+export const markRerun = async (callNumber, graphDir = GRAPH_DATA_DIR) => {
+  const planPath = wavePlanPathOf(graphDir);
+  if (!fsSync.existsSync(planPath)) throw new Error(`No wave plan at ${planPath}; run "batch-parts.mjs next <count>" first`);
+  const wavePlan = JSON.parse(await fs.readFile(planPath, 'utf8'));
+  const call = (wavePlan.calls ?? []).find((c) => c.call === callNumber);
+  if (!call) throw new Error(`call ${callNumber} is not in the wave plan (${wavePlan.wave})`);
+  const { appendValidationRecord, buildRerunMarker, readValidationLog, rerunStartsOf } = await import('./validation-log.mjs');
+  await appendValidationRecord(buildRerunMarker({ wavePlan, call }), graphDir);
+  const { records } = await readValidationLog(graphDir);
+  return { wavePlan, call, run: 1 + rerunStartsOf(wavePlan, call, records).length };
+};
+
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   const [command, batchId] = process.argv.slice(2);
   const usage =
     'Usage: node scripts/graph/batch-parts.mjs <plan|combine> <batch_id>\n' +
     '       node scripts/graph/batch-parts.mjs next <count>   (다음 미완료 배치 count개의 호출 목록, 나뉘는 배치는 담당 입력도 만든다. 회차 계획을 저장한다)\n' +
+    '       node scripts/graph/batch-parts.mjs rerun <call>   (회차의 호출 하나를 새 서브에이전트로 다시 돌린다는 표시를 남기고 그 호출을 출력한다)\n' +
     '       node scripts/graph/batch-parts.mjs finish         (저장된 회차의 결합·검증·병합, 독립 검토 입력 생성)';
   const rel = (p) => path.relative(process.cwd(), p);
 
@@ -563,7 +584,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           console.log(`call ${call}: ${id} (${input.scenes.length} scenes, ${plan[0].line_count} lines) [${combinedStatus}]`);
           console.log(`  input    ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'batches', `${id}.json`))}`);
           console.log(`  output   ${rel(path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`))}`);
-          console.log(`  validate node scripts/graph/validate-output.mjs ${id} --run 1`);
+          console.log(`  validate ${validateCommandOf({ batch_id: id, part: null })}`);
           continue;
         }
         for (const { part, scene_ids: partIds, line_count: lineCount } of plan) {
@@ -577,7 +598,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           console.log(`call ${call}: ${id} part ${part}/${plan.length} (${partIds.length} scenes, ${lineCount} lines) [${status}]`);
           console.log(`  input    ${rel(inputPath)}`);
           console.log(`  output   ${rel(partPathOf(id, part))}`);
-          console.log(`  validate node scripts/graph/validate-output.mjs ${id} --part ${part} --run 1`);
+          console.log(`  validate ${validateCommandOf({ batch_id: id, part })}`);
         }
       }
       console.log(`[batch-parts] next ${ids.length} batch(es): ${ids.join(', ')} — ${scenes} scenes, ${bytes} body bytes, ${call} call(s)`);
@@ -604,6 +625,17 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
     }
     if (command === 'finish') {
       await finishWave(rel);
+      return;
+    }
+    if (command === 'rerun') {
+      const callNumber = Number(batchId);
+      if (!Number.isInteger(callNumber) || callNumber < 1) throw new Error(usage);
+      const { call, run: runNumber } = await markRerun(callNumber);
+      const { batch_id: id, part } = call;
+      console.log(`call ${call.call}: ${id}${part ? ` part ${part}` : ''} — run ${runNumber}부터 센다(이전 서브에이전트는 멈추고 새 서브에이전트에게 맡긴다)`);
+      console.log(`  input    ${rel(part ? partInputPathOf(id, part) : path.join(GRAPH_DATA_DIR, 'pass1', 'batches', `${id}.json`))}`);
+      console.log(`  output   ${rel(part ? partPathOf(id, part) : path.join(GRAPH_DATA_DIR, 'pass1', 'shards', `${id}.json`))}`);
+      console.log(`  validate ${validateCommandOf(call)}`);
       return;
     }
     if (!batchId || !['plan', 'combine'].includes(command)) throw new Error(usage);

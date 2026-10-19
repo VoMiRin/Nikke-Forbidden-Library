@@ -771,18 +771,21 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
     );
     // 검증기 명령은 실행할 때마다 검증 기록을 남긴다(실패도). 테스트는 실제 기록 대신 임시 파일에 쓴다
     const logPath = path.join(tmpDir, 'validation_log.jsonl');
-    assert.throws(() => {
-      execFileSync(
-        process.execPath,
-        [path.join(ROOT_DIR, 'scripts/graph/validate-output.mjs'), invalidShardPath, '--run', '2'],
-        { stdio: 'pipe', env: { ...process.env, PASS1_VALIDATION_LOG: logPath } }
-      );
-    });
+    const runValidator = (...args) =>
+      execFileSync(process.execPath, [path.join(ROOT_DIR, 'scripts/graph/validate-output.mjs'), invalidShardPath, ...args], {
+        stdio: 'pipe',
+        env: { ...process.env, PASS1_VALIDATION_LOG: logPath },
+      });
+    assert.throws(() => runValidator());
     const [logged] = (await fs.readFile(logPath, 'utf8')).trim().split('\n').map((line) => JSON.parse(line));
     assert.equal(logged.actor, 'extractor');
     assert.equal(logged.result, 'fail');
-    assert.equal(logged.run, 2);
+    assert.equal(logged.run, null); // 실행 번호는 기록을 셀 때 rerun 표시로 정한다
     assert.match(logged.output_sha256, /^[0-9a-f]{64}$/);
+    // --no-log(검수·보수 작업의 검증)와 거부된 옵션은 기록을 남기지 않는다
+    assert.throws(() => runValidator('--no-log'));
+    assert.throws(() => runValidator('--run', '2'));
+    assert.equal((await fs.readFile(logPath, 'utf8')).trim().split('\n').length, 1);
 
     // 읽을 수 없는 샤드는 건너뛰고 나머지는 병합한다(5절 회차: 실패 배치만 빼고 병합)
     await fs.writeFile(path.join(shardsDir, 'batch_0002.json'), '{broken');

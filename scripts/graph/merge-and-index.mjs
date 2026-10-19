@@ -692,11 +692,28 @@ export const mergeValidatedShards = async (options = {}) => {
   };
 };
 
-if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
-  const args = process.argv.slice(2);
-  const isPilot = args.includes('--pilot');
+const MERGE_USAGE = 'Usage: node scripts/graph/merge-and-index.mjs [--pilot]';
 
-  mergeValidatedShards({ pilot: isPilot })
+// 명령줄 인자. 병합은 파일을 다시 쓰므로 도움말과 모르는 옵션은 작업 전에 끝낸다(`--help`가 병합을 돌린 일이 있었다)
+export const parseMergeArgs = (args) => {
+  if (args.includes('--help') || args.includes('-h')) return { help: true };
+  const unknown = args.filter((a) => a !== '--pilot');
+  if (unknown.length > 0) return { error: `unknown argument ${unknown[0]}` };
+  return { pilot: args.includes('--pilot') };
+};
+
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  const parsed = parseMergeArgs(process.argv.slice(2));
+  if (parsed.help) {
+    console.log(MERGE_USAGE);
+    process.exit(0);
+  }
+  if (parsed.error) {
+    console.error(`[merge-and-index] ${parsed.error}\n${MERGE_USAGE}`);
+    process.exit(1);
+  }
+
+  mergeValidatedShards({ pilot: parsed.pilot })
     .then((res) => {
       console.log(
         `[merge-and-index] Mode: ${res.isPilot ? 'pilot' : 'main'}, Merged batches: ${

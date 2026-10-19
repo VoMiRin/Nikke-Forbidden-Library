@@ -2301,31 +2301,51 @@ export const validateShardFile = async (shardArg, options = {}) => {
   };
 };
 
+const VALIDATE_USAGE = 'Usage: node scripts/graph/validate-output.mjs <shard-json-path-or-batch-id> [--part <n>] [--no-log]';
+
+/**
+ * 명령줄 인자. 모르는 옵션은 검증 전에 거부한다(없는 `--no-log`를 무시하고 기록을 남긴 일이 있었다).
+ * `--run`은 없앴다. 실행 번호는 감독관의 `batch-parts.mjs rerun` 표시로 센다(validation-log.mjs).
+ * `--no-log`: 추출자가 아닌 쪽(검수·보수 작업)의 검증. 검증 기록을 남기지 않는다.
+ */
+export const parseValidateArgs = (args) => {
+  const out = { target: null, part: null, log: true };
+  for (let i = 0; i < args.length; i += 1) {
+    const arg = args[i];
+    if (arg === '--part') {
+      const n = Number(args[i + 1]);
+      if (!Number.isInteger(n) || n < 1) return { error: '--part needs a positive integer' };
+      out.part = n;
+      i += 1;
+    } else if (arg === '--no-log') out.log = false;
+    else if (arg === '--run') return { error: '--run was removed: the supervisor marks a rerun with "batch-parts.mjs rerun <call>"' };
+    else if (arg.startsWith('-')) return { error: `unknown option ${arg}` };
+    else if (out.target) return { error: `unexpected argument ${arg}` };
+    else out.target = arg;
+  }
+  return out.target ? out : { error: 'missing shard path or batch id' };
+};
+
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
-  const target = process.argv[2];
-  const flagValue = (flag) => {
-    const idx = process.argv.indexOf(flag);
-    return idx > 0 ? Number(process.argv[idx + 1]) : null;
-  };
-  const part = flagValue('--part');
-  const run = flagValue('--run');
-  const isBadFlag = (flag, value) => process.argv.includes(flag) && !(Number.isInteger(value) && value > 0);
-  if (!target || isBadFlag('--part', part) || isBadFlag('--run', run)) {
-    console.error('Usage: node scripts/graph/validate-output.mjs <shard-json-path-or-batch-id> [--part <n>] [--run <n>]');
+  const parsed = parseValidateArgs(process.argv.slice(2));
+  if (parsed.error) {
+    console.error(`[validate-output] ${parsed.error}\n${VALIDATE_USAGE}`);
     process.exit(1);
   }
-  // 검증 기록(validation-log.mjs): 이 명령은 추출 서브에이전트가 실행하는 검증이다. --run은 같은 호출을 다시 돌릴 때 감독관이 올리는 실행 번호다
+  const { target, part } = parsed;
+  // 검증 기록(validation-log.mjs): 이 명령은 추출 서브에이전트가 실행하는 검증이다. 실행 번호는 기록을 셀 때 rerun 표시로 정한다
   const { recordValidation } = await import('./validation-log.mjs');
   const isPath = target.endsWith('.json');
   const record = (fields) =>
-    recordValidation({
-      actor: 'extractor',
-      batchId: isPath ? path.basename(target, '.json') : target,
-      part,
-      run,
-      shardPath: isPath ? path.resolve(target) : null,
-      ...fields,
-    });
+    parsed.log
+      ? recordValidation({
+          actor: 'extractor',
+          batchId: isPath ? path.basename(target, '.json') : target,
+          part,
+          shardPath: isPath ? path.resolve(target) : null,
+          ...fields,
+        })
+      : null;
 
   validateShardFile(target, { part })
     .then(async (res) => {
