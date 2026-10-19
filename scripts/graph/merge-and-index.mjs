@@ -85,8 +85,13 @@ export const enrichSceneFromManifest = (rawScene, manifestScene, mechanicalGroun
     return { ...item, claimant_unknown_id: unknownIdByLine.get(item.claim_line) ?? null };
   };
 
-  const resolvedWithContext = (res) =>
-    res && typeof res === 'object' ? withLineContext(stripForbiddenItemFields(res)) : null;
+  // 정체 공개는 시점 경계를 걸칠 수 있어(2.3의 13항) 분기 소속만 붙인다. ???의 시점은 unknown_speakers 항목의 것이다
+  const resolvedWithContext = (res) => {
+    if (!res || typeof res !== 'object') return null;
+    const clean = stripForbiddenItemFields(res);
+    if (!Number.isInteger(clean.line_start) || !Number.isInteger(clean.line_end)) return clean;
+    return { ...clean, in_branch_option: resolveBranchOption(optionRanges, clean.line_start, clean.line_end).option };
+  };
 
   const participants = {
     present_in_scene: attachItemIds(cleanScene.participants?.present_in_scene, 'pis'),

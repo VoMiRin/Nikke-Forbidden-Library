@@ -419,6 +419,76 @@ test('2.3-13 chronology segments: claims may cross, other items may not', () => 
   assert.equal(enriched.events_and_claims[1].chronology_type, 'flashback');
 });
 
+// 회상 속 ???가 이름을 대다 끊기고 현재 화자로 이어지는 정체 공개 (2.3의 12·13항, chapter_48_07 L214~219)
+const REVEAL_LINES = [
+  '지휘관은 그날의 대화를 떠올렸다.',
+  '???: 저는 마리아-',
+  '회상이 끝나고 현재로 돌아왔다.',
+  '마리안: 고마워요.',
+  '[CHOICE_START]',
+  '[OPTION TEXT="마리안?"]',
+  '마리안: 네.',
+  '[OPTION_END]',
+  '[OPTION TEXT="누구야?"]',
+  '마리안: 저예요.',
+  '[OPTION_END]',
+  '[CHOICE_END]',
+];
+
+const revealScene = (resolved) =>
+  emptyScene('t13_reveal', {
+    chronology_type: 'mixed',
+    chronology_segments: [{ line_start: 1, line_end: 2, chronology_type: 'flashback' }],
+    participants: { present_in_scene: present('지휘관', '마리안'), present_silent: [], remote_or_voice_only: [], mentioned_only: [], document_author: null },
+    unknown_speakers: [
+      {
+        unknown_id: 'unk_t13_reveal_L0002',
+        quote: '저는 마리아-',
+        speaking_style: '정중한 존댓말',
+        target_addressed: null,
+        contextual_clues: [],
+        resolved_in_same_scene_to: { surface_text: '마리안', entity_id: null, ...resolved },
+      },
+    ],
+    choice_branches: [
+      {
+        choice_line: 5,
+        options: [
+          { option_text: '마리안?', continuation_summary: '마리안이 그렇다고 답한다.' },
+          { option_text: '누구야?', continuation_summary: '마리안이 자신이라고 답한다.' },
+        ],
+      },
+    ],
+  });
+const revealBatch = () => batchOf(makeInputScene('t13_reveal', REVEAL_LINES));
+const crossingReveal = { line_start: 2, line_end: 4, quote: '저는 마리아- 회상이 끝나고 현재로 돌아왔다. 고마워요.' };
+
+test('2.3-12/13 resolved identity may cross chronology segments but not branch options', () => {
+  assertValid(validateShard(shardOf(revealScene(crossingReveal)), revealBatch()));
+
+  const acrossOptions = revealScene({ line_start: 2, line_end: 10, quote: '저는 마리아-' });
+  assertFails(validateShard(shardOf(acrossOptions), revealBatch()), 'BRANCH_BOUNDARY');
+
+  // 같은 줄 범위라도 사건은 시점 경계를 걸치면 실패다
+  const eventCrossing = revealScene(crossingReveal);
+  eventCrossing.events_and_claims.push(event({ actor_or_speaker: '마리안', ...crossingReveal }));
+  assertFails(validateShard(shardOf(eventCrossing), revealBatch()), 'CHRONOLOGY_BOUNDARY');
+
+  // 병합기: 정체 공개에는 분기 소속만 붙이고 시점은 ??? 항목에만 붙인다
+  const enriched = enrichSceneFromManifest(revealScene(crossingReveal), { scene_id: 't13_reveal' }, revealBatch().scenes[0].mechanical_ground_truth);
+  const [unk] = enriched.unknown_speakers;
+  assert.equal(unk.chronology_type, 'flashback');
+  assert.equal(unk.resolved_in_same_scene_to.in_branch_option, null);
+  assert.equal(Object.hasOwn(unk.resolved_in_same_scene_to, 'chronology_type'), false);
+
+  const inOption = enrichSceneFromManifest(
+    revealScene({ line_start: 7, line_end: 7, quote: '네.' }),
+    { scene_id: 't13_reveal' },
+    revealBatch().scenes[0].mechanical_ground_truth
+  );
+  assert.deepEqual(inOption.unknown_speakers[0].resolved_in_same_scene_to.in_branch_option, { choice_line: 5, option_text: '마리안?' });
+});
+
 // 묘사형 화자와 ??? 정체 공개 (2.3의 4·10항)
 const DESC_LINES = ['양산을 든 여성: 어서 오게.', '???: 드디어 왔구나.', '라피: 당신은 누구죠?', '???: 나는 머스탱이다.'];
 

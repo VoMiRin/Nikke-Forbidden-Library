@@ -668,7 +668,8 @@ export const validateShard = (shardData, batchInput, options = {}) => {
     };
 
     // 12·13. 근거 항목의 분기·시점 경계 검사
-    const checkEvidenceBoundaries = (item, itemPath, { isClaim = false } = {}) => {
+    // 정체 공개(resolved_in_same_scene_to)는 사건이 아니므로 시점 경계를 걸쳐도 된다(crossesChronology)
+    const checkEvidenceBoundaries = (item, itemPath, { isClaim = false, crossesChronology = false } = {}) => {
       const { line_start: ls, line_end: le } = item;
       if (!isPositiveInt(ls) || !isPositiveInt(le) || ls > le || le > totalLines) return;
       const branch = resolveBranchOption(optionRanges, ls, le);
@@ -682,7 +683,7 @@ export const validateShard = (shardData, batchInput, options = {}) => {
             .join(', ')}`
         );
       }
-      if (!isClaim && SCENE_CHRONOLOGY_ENUM.has(scene.chronology_type)) {
+      if (!isClaim && !crossesChronology && SCENE_CHRONOLOGY_ENUM.has(scene.chronology_type)) {
         const found = chronologiesInRange(scene.chronology_type, segmentsUsable, ls, le);
         if (found.size > 1) {
           addError(
@@ -816,7 +817,7 @@ export const validateShard = (shardData, batchInput, options = {}) => {
           );
         }
       }
-      checkEvidenceBoundaries(res, resPath);
+      checkEvidenceBoundaries(res, resPath, { crossesChronology: true });
     };
 
     // participants 검증

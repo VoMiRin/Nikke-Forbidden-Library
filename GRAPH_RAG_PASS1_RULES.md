@@ -100,6 +100,9 @@
 13. **시점 구간**: 장면 `chronology_type`이 `mixed`면 `chronology_segments`가 1개 이상 있어야 하고, `mixed`가 아니면 빈 배열이어야 한다. 구간은 장면 줄 범위 안에서 서로 겹치지 않아야 한다. 구간은 선택지 블록을 포함해도 된다.
     - 근거 항목이 시점 구간 경계를 걸치면, `character_claim`은 통과하고 `claim_line`의 시점을 따른다. 회상 속 말을 현재 장면에서 부정하는 경우처럼 다른 시점의 말을 문맥으로 인용할 수 있기 때문이다.
     - `character_claim`이 아닌 근거 항목이 경계를 걸치면 실패다. 어느 시점의 일인지 정할 수 없다.
+    - 단, `resolved_in_same_scene_to`는 경계를 걸쳐도 된다. 정체 공개 근거는 사건이 아니라 라벨이 누구인지 보여 주는 줄이므로 시점을 정하지 않는다(3절 8항). 분기 경계(12항)는 그대로 검사한다.
+      - 예: `chapter_48_07` L214~219. 회상 속 `???`가 L215에서 `마리아-`까지 이름을 대다 끊기고, 현재로 돌아온 L219에서 `마리안`이 말한다. 이름이 나온 줄과 이어지는 화자 줄을 함께 인용해야 정체 공개의 근거가 된다.
+      - 이유: 본 실행 6회차에서 이 장면의 `???` 12개 항목이 13항 실패를 피하려고 근거를 L216~219로 줄였다. 이름이 나온 L214~215가 빠져 근거 없는 정체 공개가 됐다.
 
 **필드**
 
@@ -355,6 +358,7 @@
    - 이는 원문 수정 시 재검증 대상을 찾기 위한 용도다. 스포일러 필터는 구현하지 않는다.
    - 병합기가 붙이는 시점(`chronology_type`)과 분기 소속(`in_branch_option`)은 **근거 항목**(2.3의 12항 목록)과 `unknown_speakers`(`unknown_id`의 줄 기준)에만 붙인다.
      - `character_claim`의 시점은 `claim_line` 기준이다.
+     - 정체 공개(`resolved_in_same_scene_to`)에는 `in_branch_option`만 붙이고 `chronology_type`은 붙이지 않는다. 근거가 시점 경계를 걸칠 수 있기 때문이다(2.3의 13항). `???`의 시점은 그 `unknown_speakers` 항목에 붙은 값(`unknown_id`의 줄 기준)이다.
      - `remote_or_voice_only`, `descriptor_speakers`, `same_scene_speaker_groups`, `present_in_scene`처럼 장면 안 여러 발화를 요약하는 항목에는 붙이지 않는다. 이런 화자가 어느 갈래·시점에서 말했는지는 Pass 2가 `line_speaker`로 계산한다.
 
 9. **관계 메모 (`relationship_and_lore_notes`)**
@@ -562,7 +566,7 @@
   - 검증을 통과하려고 내용 없는 항목을 지어내지 마라. 추출할 것이 정말 없으면 여기에 적는 것이 맞다.
 - 병합기가 덧붙이는 값:
   - 장면마다: `title_id`, `category`, `source_file`, `source_sha256`(장면 본문 해시), `route`, `mechanical_validated`
-  - 근거 항목(2.3의 12항 목록)과 `unknown_speakers`마다: `item_id`, `chronology_type`(장면 시점과 `chronology_segments`로, `character_claim`은 `claim_line` 기준, `unknown_speakers`는 그 `???` 줄 기준), `in_branch_option`(`{ choice_line, option_text }` 또는 `null`)
+  - 근거 항목(2.3의 12항 목록)과 `unknown_speakers`마다: `item_id`, `chronology_type`(장면 시점과 `chronology_segments`로, `character_claim`은 `claim_line` 기준, `unknown_speakers`는 그 `???` 줄 기준, `resolved_in_same_scene_to`에는 붙이지 않음), `in_branch_option`(`{ choice_line, option_text }` 또는 `null`)
   - `claimant`나 `actor_or_speaker`가 `"???"`인 `character_claim`: `claim_line` 줄의 `unknown_id`를 `claimant_unknown_id`로
 
 ---
