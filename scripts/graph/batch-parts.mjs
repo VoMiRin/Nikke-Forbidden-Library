@@ -246,6 +246,21 @@ export const newWarnings = (before, after) => {
   return after.filter((w) => !seen.has(keyOf(w)));
 };
 
+// 이번 회차가 새로 올리는 후보 이름: 병합되면 2.3의 25항 이름 목록에 들어가 이전 회차 배치에도 새 경고를 낼 수 있다
+export const newCandidateTerms = (waveShards, mergedCandidatesDoc) => {
+  const known = new Set((mergedCandidatesDoc?.candidates ?? []).map((c) => String(c?.surface_text ?? '').trim()));
+  const terms = new Set();
+  for (const shard of waveShards) {
+    for (const scene of shard?.scenes ?? []) {
+      for (const c of Array.isArray(scene?.unregistered_entity_candidates) ? scene.unregistered_entity_candidates : []) {
+        const t = String(c?.surface_text ?? '').trim();
+        if (t.length >= 2 && !known.has(t)) terms.add(t);
+      }
+    }
+  }
+  return [...terms];
+};
+
 // 부분 결합 뒤 새 경고: 부분 샤드와 결합 샤드는 장면 배열 번호가 다르므로 장면 ID와 장면 안 경로로 비교한다
 export const newWarningsAfterCombine = (partWarnings, batchWarnings) => {
   const keyOf = (w) =>
@@ -332,6 +347,33 @@ const finishWave = async (rel) => {
     rows.push(row);
   }
 
+  // 이전 회차 배치 중 이번 회차의 새 후보 이름이 샤드에 들어 있는 것만 병합 전에 검증해 둔다(병합 뒤와 비교)
+  let mergedCandidatesDoc = null;
+  try {
+    mergedCandidatesDoc = JSON.parse(await fs.readFile(path.join(GRAPH_DATA_DIR, 'unregistered_entity_candidates.json'), 'utf8'));
+  } catch {
+    // 아직 병합된 후보가 없다
+  }
+  const waveShardDocs = [];
+  for (const id of wavePlan.batch_ids) {
+    try {
+      waveShardDocs.push(JSON.parse(await fs.readFile(shardPathOf(id), 'utf8')));
+    } catch {
+      // 샤드가 없거나 깨진 배치는 병합되지 않는다
+    }
+  }
+  const freshTerms = newCandidateTerms(waveShardDocs, mergedCandidatesDoc);
+  const earlierBefore = {};
+  const shardsDir = path.join(GRAPH_DATA_DIR, 'pass1', 'shards');
+  for (const file of freshTerms.length > 0 ? fsSync.readdirSync(shardsDir).filter((f) => /^batch_\d+\.json$/.test(f)).sort() : []) {
+    const id = file.replace(/\.json$/, '');
+    if (wavePlan.batch_ids.includes(id)) continue;
+    const text = await fs.readFile(path.join(shardsDir, file), 'utf8');
+    if (!freshTerms.some((term) => text.includes(term))) continue;
+    const res = await tryValidate(id);
+    if (res.valid) earlierBefore[id] = res.warnings;
+  }
+
   const merged = await mergeValidatedShards();
   const mergedIds = new Set(merged.mergedBatchIds);
 
@@ -361,9 +403,22 @@ const finishWave = async (rel) => {
   }
   console.log(`[finish] 병합 뒤 다시 검증한 새 경고 ${afterMerge.length}건${afterMerge.length > 0 ? ':' : ''}`);
   afterMerge.forEach(printWarning);
+  // 이번 회차의 새 후보 이름 때문에 이전 회차 배치에 생긴 경고
+  const earlierAfterMerge = [];
+  for (const [id, before] of Object.entries(earlierBefore)) {
+    if (!mergedIds.has(id)) continue;
+    const res = await tryValidate(id);
+    earlierAfterMerge.push(...newWarnings(before, res.warnings).map((w) => ({ batch_id: id, ...w })));
+  }
+  console.log(
+    `[finish] 이번 회차의 새 후보 이름 ${freshTerms.length}개로 이전 회차 배치에 생긴 새 경고 ${earlierAfterMerge.length}건` +
+      `(검증한 이전 배치 ${Object.keys(earlierBefore).length}개)${earlierAfterMerge.length > 0 ? ':' : ''}`
+  );
+  earlierAfterMerge.forEach(printWarning);
   const unseenWarnings = [
     ...afterCombine.map((w) => ({ stage: '결합 뒤', ...w })),
     ...afterMerge.map((w) => ({ stage: '병합 뒤', ...w })),
+    ...earlierAfterMerge.map((w) => ({ stage: '병합 뒤(이전 회차)', ...w })),
   ];
   const errors = rows.flatMap((row) => row.errors.map((e) => ({ batch_id: row.batch_id, ...e })));
   if (errors.length > 0) {
@@ -386,12 +441,13 @@ const finishWave = async (rel) => {
   }
 
   const shards = {};
-  for (const id of new Set([...wavePlan.batch_ids, ...wavePlan.review_scenes.map((r) => r.batch_id)])) {
+  for (const id of new Set([...wavePlan.batch_ids, ...wavePlan.review_scenes.map((r) => r.batch_id), ...earlierAfterMerge.map((w) => w.batch_id)])) {
     try {
       shards[id] = JSON.parse(await fs.readFile(shardPathOf(id), 'utf8'));
     } catch {
       // 샤드가 없거나 깨졌으면 검토 입력에 no_shard로 표시된다
     }
+    batchInputs[id] ??= await readBatchInput(id);
   }
 
   // 시험 중인 진단(2.3의 경고가 아니다). 서브에이전트에게는 보이지 않고, 독립 검토자가 표본 장면의 항목을 판정한다

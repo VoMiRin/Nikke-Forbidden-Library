@@ -30,6 +30,7 @@ import {
   combineParts,
   newWarnings,
   newWarningsAfterCombine,
+  newCandidateTerms,
   nextPendingBatches,
   partInputPathOf,
   partPathOf,
@@ -1533,4 +1534,10 @@ test('5 Pass 1 finish: warnings that appear only after combining parts are told 
   );
   assert.deepEqual(review.warning_scenes[0].input_scene, inputScene('a2'));
   assert.equal(review.warning_scenes[1].input_scene, undefined); // 검토 장면이면 장면 객체를 다시 넣지 않는다
+
+  // 이번 회차가 새로 올리는 후보 이름만 이전 회차 배치를 다시 볼 이유가 된다
+  const cand = (surface_text) => ({ surface_text, suggested_type: 'character' });
+  const waveShards = [{ scenes: [{ unregistered_entity_candidates: [cand('양산형 니케들'), cand(' 방주 입구 '), cand('X')] }] }];
+  assert.deepEqual(newCandidateTerms(waveShards, { candidates: [cand('방주 입구')] }), ['양산형 니케들']);
+  assert.deepEqual(newCandidateTerms(waveShards, null), ['양산형 니케들', '방주 입구']);
 });
