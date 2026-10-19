@@ -1317,6 +1317,7 @@ test('2.3-25 names not in the scene: warn on rare names only, ignoring word part
       ['데이터 센터', 'location name'],
       ['이그조틱', 'squad name'],
       ['메티스 스쿼드', 'squad name'],
+      ['메티스 니케들', 'character name'],
       ['나가', 'registered character'],
       ['소라', 'registered character'],
     ]),
@@ -1338,6 +1339,7 @@ test('2.3-25 names not in the scene: warn on rare names only, ignoring word part
 
   // 끝의 일반 낱말(스쿼드), 다른 낱말의 일부(장소라고), 이름 목록이 없을 때는 경고하지 않는다
   assert.equal(termWarnings(scene('메티스 스쿼드가 온다.', '엑시아가 이 장소라고 말한다.')).length, 0);
+  assert.equal(termWarnings(scene('메티스 니케들이 온다.')).length, 0); // 일반 낱말의 복수형
   assert.equal(
     validateShard(shardOf(scene('데이터 센터에서 만난다.')), batch).warnings.filter((w) => w.rule === 'TERM_NOT_IN_SCENE').length,
     0

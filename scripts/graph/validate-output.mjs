@@ -75,11 +75,13 @@ export const TERM_ITEM_FIELDS = [
   ['relationship_and_lore_notes', ['subject', 'target', 'relation_or_change']],
   ['clues_and_hooks', ['subject', 'detail', 'keyword']],
 ];
-// 이름 끝의 이런 낱말은 장면에 없어도 된다(`메티스 스쿼드` → 장면은 `메티스`, `로드 급 랩쳐` → 장면은 `로드 급`)
+// 이름 끝의 이런 낱말은 장면에 없어도 된다(`메티스 스쿼드` → 장면은 `메티스`, `로드 급 랩쳐` → 장면은 `로드 급`).
+// 복수형도 같다(`양산형 니케들` → 장면은 `양산형 분들`, 7회차 `over_zone_03`~`05`)
 export const TERM_GENERIC_TOKENS = new Set(['스쿼드', '급', '랩쳐', '니케']);
+const isGenericToken = (tok) => TERM_GENERIC_TOKENS.has(tok) || (tok.endsWith('들') && TERM_GENERIC_TOKENS.has(tok.slice(0, -1)));
 const termTokens = (term) => {
   const tokens = term.split(/\s+/);
-  const specific = tokens.filter((tok) => !TERM_GENERIC_TOKENS.has(tok));
+  const specific = tokens.filter((tok) => !isGenericToken(tok));
   return specific.length > 0 ? specific : tokens;
 };
 const HANGUL_SYLLABLE_RE = /[가-힣]/;
