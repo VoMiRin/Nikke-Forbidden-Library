@@ -172,9 +172,11 @@ export const reviewInputPathOf = (wave, graphDir = GRAPH_DATA_DIR) =>
  * 독립 검토 입력. 검토 장면마다 배치 입력의 장면 객체 전체(원문·기계 추출값)와 샤드의 같은 장면 객체 전체를 그대로 담는다.
  * 검토자가 큰 배치·샤드 파일에서 장면을 직접 찾아 읽지 않게 하기 위함이다(대본은 JSON 한 줄이라 파일 줄 범위로는 고를 수 없다).
  * 병합되지 않은 배치의 장면이나 결과에 없는 장면은 status로 표시한다.
- * diagnose(장면, 입력 장면)를 주면 그 결과를 diagnostics에 담아 검토자가 항목마다 판정하게 한다(시험 중인 진단).
+ * diagnostics({ 이름: (장면, 입력 장면) => 항목들 })를 주면 그 결과를 diagnostics에 담아 검토자가 항목마다 판정하게 한다(시험 중인 진단).
+ * unseenWarnings(추출자가 보지 못한 경고: 부분 결합 뒤·병합 뒤)는 장면별로 묶어 warning_scenes에 장면 객체와 함께 담는다.
+ * 감독관은 원문을 읽지 않으므로(명세 2.1) 검토자가 경고마다 판정한다. 검토 장면과 같은 장면이면 장면 객체를 다시 넣지 않는다.
  */
-export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, mergedBatchIds, diagnose = null }) => ({
+export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, mergedBatchIds, diagnostics = null, unseenWarnings = [] }) => ({
   wave,
   scenes: reviewScenes.map((r) => {
     const inputScene = batchInputs[r.batch_id]?.scenes?.find((s) => s.scene_id === r.scene_id) ?? null;
@@ -198,7 +200,30 @@ export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, merg
       },
       input_scene: inputScene,
       extraction,
-      ...(diagnose ? { diagnostics: { dialogue_only_events: extraction && inputScene ? diagnose(extraction, inputScene) : [] } } : {}),
+      ...(diagnostics
+        ? {
+            diagnostics: Object.fromEntries(
+              Object.entries(diagnostics).map(([name, diagnose]) => [name, extraction && inputScene ? diagnose(extraction, inputScene) : []])
+            ),
+          }
+        : {}),
+    };
+  }),
+  warning_scenes: [...new Set(unseenWarnings.map((w) => `${w.batch_id}\u0000${w.scene_id}`))].map((key) => {
+    const [batchId, sceneId] = key.split('\u0000');
+    const inReview = reviewScenes.some((r) => r.batch_id === batchId && r.scene_id === sceneId);
+    return {
+      scene_id: sceneId,
+      batch_id: batchId,
+      warnings: unseenWarnings
+        .filter((w) => w.batch_id === batchId && w.scene_id === sceneId)
+        .map(({ stage, rule, path: at, message }) => ({ stage, rule, path: at, message })),
+      ...(inReview
+        ? { same_as_review_scene: true }
+        : {
+            input_scene: batchInputs[batchId]?.scenes?.find((s) => s.scene_id === sceneId) ?? null,
+            extraction: shards[batchId]?.scenes?.find((s) => s.scene_id === sceneId) ?? null,
+          }),
     };
   }),
 });
@@ -221,13 +246,21 @@ export const newWarnings = (before, after) => {
   return after.filter((w) => !seen.has(keyOf(w)));
 };
 
+// 부분 결합 뒤 새 경고: 부분 샤드와 결합 샤드는 장면 배열 번호가 다르므로 장면 ID와 장면 안 경로로 비교한다
+export const newWarningsAfterCombine = (partWarnings, batchWarnings) => {
+  const keyOf = (w) =>
+    [w.rule, w.scene_id, w.scene_id ? String(w.path).replace(/^\$\.scenes\[\d+\]/, '') : w.path, w.message].join('\u0000');
+  const seen = new Set(partWarnings.map(keyOf));
+  return batchWarnings.filter((w) => !seen.has(keyOf(w)));
+};
+
 const finishWave = async (rel) => {
   const planPath = wavePlanPathOf();
   if (!fsSync.existsSync(planPath)) {
     throw new Error(`No wave plan at ${rel(planPath)}; run "batch-parts.mjs next <count>" first`);
   }
   const wavePlan = JSON.parse(await fs.readFile(planPath, 'utf8'));
-  const { validateShardFile, dialogueOnlyEvents, DIALOGUE_EVENT_MIN_TURNS } = await import('./validate-output.mjs');
+  const { validateShardFile, dialogueOnlyEvents, DIALOGUE_EVENT_MIN_TURNS, claimStartsOtherSpeaker } = await import('./validate-output.mjs');
   const { mergeValidatedShards } = await import('./merge-and-index.mjs');
   const { fileHashOf, formatWaveCallSummary, readValidationLog, recordValidation, summarizeWaveCalls, validationLogPathOf } = await import(
     './validation-log.mjs'
@@ -259,7 +292,8 @@ const finishWave = async (rel) => {
     const input = await readBatchInput(id);
     batchInputs[id] = input;
     const plan = planBatchParts(input);
-    const row = { batch_id: id, parts: plan.length, combine: null, validation: '샤드 없음', errors: [], warnings: [] };
+    const row = { batch_id: id, parts: plan.length, combine: null, validation: '샤드 없음', errors: [], warnings: [], afterCombine: [] };
+    const partWarnings = [];
     if (plan.length > 1) {
       const partProblems = [];
       for (const { part } of plan) {
@@ -268,6 +302,7 @@ const finishWave = async (rel) => {
           continue;
         }
         const res = await tryValidate(id, { part });
+        partWarnings.push(...res.warnings);
         if (!res.valid) {
           partProblems.push(`part ${part} FAIL (${countRules(res.errors)})`);
           row.errors.push(...res.errors.map((e) => ({ ...e, part })));
@@ -291,6 +326,8 @@ const finishWave = async (rel) => {
       row.validation = res.valid ? `PASS, 경고 ${countRules(res.warnings)}` : `FAIL (${countRules(res.errors)})`;
       if (!res.valid) row.errors.push(...res.errors);
       row.warnings = res.warnings;
+      // 서브에이전트는 자기 부분만 검증하므로, 같은 배치 다른 부분이 올린 후보 이름의 25항 경고는 결합 뒤에야 나온다
+      if (plan.length > 1 && row.combine === `${plan.length}부분 결합`) row.afterCombine = newWarningsAfterCombine(partWarnings, res.warnings);
     }
     rows.push(row);
   }
@@ -306,9 +343,15 @@ const finishWave = async (rel) => {
     const steps = [row.combine, row.validation, mergedIds.has(row.batch_id) ? '병합됨' : '병합 안 됨(pending)'].filter(Boolean);
     console.log(`  ${row.batch_id}${row.parts > 1 ? ` (${row.parts}부분)` : ''}: ${steps.join(' | ')}`);
   }
-  const warnings = rows.flatMap((row) => row.warnings.map((w) => ({ batch_id: row.batch_id, ...w })));
-  console.log(`[finish] 경고 ${warnings.length}건:`);
-  for (const w of warnings) console.log(`  [WARN][${w.rule}] ${w.batch_id} (${w.scene_id ?? 'batch'}) ${w.path}: ${w.message}`);
+  const printWarning = (w) => console.log(`  [WARN][${w.rule}] ${w.batch_id} (${w.scene_id ?? 'batch'}) ${w.path}: ${w.message}`);
+  const seenWarnings = rows.flatMap((row) =>
+    row.warnings.filter((w) => !row.afterCombine.includes(w)).map((w) => ({ batch_id: row.batch_id, ...w }))
+  );
+  const afterCombine = rows.flatMap((row) => row.afterCombine.map((w) => ({ batch_id: row.batch_id, ...w })));
+  console.log(`[finish] 추출자가 본 경고 ${seenWarnings.length}건${seenWarnings.length > 0 ? ':' : ''}`);
+  seenWarnings.forEach(printWarning);
+  console.log(`[finish] 부분을 결합한 뒤 새로 생긴 경고 ${afterCombine.length}건(부분 검증에는 없었다)${afterCombine.length > 0 ? ':' : ''}`);
+  afterCombine.forEach(printWarning);
   // 2.3의 25항은 병합된 미등록 후보를 이름 목록에 넣으므로, 같은 회차 다른 배치가 올린 이름은 병합 뒤에야 보인다
   const afterMerge = [];
   for (const row of rows) {
@@ -317,7 +360,11 @@ const finishWave = async (rel) => {
     afterMerge.push(...newWarnings(row.warnings, res.warnings).map((w) => ({ batch_id: row.batch_id, ...w })));
   }
   console.log(`[finish] 병합 뒤 다시 검증한 새 경고 ${afterMerge.length}건${afterMerge.length > 0 ? ':' : ''}`);
-  for (const w of afterMerge) console.log(`  [WARN][${w.rule}] ${w.batch_id} (${w.scene_id ?? 'batch'}) ${w.path}: ${w.message}`);
+  afterMerge.forEach(printWarning);
+  const unseenWarnings = [
+    ...afterCombine.map((w) => ({ stage: '결합 뒤', ...w })),
+    ...afterMerge.map((w) => ({ stage: '병합 뒤', ...w })),
+  ];
   const errors = rows.flatMap((row) => row.errors.map((e) => ({ batch_id: row.batch_id, ...e })));
   if (errors.length > 0) {
     console.log(`[finish] 남은 오류 ${errors.length}건:`);
@@ -359,21 +406,37 @@ const finishWave = async (rel) => {
     console.log(`  ${id}: ${n}건`);
   }
   console.log(`  합계 ${diagnosed}건`);
+  console.log('[finish] 진단(시험, 경고 아님): 주장 범위가 다른 화자의 말로 시작하고 그 화자 자신의 항목이 없음(질문·짧은 감탄 제외)');
+  let leading = 0;
+  for (const id of wavePlan.batch_ids) {
+    if (!mergedIds.has(id) || !shards[id]) continue;
+    const inputById = new Map((batchInputs[id]?.scenes ?? []).map((s) => [s.scene_id, s]));
+    const n = shards[id].scenes.reduce((acc, s) => acc + claimStartsOtherSpeaker(s, inputById.get(s.scene_id)).length, 0);
+    leading += n;
+    console.log(`  ${id}: ${n}건`);
+  }
+  console.log(`  합계 ${leading}건`);
   const reviewInput = buildReviewInput({
     wave: wavePlan.wave,
     reviewScenes: wavePlan.review_scenes,
     batchInputs,
     shards,
     mergedBatchIds: merged.mergedBatchIds,
-    diagnose: dialogueOnlyEvents,
+    diagnostics: { dialogue_only_events: dialogueOnlyEvents, claim_starts_other_speaker: claimStartsOtherSpeaker },
+    unseenWarnings,
   });
   const reviewPath = reviewInputPathOf(wavePlan.wave);
   await writeJsonAtomic(reviewPath, reviewInput);
   console.log(`[finish] 독립 검토 입력: ${rel(reviewPath)}`);
   for (const s of reviewInput.scenes) {
-    const diag = s.diagnostics?.dialogue_only_events?.length ?? 0;
-    console.log(`  ${s.scene_id} (${s.batch_id}) — ${s.reason}: ${s.status}${s.status === 'ok' ? `, 진단 항목 ${diag}건` : ''}`);
+    const dialogueOnly = s.diagnostics?.dialogue_only_events?.length ?? 0;
+    const startsOther = s.diagnostics?.claim_starts_other_speaker?.length ?? 0;
+    console.log(
+      `  ${s.scene_id} (${s.batch_id}) — ${s.reason}: ${s.status}` +
+        (s.status === 'ok' ? `, 진단 항목 대사만 사건 ${dialogueOnly}건 · 주장 앞 다른 화자 ${startsOther}건` : '')
+    );
   }
+  console.log(`  추출자가 보지 못한 경고: ${unseenWarnings.length}건, ${reviewInput.warning_scenes.length}장면(검토자가 경고마다 판정한다)`);
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {

@@ -17,6 +17,7 @@ import {
   splitLinesOf,
 } from './graph/lib.mjs';
 import {
+  claimStartsOtherSpeaker,
   dialogueOnlyEvents,
   loadEntityRegistry,
   loadTermLexicon,
@@ -28,6 +29,7 @@ import {
   buildReviewInput,
   combineParts,
   newWarnings,
+  newWarningsAfterCombine,
   nextPendingBatches,
   partInputPathOf,
   partPathOf,
@@ -1304,9 +1306,44 @@ test('5 finish diagnostic: dialogue-only established_event with 4+ turns by 2+ s
     batchInputs: { batch_0001: { scenes: [input] } },
     shards: { batch_0001: { scenes: [scene([ev(2, 5)])] } },
     mergedBatchIds: ['batch_0001'],
-    diagnose: dialogueOnlyEvents,
+    diagnostics: { dialogue_only_events: dialogueOnlyEvents },
   });
   assert.equal(review.scenes[0].diagnostics.dialogue_only_events[0].line_end, 5);
+});
+
+test('5 finish diagnostic: a claim range that starts with another speaker who has no item of their own', () => {
+  const lines = [
+    '[SCENE START]',
+    '네온: 일출이라는 거, 일몰의 되감기 버전 같은 거였군요!',
+    '[CHOICE_START]',
+    '  [OPTION TEXT="아냐. 해가 뜬다는 점에서 더 희망적이지."]',
+    '  [OPTION_END]',
+    '[CHOICE_END]',
+    '메어리: 그건 그렇고.',
+    '메어리: 다들 일출을 왜 좋아하죠?',
+    '네온: 희망적이라서 좋아요.',
+    '라피: 저, 저건!',
+    '네온: 저건 등대예요.',
+    '[SCENE END]',
+  ];
+  const input = makeInputScene('t13_front', lines);
+  const claim = (actor, line_start, line_end, claim_line) =>
+    event({ epistemic_type: 'character_claim', actor_or_speaker: actor, line_start, line_end, claim_line, quote: '희망적' });
+  const diag = (items) => claimStartsOtherSpeaker(emptyScene('t13_front', { events_and_claims: items }), input);
+
+  // 7회차 bluewater_wisland_13 L2~5: 네온의 감상을 지휘관(선택지)의 주장 앞에 묶음
+  assert.deepEqual(
+    diag([claim('지휘관', 2, 4, 4)]).map((d) => [d.path, d.claimant, d.leading]),
+    [['events_and_claims[0]', '지휘관', [{ speaker: '네온', line: 2 }]]]
+  );
+  // 앞 화자의 항목이 따로 있으면 대상 아님
+  assert.equal(diag([claim('지휘관', 2, 4, 4), claim('네온', 2, 2, 2)]).length, 0);
+  // 질문으로 끝나는 차례만 앞에 있음(여러 줄이면 마지막 줄), 짧은 감탄만 앞에 있음, 주장 화자가 먼저 말함
+  assert.equal(diag([claim('네온', 7, 9, 9)]).length, 0);
+  assert.equal(diag([claim('네온', 10, 11, 11)]).length, 0);
+  assert.equal(diag([claim('네온', 9, 11, 11)]).length, 0);
+  // 사건은 대상 아님(대사만으로 된 사건은 다른 진단이 본다)
+  assert.equal(diag([event({ actor_or_speaker: '지휘관', line_start: 2, line_end: 4, quote: '희망적' })]).length, 0);
 });
 
 test('2.3-25 names not in the scene: warn on rare names only, ignoring word parts, spacing and generic tails', () => {
@@ -1467,4 +1504,33 @@ test('5 Pass 1 finish: warnings that appear only after merging are reported sepa
   const after = [w('main_23_21', '이그조틱'), w('main_23_22', '3대 기업')];
   assert.deepEqual(newWarnings(before, after), [w('main_23_22', '3대 기업')]);
   assert.deepEqual(newWarnings(after, before), []);
+});
+
+test('5 Pass 1 finish: warnings that appear only after combining parts are told apart, and unseen warnings go to the reviewer', () => {
+  const w = (path, name, scene = 'over_zone_04') => ({ rule: 'TERM_NOT_IN_SCENE', scene_id: scene, path, message: `uses "${name}"` });
+  // 부분 샤드에서는 장면 0번, 결합 샤드에서는 3번이어도 같은 경고다
+  const part = [w('$.scenes[0].summary', '이그조틱')];
+  const batch = [w('$.scenes[3].summary', '이그조틱'), w('$.scenes[3].summary', '방주 입구')];
+  assert.deepEqual(newWarningsAfterCombine(part, batch), [batch[1]]);
+
+  const inputScene = (id) => ({ scene_id: id, numbered_script: '[L0001] 라피: 가자.', mechanical_ground_truth: { unknowns: [] } });
+  const shardScene = (id) => ({ scene_id: id, events_and_claims: [] });
+  const review = buildReviewInput({
+    wave: 'wave_t',
+    reviewScenes: [{ batch_id: 'batch_0001', scene_id: 'a1', reason: 'r' }],
+    batchInputs: { batch_0001: { scenes: [inputScene('a1'), inputScene('a2')] } },
+    shards: { batch_0001: { scenes: [shardScene('a1'), shardScene('a2')] } },
+    mergedBatchIds: ['batch_0001'],
+    unseenWarnings: [
+      { stage: '결합 뒤', batch_id: 'batch_0001', ...w('$.scenes[1].summary', '방주 입구', 'a2') },
+      { stage: '병합 뒤', batch_id: 'batch_0001', ...w('$.scenes[1].events_and_claims[0]', '양산형 니케', 'a2') },
+      { stage: '병합 뒤', batch_id: 'batch_0001', ...w('$.scenes[0].summary', '데이터 센터', 'a1') },
+    ],
+  });
+  assert.deepEqual(
+    review.warning_scenes.map((s) => [s.scene_id, s.warnings.map((x) => x.stage), s.same_as_review_scene ?? false]),
+    [['a2', ['결합 뒤', '병합 뒤'], false], ['a1', ['병합 뒤'], true]]
+  );
+  assert.deepEqual(review.warning_scenes[0].input_scene, inputScene('a2'));
+  assert.equal(review.warning_scenes[1].input_scene, undefined); // 검토 장면이면 장면 객체를 다시 넣지 않는다
 });

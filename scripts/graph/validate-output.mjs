@@ -2164,6 +2164,69 @@ export const dialogueOnlyEvents = (scene, gtScene) => {
   return found;
 };
 
+// 진단(2.3에 넣기 전 시험, 5절 finish): 주장 범위가 다른 화자의 말로 시작하고, 그 말을 그 화자 자신의 항목이 다루지 않음.
+// 23항은 3차례 이상만, 26항은 범위 끝만 본다. 앞에 넣은 질문은 문맥일 수 있어 경고로 두지 않는다.
+// 7회차 독립 검토의 bluewater_wisland_13 L2~5(네온의 감상 뒤 지휘관 반박), queen's_order_08 L398~402(지휘관의 추론 뒤 로산나)
+export const CLAIM_LEADING_MIN_LETTERS = 6;
+const isQuestionLine = (rawLine) => /\?[\s.·…!~]*$/.test(extractUtteranceTextFromRawLine(rawLine).replace(/[\s"'”’)\]]+$/, ''));
+export const claimStartsOtherSpeaker = (scene, gtScene) => {
+  const mgt = gtScene?.mechanical_ground_truth ?? {};
+  const rawLines = Array.isArray(gtScene?.body_lines)
+    ? gtScene.body_lines
+    : extractRawLinesFromNumberedScript(gtScene?.numbered_script);
+  const spoken = (line) => /[\p{L}\p{N}]/u.test(extractUtteranceTextFromRawLine(rawLines[line - 1]));
+  const speakerFields = [
+    ['events_and_claims', 'actor_or_speaker'],
+    ['relationship_and_lore_notes', 'claimant'],
+  ];
+  const ownItems = [];
+  for (const [field, speakerField] of speakerFields) {
+    (Array.isArray(scene?.[field]) ? scene[field] : []).forEach((item, idx) => {
+      if (!isPositiveInt(item?.line_start) || !isPositiveInt(item?.line_end) || !isNonEmptyString(item[speakerField])) return;
+      const names = item[speakerField].split(MULTI_ENTITY_SEPARATOR_RE).map((n) => n.trim());
+      ownItems.push({ key: `${field}[${idx}]`, names, start: item.line_start, end: item.line_end });
+    });
+  }
+  const found = [];
+  for (const [field, speakerField] of speakerFields) {
+    (Array.isArray(scene?.[field]) ? scene[field] : []).forEach((item, idx) => {
+      if (item?.epistemic_type !== 'character_claim') return;
+      if (!isPositiveInt(item.line_start) || !isPositiveInt(item.line_end) || item.line_end < item.line_start) return;
+      const claimant = item[speakerField];
+      if (!isNonEmptyString(claimant) || lineSpeakerAt(mgt, item.claim_line) !== claimant) return;
+      const selfKey = `${field}[${idx}]`;
+      // 주장 화자가 처음 말하기 전의 다른 화자 줄(말줄임표만 있는 줄은 세지 않음)
+      const leading = [];
+      for (let line = item.line_start; line <= item.line_end; line += 1) {
+        const speaker = lineSpeakerAt(mgt, line);
+        if (speaker === null || !spoken(line)) continue;
+        if (speaker === claimant) break;
+        leading.push({ speaker, line });
+      }
+      const uncovered = leading.filter(
+        ({ speaker, line }) =>
+          !ownItems.some((own) => own.key !== selfKey && own.names.includes(speaker) && line >= own.start && line <= own.end)
+      );
+      // 질문만 앞에 넣은 것은 문맥이다(3절 6항). 같은 화자가 이어 말한 줄은 한 차례로 보고 마지막 줄로 판단한다
+      const lastLinesOfTurns = uncovered.filter((x, i) => uncovered[i + 1]?.speaker !== x.speaker).map(({ line }) => line);
+      if (lastLinesOfTurns.every((line) => isQuestionLine(rawLines[line - 1]))) return;
+      // "저, 저건···!" 같은 짧은 감탄·반응도 문맥이다
+      const letters = uncovered.map(({ line }) => extractUtteranceTextFromRawLine(rawLines[line - 1])).join('').match(/[\p{L}\p{N}]/gu)?.length ?? 0;
+      if (letters < CLAIM_LEADING_MIN_LETTERS) return;
+      found.push({
+        path: selfKey,
+        line_start: item.line_start,
+        line_end: item.line_end,
+        claim_line: item.claim_line,
+        claimant,
+        leading: uncovered,
+        summary: item.summary ?? item.relation_or_change,
+      });
+    });
+  }
+  return found;
+};
+
 /**
  * CLI 실행: 샤드 파일 경로 또는 배치 ID를 받아 검증한다.
  * 하나라도 실패하면 Exit Code 1을 반환한다 (2.3).
