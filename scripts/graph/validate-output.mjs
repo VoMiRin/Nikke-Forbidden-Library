@@ -85,6 +85,9 @@ const termTokens = (term) => {
   return specific.length > 0 ? specific : tokens;
 };
 const HANGUL_SYLLABLE_RE = /[가-힣]/;
+// 25·28항의 이름 찾기에서 지우는 말줄임표: 가운뎃점 세 개 이상(`···`, 띄어 쓴 `··· ···`는 공백을 지운 뒤 `······`).
+// 원문에 가운뎃점 하나·둘은 각 1번뿐이고 이름 사이 가운뎃점(`A·B`)일 수 있어 남긴다. `…`는 지우지 않는다
+const ELLIPSIS_DOTS_RE = /·{3,}/g;
 
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
@@ -1931,9 +1934,17 @@ export const validateShard = (shardData, batchInput, options = {}) => {
     // 가져온 것인지 다시 보게 한다(경고, 3절 6항). main_09_13의 "데이터 센터"는 앞 장면 main_09_12에서 나온 말이었다
     if (options.termLexicon) {
       // 물결표도 지운다: 늘인 말(`탄~산수~`)도 그 이름이다(8회차 `bunny_x_777_04`). 이름 찾기에만 쓰고 인용 대조에는 쓰지 않는다
-      const sceneText = [gtScene.title, gtScene.sub_title, ...rawLines].filter(isNonEmptyString).join('\n').replace(/[\s~～]+/g, '');
-      // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다
-      const inScene = (term) => termTokens(term).every((token) => sceneText.includes(token));
+      // 말줄임표(가운뎃점 세 개 이상)도 지운다: 끊어 말한 이름(`여··· 왕··· 님···`)도 그 이름이다(10회차 `main_06_08`).
+      // 가운뎃점 하나(`A·B`)는 남긴다
+      const sceneText = [gtScene.title, gtScene.sub_title, ...rawLines]
+        .filter(isNonEmptyString)
+        .join('\n')
+        .replace(/[\s~～]+/g, '')
+        .replace(ELLIPSIS_DOTS_RE, '');
+      // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다.
+      // 후보 이름에 말줄임표가 들어 있을 수 있어(`수송··· 기`) 낱말에서도 지운다
+      const inScene = (term) =>
+        termTokens(term).every((token) => sceneText.includes(token.replace(ELLIPSIS_DOTS_RE, '')));
       // 앞 글자가 한글이면 다른 낱말의 일부다(`장소라고`의 `소라`)
       const usedIn = (text, term) => {
         for (let i = text.indexOf(term); i >= 0; i = text.indexOf(term, i + 1)) {
@@ -2003,7 +2014,8 @@ export const validateShard = (shardData, batchInput, options = {}) => {
           continue;
         }
         if (!shown) continue;
-        const flat = shown.replace(/\s+/g, '');
+        // 띄어쓰기와 말줄임표는 무시한다(끊어 말한 이름 `지휘··· 관`, 10회차 `last_kingdom_28`)
+        const flat = shown.replace(/\s+/g, '').replace(ELLIPSIS_DOTS_RE, '');
         const labels = labelsById.get(id) ?? [];
         if (labels.some((label) => flat === label || (label.length >= 2 && flat.includes(label)))) continue;
         addWarning(
