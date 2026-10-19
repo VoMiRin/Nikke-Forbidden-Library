@@ -1930,7 +1930,8 @@ export const validateShard = (shardData, batchInput, options = {}) => {
     // 25. 장면에 없는 이름: 요약에 쓴 등록 인물·고유명사가 그 장면 원문과 제목에 없으면, 다른 장면이나 사전 지식에서
     // 가져온 것인지 다시 보게 한다(경고, 3절 6항). main_09_13의 "데이터 센터"는 앞 장면 main_09_12에서 나온 말이었다
     if (options.termLexicon) {
-      const sceneText = [gtScene.title, gtScene.sub_title, ...rawLines].filter(isNonEmptyString).join('\n').replace(/\s+/g, '');
+      // 물결표도 지운다: 늘인 말(`탄~산수~`)도 그 이름이다(8회차 `bunny_x_777_04`). 이름 찾기에만 쓰고 인용 대조에는 쓰지 않는다
+      const sceneText = [gtScene.title, gtScene.sub_title, ...rawLines].filter(isNonEmptyString).join('\n').replace(/[\s~～]+/g, '');
       // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다
       const inScene = (term) => termTokens(term).every((token) => sceneText.includes(token));
       // 앞 글자가 한글이면 다른 낱말의 일부다(`장소라고`의 `소라`)

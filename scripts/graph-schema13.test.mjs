@@ -38,6 +38,7 @@ import {
   waveNameOf,
 } from './graph/batch-parts.mjs';
 import { enrichSceneFromManifest } from './graph/merge-and-index.mjs';
+import { checkReviewQuotes } from './graph/check-review-quotes.mjs';
 import { planBatches } from './graph/build-manifest.mjs';
 import { applyDescriptorReview } from './graph/init-registry.mjs';
 import {
@@ -1386,6 +1387,9 @@ test('2.3-25 names not in the scene: warn on rare names only, ignoring word part
   // 띄어쓰기만 다르면 장면에 있는 것이다
   const spaced = batchOf(makeInputScene('t13_term', ['[SCENE START]', '엑시아: 안-녕-', '노벨: 데이터센터인 것입니다.', '[SCENE END]']));
   assert.equal(termWarnings(scene('데이터 센터에서 만난다.'), spaced).length, 0);
+  // 물결표로 늘인 말도 장면에 있는 것이다(8회차 bunny_x_777_04 `탄~산수~`)
+  const stretched = batchOf(makeInputScene('t13_term', ['[SCENE START]', '엑시아: 안-녕-', '노벨: 데이~터 센터~인 것입니다.', '[SCENE END]']));
+  assert.equal(termWarnings(scene('데이터 센터에서 만난다.'), stretched).length, 0);
 });
 
 test('2.3-25 term lexicon: registry names without generic roles, merged and own candidates, corpus scene counts', async () => {
@@ -1499,6 +1503,46 @@ test('5 Pass 1 waves: review input carries whole scene objects and marks samples
   assert.equal(review.scenes[0].source.shard, 'data/graph/pass1/shards/batch_0002.json');
 });
 
+test('5 Pass 1 report: reviewer quotes are checked against the scenes in the review input', () => {
+  const inputScene = (id, lines) => ({ scene_id: id, numbered_script: lines.map((l, i) => `[L${String(i + 1).padStart(4, '0')}] ${l}`).join('\n') });
+  const reviewInput = {
+    scenes: [{ scene_id: 'red_ash_05', input_scene: inputScene('red_ash_05', ['레드 후드: 그러게.', '홍련: 단단히 미운 털이 박힌 모양이군.']) }],
+    warning_scenes: [
+      { scene_id: 'main_24_01', input_scene: inputScene('main_24_01', ['디젤: 신호를 캐치했어요.', '  [OPTION TEXT="그렇구나."]']) },
+      { scene_id: 'red_ash_05', same_as_review_scene: true },
+    ],
+  };
+  const report = [
+    '#### (1) `red_ash_05` (`batch_0081`)',
+    '1. **[주 유형 4]** **L0001~L0002**',
+    '   ```text',
+    '   [L0001] 레드 후드: 그러게.',
+    '   [L0002] 레드 후드: 단단히 미운 털이 박힌 모양이군.', // 화자가 다름
+    '   [L0009] 레드 후드: 없는 줄.',
+    '   ```',
+    '##### 발견된 오류', // 장면 제목 아래 단계라 맥락 유지
+    '   [L0001] 레드 후드: 그러게.',
+    '### 3. 경고 판정',
+    '   [L0001] 디젤: 신호를 캐치했어요.', // 장면 ID 없는 제목 뒤
+    '1. **`main_24_01`** (`batch_0017`) — 고쳐야 함',
+    '   - 근거: 앞 장면(`red_ash_05` L0001)과 다르게', // 본문 속 다른 장면 언급은 맥락을 바꾸지 않는다
+    '     > [L0001] 디젤: 신호를 캐치했어요.',
+    '     [L0002] [OPTION TEXT="그렇구나."]',
+    '     [L0001] 디젤: 신호를 캐치했어요. / [L0002] [OPTION TEXT="그렇구나."]', // 두 줄을 이어 붙임
+  ].join('\n');
+  const { checked, problems } = checkReviewQuotes(reviewInput, report);
+  assert.equal(checked, 8);
+  assert.deepEqual(
+    problems.map((p) => [p.report_line, p.scene_id, p.line, p.kind]),
+    [
+      [5, 'red_ash_05', 2, 'mismatch'],
+      [6, 'red_ash_05', 9, 'no_line'],
+      [11, null, 1, 'no_scene'],
+      [16, 'main_24_01', 1, 'mismatch'],
+    ]
+  );
+});
+
 test('5 Pass 1 finish: warnings that appear only after merging are reported separately', () => {
   const w = (scene, name) => ({ rule: 'TERM_NOT_IN_SCENE', scene_id: scene, path: `$.scenes[0].summary`, message: `uses "${name}"` });
   const before = [w('main_23_21', '이그조틱')];
@@ -1515,7 +1559,7 @@ test('5 Pass 1 finish: warnings that appear only after combining parts are told 
   assert.deepEqual(newWarningsAfterCombine(part, batch), [batch[1]]);
 
   const inputScene = (id) => ({ scene_id: id, numbered_script: '[L0001] 라피: 가자.', mechanical_ground_truth: { unknowns: [] } });
-  const shardScene = (id) => ({ scene_id: id, events_and_claims: [] });
+  const shardScene = (id) => ({ scene_id: id, summary: `${id} 요약`, events_and_claims: [{ summary: `${id} 사건` }] });
   const review = buildReviewInput({
     wave: 'wave_t',
     reviewScenes: [{ batch_id: 'batch_0001', scene_id: 'a1', reason: 'r' }],
@@ -1525,14 +1569,21 @@ test('5 Pass 1 finish: warnings that appear only after combining parts are told 
     unseenWarnings: [
       { stage: '결합 뒤', batch_id: 'batch_0001', ...w('$.scenes[1].summary', '방주 입구', 'a2') },
       { stage: '병합 뒤', batch_id: 'batch_0001', ...w('$.scenes[1].events_and_claims[0]', '양산형 니케', 'a2') },
+      { stage: '병합 뒤', batch_id: 'batch_0001', ...w('$.scenes[1].events_and_claims[0]', '데이터 센터', 'a2') },
       { stage: '병합 뒤', batch_id: 'batch_0001', ...w('$.scenes[0].summary', '데이터 센터', 'a1') },
     ],
   });
   assert.deepEqual(
     review.warning_scenes.map((s) => [s.scene_id, s.warnings.map((x) => x.stage), s.same_as_review_scene ?? false]),
-    [['a2', ['결합 뒤', '병합 뒤'], false], ['a1', ['병합 뒤'], true]]
+    [['a2', ['결합 뒤', '병합 뒤', '병합 뒤'], false], ['a1', ['병합 뒤'], true]]
   );
   assert.deepEqual(review.warning_scenes[0].input_scene, inputScene('a2'));
+  // 추출 결과는 전체가 아니라 경고가 난 항목만(같은 항목은 한 번)
+  assert.equal(review.warning_scenes[0].extraction, undefined);
+  assert.deepEqual(review.warning_scenes[0].flagged_items, [
+    { path: 'summary', item: 'a2 요약' },
+    { path: 'events_and_claims[0]', item: { summary: 'a2 사건' } },
+  ]);
   assert.equal(review.warning_scenes[1].input_scene, undefined); // 검토 장면이면 장면 객체를 다시 넣지 않는다
 
   // 이번 회차가 새로 올리는 후보 이름만 이전 회차 배치를 다시 볼 이유가 된다

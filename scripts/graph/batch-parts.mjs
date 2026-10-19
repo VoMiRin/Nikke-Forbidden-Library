@@ -173,9 +173,24 @@ export const reviewInputPathOf = (wave, graphDir = GRAPH_DATA_DIR) =>
  * 검토자가 큰 배치·샤드 파일에서 장면을 직접 찾아 읽지 않게 하기 위함이다(대본은 JSON 한 줄이라 파일 줄 범위로는 고를 수 없다).
  * 병합되지 않은 배치의 장면이나 결과에 없는 장면은 status로 표시한다.
  * diagnostics({ 이름: (장면, 입력 장면) => 항목들 })를 주면 그 결과를 diagnostics에 담아 검토자가 항목마다 판정하게 한다(시험 중인 진단).
- * unseenWarnings(추출자가 보지 못한 경고: 부분 결합 뒤·병합 뒤)는 장면별로 묶어 warning_scenes에 장면 객체와 함께 담는다.
+ * unseenWarnings(추출자가 보지 못한 경고: 부분 결합 뒤·병합 뒤)는 장면별로 묶어 warning_scenes에 담는다.
  * 감독관은 원문을 읽지 않으므로(명세 2.1) 검토자가 경고마다 판정한다. 검토 장면과 같은 장면이면 장면 객체를 다시 넣지 않는다.
+ * 경고 장면에는 입력 장면 전체(다른 줄에 같은 것을 가리킨 말이 있는지 봐야 한다)와 경고가 난 항목만 넣는다.
+ * 추출 결과 전체를 넣었던 8회차는 경고 장면 14개가 검토 입력 663KB 중 약 300KB였다.
  */
+// 경고 경로(`$.scenes[3].clues_and_hooks[1]`)가 가리키는 장면 안의 항목. 같은 항목에 경고가 여럿이면 한 번만 넣는다
+const flaggedItems = (extraction, warnings) => {
+  const seen = new Set();
+  return warnings.flatMap((w) => {
+    const at = String(w.path).replace(/^\$\.scenes\[\d+\]\./, '');
+    if (seen.has(at)) return [];
+    seen.add(at);
+    const m = at.match(/^(\w+)(?:\[(\d+)\])?$/);
+    const value = !extraction || !m ? null : m[2] === undefined ? extraction[m[1]] : extraction[m[1]]?.[Number(m[2])];
+    return [{ path: at, item: value ?? null }];
+  });
+};
+
 export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, mergedBatchIds, diagnostics = null, unseenWarnings = [] }) => ({
   wave,
   scenes: reviewScenes.map((r) => {
@@ -222,7 +237,10 @@ export const buildReviewInput = ({ wave, reviewScenes, batchInputs, shards, merg
         ? { same_as_review_scene: true }
         : {
             input_scene: batchInputs[batchId]?.scenes?.find((s) => s.scene_id === sceneId) ?? null,
-            extraction: shards[batchId]?.scenes?.find((s) => s.scene_id === sceneId) ?? null,
+            flagged_items: flaggedItems(
+              shards[batchId]?.scenes?.find((s) => s.scene_id === sceneId) ?? null,
+              unseenWarnings.filter((w) => w.batch_id === batchId && w.scene_id === sceneId)
+            ),
           }),
     };
   }),
