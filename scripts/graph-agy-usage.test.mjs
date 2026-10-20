@@ -104,6 +104,22 @@ test('5 agy usage: only the latest request of the supervisor and the subagents i
     // 이전 요청 구간을 지정하면 그때 만든 서브에이전트를 센다
     const earlier = collectRunUsage({ brainDir, supervisor: 'sup', fromStep: -1, toStep: 2 });
     assert.deepEqual(earlier.rows.map((r) => r.session), ['sup', SUB_OLD]);
+
+    // 한 번에 하나씩 만든 기록(단수형)도 세고, 명령 출력에 든 다른 회차 로그의 문구는 세지 않는다(13회차)
+    await writeSession(brainDir, 'sup4', [
+      { step_index: 0, type: 'USER_INPUT', content: '이번 요청' },
+      {
+        step_index: 1,
+        type: 'GENERIC',
+        content: `Created At: 2026-10-20T10:41:48+09:00\nCompleted At: 2026-10-20T10:45:50+09:00\nCreated the following subagent:\n{\n  "conversationId": "${SUB_NEW}"\n}`,
+      },
+      {
+        step_index: 2,
+        type: 'GENERIC',
+        content: `Created At: 2026-10-20T13:18:51+09:00\nCompleted At: 2026-10-20T13:19:02+09:00\nCommand exited with code 0.\n\nCommand output:\n    'Created the following subagents:\\n' +\n    '  "conversationId": "${SUB_OLD}",\\n' +`,
+      },
+    ]);
+    assert.deepEqual(collectRunUsage({ brainDir, supervisor: 'sup4' }).rows.map((r) => r.session), ['sup4', SUB_NEW]);
   } finally {
     await fs.rm(brainDir, { recursive: true, force: true });
   }

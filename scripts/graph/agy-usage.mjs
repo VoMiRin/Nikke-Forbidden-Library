@@ -8,7 +8,9 @@ const __filename = fileURLToPath(import.meta.url);
 // 감독관 한 번의 실행(사용자 요청 하나)에서 감독관과 그 실행이 만든 서브에이전트의 사용량을 원시 로그에서 센다.
 // - 감독관은 마지막 사용자 요청 다음 스텝부터 센다(같은 세션의 이전 실행을 섞지 않는다).
 //   실행 도중 사용자가 다른 질문을 했으면 --from-request <문구>로 그 실행을 시작한 요청을 지정한다
-// - 서브에이전트는 그 구간에서 감독관이 만든 세션이다("Created the following subagents" 기록)
+// - 서브에이전트는 그 구간에서 감독관이 만든 세션이다("Created the following subagents" 기록, 13회차부터는 한 번에 하나씩
+//   "Created the following subagent:"). 도구 결과 첫머리의 문구만 센다. 감독관이 명령으로 다른 회차 로그를 출력하면
+//   그 안에도 같은 문구와 세션 ID가 들어 있다(13회차 스텝 126)
 // - 토큰은 PLANNER_RESPONSE의 input_tokens(비캐시 입력)·cache_read_tokens·output_tokens 합이다.
 //   thinking 토큰 수는 로그에 없고, output_tokens에 들어 있는지도 로그로는 알 수 없다
 // - 진행 중 오류는 세션 안에서 이어져 복구된 것도 센다. 3회차 보고서가 출력 잘림 7회·스트림 끊김 4회·도구 호출 실패 2회를
@@ -72,11 +74,13 @@ export const supervisorRange = (steps, { fromStep = null, toStep = null, fromReq
   return { from, to, steps: steps.filter((s) => s.step_index > from && s.step_index <= to) };
 };
 
+const CREATED_SUBAGENTS_RE = /^(?:(?:Created|Completed) At: \S+\r?\n)*Created the following subagents?:/;
+
 export const createdSubagentIds = (steps) => {
   const ids = [];
   for (const step of steps) {
     const content = contentOf(step);
-    if (!content.includes('Created the following subagents')) continue;
+    if (!CREATED_SUBAGENTS_RE.test(content)) continue;
     for (const m of content.matchAll(/"conversationId":\s*"([0-9a-f-]{36})"/g)) {
       if (!ids.includes(m[1])) ids.push(m[1]);
     }
