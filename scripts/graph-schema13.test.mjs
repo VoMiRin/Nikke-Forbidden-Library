@@ -1208,6 +1208,51 @@ test('2.3-24 premature identity: a name revealed later in the scene must not be 
   const s4 = scene('???');
   s4.events_and_claims[0] = { ...s4.events_and_claims[0], summary: '지엔이 어둠을 조심하라고 한다.', line_end: 4, quote: '방주 깊은 곳의 어둠을 조심해요.' };
   assert.equal(warnings(validateShard(shardOf(s4), batch)).length, 0);
+
+  // 공개 줄은 근거 범위의 시작 줄이 아니라 범위 안에서 이름이 처음 나오는 줄이다(over_the_horizon_01: 범위 L83~88, 소라는 L88)
+  const wideReveal = (actor) => {
+    const s5 = scene(actor);
+    s5.unknown_speakers[0].resolved_in_same_scene_to = {
+      surface_text: '지엔',
+      entity_id: null,
+      line_start: 2,
+      line_end: 4,
+      quote: '???: 방주 깊은 곳의 어둠을 조심해요.\n마나: 누구시죠?\n지엔: 지엔이에요. 잘 부탁해요.',
+    };
+    return validateShard(shardOf(s5), batch);
+  };
+  assert.equal(warnings(wideReveal('지엔')).length, 1, JSON.stringify(wideReveal('지엔').errors));
+  assert.match(warnings(wideReveal('지엔'))[0].message, /revealed at L4/);
+  assert.equal(warnings(wideReveal('???')).length, 0);
+
+  // ???·묘사형 화자 항목은 대화 상대(target_addressed)를 그 줄 시점으로 본다. contextual_clues는 보지 않는다
+  const addressed = (target, clues = []) => {
+    const s6 = scene('???');
+    s6.unknown_speakers[0] = { ...s6.unknown_speakers[0], target_addressed: target, contextual_clues: clues };
+    return validateShard(shardOf(s6), batch);
+  };
+  const addressedWarned = warnings(addressed('마나, 지엔'));
+  assert.equal(addressedWarned.length, 1, JSON.stringify(addressed('마나, 지엔').errors));
+  assert.match(addressedWarned[0].path, /unknown_speakers\[0\]$/);
+  assert.match(addressedWarned[0].message, /uses "지엔" in target_addressed/);
+  assert.equal(warnings(addressed('마나')).length, 0);
+  assert.equal(warnings(addressed('마나', ['직후 지엔으로 밝혀짐'])).length, 0);
+
+  // 범위 안에서 이름을 못 찾으면 시작 줄로 되돌려 셈하지 않고, 그 공개를 경고로 남긴다(지엔은 화자 라벨이라 RESOLVED_SURFACE_TEXT는 통과)
+  const s7 = scene('???');
+  s7.unknown_speakers[0].target_addressed = null;
+  s7.unknown_speakers[0].resolved_in_same_scene_to = {
+    surface_text: '지엔',
+    entity_id: null,
+    line_start: 2,
+    line_end: 3,
+    quote: '???: 방주 깊은 곳의 어둠을 조심해요.\n마나: 누구시죠?',
+  };
+  const notFound = validateShard(shardOf(s7), batch);
+  assert.equal(notFound.errors.length, 0, JSON.stringify(notFound.errors));
+  assert.equal(warnings(notFound).length, 1);
+  assert.match(warnings(notFound)[0].path, /resolved_in_same_scene_to$/);
+  assert.match(warnings(notFound)[0].message, /reveal line is unknown/);
 });
 
 test('2.3-27/28 entity ids: ids outside the registry fail, registered ids on unrelated names warn', async () => {

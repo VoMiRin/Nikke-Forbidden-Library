@@ -149,8 +149,11 @@
 
 **정체를 미리 씀 (경고)**
 
-24. **정체를 미리 씀 (`PREMATURE_IDENTITY`)**: `unknown_speakers`나 `descriptor_speakers`의 `resolved_in_same_scene_to`로 같은 장면에서 정체가 밝혀진 이름이, 공개 줄(`line_start`)보다 앞에서 끝나는 항목에 쓰이면 경고한다(3절 9항).
-    - 보는 필드: `events_and_claims`의 `actor_or_speaker`·`summary`, 관계 메모의 `subject`·`target`·`claimant`·`relation_or_change`, 단서의 `subject`·`detail`·`keyword`.
+24. **정체를 미리 씀 (`PREMATURE_IDENTITY`)**: `unknown_speakers`나 `descriptor_speakers`의 `resolved_in_same_scene_to`로 같은 장면에서 정체가 밝혀진 이름이, 공개 줄보다 앞에서 끝나는 항목에 쓰이면 경고한다(3절 9항).
+    - 공개 줄은 `resolved_in_same_scene_to`의 `line_start`가 아니라, 그 범위(`line_start`~`line_end`) 안에서 그 이름이 처음 나오는 원문 줄(화자 라벨 포함)이다. 근거 범위는 앞의 `???` 줄까지 문맥으로 담아도 된다(예: `over_the_horizon_01`은 범위 L83~88, `소라`는 L88에서 처음 나온다).
+    - 범위 안에서 그 이름을 찾지 못하면 시작 줄로 공개 줄을 정하지 않는다. 그 공개를 이 항에서 보지 않고 `resolved_in_same_scene_to`에 경고를 낸다(범위를 공개 줄까지 잡게 한다).
+    - 보는 필드: `events_and_claims`의 `actor_or_speaker`·`summary`, 관계 메모의 `subject`·`target`·`claimant`·`relation_or_change`, 단서의 `subject`·`detail`·`keyword`, `unknown_speakers`·`descriptor_speakers`의 `target_addressed`(그 `???` 줄, 묘사형 화자는 `line_end` 시점).
+    - `contextual_clues`는 보지 않는다. 14회차 집계에서 공개 뒤 이름이 든 단서 60건이 모두 "직후 X로 밝혀짐"처럼 공개 사실을 적은 메모였다.
     - 그 항목 끝 줄까지의 원문에 그 이름이 이미 나왔으면 보지 않는다. 다른 인물이 그 이름을 먼저 말했다면 그 인물을 가리킨 것일 수 있다(예: `wordless_02` L43 미하라 "유니가 밖으로 나와도 괜찮은 거야?" 뒤의 L45~53 관계 메모 `subject: 유니`는 맞다. 뒤에 나오는 `???`가 L74에서 유니로 밝혀져도 마찬가지다).
     - 공개 줄 전에 그 이름이 이미 자기 라벨로 말했으면 가려진 정체가 아니므로 보지 않는다(예: `emma_02`는 엠마가 L6부터 말하고, L136의 `???` 한 줄이 엠마로 밝혀진다).
     - `character_claim`인 관계 메모는 주장한 줄(`claim_line`) 시점으로도 본다. 범위가 공개 줄까지 이어져도 `claim_line`이 공개 줄보다 앞이고 그 줄까지의 원문에 이름이 없으면, `subject`·`target`·`claimant`에 밝혀진 이름을 쓴 것을 경고한다. `relation_or_change`는 범위 안의 공개를 설명할 수 있으므로 보지 않는다.

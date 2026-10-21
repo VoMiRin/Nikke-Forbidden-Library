@@ -1878,28 +1878,62 @@ export const validateShard = (shardData, batchInput, options = {}) => {
     // 24. 정체를 미리 씀: 같은 장면에서 ???·묘사형 화자의 정체가 밝혀지기 전 줄의 항목에 밝혀진 이름을 쓰면 경고한다(3절 9항).
     // 공개 줄 전에 그 이름이 이미 자기 라벨로 말했으면 가려진 정체가 아니므로 보지 않는다.
     // 그 항목 끝 줄까지의 원문에 이름이 이미 나왔으면(다른 인물이 그 이름을 말함) 그 인물을 가리킨 것일 수 있으므로 보지 않는다(wordless_02 L43)
+    // 공개 줄은 근거 범위의 시작 줄이 아니라, 범위 안에서 그 이름이 처음 나오는 원문 줄(화자 라벨 포함)이다.
+    // 근거 범위는 앞의 ??? 줄까지 문맥으로 담는 일이 많다(14회차 over_the_horizon_01: 범위 L83~88, 소라는 L88에서 처음 나옴)
     const revealLineByName = new Map();
-    for (const list of [scene.unknown_speakers, scene.descriptor_speakers]) {
-      for (const entry of Array.isArray(list) ? list : []) {
+    for (const key of ['unknown_speakers', 'descriptor_speakers']) {
+      const list = scene[key];
+      (Array.isArray(list) ? list : []).forEach((entry, idx) => {
         const res = entry?.resolved_in_same_scene_to;
-        if (!res || !isNonEmptyString(res.surface_text) || !isPositiveInt(res.line_start)) continue;
+        if (!res || !isNonEmptyString(res.surface_text) || !isPositiveInt(res.line_start)) return;
+        const lastLine = isPositiveInt(res.line_end) && res.line_end >= res.line_start ? res.line_end : res.line_start;
+        const surface = normalizeWhitespaceOnly(res.surface_text);
+        let revealLine = null;
+        for (let line = res.line_start; line <= lastLine; line++) {
+          if (normalizeWhitespaceOnly(rawLines[line - 1] ?? '').includes(surface)) {
+            revealLine = line;
+            break;
+          }
+        }
+        if (revealLine === null) {
+          // 시작 줄로 되돌려 셈하지 않는다. 공개 시점을 모르는 이름은 이 항에서 보지 않고 경고로 남긴다
+          addWarning(
+            'PREMATURE_IDENTITY',
+            sid,
+            `${sceneBasePath}.${key}[${idx}].resolved_in_same_scene_to`,
+            `"${res.surface_text}" does not appear in the text of L${res.line_start}~L${lastLine}, so its reveal line is unknown and earlier items are not checked for it. Re-read it: set the range to include the line where the name is revealed`
+          );
+          return;
+        }
         const prev = revealLineByName.get(res.surface_text);
-        revealLineByName.set(res.surface_text, prev ? Math.min(prev, res.line_start) : res.line_start);
-      }
+        revealLineByName.set(res.surface_text, prev ? Math.min(prev, revealLine) : revealLine);
+      });
     }
     const premature = [
       ['events_and_claims', ['actor_or_speaker'], ['summary']],
       ['relationship_and_lore_notes', ['subject', 'target', 'claimant'], ['relation_or_change']],
       ['clues_and_hooks', ['subject'], ['detail', 'keyword']],
     ];
+    // ???·묘사형 화자 항목은 대화 상대(target_addressed)만 본다. 그 줄 시점(??? 줄, 묘사형은 line_end)으로 본다.
+    // contextual_clues는 보지 않는다: "직후 X로 밝혀짐"처럼 공개 사실을 적은 메모가 대부분이다(14회차 집계 60건 중 60건)
+    const speakerEntryItems = (key) =>
+      (Array.isArray(scene[key]) ? scene[key] : []).map((entry) => {
+        const line =
+          key === 'unknown_speakers' ? expectedUnknownsById.get(entry?.unknown_id)?.line : entry?.line_end;
+        return { target_addressed: entry?.target_addressed, line_start: line, line_end: line };
+      });
+    const prematureTargets = [
+      ...premature.map(([field, idFields, textFields]) => [field, scene[field], idFields, textFields]),
+      ...['unknown_speakers', 'descriptor_speakers'].map((key) => [key, speakerEntryItems(key), ['target_addressed'], []]),
+    ];
     for (const [name, revealLine] of revealLineByName) {
       const spokeBefore = Object.entries(mgt.line_speaker ?? {}).some(
         ([line, speaker]) => speaker === name && Number(line) < revealLine
       );
       if (spokeBefore) continue;
-      for (const [field, idFields, textFields] of premature) {
-        if (!Array.isArray(scene[field])) continue;
-        scene[field].forEach((item, idx) => {
+      for (const [field, items, idFields, textFields] of prematureTargets) {
+        if (!Array.isArray(items)) continue;
+        items.forEach((item, idx) => {
           if (!isPositiveInt(item?.line_end)) return;
           // 관계 메모의 주장은 주장한 줄 시점으로 본다. 범위가 공개 줄까지 이어져도 claim_line이 그 앞이면
           // subject·target·claimant만 본다(4회차 main_39_04 L108~114: L112의 ??? 주장에 L114에서 밝혀진 나유타를 subject로 씀)
