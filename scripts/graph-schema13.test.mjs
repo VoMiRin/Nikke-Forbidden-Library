@@ -17,6 +17,7 @@ import {
   splitLinesOf,
 } from './graph/lib.mjs';
 import {
+  claimMiddleOtherSpeaker,
   claimStartsOtherSpeaker,
   dialogueOnlyEvents,
   loadEntityRegistry,
@@ -1391,6 +1392,42 @@ test('5 finish diagnostic: a claim range that starts with another speaker who ha
   assert.equal(diag([claim('네온', 9, 11, 11)]).length, 0);
   // 사건은 대상 아님(대사만으로 된 사건은 다른 진단이 본다)
   assert.equal(diag([event({ actor_or_speaker: '지휘관', line_start: 2, line_end: 4, quote: '희망적' })]).length, 0);
+});
+
+test('5 finish diagnostic: a turn by another speaker between turns of the claimant, with no item of their own', () => {
+  const lines = [
+    '[SCENE START]',
+    '이사벨: 도망가는 방법도 있어.',
+    '파피용: 저 랩쳐들의 바다를 건너서 도망가라고? 농담하지 마. 어딘가의 필그림이 아니라고 나는.',
+    '이사벨: 루트는 있어. 너도 보면 알잖아.',
+    '파피용: ··· ···.',
+    '이사벨: 왜 도망 안 가?',
+    '노아: 그래서 어떻게 할 건데?',
+    '이사벨: 일단은 버틸 거야.',
+    '노아: 응.',
+    '이사벨: 그러니까 걱정하지 마.',
+    '[SCENE END]',
+  ];
+  const input = makeInputScene('t13_middle', lines);
+  const claim = (actor, line_start, line_end, claim_line) =>
+    event({ epistemic_type: 'character_claim', actor_or_speaker: actor, line_start, line_end, claim_line, quote: '도망' });
+  const diag = (items) => claimMiddleOtherSpeaker(emptyScene('t13_middle', { events_and_claims: items }), input);
+
+  // 16회차 goddess_fall_09 L140~144: 이사벨 주장 사이의 파피용 반박(말줄임표만 있는 L5는 세지 않음)
+  assert.deepEqual(
+    diag([claim('이사벨', 2, 6, 2)]).map((d) => [d.path, d.claimant, d.middle]),
+    [['events_and_claims[0]', '이사벨', [{ speaker: '파피용', line: 3 }]]]
+  );
+  // 그 화자의 항목이 따로 있으면 대상 아님
+  assert.equal(diag([claim('이사벨', 2, 6, 2), claim('파피용', 3, 3, 3)]).length, 0);
+  // 사이의 차례가 질문이거나 짧은 맞장구면 문맥
+  assert.equal(diag([claim('이사벨', 6, 8, 8)]).length, 0);
+  assert.equal(diag([claim('이사벨', 8, 10, 8)]).length, 0);
+  // 범위 앞·끝의 다른 화자는 진단 2와 26항이 본다
+  assert.equal(diag([claim('이사벨', 3, 4, 4)]).length, 0);
+  assert.equal(diag([claim('이사벨', 2, 3, 2)]).length, 0);
+  // 사건은 대상 아님
+  assert.equal(diag([event({ actor_or_speaker: '이사벨', line_start: 2, line_end: 6, quote: '도망' })]).length, 0);
 });
 
 test('2.3-25 names not in the scene: warn on rare names only, ignoring word parts, spacing and generic tails', () => {

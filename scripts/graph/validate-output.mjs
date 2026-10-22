@@ -2274,6 +2274,78 @@ export const claimStartsOtherSpeaker = (scene, gtScene) => {
   return found;
 };
 
+// 진단(2.3에 넣기 전 시험, 5절 finish): 주장 화자의 말 사이에 낀 다른 화자의 차례를 그 화자 자신의 항목이 다루지 않음.
+// 앞은 위 진단, 끝은 26항, 3차례 이상은 23항이 본다. 이 진단은 그 사이의 1~2차례다.
+// 16회차 독립 검토의 goddess_fall_09 L140~144(이사벨 사이 파피용 반박), L189~191(노아 사이 라푼젤 응수)
+export const CLAIM_MIDDLE_MIN_LETTERS = 10;
+export const claimMiddleOtherSpeaker = (scene, gtScene) => {
+  const mgt = gtScene?.mechanical_ground_truth ?? {};
+  const rawLines = Array.isArray(gtScene?.body_lines)
+    ? gtScene.body_lines
+    : extractRawLinesFromNumberedScript(gtScene?.numbered_script);
+  const textOf = (line) => extractUtteranceTextFromRawLine(rawLines[line - 1]);
+  const lettersOf = (lines) => lines.map(textOf).join('').match(/[\p{L}\p{N}]/gu)?.length ?? 0;
+  const speakerFields = [
+    ['events_and_claims', 'actor_or_speaker'],
+    ['relationship_and_lore_notes', 'claimant'],
+  ];
+  const ownItems = [];
+  for (const [field, speakerField] of speakerFields) {
+    (Array.isArray(scene?.[field]) ? scene[field] : []).forEach((item, idx) => {
+      if (!isPositiveInt(item?.line_start) || !isPositiveInt(item?.line_end) || !isNonEmptyString(item[speakerField])) return;
+      const names = item[speakerField].split(MULTI_ENTITY_SEPARATOR_RE).map((n) => n.trim());
+      ownItems.push({ key: `${field}[${idx}]`, names, start: item.line_start, end: item.line_end });
+    });
+  }
+  const found = [];
+  for (const [field, speakerField] of speakerFields) {
+    (Array.isArray(scene?.[field]) ? scene[field] : []).forEach((item, idx) => {
+      if (item?.epistemic_type !== 'character_claim') return;
+      if (!isPositiveInt(item.line_start) || !isPositiveInt(item.line_end) || item.line_end < item.line_start) return;
+      const claimant = item[speakerField];
+      if (!isNonEmptyString(claimant) || lineSpeakerAt(mgt, item.claim_line) !== claimant) return;
+      const selfKey = `${field}[${idx}]`;
+      // 같은 화자가 이어 말한 줄은 한 차례로 센다. 말줄임표만 있는 줄은 차례를 나누지도 만들지도 않는다
+      const turns = [];
+      for (let line = item.line_start; line <= item.line_end; line += 1) {
+        const speaker = lineSpeakerAt(mgt, line);
+        if (speaker === null || !/[\p{L}\p{N}]/u.test(textOf(line))) continue;
+        const last = turns[turns.length - 1];
+        if (last && last.speaker === speaker) last.lines.push(line);
+        else turns.push({ speaker, lines: [line] });
+      }
+      const claimantTurns = turns.map((t, i) => (t.speaker === claimant ? i : -1)).filter((i) => i >= 0);
+      if (claimantTurns.length < 2) return;
+      const middle = turns
+        .slice(claimantTurns[0] + 1, claimantTurns[claimantTurns.length - 1])
+        .filter((t) => t.speaker !== claimant)
+        .filter(
+          (t) =>
+            !ownItems.some(
+              (own) => own.key !== selfKey && own.names.includes(t.speaker) && t.lines.some((line) => line >= own.start && line <= own.end)
+            )
+        );
+      // 3차례 이상이면 23항 경고가 본다
+      if (middle.length === 0 || middle.length >= CLAIM_OTHER_SPEAKER_TURNS_WARN) return;
+      // 질문으로 끝나는 차례(주장을 이끌어 낸 문맥)와 짧은 맞장구·감탄은 세지 않는다
+      const flagged = middle.filter(
+        (t) => !isQuestionLine(rawLines[t.lines[t.lines.length - 1] - 1]) && lettersOf(t.lines) >= CLAIM_MIDDLE_MIN_LETTERS
+      );
+      if (flagged.length === 0) return;
+      found.push({
+        path: selfKey,
+        line_start: item.line_start,
+        line_end: item.line_end,
+        claim_line: item.claim_line,
+        claimant,
+        middle: flagged.map((t) => ({ speaker: t.speaker, line: t.lines[0] })),
+        summary: item.summary ?? item.relation_or_change,
+      });
+    });
+  }
+  return found;
+};
+
 /**
  * CLI 실행: 샤드 파일 경로 또는 배치 ID를 받아 검증한다.
  * 하나라도 실패하면 Exit Code 1을 반환한다 (2.3).

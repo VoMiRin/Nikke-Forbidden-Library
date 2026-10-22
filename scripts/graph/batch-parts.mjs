@@ -293,7 +293,9 @@ const finishWave = async (rel) => {
     throw new Error(`No wave plan at ${rel(planPath)}; run "batch-parts.mjs next <count>" first`);
   }
   const wavePlan = JSON.parse(await fs.readFile(planPath, 'utf8'));
-  const { validateShardFile, dialogueOnlyEvents, DIALOGUE_EVENT_MIN_TURNS, claimStartsOtherSpeaker } = await import('./validate-output.mjs');
+  const { validateShardFile, dialogueOnlyEvents, DIALOGUE_EVENT_MIN_TURNS, claimStartsOtherSpeaker, claimMiddleOtherSpeaker } = await import(
+    './validate-output.mjs'
+  );
   const { mergeValidatedShards } = await import('./merge-and-index.mjs');
   const { fileHashOf, formatWaveCallSummary, readValidationLog, recordValidation, summarizeWaveCalls, validationLogPathOf } = await import(
     './validation-log.mjs'
@@ -490,13 +492,27 @@ const finishWave = async (rel) => {
     console.log(`  ${id}: ${n}건`);
   }
   console.log(`  합계 ${leading}건`);
+  console.log('[finish] 진단(시험, 경고 아님): 주장 화자의 말 사이에 낀 다른 화자의 1~2차례를 그 화자 자신의 항목이 다루지 않음(질문·짧은 맞장구 제외)');
+  let middle = 0;
+  for (const id of wavePlan.batch_ids) {
+    if (!mergedIds.has(id) || !shards[id]) continue;
+    const inputById = new Map((batchInputs[id]?.scenes ?? []).map((s) => [s.scene_id, s]));
+    const n = shards[id].scenes.reduce((acc, s) => acc + claimMiddleOtherSpeaker(s, inputById.get(s.scene_id)).length, 0);
+    middle += n;
+    console.log(`  ${id}: ${n}건`);
+  }
+  console.log(`  합계 ${middle}건`);
   const reviewInput = buildReviewInput({
     wave: wavePlan.wave,
     reviewScenes: wavePlan.review_scenes,
     batchInputs,
     shards,
     mergedBatchIds: merged.mergedBatchIds,
-    diagnostics: { dialogue_only_events: dialogueOnlyEvents, claim_starts_other_speaker: claimStartsOtherSpeaker },
+    diagnostics: {
+      dialogue_only_events: dialogueOnlyEvents,
+      claim_starts_other_speaker: claimStartsOtherSpeaker,
+      claim_middle_other_speaker: claimMiddleOtherSpeaker,
+    },
     unseenWarnings,
   });
   const reviewPath = reviewInputPathOf(wavePlan.wave);
@@ -505,9 +521,10 @@ const finishWave = async (rel) => {
   for (const s of reviewInput.scenes) {
     const dialogueOnly = s.diagnostics?.dialogue_only_events?.length ?? 0;
     const startsOther = s.diagnostics?.claim_starts_other_speaker?.length ?? 0;
+    const middleOther = s.diagnostics?.claim_middle_other_speaker?.length ?? 0;
     console.log(
       `  ${s.scene_id} (${s.batch_id}) — ${s.reason}: ${s.status}` +
-        (s.status === 'ok' ? `, 진단 항목 대사만 사건 ${dialogueOnly}건 · 주장 앞 다른 화자 ${startsOther}건` : '')
+        (s.status === 'ok' ? `, 진단 항목 대사만 사건 ${dialogueOnly}건 · 주장 앞 다른 화자 ${startsOther}건 · 주장 사이 다른 화자 ${middleOther}건` : '')
     );
   }
   console.log(`  추출자가 보지 못한 경고: ${unseenWarnings.length}건, ${reviewInput.warning_scenes.length}장면(검토자가 경고마다 판정한다)`);
