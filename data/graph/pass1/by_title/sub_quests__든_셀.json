@@ -1,0 +1,948 @@
+{
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-26T09:40:03.743Z",
+  "title_id": "sub_quests__든_셀",
+  "category": "sub_quests",
+  "title": "든?셀",
+  "source_file": "public/scripts/sub_quests/든_셀.txt",
+  "scene_count": 1,
+  "scenes": [
+    {
+      "scene_id": "든_셀_00",
+      "title_id": "sub_quests__든_셀",
+      "category": "sub_quests",
+      "source_file": "public/scripts/sub_quests/든_셀.txt",
+      "source_sha256": "b73532be9b8dc602af5424aa0585788851c3c16a9cdd8b8f06d95a78f903f84b",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "지휘관이 '든?셀'이라는 발신자로부터 글자가 깨진 메시지와 'GJF 30.55' 좌표를 받은 뒤, 1차 침공기 격전지에서 수십 년 전 제이드가 보낸 구조 문자가 담긴 오래된 핸드폰을 발견한다. 프로토콜의 엑시아와 노벨이 핸드폰을 분석한 결과, 주인은 1차 침공기 말에 사망한 군인 제이드 한슨이며 당시 에블라 입자로 통신이 막혔을 때 보낸 구조 문자가 지금 지휘관에게 전송된 것으로 밝혀진다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "든_셀_00__pis_001",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "든_셀_00__pis_002",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "든_셀_00__pis_003",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "든_셀_00__pis_004",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "든_셀_00__rvo_001",
+            "speaker_label": "든?셀",
+            "entity_id": "char_든_셀",
+            "medium": "messenger",
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "[MSG SENDER=\"든?셀\"]\n    깅?? ?要청??\n  [MSG_END]"
+          },
+          {
+            "item_id": "든_셀_00__rvo_002",
+            "speaker_label": "제이드",
+            "entity_id": "char_제이드",
+            "medium": "recording",
+            "line_start": 58,
+            "line_end": 61,
+            "quote": "제이드[ACTION]: 구조를 요청한다\n제이드[ACTION]: 좌표는\n제이드[ACTION]: GJF 30.55\n제이드[ACTION]: 속히 지원 바란다"
+          },
+          {
+            "item_id": "든_셀_00__rvo_003",
+            "speaker_label": "엑시아",
+            "entity_id": "char_엑시아",
+            "medium": "messenger",
+            "line_start": 82,
+            "line_end": 84,
+            "quote": "[MSG SENDER=\"엑시아\"]\n    재밌는 장난감 물어다줘서 ㄳ\n  [MSG_END]"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "든_셀_00__mnt_001",
+            "surface_text": "1차 침공기",
+            "entity_id": null,
+            "entity_type": "event",
+            "line_start": 39,
+            "line_end": 39,
+            "quote": "라피: 1차 침공기 때의 격전지로군요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "든_셀_00__mnt_002",
+            "surface_text": "핸드폰",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 44,
+            "line_end": 44,
+            "quote": "네온: 핸드폰이네요. 그것도 엄청 오래 된.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "든_셀_00__mnt_003",
+            "surface_text": "프로토콜",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 76,
+            "line_end": 76,
+            "quote": "[OPTION TEXT=\"프로토콜에 분석을 요청해 보자.\"]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "든_셀_00__mnt_004",
+            "surface_text": "노벨",
+            "entity_id": "char_노벨",
+            "entity_type": "character",
+            "line_start": 85,
+            "line_end": 87,
+            "quote": "[MSG SENDER=\"엑시아\"]\n    이건 나랑 노벨이 드리는 감사 선물임\n  [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "든_셀_00__mnt_005",
+            "surface_text": "제이드 한슨",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 100,
+            "line_end": 102,
+            "quote": "[MSG SENDER=\"엑시아\"]\n    일단 핸드폰의 주인은 [제이드 한슨]이란 사람인데\n  [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "든_셀_00__mnt_006",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 112,
+            "line_end": 114,
+            "quote": "[MSG SENDER=\"엑시아\"]\n    방주에 거주 중이라 신원 확인이 가능했음\n  [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "든_셀_00__mnt_007",
+            "surface_text": "에블라 입자",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 124,
+            "line_end": 126,
+            "quote": "[MSG SENDER=\"엑시아\"]\n    그 당시에 에블라 입자 때문에 통신이고 뭐고\n  [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "든_셀_00__foa_001",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "라피: ···지휘관. 여기 뭔가 있습니다.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__foa_002",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "아니스: 지휘관님이 받은 문자 아냐?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__foa_003",
+          "from_speaker": "아니스",
+          "to_target": "네온",
+          "address_term": "바보야",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "아니스: 바보야. 전송 과정에서 글자가 깨진 거겠지.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__foa_004",
+          "from_speaker": "엑시아",
+          "to_target": "지휘관",
+          "address_term": "뉴비",
+          "line_start": 136,
+          "line_end": 138,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    아마 그 중 하나가 뉴비 폰으로 어떻게\n  [MSG_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "든_셀_00__chb_001",
+          "choice_line": 26,
+          "options": [
+            {
+              "item_id": "든_셀_00__chb_001_opt_01",
+              "option_text": "암호문인가?",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "든_셀_00__chb_001_opt_02",
+              "option_text": "글자가 깨졌어",
+              "continuation_summary": null
+            }
+          ]
+        },
+        {
+          "item_id": "든_셀_00__chb_002",
+          "choice_line": 143,
+          "options": [
+            {
+              "item_id": "든_셀_00__chb_002_opt_01",
+              "option_text": "그게 어떻게 가능하지?",
+              "continuation_summary": "엑시아는 모종의 이유로 에블라 입자 농도가 옅어지면서 발송 대기 중이던 문자가 보내진 듯하지만 이 또한 개인적 추측일 뿐 실제로는 거의 있을 수 없는 일이라고 답한다."
+            },
+            {
+              "item_id": "든_셀_00__chb_002_opt_02",
+              "option_text": "핸드폰 배터리는 어떻게 유지되고 있었던 거지?",
+              "continuation_summary": "엑시아는 비와 모래에 닳아 작동할 상태가 아니던 핸드폰이 기적적으로 작동하고 있었던 것이 미스터리라며, 자신이 전달받자마자 고장 나 켜지지 않는다고 답한다."
+            }
+          ]
+        },
+        {
+          "item_id": "든_셀_00__chb_003",
+          "choice_line": 190,
+          "options": [
+            {
+              "item_id": "든_셀_00__chb_003_opt_01",
+              "option_text": "무서운 이야기네",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "든_셀_00__chb_003_opt_02",
+              "option_text": "안타까운 이야기네",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "든_셀_00__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "든?셀",
+          "summary": "든?셀이 지휘관에게 글자가 깨진 메시지들과 함께 'GJF 30.55'라는 문자열을 전송한다.",
+          "line_start": 3,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "[MSG SENDER=\"든?셀\"]\n    깅?? ?要청??\n  [MSG_END]\n  [MSG SENDER=\"든?셀\"]\n    ??그標??\n  [MSG_END]\n  [MSG SENDER=\"든?셀\"]\n    GJF 30.55\n  [MSG_END]\n  [MSG SENDER=\"든?셀\"]\n    速口??낫?口\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 든?셀에게 물음표로 답장을 보내려 하지만 메시지 전송에 실패한다.",
+          "line_start": 15,
+          "line_end": 18,
+          "claim_line": null,
+          "quote": "[MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    ??\n  [MSG_END]\n  메시지 전송에 실패했습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "든?셀",
+          "summary": "든?셀이 다시 글자가 깨진 메시지와 'GJF 30.55'를 전송한다.",
+          "line_start": 19,
+          "line_end": 24,
+          "claim_line": null,
+          "quote": "[MSG SENDER=\"든?셀\"]\n    슈復?? ?口\n  [MSG_END]\n  [MSG SENDER=\"든?셀\"]\n    GJF 30.55\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 든?셀의 메시지를 보고 암호문인지 의문을 제기한다.",
+          "line_start": 27,
+          "line_end": 28,
+          "claim_line": 27,
+          "quote": "[OPTION TEXT=\"암호문인가?\"]\n      [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 26,
+            "option_text": "암호문인가?"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 든?셀의 메시지 글자가 깨졌다고 판단한다.",
+          "line_start": 29,
+          "line_end": 30,
+          "claim_line": 29,
+          "quote": "[OPTION TEXT=\"글자가 깨졌어\"]\n      [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 26,
+            "option_text": "글자가 깨졌어"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "든?셀",
+          "summary": "지휘관의 메시지 전송이 다시 실패하고 든?셀로부터 깨진 문자열이 한 번 더 도착한다.",
+          "line_start": 33,
+          "line_end": 36,
+          "claim_line": null,
+          "quote": "메시지 전송에 실패했습니다.\n  [MSG SENDER=\"든?셀\"]\n    速口??낫?口\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 일행이 있는 장소가 1차 침공기 때의 격전지라고 말한다.",
+          "line_start": 38,
+          "line_end": 39,
+          "claim_line": 39,
+          "quote": "라피: ···여긴.\n라피: 1차 침공기 때의 격전지로군요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 격전지 어디를 가나 잔해가 널려 있다고 말한다.",
+          "line_start": 40,
+          "line_end": 40,
+          "claim_line": 40,
+          "quote": "네온: 어딜 가나 잔해가 널려 있네요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 격전지 주변에 살아 있는 사람은 전혀 없다고 말한다.",
+          "line_start": 41,
+          "line_end": 41,
+          "claim_line": 41,
+          "quote": "아니스: 눈 씻고 봐도 살아 있는 사람은 없는데.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 현장에서 희미하게 빛을 내는 휴대용 기기를 발견해 지휘관에게 건네준다.",
+          "line_start": 42,
+          "line_end": 43,
+          "claim_line": null,
+          "quote": "라피: ···지휘관. 여기 뭔가 있습니다.\n라피는 희미하게 빛을 내는 휴대용 기기를 건네 주었다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 라피가 건넨 휴대용 기기가 엄청 오래된 핸드폰이라고 말한다.",
+          "line_start": 44,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "네온: 핸드폰이네요. 그것도 엄청 오래 된.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 발견된 핸드폰이 최소 반세기 혹은 그 이전 모델 같다고 추측한다.",
+          "line_start": 45,
+          "line_end": 46,
+          "claim_line": 46,
+          "quote": "아니스: 와. 저게 대체 언제적 모델이야.\n아니스: 최소 반 세기, 혹은 그 이전 것 같은데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그런 고물 핸드폰이 어떻게 지금까지 켜져 있는 것인지 의문을 제기한다.",
+          "line_start": 47,
+          "line_end": 50,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그런 고물이 어떻게 지금까지 켜져 있는 거지?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 고물 핸드폰이 지금까지 켜져 있는 이유는 자신도 잘 모르겠다고 답한다.",
+          "line_start": 51,
+          "line_end": 51,
+          "claim_line": 51,
+          "quote": "아니스: 글쎄. 그건 나도 잘···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 발견된 핸드폰이 유령 핸드폰이 아니냐고 추측한다.",
+          "line_start": 52,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "네온: 유령 핸드폰 아니에요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 네온에게 기분 나쁘게 유령 핸드폰 같은 말은 하지 말라고 타박한다.",
+          "line_start": 53,
+          "line_end": 53,
+          "claim_line": null,
+          "quote": "아니스: 야, 그런 말 하지마. 기분 나쁘게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 핸드폰 화면에 실마리가 있을지도 모르니 일단 확인해 보라고 권한다.",
+          "line_start": 54,
+          "line_end": 55,
+          "claim_line": 55,
+          "quote": "라피: 지휘관. 일단 화면을 확인해 보십쇼.\n라피: 실마리가 있을지도 모릅니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 낡고 뿌연 핸드폰 화면에 떠 있는 문자 전송 내역을 읽어 본다.",
+          "line_start": 56,
+          "line_end": 57,
+          "claim_line": null,
+          "quote": "낡고 뿌연 핸드폰 화면에는, 문자 전송 내역이 떠 있다.\n···내역을 읽어 보았다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "제이드",
+          "summary": "핸드폰의 문자 전송 내역에서 제이드가 좌표 'GJF 30.55'로 속히 구조와 지원을 바란다고 반복해 요청한다.",
+          "line_start": 58,
+          "line_end": 63,
+          "claim_line": 58,
+          "quote": "제이드[ACTION]: 구조를 요청한다\n제이드[ACTION]: 좌표는\n제이드[ACTION]: GJF 30.55\n제이드[ACTION]: 속히 지원 바란다\n제이드[ACTION]: 반복한다\n제이드[ACTION]: GJF 30.55",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 핸드폰 화면의 문자 내역이 지휘관이 받은 문자가 아니냐고 추측한다.",
+          "line_start": 64,
+          "line_end": 65,
+          "claim_line": 65,
+          "quote": "아니스: ···이거 설마.\n아니스: 지휘관님이 받은 문자 아냐?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 지휘관이 받은 문자는 이상한 말로 되어 있었는데 핸드폰 화면의 문자는 멀쩡하게 읽을 수 있는 말이라며 의문을 표한다.",
+          "line_start": 66,
+          "line_end": 67,
+          "claim_line": 66,
+          "quote": "네온: 네? 하지만 그건 이상한 말로 되어 있었잖아요.\n네온: 이 문자는 멀쩡하게 읽을 수 있는 말로 되어 있고요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 보낸 문자의 개수와 좌표가 일치하고 수신 번호도 지휘관의 것과 같으니 전송 과정에서 글자가 깨진 것일 거라고 설명한다.",
+          "line_start": 68,
+          "line_end": 70,
+          "claim_line": 68,
+          "quote": "아니스: 바보야. 전송 과정에서 글자가 깨진 거겠지.\n아니스: 잘 보면 보낸 문자의 개수나 좌표가 일치하잖아.\n아니스: 뭣보다 수신 번호가 지휘관 거랑 같고···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 핸드폰 문자의 발송 일자가 수십 년 전의 오늘로 되어 있다며 이상하다고 말한다.",
+          "line_start": 71,
+          "line_end": 73,
+          "claim_line": 73,
+          "quote": "아니스: ···응? 잠깐.\n아니스: 이 문자, 발송 일자가 이상해.\n아니스: 보여? 날짜가 수십 년 전의 오늘이라고.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_024",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 프로토콜에 핸드폰 분석을 요청해 보자고 제안한다.",
+          "line_start": 75,
+          "line_end": 78,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"프로토콜에 분석을 요청해 보자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 어떤 분석 결과가 나오든 자신에게는 말하지 말라고 거부한다.",
+          "line_start": 79,
+          "line_end": 80,
+          "claim_line": null,
+          "quote": "아니스: ···으으.\n아니스: 어떤 결과가 나오든 나한테는 말하지 마.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 지휘관이 맡긴 고물 핸드폰을 노벨과 함께 신나게 분석했다며 감사 선물을 보낸다고 말한다.",
+          "line_start": 82,
+          "line_end": 93,
+          "claim_line": 89,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    재밌는 장난감 물어다줘서 ㄳ\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    이건 나랑 노벨이 드리는 감사 선물임\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    이번에 우리 둘이 요 고물 핸드폰 분석한다고\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    간만에 신나서 날아다녔어서 ㅋㅋㅋ\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 엑시아에게 핸드폰 분석이 끝났는지 묻는다.",
+          "line_start": 94,
+          "line_end": 96,
+          "claim_line": null,
+          "quote": "[MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    분석은 끝났어?\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_028",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 핸드폰 분석을 가능한 범위까지 모두 마쳤다고 답한다.",
+          "line_start": 97,
+          "line_end": 99,
+          "claim_line": 98,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    ㅇㅇ 가능한 데까지는 다 끝남\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 핸드폰의 주인은 1차 침공기 말에 복무하다 소리소문없이 사망한 군인 '제이드 한슨'이며, 그의 아들이 살아남아 방주에 거주 중이라 신원 확인이 가능했다고 설명한다.",
+          "line_start": 100,
+          "line_end": 114,
+          "claim_line": 101,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    일단 핸드폰의 주인은 [제이드 한슨]이란 사람인데\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    1차 침공기 말에 복무한 군인이라고 함\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    당시 소리소문 없이 죽어서 존재 자체가 묻힐 뻔했지만\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    그 사람 아들이 어떻게 살아서\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    방주에 거주 중이라 신원 확인이 가능했음\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_030",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 엑시아에게 구조 문자의 발송 시점이 언제인지 묻는다.",
+          "line_start": 115,
+          "line_end": 117,
+          "claim_line": null,
+          "quote": "[MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    구조 문자의 발송 시점은 언제지?\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_031",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 구조 문자는 제이드가 복무 중일 때 보낸 것으로 나온다며, 당시 에블라 입자 때문에 통신이 두절되자 고립된 군인들이 자기 핸드폰으로 보냈던 구조 문자 중 하나가 지휘관의 핸드폰으로 전송된 것 같다고 설명한다.",
+          "line_start": 118,
+          "line_end": 141,
+          "claim_line": 122,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    그게 ㄹㅇ 신기한 부분인데\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    무려 제이드가 복무 중일 때 보낸 거라고 나옴\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    그 당시에 에블라 입자 때문에 통신이고 뭐고\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    아군 간에 아무런 소통도 안 돼서\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    고립된 군인들이 뭐라도 얻어 걸리라는 마음으로\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    자기 폰으로 구조 문자를 보내기도 했다는데\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    아마 그 중 하나가 뉴비 폰으로 어떻게\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    전송된 것 같음 ㅇㅇ\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_032",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 과거의 구조 문자가 지금 전송되는 것이 어떻게 가능한지 묻는다.",
+          "line_start": 144,
+          "line_end": 144,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"그게 어떻게 가능하지?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 143,
+            "option_text": "그게 어떻게 가능하지?"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_033",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 모종의 이유로 에블라 입자 농도가 옅어지면서 발송 대기 중이던 문자가 보내진 듯하지만, 이는 개인적인 추측일 뿐 실제로는 거의 있을 수 없는 일이라고 답한다.",
+          "line_start": 145,
+          "line_end": 159,
+          "claim_line": 149,
+          "quote": "[MSG SENDER=\"엑시아\"]\n          내 말이 그 말임\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          모종의 이유로 에블라 입자 농도가 옅어지면서\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          발송 대기 중이던 문자가 어찌저찌 보내진 듯한데\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          이것도 걍 뇌피셜이고;\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          실제로는 거의 있을 수 없는 일임\n        [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 143,
+            "option_text": "그게 어떻게 가능하지?"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_034",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 핸드폰 배터리가 어떻게 지금까지 유지되고 있었는지 묻는다.",
+          "line_start": 161,
+          "line_end": 161,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"핸드폰 배터리는 어떻게 유지되고 있었던 거지?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 143,
+            "option_text": "핸드폰 배터리는 어떻게 유지되고 있었던 거지?"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_035",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 비와 모래에 닳아 작동할 상태가 아니던 핸드폰이 기적적으로 작동하고 있었던 것은 미스터리라며, 자신이 전달받자마자 고장 나 켜지지 않는다고 답한다.",
+          "line_start": 162,
+          "line_end": 176,
+          "claim_line": 166,
+          "quote": "[MSG SENDER=\"엑시아\"]\n          그게 미스터리임 ㅇㅇ\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          애초에 저 깡통 폰은 비랑 모래에 닳을 대로 닳아서\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          배터리고 뭐고 제대로 작동할 상태도 아니었는데\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          어떻게 기적적으로 작동하고 있었던 거\n        [MSG_END]\n        [MSG SENDER=\"엑시아\"]\n          실제로 내가 전달받자마자 맛이 가서는 안 돌아오고 있음\n        [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 143,
+            "option_text": "핸드폰 배터리는 어떻게 유지되고 있었던 거지?"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_036",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 핸드폰에 관해 더 알아보겠지만 별 기대는 하지 말라며, 그냥 귀신이 들렸다고 생각하는 편이 빠를 것 같다고 말한다.",
+          "line_start": 180,
+          "line_end": 188,
+          "claim_line": 181,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    암튼 이 부분에 관해서는 나도 더 알아보긴 할 거지만\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    별 기대는 하지 마셈 ㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    걍 귀신 들렸다고 생각하는 편이 빠를 듯\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__eac_037",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 제이드의 핸드폰에 얽힌 사연이 무서운 이야기라고 평한다.",
+          "line_start": 191,
+          "line_end": 192,
+          "claim_line": 191,
+          "quote": "[OPTION TEXT=\"무서운 이야기네\"]\n      [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 190,
+            "option_text": "무서운 이야기네"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_038",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 제이드의 핸드폰에 얽힌 사연이 안타까운 이야기라고 평한다.",
+          "line_start": 193,
+          "line_end": 194,
+          "claim_line": 193,
+          "quote": "[OPTION TEXT=\"안타까운 이야기네\"]\n      [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 190,
+            "option_text": "안타까운 이야기네"
+          }
+        },
+        {
+          "item_id": "든_셀_00__eac_039",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "엑시아",
+          "summary": "엑시아가 지휘관의 말에 동의하며 너무 깊이 생각하지 말고 신기한 경험을 했다고 치라며 인사를 건네고 대화를 마친다.",
+          "line_start": 197,
+          "line_end": 208,
+          "claim_line": null,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    ㅇㅇ\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    그래도 너무 깊이 생각은 ㄴㄴ\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    걍 신기한 경험 했다고 치셈\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    그럼 ㅅㄱㅇ\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "든_셀_00__clh_001",
+          "keyword": "GJF 30.55",
+          "category": "code_or_number",
+          "subject": null,
+          "detail": "제이드의 핸드폰 문자 전송 내역에 반복해 기록된 구조 및 지원 요청 좌표다.",
+          "line_start": 58,
+          "line_end": 63,
+          "quote": "제이드[ACTION]: 구조를 요청한다\n제이드[ACTION]: 좌표는\n제이드[ACTION]: GJF 30.55\n제이드[ACTION]: 속히 지원 바란다\n제이드[ACTION]: 반복한다\n제이드[ACTION]: GJF 30.55",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__clh_002",
+          "keyword": "핸드폰",
+          "category": "item",
+          "subject": null,
+          "detail": "1차 침공기 격전지에서 발견된 희미하게 빛을 내는 휴대용 기기로, 최소 반세기 혹은 그 이전 모델로 보이는 오래된 핸드폰이다.",
+          "line_start": 42,
+          "line_end": 46,
+          "quote": "라피: ···지휘관. 여기 뭔가 있습니다.\n라피는 희미하게 빛을 내는 휴대용 기기를 건네 주었다.\n네온: 핸드폰이네요. 그것도 엄청 오래 된.\n아니스: 와. 저게 대체 언제적 모델이야.\n아니스: 최소 반 세기, 혹은 그 이전 것 같은데?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__clh_003",
+          "keyword": "에블라 입자",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "1차 침공기 당시 에블라 입자로 인해 아군 간 통신이 두절되자 고립된 군인들이 개인 핸드폰으로 구조 문자를 보내기도 했다.",
+          "line_start": 124,
+          "line_end": 135,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    그 당시에 에블라 입자 때문에 통신이고 뭐고\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    아군 간에 아무런 소통도 안 돼서\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    고립된 군인들이 뭐라도 얻어 걸리라는 마음으로\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    자기 폰으로 구조 문자를 보내기도 했다는데\n  [MSG_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "든_셀_00__rln_001",
+          "subject": "든?셀",
+          "target": "제이드",
+          "relation_or_change": "아니스가 보낸 문자의 개수·좌표와 지휘관의 수신 번호가 일치한다는 점을 들어, 지휘관이 받은 깨진 문자(든?셀)가 제이드의 핸드폰에서 전송된 문자라고 추론한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "아니스",
+          "line_start": 68,
+          "line_end": 70,
+          "claim_line": 69,
+          "quote": "아니스: 바보야. 전송 과정에서 글자가 깨진 거겠지.\n아니스: 잘 보면 보낸 문자의 개수나 좌표가 일치하잖아.\n아니스: 뭣보다 수신 번호가 지휘관 거랑 같고···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "든_셀_00__rln_002",
+          "subject": "제이드",
+          "target": "제이드 한슨",
+          "relation_or_change": "엑시아가 고물 핸드폰의 주인(제이드)이 1차 침공기 말에 복무한 군인 '제이드 한슨'이라고 밝힌다.",
+          "epistemic_type": "character_claim",
+          "claimant": "엑시아",
+          "line_start": 100,
+          "line_end": 105,
+          "claim_line": 101,
+          "quote": "[MSG SENDER=\"엑시아\"]\n    일단 핸드폰의 주인은 [제이드 한슨]이란 사람인데\n  [MSG_END]\n  [MSG SENDER=\"엑시아\"]\n    1차 침공기 말에 복무한 군인이라고 함\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "든_셀_00__uec_001",
+          "surface_text": "1차 침공기",
+          "suggested_type": "event",
+          "line_start": 39
+        },
+        {
+          "item_id": "든_셀_00__uec_002",
+          "surface_text": "핸드폰",
+          "suggested_type": "item",
+          "line_start": 44
+        },
+        {
+          "item_id": "든_셀_00__uec_003",
+          "surface_text": "프로토콜",
+          "suggested_type": "squad",
+          "line_start": 76
+        },
+        {
+          "item_id": "든_셀_00__uec_004",
+          "surface_text": "제이드 한슨",
+          "suggested_type": "character",
+          "line_start": 101
+        },
+        {
+          "item_id": "든_셀_00__uec_005",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 113
+        },
+        {
+          "item_id": "든_셀_00__uec_006",
+          "surface_text": "에블라 입자",
+          "suggested_type": "concept",
+          "line_start": 125
+        }
+      ]
+    }
+  ]
+}

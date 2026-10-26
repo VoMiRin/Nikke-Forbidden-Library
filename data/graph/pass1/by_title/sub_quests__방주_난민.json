@@ -1,0 +1,3110 @@
+{
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-26T09:40:03.754Z",
+  "title_id": "sub_quests__방주_난민",
+  "category": "sub_quests",
+  "title": "방주 난민",
+  "source_file": "public/scripts/sub_quests/방주_난민.txt",
+  "scene_count": 4,
+  "scenes": [
+    {
+      "scene_id": "방주_난민_00",
+      "title_id": "sub_quests__방주_난민",
+      "category": "sub_quests",
+      "source_file": "public/scripts/sub_quests/방주_난민.txt",
+      "source_sha256": "a6af511befcfc6ae7af4841abf9818457913dd7601f964415eaa78155e82592e",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "부모님에게서 넘어온 막대한 빚과 고된 노동에서 벗어나기 위해 지상으로 피난 가려는 방주 난민이 지휘관에게 호위를 의뢰하고, 지휘관과 라피, 아니스, 네온이 랩쳐 무리를 돌파해 방주 근처의 버려진 벙커까지 데려다주자 난민은 그곳에 정착해 방주에 있을 때보다 행복하다고 연락해 온다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "방주_난민_00__pis_001",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_00__pis_002",
+            "speaker_label": "방주 난민",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "방주_난민_00__pis_003",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_00__pis_004",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_00__pis_005",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "방주_난민_00__mnt_001",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 80,
+            "line_end": 82,
+            "quote": "        [MSG SENDER=\"방주 난민\"]\n            뇌 기증해서 니케가 되는거? ㅋㅋㅋㅋㅋ\n        [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": {
+              "choice_line": 64,
+              "option_text": "다른 도피처는 없어?"
+            }
+          },
+          {
+            "item_id": "방주_난민_00__mnt_002",
+            "surface_text": "FDK 19.88",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 89,
+            "line_end": 91,
+            "quote": "  [MSG SENDER=\"방주 난민\"]\n    FDK 19.88\n  [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_00__mnt_003",
+            "surface_text": "콜렉터들",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 92,
+            "line_end": 94,
+            "quote": "  [MSG SENDER=\"방주 난민\"]\n    콜렉터들 말로는 이 좌표에\n  [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_00__mnt_004",
+            "surface_text": "벙커",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 101,
+            "line_end": 103,
+            "quote": "  [MSG SENDER=\"방주 난민\"]\n    적당한 벙커에 떨구고 갈 길 가시면 돼요\n  [MSG_END]",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_00__mnt_005",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 110,
+            "line_end": 110,
+            "quote": "아니스: 방주에 사는 게 힘들어서, 지상으로 도망치게 해 달라니.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_00__mnt_006",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 139,
+            "line_end": 139,
+            "quote": "라피: 경로를 랩쳐 무리가 막고 있습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "방주_난민_00__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "아니스: 지휘관님. 정말 이 의뢰, 받을 거야?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__foa_002",
+          "from_speaker": "???",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 126,
+          "line_end": 126,
+          "quote": "???: 혹시 지휘관님이세요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [
+        {
+          "item_id": "방주_난민_00__unk_001",
+          "unknown_id": "unk_방주_난민_00_L0125",
+          "quote": "???: 저기···!",
+          "speaking_style": "조심스럽게 말을 거는 어조",
+          "target_addressed": "지휘관",
+          "contextual_clues": [
+            "합류 장소에서 지휘관 일행에게 다가와 말을 건다",
+            "직후 전에 연락했던 방주 난민이라고 밝힌다"
+          ],
+          "resolved_in_same_scene_to": {
+            "surface_text": "방주 난민",
+            "entity_id": null,
+            "line_start": 125,
+            "line_end": 132,
+            "quote": "???: 저기···!\n???: 혹시 지휘관님이세요?\n[CHOICE_START]\n  [OPTION TEXT=\"그래.\"]\n  [OPTION_END]\n[CHOICE_END]\n방주 난민: 아, 안녕하세요!\n방주 난민: 저 방주 난민이에요. 전에 연락드렸던. ···기억하시죠?",
+            "in_branch_option": null
+          },
+          "line": 125,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__unk_002",
+          "unknown_id": "unk_방주_난민_00_L0126",
+          "quote": "???: 혹시 지휘관님이세요?",
+          "speaking_style": "예의 바른 존댓말",
+          "target_addressed": "지휘관",
+          "contextual_clues": [
+            "상대가 지휘관인지 확인하며 직후 자신이 방주 난민이라고 밝힌다"
+          ],
+          "resolved_in_same_scene_to": {
+            "surface_text": "방주 난민",
+            "entity_id": null,
+            "line_start": 125,
+            "line_end": 132,
+            "quote": "???: 저기···!\n???: 혹시 지휘관님이세요?\n[CHOICE_START]\n  [OPTION TEXT=\"그래.\"]\n  [OPTION_END]\n[CHOICE_END]\n방주 난민: 아, 안녕하세요!\n방주 난민: 저 방주 난민이에요. 전에 연락드렸던. ···기억하시죠?",
+            "in_branch_option": null
+          },
+          "line": 126,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [
+        {
+          "item_id": "방주_난민_00__ssg_001",
+          "unknown_ids": [
+            "unk_방주_난민_00_L0125",
+            "unk_방주_난민_00_L0126"
+          ],
+          "confidence": "확인된 사실",
+          "reason": "연속해서 지휘관을 부르며 신원을 확인한 뒤 곧바로 자신이 방주 난민이라고 밝힌다."
+        }
+      ],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "방주_난민_00__chb_001",
+          "choice_line": 64,
+          "options": [
+            {
+              "item_id": "방주_난민_00__chb_001_opt_01",
+              "option_text": "지상은 너무 위험해",
+              "continuation_summary": "방주 난민은 괜찮다며 일하다 죽으나 나가서 죽으나 자신에게는 똑같다고 답한다."
+            },
+            {
+              "item_id": "방주_난민_00__chb_001_opt_02",
+              "option_text": "다른 도피처는 없어?",
+              "continuation_summary": "방주 난민은 뇌를 기증해서 니케가 되는 것 말고 뭐가 있겠냐며 그럴 바엔 차라리 지상에 가서 죽겠다고 답한다."
+            }
+          ]
+        },
+        {
+          "item_id": "방주_난민_00__chb_002",
+          "choice_line": 117,
+          "options": [
+            {
+              "item_id": "방주_난민_00__chb_002_opt_01",
+              "option_text": "때로는 백 마디 말보다 한번의 경험이 더 나으니까.",
+              "continuation_summary": "아니스는 혹시나 일이 잘못돼도 자신은 모른다고 선을 긋는다."
+            },
+            {
+              "item_id": "방주_난민_00__chb_002_opt_02",
+              "option_text": "거절한다고 해도 다른 방법을 찾을 것 같으니까.",
+              "continuation_summary": "아니스는 확실히 그럴 기세긴 했다며 수긍한다."
+            }
+          ]
+        },
+        {
+          "item_id": "방주_난민_00__chb_003",
+          "choice_line": 147,
+          "options": [
+            {
+              "item_id": "방주_난민_00__chb_003_opt_01",
+              "option_text": "유탄을 피하느라 뛰어 다녔으니까.",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "방주_난민_00__chb_003_opt_02",
+              "option_text": "랩쳐와의 교전은 처음일 테니까.",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "방주_난민_00__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 이 번호가 지휘관 번호가 맞는지 묻는다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    저기요 죄송한데\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    혹시 이 번호가 지휘관 번호 맞나요?\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신의 번호가 맞다고 답한다.",
+          "line_start": 9,
+          "line_end": 11,
+          "claim_line": 10,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    맞아\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 보수는 아쉽지 않게 챙겨줄 테니 자신을 지상에 데려다 줄 수 있는지 급히 부탁한다.",
+          "line_start": 12,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    아 ㅎㅎ;; 다행이다\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    급하게 부탁드릴 게 있어서 연락 드렸어요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    혹시 절 지상에 데려다 주실 수 있을까요?\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    보수는 아쉽지 않게 챙겨드릴게요\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 지상에는 왜 가려는지 묻는다.",
+          "line_start": 24,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    지상에는 왜 가려는 거지?\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 부모님 빚이 자신에게 넘어와 어린 나이에 사회에 나와 죽도록 일했지만 최근 확인해보니 십분의 일밖에 못 갚았다며, 늙어 병들 때까지 이렇게 사느니 빚쟁이들도 못 쫓아올 지상으로 피난 가려 한다고 설명한다.",
+          "line_start": 27,
+          "line_end": 62,
+          "claim_line": 40,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    그게\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    초면에 이런 TMI 괜찮나 싶긴 한데 ㅎㅎ;;\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    제가 빚이 좀 많아요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    제 잘못으로 진 빚은 아니고요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    부모님 빚인데 그게 어쩌다 보니 제 앞으로 넘어와서\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    어린 나이에 사회에 나와서 죽도록 일했거든요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    그런데 얼마 전에 보니까\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    고작 십분의 일 밖에 못 갚았더라고요?\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    이런 식으로 늙어 병들 때까지 사느니\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    차라리 지상에라도 피난갈까 싶어서요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    지상쯤 돼야 빚쟁이들도 못 쫓아올 거 아니에요 ㅎㅎ;\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지상은 너무 위험하다고 만류한다.",
+          "line_start": 65,
+          "line_end": 65,
+          "claim_line": 65,
+          "quote": "      [OPTION TEXT=\"지상은 너무 위험해\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 64,
+            "option_text": "지상은 너무 위험해"
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 괜찮다며 방주에서 일하다 죽으나 지상에 나가서 죽으나 자신에게는 똑같다고 답한다.",
+          "line_start": 66,
+          "line_end": 74,
+          "claim_line": 70,
+          "quote": "        [MSG SENDER=\"방주 난민\"]\n            괜찮아요\n        [MSG_END]\n        [MSG SENDER=\"방주 난민\"]\n            일하다 죽으나 나가서 죽으나\n        [MSG_END]\n        [MSG SENDER=\"방주 난민\"]\n            저한테는 똑같거든요\n        [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 64,
+            "option_text": "지상은 너무 위험해"
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지상 말고 다른 도피처는 없는지 묻는다.",
+          "line_start": 76,
+          "line_end": 76,
+          "claim_line": null,
+          "quote": "      [OPTION TEXT=\"다른 도피처는 없어?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 64,
+            "option_text": "다른 도피처는 없어?"
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 다른 도피처라야 뇌를 기증해서 니케가 되는 것뿐인데 그럴 바엔 차라리 지상에 가서 죽겠다고 답한다.",
+          "line_start": 77,
+          "line_end": 85,
+          "claim_line": 84,
+          "quote": "      [MSG SENDER=\"방주 난민\"]\n            글쎄요\n        [MSG_END]\n        [MSG SENDER=\"방주 난민\"]\n            뇌 기증해서 니케가 되는거? ㅋㅋㅋㅋㅋ\n        [MSG_END]\n        [MSG SENDER=\"방주 난민\"]\n            그럴 바엔 차라리 지상에 가서 죽을래요 ㅋ\n        [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 64,
+            "option_text": "다른 도피처는 없어?"
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 콜렉터들 말로는 좌표 FDK 19.88에 민간인도 보안 없이 나갈 수 있는 루트가 있다며, 거기서 합류한 뒤 적당한 벙커에 내려주고 갈 길을 가면 된다고 안내한다.",
+          "line_start": 89,
+          "line_end": 106,
+          "claim_line": 96,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    FDK 19.88\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    콜렉터들 말로는 이 좌표에\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    민간인도 보안 없이 나갈 수 있는 루트가 있대요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    일단 여기서 저랑 합류한 뒤에\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    적당한 벙커에 떨구고 갈 길 가시면 돼요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    그럼 기다리고 있을게요 ㅎㅎ\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 방주에 사는 게 힘들어 지상으로 도망치게 해 달라니 차라리 죽는 걸 도와 달라고 하는 셈이라며, 지휘관에게 정말 이 의뢰를 받을 거냐고 묻는다.",
+          "line_start": 108,
+          "line_end": 111,
+          "claim_line": 111,
+          "quote": "아니스: ··· ···.\n아니스: 지휘관님. 정말 이 의뢰, 받을 거야?\n아니스: 방주에 사는 게 힘들어서, 지상으로 도망치게 해 달라니.\n아니스: 차라리 그냥 죽는 걸 도와 달라고 해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 일단 방주 난민이 원하는 대로 해주고 싶다고 답한다.",
+          "line_start": 112,
+          "line_end": 115,
+          "claim_line": 113,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"일단 원하는 대로 해주고 싶어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 지휘관에게 대체 왜 원하는 대로 해주고 싶은 것인지 묻는다.",
+          "line_start": 116,
+          "line_end": 116,
+          "claim_line": null,
+          "quote": "아니스: ···그러니까 대체 왜?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 때로는 백 마디 말보다 한 번의 경험이 더 낫기 때문이라고 답한다.",
+          "line_start": 118,
+          "line_end": 118,
+          "claim_line": 118,
+          "quote": "  [OPTION TEXT=\"때로는 백 마디 말보다 한번의 경험이 더 나으니까.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 117,
+            "option_text": "때로는 백 마디 말보다 한번의 경험이 더 나으니까."
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 혹시나 일이 잘못돼도 자신은 모른다고 말한다.",
+          "line_start": 119,
+          "line_end": 119,
+          "claim_line": 119,
+          "quote": "    아니스: ···혹시나 일이 잘못 돼도 난 몰라.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 117,
+            "option_text": "때로는 백 마디 말보다 한번의 경험이 더 나으니까."
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 의뢰를 거절한다고 해도 방주 난민이 다른 방법을 찾을 것 같기 때문이라고 답한다.",
+          "line_start": 121,
+          "line_end": 121,
+          "claim_line": 121,
+          "quote": "  [OPTION TEXT=\"거절한다고 해도 다른 방법을 찾을 것 같으니까.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 117,
+            "option_text": "거절한다고 해도 다른 방법을 찾을 것 같으니까."
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 확실히 방주 난민이 다른 방법을 찾을 기세긴 했다고 수긍한다.",
+          "line_start": 122,
+          "line_end": 122,
+          "claim_line": 122,
+          "quote": "    아니스: 음, 확실히 그럴 기세긴 했지만···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 117,
+            "option_text": "거절한다고 해도 다른 방법을 찾을 것 같으니까."
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "???",
+          "summary": "미상 화자(???)가 다가와 지휘관이 맞는지 묻는다.",
+          "line_start": 125,
+          "line_end": 126,
+          "claim_line": null,
+          "quote": "???: 저기···!\n???: 혹시 지휘관님이세요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_019",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 미상 화자(???)에게 자신이 지휘관이 맞다고 답한다.",
+          "line_start": 127,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그래.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 전에 연락드렸던 방주 난민이라고 밝히며, 총과 비상 식량, 책과 캠핑 장비를 챙겼으니 안전한 거처인 벙커만 있으면 모든 게 완벽할 거라고 말하자 아니스와 네온은 말을 잇지 못한다.",
+          "line_start": 131,
+          "line_end": 137,
+          "claim_line": 134,
+          "quote": "방주 난민: 아, 안녕하세요!\n방주 난민: 저 방주 난민이에요. 전에 연락드렸던. ···기억하시죠?\n방주 난민: 저 벙커까지 데려다 주시기로 했잖아요.\n방주 난민: 저 총하고, 비상 식량하고, 혹시 몰라서 책이랑 캠핑 장비도 챙겼어요.\n방주 난민: 이제 안전한 거처만 있으면 모든 게 완벽할 거예요.\n아니스: ··· ···.\n네온: ··· ···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 폐쇄된 벙커라면 위치를 기억해 둔 곳이 있지만 경로를 랩쳐 무리가 막고 있다고 보고한다.",
+          "line_start": 138,
+          "line_end": 139,
+          "claim_line": 139,
+          "quote": "라피: ···폐쇄된 벙커라면 위치를 기억해둔 곳이 있습니다만.\n라피: 경로를 랩쳐 무리가 막고 있습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_022",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 경로를 막고 있는 랩쳐 무리를 돌파하자고 명령한다.",
+          "line_start": 140,
+          "line_end": 143,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"돌파하자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_023",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 돌파 명령에 알겠다고 답한다.",
+          "line_start": 144,
+          "line_end": 144,
+          "claim_line": null,
+          "quote": "라피: 라져.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "방주 난민이 거칠게 숨을 헐떡이자 아니스가 난민의 얼굴이 사색이 됐다고 말한다.",
+          "line_start": 145,
+          "line_end": 146,
+          "claim_line": 146,
+          "quote": "방주 난민: 헉, 헉···.\n아니스: 얼굴이 사색이 됐네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_025",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민이 유탄을 피하느라 뛰어다녀서 얼굴이 사색이 된 것이라고 말한다.",
+          "line_start": 148,
+          "line_end": 149,
+          "claim_line": 148,
+          "quote": "  [OPTION TEXT=\"유탄을 피하느라 뛰어 다녔으니까.\"]\n  [OPTION_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 147,
+            "option_text": "유탄을 피하느라 뛰어 다녔으니까."
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민이 랩쳐와의 교전을 처음 겪어 얼굴이 사색이 된 것이라고 추측한다.",
+          "line_start": 150,
+          "line_end": 151,
+          "claim_line": 150,
+          "quote": "  [OPTION TEXT=\"랩쳐와의 교전은 처음일 테니까.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 147,
+            "option_text": "랩쳐와의 교전은 처음일 테니까."
+          }
+        },
+        {
+          "item_id": "방주_난민_00__eac_027",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 숨을 헐떡이며 자신은 괜찮으니 어서 벙커로 가자고 재촉한다.",
+          "line_start": 153,
+          "line_end": 154,
+          "claim_line": 153,
+          "quote": "방주 난민: 저는, 헉, 괜찮, 아요···.\n방주 난민: 그러니까, 어서, 벙커로, 가요···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_028",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 방주 난민, 라피, 아니스, 네온",
+          "summary": "얼마 후 일행이 버려진 벙커 인근에 도착한다.",
+          "line_start": 155,
+          "line_end": 155,
+          "claim_line": null,
+          "quote": "···얼마 후, 버려진 벙커 인근.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 덕분에 무사히 새로운 집에 도착했다며 감사하고, 나름의 정착 계획이 있으니 못 미더우면 며칠 뒤에 다시 찾아와 보라고 말한다.",
+          "line_start": 156,
+          "line_end": 160,
+          "claim_line": 158,
+          "quote": "방주 난민: ···정말 고맙습니다.\n방주 난민: 덕분에 무사히 새로운 집에 도착할 수 있었어요.\n방주 난민: 다들 엄청 걱정하시는 것 같지만, 나름의 정착 계획도 있답니다.\n방주 난민: 못 미더우면 며칠 뒤에 다시 절 찾아와 보세요.\n방주 난민: 보란 듯이 아주 잘 살고 있을 테니까요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_030",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 며칠 뒤에 다시 찾아와 보겠다고 약속한다.",
+          "line_start": 161,
+          "line_end": 164,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그렇게 할게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_031",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 다시 한번 감사 인사를 건네고 들어가 벙커의 문이 굳게 닫힌다.",
+          "line_start": 165,
+          "line_end": 166,
+          "claim_line": null,
+          "quote": "방주 난민: 다시 한번 고마워요. 그럼 전 이만.\n벙커의 문이 굳게 닫혔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_032",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 잠시 침묵한 뒤 지휘관에게 언제 다시 체크하러 올 것인지 묻는다.",
+          "line_start": 167,
+          "line_end": 168,
+          "claim_line": null,
+          "quote": "아니스: ··· ···.\n아니스: 언제 다시 체크하러 올 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_033",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 가능한 한 빠른 시일 내에 다시 확인하러 오겠다고 답한다.",
+          "line_start": 169,
+          "line_end": 172,
+          "claim_line": 170,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"가능한 한 빠른 시일 내에.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_034",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 보수를 깜빡해 하마터면 떼먹을 뻔했다며, 마침 벙커 위치가 방주 근처라 느리게나마 통신이 터져 다행이라고 메시지를 보낸다.",
+          "line_start": 174,
+          "line_end": 185,
+          "claim_line": 181,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    그러고 보니 보수를 깜빡했네요!\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    하마터면 떼먹을 뻔했지 뭐예요 ㅎㅎ;;\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    마침 벙커 위치가 방주 근처라\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    느리게나마 통신이 터지는 게 다행이죠\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_035",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 잘 지내고 있는지 묻는다.",
+          "line_start": 186,
+          "line_end": 188,
+          "claim_line": null,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    잘 지내고 있어?\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_036",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 온 지 얼마 안 돼 밖으로 나가본 적도 없지만, 당장 벙커 문을 부수고 빚쟁이들이 들이닥칠까 걱정하지 않아도 되고 내일 아침에 회사에 안 나가도 되니 방주에 있을 때보다 행복하다고 답한다.",
+          "line_start": 189,
+          "line_end": 218,
+          "claim_line": 205,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    글쎄요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    여기 온지 정말 얼마 안 됐으니까\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    아직까진 밖으로 나가본 적도 없고\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    잘 모르겠어요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    하지만 확실한 건 지금 제가\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    방주에 있을 때보단 행복하다는 거예요 ㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    적어도 당장 이 벙커 문을 부수고\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    빚쟁이들이 들이닥칠까 걱정하진 않아도 되니까요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    그리고 또 한 가지 있어요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    내일 아침에 회사에 안 나가도 된다는 거 ㅋㅋㅋㅋ\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_037",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 내일 아침에 회사에 안 나가도 된다는 점은 조금 부럽다고 말한다.",
+          "line_start": 219,
+          "line_end": 221,
+          "claim_line": 220,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    그건 조금 부럽네\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__eac_038",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 벙커 내부에 청소할 게 많아 이만 들어가 봐야겠다며 다음에 또 얘기하자고 인사한다.",
+          "line_start": 222,
+          "line_end": 233,
+          "claim_line": 226,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    그렇죠? ㅎㅎ\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    그럼 전 벙커 내부에 청소할 게 좀 많아서\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    이만 들어가봐야 할 것 같네요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    다음에 다시 또 얘기해요 ㅋㅋ\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "방주_난민_00__clh_001",
+          "keyword": "FDK 19.88",
+          "category": "code_or_number",
+          "subject": null,
+          "detail": "콜렉터들 사이에서 민간인도 보안 없이 지상으로 나갈 수 있는 루트가 있다고 알려진 좌표.",
+          "line_start": 89,
+          "line_end": 97,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    FDK 19.88\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    콜렉터들 말로는 이 좌표에\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    민간인도 보안 없이 나갈 수 있는 루트가 있대요\n  [MSG_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "방주_난민_00__rln_001",
+          "subject": "방주 난민",
+          "target": "방주",
+          "relation_or_change": "방주 난민이 부모님에게서 넘어온 빚을 죽도록 일해도 십분의 일밖에 못 갚아, 늙어 병들 때까지 이렇게 사느니 빚쟁이들이 못 쫓아올 지상으로 피난 가려 한다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "방주 난민",
+          "line_start": 33,
+          "line_end": 62,
+          "claim_line": 58,
+          "quote": "  [MSG SENDER=\"방주 난민\"]\n    제가 빚이 좀 많아요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    제 잘못으로 진 빚은 아니고요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    부모님 빚인데 그게 어쩌다 보니 제 앞으로 넘어와서\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    어린 나이에 사회에 나와서 죽도록 일했거든요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    그런데 얼마 전에 보니까\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    고작 십분의 일 밖에 못 갚았더라고요?\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    이런 식으로 늙어 병들 때까지 사느니\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    차라리 지상에라도 피난갈까 싶어서요\n  [MSG_END]\n  [MSG SENDER=\"방주 난민\"]\n    지상쯤 돼야 빚쟁이들도 못 쫓아올 거 아니에요 ㅎㅎ;\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_00__rln_002",
+          "subject": "방주 난민",
+          "target": "방주",
+          "relation_or_change": "방주 난민이 새로운 집인 버려진 벙커에 도착해 나름의 정착 계획이 있다며 벙커 안으로 들어감",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 155,
+          "line_end": 166,
+          "claim_line": null,
+          "quote": "···얼마 후, 버려진 벙커 인근.\n방주 난민: ···정말 고맙습니다.\n방주 난민: 덕분에 무사히 새로운 집에 도착할 수 있었어요.\n방주 난민: 다들 엄청 걱정하시는 것 같지만, 나름의 정착 계획도 있답니다.\n방주 난민: 못 미더우면 며칠 뒤에 다시 절 찾아와 보세요.\n방주 난민: 보란 듯이 아주 잘 살고 있을 테니까요.\n[CHOICE_START]\n  [OPTION TEXT=\"그렇게 할게.\"]\n  [OPTION_END]\n[CHOICE_END]\n방주 난민: 다시 한번 고마워요. 그럼 전 이만.\n벙커의 문이 굳게 닫혔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "방주_난민_00__uec_001",
+          "surface_text": "FDK 19.88",
+          "suggested_type": "location",
+          "line_start": 90
+        },
+        {
+          "item_id": "방주_난민_00__uec_002",
+          "surface_text": "콜렉터들",
+          "suggested_type": "faction_or_species",
+          "line_start": 93
+        },
+        {
+          "item_id": "방주_난민_00__uec_003",
+          "surface_text": "벙커",
+          "suggested_type": "location",
+          "line_start": 102
+        }
+      ]
+    },
+    {
+      "scene_id": "방주_난민_01",
+      "title_id": "sub_quests__방주_난민",
+      "category": "sub_quests",
+      "source_file": "public/scripts/sub_quests/방주_난민.txt",
+      "source_sha256": "92e63c62565078b8bdd3219c900924a87ceb68410df6127e100cce1a2a470d3e",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "지상으로 이민 간 방주 난민이 벙커에 정착해 지휘관과 카운터스를 초대하고, 방주에서의 빚과 불법 이민 처벌 때문에 돌아갈 생각 없이 벙커 생활에 만족한다고 밝힌다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "방주_난민_01__pis_001",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_01__pis_002",
+            "speaker_label": "방주 난민",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "방주_난민_01__pis_003",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_01__pis_004",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_01__pis_005",
+            "speaker_label": "방주난민",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "방주_난민_01__pis_006",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "방주_난민_01__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 9,
+            "line_end": 11,
+            "quote": "제가 지상에 이민가고 싶다고 해서",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_01__mnt_002",
+            "surface_text": "벙커",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 12,
+            "line_end": 14,
+            "quote": "지휘관님이 저 벙커까지 데려다 주셨잖아요 ㅋㅋ",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_01__mnt_003",
+            "surface_text": "아크레인저",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 48,
+            "line_end": 50,
+            "quote": "아크레인저 최신화 블루레이랑",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_01__mnt_004",
+            "surface_text": "아크레인저 최신화 블루레이",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 48,
+            "line_end": 50,
+            "quote": "아크레인저 최신화 블루레이랑",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_01__mnt_005",
+            "surface_text": "배양육 캔",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 51,
+            "line_end": 53,
+            "quote": "배양육 캔 가능한 만큼 많이 가져와주시면",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_01__mnt_006",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 101,
+            "line_end": 102,
+            "quote": "방주 난민: 방주만큼 인프라가 잘 깔려 있진 않지만,\n방주 난민: 나름 있을 건 다 있어요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "방주_난민_01__foa_001",
+          "from_speaker": "방주 난민",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "안녕하세요 지휘관님!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__foa_002",
+          "from_speaker": "방주 난민",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "방주 난민: 지휘관님!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__foa_003",
+          "from_speaker": "지휘관",
+          "to_target": "방주 난민",
+          "address_term": "네",
+          "line_start": 202,
+          "line_end": 202,
+          "quote": "[OPTION TEXT=\"네가 선택한 길을 응원할게\"]",
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 193,
+            "option_text": "네가 선택한 길을 응원할게"
+          }
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "방주_난민_01__chb_001",
+          "choice_line": 58,
+          "options": [
+            {
+              "item_id": "방주_난민_01__chb_001_opt_01",
+              "option_text": "요구사항이 많네",
+              "continuation_summary": "방주 난민이 미안해하면서도 기왕 올 때 부탁하면 좋아서 그랬다고 답한다."
+            },
+            {
+              "item_id": "방주_난민_01__chb_001_opt_02",
+              "option_text": "ㅇㅋ",
+              "continuation_summary": "방주 난민이 흔쾌히 허락해 줘서 정말 고맙다고 답한다."
+            }
+          ]
+        },
+        {
+          "item_id": "방주_난민_01__chb_002",
+          "choice_line": 103,
+          "options": [
+            {
+              "item_id": "방주_난민_01__chb_002_opt_01",
+              "option_text": "안에만 갇혀 있는 게 답답하진 않아?",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "방주_난민_01__chb_002_opt_02",
+              "option_text": "혼자 지내는 게 쓸쓸하진 않아?",
+              "continuation_summary": null
+            }
+          ]
+        },
+        {
+          "item_id": "방주_난민_01__chb_003",
+          "choice_line": 119,
+          "options": [
+            {
+              "item_id": "방주_난민_01__chb_003_opt_01",
+              "option_text": "긍정적이군.",
+              "continuation_summary": "방주난민이 직전까지의 상황이 너무 부정적이었기 때문이라고 답한다."
+            },
+            {
+              "item_id": "방주_난민_01__chb_003_opt_02",
+              "option_text": "놀라운 적응력이군.",
+              "continuation_summary": "방주 난민이 좋고 싫은 것은 상대적인 것이기 때문이라고 답한다."
+            }
+          ]
+        },
+        {
+          "item_id": "방주_난민_01__chb_004",
+          "choice_line": 193,
+          "options": [
+            {
+              "item_id": "방주_난민_01__chb_004_opt_01",
+              "option_text": "그래도 만에 하나 돌아가고 싶다면 도와줄게",
+              "continuation_summary": "방주 난민이 고마워하며 지금은 마음만 받겠다고 답한다."
+            },
+            {
+              "item_id": "방주_난민_01__chb_004_opt_02",
+              "option_text": "네가 선택한 길을 응원할게",
+              "continuation_summary": "방주 난민이 고마워하며 지휘관의 성격이 정말 좋다고 칭찬한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "방주_난민_01__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관에게 인사하며, 자신이 지상에 이민 가고 싶다고 해서 지휘관이 벙커까지 데려다주었음을 상기시킨다.",
+          "line_start": 3,
+          "line_end": 14,
+          "claim_line": 13,
+          "quote": "안녕하세요 지휘관님! 저 기억하세요? 제가 지상에 이민가고 싶다고 해서 지휘관님이 저 벙커까지 데려다 주셨잖아요 ㅋㅋ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 벙커에서의 생활이 어떤지 묻는다.",
+          "line_start": 15,
+          "line_end": 17,
+          "claim_line": null,
+          "quote": "그곳에서의 생활은 어때?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 벙커 안에 소파, 침대, 부엌과 빗물 정화 시설이 있어 샤워도 할 수 있다며 생각보다 생활이 나쁘지 않다고 말한다.",
+          "line_start": 18,
+          "line_end": 35,
+          "claim_line": 22,
+          "quote": "음 생각보다 나쁘지 않아요 안에 소파랑 침대랑 부엌이랑 있을 건 다 있거든요 빗물을 정화하는 시설이 있어서 탱크에 물이 모이면 샤워도 할 수 있고요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관에게 시간 되면 한번 놀러 오라고 초대한다.",
+          "line_start": 36,
+          "line_end": 41,
+          "claim_line": null,
+          "quote": "혹시 시간 되면 한번 놀러 오실래요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민의 초대에 응한다.",
+          "line_start": 42,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "그럴게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관에게 올 때 아크레인저 최신화 블루레이와 배양육 캔을 가능한 만큼 많이 가져와 달라고 부탁한다.",
+          "line_start": 45,
+          "line_end": 56,
+          "claim_line": null,
+          "quote": "아 그리고 오실 때 아크레인저 최신화 블루레이랑 배양육 캔 가능한 만큼 많이 가져와주시면 좋을 것 같아요 ㅋㅋㅋㅋㅋㅋㅋ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 요구사항이 많다고 말한다.",
+          "line_start": 59,
+          "line_end": 59,
+          "claim_line": 59,
+          "quote": "[OPTION TEXT=\"요구사항이 많네\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 58,
+            "option_text": "요구사항이 많네"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 요구사항이 많다는 지휘관의 말에 사과하면서도 기왕 올 때 부탁하면 좋아서 그랬다고 말한다.",
+          "line_start": 60,
+          "line_end": 65,
+          "claim_line": 64,
+          "quote": "미안해요 ㅎㅎ;; 그래도 기왕 오실 때 부탁하면 좋으니까요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 58,
+            "option_text": "요구사항이 많네"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민의 물품 배달 부탁을 흔쾌히 수락한다.",
+          "line_start": 67,
+          "line_end": 67,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"ㅇㅋ\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 58,
+            "option_text": "ㅇㅋ"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관이 부탁을 흔쾌히 허락해 주어 정말 고맙다고 말한다.",
+          "line_start": 68,
+          "line_end": 76,
+          "claim_line": 75,
+          "quote": "헉 완전 흔쾌히 허락해 주시네요 ㅋㅋㅋ 고마워요 진짜로",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 58,
+            "option_text": "ㅇㅋ"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 벙커 앞에서 만나자며 기다리겠다고 한다.",
+          "line_start": 80,
+          "line_end": 88,
+          "claim_line": null,
+          "quote": "그럼 벙커 앞에서 만나요 위치는 기억하고 계시죠? 기다리고 있을게요~!! ㅋㅋㅋ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 벙커 앞에서 지휘관 일행을 부르며 맞이한다.",
+          "line_start": 90,
+          "line_end": 91,
+          "claim_line": null,
+          "quote": "방주 난민: 지휘관님!\n방주 난민: 여기에요! 여-기-!!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 방주 난민이 용케 지금까지 살아 있다고 말한다.",
+          "line_start": 92,
+          "line_end": 92,
+          "claim_line": 92,
+          "quote": "아니스: 저 민간인 용케 지금까지 살아 있네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 방주 난민의 얼굴이 더 반질반질해졌다고 덧붙인다.",
+          "line_start": 93,
+          "line_end": 93,
+          "claim_line": 93,
+          "quote": "네온: 얼굴도 더 반질반질해졌고요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 방주 난민이 의외로 정착에 성공한 것 아니냐고 말한다.",
+          "line_start": 94,
+          "line_end": 94,
+          "claim_line": 94,
+          "quote": "아니스: ··· ···. 이거 의외로 정착 성공인 거 아냐?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 일행에게 일단 벙커로 들어가자고 제안한다.",
+          "line_start": 96,
+          "line_end": 96,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"일단 벙커로 들어가자.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 벙커가 조금 낡고 방주만큼 인프라가 잘 깔려 있진 않지만 있을 건 다 있는 사람 사는 곳 같다고 소개한다.",
+          "line_start": 99,
+          "line_end": 102,
+          "claim_line": 102,
+          "quote": "방주 난민: 어때요?\n방주 난민: 조금 낡았지만 그래도 사람 사는 곳 같죠?\n방주 난민: 방주만큼 인프라가 잘 깔려 있진 않지만,\n방주 난민: 나름 있을 건 다 있어요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 벙커 안에만 갇혀 있는 게 답답하지 않은지 묻는다.",
+          "line_start": 104,
+          "line_end": 104,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"안에만 갇혀 있는 게 답답하진 않아?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 103,
+            "option_text": "안에만 갇혀 있는 게 답답하진 않아?"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_019",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 혼자 지내는 게 쓸쓸하지 않은지 묻는다.",
+          "line_start": 106,
+          "line_end": 106,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"혼자 지내는 게 쓸쓸하진 않아?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 103,
+            "option_text": "혼자 지내는 게 쓸쓸하진 않아?"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 이곳을 자신만의 작은 사회로 여기며 시나 소설 쓰기에 도전하고 있고, 가끔 통신으로 지휘관 같은 사람들과 소통할 수 있어 아직은 단점보다 장점이 더 크다고 답한다.",
+          "line_start": 109,
+          "line_end": 118,
+          "claim_line": 113,
+          "quote": "방주 난민: 네, 뭐. 아직까지는요.\n방주 난민: 저만의 작은 사회라고 생각하면 괜찮아요.\n방주 난민: 자주 시나 소설을 써보고 싶다는 생각을 했는데\n방주 난민: 여기 와서 실제로 도전해 보고 있기도 하고요.\n방주 난민: 아직까진 단점보다 장점이 더 크게 느껴지는 것 같아요.\n방주 난민: ··· ···.\n방주 난민: 그리고 또, 가끔씩은 통신이 되잖아요?\n방주 난민: 그럴 때 지휘관님 같은 분들과 연락을 나누면서\n방주 난민: 사람 간에 소통할 수도 있으니까.\n방주 난민: 그렇게까지 최악의 상황은 아니에요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 긍정적이라고 평가한다.",
+          "line_start": 120,
+          "line_end": 120,
+          "claim_line": 120,
+          "quote": "[OPTION TEXT=\"긍정적이군.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 119,
+            "option_text": "긍정적이군."
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주난민",
+          "summary": "방주난민이 긍정적이라는 지휘관의 말에 직전까지의 상황이 너무 부정적이었기 때문이라고 답한다.",
+          "line_start": 121,
+          "line_end": 121,
+          "claim_line": 121,
+          "quote": "방주난민: 직전까지의 상황이 너무 부정적이었으니까요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 119,
+            "option_text": "긍정적이군."
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 놀라운 적응력이라고 평가한다.",
+          "line_start": 123,
+          "line_end": 123,
+          "claim_line": 123,
+          "quote": "[OPTION TEXT=\"놀라운 적응력이군.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 119,
+            "option_text": "놀라운 적응력이군."
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 놀라운 적응력이라는 지휘관의 말에 좋고 싫은 것은 상대적인 것이기 때문이라고 답한다.",
+          "line_start": 124,
+          "line_end": 124,
+          "claim_line": 124,
+          "quote": "방주 난민: 그야 좋고 싫은 건 상대적인 거니까요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 119,
+            "option_text": "놀라운 적응력이군."
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_025",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 방주에서 겪어야 했던 일들을 생각하면 벙커에서 겪는 고생은 아무것도 아니라고 말하자 라피와 네온이 침묵한다.",
+          "line_start": 127,
+          "line_end": 130,
+          "claim_line": 128,
+          "quote": "방주 난민: 제가 방주에서 겪어야 했던 일들을 생각하면\n방주 난민: 여기서 겪는 고생은 아무것도 아니에요. 정말로.\n라피: ··· ···.\n네온: ··· ···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 불구덩이라도 본인이 좋다면 좋은 거긴 하다고 말한다.",
+          "line_start": 131,
+          "line_end": 132,
+          "claim_line": 132,
+          "quote": "아니스: 으으음.\n아니스: 사실 불구덩이라도 본인이 좋다면 좋은 거긴 해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_027",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 그래도 아직은 방주 난민을 조금 더 지켜보자고 말한다.",
+          "line_start": 133,
+          "line_end": 133,
+          "claim_line": 133,
+          "quote": "라피: 그래도 아직은··· 조금 더 지켜보자.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_028",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 놀러 와 준 것에 감사하며 블루레이와 배양육 캔 배달에 대한 보답을 건네고, 직접 사람을 보고 얘기하니 좋았다고 말한다.",
+          "line_start": 135,
+          "line_end": 149,
+          "claim_line": 148,
+          "quote": "오늘은 놀러 와줘서 고마웠어요! 이건 배달해 주신 블루레이랑 배양육 캔에 대한 제 소소한 보답이에요 ㅎㅎ 아직 이민 온지 얼마 안 되긴 했지만 그래도 사람을 직접 보고 얘기하니까 좋긴 좋더라고요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신도 즐거웠다고 답한다.",
+          "line_start": 150,
+          "line_end": 152,
+          "claim_line": 151,
+          "quote": "나도 즐거웠어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_030",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 자신은 늘 한가하니 다음에도 시간 될 때마다 놀러 와 달라고 청한다.",
+          "line_start": 153,
+          "line_end": 164,
+          "claim_line": null,
+          "quote": "ㅎㅎㅎ 다음에도 시간 될 때마다 놀러와 주세요 저야 뭐 아시다시피 늘 한가하니까요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_031",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 다시 방주로 돌아가고 싶지는 않은지 묻는다.",
+          "line_start": 165,
+          "line_end": 167,
+          "claim_line": null,
+          "quote": "다시 돌아가고 싶진 않아?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_032",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 돌아가 봤자 빚과 불법 지상 이탈에 대한 징역과 벌금만 기다리고 있을 것이라며, 돌아갈 길도 없고 돌아가고 싶은 생각도 없다고 답한다.",
+          "line_start": 168,
+          "line_end": 191,
+          "claim_line": 187,
+          "quote": "음 글쎄요 돌아가봤자 기다리고 있는 건 빚이랑 지상에 불법으로 나간 것에 대한 징역과 벌금 뭐 이런 거 아닐까요? 어차피 돌아갈 수 있는 길은 없어요 그러고 싶은 생각도 없고요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_01__eac_033",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 만에 하나 돌아가고 싶다면 도와주겠다고 제안한다.",
+          "line_start": 194,
+          "line_end": 194,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"그래도 만에 하나 돌아가고 싶다면 도와줄게\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 193,
+            "option_text": "그래도 만에 하나 돌아가고 싶다면 도와줄게"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_034",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 돌아가고 싶다면 도와주겠다는 지휘관에게 고마워하며 지금은 마음만 받겠다고 답한다.",
+          "line_start": 195,
+          "line_end": 200,
+          "claim_line": 199,
+          "quote": "고마워요 지금은 마음만 받을게요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 193,
+            "option_text": "그래도 만에 하나 돌아가고 싶다면 도와줄게"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_035",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민이 선택한 길을 응원하겠다고 말한다.",
+          "line_start": 202,
+          "line_end": 202,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"네가 선택한 길을 응원할게\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 193,
+            "option_text": "네가 선택한 길을 응원할게"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_036",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 응원하겠다는 지휘관에게 고마워하며 성격이 진짜 좋다고 말한다.",
+          "line_start": 203,
+          "line_end": 208,
+          "claim_line": 207,
+          "quote": "ㅋㅋㅋ 고마워요 성격 진짜 좋으시네요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 193,
+            "option_text": "네가 선택한 길을 응원할게"
+          }
+        },
+        {
+          "item_id": "방주_난민_01__eac_037",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관 같은 사람을 알게 되어 정말 다행이라며 다음에 만날 때까지 건강하라고 인사한다.",
+          "line_start": 212,
+          "line_end": 226,
+          "claim_line": 219,
+          "quote": "ㅎㅎ 지휘관님 같은 분이랑 알게 돼서 정말 다행인 것 같아요 그럼 다음에 뵐 때까지 건강하셔야 해요! ^^",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "방주_난민_01__rln_001",
+          "subject": "방주 난민",
+          "target": "방주난민",
+          "relation_or_change": "동일 인물의 띄어쓰기 다른 화자 라벨 표기",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 118,
+          "line_end": 121,
+          "claim_line": null,
+          "quote": "방주 난민: 그렇게까지 최악의 상황은 아니에요.\n[CHOICE_START]\n    [OPTION TEXT=\"긍정적이군.\"]\n        방주난민: 직전까지의 상황이 너무 부정적이었으니까요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 119,
+            "option_text": "긍정적이군."
+          }
+        },
+        {
+          "item_id": "방주_난민_01__rln_002",
+          "subject": "방주 난민",
+          "target": "지휘관",
+          "relation_or_change": "지휘관 같은 사람을 알게 되어 정말 다행이라며 호감과 신뢰를 표함",
+          "epistemic_type": "character_claim",
+          "claimant": "방주 난민",
+          "line_start": 215,
+          "line_end": 220,
+          "claim_line": 219,
+          "quote": "지휘관님 같은 분이랑 알게 돼서 정말 다행인 것 같아요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "방주_난민_01__uec_001",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 10
+        },
+        {
+          "item_id": "방주_난민_01__uec_002",
+          "surface_text": "벙커",
+          "suggested_type": "location",
+          "line_start": 13
+        },
+        {
+          "item_id": "방주_난민_01__uec_003",
+          "surface_text": "아크레인저",
+          "suggested_type": "concept",
+          "line_start": 49
+        },
+        {
+          "item_id": "방주_난민_01__uec_004",
+          "surface_text": "아크레인저 최신화 블루레이",
+          "suggested_type": "item",
+          "line_start": 49
+        },
+        {
+          "item_id": "방주_난민_01__uec_005",
+          "surface_text": "배양육 캔",
+          "suggested_type": "item",
+          "line_start": 52
+        },
+        {
+          "item_id": "방주_난민_01__uec_006",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 101
+        }
+      ]
+    },
+    {
+      "scene_id": "방주_난민_02",
+      "title_id": "sub_quests__방주_난민",
+      "category": "sub_quests",
+      "source_file": "public/scripts/sub_quests/방주_난민.txt",
+      "source_sha256": "27b5ffe4517ba5ca8665d8f3e59cf41602ebc50b45b7be81be163b32226cf385",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "벙커 생활에 심심함과 고독을 느낀 방주 난민이 지휘관과 카운터스를 다시 초대해 글쓰기와 요리 등 근황을 나누고, 몇십억 크레디트의 빚과 압류 때문에 방주로 돌아갈 수 없는 처지를 털어놓는다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "방주_난민_02__pis_001",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_02__pis_002",
+            "speaker_label": "방주 난민",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "방주_난민_02__pis_003",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_02__pis_004",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_02__pis_005",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "방주_난민_02__mnt_001",
+            "surface_text": "벙커",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 47,
+            "line_end": 49,
+            "quote": "벙커 생활에도 그럭저럭 적응하고 나니까 이제",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_02__mnt_002",
+            "surface_text": "니케들",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 53,
+            "line_end": 55,
+            "quote": "전에 왔던 그 니케들도 같이 오면 좋겠네요",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_02__mnt_003",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 80,
+            "line_end": 81,
+            "quote": "아니스: 전에 걔가 지상 한복판에서 [여기에요-!! 여기!!] 하면서\n아니스: 고래고래 소리칠 땐 진짜 까무러치는 줄 알았다니까.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_02__mnt_004",
+            "surface_text": "아는 동생",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 124,
+            "line_end": 125,
+            "quote": "방주 난민: 얼마 전에 아는 동생하고 연락이 닿아서 문자를 좀 했는데\n방주 난민: 제 집이랑 가구랑 다 빚쟁이들한테 넘어갔다나 봐요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_02__mnt_005",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 143,
+            "line_end": 145,
+            "quote": "방주에는 무사히 돌아가셨나요?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "방주_난민_02__foa_001",
+          "from_speaker": "방주 난민",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "지휘관님",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__foa_002",
+          "from_speaker": "방주 난민",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 89,
+          "line_end": 89,
+          "quote": "방주 난민: 지휘관님··· 그리고 니케 분들.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__foa_003",
+          "from_speaker": "방주 난민",
+          "to_target": "라피, 아니스, 네온",
+          "address_term": "니케 분들",
+          "line_start": 89,
+          "line_end": 89,
+          "quote": "방주 난민: 지휘관님··· 그리고 니케 분들.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__foa_004",
+          "from_speaker": "방주 난민",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 140,
+          "line_end": 142,
+          "quote": "지휘관 지휘관님",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "방주_난민_02__chb_001",
+          "choice_line": 22,
+          "options": [
+            {
+              "item_id": "방주_난민_02__chb_001_opt_01",
+              "option_text": "임무가 몰아쳤어",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "방주_난민_02__chb_001_opt_02",
+              "option_text": "사적으로 일이 많았어",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "방주_난민_02__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관에게 전에 시간 나면 놀러 오라고 했는데 왜 오지 않느냐며 많이 바쁜 모양이라고 묻는다.",
+          "line_start": 3,
+          "line_end": 20,
+          "claim_line": 19,
+          "quote": "저기 지휘관님 전에 뵀을 때 시간 나면 한번 놀러 오시라고 했던 것 같은데 왜 안 오시나요 ㅎㅎㅎㅎ 많이 바쁘신가 봐요 ㅜㅜ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그동안 방문하지 못한 이유로 임무가 몰아쳤다고 답한다.",
+          "line_start": 23,
+          "line_end": 23,
+          "claim_line": 23,
+          "quote": "[OPTION TEXT=\"임무가 몰아쳤어\"]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 22,
+            "option_text": "임무가 몰아쳤어"
+          }
+        },
+        {
+          "item_id": "방주_난민_02__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그동안 방문하지 못한 이유로 사적으로 일이 많았다고 답한다.",
+          "line_start": 25,
+          "line_end": 25,
+          "claim_line": 25,
+          "quote": "[OPTION TEXT=\"사적으로 일이 많았어\"]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 22,
+            "option_text": "사적으로 일이 많았어"
+          }
+        },
+        {
+          "item_id": "방주_난민_02__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지난 만남 이후 시간이 꽤 지났다며 근처를 지나게 되면 한번 찾아와 달라고 청한다.",
+          "line_start": 29,
+          "line_end": 46,
+          "claim_line": null,
+          "quote": "아 그러셨군요 음 ㅜㅜ 그래도 그때로부터 시간이 꽤 지났는데 근처를 지나게 되면 한번 찾아와 주시면 안 될까요?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 벙커 생활에 적응하고 나니 너무 심심해졌고 전에 왔던 니케들도 또래 여자 친구들 같아 좋았다며 함께 오면 좋겠다고 말한다.",
+          "line_start": 47,
+          "line_end": 58,
+          "claim_line": 51,
+          "quote": "벙커 생활에도 그럭저럭 적응하고 나니까 이제 너무 심심해져서요 ㅋㅋㅋㅋㅋㅋ 전에 왔던 그 니케들도 같이 오면 좋겠네요 또래 여자 친구들 같아서 좋았거든요",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 다 같이 한번 찾아가겠다고 약속한다.",
+          "line_start": 59,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "다 같이 한번 찾아갈게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 고마워하며 깨끗하게 청소해 놓고 기다리겠다고 한다.",
+          "line_start": 62,
+          "line_end": 67,
+          "claim_line": null,
+          "quote": "고마워요 그럼 깨끗하게 청소해놓고 기다릴게요 ^^",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 방주 난민의 벙커가 분명 이 근처였는지 묻는다.",
+          "line_start": 69,
+          "line_end": 69,
+          "claim_line": null,
+          "quote": "네온: ···분명 이 근처였죠? 난민 씨네 벙커 말이에요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 벙커에 마지막으로 온 지 꽤 돼서 기억이 가물가물하다고 답한다.",
+          "line_start": 70,
+          "line_end": 71,
+          "claim_line": 71,
+          "quote": "아니스: 으음, 글쎄. 기억이 가물가물하네.\n아니스: 마지막으로 온 지도 꽤 돼서···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "깜빡이는 불빛이 보이자 지휘관이 손전등 불빛이라고 외친다.",
+          "line_start": 72,
+          "line_end": 75,
+          "claim_line": null,
+          "quote": "깜빡, 깜빡.\n[CHOICE_START]\n  [OPTION TEXT=\"손전등 불빛이다!\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "라피가 반응한 뒤 네온이 손전등 불빛이 자신들을 부르는 신호인가 보다고 말한다.",
+          "line_start": 77,
+          "line_end": 78,
+          "claim_line": 78,
+          "quote": "라피: !!\n네온: 우릴 부르는 신호인가 봐요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 전에 방주 난민이 지상 한복판에서 고래고래 소리칠 때는 까무러치는 줄 알았다며, 손전등 신호를 쓴 것이 맞다면 엄청 발전했다고 평가한다.",
+          "line_start": 79,
+          "line_end": 81,
+          "claim_line": 79,
+          "quote": "아니스: 방주 난민인가? 그렇다고 하면 엄청 발전했네.\n아니스: 전에 걔가 지상 한복판에서 [여기에요-!! 여기!!] 하면서\n아니스: 고래고래 소리칠 땐 진짜 까무러치는 줄 알았다니까.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민이 지상 생활에도 제법 적응한 모양이라고 말한다.",
+          "line_start": 83,
+          "line_end": 83,
+          "claim_line": 83,
+          "quote": "[OPTION TEXT=\"지상 생활에도 제법 적응한 모양이야.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 방주 난민이 적응한 만큼 잘 지내고 있으면 좋겠다고 말한다.",
+          "line_start": 86,
+          "line_end": 86,
+          "claim_line": 86,
+          "quote": "네온: 적응한 만큼 잘 지내고 있으면 좋을 텐데요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 잘 지내고 있으면 좋겠다는 네온의 말에 동의한다.",
+          "line_start": 87,
+          "line_end": 87,
+          "claim_line": 87,
+          "quote": "아니스: 그러게 말이야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "벙커 내부로 들어온 지휘관과 니케들에게 방주 난민이 정말 와 줄 줄은 몰랐다며 반긴다.",
+          "line_start": 88,
+          "line_end": 90,
+          "claim_line": null,
+          "quote": "···얼마 후, 벙커 내부.\n방주 난민: 지휘관님··· 그리고 니케 분들.\n방주 난민: 정말 와 주실 줄은 몰랐어요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 그동안 잘 지냈는지 묻는다.",
+          "line_start": 92,
+          "line_end": 92,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"그동안 잘 지냈어?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 잠깐 침묵한 뒤 물론 잘 지냈다며, 시 15편과 단편 소설 8권 등 벌써 20편 넘게 글을 썼다고 밝힌다.",
+          "line_start": 95,
+          "line_end": 99,
+          "claim_line": 99,
+          "quote": "방주 난민: ··· ···.\n방주 난민: 네, 네. 물론이죠.\n방주 난민: 전에 제가 시랑 소설을 써 보고 싶다고 했었죠?\n방주 난민: 벌써 20편 넘게 썼어요.\n방주 난민: 시 15편에 단편 소설 8권이요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민의 집필 분량에 대단하다고 감탄한다.",
+          "line_start": 101,
+          "line_end": 101,
+          "claim_line": 101,
+          "quote": "[OPTION TEXT=\"대단한데.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 읽어줄 사람은 없지만 취미는 자기만족이라고 말한다.",
+          "line_start": 104,
+          "line_end": 106,
+          "claim_line": 106,
+          "quote": "방주 난민: 그렇죠?\n방주 난민: 뭐 읽어줄 사람은 없지만···.\n방주 난민: 애초에 취미란 건 자기만족이니까요. 하하.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 글쓰기는 큰 인내심이 요구되는 일인데 외부의 압박 없이 그만큼 써낸 것은 대단하다고 칭찬한다.",
+          "line_start": 107,
+          "line_end": 108,
+          "claim_line": 108,
+          "quote": "라피: 글쓰기는 본래 큰 인내심이 요구되는 일이라고 들었습니다.\n라피: 외부의 압박도 없이 그만큼의 분량을 써낸 건 대단하군요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 라피의 칭찬에 고마워한 뒤, 벙커의 냉동식품으로 신이 나서 5인분쯤 요리를 만들었다가 밥 차려줄 가족이 없다는 걸 깨달았다고 털어놓자 아니스가 침묵한다.",
+          "line_start": 109,
+          "line_end": 116,
+          "claim_line": 114,
+          "quote": "방주 난민: ··· ···그런가요?\n방주 난민: 고마워요. 어쩌면 그런 칭찬을 듣고 싶었는지 모르겠네요.\n방주 난민: 참, 그리고 요리도 연구하기 시작했는데···.\n방주 난민: 다행히 벙커에 냉동 보관된 식품들이 좀 있더라고요.\n방주 난민: 신이 나서 한 5인분쯤 만들었는데.\n방주 난민: 생각해 보니가 밥 차려줄 가족이 없는 거 있죠.\n방주 난민: 정말 바보 같은 짓을 했지 뭐예요, 하하.\n아니스: ··· ···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_023",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 정말 괜찮은 것인지 묻는다.",
+          "line_start": 118,
+          "line_end": 118,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"정말 괜찮은 거야?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 자신도 잘 모르겠지만, 얼마 전 아는 동생에게 연락해 집과 가구가 다 빚쟁이들에게 넘어갔다는 소식을 들었다며 결국 여기 있을 수밖에 없다고 말한다.",
+          "line_start": 121,
+          "line_end": 129,
+          "claim_line": 125,
+          "quote": "방주 난민: 음···.\n방주 난민: 사실 저도 잘 모르겠어요.\n방주 난민: 하지만 안 괜찮으면 뭐 어쩌겠어요?\n방주 난민: 얼마 전에 아는 동생하고 연락이 닿아서 문자를 좀 했는데\n방주 난민: 제 집이랑 가구랑 다 빚쟁이들한테 넘어갔다나 봐요.\n방주 난민: 그동안은 조금이라도 이자랑 원금이랑 갚아 나가고 있었는데\n방주 난민: 그게 끊어지니까···.\n방주 난민: ··· ···.\n방주 난민: 다시 생각해도 역시 여기 있을 수밖에 없어요, 전.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신이 도울 방법은 없을지 묻는다.",
+          "line_start": 131,
+          "line_end": 131,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"내가 도울 방법은 없을까?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 몇십억 크레디트나 되는 돈을 지휘관에게 부탁할 염치는 없다며 가끔 찾아와 주는 것만으로 좋다고 답한다.",
+          "line_start": 134,
+          "line_end": 137,
+          "claim_line": 135,
+          "quote": "방주 난민: 말만으로도 고마워요.\n방주 난민: 하지만 몇십억 크레디트나 되는 돈을\n방주 난민: 지휘관님께 대뜸 부탁드릴 염치는 없잖아요.\n방주 난민: 그냥 가끔씩 이렇게 찾아와 주세요. 그걸로도 좋아요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관 일행이 해가 질 때까지 방주 난민과 이야기를 나누다 헤어진다.",
+          "line_start": 138,
+          "line_end": 138,
+          "claim_line": null,
+          "quote": "해가 질 때까지 방주 난민과 이야기를 나누다 헤어졌다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_028",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관에게 방주에 무사히 돌아갔는지 묻는다.",
+          "line_start": 140,
+          "line_end": 145,
+          "claim_line": null,
+          "quote": "지휘관 지휘관님 방주에는 무사히 돌아가셨나요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주에 무사히 돌아갔다고 답한다.",
+          "line_start": 143,
+          "line_end": 148,
+          "claim_line": 147,
+          "quote": "방주에는 무사히 돌아가셨나요? 그래",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_030",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 고마움의 선물을 보내며, 혼자 지내는 시간이 길어져 머리가 멍해지고 기억력이 떨어지며 하루의 절반 이상 우울한 상태를 겪고 있다고 고백한다.",
+          "line_start": 149,
+          "line_end": 184,
+          "claim_line": 174,
+          "quote": "ㅎㅎㅎ 지금 건 제가 너무 고마워서 드리는 선물이에요 사실 요즘 누구라도 좋으니까 사람이 보고 싶었거든요 그거 아세요? 사람이 혼자 지내는 시간이 너무 길어지다 보면 머리가 멍해지고 말이 잘 나오지 않게 돼요 기억력도 점점 더 떨어져서 방금 전까지 내가 뭘 하려 했는지도 잊어 버리고요 기분도 하루 중 절반 이상은 우울한 상태죠 저만 그런 게 아니라 혼자 사는 사람들은 대부분 그런 상태를 겪는다고 해요 그런 걸 보면 역시 인간은 사회적 동물인가 봐요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_031",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지금이라도 돌아가기에 늦지 않았다고 설득한다.",
+          "line_start": 185,
+          "line_end": 187,
+          "claim_line": 186,
+          "quote": "지금이라도 돌아가기엔 늦지 않았어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_032",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 우울한 건 금방 지나갈 것이고 취미에 집중하거나 새소리와 풀 냄새 같은 방주 사람들이 못 누릴 호사를 누릴 수 있다며 자신은 정말 괜찮다고 말한다.",
+          "line_start": 188,
+          "line_end": 220,
+          "claim_line": 216,
+          "quote": "아뇨 ㅎㅎ;; 괜찮아요 정말 우울한 건 잠시고 금방 지나갈 테니까요 오늘 하루종일 지휘관님께 찡찡거려서 그렇지 아직 여기 살면서 좋은 점들도 많아요 하루종일 취미 생활에만 집중할 수 있다는 점이나 가끔씩 벙커 밖으로 얼굴을 내밀면 들리는 새소리나 맑아지는 풀 냄새 같은 거요 그런 건 방주 사람들은 평생 가도 못 누릴 호사니까요 그러니까 저는 진짜 괜찮아요 진짜로요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__eac_033",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 생각이 바뀌면 언제든지 말하라고 당부한다.",
+          "line_start": 221,
+          "line_end": 223,
+          "claim_line": null,
+          "quote": "생각이 바뀌면 언제든지 말해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "방주_난민_02__rln_001",
+          "subject": "방주 난민",
+          "target": "라피",
+          "relation_or_change": "전에 방문했던 니케들이 또래 여자 친구들 같아서 좋았다며 호감을 표함",
+          "epistemic_type": "character_claim",
+          "claimant": "방주 난민",
+          "line_start": 53,
+          "line_end": 58,
+          "claim_line": 57,
+          "quote": "전에 왔던 그 니케들도 같이 오면 좋겠네요 또래 여자 친구들 같아서 좋았거든요",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__rln_002",
+          "subject": "방주 난민",
+          "target": "아니스",
+          "relation_or_change": "전에 방문했던 니케들이 또래 여자 친구들 같아서 좋았다며 호감을 표함",
+          "epistemic_type": "character_claim",
+          "claimant": "방주 난민",
+          "line_start": 53,
+          "line_end": 58,
+          "claim_line": 57,
+          "quote": "전에 왔던 그 니케들도 같이 오면 좋겠네요 또래 여자 친구들 같아서 좋았거든요",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_02__rln_003",
+          "subject": "방주 난민",
+          "target": "네온",
+          "relation_or_change": "전에 방문했던 니케들이 또래 여자 친구들 같아서 좋았다며 호감을 표함",
+          "epistemic_type": "character_claim",
+          "claimant": "방주 난민",
+          "line_start": 53,
+          "line_end": 58,
+          "claim_line": 57,
+          "quote": "전에 왔던 그 니케들도 같이 오면 좋겠네요 또래 여자 친구들 같아서 좋았거든요",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "방주_난민_02__uec_001",
+          "surface_text": "벙커",
+          "suggested_type": "location",
+          "line_start": 48
+        },
+        {
+          "item_id": "방주_난민_02__uec_002",
+          "surface_text": "니케들",
+          "suggested_type": "faction_or_species",
+          "line_start": 54
+        },
+        {
+          "item_id": "방주_난민_02__uec_003",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 80
+        },
+        {
+          "item_id": "방주_난민_02__uec_004",
+          "surface_text": "아는 동생",
+          "suggested_type": "character",
+          "line_start": 124
+        },
+        {
+          "item_id": "방주_난민_02__uec_005",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 144
+        }
+      ]
+    },
+    {
+      "scene_id": "방주_난민_03",
+      "title_id": "sub_quests__방주_난민",
+      "category": "sub_quests",
+      "source_file": "public/scripts/sub_quests/방주_난민.txt",
+      "source_sha256": "67e7be1f3eb2cc791beef159e63580ef910a959e047f824629d470ab56746b51",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "정체불명의 습격으로 벙커에서 탈출해 구조를 요청한 방주 난민을 찾아 지휘관과 카운터스가 수색에 나서지만 결국 시신을 발견해 묻어 주고, 이후 방주 난민이 생전에 설정해 둔 예약문자가 도착한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "방주_난민_03__pis_001",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_03__pis_002",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_03__pis_003",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "방주_난민_03__pis_004",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "방주_난민_03__rvo_001",
+            "speaker_label": "방주 난민",
+            "entity_id": null,
+            "medium": "messenger",
+            "line_start": 3,
+            "line_end": 11,
+            "quote": "안녕하세요 저 방주 난민이에요 기억하시죠? 저 지금 도망치는 중이에요"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "방주_난민_03__mnt_001",
+            "surface_text": "벙커",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 15,
+            "line_end": 17,
+            "quote": "벙커 문을 들이받으면서",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_03__mnt_002",
+            "surface_text": "아크 레인저",
+            "entity_id": null,
+            "entity_type": "concept",
+            "line_start": 64,
+            "line_end": 64,
+            "quote": "아니스: 아크 레인저 블루레이 DVD잖아?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_03__mnt_003",
+            "surface_text": "아크 레인저 블루레이 DVD",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 64,
+            "line_end": 64,
+            "quote": "아니스: 아크 레인저 블루레이 DVD잖아?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_03__mnt_004",
+            "surface_text": "다이어리",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 79,
+            "line_end": 80,
+            "quote": "라피는 너덜너덜해진 다이어리를 내밀었다.\n···안의 내용을 읽어 보았다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_03__mnt_005",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 104,
+            "line_end": 104,
+            "quote": "라피: 방주에는 따로 보고하지 않으실 겁니까?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_03__mnt_006",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 127,
+            "line_end": 129,
+            "quote": "저도 지상에 있어서 좋은 걸 하나라도 누려야 하잖아요 ㅋㅋ",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "방주_난민_03__mnt_007",
+            "surface_text": "랩쳐",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 130,
+            "line_end": 132,
+            "quote": "아무튼 그랬는데 갑자기 잔해에서 랩쳐가 툭 튀어나와서;",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "방주_난민_03__foa_001",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "아니스: 이거 지휘관님이 방주 난민한테 가져다준 거 아냐?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__foa_002",
+          "from_speaker": "네온",
+          "to_target": "지휘관",
+          "address_term": "스승님",
+          "line_start": 96,
+          "line_end": 96,
+          "quote": "네온: ···스승님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__foa_003",
+          "from_speaker": "방주 난민",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 172,
+          "line_end": 174,
+          "quote": "그래도 지금은 지휘관님이 있으니까",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "방주_난민_03__chb_001",
+          "choice_line": 28,
+          "options": [
+            {
+              "item_id": "방주_난민_03__chb_001_opt_01",
+              "option_text": "지금 바로 구하러 갈게",
+              "continuation_summary": "방주 난민이 울먹이며 자신이 지금 계속 도망치고 있는 중이라고 답한다."
+            },
+            {
+              "item_id": "방주_난민_03__chb_001_opt_02",
+              "option_text": "움직이지 말고 기다려",
+              "continuation_summary": "방주 난민이 언제 따라잡힐지 몰라 기다릴 수 없고 계속 움직여야 한다고 답한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "방주_난민_03__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 어제부터 밖에서 무언가가 계속 벙커 문을 들이받고 부수려 해 비상 통로로 나와 도망치는 중이라고 알린다.",
+          "line_start": 3,
+          "line_end": 26,
+          "claim_line": 25,
+          "quote": "안녕하세요 저 방주 난민이에요 기억하시죠? 저 지금 도망치는 중이에요 어제부터 밖에서 뭐가 계ㅅ고 벙커 문을 들이받으면서 안으로 부수고 들어오려고 해서요 부서지는거ㄷ소 시간문제일것 같아서 지금 비상 통로로 밖에 나왔어요",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지금 바로 구하러 가겠다고 답한다.",
+          "line_start": 29,
+          "line_end": 29,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"지금 바로 구하러 갈게\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 28,
+            "option_text": "지금 바로 구하러 갈게"
+          }
+        },
+        {
+          "item_id": "방주_난민_03__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 구하러 가겠다는 지휘관에게 자신이 계속 도망치고 있는 중이라고 다급히 알린다.",
+          "line_start": 30,
+          "line_end": 38,
+          "claim_line": 37,
+          "quote": "ㅁ네ㅜㅜ 그런데 제가 지금 계속 도망치고있는 중이로ㅐㅔㅓ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 28,
+            "option_text": "지금 바로 구하러 갈게"
+          }
+        },
+        {
+          "item_id": "방주_난민_03__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민에게 움직이지 말고 기다리라고 지시한다.",
+          "line_start": 40,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"움직이지 말고 기다려\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 28,
+            "option_text": "움직이지 말고 기다려"
+          }
+        },
+        {
+          "item_id": "방주_난민_03__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 언제 추격자에게 따라잡힐지 몰라 기다릴 수 없고 계속 움직여야 한다고 답한다.",
+          "line_start": 41,
+          "line_end": 49,
+          "claim_line": 42,
+          "quote": "죄송한데 제가 기다릴수가 없어요 언제 저거한테 따라잡힐지 몰라서 계속움직여야됏ㅐㅣ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 28,
+            "option_text": "움직이지 말고 기다려"
+          }
+        },
+        {
+          "item_id": "방주_난민_03__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 지휘관에게 자신을 따라와 달라고 구조를 요청한다.",
+          "line_start": 53,
+          "line_end": 58,
+          "claim_line": null,
+          "quote": "진짜 죄송한데 저 좀 어떻게 따라와주시면",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 방주 난민을 추적해 보겠다고 답한다.",
+          "line_start": 59,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "추적해 볼게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 현장에서 아크 레인저 블루레이 DVD를 발견하고 지휘관이 방주 난민에게 가져다준 것 아니냐고 묻는다.",
+          "line_start": 63,
+          "line_end": 65,
+          "claim_line": 65,
+          "quote": "아니스: ···뭐야 이거.\n아니스: 아크 레인저 블루레이 DVD잖아?\n아니스: 이거 지휘관님이 방주 난민한테 가져다준 거 아냐?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그 아크 레인저 블루레이 DVD가 자신이 방주 난민에게 가져다준 것이 맞다고 확인한다.",
+          "line_start": 67,
+          "line_end": 67,
+          "claim_line": 67,
+          "quote": "[OPTION TEXT=\"맞아.\"]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 블루레이 발견을 근거로 방주 난민이 이 근처까지 도망왔다고 추론한다.",
+          "line_start": 70,
+          "line_end": 70,
+          "claim_line": 70,
+          "quote": "아니스: 그렇다는 건··· 걔가 이 근처까지 도망왔다는 건데.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 반경 내에 감지되는 열원이 없다고 보고한다.",
+          "line_start": 71,
+          "line_end": 71,
+          "claim_line": 71,
+          "quote": "라피: 반경 내에 감지되는 열원은 없어.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 일단 더 수색해 보자고 지시한다.",
+          "line_start": 73,
+          "line_end": 73,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"일단 더 수색해 보자.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 일행에게 수색 결과가 어떤지 묻자 네온이 침묵한다.",
+          "line_start": 76,
+          "line_end": 77,
+          "claim_line": null,
+          "quote": "아니스: ···다들 결과 어때?\n네온: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피, 지휘관",
+          "summary": "라피가 무너진 잔해에서 찾은 너덜너덜한 다이어리를 내밀고, 지휘관이 '어디에도 있을 곳이 없지만 그래도 살고 싶다'는 내용을 읽은 뒤 덮자 일행이 침묵한다.",
+          "line_start": 78,
+          "line_end": 90,
+          "claim_line": null,
+          "quote": "라피: 무너진 잔해에서 이걸 찾았어.\n라피는 너덜너덜해진 다이어리를 내밀었다.\n···안의 내용을 읽어 보았다.\n돌아가고 싶다.\n돌아가고 싶지 않다.\n돌아가고 싶다.\n돌아가고 싶지 않다.\n사실은 어디에도 있을 곳이 없다.\n그래도 살고는 싶어.\n··· ··· 다이어리를 덮었다.\n라피: ··· ···.\n네온: ··· ···.\n아니스: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 수색을 계속하자고 지시한다.",
+          "line_start": 92,
+          "line_end": 92,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"수색을 계속하자.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "얼마 후 네온이 방주 난민을 찾은 것 같지만 굳이 보지 않는 게 좋겠다고 지휘관에게 말하고 아니스가 침묵한다.",
+          "line_start": 95,
+          "line_end": 99,
+          "claim_line": 98,
+          "quote": "···얼마 후.\n네온: ···스승님.\n네온: 그 사람, 찾은 것 같아요. 그런데···.\n네온: 굳이 안 보시는 게 좋겠어요.\n아니스: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 숨진 방주 난민을 묻어 주자고 말한다.",
+          "line_start": 101,
+          "line_end": 101,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"묻어 주자.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 방주에 따로 보고하지 않을 것인지 묻는다.",
+          "line_start": 104,
+          "line_end": 104,
+          "claim_line": null,
+          "quote": "라피: 방주에는 따로 보고하지 않으실 겁니까?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 방주가 방주 난민에게 해준 게 뭐가 있냐며 보고하지 말고 내버려 두라고 말한다.",
+          "line_start": 105,
+          "line_end": 106,
+          "claim_line": 106,
+          "quote": "아니스: ···내버려 둬.\n아니스: 방주가 얘한테 해준 게 뭐가 있다고 그래.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 라피, 아니스, 네온",
+          "summary": "지휘관 일행이 방주 난민을 위해 작은 무덤을 만들어 준 뒤 떠난다.",
+          "line_start": 107,
+          "line_end": 107,
+          "claim_line": null,
+          "quote": "방주 난민을 위해 작은 무덤을 만들어준 뒤 떠났다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민의 예약문자가 도착해, 햇빛을 쬘 겸 밖에 나갔다가 잔해에서 랩쳐가 튀어나와 벙커로 도망쳤으며 혹시 잘못될 경우를 대비해 짧은 간격으로 예약문자와 선물을 설정해 두었다고 설명한다.",
+          "line_start": 109,
+          "line_end": 147,
+          "claim_line": 143,
+          "quote": "예약문자 테스트 겸 예약선물 테스트 지금 엄청 짧은 간격으로 예약문자를 설정해두고 있는데 어떻게 잘 작동하는 거 같네요 ㅎㅎ 별 건 아니고 제가 오늘 너무 갇혀있기 답답해서ㅜ 햇빛이라도 쬘 겸 밖에 잠깐 나갔었거든요? 저도 지상에 있어서 좋은 걸 하나라도 누려야 하잖아요 ㅋㅋ 아무튼 그랬는데 갑자기 잔해에서 랩쳐가 툭 튀어나와서; 뒤도 안 돌아보고 바로 벙커로 들어왔지 뭐예요 다행히 지금 쫓아오진 않는데 나중에 일이 어떻게 될지 모르니까 ㅎㅎ;; 호오옥시라도 제가 잘못될 경우를 대비해서 꼭 이 말씀을 드리고 싶었어요",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "방주 난민",
+          "summary": "방주 난민이 예약문자에서 10대 때부터 빚을 갚으려 일하는 동안 아무도 안부를 물어봐 주지 않았는데 지휘관이 힘들지 않냐고 물어봐 주어 고마웠다며, 오래오래 친하게 지내자고 전한다.",
+          "line_start": 148,
+          "line_end": 183,
+          "claim_line": 179,
+          "quote": "고마워요 힘들진 않냐고 물어봐줘서 고맙고 돌아가고 싶진 않냐고 물어봐줘서 고마웠어요 제가 10대 때부터 빚 갚으려고 죽도록 일했지만 힘들지 않냐고 너 괜찮냐고 그거 하나 물어봐준 사람이 아무도 없었거든요 그래도 지금은 지휘관님이 있으니까 지상에 올라와서 뭔가 하나는 좋아진 셈이겠죠? ㅎㅎ 우리 오래오래 친하게 지내요 S2",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "방주_난민_03__clh_001",
+          "keyword": "아크 레인저 블루레이 DVD",
+          "category": "item",
+          "subject": null,
+          "detail": "방주 난민이 도망치던 경로에서 발견된 블루레이 DVD로, 지휘관이 이전에 방주 난민에게 가져다준 물건이다.",
+          "line_start": 63,
+          "line_end": 65,
+          "quote": "아니스: ···뭐야 이거.\n아니스: 아크 레인저 블루레이 DVD잖아?\n아니스: 이거 지휘관님이 방주 난민한테 가져다준 거 아냐?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "방주_난민_03__clh_002",
+          "keyword": "다이어리",
+          "category": "item",
+          "subject": null,
+          "detail": "무너진 잔해에서 발견된 방주 난민의 너덜너덜한 다이어리로, 어디에도 있을 곳이 없지만 살고 싶다는 심경이 적혀 있다.",
+          "line_start": 78,
+          "line_end": 87,
+          "quote": "라피: 무너진 잔해에서 이걸 찾았어.\n라피는 너덜너덜해진 다이어리를 내밀었다.\n···안의 내용을 읽어 보았다.\n돌아가고 싶다.\n돌아가고 싶지 않다.\n돌아가고 싶다.\n돌아가고 싶지 않다.\n사실은 어디에도 있을 곳이 없다.\n그래도 살고는 싶어.\n··· ··· 다이어리를 덮었다.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "방주_난민_03__rln_001",
+          "subject": "방주 난민",
+          "target": "지휘관",
+          "relation_or_change": "안부를 물어봐 준 유일한 사람이라며 고마움을 표하고 오래오래 친하게 지내자고 함",
+          "epistemic_type": "character_claim",
+          "claimant": "방주 난민",
+          "line_start": 148,
+          "line_end": 183,
+          "claim_line": 179,
+          "quote": "고마워요 힘들진 않냐고 물어봐줘서 고맙고 돌아가고 싶진 않냐고 물어봐줘서 고마웠어요 제가 10대 때부터 빚 갚으려고 죽도록 일했지만 힘들지 않냐고 너 괜찮냐고 그거 하나 물어봐준 사람이 아무도 없었거든요 그래도 지금은 지휘관님이 있으니까 지상에 올라와서 뭔가 하나는 좋아진 셈이겠죠? ㅎㅎ 우리 오래오래 친하게 지내요 S2",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "방주_난민_03__uec_001",
+          "surface_text": "벙커",
+          "suggested_type": "location",
+          "line_start": 16
+        },
+        {
+          "item_id": "방주_난민_03__uec_002",
+          "surface_text": "아크 레인저",
+          "suggested_type": "concept",
+          "line_start": 64
+        },
+        {
+          "item_id": "방주_난민_03__uec_003",
+          "surface_text": "아크 레인저 블루레이 DVD",
+          "suggested_type": "item",
+          "line_start": 64
+        },
+        {
+          "item_id": "방주_난민_03__uec_004",
+          "surface_text": "다이어리",
+          "suggested_type": "item",
+          "line_start": 79
+        },
+        {
+          "item_id": "방주_난민_03__uec_005",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 104
+        },
+        {
+          "item_id": "방주_난민_03__uec_006",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 128
+        },
+        {
+          "item_id": "방주_난민_03__uec_007",
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 131
+        }
+      ]
+    }
+  ]
+}
