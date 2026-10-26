@@ -1,0 +1,2378 @@
+{
+  "schema_version": "1.3.0",
+  "batch_id": "batch_0245",
+  "scenes": [
+    {
+      "scene_id": "train_station_06",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "디젤과 솔린은 높은 사람들이 AZX를 보러 온다는 명령 때문에 기차역과 AZX 대청소를 해야 한다며 지휘관에게 도움을 청한다. 솔린이 청소에 능통한 사람으로 부른 메이드 포 유의 프리바티가 도착해 혼자서 AZX 전체를 거의 다 청소하는 활약을 보여주고, 이후에도 기차역 청소날마다 나와 도와주게 된다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "디젤",
+            "entity_id": "char_디젤",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "솔린",
+            "entity_id": "char_솔린",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "프리바티",
+            "entity_id": "char_프리바티",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "AZX",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 10,
+            "line_end": 10,
+            "quote": "디젤: 음~ AZX와 역 청소를 해야 하는데요~"
+          },
+          {
+            "surface_text": "브리드",
+            "entity_id": "char_브리드",
+            "entity_type": "character",
+            "line_start": 30,
+            "line_end": 30,
+            "quote": "솔린: 브리드는 정비하느라 바빠서 못 온다길래 청소에 아주 능통한 사람을 불러놨지!"
+          },
+          {
+            "surface_text": "메이드 포 유",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 42,
+            "line_end": 42,
+            "quote": "···그건 바로 메이드 포 유의-"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "프리바티",
+          "to_target": "디젤, 솔린",
+          "address_term": "아가씨들",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "프리바티: 안녕하세요 아가씨들···!"
+        },
+        {
+          "from_speaker": "프리바티",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 54,
+          "line_end": 55,
+          "quote": "프리바티: 주, 주, 주인님?!\n프리바티: 주인님이 왜 여기에 계시는 거죠?!"
+        },
+        {
+          "from_speaker": "프리바티",
+          "to_target": "디젤, 솔린",
+          "address_term": "여러분들",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "프리바티: 여러분들이 원하신다면 언제든 불러주세요!"
+        },
+        {
+          "from_speaker": "프리바티",
+          "to_target": "디젤, 솔린",
+          "address_term": "아가씨들",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "프리바티: 전 아가씨들을 위한 메이드니까요."
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 디젤, 솔린",
+          "summary": "지휘관이 디젤의 호출로 기차역에 도착하자 디젤과 솔린이 맞이하고, 디젤은 갑작스럽게 불러 미안하다고 말한다.",
+          "line_start": 2,
+          "line_end": 5,
+          "claim_line": null,
+          "quote": "나는 디젤의 호출로 기차역에 도착했다.\n디젤: 아, 지휘관~ 어서 오세요.\n솔린: 어서 와, 지휘관.\n디젤: 갑작스럽게 불러서 죄송해요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "지휘관이 무슨 일인지 묻자 디젤은 오늘 AZX와 기차역에 청소할 곳이 많다며 청소를 도와줄 수 있는지 부탁한다.",
+          "line_start": 6,
+          "line_end": 12,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"괜찮아, 그런데 무슨 일이야?\"]\n  [OPTION_END]\n[CHOICE_END]\n디젤: 음~ AZX와 역 청소를 해야 하는데요~\n디젤: 오늘은 청소할 곳이 좀 많아서요~\n디젤: 그래서 염치없지만, 혹시 청소를 도와주실 수 있나요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 청소를 도와줄 수는 있다며 얼마나 많이 해야 하는지 묻는다.",
+          "line_start": 13,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"도와줄 수는 있는데, 얼마나 많이 해야 하는 거야?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 AZX 내부는 물론 밖의 바퀴까지 다 닦아야 한다고 들었다며 불평한다.",
+          "line_start": 17,
+          "line_end": 18,
+          "claim_line": 17,
+          "quote": "솔린: 내부는 물론이고, 밖에 있는 바퀴까지 다 닦아야 한대.\n솔린: 이게 말이 돼?!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "지휘관이 왜 그렇게까지 청소하냐고 묻자 디젤은 높은 사람들이 AZX를 보고 싶어 해서 최대한 깨끗이 해놓으라는 명령이 내려온 것 같다고 답한다.",
+          "line_start": 19,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"왜 그렇게 까지 청소를···?\"]\n  [OPTION_END]\n[CHOICE_END]\n디젤: 저도 자세한 건 잘 모르지만···.\n디젤: 아마 높은 분들이 AZX를 보고 싶다고 하셨나 봐요.\n디젤: 최대한 깨끗이 해놓으라는 명령이 내려왔지 뭐예요~",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "지휘관이 우리끼리 가능할지 묻자 솔린은 브리드가 정비하느라 바빠서 못 온다고 하여 청소에 능통한 사람을 불러두었다고 말한다.",
+          "line_start": 26,
+          "line_end": 30,
+          "claim_line": 30,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"우리끼리 가능할까?\"]\n  [OPTION_END]\n[CHOICE_END]\n솔린: 브리드는 정비하느라 바빠서 못 온다길래 청소에 아주 능통한 사람을 불러놨지!",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 솔린",
+          "summary": "디젤이 솔린에게 잘했다고 칭찬하자 솔린이 우쭐해하고, 지휘관이 청소에 능통한 사람이 누구인지 되묻자 디젤은 슬슬 올 때가 되었다며 다가오는 메이드 포 유 소속 인물을 가리킨다.",
+          "line_start": 31,
+          "line_end": 42,
+          "claim_line": null,
+          "quote": "디젤: 후후, 잘했어요 솔린.\n솔린: 흐흥~\n[CHOICE_START]\n  [OPTION TEXT=\"청소에 능통한 사람?\"]\n  [OPTION_END]\n[CHOICE_END]\n디젤: 네~!\n디젤: 아마 슬슬 오실 때가 됐을 텐데요~\n또각. 또각.\n디젤: 아, 저기 오시네요~\n멀리서 다가오는 익숙한 실루엣.\n···그건 바로 메이드 포 유의-",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "디젤과 솔린이 놀라는 가운데 프리바티가 자신을 요리와 청소를 다 하는 호출 메이드라고 소개하다가 지휘관을 발견하고 놀란다.",
+          "line_start": 43,
+          "line_end": 49,
+          "claim_line": 47,
+          "quote": "디젤: 어머~?\n솔린: 엥?\n프리바티: 아, 아···.\n프리바티: 안녕하세요 아가씨들···!\n프리바티: 호, 호출 메이드 프리바티입니다···!!\n프리바티: ···요, 요리면 요리 청소면 청소 다 하는···.\n프리바티: 흣?!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "지휘관이 침묵하자 프리바티는 지휘관을 주인님이라 부르며 왜 여기에 있는지 당황해 묻는다.",
+          "line_start": 50,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n프리바티: 주, 주, 주인님?!\n프리바티: 주인님이 왜 여기에 계시는 거죠?!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 자신도 청소하러 왔다고 답한다.",
+          "line_start": 56,
+          "line_end": 59,
+          "claim_line": 57,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"나도 청소하러 왔지.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 청소 잘하는 메이드를 불렀는데 프리바티가 와주었다며 메이드 옷이 아주 잘 어울린다고 칭찬한다.",
+          "line_start": 60,
+          "line_end": 62,
+          "claim_line": 61,
+          "quote": "디젤: 어머나.\n디젤: 청소 잘하는 메이드를 불렀는데 프리바티가 와주셨군요!\n디젤: 옷이 너무 잘 어울려요~ 후후.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "솔린, 프리바티",
+          "summary": "솔린이 프리바티가 메이드였냐며 놀라자 프리바티는 그렇다며 불만 있냐고 발끈한다.",
+          "line_start": 63,
+          "line_end": 66,
+          "claim_line": null,
+          "quote": "솔린: 세상에···.\n솔린: 프리바티가 메이드였어?\n프리바티: 그, 그래요!\n프리바티: 뭐 불만이라도 있나요?!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "솔린이 생각도 못 해서 그랬다며 청소는 잘하냐고 묻자 프리바티는 당연하다고 답한다.",
+          "line_start": 67,
+          "line_end": 70,
+          "claim_line": 70,
+          "quote": "솔린: 왜 갑자기 짜증을 내고 그래!\n솔린: 생각도 못했으니까 그렇지.\n솔린: 그나저나 프리바티, 청소는 잘해?\n프리바티: 흥! 당연하죠!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 청소 잘하는 메이드를 보내달라고 했는데 평소 청소 잘하는 이미지가 아니던 프리바티가 와서 믿음이 잘 안 간다고 말한다.",
+          "line_start": 71,
+          "line_end": 75,
+          "claim_line": 74,
+          "quote": "솔린: ···뭔가 믿음이 잘 안 가는데.\n프리바티: 뭐라구요?!\n솔린: 아니, 솔직히 그렇잖아.\n솔린: 우리는 청소 잘하는 메이드를 보내달라고 했는데 갑자기 프리바티가 와 버린 거니까.\n솔린: 프리바티가 청소를 잘하는 이미지도 아니었고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "프리바티는 유능한 메이드로서 얼마나 청소를 잘하는지 바로 보여주겠다고 선언하고 청소 도구를 들고 사라진다.",
+          "line_start": 76,
+          "line_end": 80,
+          "claim_line": null,
+          "quote": "프리바티: 하!\n프리바티: 이거 어쩔 수 없네요.\n프리바티: 유능한 메이드로서, 제가 얼마나 청소를 잘 하는지 바로 보여드릴게요.\n프리바티: 여기 싹 청소하면 되는 거죠?!\n프리바티는 청소 도구를 들고 거친 발걸음으로 사라졌다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "솔린, 디젤",
+          "summary": "솔린이 자신이 잘못 말한 게 있냐며 당황하자 디젤이 달래며 함께 청소를 시작하자고 제안하고 솔린이 수락한다.",
+          "line_start": 81,
+          "line_end": 85,
+          "claim_line": null,
+          "quote": "솔린: 뭐, 뭐야 대체.\n솔린: 내가 뭐 잘못 말한 거라도 있어?\n디젤: 후후, 아녜요 솔린.\n디젤: 프리바티가 청소를 시작한 것 같으니 저희도 바로 시작해 볼까요?\n솔린: 으응, 알겠어.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 디젤, 솔린, 프리바티",
+          "summary": "지휘관이 열심히 하자고 독려한 뒤 일행은 각자 구역을 나누어 청소를 시작해 생각보다 빠른 시간 안에 끝낸다.",
+          "line_start": 86,
+          "line_end": 91,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"열심히 하자!\"]\n  [OPTION_END]\n[CHOICE_END]\n···그렇게 우리는 각자 구역을 나누어서 열심히 청소를 시작했고.\n다행히 생각보다 빠른 시간 안에 끝낼 수 있었다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "청소가 끝난 뒤 디젤은 숨을 헐떡이는 프리바티가 혼자서 AZX 전체를 거의 다 청소해 주었다며 고마워한다.",
+          "line_start": 92,
+          "line_end": 98,
+          "claim_line": 97,
+          "quote": "디젤: 와아~ 청소 끝~!\n디젤: 다들 너무 고생 많았어요~\n디젤: 특히 프리바티!\n프리바티: 허억, 허억···.\n프리바티: 네···?\n디젤: 혼자서 AZX 전체를 거의 다 청소해 주셨잖아요~\n디젤: 너무너무 감사해요~",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "프리바티는 이 정도 청소는 간단하다고 답한다.",
+          "line_start": 99,
+          "line_end": 100,
+          "claim_line": 100,
+          "quote": "프리바티: ···아!\n프리바티: 뭐, 이 정도야 간단하죠.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 프리바티",
+          "summary": "디젤이 다음 청소 때도 부탁하고 싶다고 말하자 프리바티가 당황하며 되묻는다.",
+          "line_start": 101,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "디젤: 혹시 다음 청소 때도 부탁드리고 싶은데, 괜찮을까요~?\n프리바티: 네, 네···?\n프리바티: 다음에도요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 프리바티가 청소를 이렇게 잘할 줄 몰랐다며 계속 도와주면 엄청 든든할 것 같다고 칭찬한다.",
+          "line_start": 104,
+          "line_end": 106,
+          "claim_line": 105,
+          "quote": "솔린: 응.\n솔린: 프리바티가 청소를 이렇게 잘할 줄은 몰랐어.\n솔린: 계속 이렇게 도와주면 엄청 든든할 것 같긴 해.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 솔린의 말에 동의하면서도 부담 주려는 것은 아니니 편하게 거절해도 된다고 덧붙인다.",
+          "line_start": 107,
+          "line_end": 109,
+          "claim_line": null,
+          "quote": "디젤: 맞아요~\n디젤: 아, 물론 부담드리려는 건 아니에요.\n디젤: 편하게 거절해 주셔도 된답니다~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "프리바티",
+          "summary": "프리바티는 자신의 유능함을 알게 되어 다행이라며 아가씨들을 위한 메이드로서 언제든 불러달라고 수락한다.",
+          "line_start": 110,
+          "line_end": 113,
+          "claim_line": null,
+          "quote": "프리바티: ···뭐!\n프리바티: 제 유능함을 아신 것 같아 다행이네요.\n프리바티: 여러분들이 원하신다면 언제든 불러주세요!\n프리바티: 전 아가씨들을 위한 메이드니까요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 솔린, 지휘관, 프리바티",
+          "summary": "디젤이 감사 인사를 건네고 일행은 반짝해진 기차역을 빠져나온다.",
+          "line_start": 114,
+          "line_end": 117,
+          "claim_line": null,
+          "quote": "디젤: 어머, 정말요~?\n디젤: 감사해요~\n디젤: 솔린도, 지휘관도 고생 많았어요~\n그렇게 우리는 반짝해진 기차역을 빠져나왔고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "지문은 한동안 기차역 청소날마다 프리바티가 꼬박꼬박 나와 도와주었다고 전한다.",
+          "line_start": 118,
+          "line_end": 118,
+          "claim_line": 118,
+          "quote": "한동안 기차역의 청소날에는 프리바티가 꼬박꼬박 나와서 도와주었다고 한다.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "프리바티",
+          "target": "메이드 포 유",
+          "relation_or_change": "메이드 포 유의 호출 메이드로 활동하며 요리와 청소를 담당함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 41,
+          "line_end": 48,
+          "claim_line": null,
+          "quote": "멀리서 다가오는 익숙한 실루엣.\n···그건 바로 메이드 포 유의-\n디젤: 어머~?\n솔린: 엥?\n프리바티: 아, 아···.\n프리바티: 안녕하세요 아가씨들···!\n프리바티: 호, 호출 메이드 프리바티입니다···!!\n프리바티: ···요, 요리면 요리 청소면 청소 다 하는···.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "프리바티",
+          "target": "디젤",
+          "relation_or_change": "자신을 아가씨들을 위한 메이드라 칭하며 원한다면 언제든 불러달라고 함",
+          "epistemic_type": "character_claim",
+          "claimant": "프리바티",
+          "line_start": 110,
+          "line_end": 113,
+          "claim_line": 112,
+          "quote": "프리바티: ···뭐!\n프리바티: 제 유능함을 아신 것 같아 다행이네요.\n프리바티: 여러분들이 원하신다면 언제든 불러주세요!\n프리바티: 전 아가씨들을 위한 메이드니까요.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "프리바티",
+          "target": "솔린",
+          "relation_or_change": "자신을 아가씨들을 위한 메이드라 칭하며 원한다면 언제든 불러달라고 함",
+          "epistemic_type": "character_claim",
+          "claimant": "프리바티",
+          "line_start": 110,
+          "line_end": 113,
+          "claim_line": 112,
+          "quote": "프리바티: ···뭐!\n프리바티: 제 유능함을 아신 것 같아 다행이네요.\n프리바티: 여러분들이 원하신다면 언제든 불러주세요!\n프리바티: 전 아가씨들을 위한 메이드니까요.",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "AZX",
+          "suggested_type": "item",
+          "line_start": 10
+        },
+        {
+          "surface_text": "메이드 포 유",
+          "suggested_type": "squad",
+          "line_start": 42
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "train_station_07",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "아크 익스프레스의 역사 홀로그램 체험 학습을 하러 기차역에 온 아인과 지휘관은 청소하며 노래를 부르는 디젤을 만난다. 기계음 같은 디젤의 노랫소리에 오히려 취향 저격이라며 감탄한 아인은 체험 학습을 미루고 디젤, 지휘관과 함께 노래방으로 향한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "아인",
+            "entity_id": "char_아인",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "디젤",
+            "entity_id": "char_디젤",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "아크 익스프레스",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "아인: 아크 익스프레스의 설립부터 지금까지의 역사."
+          },
+          {
+            "surface_text": "미미르 부속고",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 49,
+            "line_end": 49,
+            "quote": "아인: 안녕하세요, 미미르 부속고에 다니고 있는 아인이예요."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "아인",
+          "to_target": "지휘관",
+          "address_term": "쌤",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "아인: 쌤, 같이 와줘서 땡큐요!"
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "아인은 같이 와준 지휘관에게 고마워하며, 아크 익스프레스의 설립부터 지금까지의 역사를 홀로그램으로 체험하고 느낀 점을 써오라는 체험 학습 과제가 귀찮다고 투덜거린다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": 5,
+          "quote": "아인: 쌤, 같이 와줘서 땡큐요!\n아인: 아 무슨~ 귀찮게 체험 학습이래.\n아인: 아크 익스프레스의 설립부터 지금까지의 역사.\n아인: 이걸 홀로그램으로 체험해 보고 느낀 점을 써오라니.\n아인: 으아아~ 생각만 해도 귀찮아요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 귀찮으면 체험 학습을 얼른 끝내자고 독려한다.",
+          "line_start": 7,
+          "line_end": 10,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"귀찮으면 얼른 끝내자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아인, 지휘관",
+          "summary": "아인이 체험 학습이 끝나고 노래방에 가자고 제안하자 지휘관이 수락한다.",
+          "line_start": 11,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "아인: 끝나고 노래방 콜?\n[CHOICE_START]\n  [OPTION TEXT=\"···콜.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "아인은 의욕이 살아난다며 열심히 하겠다고 다짐하고, 기차역이 넓어 헷갈린다며 체험 장소가 어디인지 묻는다.",
+          "line_start": 16,
+          "line_end": 19,
+          "claim_line": 16,
+          "quote": "아인: 아싸~ 그럼 또 제가 의욕이 팍팍 살아나죠!\n아인: 열심히 할게요, 쌤!\n아인: 근데 그거 체험할 수 있는 데가 어디래요?\n아인: 여기 은근 넓어서 헷갈···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "멀리서 딸기맛 사탕을 드린다는 디젤의 노랫소리가 들려온다.",
+          "line_start": 20,
+          "line_end": 22,
+          "claim_line": null,
+          "quote": "디젤: 사탕을~\n디젤: 딸기맛 사탕을 드립니다~♪\n저 멀리서, 디젤의 노랫소리가 들려오기 시작했다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "아인은 디젤의 노랫소리를 듣고 기계음인지, 어디 기계가 고장 난 것인지 의아해한다.",
+          "line_start": 23,
+          "line_end": 26,
+          "claim_line": 25,
+          "quote": "아인: 엥?\n아인: 쌤··· 이게 무슨 소리예요?\n아인: 기계음인가?\n아인: 어디 기계라도 고장 났나?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 아인, 디젤",
+          "summary": "지휘관이 말을 흐리는 사이 아인과 함께 소리가 나는 곳으로 이동하자 디젤이 노래를 부르며 청소를 하고 있다.",
+          "line_start": 27,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"아니, 이건···.\"]\n  [OPTION_END]\n[CHOICE_END]\n아인: 저쪽이에요, 쌤!\n아인: 가봐요!\n아인과 함께 이동한 그곳엔.\n디젤이 노래를 부르며 청소를 하고 있었다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 아인, 디젤",
+          "summary": "노래를 이어 부르던 디젤에게 지휘관이 인사하자 디젤이 반기며 지휘관 옆의 아인을 바라본다.",
+          "line_start": 35,
+          "line_end": 47,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n아인: 헐?\n디젤: 모두가 좋아하는~\n[CHOICE_START]\n  [OPTION TEXT=\"안녕, 디젤.\"]\n  [OPTION_END]\n[CHOICE_END]\n디젤: 어머?\n디젤: 어서 오세요, 지휘관~\n디젤: 그리고 그 옆엔···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "아인은 자신을 미미르 부속고에 다니는 아인이라고 소개하고 디젤에게 방금 노래를 부른 것이 맞는지 묻는다.",
+          "line_start": 48,
+          "line_end": 51,
+          "claim_line": 49,
+          "quote": "아인: 아.\n아인: 안녕하세요, 미미르 부속고에 다니고 있는 아인이예요.\n아인: 그것보다 저기··· 방금 전에.\n아인: 노래 부르신 거 맞죠? 그 디젤···? 이.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 자신이 제일 좋아하는 노래라 매일 연습하고 있다며 처음부터 들어볼지 권한다.",
+          "line_start": 52,
+          "line_end": 54,
+          "claim_line": 53,
+          "quote": "디젤: 네~ 맞아요.\n디젤: 제가 제일 좋아하는 노래랍니다~\n디젤: 매일 연습하고 있는데, 처음부터 들어보실래요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아인, 디젤, 지휘관",
+          "summary": "아인이 듣겠다고 하자 디젤이 노래를 부르고, 기계 소리인 듯 아닌 듯한 혼란스러운 노래가 기차역에 퍼진 뒤 디젤이 소감을 묻자 아인이 침묵한다.",
+          "line_start": 55,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "아인: 오오··· 네네.\n디젤: 사탕을~ 딸기맛 사탕을 드립니다~\n기계소리인듯, 아닌 듯한 혼란스러운 노래가 온 기차역에 퍼져나갔다.\n잠시 후.\n디젤: 후후, 어떠셨나요~?\n아인: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"···아인?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "아인은 디젤의 노래가 진짜 대박이고 완전 힙하다며 가수나 래퍼인지 묻는다.",
+          "line_start": 65,
+          "line_end": 68,
+          "claim_line": 67,
+          "quote": "아인: ···와.\n아인: 진짜 대박.\n아인: 완전 힙하다.\n아인: 혹시 가수세요? 아니면 래퍼?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 자신이 가수도 래퍼도 아니며 SNS도 직접 하지는 않는다고 답한다.",
+          "line_start": 69,
+          "line_end": 71,
+          "claim_line": 69,
+          "quote": "디젤: 가수도 래퍼도 아니예요~\n아인: SNS는 안 해요?\n디젤: 네~ 직접하진 않아요~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "아인은 디젤이 노래 부르는 영상을 올리면 사람들이 챌린지를 하며 대박 날 것 같다고 아쉬워한다.",
+          "line_start": 72,
+          "line_end": 74,
+          "claim_line": 73,
+          "quote": "아인: 아, 헐··· 진짜 아쉽네.\n아인: 노래 부르는 거 영상으로 올리면 대박 날 거 같은데!\n아인: 사람들 막 챌린지하고 쩔듯요!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 디젤의 노래가 그 정도냐며 당황해 되묻는다.",
+          "line_start": 75,
+          "line_end": 78,
+          "claim_line": 76,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그··· 정도라고?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "디젤이 자신의 노래가 마음에 들었나 보다고 말하자 아인은 완전 취향 저격이고 목소리가 사기라며 극찬한다.",
+          "line_start": 79,
+          "line_end": 82,
+          "claim_line": 81,
+          "quote": "디젤: 제 노래가 마음에 드셨나 봐요~\n아인: 아, 당연하죠!\n아인: 마음에 드는 정도가 아니고 그냥 완전 취저예요!\n아인: 목소리가 완전 사긴데요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아인, 지휘관",
+          "summary": "아인이 지휘관을 부르며 디젤과 함께 빨리 노래방에 가자고 제안하고 디젤에게 시간이 괜찮은지 묻는다.",
+          "line_start": 83,
+          "line_end": 91,
+          "claim_line": null,
+          "quote": "아인: 아, 이러고 있을 때가 아니지.\n아인: 쌤, 쌤!\n[CHOICE_START]\n  [OPTION TEXT=\"응?\"]\n  [OPTION_END]\n[CHOICE_END]\n아인: 우리 빨리 노래방 가요!\n아인: 디젤도 같이!\n아인: 아, 디젤 지금 바쁜 거 아니예요? 시간 괜찮아요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 노래방이 재밌겠다며 마침 청소도 다 끝났으니 좋다고 수락한다.",
+          "line_start": 92,
+          "line_end": 94,
+          "claim_line": 94,
+          "quote": "디젤: 어머, 노래방요~?\n디젤: 재밌겠네요, 후후.\n디젤: 마침 청소도 다 끝났고, 좋아요~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "아인은 디젤의 노래를 노래방에서도 꼭 들어보고 싶다며 빨리 가자고 재촉한다.",
+          "line_start": 95,
+          "line_end": 97,
+          "claim_line": 96,
+          "quote": "아인: 들었죠, 들었죠?\n아인: 디젤 노래, 노래방에서도 꼭 들어보고 싶거든요!\n아인: 그러니까 빨리 가요!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아인",
+          "summary": "지휘관이 체험 학습은 어쩌냐고 묻자 아인은 그건 나중에도 할 수 있다며 노래방으로 가자고 외친다.",
+          "line_start": 98,
+          "line_end": 103,
+          "claim_line": 102,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···체험 학습은?\"]\n  [OPTION_END]\n[CHOICE_END]\n아인: 아, 그건 나중에도 할 수 있잖아요!\n아인: 노래방으로 고고!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 아인, 디젤",
+          "summary": "결국 지휘관은 노래방으로 끌려가 디젤의 노래를 한 시간 내내 듣는다.",
+          "line_start": 104,
+          "line_end": 105,
+          "claim_line": null,
+          "quote": "결국 나는 노래방으로 끌려갔고.\n디젤의 노래를 한 시간 내내 듣고 있어야 했다.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "딸기맛 사탕 노래",
+          "category": "trait",
+          "subject": "디젤",
+          "detail": "디젤은 '사탕을~ 딸기맛 사탕을 드립니다~'라는 노래를 제일 좋아해 매일 연습하며, 그 노랫소리는 기계음인 듯 아닌 듯 혼란스럽게 들린다.",
+          "line_start": 53,
+          "line_end": 57,
+          "quote": "디젤: 제가 제일 좋아하는 노래랍니다~\n디젤: 매일 연습하고 있는데, 처음부터 들어보실래요?\n아인: 오오··· 네네.\n디젤: 사탕을~ 딸기맛 사탕을 드립니다~\n기계소리인듯, 아닌 듯한 혼란스러운 노래가 온 기차역에 퍼져나갔다."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "아인",
+          "target": "미미르 부속고",
+          "relation_or_change": "미미르 부속고에 재학 중인 학생이라고 밝힘",
+          "epistemic_type": "character_claim",
+          "claimant": "아인",
+          "line_start": 48,
+          "line_end": 49,
+          "claim_line": 49,
+          "quote": "아인: 아.\n아인: 안녕하세요, 미미르 부속고에 다니고 있는 아인이예요.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "아인",
+          "target": "디젤",
+          "relation_or_change": "디젤의 노래와 목소리가 완전 취향 저격이라며 큰 호감을 표함",
+          "epistemic_type": "character_claim",
+          "claimant": "아인",
+          "line_start": 79,
+          "line_end": 82,
+          "claim_line": 81,
+          "quote": "디젤: 제 노래가 마음에 드셨나 봐요~\n아인: 아, 당연하죠!\n아인: 마음에 드는 정도가 아니고 그냥 완전 취저예요!\n아인: 목소리가 완전 사긴데요?",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "아크 익스프레스",
+          "suggested_type": "organization",
+          "line_start": 4
+        },
+        {
+          "surface_text": "미미르 부속고",
+          "suggested_type": "organization",
+          "line_start": 49
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "train_station_08",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "디젤의 요청으로 크러스트와 브래디가 AZX 구경객들을 위한 차내 판매용 도시락과 간식 메뉴들을 만들어 기차역으로 가져온다. 지휘관과 디젤, 솔린, 크러스트, 브래디는 AZX 좌석에 앉아 특별 주문 메뉴인 열차맛 아이스크림과 도시락 등을 함께 시식하며 만족스러워한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "솔린",
+            "entity_id": "char_솔린",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "디젤",
+            "entity_id": "char_디젤",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "크러스트",
+            "entity_id": "char_크러스트",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "브래디",
+            "entity_id": "char_브래디",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "AZX",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 7,
+            "line_end": 7,
+            "quote": "솔린: 우리 AZX의 퀄리티가 좋아지는 거니까, 들뜰 만하지!"
+          },
+          {
+            "surface_text": "열차맛 퍼펙트",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 71,
+            "line_end": 71,
+            "quote": "크러스트: 열차맛 퍼펙트를 이용해서 만든, 열차맛 아이스크림~"
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "솔린이 오늘 오는 게 맞냐고 확인하자 디젤은 맞다고 답하며 솔린이 이렇게 들뜬 것은 오랜만에 보는 것 같다고 말한다.",
+          "line_start": 2,
+          "line_end": 4,
+          "claim_line": 4,
+          "quote": "솔린: 디젤, 오늘 오는 거 맞지?\n디젤: 맞아요.\n디젤: 솔린, 이렇게 들뜬 건 오랜만에 보는 것 같아요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 간식 때문이라고 말하려다 말을 바꿔 AZX의 퀄리티가 좋아지는 것이라 들뜰 만하다고 말한다.",
+          "line_start": 5,
+          "line_end": 7,
+          "claim_line": 7,
+          "quote": "솔린: 그야 당연히 간식···.\n솔린: 아, 아니.\n솔린: 우리 AZX의 퀄리티가 좋아지는 거니까, 들뜰 만하지!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 지휘관, 솔린",
+          "summary": "디젤이 솔린의 말에 동의하는 사이 지휘관이 도착해 무슨 이야기인지 묻고, 솔린은 반가워하며 기다리던 것이 어디 있는지 묻는다.",
+          "line_start": 8,
+          "line_end": 15,
+          "claim_line": null,
+          "quote": "디젤: 후후, 맞아요~\n[CHOICE_START]\n  [OPTION TEXT=\"무슨 얘기 하고 있어?\"]\n  [OPTION_END]\n[CHOICE_END]\n디젤: 어머, 지휘관. 오셨군요.\n솔린: 왔어?!\n솔린: 그럼 그건 어디 있어? 그···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "크러스트, 브래디, 디젤",
+          "summary": "크러스트와 브래디가 도착해 인사하자 디젤이 맞이하며 준비해 온 음식들을 확인한다.",
+          "line_start": 16,
+          "line_end": 21,
+          "claim_line": null,
+          "quote": "드르르륵-\n크러스트: 안녕하세요!\n크러스트: 저희가 조금 늦었죠~!\n브래디: 안녕.\n디젤: 어서 오세요 크러스트, 브래디.\n디젤: 여기 있는 게 준비해 주신 것들이군요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "크러스트",
+          "summary": "크러스트는 요청받은 기차 차내 판매용 음식들을 자신이 열심히 만들었다고 말한다.",
+          "line_start": 22,
+          "line_end": 24,
+          "claim_line": 23,
+          "quote": "크러스트: 네!\n크러스트: 요청주신, 기차에서 편하게 먹을 수 있는 차내 판매용 음식들!\n크러스트: 제가 열심히 만들어서~",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브래디",
+          "summary": "브래디는 자신이 음식들을 열심히 맛보았다며 개인적으로 AZX 든든 도시락 세트를 추천한다.",
+          "line_start": 25,
+          "line_end": 26,
+          "claim_line": 26,
+          "quote": "브래디: 내가 열심히 맛봤어.\n브래디: 개인적으로 추천하는 건, AZX 든든 도시락 세트야.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 크러스트",
+          "summary": "디젤이 음식을 봐도 될지 묻자 크러스트가 이동식 트레이를 디젤과 솔린 앞으로 끌고 와 AZX 특별 도시락 6종과 철로 모양 빵 4종, 물과 음료를 소개한다.",
+          "line_start": 27,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "디젤: 기대되네요~\n디젤: 한 번 봐도 될까요?\n크러스트: 당연하죠!\n크러스트는 이동식 트레이를 디젤과 솔린 앞으로 끌고 갔다.\n크러스트: AZX의 이름을 딴 특별 도시락 6종!\n크러스트: 철로 모양의 빵 4종!\n크러스트: 물이랑 음료는 기존에 팔고 있는 제품들!\n크러스트: 어떤가요!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 차내 판매용 음식들이 완벽하다며 보기만 해도 군침이 돈다고 칭찬한다.",
+          "line_start": 35,
+          "line_end": 36,
+          "claim_line": 35,
+          "quote": "디젤: 완벽하네요~\n디젤: 보기만 해도 군침이 도는 기분이에요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브래디",
+          "summary": "브래디는 이곳에 있는 열차는 운행을 하지 않는데 왜 차내 판매용 음식이 필요한지 묻는다.",
+          "line_start": 37,
+          "line_end": 39,
+          "claim_line": 38,
+          "quote": "브래디: 궁금한 게 있는데.\n브래디: 여기에 있는 열차는, 운행을 안 하잖아.\n브래디: 그런데 차내 판매용 음식들이 왜 필요한 거야?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 AZX를 구경하러 오는 사람들에게 의자에 앉아 설명만 듣는 지루함 대신 진짜 기차를 타는 느낌을 주고 싶어 AZX만의 특별한 차내 판매를 기획했다고 설명한다.",
+          "line_start": 40,
+          "line_end": 43,
+          "claim_line": 40,
+          "quote": "디젤: 종종 AZX를 구경하러 오시는 분들에게 진짜 기차를 타는 느낌을 내드리고 싶었어요.\n디젤: 체험하거나, 구경할 때 그냥 의자에 앉아서 설명만 듣는 건 지루하잖아요.\n디젤: 배가 고플 수도 있고요~\n디젤: 그래서 AZX만의 특별한 차내 판매를 하고 싶었어요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브래디",
+          "summary": "브래디는 디젤의 설명을 듣고 좋은 아이디어라고 평가한다.",
+          "line_start": 44,
+          "line_end": 45,
+          "claim_line": 45,
+          "quote": "브래디: 그렇구나.\n브래디: 좋은 아이디어네.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "디젤이 브래디에게 감사 인사를 하는 동안 솔린이 침묵하자, 지휘관은 솔린을 불러 기분이 안 좋아 보이는데 괜찮은지 묻는다.",
+          "line_start": 46,
+          "line_end": 56,
+          "claim_line": 54,
+          "quote": "디젤: 그렇게 말씀해 주셔서 감사해요~\n솔린: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"음, 솔린?\"]\n  [OPTION_END]\n[CHOICE_END]\n솔린: 어, 어?! 나 불렀어? 왜?\n[CHOICE_START]\n  [OPTION TEXT=\"기분이 안 좋아 보이는데, 괜찮아?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 무슨 소리냐며 AZX만의 음식들이 완성돼서 기분이 아주 좋다고 둘러댄다.",
+          "line_start": 57,
+          "line_end": 58,
+          "claim_line": 58,
+          "quote": "솔린: 그, 그게 무슨소리야아~\n솔린: AZX만의 음식들이 완성돼서 난 너어무 기분 좋은데! 하하!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "크러스트",
+          "summary": "크러스트는 아직 설명하지 않은 음식들로 간식들이 있다고 밝힌다.",
+          "line_start": 59,
+          "line_end": 62,
+          "claim_line": null,
+          "quote": "크러스트: 앗!\n크러스트: 그러고 보니, 아직 설명을 안 드린 음식들이 있어요.\n크러스트: 바로바로~\n크러스트: 간식들입니다!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 밥만 있고 간식은 없는 줄 알고 놀랐다며 반가워한다.",
+          "line_start": 63,
+          "line_end": 65,
+          "claim_line": 65,
+          "quote": "솔린: !!\n솔린: 그치? 간식들도 있는 거지?\n솔린: 밥만 있고 간식은 없는 줄 알고 놀랐잖아~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "크러스트",
+          "summary": "크러스트는 AZX 모양 쿠키 4종, 선로 위 돌멩이를 떠올리게 하는 사탕 10종, 디젤이 특별 주문해 열차맛 퍼펙트로 만든 열차맛 아이스크림을 소개한다.",
+          "line_start": 66,
+          "line_end": 71,
+          "claim_line": null,
+          "quote": "크러스트: 헤헤, 죄송해요.\n크러스트: 설명을 추가로 드릴게요!\n크러스트: AZX 모양을 딴 쿠키 4종!\n크러스트: 선로 위의 돌멩이들을 떠올리게 만드는 사탕 10종!\n크러스트: 그리고 디젤이 특별 주문한 메뉴.\n크러스트: 열차맛 퍼펙트를 이용해서 만든, 열차맛 아이스크림~",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브래디",
+          "summary": "브래디는 도시락을 제외하면 열차맛 아이스크림이 제일 맛있었다며 솔린에게 먹어보라고 권한다.",
+          "line_start": 72,
+          "line_end": 73,
+          "claim_line": 72,
+          "quote": "브래디: 도시락을 제외하면, 이게 제일 맛있었어.\n브래디: 솔린, 한번 먹어볼래?",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 원래 단 것을 별로 좋아하지 않지만 그렇게 부탁하니 어쩔 수 없다며 하나 달라고 말한다.",
+          "line_start": 74,
+          "line_end": 77,
+          "claim_line": 75,
+          "quote": "솔린: 어?\n솔린: 흐흥~ 원래 단 거 별로 안 좋아하지만.\n솔린: 그렇게까지 부탁하니까, 어쩔 수 없네.\n솔린: 알겠어, 하나만 줘 봐.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 크러스트",
+          "summary": "디젤이 AZX 좌석에 앉아서 원하는 메뉴를 먹어보자고 제안하자 크러스트가 반긴다.",
+          "line_start": 78,
+          "line_end": 81,
+          "claim_line": null,
+          "quote": "디젤: 아, 그럼 이왕 이렇게 된 거.\n디젤: AZX 안에서 드시고 싶은 메뉴를 드셔보시겠어요?\n디젤: 좌석에 앉아서 먹으면, 분명 더 맛있을 거예요.\n크러스트: 우와! 그래도 되나요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브래디",
+          "summary": "브래디는 음식은 어디서 먹느냐에 따라 맛도 달라지는 법이라며 고마워한다.",
+          "line_start": 82,
+          "line_end": 83,
+          "claim_line": 83,
+          "quote": "브래디: 우린 고맙지.\n브래디: 음식은 어디서 먹느냐에 따라 맛도 달라지는 법이니까.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 디젤, 솔린, 크러스트, 브래디",
+          "summary": "일행은 AZX 안으로 이동해 좌석에 앉아 각자 원하는 메뉴를 테이블에 올려놓고 맛을 보기 시작한다.",
+          "line_start": 84,
+          "line_end": 93,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그럼 이동하자!\"]\n  [OPTION_END]\n[CHOICE_END]\n디젤: 그럼, 잘 먹겠습니다.\n솔린: 으으~ 맛있겠다···!\n크러스트: 잘 먹겠습니다!\n브래디: 잘 먹을게.\n좌석에 앉은 우리는, 각자 원하는 메뉴를 하나씩 테이블에 얹어놓고.\n맛을 보기 시작했다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브래디",
+          "summary": "브래디는 의도에 맞는 장소에서 먹으니 확실히 느낌이 다르고 최상의 맛을 낸다고 평한다.",
+          "line_start": 94,
+          "line_end": 96,
+          "claim_line": 96,
+          "quote": "브래디: 음.\n브래디: 확실히 느낌이 달라.\n브래디: 역시 의도에 맞는 장소에서 먹으니까, 최상의 맛을 내는구나.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "크러스트",
+          "summary": "크러스트는 만들면서 맛을 봤을 때는 이런 맛이 아니었다며 놀라워한다.",
+          "line_start": 97,
+          "line_end": 97,
+          "claim_line": 97,
+          "quote": "크러스트: 진짜로! 분명 만들면서 맛을 봤을 땐 이런 맛이 아니었는데!",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 크러스트에게 부탁하길 잘했다며 배가 불러도 도시락 2개는 거뜬히 먹겠다고 칭찬한다.",
+          "line_start": 98,
+          "line_end": 99,
+          "claim_line": 98,
+          "quote": "디젤: 으음~ 역시 크러스트에게 부탁드리길 잘했어요.\n디젤: 배가 불러도 도시락 2개는 거뜬히 먹겠는데요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "솔린이 아이스크림을 맛보며 디젤이 특별히 주문한 메뉴가 맞는지 묻자 디젤은 맞다고 확인해 준다.",
+          "line_start": 100,
+          "line_end": 103,
+          "claim_line": 103,
+          "quote": "솔린: 할짝- 할짝-\n솔린: 맛있다···.\n솔린: 이거 디젤이 특별히 주문한 메뉴라고 했지?\n디젤: 네, 맞아요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 자신이 단 것을 별로 안 좋아하지만 이 열차맛 아이스크림은 진짜 맛있다고 감탄한다.",
+          "line_start": 104,
+          "line_end": 104,
+          "claim_line": 104,
+          "quote": "솔린: 내가 단 걸 별로 안 좋아하지만, 이건 진짜 맛있어!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 솔린",
+          "summary": "디젤이 다행이라며 자신도 한 입 맛봐도 될지 묻자 솔린이 먹어보라고 허락한다.",
+          "line_start": 105,
+          "line_end": 107,
+          "claim_line": null,
+          "quote": "디젤: 다행이네요~\n디젤: 저도 한 입 맛 봐도 될까요?\n솔린: 응, 먹어봐.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 아이스크림을 한 입 맛보고 청량함과 함께 다양한 맛이 느껴져 정말 맛있다고 평한다.",
+          "line_start": 108,
+          "line_end": 111,
+          "claim_line": 110,
+          "quote": "디젤: 할짝-\n디젤: 아···.\n디젤: 이 청량함과 함께 느껴지는 다양한 맛들.\n디젤: 정말 맛있네요~ 후후.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "크러스트, 브래디",
+          "summary": "크러스트가 일행이 만족해하는 것 같냐고 묻자 브래디가 그렇다며 고생 많았다고 격려한다.",
+          "line_start": 112,
+          "line_end": 114,
+          "claim_line": null,
+          "quote": "크러스트: 만족해하시는 것 같지?\n브래디: 응.\n브래디: 고생 많았어.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 크러스트",
+          "summary": "지휘관이 이 음식을 먹으려고 기차역에 자주 오겠다고 말하자 크러스트는 다음에 또 다 같이 오자고 반긴다.",
+          "line_start": 115,
+          "line_end": 119,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"이거 먹으려고 기차역에 자주 오겠는데.\"]\n  [OPTION_END]\n[CHOICE_END]\n크러스트: 헤헤~ 그럼 다음에 또 다 같이 와요!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브래디",
+          "summary": "브래디는 기차 안에서 음식을 먹는 것이 처음이라 신선했다며 좋은 맛을 기억하겠다고 말한다.",
+          "line_start": 120,
+          "line_end": 122,
+          "claim_line": 121,
+          "quote": "브래디: 그래.\n브래디: 기차 안에서 음식을 먹는 건 처음이라, 신선했어.\n브래디: 좋은 맛, 기억해야지.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 디젤, 솔린, 크러스트, 브래디",
+          "summary": "일행은 기차 여행을 하는 사람들처럼 함께 음식을 나눠 먹으며 한참 동안 이야기를 나눈다.",
+          "line_start": 123,
+          "line_end": 124,
+          "claim_line": null,
+          "quote": "우리는 마치 기차 여행을 하는 사람들처럼.\n함께 음식을 나눠 먹으며, 한참을 떠들었다.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "AZX 차내 판매용 간식",
+          "category": "item",
+          "subject": null,
+          "detail": "크러스트가 만든 AZX 차내 판매용 간식으로는 AZX 모양을 딴 쿠키 4종, 선로 위의 돌멩이들을 떠올리게 만드는 사탕 10종, 디젤이 특별 주문해 열차맛 퍼펙트로 만든 열차맛 아이스크림이 있다.",
+          "line_start": 68,
+          "line_end": 71,
+          "quote": "크러스트: AZX 모양을 딴 쿠키 4종!\n크러스트: 선로 위의 돌멩이들을 떠올리게 만드는 사탕 10종!\n크러스트: 그리고 디젤이 특별 주문한 메뉴.\n크러스트: 열차맛 퍼펙트를 이용해서 만든, 열차맛 아이스크림~"
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "AZX",
+          "suggested_type": "item",
+          "line_start": 7
+        },
+        {
+          "surface_text": "열차맛 퍼펙트",
+          "suggested_type": "item",
+          "line_start": 71
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "train_station_09",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "디젤, 솔린, 브리드는 최근 바쁜 와중에 도움을 준 지휘관에게 감사 인사를 전하고자 기차역으로 초대해 각자 선물을 건넨다. 세 사람의 선물에 모두 작은 실수가 있어 분위기가 가라앉지만, 지휘관이 미리 준비해 온 AZX 배지를 선물하고 서로 앞으로도 잘 부탁한다며 훈훈하게 마무리한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "디젤",
+            "entity_id": "char_디젤",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "솔린",
+            "entity_id": "char_솔린",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "브리드",
+            "entity_id": "char_브리드",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "AZX",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 143,
+            "line_end": 143,
+            "quote": "브리드: AZX가 그러져있군요."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "브리드",
+          "to_target": "디젤, 솔린, 지휘관",
+          "address_term": "여러분",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "브리드: 그냥 여러분이 마실 걸 준비해 왔으니, 드시면서 하시죠."
+        },
+        {
+          "from_speaker": "디젤",
+          "to_target": "브리드, 솔린, 지휘관",
+          "address_term": "여러분",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "디젤: 자, 여기 있어요~ 여러분~"
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 솔린, 브리드, 지휘관",
+          "summary": "기차역에서 디젤, 솔린, 브리드와 지휘관이 인사를 나누고, 지휘관이 기차역으로 불러낸 이유를 묻는다.",
+          "line_start": 2,
+          "line_end": 12,
+          "claim_line": null,
+          "quote": "디젤: 지휘관, 안녕하세요~\n솔린: 어서 와!\n브리드: 안녕하십니까.\n[CHOICE_START]\n  [OPTION TEXT=\"안녕.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그런데 기차역으로 왜 불러낸 거야?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 최근 바쁜 와중에 지휘관이 여러 가지로 도움을 주어 감사 인사 겸 초대한 것이라고 밝힌다.",
+          "line_start": 13,
+          "line_end": 17,
+          "claim_line": 17,
+          "quote": "디젤: 아, 제가 알려드리지 않아서 궁금하셨죠?\n디젤: 큰일은 아니구요~\n디젤: 저희 최근 들어 너무 바빴잖아요~\n디젤: 그 와중에 지휘관이 이래저래 여러 가지로 도움을 주셨구요.\n디젤: 그게 감사해서 인사드릴 겸 초대 드린 거예요~",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 이렇게 셋이서 모인 것도 오랜만이라고 말한다.",
+          "line_start": 18,
+          "line_end": 18,
+          "claim_line": 18,
+          "quote": "브리드: 그러고 보니, 이렇게 셋이서 모인 것도 오랜만입니다.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 디젤과 브리드가 바빠서 쉴 여유가 거의 없었고 오늘도 둘 다 아슬아슬하게 시간을 맞춰 왔다고 말한다.",
+          "line_start": 19,
+          "line_end": 21,
+          "claim_line": 20,
+          "quote": "솔린: 맞아!\n솔린: 디젤도 브리드도 바빠서, 쉴 여유가 거의 없었잖아.\n솔린: 오늘도 둘 다 엄청 아슬아슬하게 시간 맞춰서 왔고.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 솔린의 말이 솔린은 바쁘지 않았다는 말로 들린다고 지적한다.",
+          "line_start": 22,
+          "line_end": 22,
+          "claim_line": 22,
+          "quote": "브리드: 솔린은 바쁘지 않았다는 말로 들리는군요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 자신도 엄청 바빴다며 다 같이 모여서 좋다고 말한다.",
+          "line_start": 23,
+          "line_end": 24,
+          "claim_line": 23,
+          "quote": "솔린: 무, 물론 나도 엄~청 바빴지!\n솔린: 아무튼, 이렇게 다 같이 모이니 좋네!",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 솔린, 브리드",
+          "summary": "디젤, 솔린, 브리드는 모두 지휘관에게 줄 선물이 든 쇼핑백을 준비해 왔음을 밝히고 선물 증정식을 하기로 한다.",
+          "line_start": 25,
+          "line_end": 33,
+          "claim_line": null,
+          "quote": "디젤: 후후, 그렇죠?\n디젤: 그래서 약소하지만 이렇게 작은 선물도 준비했답니다.\n솔린: 앗, 디젤도?\n솔린: 나도 준비했는데!\n브리드: 저도 준비했습니다.\n디젤, 솔린, 브리드의 손에는 각각 쇼핑백이 들려있었다.\n솔린: 감사의 표현, 하면 뭐니 뭐니 해도 선물이지!\n디젤: 어머, 마음이 통했나 보네요~\n디젤: 선물 증정식을 하면 되겠네요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "브리드, 디젤, 솔린, 지휘관",
+          "summary": "브리드는 각자 취향에 맞춘 마실 것을 준비해 왔다며 쇼핑백을 살펴보다가 그대로 굳어버리고, 지휘관이 왜 그러는지 묻는다.",
+          "line_start": 34,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "브리드: 전 거창하게 선물이라고 할 것까지는 아닙니다.\n브리드: 그냥 여러분이 마실 걸 준비해 왔으니, 드시면서 하시죠.\n디젤: 와~ 마실 거 좋네요!\n솔린: 나도 마침 목말랐는데, 좋아!\n브리드: 각자 취향에 맞춘 걸로 가져왔으니 그대로 드시면 될 것 같···.\n브리드가 자신의 쇼핑백을 살펴보더니, 그대로 굳어버렸다.\n[CHOICE_START]\n  [OPTION TEXT=\"음? 왜 그래?\"]\n  [OPTION_END]\n[CHOICE_END]\n브리드: ··· ···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 급하게 나오느라 쇼핑백을 착각해 마실 것 대신 업무용 태블릿이 들어 있다며 사과한다.",
+          "line_start": 45,
+          "line_end": 48,
+          "claim_line": 46,
+          "quote": "브리드: 죄송합니다.\n브리드: ···마실 것 대신··· 업무용 태블릿이 들어있군요.\n브리드: 급하게 나오느라 쇼핑백을 착각한 것 같습니다.\n브리드: 이런 실수를 하다니, 정말···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 그럴 수도 있다며 너무 마음 쓰지 말라고 브리드를 위로한다.",
+          "line_start": 49,
+          "line_end": 50,
+          "claim_line": null,
+          "quote": "디젤: 에이~ 그럴 수도 있죠.\n디젤: 너무 마음 쓰지 마세요~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 생각해 보니 그렇게 목이 마르지는 않다며 괜찮다고 브리드를 위로한다.",
+          "line_start": 51,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "솔린: 맞아, 맞아!\n솔린: 나도 생각해 보니까 그렇게 막 목이 마르진 않아, 괜찮아!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "브리드, 솔린, 디젤",
+          "summary": "브리드가 재차 사과한 뒤 침묵이 흐르자, 디젤이 다음으로 자신의 선물을 나누어준다.",
+          "line_start": 53,
+          "line_end": 58,
+          "claim_line": null,
+          "quote": "브리드: 그래도 죄송합니다···.\n브리드: ··· ···.\n솔린: ··· ···.\n디젤: 그럼 다음엔 제가 드릴게요~\n디젤: 자, 여기 있어요~ 여러분~\n디젤은 쇼핑백 안에서 작은 봉투를 꺼내어, 우리에게 하나씩 나누어주었다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 달콤한 향을 맡고 자신도 디젤도 좋아하는 선물인 줄 알겠다고 말한다.",
+          "line_start": 59,
+          "line_end": 61,
+          "claim_line": 61,
+          "quote": "솔린: 킁킁, 달콤한 향이 나는데?\n솔린: 나, 이 선물 뭔지 알 것 같아.\n솔린: 나도 디젤도 좋아하는 그거지?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 브리드, 디젤",
+          "summary": "지휘관과 브리드도 무엇인지 짐작하고 봉투 안의 사탕을 확인한다.",
+          "line_start": 62,
+          "line_end": 69,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"아, 그거구나.\"]\n  [OPTION_END]\n[CHOICE_END]\n브리드: 그거로군요.\n디젤: 후후~\n봉투 안을 보자, 예상대로 거기엔 사탕이 있었다.\n하지만···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 봉투 안의 사탕이 딸기맛 사탕이 아니라고 말한다.",
+          "line_start": 70,
+          "line_end": 73,
+          "claim_line": 71,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"딸기맛 사탕이 아니네?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 디젤이 늘 사 오는 사탕인 줄 알았다며 놀란다.",
+          "line_start": 74,
+          "line_end": 74,
+          "claim_line": 74,
+          "quote": "솔린: 앗, 디젤이 늘 사 오는 그 사탕인 줄 알았는데!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 봉투 안의 사탕이 포도맛 사탕이라고 말한다.",
+          "line_start": 75,
+          "line_end": 75,
+          "claim_line": 75,
+          "quote": "브리드: 포도맛 사탕이군요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 분명 딸기맛 사탕으로 달라고 했다며 당황한다.",
+          "line_start": 76,
+          "line_end": 77,
+          "claim_line": 77,
+          "quote": "디젤: ···네?\n디젤: 그럴 리가··· 분명 딸기맛 사탕으로 달라고 했는데···!",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 점원이 실수한 것 아닐까 추측하며 지난번에도 이런 일이 있었던 기억이 난다고 말한다.",
+          "line_start": 78,
+          "line_end": 79,
+          "claim_line": 79,
+          "quote": "브리드: 점원이 실수한 거 아닐까요?\n브리드: 생각해 보니, 지난번에도 이런 일이 있었던 기억입니다.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 오기 전에 급하게 사 오느라 봉투를 받고 확인하는 것을 깜빡했다며 사과한다.",
+          "line_start": 80,
+          "line_end": 83,
+          "claim_line": 82,
+          "quote": "디젤: 아··· 그랬을 수도 있겠네요.\n디젤: 제가 봉투를 받고 나서 한 번 더 확인해야 했는데.\n디젤: 여기 오기 전에 급하게 사 오느라··· 확인한다는 걸 깜빡했어요.\n디젤: 죄송해요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 그럴 수도 있다며 너무 마음 쓰지 말라고 디젤을 위로한다.",
+          "line_start": 84,
+          "line_end": 85,
+          "claim_line": null,
+          "quote": "브리드: 그러실 수도 있죠.\n브리드: 너무 마음 쓰지 마십시오.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 자신은 포도맛 사탕도 좋아한다며 괜찮다고 위로한다.",
+          "line_start": 86,
+          "line_end": 87,
+          "claim_line": 87,
+          "quote": "솔린: 맞아, 맞아!\n솔린: 난 포도맛 사탕도 좋아해, 괜찮아!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 그래도 딸기맛 사탕을 맛보여주고 싶었다며 아쉬워하고 브리드와 함께 침묵한다.",
+          "line_start": 88,
+          "line_end": 90,
+          "claim_line": 88,
+          "quote": "디젤: 그래도 딸기맛 사탕을 맛보여드리고 싶었는데, 아쉽네요···.\n디젤: ··· ···.\n브리드: ··· ···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 자신은 확실히 잘 준비해 왔다며 자기 선물을 받고 기분을 풀라고 말한다.",
+          "line_start": 91,
+          "line_end": 92,
+          "claim_line": 92,
+          "quote": "솔린: 괘, 괜찮다니까!\n솔린: 난 확실히 잘 준비해 왔으니까 내 선물 받고 기분들 풀어!",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "솔린, 디젤, 브리드, 지휘관",
+          "summary": "솔린이 지휘관, 디젤, 브리드에게 선물을 건네고 지휘관이 허락을 받아 포장지를 뜯자 마이크 모양 키링이 나타난다.",
+          "line_start": 93,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "솔린: 자, 받아. 지휘관!\n솔린: 여기 디젤이랑, 브리드도.\n디젤: 앗, 감사드려요!\n브리드: 감사합니다.\n[CHOICE_START]\n  [OPTION TEXT=\"고마워, 뜯어봐도 돼?\"]\n  [OPTION_END]\n[CHOICE_END]\n솔린: 물론이지!\n포장지를 뜯자,\n마이크 모양··· 의 키링이 나타났다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 솔린, 디젤, 브리드",
+          "summary": "지휘관이 마이크 모양이라고 말하자 솔린이 당황하며 다른 두 사람의 선물을 확인하고, 디젤에게는 커피콩 모양, 브리드에게는 하트 모양 키링이 나온다.",
+          "line_start": 104,
+          "line_end": 110,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"음? 마이크네?\"]\n  [OPTION_END]\n[CHOICE_END]\n솔린: 엇?! 아앗?!\n솔린: 자, 잠깐! 디젤이랑 브리드는?\n디젤에게는 커피콩 모양의 키링, 브리드에게는 하트 모양의 키링이 나왔다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "솔린, 지휘관, 브리드, 디젤",
+          "summary": "당황한 솔린은 키링을 돌려받아 지휘관에게는 하트 모양, 브리드에게는 커피콩 모양, 디젤에게는 마이크 모양 키링으로 다시 나누어준다.",
+          "line_start": 111,
+          "line_end": 115,
+          "claim_line": null,
+          "quote": "솔린: 으, 으으···!\n솔린: 이, 이게 아닌데···!\n솔린: 잠깐 그거 다 나한테 좀 줄래···?\n키링을 솔린에게 돌려주자, 하트 모양의 키링은 나에게.\n커피콩 모양의 키링은 브리드에게, 마이크 모양의 키링은 디젤에게 다시 나누어주었다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 원래 이렇게 주려고 순서를 다 기억해 두었는데 늦을까 봐 달려오다가 섞인 것 같다며 사과한다.",
+          "line_start": 116,
+          "line_end": 118,
+          "claim_line": 117,
+          "quote": "솔린: 원래는 이렇게 주려고 했어.\n솔린: 분명··· 순서를 다 기억해 뒀는데, 혹시 늦을까해서 달려오다가 섞였나 봐.\n솔린: ···미안.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 키링이 너무 귀엽다며 괜찮다고 위로한다.",
+          "line_start": 119,
+          "line_end": 120,
+          "claim_line": 119,
+          "quote": "디젤: 아녜요, 이 키링 너무 귀여운데요~\n디젤: 괜찮아요~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드도 키링이 마음에 든다고 말한다.",
+          "line_start": 121,
+          "line_end": 121,
+          "claim_line": 121,
+          "quote": "브리드: 저도 마음에 듭니다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 뜯자마자 서프라이즈를 해주고 싶었는데 망했다며 한탄하고 세 사람 모두 침묵한다.",
+          "line_start": 122,
+          "line_end": 126,
+          "claim_line": 122,
+          "quote": "솔린: 뜯자마자 서프라이즈! 하게 해주고 싶었는데.\n솔린: 망했어, 으으···.\n솔린: ··· ···.\n디젤: ··· ···.\n브리드: ··· ···.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 디젤, 브리드, 솔린",
+          "summary": "분위기가 무겁게 가라앉자 지휘관은 다들 선물 고맙다며 자신도 준비한 것이 있다고 말하고 세 사람에게 선물을 건넨다.",
+          "line_start": 127,
+          "line_end": 141,
+          "claim_line": null,
+          "quote": "분위기가 무겁게 가라앉았다.\n이제 내가 나설 차례인가.\n[CHOICE_START]\n  [OPTION TEXT=\"다들 선물 고마워.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"실은 나도 준비한 게 있어.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"자, 여기.\"]\n  [OPTION_END]\n[CHOICE_END]\n놀란 표정으로 서 있는 셋에게 각각 선물을 건넸다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "디젤, 브리드, 솔린",
+          "summary": "디젤, 브리드, 솔린은 반짝거리는 AZX가 그려진 배지를 확인하고 감탄한다.",
+          "line_start": 142,
+          "line_end": 144,
+          "claim_line": null,
+          "quote": "디젤: 어머나, 이건 배지네요!\n브리드: AZX가 그러져있군요.\n솔린: 우와~! 반짝반짝해!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 얼마 전 기념품 가게에서 눈에 띄어 샀고 오늘 다 같이 만나는 날이라 들고 왔다며 앞으로도 AZX 운영을 잘 부탁한다고 격려한다.",
+          "line_start": 145,
+          "line_end": 156,
+          "claim_line": 146,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"얼마 전에, 기념품 가게에서 눈에 띄어서 샀어.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"오늘 다 같이 만나는 날이라고 해서 들고 왔고.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"다들 고생많아. 앞으로도 AZX 운영, 잘 부탁할게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "세 사람이 감동해 말을 잇지 못하자 지휘관이 마음에 안 드냐고 묻고, 브리드는 AZX가 아주 멋져서 마음에 든다고 답한다.",
+          "line_start": 157,
+          "line_end": 165,
+          "claim_line": 164,
+          "quote": "디젤: ··· ···.\n브리드: ··· ···.\n솔린: ···으으.\n[CHOICE_START]\n  [OPTION TEXT=\"호, 혹시··· 마음에 안 들어?\"]\n  [OPTION_END]\n[CHOICE_END]\n브리드: 아뇨, 마음에 듭니다.\n브리드: AZX가 아주 멋지네요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 배지가 반짝반짝하고 예뻐서 너무 좋다며 매일 들고 다니겠다고 말한다.",
+          "line_start": 166,
+          "line_end": 167,
+          "claim_line": 166,
+          "quote": "솔린: 반짝반짝하고 예뻐서, 너무 좋아!\n솔린: 매일 들고 다닐래!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "디젤",
+          "summary": "디젤은 정말 최고의 선물이라며 앞으로도 열심히 하겠다고 다짐하고 브리드와 솔린에게도 고마움을 전한다.",
+          "line_start": 168,
+          "line_end": 172,
+          "claim_line": 169,
+          "quote": "디젤: 마음에 안 들긴요~\n디젤: 정말 최고의 선물이에요, 지휘관.\n디젤: 앞으로도 열심히 할게요~!\n디젤: 브리드랑 솔린도 고마워요.\n디젤: 앞으로도 잘 부탁드려요~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "솔린",
+          "summary": "솔린은 자신도 이제 한층 더 성장했으니 더 열심히 해보겠다고 다짐한다.",
+          "line_start": 173,
+          "line_end": 175,
+          "claim_line": 174,
+          "quote": "솔린: 뭐, 뭐야! 새삼스럽게!\n솔린: 나도 뭐··· 이제 한층 더 성장했으니까!\n솔린: 더 열심히 해볼게!",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 디젤, 솔린, 지휘관에게 늘 감사한다며 이후에도 잘 부탁한다고 인사한다.",
+          "line_start": 176,
+          "line_end": 178,
+          "claim_line": 177,
+          "quote": "브리드: 디젤, 솔린, 그리고 지휘관.\n브리드: 늘 감사드립니다.\n브리드: 이후에도 잘 부탁드리겠습니다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "브리드, 디젤, 솔린, 지휘관",
+          "summary": "브리드가 기차역에서 간단하게 마실 것을 준비하겠다고 제안하자 디젤, 솔린, 지휘관이 동의하고 한참 동안 이야기를 나눈다.",
+          "line_start": 179,
+          "line_end": 187,
+          "claim_line": null,
+          "quote": "브리드: 비록 마실 걸 들고 오진 못했지만, 간단하게나마 여기서 준비해 드릴까 하는데, 다들 괜찮으실까요?\n디젤: 후후, 좋죠~\n솔린: 나도 좋아!\n디젤: 지휘관도 괜찮으신가요?\n[CHOICE_START]\n  [OPTION TEXT=\"응, 당연하지.\"]\n  [OPTION_END]\n[CHOICE_END]\n우리는 한참동안 기차역에서 이야기 꽃을 피웠다.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "디젤",
+          "target": "지휘관",
+          "relation_or_change": "최근 바쁜 와중에 여러 도움을 준 지휘관에게 감사해하며 인사드릴 겸 기차역으로 초대함",
+          "epistemic_type": "character_claim",
+          "claimant": "디젤",
+          "line_start": 15,
+          "line_end": 17,
+          "claim_line": 17,
+          "quote": "디젤: 저희 최근 들어 너무 바빴잖아요~\n디젤: 그 와중에 지휘관이 이래저래 여러 가지로 도움을 주셨구요.\n디젤: 그게 감사해서 인사드릴 겸 초대 드린 거예요~",
+          "refers_to_past": true
+        },
+        {
+          "subject": "디젤",
+          "target": "지휘관",
+          "relation_or_change": "지휘관의 선물을 최고의 선물이라 칭하며 앞으로도 열심히 하겠다고 다짐함",
+          "epistemic_type": "character_claim",
+          "claimant": "디젤",
+          "line_start": 168,
+          "line_end": 170,
+          "claim_line": 169,
+          "quote": "디젤: 마음에 안 들긴요~\n디젤: 정말 최고의 선물이에요, 지휘관.\n디젤: 앞으로도 열심히 할게요~!",
+          "refers_to_past": false
+        },
+        {
+          "subject": "브리드",
+          "target": "지휘관",
+          "relation_or_change": "디젤, 솔린과 함께 지휘관에게 늘 감사한다며 앞으로도 잘 부탁한다고 마음을 전함",
+          "epistemic_type": "character_claim",
+          "claimant": "브리드",
+          "line_start": 176,
+          "line_end": 178,
+          "claim_line": 177,
+          "quote": "브리드: 디젤, 솔린, 그리고 지휘관.\n브리드: 늘 감사드립니다.\n브리드: 이후에도 잘 부탁드리겠습니다.",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "AZX",
+          "suggested_type": "item",
+          "line_start": 143
+        }
+      ],
+      "reviewed_gaps": []
+    },
+    {
+      "scene_id": "train_station_10",
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "한밤중 아무도 없는 기차역으로 데이트하러 온 벨벳과 지휘관은 야근 중이던 브리드와 마주친다. 벨벳이 직장인용 신메뉴 조사를 하러 왔다고 둘러대자, 브리드는 벨벳이 말하는 암살·요원식 업무 철학을 순수한 직장인의 열정으로 받아들이며 첫차가 출발할 때까지 역무실에서 깊은 대화를 나눈다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "speaker_label": "벨벳",
+            "entity_id": "char_벨벳",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "speaker_label": "브리드",
+            "entity_id": "char_브리드",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "지휘관실",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 21,
+            "line_end": 21,
+            "quote": "벨벳: 혹시 지휘관실로 가고 싶었던···."
+          },
+          {
+            "surface_text": "차량기지",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 38,
+            "line_end": 38,
+            "quote": "브리드: 차량기지에 열차도 놔야 하고, 일지도 가져다 놔야 하거든요."
+          },
+          {
+            "surface_text": "메이드 카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 48,
+            "line_end": 48,
+            "quote": "브리드: 옆에 계신 분이 메이드 카페에 새로 오신 분인가요?"
+          },
+          {
+            "surface_text": "역무실",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 143,
+            "line_end": 143,
+            "quote": "브리드: 괜찮으시다면 역무실에서 좀 더 얘기를 나눠보고 싶어요."
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "from_speaker": "벨벳",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "벨벳: 꺄하하하. 주인님이랑 같이 있으니까, 이런 경험도 다 해보네."
+        },
+        {
+          "from_speaker": "브리드",
+          "to_target": "벨벳",
+          "address_term": "일행분",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "브리드: 지휘관··· 하고 일행분이시네요."
+        },
+        {
+          "from_speaker": "브리드",
+          "to_target": "벨벳",
+          "address_term": "벨벳 님",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "브리드: 그러시군요. 벨벳 님은 역에 어쩐 일이신가요?"
+        }
+      ],
+      "unknown_speakers": [
+        {
+          "unknown_id": "unk_train_station_10_L0022",
+          "quote": "???: 거기 누구 계신가요?",
+          "speaking_style": "정중한 존댓말",
+          "target_addressed": "지휘관, 벨벳",
+          "contextual_clues": [
+            "한밤중 기차역에서 손전등을 비추며 지휘관과 벨벳에게 누구냐고 묻는 인물"
+          ],
+          "resolved_in_same_scene_to": {
+            "surface_text": "브리드",
+            "entity_id": "char_브리드",
+            "line_start": 22,
+            "line_end": 25,
+            "quote": "???: 거기 누구 계신가요?\n손전등이 나와 벨벳을 향해 비춰졌다.\n브리드: 지휘관··· 하고 일행분이시네요.\n브리드: 이 시간에 역에는 무슨 일이세요?"
+          }
+        }
+      ],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 한밤중 아무도 없는 기차역은 처음이라며 둘이서 비밀스러운 장난을 치기 딱 좋다고 말한다.",
+          "line_start": 2,
+          "line_end": 5,
+          "claim_line": 5,
+          "quote": "벨벳: 꺄하하하. 주인님이랑 같이 있으니까, 이런 경험도 다 해보네.\n벨벳: 아~무도 없는 기차역은 처음이야.\n벨벳: 그것도 이런 한밤중에.\n벨벳: 둘이서 비밀~스런 장난치기 딱 좋다, 그치?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 기차역도 누군가의 직장이니 장난은 치면 안 된다고 만류한다.",
+          "line_start": 6,
+          "line_end": 13,
+          "claim_line": 11,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"장난은 치면 안 돼.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"여기도 누군가의 직장이니까.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 말이 그렇다는 것이라고 답한다.",
+          "line_start": 14,
+          "line_end": 14,
+          "claim_line": 14,
+          "quote": "벨벳: 말이 그렇다는 거지, 말이~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "지휘관이 이 시간에 기차역에 왜 오고 싶었는지 묻자 벨벳은 데이트 장소로 아무나 못 가는 곳에 가보고 싶었다며 혹시 지휘관실로 가고 싶었냐고 묻는다.",
+          "line_start": 15,
+          "line_end": 21,
+          "claim_line": 19,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"근데 이 시간에 기차역엔 왜 오고 싶었던 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n벨벳: 이왕 데이트 장소로 할 거면, 아무나 못 가는 곳으로 해보고 싶었을 뿐이야.\n벨벳: 아.\n벨벳: 혹시 지휘관실로 가고 싶었던···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드가 손전등을 비추며 나타나 지휘관과 일행에게 이 시간에 역에는 무슨 일이냐고 묻는다.",
+          "line_start": 22,
+          "line_end": 25,
+          "claim_line": null,
+          "quote": "???: 거기 누구 계신가요?\n손전등이 나와 벨벳을 향해 비춰졌다.\n브리드: 지휘관··· 하고 일행분이시네요.\n브리드: 이 시간에 역에는 무슨 일이세요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 아무도 없는 게 아니었다며 김빠진다고 아쉬워한다.",
+          "line_start": 26,
+          "line_end": 27,
+          "claim_line": 27,
+          "quote": "벨벳: 아아- 김빠지네~\n벨벳: 아무도 없는 게 아니었잖아.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "브리드가 아무도 없다니 무슨 말이냐고 묻자 지휘관은 별일 아니라고 얼버무린다.",
+          "line_start": 28,
+          "line_end": 32,
+          "claim_line": 30,
+          "quote": "브리드: 아무도 없다니요?\n[CHOICE_START]\n  [OPTION TEXT=\"아니, 별일 아니야···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "지휘관이 퇴근 안 하냐고 묻자 브리드는 기관사는 종점까지 운행했다고 일이 끝나는 게 아니라며 차량기지에 열차를 놓고 일지도 가져다 놔야 하고 남은 할 일도 있다고 설명한다.",
+          "line_start": 33,
+          "line_end": 39,
+          "claim_line": 38,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그런데 브리드는 퇴근 안 해?\"]\n  [OPTION_END]\n[CHOICE_END]\n브리드: 기관사는 종점까지 열차 운행했다고 일이 끝나는 게 아니니까요.\n브리드: 차량기지에 열차도 놔야 하고, 일지도 가져다 놔야 하거든요.\n브리드: 그것 말고도 아직 할 일은 남아 있고요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 브리드가 야근까지 해야 할 정도로 바쁘다고 말한다.",
+          "line_start": 40,
+          "line_end": 43,
+          "claim_line": 41,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"야근까지 해야 할 정도로 바쁘구나.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 다 자신의 일이고 싫어서 하는 것도 아니라고 답한 뒤, 소문을 들었다며 옆에 있는 사람이 메이드 카페에 새로 온 사람인지 묻는다.",
+          "line_start": 44,
+          "line_end": 48,
+          "claim_line": 48,
+          "quote": "브리드: 이것도 다 제 일이니까요.\n브리드: 싫어서 하는 것도 아닌걸요.\n브리드: 그런데···.\n브리드: 소문은 들었습니다만,\n브리드: 옆에 계신 분이 메이드 카페에 새로 오신 분인가요?",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 자신이 지금 메이드 카페에서 최고로 잘나가는 메이드 벨벳이라고 소개한다.",
+          "line_start": 49,
+          "line_end": 50,
+          "claim_line": 49,
+          "quote": "벨벳: 지금 메이드 카페에서 최고로 잘 나가고 있는 메이드, 벨벳이야.\n벨벳: 꺄하하, 내 입으로 이렇게 말하는 건 조금 부끄럽네♥",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "브리드, 벨벳",
+          "summary": "브리드가 역에 어쩐 일이냐고 묻자 벨벳은 주인님과 기차역에서 어른의 불장난을 하러 왔다고 말하려 한다.",
+          "line_start": 51,
+          "line_end": 53,
+          "claim_line": null,
+          "quote": "브리드: 그러시군요. 벨벳 님은 역에 어쩐 일이신가요?\n벨벳: 나?\n벨벳: 난 주인님하고 기차역에서 어른의 불장난ㅇ···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 벨벳의 말을 끊으며 벨벳도 일하러 왔다고 둘러댄다.",
+          "line_start": 54,
+          "line_end": 57,
+          "claim_line": 55,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"베, 벨벳도 일하러 왔어!\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "브리드, 지휘관",
+          "summary": "브리드가 메이드가 역에서 할 일이 떠오르지 않는다며 어떤 일인지 묻자, 지휘관은 기억이 안 난다며 벨벳에게 눈빛으로 신호를 보낸다.",
+          "line_start": 58,
+          "line_end": 65,
+          "claim_line": null,
+          "quote": "브리드: 일하러 오셨다고요?\n브리드: ···죄송합니다. 메이드 분이 역에서 할 일이 제 머리속에선 떠오르질 않네요.\n브리드: 어떤 일로 오신 거죠?\n[CHOICE_START]\n  [OPTION TEXT=\"어··· 뭐였더라, 정확히 기억이 안 나네···.\"]\n  [OPTION_END]\n[CHOICE_END]\n나는 벨벳에게 눈빛으로 신호를 보냈다.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 늦게까지 일하는 직장인들을 위한 새 메뉴를 고안하려고 야근하는 직장인인 브리드에게 어떤 메뉴가 좋을지 물어보러 왔다고 둘러댄다.",
+          "line_start": 66,
+          "line_end": 71,
+          "claim_line": 68,
+          "quote": "벨벳: 무슨 일이었더라~?\n벨벳: 아, 맞다~\n벨벳: 늦게까지 일하는 직장인들을 위한 메뉴를 고안한다고 해서 좀 물어보러 왔었지~?\n브리드: 직장인들을 위한 메뉴요?\n벨벳: 새 메뉴로 출시할까 하거든.\n벨벳: 늦게까지 야근하는 직장인으로서, 어떤 메뉴가 새로 나왔으면 좋겠어?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 맛있는 커피만 마실 수 있다면 어떤 메뉴라도 괜찮다고 답한다.",
+          "line_start": 72,
+          "line_end": 74,
+          "claim_line": 73,
+          "quote": "브리드: 으음···.\n브리드: 전 맛있는 커피만 마실 수 있다면 어떤 메뉴라도 괜찮습니다.\n브리드: ···제대로 된 답변을 드리지 못해서 죄송하네요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 그 정도면 충분하다며 메이드 카페에 오면 잔뜩 서비스해 줄 테니 자신을 지명해 달라고 말한다.",
+          "line_start": 75,
+          "line_end": 78,
+          "claim_line": null,
+          "quote": "벨벳: 아니, 이 정도면 충분해~\n벨벳: 브리드라고 했지?\n벨벳: 대답해 줘서 고맙다는 의미로, 메이드 카페에 오면 잔~뜩 서비스해 줄게.\n벨벳: 그러니까 꼭 벨벳을 지명해 줘♥",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 업무를 위해 늦은 시간에 오고 밖에서 홍보까지 한다며 벨벳의 일에 대한 열정에 감탄한다.",
+          "line_start": 79,
+          "line_end": 81,
+          "claim_line": 81,
+          "quote": "브리드: 업무를 위해서 늦은 시간에 여길 오신 것도 대단한데,\n브리드: 업무 공간 밖에서 일을 위해 홍보까지 하신다니···.\n브리드: 일에 대한 열정이 대단하신 분이시군요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 자신만큼 일에 열정 넘치는 사람도 드물며, 예전부터 배정된 임무는 확실히 처리하고 책임져야 할 타겟은 끝장 볼 때까지 절대 놓치지 않는다고 말한다.",
+          "line_start": 82,
+          "line_end": 86,
+          "claim_line": 85,
+          "quote": "벨벳: 꺄하하하. 나만큼 일에 열정 넘치는 사람도 드물걸~\n브리드: 열정이 넘치시니까, 그만큼 업무에 대한 책임감도 있으시겠네요?\n벨벳: 당연하지.\n벨벳: 예전부터 배정된 임무 하나만큼은 확실히 처리했으니까.\n벨벳: 책임져야 할 타겟은 끝장 볼 때까지 절~대 놓치지 않거든.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관의 팔에 안기며 주인님도 안 놓친다고 말한다.",
+          "line_start": 87,
+          "line_end": 88,
+          "claim_line": null,
+          "quote": "벨벳이 내 팔에 안겨 왔다.\n벨벳: 봐, 주인님도 안 놓치잖아♥",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 타겟을 절대 놓치지 않는다는 마인드를 자신도 배워야겠다고 말한다.",
+          "line_start": 89,
+          "line_end": 90,
+          "claim_line": 90,
+          "quote": "브리드: 타겟은 절대 놓치지 않는다라···.\n브리드: 그런 마인드는 저도 배워야겠어요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 두 사람에게 대화의 핀트가 어긋났다는 생각은 안 하냐고 묻는다.",
+          "line_start": 91,
+          "line_end": 94,
+          "claim_line": 92,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"뭔가 대화의 핀트가 어긋났다는 생각은 안 해···?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 지금 자신과 벨벳이 업무에 관한 대화를 나누고 있지 않았냐며 의아해한다.",
+          "line_start": 95,
+          "line_end": 96,
+          "claim_line": 96,
+          "quote": "브리드: 핀트가 어긋났다고요?\n브리드: 지금 저랑 벨벳 님은 업무에 관한 대화를 나누고 있지 않았나요?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 맞다며 둘 다 업무에 관해 이야기하고 있는 것이라고 주장한다.",
+          "line_start": 97,
+          "line_end": 98,
+          "claim_line": 98,
+          "quote": "벨벳: 맞아~\n벨벳: 우리는 둘 다 [업무]에 관해서 얘기하고 있는 거야~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 자신이 업무 처리를 꼼꼼하게 해서 가끔 지나치다는 말을 들을 때가 있다며 벨벳은 어떤 편인지 묻는다.",
+          "line_start": 99,
+          "line_end": 101,
+          "claim_line": 101,
+          "quote": "브리드: 그럼 벨벳 님.\n브리드: 업무 처리는 꼼꼼하게 하시는 편인가요?\n브리드: 전 가끔 지나치다는 얘기를 들을 때가 있거든요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 어중간하면 꼬리를 밟히므로 확인은 철저히 해야 하고 특히 뒤처리가 중요하다고 답한다.",
+          "line_start": 102,
+          "line_end": 106,
+          "claim_line": 105,
+          "quote": "벨벳: 모자란 것보단 지나친 게 낫지 않아?\n벨벳: 뭐든 확실하게 해서 나쁠 건 없지.\n벨벳: 확인이라는 건 철저히 해야 하는 거니까.\n벨벳: 어중간하면 꼬리를 밟혀.\n벨벳: 그래서 특히 뒤처리가 중요하고.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 뒤처리까지 깔끔해야 다음 업무도 부드럽게 진행할 수 있다며, 지금까지 그렇게 말해 준 사람은 지휘관밖에 없었는데 생각이 통하는 사람을 또 만났다고 기뻐한다.",
+          "line_start": 107,
+          "line_end": 110,
+          "claim_line": 109,
+          "quote": "브리드: 그렇죠. 뒤처리까지 깔끔하게 끝내는 게 중요하죠.\n브리드: 그래야 다음 업무를 진행할 때도 부드럽게 진행할 수 있을 테니까요.\n브리드: 지금까지 그렇게 말씀해 주시는 분은 지휘관 말고 없었는데···.\n브리드: 생각이 통하는 분을 또 만나게 됐군요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 자신이 일에 너무 집중하면 남이 말을 걸어도 고의가 아니게 대답하지 못할 때가 있다며 벨벳은 어떻게 하는지 묻는다.",
+          "line_start": 111,
+          "line_end": 114,
+          "claim_line": 114,
+          "quote": "브리드: 그러면···.\n브리드: 일에 집중하고 있을 때, 다른 사람이 말을 걸면 어떻게 하시죠?\n브리드: 고의로 무시하는 건 아닌데,\n브리드: 전 일에 너무 집중하고 있다 보면, 말을 걸어도 대답 못 할 때가 있거든요.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 중요한 일을 하다가 타겟을 놓치면 말 건 사람이 책임져 줄 것이 아니므로 일부러라도 무시해야 한다고 답한다.",
+          "line_start": 115,
+          "line_end": 118,
+          "claim_line": 115,
+          "quote": "벨벳: 그런 건 일부러라도 무시해야지~\n벨벳: 중요한 일을 하고 있는데, 다른 곳에 신경 쓸 여유가 어디 있어?\n벨벳: 그러다가 타겟을 놓치기라도 하면,\n벨벳: 말 건 사람이 책임 져 줄 거야?",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 자신이 가장 일에 진심인 사람이라고 생각했는데 이렇게까지 업무를 우선하는 사람이 있을 줄 몰랐다며 감탄한다.",
+          "line_start": 119,
+          "line_end": 122,
+          "claim_line": 122,
+          "quote": "브리드: ··· ···.\n브리드: 역시 세상은 넓네요.\n브리드: 전 제가 가장 일에 진심인 사람이라고 생각했는데···.\n브리드: 이렇게까지 업무를 우선해서 생각하시는 분이 계실 줄이야.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 옆에서 보기엔 장난치는 것처럼 보여도 사실 뭘 하든 항상 진심이고 최선을 다하고 있다고 말한다.",
+          "line_start": 123,
+          "line_end": 124,
+          "claim_line": 124,
+          "quote": "벨벳: 난 뭘 하든 항상 진심이거든~\n벨벳: 옆에서 보기엔 장난치는 것처럼 보여도, 사실 항상 최선을 다하고 있으니까~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 벨벳을 바라보며 둘이 다른 이야기하는 것을 처음부터 알고 있었지 않냐고 묻는다.",
+          "line_start": 125,
+          "line_end": 129,
+          "claim_line": null,
+          "quote": "나는 벨벳을 바라보았다.\n[CHOICE_START]\n  [OPTION TEXT=\"···둘이 다른 얘기하는 거, 처음부터 알고 있었지?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 업무를 대하는 자세에 대해 말하고 있으니 전혀 다른 이야기가 아니라고 주장한다.",
+          "line_start": 130,
+          "line_end": 133,
+          "claim_line": 132,
+          "quote": "벨벳: 그게 무슨 소리야, 주인님~\n벨벳: 우린 [업무]에 대해서.\n벨벳: 아니, 정확히는 [업무를 대하는 자세]에 대해 말하고 있는 거잖아?\n벨벳: 그럼 전~혀 다른 얘기가 아닌걸♥",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "지휘관이 위화감을 못 느끼냐고 묻자 브리드는 전혀 느껴지지 않는다며 이렇게 대화가 잘 통하는 사람은 처음이니 역무실에서 좀 더 이야기하자고 벨벳에게 제안한다.",
+          "line_start": 134,
+          "line_end": 144,
+          "claim_line": 144,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"브리드는 위화감 안 느껴?\"]\n  [OPTION_END]\n[CHOICE_END]\n브리드: 위화감이요?\n브리드: 전혀 느껴지지 않습니다.\n브리드: 오히려 더 얘기를 나누고 싶을 정도예요.\n브리드: 그래서 말인데요, 벨벳 님.\n브리드: 시간이 좀 늦긴 했는데··· 잠깐 괜찮으실까요?\n브리드: 괜찮으시다면 역무실에서 좀 더 얘기를 나눠보고 싶어요.\n브리드: 이렇게 대화가 잘 통하는 분은 처음이라···.",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳은 나중에 메이드 카페에 와준다고 하면 역무실에서 이야기하는 것을 생각해 봐도 괜찮다고 조건을 건다.",
+          "line_start": 145,
+          "line_end": 146,
+          "claim_line": null,
+          "quote": "벨벳: 음··· 어쩔까?\n벨벳: 나중에 메이드 카페에 와준다고 하면, 생각해 봐도 괜찮은데~",
+          "refers_to_past": false
+        },
+        {
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "브리드",
+          "summary": "브리드는 좋다며 자신도 메이드 카페에 커피를 마시러 종종 간다고 말한다.",
+          "line_start": 147,
+          "line_end": 148,
+          "claim_line": 148,
+          "quote": "브리드: 네, 좋습니다.\n브리드: 저도 메이드 카페에 커피를 마시러 종종 가거든요.",
+          "refers_to_past": true
+        },
+        {
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳, 브리드, 지휘관",
+          "summary": "벨벳이 오므라이스까지 먹어주면 더 성실히 답하겠다고 하자 브리드는 오므라이스와 디저트까지 주문하기로 약속하고, 첫차가 출발할 때까지 두 사람이 기차역에서 긴 이야기를 나누는 동안 지휘관도 함께 남아 있는다.",
+          "line_start": 149,
+          "line_end": 154,
+          "claim_line": null,
+          "quote": "벨벳: 오므라이스까지 먹어준다고 하면 더 성실하게 대답해 주고♥\n브리드: 이렇게 홍보까지 덧붙이는 프로 정신···.\n브리드: 알겠습니다. 오므라이스에 디저트까지 주문하도록 하죠.\n벨벳: 꺄하, 고마워♥\n그렇게 첫 차가 출발해야 할 때까지, 벨벳과 브리드는 기차역에서 긴 이야기를 나누었고.\n혹시라도 벨벳이 이상한 장난을 칠까 봐, 나도 함께 남아있었다.",
+          "refers_to_past": false
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "keyword": "배정된 임무와 타겟",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "벨벳은 예전부터 배정된 임무 하나만큼은 확실히 처리했으며 책임져야 할 타겟은 끝장 볼 때까지 절대 놓치지 않는다고 말한다.",
+          "line_start": 84,
+          "line_end": 86,
+          "quote": "벨벳: 당연하지.\n벨벳: 예전부터 배정된 임무 하나만큼은 확실히 처리했으니까.\n벨벳: 책임져야 할 타겟은 끝장 볼 때까지 절~대 놓치지 않거든."
+        },
+        {
+          "keyword": "업무 집중 습관",
+          "category": "trait",
+          "subject": "브리드",
+          "detail": "브리드는 일에 너무 집중하고 있다 보면 다른 사람이 말을 걸어도 고의가 아니게 대답하지 못할 때가 있다.",
+          "line_start": 112,
+          "line_end": 114,
+          "quote": "브리드: 일에 집중하고 있을 때, 다른 사람이 말을 걸면 어떻게 하시죠?\n브리드: 고의로 무시하는 건 아닌데,\n브리드: 전 일에 너무 집중하고 있다 보면, 말을 걸어도 대답 못 할 때가 있거든요."
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "subject": "벨벳",
+          "target": "메이드 카페",
+          "relation_or_change": "메이드 카페에 새로 들어온 메이드로, 스스로 최고로 잘나가는 메이드라고 소개함",
+          "epistemic_type": "character_claim",
+          "claimant": "벨벳",
+          "line_start": 47,
+          "line_end": 49,
+          "claim_line": 49,
+          "quote": "브리드: 소문은 들었습니다만,\n브리드: 옆에 계신 분이 메이드 카페에 새로 오신 분인가요?\n벨벳: 지금 메이드 카페에서 최고로 잘 나가고 있는 메이드, 벨벳이야.",
+          "refers_to_past": false
+        },
+        {
+          "subject": "브리드",
+          "target": "지휘관",
+          "relation_or_change": "벨벳을 만나기 전까지 업무에서 뒤처리까지 깔끔하게 끝내는 것이 중요하다고 말해 준 유일한 사람이었다고 언급함",
+          "epistemic_type": "character_claim",
+          "claimant": "브리드",
+          "line_start": 107,
+          "line_end": 109,
+          "claim_line": 109,
+          "quote": "브리드: 그렇죠. 뒤처리까지 깔끔하게 끝내는 게 중요하죠.\n브리드: 그래야 다음 업무를 진행할 때도 부드럽게 진행할 수 있을 테니까요.\n브리드: 지금까지 그렇게 말씀해 주시는 분은 지휘관 말고 없었는데···.",
+          "refers_to_past": true
+        },
+        {
+          "subject": "브리드",
+          "target": "벨벳",
+          "relation_or_change": "업무를 대하는 자세에 깊이 공감하며 이렇게 대화가 잘 통하는 사람은 처음이라고 호감을 표함",
+          "epistemic_type": "character_claim",
+          "claimant": "브리드",
+          "line_start": 141,
+          "line_end": 144,
+          "claim_line": 144,
+          "quote": "브리드: 그래서 말인데요, 벨벳 님.\n브리드: 시간이 좀 늦긴 했는데··· 잠깐 괜찮으실까요?\n브리드: 괜찮으시다면 역무실에서 좀 더 얘기를 나눠보고 싶어요.\n브리드: 이렇게 대화가 잘 통하는 분은 처음이라···.",
+          "refers_to_past": false
+        }
+      ],
+      "unregistered_entity_candidates": [
+        {
+          "surface_text": "지휘관실",
+          "suggested_type": "location",
+          "line_start": 21
+        },
+        {
+          "surface_text": "차량기지",
+          "suggested_type": "location",
+          "line_start": 38
+        },
+        {
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 48
+        },
+        {
+          "surface_text": "역무실",
+          "suggested_type": "location",
+          "line_start": 143
+        }
+      ],
+      "reviewed_gaps": []
+    }
+  ]
+}
