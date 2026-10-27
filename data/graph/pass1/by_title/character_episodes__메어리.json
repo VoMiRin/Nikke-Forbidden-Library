@@ -1,0 +1,4088 @@
+{
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-27T04:56:21.944Z",
+  "title_id": "character_episodes__메어리",
+  "category": "character_episodes",
+  "title": "메어리",
+  "source_file": "public/scripts/character_episodes/메어리.txt",
+  "scene_count": 5,
+  "scenes": [
+    {
+      "scene_id": "mary_00",
+      "title_id": "character_episodes__메어리",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/메어리.txt",
+      "source_sha256": "8fcb246671584eda413093e8ca5cc92c6964fa6c61a6ac25cd7e63e229f3ddc6",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "메어리가 방송 인터뷰에서 계단에서 굴러떨어져 기억을 잃었다고 말하자, TV를 보던 미상의 인물이 그녀를 위선자라고 부른다. 인터뷰 후 페퍼와 지휘관이 메어리와 과거 기억에 대해 이야기하던 중, '블랙박스'라는 발신자가 메어리에게 당시 죽었던 메어리가 니케가 되어 살아 있냐며 위선자라고 조롱하는 메시지를 보내고 메어리는 급히 자리를 뜬다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "mary_00__pis_001",
+            "speaker_label": "메어리",
+            "entity_id": "char_메어리",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_00__pis_002",
+            "speaker_label": "페퍼",
+            "entity_id": "char_페퍼",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_00__pis_003",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "mary_00__rvo_001",
+            "speaker_label": "아나운서",
+            "entity_id": null,
+            "medium": "other",
+            "line_start": 3,
+            "line_end": 6,
+            "quote": "아나운서: 시청자 여러분 안녕하세요~\n아나운서: 오늘의 꼭 한 번 만나고 싶다. 그 주인공은!\n아나운서: 언제나 방주의 건강을 위해 힘쓰는 백의의 천사!\n아나운서: 메어리 씨입니다!"
+          },
+          {
+            "item_id": "mary_00__rvo_002",
+            "speaker_label": "블랙박스",
+            "entity_id": "char_블랙박스",
+            "medium": "messenger",
+            "line_start": 119,
+            "line_end": 124,
+            "quote": "[MSG SENDER=\"블랙박스\"]\n    야\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    너 메어리 맞지?\n  [MSG_END]"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "mary_00__mnt_001",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "아나운서: 언제나 방주의 건강을 위해 힘쓰는 백의의 천사!",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_00__mnt_002",
+            "surface_text": "머스탱",
+            "entity_id": "char_머스탱",
+            "entity_type": "character",
+            "line_start": 89,
+            "line_end": 89,
+            "quote": "[OPTION TEXT=\"머스탱에게 부탁해보는 게 어때?\"]",
+            "chronology_type": "present",
+            "in_branch_option": {
+              "choice_line": 88,
+              "option_text": "머스탱에게 부탁해보는 게 어때?"
+            }
+          },
+          {
+            "item_id": "mary_00__mnt_003",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 156,
+            "line_end": 156,
+            "quote": "니케지?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "mary_00__foa_001",
+          "from_speaker": "아나운서",
+          "to_target": "시청자",
+          "address_term": "시청자 여러분",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "아나운서: 시청자 여러분 안녕하세요~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_002",
+          "from_speaker": "아나운서",
+          "to_target": "메어리",
+          "address_term": "백의의 천사",
+          "line_start": 5,
+          "line_end": 6,
+          "quote": "아나운서: 언제나 방주의 건강을 위해 힘쓰는 백의의 천사!\n아나운서: 메어리 씨입니다!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_003",
+          "from_speaker": "아나운서",
+          "to_target": "메어리",
+          "address_term": "메어리 씨",
+          "line_start": 6,
+          "line_end": 7,
+          "quote": "아나운서: 메어리 씨입니다!\n아나운서: 메어리 씨, 안녕하세요!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_004",
+          "from_speaker": "???",
+          "to_target": "메어리",
+          "address_term": "메어리",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "???: ···메어리?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_005",
+          "from_speaker": "???",
+          "to_target": "메어리",
+          "address_term": "이 위선자",
+          "line_start": 29,
+          "line_end": 30,
+          "quote": "???: 백의의 천사 좋아하시네.\n???: 이 위선자.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_006",
+          "from_speaker": "페퍼",
+          "to_target": "메어리",
+          "address_term": "선배",
+          "line_start": 31,
+          "line_end": 32,
+          "quote": "페퍼: 선배!\n페퍼: 인터뷰 고생하셨어요!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_007",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "메어리: 어머, 지휘관도 오셨군요~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_008",
+          "from_speaker": "페퍼",
+          "to_target": "메어리",
+          "address_term": "메어리 선배",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "페퍼: 메어리 선배가 계단에서 구른 게.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_009",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "야",
+          "line_start": 119,
+          "line_end": 121,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    야\n  [MSG_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_010",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "너",
+          "line_start": 122,
+          "line_end": 124,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    너 메어리 맞지?\n  [MSG_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__foa_011",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "이 위선자",
+          "line_start": 164,
+          "line_end": 166,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    이 위선자\n  [MSG_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [
+        {
+          "item_id": "mary_00__unk_001",
+          "unknown_id": "unk_mary_00_L0010",
+          "quote": "???: !!",
+          "speaking_style": "짧은 감탄사로 놀람을 표출함",
+          "target_addressed": null,
+          "contextual_clues": [
+            "어두운 방 안에서 메어리가 출연한 TV 방송을 보며 놀라는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 10,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__unk_002",
+          "unknown_id": "unk_mary_00_L0014",
+          "quote": "???: ···메어리?",
+          "speaking_style": "혼잣말로 이름을 되뇌는 반말",
+          "target_addressed": "메어리",
+          "contextual_clues": [
+            "TV에 나오는 메어리를 알아보고 이름을 부르는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 14,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__unk_003",
+          "unknown_id": "unk_mary_00_L0029",
+          "quote": "???: 백의의 천사 좋아하시네.",
+          "speaking_style": "냉소적이고 비꼬는 반말",
+          "target_addressed": "메어리",
+          "contextual_clues": [
+            "메어리가 백의의 천사로 불리는 것을 비웃는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 29,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__unk_004",
+          "unknown_id": "unk_mary_00_L0030",
+          "quote": "???: 이 위선자.",
+          "speaking_style": "적대적인 반말",
+          "target_addressed": "메어리",
+          "contextual_clues": [
+            "메어리를 위선자라고 부르며 적개심을 드러내는 인물. 이후 메신저에서 같은 말을 쓰는 블랙박스와 연결됨"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 30,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [
+        {
+          "item_id": "mary_00__ssg_001",
+          "unknown_ids": [
+            "unk_mary_00_L0010",
+            "unk_mary_00_L0014",
+            "unk_mary_00_L0029",
+            "unk_mary_00_L0030"
+          ],
+          "confidence": "확인된 사실",
+          "reason": "어두운 방 안에서 메어리의 TV 인터뷰 방송을 시청하며 연속으로 반응하는 동일 인물이다."
+        }
+      ],
+      "cross_scene_hints": [
+        {
+          "item_id": "mary_00__csh_001",
+          "text": "TV를 보며 메어리를 '이 위선자'라고 부른 ???와 이후 메어리에게 같은 표현으로 문자를 보내고 다음 장면에서 통화하는 '블랙박스'가 동일 인물로 이어진다.",
+          "related_scene_ids": [
+            "mary_01",
+            "mary_02"
+          ]
+        }
+      ],
+      "choice_branches": [
+        {
+          "item_id": "mary_00__chb_001",
+          "choice_line": 88,
+          "options": [
+            {
+              "item_id": "mary_00__chb_001_opt_01",
+              "option_text": "머스탱에게 부탁해보는 게 어때?",
+              "continuation_summary": "페퍼는 사장님께 부탁하는 것은 다른 의미로 위험할 것 같다고 말리고, 메어리는 머스탱의 화려한 모습을 보면 머리가 아찔해져 모든 기억이 떠오를지도 모른다며 명답이라고 반긴다."
+            },
+            {
+              "item_id": "mary_00__chb_001_opt_02",
+              "option_text": "계단에서 한 번 더 굴러보면 생각날지도 몰라.",
+              "continuation_summary": "페퍼가 놀라며 말리지만 메어리는 페퍼의 귀여웠던 순간이 떠오를 수 있다면 좋은 생각이라며 지휘관에게 계단에서 밀어 달라고 부탁하고 지휘관이 승낙한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "mary_00__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아나운서",
+          "summary": "어두운 방 안에 TV 소리가 들려오고, 아나운서가 방주의 건강을 위해 힘쓰는 백의의 천사라며 메어리를 소개한다.",
+          "line_start": 2,
+          "line_end": 7,
+          "claim_line": 5,
+          "quote": "어두운 방 안에 시끄러운 TV 소리가 들려왔다.\n아나운서: 시청자 여러분 안녕하세요~\n아나운서: 오늘의 꼭 한 번 만나고 싶다. 그 주인공은!\n아나운서: 언제나 방주의 건강을 위해 힘쓰는 백의의 천사!\n아나운서: 메어리 씨입니다!\n아나운서: 메어리 씨, 안녕하세요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 흰옷만 입은 것이 아니라며 안쪽 옷도 흰옷으로 갈아입고 올지 묻고, 아나운서가 괜찮다고 만류한다.",
+          "line_start": 8,
+          "line_end": 13,
+          "claim_line": null,
+          "quote": "메어리: 어··· 어? 벌써 찍고 있는 건가요?\n메어리: 아, 안녕하세요~\n???: !!\n메어리: 어··· 근데 저 흰옷만 입고 있는 게 아니라서 백의는 아닌데···.\n메어리: 안쪽 옷도 흰옷으로 갈아입고 올까요?\n아나운서: 아, 아니에요! 괜찮습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "???",
+          "summary": "TV를 보던 ???가 메어리의 이름을 되뇐다.",
+          "line_start": 14,
+          "line_end": 14,
+          "claim_line": 14,
+          "quote": "???: ···메어리?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "claimant_unknown_id": "unk_mary_00_L0014"
+        },
+        {
+          "item_id": "mary_00__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "아나운서가 예전에 크게 다친 적이 있냐고 묻자, 메어리가 계단을 헛디뎌 굴러떨어져 크게 다쳤다고 하더라고 답한다.",
+          "line_start": 15,
+          "line_end": 17,
+          "claim_line": 16,
+          "quote": "아나운서: 그러고 보니까 메어리 씨도 예전에 크게 다친 적이 있으시다면서요?\n메어리: 계단을 헛디뎌서 굴러떨어졌다고 하더라고요.\n메어리: 그때 조금 크게 다쳐서···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "아나운서가 지금은 괜찮은지 묻자, 메어리가 몸은 괜찮은데 기억상실이라며 신기하지 않냐고 말한다.",
+          "line_start": 18,
+          "line_end": 21,
+          "claim_line": 19,
+          "quote": "아나운서: 큰일 날 뻔했네요. 지금은 괜찮으신 건가요?\n메어리: 몸은 괜찮은데··· 기억이 좀.\n아나운서: 설마, 기억상실?!\n메어리: 신기하죠!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아나운서",
+          "summary": "아나운서가 기억상실은 드라마에만 있는 줄 알았더니 아니었다며 놀란다.",
+          "line_start": 22,
+          "line_end": 22,
+          "claim_line": 22,
+          "quote": "아나운서: 그런 건 드라마에만 있는 줄 알았더니 아니었네요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 현실에도 기억상실이 있다며 예전의 자신을 안다고 찾아오는 분들을 몰라봐서 죄송하지만 몸은 오히려 더 건강해졌다고 말한다.",
+          "line_start": 23,
+          "line_end": 26,
+          "claim_line": 25,
+          "quote": "메어리: 후후, 현실에도 있더라고요~\n메어리: 그래서 예전의 저를 안다고 찾아오시는 분들이 있는데.\n메어리: 그럴 때마다 몰라봬서 죄송하곤 해요.\n메어리: 아, 그래도 몸은 오히려 더 건강해졌답니다~",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아나운서",
+          "summary": "아나운서가 다행이라며 백의의 천사가 아프면 큰일이라고 말한다.",
+          "line_start": 27,
+          "line_end": 28,
+          "claim_line": 28,
+          "quote": "아나운서: 그건 다행이네요!\n아나운서: 백의의 천사가 아프면 큰일···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "???",
+          "summary": "TV를 보던 ???가 백의의 천사 좋아하신다며 메어리를 위선자라고 부른다.",
+          "line_start": 29,
+          "line_end": 30,
+          "claim_line": 30,
+          "quote": "???: 백의의 천사 좋아하시네.\n???: 이 위선자.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "claimant_unknown_id": "unk_mary_00_L0030"
+        },
+        {
+          "item_id": "mary_00__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "페퍼가 인터뷰 고생했다고 인사하자 메어리가 정신이 하나도 없다며 지휘관이 온 것을 반긴다.",
+          "line_start": 31,
+          "line_end": 34,
+          "claim_line": null,
+          "quote": "페퍼: 선배!\n페퍼: 인터뷰 고생하셨어요!\n메어리: 으으~ 정신이 하나도 없네요~\n메어리: 어머, 지휘관도 오셨군요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메어리가 방송에 나온다길래 보러 왔다고 말한다.",
+          "line_start": 35,
+          "line_end": 38,
+          "claim_line": 36,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"메어리가 방송에 나온다길래 보러 왔어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 자신이 지휘관에게 연락했다고 밝힌다.",
+          "line_start": 39,
+          "line_end": 39,
+          "claim_line": 39,
+          "quote": "페퍼: 헤헤. 제가 연락드렸어요!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 그랬냐며 부끄러워한다.",
+          "line_start": 40,
+          "line_end": 40,
+          "claim_line": 40,
+          "quote": "메어리: 그랬군요~ 으으~ 부끄러워라~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "페퍼가 인간이었을 때의 기억이 없다는 이야기를 방송에서 해도 되냐고 묻자, 메어리가 자신이 기억 못 하는 것을 아는 사람이 많다며 대수롭지 않게 넘긴다.",
+          "line_start": 41,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "페퍼: 그보다 선배. 아까 그 얘기 해도 되는 거였어요?\n메어리: ??\n페퍼: 그··· 인간이었을 때의 기억이 없는 거···.\n메어리: 에이~ 뭐 어때요. 제가 기억 못 하는 거 아는 사람 많은데.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 아무것도 기억나지 않냐고 묻자, 메어리가 의료 지식은 기억나서 공부를 다시 하지 않아도 되어 다행이라고 답한다.",
+          "line_start": 45,
+          "line_end": 52,
+          "claim_line": 50,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"아무것도 기억나지 않는 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 음··· 아!\n메어리: 의료 지식은 기억나요!\n메어리: 정말 다행이죠?\n메어리: 아니었으면 공부를 다시 했어야 했으니까···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 큰일 날 뻔했다고 맞장구친다.",
+          "line_start": 53,
+          "line_end": 56,
+          "claim_line": 54,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"큰일 날 뻔했네.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "메어리가 동의한 뒤, 페퍼가 계단에서 넘어졌을 때의 일도 생각났으면 좋았을 것이라며 그때의 사고로 메어리가 변했다고 언급한다.",
+          "line_start": 57,
+          "line_end": 59,
+          "claim_line": 59,
+          "quote": "메어리: 그렇죠?\n페퍼: 계단에서 넘어졌을 때의 일도 생각났으면 좋았을 텐데.\n페퍼: 그때 그 사고로 선배가···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 정말 그때 일이 하나도 기억나지 않는지 묻지만 메어리는 답하지 않는다.",
+          "line_start": 60,
+          "line_end": 63,
+          "claim_line": null,
+          "quote": "메어리: 음··· 그때요.\n페퍼: 진짜 그때 일 하나도 기억 안 나세요?\n메어리: ··· ···.\n페퍼: ??",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "메어리가 페퍼에게 예전의 기억이 나냐고 묻자, 페퍼는 다 기억나서 더 열심히 살기로 했다고 답한다.",
+          "line_start": 64,
+          "line_end": 67,
+          "claim_line": 66,
+          "quote": "메어리: 페퍼는 기억나나요?\n메어리: 예전의 기억.\n페퍼: 네! 전 다 기억나요.\n페퍼: 그래서 더 열심히 살기로 했어요!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 페퍼를 귀여워하며 자신은 의료 지식 말고는 생각이 나지 않는다고 말한다.",
+          "line_start": 68,
+          "line_end": 69,
+          "claim_line": 69,
+          "quote": "메어리: 후후, 귀여워라~ 정말 페퍼답네요.\n메어리: 음~ 전 의료 지식 말고는 생각이 안 나네요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 그때 일을 기억할 수 있었으면 범인도 잡을 수 있었을 것이라며, 메어리가 계단에서 구른 것이 누군가 밀었기 때문이라는 소문이 있다고 말한다.",
+          "line_start": 70,
+          "line_end": 77,
+          "claim_line": 77,
+          "quote": "페퍼: 아쉽네요. 그때 일을 기억할 수 있으면.\n페퍼: 범인도 잡을 수 있었을 텐데.\n[CHOICE_START]\n  [OPTION TEXT=\"범인?\"]\n  [OPTION_END]\n[CHOICE_END]\n페퍼: 메어리 선배가 계단에서 구른 게.\n페퍼: 누가 밀었던 것 같다는 소문이 있어서···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 때로는 기억하지 못하는 것이 행복한 일도 있다며 괜찮다고 한 뒤, 페퍼가 인턴 때 귀여웠다고 하던데 그것을 기억하지 못하는 것이 아쉽다고 말한다.",
+          "line_start": 78,
+          "line_end": 83,
+          "claim_line": 80,
+          "quote": "메어리: 괜찮아요~\n메어리: 때로는.\n메어리: 기억하지 못하는 게 행복한 일도 있으니까요.\n페퍼: 네···?\n메어리: 아, 그러고 보니까. 아쉬운 게 있긴 하네요~\n메어리: 페퍼가 인턴 때 그렇게 귀여웠다고 하던데···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 인턴 시절 모습은 기억하지 않아도 된다며 잊길 잘했다고 말한다.",
+          "line_start": 84,
+          "line_end": 85,
+          "claim_line": 84,
+          "quote": "페퍼: 으아! 그런 건 기억 안 하셔도 돼요!\n페퍼: 잊길 잘했어요. 선배!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_024",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 어떻게 하면 기억을 떠올릴 수 있을지 묻는다.",
+          "line_start": 86,
+          "line_end": 87,
+          "claim_line": null,
+          "quote": "메어리: 음~ 아무리 생각해도 아쉬운데.\n메어리: 어떻게 하면 기억을 떠올릴 수 있을까요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 머스탱에게 부탁해 보는 게 어떻냐고 제안한다.",
+          "line_start": 89,
+          "line_end": 90,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"머스탱에게 부탁해보는 게 어때?\"]\n    메어리: !!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "머스탱에게 부탁해보는 게 어때?"
+          }
+        },
+        {
+          "item_id": "mary_00__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 사장님(머스탱)께 부탁하는 것은 다른 의미로 위험할 것 같다고 걱정한다.",
+          "line_start": 91,
+          "line_end": 92,
+          "claim_line": 92,
+          "quote": "페퍼: 사, 사장님께요?\n    페퍼: 그건 좀 다른 의미로 위험할 거 같은데···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "머스탱에게 부탁해보는 게 어때?"
+          }
+        },
+        {
+          "item_id": "mary_00__eac_027",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 머스탱의 화려한 모습을 보면 머리가 아찔해져서 모든 기억이 떠오를 수도 있을 것 같다며 명답이라고 평가한다.",
+          "line_start": 93,
+          "line_end": 96,
+          "claim_line": 96,
+          "quote": "메어리: 흠···.\n    메어리: 창의력 부족한 대답인 거 같으면서도.\n    메어리: 명답이네요!\n    메어리: 그 화려한 모습을 보면 머리가 아찔해져서 모든 게 떠오를 수도 있을 거 같아요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "머스탱에게 부탁해보는 게 어때?"
+          }
+        },
+        {
+          "item_id": "mary_00__eac_028",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 그럴 리가 없다고 반박한다.",
+          "line_start": 97,
+          "line_end": 97,
+          "claim_line": 97,
+          "quote": "페퍼: 그럴 리가 없잖아요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "머스탱에게 부탁해보는 게 어때?"
+          }
+        },
+        {
+          "item_id": "mary_00__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 계단에서 한 번 더 굴러 보면 기억이 생각날지도 모른다고 제안하자, 메어리가 진짜 좋은 생각이라고 호응한다.",
+          "line_start": 99,
+          "line_end": 102,
+          "claim_line": 102,
+          "quote": "[OPTION TEXT=\"계단에서 한 번 더 굴러보면 생각날지도 몰라.\"]\n    페퍼: !!!\n    메어리: 어머, 지휘관~\n    메어리: 그거 진짜 좋은 생각인 거 같아요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "계단에서 한 번 더 굴러보면 생각날지도 몰라."
+          }
+        },
+        {
+          "item_id": "mary_00__eac_030",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 뭐가 좋은 생각이라는 거냐며 메어리를 말린다.",
+          "line_start": 103,
+          "line_end": 103,
+          "claim_line": 103,
+          "quote": "페퍼: 뭐, 뭐가 좋은 생각이라는 거예요. 선배!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "계단에서 한 번 더 굴러보면 생각날지도 몰라."
+          }
+        },
+        {
+          "item_id": "mary_00__eac_031",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 페퍼의 귀여웠던 순간이 떠오를 수만 있다면 괜찮다며 지휘관에게 계단에서 밀어 달라고 요청하고, 지휘관이 승낙한다.",
+          "line_start": 104,
+          "line_end": 111,
+          "claim_line": null,
+          "quote": "메어리: 괜찮아요~\n    메어리: 이걸로 페퍼의 귀여웠던 순간이 떠오를 수만 있다면···!\n    메어리: 지휘관. 저 마음의 준비는 끝났어요.\n    메어리: 계단에서 미는 건 지휘관이 해줄 거죠?\n    [CHOICE_START]\n      [OPTION TEXT=\"물론이지.\"]\n      [OPTION_END]\n    [CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "계단에서 한 번 더 굴러보면 생각날지도 몰라."
+          }
+        },
+        {
+          "item_id": "mary_00__eac_032",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 둘 다 이상한 말을 그만하라고 말리고, 메어리에게 메시지가 도착한다.",
+          "line_start": 114,
+          "line_end": 117,
+          "claim_line": null,
+          "quote": "페퍼: 으으··· 둘 다 이상한 말 그만해요!\n메어리: 에이 왜요~ 그러다가 기억이 떠오르면 좋은 거···.\n지잉-\n메어리: 음? 메시지?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_033",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "블랙박스가 메어리가 맞냐며 말을 걸자 메어리가 누구신지 묻는다.",
+          "line_start": 119,
+          "line_end": 127,
+          "claim_line": null,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    야\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    너 메어리 맞지?\n  [MSG_END]\n  [MSG SENDER=\"메어리\" IS_SENDER=\"true\"]\n    누구신가요?\n  [MSG_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_034",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "블랙박스가 방송을 잘 봤다며, 자신과 같이 그런 일을 했던 메어리가 백의의 천사라니 웃긴다고 조롱한다.",
+          "line_start": 128,
+          "line_end": 136,
+          "claim_line": 135,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    방송 잘 봤어\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    백의의 천사?ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    나랑 같이 그런 일을 했던 게 천사라닠ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_035",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "블랙박스가 메어리가 계단에서 떨어져 기억을 잃었다는 말은 그럴 리 없다며, 그때 죽었는데 왜 살아 있는지 묻고 인간이 아니라 니케가 맞냐며 위선자라고 비난한다.",
+          "line_start": 137,
+          "line_end": 166,
+          "claim_line": 144,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    계단에서 떨어져 기억을 잃었다고?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    그럴 리가\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    너 그때 죽었잖아\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    왜 살아있어?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    너\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    인간 아니지?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    니케지?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    맞지?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    이 위선자\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__eac_036",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "페퍼가 무슨 문자냐고 묻자 메어리는 황급히 메신저를 끄고, 아는 분께 연락이 왔다며 먼저 자리를 뜬다.",
+          "line_start": 168,
+          "line_end": 182,
+          "claim_line": null,
+          "quote": "메어리: ··· ···.\n페퍼: 선배 무슨 문자에요?\n메어리: !!\n메어리는 황급히 메신저를 꺼버렸다.\n페퍼: 선배?\n메어리: 아무것도 아니에요!\n메어리: 저, 죄송해요~\n메어리: 아는 분께 연락이 와서 먼저 가볼게요.\n메어리: 그럼 조심히 가세요. 지휘관~\n메어리가 떠나갔다.\n페퍼: 선배···?\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "mary_00__clh_001",
+          "keyword": "메어리의 추락 사고와 기억상실",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "메어리가 계단에서 굴러 인간 시절의 기억을 잃게 된 사고로, 페퍼는 누군가 밀었던 것 같다는 소문이 있어 기억이 돌아오면 범인을 잡을 수 있었을 것이라고 말한다.",
+          "line_start": 70,
+          "line_end": 77,
+          "quote": "페퍼: 아쉽네요. 그때 일을 기억할 수 있으면.\n페퍼: 범인도 잡을 수 있었을 텐데.\n[CHOICE_START]\n  [OPTION TEXT=\"범인?\"]\n  [OPTION_END]\n[CHOICE_END]\n페퍼: 메어리 선배가 계단에서 구른 게.\n페퍼: 누가 밀었던 것 같다는 소문이 있어서···.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__clh_002",
+          "keyword": "블랙박스",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "과거 메어리와 함께 어떤 일을 했다고 주장하며, 메어리가 계단에서 죽었는데 니케로 살아 있다며 위선자라고 조롱하는 메신저 발신자.",
+          "line_start": 134,
+          "line_end": 145,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    나랑 같이 그런 일을 했던 게 천사라닠ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    계단에서 떨어져 기억을 잃었다고?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    그럴 리가\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    너 그때 죽었잖아\n  [MSG_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "mary_00__rln_001",
+          "subject": "페퍼",
+          "target": "메어리",
+          "relation_or_change": "페퍼가 메어리를 선배라고 부르며, 과거 인턴 시절을 거친 후배 관계임이 드러난다.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 82,
+          "line_end": 85,
+          "claim_line": null,
+          "quote": "메어리: 아, 그러고 보니까. 아쉬운 게 있긴 하네요~\n메어리: 페퍼가 인턴 때 그렇게 귀여웠다고 하던데···.\n페퍼: 으아! 그런 건 기억 안 하셔도 돼요!\n페퍼: 잊길 잘했어요. 선배!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_00__rln_002",
+          "subject": "블랙박스",
+          "target": "메어리",
+          "relation_or_change": "과거 메어리와 함께 어떤 일을 했으며, 그때 죽은 메어리가 니케로 살아 백의의 천사로 불리는 것을 두고 위선자라며 적대한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "블랙박스",
+          "line_start": 134,
+          "line_end": 166,
+          "claim_line": 135,
+          "quote": "[MSG SENDER=\"블랙박스\"]\n    나랑 같이 그런 일을 했던 게 천사라닠ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    계단에서 떨어져 기억을 잃었다고?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    그럴 리가\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    너 그때 죽었잖아\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    왜 살아있어?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    너\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    인간 아니지?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    니케지?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    맞지?\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n  [MSG_END]\n  [MSG SENDER=\"블랙박스\"]\n    이 위선자\n  [MSG_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "mary_00__uec_001",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 5
+        },
+        {
+          "item_id": "mary_00__uec_002",
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 156
+        }
+      ]
+    },
+    {
+      "scene_id": "mary_01",
+      "title_id": "character_episodes__메어리",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/메어리.txt",
+      "source_sha256": "51e0218cd8d3d03ba00d236517fec428c39597d69276cfb971b0ddba09484348",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "mixed",
+      "chronology_segments": [
+        {
+          "line_start": 7,
+          "line_end": 29,
+          "chronology_type": "flashback"
+        }
+      ],
+      "is_plot_critical": true,
+      "summary": "페퍼의 부탁으로 메어리를 만나러 간 지휘관은 페퍼가 자신을 불치병 환자라고 속여 메어리를 불러냈음을 알게 되고, 꾀병을 부려 진료실에 남는다. 잠시 자리를 비운 메어리가 통화로 과거 자신이 어떤 사람이었는지 듣는 조건으로 폐병원에서 상자를 찾아 주기로 약속하는 것을 들은 지휘관은, 왜 죽어야 했는지 알고 싶다는 메어리와 함께 가기로 하되 먼저 휴식을 처방한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "mary_01__pis_001",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_01__pis_002",
+            "speaker_label": "페퍼",
+            "entity_id": "char_페퍼",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_01__pis_003",
+            "speaker_label": "메어리",
+            "entity_id": "char_메어리",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "mary_01__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 114,
+            "line_end": 114,
+            "quote": "메어리: 그럼 갑자기 막 지상의 일이 떠올라서 무서워진다거나···.",
+            "chronology_type": "present",
+            "in_branch_option": {
+              "choice_line": 88,
+              "option_text": "마음이 아파."
+            }
+          },
+          {
+            "item_id": "mary_01__mnt_002",
+            "surface_text": "폐 병원",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 199,
+            "line_end": 199,
+            "quote": "메어리: 아··· 그 폐 병원으로요?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_01__mnt_003",
+            "surface_text": "상자",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 203,
+            "line_end": 203,
+            "quote": "메어리: 그 상자. 찾아드릴게요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_01__mnt_004",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 233,
+            "line_end": 233,
+            "quote": "메어리: 니케인 걸 밝혀버리겠다고 하시지 뭐예요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "mary_01__foa_001",
+          "from_speaker": "페퍼",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "페퍼: 지휘관. 요즘 선배가 이상해요.",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__foa_002",
+          "from_speaker": "페퍼",
+          "to_target": "메어리",
+          "address_term": "선배",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "페퍼: 지휘관. 요즘 선배가 이상해요.",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__foa_003",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "메어리: 지휘관. 불치병이라면서요!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__foa_004",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "환자분",
+          "line_start": 130,
+          "line_end": 130,
+          "quote": "메어리: 환자분. 따라 하셔야 치료가 된답니다~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__foa_005",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "우리 지휘관 님",
+          "line_start": 156,
+          "line_end": 156,
+          "quote": "메어리: 자, 그럼 우리 지휘관 님이 왜 꾀병을 부리시면서까지 여기에 왔을까~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__foa_006",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "우리",
+          "line_start": 278,
+          "line_end": 278,
+          "quote": "메어리: 그럼 조금만 쉬었다 가요. 우리.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "mary_01__csh_001",
+          "text": "메어리가 '지난번에 문자 보낸 사람'과 통화하며 폐병원에서 상자를 찾아 주기로 하는 내용은 앞 장면 mary_00의 '블랙박스' 문자 및 다음 장면 mary_02의 검은 상자 회수로 이어진다.",
+          "related_scene_ids": [
+            "mary_00",
+            "mary_02"
+          ]
+        }
+      ],
+      "choice_branches": [
+        {
+          "item_id": "mary_01__chb_001",
+          "choice_line": 88,
+          "options": [
+            {
+              "item_id": "mary_01__chb_001_opt_01",
+              "option_text": "소화 불량인 거 같은데···.",
+              "continuation_summary": "메어리가 배가 아픈지, 윗배와 아랫배 중 어디가 아픈지, 전부 아픈 건지 차례로 묻고 지휘관이 애매하게 답한다."
+            },
+            {
+              "item_id": "mary_01__chb_001_opt_02",
+              "option_text": "마음이 아파.",
+              "continuation_summary": "메어리가 눈물이 날 것 같고 우울한지, 지상의 일이 떠올라 무서운지 묻고 지휘관이 둘 다 아니라고 답한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "mary_01__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 아무리 기다려도 오지 않는 메어리를 기다린다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n아무리 기다려도 메어리가 오지 않는다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "며칠 전 페퍼가 지휘관에게 인터뷰를 했던 날 이후로 메어리가 얘기도 잘 못 듣고 얼굴이 창백한데 괜찮다고만 하며, 자꾸 밤에 어딘가를 나갔다 오는 것 같다고 말한다.",
+          "line_start": 7,
+          "line_end": 16,
+          "claim_line": 16,
+          "quote": "며칠 전의 일을 떠올려보았다.\n페퍼: 지휘관. 요즘 선배가 이상해요.\n[CHOICE_START]\n  [OPTION TEXT=\"메어리가?\"]\n  [OPTION_END]\n[CHOICE_END]\n페퍼: 인터뷰를 했던 그날 이후로 자꾸 얘기도 잘 못 듣고.\n페퍼: 얼굴이 창백한데 괜찮다고만 해요.\n페퍼: 그리고···.\n페퍼: 자꾸 밤에 어딘가를 나갔다 오는 거 같았어요.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "지휘관이 밤에 나가냐고 묻자, 페퍼가 밤마다 누군가에게 전화를 받는 것 같은데 그때마다 메어리가 조금 이상해진다고 말한다.",
+          "line_start": 17,
+          "line_end": 22,
+          "claim_line": 21,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"밤에?\"]\n  [OPTION_END]\n[CHOICE_END]\n페퍼: 네. 밤마다 누구한테 전화를 받는 것 같은데.\n페퍼: 뭐랄까 그때마다 선배가 조금 이상해져서···.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 지휘관에게 메어리와 이야기해 달라고 부탁한다.",
+          "line_start": 23,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "페퍼: 그래서 그런데. 지휘관이 선배랑 얘기 좀 해보면 안 될까요?",
+          "refers_to_past": false,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메어리가 바빠서 만나지 못할 수도 있다고 말한다.",
+          "line_start": 24,
+          "line_end": 27,
+          "claim_line": 25,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"메어리가 바빠서 만나지 못할 수도 있어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 걱정하지 말라며 무슨 일이 있어도 메어리를 불러 주겠다고 장담한다.",
+          "line_start": 28,
+          "line_end": 29,
+          "claim_line": null,
+          "quote": "페퍼: 그건 걱정 마세요.\n페퍼: 무슨 일이 있어도 제가 불러 드릴 테니까!",
+          "refers_to_past": false,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관에게 불치병으로 시간이 얼마 남지 않았다는 말을 페퍼에게 들었다고 말한다.",
+          "line_start": 30,
+          "line_end": 36,
+          "claim_line": 36,
+          "quote": "메어리: 지휘관. 불치병이라면서요!\n[CHOICE_START]\n  [OPTION TEXT=\"????\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 페퍼한테 들었어요.\n메어리: 이제 지휘관의 시간이 얼마 남지 않았다고···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "당황하는 지휘관에게 주변 시선이 쏠리는 가운데 메어리가 지휘관의 손을 잡고 무슨 병이든 반드시 고칠 방법을 찾아내겠으니 포기하지 말라고 말한다.",
+          "line_start": 37,
+          "line_end": 45,
+          "claim_line": 44,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그게 무슨···.\"]\n  [OPTION_END]\n[CHOICE_END]\n주변 사람들의 시선이 느껴졌다.\n메어리: 걱정 마세요.\n메어리가 손을 잡아왔다\n메어리: 그 병이 뭐든 간에. 반드시 고칠 방법을 찾아낼게요.\n메어리: 그러니까 절대 포기하면 안 돼요. 알겠죠?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "주변 사람들이 수군거리기 시작하자 지휘관이 일단 자리를 옮기자고 제안해 진료실로 간다.",
+          "line_start": 46,
+          "line_end": 51,
+          "claim_line": null,
+          "quote": "주변 사람들이 수군거리기 시작했다.\n[CHOICE_START]\n  [OPTION TEXT=\"일단 자리를 옮기자.\"]\n  [OPTION_END]\n[CHOICE_END]\n진료실.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "진료실에서 메어리가 불치병이 아니라는 거냐고 묻자 지휘관이 아니라고 답한다.",
+          "line_start": 52,
+          "line_end": 56,
+          "claim_line": 54,
+          "quote": "메어리: 음~ 그러니까 불치병은 아니라는 거죠?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 아니야.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메어리가 정말로 하나도 안 아픈 것이 맞는지 거듭 확인하자 지휘관이 정말로 아프지 않다고 답한다.",
+          "line_start": 57,
+          "line_end": 66,
+          "claim_line": 59,
+          "quote": "메어리: 정말로 하나도 안 아픈 거 맞죠?\n[CHOICE_START]\n  [OPTION TEXT=\"정말이야.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 진짜로?\n[CHOICE_START]\n  [OPTION TEXT=\"진짜로.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 이런 농담을 계속하면 죽음이 가볍게 느껴진다며 앞으로 이런 농담은 하지 말라고 주의를 준다.",
+          "line_start": 67,
+          "line_end": 71,
+          "claim_line": 70,
+          "quote": "메어리: ··· ···.\n메어리: 지휘관.\n메어리: 앞으로 이런 농담은 하면 안 돼요~\n메어리: 이런 농담을 계속하면 죽음이 가볍게 느껴진답니다.\n메어리: 그러면 안 되는 거예요. 알겠죠?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 알겠다고 답한 뒤 요즘 어떠냐고 말을 꺼내려 하지만, 메어리가 아픈 곳이 없는 것 같으니 진짜 환자를 만나러 가보겠다고 한다.",
+          "line_start": 72,
+          "line_end": 82,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···알겠어.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 좋아요. 좋아요~\n[CHOICE_START]\n  [OPTION TEXT=\"그보다 요즘···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 자, 그럼~\n메어리: 아픈 곳이 없으신 거 같으니까. 진짜 환자분을 만나러 먼저 가볼게요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 불치병은 아니지만 갑자기 어딘가 아픈 것 같다고 말한다.",
+          "line_start": 83,
+          "line_end": 86,
+          "claim_line": 84,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"불치병은 아니지만, 갑자기 어딘가 아픈 것 같아!\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 어디가 아픈지 묻는다.",
+          "line_start": 87,
+          "line_end": 87,
+          "claim_line": null,
+          "quote": "메어리: 어머, 어디가요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소화 불량인 것 같다고 말하고, 배가 아프냐는 메어리의 질문에 그런 것 같다고 답한다.",
+          "line_start": 89,
+          "line_end": 94,
+          "claim_line": 89,
+          "quote": "[OPTION TEXT=\"소화 불량인 거 같은데···.\"]\n    메어리: 혹시 배가 아프신가요?\n    [CHOICE_START]\n      [OPTION TEXT=\"그런 것 같아.\"]\n      [OPTION_END]\n    [CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "소화 불량인 거 같은데···."
+          }
+        },
+        {
+          "item_id": "mary_01__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메어리가 윗배와 아랫배 중 어디가 아픈지, 전부 아픈 건지 묻자 지휘관이 모르겠다며 전부 아픈 건 아니라고 답한다.",
+          "line_start": 95,
+          "line_end": 104,
+          "claim_line": 97,
+          "quote": "메어리: 윗배가 아픈가요, 아랫배가 아픈가요?\n    [CHOICE_START]\n      [OPTION TEXT=\"그건··· 모르겠어.\"]\n      [OPTION_END]\n    [CHOICE_END]\n    메어리: 혹시 전부 아픈 건가요?\n    [CHOICE_START]\n      [OPTION TEXT=\"그렇진 않아.\"]\n      [OPTION_END]\n    [CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "소화 불량인 거 같은데···."
+          }
+        },
+        {
+          "item_id": "mary_01__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 마음이 아프다고 말하고, 눈물이 날 것 같고 우울해지냐는 메어리의 질문에 그렇지는 않다고 답한다.",
+          "line_start": 106,
+          "line_end": 113,
+          "claim_line": 106,
+          "quote": "[OPTION TEXT=\"마음이 아파.\"]\n    메어리: !!\n    메어리: 마음이?\n    메어리: 혹시 막 눈물이 날 것 같고 우울해지나요?\n    [CHOICE_START]\n      [OPTION TEXT=\"그렇진 않아.\"]\n      [OPTION_END]\n    [CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "마음이 아파."
+          }
+        },
+        {
+          "item_id": "mary_01__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메어리가 갑자기 지상의 일이 떠올라 무서워지는지 묻자 지휘관이 그렇지도 않다고 답한다.",
+          "line_start": 114,
+          "line_end": 118,
+          "claim_line": 116,
+          "quote": "메어리: 그럼 갑자기 막 지상의 일이 떠올라서 무서워진다거나···.\n    [CHOICE_START]\n      [OPTION TEXT=\"그렇지도 않은데.\"]\n      [OPTION_END]\n    [CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 88,
+            "option_text": "마음이 아파."
+          }
+        },
+        {
+          "item_id": "mary_01__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관의 병이 무엇인지 알겠다며 침대에 눕히고 호흡을 따라 하게 한 뒤 이불을 덮어 주며 자라고 한다.",
+          "line_start": 121,
+          "line_end": 139,
+          "claim_line": null,
+          "quote": "메어리: 흐으음~ 좋아요.\n메어리: 지휘관의 병이 뭔지 알겠어요!\n메어리: 일단 이쪽에 누워보시겠어요?\n메어리의 손짓에 따라 침대에 누웠다.\n메어리: 자아~ 마음을 편하게 하고 숨을 들이켰다 내쉬었다~\n[CHOICE_START]\n  [OPTION TEXT=\"??\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 환자분. 따라 하셔야 치료가 된답니다~\n메어리: 들이켰다~ 내쉬세요~\n메어리를 따라 호흡을 해보았다.\n메어리: 마음이 좀 편해지셨나요?\n메어리가 이불을 덮어주었다.\n[CHOICE_START]\n  [OPTION TEXT=\"???\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 그럼 이제 코오~ 하시면 돼요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 왜 잠을 자야 하냐고 묻자, 메어리가 지휘관의 병명은 꾀병이고 수면은 정신적·육체적 피로를 모두 풀어 주니 딱 맞다고 말한다.",
+          "line_start": 140,
+          "line_end": 146,
+          "claim_line": 144,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"왜 잠을···?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 지휘관의 병명은 꾀병이니까요?\n메어리: 수면은 정신적인 피로와 육체의 피로를 모두 풀어주니까.\n메어리: 꾀병인 지휘관에겐 딱이지 않을까요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 침묵하다가 메어리가 아니냐고 묻자 꾀병이 맞다고 인정한다.",
+          "line_start": 147,
+          "line_end": 155,
+          "claim_line": 153,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 아닌가요?\n[CHOICE_START]\n  [OPTION TEXT=\"···맞아.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메어리가 왜 꾀병을 부리면서까지 왔냐며 페퍼가 불러서 왔는지 묻자 지휘관이 아니라고 부인한다.",
+          "line_start": 156,
+          "line_end": 161,
+          "claim_line": 159,
+          "quote": "메어리: 자, 그럼 우리 지휘관 님이 왜 꾀병을 부리시면서까지 여기에 왔을까~\n메어리: 페퍼가 불러서 오신 건가요?\n[CHOICE_START]\n  [OPTION TEXT=\"아니야.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메어리가 그럼 왜 왔냐고 묻자 지휘관이 메어리를 만나기 위해 왔다고 답한다.",
+          "line_start": 162,
+          "line_end": 166,
+          "claim_line": 164,
+          "quote": "메어리: 그럼?\n[CHOICE_START]\n  [OPTION TEXT=\"메어리를 만나기 위해 왔어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_025",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 설렌다고 말한 뒤, 요즘 무슨 일이 있냐는 지휘관의 질문에 조금 늦게 자서 피곤한 것뿐이라고 둘러댄다.",
+          "line_start": 167,
+          "line_end": 174,
+          "claim_line": 172,
+          "quote": "메어리: 어머 어머~ 설레라.\n[CHOICE_START]\n  [OPTION TEXT=\"요즘 무슨 일이 있어?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 무슨 일이 있긴요. 그냥 좀 피곤한 것뿐인걸요.\n메어리: 아아~ 젊은 시절은 다 갔나 보네요~\n메어리: 조금 늦게 잤다고 이렇게 티가 나다니.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 밤마다 무슨 일을 하냐고 묻자, 메어리가 자신은 신비주의가 좋다며 지휘관에게도 가르쳐 줄 수 없다고 거절한다.",
+          "line_start": 175,
+          "line_end": 181,
+          "claim_line": 181,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"밤마다 무슨 일을 하길래?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 어머 어머, 안돼요~ 안돼.\n메어리: 전 신비주의가 좋은걸요.\n메어리: 아무리 지휘관이라도 가르쳐 드릴 수 없네요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 위험한 상황이라면 도와주고 싶다고 말하던 중 연락이 오자, 메어리가 통화를 하겠다며 방을 나가고 지휘관이 뒤따라 나간다.",
+          "line_start": 182,
+          "line_end": 198,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"위험한 상황이라면 도와주고 싶어.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: !!\n메어리: 그건···.\n지잉-\n메어리: 아···!\n메어리는 메신저를 들여다보았다.\n메어리: 저··· 잠시만 통화 좀 하고 올게요.\n메어리가 방을 나갔다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n뒤따라 방을 나섰다.\n멀리서 메어리의 모습이 보인다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_028",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 통화 상대에게 폐병원으로 가서 상자를 찾아 주면 자신이 어떤 사람이었는지 말해 줄 것인지 확인한 뒤, 상자를 찾아 주겠다고 약속하고 전화를 끊는다.",
+          "line_start": 199,
+          "line_end": 205,
+          "claim_line": null,
+          "quote": "메어리: 아··· 그 폐 병원으로요?\n메어리: 정말 그걸 찾아드리면.\n메어리: 제가 어떤 사람이었는지 말씀해 주실 건가요?\n메어리: ···네. 알겠어요.\n메어리: 그 상자. 찾아드릴게요.\n메어리가 전화를 끊었다.\n메어리: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_029",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 무슨 전화이고 밤에 일하는 원인이냐며, 지난번에 문자를 보낸 사람인지 묻는다.",
+          "line_start": 206,
+          "line_end": 219,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"무슨 전화야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: !!\n[CHOICE_START]\n  [OPTION TEXT=\"그게 밤에 일하는 원인이야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"지난번에 문자 보낸 사람이지?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_030",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관이 눈치가 빠르다며 그때 문자를 보낸 사람이 무엇을 찾아 달라고 했다고 인정하고, 당시 메시지 내용도 봤는지 묻는다.",
+          "line_start": 220,
+          "line_end": 224,
+          "claim_line": 223,
+          "quote": "메어리: !!\n메어리: 후후, 역시 지휘관.\n메어리: 눈치가 빠르네요.\n메어리: 맞아요. 그때 그분이 뭘 좀 찾아달라 하셔서요.\n메어리: 혹시 그때 메시지 내용도 보셨나요?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_031",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그때 메시지 내용을 봤다고 답한다.",
+          "line_start": 225,
+          "line_end": 228,
+          "claim_line": 226,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···응, 봤어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_032",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 그 사람이 자신을 엄청 싫어해 니케인 것을 밝혀 버리겠다고 협박하므로 부탁을 들어주는 편이 좋을 것 같다고 말한다.",
+          "line_start": 229,
+          "line_end": 234,
+          "claim_line": 233,
+          "quote": "메어리: 후후, 지휘관은 솔직한 사람이네요.\n메어리: ··· ···.\n메어리: 그때 보셨으면 아시겠지만.\n메어리: 이분이 저를 엄~청 싫어하셔서.\n메어리: 니케인 걸 밝혀버리겠다고 하시지 뭐예요.\n메어리: 조금 부탁을 들어드리는 게 좋을 거 같아서요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_033",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 무시해도 되지 않느냐고 묻는다.",
+          "line_start": 235,
+          "line_end": 238,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"무시해도 되지 않아?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_034",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 무시할 수도 있지만 자신이 왜 죽어야만 했는지, 정말 죽이고 싶을 만큼 나쁜 사람이었는지 알고 싶다고 털어놓는다.",
+          "line_start": 239,
+          "line_end": 248,
+          "claim_line": 242,
+          "quote": "메어리: 맞아요.\n메어리: 무시하려면 무시할 수 있는데···.\n메어리: 저 알고 싶거든요.\n메어리: 왜 제가 죽어야만 했었는지.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 혹시 모르잖아요?\n메어리: 정말로 제가 죽이고 싶을 만큼 나쁜 사람이었을지도.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_035",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 같이 가자고 제안하며 왜냐는 메어리의 물음에 걱정되니까 그렇다고 답한다.",
+          "line_start": 249,
+          "line_end": 257,
+          "claim_line": 255,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그러면 같이 가자.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 왜요?\n[CHOICE_START]\n  [OPTION TEXT=\"걱정되니까.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_036",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "메어리가 같이 가는 것을 거부하면 어쩔 거냐고 묻자 지휘관이 몰래 따라갈 거라고 답하고, 메어리가 같이 가자고 승낙한다.",
+          "line_start": 258,
+          "line_end": 265,
+          "claim_line": null,
+          "quote": "메어리: ··· ···.\n메어리: 같이 가는 걸 거부하면요?\n[CHOICE_START]\n  [OPTION TEXT=\"몰래 따라갈 거야.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 흐으음~ 알겠어요.\n메어리: 그럼 같이 가요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_037",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 가기 전에 휴식부터 해야 한다고 말한다.",
+          "line_start": 266,
+          "line_end": 269,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그전에, 휴식부터 해야 해.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_038",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 자신은 건강해서 이 정도로 휴식할 필요는 없다고 말한다.",
+          "line_start": 270,
+          "line_end": 271,
+          "claim_line": 270,
+          "quote": "메어리: 어머, 전 건강한 걸요?\n메어리: 이정도로 휴식할 필요는 없답니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_039",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지금의 메어리에겐 휴식이란 처방이 필요하다고 말한다.",
+          "line_start": 272,
+          "line_end": 275,
+          "claim_line": 273,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"지금의 메어리에겐 휴식이란 처방이 필요하니까.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__eac_040",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 알겠다며 조금만 쉬었다 가자고 받아들인다.",
+          "line_start": 276,
+          "line_end": 278,
+          "claim_line": null,
+          "quote": "메어리: ··· ···.\n메어리: 후후, 알겠어요.\n메어리: 그럼 조금만 쉬었다 가요. 우리.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "mary_01__clh_001",
+          "keyword": "폐병원과 상자",
+          "category": "item",
+          "subject": null,
+          "detail": "메어리에게 문자를 보낸 사람이 폐병원에서 찾아오라고 요구한 상자. 메어리는 자신이 과거 어떤 사람이었는지 듣는 대가로 상자를 찾아 주기로 한다.",
+          "line_start": 199,
+          "line_end": 203,
+          "quote": "메어리: 아··· 그 폐 병원으로요?\n메어리: 정말 그걸 찾아드리면.\n메어리: 제가 어떤 사람이었는지 말씀해 주실 건가요?\n메어리: ···네. 알겠어요.\n메어리: 그 상자. 찾아드릴게요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__clh_002",
+          "keyword": "메어리의 니케 신분 은폐",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "메어리는 자신이 니케라는 사실이 외부에 밝혀지는 것을 빌미로 협박받고 있다.",
+          "line_start": 231,
+          "line_end": 234,
+          "quote": "메어리: 그때 보셨으면 아시겠지만.\n메어리: 이분이 저를 엄~청 싫어하셔서.\n메어리: 니케인 걸 밝혀버리겠다고 하시지 뭐예요.\n메어리: 조금 부탁을 들어드리는 게 좋을 거 같아서요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "mary_01__rln_001",
+          "subject": "페퍼",
+          "target": "메어리",
+          "relation_or_change": "페퍼가 인터뷰 날 이후 밤마다 전화를 받고 어딘가 나갔다 오며 창백해진 메어리를 걱정해 지휘관에게 상담을 부탁한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "페퍼",
+          "line_start": 13,
+          "line_end": 23,
+          "claim_line": 23,
+          "quote": "페퍼: 인터뷰를 했던 그날 이후로 자꾸 얘기도 잘 못 듣고.\n페퍼: 얼굴이 창백한데 괜찮다고만 해요.\n페퍼: 그리고···.\n페퍼: 자꾸 밤에 어딘가를 나갔다 오는 거 같았어요.\n[CHOICE_START]\n  [OPTION TEXT=\"밤에?\"]\n  [OPTION_END]\n[CHOICE_END]\n페퍼: 네. 밤마다 누구한테 전화를 받는 것 같은데.\n페퍼: 뭐랄까 그때마다 선배가 조금 이상해져서···.\n페퍼: 그래서 그런데. 지휘관이 선배랑 얘기 좀 해보면 안 될까요?",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__rln_002",
+          "subject": "메어리",
+          "target": "지휘관",
+          "relation_or_change": "지휘관이 불치병에 걸렸다는 말에 무슨 병이든 반드시 고칠 방법을 찾아내겠다고 말한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "메어리",
+          "line_start": 42,
+          "line_end": 45,
+          "claim_line": 44,
+          "quote": "메어리: 걱정 마세요.\n메어리가 손을 잡아왔다\n메어리: 그 병이 뭐든 간에. 반드시 고칠 방법을 찾아낼게요.\n메어리: 그러니까 절대 포기하면 안 돼요. 알겠죠?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_01__rln_003",
+          "subject": "지휘관",
+          "target": "메어리",
+          "relation_or_change": "메어리가 걱정된다며 폐병원에 함께 가겠다고 나선다.",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 249,
+          "line_end": 257,
+          "claim_line": 255,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그러면 같이 가자.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 왜요?\n[CHOICE_START]\n  [OPTION TEXT=\"걱정되니까.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "mary_01__uec_001",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 114
+        },
+        {
+          "item_id": "mary_01__uec_002",
+          "surface_text": "폐 병원",
+          "suggested_type": "location",
+          "line_start": 199
+        },
+        {
+          "item_id": "mary_01__uec_003",
+          "surface_text": "상자",
+          "suggested_type": "item",
+          "line_start": 203
+        },
+        {
+          "item_id": "mary_01__uec_004",
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 233
+        }
+      ]
+    },
+    {
+      "scene_id": "mary_02",
+      "title_id": "character_episodes__메어리",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/메어리.txt",
+      "source_sha256": "5057ac73947b139bbe2149b8ce319351795c8378f47f1796b4fea166253a383c",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": true,
+      "summary": "메어리는 지휘관과 함께 신을 믿던 사람들이 지은 곳으로 가서, 과거 자신이 사망할 환자들의 서류를 조작해 동의 없이 뇌를 팔아 니케로 만들고 그 기록을 검은 상자에 담아 제단 밑에 숨겼으며 사실 기억을 잃지 않고 공범들을 낚기 위해 연기했음을 고백한다. 이어 메어리는 혼자 문자의 주인을 만나야 한다며 자신을 '블랙 데빌 메어리'라고 칭하고 지휘관의 목뒤에 수면 주사를 놓아 재운다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "mary_02__pis_001",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_02__pis_002",
+            "speaker_label": "메어리",
+            "entity_id": "char_메어리",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "mary_02__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "메어리: 여긴 지상에서부터 신의 존재를 믿어온 사람들이 지은 곳이라고 해요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_02__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 25,
+            "line_end": 25,
+            "quote": "메어리: 지상에서 방주로 내려오면서 수많은 병의 치료 방법이 발견되었는데도.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_02__mnt_003",
+            "surface_text": "검은 상자",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 53,
+            "line_end": 53,
+            "quote": "메어리: 그리고 그 기록들을 모두 모아 검은 상자에 보관하곤 했답니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_02__mnt_004",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 81,
+            "line_end": 81,
+            "quote": "메어리: 기억을 잃은 순진한 니케가 되어 미끼를 던져보는 수밖에.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_02__mnt_005",
+            "surface_text": "주사기",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 126,
+            "line_end": 126,
+            "quote": "메어리는 주사기를 꺼내들었다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "mary_02__foa_001",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 6,
+          "line_end": 7,
+          "quote": "메어리: 지휘관.\n메어리: 신을 믿나요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__foa_002",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "우리 지휘관 님",
+          "line_start": 124,
+          "line_end": 125,
+          "quote": "메어리: 그런 의미에서 우리 지휘관 님은.\n메어리: 아침에 못한 처방을 받아볼까요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__foa_003",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "꾀병인 환자분",
+          "line_start": 159,
+          "line_end": 159,
+          "quote": "메어리: 꾀병인 환자분께는 수면 처방이 필요하답니다~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__foa_004",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 161,
+          "line_end": 162,
+          "quote": "메어리: 지휘관.\n메어리: 병은 뿌리까지 뽑는 게 중요하다고 생각해요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__foa_005",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 165,
+          "line_end": 166,
+          "quote": "메어리: 그러니까 지휘관.\n메어리: 안녕히 주무세요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "mary_02__csh_001",
+          "text": "메어리가 제단 밑에서 꺼낸 '검은 상자'는 mary_00의 부제 '블랙박스'이자 발신자 이름, mary_01에서 찾아 달라고 한 '상자'와 연결된다.",
+          "related_scene_ids": [
+            "mary_00",
+            "mary_01"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "mary_02__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 여기가 어디냐고 묻자, 메어리가 신을 믿냐고 물으며 이곳은 지상에서부터 신의 존재를 믿어온 사람들이 지은 곳이라고 설명한다.",
+          "line_start": 2,
+          "line_end": 8,
+          "claim_line": 8,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"여긴···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 지휘관.\n메어리: 신을 믿나요?\n메어리: 여긴 지상에서부터 신의 존재를 믿어온 사람들이 지은 곳이라고 해요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 메어리는 신을 믿고 있냐고 묻자, 메어리는 믿고 있다고 할 수는 없지만 있었으면 좋겠다고 생각한다고 답한다.",
+          "line_start": 9,
+          "line_end": 19,
+          "claim_line": 15,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"메어리는 믿고 있어?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 글쎄요~\n메어리: 믿고 있다고는 할 수 없지만.\n메어리: 있었으면 좋겠다고 생각해요.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 한 의사의 이야기라며, 방주에서 수많은 병의 치료법이 발견되었는데도 병원에서 수많은 죽음을 경험하며 죽음과 사람의 가치가 가볍게 느껴진 의사가 죽음 이후에 새로운 삶이 주어진다면 인간이 더 가치 있어질 수 있지 않을까 생각했다고 말한다.",
+          "line_start": 20,
+          "line_end": 34,
+          "claim_line": 33,
+          "quote": "메어리: 음··· 여기까지 왔으니.\n메어리: 제가 재미있는 이야기를 하나 해드릴까요?\n메어리: 한 의사가 있었습니다.\n메어리: 의사는 병원에서 일하며 수 많은 죽음을 경험했습니다.\n메어리: 이상하죠?\n메어리: 지상에서 방주로 내려오면서 수많은 병의 치료 방법이 발견되었는데도.\n메어리: 병원에는 수 많은 죽음이 존재했습니다.\n메어리: 여전히 사람은 너무나 많이, 너무나도 쉽게 죽어버렸어요.\n메어리: 의사가 죽음을 경험할수록 죽음은 점점 가볍게 느껴졌고.\n메어리: 사람의 가치는 그보다 더 가볍게 느껴졌습니다.\n메어리: 그 수많은 죽음을 경험한 후.\n메어리: 의사는 생각했답니다.\n메어리: 죽음이란 존재가 아무런 의미가 없어진다면.\n메어리: 죽음 이후에 새로운 삶이 주어진다면.\n메어리: 인간은 조금 더 가치 있어질 수 있지 않을까?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 그때 한 무리의 사람들이 의사를 찾아와 사람을 조금 더 가치 있게 만드는 일에 동참해 달라고 제안했고, 그때부터 의사는 사망할 사람들의 동의 없이 서류를 조작해 뇌를 팔아 새로운 삶을 시작하게 했으며 그 기록들을 모두 검은 상자에 보관해 신의 곁에 숨겨 두었다고 말한다.",
+          "line_start": 35,
+          "line_end": 60,
+          "claim_line": 50,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 그때였습니다.\n메어리: 한 무리의 사람들이 그녀를 찾아왔답니다.\n메어리: 우리는 사람을 조금 더 가치있게 만들고 싶다.\n메어리: 그런데 이 일에 함께해 주는 사람이 너무 적으니.\n메어리: 네가 만들어주지 않을래?\n[CHOICE_START]\n  [OPTION TEXT=\"설마···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 그때부터 의사는 사망할 사람들의 서류를 조작하기 시작했습니다.\n메어리: 그들의 죽음을 무시하고.\n메어리: 그들의 뇌를 팔아.\n메어리: 그들에게 새로운 삶을 시작하게 했죠.\n메어리: 그들이 동의하지 않았는데도.\n메어리: 그리고 그 기록들을 모두 모아 검은 상자에 보관하곤 했답니다.\n[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 의사는 그걸.\n메어리: 인간을 만들었다는 신의 곁에 숨겨두었죠.\n메어리: 마치 인간이 신의 영역을 초월했다 조롱하듯.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 제단 밑의 바닥을 열어 검은 상자를 꺼낸다.",
+          "line_start": 61,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "메어리는 제단 밑의 바닥을 열어 검은 상자를 꺼냈다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 이야기의 주인공이 메어리냐고 물은 뒤 메어리가 답하지 않자 기억을 잃지 않았음을 지적한다.",
+          "line_start": 62,
+          "line_end": 70,
+          "claim_line": 68,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"이 이야기의 주인공은 메어리야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"기억을 잃지 않았구나.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 들켜버렸다며, 꼭꼭 숨어 있는 그 사람들을 다시 만나기 위해 기억을 잃은 순진한 니케가 되어 미끼를 던진 것이라고 밝힌다.",
+          "line_start": 71,
+          "line_end": 81,
+          "claim_line": 81,
+          "quote": "메어리: 어머.\n메어리: 들켜버렸네요~\n[CHOICE_START]\n  [OPTION TEXT=\"왜 숨기고 있던 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 세계 제일의 낚시꾼이 되어야 했으니까요?\n메어리: 전 그분들을 다시 만나고 싶은데.\n메어리: 그분들은 꼭꼭 숨어있는 걸 좋아하시거든요~\n메어리: 그러니 어쩔 수 있나요?\n메어리: 기억을 잃은 순진한 니케가 되어 미끼를 던져보는 수밖에.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 왜 자신에게 말해 주냐고 묻자, 메어리는 이곳에 오니 고해성사라도 하고 싶었던 것일지도 모른다고 답한다.",
+          "line_start": 82,
+          "line_end": 93,
+          "claim_line": 93,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그럼 왜 이걸 내게 말해주는 건데?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 글쎄요···.\n메어리: 왤까요?\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 이곳에 오니···.\n메어리: 고해성사라도 하고 싶었던 건지도 모르죠.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 문자의 주인에게 갈 거냐고 묻자 메어리가 약속했으니 가야 한다고 답한다.",
+          "line_start": 94,
+          "line_end": 99,
+          "claim_line": 98,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그 문자의 주인에게 갈 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네. 가야죠.\n메어리: 약속했으니까요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 문자의 주인이 나오지 않을지도 모른다고 말한다.",
+          "line_start": 100,
+          "line_end": 103,
+          "claim_line": 101,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"나오지 않을지도 몰라.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 그 사람들은 겁이 많고 이 검은 상자가 세상에 나오는 것을 누구보다 두려워하기 때문에 반드시 나올 것이라고 반박한다.",
+          "line_start": 104,
+          "line_end": 106,
+          "claim_line": 106,
+          "quote": "메어리: 아뇨. 나올 거예요.\n메어리: 그분들은 겁이 많으시거든요~\n메어리: 이게 세상 밖으로 나오는 걸 누구보다 두려워하고 계시니까요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 차라리 그 상자로 신고하자고 제안한다.",
+          "line_start": 107,
+          "line_end": 110,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"차라리 그걸로 신고하자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 그분께 꼭 물어봐야 할 것이 있어 안 될 것 같다고 거절하며, 무엇을 물어볼 거냐는 질문에 비밀이라고 답한다.",
+          "line_start": 111,
+          "line_end": 117,
+          "claim_line": 112,
+          "quote": "메어리: 음··· 그건 안될 거 같아요~\n메어리: 제가 그분께 꼭 물어봐야 할 것이 있거든요.\n[CHOICE_START]\n  [OPTION TEXT=\"무엇을?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 그건 비밀이랍니다~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그러면 같이 가자고 제안한다.",
+          "line_start": 118,
+          "line_end": 121,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그러면 같이 가자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리는 이번엔 정말 혼자 해야 할 일이라며 거절하고, 아침에 못 한 처방을 받자며 주사기를 꺼내 든다.",
+          "line_start": 122,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "메어리: 이번엔 안돼요.\n메어리: 이건 정말 저 혼자 해야 할 일이에요.\n메어리: 그런 의미에서 우리 지휘관 님은.\n메어리: 아침에 못한 처방을 받아볼까요?\n메어리는 주사기를 꺼내들었다.\n[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지금의 자신은 꾀병 환자에게 주사 놓기를 좋아하는 '블랙 데빌 메어리'이며, '화이트 엔젤 메어리'는 연차 중이라고 말한다.",
+          "line_start": 131,
+          "line_end": 138,
+          "claim_line": 132,
+          "quote": "메어리: 아, 참고로.\n메어리: 지금의 저는 블랙 데빌 메어리랍니다.\n메어리: 꾀병 환자에게 주사를 놓는 걸 좋아하죠!\n[CHOICE_START]\n  [OPTION TEXT=\"화이트 엔젤 메어리는?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 연차 중이에요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 화이트 엔젤 메어리의 강제 복귀를 원한다고 말한다.",
+          "line_start": 139,
+          "line_end": 142,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"강제 복귀를 원해!\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 연차 도중 강제 복귀라니 잔인하다고 말한다.",
+          "line_start": 143,
+          "line_end": 143,
+          "claim_line": 143,
+          "quote": "메어리: 어머, 연차 도중 강제 복귀라니 잔인하네요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 주사가 더 잔인한 것 같다고 말한다.",
+          "line_start": 144,
+          "line_end": 147,
+          "claim_line": 145,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"주사가 더 잔인한 것 같은데.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관보다 훨씬 잔인하다며, 블랙 데빌 메어리는 수단과 방법을 가리지 않기로 유명한 피도 눈물도 없고 이기적인 악의 하수인이라고 말한다.",
+          "line_start": 148,
+          "line_end": 152,
+          "claim_line": 149,
+          "quote": "메어리: 그럼요~ 지휘관보다 훨씬 잔인하죠.\n메어리: 블랙 데빌 메어리는 수단과 방법을 가리지 않기로 유명하거든요.\n메어리가 몸을 끌어안아왔다.\n메어리: 피도 눈물도 없고 이기적인.\n메어리: 악의 하수인이니까요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_021",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관의 목뒤에 바늘을 찔러 수면 처방을 하고, 지휘관의 의식이 흐려진다.",
+          "line_start": 153,
+          "line_end": 160,
+          "claim_line": null,
+          "quote": "목뒤에 바늘이 찔렸다.\n[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 아까 이야기해드렸죠?\n메어리: 꾀병인 환자분께는 수면 처방이 필요하답니다~\n의식이 흐려진다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 병은 더 이상 재발하지 않도록 뿌리까지 뽑는 게 중요하다고 말하며, 안녕히 주무시라고 인사하고 이곳에 함께 와줘서 고마웠다고 덧붙인다.",
+          "line_start": 161,
+          "line_end": 167,
+          "claim_line": 162,
+          "quote": "메어리: 지휘관.\n메어리: 병은 뿌리까지 뽑는 게 중요하다고 생각해요.\n메어리: 더 이상 재발하지 않도록.\n정신을 차려야 하는데···.\n메어리: 그러니까 지휘관.\n메어리: 안녕히 주무세요.\n메어리: 이곳에 함께 와줘서 고마웠어요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "mary_02__clh_001",
+          "keyword": "불법 뇌 매매와 검은 상자",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "메어리가 인간 의사 시절 한 무리의 사람들과 결탁해 사망할 환자들의 서류를 조작하고 동의 없이 뇌를 팔아 니케로 만들었으며, 그 기록들을 모두 검은 상자에 담아 제단 밑에 숨겨 두었다.",
+          "line_start": 48,
+          "line_end": 61,
+          "quote": "메어리: 그때부터 의사는 사망할 사람들의 서류를 조작하기 시작했습니다.\n메어리: 그들의 죽음을 무시하고.\n메어리: 그들의 뇌를 팔아.\n메어리: 그들에게 새로운 삶을 시작하게 했죠.\n메어리: 그들이 동의하지 않았는데도.\n메어리: 그리고 그 기록들을 모두 모아 검은 상자에 보관하곤 했답니다.\n[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 의사는 그걸.\n메어리: 인간을 만들었다는 신의 곁에 숨겨두었죠.\n메어리: 마치 인간이 신의 영역을 초월했다 조롱하듯.\n메어리는 제단 밑의 바닥을 열어 검은 상자를 꺼냈다.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__clh_002",
+          "keyword": "기억을 잃은 순진한 니케 연기",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "메어리는 실제로는 과거의 기억을 잃지 않았으나, 숨어 있는 과거의 공범들을 유인하기 위해 기억을 잃은 순진한 니케를 연기했다.",
+          "line_start": 77,
+          "line_end": 81,
+          "quote": "메어리: 세계 제일의 낚시꾼이 되어야 했으니까요?\n메어리: 전 그분들을 다시 만나고 싶은데.\n메어리: 그분들은 꼭꼭 숨어있는 걸 좋아하시거든요~\n메어리: 그러니 어쩔 수 있나요?\n메어리: 기억을 잃은 순진한 니케가 되어 미끼를 던져보는 수밖에.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_02__clh_003",
+          "keyword": "블랙 데빌 메어리",
+          "category": "trait",
+          "subject": "메어리",
+          "detail": "메어리가 수단과 방법을 가리지 않고 주사를 놓을 때 스스로를 부르는 호칭으로, 평소 모습은 '화이트 엔젤 메어리'라고 부른다.",
+          "line_start": 131,
+          "line_end": 138,
+          "quote": "메어리: 아, 참고로.\n메어리: 지금의 저는 블랙 데빌 메어리랍니다.\n메어리: 꾀병 환자에게 주사를 놓는 걸 좋아하죠!\n[CHOICE_START]\n  [OPTION TEXT=\"화이트 엔젤 메어리는?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 연차 중이에요~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "mary_02__rln_001",
+          "subject": "메어리",
+          "target": "지휘관",
+          "relation_or_change": "과거 자신의 행적과 기억을 잃은 척 연기한 사실을 지휘관에게 말해 준 이유로, 이곳에 오니 고해성사라도 하고 싶었던 것일지 모른다고 말한다.",
+          "epistemic_type": "character_claim",
+          "claimant": "메어리",
+          "line_start": 82,
+          "line_end": 93,
+          "claim_line": 93,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그럼 왜 이걸 내게 말해주는 건데?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 글쎄요···.\n메어리: 왤까요?\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 이곳에 오니···.\n메어리: 고해성사라도 하고 싶었던 건지도 모르죠.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "mary_02__uec_001",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 8
+        },
+        {
+          "item_id": "mary_02__uec_002",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 25
+        },
+        {
+          "item_id": "mary_02__uec_003",
+          "surface_text": "검은 상자",
+          "suggested_type": "item",
+          "line_start": 53
+        },
+        {
+          "item_id": "mary_02__uec_004",
+          "surface_text": "니케",
+          "suggested_type": "faction_or_species",
+          "line_start": 81
+        },
+        {
+          "item_id": "mary_02__uec_005",
+          "surface_text": "주사기",
+          "suggested_type": "item",
+          "line_start": 126
+        }
+      ]
+    },
+    {
+      "scene_id": "mary_03",
+      "title_id": "character_episodes__메어리",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/메어리.txt",
+      "source_sha256": "4a5967e6c66492d7d07e1776ffb9c6cf2919bce7e63f7b031b9cb9d5172869c2",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "mixed",
+      "chronology_segments": [
+        {
+          "line_start": 3,
+          "line_end": 26,
+          "chronology_type": "flashback"
+        }
+      ],
+      "is_plot_critical": true,
+      "summary": "과거 계단에서 밀려 죽은 뒤 머스탱에 의해 기억을 유지한 채 니케가 된 메어리는, 블랙박스와의 메신저를 통해 폐 병원이 곧 폭파된다는 사실을 알게 된다. 체념하고 있던 메어리 앞에 손에 총상을 입은 지휘관이 나타나 죄를 함께 짊어지고 치료법을 찾자고 설득하고, 두 사람은 살아서 탈출하기로 한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "mary_03__pis_001",
+            "speaker_label": "메어리",
+            "entity_id": "char_메어리",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_03__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "mary_03__rvo_001",
+            "speaker_label": "머스탱",
+            "entity_id": "char_머스탱",
+            "medium": "memory_voice",
+            "line_start": 13,
+            "line_end": 16,
+            "quote": "머스탱: Hello~ 당신이 Mary인가요?\n머스탱: Me의 Girl들이 입을 모아 말하더군요.\n머스탱: You에게 Revenge 해달라고.\n머스탱: Hmm. 그런데 You도 이제 Me의 Girl이 되었잖아요?"
+          },
+          {
+            "item_id": "mary_03__rvo_002",
+            "speaker_label": "블랙박스",
+            "entity_id": "char_블랙박스",
+            "medium": "messenger",
+            "line_start": 29,
+            "line_end": 31,
+            "quote": "오고 있어?"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "mary_03__mnt_001",
+            "surface_text": "Nikke",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 23,
+            "line_end": 23,
+            "quote": "머스탱: 보통, 사고로 Nikke가 된 Girl들의 기억은 지워주는 것이 관례이지만.",
+            "chronology_type": "flashback",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_03__mnt_002",
+            "surface_text": "폐 병원",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 69,
+            "line_end": 71,
+            "quote": "그 폐 병원 안에 아웃로들이 그렇게 많이 숨어 있대",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_03__mnt_003",
+            "surface_text": "아웃로",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 69,
+            "line_end": 71,
+            "quote": "그 폐 병원 안에 아웃로들이 그렇게 많이 숨어 있대",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_03__mnt_004",
+            "surface_text": "콜렉터",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 129,
+            "line_end": 131,
+            "quote": "야 거기 주변에 콜렉터들이 있을지도 모른다던데",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_03__mnt_005",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 132,
+            "line_end": 134,
+            "quote": "네 부품 잘 간수해라? 그것도 다 방주 돈인 거 알지?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_03__mnt_006",
+            "surface_text": "시프티",
+            "entity_id": "char_시프티",
+            "entity_type": "character",
+            "line_start": 168,
+            "line_end": 171,
+            "quote": "시프티가 탈출 경로를 알려줄 거야.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "mary_03__foa_001",
+          "from_speaker": "???",
+          "to_target": "메어리",
+          "address_term": "이 위선자",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "???: 이 위선자!",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__foa_002",
+          "from_speaker": "머스탱",
+          "to_target": "메어리",
+          "address_term": "당신",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "머스탱: Hello~ 당신이 Mary인가요?",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__foa_003",
+          "from_speaker": "머스탱",
+          "to_target": "메어리",
+          "address_term": "You",
+          "line_start": 15,
+          "line_end": 17,
+          "quote": "머스탱: You에게 Revenge 해달라고.\n머스탱: Hmm. 그런데 You도 이제 Me의 Girl이 되었잖아요?\n머스탱: 그래서 You에게도 Chance를 주기로 했어Yo.",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__foa_004",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "너",
+          "line_start": 93,
+          "line_end": 95,
+          "quote": "아 너 원래 어떤 사람인지 말해달라고 했던가?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__foa_005",
+          "from_speaker": "메어리",
+          "to_target": "블랙박스",
+          "address_term": "당신",
+          "line_start": 99,
+          "line_end": 101,
+          "quote": "당신은 우리가 조작한 사람들의 이름을",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__foa_006",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "넌",
+          "line_start": 120,
+          "line_end": 122,
+          "quote": "그래 넌 예전부터 그런 놈이었지",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__foa_007",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "위선자 자식",
+          "line_start": 126,
+          "line_end": 128,
+          "quote": "하여튼 위선자 자식 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__foa_008",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "네",
+          "line_start": 132,
+          "line_end": 134,
+          "quote": "네 부품 잘 간수해라? 그것도 다 방주 돈인 거 알지?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [
+        {
+          "item_id": "mary_03__unk_001",
+          "unknown_id": "unk_mary_03_L0003",
+          "quote": "믿었는데···.",
+          "speaking_style": "배신감과 원망이 섞인 반말",
+          "target_addressed": "메어리",
+          "contextual_clues": [
+            "과거 회상에서 메어리를 믿었다며 원망하고 계단에서 밀어 추락시킨 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 3,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__unk_002",
+          "unknown_id": "unk_mary_03_L0004",
+          "quote": "믿고 있었는데!",
+          "speaking_style": "격앙된 반말",
+          "target_addressed": "메어리",
+          "contextual_clues": [
+            "과거 회상에서 메어리를 믿고 있었다며 분노를 터뜨리는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 4,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__unk_003",
+          "unknown_id": "unk_mary_03_L0005",
+          "quote": "이 위선자!",
+          "speaking_style": "분노에 찬 반말 외침",
+          "target_addressed": "메어리",
+          "contextual_clues": [
+            "과거 회상에서 메어리를 위선자라고 부르며 어깨를 밀어 계단에서 떨어뜨린 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 5,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        }
+      ],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [
+        {
+          "item_id": "mary_03__ssg_001",
+          "unknown_ids": [
+            "unk_mary_03_L0003",
+            "unk_mary_03_L0004",
+            "unk_mary_03_L0005"
+          ],
+          "confidence": "확인된 사실",
+          "reason": "과거 회상에서 메어리에게 연속으로 배신감을 토로하며 위선자라고 외친 뒤 계단에서 밀어낸 동일 인물의 발화다."
+        }
+      ],
+      "cross_scene_hints": [
+        {
+          "item_id": "mary_03__csh_001",
+          "text": "L3~8에서 메어리를 위선자라고 부르며 계단에서 밀어 죽게 한 미상 화자(???)는 후속 장면 mary_04에서 페퍼였음이 밝혀진다.",
+          "related_scene_ids": [
+            "mary_04"
+          ]
+        }
+      ],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "mary_03__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "???",
+          "summary": "미상 화자가 메어리를 믿었다며 위선자라고 외치고 분노를 담은 손으로 어깨를 밀어, 계단에서 추락한 메어리가 사망한다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "???: 믿었는데···.\n???: 믿고 있었는데!\n???: 이 위선자!\n분노를 담은 손이 어깨를 밀었다.\n계단에서 밀려난 몸이 허공을 날았다.\n삶의 무게를 담아 추락한 몸은 죽음을 맞이했지만.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "메어리는 뇌가 새로운 삶을 마주하며 자신이 모르는 사이 죽음을 빼앗겼고, 그때 자신이 해왔던 모든 것이 죄였음을 깨달았다고 회고한다.",
+          "line_start": 9,
+          "line_end": 12,
+          "claim_line": 9,
+          "quote": "뇌는 새로운 삶을 마주했다.\n내가 모르는 사이, 죽음을 빼앗겼다.\n그때 깨달았다.\n내가 해왔던 모든 것이 죄였음을.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 자신의 니케들이 메어리에게 복수해달라고 입을 모아 말했지만, 메어리도 자신의 니케가 되었으니 기회를 주겠다며 메어리가 새 삶을 주었다던 소녀들의 본명을 한 명이라도 기억하는지 묻는다.",
+          "line_start": 13,
+          "line_end": 21,
+          "claim_line": 14,
+          "quote": "머스탱: Hello~ 당신이 Mary인가요?\n머스탱: Me의 Girl들이 입을 모아 말하더군요.\n머스탱: You에게 Revenge 해달라고.\n머스탱: Hmm. 그런데 You도 이제 Me의 Girl이 되었잖아요?\n머스탱: 그래서 You에게도 Chance를 주기로 했어Yo.\n머스탱: 그런 의미에서 Question!\n머스탱: 당신이 New Life를 주었다던 Girl들의 Real Name을 한 명이라도 기억하고 있나요?\n머스탱: 모르겠Jo?\n머스탱: 그럼 어쩔 수 없네Yo.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "머스탱",
+          "summary": "머스탱이 보통 사고로 니케가 된 소녀들의 기억은 지워주는 것이 관례이지만, 반성을 모르는 메어리에게는 벌로 기억을 지우지 않고 자신의 업보를 기억하며 살게 하겠다고 선언한다.",
+          "line_start": 22,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "머스탱: 반성을 모르는 Girl에겐 벌을 줘야 겠네Yo.\n머스탱: 보통, 사고로 Nikke가 된 Girl들의 기억은 지워주는 것이 관례이지만.\n머스탱: You의 Memory는 지우지 않을 거예요.\n머스탱: 자신의 Karma를 기억하며 사는 것.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "블랙박스가 메신저로 오고 있는지 묻자 메어리가 곧 도착할 것이라고 답한다.",
+          "line_start": 29,
+          "line_end": 34,
+          "claim_line": 33,
+          "quote": "오고 있어?\n곧 도착할 거예요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 손에 쥔 검은 상자를 움켜쥐며 약속 시간이 되었는데도 블랙박스가 오지 않는다고 중얼거린다.",
+          "line_start": 36,
+          "line_end": 39,
+          "claim_line": null,
+          "quote": "메어리: ··· ···.\n메어리는 손에 쥔 검은 상자를 움켜쥐었다.\n메어리: 약속 시간이 되었는데···.\n메어리: 오지 않는군요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스, 메어리",
+          "summary": "블랙박스가 메신저로 도착했는지 묻자 메어리가 어디에 있냐고 묻는다.",
+          "line_start": 42,
+          "line_end": 47,
+          "claim_line": null,
+          "quote": "도착했어?\n어디에 계시나요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "여기가 어딜까라며 얼버무리는 블랙박스의 말에 메어리는 그가 약속 장소에 오지 않을 것임을 알아차린다.",
+          "line_start": 48,
+          "line_end": 53,
+          "claim_line": 52,
+          "quote": "나? 글쎄 여기가 어딜까?\n오지 않으실 거군요",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "블랙박스는 곧 죽을 것 같은 놈을 왜 만나냐며 약속 장소에 가지 않겠다고 밝힌다.",
+          "line_start": 54,
+          "line_end": 59,
+          "claim_line": 58,
+          "quote": "ㅇㅇㅇㅇㅇㅇㅇ 안 가\n곧 죽을 것 같은 놈을 내가 왜 만나?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "자신이 죽느냐는 메어리의 질문에 블랙박스는 그 폐 병원 안에 해충 같은 아웃로들이 많이 숨어 있다는 소문이 있어 소름 끼친다고 말한다.",
+          "line_start": 60,
+          "line_end": 77,
+          "claim_line": 70,
+          "quote": "제가 죽나요?\n그거 알아?\n소문이긴 한데\n그 폐 병원 안에 아웃로들이 그렇게 많이 숨어 있대\n그런 해충 놈들이 숨어있는 곳이라니\n좀 소름 끼치잖아?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "블랙박스는 시민 복지를 위해 10~20분 뒤 폐 병원 근방 전부를 폭파시키기로 했다며 도망쳐 보라고 조롱한다.",
+          "line_start": 78,
+          "line_end": 89,
+          "claim_line": 79,
+          "quote": "그래서 시민 복지를 위해 그 근방 전부를 폭파시키기로 했어\n10분 뒤였나~ 20분 뒤였나?\n그쯤이면 전부 터질 거야\n열심히 도망쳐봨ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "메어리가 마지막으로 하나만 물어도 되냐고 하자, 블랙박스는 원래 어떤 사람인지 말해달라고 했던 것을 언급하며 어차피 죽을 텐데 그게 중요하냐고 비웃는다.",
+          "line_start": 90,
+          "line_end": 98,
+          "claim_line": 94,
+          "quote": "마지막으로 하나만 물어도 될까요?\n아 너 원래 어떤 사람인지 말해달라고 했던가?\n근데 그게 지금 중요해? 어차피 죽을 거ㅋㅋㅋㅋㅋ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 블랙박스에게 자신들이 조작한 사람들의 조작되지 않은 진짜 이름을 기억하고 있는지 묻는다.",
+          "line_start": 99,
+          "line_end": 107,
+          "claim_line": null,
+          "quote": "당신은 우리가 조작한 사람들의 이름을\n?\n조작된 게 아닌 진짜 이름을 기억하고 있나요?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "블랙박스는 돈 받고 팔았으면 끝이지 조작한 사람들의 진짜 이름을 왜 기억하냐며, 메어리가 예전부터 인류의 새로운 가치를 운운하던 위선자였다고 비웃는다.",
+          "line_start": 108,
+          "line_end": 128,
+          "claim_line": 118,
+          "quote": "??\n갑자기 뭔 감성 팔이야\n그걸 왜 기억하고 있어?\n돈 받고 팔았으면 끝이지\n그래 넌 예전부터 그런 놈이었지\n인류의 새로운 가치는 무슨ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n하여튼 위선자 자식 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "블랙박스",
+          "summary": "블랙박스는 주변에 콜렉터들이 있을지도 모른다며 방주 돈인 부품을 잘 간수하라고 조롱한 뒤 어차피 폭탄에 다 날아갈 것이라고 말한다.",
+          "line_start": 129,
+          "line_end": 140,
+          "claim_line": 133,
+          "quote": "야 거기 주변에 콜렉터들이 있을지도 모른다던데\n네 부품 잘 간수해라? 그것도 다 방주 돈인 거 알지?\n뭐 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n어차피 폭탄에 다 날아가겠지만",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리는 블랙박스도 이름을 기억하지 못한다며 이제 와서 이름을 알아봤자 달라지는 건 없을 텐데 무엇을 기대했는지 자조하고, 도망가야 하는데도 너무 숨이 막힌다고 말한다.",
+          "line_start": 142,
+          "line_end": 148,
+          "claim_line": 143,
+          "quote": "메어리: ··· ···.\n메어리: 역시 기억하지 못하고 있네.\n메어리: 후후, 난 뭘 기대하고 있었을까···.\n메어리: 이제 와서 이름을 알아봤자.\n메어리: 달라지는 건 없을 텐데···.\n메어리: ··· ···.\n메어리: 어서 도망이라도 가야 하는데···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 메어리",
+          "summary": "지휘관이 메어리를 부르며 나타나자 놀란 메어리가 지휘관의 손 상처를 바라본다.",
+          "line_start": 150,
+          "line_end": 156,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"메어리!\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 지휘관? 어떻게 여길···!\n메어리가 손을 바라보았다.\n메어리: 손의 그 상처··· 설마!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메어리에게 일단 이곳을 탈출하자고 말한다.",
+          "line_start": 157,
+          "line_end": 160,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"일단 이곳을 탈출하자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관의 손을 보고 잠에서 깨려고 총으로 쏜 것이냐고 묻는다.",
+          "line_start": 161,
+          "line_end": 162,
+          "claim_line": 162,
+          "quote": "메어리: ··· ···.\n메어리: 그 손. 잠에서 깨려고 총으로 쏜 거죠?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 시간이 없다며 곧 폭탄이 터질 것이고 시프티가 탈출 경로를 알려줄 것이라고 말한다.",
+          "line_start": 163,
+          "line_end": 171,
+          "claim_line": 169,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"시간 없어. 폭탄이 터질 거야.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 그걸 알면서도 오신 건가요?\n[CHOICE_START]\n  [OPTION TEXT=\"시프티가 탈출 경로를 알려줄 거야.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리는 만약 폭탄이 하나라도 먼저 터지거나 그때까지 도망치지 못하면 진짜 죽는다는 것을 알고 있냐고 다그친다.",
+          "line_start": 172,
+          "line_end": 174,
+          "claim_line": 174,
+          "quote": "메어리: 만약 폭탄이 하나라도 먼저 터지면요.\n메어리: 폭탄이 터질 때까지 도망치지 못하면요!\n메어리: 그럼 진짜 죽는 거예요. 알고는 있나요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_022",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메어리에게 왜 여기에 왔고 도망치지 않고 있었냐며, 모두 포기하고 싶어졌냐고 묻자 메어리는 답하지 못한다.",
+          "line_start": 175,
+          "line_end": 189,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그러는 메어리는 왜 여기에 왔어?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네?\n[CHOICE_START]\n  [OPTION TEXT=\"왜 도망치지 않고 있었어?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"모두 포기하고 싶어졌어?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 지휘관.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_023",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 메어리에게 공범자가 되어 자신에게 털어놓은 이야기만큼만이라도 함께 짊어지겠다고 선언한다.",
+          "line_start": 190,
+          "line_end": 198,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"공범자가 될게.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네?\n[CHOICE_START]\n  [OPTION TEXT=\"내게 털어놓은 이야기만큼만이라도 짊어질게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리는 몇 명이었는지, 이름이 뭐였는지 기억도 안 날 정도로 많은 사람들에게 죄를 지었는데 그 무거운 죄를 나눠 들겠냐고 되묻는다.",
+          "line_start": 199,
+          "line_end": 203,
+          "claim_line": 202,
+          "quote": "메어리: 후후, 이게 얼마나 무거운데요.\n메어리: 몇 명이었는지.\n메어리: 이름이 뭐였는지 기억도 안날 정도로.\n메어리: 많은 사람들에게 죄를 지었는데···.\n메어리: 이걸 나눠들겠다고요?",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_025",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관은 죄가 얼마나 많든 불치병이 아니면 된다며, 살다 보면 반드시 치료법을 찾을 수 있을 것이니 함께 찾아보자고 설득한다.",
+          "line_start": 204,
+          "line_end": 217,
+          "claim_line": 210,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"얼마나 많든, 불치병이 아니면 돼.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 그게 무슨···.\n[CHOICE_START]\n  [OPTION TEXT=\"살다 보면 반드시 치료법을 찾을 수 있을 거야.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: !!\n[CHOICE_START]\n  [OPTION TEXT=\"함께 찾아보자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리는 진짜 공범자는 죽으라고 하는데 관련도 없는 지휘관이 바보 같다면서도, 용서받을 방법이 있을 리 없다는 걸 알지만 지휘관에게 바보병이 옮았는지 믿고 싶어진다고 말한다.",
+          "line_start": 218,
+          "line_end": 226,
+          "claim_line": 225,
+          "quote": "메어리: 후후, 그게 뭐예요.\n메어리: 진짜 공범자는 죽으라고 하는데.\n메어리: 지휘관은 이 일이랑 관련도 없으면서···.\n메어리: 바보 같네요. 정말.\n메어리: ··· ···.\n메어리: 용서받을 방법이라니···.\n메어리: 그런 게 있을 리 없다는 걸 아는데도.\n메어리: 믿고 싶어지네요.\n메어리: 저도 지휘관한테 바보병이 옮았나 봐요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_027",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 맞장구를 치자 메어리는 계속 뜸 들이면 둘 다 죽어버리겠다며 응급 상황부터 해결하자고 말한다.",
+          "line_start": 227,
+          "line_end": 233,
+          "claim_line": 232,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그런가 보네.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: ··· ···.\n메어리: 자, 그럼 응급 상황부터 해결해볼까요?\n메어리: 이렇게 계속 뜸 들이고 있다간 둘 다 죽어버리겠어요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_028",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 서두르자고 답한다.",
+          "line_start": 234,
+          "line_end": 237,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"서두르자.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관에게 이렇게 말해 놓고 먼저 죽으면 용서하지 않겠다고 말한다.",
+          "line_start": 238,
+          "line_end": 239,
+          "claim_line": 239,
+          "quote": "메어리: ···지휘관.\n메어리: 이렇게 말해 놓고 먼저 죽으면 용서하지 않을 거예요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_030",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 먼저 죽지 않겠다고 약속한다.",
+          "line_start": 240,
+          "line_end": 243,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"물론이야.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__eac_031",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 살아서 이 죄를 치료할 수 있게 가자고 다짐한다.",
+          "line_start": 244,
+          "line_end": 246,
+          "claim_line": 246,
+          "quote": "메어리: 그럼 가요.\n메어리: 살아서.\n메어리: 이 죄를 치료할 수 있게.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "mary_03__clh_001",
+          "keyword": "사고로 니케가 된 소녀들의 기억 삭제 관례와 메어리의 예외",
+          "category": "lore_concept",
+          "subject": null,
+          "detail": "머스탱에 따르면 보통 사고로 니케가 된 소녀들의 기억은 지워주는 것이 관례이나, 머스탱은 메어리에게 자신의 업보를 기억하며 사는 벌을 내리기 위해 기억을 지우지 않았다.",
+          "line_start": 22,
+          "line_end": 26,
+          "quote": "머스탱: 반성을 모르는 Girl에겐 벌을 줘야 겠네Yo.\n머스탱: 보통, 사고로 Nikke가 된 Girl들의 기억은 지워주는 것이 관례이지만.\n머스탱: You의 Memory는 지우지 않을 거예요.\n머스탱: 자신의 Karma를 기억하며 사는 것.\n이것이 벌입니다.",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__clh_002",
+          "keyword": "검은 상자",
+          "category": "item",
+          "subject": null,
+          "detail": "메어리가 블랙박스와의 약속 장소인 폐 병원에 들고 온 검은 상자.",
+          "line_start": 37,
+          "line_end": 39,
+          "quote": "메어리는 손에 쥔 검은 상자를 움켜쥐었다.\n메어리: 약속 시간이 되었는데···.\n메어리: 오지 않는군요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__clh_003",
+          "keyword": "메어리와 블랙박스의 과거 신원 조작 및 인신매매 공모",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "과거 메어리와 블랙박스는 사람들의 이름을 조작하고 돈을 받고 팔았으며, 그 피해자들의 진짜 이름을 두 사람 모두 기억하지 못한다.",
+          "line_start": 99,
+          "line_end": 128,
+          "quote": "당신은 우리가 조작한 사람들의 이름을\n?\n조작된 게 아닌 진짜 이름을 기억하고 있나요?\n??\n갑자기 뭔 감성 팔이야\n그걸 왜 기억하고 있어?\n돈 받고 팔았으면 끝이지\n그래 넌 예전부터 그런 놈이었지\n인류의 새로운 가치는 무슨ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n하여튼 위선자 자식 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "mary_03__rln_001",
+          "subject": "메어리",
+          "target": "머스탱",
+          "relation_or_change": "머스탱이 니케가 된 메어리를 자신의 소속('Me의 Girl')으로 두고, 벌로서 과거의 기억을 지우지 않은 채 살게 했다고 말함.",
+          "epistemic_type": "character_claim",
+          "claimant": "머스탱",
+          "line_start": 16,
+          "line_end": 25,
+          "claim_line": 16,
+          "quote": "머스탱: Hmm. 그런데 You도 이제 Me의 Girl이 되었잖아요?\n머스탱: 그래서 You에게도 Chance를 주기로 했어Yo.\n머스탱: 그런 의미에서 Question!\n머스탱: 당신이 New Life를 주었다던 Girl들의 Real Name을 한 명이라도 기억하고 있나요?\n머스탱: 모르겠Jo?\n머스탱: 그럼 어쩔 수 없네Yo.\n머스탱: 반성을 모르는 Girl에겐 벌을 줘야 겠네Yo.\n머스탱: 보통, 사고로 Nikke가 된 Girl들의 기억은 지워주는 것이 관례이지만.\n머스탱: You의 Memory는 지우지 않을 거예요.\n머스탱: 자신의 Karma를 기억하며 사는 것.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__rln_002",
+          "subject": "블랙박스",
+          "target": "메어리",
+          "relation_or_change": "과거 함께 사람들의 이름을 조작해 돈을 받고 판 공범 관계로, 블랙박스는 돈 받고 팔았으면 끝이지 왜 진짜 이름을 기억하냐며 메어리를 위선자라고 비난함.",
+          "epistemic_type": "character_claim",
+          "claimant": "블랙박스",
+          "line_start": 114,
+          "line_end": 128,
+          "claim_line": 118,
+          "quote": "그걸 왜 기억하고 있어?\n돈 받고 팔았으면 끝이지\n그래 넌 예전부터 그런 놈이었지\n인류의 새로운 가치는 무슨ㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n하여튼 위선자 자식 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__rln_003",
+          "subject": "지휘관",
+          "target": "메어리",
+          "relation_or_change": "지휘관이 메어리의 공범자가 되어 자신에게 털어놓은 이야기만큼만이라도 죄를 함께 짊어지겠다고 선언함.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 190,
+          "line_end": 198,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"공범자가 될게.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네?\n[CHOICE_START]\n  [OPTION TEXT=\"내게 털어놓은 이야기만큼만이라도 짊어질게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_03__rln_004",
+          "subject": "메어리",
+          "target": "지휘관",
+          "relation_or_change": "메어리는 진짜 공범자는 죽으라고 하는데 관련도 없는 지휘관이 함께 죄의 치료법을 찾자고 하자, 바보 같다면서도 지휘관의 말을 믿고 싶어진다고 밝힘.",
+          "epistemic_type": "character_claim",
+          "claimant": "메어리",
+          "line_start": 218,
+          "line_end": 226,
+          "claim_line": 225,
+          "quote": "메어리: 후후, 그게 뭐예요.\n메어리: 진짜 공범자는 죽으라고 하는데.\n메어리: 지휘관은 이 일이랑 관련도 없으면서···.\n메어리: 바보 같네요. 정말.\n메어리: ··· ···.\n메어리: 용서받을 방법이라니···.\n메어리: 그런 게 있을 리 없다는 걸 아는데도.\n메어리: 믿고 싶어지네요.\n메어리: 저도 지휘관한테 바보병이 옮았나 봐요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "mary_03__uec_001",
+          "surface_text": "폐 병원",
+          "suggested_type": "location",
+          "line_start": 70
+        },
+        {
+          "item_id": "mary_03__uec_002",
+          "surface_text": "아웃로",
+          "suggested_type": "faction_or_species",
+          "line_start": 70
+        },
+        {
+          "item_id": "mary_03__uec_003",
+          "surface_text": "콜렉터",
+          "suggested_type": "faction_or_species",
+          "line_start": 130
+        }
+      ]
+    },
+    {
+      "scene_id": "mary_04",
+      "title_id": "character_episodes__메어리",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/메어리.txt",
+      "source_sha256": "582819efb4a6176f96e0473cc687029a2fcbc6b86184d7758bf8a5f693a55101",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "mixed",
+      "chronology_segments": [
+        {
+          "line_start": 149,
+          "line_end": 155,
+          "chronology_type": "flashback"
+        }
+      ],
+      "is_plot_critical": true,
+      "summary": "메어리가 사장님에게 넘긴 검은 상자로 인해 병원 사망 기록 조작과 공무원 연루 사건이 테트라 커넥트 뉴스에 보도되고, 상자를 관리하던 공범자는 D에게 처단된다. 메어리는 자신을 계단에서 밀어 죽였던 범인이 페퍼라는 사실을 페퍼가 알지 못하도록 기억 상실 연기를 계속하기로 하며 지휘관과 비밀을 공유한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "mary_04__pis_001",
+            "speaker_label": "메어리",
+            "entity_id": "char_메어리",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_04__pis_002",
+            "speaker_label": "D",
+            "entity_id": "char_D",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_04__pis_003",
+            "speaker_label": "페퍼",
+            "entity_id": "char_페퍼",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "mary_04__pis_004",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "mary_04__rvo_001",
+            "speaker_label": "아나운서",
+            "entity_id": null,
+            "medium": "other",
+            "line_start": 3,
+            "line_end": 6,
+            "quote": "아나운서: 병원의 사망 기록을 조작해 사전 동의 없이 사망한 환자의 뇌를.\n아나운서: 니케 뇌 기증에 사용되었다는 사실이 밝혀져 사회적 논란이 일고 있습니다.\n아나운서: 익명의 제보자에 의해 저희 테트라 커넥트에 전해져 온 이 검은 상자에 따르면.\n아나운서: 중앙 정부 소속 공무원과 연관이 있다는···."
+          },
+          {
+            "item_id": "mary_04__rvo_002",
+            "speaker_label": "블랙박스",
+            "entity_id": "char_블랙박스",
+            "medium": "messenger",
+            "line_start": 17,
+            "line_end": 19,
+            "quote": "너 어떻게 살아있어?"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "mary_04__mnt_001",
+            "surface_text": "니케",
+            "entity_id": null,
+            "entity_type": "faction_or_species",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "아나운서: 니케 뇌 기증에 사용되었다는 사실이 밝혀져 사회적 논란이 일고 있습니다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_04__mnt_002",
+            "surface_text": "테트라 커넥트",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "아나운서: 익명의 제보자에 의해 저희 테트라 커넥트에 전해져 온 이 검은 상자에 따르면.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_04__mnt_003",
+            "surface_text": "중앙 정부",
+            "entity_id": null,
+            "entity_type": "organization",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "아나운서: 중앙 정부 소속 공무원과 연관이 있다는···.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "mary_04__mnt_004",
+            "surface_text": "사장님",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 117,
+            "line_end": 117,
+            "quote": "메어리: 역시 그 상자는 사장님께 드리길 잘 했던 거 같아요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "mary_04__foa_001",
+          "from_speaker": "블랙박스",
+          "to_target": "메어리",
+          "address_term": "너",
+          "line_start": 17,
+          "line_end": 19,
+          "quote": "너 어떻게 살아있어?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__foa_002",
+          "from_speaker": "페퍼",
+          "to_target": "메어리",
+          "address_term": "선배",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "페퍼: 선배. 들으셨어요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__foa_003",
+          "from_speaker": "페퍼",
+          "to_target": "메어리",
+          "address_term": "선배에",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "페퍼: 우으으··· 선배에.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__foa_004",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "우리 지휘관님",
+          "line_start": 130,
+          "line_end": 130,
+          "quote": "메어리: 우리 지휘관님 손만 빼고~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__foa_005",
+          "from_speaker": "페퍼",
+          "to_target": "메어리",
+          "address_term": "이 위선자",
+          "line_start": 155,
+          "line_end": 155,
+          "quote": "페퍼: 이 위선자!",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__foa_006",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "우리의 정의로운 천사님",
+          "line_start": 162,
+          "line_end": 162,
+          "quote": "메어리: 우리의 정의로운 천사님께는.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__foa_007",
+          "from_speaker": "메어리",
+          "to_target": "지휘관",
+          "address_term": "공범자 님",
+          "line_start": 179,
+          "line_end": 179,
+          "quote": "메어리: 공범자 님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [
+        {
+          "item_id": "mary_04__unk_001",
+          "unknown_id": "unk_mary_04_L0007",
+          "quote": "저게 무슨 말이야.",
+          "speaking_style": "당황한 독백조의 반말",
+          "target_addressed": null,
+          "contextual_clues": [
+            "어두운 방 안에서 검은 상자와 중앙 정부 공무원 연루에 관한 TV 뉴스를 보며 당황하는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 7,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__unk_002",
+          "unknown_id": "unk_mary_04_L0008",
+          "quote": "저 상자는 분명 그 여자랑···!",
+          "speaking_style": "경악하는 독백조의 반말",
+          "target_addressed": null,
+          "contextual_clues": [
+            "TV 뉴스에 나온 검은 상자가 '그 여자'와 관련된 것임을 알아보고 경악하는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 8,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__unk_003",
+          "unknown_id": "unk_mary_04_L0052",
+          "quote": "!!",
+          "speaking_style": "놀란 반응",
+          "target_addressed": null,
+          "contextual_clues": [
+            "메어리가 메신저로 '이제 슬슬 도착할 때가 됐는데?'라고 보낸 직후 초인종이 울리자 놀라는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 52,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__unk_004",
+          "unknown_id": "unk_mary_04_L0055",
+          "quote": "누구세요?",
+          "speaking_style": "경계하는 존댓말",
+          "target_addressed": null,
+          "contextual_clues": [
+            "초인종이 거듭 울리자 현관문 앞으로 다가가 문밖의 상대에게 누구냐고 묻는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 55,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__unk_005",
+          "unknown_id": "unk_mary_04_L0058",
+          "quote": "어떻게 집 안에···!",
+          "speaking_style": "경악하는 반말",
+          "target_addressed": "D",
+          "contextual_clues": [
+            "집 안에 들어온 D에게 상자 관리가 허술하다는 위의 전언을 듣고 총성(탕-!)과 함께 처단되는 인물"
+          ],
+          "resolved_in_same_scene_to": null,
+          "line": 58,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [
+        {
+          "item_id": "mary_04__ssg_001",
+          "unknown_ids": [
+            "unk_mary_04_L0007",
+            "unk_mary_04_L0008",
+            "unk_mary_04_L0052",
+            "unk_mary_04_L0055",
+            "unk_mary_04_L0058"
+          ],
+          "confidence": "확인된 사실",
+          "reason": "어두운 방에서 검은 상자 관련 TV 뉴스를 보고 메어리와 메신저를 주고받은 직후 집 안에 침입한 D와 마주치는 동일 인물의 연속 발화다."
+        }
+      ],
+      "cross_scene_hints": [
+        {
+          "item_id": "mary_04__csh_001",
+          "text": "L149~155 회상에서 페퍼가 메어리에게 한 대사('믿었는데···.', '믿고 있었는데!', '이 위선자!')는 mary_03 L3~5에서 메어리를 계단에서 밀어 죽인 미상 화자(???)의 대사와 일치한다.",
+          "related_scene_ids": [
+            "mary_03"
+          ]
+        }
+      ],
+      "choice_branches": [
+        {
+          "item_id": "mary_04__chb_001",
+          "choice_line": 87,
+          "options": [
+            {
+              "item_id": "mary_04__chb_001_opt_01",
+              "option_text": "자주 걱정시키는 게 좋겠네.",
+              "continuation_summary": "메어리가 지휘관처럼 손이라도 다쳐서 와볼까 농담하자 페퍼가 애교 부린 적 없다며 그런 생각은 하지도 말라고 만류한다."
+            },
+            {
+              "item_id": "mary_04__chb_001_opt_02",
+              "option_text": "이번엔 페퍼의 턴이야.",
+              "continuation_summary": "메어리가 이번엔 페퍼가 걱정시키는 걸로 하자고 농담하자 페퍼가 애교 부린 적 없다며 싫다고 거절한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "mary_04__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아나운서",
+          "summary": "아나운서가 TV 뉴스에서 병원의 사망 기록을 조작해 사전 동의 없이 사망 환자의 뇌를 니케 뇌 기증에 사용한 사실이 익명의 제보자가 테트라 커넥트에 전한 검은 상자로 밝혀졌으며, 중앙 정부 소속 공무원과 연관이 있다고 보도한다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": 5,
+          "quote": "어두운 방 안에 시끄러운 TV 소리가 들려왔다.\n아나운서: 병원의 사망 기록을 조작해 사전 동의 없이 사망한 환자의 뇌를.\n아나운서: 니케 뇌 기증에 사용되었다는 사실이 밝혀져 사회적 논란이 일고 있습니다.\n아나운서: 익명의 제보자에 의해 저희 테트라 커넥트에 전해져 온 이 검은 상자에 따르면.\n아나운서: 중앙 정부 소속 공무원과 연관이 있다는···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "???",
+          "summary": "TV 뉴스를 보던 미상 화자가 저 검은 상자는 분명 그 여자와 관련된 것이라며 경악한다.",
+          "line_start": 7,
+          "line_end": 8,
+          "claim_line": 8,
+          "quote": "???: 저게 무슨 말이야.\n???: 저 상자는 분명 그 여자랑···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "claimant_unknown_id": "unk_mary_04_L0008"
+        },
+        {
+          "item_id": "mary_04__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리, 블랙박스",
+          "summary": "메어리가 블랙박스에게 메신저로 오늘의 뉴스를 재미있게 시청했냐며 인사하자 블랙박스가 어떻게 살아있냐고 경악한다.",
+          "line_start": 11,
+          "line_end": 19,
+          "claim_line": null,
+          "quote": "안녕하세요~ ^^\n오늘의 뉴스는 재미있게 시청하셨나요?\n너 어떻게 살아있어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 그걸로 어떻게 죽어야 하냐며 아무리 애를 써도 못 죽겠다고 조롱한다.",
+          "line_start": 20,
+          "line_end": 31,
+          "claim_line": 30,
+          "quote": "??\n어머 그걸로 어떻게 죽어야 하나요?\n아무리 애를 써도\n못 죽겠던데요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "블랙박스가 분개하자 메어리는 아직 메신저를 하는 걸 보니 아직 도착하지 않은 모양이라며 이제 슬슬 도착할 때가 됐다고 예고한다.",
+          "line_start": 32,
+          "line_end": 50,
+          "claim_line": 48,
+          "quote": "이게 진짜\n그나저나 아직 메신저를 하시는 거 보니까\n아직 도착하지 않았나 봐요? ^^\n뭐?\n이상하다~\n이제 슬슬 도착할 때가 됐는데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "D",
+          "summary": "초인종이 울리고 집 안에 들어온 D가 미상 화자에게 상자 관리가 허술하다는 위의 전언을 전한 뒤 총성을 울린다.",
+          "line_start": 51,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "띵동-\n???: !!\n현관문 앞으로 다가갔다.\n띵동- 띵동-\n???: 누구세요?\nD: D.\n철컥-\n???: 어떻게 집 안에···!\nD: 위의 전언이다.\nD: 상자 관리가 허술하군.\n탕-!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "검은 상자 사건을 들었냐는 페퍼의 질문에 메어리가 들었다고 답한다.",
+          "line_start": 62,
+          "line_end": 64,
+          "claim_line": 64,
+          "quote": "페퍼: 선배. 들으셨어요?\n페퍼: 그 검은 상자 사건!\n메어리: 아아~ 들었어요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼는 병원에서 어떻게 그런 끔찍한 일이 있었냐며, 메어리가 침묵하는 가운데 그런 나쁜 놈들은 그냥 죽으면 안 되고 오히려 살려 놓고 평생 괴롭히면서 속죄하게 해야 한다고 분개한다.",
+          "line_start": 65,
+          "line_end": 69,
+          "claim_line": 69,
+          "quote": "페퍼: 엄청 충격적이지 않나요?\n페퍼: 어떻게 병원에서 그런 끔찍한 일이···!\n메어리: ··· ···.\n페퍼: 저런 나쁜 놈들은 그냥 죽으면 안 돼요.\n페퍼: 오히려 살려 놓고 평생 괴롭히면서 속죄하게 해야···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 페퍼에게 자신이 이 일을 계속할 수 있는 건 모두 페퍼 덕분이라며 고마움을 전하고, 이제 정말 괜찮으니 더는 걱정하지 않아도 된다고 안심시킨다.",
+          "line_start": 70,
+          "line_end": 78,
+          "claim_line": 73,
+          "quote": "메어리: 페퍼.\n페퍼: 네?\n메어리: 고마워요.\n메어리: 제가 이 일을 계속할 수 있는 건 모두 페퍼 덕분이에요.\n페퍼: 선배···?\n메어리: 한 번도 제대로 말해준 적이 없는 것 같아서요.\n메어리: 이번에도 많이 걱정했죠?\n메어리: 이제 정말 괜찮으니까.\n메어리: 더는 걱정하지 않아도 돼요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 메어리를 끌어안으며 자신도 선배와 같이 일하는 것이 엄청 좋고 걱정들이 잘 해결돼서 다행이라고 말한다.",
+          "line_start": 79,
+          "line_end": 82,
+          "claim_line": null,
+          "quote": "페퍼: 우으으··· 선배에.\n페퍼가 메어리를 끌어안았다.\n페퍼: 저도 선배랑 같이 일하는 거 엄청 좋아요!\n페퍼: 선배의 걱정들이 잘 해결돼서 진짜 다행이에요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리는 페퍼에게 이런 애교도 받아본다며 자주 걱정 끼치고 싶어진다고 농담하며 지휘관에게 동의를 구한다.",
+          "line_start": 83,
+          "line_end": 86,
+          "claim_line": 85,
+          "quote": "메어리: 어머, 좋네요~\n메어리: 페퍼한테 이런 애교도 받아보고~\n메어리: 이러면 자주자주 걱정 끼치고 싶어지는데~ 큰일이네요~\n메어리: 그렇죠, 지휘관?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 메어리",
+          "summary": "지휘관이 자주 걱정시키는 게 좋겠다고 맞장구치자 메어리가 지휘관이 뭘 좀 안다고 호응한다.",
+          "line_start": 88,
+          "line_end": 89,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"자주 걱정시키는 게 좋겠네.\"]\n    메어리: 후후, 역시 지휘관이 뭘 좀 아시네요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 87,
+            "option_text": "자주 걱정시키는 게 좋겠네."
+          }
+        },
+        {
+          "item_id": "mary_04__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 메어리에게서 떨어지며 애교 같은 건 하지 않았다고 부인한다.",
+          "line_start": 90,
+          "line_end": 92,
+          "claim_line": 92,
+          "quote": "    페퍼: !!!\n    페퍼가 메어리에게서 떨어졌다.\n    페퍼: 애, 애교 같은 거 안 했어요!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 87,
+            "option_text": "자주 걱정시키는 게 좋겠네."
+          }
+        },
+        {
+          "item_id": "mary_04__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리, 페퍼",
+          "summary": "메어리가 지휘관처럼 손이라도 다쳐서 와볼까 농담하자 페퍼가 그런 건 생각도 하지 말라고 만류한다.",
+          "line_start": 93,
+          "line_end": 95,
+          "claim_line": null,
+          "quote": "    메어리: 흠··· 그럼 이번엔 뭐로 걱정시켜 볼까요~\n    메어리: 지휘관처럼 손이라도 다쳐서 와볼까요?\n    페퍼: 그런 건 생각도 하지 마세요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 87,
+            "option_text": "자주 걱정시키는 게 좋겠네."
+          }
+        },
+        {
+          "item_id": "mary_04__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 메어리",
+          "summary": "지휘관이 이번엔 페퍼의 턴이라고 하자 메어리가 아직 턴 종료를 안 했다고 받아친다.",
+          "line_start": 97,
+          "line_end": 98,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"이번엔 페퍼의 턴이야.\"]\n    메어리: 어머, 저 아직 턴 종료 안 했는데요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 87,
+            "option_text": "이번엔 페퍼의 턴이야."
+          }
+        },
+        {
+          "item_id": "mary_04__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼가 메어리에게서 떨어지며 애교 같은 건 하지 않았다고 부인한다.",
+          "line_start": 99,
+          "line_end": 101,
+          "claim_line": 101,
+          "quote": "    페퍼: !!!\n    페퍼가 메어리에게서 떨어졌다.\n    페퍼: 애, 애교 같은 거 안 했어요!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 87,
+            "option_text": "이번엔 페퍼의 턴이야."
+          }
+        },
+        {
+          "item_id": "mary_04__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리, 페퍼",
+          "summary": "메어리가 이번엔 페퍼가 걱정시키는 걸로 하자고 농담하자 페퍼가 싫다고 거절한다.",
+          "line_start": 102,
+          "line_end": 104,
+          "claim_line": null,
+          "quote": "    메어리: 흐음~ 좋아요.\n    메어리: 그럼 이번엔 페퍼가 걱정시키는 걸로!\n    페퍼: 싫거든요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 87,
+            "option_text": "이번엔 페퍼의 턴이야."
+          }
+        },
+        {
+          "item_id": "mary_04__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "페퍼는 더 있다간 놀림만 당할 것 같다며 지휘관에게 다음에 또 놀러 오겠다고 인사한 뒤 도망친다.",
+          "line_start": 107,
+          "line_end": 110,
+          "claim_line": null,
+          "quote": "페퍼: 으으··· 더 있다간 놀림만 당할 거 같으니까.\n페퍼: 저 먼저 가볼게요. 지휘관.\n페퍼: 다음에 또 놀러 올게요!\n페퍼가 도망쳤다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 도망친 페퍼를 보며 귀엽다고 말한다.",
+          "line_start": 111,
+          "line_end": 111,
+          "claim_line": 111,
+          "quote": "메어리: 후후, 귀여워라.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "상자 일이 완전히 끝났냐는 지휘관의 질문에 메어리는 끝났다며, 상자를 사장님께 드리길 잘했고 기대보다 더 크게 판을 키워주셨다고 답한다.",
+          "line_start": 112,
+          "line_end": 118,
+          "claim_line": 117,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"상자 일은 이제 완전히 끝난 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네. 끝났어요.\n메어리: 역시 그 상자는 사장님께 드리길 잘 했던 거 같아요.\n메어리: 기대했던 것보다 더 크게 판을 키워주셨더라고요~",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "문자의 주인(블랙박스)은 어떻게 되었냐는 지휘관의 질문에 메어리는 자신보다 무서운 분들이 알아서 해주지 않았을까라고 추측하며, 지휘관의 손만 빼고 다 잘 해결되었다고 말한다.",
+          "line_start": 119,
+          "line_end": 130,
+          "claim_line": 124,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그 문자의 주인은?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 글쎄요~\n메어리: 저보다 무서운 분들이 알아서 해주시지 않았을까요?\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 뭐, 다 잘 해결되었으니까 된 거죠.\n메어리: 우리 지휘관님 손만 빼고~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "기억을 잃었다는 것을 계속 유지할 것이냐는 지휘관의 질문에 메어리는 계속 그렇게 할 것이라고 답한다.",
+          "line_start": 131,
+          "line_end": 135,
+          "claim_line": 135,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"기억을 잃었다는 건 계속 유지할 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네. 그럴 거예요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "왜 기억을 잃은 척 유지하냐는 지휘관의 질문에 메어리는 이미 사람들이 다 그렇게 알고 있고, 기억을 찾았다고 하면 페퍼가 자신이 죽었을 때의 계단 일을 궁금해할 것이며 그 일의 범인만큼은 페퍼가 알아선 안 되기 때문이라고 밝힌다.",
+          "line_start": 136,
+          "line_end": 148,
+          "claim_line": 148,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"어째서?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 이미 사람들이 다 그렇게 알고 있기도 하고···.\n메어리: 기억을 찾았다고 하면.\n메어리: 페퍼가 계단 일을 궁금해할 테니까요.\n[CHOICE_START]\n  [OPTION TEXT=\"계단이라면···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네. 제가 죽었을 때의 일.\n메어리: 그 일의 범인만큼은 그 애가 알아선 안되거든요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_024",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "페퍼",
+          "summary": "과거 페퍼가 선배인 메어리에게 서류 조작과 환자의 뇌를 판 사실에 대해 추궁하며 믿고 있었는데 이 위선자라고 외친다.",
+          "line_start": 149,
+          "line_end": 155,
+          "claim_line": null,
+          "quote": "페퍼: 선배. 저게 무슨 말이에요?\n페퍼: 서류 조작이라니··· 아니죠?\n페퍼: 선배가 저런 짓을··· 환자의 뇌를 팔다니!\n페퍼: 뭐라고 말 좀 해봐요!\n페퍼: 믿었는데···.\n페퍼: 믿고 있었는데!\n페퍼: 이 위선자!",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "지휘관이 진상을 짐작하자 메어리가 손으로 지휘관의 입을 막으며 우리의 정의로운 천사님(페퍼)에게는 이번에도 비밀이라고 당부한다.",
+          "line_start": 156,
+          "line_end": 164,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"설마···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 쉿.\n메어리가 손으로 입을 막아왔다.\n메어리: 우리의 정의로운 천사님께는.\n메어리: 이번에도 비밀이에요~\n메어리: 알겠죠?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "말하면 어떻게 되냐는 지휘관의 질문에 메어리가 지휘관의 붕대 감은 손을 들어 올리며 블랙 데빌 메어리가 아픈 손에 주사를 놓을지도 모른다고 농담한다.",
+          "line_start": 165,
+          "line_end": 171,
+          "claim_line": 171,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"말하면 어떻게 되는데?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 음~ 글쎄요~\n메어리가 붕대를 감은 손을 들어 올렸다.\n메어리: 블랙 데빌 메어리가 아픈 손에 주사를 놔버릴지도 모르겠네요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_027",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 아픈 손에 주사를 놓겠다는 메어리의 말에 그건 진짜 무서운 일이라고 반응한다.",
+          "line_start": 172,
+          "line_end": 175,
+          "claim_line": 173,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그건 진짜 무서운 일이네.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__eac_028",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "메어리",
+          "summary": "메어리가 지휘관의 붕대 감은 손바닥에 입 맞추며 공범자 님에게 앞으로도 잘 부탁한다고 말한다.",
+          "line_start": 176,
+          "line_end": 179,
+          "claim_line": null,
+          "quote": "메어리: 후후, 그렇죠?\n메어리: 그러니까 앞으로도 잘 부탁드려요~\n메어리가 붕대를 감은 손바닥에 입 맞췄다.\n메어리: 공범자 님.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "mary_04__clh_001",
+          "keyword": "검은 상자와 병원 뇌 기증 조작 폭로",
+          "category": "item",
+          "subject": null,
+          "detail": "메어리가 사장님에게 넘겨 테트라 커넥트에 제보된 검은 상자로, 병원의 사망 기록을 조작해 사전 동의 없이 사망 환자의 뇌를 니케 뇌 기증에 사용한 사건과 중앙 정부 소속 공무원의 연루 사실이 담겨 있다.",
+          "line_start": 3,
+          "line_end": 6,
+          "quote": "아나운서: 병원의 사망 기록을 조작해 사전 동의 없이 사망한 환자의 뇌를.\n아나운서: 니케 뇌 기증에 사용되었다는 사실이 밝혀져 사회적 논란이 일고 있습니다.\n아나운서: 익명의 제보자에 의해 저희 테트라 커넥트에 전해져 온 이 검은 상자에 따르면.\n아나운서: 중앙 정부 소속 공무원과 연관이 있다는···.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__clh_002",
+          "keyword": "메어리를 계단에서 죽게 한 사건의 범인",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "메어리가 기억을 되찾았다는 사실을 숨기는 이유는 과거 자신이 계단에서 죽었을 때의 일을 페퍼가 궁금해할 것이고, 그 일의 범인만큼은 페퍼가 알아선 안 되기 때문이다.",
+          "line_start": 140,
+          "line_end": 148,
+          "quote": "메어리: 이미 사람들이 다 그렇게 알고 있기도 하고···.\n메어리: 기억을 찾았다고 하면.\n메어리: 페퍼가 계단 일을 궁금해할 테니까요.\n[CHOICE_START]\n  [OPTION TEXT=\"계단이라면···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네. 제가 죽었을 때의 일.\n메어리: 그 일의 범인만큼은 그 애가 알아선 안되거든요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__clh_003",
+          "keyword": "페퍼의 과거 추궁과 위선자 발언",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "과거 페퍼가 선배 메어리에게 서류 조작과 환자 뇌 매매를 추궁하며 믿고 있었는데 이 위선자라고 외쳤다.",
+          "line_start": 149,
+          "line_end": 155,
+          "quote": "페퍼: 선배. 저게 무슨 말이에요?\n페퍼: 서류 조작이라니··· 아니죠?\n페퍼: 선배가 저런 짓을··· 환자의 뇌를 팔다니!\n페퍼: 뭐라고 말 좀 해봐요!\n페퍼: 믿었는데···.\n페퍼: 믿고 있었는데!\n페퍼: 이 위선자!",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__clh_004",
+          "keyword": "블랙 데빌 메어리",
+          "category": "trait",
+          "subject": "메어리",
+          "detail": "메어리가 비밀을 발설하면 아픈 손에 주사를 놓을지도 모른다며 스스로를 '블랙 데빌 메어리'라고 칭한다.",
+          "line_start": 171,
+          "line_end": 171,
+          "quote": "메어리: 블랙 데빌 메어리가 아픈 손에 주사를 놔버릴지도 모르겠네요~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "mary_04__rln_001",
+          "subject": "메어리",
+          "target": "페퍼",
+          "relation_or_change": "병원 선후배 사이로, 메어리는 자신이 이 일을 계속할 수 있는 것이 모두 페퍼 덕분이라며 고마움을 밝힘.",
+          "epistemic_type": "character_claim",
+          "claimant": "메어리",
+          "line_start": 70,
+          "line_end": 75,
+          "claim_line": 73,
+          "quote": "메어리: 페퍼.\n페퍼: 네?\n메어리: 고마워요.\n메어리: 제가 이 일을 계속할 수 있는 건 모두 페퍼 덕분이에요.\n페퍼: 선배···?\n메어리: 한 번도 제대로 말해준 적이 없는 것 같아서요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__rln_002",
+          "subject": "페퍼",
+          "target": "메어리",
+          "relation_or_change": "페퍼가 메어리 선배와 같이 일하는 것을 엄청 좋아한다고 말함.",
+          "epistemic_type": "character_claim",
+          "claimant": "페퍼",
+          "line_start": 79,
+          "line_end": 82,
+          "claim_line": 81,
+          "quote": "페퍼: 우으으··· 선배에.\n페퍼가 메어리를 끌어안았다.\n페퍼: 저도 선배랑 같이 일하는 거 엄청 좋아요!\n페퍼: 선배의 걱정들이 잘 해결돼서 진짜 다행이에요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__rln_003",
+          "subject": "메어리",
+          "target": "페퍼",
+          "relation_or_change": "메어리는 페퍼가 과거 자신이 죽었을 때의 계단 일과 그 범인을 알지 못하도록 기억을 잃은 척 비밀을 유지하겠다고 밝힘.",
+          "epistemic_type": "character_claim",
+          "claimant": "메어리",
+          "line_start": 140,
+          "line_end": 148,
+          "claim_line": 148,
+          "quote": "메어리: 이미 사람들이 다 그렇게 알고 있기도 하고···.\n메어리: 기억을 찾았다고 하면.\n메어리: 페퍼가 계단 일을 궁금해할 테니까요.\n[CHOICE_START]\n  [OPTION TEXT=\"계단이라면···.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 네. 제가 죽었을 때의 일.\n메어리: 그 일의 범인만큼은 그 애가 알아선 안되거든요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__rln_004",
+          "subject": "페퍼",
+          "target": "메어리",
+          "relation_or_change": "과거 선배 메어리가 서류를 조작해 환자의 뇌를 팔았다는 사실을 알고 배신감을 느끼며 위선자라고 비난함.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 149,
+          "line_end": 155,
+          "claim_line": null,
+          "quote": "페퍼: 선배. 저게 무슨 말이에요?\n페퍼: 서류 조작이라니··· 아니죠?\n페퍼: 선배가 저런 짓을··· 환자의 뇌를 팔다니!\n페퍼: 뭐라고 말 좀 해봐요!\n페퍼: 믿었는데···.\n페퍼: 믿고 있었는데!\n페퍼: 이 위선자!",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "mary_04__rln_005",
+          "subject": "메어리",
+          "target": "지휘관",
+          "relation_or_change": "메어리가 지휘관을 '공범자 님'이라 부르며 페퍼에 관한 과거의 비밀을 함께 지키는 공범 관계로서 앞으로도 잘 부탁한다고 말함.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 160,
+          "line_end": 179,
+          "claim_line": null,
+          "quote": "메어리: 쉿.\n메어리가 손으로 입을 막아왔다.\n메어리: 우리의 정의로운 천사님께는.\n메어리: 이번에도 비밀이에요~\n메어리: 알겠죠?\n[CHOICE_START]\n  [OPTION TEXT=\"말하면 어떻게 되는데?\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 음~ 글쎄요~\n메어리가 붕대를 감은 손을 들어 올렸다.\n메어리: 블랙 데빌 메어리가 아픈 손에 주사를 놔버릴지도 모르겠네요~\n[CHOICE_START]\n  [OPTION TEXT=\"그건 진짜 무서운 일이네.\"]\n  [OPTION_END]\n[CHOICE_END]\n메어리: 후후, 그렇죠?\n메어리: 그러니까 앞으로도 잘 부탁드려요~\n메어리가 붕대를 감은 손바닥에 입 맞췄다.\n메어리: 공범자 님.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "mary_04__uec_001",
+          "surface_text": "테트라 커넥트",
+          "suggested_type": "organization",
+          "line_start": 5
+        },
+        {
+          "item_id": "mary_04__uec_002",
+          "surface_text": "중앙 정부",
+          "suggested_type": "organization",
+          "line_start": 6
+        },
+        {
+          "item_id": "mary_04__uec_003",
+          "surface_text": "사장님",
+          "suggested_type": "character",
+          "line_start": 117
+        }
+      ]
+    }
+  ]
+}
