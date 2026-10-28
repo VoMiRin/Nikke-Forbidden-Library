@@ -636,6 +636,17 @@ test('2.3 & 2.4.6 validate-output catches all required failure modes and passes 
   const res9 = validateShard(duplicateBranchSpeaker, sampleBatchInput);
   assert.equal(res9.valid, false);
   assert.ok(res9.errors.some((e) => e.rule === 'PARTICIPANT_BRANCH_EXCLUSIVITY'));
+
+  // 10. 3절 2항: 참여 갈래에 있는 entity_id를 mentioned_only에 또 넣으면 실패
+  const duplicateMentionEntity = makeValidShard();
+  duplicateMentionEntity.scenes[0].participants.mentioned_only[0].entity_id = 'char_라피';
+  const res10 = validateShard(duplicateMentionEntity, sampleBatchInput);
+  assert.equal(res10.valid, false);
+  assert.ok(
+    res10.errors.some(
+      (e) => e.rule === 'PARTICIPANT_BRANCH_EXCLUSIVITY' && e.path.endsWith('mentioned_only[0].entity_id')
+    )
+  );
 });
 
 test('5. merge-and-index merges validated shards, attaches manifest fields & item_ids, and updates progress atomically', async () => {

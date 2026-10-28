@@ -229,7 +229,7 @@
    - `entity_id`는 레지스트리(`entity_registry.json`)에 있는 ID만 쓴다. 화자 갈래는 배치 입력 `speakers`의 `suggested_entity_id`를 그대로 쓴다. ID를 지어내지 마라(`char_`+이름처럼 만들어 쓰지 마라). 레지스트리에 없거나 모르면 `null`로 두고 그 표기를 `unregistered_entity_candidates`에 적는다. 조직·장소·개념·아이템은 레지스트리에 없으므로 언제나 `null`이다. 검증기가 레지스트리에 없는 ID를 실패로 알려 주고, 표기가 등록 이름이면 정식 ID도 알려 준다(2.3의 27항).
      - 다른 표기를 등록 인물에 잇는 것은 그 장면이 같은 대상임을 보여 줄 때만이다. 사전 지식으로 잇지 마라(예: `main_39_04` L99 `백설`·`금장발` — 장면 안에 근거가 없으므로 `null`과 후보). 2.3의 28항이 경고한다.
    - 블라블라 메신저의 참여자와 발신자는 `remote_or_voice_only`(`medium: "messenger"`)로 넣는다.
-   - **한 인물은 한 장면에서 한 갈래에만 넣는다.** 같은 장면에서 메신저·통신으로도 말하고 현장에도 나오면 `present_in_scene`에만 넣는다. 메신저·통신으로만 말했을 때만 `remote_or_voice_only`에 넣는다(예: 메신저로 의뢰한 뒤 현장에서 만나는 서브 퀘스트 의뢰인은 `present_in_scene`). 통신으로 말한 인물의 이름이 다른 대사에 나와도 `mentioned_only`에 또 넣지 않는다. 검증기는 같은 `speaker_label`이 `present_in_scene`과 `remote_or_voice_only`에 함께 있으면 실패 처리한다.
+   - **한 인물은 한 장면에서 한 갈래에만 넣는다.** 같은 장면에서 메신저·통신으로도 말하고 현장에도 나오면 `present_in_scene`에만 넣는다. 메신저·통신으로만 말했을 때만 `remote_or_voice_only`에 넣는다(예: 메신저로 의뢰한 뒤 현장에서 만나는 서브 퀘스트 의뢰인은 `present_in_scene`). 통신으로 말한 인물의 이름이 다른 대사에 나와도 `mentioned_only`에 또 넣지 않는다. 검증기는 같은 `speaker_label`이 `present_in_scene`과 `remote_or_voice_only`에 함께 있거나, 이 세 갈래(`present_in_scene`·`present_silent`·`remote_or_voice_only`)에 있는 `entity_id`가 `mentioned_only`에 또 있으면 실패 처리한다(본명·별칭 표기도 같다).
    - **화자 라벨 없는 기록물**(문서·일기·수기, 음성·영상 유실물 `.wav`·`.mp4` 등)은 `document_author`에 넣는다.
      - 작성자나 목소리가 하나면 `name`에 원문 지칭을 쓴다(예: `수기 작성자`, `녹음 속 남자`). 정체가 없으면 `entity_id`는 `null`이다.
      - 라벨 없는 목소리가 여럿이면 `voices`에 원문 지칭을 하나씩 적는다(예: `남자의 목소리`, `여자의 목소리`). 기록물 전체의 작성자가 따로 없으면 `name`은 `null`이다.

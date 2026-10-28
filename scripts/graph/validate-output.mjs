@@ -969,8 +969,14 @@ export const validateShard = (shardData, batchInput, options = {}) => {
         });
       }
 
-      // mentioned_only (2.3.6-1 언급 표기 + 2.3.4 인용 위치 + 스키마)
+      // mentioned_only (2.3.6-1 언급 표기 + 3.2 한 인물은 한 갈래에만 + 2.3.4 인용 위치 + 스키마)
       if (Array.isArray(scene.participants.mentioned_only)) {
+        const participatingEntityIds = new Set(
+          ['present_in_scene', 'present_silent', 'remote_or_voice_only']
+            .flatMap((key) => (Array.isArray(scene.participants[key]) ? scene.participants[key] : []))
+            .map((p) => p?.entity_id)
+            .filter(isNonEmptyString)
+        );
         scene.participants.mentioned_only.forEach((p, idx) => {
           const pPath = `${sceneBasePath}.participants.mentioned_only[${idx}]`;
           if (!p || typeof p !== 'object') {
@@ -982,6 +988,13 @@ export const validateShard = (shardData, batchInput, options = {}) => {
           }
           if (!isNullableString(p.entity_id)) {
             addError('SCHEMA_VALIDATION', sid, `${pPath}.entity_id`, 'entity_id must be string or null');
+          } else if (participatingEntityIds.has(p.entity_id)) {
+            addError(
+              'PARTICIPANT_BRANCH_EXCLUSIVITY',
+              sid,
+              `${pPath}.entity_id`,
+              `Entity "${p.entity_id}" already takes part in this scene (present_in_scene, present_silent or remote_or_voice_only); do not list its names again in mentioned_only (3.2)`
+            );
           }
           if (!MENTIONED_ENTITY_TYPE_ENUM.has(p.entity_type)) {
             addError(
