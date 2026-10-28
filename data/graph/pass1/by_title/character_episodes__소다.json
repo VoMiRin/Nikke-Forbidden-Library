@@ -1,0 +1,3662 @@
+{
+  "schema_version": "1.3.0",
+  "generated_at": "2026-10-28T17:43:04.858Z",
+  "title_id": "character_episodes__소다",
+  "category": "character_episodes",
+  "title": "소다",
+  "source_file": "public/scripts/character_episodes/소다.txt",
+  "scene_count": 5,
+  "scenes": [
+    {
+      "scene_id": "soda_00",
+      "title_id": "character_episodes__소다",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/소다.txt",
+      "source_sha256": "c5b765746e0c64ab890915a648c8af9b89847d97b4fab32dc235a3edbdf903f9",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "소다의 상담 요청으로 메이드 카페를 찾은 지휘관은 영업시간 동안 소다가 37번이나 실수를 연발하는 모습을 목격한다. 영업 종료 후 소다는 지휘관의 바지에 음료를 엎지르고 세탁해 주겠다며 바지를 벗기려다 함께 넘어지는 소동을 벌인 뒤, 덜렁대는 성격을 고치게 도와달라고 부탁한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "soda_00__pis_001",
+            "speaker_label": "에이드",
+            "entity_id": "char_에이드",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_00__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_00__pis_003",
+            "speaker_label": "차분한 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "soda_00__pis_004",
+            "speaker_label": "소다",
+            "entity_id": "char_소다",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_00__pis_005",
+            "speaker_label": "단골 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "soda_00__mnt_001",
+            "surface_text": "메이드 카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "소다의 상담 요청을 받고 메이드 카페에 들렀다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "soda_00__foa_001",
+          "from_speaker": "에이드",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "에이드: 아, 어서 오세요. 주인님. 소다를 보러 오신 거죠?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__foa_002",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "소다: 죄송해요, 주인님. 오래 기다리셨죠?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__foa_003",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 154,
+          "line_end": 154,
+          "quote": "소다: ···주인님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "soda_00__chb_001",
+          "choice_line": 133,
+          "options": [
+            {
+              "item_id": "soda_00__chb_001_opt_01",
+              "option_text": "···이건 내 가장 소중한 물건이야.",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "soda_00__chb_001_opt_02",
+              "option_text": "···이걸 꺼내면 여러 가지 의미로 큰일 나.",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "soda_00__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "소다의 상담 요청을 받고 메이드 카페에 들른 지휘관이 에이드에게 무슨 일이 있는지 묻는다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "소다의 상담 요청을 받고 메이드 카페에 들렀다.\n에이드: 아, 어서 오세요. 주인님. 소다를 보러 오신 거죠?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 자세한 이야기는 못 들었는데, 혹시 무슨 일 있어?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "에이드가 소다에게 직접 듣는 편이 좋겠다며 영업시간이 남았으니 잠깐 기다려 달라고 요청한다.",
+          "line_start": 9,
+          "line_end": 11,
+          "claim_line": null,
+          "quote": "에이드: 그게···.\n에이드: ···소다에게 직접 들으시는 편이 좋겠어요.\n에이드: 아직 영업시간이 남았으니까, 잠깐 기다려 주시겠어요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 기다리겠다고 답한 뒤 빈자리에 앉아 홀을 둘러본다.",
+          "line_start": 12,
+          "line_end": 16,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그럴게.\"]\n  [OPTION_END]\n[CHOICE_END]\n빈자리에 앉아 홀을 둘러보았다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 차분한 손님의 주문을 받으러 가다 넘어지지만 괜찮다며 순백의 크림파스타 주문을 받는다.",
+          "line_start": 17,
+          "line_end": 24,
+          "claim_line": null,
+          "quote": "차분한 손님: 여기 주문이요.\n소다: 네에~ 갑니··· 꺄악?!\n꽈당!\n차분한 손님: 괘, 괜찮으세요?\n소다: 앗, 네! 괜찮아요!\n소다: 주문하신다고 했죠?\n차분한 손님: 네. 쫄깃쫄깃 ♪ 순백의 크림파스타 하나 주세요.\n소다: 주문받았습니다아~ 잠시만 기다려주세요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 차분한 손님에게 사랑의 하트 볶음밥을 내어오며 맛있어지는 주문이 필요한지 묻는다.",
+          "line_start": 25,
+          "line_end": 27,
+          "claim_line": null,
+          "quote": "잠시 후.\n소다: 주문하신 몽글몽글 ♪ 사랑의 하트 볶음밥 나왔습니다아~\n소다: 맛있어지는 주문, 필요하신가요~?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "차분한 손님",
+          "summary": "차분한 손님이 맛있어지는 주문은 괜찮다고 사양하다가 자신은 크림 파스타를 시켰다고 말한다.",
+          "line_start": 28,
+          "line_end": 31,
+          "claim_line": 31,
+          "quote": "차분한 손님: 아뇨, 괜찮··· 응?\n차분한 손님: 저기···.\n소다: 네에~\n차분한 손님: 저는 크림 파스타를 시켰는데요···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 주문을 잘못 가져온 것을 깨닫고 사과하며 금방 다시 만들어 드리겠다고 말하고 차분한 손님이 천천히 하라며 달랜다.",
+          "line_start": 32,
+          "line_end": 35,
+          "claim_line": null,
+          "quote": "소다: ···헤에?\n소다: 아아앗···!\n소다: 죄, 죄송해요오··· 금방 다시 만들어 드릴게요!\n차분한 손님: 아, 네. 괜찮으니까 천천히···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 서두르다 넘어지고 그릇까지 깨뜨려 사과하자 에이드가 대신 치우며 소다가 다치지 않았는지 살핀다.",
+          "line_start": 36,
+          "line_end": 47,
+          "claim_line": null,
+          "quote": "우당탕탕!!\n소다: 꺄아아악?!\n차분한 손님: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n그리고 그다음에도.\n쨍그랑-!\n소다: 죄, 죄송해요, 죄송해요오···!\n에이드: 죄송합니다. 금방 치울게요.\n에이드: 소다, 안 다쳤니?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 단골 손님에게 오므라이스를 엎지르며 사과한다.",
+          "line_start": 48,
+          "line_end": 50,
+          "claim_line": null,
+          "quote": "또 그 다음에도.\n철퍽.\n소다: 흐에에···! 죄송해요오···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 소다가 오므라이스를 엎질러 주다니 괜찮다며 오히려 포상이라고 기뻐한다.",
+          "line_start": 51,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "단골 손님: 괘, 괜찮다는!\n단골 손님: 소다쨩이 오므라이스를 엎질러 주다니, 오히려 포상이라는!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 또다시 물건을 깨뜨려 사과하는 등 지휘관이 온 뒤 영업이 끝날 때까지 약 1시간 동안 도합 37번의 실수를 저지른다.",
+          "line_start": 53,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "또또 다음에도.\n와장창창!\n소다: 흐엥··· 죄송합니다아··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n내가 오고 나서 영업이 끝날 때까지, 약 1시간 남짓 동안.\n소다는 도합 37번의 실수를 저질렀다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "영업이 끝난 뒤 뒷정리를 마친 소다가 지휘관에게 음료를 가져오다 지휘관의 바지에 엎지르고 사과하며 괜찮은지 묻는다.",
+          "line_start": 62,
+          "line_end": 72,
+          "claim_line": null,
+          "quote": "얼마 후. 영업이 끝난 메이드 카페.\n영업이 끝난 뒤, 뒷정리까지 마친 소다가 다가왔다.\n소다: 죄송해요, 주인님. 오래 기다리셨죠?\n소다: 이거 드시면서··· 흐엣?!\n[CHOICE_START]\n  [OPTION TEXT=\"으앗?!\"]\n  [OPTION_END]\n[CHOICE_END]\n소다는 음료를 가져오다 내 바지에 엎질렀다.\n소다: 흐에엥··· 죄송해요오···!\n소다: 괘, 괜찮으세요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다에게 괜찮다고 답한다.",
+          "line_start": 73,
+          "line_end": 76,
+          "claim_line": 74,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"으, 응. 괜찮아.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관의 바지가 전부 젖었다며 쾌속으로 돌리면 금방 되니 지금 바로 벗어달라고 세탁해 주겠다고 나선다.",
+          "line_start": 77,
+          "line_end": 83,
+          "claim_line": null,
+          "quote": "소다: 바지가 전부 젖어버리셔서···.\n소다: 아! 지금 바로 벗어주시겠어요? 세탁해 드릴게요!\n[CHOICE_START]\n  [OPTION TEXT=\"···응?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 쾌속으로 돌리면 금방 되니까요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 금방 세탁되는지의 문제가 아니라며 당황한다.",
+          "line_start": 84,
+          "line_end": 87,
+          "claim_line": 85,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그런 문제가 아니라···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관의 바짓춤을 덥석 붙잡고 젖어서 벗기 어려울 테니 도와주겠다며 손에 힘을 준다.",
+          "line_start": 88,
+          "line_end": 94,
+          "claim_line": null,
+          "quote": "소다가 내 바짓춤을 덥석 붙잡았다.\n[CHOICE_START]\n  [OPTION TEXT=\"!!\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 젖어서 벗기 어려우시죠? 제가 도와드릴게요!\n소다의 손에 조금씩 힘이 들어가기 시작한다!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 바지를 벗기려는 소다를 다급히 만류한다.",
+          "line_start": 95,
+          "line_end": 98,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"아니아니아니···!\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 힘을 빼야 바지를 벗기기 쉽다고 말한다.",
+          "line_start": 99,
+          "line_end": 99,
+          "claim_line": 99,
+          "quote": "소다: 힘을 빼셔야 벗기기 쉬워요~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_019",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다에게 잠깐 멈추라고 외친다.",
+          "line_start": 100,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"자, 잠깐!\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 바닥에 고여 있던 음료를 밟고 미끄러져 지휘관의 다리 사이에 얼굴을 파묻은 채 함께 바닥에 쓰러지고, 지휘관이 괜찮은지 묻는다.",
+          "line_start": 104,
+          "line_end": 117,
+          "claim_line": null,
+          "quote": "소다: 영~차··· 흐엣?!\n소다는 바닥에 고여있던 음료를 밟고 미끄러졌고···.\n우당탕!\n나와 함께 바닥에 쓰러졌다.\n[CHOICE_START]\n  [OPTION TEXT=\"윽.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 꺄··· 우풉.\n···내 다리 사이에 얼굴을 파묻은 채로.\n[CHOICE_START]\n  [OPTION TEXT=\"···괜찮아?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_021",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 사과하다가 지휘관의 주머니 쪽에 무언가 있다며 핸드폰이나 배터리인지 궁금해하며 쿡쿡 찌른다.",
+          "line_start": 118,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "소다: 흐엥··· 죄송해요오···.\n소다: ···어라? 근데 주머니에 이건 뭘까요?\n쿡-! 쿡-!\n[CHOICE_START]\n  [OPTION TEXT=\"?!\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ···핸드폰? 배터리···?\n쿡-! 쿡-! 쿡-!\n[CHOICE_START]\n  [OPTION TEXT=\"?!?!?!?!\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 말랑말랑해서 핸드폰이나 배터리는 아닌 것 같다며, 세탁기가 망가지지 않게 세탁하기 전에 꺼내놓아야 한다고 말한다.",
+          "line_start": 131,
+          "line_end": 132,
+          "claim_line": 132,
+          "quote": "소다: 말랑말랑하니까 그건 아닌 것 같은데···.\n소다: 헤헤. 뭐든 세탁하기 전에 꺼내놓으셔야 해요. 안 그러면 세탁기가 망가져 버리니까요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그것은 자신의 가장 소중한 물건이라고 답한다.",
+          "line_start": 134,
+          "line_end": 135,
+          "claim_line": 134,
+          "quote": "  [OPTION TEXT=\"···이건 내 가장 소중한 물건이야.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 133,
+            "option_text": "···이건 내 가장 소중한 물건이야."
+          }
+        },
+        {
+          "item_id": "soda_00__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그것을 꺼내면 여러 가지 의미로 큰일 난다고 답한다.",
+          "line_start": 136,
+          "line_end": 137,
+          "claim_line": 136,
+          "quote": "  [OPTION TEXT=\"···이걸 꺼내면 여러 가지 의미로 큰일 나.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 133,
+            "option_text": "···이걸 꺼내면 여러 가지 의미로 큰일 나."
+          }
+        },
+        {
+          "item_id": "soda_00__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "뒤늦게 상황을 깨닫고 부끄러워하던 소다가 간신히 정신을 차리고 어서 세탁해 드려야 한다는 생각뿐이었다며 사과한다.",
+          "line_start": 139,
+          "line_end": 143,
+          "claim_line": null,
+          "quote": "소다: 헤에···?\n소다: ··· ···.\n소다: ··· ···!!!!!!\n부끄러움에 폭발해 버렸던 소다는 간신히 정신을 차렸다.\n소다: 죄, 죄송해요오··· 어서 세탁해 드려야 한다는 것만 생각해서···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_026",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다에게 좀 진정됐는지 확인한 뒤 상담하고 싶다는 내용이 무엇인지 말해달라고 묻는다.",
+          "line_start": 144,
+          "line_end": 152,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···괜찮아. 좀 진정됐어?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네에···.\n[CHOICE_START]\n  [OPTION TEXT=\"그럼 상담하고 싶다는 게 뭔지 말해줄래?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_00__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관에게 자신의 덜렁대는 성격을 고치게 도와달라고 요청한다.",
+          "line_start": 153,
+          "line_end": 155,
+          "claim_line": null,
+          "quote": "소다: 앗. 네.\n소다: ···주인님.\n소다: 제 덜렁대는 성격을 고치게 도와주세요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "soda_00__uec_001",
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 3
+        }
+      ]
+    },
+    {
+      "scene_id": "soda_01",
+      "title_id": "character_episodes__소다",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/소다.txt",
+      "source_sha256": "75c008c8cc2eb5eaaf17b7d3d66669b37e2093452769831666caf6cc9ec2821a",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "소다의 덜렁대는 성격을 고치기 위해 지휘관과 코코아가 메모 습관 기르기와 균형감각 훈련 등을 시도하지만 소다는 지휘관 앞에서의 서빙 실습에 모두 실패한다. 개점 후 홀에서 손님들의 사소한 필요까지 동시에 챙기려다 넘어지는 소다를 본 지휘관은 실수의 원인을 깨닫고 소다를 휴게실로 데려간다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "soda_01__pis_001",
+            "speaker_label": "소다",
+            "entity_id": "char_소다",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_01__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_01__pis_003",
+            "speaker_label": "코코아",
+            "entity_id": "char_코코아",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_01__pis_004",
+            "speaker_label": "에이드",
+            "entity_id": "char_에이드",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "soda_01__foa_001",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "소다: ···주인님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__foa_002",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "소다: 네, 주인님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__foa_003",
+          "from_speaker": "에이드",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "에이드: 주인님. 이렇게 일찍 나오셔서···.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__foa_004",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 132,
+          "line_end": 132,
+          "quote": "소다: 주인님! 보셨어요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__foa_005",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 147,
+          "line_end": 147,
+          "quote": "소다: 주인님. 그럼 다른 방법도 부탁드려요!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__foa_006",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 167,
+          "line_end": 167,
+          "quote": "소다: 주인님께서 이렇게 힘내주셨는데, 죄송해요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__foa_007",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 196,
+          "line_end": 196,
+          "quote": "소다: 네, 주인님. 부르셨어요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [
+        {
+          "item_id": "soda_01__unk_001",
+          "unknown_id": "unk_soda_01_L0105",
+          "quote": "???: 프로 메이드가 되고 시픈가 보군.",
+          "speaking_style": "받침을 소리 나는 대로 발음하는 어린 말투",
+          "target_addressed": "소다",
+          "contextual_clues": [
+            "서빙 실습에 연달아 실패한 소다 앞에 나타나 프로 메이드가 되고 싶은가 보다고 말한 뒤, 바로 다음 줄에서 코코아로 밝혀져 훈련을 자처함"
+          ],
+          "resolved_in_same_scene_to": {
+            "surface_text": "코코아",
+            "entity_id": "char_코코아",
+            "line_start": 105,
+            "line_end": 106,
+            "quote": "???: 프로 메이드가 되고 시픈가 보군.\n코코아: 그러타면 코코아가 훈련시켜주께.",
+            "in_branch_option": null
+          },
+          "line": 105,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "soda_01__chb_001",
+          "choice_line": 115,
+          "options": [
+            {
+              "item_id": "soda_01__chb_001_opt_01",
+              "option_text": "···아니.",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "soda_01__chb_001_opt_02",
+              "option_text": "···노력 중이야.",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "soda_01__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관에게 자신의 덜렁대는 성격을 고치게 도와달라고 부탁하며 고개를 숙이다 테이블에 이마를 부딪친다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "소다: ···주인님.\n소다: 제 덜렁대는 성격을 고치게 도와주세요!\n콩.\n소다: 아얏.\n꾸벅 고개를 숙이던 소다는 테이블에 이마를 부딪쳤다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 성격을 고치려는지 되묻자 소다가 자신은 메이드이면서 똑 부러지지 못하고 실수투성이라 항상 다른 사람들에게 민폐만 끼친다고 답한다.",
+          "line_start": 7,
+          "line_end": 13,
+          "claim_line": 12,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"성격을?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ···네.\n소다: 저, 메이드면서 똑 부러지지 못하고 실수투성이니까요.\n소다: 항상 다른 분들에게 민폐만 끼치고···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 음료 잔을 잡으려다 쳐서 쓰러뜨리고 사과하자 지휘관이 괜찮다고 달랜다.",
+          "line_start": 14,
+          "line_end": 20,
+          "claim_line": null,
+          "quote": "달그락-\n소다는 음료 잔을 잡으려다 쳐서 쓰러뜨렸다.\n소다: 죄, 죄송해요!\n[CHOICE_START]\n  [OPTION TEXT=\"아냐. 괜찮아.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 실수하고 싶지 않아 상담을 부탁드리는 자리에서 또 실수를 한다며 의기소침해한다.",
+          "line_start": 21,
+          "line_end": 23,
+          "claim_line": 22,
+          "quote": "소다: ···저는 항상 이런 식이에요.\n소다: 실수하고 싶지 않아서 상담을 부탁드리는 자리에서 또 실수나 하고···.\n···소다는 굉장히 의기소침해 보인다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 같이 해결해 보자고 수락하자 소다가 정말이냐며 자신이 잘할 수 있을지 묻는다.",
+          "line_start": 24,
+          "line_end": 29,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"알았어. 같이 해결해 보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 정말요···?\n소다: 저, 잘할 수 있을까요···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 솔직히 장담할 수는 없다고 답한다.",
+          "line_start": 30,
+          "line_end": 33,
+          "claim_line": 31,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"솔직히 장담할 수는 없어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "시무룩해진 소다에게 지휘관이 그래도 끝까지 포기하지 않겠다고 약속하자 소다가 수락한다.",
+          "line_start": 34,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "소다: 흐엥···.\n[CHOICE_START]\n  [OPTION TEXT=\"그래도 끝까지 포기하지 않을게.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···.\n소다: 네, 주인님.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "다음 날 이른 아침, 지휘관이 소다의 실수를 줄이기 위해 우선 메모하는 습관을 길러보자고 제안한다.",
+          "line_start": 41,
+          "line_end": 47,
+          "claim_line": null,
+          "quote": "다음 날. 이른 아침.\n소다의 실수를 줄이기 위해, 함께 여러 가지 시도를 해보기로 했다.\n[CHOICE_START]\n  [OPTION TEXT=\"우선 메모하는 습관을 길러보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 메모요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다는 넘어지는 실수뿐 아니라 자주 까먹기도 한다고 지적한다.",
+          "line_start": 48,
+          "line_end": 55,
+          "claim_line": 53,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"소다는 넘어지거나 하는 실수도 하지만.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"자주 까먹기도 하잖아?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "사과하는 소다에게 지휘관이 메모지를 건네며 주문을 이곳에 적어두라고 설명한다.",
+          "line_start": 56,
+          "line_end": 69,
+          "claim_line": null,
+          "quote": "소다: 흐에엥··· 죄송해요오···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"이, 일단 한 번 해보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n테이블에 앉아 소다에게 메모지를 건네주었다.\n[CHOICE_START]\n  [OPTION TEXT=\"이젠 그냥 주문받는 게 아니라, 여기 적어두는 거야.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 사랑의 하트 볶음밥 하나를 주문하자 소다가 아침 식사에 맞춘 조리와 어울릴 디저트를 중얼거리며 주문지에 메모한 뒤 주방으로 향한다.",
+          "line_start": 70,
+          "line_end": 79,
+          "claim_line": null,
+          "quote": "소다: ···네!\n[CHOICE_START]\n  [OPTION TEXT=\"그럼··· 몽글몽글 ♪ 사랑의 하트 볶음밥 하나 주세요.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 몽글몽글 ♪ 사랑의 하트 볶음밥 하나 주문받았습니다아~!\n소다: 조금만 기다려 주세요~\n소다: ···음. 주인님 아침 식사니까 너무 무겁지 않게 요리하고,\n소다: 디저트는 뭐가 어울리려나···.\n소다는 중얼거리며 주문지에 메모한 뒤 주방으로 향했다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 주문 내용을 적은 메모지를 테이블 위에 그대로 두고 간 뒤, 바니바니 오므라이스를 잘못 내어왔다가 메모지를 안 가져갔음을 깨닫는다.",
+          "line_start": 80,
+          "line_end": 93,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n그리고 [몽글몽글 ♪ 사랑의 하트 볶음밥 1개]라고 귀여운 글씨로 적혀있는 메모지는 테이블 위에 얌전히 놓여 있다.\n잠시 후.\n소다: 주문하신 쫑긋쫑긋 ♪ 바니바니 오므라이스 나왔습니다아~\n소다: 맛있어지는 주문, 필요하신가요~?\n[CHOICE_START]\n  [OPTION TEXT=\"··· ··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···?\n소다: 앗···! 메, 메모지를 안 가져갔어요···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 다시 해보자고 격려하지만 세 번의 추가 시도 후에도 소다는 완벽히 서빙을 마치지 못하고, 지휘관이 한 번 더 해보자고 말한다.",
+          "line_start": 94,
+          "line_end": 104,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···다시 해보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 죄송해요오···.\n세 번의 추가 시도 후에도, 소다는 완벽히 서빙을 마치지 못했다.\n소다: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"괜찮아. 한 번 더···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "???",
+          "summary": "미상 화자(???)가 소다를 보고 프로 메이드가 되고 싶은가 보다고 말한다.",
+          "line_start": 105,
+          "line_end": 105,
+          "claim_line": 105,
+          "quote": "???: 프로 메이드가 되고 시픈가 보군.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null,
+          "claimant_unknown_id": "unk_soda_01_L0105"
+        },
+        {
+          "item_id": "soda_01__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 자신이 훈련시켜 주겠다며 소다를 끌고 주방 쪽으로 향한다.",
+          "line_start": 106,
+          "line_end": 108,
+          "claim_line": null,
+          "quote": "코코아: 그러타면 코코아가 훈련시켜주께.\n소다: 흐에?!\n코코아는 소다를 끌고 주방 쪽으로 향했다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "에이드가 일찍 나온 지휘관에게 인사하며 연습이 잘 되어 가는지 묻는다.",
+          "line_start": 109,
+          "line_end": 114,
+          "claim_line": null,
+          "quote": "에이드: 주인님. 이렇게 일찍 나오셔서···.\n[CHOICE_START]\n  [OPTION TEXT=\"안녕.\"]\n  [OPTION_END]\n[CHOICE_END]\n에이드: 잘 되어 가세요···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 에이드에게 연습이 잘 되지 않는다고 답한다.",
+          "line_start": 116,
+          "line_end": 117,
+          "claim_line": 116,
+          "quote": "  [OPTION TEXT=\"···아니.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 115,
+            "option_text": "···아니."
+          }
+        },
+        {
+          "item_id": "soda_01__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 에이드에게 노력 중이라고 답한다.",
+          "line_start": 118,
+          "line_end": 119,
+          "claim_line": 118,
+          "quote": "  [OPTION TEXT=\"···노력 중이야.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 115,
+            "option_text": "···노력 중이야."
+          }
+        },
+        {
+          "item_id": "soda_01__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "지휘관이 에이드와 이야기를 나누는 사이 코코아가 소다에게 음료를 내어갈 때는 지붕 위를 걷는 스파이처럼 완벽한 균형감각이 중요하다고 가르친다.",
+          "line_start": 121,
+          "line_end": 125,
+          "claim_line": 124,
+          "quote": "에이드: 네···.\n내가 에이드와 이야기를 나누는 사이, 소다는 코코아에게 붙들려 있다.\n코코아: 잘 바.\n코코아: 음료를 내어갈 땐 완벽한 균형감각이 중요해.\n코코아: 응. 지붕 위를 걷는 스파이처럼···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 코코아의 가르침을 되뇌며 음료를 쏟지 않고 옮기는 데 성공한다.",
+          "line_start": 126,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "소다: 네! 다시 한번 마음에 새길게요···!\n코코아: 조아. 해바.\n소다: 지, 지붕 위를 걷는 스파이처러엄···!\n달그락-\n소다: 와아···! 안 쏟았어요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 자신의 가르침은 완벽하다고 자부한다.",
+          "line_start": 131,
+          "line_end": 131,
+          "claim_line": 131,
+          "quote": "코코아: 역시. 코코아의 가르침은 완벽해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_022",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관에게 다시 해보겠다며 찻잔을 쟁반에 올리고 걸어오다 발을 헛디뎌 넘어지며 울상을 짓는다.",
+          "line_start": 132,
+          "line_end": 137,
+          "claim_line": null,
+          "quote": "소다: 주인님! 보셨어요?\n소다: 다시 한번 해볼게요!\n소다는 찻잔을 쟁반에 올리고 내게 걸어오다···.\n소다: 꺅?!\n발을 헛디뎌 넘어졌다.\n소다: 흐에엥···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 괜찮은지 묻자 소다가 괜찮다고 답하며 잘될 것 같았는데 아쉽다고 속상해한다.",
+          "line_start": 138,
+          "line_end": 143,
+          "claim_line": 143,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"괜찮아?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네에···.\n소다: 잘될 것 같았는데···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_024",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "에이드가 개점 준비는 자신들이 할 테니 계속 연습해도 괜찮다고 배려한다.",
+          "line_start": 144,
+          "line_end": 144,
+          "claim_line": null,
+          "quote": "에이드: 소다. 개점 준비는 우리가 할 테니까, 계속 연습해도 괜찮아.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_025",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 소다도 분명 프로 메이드가 될 수 있다고 격려한다.",
+          "line_start": 145,
+          "line_end": 145,
+          "claim_line": 145,
+          "quote": "코코아: 응. 소다도 분명 프로 메이드 될 수 이써.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_026",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관에게 다른 방법도 부탁해 여러 가지를 시도해 보지만, 지휘관을 상대로 한 실습에서 끝내 단 한 번도 완벽히 서빙하지 못한다.",
+          "line_start": 146,
+          "line_end": 154,
+          "claim_line": null,
+          "quote": "소다: ···네!\n소다: 주인님. 그럼 다른 방법도 부탁드려요!\n[CHOICE_START]\n  [OPTION TEXT=\"응. 힘내자.\"]\n  [OPTION_END]\n[CHOICE_END]\n그 뒤로도 여러 가지를 시도해 보았지만.\n나를 상대로 한 실습에서 소다는 끝내 단 한 번도 완벽히 서빙을 해내지 못했다.\n소다: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "침묵하는 소다에게 지휘관이 괜찮은지 묻자 소다가 정신을 차리고 괜찮다고 답한다.",
+          "line_start": 155,
+          "line_end": 165,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"소다.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"소다. 괜찮아?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ···앗.\n소다: 네, 네에~! 그럼요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_028",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 역시 하루아침에 고치긴 힘들었나 보다며 힘써준 지휘관에게 미안해한다.",
+          "line_start": 166,
+          "line_end": 167,
+          "claim_line": 166,
+          "quote": "소다: 헤헤. 역시 하루아침에 고치긴 힘들었나 봐요.\n소다: 주인님께서 이렇게 힘내주셨는데, 죄송해요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신은 괜찮으니 신경 쓰지 말라고 달랜다.",
+          "line_start": 168,
+          "line_end": 171,
+          "claim_line": 169,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"난 괜찮으니까 신경 쓰지 마. 그보다···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_030",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "개점 시간이 되자 소다가 지휘관에게 감사 인사를 남기고 손님들을 맞이하러 간다.",
+          "line_start": 172,
+          "line_end": 176,
+          "claim_line": null,
+          "quote": "짤랑-\n소다: 앗! 벌써 개점 시간이네요!\n소다: 그럼 저는 일하러 가볼게요.\n소다: ···감사했어요. 헤헤.\n소다는 꾸벅 인사하곤 손님들을 맞이하러 갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_031",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 주문 전달과 3번 테이블 확인, 6번 테이블의 티슈와 떨어진 포크 챙기기 등 손님들의 일을 동시에 중얼거리며 일하다가 또다시 넘어진다.",
+          "line_start": 177,
+          "line_end": 185,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"응···?\"]\n  [OPTION_END]\n[CHOICE_END]\n분주하게 자리를 안내하고, 주문을 받는 소다는 무언가를 계속 중얼거리고 있다.\n소다: 주문받았으니까 일단 전달한 다음에···.\n소다: 아. 3번 테이블 다 드셔 가니까 맛있게 드셨는지 물어보고···.\n소다: 6번 테이블에 티슈··· 앗. 포크를 떨어트리셨으니 가져다드려야··· 꺄악?!\n꽈당!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_01__eac_032",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "소다가 일하는 모습을 보고 무언가를 깨달은 지휘관이 소다를 불러 손을 잡고 카페의 휴게실로 데려간다.",
+          "line_start": 186,
+          "line_end": 202,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n그것을 보고 무언가를 깨달았다.\n[CHOICE_START]\n  [OPTION TEXT=\"···소다.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 아야야···.\n소다: 네, 주인님. 부르셨어요?\n[CHOICE_START]\n  [OPTION TEXT=\"잠깐 이리 와볼래?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 흐에?\n소다의 손을 잡고 카페의 휴게실로 향했다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "soda_01__rln_001",
+          "subject": "지휘관",
+          "target": "소다",
+          "relation_or_change": "지휘관이 소다의 덜렁대는 성격을 고치는 일을 끝까지 포기하지 않고 함께 해결해 주기로 약속함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 24,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"알았어. 같이 해결해 보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 정말요···?\n소다: 저, 잘할 수 있을까요···?\n[CHOICE_START]\n  [OPTION TEXT=\"솔직히 장담할 수는 없어.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 흐엥···.\n[CHOICE_START]\n  [OPTION TEXT=\"그래도 끝까지 포기하지 않을게.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···.\n소다: 네, 주인님.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": []
+    },
+    {
+      "scene_id": "soda_02",
+      "title_id": "character_episodes__소다",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/소다.txt",
+      "source_sha256": "ce3a3e167d541e9cb20138a42db83f457f4df44ec68eec98625c1fc422ecb4f0",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "지휘관은 소다가 다른 손님들의 기색을 과하게 신경 쓰느라 주변을 못 보고 실수한다고 판단해 눈을 감고 일해 보라고 제안한다. 소다는 눈을 감은 채 단 한 번의 실수도 없이 능숙하게 홀을 서빙하지만, 손님들이 소다 특유의 정성 어린 서비스가 사라져 행복하지 않다고 말하자 충격을 받고 조퇴한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "soda_02__pis_001",
+            "speaker_label": "소다",
+            "entity_id": "char_소다",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_02__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_02__pis_003",
+            "speaker_label": "단골 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "soda_02__pis_004",
+            "speaker_label": "차분한 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "soda_02__pis_005",
+            "speaker_label": "코코아",
+            "entity_id": "char_코코아",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "soda_02__mnt_001",
+            "surface_text": "메이드 카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "잠시 후. 메이드 카페의 휴게실.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "soda_02__mnt_002",
+            "surface_text": "에이드",
+            "entity_id": "char_에이드",
+            "entity_type": "character",
+            "line_start": 163,
+            "line_end": 163,
+            "quote": "소다: 저 오늘 조퇴한다고··· 에이드랑 코코아한테 미안하다고 전해주시겠어요···?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "soda_02__foa_001",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인니이이임",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "소다: 저기··· 주인니이이임···.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__foa_002",
+          "from_speaker": "단골 손님",
+          "to_target": "소다",
+          "address_term": "소다쨩",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "단골 손님: 소다쨩, 여기 주문하겠다는.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__foa_003",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 96,
+          "line_end": 96,
+          "quote": "소다: 아? 주인님!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__foa_004",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "소다: 와아, 주인님! 저 실수 한 번도 안 했어요!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__foa_005",
+          "from_speaker": "단골 손님",
+          "to_target": "코코아",
+          "address_term": "코코아쨩",
+          "line_start": 131,
+          "line_end": 131,
+          "quote": "단골 손님: ···저, 저기. 코코아쨩.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__foa_006",
+          "from_speaker": "차분한 손님",
+          "to_target": "단골 손님",
+          "address_term": "그쪽",
+          "line_start": 145,
+          "line_end": 145,
+          "quote": "차분한 손님: 그쪽도 그렇게 느꼈나요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__foa_007",
+          "from_speaker": "차분한 손님",
+          "to_target": "소다",
+          "address_term": "소다 양",
+          "line_start": 148,
+          "line_end": 148,
+          "quote": "차분한 손님: 소다 양. 조금 이상해요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__foa_008",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 162,
+          "line_end": 162,
+          "quote": "소다: ···주인님. 죄송해요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "soda_02__chb_001",
+          "choice_line": 97,
+          "options": [
+            {
+              "item_id": "soda_02__chb_001_opt_01",
+              "option_text": "···혹시 마음의 눈으로 보고 있는 거야?",
+              "continuation_summary": "소다가 마음의 눈이냐며 되묻는다."
+            },
+            {
+              "item_id": "soda_02__chb_001_opt_02",
+              "option_text": "···혹시 실눈 뜨고 있어?",
+              "continuation_summary": "소다가 실눈을 뜨고 있는 것은 아니라고 답한다."
+            }
+          ]
+        },
+        {
+          "item_id": "soda_02__chb_002",
+          "choice_line": 120,
+          "options": [
+            {
+              "item_id": "soda_02__chb_002_opt_01",
+              "option_text": "정말 잘 됐어.",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "soda_02__chb_002_opt_02",
+              "option_text": "이게 왜 효과가 있는 거지···.",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "soda_02__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "메이드 카페 휴게실에서 소다가 지휘관에게 계속 눈을 감고 있어야 하냐고 묻는다.",
+          "line_start": 2,
+          "line_end": 4,
+          "claim_line": null,
+          "quote": "잠시 후. 메이드 카페의 휴게실.\n소다: 저기··· 주인니이이임···.\n소다: 계, 계속 이렇게 눈을 감고 있어야 하나요오···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 조금 전 소다가 일하는 모습을 보면서 깨달은 것이 있다고 말한다.",
+          "line_start": 5,
+          "line_end": 8,
+          "claim_line": 6,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"조금 전에 소다가 일하는 걸 보면서 깨달은 게 있어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "소다가 깨달은 것이 무엇인지 묻자 지휘관이 소다는 계속 다른 손님들을 신경 쓰고 있었다고 답한다.",
+          "line_start": 9,
+          "line_end": 13,
+          "claim_line": 11,
+          "quote": "소다: 깨달은 거요···?\n[CHOICE_START]\n  [OPTION TEXT=\"소다는 계속 다른 손님들을 신경 쓰고 있더라고.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 메이드로서 손님들을 모셔야 하니 신경 쓰는 것이라고 답한다.",
+          "line_start": 14,
+          "line_end": 14,
+          "claim_line": 14,
+          "quote": "소다: 그건··· 메이드로서 손님분들을 모셔야 하니까···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다는 손님들의 기색을 과하게 신경 쓰느라 정작 주변을 못 보고 실수를 하는 것이라고 자신의 생각을 말한다.",
+          "line_start": 15,
+          "line_end": 27,
+          "claim_line": 25,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"응. 그런데 소다는 그게 너무 과한 것 같아.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···?\n[CHOICE_START]\n  [OPTION TEXT=\"계속해서 손님들 기색만 신경 쓰느라.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"정작 주변을 못 보고 실수를 하는 거라고 생각해.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그래서 눈을 감고 일해보면 어떨까 생각했다고 말하자 소다가 호응한다.",
+          "line_start": 28,
+          "line_end": 33,
+          "claim_line": null,
+          "quote": "소다: 아···?\n[CHOICE_START]\n  [OPTION TEXT=\"그래서 눈을 감고 일해보면 어떨까 했는데.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 눈을 감으면 일을 못 하겠다며 마음이 너무 앞섰으니 다시 생각해 보겠다고 물러선다.",
+          "line_start": 34,
+          "line_end": 41,
+          "claim_line": 35,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···미안. 눈을 감으면 일을 못하겠네.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"마음이 너무 앞섰나 봐. 다시 생각해 볼 테니까···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 눈을 감고도 일할 수 있다고 반박하며 거듭 확인하는 지휘관에게 활기차게 할 수 있다고 답한다.",
+          "line_start": 42,
+          "line_end": 52,
+          "claim_line": 42,
+          "quote": "소다: 아뇨, 할 수 있어요!\n[CHOICE_START]\n  [OPTION TEXT=\"···할 수 있다고?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 헤헤. 네!\n[CHOICE_START]\n  [OPTION TEXT=\"눈을 감고?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네에~!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "의지가 넘치는 소다를 보고 지휘관이 눈을 감은 소다의 손을 잡아 홀까지 데려다준다.",
+          "line_start": 53,
+          "line_end": 64,
+          "claim_line": null,
+          "quote": "활기차게 대답하는 소다는 전에 없이 의지가 넘쳐 보인다.\n[CHOICE_START]\n  [OPTION TEXT=\"···알겠어. 그럼 가자.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 앗···.\n소다: 소, 손 잡아 주신 거죠···?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 홀까지 데려다줄게.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ···헤헤. 네.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 눈을 감은 채로 단골 손님의 주문을 받으러 가고, 차분한 손님이 포크를 떨어뜨리자마자 새 포크를 건네주어 손님을 놀라게 한다.",
+          "line_start": 65,
+          "line_end": 76,
+          "claim_line": null,
+          "quote": "잠시 후.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다는 눈을 감은 채로 서빙을 하고 있다.\n단골 손님: 소다쨩, 여기 주문하겠다는.\n소다: 네에~ 갑니다아~\n달그락-\n차분한 손님: 앗. 포크가···.\n소다: 포크 떨어트리셨죠? 여기요!\n차분한 손님: ···?! 가, 감사합니다···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "지휘관이 눈을 감은 채 서빙하는 소다가 홀을 지배하고 있다고 평한다.",
+          "line_start": 77,
+          "line_end": 78,
+          "claim_line": 78,
+          "quote": "아니, 소다는 눈을 감은 채로.\n홀을 지배하고 있다···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 단골 손님에게 바니바니 오므라이스를 내어오고 요청에 따라 맛있어지는 주문을 외워 준다.",
+          "line_start": 79,
+          "line_end": 85,
+          "claim_line": null,
+          "quote": "소다: 주문하신 쫑긋쫑긋 ♪ 바니바니 오므라이스 나왔습니다아~\n소다: 맛있어지는 주문, 필요하신가요오~?\n단골 손님: 부, 부탁한다는!\n소다: 네!\n소다: 몽글몽글~♪ 퓨어퓨어~♬\n소다: 미라클~ 뀨웅☆\n소다: 오므라이스 씨~ 맛있어져라~ 얍♡",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 감격하며 처음으로 제대로 접시에 담긴 소다의 오므라이스를 먹게 되었다고 기뻐한다.",
+          "line_start": 86,
+          "line_end": 88,
+          "claim_line": 88,
+          "quote": "단골 손님: 오, 오오···!\n단골 손님: 이 몸··· 살아있기를 잘했다는!\n단골 손님: 거기다 처음으로 제대로 접시에 담긴 오므라이스를 먹게 됐다는···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 놀라 지켜보는 사이 홀을 종횡무진하던 소다가 지휘관의 가슴팍에 이마를 부딪친다.",
+          "line_start": 89,
+          "line_end": 96,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"말도 안 돼···.\"]\n  [OPTION_END]\n[CHOICE_END]\n그 후로도 한동안 홀을 종횡무진하던 소다는.\n멍하니 지켜보고 있던 내 가슴팍에 이마를 부딪쳤다.\n소다: 흐엑.\n소다: 아? 주인님!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 혹시 마음의 눈으로 보고 있는 것이냐고 묻자 소다가 마음의 눈이냐며 되묻는다.",
+          "line_start": 98,
+          "line_end": 100,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"···혹시 마음의 눈으로 보고 있는 거야?\"]\n    소다: 마음의 눈이요···?\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 97,
+            "option_text": "···혹시 마음의 눈으로 보고 있는 거야?"
+          }
+        },
+        {
+          "item_id": "soda_02__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 혹시 실눈을 뜨고 있냐고 묻자 소다가 아니라고 답한다.",
+          "line_start": 101,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"···혹시 실눈 뜨고 있어?\"]\n    소다: 헤헤. 아뇨.\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 97,
+            "option_text": "···혹시 실눈 뜨고 있어?"
+          }
+        },
+        {
+          "item_id": "soda_02__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관의 오른쪽 허공을 향해 말하는 소다에게 어떻게 눈을 감고 일하는지 묻자, 소다가 잘 모르겠지만 평소대로 몸이 움직이는 대로 하고 있다고 답한다.",
+          "line_start": 105,
+          "line_end": 111,
+          "claim_line": 111,
+          "quote": "소다는 내 오른쪽 허공을 향해 말을 하고 있다···.\n[CHOICE_START]\n  [OPTION TEXT=\"어떻게 눈 감고 일을 하는 거야···?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 으음··· 잘 모르겠어요오···.\n소다: 그냥 평소대로···? 몸이 움직이는 대로 하고 있거든요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 실수를 하나도 안 하더라고 알려주자 소다가 자신이 실수를 한 번도 안 했다는 사실을 깨닫고 기뻐한다.",
+          "line_start": 112,
+          "line_end": 119,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그런 것치곤 실수를 하나도 안 하던데?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···?\n소다: !!\n소다: 그, 그렇네요!\n소다: 와아, 주인님! 저 실수 한 번도 안 했어요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 정말 잘 됐다고 말한다.",
+          "line_start": 121,
+          "line_end": 122,
+          "claim_line": 121,
+          "quote": "  [OPTION TEXT=\"정말 잘 됐어.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 120,
+            "option_text": "정말 잘 됐어."
+          }
+        },
+        {
+          "item_id": "soda_02__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 이게 왜 효과가 있는 건지 의아해한다.",
+          "line_start": 123,
+          "line_end": 124,
+          "claim_line": 123,
+          "quote": "  [OPTION TEXT=\"이게 왜 효과가 있는 거지···.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 120,
+            "option_text": "이게 왜 효과가 있는 거지···."
+          }
+        },
+        {
+          "item_id": "soda_02__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 앞으로도 이렇게 일하면 민폐를 끼치지 않고 모두를 행복하게 만들 수 있겠다고 기대한다.",
+          "line_start": 126,
+          "line_end": 127,
+          "claim_line": 126,
+          "quote": "소다: 헤헤. 앞으로도 이렇게 일하면 되겠어요!\n소다: 이제 민폐를 끼치지 않고, 모두를 행복하게 만들···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_022",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 헛기침을 하며 코코아를 부르고 코코아가 응답한다.",
+          "line_start": 128,
+          "line_end": 132,
+          "claim_line": null,
+          "quote": "단골 손님: 크흠.\n코코아: ??\n단골 손님: ··· ···.\n단골 손님: ···저, 저기. 코코아쨩.\n코코아: 불러써?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "단골 손님이 오므라이스 조리법이 바뀌었는지 묻자 코코아가 자신들의 메뉴는 항상 완벽하게 같은 조리법을 따른다고 답한다.",
+          "line_start": 133,
+          "line_end": 134,
+          "claim_line": 134,
+          "quote": "단골 손님: 혹시 오므라이스 조리법이 바뀐 거냐는.\n코코아: 아니. 우리 메뉴는 항상 완벽하게 같은 조리법을 따라.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "단골 손님이 소다가 아니라 다른 메이드가 만든 것이냐고 묻자 코코아가 지명 메뉴는 무조건 지명받은 사람이 만든다고 답한다.",
+          "line_start": 135,
+          "line_end": 136,
+          "claim_line": 136,
+          "quote": "단골 손님: ···그럼 소다쨩이 아니라 다른 메이드가 만든 거냐는.\n코코아: 아니. 지명 메뉴는 무조건 지명받은 사람이 만드러.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_025",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "코코아가 문제가 있는지 묻자 단골 손님이 눈을 감고 일하는 소다가 귀엽고 서비스도 능숙해졌지만 소다의 오므라이스를 먹어도 도무지 행복한 기분이 들지 않는다며 답답해한다.",
+          "line_start": 137,
+          "line_end": 144,
+          "claim_line": 140,
+          "quote": "단골 손님: ··· ···.\n코코아: 왜 그래? 문제이써?\n단골 손님: 무, 문제라기보다는···.\n단골 손님: ···소다쨩의 오므라이스를 먹었는데, 도무지 행복한 기분이 들지 않는다는.\n소다: ···에?\n단골 손님: 분명 눈을 감고 일하는 건 귀엽고, 서, 서비스도 능숙해져서 좋다는.\n단골 손님: 그런데도··· 으윽···.\n단골 손님: 뭐, 뭐라고 표현해야 할지 모르겠다는!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "차분한 손님",
+          "summary": "차분한 손님이 단골 손님에게 공감하며 소다가 조금 이상하다고 말한다.",
+          "line_start": 145,
+          "line_end": 148,
+          "claim_line": 148,
+          "quote": "차분한 손님: 그쪽도 그렇게 느꼈나요?\n단골 손님: 히, 히익!\n차분한 손님: ··· ···.\n차분한 손님: 소다 양. 조금 이상해요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_027",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 눈을 감고 일하는 것은 프로 메이드도 못 한다고 말한다.",
+          "line_start": 149,
+          "line_end": 149,
+          "claim_line": 149,
+          "quote": "코코아: 응. 눈 감고 일하는 거, 프로 메이드도 못 해.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_028",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "차분한 손님",
+          "summary": "차분한 손님이 눈을 감고 있어서인지 평소 소다의 서툴지만 정성이 느껴지는 서비스가 없어졌다고 평가한다.",
+          "line_start": 150,
+          "line_end": 152,
+          "claim_line": 151,
+          "quote": "차분한 손님: ···그것도 그렇지만요.\n차분한 손님: 평소에 그 서툴지만 정성이 느껴지는 서비스가 없어졌다고 할까.\n차분한 손님: 뭐, 눈을 감고 있으니 당연다면 당연하겠네요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 자신의 작은 행복이 어디로 간 것이냐며 한탄한다.",
+          "line_start": 153,
+          "line_end": 154,
+          "claim_line": 154,
+          "quote": "소다: ··· ···.\n단골 손님: 크윽··· 이, 이럴 수는 없다는! 내 작은 행복은 어디로 간 거냐는!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_030",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "차분한 손님",
+          "summary": "차분한 손님이 이대로라면 카페에 찾아올 이유도 없어진다며 걱정한다.",
+          "line_start": 155,
+          "line_end": 155,
+          "claim_line": 155,
+          "quote": "차분한 손님: 걱정이네요. 이대로라면 여기 찾아올 이유도 없어져 버리는데.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_02__eac_031",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "손님들의 대화를 듣고 충격받은 소다가 지휘관에게 오늘 조퇴한다고 에이드와 코코아에게 미안하다고 전해달라고 부탁한 뒤, 말릴 틈도 없이 굳은 표정으로 메이드 카페를 나간다.",
+          "line_start": 156,
+          "line_end": 169,
+          "claim_line": null,
+          "quote": "소다: !!!\n[CHOICE_START]\n  [OPTION TEXT=\"소다?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···.\n소다: ···주인님. 죄송해요.\n소다: 저 오늘 조퇴한다고··· 에이드랑 코코아한테 미안하다고 전해주시겠어요···?\n[CHOICE_START]\n  [OPTION TEXT=\"소다. 잠깐···.\"]\n  [OPTION_END]\n[CHOICE_END]\n짤랑-\n말릴 틈도 없이, 소다는 굳어진 표정으로 메이드 카페를 나갔다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "soda_02__rln_001",
+          "subject": "차분한 손님",
+          "target": "소다",
+          "relation_or_change": "차분한 손님이 눈을 감고 일하는 소다에게서 평소 서툴지만 정성이 느껴지는 서비스가 없어졌다고 평가함",
+          "epistemic_type": "character_claim",
+          "claimant": "차분한 손님",
+          "line_start": 150,
+          "line_end": 152,
+          "claim_line": 151,
+          "quote": "차분한 손님: ···그것도 그렇지만요.\n차분한 손님: 평소에 그 서툴지만 정성이 느껴지는 서비스가 없어졌다고 할까.\n차분한 손님: 뭐, 눈을 감고 있으니 당연다면 당연하겠네요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "soda_02__uec_001",
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 2
+        }
+      ]
+    },
+    {
+      "scene_id": "soda_03",
+      "title_id": "character_episodes__소다",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/소다.txt",
+      "source_sha256": "4bec60191548ef089d9dbbb76a096f2ffe0819858c868f81f4a6d024241835db",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "mixed",
+      "chronology_segments": [
+        {
+          "line_start": 115,
+          "line_end": 138,
+          "chronology_type": "flashback"
+        }
+      ],
+      "is_plot_critical": false,
+      "summary": "소다의 방을 찾은 지휘관은 소다가 방주에 갇혀 지내는 사람들을 행복하게 해주고 싶어서 타인을 먼저 살피다 실수하게 되었다는 진심을 듣는다. 지휘관은 앞서 손님들이 소다의 헌신적인 서비스에 감동하고 있었다고 전해 주며, 자신이 주변을 봐줄 테니 하던 대로 모두를 행복하게 해 주는 일에만 집중하라고 격려해 소다가 기운을 되찾는다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "soda_03__pis_001",
+            "speaker_label": "소다",
+            "entity_id": "char_소다",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_03__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_03__pis_003",
+            "speaker_label": "에이드",
+            "entity_id": "char_에이드",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_03__pis_004",
+            "speaker_label": "단골 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "soda_03__pis_005",
+            "speaker_label": "차분한 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "soda_03__mnt_001",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 89,
+            "line_end": 89,
+            "quote": "소다: 다들 방주에 갇혀서 답답하게 지내잖아요?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "soda_03__mnt_002",
+            "surface_text": "메이드 카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 115,
+            "line_end": 115,
+            "quote": "30분 전. 메이드 카페.",
+            "chronology_type": "flashback",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "soda_03__foa_001",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "소다: 주, 주인님?!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__foa_002",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "소다: 주인님 말씀이··· 맞는 것 같아요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__foa_003",
+          "from_speaker": "에이드",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 126,
+          "line_end": 126,
+          "quote": "에이드: ···네. 부탁드릴게요, 주인님.",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__foa_004",
+          "from_speaker": "차분한 손님",
+          "to_target": "소다",
+          "address_term": "소다 양",
+          "line_start": 136,
+          "line_end": 136,
+          "quote": "차분한 손님: 소다 양, 그런 고민을 했었군요···.",
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__foa_005",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 163,
+          "line_end": 163,
+          "quote": "소다: ···그렇지만 주인님, 엄청 바쁘시잖아요?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__foa_006",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 191,
+          "line_end": 191,
+          "quote": "소다: 주, 주인님!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__foa_007",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 200,
+          "line_end": 200,
+          "quote": "소다: ···주인님. 이번엔 정말 감사했어요.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "soda_03__chb_001",
+          "choice_line": 82,
+          "options": [
+            {
+              "item_id": "soda_03__chb_001_opt_01",
+              "option_text": "응.",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "soda_03__chb_001_opt_02",
+              "option_text": "약속할게.",
+              "continuation_summary": null
+            }
+          ]
+        },
+        {
+          "item_id": "soda_03__chb_002",
+          "choice_line": 164,
+          "options": [
+            {
+              "item_id": "soda_03__chb_002_opt_01",
+              "option_text": "그, 그건 그렇긴 한데···.",
+              "continuation_summary": "지휘관이 그래도 최선을 다하겠다고 덧붙인다."
+            },
+            {
+              "item_id": "soda_03__chb_002_opt_02",
+              "option_text": "···그래도 최선을 다할거야.",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "soda_03__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "방 앞에서 혼자 있겠다던 소다가 찾아온 사람이 지휘관임을 알고 급히 문을 열어 방 안으로 들인다.",
+          "line_start": 2,
+          "line_end": 17,
+          "claim_line": null,
+          "quote": "얼마 후. 소다의 방 앞.\n똑똑.\n소다: 죄송해요. 오늘은 혼자 있을게요.\n[CHOICE_START]\n  [OPTION TEXT=\"···소다.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 주, 주인님?!\n소다: 잠시만요오···! 흐엑.\n우당탕탕!!\n잠시 소란스러운 소리가 난 뒤, 소다가 문을 열어 주었다.\n소다: 드, 들어 오세요오···.\n[CHOICE_START]\n  [OPTION TEXT=\"실례할게.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 괜찮은지 묻자 소다가 다른 사람들에게 민폐를 끼치고 싶지 않아 실수를 줄였는데 정작 메이드의 본분을 다하지 못하게 되어 어떻게 해야 할지 모르겠다고 털어놓는다.",
+          "line_start": 18,
+          "line_end": 30,
+          "claim_line": 29,
+          "quote": "소다: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"괜찮아?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 그냥 조금··· 머리가 복잡해져서요···.\n소다: 다른 분들에게 민폐를 끼치고 싶지 않아서 실수를 줄였는데.\n소다: 정작 메이드의 본분을 다하지 못하게 되다니···.\n소다: ···헤헤. 이제 어떻게 해야 할지 모르겠어요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다에게 사과하며 소다가 너무 잘하려고 타인을 의식해 긴장해서 실수를 한다고 착각했었다고 말한다.",
+          "line_start": 31,
+          "line_end": 48,
+          "claim_line": 46,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"미안.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네?\n[CHOICE_START]\n  [OPTION TEXT=\"내가 착각했었어.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 착각이요···?\n[CHOICE_START]\n  [OPTION TEXT=\"나는 소다가 너무 잘 하려고해서 타인을 의식하고.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그런 바람에 긴장해서 실수를 한다고 생각했거든.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다는 단순히 눈치를 보는 것이 아니라 진심으로 손님들을 행복하게 해주고 싶어서 자기 주변보다 타인의 기분이나 행동을 먼저 살피다 실수하게 되는 것이라고 분석한다.",
+          "line_start": 49,
+          "line_end": 71,
+          "claim_line": 69,
+          "quote": "소다: 네에···.\n[CHOICE_START]\n  [OPTION TEXT=\"그런데 그렇게 단순한 건 아니었던 것 같아.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···?\n[CHOICE_START]\n  [OPTION TEXT=\"소다는 단순히 눈치를 보는 게 아니라.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"진심으로 손님들을 행복하게 해주고 싶었던 거야.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"그래서 자기 주변을 살피는 것보다,\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"타인의 기분이나 행동을 먼저 살펴서 실수하게 되는 거라고 생각해.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 고개를 끄덕이며 지휘관의 말이 맞다고 동의하고, 혼자 있을 때는 별로 실수하지 않지만 일을 하거나 다른 사람들과 같이 있으면 그곳에 신경이 전부 쏠려 버린다고 말한다.",
+          "line_start": 72,
+          "line_end": 75,
+          "claim_line": 75,
+          "quote": "가만히 내 말을 듣고 있던 소다가 작게 고개를 끄덕였다.\n소다: 주인님 말씀이··· 맞는 것 같아요.\n소다: 저, 혼자 있을 때는 별로 실수 안 하거든요.\n소다: 그런데 일을 하거나, 다른 분들이랑 같이 있으면 거기에 신경이 전부 쏠려 버려요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 왜 그렇게까지 하는지 묻자 소다가 말씀드려도 웃지 않을 것인지 확인한다.",
+          "line_start": 76,
+          "line_end": 81,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"왜 그렇게까지 하는 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···.\n소다: 마, 말씀드려도 안 웃으실 거죠···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 웃지 않겠다고 답한다.",
+          "line_start": 83,
+          "line_end": 84,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"응.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 82,
+            "option_text": "응."
+          }
+        },
+        {
+          "item_id": "soda_03__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 웃지 않겠다고 약속한다.",
+          "line_start": 85,
+          "line_end": 86,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"약속할게.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 82,
+            "option_text": "약속할게."
+          }
+        },
+        {
+          "item_id": "soda_03__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 다들 방주에 갇혀 답답하게 지내는 상황에서 모두가 조금이라도 행복해졌으면 좋겠다고 생각했고, 자신이 할 수 있는 일이 메이드 일밖에 없었다고 밝힌다.",
+          "line_start": 88,
+          "line_end": 91,
+          "claim_line": 91,
+          "quote": "소다: 그냥··· 모두가 조금이라도 행복해 졌으면 좋겠다고 생각했어요.\n소다: 다들 방주에 갇혀서 답답하게 지내잖아요?\n소다: 그런 상황에서 제가 할 수 있는게 뭐가 있을까··· 하고 고민해 봤더니.\n소다: 결국 메이드 일밖에 없더라구요. 헤헤···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 그전에도 실수를 하긴 했지만 더 열심히 하려고 마음먹었을 때부터 실수가 많아지기 시작했다고 말한다.",
+          "line_start": 92,
+          "line_end": 98,
+          "claim_line": 97,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그래서···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네. 그래서 더 열심히 하려고 마음먹었었는데···.\n소다: 그때부터 실수가 많아지기 시작했어요.\n소다: 무, 물론 그전에도 하긴 했지만요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 결국 민폐만 끼치는 데다가 아무도 행복하게 만들어 주지 못하게 되었다며 자책한다.",
+          "line_start": 99,
+          "line_end": 105,
+          "claim_line": 105,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 분명 그랬었는데···.\n소다: 헤헤. 그러다 결국 이렇게 민폐만 끼치는 데다가,\n소다: 아무도 행복하게 만들어드리지 못하게 되어버렸네요···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그렇지 않다며 소다의 방에 오기 전에 잠깐 손님들의 이야기를 들었다고 말한다.",
+          "line_start": 106,
+          "line_end": 114,
+          "claim_line": 112,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그렇지 않아.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네에···?\n[CHOICE_START]\n  [OPTION TEXT=\"여기 오기 전에 잠깐 손님들 얘기를 들었어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "30분 전 메이드 카페에서 소다가 나가버리자 지휘관이 에이드에게 자신이 가서 이야기해 보겠다고 말하고 에이드가 부탁한다.",
+          "line_start": 115,
+          "line_end": 126,
+          "claim_line": null,
+          "quote": "30분 전. 메이드 카페.\n[CHOICE_START]\n  [OPTION TEXT=\"소다. 잠깐···.\"]\n  [OPTION_END]\n[CHOICE_END]\n짤랑-\n에이드: 소다···.\n[CHOICE_START]\n  [OPTION TEXT=\"내가 가서 얘기해볼게.\"]\n  [OPTION_END]\n[CHOICE_END]\n에이드: ···네. 부탁드릴게요, 주인님.",
+          "refers_to_past": false,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 소다에게 무슨 일이 있는 것이냐며 자신이 조금이라도 힘이 되어 주겠다고 말한다.",
+          "line_start": 127,
+          "line_end": 128,
+          "claim_line": 128,
+          "quote": "단골 손님: 호, 혹시 소다쨩에게 무슨 일이 있는 거냐는!\n단골 손님: 내가 조금이라도 힘이 되어 주겠다는!",
+          "refers_to_past": false,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "차분한 손님",
+          "summary": "차분한 손님이 얼마 전에도 소다가 굉장히 우울해했다며 그때 무슨 일이 있었는지 묻는다.",
+          "line_start": 129,
+          "line_end": 130,
+          "claim_line": 129,
+          "quote": "차분한 손님: 그러고 보니 얼마 전에 굉장히 우울해했었죠.\n차분한 손님: 그때 무슨 일이 있었던 건가요?",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "에이드가 소다가 잦은 실수 때문에 자신이 민폐만 끼치는 게 아닐까 얼마 전부터 힘들어했다고 설명한다.",
+          "line_start": 131,
+          "line_end": 132,
+          "claim_line": 131,
+          "quote": "에이드: ···사실 소다, 실수가 잦은 것 때문에 얼마 전부터 힘들어 했어요.\n에이드: 혹시 자기가 민폐만 끼치는 게 아닐까, 하고요.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 말도 안 된다며 실수하면서도 항상 웃음을 잃지 않고 손님들을 행복하게 만들어 주려고 노력하는 것이 바로 소다라고 외친다.",
+          "line_start": 133,
+          "line_end": 135,
+          "claim_line": 135,
+          "quote": "단골 손님: 마, 말도 안 된다는!!\n단골 손님: 그렇게 실수하면서도 항상 웃음을 잃지 않고!!\n단골 손님: 우리를 행복하게 만들어주려고 노력하는 게 바로 소다쨩이라는!!!!!",
+          "refers_to_past": false,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "차분한 손님",
+          "summary": "차분한 손님이 소다가 실수는 잦지만 그 이상으로 진심 어린 헌신적인 서비스에 감동했다고 말한다.",
+          "line_start": 136,
+          "line_end": 138,
+          "claim_line": 137,
+          "quote": "차분한 손님: 소다 양, 그런 고민을 했었군요···.\n차분한 손님: 실수가 잦은 건 맞지만, 저는 그 이상으로 헌신적인 서비스에 감동했었는데요.\n차분한 손님: 그렇게 진심으로 일하시는 분은 만나기 힘드니까요.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다에게 아무도 소다가 민폐를 끼친다고 생각하지 않는다고 말해 준다.",
+          "line_start": 139,
+          "line_end": 142,
+          "claim_line": 140,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"아무도 소다가 민폐를 끼친다고 생각하지 않아.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 그래도 계속 실수만 하다 보면 언젠가 다들 질려버릴 것이라고 걱정한다.",
+          "line_start": 143,
+          "line_end": 144,
+          "claim_line": 144,
+          "quote": "소다: ··· ···.\n소다: 그래도 이렇게 계속 실수만 하다 보면, 언젠가 다들 질려버리실 거예요···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_021",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 포기하지 않겠다고 했다며 소다의 주변은 자신이 봐주고 실수를 줄이는 연습도 계속할 테니 소다는 하던 대로 모두를 행복하게 만들어 주는 것만 신경 쓰라고 격려한다.",
+          "line_start": 145,
+          "line_end": 162,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"포기 안 한다고 했잖아.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네···?\n[CHOICE_START]\n  [OPTION TEXT=\"소다의 주변은 내가 봐줄게.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"실수를 줄이는 연습도 계속 해보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"그러니까 소다는 하던 대로 모두를 행복하게 만들어 주는 것만 신경 써.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관은 엄청 바쁘지 않느냐며 걱정한다.",
+          "line_start": 163,
+          "line_end": 163,
+          "claim_line": 163,
+          "quote": "소다: ···그렇지만 주인님, 엄청 바쁘시잖아요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_023",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 바쁘긴 하지만 그래도 최선을 다하겠다고 다짐한다.",
+          "line_start": 165,
+          "line_end": 170,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"그, 그건 그렇긴 한데···.\"]\n    [CHOICE_START]\n      [OPTION TEXT=\"그래도 최선을 다할게.\"]\n      [OPTION_END]\n    [CHOICE_END]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 164,
+            "option_text": "그, 그건 그렇긴 한데···."
+          }
+        },
+        {
+          "item_id": "soda_03__eac_024",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그래도 최선을 다할 것이라고 다짐한다.",
+          "line_start": 171,
+          "line_end": 172,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"···그래도 최선을 다할거야.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 164,
+            "option_text": "···그래도 최선을 다할거야."
+          }
+        },
+        {
+          "item_id": "soda_03__eac_025",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 미소를 띠며 손님들이 기뻐해 주었다는 사실에 안도한다.",
+          "line_start": 174,
+          "line_end": 176,
+          "claim_line": 176,
+          "quote": "소다: ··· ···네.\n소다는 미소를 띈 채 지긋이 눈을 감았다.\n소다: 그랬구나. 다들 기뻐해 주셨구나···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_026",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 기운이 좀 났는지 묻자 소다가 카페를 찾아오는 손님들이 모두 행복해질 수 있도록 다시 열심히 해보겠다고 다짐한다.",
+          "line_start": 177,
+          "line_end": 182,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"기운이 좀 났어?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네. 다시 열심히 해볼게요!\n소다: 저희 카페를 찾아오시는 분들이 모두 행복해지실 수 있도록요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 다행이라며 나중에 또 연습하자고 말하고 자리에서 일어난다.",
+          "line_start": 183,
+          "line_end": 190,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"다행이야. 나중에 또 연습하자.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그럼 오늘은 이제···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__eac_028",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 자리에서 일어나는 지휘관의 옷자락을 붙잡고 이번 일에 정말 감사했다며 카페에 또 찾아와 달라고 인사한다.",
+          "line_start": 191,
+          "line_end": 201,
+          "claim_line": null,
+          "quote": "소다: 주, 주인님!\n자리에서 일어나다 소다에게 옷자락을 붙잡혔다.\n[CHOICE_START]\n  [OPTION TEXT=\"응? 왜?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 앗. 엣. 그게.\n소다: ··· ···.\n소다: 그, 그냥 감사 인사를 드리고 싶어서요.\n소다: ···주인님. 이번엔 정말 감사했어요.\n소다: 카페, 또 찾아와 주세요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "soda_03__rln_001",
+          "subject": "단골 손님",
+          "target": "소다",
+          "relation_or_change": "단골 손님이 실수하면서도 항상 웃음을 잃지 않고 손님들을 행복하게 만들어 주려고 노력하는 소다를 옹호함",
+          "epistemic_type": "character_claim",
+          "claimant": "단골 손님",
+          "line_start": 133,
+          "line_end": 135,
+          "claim_line": 135,
+          "quote": "단골 손님: 마, 말도 안 된다는!!\n단골 손님: 그렇게 실수하면서도 항상 웃음을 잃지 않고!!\n단골 손님: 우리를 행복하게 만들어주려고 노력하는 게 바로 소다쨩이라는!!!!!",
+          "refers_to_past": false,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__rln_002",
+          "subject": "차분한 손님",
+          "target": "소다",
+          "relation_or_change": "차분한 손님이 소다의 진심 어린 헌신적인 서비스에 감동했다고 호감을 밝힘",
+          "epistemic_type": "character_claim",
+          "claimant": "차분한 손님",
+          "line_start": 136,
+          "line_end": 138,
+          "claim_line": 137,
+          "quote": "차분한 손님: 소다 양, 그런 고민을 했었군요···.\n차분한 손님: 실수가 잦은 건 맞지만, 저는 그 이상으로 헌신적인 서비스에 감동했었는데요.\n차분한 손님: 그렇게 진심으로 일하시는 분은 만나기 힘드니까요.",
+          "refers_to_past": true,
+          "chronology_type": "flashback",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_03__rln_003",
+          "subject": "지휘관",
+          "target": "소다",
+          "relation_or_change": "지휘관이 소다가 손님들을 행복하게 해 주는 일에만 집중할 수 있도록 주변을 봐주고 연습을 계속 돕겠다고 약속함",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 150,
+          "line_end": 162,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"소다의 주변은 내가 봐줄게.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"실수를 줄이는 연습도 계속 해보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"그러니까 소다는 하던 대로 모두를 행복하게 만들어 주는 것만 신경 써.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "soda_03__uec_001",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 89
+        },
+        {
+          "item_id": "soda_03__uec_002",
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 115
+        }
+      ]
+    },
+    {
+      "scene_id": "soda_04",
+      "title_id": "character_episodes__소다",
+      "category": "character_episodes",
+      "source_file": "public/scripts/character_episodes/소다.txt",
+      "source_sha256": "cb3c384a7f4eab15009ebd998df640bc6807856d16abf1682787254f31f83083",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "며칠 뒤 메이드 카페를 찾은 지휘관은 의욕 넘치게 일하던 소다와 차를 마시며 서로의 두근거리는 마음을 확인하고 입을 맞춘다. 홀로 돌아간 소다는 여전히 테이블을 엎는 실수를 저지르지만 손님들은 그런 소다의 모습에 행복해한다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "soda_04__pis_001",
+            "speaker_label": "소다",
+            "entity_id": "char_소다",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_04__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_04__pis_003",
+            "speaker_label": "코코아",
+            "entity_id": "char_코코아",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_04__pis_004",
+            "speaker_label": "에이드",
+            "entity_id": "char_에이드",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "soda_04__pis_005",
+            "speaker_label": "단골 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          },
+          {
+            "item_id": "soda_04__pis_006",
+            "speaker_label": "차분한 손님",
+            "entity_id": null,
+            "is_generic_role": true
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "soda_04__mnt_001",
+            "surface_text": "메이드 카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "며칠 뒤, 다시 메이드 카페에 들렀다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "soda_04__foa_001",
+          "from_speaker": "소다",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "소다: 앗! 다녀오셨어요, 주인님!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__foa_002",
+          "from_speaker": "코코아",
+          "to_target": "지휘관",
+          "address_term": "주인",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "코코아: 주인. 여기.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__foa_003",
+          "from_speaker": "에이드",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "에이드: 오셨어요, 주인님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__foa_004",
+          "from_speaker": "지휘관",
+          "to_target": "코코아, 에이드",
+          "address_term": "둘",
+          "line_start": 20,
+          "line_end": 23,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"둘은 쉬는 날이야?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__foa_005",
+          "from_speaker": "단골 손님",
+          "to_target": "소다",
+          "address_term": "소다쨩",
+          "line_start": 192,
+          "line_end": 192,
+          "quote": "단골 손님: 아니, 소다쨩!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "soda_04__chb_001",
+          "choice_line": 34,
+          "options": [
+            {
+              "item_id": "soda_04__chb_001_opt_01",
+              "option_text": "나도 이런 소다의 모습이 좋아.",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "soda_04__chb_001_opt_02",
+              "option_text": "정말 다행이야.",
+              "continuation_summary": null
+            }
+          ]
+        },
+        {
+          "item_id": "soda_04__chb_002",
+          "choice_line": 89,
+          "options": [
+            {
+              "item_id": "soda_04__chb_002_opt_01",
+              "option_text": "전엔 그냥 벗기려고 했잖아?",
+              "continuation_summary": "소다가 당황하며 그렇게 말하는 것은 치사하다고 반응한다."
+            },
+            {
+              "item_id": "soda_04__chb_002_opt_02",
+              "option_text": "···내, 내가 그냥 냅킨으로 닦을게.",
+              "continuation_summary": "소다가 그러는 게 좋겠다고 동의하고 지휘관이 수긍한다."
+            }
+          ]
+        },
+        {
+          "item_id": "soda_04__chb_003",
+          "choice_line": 126,
+          "options": [
+            {
+              "item_id": "soda_04__chb_003_opt_01",
+              "option_text": "나도 그래.",
+              "continuation_summary": "소다가 정말이냐며 놀란다."
+            },
+            {
+              "item_id": "soda_04__chb_003_opt_02",
+              "option_text": "···응.",
+              "continuation_summary": null
+            }
+          ]
+        },
+        {
+          "item_id": "soda_04__chb_004",
+          "choice_line": 143,
+          "options": [
+            {
+              "item_id": "soda_04__chb_004_opt_01",
+              "option_text": "으?",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "soda_04__chb_004_opt_02",
+              "option_text": "왜 그래?",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "soda_04__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 소다",
+          "summary": "며칠 뒤 지휘관이 다시 메이드 카페에 들르자 소다가 반기며 잠깐 기다려 달라고 한다.",
+          "line_start": 3,
+          "line_end": 5,
+          "claim_line": null,
+          "quote": "며칠 뒤, 다시 메이드 카페에 들렀다.\n소다: 앗! 다녀오셨어요, 주인님!\n소다: 잠깐만 기다려 주세요오~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 소다",
+          "summary": "지휘관이 그냥 들른 것이니 주문은 안 받아도 괜찮다고 하자 소다가 대답한다.",
+          "line_start": 6,
+          "line_end": 10,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그냥 들른 거니까 주문은 안 받아도 괜찮아.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네에~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 코코아, 에이드",
+          "summary": "홀에 소다만 분주히 돌아다니는 것을 본 지휘관을 휴게실 쪽의 코코아와 에이드가 맞이하고, 지휘관이 두 사람에게 쉬는 날이냐고 묻는다.",
+          "line_start": 11,
+          "line_end": 23,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다만 홀을 분주히 돌아다니고 있을 뿐, 코코아와 에이드의 모습은 보이지 않는다.\n코코아: 주인. 여기.\n휴게실 쪽에서 빼꼼 고개를 내민 코코아가 손짓했다.\n에이드: 오셨어요, 주인님.\n코코아: 주인. 어서 와.\n[CHOICE_START]\n  [OPTION TEXT=\"둘은 쉬는 날이야?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 소다가 전부 자기가 할 테니 가만히 있으라고 했다며, 며칠 전부터 의욕이 넘쳤다고 말한다.",
+          "line_start": 24,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "코코아: 소다가 전부 자기가 할 테니까 가마니 있으래.\n코코아: 며칠 전부터 의욕이 넘쳐써.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "에이드가 지휘관에게 그때 소다와 얘기가 잘 된 것이냐고 묻는다.",
+          "line_start": 26,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "에이드: 그때 얘기가 잘 되신 거죠?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "에이드가 그때 소다와 얘기가 잘 된 것이냐고 묻자 지휘관이 그렇다고 답한다.",
+          "line_start": 26,
+          "line_end": 30,
+          "claim_line": 28,
+          "quote": "에이드: 그때 얘기가 잘 되신 거죠?\n[CHOICE_START]\n  [OPTION TEXT=\"응.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "에이드",
+          "summary": "에이드가 소다와 얘기가 잘 되어 정말 다행이라고 말한다.",
+          "line_start": 31,
+          "line_end": 31,
+          "claim_line": 31,
+          "quote": "에이드: 후후, 정말 다행이에요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 지금의 소다가 좋으며 완벽한 프로 메이드라고 칭찬한다.",
+          "line_start": 32,
+          "line_end": 33,
+          "claim_line": 32,
+          "quote": "코코아: 코코아. 지금 소다가 조아.\n코코아: 완벽한 프로 메이드야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관도 의욕 넘치는 지금 소다의 모습이 좋다고 말한다.",
+          "line_start": 35,
+          "line_end": 36,
+          "claim_line": 35,
+          "quote": "  [OPTION TEXT=\"나도 이런 소다의 모습이 좋아.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "나도 이런 소다의 모습이 좋아."
+          }
+        },
+        {
+          "item_id": "soda_04__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다가 의욕을 되찾아 정말 다행이라고 말한다.",
+          "line_start": 37,
+          "line_end": 38,
+          "claim_line": 37,
+          "quote": "  [OPTION TEXT=\"정말 다행이야.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "정말 다행이야."
+          }
+        },
+        {
+          "item_id": "soda_04__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드, 소다",
+          "summary": "에이드가 곧 손님이 몰릴 러시타임이니 미리 교대하고 조금 쉬라며 소다를 부른다.",
+          "line_start": 40,
+          "line_end": 43,
+          "claim_line": null,
+          "quote": "에이드: 아, 그래도 곧 손님이 몰릴 시간이니까 미리 조금 쉬라고 해야겠어요.\n에이드: 소다~\n소다: 네에~\n에이드: 교대하고 조금 쉬어. 곧 러시타임이니까.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 자신은 힘이 넘친다며 쉬지 않아도 괜찮다고 답한다.",
+          "line_start": 44,
+          "line_end": 44,
+          "claim_line": 44,
+          "quote": "소다: 헤헤. 괜찮아요. 저 힘이 넘치니까요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드, 소다",
+          "summary": "에이드가 지휘관과 같이 차라도 한 잔 마시라고 권하자 소다가 수긍한다.",
+          "line_start": 45,
+          "line_end": 46,
+          "claim_line": null,
+          "quote": "에이드: 그러지 말고 주인님이랑 같이 차라도 한 잔 마시렴.\n소다: 네. 그럼 주인님이랑 차 한잔···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다, 지휘관",
+          "summary": "소다가 뒤늦게 지휘관을 발견하고 언제 왔냐며 놀라자 지휘관이 아까 인사도 했다고 답한다.",
+          "line_start": 47,
+          "line_end": 51,
+          "claim_line": null,
+          "quote": "소다: ···?! 주인님?! 언제 오셨어요?!\n[CHOICE_START]\n  [OPTION TEXT=\"아까 인사도 했는데···?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 다른 데에 정신이 팔렸었나 보다며 울먹인다.",
+          "line_start": 52,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "소다: 흐에엥··· 다른 데에 정신이 팔렸었나봐요오···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "에이드, 코코아",
+          "summary": "에이드와 코코아가 홀은 코코아에게 맡기고 푹 쉬라고 한 뒤 지휘관에게 소다를 부탁한다.",
+          "line_start": 53,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "에이드: 그럼 푹 쉬렴.\n코코아: 홀은 코코아한테 마껴.\n에이드: 소다를 잘 부탁드려요. 주인님.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 멋쩍게 웃으며 지휘관에게 그때 이후로 처음 뵙는 것이냐고 묻는다.",
+          "line_start": 56,
+          "line_end": 58,
+          "claim_line": null,
+          "quote": "소다: ··· ···.\n소다: ··· ···헤헤.\n소다: 그때 이후로 처음 뵙는 거죠···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "그때 이후로 처음 뵙는 것이냐는 소다의 물음에 지휘관이 그렇다고 답한다.",
+          "line_start": 58,
+          "line_end": 62,
+          "claim_line": 60,
+          "quote": "소다: 그때 이후로 처음 뵙는 거죠···?\n[CHOICE_START]\n  [OPTION TEXT=\"그렇네.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_019",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다, 지휘관",
+          "summary": "소다가 어색하게 웃자 지휘관이 왜 그러냐고 묻고 소다가 당황하며 반문한다.",
+          "line_start": 63,
+          "line_end": 68,
+          "claim_line": null,
+          "quote": "소다: 으, 으음··· 헤헤···.\n[CHOICE_START]\n  [OPTION TEXT=\"왜 그래?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네?! 무, 뭐가요?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다, 지휘관",
+          "summary": "소다가 홍차를 드리겠다며 능숙하게 우려내다가 비명을 지르며 지휘관의 바지에 쏟는다.",
+          "line_start": 70,
+          "line_end": 80,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 마, 맞다. 홍차 드릴게요!\n능숙하게 홍차를 우려낸 소다는···.\n소다: 꺄악?!\n[CHOICE_START]\n  [OPTION TEXT=\"앗뜨···!\"]\n  [OPTION_END]\n[CHOICE_END]\n···그대로 내 바지에 쏟았다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_021",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다, 지휘관",
+          "summary": "소다가 바지에 홍차를 쏟은 것을 사과하자 지휘관이 괜찮다고 달랜다.",
+          "line_start": 81,
+          "line_end": 85,
+          "claim_line": null,
+          "quote": "소다: 흐에엥··· 죄송해요오···!\n[CHOICE_START]\n  [OPTION TEXT=\"괜찮아.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_022",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 바지를 벗으면 바로 세탁해 드리겠다고 말하다가 멈칫하며 말을 끊는다.",
+          "line_start": 86,
+          "line_end": 88,
+          "claim_line": null,
+          "quote": "소다: 벗으시면 바로 세탁해 드리···.\n소다: ···아.\n소다: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다에게 전에는 그냥 바지를 벗기려고 하지 않았냐고 지적한다.",
+          "line_start": 90,
+          "line_end": 90,
+          "claim_line": 90,
+          "quote": "  [OPTION TEXT=\"전엔 그냥 벗기려고 했잖아?\"]",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 89,
+            "option_text": "전엔 그냥 벗기려고 했잖아?"
+          }
+        },
+        {
+          "item_id": "soda_04__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 말을 더듬으며 그렇게 말하는 것은 치사하다고 반응한다.",
+          "line_start": 91,
+          "line_end": 92,
+          "claim_line": 92,
+          "quote": "    소다: 그, 그건 그게에··· 그러니까아···.\n    소다: 그렇게 말씀하시는 건 치사해요오···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 89,
+            "option_text": "전엔 그냥 벗기려고 했잖아?"
+          }
+        },
+        {
+          "item_id": "soda_04__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그냥 자신이 냅킨으로 바지를 닦겠다고 말한다.",
+          "line_start": 94,
+          "line_end": 94,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"···내, 내가 그냥 냅킨으로 닦을게.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 89,
+            "option_text": "···내, 내가 그냥 냅킨으로 닦을게."
+          }
+        },
+        {
+          "item_id": "soda_04__eac_026",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "냅킨으로 직접 닦겠다는 지휘관의 말에 소다가 그러는 게 좋겠다고 동의한다.",
+          "line_start": 95,
+          "line_end": 95,
+          "claim_line": 95,
+          "quote": "    소다: 앗, 네! 그러는 게 좋겠어요. 헤헤···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 89,
+            "option_text": "···내, 내가 그냥 냅킨으로 닦을게."
+          }
+        },
+        {
+          "item_id": "soda_04__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "소다가 동의하자 지휘관이 수긍한다.",
+          "line_start": 96,
+          "line_end": 99,
+          "claim_line": null,
+          "quote": "    [CHOICE_START]\n      [OPTION TEXT=\"으, 응···.\"]\n      [OPTION_END]\n    [CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 89,
+            "option_text": "···내, 내가 그냥 냅킨으로 닦을게."
+          }
+        },
+        {
+          "item_id": "soda_04__eac_028",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "젖은 바지를 대충 닦아내고 소다와 마주 앉은 지휘관이 요새 즐겁게 일한다고 들었다며 말을 건넨다.",
+          "line_start": 102,
+          "line_end": 107,
+          "claim_line": null,
+          "quote": "젖은 바지를 대충 닦아내고, 겨우 소다와 마주 앉았다.\n소다: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"요새 즐겁게 일한다고 들었어.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_029",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 여전히 실수를 많이 해 바뀐 것은 거의 없는 것 같지만 한 가지는 확실히 바뀌었다고 말한다.",
+          "line_start": 108,
+          "line_end": 111,
+          "claim_line": 109,
+          "quote": "소다: 앗, 네!\n소다: ···사실 바뀐 건 거의 없는 것 같아요.\n소다: 실수도 여전히 많이하고요오···.\n소다: ···그래도, 한 가지는 확실히 바뀌었어요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_030",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 확실히 바뀐 한 가지가 무엇인지 묻는다.",
+          "line_start": 112,
+          "line_end": 115,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"뭔데?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_031",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관이 자신 덕분에 누군가가 행복해졌다고 알려 주고 지켜봐 주겠다고 했을 때 뭐든지 해낼 수 있을 것 같은 기분이 들었다고 말한다.",
+          "line_start": 116,
+          "line_end": 118,
+          "claim_line": 118,
+          "quote": "소다: 주인님께서 저 덕분에 누군가가 행복해졌다고 알려 주시고,\n소다: 또 저를 지켜봐 주신다고 하셨을 때.\n소다: 뭐라고 잘 설명은 못하겠지만, 뭐든지 해낼 수 있을 것 같은 기분이 들었···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_032",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 소다",
+          "summary": "소다가 쳐서 쓰러지려는 찻잔을 지휘관이 붙잡아 주자 소다가 감사 인사를 하고, 겹쳐진 손가락을 꼬물거리다가 조심스럽게 손을 뺀다.",
+          "line_start": 119,
+          "line_end": 123,
+          "claim_line": null,
+          "quote": "소다: 앗···!\n소다가 쳐서 쓰러지려는 찻잔을 붙잡았다.\n소다: 가, 감사해요.\n소다: ··· ···.\n겹쳐있는 손가락을 한동안 꼬물거리던 소다는 조심스럽게 손을 뺐다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_033",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 그때 엄청 두근거리고 간질간질한 기분도 들었으며 지금도 그렇다고 고백한다.",
+          "line_start": 124,
+          "line_end": 125,
+          "claim_line": 124,
+          "quote": "소다: 그리고··· 엄청 두근거리고 간질간질한 기분도 들었어요.\n소다: ··· ···지, 지금처럼요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_034",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관도 소다와 마찬가지로 두근거리고 간질간질한 기분이라고 말한다.",
+          "line_start": 127,
+          "line_end": 127,
+          "claim_line": 127,
+          "quote": "  [OPTION TEXT=\"나도 그래.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 126,
+            "option_text": "나도 그래."
+          }
+        },
+        {
+          "item_id": "soda_04__eac_035",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관도 같은 기분이라고 하자 소다가 정말이냐며 놀란다.",
+          "line_start": 128,
+          "line_end": 129,
+          "claim_line": null,
+          "quote": "    소다: 그, 그런가요?!\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 126,
+            "option_text": "나도 그래."
+          }
+        },
+        {
+          "item_id": "soda_04__eac_036",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다, 지휘관",
+          "summary": "소다가 다시 일하러 가보겠다고 말하자 지휘관이 힘내라고 응원한다.",
+          "line_start": 133,
+          "line_end": 139,
+          "claim_line": null,
+          "quote": "소다: ···헤헤.\n소다: ··· ···.\n소다: 그, 그그그럼 저는 다시 일하러 가볼게요오!\n[CHOICE_START]\n  [OPTION TEXT=\"응. 힘내.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_037",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 가벼운 걸음으로 홀로 향했다가 다시 돌아와 망설인다.",
+          "line_start": 140,
+          "line_end": 142,
+          "claim_line": null,
+          "quote": "소다는 가벼운 걸음으로 홀로 향했다.\n···가 다시 돌아왔다.\n소다: ··· ···으.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_038",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 돌아온 소다에게 왜 그러냐고 되묻는다.",
+          "line_start": 144,
+          "line_end": 145,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"으?\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 143,
+            "option_text": "으?"
+          }
+        },
+        {
+          "item_id": "soda_04__eac_039",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 돌아온 소다에게 왜 그러냐고 묻는다.",
+          "line_start": 146,
+          "line_end": 147,
+          "claim_line": null,
+          "quote": "  [OPTION TEXT=\"왜 그래?\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 143,
+            "option_text": "왜 그래?"
+          }
+        },
+        {
+          "item_id": "soda_04__eac_040",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 다른 분들을 더 행복하게 해드릴 수 있도록 힘을 줄 수 있냐고 물으며 살며시 눈을 감는다.",
+          "line_start": 149,
+          "line_end": 152,
+          "claim_line": null,
+          "quote": "소다: 주, 주인님.\n소다: 제가 더 다른 분들을 행복하게 해드릴 수 있도록···.\n소다: 히, 힘을··· 주실 수 있나요?\n소다는 살며시 눈을 감았다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_041",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 소다",
+          "summary": "지휘관이 소다를 부드럽게 품에 안고 입을 맞추자 살짝 몸을 떤 소다가 지휘관을 꼭 껴안는다.",
+          "line_start": 153,
+          "line_end": 161,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다를 부드럽게 품에 안고 입을 맞췄다.\n입술이 맞닿는 순간 살짝 몸을 떤 소다는.\n곧 나를 꼬옥 껴안았다.\n소다: 아···.\n소다: ···헤헤.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_042",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "지휘관이 힘이 좀 났냐고 묻자 소다가 힘이 났다고 답하다가 말끝을 흐리며 침묵한다.",
+          "line_start": 162,
+          "line_end": 168,
+          "claim_line": 166,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"힘이 좀 났어?\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 네! 힘이···.\n소다: 힘이···.\n소다: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_043",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 지휘관에게 조금 더 힘을 주는 것은 어렵겠냐고 조심스럽게 묻는다.",
+          "line_start": 169,
+          "line_end": 174,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다: 조, 조금 더 주시는 건···.\n소다: 어렵, 겠죠···?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_044",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 홀로 돌아와 늦어서 죄송하다고 사과한다.",
+          "line_start": 175,
+          "line_end": 175,
+          "claim_line": null,
+          "quote": "소다: 느, 늦어서 죄송합니다아···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_045",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 러시타임이 벌써 끝났다며 지휘관과 낮잠이라도 잔 것이냐고 묻는다.",
+          "line_start": 176,
+          "line_end": 177,
+          "claim_line": 176,
+          "quote": "코코아: 러시타임 벌써 끝나써.\n코코아: 주인이랑 낮잠이라도 잔 건가.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_046",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "낮잠이라도 잤냐는 코코아의 물음에 소다가 당황하며 얼버무린다.",
+          "line_start": 178,
+          "line_end": 178,
+          "claim_line": null,
+          "quote": "소다: 그, 그게요오···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_047",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "에이드가 푹 쉬었냐고 묻자 소다가 힘이 넘친다고 답한다.",
+          "line_start": 179,
+          "line_end": 180,
+          "claim_line": 180,
+          "quote": "에이드: 소다. 푹 쉬었니?\n소다: 넷, 네에! 힘이 넘쳐요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_048",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 에이드",
+          "summary": "소다를 뒤따라 나오던 지휘관과 에이드의 눈이 마주치자 에이드가 웃는다.",
+          "line_start": 181,
+          "line_end": 186,
+          "claim_line": null,
+          "quote": "소다를 뒤따라 나오다 에이드와 눈이 마주쳤다.\n에이드: 후후.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_049",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "코코아",
+          "summary": "코코아가 소다를 보고 확실히 푹 쉬었다고 평한다.",
+          "line_start": 187,
+          "line_end": 187,
+          "claim_line": 187,
+          "quote": "코코아: 음. 확실히 푹 쉬어꾼.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_050",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "코코아, 소다",
+          "summary": "코코아가 7번 테이블 주문을 받으라고 지시하자 소다가 주문을 받으러 갔다가 비명을 지르며 테이블을 엎는다.",
+          "line_start": 188,
+          "line_end": 191,
+          "claim_line": null,
+          "quote": "코코아: 소다. 7번 테이블. 주문바다.\n소다: 앗. 네에~\n소다: 주문하시겠··· 꺄악?!\n쾅! 와장창창!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_051",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 소다에게 이제 테이블까지 엎어버리는 것이냐고 말한다.",
+          "line_start": 192,
+          "line_end": 193,
+          "claim_line": 193,
+          "quote": "단골 손님: 아니, 소다쨩!\n단골 손님: 이제 테이블까지 엎어버리는 거냐는!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_052",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "차분한 손님",
+          "summary": "차분한 손님이 괜찮은 것이 맞냐고 묻는다.",
+          "line_start": 194,
+          "line_end": 194,
+          "claim_line": null,
+          "quote": "차분한 손님: ···괜찮으신 거 맞죠?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_053",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "단골 손님",
+          "summary": "단골 손님이 역시 이게 소다라며 보기만 해도 행복해진다고 기뻐한다.",
+          "line_start": 195,
+          "line_end": 196,
+          "claim_line": 195,
+          "quote": "단골 손님: 역시 이게 소다쨩이라는!\n단골 손님: 보기만 해도 행복해진다는!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_054",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "지휘관이 속으로 소다를 계속 지켜봐 주기로 약속했음을 떠올린다.",
+          "line_start": 201,
+          "line_end": 201,
+          "claim_line": 201,
+          "quote": "계속 지켜봐 주기로 약속했지만···.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_055",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 소다가 진짜 괜찮은 걸까 걱정한다.",
+          "line_start": 202,
+          "line_end": 205,
+          "claim_line": 203,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"진짜 괜찮은 걸까···.\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__eac_056",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "소다",
+          "summary": "소다가 크게 죄송하다고 외친다.",
+          "line_start": 206,
+          "line_end": 206,
+          "claim_line": null,
+          "quote": "소다: 죄송해요오오오오오오···!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "soda_04__clh_001",
+          "keyword": "코코아의 3인칭 자칭과 발음 어투",
+          "category": "trait",
+          "subject": "코코아",
+          "detail": "코코아는 자신을 '코코아'라고 3인칭으로 부르며 '가마니', '넘쳐써', '조아', '마껴'처럼 받침을 흘리는 독특한 발음 어투를 쓴다.",
+          "line_start": 24,
+          "line_end": 33,
+          "quote": "코코아: 소다가 전부 자기가 할 테니까 가마니 있으래.\n코코아: 며칠 전부터 의욕이 넘쳐써.\n에이드: 그때 얘기가 잘 되신 거죠?\n[CHOICE_START]\n  [OPTION TEXT=\"응.\"]\n  [OPTION_END]\n[CHOICE_END]\n에이드: 후후, 정말 다행이에요.\n코코아: 코코아. 지금 소다가 조아.\n코코아: 완벽한 프로 메이드야.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "soda_04__rln_001",
+          "subject": "코코아",
+          "target": "소다",
+          "relation_or_change": "코코아가 의욕 넘치는 지금의 소다가 좋으며 완벽한 프로 메이드라고 호감을 밝힌다.",
+          "epistemic_type": "character_claim",
+          "claimant": "코코아",
+          "line_start": 32,
+          "line_end": 33,
+          "claim_line": 32,
+          "quote": "코코아: 코코아. 지금 소다가 조아.\n코코아: 완벽한 프로 메이드야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__rln_002",
+          "subject": "지휘관",
+          "target": "소다",
+          "relation_or_change": "지휘관이 의욕 넘치는 지금 소다의 모습이 좋다고 호감을 밝힌다.",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 35,
+          "line_end": 36,
+          "claim_line": 35,
+          "quote": "  [OPTION TEXT=\"나도 이런 소다의 모습이 좋아.\"]\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 34,
+            "option_text": "나도 이런 소다의 모습이 좋아."
+          }
+        },
+        {
+          "item_id": "soda_04__rln_003",
+          "subject": "소다",
+          "target": "지휘관",
+          "relation_or_change": "소다가 지휘관의 격려를 들었을 때와 지금 모두 지휘관에게 엄청 두근거리고 간질간질한 기분을 느낀다고 호감을 밝힌다.",
+          "epistemic_type": "character_claim",
+          "claimant": "소다",
+          "line_start": 124,
+          "line_end": 125,
+          "claim_line": 124,
+          "quote": "소다: 그리고··· 엄청 두근거리고 간질간질한 기분도 들었어요.\n소다: ··· ···지, 지금처럼요.",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "soda_04__rln_004",
+          "subject": "지휘관",
+          "target": "소다",
+          "relation_or_change": "지휘관도 소다와 마찬가지로 두근거리고 간질간질한 기분이라고 호감을 밝힌다.",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 127,
+          "line_end": 127,
+          "claim_line": 127,
+          "quote": "  [OPTION TEXT=\"나도 그래.\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 126,
+            "option_text": "나도 그래."
+          }
+        },
+        {
+          "item_id": "soda_04__rln_005",
+          "subject": "지휘관",
+          "target": "소다",
+          "relation_or_change": "소다가 힘을 달라며 눈을 감자 지휘관이 소다를 품에 안고 입을 맞추고, 소다가 지휘관을 꼭 껴안는다.",
+          "epistemic_type": "established_event",
+          "claimant": null,
+          "line_start": 149,
+          "line_end": 161,
+          "claim_line": null,
+          "quote": "소다: 주, 주인님.\n소다: 제가 더 다른 분들을 행복하게 해드릴 수 있도록···.\n소다: 히, 힘을··· 주실 수 있나요?\n소다는 살며시 눈을 감았다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n소다를 부드럽게 품에 안고 입을 맞췄다.\n입술이 맞닿는 순간 살짝 몸을 떤 소다는.\n곧 나를 꼬옥 껴안았다.\n소다: 아···.\n소다: ···헤헤.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "soda_04__uec_001",
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 3
+        }
+      ]
+    }
+  ]
+}
