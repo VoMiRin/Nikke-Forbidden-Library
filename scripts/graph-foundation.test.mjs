@@ -834,6 +834,21 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
     );
     assert.equal(candidatesDoc.total_candidates, 1);
     assert.equal(candidatesDoc.candidates[0].surface_text, '태엽 오르골');
+
+    // 본문이 바뀌어 build-manifest가 s1을 새 배치(batch_0003)로 옮기면, 옛 샤드(batch_0001)의 s1은 병합하지 않는다
+    testManifest.scenes.s1.batch_id = 'batch_0003';
+    await fs.writeFile(path.join(tmpDir, 'manifest.json'), JSON.stringify(testManifest, null, 2));
+    await fs.writeFile(path.join(batchesDir, 'batch_0003.json'), JSON.stringify({ ...batchInput, batch_id: 'batch_0003' }, null, 2));
+    await fs.writeFile(path.join(shardsDir, 'batch_0003.json'), JSON.stringify({ ...validShard, batch_id: 'batch_0003' }, null, 2));
+    const remerged = await mergeValidatedShards({ graphDir: tmpDir, pilot: false });
+    assert.equal(remerged.mergedScenesCount, 1);
+    assert.deepEqual(remerged.staleScenes, [{ scene_id: 's1', batch_id: 'batch_0001', current_batch_id: 'batch_0003' }]);
+    const remergedView = JSON.parse(
+      await fs.readFile(path.join(tmpDir, 'pass1', 'by_title', 'main_story__chapter_00.json'), 'utf8')
+    );
+    assert.equal(remergedView.scenes.length, 1);
+    const remergedProgress = JSON.parse(await fs.readFile(path.join(tmpDir, 'progress.json'), 'utf8'));
+    assert.equal(remergedProgress.scenes['s1'].batch_id, 'batch_0003');
   } finally {
     await fs.rm(tmpDir, { recursive: true, force: true });
   }

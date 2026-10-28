@@ -501,6 +501,7 @@ export const mergeValidatedShards = async (options = {}) => {
   const densityByBatch = {};
   const densityWarnings = [];
   const mergedSceneRecords = [];
+  const staleScenes = [];
 
   for (const fileName of shardFiles) {
     const shardPath = path.join(shardsDir, fileName);
@@ -547,6 +548,12 @@ export const mergeValidatedShards = async (options = {}) => {
       const mScene = manifestScenes[rawScene.scene_id];
       if (!mScene) {
         throw new Error(`Scene "${rawScene.scene_id}" in shard "${batchId}" not found in manifest.json`);
+      }
+      // 본문이 바뀌어 build-manifest가 다른 배치로 다시 추출하게 한 장면은 옛 샤드에서 병합하지 않는다.
+      // 병합하면 같은 장면이 두 번 들어가고, 옛 결과가 새 본문의 해시로 progress.json에 merged로 남는다
+      if (!isPilot && mScene.batch_id && mScene.batch_id !== batchId) {
+        staleScenes.push({ scene_id: rawScene.scene_id, batch_id: batchId, current_batch_id: mScene.batch_id });
+        continue;
       }
       const gtScene = gtById.get(rawScene.scene_id);
       enrichedScenes.push(enrichSceneFromManifest(rawScene, mScene, gtScene?.mechanical_ground_truth ?? null));
@@ -681,6 +688,7 @@ export const mergeValidatedShards = async (options = {}) => {
     isPilot,
     mergedBatchIds,
     skippedBatches,
+    staleScenes,
     mergedScenesCount: enrichedScenes.length,
     pass1IndexPath,
     unregisteredPath,
@@ -722,6 +730,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
           res.skippedBatches.length
         }, Index: ${res.pass1IndexPath}`
       );
+      for (const s of res.staleScenes) {
+        console.log(`[merge-and-index] Stale scene skipped: ${s.scene_id} in ${s.batch_id} (now in ${s.current_batch_id})`);
+      }
     })
     .catch((err) => {
       console.error('[merge-and-index] Error:', err);

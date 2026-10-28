@@ -451,7 +451,10 @@ const finishWave = async (rel) => {
   console.log(
     `[finish] 병합: 이번 회차 ${wavePlan.batch_ids.length - notMerged.length}/${wavePlan.batch_ids.length}배치` +
       (notMerged.length > 0 ? `, 병합 안 됨(다음 회차에 다시 골라짐): ${notMerged.join(', ')}` : '') +
-      ` — 전체 병합 ${merged.mergedBatchIds.length}배치 ${merged.mergedScenesCount}장면, 건너뛴 샤드 ${merged.skippedBatches.length}개`
+      ` — 전체 병합 ${merged.mergedBatchIds.length}배치 ${merged.mergedScenesCount}장면, 건너뛴 샤드 ${merged.skippedBatches.length}개` +
+      (merged.staleScenes.length > 0
+        ? `, 본문이 바뀌어 옛 샤드에서 뺀 장면 ${merged.staleScenes.length}개(${merged.staleScenes.map((s) => `${s.scene_id} ${s.batch_id}→${s.current_batch_id}`).join(', ')})`
+        : '')
   );
 
   console.log('[finish] 위치별 밀도(사건·주장 / 대사 100줄, 앞·중간·뒤):');
