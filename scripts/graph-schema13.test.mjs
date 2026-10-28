@@ -1472,6 +1472,14 @@ test('2.3-25 names not in the scene: warn on rare names only, ignoring word part
   // 물결표로 늘인 말도 장면에 있는 것이다(8회차 bunny_x_777_04 `탄~산수~`)
   const stretched = batchOf(makeInputScene('t13_term', ['[SCENE START]', '엑시아: 안-녕-', '노벨: 데이~터 센터~인 것입니다.', '[SCENE END]']));
   assert.equal(termWarnings(scene('데이터 센터에서 만난다.'), stretched).length, 0);
+
+  // 병합된 결과의 많은 장면에 걸리는 이름은 요약에 흔한 말과 겹친 것이다(29회차 `알리` → `알리고`)
+  lexicon.terms.set('알리', 'concept name');
+  lexicon.leakSceneCountOf = (term) => (term === '알리' ? 311 : 3);
+  assert.deepEqual(
+    termWarnings(scene('엑시아가 노벨에게 알리고 데이터 센터에 간다.')).map((w) => w.message.match(/"([^"]+)"/)[1]),
+    ['데이터 센터']
+  );
 });
 
 test('2.3-25 term lexicon: registry names without generic roles, merged and own candidates, corpus scene counts', async () => {
@@ -1506,6 +1514,20 @@ test('2.3-25 term lexicon: registry names without generic roles, merged and own 
     assert.deepEqual([...lexicon.terms.keys()].sort(), ['데이터 센터', '모더니아', '실버건']);
     assert.equal(lexicon.sceneCountOf('데이터 센터'), 2);
     assert.equal(lexicon.sceneCountOf('모더니아'), 1);
+
+    // 경고 장면 수: 결합된 샤드에서 요약에 쓰였는데 그 장면 원문에 없는 장면만 센다
+    await fs.mkdir(path.join(dir, 'pass1', 'shards'), { recursive: true });
+    await fs.writeFile(
+      path.join(dir, 'pass1', 'shards', 'batch_0001.json'),
+      JSON.stringify({
+        scenes: [
+          { scene_id: 'batch_0001_0', summary: '노벨이 데이터 센터를 알린다.' }, // 원문에 데이터센터가 있다
+          { scene_id: 'batch_0001_1', summary: '라피가 데이터 센터에 간다.', events_and_claims: [{ summary: '모더니아.' }] },
+        ],
+      })
+    );
+    assert.equal(lexicon.leakSceneCountOf('데이터 센터'), 1);
+    assert.equal(lexicon.leakSceneCountOf('모더니아'), 0);
   } finally {
     await fs.rm(dir, { recursive: true, force: true });
   }

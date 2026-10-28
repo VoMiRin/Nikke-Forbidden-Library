@@ -88,6 +88,38 @@ const HANGUL_SYLLABLE_RE = /[가-힣]/;
 // 25·28항의 이름 찾기에서 지우는 말줄임표: 가운뎃점 세 개 이상(`···`, 띄어 쓴 `··· ···`는 공백을 지운 뒤 `······`).
 // 원문에 가운뎃점 하나·둘은 각 1번뿐이고 이름 사이 가운뎃점(`A·B`)일 수 있어 남긴다. `…`는 지우지 않는다
 const ELLIPSIS_DOTS_RE = /·{3,}/g;
+// 2.3의 25항 경고 장면 수: 병합된 결과에서 이만큼 넘는 장면에 이 경고가 걸리는 이름은 요약에 흔히 쓰는 말과 겹친 것으로 보고
+// 검사하지 않는다. 원문 장면 수로는 거르지 못한다: 29회차 `알리`(보드 기술)는 원문 83장면이지만 요약의 동사 `알리다`에
+// 311장면이 걸렸다(345건 모두 동사). 그다음은 11장면(`잡지`)이었다
+export const TERM_LEAK_MAX_SCENES = 30;
+// 25항의 장면 글: 물결표도 지운다. 늘인 말(`탄~산수~`)도 그 이름이다(8회차 `bunny_x_777_04`). 이름 찾기에만 쓰고 인용 대조에는 쓰지 않는다.
+// 말줄임표(가운뎃점 세 개 이상)도 지운다: 끊어 말한 이름(`여··· 왕··· 님···`)도 그 이름이다(10회차 `main_06_08`).
+// 가운뎃점 하나(`A·B`)는 남긴다
+const termSceneText = (parts) =>
+  parts.filter(isNonEmptyString).join('\n').replace(/[\s~～]+/g, '').replace(ELLIPSIS_DOTS_RE, '');
+// 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다.
+// 후보 이름에 말줄임표가 들어 있을 수 있어(`수송··· 기`) 낱말에서도 지운다
+const termInScene = (sceneText, term) =>
+  termTokens(term).every((token) => sceneText.includes(token.replace(ELLIPSIS_DOTS_RE, '')));
+// 앞 글자가 한글이면 다른 낱말의 일부다(`장소라고`의 `소라`)
+const termUsedIn = (text, term) => {
+  for (let i = text.indexOf(term); i >= 0; i = text.indexOf(term, i + 1)) {
+    if (i === 0 || !HANGUL_SYLLABLE_RE.test(text[i - 1])) return true;
+  }
+  return false;
+};
+// 25항이 보는 글: [경로, 글]
+const termTextsOf = (scene) => {
+  const texts = [['summary', scene?.summary]];
+  for (const [field, keys] of TERM_ITEM_FIELDS) {
+    if (!Array.isArray(scene?.[field])) continue;
+    scene[field].forEach((item, idx) => {
+      const text = keys.map((k) => item?.[k]).filter(isNonEmptyString).join('\n');
+      if (text) texts.push([`${field}[${idx}]`, text]);
+    });
+  }
+  return texts.filter(([, text]) => isNonEmptyString(text));
+};
 
 export const REMOTE_MEDIUM_ENUM = new Set([
   'comm',
@@ -325,7 +357,7 @@ export const quoteCoversLine = (quote, rawLine, rawSliceLines = []) => {
 /**
  * 단일 배치 샤드 JSON을 해당 배치 입력 데이터(batchInput)와 대조해 2.3의 1~21항을 검증한다.
  */
-// options.termLexicon: 25항의 이름 목록({ terms: Map<이름, 출처>, sceneCountOf(이름) }). 없으면 25항은 검사하지 않는다
+// options.termLexicon: 25항의 이름 목록({ terms: Map<이름, 출처>, sceneCountOf(이름), leakSceneCountOf(이름) }). 없으면 25항은 검사하지 않는다
 // options.registry: 27·28항의 레지스트리({ ids, labelsById, idByLabel }, loadEntityRegistry). 없으면 27·28항은 검사하지 않는다
 export const validateShard = (shardData, batchInput, options = {}) => {
   const errors = [];
@@ -1980,40 +2012,16 @@ export const validateShard = (shardData, batchInput, options = {}) => {
     // 25. 장면에 없는 이름: 요약에 쓴 등록 인물·고유명사가 그 장면 원문과 제목에 없으면, 다른 장면이나 사전 지식에서
     // 가져온 것인지 다시 보게 한다(경고, 3절 6항). main_09_13의 "데이터 센터"는 앞 장면 main_09_12에서 나온 말이었다
     if (options.termLexicon) {
-      // 물결표도 지운다: 늘인 말(`탄~산수~`)도 그 이름이다(8회차 `bunny_x_777_04`). 이름 찾기에만 쓰고 인용 대조에는 쓰지 않는다
-      // 말줄임표(가운뎃점 세 개 이상)도 지운다: 끊어 말한 이름(`여··· 왕··· 님···`)도 그 이름이다(10회차 `main_06_08`).
-      // 가운뎃점 하나(`A·B`)는 남긴다
-      const sceneText = [gtScene.title, gtScene.sub_title, ...rawLines]
-        .filter(isNonEmptyString)
-        .join('\n')
-        .replace(/[\s~～]+/g, '')
-        .replace(ELLIPSIS_DOTS_RE, '');
-      // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다.
-      // 후보 이름에 말줄임표가 들어 있을 수 있어(`수송··· 기`) 낱말에서도 지운다
-      const inScene = (term) =>
-        termTokens(term).every((token) => sceneText.includes(token.replace(ELLIPSIS_DOTS_RE, '')));
-      // 앞 글자가 한글이면 다른 낱말의 일부다(`장소라고`의 `소라`)
-      const usedIn = (text, term) => {
-        for (let i = text.indexOf(term); i >= 0; i = text.indexOf(term, i + 1)) {
-          if (i === 0 || !HANGUL_SYLLABLE_RE.test(text[i - 1])) return true;
-        }
-        return false;
-      };
-      const textsToCheck = [['summary', scene.summary]];
-      for (const [field, keys] of TERM_ITEM_FIELDS) {
-        if (!Array.isArray(scene[field])) continue;
-        scene[field].forEach((item, idx) => {
-          const text = keys.map((k) => item?.[k]).filter(isNonEmptyString).join('\n');
-          if (text) textsToCheck.push([`${field}[${idx}]`, text]);
-        });
-      }
-      for (const [key, text] of textsToCheck) {
-        if (!isNonEmptyString(text)) continue;
-        const found = [...options.termLexicon.terms.keys()].filter((term) => usedIn(text, term) && !inScene(term));
+      const sceneText = termSceneText([gtScene.title, gtScene.sub_title, ...rawLines]);
+      for (const [key, text] of termTextsOf(scene)) {
+        const found = [...options.termLexicon.terms.keys()].filter(
+          (term) => termUsedIn(text, term) && !termInScene(sceneText, term)
+        );
         // 긴 이름 안의 짧은 이름은 따로 세지 않는다(`메티스 스쿼드`의 `메티스`)
         const terms = found
           .filter((term) => !found.some((other) => other !== term && other.includes(term)))
-          .filter((term) => options.termLexicon.sceneCountOf(term) <= TERM_COMMON_MAX_SCENES);
+          .filter((term) => options.termLexicon.sceneCountOf(term) <= TERM_COMMON_MAX_SCENES)
+          .filter((term) => (options.termLexicon.leakSceneCountOf?.(term) ?? 0) <= TERM_LEAK_MAX_SCENES);
         for (const term of terms) {
           addWarning(
             'TERM_NOT_IN_SCENE',
@@ -2141,6 +2149,31 @@ const corpusSceneTexts = (graphDir) => {
   return corpusTextsByDir.get(graphDir);
 };
 
+// 25항 경고 장면 수를 셀 병합된 장면: 결합된 샤드(pass1/shards)의 장면마다 [장면 글, 25항이 보는 글들]
+const termScenesByDir = new Map();
+const mergedTermScenes = (graphDir) => {
+  if (!termScenesByDir.has(graphDir)) {
+    const shardsDir = path.join(graphDir, 'pass1', 'shards');
+    const scenes = [];
+    const files = fsSync.existsSync(shardsDir) ? fsSync.readdirSync(shardsDir) : [];
+    for (const file of files.filter((f) => /^batch_\d+\.json$/.test(f)).sort()) {
+      const inputPath = path.join(graphDir, 'pass1', 'batches', file);
+      if (!fsSync.existsSync(inputPath)) continue;
+      const input = JSON.parse(fsSync.readFileSync(inputPath, 'utf8'));
+      const inputById = new Map((input.scenes ?? []).map((s) => [s.scene_id, s]));
+      const shard = JSON.parse(fsSync.readFileSync(path.join(shardsDir, file), 'utf8'));
+      for (const s of shard.scenes ?? []) {
+        const gt = inputById.get(s?.scene_id);
+        if (!gt) continue;
+        const rawLines = Array.isArray(gt.body_lines) ? gt.body_lines : extractRawLinesFromNumberedScript(gt.numbered_script);
+        scenes.push([termSceneText([gt.title, gt.sub_title, ...rawLines]), termTextsOf(s).map(([, text]) => text)]);
+      }
+    }
+    termScenesByDir.set(graphDir, scenes);
+  }
+  return termScenesByDir.get(graphDir);
+};
+
 export const loadTermLexicon = async (graphDir, shardData) => {
   const terms = new Map();
   const add = (term, source) => {
@@ -2175,7 +2208,19 @@ export const loadTermLexicon = async (graphDir, shardData) => {
     }
     return counts.get(term);
   };
-  return { terms, sceneCountOf };
+  const leakCounts = new Map();
+  const leakSceneCountOf = (term) => {
+    if (!leakCounts.has(term)) {
+      leakCounts.set(
+        term,
+        mergedTermScenes(graphDir).filter(
+          ([sceneText, texts]) => !termInScene(sceneText, term) && texts.some((text) => termUsedIn(text, term))
+        ).length
+      );
+    }
+    return leakCounts.get(term);
+  };
+  return { terms, sceneCountOf, leakSceneCountOf };
 };
 
 // 27·28항의 레지스트리. 이름은 띄어쓰기를 지우고 비교한다. 레지스트리가 없으면 null(검사 안 함)
