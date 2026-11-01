@@ -337,4 +337,16 @@ export const lostRelicsScripts: ScriptData[] = [
     { id: '승리를 부르는 그림자_02', categoryKey: 'lost_relics', title: '승리를 부르는 그림자', subTitle: '세 번째 장', mainChapterFile: '승리를 부르는 그림자.txt' },
     { id: '승리를 부르는 그림자_03', categoryKey: 'lost_relics', title: '승리를 부르는 그림자', subTitle: '마지막 장', mainChapterFile: '승리를 부르는 그림자.txt' },
 
+    // 갓데스 다큐멘터리 제작기
+    { id: '갓데스 다큐멘터리 제작기_00', categoryKey: 'lost_relics', title: '갓데스 다큐멘터리 제작기', subTitle: '제작 보고서 초안', mainChapterFile: '갓데스 다큐멘터리 제작기.txt' },
+    { id: '갓데스 다큐멘터리 제작기_01', categoryKey: 'lost_relics', title: '갓데스 다큐멘터리 제작기', subTitle: '첫 달의 답사 일지', mainChapterFile: '갓데스 다큐멘터리 제작기.txt' },
+    { id: '갓데스 다큐멘터리 제작기_02', categoryKey: 'lost_relics', title: '갓데스 다큐멘터리 제작기', subTitle: '마지막 답사 일지', mainChapterFile: '갓데스 다큐멘터리 제작기.txt' },
+    { id: '갓데스 다큐멘터리 제작기_03', categoryKey: 'lost_relics', title: '갓데스 다큐멘터리 제작기', subTitle: '제작 보고서 최종안', mainChapterFile: '갓데스 다큐멘터리 제작기.txt' },
+
+    // 신임 장교의 일지
+    { id: '신임 장교의 일지_00', categoryKey: 'lost_relics', title: '신임 장교의 일지', subTitle: '첫 번째 페이지', mainChapterFile: '신임 장교의 일지.txt' },
+    { id: '신임 장교의 일지_01', categoryKey: 'lost_relics', title: '신임 장교의 일지', subTitle: '두 번째 페이지', mainChapterFile: '신임 장교의 일지.txt' },
+    { id: '신임 장교의 일지_02', categoryKey: 'lost_relics', title: '신임 장교의 일지', subTitle: '세 번째 페이지', mainChapterFile: '신임 장교의 일지.txt' },
+    { id: '신임 장교의 일지_03', categoryKey: 'lost_relics', title: '신임 장교의 일지', subTitle: '마지막 페이지', mainChapterFile: '신임 장교의 일지.txt' },
+
 ];

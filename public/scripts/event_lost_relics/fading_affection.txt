@@ -1,0 +1,6022 @@
+@@@SCRIPT_ID: fading_affection_start
+@@@SUB_TITLE: FADING AFFECTION — 기록 선택
+[SCENE START]
+오래된 프로젝트의 기록을 열람하기로 했다.
+[CHOICE_START ID="fading_affection_start_choice"]
+  [OPTION TEXT="마리아의 기록" VALUE="route_11"]
+    쓸쓸했고 처절했던 그녀의 기록.
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록" VALUE="route_12"]
+    덧없고 아름다웠던 그들의 기록.
+  [OPTION_END]
+  [OPTION TEXT="7호의 기록" VALUE="route_13"]
+    더없이 간절했던 그의 기록.
+  [OPTION_END]
+  [OPTION TEXT="메모리" VALUE="memory"]
+  [OPTION_END]
+  [OPTION TEXT="엔딩 회상" VALUE="endings"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_start_choice" OPTION="route_11" TARGET="fading_affection_route_11"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_start_choice" OPTION="route_12" TARGET="fading_affection_route_12"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_start_choice" OPTION="route_13" TARGET="fading_affection_route_13"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_start_choice" OPTION="memory" TARGET="fading_affection_memory"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_start_choice" OPTION="endings" TARGET="fading_affection_endings"]
+
+@@@SCRIPT_ID: fading_affection_route_11
+@@@SUB_TITLE: 마리아의 기록
+[SCENE START]
+넓은 평원 위, 수송기가 무사히 착륙한다.
+마리아는 임무를 위해 나아갈 곳을 찾는다.
+[CHOICE_START ID="fading_affection_route_11_choice"]
+  [OPTION TEXT="구도심" VALUE="start_1101"]
+  [OPTION_END]
+  [OPTION TEXT="호수" VALUE="start_1102"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_route_11_choice" OPTION="start_1101" TARGET="fading_affection_1101"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_route_11_choice" OPTION="start_1102" TARGET="fading_affection_1201"]
+
+@@@SCRIPT_ID: fading_affection_route_12
+@@@SUB_TITLE: 마리안의 기록
+[SCENE START]
+수송기는 무사히 착륙한다.
+마리안과 지휘관은 나아갈 곳을 찾는다.
+[CHOICE_START ID="fading_affection_route_12_choice"]
+  [OPTION TEXT="구도심" VALUE="start_1201"]
+  [OPTION_END]
+  [OPTION TEXT="호수" VALUE="start_1202"]
+  [OPTION_END]
+  [OPTION TEXT="신도시" VALUE="start_1203"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_route_12_choice" OPTION="start_1201" TARGET="fading_affection_2101"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_route_12_choice" OPTION="start_1202" TARGET="fading_affection_2201"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_route_12_choice" OPTION="start_1203" TARGET="fading_affection_2301"]
+
+@@@SCRIPT_ID: fading_affection_route_13
+@@@SUB_TITLE: 7호의 기록
+[SCENE START]
+쾅-!
+수송기가 바닥으로 추락해, 몸은 부서질 듯 아프지만 7호는 마리안을 기억하기 위해 앞으로 향한다.
+[CHOICE_START ID="fading_affection_route_13_choice"]
+  [OPTION TEXT="구도심" VALUE="start_1301"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_route_13_choice" OPTION="start_1301" TARGET="fading_affection_3002"]
+
+@@@SCRIPT_ID: fading_affection_1101
+@@@SUB_TITLE: 마리아의 기록 001
+[SCENE START]
+마리아는 수송기의 위치와 가장 가까운, 구도심 방향으로 향한다.
+무너진 건물과 부서진 도로.
+그 사이로 피어난 무성한 나무들.
+랩쳐가 휩쓸고 지나간 쓸쓸한 전쟁의 폐허가 마리아를 반긴다.
+[CHOICE_START ID="fading_affection_1101_choice"]
+  [OPTION TEXT="앞으로 나아간다." VALUE="option_110101"]
+  [OPTION_END]
+  [OPTION TEXT="숨을 곳을 찾아본다." VALUE="option_110102"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1101_choice" OPTION="option_110101" TARGET="fading_affection_1102"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1101_choice" OPTION="option_110102" TARGET="fading_affection_1133"]
+
+@@@SCRIPT_ID: fading_affection_1102
+@@@SUB_TITLE: 마리아의 기록 002
+[SCENE START]
+그때,
+쿵- 쿵-
+마리아는 무너진 건물 너머, 멀리서 들려오는 위협적인 소리를 듣는다.
+[CHOICE_START ID="fading_affection_1102_choice"]
+  [OPTION TEXT="무시한다." VALUE="option_110201"]
+  [OPTION_END]
+  [OPTION TEXT="경계한다." VALUE="option_110202"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1102_choice" OPTION="option_110201" TARGET="fading_affection_1103"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1102_choice" OPTION="option_110202" TARGET="fading_affection_1104"]
+
+@@@SCRIPT_ID: fading_affection_1103
+@@@SUB_TITLE: 마리아의 기록 003
+[SCENE START]
+아직은 거리가 있어.
+빠르게 움직이면 되겠지라고 생각하며, 마리아는 근처에 있는 건물을 향해 달려갔-
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6101"]
+
+@@@SCRIPT_ID: fading_affection_1104
+@@@SUB_TITLE: 마리아의 기록 004
+[SCENE START]
+지상에서 방심은 금물이지.
+마리아는 근처의 엄폐물을 찾아, 빠르게 몸을 숨겼다.
+콰아앙-
+건물을 뛰어넘어, 지상형 랩쳐가 나타난다.
+다행히 단 1기뿐이다.
+"이 정도는··· 할 수 있어."
+마리아는 엄폐물로 몸을 숨기며, 랩쳐를 역으로 습격하는 데 성공한다.
+랩쳐를 쓰러뜨린 마리아는 앞으로 나아갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1105"]
+
+@@@SCRIPT_ID: fading_affection_1105
+@@@SUB_TITLE: 마리아의 기록 005
+[SCENE START]
+마리아는 구도심의 거대한 광장에 도달한다.
+부서지고 무너져서, 갈 수 있는 길은 세 갈래 정도다.
+마리아는···.
+[CHOICE_START ID="fading_affection_1105_choice"]
+  [OPTION TEXT="상업시설이 보이는 왼쪽으로 간다." VALUE="option_110501"]
+  [OPTION_END]
+  [OPTION TEXT="주거지가 보이는 정면으로 간다." VALUE="option_110502"]
+  [OPTION_END]
+  [OPTION TEXT="큰 도로가 보이는 오른쪽으로 간다." VALUE="option_110503"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1105_choice" OPTION="option_110501" TARGET="fading_affection_1106"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1105_choice" OPTION="option_110502" TARGET="fading_affection_1107"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1105_choice" OPTION="option_110503" TARGET="fading_affection_1108"]
+
+@@@SCRIPT_ID: fading_affection_1106
+@@@SUB_TITLE: 마리아의 기록 006
+[SCENE START]
+마리아는 우선 쓸 만한 물건들이 있는지 확인하기 위해 상업시설이 있는 왼쪽부터 가보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1109"]
+
+@@@SCRIPT_ID: fading_affection_1107
+@@@SUB_TITLE: 마리아의 기록 007
+[SCENE START]
+마리아는 호수로 갈 길이 있는지 찾아보기 위해 주거지가 있는 정면으로 가보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1124"]
+
+@@@SCRIPT_ID: fading_affection_1108
+@@@SUB_TITLE: 마리아의 기록 008
+[SCENE START]
+마리아는 나아가야 할 길을 확인하기 위해, 큰 도로가 보이는 오른쪽부터 가보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1143"]
+
+@@@SCRIPT_ID: fading_affection_1109
+@@@SUB_TITLE: 마리아의 기록 009
+[SCENE START]
+마리아는 무너진 건물들 사이, 제법 온전한 형태의 낡은 편의점을 발견한다.
+깨진 유리문 너머로 자세히 들여다보자, 통조림 하나가 바닥에 떨어져 있는 것이 보인다.
+다만, 안쪽이 너무 어두워서 내부 상태를 자세히 살피기엔 어려운 상황이다.
+마리아는 편의점 안에···.
+[CHOICE_START ID="fading_affection_1109_choice"]
+  [OPTION TEXT="들어간다." VALUE="option_110901"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1109_choice" OPTION="option_110901" TARGET="fading_affection_1110"]
+
+@@@SCRIPT_ID: fading_affection_1110
+@@@SUB_TITLE: 마리아의 기록 010
+[SCENE START]
+끼익-
+식량은 어떻게 해서든 많이 확보해 놓는 게 좋다고 생각한 마리아는 어두운 편의점 안으로 들어섰다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1112"]
+
+@@@SCRIPT_ID: fading_affection_1111
+@@@SUB_TITLE: 마리아의 기록 011
+[SCENE START]
+마리아는 상업시설을 좀 더 살펴보기로 했다.
+하지만 아무리 돌아다녀도, 특별한 무언가는 찾아내지 못한다.
+마리아는 다시 광장으로 돌아가보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1105"]
+
+@@@SCRIPT_ID: fading_affection_1112
+@@@SUB_TITLE: 마리아의 기록 012
+[SCENE START]
+마리아는 밖에서 보았던 통조림을 들어올렸다.
+"비어있네···."
+마리아는 아쉬움에, 주변을 둘러보다가 문이 열려 있는 창고를 발견한다.
+마리아는 빛이 들어오지 않는 창고 안을 바라보았다.
+금속과 같은 무언가가 반짝이는 것이 보인다.
+"저 안에 더 있는 걸까."
+마리아는···.
+[CHOICE_START ID="fading_affection_1112_choice"]
+  [OPTION TEXT="안으로 계속 들어간다." VALUE="option_111201"]
+  [OPTION_END]
+  [OPTION TEXT="들어가지 않는다." VALUE="option_111202"]
+  [OPTION_END]
+  [OPTION TEXT="안을 자세히 바라본다." VALUE="option_111203"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1112_choice" OPTION="option_111201" TARGET="fading_affection_1113"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1112_choice" OPTION="option_111202" TARGET="fading_affection_1114"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1112_choice" OPTION="option_111203" TARGET="fading_affection_1115"]
+
+@@@SCRIPT_ID: fading_affection_1113
+@@@SUB_TITLE: 마리아의 기록 013
+[SCENE START]
+마리아가 창고 안에 발을 들여놓자,
+철컥-!
+"!!!"
+발목을 꿰뚫는 아픔이 느껴진다.
+마리아가 아래를 내려다보자, 그녀의 발목을 꿰뚫고 있는 바닥에 고정된 반원형의 금속 덫이 보인다.
+"왜 이게 여기에···."
+덜컥-
+그리고 발아래 무언가가 눌리는 느낌이 든다.
+눌렸다?
+마리아는 위험한 느낌에···.
+[CHOICE_START ID="fading_affection_1113_choice"]
+  [OPTION TEXT="고개를 든다." VALUE="option_111301"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1113_choice" OPTION="option_111301" TARGET="fading_affection_6102"]
+
+@@@SCRIPT_ID: fading_affection_1114
+@@@SUB_TITLE: 마리아의 기록 014
+[SCENE START]
+창고 안이 너무 어둡다.
+어떤 위험이 있을지 모른다고 판단한 마리아는 통조림을 포기하고 밖으로 나아가기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1111"]
+
+@@@SCRIPT_ID: fading_affection_1115
+@@@SUB_TITLE: 마리아의 기록 015
+[SCENE START]
+"분명 이 앞에 덫이 있었지···."
+창고 안을 조금 더 자세히 바라보자, 길목에 놓인 덫이 보인다.
+먀옹-
+"···고양이?"
+마리아는 이상한 기시감이 들었다.
+마리아는 덫에 걸려 죽었던 메모리를 떠올렸다.
+어둠 속 사냥꾼의 옆에 있던, 고양이.
+"너는 그때 본···."
+고양이도 마리아를 알아보듯 뚫어지게 바라보았다.
+아직 창고 안에 누군가가 있을지 알 수 없는 상황. 마리아는···.
+[CHOICE_START ID="fading_affection_1115_choice"]
+  [OPTION TEXT="덫을 피해 들어간다." VALUE="option_111501"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1115_choice" OPTION="option_111501" TARGET="fading_affection_1116"]
+
+@@@SCRIPT_ID: fading_affection_1116
+@@@SUB_TITLE: 마리아의 기록 016
+[SCENE START]
+마리아는 창고 입구의 덫을 뛰어넘어, 고양이를 따라 안쪽으로 들어갔다.
+그리고 창고 구석 석궁 함정 아래, 선반에 기대 웅크리고 앉아 있는 사냥꾼의···.
+"아···."
+해골을 마주한다.
+바닥에는 살아있었을 적, 그가 먹은 듯한 통조림 깡통들과 뚜껑이 열린 약통, 꺼진 손전등과 빈 물통이 흐트러져 있었다.
+마리아가 약통을 들어올렸다.
+"···수면제."
+그리고 창고 바닥에 쓰인, 붉은 글자들을 바라보았다.
+[무서워. 여기 숨자. 들어오면 죽일 거야.]
+[식량도 있고 함정도 설치했어.]
+[여기서 버티면 살 수 있을 거야.]
+[조금만 더 버티자. 어떻게든 살아야 해. 무서워.]
+[무서워. 죽고 싶지 않아. 살고 싶어.]
+마리아는 마지막 문구를 바라본다.
+[그런데 나는 왜 살고 싶어 하는 거지?]
+"··· ···."
+마리아는 말없이 약통을 내려놓았다.
+
+메모리 저장: 저장된 메모리 : 사냥꾼
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1118"]
+
+@@@SCRIPT_ID: fading_affection_1118
+@@@SUB_TITLE: 마리아의 기록 017
+[SCENE START]
+마리아는 창고 안쪽을 좀 더 둘러보다, 창고에 아무것도 남아있지 않다는 것을 알게 된다.
+냐앙-
+고양이가 무언가를 원하듯 마리아를 바라본다.
+마리아는···.
+[CHOICE_START ID="fading_affection_1118_choice"]
+  [OPTION TEXT="고양이에게 자신의 식량을 나눠준다." VALUE="option_111801"]
+  [OPTION_END]
+  [OPTION TEXT="고양이를 외면한다." VALUE="option_111802"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1118_choice" OPTION="option_111801" TARGET="fading_affection_1119"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1118_choice" OPTION="option_111802" TARGET="fading_affection_1120"]
+
+@@@SCRIPT_ID: fading_affection_1119
+@@@SUB_TITLE: 마리아의 기록 018
+[SCENE START]
+부스럭-
+마리아는 품에서, 건조된 육포를 꺼내 고양이에게 건넸다.
+챱챱챱-
+고양이가 신이 난 듯 한참을 육포를 뜯어먹었다.
+배가 고팠는지 허겁지겁 씹어댔다.
+냐앙-
+육포를 다 먹은 고양이가 머리를 든다.
+두 눈이, 되찾은 삶이 생기 있게 반짝거렸다.
+"!!!"
+마리아는 그 아름다운 빛에 눈을 떼지 못했다.
+삶은 존재하는 것만으로도 빛난다는 것을 목격한 느낌이었다.
+마리아가 멍하니 고양이를 바라보고 있자, 고양이가 다가와 다리에 머리를 비비적거렸다.
+"후후, 귀여워라···."
+고양이는 마리아를 빤히 바라본 후, 덫을 뛰어넘어 창고 밖으로 달려나갔다.
+마리아도 그 모습을 보다, 덫을 넘어 창고 밖으로 걸어나갔다.
+
+메모리 저장: 저장된 메모리 : 고양이
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1121"]
+
+@@@SCRIPT_ID: fading_affection_1120
+@@@SUB_TITLE: 마리아의 기록 019
+[SCENE START]
+언제 필요할지 모르는 식량을 이곳에서 쓸 수는 없다.
+마리아는 매정하지만 이게 맞다고 되뇌며, 고양이를 외면한 채 창고 밖으로 걸어나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1121"]
+
+@@@SCRIPT_ID: fading_affection_1121
+@@@SUB_TITLE: 마리아의 기록 020
+[SCENE START]
+창고 밖으로 나온 마리아는 편의점 밖으로 나서려 한다.
+그 순간,
+쿵- 쿵- 쿵- 쿵-
+밖에서 랩쳐가 다가오는 소리가 들린다.
+[CHOICE_START ID="fading_affection_1121_choice"]
+  [OPTION TEXT="밖으로 나가본다." VALUE="option_112101"]
+  [OPTION_END]
+  [OPTION TEXT="선반 뒤에 숨어 시간을 보낸다." VALUE="option_112102"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1121_choice" OPTION="option_112101" TARGET="fading_affection_1122"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1121_choice" OPTION="option_112102" TARGET="fading_affection_1123"]
+
+@@@SCRIPT_ID: fading_affection_1122
+@@@SUB_TITLE: 마리아의 기록 021
+[SCENE START]
+기다릴 시간은 없다.
+그 시간에 나가서 목표 지점에 조금이라도 더 다가가야 한다.
+그렇게 생각한 마리아는 편의점 밖으로 이동했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6103"]
+
+@@@SCRIPT_ID: fading_affection_1123
+@@@SUB_TITLE: 마리아의 기록 022
+[SCENE START]
+랩쳐가 이동하는 시간에는 움직이지 않는 게 좋다.
+마리아는 공중형 랩쳐의 시야에도 걸리지 않도록 편의점에 있는 선반 뒤에 숨었다.
+윙- 윙- 윙-
+쿵- 쿵- 쿵-
+얼마나 시간이 흘렀을까.
+마리아는 랩쳐들이 움직이는 소리가 들리지 않음을 느끼고 유리창 밖으로 주변을 살피기 시작했다.
+지상, 공중 모두 랩쳐가 보이지 않는다.
+"나가자."
+마리아는 밖으로 나섰다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1111"]
+
+@@@SCRIPT_ID: fading_affection_1124
+@@@SUB_TITLE: 마리아의 기록 023
+[SCENE START]
+쿵- 쿵- 쿵- 쿵-
+주거지에 들어선 마리아는 순찰을 돌고 있는 한 무리의 랩쳐를 발견한다.
+주거지를 제대로 살펴보기 위해선, 저것들은 확실하게 잡고 가는 편이 안전하다.
+마리아는···.
+[CHOICE_START ID="fading_affection_1124_choice"]
+  [OPTION TEXT="싸워본다." VALUE="option_112401"]
+  [OPTION_END]
+  [OPTION TEXT="조금 더 지켜본다." VALUE="option_112402"]
+  [OPTION_END]
+  [OPTION TEXT="피하는 게 상책이다. 다시 돌아간다." VALUE="option_112403"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1124_choice" OPTION="option_112401" TARGET="fading_affection_1125"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1124_choice" OPTION="option_112402" TARGET="fading_affection_1126"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1124_choice" OPTION="option_112403" TARGET="fading_affection_1127"]
+
+@@@SCRIPT_ID: fading_affection_1125
+@@@SUB_TITLE: 마리아의 기록 024
+[SCENE START]
+고작 한 무리의 랩쳐라면 해볼 만하다.
+성장을 확인하기 위해서라도 싸워봐야 한다.
+마리아는 총을 고쳐 쥐고 앞으로 뛰어나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6104"]
+
+@@@SCRIPT_ID: fading_affection_1126
+@@@SUB_TITLE: 마리아의 기록 025
+[SCENE START]
+이전의 경험을 떠올리며, 마리아는 랩쳐 무리가 이동하는 것을 조금 더 관찰한다.
+쿵- 쿵- 쿵- 쿵-
+서번트급 5기, 마스터급 5기로 이루어진 지상형 랩쳐들이 먼저 지나가고, 그보다 조금 뒤에, 공중형 서번트급 랩쳐 3기와 마스터급 2기가 함께 지나가고 있었다.
+"역시··· 지상형과 공중형이 섞여있어."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1128"]
+
+@@@SCRIPT_ID: fading_affection_1127
+@@@SUB_TITLE: 마리아의 기록 026
+[SCENE START]
+아직은 싸울 수 있는 타이밍이 아닌 듯하다.
+마리아는 빠르게 미련을 버리고, 광장으로 되돌아가보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1105"]
+
+@@@SCRIPT_ID: fading_affection_1128
+@@@SUB_TITLE: 마리아의 기록 027
+[SCENE START]
+마리아는 이대로 맞서 싸울지, 아니면 다시 되돌아가면 좋을지 고민한다.
+[CHOICE_START ID="fading_affection_1128_choice"]
+  [OPTION TEXT="돌아간다." VALUE="option_112801"]
+  [OPTION_END]
+  [OPTION TEXT="지형지물을 이용해 싸워본다." VALUE="option_112802"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1128_choice" OPTION="option_112801" TARGET="fading_affection_1105"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1128_choice" OPTION="option_112802" TARGET="fading_affection_1129"]
+
+@@@SCRIPT_ID: fading_affection_1129
+@@@SUB_TITLE: 마리아의 기록 028
+[SCENE START]
+정면으로 맞서 싸우는 건 너무 위험하다고 생각한 마리아는 무작정 싸우는 건 힘들다고 판단하여, 다른 수를 내보기로 한다.
+마리아는 랩쳐들이 지나갈 경로와 그 주변 지형들을 관찰한다.
+그리고 공중형 랩쳐들이 선회하고 있는 곳 근처에 녹슨 크레인이 있다는 것을 발견한다.
+크레인을 지탱하고 있는 줄이 단 하나밖에 남아있지 않은 상황.
+"이 정도 거리라면··· 쏠 수 있어."
+마리아는 공중형 랩쳐들이 크레인 근처에 다가가는 걸 기다렸다가···.
+[CHOICE_START ID="fading_affection_1129_choice"]
+  [OPTION TEXT="줄을 향해 총을 발사한다." VALUE="option_112901"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1129_choice" OPTION="option_112901" TARGET="fading_affection_1130"]
+
+@@@SCRIPT_ID: fading_affection_1130
+@@@SUB_TITLE: 마리아의 기록 029
+[SCENE START]
+콰아앙-!
+거대한 크레인이 공중형 랩쳐를 덮치며, 바닥으로 쓰러져 내렸다.
+"지금이야···!"
+마리아는 전열이 흐트러진 틈을 노려, 공중형 랩쳐부터 지상형 랩쳐까지 차분하게 잡아 나간다.
+잠시 후.
+마리아는 순찰을 돌던 모든 랩쳐를 잡는 데 성공한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1131"]
+
+@@@SCRIPT_ID: fading_affection_1131
+@@@SUB_TITLE: 마리아의 기록 030
+[SCENE START]
+"시간이 벌써 이렇게 됐네."
+마리아는 노을이 지는 하늘을 바라본다.
+얼마 지나지 않아, 밤이 될 것 같다고 느낀다.
+마리아는 조금이라도 더 탐색해봐야 할지, 아니면 지금이라도 오늘 야영할 곳을 찾아야 할지 고민한다.
+[CHOICE_START ID="fading_affection_1131_choice"]
+  [OPTION TEXT="아직은 이르다. 좀 더 앞으로 가보자." VALUE="option_113101"]
+  [OPTION_END]
+  [OPTION TEXT="지금 당장 야영할 곳을 찾아본다." VALUE="option_113102"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1131_choice" OPTION="option_113101" TARGET="fading_affection_1132"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1131_choice" OPTION="option_113102" TARGET="fading_affection_1133"]
+
+@@@SCRIPT_ID: fading_affection_1132
+@@@SUB_TITLE: 마리아의 기록 031
+[SCENE START]
+아직 해가 완전히 지지 않았다.
+마리아는 아직 빛이 있다는 생각에, 조금 더 움직여 보기로 했다.
+하지만 얼마 지나지 않아, 해는 완전히 져 버리고 삽시간에 도시는 어두워졌다.
+시야에 들어오는 것이 아무것도 없다.
+마리아는 낭패감을 느꼈다.
+"지금이라도 야영할 곳을 찾아야···."
+그때,
+휘릭-
+"!!!"
+어디선가 뻗어온 촉수가 그녀의 몸을 낚아챘다.
+
+메모리 저장: 저장된 메모리 : 블랙스미스
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6108"]
+
+@@@SCRIPT_ID: fading_affection_1133
+@@@SUB_TITLE: 마리아의 기록 032
+[SCENE START]
+마리아는 등골이 서늘해졌다.
+이상하리만큼 마음이 초조해졌다.
+어서 도망쳐야 한다.
+안전한 곳을 찾아야 한다.
+그래야 [REDACT]저장 창고를[/REDACT] 위험한 곳을 피할 수 있어.
+마리아는···.
+[CHOICE_START ID="fading_affection_1133_choice"]
+  [OPTION TEXT="어디든 상관없어. 서둘러 들어간다." VALUE="option_113301"]
+  [OPTION_END]
+  [OPTION TEXT="초조함을 가라앉히고 천천히 찾아본다." VALUE="option_113302"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1133_choice" OPTION="option_113301" TARGET="fading_affection_1134"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1133_choice" OPTION="option_113302" TARGET="fading_affection_1135"]
+
+@@@SCRIPT_ID: fading_affection_1134
+@@@SUB_TITLE: 마리아의 기록 033
+[SCENE START]
+알 수 없는 공포가 마리아의 머리를 잠식한다.
+마리아는 서둘러 오늘 밤 머물 장소를 찾는다.
+랩쳐만 없는 곳이라면 어디든 괜찮을 것 같았다.
+마리아는 황급히 주변을 둘러보다, 랩쳐의 기척이 느껴지지 않는 건물 안으로···.
+[CHOICE_START ID="fading_affection_1134_choice"]
+  [OPTION TEXT="뛰어 들어갔다." VALUE="option_113401"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1134_choice" OPTION="option_113401" TARGET="fading_affection_6109"]
+
+@@@SCRIPT_ID: fading_affection_1135
+@@@SUB_TITLE: 마리아의 기록 034
+[SCENE START]
+아무리 급해도 오늘 하루 머무를 곳이다.
+신중하게 찾아야 한다고 판단한 마리아는 천천히 오늘 밤을 보낼 장소를 찾는다.
+그리고 조그마한 창문 정도만 나 있는, 제법 온전한 형태의 건물을 발견한다.
+"여기라면··· 괜찮을 거 같아."
+마리아는 디코이를 설치한 후, 조심스레 건물 안으로 들어갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1136"]
+
+@@@SCRIPT_ID: fading_affection_1136
+@@@SUB_TITLE: 마리아의 기록 035
+[SCENE START]
+마리아는 디코이를 설치한 후, 건물 안으로 들어가, 바닥에 주저앉았다.
+바깥은 해가 져서 한 치 앞도 보이지 않았다.
+"조금만··· 쉴까."
+마리아는 벽에 머리를 기댄 채, 눈을 감았다.
+그리고 얼마 지나지 않아, 알 수 없는 불안함에 황급히 눈을 뜬다.
+분명히 점검할 만큼 점검하고 들어왔음에도, 알 수 없는 공포가 그녀의 머릿속을 가득 메웠다.
+이 불안한 마음을 누군가를 붙잡고서라도 말하고 싶었지만···.
+"···아무도 없지."
+어둠 속에서 그녀는 혼자였다.
+마리아는 외로움에 숨이 막혀왔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1137"]
+
+@@@SCRIPT_ID: fading_affection_1137
+@@@SUB_TITLE: 마리아의 기록 036
+[SCENE START]
+마리아는 불안한 마음에 총을 움켜쥐었다.
+총을 내려놓으면 당장에라도 랩쳐가 들어올 것 같았다.
+"괜찮아··· 괜찮아. 괜찮을 거야."
+아무리 되뇌어도, 불안은 해소되지 않았다.
+눈을 감을 수조차 없었다.
+"왜 이렇게 불안한 걸까."
+이 불안한 마음이 어디에서 기인한 것인지조차 모른다는 것이 마리아를 더욱 초조하게 만들었다.
+"난 어딘가··· 고장 난 걸까···?"
+그러다 문득.
+"어차피 이 목숨에 의미도 없는데."
+"죽어서 박사님께 고쳐달라고 하는 게 낫지 않을까?"
+마리아는 움켜쥔 총을 내려다본다.
+그리고 총구를 자신의 턱 아래에 가져다 댄다.
+"당기면··· 돼. 당기면··· 되는데···."
+덜덜덜-
+마리아는 떨리는 손가락을 방아쇠에 걸었다.
+"흐으··· 흐으으으···!"
+마리아는···.
+[CHOICE_START ID="fading_affection_1137_choice"]
+  [OPTION TEXT="죽음을 두려워한다." VALUE="option_113701"]
+  [OPTION_END]
+  [OPTION TEXT="죽음을 선택한다." VALUE="option_113702"]
+  [OPTION_END]
+  [OPTION TEXT="삶을 마주한다." VALUE="option_113703"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1137_choice" OPTION="option_113701" TARGET="fading_affection_1138"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1137_choice" OPTION="option_113702" TARGET="fading_affection_1139"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1137_choice" OPTION="option_113703" TARGET="fading_affection_1140"]
+
+@@@SCRIPT_ID: fading_affection_1138
+@@@SUB_TITLE: 마리아의 기록 037
+[SCENE START]
+탕-!!
+총알이 벽에 박혔다.
+마리아는 자신이 총구로부터 고개를 피했다는 것을 깨달았다.
+"아··· 아아···!"
+죽음조차 두려워 선택할 수 없는 자신이 끔찍하게 느껴졌다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6110"]
+
+@@@SCRIPT_ID: fading_affection_1139
+@@@SUB_TITLE: 마리아의 기록 038
+[SCENE START]
+마리아는 문득, 편의점 창고에서 보았던 사냥꾼이 남긴 마지막 문구를 떠올렸다.
+[그런데 나는 왜 살고 싶어 하는 거지?]
+그리고 생각했다.
+"나는 왜 살고 싶은 걸까."
+"이런 삶에 무슨 의미가 있지?"
+아무리 고민해도 답이 떠오르지 않았다.
+[CHOICE_START ID="fading_affection_1139_choice"]
+  [OPTION TEXT="결정을 내린다." VALUE="option_113901"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1139_choice" OPTION="option_113901" TARGET="fading_affection_6111"]
+
+@@@SCRIPT_ID: fading_affection_1140
+@@@SUB_TITLE: 마리아의 기록 039
+[SCENE START]
+냐옹-
+"!!!"
+마리아는 갑작스레 들려온 소리에 놀라, 옆을 바라보았다.
+편의점에서 보았던 고양이가 그녀를 빤히 바라보고 있었다.
+"너는···."
+고양이가 다가와 그녀에게 머리를 들이밀었다.
+다리에 조그마한 삶의 온기가 느껴졌다.
+"··· ···아."
+덜그럭-
+마리아는 총을 내려놓고는, 고양이를 품에 안아 올렸다.
+먀옹-
+고양이가 얌전히 마리아의 품에 기댔다.
+따뜻한 체온이 느껴졌다.
+그녀가 살린 삶의 온기였다.
+"의미가··· 있었구나."
+"이 삶에 의미가 있었어."
+마리아는 고양이를 품은 채, 눈을 감았다.
+더 이상 불안하지도 무섭지도 않았다.
+
+메모리 저장: 저장된 메모리 : 삶의 온기
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1141"]
+
+@@@SCRIPT_ID: fading_affection_1141
+@@@SUB_TITLE: 마리아의 기록 040
+[SCENE START]
+냐옹-
+"!!!"
+마리아는 눈을 떴다.
+창문으로 햇빛이 쏟아져 내렸다.
+"아침···?"
+마리아는 자신이 깊게 잠들었다는 것을 깨달았다.
+마리아는 옆에 앉아있는 고양이의 머리를 살살 쓰다듬었다.
+"고마워. 덕분에 잘 잤어."
+고양이가 일어나, 밖으로 유유히 뛰어나간다.
+마리아는 그 모습을 한참 동안 바라보다, 총을 챙겨 들었다.
+"다시 가보자."
+[CHOICE_START ID="fading_affection_1141_choice"]
+  [OPTION TEXT="밖으로 나간다." VALUE="option_114101"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1141_choice" OPTION="option_114101" TARGET="fading_affection_1142"]
+
+@@@SCRIPT_ID: fading_affection_1142
+@@@SUB_TITLE: 마리아의 기록 041
+[SCENE START]
+냐옹-
+마리아가 밖으로 나오자, 기다렸다는 듯 고양이가 그녀를 반긴다.
+"아직 안 갔구나?"
+고양이는 마리아를 보고 다시 울고는, 어딘가를 향해 걸어갔다.
+먕-
+그리고 다시 뒤를 돌아 그녀를 바라보고 울었다.
+"따라··· 오라는 건가?"
+먀앙-
+마리아는 고양이를 따라 걸음을 옮겼다.
+그리고···.
+"이 길은···."
+[호수 산책로]라고 적힌, 오솔길을 발견한다.
+마리아는 놀라 고양이를 내려다보았지만,
+"어디 갔지···?"
+아무리 둘러봐도 고양이는 보이지 않았다.
+"··· ···."
+마리아는 이 길을 따라가보기로 했다.
+
+메모리 저장: 저장된 메모리 : 오솔길
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1202"]
+
+@@@SCRIPT_ID: fading_affection_1143
+@@@SUB_TITLE: 마리아의 기록 042
+[SCENE START]
+마리아는 호수로 가는 큰 도로를 발견한다.
+호수를 지나면 임무 목표 지점까지 빠르게 갈 수 있다.
+다만, 아무리 봐도 랩쳐에게 습격을 당할 경우 숨을 곳은 보이지 않았다.
+마리아는 고민했다.
+위험을 감수하고서라도 돌파해야 하는가, 다른 길로 안전하게 가야 하는가.
+마리아는···.
+[CHOICE_START ID="fading_affection_1143_choice"]
+  [OPTION TEXT="큰 도로를 나아간다." VALUE="option_114301"]
+  [OPTION_END]
+  [OPTION TEXT="랩쳐가 나타나길 기다리다 멀리서 저격한다." VALUE="option_114302"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1143_choice" OPTION="option_114301" TARGET="fading_affection_1144"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1143_choice" OPTION="option_114302" TARGET="fading_affection_1145"]
+
+@@@SCRIPT_ID: fading_affection_1144
+@@@SUB_TITLE: 마리아의 기록 043
+[SCENE START]
+"일단 가보자."
+어차피 죽음은 자신에겐 큰 문제가 되지 않기에 마리아는 일단 도전해보기로 한다.
+시도를 해보는 것만으로도 좋은 경험이 될 것이다.
+마리아는 그렇게 결심하고 큰 도로를 달려나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1147"]
+
+@@@SCRIPT_ID: fading_affection_1145
+@@@SUB_TITLE: 마리아의 기록 044
+[SCENE START]
+이전의 경험으로 큰 도로에 무작정 들어가는 건 무모하다고 판단한 마리아는 엄폐물로 삼을 만한 곳이 있는 입구 근처에서 저격해 보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1150"]
+
+@@@SCRIPT_ID: fading_affection_1147
+@@@SUB_TITLE: 마리아의 기록 045
+[SCENE START]
+넓은 도로를 얼마 동안 달려나갔을까.
+윙- 윙- 윙- 윙-
+마리아는 자신의 머리 위로 공중형 랩쳐들이 몰려들고 있음을 느꼈다.
+"생각보다··· 너무 빨라."
+마리아는 이대로 계속 달려야 할지 맞서 싸워야 할지 고민한다.
+[CHOICE_START ID="fading_affection_1147_choice"]
+  [OPTION TEXT="싸운다." VALUE="option_114701"]
+  [OPTION_END]
+  [OPTION TEXT="미친 듯이 뛴다." VALUE="option_114702"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1147_choice" OPTION="option_114701" TARGET="fading_affection_1148"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1147_choice" OPTION="option_114702" TARGET="fading_affection_1149"]
+
+@@@SCRIPT_ID: fading_affection_1148
+@@@SUB_TITLE: 마리아의 기록 046
+[SCENE START]
+마리아는 몰려드는 공중형 랩쳐와 맞서기 위해 자리에 멈춰 서서 뒤를 돌아보았다.
+하지만.
+황량한 도로 위엔, 엄폐할 마땅한 공간이 보이지 않았다.
+[CHOICE_START ID="fading_affection_1148_choice"]
+  [OPTION TEXT="엄폐할 곳을 좀 더 찾아본다!" VALUE="option_114801"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1148_choice" OPTION="option_114801" TARGET="fading_affection_6105"]
+
+@@@SCRIPT_ID: fading_affection_1149
+@@@SUB_TITLE: 마리아의 기록 047
+[SCENE START]
+맞서 싸워선 안 돼. 이길 수 없어.
+마리아는 이번엔 미친 듯이 뛰어 도로의 끝까지 달려가 보기로 한다.
+지난번에 이곳에서 죽었기 때문인지, 몰려드는 랩쳐의 소리가 소름 돋게 느껴졌다.
+마리아는 전방을 주시한다.
+그리고···.
+[CHOICE_START ID="fading_affection_1149_choice"]
+  [OPTION TEXT="조금 더 빠르게 달려본다." VALUE="option_114901"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1149_choice" OPTION="option_114901" TARGET="fading_affection_6106"]
+
+@@@SCRIPT_ID: fading_affection_1150
+@@@SUB_TITLE: 마리아의 기록 048
+[SCENE START]
+마리아는 입구 근처, 관리 건물 분리수거통 근처에 몸을 숨긴다.
+그동안의 경험대로, 공중형 랩쳐 무리가 순찰하듯 다가오고 있음을 느꼈다.
+"불안해···."
+지난번 죽은 기억 때문인지, 알 수 없이 불안해진 마리아는···.
+[CHOICE_START ID="fading_affection_1150_choice"]
+  [OPTION TEXT="랩쳐가 보이는 즉시 저격한다." VALUE="option_115001"]
+  [OPTION_END]
+  [OPTION TEXT="불안함을 참고 미끼를 던진다." VALUE="option_115002"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1150_choice" OPTION="option_115001" TARGET="fading_affection_1151"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1150_choice" OPTION="option_115002" TARGET="fading_affection_1152"]
+
+@@@SCRIPT_ID: fading_affection_1151
+@@@SUB_TITLE: 마리아의 기록 049
+[SCENE START]
+알 수 없는 불안함에 초조해진 마리아는 공중형 랩쳐가 육안으로 들어오자마자 방아쇠를 당겼다.
+탕-!
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6107"]
+
+@@@SCRIPT_ID: fading_affection_1152
+@@@SUB_TITLE: 마리아의 기록 050
+[SCENE START]
+"침착해야 해···."
+마음을 다잡은 마리아는 침착하게, 분리수거통 안에 있는 병을 들어 전방을 향해 던졌다.
+쨍그랑-!!
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1153"]
+
+@@@SCRIPT_ID: fading_affection_1153
+@@@SUB_TITLE: 마리아의 기록 051
+[SCENE START]
+투두두두두-
+마리아는 부서진 병을 향해 몰려드는 공중형 랩쳐들을 하나씩 처리해 나갔다.
+그리고 긴 사투 끝에, 마침내 모든 공중형 랩쳐를 잡아내는 데 성공한다.
+"드디어··· 잡았다!"
+마리아는 알 수 없는 고양감을 느꼈다.
+신중하게 주위를 살핀 마리아는···.
+[CHOICE_START ID="fading_affection_1153_choice"]
+  [OPTION TEXT="앞으로 나아간다." VALUE="option_115301"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1153_choice" OPTION="option_115301" TARGET="fading_affection_1154"]
+
+@@@SCRIPT_ID: fading_affection_1154
+@@@SUB_TITLE: 마리아의 기록 052
+[SCENE START]
+길의 끝을 향해 마리아는 한참을 걸었다.
+다행히, 그 이후 마리아를 덮쳐오는 랩쳐는 없었다.
+하지만···.
+"길이 끊겨 있네."
+거대한 구덩이가 있어, 더는 앞으로 나아갈 수 없었다.
+마리아는 호수로 갈 수 없어 아쉽긴 했지만, 궁금했던 길의 끝을 봤다는 것에 뿌듯함을 느끼기도 했다.
+"돌아가자."
+마리아는 광장으로 되돌아간다.
+
+메모리 저장: 저장된 메모리 : 큰 도로의 끝
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1105"]
+
+@@@SCRIPT_ID: fading_affection_1201
+@@@SUB_TITLE: 마리아의 기록 053
+[SCENE START]
+마리아는 지금까지 저장된 메모리를 이용해 호수로 가는 최적의 루트를 찾아낸다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1202"]
+
+@@@SCRIPT_ID: fading_affection_1202
+@@@SUB_TITLE: 마리아의 기록 054
+[SCENE START]
+짧지 않은 길을 따라, 한참을 걸은 마리아는 마침내 햇살에 반짝이고 있는, 거대한 호수를 발견한다.
+마리아는···.
+[CHOICE_START ID="fading_affection_1202_choice"]
+  [OPTION TEXT="풍경을 둘러볼 시간은 없다. 앞으로 간다." VALUE="option_120201"]
+  [OPTION_END]
+  [OPTION TEXT="호수의 풍경을 바라본다." VALUE="option_120202"]
+  [OPTION_END]
+  [OPTION TEXT="목표 지점과 반대 방향으로 달린다." VALUE="option_120203"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1202_choice" OPTION="option_120201" TARGET="fading_affection_1203"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1202_choice" OPTION="option_120202" TARGET="fading_affection_1204"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1202_choice" OPTION="option_120203" TARGET="fading_affection_1205"]
+
+@@@SCRIPT_ID: fading_affection_1203
+@@@SUB_TITLE: 마리아의 기록 055
+[SCENE START]
+목표 지점과 조금 더 가까워졌다는 것에 의욕을 낸 마리아는 서둘러 앞으로 향했다.
+호수 근처 역시 랩쳐 무리가 있었으나 그동안의 전투 경험을 살려, 무리 없이 앞으로 나아갈 수 있었다.
+그때,
+쿵- 쿵- 쿵- 쿵-
+거대한 움직임에 마리아는 고개를 들어 정면을 바라보았다.
+"!!!"
+블랙스미스가 마리아를 향해 다가오고 있었다.
+"블랙스미스가··· 여기에도 있었구나."
+마리아는 총을 고쳐 쥐었-
+
+메모리 저장: 저장된 메모리 : 호수의 랩쳐
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1209"]
+
+@@@SCRIPT_ID: fading_affection_1204
+@@@SUB_TITLE: 마리아의 기록 056
+[SCENE START]
+호수에 있는 랩쳐들을 떠올린 마리아는 또다시 죽고 살아남으며, 랩쳐들을 쓰러뜨려야 한다는 것에 알 수 없는 막막함을 느꼈다.
+"잠시만··· 쉬자."
+마리아는 이 막막함을 덜어내기 위해, 반짝이는 호수를 멍하니 바라보았다.
+마리아의 상황과 다르게, 호수는 찬란히 빛나고 있었다.
+그때,
+삐이- 삐이이-
+가느다란 새소리가 들려왔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1206"]
+
+@@@SCRIPT_ID: fading_affection_1205
+@@@SUB_TITLE: 마리아의 기록 057
+[SCENE START]
+마리아는 불현듯, 이대로 반복해서는 안 된다는 생각이 들었다.
+이 끝없는 죽음의 굴레에서 벗어나 자유롭고 싶어졌다.
+마지막으로 반짝이는 호수를 바라본 마리아는 임무 목표와 반대 방향으로 뛰어나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1210"]
+
+@@@SCRIPT_ID: fading_affection_1206
+@@@SUB_TITLE: 마리아의 기록 058
+[SCENE START]
+마리아는 황급히 주위를 둘러보았다.
+멀지 않은 나무 위에, 작은 새가 날개를 퍼덕이고 있는 것이 보였다.
+자세히 바라보자, 나뭇가지에 묶여 있는 나일론 끈에 발이 걸려있는 모습이 보였다.
+"구해야 하는데···."
+나뭇가지의 위치가 호수 쪽에 쏠려 있다.
+잘못 발을 헛디디면 바로 호수에 빠질 것만 같았다.
+마리아는···.
+[CHOICE_START ID="fading_affection_1206_choice"]
+  [OPTION TEXT="새를 구한다." VALUE="option_120601"]
+  [OPTION_END]
+  [OPTION TEXT="새를 구하지 않는다." VALUE="option_120602"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1206_choice" OPTION="option_120601" TARGET="fading_affection_1207"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1206_choice" OPTION="option_120602" TARGET="fading_affection_1208"]
+
+@@@SCRIPT_ID: fading_affection_1207
+@@@SUB_TITLE: 마리아의 기록 059
+[SCENE START]
+마리아는 새를 구하기 위해 나무를 향해 달려갔다.
+그리고 몸을 호수 쪽으로 한껏 기울인 채, 나뭇가지에 걸린 끈을 풀어내기 시작했다.
+삐이- 삐이이-
+"좋아, 다 풀었다···!"
+마리아가 끈을 풀어냄과 동시에,
+파드득-
+새가 날개를 퍼덕였다.
+"앗···?!"
+휘청-
+마리아의 몸이 호수 쪽으로 완전히 기울었다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6112"]
+
+@@@SCRIPT_ID: fading_affection_1208
+@@@SUB_TITLE: 마리아의 기록 060
+[SCENE START]
+임무를 수행하기 위해, 이 이상의 변수가 있어선 안 된다고 판단한 마리아는 호수에서 시선을 떼고 앞을 향해 나아갔다.
+그리고···.
+쿵- 쿵- 쿵- 쿵-
+다가오는 블랙스미스를 마주한다.
+"또 당할 수는 없어···!"
+마리아는 총을 고쳐 쥐었-
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_1209"]
+
+@@@SCRIPT_ID: fading_affection_1209
+@@@SUB_TITLE: 마리아의 기록 061
+[SCENE START]
+푹-
+마리아는 자신의 몸에 박힌 블랙스미스의 촉수를 바라보았다.
+"윽···!"
+황급히 몸에서 촉수를 떼어낸 마리아가 정신을 다잡으며 블랙스미스와 맞서 싸우기 시작했다.
+"어떻게든 잡아야 해···!"
+그렇게 시간이 흘렀다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_7101"]
+
+@@@SCRIPT_ID: fading_affection_1210
+@@@SUB_TITLE: 마리아의 기록 062
+[SCENE START]
+마리아는 생각했다.
+이것이 옳은 선택인가?
+지금이라도 돌아가야 하지 않나?
+[마리아-]
+이제 더 이상 박사님은 자신의 임무를 실시간으로 지켜보고 있지 않다는 것을 알면서도 마리아는 자꾸만, 박사의 목소리가 들리는 것 같았다.
+마리아는···.
+[CHOICE_START ID="fading_affection_1210_choice"]
+  [OPTION TEXT="자리에 멈춰 선다." VALUE="option_121001"]
+  [OPTION_END]
+  [OPTION TEXT="계속해서 뛰어간다." VALUE="option_121002"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1210_choice" OPTION="option_121001" TARGET="fading_affection_1211"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1210_choice" OPTION="option_121002" TARGET="fading_affection_1212"]
+
+@@@SCRIPT_ID: fading_affection_1211
+@@@SUB_TITLE: 마리아의 기록 063
+[SCENE START]
+마리아는 자리에 멈춰 섰다.
+"헉··· 허억··· 콜록, 콜록···!"
+니케의 바디는 이렇게 뛴 정도로 숨을 몰아쉬지 않을 것을 알고 있음에도 마리아는 이상하리만큼 숨이 막히는 기분이 들었다.
+[마리아-n!]
+귓가에 마리아 박사의 목소리가 선명하게 들렸다.
+"박사님···?"
+[너 지금 어디야. 왜 거기까지···!]
+"오늘은 보고··· 계셨군요."
+[뭐?]
+[그거야··· 요즘 네가 이상했으니까···.]
+당황한 목소리를 듣고 마리아는 생각했다.
+멈추길 잘했다.
+당신을 배신하지 않길 잘했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_8101"]
+
+@@@SCRIPT_ID: fading_affection_1212
+@@@SUB_TITLE: 마리아의 기록 064
+[SCENE START]
+마리아는 자리에 멈춰 서면, 임무 지역으로 되돌아가면, 잊고 있었던 공포가 떠오를 것만 같았다.
+하지만, 그와 함께 어떤 기억이 떠오른다.
+[다시 한번 잘 부탁해. 마리아-2.]
+[···응? 네 이름?]
+[어··· 나를 베이스로 만든 거니까 그렇게 지었지?]
+기억이 떠오를수록, 마리아의 발걸음이 느려진다.
+[마리아-]
+귓가에는 계속 마리아 박사의 목소리가 들려오는 것 같다.
+마리아는 망설인다.
+[CHOICE_START ID="fading_affection_1212_choice"]
+  [OPTION TEXT="자리에 멈춰 선다." VALUE="option_121201"]
+  [OPTION_END]
+  [OPTION TEXT="계속해서 뛰어간다." VALUE="option_121202"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1212_choice" OPTION="option_121201" TARGET="fading_affection_1211"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1212_choice" OPTION="option_121202" TARGET="fading_affection_1213"]
+
+@@@SCRIPT_ID: fading_affection_1213
+@@@SUB_TITLE: 마리아의 기록 065
+[SCENE START]
+마리아는 생각했다.
+명확히 기억나지 않지만, 자신이 겪었을 수많은 죽음들을, 그 이후에 찾아올 끝없는 시작의 허무함을 떠올렸다.
+수송기에서 내려, 다시 무한한 죽음으로 나아갈 자신의 미래가 가여웠다.
+아무것도 남기지 못하고, 아무와도 이야기할 수 없고, 아무 의미 없는, 죽음을 위한 삶.
+마리아는 그것이 너무나도 지긋지긋하게 느껴졌다.
+하지만, 그와 함께 어떤 기억이 떠오른다.
+[응? 왜 1부터가 아니냐고?]
+[그야, 1은 나니까? 아하하.]
+그날, 쑥스러움을 숨기던 웃음을 기억한다.
+그날의 따뜻함을, 목소리를 기억한다.
+[우리는 이제 운명공동체야.]
+나의 운명공동체. 나의 창조주. 나의 어머니.
+또 다른 나.
+[마리아-]
+귓가에 나의 목소리가 들린다.
+"하아··· 하아···!"
+마리아는 임무 지역의 끝을 눈앞에 둔다.
+이곳이 끝이다.
+여기서 한 발자국만 더 넘으면, 지도 밖으로, 임무 지역 밖으로 나갈 수 있다.
+마리아는···!
+[CHOICE_START ID="fading_affection_1213_choice"]
+  [OPTION TEXT="자리에 멈춰 선다." VALUE="option_121301"]
+  [OPTION_END]
+  [OPTION TEXT="계속해서 뛰어간다." VALUE="option_121302"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1213_choice" OPTION="option_121301" TARGET="fading_affection_1211"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_1213_choice" OPTION="option_121302" TARGET="fading_affection_1214"]
+
+@@@SCRIPT_ID: fading_affection_1214
+@@@SUB_TITLE: 마리아의 기록 066
+[SCENE START]
+이것은 배신이다.
+그것을 알고 있음에도 마리아는,
+"흑··· 죄송해요··· 정말 죄송해요···!"
+슬픔, 그리움, 미안함, 죄책감을 품에 안은 채, 동경했던 자유를 향해, 임무 지역 밖으로 뛰어나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_9101"]
+
+@@@SCRIPT_ID: fading_affection_6101
+@@@SUB_TITLE: 방심의 끝
+[SCENE START]
+DEATH END
+
+콰드드득-
+건물을 뛰어넘어, 마리아의 머리 위로 지상형 랩쳐가 떨어져 내린다.
+마리아는 비명도 제대로 내지르지 못한 채, 랩쳐에게 짓밟혀 죽는다.
+
+메모리 저장: 저장된 메모리 : 습격
+
+힌트: 지상에서 방심은 금물이다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6102
+@@@SUB_TITLE: 사냥꾼의 방
+[SCENE START]
+DEATH END
+
+휘익- 퍽-!!
+마리아의 머리에 화살이 날아와 박혔다.
+마리아의 몸이 바닥으로 무너져 내린다.
+어둠 속에 익숙해진 마리아의 눈이, 창고 구석의 벽에 숨겨져 있던 석궁 함정과 그 아래 몸을 웅크리고 있는 사냥꾼의 실루엣을 발견한다.
+먀옹-
+그 옆에서 웅크리고 있던 고양이가 눈을 떠, 마리아를 바라본다.
+마리아는 그 눈을 바라보다 의식을 잃었다.
+
+메모리 저장: 저장된 메모리 : 덫
+
+힌트: 어두운 곳에 들어갈 땐 주변부터 살피자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6103
+@@@SUB_TITLE: 도둑 잡기
+[SCENE START]
+DEATH END
+
+마리아는 편의점 밖으로 고개를 내밀어, 랩쳐가 다가오고 있는 방향을 바라보았다.
+"아직··· 거리가 있어. 움직이자."
+마리아는 빠르게 밖으로 뛰쳐나왔-
+키잉-
+"!!!"
+공중형 랩쳐가 마리아에게 총구를 겨누고 있었다.
+[REDACT]무서워[/REDACT]
+"···아."
+탕-!
+마리아의 바디가 꿰뚫린다.
+
+메모리 저장: 저장된 메모리 : 순찰 시간
+
+힌트: 랩쳐의 이동 시간을 피해 움직이자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6104
+@@@SUB_TITLE: 보이는 게 다가 아니야
+[SCENE START]
+DEATH END
+
+마리아는 그동안의 수많은 죽음으로 익힌 전투 노하우를 이용하여 한 무리의 랩쳐들을 처치하는 데 성공한다.
+"해냈···!"
+하지만,
+"어···?"
+쾅-!!
+건물 뒤편에 가려져 다가오는 것이 보이지 않았던 공중형 랩쳐들이 마리아를 공격해온다.
+털썩-
+"공중형도 있었··· 구나···."
+마리아는 결국 공중형 랩쳐의 공격으로 복부가 꿰뚫려 사망한다.
+
+메모리 저장: 저장된 메모리 : 무리 이동
+
+힌트: 랩쳐의 수를 정확히 파악해야 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6105
+@@@SUB_TITLE: 피할 곳은 없다
+[SCENE START]
+DEATH END
+
+"이런···!"
+마리아가 채 엄폐하기도 전에, 공중형 랩쳐들은 끝없이 쏟아져 내렸다.
+마리아는 안간힘을 다해 그들과 맞서려 했으나, 결국 얼마 지나지 않아 랩쳐의 빔에 코어를 꿰뚫려 죽는다.
+
+메모리 저장: 저장된 메모리 : 큰 도로
+
+힌트: 큰 도로 중앙에는 엄폐할 곳이 없다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6106
+@@@SUB_TITLE: 체력의 한계
+[SCENE START]
+DEATH END
+
+언제까지 뛰어야 하지?
+앞뒤로 몰려드는 공중형 랩쳐들을 피해 뛰느라, 마리아는 생각했던 것보다 더 오랜 시간 뛰어다녀야 했다.
+니케는 숨이 차지 않을 것임에도, 이상하게 숨이 차는 것처럼 힘들게 느껴졌다.
+한계에 다다른 체력이 마리아에게 무기력함을 가져다주었다.
+그만하고 싶다.
+그런 생각이 든 마리아는 자리에 멈춰 섰다.
+"이 방법은 실패했네."
+"다시 하자."
+마리아는 하늘을 바라본다.
+윙- 윙- 윙-
+공중형 랩쳐들이 몰려와, 마리아에게 총구를 겨눈다.
+[REDACT]무서워[/REDACT]
+"···어?"
+푸슝-!
+랩쳐의 빔이 마리아의 머리를 꿰뚫는다.
+
+메모리 저장: 저장된 메모리 : 체력 관리
+
+힌트: 체력 관리는 필수다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6107
+@@@SUB_TITLE: 거리 조절 가능하신가요?
+[SCENE START]
+DEATH END
+
+하지만, 마리아가 갖고 있는 총으로는 공중형 랩쳐가 있는 곳까지 사거리가 닿지 않았다.
+"이런···!"
+오히려 자신의 위치만 노출시킨 상황에, 허둥거리는 마리아.
+그 순간,
+푸슝-
+랩쳐의 빔이 마리아의 머리를 꿰뚫었다.
+
+메모리 저장: 저장된 메모리 : 사거리
+
+힌트: 갖고 있는 총으로 어디까지 닿을 수 있을지 잘 파악하자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6108
+@@@SUB_TITLE: 밤길 조심
+[SCENE START]
+DEATH END
+
+텁썩.
+블랙스미스 안에 몸이 삼켜진다.
+콰드득-
+몸이 우그러진다.
+치이익-
+몸이 녹아내린다.
+[REDACT]살갗이 머리가 얼굴이 온몸이 녹아내려[/REDACT]
+죽음이 마리아를 느릿하게 좀먹는다.
+[REDACT]무서워[/REDACT]무[REDACT]서워무서워무[/REDACT]서[REDACT]워무서워무서[/REDACT]워
+[REDACT]아파아파아파아파아파아파아파아파아파!![/REDACT]
+[REDACT]죽고 싶어 제발 나를[/REDACT]
+마리아는 의식을 잃었다.
+
+메모리 저장: 삭제된 메모리 : 저장 창고
+
+힌트: 밤이 되기 전에 야영지를 찾아보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6109
+@@@SUB_TITLE: 부동산은 신중히
+[SCENE START]
+DEATH END
+
+"허억··· 허억···!"
+마리아는 숨을 몰아쉬었다.
+여기라면 괜찮겠지?
+불안한 마음에 서성거리다,
+우당탕- 쿵-!
+균형을 잃고 넘어져 기둥에 몸을 부딪혔다.
+후드득-
+마리아의 머리 위로 돌이 떨어져 내렸다.
+"돌···?"
+마리아가 천장을 바라본다.
+쩌저적-
+조금 전 기둥에 가해진 충격 때문인지 천장에 균열이 점점 넓어지고 있었다!
+"여기서 나가야···!"
+쿠르릉-!!
+채 피할 새도 없이, 마리아의 머리 위로 천장이 쏟아져 내렸다.
+
+메모리 저장: 저장된 메모리 : 무너지는 천장
+
+힌트: 아무리 급해도 머물 곳은 신중히 찾아야 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6110
+@@@SUB_TITLE: 선택하지 못한 자
+[SCENE START]
+DEATH END
+
+"죽는 것조차 제대로 못하다니."
+쿵- 쿵- 쿵- 쿵-
+멀리서 총소리를 듣고 랩쳐가 몰려드는 것이 들려왔다.
+"어차피··· 죽을 텐데."
+철컥-
+마리아는 다시 한번 총구를 머리 아래에 가져다 댔지만.
+덜덜덜덜-
+이번에도 쏘지 못했다.
+"하하··· 하하하하···!"
+마리아는 울듯이 웃었다.
+그리고 얼마 뒤, 주변을 돌아다니던 랩쳐 중 하나가,
+쿠우웅-
+마리아가 있는 건물 위로 착지한다.
+콰드득-
+죽음이 그녀의 위에 내려앉았다.
+
+메모리 저장: 저장된 메모리 : 총소리
+
+힌트: 숨어 있을 때 총소리는 금물!
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6111
+@@@SUB_TITLE: 삶의 추락
+[SCENE START]
+DEATH END
+
+이 삶에 의미는 없다.
+마리아는 그렇게 결론을 내렸다.
+이상하게도, 삶의 무게가 가벼워질수록 죽음이 가볍게 느껴졌다.
+더 이상 아무것도 두렵지 않았다.
+마리아는 웃었다.
+"이런··· 거였구나."
+"편의점의 그 사람도··· 이런 마음이었겠구나."
+탕-!
+마리아는 결국 방아쇠를 당겼다.
+삶이 추락했다.
+
+메모리 저장: 삭제된 메모리 : 낙하
+
+힌트: 삶이 반짝이는 순간을 찾아보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_6112
+@@@SUB_TITLE: 날아오르는 새
+[SCENE START]
+DEATH END
+
+마리아가 풀어낸 끈이 허공에 흩날린다.
+파드득-
+새가 모든 구속을 벗어버리고 빛을 향해, 하늘을 향해 날아오른다.
+마리아는 그 자유로운 모습에, 그 반짝이는 아름다움에 멍하니 하늘을 바라보았다.
+풍덩-
+무거운 바디가 호수에 가라앉아, 숨이 막혀 의식을 잃을 때까지, 그 광경에서 눈을 떼지 못했다.
+
+메모리 저장: 삭제된 메모리 : 자유
+
+힌트: 나아갈 선택지는 두 개가 아닐 수 있다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_7101
+@@@SUB_TITLE: 잡■야 ■?
+[SCENE START]
+404 ERROR
+
+블랙스미스와 맞서 싸우던 마리아가 중얼거린다.
+"잡아야 해."
+계속해서 중얼거린다.
+"잡아야 해. 잡아야 해. 잡아야 해. 잡아야 해."
+마리아가 총을 내린다.
+"잡아야 해."
+쿵- 쿵- 쿵- 쿵-
+마리아의 주위로 랩쳐들이 몰려든다.
+랩쳐들이 마리아를 들어올린다.
+마리아는 저항하지 않는다.
+쿵- 쿵- 쿵- 쿵-
+랩쳐들이 마리아를 짊어진 채 떠나간다.
+멍하니 허공을 바라보는 마리아의 눈은 어느새 붉게 물들어 있었다.
+
+힌트: 블랙스미스의 촉수를 조심해라.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_8101
+@@@SUB_TITLE: 운명공동체
+[SCENE START]
+TRUE END
+
+"박사님. 이 기억은 지워주세요."
+"당신을 배신하려고 했어요."
+[그게 무슨···.]
+마리아가 총을 들어올렸다.
+철컥-
+[마리아-n···?]
+그리고 턱 밑에 가져다 댔다.
+"박사님."
+"우린 여전히 운명공동체인가요?"
+목소리가 멈췄다.
+그리고 조금 뒤,
+[···그래.]
+마리아는 활짝 웃었다.
+"다행이에요."
+방아쇠를 당겼다.
+탕-!
+
+메모리 저장: 삭제된 메모리 : 배신
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_9101
+@@@SUB_TITLE: 굴레를 벗어난 나비
+[SCENE START]
+HIDDEN END
+
+마리아는 산을 향해 달린다.
+굴레를 넘어 필사적으로 위를 향해 달려나간다.
+"하하··· 하하하··· 아하하하하!!"
+두 눈 한가득 눈물을 매단 채, 자유를 갈망한 나비가, 마침내 창살 밖으로 날아올랐다.
+더 이상 마리아 박사의 목소리가 들려오지 않았다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_11"]
+
+@@@SCRIPT_ID: fading_affection_2101
+@@@SUB_TITLE: 마리안의 기록 001
+[SCENE START]
+마리안은 수백 번을 돌아봤을, 구도심을 바라보았다.
+흔적조차 남아있지 않을 자신의 죽음과 수많은 외로운 순간들을 떠올렸다.
+하지만 지금은 이전과 다르다.
+"갈까?"
+혼자가 아니야.
+마리안과 지휘관은 앞으로 향했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2102"]
+
+@@@SCRIPT_ID: fading_affection_2102
+@@@SUB_TITLE: 마리안의 기록 002
+[SCENE START]
+쿵- 쿵- 쿵- 쿵-
+구도심에 들어온 마리안은 익숙한 진동을 느낀다.
+[CHOICE_START ID="fading_affection_2102_choice"]
+  [OPTION TEXT="공격한다." VALUE="option_210201"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="경계한다." VALUE="option_210202"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2102_choice" OPTION="option_210201" TARGET="fading_affection_2103"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2102_choice" OPTION="option_210202" TARGET="fading_affection_2104"]
+
+@@@SCRIPT_ID: fading_affection_2103
+@@@SUB_TITLE: 마리안의 기록 003
+[SCENE START]
+투두두두두-
+마리안은 수십, 수백 번을 잡아봤던 기억을 떠올리며, 능숙하게 랩쳐 1기를 해치우는 데 성공한다.
+"정리됐네요. 지휘관 이쪽으로···."
+"마리안, 조심해!"
+"!!"
+탕-! 탕탕!!
+지휘관이 뒤이어 떨어져 내리는 랩쳐를 향해 총을 쐈다.
+"한 기가 더 있었다니···!"
+마리안도 뒤이어 랩쳐를 향해 총을 쐈다.
+쿠우웅-
+얼마 지나지 않아, 랩쳐가 쓰러진다.
+"죄송해요.
+지금까지는 늘 1기만 나타났어서···."
+마리안은 자책했다.
+이렇게 또 방심하다니. 혼자 있었다면, 분명 아무것도 못한 채 죽었을 거다.
+"괜찮아. 이게 둘이 함께 다니는 장점 아니겠어?"
+지휘관이 웃었다.
+"둘···."
+
+메모리 저장: 저장된 메모리 : 동행
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2106"]
+
+@@@SCRIPT_ID: fading_affection_2104
+@@@SUB_TITLE: 마리안의 기록 004
+[SCENE START]
+지상에서 방심은 금물이다.
+마리안은 지휘관을 이끌며 근처의 엄폐물을 찾아, 빠르게 몸을 숨겼다.
+쿠우웅-
+건물을 뛰어넘어, 지상형 랩쳐 1기가 나타난다.
+"역시··· 또···!"
+그리고 얼마 지나지 않아.
+쿠우우웅-!!
+두 번째 랩쳐가 나타난다.
+"2기였다니···!"
+마리안은 등골이 서늘해지는 감각을 느끼며, 지휘관과 함께 랩쳐 2기를 물리쳤다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2105"]
+
+@@@SCRIPT_ID: fading_affection_2105
+@@@SUB_TITLE: 마리안의 기록 005
+[SCENE START]
+"이전과 또 달라졌네요."
+"방심하지 말아야겠어요."
+마리안이 단호하게 이야기했다.
+"응. 믿고 있을게."
+지휘관이 끄덕였다.
+마리안은 강한 책임감을 느끼며, 앞으로 나아갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2107"]
+
+@@@SCRIPT_ID: fading_affection_2106
+@@@SUB_TITLE: 마리안의 기록 006
+[SCENE START]
+"그럼 앞으로 갈까?"
+지휘관이 앞으로 나아갔다.
+마리안은 그 모습을 바라보며 알 수 없는 술렁거림을 느끼다, 함께 걸어갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2107"]
+
+@@@SCRIPT_ID: fading_affection_2107
+@@@SUB_TITLE: 마리안의 기록 007
+[SCENE START]
+마리안은 지휘관과 함께 익숙한 광장에 도착한다.
+마리안은 호수로 가기 위해···.
+[CHOICE_START ID="fading_affection_2107_choice"]
+  [OPTION TEXT="오솔길로 향한다." VALUE="option_210701"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="어떻게 가는 거였지?" VALUE="option_210702"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2107_choice" OPTION="option_210701" TARGET="fading_affection_2108"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2107_choice" OPTION="option_210702" TARGET="fading_affection_2109"]
+
+@@@SCRIPT_ID: fading_affection_2108
+@@@SUB_TITLE: 마리안의 기록 008
+[SCENE START]
+호수로 서둘러 가려는 마리안에게 지휘관이 묻는다.
+"혹시 들렀다 가야 할 곳은 없어?"
+마리안은···.
+[CHOICE_START ID="fading_affection_2108_choice"]
+  [OPTION TEXT="고양이가 있는지 확인하러 편의점에 가본다." VALUE="option_210801"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="없다. 갈 길을 서두르자." VALUE="option_210802"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2108_choice" OPTION="option_210801" TARGET="fading_affection_2110"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2108_choice" OPTION="option_210802" TARGET="fading_affection_2111"]
+
+@@@SCRIPT_ID: fading_affection_2109
+@@@SUB_TITLE: 마리안의 기록 009
+[SCENE START]
+마리안이 다급하게 외쳤다.
+"지휘관. 큰일이에요···!"
+"호수로 가는 길이 기억나지 않아요!"
+지휘관이 벙쪄서 대답했다.
+"···응?"
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6201"]
+
+@@@SCRIPT_ID: fading_affection_2110
+@@@SUB_TITLE: 마리안의 기록 010
+[SCENE START]
+"고양이··· 를 보고 싶은데···."
+"고양이?"
+"호수로 가는 길을 알려준 고양이가 있거든요.
+그 애가 잘 있는지 보고 가면 좋을 것 같지만···."
+마리안이 망설였다.
+"그래도··· 호수로 서둘러 가는 쪽이 맞지 않을까요?"
+그 망설임에 지휘관이 대답했다.
+"서두를 것 없잖아. 보고 싶으면 보고 가야지."
+"고마··· 워요."
+"안내 부탁해."
+마리안은 지휘관을 이끌고, 익숙한 상업시설로 향한다.
+그리고 익숙한 편의점을 발견한다.
+"들어갈게요."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2112"]
+
+@@@SCRIPT_ID: fading_affection_2111
+@@@SUB_TITLE: 마리안의 기록 011
+[SCENE START]
+"아니요."
+"더 볼일은 없을 것 같아요."
+마리안은 알 수 없는 불안함에, 빨리 호수 쪽으로 넘어가야겠다고 판단했다.
+"어··· 음, 그래."
+마리안과 지휘관은 구도심을 뒤로한 채, 앞으로 나아갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2121"]
+
+@@@SCRIPT_ID: fading_affection_2112
+@@@SUB_TITLE: 마리안의 기록 012
+[SCENE START]
+끼익-
+마리안은 어두운 편의점의 문을 밀고 들어갔다.
+여전히 빈 통조림 깡통들을 제외하고는 아무도, 아무것도 존재하지 않았다.
+"없는 것 같네요···."
+마리안은 창고 안을 바라보았다.
+여전히 어둠으로 가득해 있었다.
+"저 안에도 확인해봐야 하지 않아?"
+"아···."
+"그렇긴 한데···."
+마리안은 창고 안에 있던 사냥꾼을 떠올렸다.
+[CHOICE_START ID="fading_affection_2112_choice"]
+  [OPTION TEXT="혼자 창고 안으로 들어간다." VALUE="option_211201"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2112_choice" OPTION="option_211201" TARGET="fading_affection_2113"]
+
+@@@SCRIPT_ID: fading_affection_2113
+@@@SUB_TITLE: 마리안의 기록 013
+[SCENE START]
+"문 앞에 덫이 있어서, 저 혼자 다녀올게요."
+"마리안?"
+마리안은 덫을 넘어 홀로 창고 안으로 들어갔다.
+"역시··· 여기에도 없구나."
+창고 안에는 사냥꾼의 해골만 그 자리 그대로 홀로 외로이 놓여 있었다.
+마리안은 바닥에 적힌 글자를 바라본다.
+[그런데 나는 왜 살고 싶어 하는 거지?]
+"··· ···."
+이제는 공감할 수 있는 외로움을 느꼈다.
+"이 해골 때문에 들어오지 말라고 했던 거야?"
+"!!!"
+"지휘관···."
+지휘관이 마리안의 옆으로 다가왔다.
+"여기에 숨어있었던 사람이구나···."
+지휘관이 바닥에 적힌 글귀들을 바라본다.
+"안타깝네···."
+마리안은 충동적으로 물었다.
+"지휘관은 이 사람이 왜 살고 싶어 했을 거라고 생각해요?"
+"글쎄···."
+"죄송해요, 대답하지 않으셔도···!"
+"언젠가 이 모든 괴로움이 끝나고, 행복해질 거라고 믿었기 때문이지 않을까?"
+"···행복해질 거라고 믿어서요?"
+"응. 그렇기 때문에 살아남기 위해 최선을 다했던 거라고 생각해."
+"···우리도 그렇게 될 수 있을 거라고 믿나요?"
+"그럼, 당연하지."
+"우리도 행복해질 수 있을 거야."
+"그러니 최선을 다해 발버둥 쳐봐야지."
+"··· ···."
+지휘관이 마리안에게 손을 내밀었다.
+"나갈까?"
+마리안이 말없이 그 손을 잡았다.
+
+메모리 저장: 저장된 메모리 : 행복한 삶
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2114"]
+
+@@@SCRIPT_ID: fading_affection_2114
+@@@SUB_TITLE: 마리안의 기록 014
+[SCENE START]
+창고 밖으로 나온 마리안과 지휘관은 편의점 밖으로 나서려 한다.
+그 순간,
+쿵- 쿵- 쿵- 쿵-
+밖에서 랩쳐가 다가오는 소리가 들린다.
+[CHOICE_START ID="fading_affection_2114_choice"]
+  [OPTION TEXT="선반 뒤에 숨어 시간을 기다린다." VALUE="option_211401"]
+    침식도 +90%
+  [OPTION_END]
+  [OPTION TEXT="밖으로 나가 맞서 싸운다." VALUE="option_211402"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2114_choice" OPTION="option_211401" TARGET="fading_affection_2115"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2114_choice" OPTION="option_211402" TARGET="fading_affection_2116"]
+
+@@@SCRIPT_ID: fading_affection_2115
+@@@SUB_TITLE: 마리안의 기록 015
+[SCENE START]
+마리안은 지난 경험을 떠올리며, 지휘관과 함께 선반 뒤에 몸을 숨겼다.
+윙- 윙- 윙-
+쿵- 쿵- 쿵-
+랩쳐 무리가 요란한 소리를 내며 지나갔다.
+예상했던 것보다 오랜 시간이 흐른 후,
+"··· ···."
+지휘관이 미동 없이 밖을 바라보는 마리안에게 묻는다.
+"이제 나가도 되지 않을···."
+쿵- 쿵- 쿵-
+"이런··· 또 온다. 조금만 더 있다 나갈···."
+"나가야 해요."
+"마리안?"
+지휘관이 마리안을 바라본다.
+"!!!"
+마리안의 눈이 붉어져 있었다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2117"]
+
+@@@SCRIPT_ID: fading_affection_2116
+@@@SUB_TITLE: 마리안의 기록 016
+[SCENE START]
+마리안은 알 수 없는 직감이 들었다.
+기다려선 안 돼. 나가야 해···!
+마리안이 자리에서 일어났다.
+"마리안···?"
+"나가야 해요."
+"!!!"
+지휘관의 얼굴에 두려움이 서린다.
+"지휘관···?"
+지휘관이 빠르게 표정을 갈무리했다.
+"아, 미, 미안! 그래서··· 왜 나가려는 건데?"
+"여기에 오래 있으면 안 될 것 같아서요."
+"그런··· 직감이 들어요."
+"··· ···."
+지휘관이 마리안의 얼굴을 천천히 살폈다.
+"그래. 그런 이유라면 가자."
+"우리 둘이라면 잡을 수 있을 거야."
+"···예."
+마리안도 지휘관의 얼굴을 천천히 살폈다.
+"···마리안?"
+"아무것도 아니에요. 가죠."
+마리안은 조금 전의 지휘관의 표정을 기억하며, 밖으로 나갔다.
+
+메모리 저장: 저장된 메모리 : 두려워하는 표정
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2120"]
+
+@@@SCRIPT_ID: fading_affection_2117
+@@@SUB_TITLE: 마리안의 기록 017
+[SCENE START]
+"나가야 해요."
+마리안이 자리에서 일어나 걸어나간다.
+"나가야 해요. 나가야 해요. 나가야 해요.
+나가야···."
+"마리안!!"
+[REDACT]지휘관[/REDACT]이 [REDACT]7호[/REDACT]가 아니 [REDACT]지휘관[/REDACT]이 아니 [REDACT]7호[/REDACT]가 남자가 마리안을 불렀지만, 뒤돌아보지 않는다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2118"]
+
+@@@SCRIPT_ID: fading_affection_2118
+@@@SUB_TITLE: 마리안의 기록 018
+[SCENE START]
+"마리안!!"
+남자가 마리안을 붙잡고, 그녀를 부른다.
+마리안은,
+[CHOICE_START ID="fading_affection_2118_choice"]
+  [OPTION TEXT="[REDACT]지휘관을[/REDACT]남자를 쏜다." VALUE="option_211801"]
+  [OPTION_END]
+  [OPTION TEXT="남자를 [REDACT]쏘면 안 돼![/REDACT]쏜다." VALUE="option_211802"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2118_choice" OPTION="option_211801" TARGET="fading_affection_2119"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2118_choice" OPTION="option_211802" TARGET="fading_affection_2119"]
+
+@@@SCRIPT_ID: fading_affection_2119
+@@@SUB_TITLE: 마리안의 기록 019
+[SCENE START]
+철컥-
+마리안은 남자를 뿌리치고 총을 겨눴다.
+남자의 표정이 경악으로 물든다.
+[CHOICE_START ID="fading_affection_2119_choice"]
+  [OPTION TEXT="방아쇠를 당긴다." VALUE="option_211901"]
+    침식도 +10%
+    침식 엔딩으로 이어집니다.
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2119_choice" OPTION="option_211901" TARGET="fading_affection_7201"]
+
+@@@SCRIPT_ID: fading_affection_2120
+@@@SUB_TITLE: 마리안의 기록 020
+[SCENE START]
+투두두두두-
+"상황 종료."
+마리안과 지휘관은 큰 피해 없이 랩쳐 무리를 잡는 데 성공한다.
+"나오길 잘했네."
+"···그러게요."
+마리안은 그들이 숨어있던 편의점을 바라보았다.
+자꾸 무언가 잊고 있다는 위화감이 느껴졌지만,
+"그럼 이만 갈까?"
+"예. 더 볼일은 없으니 바로 가시죠."
+그들이 가야 할 길은 멀기에 지금은 그저 앞으로 나아가기로 했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2121"]
+
+@@@SCRIPT_ID: fading_affection_2121
+@@@SUB_TITLE: 마리안의 기록 021
+[SCENE START]
+마리안은 지휘관과 함께 호수로 이어진 오솔길로 향했다.
+"여기로 쭉 가면, 호수가 나올 거예요.
+혹시 모르니 제가 먼저 걸어갈···."
+"마리안."
+"예?"
+마리안이 뒤를 돌아보았다.
+"자."
+마리안의 눈앞에 파란 장미가 내밀어졌다.
+"이건···."
+"여기에도 피어있더라고."
+지휘관이 길가를 가리켰다.
+그제야 길가에 핀 파란 장미가 눈에 들어왔다.
+"그렇··· 네요. 여기에도 피어있었군요."
+"아까부터 왜 이렇게 긴장하고 있어."
+"예···?"
+"아무 일도 없을 거야."
+"그러니까···."
+지휘관이 손을 내밀었다.
+"같이 걷자."
+"!!"
+"앞에서 보니까, 여기 산책로라는데.
+긴장하면서 걷기엔 아쉽잖아."
+[CHOICE_START ID="fading_affection_2121_choice"]
+  [OPTION TEXT="그의 손을 바라본다." VALUE="option_212101"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2121_choice" OPTION="option_212101" TARGET="fading_affection_2122"]
+
+@@@SCRIPT_ID: fading_affection_2122
+@@@SUB_TITLE: 마리안의 기록 022
+[SCENE START]
+마리안이 자신에게 내밀어진 손을 물끄러미 바라보다, 그의 얼굴을 바라보았다.
+"안 잡아 줄 거야?"
+아무 일도 없었다는 듯, 조금의 두려움도 보이지 않는 눈.
+기묘할 정도로 예민해진 감각이, 분명 자신이 무슨 일을 저질렀다고 경보를 울리고 있었지만.
+마리안은 그의 눈을 보고 막연하게, 정말 아무 일도 없었던 거라고 믿고 싶어졌다.
+"아니요."
+그것이 진실이길 소망했다.
+"잡을게요."
+마리안이 지휘관의 손을 잡는다.
+지휘관이 활짝 웃는다.
+"그럼, 산책하러 갈까?"
+"···예."
+처음 손을 잡았던 그때처럼, 이번에도 그의 손은 따뜻했기에,
+"예. 지휘관."
+마리안도 그를 향해 마주 웃어보였다.
+이상하게도 더는 자신이 두렵지 않았다.
+
+메모리 저장: 저장된 메모리 : 함께 걷는 길
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2202"]
+
+@@@SCRIPT_ID: fading_affection_2201
+@@@SUB_TITLE: 마리안의 기록 023
+[SCENE START]
+마리안과 지휘관은 지금까지 저장된 메모리를 이용해 호수로 가는 최적의 루트를 찾아낸다.
+둘은 호수로 향한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2202"]
+
+@@@SCRIPT_ID: fading_affection_2202
+@@@SUB_TITLE: 마리안의 기록 024
+[SCENE START]
+한참을 걸은 마리안과 지휘관은 마침내 햇살에 반짝이고 있는, 거대한 호수를 발견한다.
+[CHOICE_START ID="fading_affection_2202_choice"]
+  [OPTION TEXT="호수의 풍경을 바라본다." VALUE="option_220201"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="앞으로 나아간다." VALUE="option_220202"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="블랙스미스와 맞서 싸운다." VALUE="option_220203"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2202_choice" OPTION="option_220201" TARGET="fading_affection_2203"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2202_choice" OPTION="option_220202" TARGET="fading_affection_2204"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2202_choice" OPTION="option_220203" TARGET="fading_affection_2205"]
+
+@@@SCRIPT_ID: fading_affection_2203
+@@@SUB_TITLE: 마리안의 기록 025
+[SCENE START]
+"그래도 이왕 왔는데, 잠시만 보고 갈까?"
+"지휘관 너무 가까이 가면 빠질 수 있어서 위험···."
+"그래도 가까이서 봐야지."
+지휘관이 마리안을 이끌고 호수 가까이로 갔다.
+"와, 예쁘다."
+지휘관이 햇빛을 받아 찬란히 빛나고 있는 호수를 바라보며 웃는다.
+"··· ···."
+마리안은 환하게 웃는 지휘관을 멍하니 바라보다, 고개를 돌려 호수를 바라보았다.
+"마리안은 어때? 기분 전환도 되고 좋지 않아?"
+"예···? 저는···."
+마리안은 이곳에서 홀로 겪었던 수많은 죽음들이 떠올랐지만,
+"···예쁘네요."
+이상하게도 그와 함께 풍경을 바라보는 것만으로, 이전처럼 쓸쓸하지도, 외롭지도, 절망스럽게도 느껴지지 않았다.
+"다음에 또 보러오자."
+"···예. 꼭 그렇게 해요."
+마리안은 이 광경을 한 번 더 보기 위해서라도, 그를 지켜내고 싶다고 생각했다.
+
+메모리 저장: 저장된 메모리 : 함께 보는 풍경
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2206"]
+
+@@@SCRIPT_ID: fading_affection_2204
+@@@SUB_TITLE: 마리안의 기록 026
+[SCENE START]
+지금은 여유롭게 호수를 바라볼 때가 아니라고 판단한 마리안과 지휘관은 호수는 다음에 감상해 보기로 했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2207"]
+
+@@@SCRIPT_ID: fading_affection_2205
+@@@SUB_TITLE: 마리안의 기록 027
+[SCENE START]
+다른 곳에 들를 여유는 없다.
+둘은 블랙스미스와 싸우기 위해, 산책로에 있는 쓰러진 빌딩으로 향했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2263"]
+
+@@@SCRIPT_ID: fading_affection_2206
+@@@SUB_TITLE: 마리안의 기록 028
+[SCENE START]
+"이제 그만 갈까요?"
+마리안과 지휘관은 호수에서 눈을 떼고, 이동하기로 했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2207"]
+
+@@@SCRIPT_ID: fading_affection_2207
+@@@SUB_TITLE: 마리안의 기록 029
+[SCENE START]
+마리안과 지휘관은 호수에서 나아가야 할 길을 찾는다.
+목표 지점으로 가는 방법으로는 위험하지만 북쪽 숲을 지나 공장 지대로 빠르게 넘어가는 길과, 멀리 돌아가지만 그나마 정비되어 있는 남쪽 산책로를 따라가는 길이 있었다.
+마리안은 이 중···.
+[CHOICE_START ID="fading_affection_2207_choice"]
+  [OPTION TEXT="북쪽 숲으로 간다." VALUE="option_220701"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="남쪽의 산책로로 간다." VALUE="option_220702"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2207_choice" OPTION="option_220701" TARGET="fading_affection_2208"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2207_choice" OPTION="option_220702" TARGET="fading_affection_2209"]
+
+@@@SCRIPT_ID: fading_affection_2208
+@@@SUB_TITLE: 마리안의 기록 030
+[SCENE START]
+"목표 지점으로 가장 빠르게 가는 방법은 북쪽의 숲을 뚫고 공장지대로 넘어가는 거예요."
+"임무를 위해서라면 당연히 그곳으로 가는 게 맞지만···."
+마리안의 안색이 어두워졌다.
+"이전에··· 그곳에 블랙스미스가 돌아다니고 있었어요."
+마리안의 손이 떨렸다.
+"또··· 마주치게 될까 봐 그게 마음에 걸려요."
+그 손을 지휘관이 맞잡는다.
+"괜찮을 거야."
+마리안이 고개를 들어 지휘관을 마주 보았다.
+"이번엔 혼자가 아니라 둘이니까."
+"가보자."
+"···예."
+마리안은 지휘관과 함께이기 때문에, 그를 지키지 못할까 봐 무섭다는 말을 삼키며 애써 웃어보였다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2210"]
+
+@@@SCRIPT_ID: fading_affection_2209
+@@@SUB_TITLE: 마리안의 기록 031
+[SCENE START]
+"시간이 좀 걸리겠지만, 안전하게 남쪽에 깔린 산책로를 따라 가는 게 좋겠어요."
+마리안이 중얼거린다.
+"그곳이라면··· 블랙스미스를 만날 확률도 줄어들 테니까. 그럼 다신 지휘관이 희생하는 일은···."
+"···마리안. 괜찮아?"
+마리안이 놀라 지휘관을 바라본다.
+"예···?"
+"그럼요. 괜찮아요."
+"··· ···."
+"얼른 가죠. 지휘관."
+마리안이 앞장서서 걸어가기 시작했다.
+지휘관은 그 모습을 말없이 바라보았다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2238"]
+
+@@@SCRIPT_ID: fading_affection_2210
+@@@SUB_TITLE: 마리안의 기록 032
+[SCENE START]
+북쪽 숲의 도입부에 도달한 마리안과 지휘관.
+북쪽 숲은 랩쳐가 지나다닌 탓인지, 일부 나무들이 쓰러져 있었다.
+마리안은···.
+[CHOICE_START ID="fading_affection_2210_choice"]
+  [OPTION TEXT="시야가 좁아도 나무가 많은 쪽으로 이동한다." VALUE="option_221001"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="나무가 적어도, 시야가 트인 곳으로 이동한다." VALUE="option_221002"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="다른 길로 가본다." VALUE="option_221003"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2210_choice" OPTION="option_221001" TARGET="fading_affection_2211"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2210_choice" OPTION="option_221002" TARGET="fading_affection_2212"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2210_choice" OPTION="option_221003" TARGET="fading_affection_2213"]
+
+@@@SCRIPT_ID: fading_affection_2211
+@@@SUB_TITLE: 마리안의 기록 033
+[SCENE START]
+랩쳐가 나타났을 때 대처하기 위해서라도, 엄폐할 곳이 많은 쪽이 낫다고 판단한 마리안은 지휘관과 함께 나무가 많은 쪽으로 이동한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2214"]
+
+@@@SCRIPT_ID: fading_affection_2212
+@@@SUB_TITLE: 마리안의 기록 034
+[SCENE START]
+마리안과 지휘관은 시야가 가려져 고생했던 지난 기억들을 떠올리며 나무가 적고, 시야가 트인 방향으로 이동했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2223"]
+
+@@@SCRIPT_ID: fading_affection_2213
+@@@SUB_TITLE: 마리안의 기록 035
+[SCENE START]
+숲에서는 더 알아볼 것이 없다고 판단한 마리안과 지휘관은 서둘러 산책로로 걸음을 옮겼다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2209"]
+
+@@@SCRIPT_ID: fading_affection_2214
+@@@SUB_TITLE: 마리안의 기록 036
+[SCENE START]
+나무가 많은 쪽으로 오니, 확실히 랩쳐는 보이지 않았지만 그들의 시야도 많이 가려져 느리게 움직여야 했다.
+마리안은 언제 블랙스미스가 기습해올지 모른다는 생각에 신경을 더욱 곤두세웠다.
+"후우···."
+"많이 힘드신가요?"
+"아니야, 견딜 만해.
+마리안이야말로 경계하느라 힘들지?"
+"저도 괜찮아요."
+마리안이 웃었-
+바스락-
+"!!"
+[CHOICE_START ID="fading_affection_2214_choice"]
+  [OPTION TEXT="총을 쏜다." VALUE="option_221401"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="총을 쏘지 않는다." VALUE="option_221402"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2214_choice" OPTION="option_221401" TARGET="fading_affection_2215"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2214_choice" OPTION="option_221402" TARGET="fading_affection_2216"]
+
+@@@SCRIPT_ID: fading_affection_2215
+@@@SUB_TITLE: 마리안의 기록 037
+[SCENE START]
+탕-!!
+마리안이 빠르게 경계 사격을 했다.
+하지만 그곳엔 사슴만 존재할 뿐이었다.
+"!!!"
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6202"]
+
+@@@SCRIPT_ID: fading_affection_2216
+@@@SUB_TITLE: 마리안의 기록 038
+[SCENE START]
+철컥-
+마리안과 지휘관이 총을 겨눈 그곳엔···.
+"···사슴?"
+"!!"
+마리안은 놀란 마음을 진정시키며 총을 내렸다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2217"]
+
+@@@SCRIPT_ID: fading_affection_2217
+@@@SUB_TITLE: 마리안의 기록 039
+[SCENE START]
+마리안이 총을 내리자, 사슴이 떠나갔다.
+"시야가 가려지니까 과민하게 반응하게 되네."
+지휘관이 멋쩍게 웃는다.
+"조금만 힘을 빼고 가볼까?"
+"예. 지휘관."
+마리안도 지휘관을 따라 어깨에서 힘을 빼보았다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2218"]
+
+@@@SCRIPT_ID: fading_affection_2218
+@@@SUB_TITLE: 마리안의 기록 040
+[SCENE START]
+지휘관과 마리안은 한참 동안 앞을 향해 걸었다.
+그리고 가야 할 길을 바라보았다.
+빽빽한 나무들 때문인지, 얼마큼 더 가야 할지 가늠하기가 어려웠다.
+"지금이라도 돌아가는 게 나을까?"
+지휘관의 물음에, 마리안은···.
+[CHOICE_START ID="fading_affection_2218_choice"]
+  [OPTION TEXT="조금 더 가보자고 한다." VALUE="option_221801"]
+  [OPTION_END]
+  [OPTION TEXT="돌아가는 편이 좋을 거 같다." VALUE="option_221802"]
+    침식도 +10%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2218_choice" OPTION="option_221801" TARGET="fading_affection_2219"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2218_choice" OPTION="option_221802" TARGET="fading_affection_2220"]
+
+@@@SCRIPT_ID: fading_affection_2219
+@@@SUB_TITLE: 마리안의 기록 041
+[SCENE START]
+"여기까지 들어왔으니, 이 길의 끝까지 가보는 게 좋을 거 같아요."
+"끝까지?"
+지휘관이 마리안을 걱정스레 바라보다가 대답했다.
+"좋아. 이왕 온 거 끝까지 가보자."
+[CHOICE_START ID="fading_affection_2219_choice"]
+  [OPTION TEXT="고개를 끄덕인다." VALUE="option_221901"]
+    침식도 +90%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2219_choice" OPTION="option_221901" TARGET="fading_affection_2221"]
+
+@@@SCRIPT_ID: fading_affection_2220
+@@@SUB_TITLE: 마리안의 기록 042
+[SCENE START]
+마리안은 이 이상 나무들 사이에 오래 있어선 안 된다는 알 수 없는 직감이 들어서, 숲의 도입부에서 나무가 적었던 방향으로 가보기로 했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2212"]
+
+@@@SCRIPT_ID: fading_affection_2221
+@@@SUB_TITLE: 마리안의 기록 043
+[SCENE START]
+마리안과 지휘관이 숲속으로 조금 더 깊게 들어간다.
+시간이 얼마나 흘렀을까, 지휘관은 문득 지금 보는 이 풍경이, 한 시간 전에 봤던 것과 비슷하다고 느꼈다.
+"마리안. 여긴 아까 왔던 길 같은데, 지도를 다시 살펴볼까?"
+"··· ···."
+"···마리안?"
+지휘관이 마리안을 바라본다.
+"!!!"
+"눈··· 이···."
+마리안의 눈이 붉게 물들어 있었다.
+"도대체··· 언제부터···."
+"랩쳐를 만나지도 않았는데···?"
+"··· ···."
+마리안이 붉은 눈으로 빤히 바라본다.
+"설마 시간의 문제인가?"
+"너무 오래 걸리면 침식에 걸리게 해놨다고?"
+"···왜?"
+"가야 해요."
+지휘관이 앞으로 가려는 마리안의 팔을 붙잡는다.
+"어딜 가려는 거야."
+"가야 해요."
+"마리안!!"
+마리안은,
+[CHOICE_START ID="fading_affection_2221_choice"]
+  [OPTION TEXT="[REDACT]도망쳐요[/REDACT]가야해요." VALUE="option_222101"]
+  [OPTION_END]
+  [OPTION TEXT="[REDACT]지휘관![/REDACT]가야해요." VALUE="option_222102"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2221_choice" OPTION="option_222101" TARGET="fading_affection_2222"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2221_choice" OPTION="option_222102" TARGET="fading_affection_2222"]
+
+@@@SCRIPT_ID: fading_affection_2222
+@@@SUB_TITLE: 마리안의 기록 044
+[SCENE START]
+"가야 해요. 가야 해요. 가야 해요. 가야 해요."
+마리안이 [REDACT]지휘관을[/REDACT]남자를 뿌리치고 앞으로 나아간다.
+"마리안!!"
+"가가가가야야야야야해해해해요요요요요"
+남자가 마리안을 다시 붙잡으려 할 때,
+쿵- 쿵- 쿵- 쿵-
+멀리서 거대한 진동이 느껴졌다.
+"!!!"
+"설마··· 랩쳐를 부르는 건가?!"
+[CHOICE_START ID="fading_affection_2222_choice"]
+  [OPTION TEXT="가가가가야야야야야해해해해요요요요요." VALUE="option_222201"]
+    침식도 +10%
+    침식 엔딩으로 이어집니다.
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2222_choice" OPTION="option_222201" TARGET="fading_affection_7202"]
+
+@@@SCRIPT_ID: fading_affection_2223
+@@@SUB_TITLE: 마리안의 기록 045
+[SCENE START]
+나무가 적은 쪽으로 오니, 시야가 트인 것은 좋았지만···.
+윙- 윙- 윙- 윙-
+공중형 랩쳐들이 무리 지어 돌아다니고 있는 모습이 보인다.
+빠르게 움직이면, 높은 확률로 전투가 일어날 것 같은 상황으로 보인다.
+마리안은···.
+[CHOICE_START ID="fading_affection_2223_choice"]
+  [OPTION TEXT="랩쳐의 움직임에 주의하며 신중하게 움직인다." VALUE="option_222301"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="빠르게 걸어 가본다." VALUE="option_222302"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2223_choice" OPTION="option_222301" TARGET="fading_affection_2224"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2223_choice" OPTION="option_222302" TARGET="fading_affection_2225"]
+
+@@@SCRIPT_ID: fading_affection_2224
+@@@SUB_TITLE: 마리안의 기록 046
+[SCENE START]
+지휘관과 잦은 전투를 벌이는 것은 좋지 않다고 판단한 마리안은 속도는 느리지만, 랩쳐의 움직임에 주의하며 신중하게 앞으로 나아가기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2226"]
+
+@@@SCRIPT_ID: fading_affection_2225
+@@@SUB_TITLE: 마리안의 기록 047
+[SCENE START]
+마리안은 블랙스미스가 뒤따라오고 있다는 걸 알게 된 이상, 느긋하게 갈 여유가 없다고 판단했다.
+하지만 뛰어가면 더 위험해질 수 있으니, 최대한 빠르게 걸어 가보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2231"]
+
+@@@SCRIPT_ID: fading_affection_2226
+@@@SUB_TITLE: 마리안의 기록 048
+[SCENE START]
+시간이 얼마나 흘렀을까, 랩쳐를 피해 움직이는 것에는 생각보다 더 오랜 시간이 들었다.
+"후우··· 생각보다 오래 걸리네요."
+"그러게···."
+한동안 심각하게 고민하던 지휘관이 조심스레 묻는다.
+"조금만 속도를 올리는 편이 어떨까?"
+마리안은···.
+[CHOICE_START ID="fading_affection_2226_choice"]
+  [OPTION TEXT="지휘관의 말대로 속도를 높여본다." VALUE="option_222601"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="신중하게 계속 가본다." VALUE="option_222602"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2226_choice" OPTION="option_222601" TARGET="fading_affection_2227"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2226_choice" OPTION="option_222602" TARGET="fading_affection_2228"]
+
+@@@SCRIPT_ID: fading_affection_2227
+@@@SUB_TITLE: 마리안의 기록 049
+[SCENE START]
+지휘관이 묘하게 초조해 보인다고 느낀 마리안은 이상하게 자신도 함께 초조해진다고 느꼈다.
+"지금부터 뛰어가게 될 텐데, 괜찮으시겠어요?"
+"괜찮아. 잘 따라갈게."
+"알겠어요."
+마리안이 총을 고쳐 쥔 후, 앞을 향해 달려나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2229"]
+
+@@@SCRIPT_ID: fading_affection_2228
+@@@SUB_TITLE: 마리안의 기록 050
+[SCENE START]
+느리긴 하지만 신중하게 가는 게 더 안전하다고 판단한 마리안은 이 속도로 계속 가기로 한다.
+"그것도 맞는 말인데···."
+지휘관이 걱정스러운 눈으로 마리안의 눈을 바라본다.
+"아직··· 인가."
+"지휘관?"
+"아, 미안··· 내가 너무 빤히 봤지."
+"그래. 이대로 가자."
+지휘관이 아무렇지 않은 척 웃으며 앞으로 나아갔다.
+마리안은 걱정스레 자신을 바라보던 눈을 떠올리며 그 뒤를 따랐다.
+
+메모리 저장: 저장된 메모리 : 걱정하는 눈
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2230"]
+
+@@@SCRIPT_ID: fading_affection_2229
+@@@SUB_TITLE: 마리안의 기록 051
+[SCENE START]
+쾅- 콰아앙-!!
+하늘에서 공중형 랩쳐들이 쏘아낸 빔들이 빗발쳤다.
+"헉··· 허억···!"
+지휘관의 체력은 점점 떨어져만 갔고, 마리안 역시 나아가야 할 길을 찾지 못해 방황한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6203"]
+
+@@@SCRIPT_ID: fading_affection_2230
+@@@SUB_TITLE: 마리안의 기록 052
+[SCENE START]
+그때,
+쿵- 쿵- 쿵- 쿵-
+멀리서 거대한 진동이 느껴졌다.
+"설마···!"
+마리안과 지휘관이 뒤를 돌아보았다.
+블랙스미스가 보인다.
+휘릭-
+마리안을 향해 촉수를 뻗어낸다.
+"!!!"
+수없이 학습된 공포가 마리안의 몸을 멈추게 했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6204"]
+
+@@@SCRIPT_ID: fading_affection_2231
+@@@SUB_TITLE: 마리안의 기록 053
+[SCENE START]
+지휘관과 마리안은 빠르게 걷고 또 걸었다.
+그러던 중···.
+꼬르륵-
+"!!!"
+"미안···!"
+"죄송해요. 많이 배고프셨죠."
+"여기서 뭐라도 먹고 갈까요?"
+마리안이 주변을 살핀다.
+[CHOICE_START ID="fading_affection_2231_choice"]
+  [OPTION TEXT="큰 나무 주변에서 먹고 간다." VALUE="option_223101"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="먹을 만한 장소가 없다. 다음에 먹는다." VALUE="option_223102"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2231_choice" OPTION="option_223101" TARGET="fading_affection_2232"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2231_choice" OPTION="option_223102" TARGET="fading_affection_2233"]
+
+@@@SCRIPT_ID: fading_affection_2232
+@@@SUB_TITLE: 마리안의 기록 054
+[SCENE START]
+"일단 이 근처에서 먹고 갈까요?"
+마리안이 주변의 나무 중 가장 큰 나무 곁에 앉았다.
+"고마워. 사실 체력이 한계였거든."
+지휘관도 그 옆에 앉는다.
+"죄송해요. 좀 더 배려했어야 했는데···."
+"괜찮아. 내가 더 체력을 기르면 되지."
+"후후, 그런가요."
+마리안이 지휘관에게 하나뿐인 육포를 내밀었다.
+"마리안은?"
+"전 괜찮아요. 니케니까 안 먹고 버틸 수 있어요."
+"더 없어?"
+"···예. 인원이 늘었는데, 식량은 여전히 한 개만 지급되더라고요."
+"아마 이것까지 테스트 항목에 포함되는 것 같아요."
+"그렇··· 구나."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2234"]
+
+@@@SCRIPT_ID: fading_affection_2233
+@@@SUB_TITLE: 마리안의 기록 055
+[SCENE START]
+언제 블랙스미스가 나타날지 모른다는 불안감에 마리안은 경계를 풀 수 없었다. 어느 곳도 안전하게 느껴지지 않았다.
+"죄송해요. 이 근처에서 먹긴 힘들 것 같아요."
+"괜찮아. 그럼 조금만 더 가서 먹자."
+"감사해요. 지휘관."
+둘은 조금 더 힘을 내보기로 했다.
+하지만 아무리 가도 나무들 사이에선, 두 사람이 마음 놓고 쉴 만한 장소는 찾을 수 없었다.
+"후우우···."
+식사조차 제때 하지 못하고 내내 돌아다닌 탓에, 두 사람의 걸음이 점점 느려졌다.
+그때,
+쿵- 쿵-
+위협적인 소리가 들린다.
+[CHOICE_START ID="fading_affection_2233_choice"]
+  [OPTION TEXT="피해야 한다!" VALUE="option_223301"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2233_choice" OPTION="option_223301" TARGET="fading_affection_6205"]
+
+@@@SCRIPT_ID: fading_affection_2234
+@@@SUB_TITLE: 마리안의 기록 056
+[SCENE START]
+"··· ···."
+지휘관이 육포를 반으로 나눈다.
+"자."
+그리고 마리안에게 내밀었다.
+"같이 먹자."
+마리안이 물끄러미 그것을 바라보았다.
+"안 받아 줄 거야?"
+[CHOICE_START ID="fading_affection_2234_choice"]
+  [OPTION TEXT="육포를 받는다." VALUE="option_223401"]
+    침식도 +10%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2234_choice" OPTION="option_223401" TARGET="fading_affection_2235"]
+
+@@@SCRIPT_ID: fading_affection_2235
+@@@SUB_TITLE: 마리안의 기록 057
+[SCENE START]
+마리안이 얼떨떨하게 육포를 받았다.
+"전 주지 않으셔도···."
+"니케든 인간이든 식사를 해야 하는 건 똑같잖아."
+"그리고··· 혼자 먹는 것보단 같이 먹는 게 더 맛있으니까."
+"그렇군요···."
+지휘관이 반절로 잘린 육포를 입에 넣었다.
+마리안도 그 모습을 바라보다, 자신의 손에 있는 반절의 육포를 입에 넣었다.
+"···맛있네요."
+메마른 육포를 먹었음에도, 이상하리만큼 마음이 따뜻해지는 기분이 들었다.
+그리고 그와 동시에···.
+그를 잃는 것이 예전보다 더 무서워졌다.
+
+메모리 저장: 저장된 메모리 : 함께 먹는 식사
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2236"]
+
+@@@SCRIPT_ID: fading_affection_2236
+@@@SUB_TITLE: 마리안의 기록 058
+[SCENE START]
+"이제 다시 가볼까?"
+지휘관과 마리안은 다시 숲의 끝을 향해 빠르게 걸어나갔다.
+하지만,
+"이게 대체···."
+마리안과 지휘관은 큰 지진이라도 난 듯, 숲의 지면을 가로지르는 거대한 균열을 발견한다.
+반대편까지는 족히 수 미터.
+균열 아래로는 바닥조차 보이지 않았다.
+"지도에는 없는 지형인데···."
+"몇 년 사이에 변한 것 같아요."
+"이 거리면 뛰어넘기는 힘들 거 같아."
+"그렇겠죠···."
+마리안은 건너편을 바라본다.
+멀리 있기는 하지만, 목표 지점이 있는 공장지대가 육안으로 보였다.
+"저렇게나 가까이에 있는데···."
+마리안은···.
+[CHOICE_START ID="fading_affection_2236_choice"]
+  [OPTION TEXT="숲이 아닌 다른 길로 가보기로 한다." VALUE="option_223601"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2236_choice" OPTION="option_223601" TARGET="fading_affection_2237"]
+
+@@@SCRIPT_ID: fading_affection_2237
+@@@SUB_TITLE: 마리안의 기록 059
+[SCENE START]
+"숲에서 더 할 수 있는 일은 없는 것 같네요."
+"어쩔 수 없지."
+지휘관이 마리안을 바라본다.
+"산책로 쪽으로 가볼까?"
+"···예. 그렇게 해요."
+마리안과 지휘관은 숲을 벗어나 남쪽의 산책로로 가보기로 한다.
+
+메모리 저장: 저장된 메모리 : 숲의 끝
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2209"]
+
+@@@SCRIPT_ID: fading_affection_2238
+@@@SUB_TITLE: 마리안의 기록 060
+[SCENE START]
+쿵- 쿵- 쿵- 쿵-
+"!!!"
+마리안과 지휘관은 익숙한 진동을 느낀다.
+분명 블랙스미스일 것이라고 확신한 둘은···.
+[CHOICE_START ID="fading_affection_2238_choice"]
+  [OPTION TEXT="급하니까 가까운 곳에 아무 데나 숨는다." VALUE="option_223801"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="먼 곳이라도 신중하게 찾아보자." VALUE="option_223802"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="블랙스미스와 맞서 싸운다." VALUE="option_223803"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2238_choice" OPTION="option_223801" TARGET="fading_affection_2239"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2238_choice" OPTION="option_223802" TARGET="fading_affection_2240"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2238_choice" OPTION="option_223803" TARGET="fading_affection_2205"]
+
+@@@SCRIPT_ID: fading_affection_2239
+@@@SUB_TITLE: 마리안의 기록 061
+[SCENE START]
+"벌써 따라오다니···!"
+"점점··· 빠르게 따라오고 있어."
+마리안은 패닉에 빠져, 지휘관을 이끌었다.
+"지휘관 이쪽으로···!"
+그리고 지휘관을 이끌고, 호수에 반쯤 잠겨 있는 무너진 건물로 들어갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2241"]
+
+@@@SCRIPT_ID: fading_affection_2240
+@@@SUB_TITLE: 마리안의 기록 062
+[SCENE START]
+급할수록 신중해져야 한다고 판단한 마리안은 지휘관을 이끌고 앞으로 달려나갔다.
+그리고 호수를 향해 쓰러져 있는 거대한 빌딩을 발견한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2250"]
+
+@@@SCRIPT_ID: fading_affection_2241
+@@@SUB_TITLE: 마리안의 기록 063
+[SCENE START]
+건물 안쪽으로 들어간 마리안은 눈앞에 고인 물을 바라보았다.
+건물이 호수를 향해 무너져 있었기 때문일까, 안쪽으로 들어갈수록 물이 점점 깊어지는 것 같았다.
+"안전하게 숨으려면 더 안으로 들어가야 하는데···."
+지휘관이 걱정스레 바라본다.
+"어두워서 안이 잘 보이지 않는데···.
+더 들어가면 위험하지 않을까?"
+마리안은 고민한다.
+[CHOICE_START ID="fading_affection_2241_choice"]
+  [OPTION TEXT="안쪽으로 좀 더 들어간다." VALUE="option_224101"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="밖에 나가 다시 찾아본다." VALUE="option_224102"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2241_choice" OPTION="option_224101" TARGET="fading_affection_2242"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2241_choice" OPTION="option_224102" TARGET="fading_affection_2243"]
+
+@@@SCRIPT_ID: fading_affection_2242
+@@@SUB_TITLE: 마리안의 기록 064
+[SCENE START]
+블랙스미스에게 들키는 것보단 물에 잠겨 있는 쪽이 낫겠다고 판단한 마리안은 조금 더 안쪽으로 들어가보기로 한다.
+파직-
+"마리안, 잠시만!"
+"예···?"
+첨벙-
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6206"]
+
+@@@SCRIPT_ID: fading_affection_2243
+@@@SUB_TITLE: 마리안의 기록 065
+[SCENE START]
+잘 보이지 않는 안쪽으로 들어가는 건 위험하다고 판단한 두 사람은 다시 밖으로 뛰어나간다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2244"]
+
+@@@SCRIPT_ID: fading_affection_2244
+@@@SUB_TITLE: 마리안의 기록 066
+[SCENE START]
+쿠우웅-
+너무 늦었다.
+두 사람은 결국 블랙스미스를 마주한다.
+휘릭-
+블랙스미스에게서 촉수가 뻗어나온다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2245"]
+
+@@@SCRIPT_ID: fading_affection_2245
+@@@SUB_TITLE: 마리안의 기록 067
+[SCENE START]
+마리안은 블랙스미스가 분명 니케인 자신만을 노리고 촉수를 뻗어올 것이라고 예상한다.
+그때,
+"마리안!!"
+마리안은 자신을 향해 달려오는 지휘관을 바라본다.
+지난번처럼 자신을 구하려 달려드는 그를 보고 마리안은···!
+[CHOICE_START ID="fading_affection_2245_choice"]
+  [OPTION TEXT="지휘관을 밀어낸다." VALUE="option_224501"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="촉수를 향해 총을 난사한다." VALUE="option_224502"]
+    침식도 +50%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2245_choice" OPTION="option_224501" TARGET="fading_affection_2246"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2245_choice" OPTION="option_224502" TARGET="fading_affection_2247"]
+
+@@@SCRIPT_ID: fading_affection_2246
+@@@SUB_TITLE: 마리안의 기록 068
+[SCENE START]
+마리안이 지휘관을 밀어낸다.
+우당탕-
+지휘관이 바닥에 나동그라졌다.
+"마리안···?!"
+휘릭-
+그리고 촉수에 붙잡힌다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6207"]
+
+@@@SCRIPT_ID: fading_affection_2247
+@@@SUB_TITLE: 마리안의 기록 069
+[SCENE START]
+"숙여요, 지휘관!"
+지휘관이 몸을 숙이는 것과 동시에, 마리안은 날아오는 촉수를 향해 총을 난사했다.
+투두두두두두-
+촤악-
+또 다른 촉수가 마리안의 옆구리를 스치고 지나간다.
+"마리안!!"
+"괜찮··· 아요···!"
+마리안은 빠르게 주변을 살펴본다.
+그리고 블랙스미스 곁에 기울어져 있는 전봇대를 발견한다.
+그곳을 향해 총을 난사한다.
+끼이익- 쾅-!!
+전봇대가 블랙스미스를 향해 떨어져 내렸다.
+"지금이에요, 뛰어요! 지휘관!!"
+둘은 미친 듯이 앞으로 뛰어나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2248"]
+
+@@@SCRIPT_ID: fading_affection_2248
+@@@SUB_TITLE: 마리안의 기록 070
+[SCENE START]
+마리안과 지휘관은 무너질 것 같은 건물 안으로 간신히 숨어들어갔다.
+"허억··· 허억···!"
+숨을 몰아쉬는 [REDACT]지휘관[/REDACT]남자 아니, 지휘관을 보며 마리안은 눈앞이 점점 붉어짐을 느꼈다.
+"지휘··· 관."
+마리안이 남자 아니, 지휘관과 눈을 마주친다.
+"!!!"
+"마리안··· 눈이···!"
+"제가··· 혹시라도 이상해지면···."
+[CHOICE_START ID="fading_affection_2248_choice"]
+  [OPTION TEXT="[REDACT]남자에게[/REDACT]지휘관에게 총을 건넨다." VALUE="option_224801"]
+  [OPTION_END]
+  [OPTION TEXT="지휘관에게 총을 [REDACT]쏜다[/REDACT]건넨다." VALUE="option_224802"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2248_choice" OPTION="option_224801" TARGET="fading_affection_2249"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2248_choice" OPTION="option_224802" TARGET="fading_affection_2249"]
+
+@@@SCRIPT_ID: fading_affection_2249
+@@@SUB_TITLE: 마리안의 기록 071
+[SCENE START]
+마리안이 자신이 가지고 있던 총을 지휘관에게 넘겨준다.
+"제 머리에··· 이걸··· 쏴주세요."
+"뭐···?"
+"시··· 간이··· 없··· 어요···."
+"어떻게··· 너를···!"
+"아··· 시겠··· 죠?"
+마리안은 간절한 눈으로 [REDACT]지휘관을[/REDACT]남자를 바라보았다.
+"···부탁··· 해요."
+[REDACT]남자는[/REDACT]지휘관은 떨리는 손으로 총을 바라보다 서서히 들어올렸다.
+덜덜덜덜-
+마리안을 향한 총구가 떨려온다.
+[REDACT]남자가지휘관이[/REDACT] 총을 쏜다.
+[CHOICE_START ID="fading_affection_2249_choice"]
+  [OPTION TEXT="[REDACT]남자를[/REDACT]지휘관을 바라본다." VALUE="option_224901"]
+    침식도 +50%
+    침식 엔딩으로 이어집니다.
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2249_choice" OPTION="option_224901" TARGET="fading_affection_7203"]
+
+@@@SCRIPT_ID: fading_affection_2250
+@@@SUB_TITLE: 마리안의 기록 072
+[SCENE START]
+"이 건물을 다리처럼 타고 올라갈 수도 있을 거 같은데, 어떻게 할까?"
+지휘관의 말대로 쓰러져 있는 빌딩의 경사진 외벽을 다리처럼 여기고 올라갈 수 있을 것 같다.
+마리안은 이곳에 올라가기라도 해야 할지 다른 곳을 찾아봐야 할지 망설인다.
+쿵- 쿵- 쿵- 쿵-
+그 사이, 블랙스미스의 진동이 점점 가까워진다.
+마리안은···.
+[CHOICE_START ID="fading_affection_2250_choice"]
+  [OPTION TEXT="다른 건물을 조금 더 찾아본다." VALUE="option_225001"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="경사진 외벽을 타고 올라가 본다." VALUE="option_225002"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="깨진 창문으로 들어가본다." VALUE="option_225003"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2250_choice" OPTION="option_225001" TARGET="fading_affection_2251"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2250_choice" OPTION="option_225002" TARGET="fading_affection_2252"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2250_choice" OPTION="option_225003" TARGET="fading_affection_2253"]
+
+@@@SCRIPT_ID: fading_affection_2251
+@@@SUB_TITLE: 마리안의 기록 073
+[SCENE START]
+안전할지 모르는 건물의 외벽을 타고 오르는 건 너무 위험하다고 판단한 마리안은 다른 건물을 조금 더 찾아보기로 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2244"]
+
+@@@SCRIPT_ID: fading_affection_2252
+@@@SUB_TITLE: 마리안의 기록 074
+[SCENE START]
+"올라가자."
+지휘관이 다급하게 마리안을 이끌고, 빌딩 위로 올라가기 시작한다.
+"···지휘관?"
+거대한 죽음으로부터 마리안을 지키려는 듯, 필사적으로 건물 위로 이끌었다.
+마리안은 지난번 다른 건물을 찾으러 가다가 블랙스미스의 촉수에 맞은 이후의 일을 기억하지 못했다.
+"··· ···."
+마리안은 평소랑은 다른, 필사적인 지휘관의 행동을 기억하며 그 뒤를 따랐다.
+
+메모리 저장: 저장된 메모리 : 다급한 행동
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2254"]
+
+@@@SCRIPT_ID: fading_affection_2253
+@@@SUB_TITLE: 마리안의 기록 075
+[SCENE START]
+도망치는 것도, 외벽을 타고 올라가는 것도 위험하다고 판단한 마리안은, 깨져있는 창문들을 관찰하기 시작했다.
+그리고···.
+"찾았어요. 이쪽으로···!"
+창문이 깨져있는 곳 중, 물이 들어차있지 않은 곳으로 지휘관과 함께 숨어들어갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2255"]
+
+@@@SCRIPT_ID: fading_affection_2254
+@@@SUB_TITLE: 마리안의 기록 076
+[SCENE START]
+마리안과 지휘관은 필사적으로 빌딩 위를 달려 올라갔다.
+"허억··· 허어억···!"
+지휘관의 호흡이 가빠온다는 것을 확인한 마리안이 외쳤다.
+"지휘관 잠시만 멈췄다 가요···!"
+지휘관이 자리에 멈춰 섰다.
+"후우··· 알겠··· 어···!"
+지휘관이 근처에 있는 전력 제어반에 손을 올려놓았다.
+웅-
+희미한 진동이 손바닥을 타고 올라왔다.
+"이거··· 아직 움직이는데?"
+지휘관이 전력 제어반을 바라보았다.
+지직-
+표시등 하나가 불규칙적으로 깜박였다.
+"아직··· 전력이 살아 있는 건가."
+끼익-
+지휘관이 전력 제어반의 덮개를 연다.
+"저도 확인해볼···."
+마리안이 지휘관이 있는 곳으로 다가갔-
+쩌저적-
+마리안이 갈라져 있던 창문을 밟자 순식간에 깨져 나갔다.
+"!!!"
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6208"]
+
+@@@SCRIPT_ID: fading_affection_2255
+@@@SUB_TITLE: 마리안의 기록 077
+[SCENE START]
+"여기라면··· 괜찮을 거 같아요."
+마리안과 지휘관은 바닥에 주저앉았다.
+"··· ···."
+"··· ···."
+여기에 올 때까지 수많은 죽음을 겪었기 때문일까, 둘은 한동안 아무런 말도 하지 않았다.
+마리안은 생각했다.
+이제 어떻게 해야 하지?
+언제까지 이렇게 쫓겨야 하는 걸까?
+언제까지 이렇게 두려워해야 하는 걸까?
+결국 난 저것에게 잡아먹히고 도망치는 것 말고는 할 수 있는 일이 없는 걸까?
+"마리안···."
+어떻게 하면 지휘관을 살릴 수 있지?
+저것에게서 도망칠 수 있는 방법이 있을까?
+"마리안···."
+여기에 계속 숨어있는 게 나을까?
+아니면 나가서 새로운 은신처를 찾는 게 나을까?
+차라리.
+죽고 다시 시작하는 게···!
+톡톡-
+무언가가 마리안의 어깨를 두드린다.
+"마리안?"
+"예?"
+[CHOICE_START ID="fading_affection_2255_choice"]
+  [OPTION TEXT="고개를 든다." VALUE="option_225501"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2255_choice" OPTION="option_225501" TARGET="fading_affection_2256"]
+
+@@@SCRIPT_ID: fading_affection_2256
+@@@SUB_TITLE: 마리안의 기록 078
+[SCENE START]
+지휘관이 마리안과 눈을 마주쳤다.
+"아··· 죄송해요. 생각을 하느라 못 들었···."
+"많이 무섭지?"
+"예?"
+마리안은 망설였다.
+"아··· 니요."
+지휘관이 다정하게 웃는다.
+"그렇구나. 대단하네."
+"난 좀 무서운데."
+"···지휘관."
+"너를 지켜내지 못해 속상하고, 또 지켜내지 못할까 봐 두려운데···."
+지휘관이 마리안을 바라본다.
+"그래도 마리안이 옆에 있어서 다행이라고 생각해.
+이상하지?"
+"!!"
+마리안은 생각했다.
+나와 같구나. 이번에도 나와 같았구나.
+당신도 지키고 싶었구나. 나를 지키고 싶었어.
+마리안은···.
+[CHOICE_START ID="fading_affection_2256_choice"]
+  [OPTION TEXT="지휘관에게 진심을 전한다." VALUE="option_225601"]
+    침식도 +2%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2256_choice" OPTION="option_225601" TARGET="fading_affection_2257"]
+
+@@@SCRIPT_ID: fading_affection_2257
+@@@SUB_TITLE: 마리안의 기록 079
+[SCENE START]
+"저도··· 그래요."
+"사실은··· 저도 무서워요. 그런데도···."
+마리안도 지휘관과 눈을 마주했다.
+"지휘관과 함께여서 다행이라고 생각해요."
+"하, 하하···! 그렇구나."
+지휘관이 기쁘게 웃는다.
+"나 혼자만이 아니야. 마리안도 나를 지키고 싶었어."
+"맞아. 우린 혼자가 아니었어.
+하하하!"
+다정하게 마리안을 바라본다.
+"지휘관···."
+눈을 빛낸다.
+"나가고 싶다."
+"이 좁고 어두운 곳에서 나가서, 마리안과 더 많은 곳에 가보고 싶어."
+"행복한 미래를 맞이하고 싶어."
+용기를 이끌어낸다.
+"그러니 더는 쫓기지 말자."
+"더는 녀석에게 끌려다니지 말고, 어떻게 해서든, 이겨내서···."
+"이 호수 밖으로 나가자."
+마리안은 그 모습이 너무나···.
+"예. 지휘관. 반드시 이겨서···."
+"행복해져요, 우리."
+
+메모리 저장: 저장된 메모리 : 함께하는 미래
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2258"]
+
+@@@SCRIPT_ID: fading_affection_2258
+@@@SUB_TITLE: 마리안의 기록 080
+[SCENE START]
+"지금 우리의 전력으로는 정면 승부하는 건 무리일 것 같은데, 정면으로 승부하는 것 말고 다른 방법이 없을까?"
+그 말에 마리안은 정면 승부가 아닌 다른 방법을 떠올려 본다.
+[CHOICE_START ID="fading_affection_2258_choice"]
+  [OPTION TEXT="조금 더 고민해 보자고 한다." VALUE="option_225801"]
+    침식도 +60%
+  [OPTION_END]
+  [OPTION TEXT="함정을 만들어보자고 한다." VALUE="option_225802"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2258_choice" OPTION="option_225801" TARGET="fading_affection_2259"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2258_choice" OPTION="option_225802" TARGET="fading_affection_2260"]
+
+@@@SCRIPT_ID: fading_affection_2259
+@@@SUB_TITLE: 마리안의 기록 081
+[SCENE START]
+더 생각하기로 한 후, 긴 시간이 흘렀다.
+하지만 아무리 고민해도 뾰족한 답은 나오지 않는다.
+"마리안, 일단 밖으로 나가볼···."
+남자가 마리안과 눈을 마주친다.
+"아."
+마리안이 붉은 눈으로 남자를 바라본다.
+"벌써··· 시간이 다 됐구나."
+[CHOICE_START ID="fading_affection_2259_choice"]
+  [OPTION TEXT="밖으로 나간다." VALUE="option_225901"]
+    침식도 +40%
+    침식 엔딩으로 이어집니다.
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2259_choice" OPTION="option_225901" TARGET="fading_affection_7204"]
+
+@@@SCRIPT_ID: fading_affection_2260
+@@@SUB_TITLE: 마리안의 기록 082
+[SCENE START]
+마리안은 과거의 기억을 떠올렸다.
+"예전에 제가 고압 전류에 감전당했던 적이 있잖아요."
+"그것처럼··· 감전을 시켜보는 건 어떨까요?"
+"감전?"
+"블랙스미스의 위험한 점은, 그 촉수에 있다고 생각해요."
+"그러니 한순간만이라도, 촉수를 뻗을 수 없을 만큼 강한 전력을 가할 수 있다면."
+"그 사이에 코어를 부술 수만 있다면···!"
+마리안이 확신을 가진 눈으로 지휘관을 바라본다.
+"이길 수 있지 않을까요?"
+"확실히 좋은 방법인 것 같아."
+"감전··· 시킬 수 있는 방법은···."
+지휘관도 과거의 기억을 떠올렸다.
+"이 빌딩 말이야··· 전력 제어반이 가동되고 있었지?"
+"아, 그때··· 창문으로 추락했을 때···!"
+"맞아. 그때 우리가 떨어졌던 침수구역에 전력을 흐르게만 할 수 있다면···!"
+"감전을 시킬 수 있을지 몰라요."
+지휘관이 자리에서 일어났다.
+"가자. 마리안."
+"당장 되지 않는다 하더라도, 몇 번이고 도전해서···."
+손을 내민다.
+"반드시 이겨내자."
+마리안이 그 손을 맞잡았다.
+"예!"
+둘은 함께 밖으로 나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2261"]
+
+@@@SCRIPT_ID: fading_affection_2261
+@@@SUB_TITLE: 마리안의 기록 083
+[SCENE START]
+둘은 밖으로 나가, 창문으로 빠지지 않게 조심하며 다시 빌딩 위를 올랐다.
+마리안은 전력 제어반을 열어 내부를 확인한다.
+외벽 조명과 각종 설비에 전력을 공급하기 위한 장치였다.
+대부분의 표시등이 꺼져있었지만, 한쪽 계통에만 붉은 표시등이 들어와 있었다.
+"···지휘관."
+마리안은 이전에 그들이 떨어져 내렸던 창문 아래를 바라보았다.
+파손된 외벽 설비에서 이어진 전력선이 깨진 창문 너머로, 호숫물 속으로 축 늘어져 있었다.
+"쓸 수 있을 거 같아요."
+"다만, 저쪽까지 제대로 공급되는지는···."
+마리안이 레버를 바라보았다.
+"직접 투입해 봐야 알 수 있을 것 같아요."
+"해보자."
+"예···!"
+"전력을 조금이라도 아끼려면 타이밍에 맞게, 레버를 당기는 게 좋을 거 같아요."
+"그렇다는 건···."
+마리안은 결심한 듯 지휘관을 바라보았다.
+[CHOICE_START ID="fading_affection_2261_choice"]
+  [OPTION TEXT="미끼가 되겠다고 말한다." VALUE="option_226101"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2261_choice" OPTION="option_226101" TARGET="fading_affection_2262"]
+
+@@@SCRIPT_ID: fading_affection_2262
+@@@SUB_TITLE: 마리안의 기록 084
+[SCENE START]
+"그건 안···!"
+"함께··· 미래로 가자고 했잖아요."
+마리안이 눈을 빛낸다.
+"제가 미끼가 되어서 블랙스미스를 여기까지 데려올게요.
+대신 지휘관은 타이밍에 맞게 레버를 당겨주세요."
+"···마리안."
+"할 수 있으시겠어요?"
+지휘관이 마리안을 바라본다.
+"알겠어."
+"타이밍에 맞춰, 반드시 성공시킬게."
+"예!"
+"그래도··· 이 빌딩 아래까지는 함께 가게 해줘.
+혼자 있으면··· 내가 무서울 거 같거든."
+마리안이 지휘관을 바라본다.
+홀로 있을 자신을 걱정하는 눈이 있었다.
+그 순간, 마리안은 지독히도 외로웠던 지난날이 떠올랐다.
+"···좋아요."
+그렇기에, 그의 따뜻한 눈을 보며,
+"지휘관."
+"응?"
+마리안이 미소 지었다.
+"고마워요."
+
+메모리 저장: 저장된 메모리 : 함께하는 작전
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2263"]
+
+@@@SCRIPT_ID: fading_affection_2263
+@@@SUB_TITLE: 마리안의 기록 085
+[SCENE START]
+마리안과 지휘관은 쓰러진 빌딩 앞에 섰다.
+쿵- 쿵- 쿵- 쿵-
+멀리서 익숙한 진동이 느껴졌다.
+"블랙스미스의 진동 확인."
+"좋아. 그럼 난 전력 제어반으로 가 있을게."
+"저도 곧 유인해서 따라갈게요."
+"촉수랑 창문 조심하고."
+"후후, 지휘관도 창문 조심하세요."
+지휘관이 웃으며 먼저 외벽을 뛰어 올라간다.
+마리안은 그 모습을 바라보다가, 정면을 응시했다.
+블랙스미스가 육안으로 들어왔다.
+"조금만 더···!"
+마리안을 향해 촉수를 뻗어낸···!
+"지금···!"
+[CHOICE_START ID="fading_affection_2263_choice"]
+  [OPTION TEXT="전력을 다해 뛴다." VALUE="option_226301"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="아래를 살피며 신중하게 뛴다." VALUE="option_226302"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2263_choice" OPTION="option_226301" TARGET="fading_affection_2264"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2263_choice" OPTION="option_226302" TARGET="fading_affection_2265"]
+
+@@@SCRIPT_ID: fading_affection_2264
+@@@SUB_TITLE: 마리안의 기록 086
+[SCENE START]
+마리안은 전력을 다해, 필사적으로 빌딩을 뛰어올라갔다.
+쿵- 쿵- 쿵- 쿵-!!
+블랙스미스가 마리안을 쫓아 빠르게 다가오고 있다.
+"조금만 더··· 조금만 더···!!"
+쿵- 쿵- 쿵···! 쾅-!!!
+블랙스미스가 마리안을 따라 빌딩을 오른다.
+"조금만 더···!!"
+쨍그랑-!!!
+블랙스미스의 발이 창문으로 파고들었다.
+풍덩! 촤아악-!!
+건물 안에 거대한 물살이 인다.
+지금이다!
+"지휘관!!"
+지휘관이 레버를 당겼다!
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2266"]
+
+@@@SCRIPT_ID: fading_affection_2265
+@@@SUB_TITLE: 마리안의 기록 087
+[SCENE START]
+마리안은 창문으로 빠졌던 지난날을 떠올리며 아래를 바라보고 신중하게 달렸다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6209"]
+
+@@@SCRIPT_ID: fading_affection_2266
+@@@SUB_TITLE: 마리안의 기록 088
+[SCENE START]
+파지지지직-!!
+일순간, 블랙스미스가 멈춰 섰다.
+"지금이야!!"
+투두두두두두-
+마리안과 지휘관이 블랙스미스의 코어를 향해 집중 사격했다.
+"제발···!"
+"부서져라!!"
+쩍- 쩌적-!!
+[CHOICE_START ID="fading_affection_2266_choice"]
+  [OPTION TEXT="코어를 깨뜨린다!" VALUE="option_226601"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2266_choice" OPTION="option_226601" TARGET="fading_affection_2267"]
+
+@@@SCRIPT_ID: fading_affection_2267
+@@@SUB_TITLE: 마리안의 기록 089
+[SCENE START]
+쾅-!!
+코어가 깨져나가고,
+쿠우웅-
+마침내 블랙스미스가 쓰러져내렸다.
+"블랙스미스··· 침묵 확인···!"
+마리안이 떨리는 눈으로 지휘관을 바라본다.
+"지휘관···!"
+지휘관도 같은 표정으로 마리안을 바라본다.
+"마리안···!"
+서로를 끌어안는다.
+많은 순간 마리안을 죽음으로 밀어넣었던 블랙스미스를 마침내 물리쳐낸 순간이었다.
+
+메모리 저장: 저장된 메모리 : 복수
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2268"]
+
+@@@SCRIPT_ID: fading_affection_2268
+@@@SUB_TITLE: 마리안의 기록 090
+[SCENE START]
+마리안과 지휘관은 빌딩에서 내려와, 산책로를 걸어갔다.
+가는 도중, 여러 차례 랩쳐들과 조우했으나 쉽게 이겨낼 수 있는 수준의 규모였다.
+그렇게 걷고, 또 걸은 끝에···.
+"드디어··· 산책로가 끝났네요."
+"그렇네."
+지휘관이 앞을 바라보았다.
+한때 신도시로 불렸던, 무너진 도심이 둘을 반기고 있었다.
+마리안은···.
+[CHOICE_START ID="fading_affection_2268_choice"]
+  [OPTION TEXT="함께 앞을 바라본다." VALUE="option_226801"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2268_choice" OPTION="option_226801" TARGET="fading_affection_2269"]
+
+@@@SCRIPT_ID: fading_affection_2269
+@@@SUB_TITLE: 마리안의 기록 091
+[SCENE START]
+"정말··· 여길 오게 되네요."
+"영영··· 임무 지역의 절반도 못 넘어갈 줄 알았는데."
+"함께 있으니까."
+지휘관이 마리안을 바라본다.
+"마리안과 함께 있어서 올 수 있었던 거야."
+그의 등 뒤로 황금빛으로 물든 하늘이 보인다.
+"마리안."
+찬란한 황금빛이, 그를 비춘다.
+그가 마리안을 향해 웃는다.
+"그날, 나를 믿어줘서 고마워."
+"앞으로도 꼭··· 살아남아서."
+"끝까지 함께 가자."
+언젠가 함께 보았던 반짝이던 호수처럼, 아니, 그보다 더 찬란하게 삶이 황금빛으로 반짝였다.
+"그리고 미래를 맞이하자."
+그 속에 그가 있었다.
+그 속에 마리안이 있었다.
+"예. 지휘관."
+
+메모리 저장: 저장된 메모리 : 반짝이는 삶
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2270"]
+
+@@@SCRIPT_ID: fading_affection_2270
+@@@SUB_TITLE: 마리안의 기록 092
+[SCENE START]
+노을이 진다.
+두 사람은 신도시 입구를 향해 걸어간다.
+"들어가면 뭐부터 해볼까?"
+"일단 거점이 될 만한 곳을 찾아볼까?"
+"이번엔 블랙스미스 같은 건 없었으면 좋겠는데."
+황금빛이 주홍빛으로 변해간다.
+"함정으로 쓸 만한 곳을 먼저 찾아두는 것도 좋겠다."
+"아니면 식량을 먼저 확보해두는 편이 좋으려나···."
+태양이 조금 더 내려온다.
+"조금이라도 편하게 쉴 수 있을 만한 곳이 있었으면 좋겠네."
+"이번에 너무 고생 많았잖아."
+세상이 붉게 물든다.
+"마리안은 어떻게 생각해?"
+마리안은···.
+[CHOICE_START ID="fading_affection_2270_choice"]
+  [OPTION TEXT="고개를 돌린다." VALUE="option_227001"]
+    침식도 +50%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2270_choice" OPTION="option_227001" TARGET="fading_affection_2271"]
+
+@@@SCRIPT_ID: fading_affection_2271
+@@@SUB_TITLE: 마리안의 기록 093
+[SCENE START]
+"아."
+붉은 눈으로 남자를 마주한다.
+"벌써··· 시간이 이렇게 되었구나···."
+남자가 마리안의 팔을 붙잡는다.
+"가지 말라고 해도, 갈 거지?"
+"갈 거예요."
+철컥-
+[CHOICE_START ID="fading_affection_2271_choice"]
+  [OPTION TEXT="[REDACT]지휘관을[/REDACT]남자를 죽인다." VALUE="option_227101"]
+    침식도 +50%
+    침식 엔딩으로 이어집니다.
+  [OPTION_END]
+  [OPTION TEXT="남자를 [REDACT]죽이지 마! 제발[/REDACT] 죽인다." VALUE="option_227102"]
+    침식도 +50%
+    침식 엔딩으로 이어집니다.
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2271_choice" OPTION="option_227101" TARGET="fading_affection_7205"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2271_choice" OPTION="option_227102" TARGET="fading_affection_7205"]
+
+@@@SCRIPT_ID: fading_affection_2301
+@@@SUB_TITLE: 마리안의 기록 094
+[SCENE START]
+마리안과 지휘관은 이제는 익숙하게, 호수 지역을 돌파하여 신도시에 도착한다.
+신도시의 입구.
+마리안은 이상한 기시감에 발걸음을 늦춘다.
+"왜 그래? 뭐라도 있어?"
+지휘관이 옆으로 다가온다.
+지휘관이 마리안을 바라본다.
+"마리안?"
+마리안은 그의 머리 위로 쏟아지는 햇빛을 바라본다.
+푸르고 맑은 하늘에 해가 떠 있었다.
+"어디··· 안 좋은 거야?"
+걱정만이 가득한, 어딘가 익숙한 그의 눈을 본다.
+마리안은···.
+[CHOICE_START ID="fading_affection_2301_choice"]
+  [OPTION TEXT="그를 안심시킨다." VALUE="option_230101"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="꿈을 이야기한다." VALUE="option_230102"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="이곳에서 도망치자고 한다." VALUE="option_230103"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2301_choice" OPTION="option_230101" TARGET="fading_affection_2302"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2301_choice" OPTION="option_230102" TARGET="fading_affection_2303"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2301_choice" OPTION="option_230103" TARGET="fading_affection_2304"]
+
+@@@SCRIPT_ID: fading_affection_2302
+@@@SUB_TITLE: 마리안의 기록 095
+[SCENE START]
+"아무것도··· 아니에요."
+"그래?"
+"그럼 같이 들어갈까?"
+익숙한 말.
+"··· ···."
+마리안은 그를 안심시키기 위해 다시 미소 짓는다.
+"예. 가요, 지휘관."
+둘은 함께 신도시로 걸어들어간다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2305"]
+
+@@@SCRIPT_ID: fading_affection_2303
+@@@SUB_TITLE: 마리안의 기록 096
+[SCENE START]
+마리안은 생각했다.
+이 지독한 침식도, 임무도 지금 당장 해결할 수 있는 건 아무것도 없다.
+임무 지역을 탈출한다고 하더라도, 자신이 언제 침식에 걸릴지, 랩쳐에게 죽을지 모른다.
+지상은 위험하다.
+안전한 장소에서 지휘관과 함께 미래를 꿈꾸려면, 어떻게 해서든 이 거짓된 사명을 완수해야만 한다.
+그렇기에 마리안은 지휘관과 함께 미래를 그리며 나아가기로 했다.
+"지휘관. 저 하고 싶은 게 생겼어요."
+지휘관이 의아한 눈으로 바라본다.
+"뭔데?"
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_8201"]
+
+@@@SCRIPT_ID: fading_affection_2304
+@@@SUB_TITLE: 마리안의 기록 097
+[SCENE START]
+마리안은 생각했다.
+정말 끝이 날지 알 수 없는 거짓된 사명으로부터, 이 지독한 굴레에서 벗어나고 싶다.
+단 하루만이라도 지휘관과 죽음을 걱정하는 것이 아니라, 어떻게 살아갈지 고민하며 보내고 싶다.
+단 한 번만이라도 그와 함께 행복해지고 싶다고 생각했다.
+그렇기에 마리안은···.
+[CHOICE_START ID="fading_affection_2304_choice"]
+  [OPTION TEXT="지휘관에게 도망가자고 말한다." VALUE="option_230401"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="아직은 말할 용기가 없다." VALUE="option_230402"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2304_choice" OPTION="option_230401" TARGET="fading_affection_2320"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2304_choice" OPTION="option_230402" TARGET="fading_affection_2321"]
+
+@@@SCRIPT_ID: fading_affection_2305
+@@@SUB_TITLE: 마리안의 기록 098
+[SCENE START]
+지휘관이 도심 안을 걷는다.
+"와··· 여긴 제법 멀쩡한 건물들도 많이 남아 있네."
+"우선 거점을 삼을 만한 곳을 찾아볼까?"
+익숙해보이는 들뜬 얼굴.
+"··· ···."
+마리안은 그 얼굴을 빤히 바라보았다.
+"마리안?"
+"예?"
+"무슨 일 있어? 오늘 계속 멍해보이는···."
+쾅-!!
+"이런··· 기습이다!"
+한 무리의 지상형 랩쳐들이 기습해온다.
+마리안은···.
+[CHOICE_START ID="fading_affection_2305_choice"]
+  [OPTION TEXT="랩쳐를 모두 잡아낸다." VALUE="option_230501"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2305_choice" OPTION="option_230501" TARGET="fading_affection_2306"]
+
+@@@SCRIPT_ID: fading_affection_2306
+@@@SUB_TITLE: 마리안의 기록 099
+[SCENE START]
+수많은 경험을 한 후, 마리안과 지휘관은 이 정도 기습에는 능숙해졌다.
+"후우···."
+"다행히 블랙스미스 같은 놈은 없는 것 같네."
+어딘가 익숙한 안도.
+"그렇··· 네요."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2307"]
+
+@@@SCRIPT_ID: fading_affection_2307
+@@@SUB_TITLE: 마리안의 기록 100
+[SCENE START]
+"아까부터 멍해보이는데, 괜찮은 거야?"
+"아··· 그럼요. 아직은 낯선 곳이라 조금 긴장했나 봐요."
+지휘관이 걱정스레 바라보다, 주위를 둘러본다.
+"많이 불안하면, 함정으로 쓸 만한 곳이 있나 먼저 찾아볼까?"
+또다시 드는 기시감.
+"아니면, 이곳에서 얼마나 있을지 모르니, 식량부터 좀 더 확보하는 게 좋을까?"
+이 이야기를 언제 들었었지?
+왜 기억에 존재하지 않는 걸까.
+애초에, 어째서 기억이 존재하지 않는 거지?
+"···마리안?"
+마리안은 지휘관에게···.
+[CHOICE_START ID="fading_affection_2307_choice"]
+  [OPTION TEXT="이전에 같은 말을 했는지 묻는다." VALUE="option_230701"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2307_choice" OPTION="option_230701" TARGET="fading_affection_2308"]
+
+@@@SCRIPT_ID: fading_affection_2308
+@@@SUB_TITLE: 마리안의 기록 101
+[SCENE START]
+"이전에··· 같은 말을 했었냐고?"
+"음··· 글쎄."
+난감해 하는 표정 속, 아주 짧게 스쳐간 두려움.
+마리안은 그 두려움에서···.
+[CHOICE_START ID="fading_affection_2308_choice"]
+  [OPTION TEXT="아무것도 떠올리지 못한다." VALUE="option_230801"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="비슷한 표정을 본 기억을 떠올린다." VALUE="option_230802"]
+    침식도 +1%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2308_choice" OPTION="option_230801" TARGET="fading_affection_2309"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2308_choice" OPTION="option_230802" TARGET="fading_affection_2310"]
+
+@@@SCRIPT_ID: fading_affection_2309
+@@@SUB_TITLE: 마리안의 기록 102
+[SCENE START]
+"마리안. 괜찮은 것 맞지?"
+"그럼··· 요. 괜찮아요."
+마리안은 아무런 기억을 떠올리지 못한 채, 미묘한 위화감을 안고 지휘관을 따라나선다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6210"]
+
+@@@SCRIPT_ID: fading_affection_2310
+@@@SUB_TITLE: 마리안의 기록 103
+[SCENE START]
+마리안은 그의 두려워하는 표정을 봤던 날을 기억한다.
+구도심에서 고양이를 찾으러 편의점 창고에 갔던 때.
+그날도 분명, 알 수 없는 직감에 평소라면 하지 않았을 선택을 했다.
+평소였다면 분명 편의점 안에서 랩쳐들이 지나가는 것을 기다렸을 것이다.
+만약 그때, 평소와 다른 선택을 하지 않고 평소대로 행동했다면 무슨 일이 일어났을까?
+그때 일어날 수 있는 두려운 일이 뭐지?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2311"]
+
+@@@SCRIPT_ID: fading_affection_2311
+@@@SUB_TITLE: 마리안의 기록 104
+[SCENE START]
+마리안이 말이 없자, 지휘관이 다급하게 말을 이어나간다.
+"뭐, 언젠가 했던 말 아닐까?"
+"아무래도 우리 많은 일을 겪었으니까."
+"그보다 우리 이만 움직일까?
+언제 또 랩쳐가 올지 모르잖아."
+다급해 보이는 행동.
+마리안은 그 행동에서···.
+[CHOICE_START ID="fading_affection_2311_choice"]
+  [OPTION TEXT="아무것도 떠올리지 못한다." VALUE="option_231101"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="비슷한 행동을 본 기억을 떠올린다." VALUE="option_231102"]
+    침식도 +2%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2311_choice" OPTION="option_231101" TARGET="fading_affection_2309"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2311_choice" OPTION="option_231102" TARGET="fading_affection_2312"]
+
+@@@SCRIPT_ID: fading_affection_2312
+@@@SUB_TITLE: 마리안의 기록 105
+[SCENE START]
+마리안은 그의 다급한 행동을 봤던 날을 기억한다.
+평소라면 절대 빌딩 위에 오르는 선택을 하지 않았을 지휘관이, 거대한 죽음으로부터 마리안을 지키려는 듯 필사적으로 빌딩을 올라갔다.
+그리고 그전에, 마리안은 블랙스미스의 촉수에 맞은 이후의 일을 기억하지 못했다.
+블랙스미스. 촉수. 기억의 공백.
+기억이 지워진 건 정말 그때뿐일까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2313"]
+
+@@@SCRIPT_ID: fading_affection_2313
+@@@SUB_TITLE: 마리안의 기록 106
+[SCENE START]
+"마리안?"
+지휘관은 마리안이 계속 말이 없자, 걱정 가득한 눈으로 바라본다.
+그 눈을 바라보며 마리안은···.
+[CHOICE_START ID="fading_affection_2313_choice"]
+  [OPTION TEXT="아무것도 떠올리지 못한다." VALUE="option_231301"]
+    침식도 +1%
+  [OPTION_END]
+  [OPTION TEXT="비슷한 눈을 본 기억을 떠올린다." VALUE="option_231302"]
+    침식도 +2%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2313_choice" OPTION="option_231301" TARGET="fading_affection_2309"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2313_choice" OPTION="option_231302" TARGET="fading_affection_2314"]
+
+@@@SCRIPT_ID: fading_affection_2314
+@@@SUB_TITLE: 마리안의 기록 107
+[SCENE START]
+마리안은 그의 걱정 가득한 눈을 봤던 날을 기억한다.
+호수의 북쪽 숲에 들어갔을 때.
+나무가 적은 방향으로 가서 생각보다 오랫동안 랩쳐와 전투를 벌였던 날.
+[아직··· 인가.]
+라고 말하던 말. 걱정스럽게 바라본 눈.
+아직? 뭐가 아직이었던 걸까.
+무언가가 변화한다는 것이었을까?
+그가 걱정할 만한 변화가 뭐지?
+그 눈이 살피던 건 분명···.
+[CHOICE_START ID="fading_affection_2314_choice"]
+  [OPTION TEXT="마리안. 자신이었다는 걸 깨닫는다." VALUE="option_231401"]
+    침식도 +2%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2314_choice" OPTION="option_231401" TARGET="fading_affection_2315"]
+
+@@@SCRIPT_ID: fading_affection_2315
+@@@SUB_TITLE: 마리안의 기록 108
+[SCENE START]
+지휘관이 두려워할 만한 마리안, 자신의 변화.
+기억의 공백.
+순간, 마리안은 마리아 박사와의 기억을 떠올린다.
+[너. 침식에 작작 좀 걸려.]
+[아··· 침식에 걸리는 순간 데이터 갱신이 바로 멈추지.]
+[기억 못 하는 게 당연한가.]
+"···아."
+침식.
+자신이 침식에 걸렸던 거다.
+그래서 기억에 공백이 생겼던 거다.
+마리안이 침식에 걸린 동안···.
+"마리안?"
+지휘관은 어떻게 됐을까?
+[CHOICE_START ID="fading_affection_2315_choice"]
+  [OPTION TEXT="결론을 내린다." VALUE="option_231501"]
+    침식도 +10%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2315_choice" OPTION="option_231501" TARGET="fading_affection_2316"]
+
+@@@SCRIPT_ID: fading_affection_2316
+@@@SUB_TITLE: 마리안의 기록 109
+[SCENE START]
+쿵- 쿵- 쿵- 쿵-
+"이런··· 여기 계속 있다간 큰일 나겠다."
+"일단, 어디든 이동하자."
+"아니요. 정리하고 가요."
+"···마리안?"
+"다녀올게요, 지휘관."
+"마리안?!"
+마리안이 앞으로 달려나간다.
+수백 번을 싸워보았을 랩쳐들과 교전한다.
+그리고 지휘관을 향해 달려드는 랩쳐들을 보며, 다시금 깨닫는다.
+랩쳐는 인간을 죽이려 한다.
+침식은 니케를 랩쳐 기준의 사고방식으로 변화시킨다.
+마리안은 특정할 수 없는 시간이 지나면 침식에 걸린다.
+이 모든 것이 합쳐져, 마리안의 머릿속에서 단 하나의 결과를 만들어낸다.
+[마리안이 침식에 걸려 지휘관을 죽였다.]
+"흑··· 으으··· 으으으으···!"
+마리안은 필사적으로 눈물을 참으며, 지휘관을 향해 달려드는 랩쳐들을 모두 쓰러뜨렸다.
+
+메모리 저장: 저장된 메모리 : 진실
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2317"]
+
+@@@SCRIPT_ID: fading_affection_2317
+@@@SUB_TITLE: 마리안의 기록 110
+[SCENE START]
+얼마나 시간이 흘렀을까, 마리안과 지휘관은 몰아치는 랩쳐들을 모두 쓰러뜨린 후, 근처에 있는 안전해보이는 건물에 들어섰다.
+"후우··· 큰일 날 뻔했네."
+디코이를 설치하고 건물의 최상층에 숨어들어온 지휘관과 마리안은 창밖을 바라보았다.
+"시간이 벌써 이렇게 됐구나."
+"노을이 지네."
+하늘이 황금빛으로 빛나고 있었다.
+"벌써···."
+마리안은 알 수 없는 직감이 들었다.
+이제 시간이 얼마 남지 않았다.
+아마 지금 이 순간도 머릿속에서 지워질지 모른다.
+그렇기에 마리안은···.
+[CHOICE_START ID="fading_affection_2317_choice"]
+  [OPTION TEXT="진심을 물어본다." VALUE="option_231701"]
+    침식도 +30%
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_2317_choice" OPTION="option_231701" TARGET="fading_affection_2318"]
+
+@@@SCRIPT_ID: fading_affection_2318
+@@@SUB_TITLE: 마리안의 기록 111
+[SCENE START]
+"지휘관."
+마리안이 창문가로 다가가 지휘관을 바라보았다.
+"마리안···?"
+지휘관이 마리안을, 붉은색으로 서서히 물들어가는 눈을 바라본다.
+"!!!"
+"왜··· 벌써···."
+"역시··· 알고 계셨군요.
+제가 시간이 지나면 침식에 걸린다는 걸."
+"그걸··· 마리안이 어떻게···."
+"지휘관."
+이 도시를 처음 봤던 그날처럼.
+마리안의 등 뒤로 황금빛이 쏟아져 내린다.
+"저와 함께 미래를 맞이하고 싶다고 했던 거, 아직도 진심인가요?"
+"마리안."
+"부탁이에요. 어차피 지금의 일은 제대로 다 기억하지 못할 거예요."
+"그러니··· 부디 지금만큼은 솔직하게 말해주세요."
+마리안이 간절하게 지휘관을 바라본다.
+"아직도 저와 미래를 함께하고 싶나요?"
+"응."
+"제가 언제 침식에 걸릴지 모르는데도?"
+"괜찮아."
+"제가 지휘관을 또 죽일지 모르는데도요?"
+"괜찮아. 그런 건 아무런 상관 없어."
+"왜요?"
+지휘관이 마리안을 향해 웃는다.
+황금빛이 그에게 머물렀던 그날처럼.
+"사랑하니까."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2319"]
+
+@@@SCRIPT_ID: fading_affection_2319
+@@@SUB_TITLE: 마리안의 기록 112
+[SCENE START]
+"아···."
+마리안은 안도하는 자신이 지독하게 혐오스러웠지만, 그럼에도···.
+"···기뻐요."
+너무나도 기뻤다.
+이 모든 진실을 알고 있음에도, 자신을 사랑해줘서 기뻤다.
+행복했다.
+이걸 전부 기억하지 못한다고 하더라도, 마리안은 이 사실을 안 것만으로도 충분했다.
+"정말 기뻐요."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6211"]
+
+@@@SCRIPT_ID: fading_affection_2320
+@@@SUB_TITLE: 마리안의 기록 113
+[SCENE START]
+"지휘관. 저희 도망갈까요?"
+"···뭐?"
+마리안이 간절한 눈으로 지휘관을 바라본다.
+"딱 하루··· 아니, 아주 잠시라도 좋아요."
+"이 지독한 반복에서 벗어나서, 지휘관과 오늘을 살아보고 싶어요."
+"마리안···."
+"랩쳐에게 쫓기고 부수고, 위험한 곳을 향해 나아가는 것이 아니라···."
+"오늘은 뭐 할지, 내일은 뭐 할지 소소하게 고민하는 삶을 살아보고 싶어요."
+"거짓된 행복이라도 좋아요.
+아주 잠시 스쳐지나가는 행복이라도 좋아요.
+우리에게 언제 끝이 찾아올지 모르지만, 끝이라는 게 반드시 찾아오는 것이라면···.
+오늘 단 하루만이라도 임무 지역에서 벗어나 도망쳐보면 안 될까요?"
+굴레에서 벗어나 함께 행복해지고 싶다고 말한다.
+그렇기에 지휘관은···.
+"···그러자. 그렇게 하자."
+"도망치자. 우리."
+그녀의 소원대로 해보기로 했다.
+사랑하는 그녀를 위해, 늘 그래왔듯 자신의 목숨을 걸고 새로운 길을 나아가 보기로 했다.
+"···고마워요. 지휘관."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2322"]
+
+@@@SCRIPT_ID: fading_affection_2321
+@@@SUB_TITLE: 마리안의 기록 114
+[SCENE START]
+아직은 어떻게 도망가야 할지 계획조차 떠오르지 않는다.
+마리안은 다른 방향으로 고민해보기로 했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_2301"]
+
+@@@SCRIPT_ID: fading_affection_2322
+@@@SUB_TITLE: 마리안의 기록 115
+[SCENE START]
+마리안과 지휘관은 임무 목표와 반대 방향으로 달려나갔다.
+"이제 조금만 더 가면 산이 나와요!
+그곳으로 가면, 건너편 지역으로 넘어갈 수 있을 거예요."
+"나가면 가장 먼저 뭐부터 해보고 싶어?"
+"글쎄요···."
+마리안은 한참을 고민하더니, 행복하게 웃었다.
+"후후, 지휘관과 함께라면 뭘 해도 좋을 거 같아요."
+"지휘관은요?"
+"나도 그래."
+"마리안과 함께라면, 뭘 해도 좋아."
+지휘관도 마주 보고 웃었다.
+"그럼 조금 더 서두를까요?"
+"좋아, 가자···!"
+제한 시간이 있지만 그렇기에 더 애틋한 행복을 가슴에 담은 채, 두 사람은 행복한 오늘을 맞이하기 위해 마침내 선을 넘어 임무 지역 밖으로 뛰어나갔-
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_9201"]
+
+@@@SCRIPT_ID: fading_affection_6201
+@@@SUB_TITLE: 다녀오세요?
+[SCENE START]
+DEATH END
+
+마리안은 한참을 고개를 갸웃하더니, 이내 결심한 듯 고개를 들어 지휘관을 바라본다.
+"일단 죽고, 다시 떠올려 볼게요!"
+"아니, 마리안 잠시만···!"
+마리안이 비장한 표정으로 머리에 총을 가져간다.
+"다녀올게요!"
+탕-!
+
+메모리 저장: 저장된 메모리 : 기억의 중요성
+
+힌트: [마리아]의 기억을 되짚어 보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6202
+@@@SUB_TITLE: 과민반응
+[SCENE START]
+DEATH END
+
+쿵- 쿵- 쿵- 쿵-
+마리안의 총소리를 듣고, 랩쳐들이 몰려들기 시작한다.
+"이렇게나··· 갑자기···!"
+마리안과 지휘관은 필사적으로 막아내려 고군분투했지만···.
+"나무가··· 너무 방해돼···!"
+가려진 시야 탓에 결국 밀려드는 랩쳐들을 막아내지 못하고,
+푸슝-
+"위험해, 마리안!"
+지휘관이 마리안의 앞을 막아선다.
+펑-!!
+지휘관의 배에 거대한 구멍이 뚫린다.
+"지휘관···?"
+지휘관이 즉사한다.
+"안 돼···!!"
+얼마 지나지 않아 마리안의 바디에도 거대한 구멍이 뚫렸고, 마리안은 의식을 잃었다.
+
+메모리 저장: 저장된 메모리 : 과도한 경계
+
+힌트: 너무 과하게 반응하는 것도 때로는 독이 된다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6203
+@@@SUB_TITLE: 어디까지 뛰어보셨죠?
+[SCENE START]
+DEATH END
+
+"헉··· 허억··· 허어어억···!"
+지휘관의 체력이 한계에 다다랐다.
+"지휘관, 우선 이쪽에 숨어서 쉬고 가죠."
+마리안이 지휘관을 이끌고 거대한 나무 뒤에 앉힌다.
+"후우··· 미, 미안···."
+"제가 먼저 나가서 미끼가 될 테니까, 천천히 따라오세요. 아셨죠?"
+"뭐···? 안···!"
+"먼저 갈게요!"
+마리안이 미끼가 되기 위해 나무 밖으로 뛰어나간 그 순간,
+쾅-!!
+공중형 랩쳐가 쏘아낸 빔이 거대한 나무의 밑동을 맞힌다.
+쩌저적-
+"지휘관!"
+"!!!"
+지휘관은 쓰러지는 나무를 피하지 못한 채,
+쿠우웅-!!
+깔려서 사망한다.
+"안 돼!"
+지휘관을 끌어내려던 마리안도 공중형 랩쳐의 공격을 맞아 함께 사망한다.
+
+메모리 저장: 저장된 메모리 : 지휘관의 체력
+
+힌트: 무작정 뛰는 건 모두의 이목을 끌 수 있다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6204
+@@@SUB_TITLE: 데려갈 수 없어
+[SCENE START]
+DEATH END
+
+지휘관이 마리안의 앞으로 뛰어든다.
+푸욱-
+지휘관의 배에 블랙스미스의 촉수가 꽂힌다.
+"지휘··· 관?"
+지휘관이 필사적으로 촉수를 붙잡는다.
+"절대··· 널··· 잡아가게··· 놔두지 않아."
+"지휘관···!!"
+"쿨럭···! 도망··· 쳐···!"
+지휘관이 필사적으로 외친다.
+"지휘관을 두고는 못 가요!"
+투두두두-
+마리안이 블랙스미스를 향해 총을 난사한다.
+하지만,
+푸슝-
+"마리··· 안···!"
+총소리를 듣고 몰려온 랩쳐에 의해, 마리안이 사망한다.
+"안··· 돼···!"
+얼마 지나지 않아 지휘관도 과다출혈로 인해 사망한다.
+
+메모리 저장: 저장된 메모리 : 희생
+
+힌트: 추격자를 따돌리기 위해선 재빠르게 움직여야 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6205
+@@@SUB_TITLE: 굶주림의 끝
+[SCENE START]
+DEATH END
+
+"어서 피해야···!"
+둘은 랩쳐들이 몰려오기 전에, 나무 뒤로 엄폐해보려 하지만···.
+콰드드득-
+느려진 판단력은 위에서 떨어져 내리는 랩쳐를 감지하지 못하고, 결국 둘은 떨어지는 랩쳐에게 짓밟혀 죽는다.
+
+메모리 저장: 저장된 메모리 : 지휘관의 체력
+
+힌트: 쉴 수 있을 때 쉬고, 먹을 수 있을 때 먹자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6206
+@@@SUB_TITLE: 전기 주의
+[SCENE START]
+DEATH END
+
+파지지직-!!
+고압의 전류가 마리안의 바디를 꿰뚫는다.
+마리안은 비명도 지르지 못하고 바닥으로 쓰러져 내린다.
+"안 돼···!"
+마리안은 그제야 천장에서 내려온 케이블들이 파손된 상태로 물에 잠겨있는 것을 발견한다.
+"아··· 아아···."
+마리안은 지휘관이 자신을 구하기 위해 무리하지 않길 바라며 의식을 잃었다.
+
+메모리 저장: 저장된 메모리 : 감전
+
+힌트: 무작정 숨는 것이 능사는 아니다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6207
+@@@SUB_TITLE: 만족스러운 희생
+[SCENE START]
+DEATH END
+
+"지휘관··· 도망···!"
+마리안이 촉수에 붙잡힌 채, 허공으로 날아오른다.
+예상대로 지휘관에게 더 이상 촉수는 날아가지 않는다는 걸 확인한 마리안은,
+텁썩-
+우드득-
+그를 구해냈다는 것에 안도하며, 익숙한 죽음을 맞이했다.
+
+메모리 저장: 저장된 메모리 : 우선 순위
+
+힌트: 수많은 죽음의 경험이 싸움의 열쇠가 되어줄 것이다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6208
+@@@SUB_TITLE: 발밑을 조심하세요
+[SCENE START]
+DEATH END
+
+쨍그랑-!!
+"마리안!!"
+지휘관이 떨어지는 마리안의 손을 잡았지만, 결국 끌어올리지 못하고 함께 창문 아래로 떨어져 내린다.
+풍덩-
+두 사람은 건물 안으로 들어찬 호숫물 속으로 가라앉았다.
+
+메모리 저장: 저장된 메모리 : 깨지는 창문
+
+힌트: 일반적인 창문은 니케의 무게를 감당할 수 없다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6209
+@@@SUB_TITLE: 산책 나오셨나요?
+[SCENE START]
+DEATH END
+
+그때,
+휘익-
+"어?"
+블랙스미스의 촉수가 마리안을 잡아챘다.
+"너무 늦었···!"
+마리안의 몸이 허공으로 날아올랐다.
+텁썩-
+마리안은 전력을 다했어야 했다고 후회하며, 익숙한 죽음을 맞이했다.
+멀리서 지휘관의 비명 소리가 들리는 것 같았다.
+
+메모리 저장: 저장된 메모리 : 타이밍
+
+힌트: 성공하기 위해선 전력을 다해야 한다!
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6210
+@@@SUB_TITLE: 끝없는 의문
+[SCENE START]
+DEATH END
+
+결국 그날 오후,
+푸슝-!!
+"마리안!!"
+마리안은 넋을 놓고 움직이다, 공중형 랩쳐가 쏜 빔에 맞고 사망한다.
+의식을 잃는 그 순간까지, 마리안은 자신 안에 남아 있는 의문에 답을 찾지 못했다.
+
+메모리 저장: 저장된 메모리 : 위화감
+
+힌트: 지휘관과 함께하면서 느꼈던 미묘한 위화감들을 기억해내야 한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_6211
+@@@SUB_TITLE: 잠시만 안녕
+[SCENE START]
+DEATH END
+
+마리안은 창가에 걸터앉았다.
+"지휘관."
+마리안의 시야가 점점 붉어진다.
+"거기서 뭐 하는 거야, 위험···!"
+"다음에 다시 시작하면, 그땐 제가 더 서두를 테니까."
+지휘관이 마리안에게 손을 뻗는다.
+"잠시만··· 안녕."
+마리안이 붉은 하늘 위로 몸을 맡긴다.
+꽃이 떨어져내렸다.
+
+힌트: 다시 시작할 때, 다른 선택을 할 수 있기를.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_7201
+@@@SUB_TITLE: 나■야 ■요?
+[SCENE START]
+404 ERROR
+
+"탕-!"
+마리안이 쏜 탄환이 남자의 몸을 꿰뚫는다.
+남자가 바닥으로 쓰러진다.
+남자의 손이 마리안의 발을 향해 뻗어지다가-
+털썩-
+바닥으로 떨어진다.
+마리안은 붉은 눈으로 무심히 그 광경을 보다, 밖으로 걸어 나갔다.
+
+힌트: 시간이 지날수록 침식될 확률이 높아진다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_7202
+@@@SUB_TITLE: 가■■요?
+[SCENE START]
+404 ERROR
+
+탕-!!
+남자가 멀리서 날아오는 촉수를 향해 총을 쐈다.
+"제기랄··· 마리안을 노리는 건가!"
+촉수가 마리안을 향해 끊임없이 뻗어진다.
+탕-! 탕탕-!!
+"가가가가야야야야야해해해해요요요···."
+마리안이 촉수를 향해 손을 뻗는다.
+"마리안, 안 돼!"
+남자가 마리안의 팔을 잡는-
+푸슝-
+"컥-!"
+남자는 뒤에서 접근한 랩쳐의 탄환에 맞는다.
+털썩-
+남자가 쓰러진다.
+그 사이, 마리안이 촉수에 휘감긴다.
+"데려··· 가면···!"
+남자가 손을 뻗는다.
+"안··· 돼···."
+남자의 눈에서 빛이 사라진다.
+마리안은 블랙스미스의 촉수에 끌려가며, 그 모습을 무감각하게 바라보았다.
+
+힌트: 침식이 되면 콜링시그널을 일으킬 수 있다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_7203
+@@@SUB_TITLE: 놓■줘■?
+[SCENE START]
+404 ERROR
+
+탕-!!
+남자가 쏜 총알이 마리안의 옆에 있던 기둥을 맞힌다.
+마리안이 그와 동시에 자리에서 일어나려고 하자,
+꽈악-
+지휘관이 마리안을 필사적으로 끌어안았다.
+"놓아줘요."
+쩍- 쩌저적-
+기둥이 갈라진다.
+"미안해··· 마리안."
+쩍- 쩌저적-
+"놓아줘요."
+"내가··· 어떻게 너를 쏠 수 있겠어."
+퍽-
+마리안이 지휘관을 내리친다.
+"놓아줘요."
+"윽··· 미안해··· 정말 미안해···!"
+쩌적- 쩌저저적-!!
+"놓아줘요."
+아무리 때려도, 그는 마리안을 놓지 않았다.
+"대신··· 널 혼자 두지 않을게. 절대로···!"
+"놓아줘요. 놓아줘요. 놓아줘요. 놓아줘요."
+"미안해··· 마리안. 미안해···!"
+쿠르릉-
+천장이 모두 무너져 파묻힐 때까지 지휘관은 마리안을 놓지 않았다.
+
+힌트: 도망치는 것만이 능사는 아니다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_7204
+@@@SUB_TITLE: 비■줘■?
+[SCENE START]
+404 ERROR
+
+"비켜줘요."
+남자가 밖으로 나가려는 마리안의 앞을 가로막았다.
+"비켜줘요."
+"미안해··· 마리안."
+철컥-
+총을 들어올린다.
+"아무리 생각해도··· 널 쏘는 건 안 될 거 같아."
+"비켜줘요. 비켜줘요. 비켜줘요. 비켜줘요."
+"···미안해."
+탕-!
+마리안이 쏜 총알을 맞고, 남자가 바닥에 쓰러진다.
+마리안은 그것을 무심히 바라보다, 밖으로 나갔다.
+
+힌트: 실패했던 지난 경험들을 떠올려보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_7205
+@@@SUB_TITLE: ■ 거예■?
+[SCENE START]
+404 ERROR
+
+죽음을 예감한 듯, 남자의 손이 덜덜 떨린다.
+"난··· 괜찮으니까."
+남자가 울 것 같은 눈으로 마리안을 바라본다.
+"울지 마."
+마리안의 눈에서 눈물이 흘러내린다.
+"??"
+마리안이 의아하다는 듯 그것을 닦아낸다.
+"이렇게 돼도, 아직 그 안에 있는 거구나."
+남자가 웃는다.
+"그렇다면 됐어. 마리안이라면 괜찮아."
+"갈 거예요."
+"다음엔 내가 더 서두를 테니까···."
+"갈 거예요."
+"다음엔 꼭···."
+탕-!!
+"함께 가자."
+남자가 바닥에 쓰러졌다.
+바닥이 붉게 물들어간다.
+마리안은 볼에 묻은 붉은 것을 무심히 닦아낸 뒤, 무너진 도시 안으로 유유히 걸어들어갔다.
+
+메모리 저장: 일부만 남은 메모리 : ■휘■
+
+힌트: 다시 시작하자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_8201
+@@@SUB_TITLE: 함께하는 꿈
+[SCENE START]
+TRUE END
+
+"흰머리가 될 때까지 살고 싶어요."
+"···뭐?"
+지휘관이 놀란 눈으로 마리안을 바라본다.
+"그땐 지휘관도 흰머리가 가득해있겠죠?"
+"어··· 그럼 지금만큼 멋지진 않을 거 같은데."
+"아니에요."
+마리안이 지휘관을 바라본다.
+"분명 멋질 거예요."
+"마리안도 예쁠 거야."
+"후후, 그럴까요?"
+"음··· 결혼식도 해보면 좋겠네요."
+"결혼식?"
+"하얀 머리 될 때까지 같이 살려면, 결혼 정도는 해야 하는 거 아닌가요?"
+지휘관이 벙찐 듯 마리안을 바라보다,
+"하하! 그럼 당연히 해야지."
+기쁘게 웃었다.
+"반지를 준비해야겠네."
+"예쁜 걸로 준비해주세요."
+"매일매일 끼고 있고 싶게."
+"제일 예쁜 걸로 준비해놓을게."
+"그럼 예식장은···."
+마리안이 먼 곳을 바라본다.
+"저기··· 보이세요?"
+"어디?"
+"저기 멀리··· 교회 같은 게 보이는 것 같은데."
+"저런 곳에서 하면 좋지 않을까요?"
+"아주 좋겠지?"
+둘은 마주 보고 환하게 웃었다.
+푸른 하늘, 따뜻한 햇살 아래에서.
+"···갈까?"
+지휘관이 손을 내밀었다.
+"예. 지휘관."
+마리안이 손을 맞잡았다.
+그리고 함께 미래를 향해 나아갔다.
+
+메모리 저장: 저장된 메모리 : 함께하는 꿈
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_9201
+@@@SUB_TITLE: 둘은 안 돼
+[SCENE START]
+HIDDEN END
+
+탕-!!
+지휘관의 머리가 꿰뚫린다.
+"지휘··· 관?"
+익숙한 붉은 피를 흩뿌리며, 지휘관이 바닥으로 쓰러져 내렸다.
+마리안은 비명을 지르며 상대를 바라본다.
+"?!!"
+"이게··· 무슨···."
+마리안이 마리아를 바라본다.
+"아직도 계속되고 있었군요."
+마리아가 마리안을 바라본다.
+"미안해요."
+탕-!
+"전 자유로워질 거예요."
+이윽고 자유로운 나비는 하나만 남아,
+"여기도 더는 안전하지 않네."
+"···다른 곳으로 가야 해."
+더 먼 곳을 향해 날아갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_12"]
+
+@@@SCRIPT_ID: fading_affection_3002
+@@@SUB_TITLE: 7호의 기록 001
+[SCENE START]
+7호는 구도심에 들어가기 전, 자신이 이곳에 오기 전의 상황을 떠올렸다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3003"]
+
+@@@SCRIPT_ID: fading_affection_3003
+@@@SUB_TITLE: 7호의 기록 002
+[SCENE START]
+한 시간 전.
+7호는 연구실 숙소에서 눈을 뜬다.
+"여긴··· 어디지?"
+여기가 어디인지, 왜 이곳에 있는지 기억나지 않는다.
+"···마리안?"
+주변을 둘러본다.
+마리안이 보이지 않는다.
+"마리안!"
+보이지 않는다.
+알 수 없는 장소에서 마리안을 혼자 둘 수는 없다.
+7호는 서둘러 침대에서 일어나 숙소 밖으로 나섰다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3004"]
+
+@@@SCRIPT_ID: fading_affection_3004
+@@@SUB_TITLE: 7호의 기록 003
+[SCENE START]
+7호는 연구소 내부를 배회한다.
+아무리 찾아도 마리안은 보이지 않았다.
+정말 이상하게도···.
+어제 일도, 그전의 일들도 잘 기억나지 않는다.
+"왜 이러지···?"
+7호는 고개를 흔든다.
+"이대로 있으면 안 돼."
+"우선 마리안부터 찾아야···."
+그러다,
+"저건···."
+문이 열려있는 수송기를 발견한다.
+"왜 문이···."
+"마리안은 먼저 임무 지역으로 떠난 건가?"
+"혼자 가면 안 되는데··· 가면··· [REDACT]블랙스미스[/REDACT]가···."
+어?
+"왜 기억이 안 나지? 분명히 우리가 쫓겼던 게···."
+"마리안이랑 분명히···!"
+기억나지 않는다.
+"어···?"
+마리안과의 추억이 기억나지 않는다.
+"왜··· 갑자기···?"
+"잊지 않겠다고 했는데···."
+"안 돼. 이렇게 잊어버리면 안 돼···!"
+7호는 다급하게 수송기에 탑승한다.
+지잉-
+문이 닫힌다.
+"7호?!"
+마리아 박사가 놀라 달려오지만,
+"지금 어딜 가는···! 멈춰!!"
+수송기는 목적지를 향해 출발한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3101"]
+
+@@@SCRIPT_ID: fading_affection_3101
+@@@SUB_TITLE: 7호의 기록 004
+[SCENE START]
+지난 기억을 떠올린 7호는 다시 구도심을 바라본다.
+마리안을 잊지 않기 위해 어디론가 가야 한다.
+그런데 그 [어딘가]가 잘 생각이 나지 않는다.
+7호는···.
+[CHOICE_START ID="fading_affection_3101_choice"]
+  [OPTION TEXT="아무런 생각이 떠오르지 않는다." VALUE="option_310101"]
+  [OPTION_END]
+  [OPTION TEXT="희미한 기억을 떠올린다." VALUE="option_310102"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3101_choice" OPTION="option_310101" TARGET="fading_affection_3102"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3101_choice" OPTION="option_310102" TARGET="fading_affection_3103"]
+
+@@@SCRIPT_ID: fading_affection_3102
+@@@SUB_TITLE: 7호의 기록 005
+[SCENE START]
+큰일이다.
+아무것도 떠오르지 않는다.
+7호는 괴로워한다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_6301"]
+
+@@@SCRIPT_ID: fading_affection_3103
+@@@SUB_TITLE: 7호의 기록 006
+[SCENE START]
+7호는 마리안과의 기억을 떠올렸다.
+["[REDACT]흰머리[/REDACT]가 될 때까지 살고 싶어요."]
+자신은 놀란 눈으로 마리안을 바라봤다.
+["하[REDACT]얀 머[/REDACT]리 될 때까지 같이 [REDACT]살려[/REDACT]면, [REDACT]결혼[/REDACT] 정도는 해야 하는 거 아닌가요?"]
+["그럼 [REDACT]예식장[/REDACT]은···."]
+마리안이 먼 곳을 바라본다.
+["저기 멀리··· 교회 같은 게 보이는 것 같은데."]
+["저런 곳에서 하면 좋지 않을까요?"]
+7호는 고개를 들었다.
+"그때 분명··· 교회를 이야기했었어."
+"거기로 가야 해."
+7호는 마리안과의 기억을 잊지 않기 위해, 구도심으로 들어갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3104"]
+
+@@@SCRIPT_ID: fading_affection_3104
+@@@SUB_TITLE: 7호의 기록 007
+[SCENE START]
+쿵- 쿵- 쿵- 쿵-
+구도심에 들어온 지휘관은 익숙한 진동을 느낀다.
+[CHOICE_START ID="fading_affection_3104_choice"]
+  [OPTION TEXT="공격한다?" VALUE="option_310401"]
+  [OPTION_END]
+  [OPTION TEXT="도망친다." VALUE="option_310402"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3104_choice" OPTION="option_310401" TARGET="fading_affection_3105"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3104_choice" OPTION="option_310402" TARGET="fading_affection_3106"]
+
+@@@SCRIPT_ID: fading_affection_3105
+@@@SUB_TITLE: 7호의 기록 008
+[SCENE START]
+탕-!!
+"!!"
+7호는 자신도 모르게, 마리안과 함께 있었을 때처럼 랩쳐를 공격했다는 것에 놀란다.
+"마리안도 없는데 혼자서 맞서려 하다니, 미쳤···!"
+그의 예상대로 니케가 없는 인간만으로는 랩쳐 무리를 상대할 수 없다.
+푸슝-!
+"안 돼···!!"
+7호는 랩쳐가 쏜 빔에 맞았-
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3107"]
+
+@@@SCRIPT_ID: fading_affection_3106
+@@@SUB_TITLE: 7호의 기록 009
+[SCENE START]
+마리안도 없는 지금, 인간인 자신 혼자서 랩쳐에게 덤벼드는 것은 자살행위이다.
+게다가 지금의 자신은 죽어도 다시 기억을 이어나갈 수 없을 것 같다는 예감이 들었다.
+"···도망쳐야 해."
+7호는 그동안의 경험을 살려, 재빠르게 몸을 피했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3109"]
+
+@@@SCRIPT_ID: fading_affection_3107
+@@@SUB_TITLE: 7호의 기록 010
+[SCENE START]
+"!!!"
+7호는···.
+[CHOICE_START ID="fading_affection_3107_choice"]
+  [OPTION TEXT="잠에서 깨어난다." VALUE="option_310701"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3107_choice" OPTION="option_310701" TARGET="fading_affection_3108"]
+
+@@@SCRIPT_ID: fading_affection_3108
+@@@SUB_TITLE: 7호의 기록 011
+[SCENE START]
+7호가 소스라치게 놀라며 눈을 뜬다.
+그리고 구도심 입구 근처에서 쓰러져 있던 몸을 일으켰다.
+"잠시··· 존 건가?"
+퍽-!
+7호는 자신의 얼굴을 주먹으로 때린다.
+"정신 차리자."
+"이대로 전부 잊으면 안 돼."
+"마리안을··· 잊어선 안 돼."
+7호가 앞을 바라본다.
+"서두르자."
+그리고 구도심을 향해 걸어들어갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3104"]
+
+@@@SCRIPT_ID: fading_affection_3109
+@@@SUB_TITLE: 7호의 기록 012
+[SCENE START]
+구도심 광장에 도달한 7호는 호수로 가기 위해, 길을 찾는다.
+하지만 이상하게도,
+"어떻게 갔었지···?"
+길이 생각나지 않는다.
+7호가 머리를 붙잡는다.
+"떠올려··· 떠올려야 해! 제발···!"
+7호는 생각을 집중한다.
+그때,
+냐옹-
+7호는 고개를 들었다.
+상점 구역 근처에 검은 고양이 한 마리가 서있었다.
+"고양이···?"
+7호는···.
+[CHOICE_START ID="fading_affection_3109_choice"]
+  [OPTION TEXT="이전의 기억을 떠올린다." VALUE="option_310901"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3109_choice" OPTION="option_310901" TARGET="fading_affection_3110"]
+
+@@@SCRIPT_ID: fading_affection_3110
+@@@SUB_TITLE: 7호의 기록 013
+[SCENE START]
+구도심에서 언젠가··· 마리안이 어딘가를 들렀다 가고 싶은 곳이 있다고 한 적이 있었다.
+["고양이··· 를 [REDACT]보고[/REDACT] 싶은데···."]
+["[REDACT]호수로 가는[/REDACT] 길을 알려준 고양이가 있거든요.
+그 애가 [REDACT]잘 있는지 보고[/REDACT] 가면 좋을 것 같지만···."]
+"그··· 고양이인가?"
+먕-
+고양이가 뒤를 돌아 어딘가를 향해 걸어간다.
+"따라오라는 거 같은데···."
+7호는···.
+[CHOICE_START ID="fading_affection_3110_choice"]
+  [OPTION TEXT="따라간다." VALUE="option_311001"]
+  [OPTION_END]
+  [OPTION TEXT="따라가지 않는다." VALUE="option_311002"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3110_choice" OPTION="option_311001" TARGET="fading_affection_3111"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3110_choice" OPTION="option_311002" TARGET="fading_affection_3112"]
+
+@@@SCRIPT_ID: fading_affection_3111
+@@@SUB_TITLE: 7호의 기록 014
+[SCENE START]
+지금은 조그마한 희망이라도 있으면, 그것에 걸어야 할 때다.
+그렇게 판단한 7호는 서둘러 고양이를 따라 걸어갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3113"]
+
+@@@SCRIPT_ID: fading_affection_3112
+@@@SUB_TITLE: 7호의 기록 015
+[SCENE START]
+처음 보는 고양이를 따라갈 수는 없다.
+7호는 한참을 망설이다가 앞을 바라보았다.
+고양이는 이미 떠나가고 없었다.
+하는 수 없이, 7호는 구도심을 정처 없이 떠돌았다.
+그렇게 시간이 지나 밤이 되고 7호는 결국 아무것도 기억하지 못-
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3107"]
+
+@@@SCRIPT_ID: fading_affection_3113
+@@@SUB_TITLE: 7호의 기록 016
+[SCENE START]
+7호는 고양이를 따라 한참을 걸었다.
+그리고, [호수 산책로]라고 적힌, 오솔길을 발견한다.
+"맞아. 이 길이었어···!"
+7호는 놀라 고양이를 내려다보았지만,
+"어디 갔지?"
+아무리 둘러봐도 고양이는 보이지 않았다.
+"···도와줘서 고마워."
+7호는 수없이 걸어갔던 오솔길을 바라보았다.
+그리고 길가에 핀 파란 장미를 바라보았다.
+"아···."
+7호는 홀린 듯 파란 장미를 바라보았다.
+푸른빛이 아름다운, 마리안을 닮은 꽃.
+그래서 이 꽃을 볼 때마다 언제나, 그녀에게 선물하고 싶었다.
+하지만 이젠···.
+이 꽃을 받고 기뻐하는 마리안의 얼굴이, 점점 희미해진다.
+"··· ···."
+7호는 장미 한 송이를 꺾어 품에 넣었다.
+"···서두르자."
+[CHOICE_START ID="fading_affection_3113_choice"]
+  [OPTION TEXT="앞을 향해 뛰어간다." VALUE="option_311301"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3113_choice" OPTION="option_311301" TARGET="fading_affection_3114"]
+
+@@@SCRIPT_ID: fading_affection_3114
+@@@SUB_TITLE: 7호의 기록 017
+[SCENE START]
+오솔길을 걷고, 걸어 7호는 호수에 도착한다.
+언젠가 봤던 그날처럼, 호수는 햇살에 반짝이고 있었다.
+7호는 마리안과 호수의 풍경을 바라봤던 때를 떠올려 보았다.
+["와, 예쁘다."]
+내가 웃는다.
+["마리안은 어때? 기분 전환도 되고 좋지 않아?"]
+["[REDACT]예[/REDACT]···? 저는···."]
+마리안이 머뭇거리다,
+["···예쁘[REDACT]네[/REDACT]요."]
+환하게 웃었다.
+"··· ···."
+한 번만 더···.
+마리안과 함께 이 호수를 보고 싶었다.
+미소 짓던 그 얼굴을 보고 싶었다.
+"가야 해···."
+그러기 위해선 사라져가는 기억들을 어떻게든 붙잡아야 한다.
+7호는 반짝이는 호수를 뒤로한 채, 발걸음을 옮겼다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3115"]
+
+@@@SCRIPT_ID: fading_affection_3115
+@@@SUB_TITLE: 7호의 기록 018
+[SCENE START]
+7호는 호수를 지나, 신도시로 향해야 한다는 것을 알지만, 어떻게 가야 하는지 잊어버렸다는 것을 깨닫는다.
+7호는 필사적으로 주변을 둘러보다가···.
+[CHOICE_START ID="fading_affection_3115_choice"]
+  [OPTION TEXT="호수를 헤엄쳐 간다." VALUE="option_311501"]
+  [OPTION_END]
+  [OPTION TEXT="지나가는 사슴을 목격한다." VALUE="option_311502"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3115_choice" OPTION="option_311501" TARGET="fading_affection_3116"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3115_choice" OPTION="option_311502" TARGET="fading_affection_3117"]
+
+@@@SCRIPT_ID: fading_affection_3116
+@@@SUB_TITLE: 7호의 기록 019
+[SCENE START]
+"물에 빠졌던 것 같은 기억이 있어."
+7호는 호수를 바라본다.
+"이게 맞는 건지는 모르겠지만···."
+"아무것도 안 하는 것보단 낫겠지."
+7호는 심호흡을 하고, 호수에 뛰어들었다.
+풍덩-!!
+"?!!"
+호기롭게 달려들었던 것과 다르게, 몸이 점점 무거워진다.
+7호의 몸이 호수 아래로 점점 가라앉는-
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3118"]
+
+@@@SCRIPT_ID: fading_affection_3117
+@@@SUB_TITLE: 7호의 기록 020
+[SCENE START]
+바스락-
+7호는 북쪽 숲으로 사슴이 떠나가는 모습을 바라본다.
+"분명히··· 지난번에···."
+그리고 마리안과 함께 사슴 가족을 봤던 기억을 떠올린다.
+["[REDACT]소풍[/REDACT] 다음으로 하고 싶은 게 생겼어요."]
+그때 나는···.
+["나는 딸이 좋아."]
+["그야, 마리안을 닮았을 테니까."]
+라고 했었고, 마리안은···.
+["아하하. [REDACT]저도 같은 이유로 아들이 좋겠다고 생각했어요."[/REDACT]]
+어?
+["[REDACT]아하하. 저도 같은 이유로 아들이 좋겠다고 생각했어요."[/REDACT]]
+무슨 말을 했는지 전부 기억나지 않는다.
+"안 돼··· 이렇게 잊어서는 안 돼···!"
+7호는 다급하게···.
+[CHOICE_START ID="fading_affection_3117_choice"]
+  [OPTION TEXT="사슴을 쫓아 북쪽 숲으로 간다." VALUE="option_311701"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3117_choice" OPTION="option_311701" TARGET="fading_affection_3120"]
+
+@@@SCRIPT_ID: fading_affection_3118
+@@@SUB_TITLE: 7호의 기록 021
+[SCENE START]
+"!!!"
+7호는···.
+[CHOICE_START ID="fading_affection_3118_choice"]
+  [OPTION TEXT="눈을 뜬다." VALUE="option_311801"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3118_choice" OPTION="option_311801" TARGET="fading_affection_3119"]
+
+@@@SCRIPT_ID: fading_affection_3119
+@@@SUB_TITLE: 7호의 기록 022
+[SCENE START]
+7호가 소스라치게 놀라며 눈을 뜬다.
+호수 근처에 쓰러져 있던 몸을 일으킨다.
+"호수를 봤던 기억은 나는데···."
+일순간 의식을 잃었다.
+"기억을 잃어가는 부작용인가···?"
+짝-!
+7호는 자신의 양 뺨을 내리쳤다.
+"정신 차려···!!"
+"지금 쓰러져 있을 때가 아니야···."
+"마리안을 잊고 말 거야. 그것만은 안 돼."
+7호가 비틀거리며 자리에서 일어났다.
+"가자."
+그리고 앞을 향해 나아갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3115"]
+
+@@@SCRIPT_ID: fading_affection_3120
+@@@SUB_TITLE: 7호의 기록 023
+[SCENE START]
+하지만, 아무리 북쪽 숲을 돌아다녀도, 사슴은 보이지 않았다.
+"후우···."
+설상가상으로 랩쳐들을 피해 다니느라 평소보다 많이 소모되었던 체력에 한계가 오는 것이 느껴진다.
+7호는 갑작스러운 현기증에, 주변에 있는 나무를 부여잡았다.
+"여기서··· 이러고 있을 때가 아닌데···."
+7호는···.
+[CHOICE_START ID="fading_affection_3120_choice"]
+  [OPTION TEXT="바닥에 쓰러진다." VALUE="option_312001"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3120_choice" OPTION="option_312001" TARGET="fading_affection_3121"]
+
+@@@SCRIPT_ID: fading_affection_3121
+@@@SUB_TITLE: 7호의 기록 024
+[SCENE START]
+["역시, 도시락을 싸서 소풍을 가는 게 좋겠어요."]
+소풍을 가자고 했었지.
+호수로 가자고 했던가?
+["공원도 좋고요.
+풀이 깔려있는 바닥에 돗자리를 펴서 앉는 게 좋아요."]
+호수 공원이었던 것 같다.
+["아, 도시락통. 저 진짜 [REDACT]귀여운 걸[/REDACT]로 할 거예요."]
+뭐로 가져가자고 했었지?
+가위바위보를 했었는데···.
+["저는 진짜, 무조건 [REDACT]가위[/REDACT] 낼 거예요."]
+마리안이 원하는 걸 가져가게 해주고 싶은데···.
+마리안이 뭘 낸다고 했었지?
+["자, 가위···."]
+어떻게 해야, 마리안을 이기게 해줄 수 있지?
+기억나야 해, 그래야··· 마리안이 원하는 도시락통을···!
+["바위~"]
+기억해라··· 기억해라!
+["잊어줘요."]
+이건··· 언제 들은 말이지?
+["다 잊고 살아요."]
+["우리의 이야기는 여기서 끝이니까."]
+난 싫어.
+["사랑해요."]
+이렇게 끝나는 건··· 안 돼!
+["자, 가위 바위~ 보!"]
+[CHOICE_START ID="fading_affection_3121_choice"]
+  [OPTION TEXT="보[REDACT]를[/REDACT] [REDACT]낸[/REDACT]다!" VALUE="option_312101"]
+  [OPTION_END]
+  [OPTION TEXT="보[REDACT]를[/REDACT] 낸다!" VALUE="option_312102"]
+  [OPTION_END]
+  [OPTION TEXT="보[REDACT]를 낸다[/REDACT]!" VALUE="option_312103"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3121_choice" OPTION="option_312101" TARGET="fading_affection_3122"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3121_choice" OPTION="option_312102" TARGET="fading_affection_3122"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3121_choice" OPTION="option_312103" TARGET="fading_affection_3122"]
+
+@@@SCRIPT_ID: fading_affection_3122
+@@@SUB_TITLE: 7호의 기록 025
+[SCENE START]
+["앗, 이런. 져버렸잖아?"]
+내가 일부러 져준 것을 안다는 듯,
+["그럼 도시락통은 귀여운 걸로 결정이네요. 맞죠?"]
+사랑스럽게 웃는 얼굴.
+["꼭, 갔으면 좋겠네요."]
+가야 해.
+가야만 해.
+너와 함께하기 위해서 난···!
+[CHOICE_START ID="fading_affection_3122_choice"]
+  [OPTION TEXT="눈을 뜬다." VALUE="option_312201"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3122_choice" OPTION="option_312201" TARGET="fading_affection_3123"]
+
+@@@SCRIPT_ID: fading_affection_3123
+@@@SUB_TITLE: 7호의 기록 026
+[SCENE START]
+"!!!"
+7호는 눈을 뜬다.
+그리고 나무 밑에 쓰러져 있던 몸을 일으켰다.
+"소풍에··· 가야 해."
+"예쁜 도시락통을 들고··· 가야 해···!"
+7호는 깊게 심호흡했다.
+"이대로 가면, 다시 쓰러질 뿐이야."
+"먹고 가자···."
+7호는 혹시나 싶어서 아껴두었던 육포를 꺼내들었다.
+"··· ···."
+반절을 나눠줄 사람은 곁에 없다.
+그날의 기억도 이젠 잘 떠오르지 않는다.
+그렇기에 7호는 입안에 육포를 욱여넣었다.
+그리고 필사적으로 생각했다.
+분명 이것을 먹고 나서, 뭔가를 피해 도망갔었다.
+그 무언가는 잘 기억나지 않지만,
+"북쪽 숲을 떠난 것만은 확실해."
+"그렇다는 건··· 남쪽의 산책로다."
+7호는 자리에서 일어나, 산책로로 향했다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3124"]
+
+@@@SCRIPT_ID: fading_affection_3124
+@@@SUB_TITLE: 7호의 기록 027
+[SCENE START]
+7호는 산책로를 따라, 신도시를 향해 달려나간다.
+그리고 중간 부분이 움푹 팬 채, 쓰러져 있는 거대한 빌딩을 발견한다.
+"여기서 분명히···."
+뭐랑 싸웠었지?
+[CHOICE_START ID="fading_affection_3124_choice"]
+  [OPTION TEXT="거대한··· 랩쳐였는데." VALUE="option_312401"]
+  [OPTION_END]
+  [OPTION TEXT="랩쳐 무리였던 것 같은데···." VALUE="option_312402"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3124_choice" OPTION="option_312401" TARGET="fading_affection_3125"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3124_choice" OPTION="option_312402" TARGET="fading_affection_3126"]
+
+@@@SCRIPT_ID: fading_affection_3125
+@@@SUB_TITLE: 7호의 기록 028
+[SCENE START]
+"맞아. 거대한 랩쳐였어."
+7호는 빌딩 중간에 움푹 팬 부분을 바라본다.
+"그래. 저게 그때 싸웠던 흔적이었지."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3127"]
+
+@@@SCRIPT_ID: fading_affection_3126
+@@@SUB_TITLE: 7호의 기록 029
+[SCENE START]
+"아니야."
+"랩쳐 무리였다기엔···."
+7호는 빌딩 중간에 움푹 팬 부분을 바라본다.
+"저런 흔적이 남지 않을 거야."
+7호는 다시 정신을 집중해서 기억을 떠올린다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3124"]
+
+@@@SCRIPT_ID: fading_affection_3127
+@@@SUB_TITLE: 7호의 기록 030
+[SCENE START]
+"그게 자꾸 촉수를 뻗어와서···."
+"그걸 피해서 도망가다가 여러 번 죽고."
+7호는 쓰러진 빌딩 아래를 바라보았다.
+"빌딩 아래에 숨기도 했었어."
+"저기서 작전을 세워서···."
+쓰러진 빌딩의 외벽을 바라본다.
+"외벽을 다리 삼아 올라갔지."
+"그걸 물리치기 위해서 나는···."
+[CHOICE_START ID="fading_affection_3127_choice"]
+  [OPTION TEXT="미끼가 되었다." VALUE="option_312701"]
+  [OPTION_END]
+  [OPTION TEXT="레버를 당겼다." VALUE="option_312702"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3127_choice" OPTION="option_312701" TARGET="fading_affection_3128"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3127_choice" OPTION="option_312702" TARGET="fading_affection_3129"]
+
+@@@SCRIPT_ID: fading_affection_3128
+@@@SUB_TITLE: 7호의 기록 031
+[SCENE START]
+"미끼? 내가 랩쳐를 피해서?"
+7호는 쓰러진 빌딩을 바라보았다.
+"체력이 불가능했을 것 같은데···."
+7호는 다시 정신을 집중해서 기억을 떠올린다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3127"]
+
+@@@SCRIPT_ID: fading_affection_3129
+@@@SUB_TITLE: 7호의 기록 032
+[SCENE START]
+"그래. 레버를 당겼지··· 빌딩에 빠트려서, 감전시키려고···."
+"그게 촉수를 뻗기 전에, 함께 집중 사격해서···."
+귓가에 그날의 소리가 들려오는 듯했다.
+투두두두두-
+["제발···!"]
+["부서져라!!"]
+쩍- 쩌적-!!
+"블랙스미스의 코어를 깼어···!"
+7호는 환호했다.
+"맞아. 블랙스미스야. 블랙스미스였어!"
+드디어 잊고 있었던 이름이 떠올랐다는 것에 희망을 느꼈다!
+"어서 가자. 얼른 신도시로 가는 거야···!"
+7호는 앞을 향해 달려갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3130"]
+
+@@@SCRIPT_ID: fading_affection_3130
+@@@SUB_TITLE: 7호의 기록 033
+[SCENE START]
+7호는 희망에 가득 차 신도시를 향해 달린다.
+이 방법은 틀리지 않았다.
+"그래. 이렇게 자꾸 추억의 장소들에 가서 과거를 떠올리다 보면, 마리아-n의 기억도 자연스레···?"
+[CHOICE_START ID="fading_affection_3130_choice"]
+  [OPTION TEXT="자리에 멈춰 선다." VALUE="option_313001"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3130_choice" OPTION="option_313001" TARGET="fading_affection_3131"]
+
+@@@SCRIPT_ID: fading_affection_3131
+@@@SUB_TITLE: 7호의 기록 034
+[SCENE START]
+"지금 내가··· 뭐라고 한 거지?"
+"마리아··· n이라니 마리아-n이라니!"
+퍽-
+7호는 자신의 얼굴을 주먹으로 때린다.
+퍽- 퍽-!
+얼굴이 부어오를 때까지 마구 때린다.
+"안 돼. 안 돼, 안 돼!!"
+"정신 차려. 정신 차리라고!!"
+"교회에 가야 해. 교회에 가면 어떻게든···!"
+그런데···.
+교회에는 왜 가야 했지?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3132"]
+
+@@@SCRIPT_ID: fading_affection_3132
+@@@SUB_TITLE: 7호의 기록 035
+[SCENE START]
+7호는 고개를 들어 눈앞에 있는 도시를 바라본다.
+과거 신도시라고 불렸던, 도시의 입구가 노을빛에 물들어 황금빛으로 빛나고 있었다.
+"분명 여기에서··· 이야기를 들었었는데···."
+"하고 싶은 게 생겼다고··· 들었었는데···!"
+그게··· 언제였지?
+하늘 색깔은 어땠지?
+푸르렀나?
+황금빛이었나?
+붉은빛이었나?
+"떠올려라··· 떠올려라···!"
+7호는···.
+[CHOICE_START ID="fading_affection_3132_choice"]
+  [OPTION TEXT="이전의 기억을 다시 떠올린다." VALUE="option_313201"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3132_choice" OPTION="option_313201" TARGET="fading_affection_3133"]
+
+@@@SCRIPT_ID: fading_affection_3133
+@@@SUB_TITLE: 7호의 기록 036
+[SCENE START]
+7호는 다시 기억을 떠올렸다.
+["[REDACT]흰머리가 될 때까지 살고 싶어요.[/REDACT]"]
+자신은 놀란 눈으로 그녀를 바라봤다.
+["[REDACT]하얀 머리 될 때까지 같이 살려면, 결혼 정도는 해야 하는 거 아닌가요[/REDACT]?"]
+["[REDACT]그럼 예식장은[/REDACT]···."]
+그녀가 먼 곳을 바라본다.
+["[REDACT]저기 멀리··· 교회 같은 게 보이는 것 같은데.[/REDACT]"]
+["[REDACT]저런 곳에서 하면 좋지 않을까요[/REDACT]?"]
+··· ···.
+잘 기억나지 않는다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3134"]
+
+@@@SCRIPT_ID: fading_affection_3134
+@@@SUB_TITLE: 7호의 기록 037
+[SCENE START]
+그래서,
+[그녀]의 이름은 뭐였지?
+[CHOICE_START ID="fading_affection_3134_choice"]
+  [OPTION TEXT="[REDACT]마리안[/REDACT]." VALUE="option_313401"]
+  [OPTION_END]
+  [OPTION TEXT="[REDACT]마리안[/REDACT]." VALUE="option_313402"]
+  [OPTION_END]
+  [OPTION TEXT="[REDACT]마리안[/REDACT]." VALUE="option_313403"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3134_choice" OPTION="option_313401" TARGET="fading_affection_3135"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3134_choice" OPTION="option_313402" TARGET="fading_affection_3135"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3134_choice" OPTION="option_313403" TARGET="fading_affection_3135"]
+
+@@@SCRIPT_ID: fading_affection_3135
+@@@SUB_TITLE: 7호의 기록 038
+[SCENE START]
+기억나지 않는다.
+그녀의 이름이 기억나지 않는다!
+"아··· 아아··· 으아아아···!"
+쾅-!
+7호는 머리를 바닥에 내리쳤다.
+"제발··· 생각해··· 제발··· 생각해 내!!"
+쾅-! 쾅-!
+"제발···!!"
+툭-
+그때, 7호의 품에서 무언가가 떨어져 내린다.
+[CHOICE_START ID="fading_affection_3135_choice"]
+  [OPTION TEXT="떨어진 것을 바라본다." VALUE="option_313501"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3135_choice" OPTION="option_313501" TARGET="fading_affection_3136"]
+
+@@@SCRIPT_ID: fading_affection_3136
+@@@SUB_TITLE: 7호의 기록 039
+[SCENE START]
+파란 장미다.
+산책로에서 꺾어 왔던 파란 장미.
+그녀를 닮은 꽃.
+푸른빛이 아름다운···.
+[CHOICE_START ID="fading_affection_3136_choice"]
+  [OPTION TEXT="마[REDACT]리안[/REDACT]." VALUE="option_313601"]
+  [OPTION_END]
+  [OPTION TEXT="[REDACT]마[/REDACT]리[REDACT]안[/REDACT]." VALUE="option_313602"]
+  [OPTION_END]
+  [OPTION TEXT="[REDACT]마리[/REDACT]안." VALUE="option_313603"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3136_choice" OPTION="option_313601" TARGET="fading_affection_3137"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3136_choice" OPTION="option_313602" TARGET="fading_affection_3137"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3136_choice" OPTION="option_313603" TARGET="fading_affection_3137"]
+
+@@@SCRIPT_ID: fading_affection_3137
+@@@SUB_TITLE: 7호의 기록 040
+[SCENE START]
+"마리안!"
+7호는 자리에서 일어난다.
+"교회로 가자. 이유는 몰라도 가야 해. 가야만 해···!"
+그리고 파란 장미를 주워든 채 교회를 향해 달려나갔다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3138"]
+
+@@@SCRIPT_ID: fading_affection_3138
+@@@SUB_TITLE: 7호의 기록 041
+[SCENE START]
+끼이이이---
+요란한 소리를 내며 교회의 문이 열린다.
+자욱한 먼지가 달빛을 받아 뿌옇게 일렁인다.
+그곳에···.
+우당탕-
+7호가 뛰어들어온다.
+"마리[REDACT]안[/REDACT]··· [REDACT]마리[/REDACT]안··· 마[REDACT]리[/REDACT]안··· 마리[REDACT]안[/REDACT]···!"
+끝없이 되뇌지만, 점점 기억이 희미해진다.
+7호는···.
+[CHOICE_START ID="fading_affection_3138_choice"]
+  [OPTION TEXT="어디에든 그녀의 이름을 적어 놓는다!" VALUE="option_313801"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3138_choice" OPTION="option_313801" TARGET="fading_affection_3139"]
+
+@@@SCRIPT_ID: fading_affection_3139
+@@@SUB_TITLE: 7호의 기록 042
+[SCENE START]
+우당탕-!!
+"그래··· 어디든 적어놔야 해···!"
+7호는 다급하게 단상으로 다가가, 자신의 손가락을 물어뜯어, 글씨를 쓴다.
+"마··· 리··· [REDACT]안[/REDACT]?"
+어?
+"마··· [REDACT]리[/REDACT]··· [REDACT]안[/REDACT]···."
+···안 돼.
+"[REDACT]마[/REDACT]··· 리··· [REDACT]안[/REDACT]···."
+안 돼···!!
+"[REDACT]마[/REDACT]··· [REDACT]리[/REDACT]··· [REDACT]안[/REDACT]···."
+[REDACT]마리안[/REDACT]··· [REDACT]마리안[/REDACT]··· [REDACT]마리안[/REDACT]! [REDACT]마리안[/REDACT]!!
+7호가 단상 앞에 주저앉는다.
+"제발··· 사라지지 마···."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3140"]
+
+@@@SCRIPT_ID: fading_affection_3140
+@@@SUB_TITLE: 7호의 기록 043
+[SCENE START]
+끼이익-
+누군가 교회의 문을 열고 들어온다.
+또각. 또각.
+언젠가, 살면서 가장 행복했던 그날처럼.
+[REDACT]하얀 웨딩드레스[/REDACT]를 입은···?
+"지휘관."
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_3141"]
+
+@@@SCRIPT_ID: fading_affection_3141
+@@@SUB_TITLE: 7호의 기록 044
+[SCENE START]
+그녀다.
+"역시··· 여기 계셨군요."
+[CHOICE_START ID="fading_affection_3141_choice"]
+  [OPTION TEXT="[REDACT]마리안[/REDACT]!!" VALUE="option_314101"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3141_choice" OPTION="option_314101" TARGET="fading_affection_3142"]
+
+@@@SCRIPT_ID: fading_affection_3142
+@@@SUB_TITLE: 7호의 기록 045
+[SCENE START]
+"!!!"
+이름을 부를 수 없다.
+부를 이름이 기억나지 않는다.
+"아아··· 아아아···!"
+7호는 절망한다.
+어떻게든 기억하려···.
+[CHOICE_START ID="fading_affection_3142_choice"]
+  [OPTION TEXT="고개를 들어 그녀를 바라본다." VALUE="option_314201"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3142_choice" OPTION="option_314201" TARGET="fading_affection_3143"]
+
+@@@SCRIPT_ID: fading_affection_3143
+@@@SUB_TITLE: 7호의 기록 046
+[SCENE START]
+"?!!"
+체력이 다했기 때문일까?
+눈 앞이 점점 뿌예진다.
+"아···."
+몸에 힘이 서서히 빠진다.
+고개를 들 힘 조차 없다.
+"왜··· 이러··· 지?"
+지직-
+귓가에도 이명이 들리는 것 같다.
+"NIMPH가 끊어진 충격··· 지직- 일시적으로 발생하는···
+지직- 부작용일··· 지직- ···예요."
+서서히 눈이 감긴다.
+[CHOICE_START ID="fading_affection_3143_choice"]
+  [OPTION TEXT="눈을 떠야 한다!" VALUE="option_314301"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3143_choice" OPTION="option_314301" TARGET="fading_affection_3144"]
+
+@@@SCRIPT_ID: fading_affection_3144
+@@@SUB_TITLE: 7호의 기록 047
+[SCENE START]
+"잠들었··· 지직- 깨어··· 지직- ···면 전부··· 지직- 괜찮아질··· 지직- ···니까···."
+또각. 또각.
+[REDACT]마리안마리안마리안[/REDACT]그녀가 다가온다.
+[REDACT]마리안[/REDACT]···.
+[REDACT]마리안[/REDACT]···!
+[REDACT]마리안[/REDACT]··· ···!!
+안 돼. 제발···!
+"이제 돌아가요. 지휘관."
+이대로··· 눈을 감아선 안 돼···!
+[CHOICE_START ID="fading_affection_3144_choice"]
+  [OPTION TEXT="[REDACT]마리안[/REDACT]을 향해 고개를 든다!" VALUE="option_314401"]
+  [OPTION_END]
+  [OPTION TEXT="[REDACT]마리안[/REDACT]을 본다!" VALUE="option_314402"]
+  [OPTION_END]
+  [OPTION TEXT="[REDACT]마리안[/REDACT]의 얼굴을 바라본다!" VALUE="option_314403"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3144_choice" OPTION="option_314401" TARGET="fading_affection_3145"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3144_choice" OPTION="option_314402" TARGET="fading_affection_3145"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3144_choice" OPTION="option_314403" TARGET="fading_affection_3145"]
+
+@@@SCRIPT_ID: fading_affection_3145
+@@@SUB_TITLE: 7호의 기록 048
+[SCENE START]
+"!!!"
+[REDACT]마리안과[/REDACT]그녀와 눈이 마주친다.
+[CHOICE_START ID="fading_affection_3145_choice"]
+  [OPTION TEXT="사랑해." VALUE="option_314501"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_3145_choice" OPTION="option_314501" TARGET="fading_affection_3146"]
+
+@@@SCRIPT_ID: fading_affection_3146
+@@@SUB_TITLE: 7호의 기록 049
+[SCENE START]
+[REDACT]마리안마리안마리안마리안마리안[/REDACT]
+[REDACT]마리안마리안마리안마리안마리안마리안[/REDACT]
+[REDACT]마리안마리안마리안마리안마리안[/REDACT]이···.
+그녀가 눈물이 가득한 눈으로 웃는다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_8301"]
+
+@@@SCRIPT_ID: fading_affection_6301
+@@@SUB_TITLE: 상실된 기억
+[SCENE START]
+DEATH END
+
+"이대로는 안 돼···."
+7호는 초조한 마음으로 과거의 기억을 떠올리기 위해 눈을 감았다.
+죽음과 같은 잠이 쏟아져내렸다.
+
+힌트: [마리안]의 기억을 되짚어 보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_13"]
+
+@@@SCRIPT_ID: fading_affection_8301
+@@@SUB_TITLE: 안녕히. 내···.
+[SCENE START]
+TRUE END
+
+우웅-
+나는 눈을 뜬다.
+"??"
+익숙한 듯 낯선 수송기 안이다.
+"벌써··· 깨어나셨군요···."
+놀란 표정의 여성은 이내, 다정하게 웃는다.
+"안녕하세요?"
+"전··· 오늘 임무를 함께하게 된···."
+그녀가 말을 흐린다.
+"니케예요."
+그녀를 보니···.
+"오늘 임무··· 잘 부탁드릴게요."
+왠지 모르게 눈물이 나올 것 같았다.
+"나도··· 잘 부탁···."
+비틀-
+이상하게 현기증이 난다.
+"괜찮으세요? 어지러우신가요?"
+"괜찮···."
+졸음이 몰려온다.
+"미안. 조금 졸려서···."
+"그러실 수 있어요."
+"아직 도착하려면 시간이 좀 남았으니까, 조금만 더 주무세요."
+그녀가 부드럽게 내 몸을 자리에 눕힌다.
+"미··· 안. 조금만··· 잘게."
+"예. 걱정 말고···."
+"안녕히 주무세요. 지휘관."
+눈을 감았다.
+"깨어나면 모든 게 끝나있을 거예요."
+의식이 멀어진다.
+"안녕히. 내···."
+세상이 검게 물든다.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다시 기록하기"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_route_13"]
+
+@@@SCRIPT_ID: fading_affection_memory
+@@@SUB_TITLE: 메모리
+[SCENE START]
+NIMPH에 기록된 메모리는 새로운 길을 여는 열쇠가 된다.
+[CHOICE_START ID="fading_affection_memory_choice"]
+  [OPTION TEXT="저장된 메모리 : 습격" VALUE="memory_1101"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 덫" VALUE="memory_1102"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 순찰 시간" VALUE="memory_1103"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 무리 이동" VALUE="memory_1104"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 큰 도로" VALUE="memory_1105"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 체력 관리" VALUE="memory_1106"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 사거리" VALUE="memory_1107"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 무너지는 천장" VALUE="memory_1108"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 총소리" VALUE="memory_1109"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 사냥꾼" VALUE="memory_1110"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 고양이" VALUE="memory_1111"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 블랙스미스" VALUE="memory_1112"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 삶의 온기" VALUE="memory_1113"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 오솔길" VALUE="memory_1114"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 큰 도로의 끝" VALUE="memory_1115"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 호수의 랩쳐" VALUE="memory_1116"]
+  [OPTION_END]
+  [OPTION TEXT="삭제된 메모리 : 저장 창고" VALUE="memory_1117"]
+  [OPTION_END]
+  [OPTION TEXT="삭제된 메모리 : 낙하" VALUE="memory_1118"]
+  [OPTION_END]
+  [OPTION TEXT="삭제된 메모리 : 자유" VALUE="memory_1119"]
+  [OPTION_END]
+  [OPTION TEXT="삭제된 메모리 : 배신" VALUE="memory_1120"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 기억의 중요성" VALUE="memory_1201"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 과도한 경계" VALUE="memory_1202"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 지휘관의 체력" VALUE="memory_1203"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 희생" VALUE="memory_1204"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 감전" VALUE="memory_1205"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 우선 순위" VALUE="memory_1206"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 깨지는 창문" VALUE="memory_1207"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 타이밍" VALUE="memory_1208"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 위화감" VALUE="memory_1209"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 함께하는 꿈" VALUE="memory_1210"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 동행" VALUE="memory_1211"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 행복한 삶" VALUE="memory_1212"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 두려워하는 표정" VALUE="memory_1213"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 함께 걷는 길" VALUE="memory_1214"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 함께 보는 풍경" VALUE="memory_1215"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 걱정하는 눈" VALUE="memory_1216"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 함께 먹는 식사" VALUE="memory_1217"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 숲의 끝" VALUE="memory_1218"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 다급한 행동" VALUE="memory_1219"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 함께하는 미래" VALUE="memory_1220"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 함께하는 작전" VALUE="memory_1221"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 복수" VALUE="memory_1222"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 반짝이는 삶" VALUE="memory_1223"]
+  [OPTION_END]
+  [OPTION TEXT="저장된 메모리 : 진실" VALUE="memory_1224"]
+  [OPTION_END]
+  [OPTION TEXT="일부만 남은 메모리 : ■휘■" VALUE="memory_1225"]
+  [OPTION_END]
+  [OPTION TEXT="기록 선택으로 돌아가기" VALUE="return"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1101" TARGET="fading_affection_memory_1101"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1102" TARGET="fading_affection_memory_1102"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1103" TARGET="fading_affection_memory_1103"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1104" TARGET="fading_affection_memory_1104"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1105" TARGET="fading_affection_memory_1105"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1106" TARGET="fading_affection_memory_1106"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1107" TARGET="fading_affection_memory_1107"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1108" TARGET="fading_affection_memory_1108"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1109" TARGET="fading_affection_memory_1109"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1110" TARGET="fading_affection_memory_1110"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1111" TARGET="fading_affection_memory_1111"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1112" TARGET="fading_affection_memory_1112"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1113" TARGET="fading_affection_memory_1113"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1114" TARGET="fading_affection_memory_1114"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1115" TARGET="fading_affection_memory_1115"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1116" TARGET="fading_affection_memory_1116"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1117" TARGET="fading_affection_memory_1117"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1118" TARGET="fading_affection_memory_1118"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1119" TARGET="fading_affection_memory_1119"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1120" TARGET="fading_affection_memory_1120"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1201" TARGET="fading_affection_memory_1201"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1202" TARGET="fading_affection_memory_1202"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1203" TARGET="fading_affection_memory_1203"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1204" TARGET="fading_affection_memory_1204"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1205" TARGET="fading_affection_memory_1205"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1206" TARGET="fading_affection_memory_1206"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1207" TARGET="fading_affection_memory_1207"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1208" TARGET="fading_affection_memory_1208"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1209" TARGET="fading_affection_memory_1209"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1210" TARGET="fading_affection_memory_1210"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1211" TARGET="fading_affection_memory_1211"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1212" TARGET="fading_affection_memory_1212"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1213" TARGET="fading_affection_memory_1213"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1214" TARGET="fading_affection_memory_1214"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1215" TARGET="fading_affection_memory_1215"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1216" TARGET="fading_affection_memory_1216"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1217" TARGET="fading_affection_memory_1217"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1218" TARGET="fading_affection_memory_1218"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1219" TARGET="fading_affection_memory_1219"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1220" TARGET="fading_affection_memory_1220"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1221" TARGET="fading_affection_memory_1221"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1222" TARGET="fading_affection_memory_1222"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1223" TARGET="fading_affection_memory_1223"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1224" TARGET="fading_affection_memory_1224"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="memory_1225" TARGET="fading_affection_memory_1225"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_memory_choice" OPTION="return" TARGET="fading_affection_start"]
+
+@@@SCRIPT_ID: fading_affection_memory_1101
+@@@SUB_TITLE: 저장된 메모리 : 습격
+[SCENE START]
+저장된 메모리
+습격
+
+지상에서 방심은 금물이야.
+언제 어떤 방식으로 랩쳐에게 습격 받을지 몰라.
+다음엔 더 신중하게 움직여야 해.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1102
+@@@SUB_TITLE: 저장된 메모리 : 덫
+[SCENE START]
+저장된 메모리
+덫
+
+편의점 창고 안쪽에 석궁 함정이 있었어.
+그 밑에 그 함정을 설치한 누군가와 고양이가 있었던 것 같은데···.
+다음엔 트랩에 주의해서 들어가야 할 것 같아.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1103
+@@@SUB_TITLE: 저장된 메모리 : 순찰 시간
+[SCENE START]
+저장된 메모리
+순찰 시간
+
+너무 서둘러 움직이다가 공중형 랩쳐가 함께 순찰을 도는 걸 알아채지 못했어.
+아무리 급해도 랩쳐들의 순찰 시간에 돌아다니는 건 무리인 것 같아.
+다음엔 이 시간은 피해서 움직여보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1104
+@@@SUB_TITLE: 저장된 메모리 : 무리 이동
+[SCENE START]
+저장된 메모리
+무리 이동
+
+주거지를 순찰하고 있는 건 지상형 랩쳐 뿐만이 아니야.
+지상형이 지나가고 난 다음에, 공중형이 따라 움직이고 있었어.
+다음엔 지상형과 공중형을 모두 상대해낼 방법을 찾아보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1105
+@@@SUB_TITLE: 저장된 메모리 : 큰 도로
+[SCENE START]
+저장된 메모리
+큰 도로
+
+큰 도로 중앙 쪽에는 엄폐할 공간이 없어.
+정면 승부를 벌이는 건 무모한 짓이었어.
+다음엔 큰 도로 쪽에서 대책 없이 싸움을 하는 일은 없도록 하자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1106
+@@@SUB_TITLE: 저장된 메모리 : 체력 관리
+[SCENE START]
+저장된 메모리
+체력 관리
+
+숨을 곳이 없다고 뛰기만 하는 건 너무 무모했어.
+니케는 무한 체력인 줄 알았는데··· 정신적으로 지치는 건 어떻게 할 수 없는 거구나.
+다음엔 체력에도 신경을 써서 움직여야겠네.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1107
+@@@SUB_TITLE: 저장된 메모리 : 사거리
+[SCENE START]
+저장된 메모리
+사거리
+
+세상에. 들고 있는 총의 사거리도 생각하지 않고 저격을 하려고 하다니···.
+나 진짜 엄청 급했구나. 조금··· 부끄럽네.
+다음엔 내 총으로 어디까지 맞출 수 있는지는 보고 쏘도록 하자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1108
+@@@SUB_TITLE: 저장된 메모리 : 무너지는 천장
+[SCENE START]
+저장된 메모리
+무너지는 천장
+
+급했어. 급해도 너무 급했어.
+왜 그렇게 무섭고 초조했던 걸까··· 기억이 안 나.
+그래도··· 다음엔 이렇게 아무 건물이나 들어가선 안돼.
+아무리 급해도 하룻밤을 지새워야 하는 곳이야.
+신중하게 찾아보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1109
+@@@SUB_TITLE: 저장된 메모리 : 총소리
+[SCENE START]
+저장된 메모리
+총소리
+
+결국··· 스스로 끝을 선택하는 것조차 하지 못했구나.
+그래. 끝을 결정하는 것도 용기가 필요한 일이지.
+죽음은··· 정말 무서운 거니까.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1110
+@@@SUB_TITLE: 저장된 메모리 : 사냥꾼
+[SCENE START]
+저장된 메모리
+사냥꾼
+
+편의점 창고 안쪽에서 함정을 설치했던 사냥꾼의 기록을 봤어.
+그렇게나 강렬하게 삶을 원하던 사람은 왜 수면제로 죽음을 선택한 걸까?
+왜 살고 싶지 않아졌던 걸까.
+혼자였기 때문에?
+그럼··· 나도 언젠가 저렇게 생각하는 날이 오게 되는 걸까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1111
+@@@SUB_TITLE: 저장된 메모리 : 고양이
+[SCENE START]
+저장된 메모리
+고양이
+
+편의점 창고 안쪽에서 고양이를 봤어.
+갖고 있던 식량을 주니까 엄청 허겁지겁 먹던데 많이 배고팠나 봐.
+다 먹고 나니까 두 눈에 생기를 되찾는데··· 그게 참 예뻤던 것 같아.
+나한테 고마웠는지 내 다리에 애교를 부리고 갔는데···.
+그 온기가 너무 좋았던 것 같아.
+삶이라는 건 그렇게나 빛나고 따뜻할 수 있는 거구나.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1112
+@@@SUB_TITLE: 저장된 메모리 : 블랙스미스
+[SCENE START]
+저장된 메모리
+블랙스미스
+
+주거지 쪽에 블랙스미스가 돌아다니고 있어.
+어두운 도시에서 기척도 없이 촉수를 뻗어내는데···.
+아무 대응도 못하고 잡혀갔어.
+위험해. 위험해도··· 너무 위험해.
+구도심의 밤을 조심하자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1113
+@@@SUB_TITLE: 저장된 메모리 : 삶의 온기
+[SCENE START]
+저장된 메모리
+삶의 온기
+
+정말 무섭고 불안해서,
+이 삶에 아무런 의미도 없다고 생각해서 다 포기해버리려고 했는데···.
+그 고양이가 준 삶의 온기가 증명해냈어.
+자신이 있다고, 내 삶이 의미가 있다고 말해줬어.
+내가 살린 생명이 나를 살린 거야.
+그래. 수없이 반복되는 이 삶에도 의미는 있어.
+그러니까··· 포기하지 말아보자. 조금만 더 앞으로 나아가 보자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1114
+@@@SUB_TITLE: 저장된 메모리 : 오솔길
+[SCENE START]
+저장된 메모리
+오솔길
+
+주거지 뒤쪽 샛길을 따라가다 보면, 호수와 이어진 산책로가 있었어.
+굳이 큰 도로로 가지 않아도 호수로 갈 방법이 있었네.
+그 고양이는 어떻게 이 길을 알고 있었던 걸까?
+언젠가 다시 만나면 꼭 고맙다고 전하고 싶은데··· 전할 수 있는 날이 올까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1115
+@@@SUB_TITLE: 저장된 메모리 : 큰 도로의 끝
+[SCENE START]
+저장된 메모리
+큰 도로의 끝
+
+큰 도로의 끝엔 거대한 구덩이가 있어서 길이 끊겨 호수로 갈 수 없어.
+그러니까 더는 이 길을 건너가려고 하지 않아도 될 것 같아.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1116
+@@@SUB_TITLE: 저장된 메모리 : 호수의 랩쳐
+[SCENE START]
+저장된 메모리
+호수의 랩쳐
+
+호수 근처에도 블랙스미스가 있었어.
+그건 원래부터 호수에 있었던 걸까?
+아니면 구도심에 있던 게 나를 따라온 걸까?
+어느 쪽이든··· 위험해.
+구도심을 벗어나면 다시는 마주치지 않을 수 있을 줄 알았는데···.
+호수에선 도대체 그걸 어떻게 피해서 도망가야 하지?
+···이번엔 또 얼마나 죽고 살아남아야 하는 걸까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1117
+@@@SUB_TITLE: 삭제된 메모리 : 저장 창고
+[SCENE START]
+삭제된 메모리
+저장 창고
+
+블랙스미스에게 잡아먹힌 기억이구나.
+이렇게··· 끔찍하게 녹아내리다니···.
+··· ···.
+이건 지우자.
+공포가··· 트라우마가 심하게 남을 거야.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1118
+@@@SUB_TITLE: 삭제된 메모리 : 낙하
+[SCENE START]
+삭제된 메모리
+낙하
+
+지상에서 스스로··· 죽음을 선택했어.
+왜 공포가 사라지지 않지?
+뭐가 잘못된 걸까.
+··· ···.
+지우자. 지우고 다시 시작하자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1119
+@@@SUB_TITLE: 삭제된 메모리 : 자유
+[SCENE START]
+삭제된 메모리
+자유
+
+날아가는 새를 보고 부러워··· 하는 기억이구나.
+자유를 원한 거야.
+자신이 구속된 새··· 인 것 같다고 느낀 거겠지?
+··· ···.
+지워야겠지. 이런 감정이 있으면 임무를 계속할 수 없을 거야.
+한 번 자유를 동경하게 되면, 계속··· 이곳에서 벗어나고 싶어 할 테니까.
+하하. 정말··· 지독하네.
+정말 지독한 구속이다. 나도.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1120
+@@@SUB_TITLE: 삭제된 메모리 : 배신
+[SCENE START]
+삭제된 메모리
+배신
+
+그 애는 나를 배신했다고 했지.
+아주 잠시 일탈을 원한 것만으로 배신이라고 한 거야.
+그 작은 욕심을··· 배신이라고 말한 거야.
+정말··· 착하고 가엽게도···.
+··· ···.
+그걸 알면서도 이 기억을 지우려는 나야말로··· 널 배신한거나 다름없는데.
+···미안해.
+정말 미안해. 마리아.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1201
+@@@SUB_TITLE: 저장된 메모리 : 기억의 중요성
+[SCENE START]
+저장된 메모리
+기억의 중요성
+
+마리안이라고 불리기 전, 마리아의 기억들도 분명 의미가 있을 거야.
+그 기억들이 지금의 나를 살게 해준 것일 테니까.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1202
+@@@SUB_TITLE: 저장된 메모리 : 과도한 경계
+[SCENE START]
+저장된 메모리
+과도한 경계
+
+지휘관을 지켜야 한다는 생각에 너무 과도하게 반응했어.
+사슴인지 랩쳐인지 확인도 하지 않고 총을 쏴버렸지.
+그리고··· 지휘관이 내 앞을 가로막아 죽게 만들었어.
+···다시는 이래선 안 돼.
+다음엔 꼭 적이 누군지 확실히 보고 쏘도록 하자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1203
+@@@SUB_TITLE: 저장된 메모리 : 지휘관의 체력
+[SCENE START]
+저장된 메모리
+지휘관의 체력
+
+지휘관은 인간이니까 니케와는 달라.
+제때 쉬고, 먹지 않으면 체력에 한계가 올 수밖에 없어.
+내가 그걸 간과한 거야.
+다음엔 더 세심하게 지휘관을 배려해야만 해.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1204
+@@@SUB_TITLE: 저장된 메모리 : 희생
+[SCENE START]
+저장된 메모리
+희생
+
+지휘관이··· 블랙스미스의 촉수를 대신 막았어.
+날 죽게 하지 않으려고 몸을 내던져서···.
+내가 뭐라고. 어차피 죽어도 죽어도 다시 살아날 나를 위해.
+도대체 왜···.
+계속 그렇게 희생하게 해선 안 돼.
+지휘관을 그렇게 고통스럽게 죽어가게 만들 수 없어.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1205
+@@@SUB_TITLE: 저장된 메모리 : 감전
+[SCENE START]
+저장된 메모리
+감전
+
+블랙스미스에게서 도망치는 것만 생각하다가 건물이 물에 잠겨 있는 것도, 그 물속에 전기가 흐르고 있다는 것도 알아채지 못했네.
+그렇게 필사적으로 숨는다고 해도, 평생 그 안에 있을 수 있는 것도 아니고.
+지휘관을 지켜낼 수 있는 것도 아닌데.
+다음엔··· 무섭더라도 그것과 싸워보자.
+싸워야만 지휘관을 지킬 수 있는 거라면 싸울 수 있을 것 같아.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1206
+@@@SUB_TITLE: 저장된 메모리 : 우선 순위
+[SCENE START]
+저장된 메모리
+우선 순위
+
+블랙스미스의 안에서 녹아내리는 건 정말 끔찍한 고통이었어.
+그런데··· 이상하지.
+지휘관을 구해낸 것만으로도 만족스러웠어.
+죽음은 그렇게나 무서운 것이었는데.
+그것보다 지휘관의 죽음을 보는 게 더 무서워진 것 같아.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1207
+@@@SUB_TITLE: 저장된 메모리 : 깨지는 창문
+[SCENE START]
+저장된 메모리
+깨지는 창문
+
+빌딩 창문도 니케의 무게를 이겨내지 못하는구나.
+지휘관 앞에서 창문이 깨져 떨어져 내리다니··· 이상하게 좀 부끄러워.
+하지만 다른 관점에서 보면, 창문을 깰 수 있다는 뜻이기도 하네.
+이 경험으로 블랙스미스를 상대할 방법이 없을까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1208
+@@@SUB_TITLE: 저장된 메모리 : 타이밍
+[SCENE START]
+저장된 메모리
+타이밍
+
+창문 밑으로 떨어질까 봐 너무 신중하게 달렸어.
+블랙스미스를 상대로 내가 너무 안일했네.
+그래선 안 돼. 그래서는 블랙스미스를 쓰러뜨릴 수 없어.
+정신 차리자.
+지휘관을 지켜내기 위해선 전력을 다해야 해.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1209
+@@@SUB_TITLE: 저장된 메모리 : 위화감
+[SCENE START]
+저장된 메모리
+위화감
+
+지휘관의 말과 행동, 이 장소에 알 수 없는 기시감이 든다.
+분명 의미 있는 기억들이었다면 그 추억이 남아 있어야 하는데···.
+난 뭘 잊고 있는 거지? 이 위화감은 뭘까?
+기억해야 해. 기억해 내야만 해.
+아무것도 기억나지 않지만··· 그래야만 한다는 기분이 들어.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1210
+@@@SUB_TITLE: 저장된 메모리 : 함께하는 꿈
+[SCENE START]
+저장된 메모리
+함께하는 꿈
+
+이 지독한 침식도, 임무도 당장 내 힘으로 해결할 수 있는 건 아무것도 없어.
+그렇다면 지금 우리에게 주어진 것들에 최선을 다해보자.
+지휘관이 거짓된 사명 속에서도 내게 손을 내밀어 주었던 것처럼,
+나 역시 이 모든 게 잘 끝날 것이라고 믿고 어떻게 해서든 임무를 완수해 내자.
+그리고 미래를 꿈꾸는 거야.
+모든 것이 끝나고 지휘관과 미래를 함께 살아갈 수 있는 꿈을.
+그 꿈이 있다면, 그 꿈을 이룰 수만 있다면 난 이 지옥 속에서 앞으로 나아갈 수 있어.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1211
+@@@SUB_TITLE: 저장된 메모리 : 동행
+[SCENE START]
+저장된 메모리
+동행
+
+정말 신기한 경험이었어.
+혼자였다면 분명 죽었을 텐데, 단 한 명이 더 있는 것만으로도 반드시 죽는 상황에서 벗어날 수 있었어.
+다른 가능성이 생긴 거야.
+누군가와 함께 다니는 것. 그것 하나만으로.
+···마음이 이상해지는 느낌이야.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1212
+@@@SUB_TITLE: 저장된 메모리 : 행복한 삶
+[SCENE START]
+저장된 메모리
+행복한 삶
+
+우리도 행복해질 수 있을 거라고 했어.
+이 괴로운 시간이 끝나고 행복해질 수 있을 거라고 했지.
+그럴 리가 없을 걸 아는데··· 그렇게 수없이 죽어서 뼈저리게 알고 있는데도,
+이상하게 믿고 싶다고 생각했어.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1213
+@@@SUB_TITLE: 저장된 메모리 : 두려워하는 표정
+[SCENE START]
+저장된 메모리
+두려워하는 표정
+
+지휘관이 날 보고 무서워했어.
+아주 잠깐이었지만 분명 두려워하는 표정으로 날 봤어.
+뭐 때문일까? 지휘관이 두려워할 만한 일을 했던 적이 없는데···.
+···정말 없었나? 내 기억이 뭔가 잘못된 건 아닐까?
+내가 나도 모르게 이상한 일을 저지르고 있는 건 아닐까?
+지휘관이 이유 없이 날 무서워할 리가 없어.
+지휘관은··· 상냥한 사람이니까.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1214
+@@@SUB_TITLE: 저장된 메모리 : 함께 걷는 길
+[SCENE START]
+저장된 메모리
+함께 걷는 길
+
+분명히 무서워했었는데 어떻게 또다시 내게 손을 내밀 수 있었던 걸까?
+처음 손을 잡았던 그때처럼, 아무렇지 않게 내게 손을 내밀어 줬어.
+정말 많은 일이 있었고, 무서워할 만한 일이 있었는데도.
+또다시 아무렇지 않게 내게 손을 내밀어줬어.
+맞잡은 손이 너무나 따뜻해서,
+잡은 것만으로도 온기가 마음에 전해지는 것 같아서···
+모든 불안했던 상황들이 전부 괜찮다고 생각하게 돼.
+지휘관이 옆에 있는 것만으로도··· 전부 괜찮아지는 것 같아.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1215
+@@@SUB_TITLE: 저장된 메모리 : 함께 보는 풍경
+[SCENE START]
+저장된 메모리
+함께 보는 풍경
+
+호수는 여전히 아름다웠어.
+예전엔 그 아름다움이 내 삶을 더 절망스럽게 느껴지게 했는데.
+이상하게도 지휘관과 함께 있는 것만으로도 온전히 호수가 아름답게만 느껴졌어.
+쓸쓸하지도, 외롭지도, 절망스럽지도 않아.
+눈에 보이는 이 반짝이는 풍경을 다시 한번만 더 지휘관과 함께 보고 싶다는 생각만 들 뿐이었어.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1216
+@@@SUB_TITLE: 저장된 메모리 : 걱정하는 눈
+[SCENE START]
+저장된 메모리
+걱정하는 눈
+
+아직이라는 건 무슨 의미였을까?
+지휘관은 뭔가를 기다리고 있었던 걸까?
+시간이 흐르면 뭔가가 변화한다는 것이었을까?
+분명 나를 보고 말하고 있었는데···.
+그렇다는 건 내가 시간이 지나면 변화한다는 걸까?
+내가 모르는 게 너무 많아.
+하지만 직접 물어보기엔··· 걱정스레 바라보던 그 눈의 온기가 사라질까 봐 무서워.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1217
+@@@SUB_TITLE: 저장된 메모리 : 함께 먹는 식사
+[SCENE START]
+저장된 메모리
+함께 먹는 식사
+
+니케인 나에게 굳이 음식을 나눠줄 이유는 없었을 텐데,
+함께 먹는 게 더 맛있다는 이유로 지휘관은 내게 음식을 건네주었지.
+그게 내게 반을 내주기 위해 둘러댄 말이라는 걸 아는데,
+정말로 혼자 먹을 때보다 더 맛있게 느껴졌어.
+성분도 맛도 똑같은 것이 분명한데··· 정말 이상하게 지휘관과 함께 먹는 것만으로도 더 맛있게 느껴져.
+너무 신기한 기분이야.
+이런 기분을 알게 됐는데··· 나중에 지휘관이 없이 혼자서 밥을 먹을 수 있을까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1218
+@@@SUB_TITLE: 저장된 메모리 : 숲의 끝
+[SCENE START]
+저장된 메모리
+숲의 끝
+
+호수 북쪽 숲의 끝은 거대한 균열이 있어서 앞으로 나아갈 수 없어.
+그러니까 더는 이 길을 통해 공장지대로 가려고 시도하지 않아도 될 것 같아.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1219
+@@@SUB_TITLE: 저장된 메모리 : 다급한 행동
+[SCENE START]
+저장된 메모리
+다급한 행동
+
+평소의 지휘관과는 달라.
+무언가에 쫓기듯이 다급하게 움직였어.
+무언가로부터 나를 지키려는 것처럼···.
+지난번에 분명 숨어있을 다른 건물을 찾으러 가다가 블랙스미스의 촉수를 맞았던 것 같은데···.
+그때 무슨 일이 있었던 걸까?
+왜 난 그때 이후의 기억이 존재하지 않는 거지?
+내 기억이 사라진 이후에, 지휘관은 무슨 일을 겪었던 걸까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1220
+@@@SUB_TITLE: 저장된 메모리 : 함께하는 미래
+[SCENE START]
+저장된 메모리
+함께하는 미래
+
+나를 지키고 싶었던 지휘관.
+지휘관을 지키고 싶었던 나.
+무섭고 두려운 이곳에서 서로가 있어서 다행이라고 생각하고 있었어.
+서로 같은 생각을 하고 있었다니···!
+···너무 행복해.
+지휘관과 더 행복해지고 싶다.
+다정하게 빛나는 이 사람과 함께··· 행복한 미래를 맞이하고 싶어.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1221
+@@@SUB_TITLE: 저장된 메모리 : 함께하는 작전
+[SCENE START]
+저장된 메모리
+함께하는 작전
+
+지휘관은 혼자 있으면 무서워서 함께 빌딩 아래까지 내려가자고 했지만.
+그건 거짓말이라는 걸 알아.
+나를 걱정해서.
+내가 외롭고 두려워할까 봐 걱정해서 함께 내려가 준 거야.
+어떻게 이렇게 상냥할 수 있을까?
+지휘관과 함께 싸우는 건 이렇게나 행복한 일이었구나.
+마음이 따뜻해지는 기분이야.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1222
+@@@SUB_TITLE: 저장된 메모리 : 복수
+[SCENE START]
+저장된 메모리
+복수
+
+수많은 마리아들과 수많은 마리안들, 그리고 수많은 지휘관들의 목숨을 빼앗았던 블랙스미스를 마침내 쓰러뜨렸어.
+그 수많은 목숨과 비교할 수는 없지만, 아주 조금이라도 복수를 해낸 것 같아서···.
+그걸 지휘관과 함께 해냈다는 게, 뭐라고 표현할 수 없을 만큼 기뻤어.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1223
+@@@SUB_TITLE: 저장된 메모리 : 반짝이는 삶
+[SCENE START]
+저장된 메모리
+반짝이는 삶
+
+나와 함께 있어서 여기까지 올 수 있었다고 말하는 지휘관.
+당신의 그 다정한 말과, 따뜻한 눈빛을 보면,
+무가치했던 내 삶이 찬란하게 반짝이는 것만 같아.
+내가 사랑스러운 사람이 된 것만 같아.
+당신이 나를 세상에서 가장 귀한 존재로 만들어줘요.
+이런 당신을 어떻게 사랑하지 않을 수 있을까?
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1224
+@@@SUB_TITLE: 저장된 메모리 : 진실
+[SCENE START]
+저장된 메모리
+진실
+
+내가··· 지휘관을 죽였던 거야.
+내가 침식에 걸려서 지휘관을 죽였던 거야.
+그런데 어떻게 나를 그렇게 사랑스럽게 봐줄 수 있었던 걸까?
+나와 미래를 함께하고 싶다고 했던 말은 진심이었을까?
+···물어보고 싶은데, 물어볼 자격이 나에게 있는 걸까.
+지휘관 미안해요. 너무너무 미안해요.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_memory_1225
+@@@SUB_TITLE: 일부만 남은 메모리 : ■휘■
+[SCENE START]
+일부만 남은 메모리
+■휘■
+
+들■가면 뭐■■ 해볼■?
+일■ 거점이 될 ■■ 곳을 찾■■까?
+■■엔 블■■미스 같■ 건 없었■■ 좋■■데.
+함정■■ 쓸 만■ ■을 ■저 찾■■는 것도 ■■다.
+■■면 식량을 ■■ 확보■■는 편■ ■■■■···.
+조금■■■ 편■게 쉴 ■ ■을 만한 곳이 ■■으면 ■■네.
+■번에 ■■ 고생 ■■잖아.
+마리안은 ■■게 생각해?
+아, ■써··· 시간이 ■■게 ■■■나···.
+■■ 말■고 해■, 갈 ■■?
+난··· 괜■으■까.
+울■마.
+이■■ 돼도, ■■ ■ 안에 ■는 ■구나.
+그렇■면 됐■. 마■안이■■ ■찮아.
+다■엔 내가 더 서두■ 테■■···.
+■음■ 꼭···.
+함께 가자.
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="메모리 목록으로"]
+[NEXT_ROUTE DEFAULT TARGET="fading_affection_memory"]
+
+@@@SCRIPT_ID: fading_affection_endings
+@@@SUB_TITLE: 엔딩 회상
+[SCENE START]
+[CHOICE_START ID="fading_affection_endings_choice"]
+  [OPTION TEXT="마리아의 기록 — 방심의 끝" VALUE="ending_6101"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 사냥꾼의 방" VALUE="ending_6102"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 도둑 잡기" VALUE="ending_6103"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 보이는 게 다가 아니야" VALUE="ending_6104"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 피할 곳은 없다" VALUE="ending_6105"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 체력의 한계" VALUE="ending_6106"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 거리 조절 가능하신가요?" VALUE="ending_6107"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 밤길 조심" VALUE="ending_6108"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 부동산은 신중히" VALUE="ending_6109"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 선택하지 못한 자" VALUE="ending_6110"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 삶의 추락" VALUE="ending_6111"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 날아오르는 새" VALUE="ending_6112"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 잡■야 ■?" VALUE="ending_7101"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 운명공동체" VALUE="ending_8101"]
+  [OPTION_END]
+  [OPTION TEXT="마리아의 기록 — 굴레를 벗어난 나비" VALUE="ending_9101"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 다녀오세요?" VALUE="ending_6201"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 과민반응" VALUE="ending_6202"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 어디까지 뛰어보셨죠?" VALUE="ending_6203"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 데려갈 수 없어" VALUE="ending_6204"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 굶주림의 끝" VALUE="ending_6205"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 전기 주의" VALUE="ending_6206"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 만족스러운 희생" VALUE="ending_6207"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 발밑을 조심하세요" VALUE="ending_6208"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 산책 나오셨나요?" VALUE="ending_6209"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 끝없는 의문" VALUE="ending_6210"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 잠시만 안녕" VALUE="ending_6211"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 나■야 ■요?" VALUE="ending_7201"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 가■■요?" VALUE="ending_7202"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 놓■줘■?" VALUE="ending_7203"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 비■줘■?" VALUE="ending_7204"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — ■ 거예■?" VALUE="ending_7205"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 함께하는 꿈" VALUE="ending_8201"]
+  [OPTION_END]
+  [OPTION TEXT="마리안의 기록 — 둘은 안 돼" VALUE="ending_9201"]
+  [OPTION_END]
+  [OPTION TEXT="7호의 기록 — 상실된 기억" VALUE="ending_6301"]
+  [OPTION_END]
+  [OPTION TEXT="7호의 기록 — 안녕히. 내···." VALUE="ending_8301"]
+  [OPTION_END]
+  [OPTION TEXT="기록 선택으로 돌아가기" VALUE="return"]
+  [OPTION_END]
+[CHOICE_END]
+[SCENE END]
+[NEXT_SUBCHAPTER_BUTTON TEXT="다음으로 이동"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6101" TARGET="fading_affection_6101"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6102" TARGET="fading_affection_6102"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6103" TARGET="fading_affection_6103"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6104" TARGET="fading_affection_6104"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6105" TARGET="fading_affection_6105"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6106" TARGET="fading_affection_6106"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6107" TARGET="fading_affection_6107"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6108" TARGET="fading_affection_6108"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6109" TARGET="fading_affection_6109"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6110" TARGET="fading_affection_6110"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6111" TARGET="fading_affection_6111"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6112" TARGET="fading_affection_6112"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_7101" TARGET="fading_affection_7101"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_8101" TARGET="fading_affection_8101"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_9101" TARGET="fading_affection_9101"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6201" TARGET="fading_affection_6201"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6202" TARGET="fading_affection_6202"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6203" TARGET="fading_affection_6203"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6204" TARGET="fading_affection_6204"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6205" TARGET="fading_affection_6205"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6206" TARGET="fading_affection_6206"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6207" TARGET="fading_affection_6207"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6208" TARGET="fading_affection_6208"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6209" TARGET="fading_affection_6209"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6210" TARGET="fading_affection_6210"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6211" TARGET="fading_affection_6211"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_7201" TARGET="fading_affection_7201"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_7202" TARGET="fading_affection_7202"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_7203" TARGET="fading_affection_7203"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_7204" TARGET="fading_affection_7204"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_7205" TARGET="fading_affection_7205"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_8201" TARGET="fading_affection_8201"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_9201" TARGET="fading_affection_9201"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_6301" TARGET="fading_affection_6301"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="ending_8301" TARGET="fading_affection_8301"]
+[NEXT_ROUTE IF_CHOICE="fading_affection_endings_choice" OPTION="return" TARGET="fading_affection_start"]

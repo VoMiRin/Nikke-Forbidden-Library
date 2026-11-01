@@ -1163,4 +1163,25 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'belorta_pumpkinwitch_02', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '재료를 찾아라', mainChapterFile: '벨로타_펌킨_위치.txt' },
     { id: 'belorta_pumpkinwitch_03', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '이게 수집이 된다고?', mainChapterFile: '벨로타_펌킨_위치.txt' },
     { id: 'belorta_pumpkinwitch_04', categoryKey: 'character_episodes', title: '벨로타 : 펌킨 위치', subTitle: '마녀의 보수', mainChapterFile: '벨로타_펌킨_위치.txt' },
+
+    // 마리안 : 퀸
+    { id: 'marian_queen_00', categoryKey: 'character_episodes', title: '마리안 : 퀸', subTitle: '행복이 만든 불안', mainChapterFile: '마리안_퀸.txt' },
+    { id: 'marian_queen_01', categoryKey: 'character_episodes', title: '마리안 : 퀸', subTitle: '아침이 만든 추억', mainChapterFile: '마리안_퀸.txt' },
+    { id: 'marian_queen_02', categoryKey: 'character_episodes', title: '마리안 : 퀸', subTitle: '휴식이 만든 불안', mainChapterFile: '마리안_퀸.txt' },
+    { id: 'marian_queen_03', categoryKey: 'character_episodes', title: '마리안 : 퀸', subTitle: '밤하늘이 만든 추억', mainChapterFile: '마리안_퀸.txt' },
+    { id: 'marian_queen_04', categoryKey: 'character_episodes', title: '마리안 : 퀸', subTitle: '추억이 만든 행복', mainChapterFile: '마리안_퀸.txt' },
+
+    // 라푼젤 : 생츄어리
+    { id: 'rapunzel_sanctuary_00', categoryKey: 'character_episodes', title: '라푼젤 : 생츄어리', subTitle: '돌아온 성녀', mainChapterFile: '라푼젤_생츄어리.txt' },
+    { id: 'rapunzel_sanctuary_01', categoryKey: 'character_episodes', title: '라푼젤 : 생츄어리', subTitle: '빠르게 가는 성녀', mainChapterFile: '라푼젤_생츄어리.txt' },
+    { id: 'rapunzel_sanctuary_02', categoryKey: 'character_episodes', title: '라푼젤 : 생츄어리', subTitle: '분노하는 성녀', mainChapterFile: '라푼젤_생츄어리.txt' },
+    { id: 'rapunzel_sanctuary_03', categoryKey: 'character_episodes', title: '라푼젤 : 생츄어리', subTitle: '확신을 얻은 성녀', mainChapterFile: '라푼젤_생츄어리.txt' },
+    { id: 'rapunzel_sanctuary_04', categoryKey: 'character_episodes', title: '라푼젤 : 생츄어리', subTitle: '나아가는 성녀', mainChapterFile: '라푼젤_생츄어리.txt' },
+
+    // 홍련 : 신살
+    { id: 'hongryeon_goddeath_00', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '홍련부생', mainChapterFile: '홍련_신살.txt' },
+    { id: 'hongryeon_goddeath_01', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '형우제공', mainChapterFile: '홍련_신살.txt' },
+    { id: 'hongryeon_goddeath_02', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '망운지정', mainChapterFile: '홍련_신살.txt' },
+    { id: 'hongryeon_goddeath_03', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '회자정리', mainChapterFile: '홍련_신살.txt' },
+    { id: 'hongryeon_goddeath_04', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '낙화춘불진', mainChapterFile: '홍련_신살.txt' },
 ];

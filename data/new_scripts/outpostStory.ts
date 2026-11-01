@@ -216,6 +216,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'theater_09', categoryKey: 'outpost_stories', title: '극장', subTitle: '꿈을 좇는 자들', mainChapterFile: '극장.txt' },
     { id: 'theater_10', categoryKey: 'outpost_stories', title: '극장', subTitle: '특별 게스트', mainChapterFile: '극장.txt' },
     { id: 'theater_11', categoryKey: 'outpost_stories', title: '극장', subTitle: '괴식과 극장', mainChapterFile: '극장.txt' },
+    { id: 'theater_12', categoryKey: 'outpost_stories', title: '극장', subTitle: '꿈을 이루어주는 아이돌', mainChapterFile: '극장.txt' },
 
     // 수상한 클럽
     { id: 'seedy_club_00', categoryKey: 'outpost_stories', title: '수상한 클럽', subTitle: '비밀의 계단', mainChapterFile: '수상한_클럽.txt' },
