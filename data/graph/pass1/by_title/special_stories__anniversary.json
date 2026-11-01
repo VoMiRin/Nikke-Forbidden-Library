@@ -1,12 +1,441 @@
 {
   "schema_version": "1.3.0",
-  "generated_at": "2026-11-01T05:11:17.958Z",
+  "generated_at": "2026-11-01T06:10:09.323Z",
   "title_id": "special_stories__anniversary",
   "category": "special_stories",
   "title": "ANNIVERSARY",
   "source_file": "public/scripts/special_stories/anniversary.txt",
-  "scene_count": 8,
+  "scene_count": 9,
   "scenes": [
+    {
+      "scene_id": "anniversary_00",
+      "title_id": "special_stories__anniversary",
+      "category": "special_stories",
+      "source_file": "public/scripts/special_stories/anniversary.txt",
+      "source_sha256": "14f3d02cd1c0c8b804c18d53a2b467014469123f8fe8f1c391de27c57c9b17f3",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "1주년 아침, 라피가 어설픈 거짓말로 지휘관을 밖으로 내보내려다 실패하자 아니스와 네온이 나서서 전초기지 곳곳에 지휘관을 위한 이벤트가 준비되어 있다며 밖으로 나가 보라고 권하고, 카운터스 삼인방은 대청소를 핑계로 숙소에 남는다.",
+      "participants": {
+        "present_in_scene": [
+          {
+            "item_id": "anniversary_00__pis_001",
+            "speaker_label": "라피",
+            "entity_id": "char_라피",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "anniversary_00__pis_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "anniversary_00__pis_003",
+            "speaker_label": "네온",
+            "entity_id": "char_네온",
+            "is_generic_role": false
+          },
+          {
+            "item_id": "anniversary_00__pis_004",
+            "speaker_label": "아니스",
+            "entity_id": "char_아니스",
+            "is_generic_role": false
+          }
+        ],
+        "present_silent": [],
+        "remote_or_voice_only": [],
+        "mentioned_only": [
+          {
+            "item_id": "anniversary_00__mnt_001",
+            "surface_text": "지휘관 실",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "어쩐지 평화롭지 못한 하루가 될 것을 직감하며 지휘관 실을 나섰다.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "anniversary_00__mnt_002",
+            "surface_text": "전초기지",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 53,
+            "line_end": 53,
+            "quote": "네온: 어쨌든 전초기지 여기저기서 스승님을 위한 이벤트를 준비한 것 같더라구요.",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "anniversary_00__foa_001",
+          "from_speaker": "라피",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "라피: 지휘관.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__foa_002",
+          "from_speaker": "아니스",
+          "to_target": "지휘관",
+          "address_term": "지휘관님",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "아니스: 지휘관님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__foa_003",
+          "from_speaker": "지휘관",
+          "to_target": "라피, 네온, 아니스",
+          "address_term": "너희",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "너희는 같이 안 가?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__foa_004",
+          "from_speaker": "네온",
+          "to_target": "지휘관",
+          "address_term": "스승님",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "네온: 그러니 얼른 나가 보세요, 스승님.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "anniversary_00__chb_001",
+          "choice_line": 44,
+          "options": [
+            {
+              "item_id": "anniversary_00__chb_001_opt_01",
+              "option_text": "당연히 알고 있지.",
+              "continuation_summary": "아니스가 지휘관이라면 알고 있을 줄 알았다며 사소한 것들도 잘 챙겨주지 않냐고 말한다."
+            },
+            {
+              "item_id": "anniversary_00__chb_001_opt_02",
+              "option_text": "글쎄, 모르겠는데.",
+              "continuation_summary": "라피가 특별한 날 정도로만 알고 있으면 된다고 말한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "anniversary_00__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 알람을 끄고 핸드폰에 뜬 '1주년' 글자를 확인한 뒤 지휘관실을 나선다.",
+          "line_start": 2,
+          "line_end": 6,
+          "claim_line": null,
+          "quote": "삐비비빗-\n알람을 끄고 핸드폰에 떠 있는 글자를 확인한다.\n[1주년.]\n벌써 1년이라니.\n어쩐지 평화롭지 못한 하루가 될 것을 직감하며 지휘관 실을 나섰다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지문",
+          "summary": "지휘관이 벌써 1년이 되었다며 평화롭지 못한 하루가 될 것을 직감한다.",
+          "line_start": 5,
+          "line_end": 6,
+          "claim_line": 6,
+          "quote": "벌써 1년이라니.\n어쩐지 평화롭지 못한 하루가 될 것을 직감하며 지휘관 실을 나섰다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 지휘관에게 큰일이 났다며 지금 당장 밖으로 나가 보아야 할 것 같다고 말한다.",
+          "line_start": 7,
+          "line_end": 14,
+          "claim_line": 8,
+          "quote": "라피: 지휘관.\n라피: 큰일입니다.\n[CHOICE_START]\n  [OPTION TEXT=\"큰일?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예.\n라피: 지금 당장 밖으로 나가 보셔야 할 것 같습니다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관, 라피",
+          "summary": "지휘관이 무슨 일인지 묻자 라피가 말을 더듬으며 큰일이라는 말만 되풀이하다 침묵한다.",
+          "line_start": 15,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"무슨 일인데?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 그게···.\n라피: ··· ···.\n라피: 크, 큰일입니다. 지휘관.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ··· ···.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 라피에게 정말 큰일이 맞냐고 묻는다.",
+          "line_start": 27,
+          "line_end": 30,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"큰일 맞아?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 라피에게 맡겨두는 게 아니었다며 자신이 해도 저것보다는 잘했을 것이라고 타박한다.",
+          "line_start": 31,
+          "line_end": 32,
+          "claim_line": 31,
+          "quote": "네온: 역시 라피한테 맡겨두는 게 아니었어요.\n네온: 제가 해도 저것보단 잘했을 거라구요!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 라피가 이렇게까지 절망적으로 거짓말에 소질이 없을 줄 몰랐다고 평한다.",
+          "line_start": 33,
+          "line_end": 34,
+          "claim_line": 34,
+          "quote": "아니스: 그러게~\n아니스: 이렇게까지 절망적으로 거짓말에 소질이 없을 줄이야.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 거짓말을 제대로 하지 못한 것을 사과한다.",
+          "line_start": 35,
+          "line_end": 35,
+          "claim_line": null,
+          "quote": "라피: ···미안.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스, 지휘관, 네온",
+          "summary": "아니스가 솔직하게 말하자며 지휘관에게 일단 밖으로 나가 보라고 권하고, 지휘관이 이유를 묻자 네온이 오늘이 무슨 날인지 알고 있냐고 묻는다.",
+          "line_start": 36,
+          "line_end": 43,
+          "claim_line": null,
+          "quote": "아니스: 이왕 이렇게 된 거, 그냥 솔직하게 말하자.\n아니스: 지휘관님.\n아니스: 일단 밖으로 나가 봐.\n[CHOICE_START]\n  [OPTION TEXT=\"왜?\"]\n  [OPTION_END]\n[CHOICE_END]\n네온: 오늘이 무슨 날인지는 알고 계시죠?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "지휘관이 오늘이 무슨 날인지 당연히 알고 있다고 답하자, 아니스가 지휘관이라면 사소한 것들도 잘 챙겨주니 알고 있을 줄 알았다고 말한다.",
+          "line_start": 45,
+          "line_end": 48,
+          "claim_line": 47,
+          "quote": "  [OPTION TEXT=\"당연히 알고 있지.\"]\n    아니스: 지휘관님이라면 알고 있을 줄 알았어.\n    아니스: 사소한 것들도 잘 챙겨주잖아?\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 44,
+            "option_text": "당연히 알고 있지."
+          }
+        },
+        {
+          "item_id": "anniversary_00__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "지휘관이 무슨 날인지 모르겠다고 답하자, 라피가 특별한 날 정도로만 알고 있으면 된다고 말한다.",
+          "line_start": 49,
+          "line_end": 51,
+          "claim_line": 50,
+          "quote": "  [OPTION TEXT=\"글쎄, 모르겠는데.\"]\n    라피: 특별한 날, 정도로만 알고 계셔주시면 됩니다.\n  [OPTION_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 44,
+            "option_text": "글쎄, 모르겠는데."
+          }
+        },
+        {
+          "item_id": "anniversary_00__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 전초기지 여기저기서 지휘관을 위한 이벤트를 준비한 것 같다고 전한다.",
+          "line_start": 53,
+          "line_end": 53,
+          "claim_line": 53,
+          "quote": "네온: 어쨌든 전초기지 여기저기서 스승님을 위한 이벤트를 준비한 것 같더라구요.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "아니스가 지휘관에게 얼른 밖으로 나가 보라고 재촉한다.",
+          "line_start": 54,
+          "line_end": 54,
+          "claim_line": null,
+          "quote": "아니스: 그러니까 얼른 나가 봐, 지휘관님.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 라피, 아니스, 네온에게 같이 안 가느냐고 묻는다.",
+          "line_start": 55,
+          "line_end": 58,
+          "claim_line": null,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"너희는 같이 안 가?\"]\n  [OPTION_END]\n[CHOICE_END]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "아니스",
+          "summary": "라피가 말끝을 흐리자 아니스가 자신들을 위해 준비된 이벤트가 아니며 오늘 바쁜 일이 있다고 둘러댄다.",
+          "line_start": 59,
+          "line_end": 62,
+          "claim_line": 61,
+          "quote": "라피: 저희는 여기서···.\n아니스: 우, 우리를 위해서 준비된 이벤트가 아니잖아!\n아니스: 그리고 우린 오늘 바쁜 일이 있어.\n아니스: 그렇지, 네온?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "네온",
+          "summary": "네온이 아니스의 말에 맞장구를 치며 오늘은 특별한 날이라 대청소를 하기로 했으니 얼른 나가 보라고 권한다.",
+          "line_start": 63,
+          "line_end": 65,
+          "claim_line": 64,
+          "quote": "네온: 마, 맞아요.\n네온: 오늘은 특별한 날이니까, 대청소하기로 했어요.\n네온: 그러니 얼른 나가 보세요, 스승님.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "라피",
+          "summary": "라피가 지휘관에게 이따 뵙겠다고 인사한다.",
+          "line_start": 66,
+          "line_end": 66,
+          "claim_line": null,
+          "quote": "라피: ···이따 뵙겠습니다, 지휘관.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "anniversary_00__clh_001",
+          "keyword": "거짓말",
+          "category": "trait",
+          "subject": "라피",
+          "detail": "라피는 거짓말에 소질이 없어 둘러대지 못하고 말을 더듬는다.",
+          "line_start": 19,
+          "line_end": 21,
+          "quote": "라피: 그게···.\n라피: ··· ···.\n라피: 크, 큰일입니다. 지휘관.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "anniversary_00__clh_002",
+          "keyword": "대청소",
+          "category": "foreshadowing",
+          "subject": null,
+          "detail": "라피, 아니스, 네온이 지휘관과 동행하지 않고 바쁜 일이 있다며 대청소를 핑계로 숙소에 남는다.",
+          "line_start": 59,
+          "line_end": 66,
+          "quote": "라피: 저희는 여기서···.\n아니스: 우, 우리를 위해서 준비된 이벤트가 아니잖아!\n아니스: 그리고 우린 오늘 바쁜 일이 있어.\n아니스: 그렇지, 네온?\n네온: 마, 맞아요.\n네온: 오늘은 특별한 날이니까, 대청소하기로 했어요.\n네온: 그러니 얼른 나가 보세요, 스승님.\n라피: ···이따 뵙겠습니다, 지휘관.",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "anniversary_00__uec_001",
+          "surface_text": "지휘관 실",
+          "suggested_type": "location",
+          "line_start": 6
+        },
+        {
+          "item_id": "anniversary_00__uec_002",
+          "surface_text": "전초기지",
+          "suggested_type": "location",
+          "line_start": 53
+        }
+      ]
+    },
     {
       "scene_id": "anniversary_01",
       "title_id": "special_stories__anniversary",
