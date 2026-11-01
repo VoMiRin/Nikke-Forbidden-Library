@@ -148,8 +148,20 @@ const termSceneText = (parts) => {
 };
 // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다.
 // 후보 이름에 말줄임표가 들어 있을 수 있어(`수송··· 기`) 낱말에서도 지운다
+// 같은 말을 두 번 이은 이름(`블라블라`)은 그 반쪽(`블라`)만 장면에 있어도 있는 것으로 본다.
+// 38회차 메신저 장면에서 "블라 맞나요", "블라하자"를 `블라블라`로 풀어 쓴 경고가 17건 모두였다
+const halfOfDoubled = (token) => {
+  const chars = [...token];
+  if (chars.length < 4 || chars.length % 2 !== 0) return null;
+  const half = chars.slice(0, chars.length / 2).join('');
+  return half === chars.slice(chars.length / 2).join('') ? half : null;
+};
 const termInScene = (sceneText, term) =>
-  termTokens(term).every((token) => sceneText.includes(token.replace(ELLIPSIS_DOTS_RE, '')));
+  termTokens(term).every((token) => {
+    const flat = token.replace(ELLIPSIS_DOTS_RE, '');
+    const half = halfOfDoubled(flat);
+    return sceneText.includes(flat) || (half !== null && sceneText.includes(half));
+  });
 // 앞 글자가 한글이면 다른 낱말의 일부다(`장소라고`의 `소라`)
 const termUsedIn = (text, term) => {
   for (let i = text.indexOf(term); i >= 0; i = text.indexOf(term, i + 1)) {
@@ -302,6 +314,9 @@ const isNonEmptyString = (val) => typeof val === 'string' && val.trim().length >
 const isNullableString = (val) => val === null || typeof val === 'string';
 const isPositiveInt = (val) => Number.isInteger(val) && val >= 1;
 
+// 콜론 바로 뒤에 오는 글자 이모티콘: `)`, `-)`, `(`, `D`, `P`가 끝이거나 뒤에 공백·문장부호가 온다
+const TEXT_EMOTICON_AFTER_COLON_RE = /^-?[)(DPp](?=$|[\s)(.!?~,])/;
+
 /**
  * 원문 한 줄에서 화자: 라벨과 제어 태그를 뗀 순수 대사/문장 텍스트를 추출한다 (2.3.4).
  */
@@ -336,9 +351,10 @@ export const extractUtteranceTextFromRawLine = (rawLine) => {
     return actionMatch[2].trim();
   }
 
-  // 일반 화자: 대사
+  // 일반 화자: 대사. 콜론 뒤가 글자 이모티콘(`: )`, `:-)`, `:(`, `:D`)이면 화자 라벨이 아니다.
+  // 38회차 `blabla_ade_001` L28 "진심으로 영광이에요 : )"를 라벨로 떼어 ")"만 남겨 인용 7건이 실패했다(메신저 본문 167줄 중 110줄)
   const colonMatch = trimmed.match(/^(?:\[[^\[\]:]+\]|[^:\[\]]+?)\s*:\s*(.*)$/);
-  if (colonMatch) {
+  if (colonMatch && !TEXT_EMOTICON_AFTER_COLON_RE.test(colonMatch[1])) {
     return colonMatch[1].trim();
   }
 

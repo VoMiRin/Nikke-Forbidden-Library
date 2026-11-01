@@ -21,6 +21,7 @@ import {
   claimStartsOtherSpeaker,
   composeJamo,
   dialogueOnlyEvents,
+  extractUtteranceTextFromRawLine,
   loadEntityRegistry,
   loadTermLexicon,
   validateShard,
@@ -1519,6 +1520,35 @@ test('2.3-25/28 names typed as loose jamo (messenger typos) are composed before 
   } finally {
     await fs.rm(dir, { recursive: true, force: true });
   }
+});
+
+test('2.3-6 text emoticons after a colon are not speaker labels; 2.3-25 doubled names match their half', () => {
+  assert.equal(extractUtteranceTextFromRawLine('진심으로 영광이에요 : )'), '진심으로 영광이에요 : )');
+  assert.equal(extractUtteranceTextFromRawLine('멋져 :-)'), '멋져 :-)');
+  assert.equal(extractUtteranceTextFromRawLine('미안해요 :) 저도 개인적인 용무가 있네요'), '미안해요 :) 저도 개인적인 용무가 있네요');
+  assert.equal(extractUtteranceTextFromRawLine('라피: Don\'t move.'), "Don't move.");
+  assert.equal(extractUtteranceTextFromRawLine('라피: (웃으며) 안녕'), '(웃으며) 안녕');
+
+  // 여러 줄 메신저 대사를 한 줄로 이어 인용해도 통과한다(38회차 blabla_ade_001)
+  const lines = ['[SCENE START]', '[MESSENGER_START TITLE="에이드" PARTICIPANTS="에이드,지휘관"]', '  [MSG SENDER="에이드"]', '    이렇게 주인님과 문자를 하게 되어', '  [MSG_END]', '  [MSG SENDER="에이드"]', '    진심으로 영광이에요 : )', '  [MSG_END]', '[MESSENGER_END]', '[SCENE END]'];
+  const batch = batchOf(makeInputScene('t13_emoticon', lines));
+  const scene = (quote, summary = '말한다.') =>
+    emptyScene('t13_emoticon', {
+      summary,
+      participants: { present_in_scene: [], present_silent: [], remote_or_voice_only: [{ speaker_label: '에이드', entity_id: null, medium: 'messenger', is_generic_role: false, line_start: 3, line_end: 7, quote: '이렇게 주인님과 문자를 하게 되어' }], mentioned_only: [], document_author: null },
+      events_and_claims: [event({ epistemic_type: 'character_claim', actor_or_speaker: '에이드', summary, line_start: 3, line_end: 8, claim_line: 7, quote })],
+    });
+  const quoteErrors = (s) => validateShard(shardOf(s), batch).errors.filter((e) => e.rule === 'QUOTE_LOCATION');
+  assert.equal(quoteErrors(scene('이렇게 주인님과 문자를 하게 되어 진심으로 영광이에요 : )')).length, 0);
+  assert.equal(quoteErrors(scene('이렇게 주인님과 문자를 하게 되어\n진심으로 영광이에요 : )')).length, 0);
+
+  // 25항: `블라블라`는 장면에 `블라`만 있어도 있는 것으로 본다. 반쪽도 없으면 경고
+  const lexicon = { terms: new Map([['블라블라', 'item name']]), sceneCountOf: () => 3 };
+  const termWarnings = (s, b) => validateShard(shardOf(s), b, { termLexicon: lexicon }).warnings.filter((w) => w.rule === 'TERM_NOT_IN_SCENE');
+  const blaLines = (text) => ['[SCENE START]', '[MESSENGER_START TITLE="에이드" PARTICIPANTS="에이드,지휘관"]', '  [MSG SENDER="에이드"]', `    ${text}`, '  [MSG_END]', '  [MSG SENDER="에이드"]', '    진심으로 영광이에요 : )', '  [MSG_END]', '[MESSENGER_END]', '[SCENE END]'];
+  const blaScene = (text) => batchOf(makeInputScene('t13_emoticon', blaLines(text)));
+  assert.equal(termWarnings(scene('혹시 주인님 블라 맞나요 진심으로 영광이에요 : )', '블라블라로 인사한다.'), blaScene('혹시 주인님 블라 맞나요')).length, 0);
+  assert.equal(termWarnings(scene('이렇게 주인님과 문자를 하게 되어 진심으로 영광이에요 : )', '블라블라로 인사한다.'), batch).length, 2); // 장면 요약과 항목 요약
 });
 
 test('2.3-25 term lexicon: registry names without generic roles, merged and own candidates, corpus scene counts', async () => {
