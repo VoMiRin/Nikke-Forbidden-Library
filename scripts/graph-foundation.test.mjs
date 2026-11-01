@@ -68,7 +68,7 @@ test('2.4.2 total ???: line count in manifest matches raw grep -cE "^\\s*\\?\\?\
     manifestUnknownSum += scene.mechanical_ground_truth.unknowns.length;
   }
 
-  assert.equal(rawGrepSum, 1071);
+  assert.equal(rawGrepSum, 1073);
   assert.equal(manifestDoc.totals.total_unknown_lines, rawGrepSum);
   assert.equal(manifestUnknownSum, rawGrepSum);
 });

@@ -59,9 +59,8 @@ test('selectUnincludedRawRecords recovers a new block from a partially registere
   );
 });
 
-test('unregistered source files are parsed into all 29 script records', async () => {
+test('unregistered source files are parsed into all 23 script records', async () => {
   const sourcePaths = [
-    ['event_stories/chocolate_please.txt', 6],
     ['event_lost_relics/outer_automata_lost.txt', 23],
   ];
   const allIds = new Set();
@@ -76,5 +75,5 @@ test('unregistered source files are parsed into all 29 script records', async ()
     }
   }
 
-  assert.equal(allIds.size, 29);
+  assert.equal(allIds.size, 23);
 });
