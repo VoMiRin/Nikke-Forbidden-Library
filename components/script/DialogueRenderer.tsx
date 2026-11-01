@@ -1,6 +1,7 @@
 import React from 'react';
 import type { DialogueElement } from '../../types';
 import { SPEAKER_COLORS } from '../../lib/speakerColors';
+import { InlineText } from './InlineText';
 
 interface DialogueRendererProps {
   element: DialogueElement;
@@ -40,7 +41,7 @@ export const DialogueRenderer: React.FC<DialogueRendererProps> = ({ element }) =
         )}
       </span>
       <p className="whitespace-pre-wrap font-body text-[1.125em] leading-[var(--reader-leading,1.9)] text-nikke-text-primary max-sm:text-[1em]">
-        {element.dialogue}
+        <InlineText text={element.dialogue} />
       </p>
     </div>
   );

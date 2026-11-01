@@ -23,6 +23,12 @@ const MAX_PARSER_RECURSION_DEPTH = 50;
 
 type ParserMode = 'default' | 'document';
 
+/**
+ * 미니게임(텍스트 어드벤처) 본문의 안내 줄 이름표. `힌트: …`처럼 쓰여도 등장인물 대사가 아니라 안내 지문이다.
+ */
+export const SYSTEM_NOTICE_LABELS = ['힌트', '수집품 획득', '메모리 저장'] as const;
+const SYSTEM_NOTICE_LINE = new RegExp(`^(${SYSTEM_NOTICE_LABELS.join('|')})\\s*:\\s*(.+)$`);
+
 const shouldTreatLineAsDialogue = (line: string, parserMode: ParserMode): boolean => {
     if (parserMode === 'document') {
         return false;
@@ -414,7 +420,11 @@ const parseScriptElementsRecursive = (
             const narrationKeywordMatch = line.match(/^(LOCATION|SOUND|NARRATION|나래이션|MUSIC|EFFECTS|ACTION|TRANSITION|FADE IN|FADE OUT|CUT TO|INT\.|EXT\.|SYSTEM)[:\s](.*)/i);
             const actionDialogueMatch = line.match(/^([^\[]+)\[ACTION\]:\s*(.*)/i);
 
-            if (narrationKeywordMatch) {
+            const systemNoticeMatch = line.match(SYSTEM_NOTICE_LINE);
+
+            if (systemNoticeMatch) {
+                elements.push({ type: 'narration', text: systemNoticeMatch[2].trim(), speaker: systemNoticeMatch[1] });
+            } else if (narrationKeywordMatch) {
                 elements.push({
                     type: 'narration',
                     text: narrationKeywordMatch[2].trim(),
@@ -433,13 +443,9 @@ const parseScriptElementsRecursive = (
                     const potentialSpeaker = dialogueMatch[1].trim();
                     const dialogueText = dialogueMatch[2].trim();
                     elements.push({ type: 'dialogue', speaker: potentialSpeaker, dialogue: dialogueText });
-                } else {
-                    const parentheticalMatch = line.match(/^\((.*)\)$/);
-                    if (parentheticalMatch) {
-                        elements.push({ type: 'narration', text: parentheticalMatch[1].trim(), speaker: 'ACTION' });
-                    } else if (line) {
-                        elements.push({ type: 'narration', text: line });
-                    }
+                } else if (line) {
+                    // 괄호로 감싼 줄도 원문 그대로(괄호 포함) 일반 지문으로 표시한다.
+                    elements.push({ type: 'narration', text: line });
                 }
             }
         }

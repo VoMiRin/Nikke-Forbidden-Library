@@ -158,6 +158,10 @@ export const DOCUMENT_FIELD_LABELS = new Set([
   '날짜',
   'xttp',
   'http',
+  // 미니게임(텍스트 어드벤처) 안내 줄: 힌트: …, 수집품 획득: …, 메모리 저장: …
+  '힌트',
+  '수집품 획득',
+  '메모리 저장',
   'https',
   '댓글',
   'RE',

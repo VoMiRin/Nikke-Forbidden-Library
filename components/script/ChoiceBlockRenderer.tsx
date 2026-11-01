@@ -1,6 +1,7 @@
 import React from 'react';
 import type { ChoiceBlockElement, ScriptElement } from '../../types';
 import { optionKey } from './branchView';
+import { InlineText, toPlainInlineText } from './InlineText';
 
 interface ChoiceBlockRendererProps {
   element: ChoiceBlockElement;
@@ -31,6 +32,8 @@ export const ChoiceBlockRenderer: React.FC<ChoiceBlockRendererProps> = ({
   const selectedOptionData = element.options.find(option => option.value === selectedOptionValue);
 
   const selectedOptionIndex = selectedOptionData ? element.options.indexOf(selectedOptionData) : -1;
+  // 가림 문구가 있는 선택지는 문구를 펼치는 버튼과 고르는 버튼을 나눈다(버튼 안에 버튼을 둘 수 없다)
+  const hasRedactedOption = element.options.some(option => option.text.includes('[REDACT]'));
 
   return (
     <section
@@ -66,7 +69,7 @@ export const ChoiceBlockRenderer: React.FC<ChoiceBlockRendererProps> = ({
                   {optionKey(index)}
                 </span>
                 <span className="sr-only">분기 {optionKey(index)}:</span>
-                {option.text}
+                <span><InlineText text={option.text} /></span>
               </p>
               {destination && (
                 <p className="ml-[39px] mt-1.5 flex items-center gap-1.5 text-xs text-nikke-highlight">
@@ -86,6 +89,28 @@ export const ChoiceBlockRenderer: React.FC<ChoiceBlockRendererProps> = ({
             );
           })}
         </ol>
+      ) : !selectedOptionValue && hasRedactedOption ? (
+        <ul className="flex flex-col gap-2">
+          {element.options.map((option, index) => (
+            <li
+              key={option.optionId}
+              className="flex min-h-[52px] w-full items-center gap-3.5 rounded-lg border border-nikke-border-strong px-3.5 py-2 text-[1em] text-nikke-text-primary max-sm:min-h-[50px] max-sm:gap-3 max-sm:px-3 max-sm:text-[0.9375em]"
+            >
+              <span aria-hidden="true" className="flex h-[26px] w-[26px] flex-none items-center justify-center rounded-full border border-nikke-border-strong font-headline text-xs text-nikke-text-secondary">
+                {optionKey(index)}
+              </span>
+              <span className="min-w-0 flex-1"><InlineText text={option.text} /></span>
+              <button
+                type="button"
+                onClick={() => onOptionSelect(element.choiceId, option.value)}
+                className="min-h-10 flex-none rounded-lg border border-nikke-border-strong px-3.5 text-[13px] text-nikke-text-secondary hover:border-nikke-accent hover:bg-nikke-accent/[0.08] hover:text-nikke-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent"
+                aria-label={`선택: ${toPlainInlineText(option.text, { redacted: 'mask' })}`}
+              >
+                선택
+              </button>
+            </li>
+          ))}
+        </ul>
       ) : !selectedOptionValue ? (
         <ul className="flex flex-col gap-2">
           {element.options.map((option, index) => (
@@ -93,12 +118,12 @@ export const ChoiceBlockRenderer: React.FC<ChoiceBlockRendererProps> = ({
               <button
                 onClick={() => onOptionSelect(element.choiceId, option.value)}
                 className="group flex min-h-[52px] w-full items-center gap-3.5 rounded-lg border border-nikke-border-strong px-3.5 py-2 text-left text-[1em] text-nikke-text-primary transition-colors duration-150 hover:border-nikke-accent hover:bg-nikke-accent/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent max-sm:min-h-[50px] max-sm:gap-3 max-sm:px-3 max-sm:text-[0.9375em]"
-                aria-label={`선택: ${option.text}`}
+                aria-label={`선택: ${toPlainInlineText(option.text, { redacted: 'mask' })}`}
               >
                 <span aria-hidden="true" className="flex h-[26px] w-[26px] flex-none items-center justify-center rounded-full border border-nikke-border-strong font-headline text-xs text-nikke-text-secondary group-hover:border-nikke-accent group-hover:text-nikke-text-primary">
                   {optionKey(index)}
                 </span>
-                <span>{option.text}</span>
+                <span><InlineText text={option.text} interactive={false} /></span>
               </button>
             </li>
           ))}
@@ -111,12 +136,12 @@ export const ChoiceBlockRenderer: React.FC<ChoiceBlockRendererProps> = ({
                 {selectedOptionIndex >= 0 ? optionKey(selectedOptionIndex) : ''}
               </span>
               <span className="sr-only">선택함:</span>
-              {selectedOptionData?.text}
+              <span>{selectedOptionData && <InlineText text={selectedOptionData.text} />}</span>
             </p>
             <button
               onClick={() => onClearChoice(element.choiceId)}
               className="min-h-10 rounded-lg border border-nikke-border-strong px-3.5 text-[13px] text-nikke-text-secondary hover:border-nikke-accent hover:text-nikke-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent"
-              aria-label={`선택 변경: ${selectedOptionData?.text ?? ''}`}
+              aria-label={`선택 변경: ${toPlainInlineText(selectedOptionData?.text ?? '', { redacted: 'mask' })}`}
             >
               선택 변경
             </button>

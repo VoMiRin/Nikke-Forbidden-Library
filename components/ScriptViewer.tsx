@@ -17,6 +17,13 @@ import {
 } from './script';
 import { BranchIcon, ChevronLeftIcon, ChevronRightIcon, FourPointStarIcon, LinkIcon } from './Icons';
 import { NikkeLogo } from './NikkeLogo';
+import { toPlainInlineText } from './script/InlineText';
+
+/** 선택지를 고르면 곧바로 이어지는 장면으로 넘어가는 텍스트 어드벤처 미니게임 (분류/파일) */
+const TEXT_ADVENTURE_FILES = new Set([
+  'event_lost_relics/white_memory.txt',
+  'event_lost_relics/fading_affection.txt',
+]);
 import { scenePath } from '../lib/pageRoutes.mjs';
 
 type SearchFocus = {
@@ -179,7 +186,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   }, [branchWarning]);
 
   const normalizeSearchValue = React.useCallback((value: string): string => (
-    value
+    toPlainInlineText(value)
       .normalize('NFKC')
       .toLowerCase()
       .replace(/\s+/g, ' ')
@@ -561,6 +568,17 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   const sceneHasBranches = React.useMemo(() => hasBranchingContent(parsedElements), [parsedElements]);
   const choiceOptionKeys = React.useMemo(() => collectChoiceOptionKeys(parsedElements), [parsedElements]);
   const routeTargets = React.useMemo(() => collectRouteTargets(parsedElements), [parsedElements]);
+  // 텍스트 어드벤처 미니게임은 선택지를 고르면 다음 장면 버튼을 거치지 않고 바로 그 장면으로 넘어간다
+  const isTextAdventure = !!script && TEXT_ADVENTURE_FILES.has(`${script.categoryKey}/${script.mainChapterFile}`);
+  const handleOptionSelect = (choiceId: string, optionValue: string) => {
+    const targetScriptId = isTextAdventure ? routeTargets.get(choiceId)?.get(optionValue) : undefined;
+    if (targetScriptId && onNavigateToScript) {
+      onNavigateToScript(targetScriptId);
+      return;
+    }
+    onOptionSelect(choiceId, optionValue);
+  };
+
   const getOptionDestination = (choiceId: string, optionValue: string) => {
     const targetScriptId = routeTargets.get(choiceId)?.get(optionValue);
     return targetScriptId ? (describeScene?.(targetScriptId) ?? targetScriptId) : undefined;
@@ -572,7 +590,10 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
     if (conditionalRoutes.length === 0) return [];
 
     // 선택지 문구를 함께 적어, 서로 다른 선택지의 A/B가 섞여도 구분되게 한다
-    const shorten = (text: string) => (text.length > 22 ? `${text.slice(0, 22)}…` : text);
+    const shorten = (raw: string) => {
+      const text = toPlainInlineText(raw, { redacted: 'mask' });
+      return text.length > 22 ? `${text.slice(0, 22)}…` : text;
+    };
     const labelsByTarget = new Map<string, string[]>();
     for (const route of conditionalRoutes) {
       const option = choiceOptionKeys.get(route.choiceId!)?.get(route.optionValue ?? '');
@@ -675,7 +696,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
             key={key}
             element={element}
             selectedOptions={selectedOptions}
-            onOptionSelect={onOptionSelect}
+            onOptionSelect={handleOptionSelect}
             onClearChoice={onClearChoice}
             renderElements={renderElements}
             containerId={`choice-block-${element.choiceId}`}

@@ -15,6 +15,16 @@ const normalizeSearchText = (value: string): string => (
     .trim()
 );
 
+/**
+ * 본문 안 인라인 표기(`[REDACT]…[/REDACT]` 가림, `<color=#…>…</color>` 글자색)를 걷어내고 안의 글만 남긴다.
+ * `mask`를 주면 가려진 문구를 ■로 바꾼다.
+ */
+export const stripInlineMarkup = (text: string, mask?: string): string => (
+  text
+    .replace(/\[REDACT\]([\s\S]*?)\[\/REDACT\]/g, (_, inner: string) => (mask ?? inner))
+    .replace(/<color=#[0-9a-fA-F]{3,8}>([\s\S]*?)<\/color>/g, '$1')
+);
+
 const NARRATION_LABELS = new Set([
   'LOCATION', 'SOUND', 'NARRATION', '나래이션', '나레이션', 'MUSIC', 'EFFECTS',
   'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM', '시스템', '알림',
@@ -26,6 +36,8 @@ const DOCUMENT_FIELD_LABELS = new Set([
   '제목', '내용', '장소', '시간', '용도', '서명자', '타겟', '부사령관실',
   '노이즈 게릴라 콘서트. 장소', '슈가 커피 레시피',
   '카페 서비스', '카페 신메뉴 맛', '미카의 서비스', '미카가 만든 신메뉴 맛',
+  // 미니게임(텍스트 어드벤처) 안내 줄
+  '힌트', '수집품 획득', '메모리 저장',
 ]);
 
 const isSpeakerLabel = (name: string): boolean => {
@@ -102,7 +114,7 @@ export const extractTextFromScriptContent = (
   };
 
   for (const line of lines) {
-    const trimmedLine = line.trim();
+    const trimmedLine = stripInlineMarkup(line.trim());
 
     // Messenger block handling
     if (trimmedLine.match(/^\[MESSENGER_START.*?\]$/i)) {
@@ -161,7 +173,8 @@ export const extractTextFromScriptContent = (
     if (trimmedLine === '---' || 
         trimmedLine.match(/^\[SCENE START\]/i) || 
         trimmedLine.match(/^\[SCENE END\]/i) ||
-        trimmedLine.match(/^\[CHOICE_START\]/i) ||
+        trimmedLine.match(/^\[CHOICE_START(?:\s+ID=".*?")?\]$/i) ||
+        trimmedLine.match(/^\[NEXT_ROUTE\s.*\]$/i) ||
         trimmedLine.match(/^\[CHOICE_END\]/i) ||
         trimmedLine.match(/^\[CHOICE_PROMPT=".*?"\]/i) ||
         trimmedLine.match(/^\[OPTION TEXT=".*?"\]/i) ||

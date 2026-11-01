@@ -1,5 +1,7 @@
 import React from 'react';
 import type { NarrationElement } from '../../types';
+import { InlineText } from './InlineText';
+import { SYSTEM_NOTICE_LABELS } from './scriptParser';
 
 interface NarrationRendererProps {
   element: NarrationElement;
@@ -21,11 +23,11 @@ export const NarrationRenderer: React.FC<NarrationRendererProps> = ({ element })
   if (upperSpeakerForCheck.includes('[ACTION]')) {
     const speakerName = element.speaker!.replace(/\[ACTION\]/i, '').trim();
     return (
-      <p className={`my-2 ${narrationClass}`}>{speakerName} : {element.text}</p>
+      <p className={`my-2 ${narrationClass}`}>{speakerName} : <InlineText text={element.text} /></p>
     );
   }
 
-  const narrationKeywords = ['LOCATION', 'SOUND', 'NARRATION', 'MUSIC', 'EFFECTS', 'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM'];
+  const narrationKeywords = ['LOCATION', 'SOUND', 'NARRATION', 'MUSIC', 'EFFECTS', 'ACTION', 'TRANSITION', 'FADE IN', 'FADE OUT', 'CUT TO', 'INT', 'EXT', 'SYSTEM', ...SYSTEM_NOTICE_LABELS];
 
   if (element.speaker && narrationKeywords.includes(upperSpeakerForCheck.replace(/\.$/, ''))) {
     if (upperSpeakerForCheck === 'SYSTEM' && element.text.startsWith('Error:')) {
@@ -35,14 +37,16 @@ export const NarrationRenderer: React.FC<NarrationRendererProps> = ({ element })
         </p>
       );
     }
+    // 미니게임 안내 줄(힌트·수집품 획득·메모리 저장)은 본문 지문과 같은 칸에서 시작한다
+    const isSystemNotice = (SYSTEM_NOTICE_LABELS as readonly string[]).includes(element.speaker);
     return (
-      <p className="mb-4 mt-1 whitespace-pre-wrap font-mono text-xs leading-[1.7] tracking-[0.06em] text-nikke-text-muted max-sm:mb-1.5 max-sm:text-[11px]">
-        <span className="text-nikke-accent">{element.speaker}</span> — {element.text}
+      <p className={`mb-4 mt-1 whitespace-pre-wrap font-mono text-xs leading-[1.7] tracking-[0.06em] text-nikke-text-muted max-sm:mb-1.5 max-sm:text-[11px] ${isSystemNotice ? 'pl-[136px] max-sm:pl-0' : ''}`}>
+        <span className="text-nikke-accent">{element.speaker}</span> — <InlineText text={element.text} />
       </p>
     );
   }
 
   return (
-    <p className={`mb-3 ${narrationClass}`}>{element.text}</p>
+    <p className={`mb-3 ${narrationClass}`}><InlineText text={element.text} /></p>
   );
 };

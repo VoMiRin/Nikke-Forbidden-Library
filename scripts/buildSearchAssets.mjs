@@ -57,7 +57,10 @@ const buildPreviewText = (content, options = {}) => {
   const lines = content.split('\n');
 
   for (const rawLine of lines) {
-    const line = rawLine.trim();
+    // 가림·글자색 표기는 걷어내고 안의 글만 미리보기에 쓴다 (utils.ts stripInlineMarkup과 같은 규칙)
+    const line = rawLine.trim()
+      .replace(/\[REDACT\]([\s\S]*?)\[\/REDACT\]/g, '$1')
+      .replace(/<color=#[0-9a-fA-F]{3,8}>([\s\S]*?)<\/color>/g, '$1');
 
     if (!line) {
       continue;
