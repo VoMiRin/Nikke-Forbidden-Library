@@ -161,11 +161,22 @@ const halfOfDoubled = (token) => {
   const half = chars.slice(0, chars.length / 2).join('');
   return half === chars.slice(chars.length / 2).join('') ? half : null;
 };
+// 복수 접미사 `들`이 붙은 이름(`고양이들`)은 뗀 꼴(`고양이`)만 장면에 있어도 있는 것으로 본다(40회차 `lion_heart_04`).
+// 뗀 꼴이 한 글자(`개들`→`개`)면 아무 데나 걸리므로 두 글자 이상일 때만 본다
+const pluralStem = (token) => {
+  const chars = [...token];
+  return chars.length >= 3 && chars[chars.length - 1] === '들' ? chars.slice(0, -1).join('') : null;
+};
 const termInScene = (sceneText, term) =>
   termTokens(term).every((token) => {
     const flat = token.replace(ELLIPSIS_DOTS_RE, '');
     const half = halfOfDoubled(flat);
-    return sceneText.includes(flat) || (half !== null && sceneText.includes(half));
+    const stem = pluralStem(flat);
+    return (
+      sceneText.includes(flat) ||
+      (half !== null && sceneText.includes(half)) ||
+      (stem !== null && sceneText.includes(stem))
+    );
   });
 // 앞 글자가 한글이면 다른 낱말의 일부다(`장소라고`의 `소라`)
 const termUsedIn = (text, term) => {

@@ -1578,6 +1578,22 @@ test('2.3-25/28 glitch characters in Sin\'s speech (※▣□) are skipped when 
   }
 });
 
+test('2.3-25 a candidate name with the plural suffix 들 matches its stem in the scene (two syllables or more)', () => {
+  // 40회차 lion_heart_04: 원문 `개나 고양이는`, 요약 `고양이들`
+  const lines = ['[SCENE START]', '레오나: 솔직히 개나 고양이는 괜찮을 거라 생각해.', '[SCENE END]'];
+  const batch = batchOf(makeInputScene('t13_plural', lines));
+  const lexicon = { terms: new Map([['고양이들', 'faction_or_species name'], ['새들', 'faction_or_species name']]), sceneCountOf: () => 3 };
+  const scene = (summary) =>
+    emptyScene('t13_plural', {
+      summary,
+      participants: { present_in_scene: present('레오나'), present_silent: [], remote_or_voice_only: [], mentioned_only: [], document_author: null },
+      events_and_claims: [event({ epistemic_type: 'character_claim', actor_or_speaker: '레오나', summary: '말한다.', line_start: 2, line_end: 2, claim_line: 2, quote: '솔직히 개나 고양이는 괜찮을 거라 생각해.' })],
+    });
+  const termWarnings = (s) => validateShard(shardOf(s), batch, { termLexicon: lexicon }).warnings.filter((w) => w.rule === 'TERM_NOT_IN_SCENE');
+  assert.equal(termWarnings(scene('레오나가 고양이들은 괜찮을 거라고 말한다.')).length, 0);
+  assert.equal(termWarnings(scene('레오나가 새들 이야기를 한다.')).length, 1); // `새`는 한 글자라 떼지 않는다
+});
+
 test('2.3-25 term lexicon: registry names without generic roles, merged and own candidates, corpus scene counts', async () => {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-terms-'));
   try {
