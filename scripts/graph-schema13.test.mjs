@@ -1551,6 +1551,33 @@ test('2.3-6 text emoticons after a colon are not speaker labels; 2.3-25 doubled 
   assert.equal(termWarnings(scene('이렇게 주인님과 문자를 하게 되어 진심으로 영광이에요 : )', '블라블라로 인사한다.'), batch).length, 2); // 장면 요약과 항목 요약
 });
 
+test('2.3-25/28 glitch characters in Sin\'s speech (※▣□) are skipped when finding names, and names made of them still match', async () => {
+  // 39회차 seedy_club_06 `수영※▣복`. `※※`(검열 표기)처럼 그 글자로 된 후보 이름도 그대로 찾는다
+  const lines = ['[SCENE START]', '신: ▣※□□▣수영※▣복 메※▣이▣드도 있□고.', '???: ※※에서 대기하고 있어야 하는데.', '[SCENE END]'];
+  const batch = batchOf(makeInputScene('t13_glitch', lines));
+  const lexicon = { terms: new Map([['수영복', 'item name'], ['※※', 'location name'], ['일레그', 'registered character'], ['도서관', 'location name']]), sceneCountOf: () => 3 };
+  const scene = (summary, mentions = []) =>
+    emptyScene('t13_glitch', {
+      summary,
+      participants: { present_in_scene: present('신'), present_silent: [], remote_or_voice_only: [], mentioned_only: mentions, document_author: null },
+      events_and_claims: [event({ epistemic_type: 'character_claim', actor_or_speaker: '신', summary: '말한다.', line_start: 2, line_end: 2, claim_line: 2, quote: '▣※□□▣수영※▣복 메※▣이▣드도 있□고.' })],
+    });
+  const termWarnings = (s) => validateShard(shardOf(s), batch, { termLexicon: lexicon }).warnings.filter((w) => w.rule === 'TERM_NOT_IN_SCENE');
+  assert.equal(termWarnings(scene('신이 수영복 메이드도 있다고 말하고, ※※에서 대기해야 한다는 말이 나온다.')).length, 0);
+  assert.equal(termWarnings(scene('도서관 이야기를 한다.')).length, 1);
+
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-glitch-'));
+  try {
+    await fs.writeFile(path.join(dir, 'entity_registry.json'), JSON.stringify({ entities: [{ entity_id: 'char_일레그', canonical_name: '일레그', surface_labels: ['일레그'] }] }));
+    const registry = await loadEntityRegistry(dir);
+    const mention = { surface_text: '일▣레※그', entity_id: 'char_일레그', entity_type: 'character', line_start: 2, line_end: 2, quote: '▣※□□▣수영※▣복' };
+    const res = validateShard(shardOf(scene('말한다.', [mention])), batch, { registry });
+    assert.equal(res.warnings.filter((w) => w.rule === 'ENTITY_ID_SURFACE_MISMATCH').length, 0);
+  } finally {
+    await fs.rm(dir, { recursive: true, force: true });
+  }
+});
+
 test('2.3-25 term lexicon: registry names without generic roles, merged and own candidates, corpus scene counts', async () => {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-terms-'));
   try {

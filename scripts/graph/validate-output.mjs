@@ -88,6 +88,9 @@ const HANGUL_SYLLABLE_RE = /[가-힣]/;
 // 25·28항의 이름 찾기에서 지우는 말줄임표: 가운뎃점 세 개 이상(`···`, 띄어 쓴 `··· ···`는 공백을 지운 뒤 `······`).
 // 원문에 가운뎃점 하나·둘은 각 1번뿐이고 이름 사이 가운뎃점(`A·B`)일 수 있어 남긴다. `…`는 지우지 않는다
 const ELLIPSIS_DOTS_RE = /·{3,}/g;
+// 신(Sin)의 깨진 말투 연출 글자(`수▣※영복`, 39회차 `seedy_club_06`·`anchor_innocentmaid_04`). 이름 찾기에서만 지우고 인용 대조에는 쓰지 않는다
+const GLITCH_CHARS_RE = /[※▣□]/g;
+const HAS_GLITCH_CHAR_RE = /[※▣□]/;
 // 2.3의 25항 경고 장면 수: 병합된 결과에서 이만큼 넘는 장면에 이 경고가 걸리는 이름은 요약에 흔히 쓰는 말과 겹친 것으로 보고
 // 검사하지 않는다. 원문 장면 수로는 거르지 못한다: 29회차 `알리`(보드 기술)는 원문 83장면이지만 요약의 동사 `알리다`에
 // 311장면이 걸렸다(345건 모두 동사). 그다음은 11장면(`잡지`)이었다
@@ -140,11 +143,13 @@ export const composeJamo = (text) => {
 };
 // 25항의 장면 글: 물결표도 지운다. 늘인 말(`탄~산수~`)도 그 이름이다(8회차 `bunny_x_777_04`). 이름 찾기에만 쓰고 인용 대조에는 쓰지 않는다.
 // 말줄임표(가운뎃점 세 개 이상)도 지운다: 끊어 말한 이름(`여··· 왕··· 님···`)도 그 이름이다(10회차 `main_06_08`).
-// 가운뎃점 하나(`A·B`)는 남긴다
+// 가운뎃점 하나(`A·B`)는 남긴다. 신의 깨진 말투 글자(※▣□)를 지운 글도 덧붙인다
 const termSceneText = (parts) => {
   const joined = parts.filter(isNonEmptyString).join('\n');
   const text = HANGUL_JAMO_RE.test(joined) ? `${joined}\n${composeJamo(joined)}` : joined;
-  return text.replace(/[\s~～]+/g, '').replace(ELLIPSIS_DOTS_RE, '');
+  const flat = text.replace(/[\s~～]+/g, '').replace(ELLIPSIS_DOTS_RE, '');
+  // 지운 글은 덧붙인다: `※※`(검열 표기)·`카운▣□터▣스`처럼 이 글자가 든 후보 이름도 있다
+  return HAS_GLITCH_CHAR_RE.test(flat) ? `${flat}\n${flat.replace(GLITCH_CHARS_RE, '')}` : flat;
 };
 // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다.
 // 후보 이름에 말줄임표가 들어 있을 수 있어(`수송··· 기`) 낱말에서도 지운다
@@ -2136,8 +2141,10 @@ export const validateShard = (shardData, batchInput, options = {}) => {
         if (!shown) continue;
         // 띄어쓰기와 말줄임표는 무시한다(끊어 말한 이름 `지휘··· 관`, 10회차 `last_kingdom_28`)
         // 자모를 풀어 친 표기도 합쳐 본다(37회차 `blabla_ludmilla_004` `ㅁㅣ카`)
+        // 신의 깨진 말투 글자(※▣□)를 지운 것도 본다(`일▣레※그`)
         const flat = shown.replace(/\s+/g, '').replace(ELLIPSIS_DOTS_RE, '');
         const flats = HANGUL_JAMO_RE.test(flat) ? [flat, composeJamo(flat)] : [flat];
+        if (HAS_GLITCH_CHAR_RE.test(flat)) flats.push(flat.replace(GLITCH_CHARS_RE, ''));
         const labels = labelsById.get(id) ?? [];
         if (labels.some((label) => flats.some((f) => f === label || (label.length >= 2 && f.includes(label))))) continue;
         addWarning(
