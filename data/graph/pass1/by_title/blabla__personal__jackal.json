@@ -1,0 +1,1328 @@
+{
+  "schema_version": "1.3.0",
+  "generated_at": "2026-11-01T10:02:07.149Z",
+  "title_id": "blabla__personal__jackal",
+  "category": "blabla",
+  "title": "자칼",
+  "source_file": "public/scripts/blabla/personal/jackal.txt",
+  "scene_count": 3,
+  "scenes": [
+    {
+      "scene_id": "blabla_jackal_001",
+      "title_id": "blabla__personal__jackal",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/jackal.txt",
+      "source_sha256": "b3a0aa8c6b2a690a7bbbc9aa4a959612053444d444e8258ca009d1f9ff97fe02",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "자칼이 지휘관과 같이 다니라는 말을 들었다며 함께 무엇을 할지 이야기하다가, 자신이 잘하는 일(ACPU에게서 도망치기 또는 총 쏘기)을 지금 당장 하러 가자며 먼저 뛰쳐나간다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_jackal_001__rvo_001",
+            "speaker_label": "자칼",
+            "entity_id": "char_자칼",
+            "medium": "messenger",
+            "line_start": 9,
+            "line_end": 11,
+            "quote": "나보고 지휘관이랑 같이 다니라던데"
+          },
+          {
+            "item_id": "blabla_jackal_001__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 18,
+            "line_end": 20,
+            "quote": "자칼은 뭘 하고 싶은데?"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_jackal_001__mnt_001",
+            "surface_text": "대장",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 57,
+            "line_end": 59,
+            "quote": "대장 말도 잘 듣고",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_jackal_001__mnt_002",
+            "surface_text": "ACPU",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 71,
+            "line_end": 71,
+            "quote": "[OPTION TEXT=\"ACPU한테서 잘 도망치지\"]",
+            "chronology_type": "present",
+            "in_branch_option": {
+              "choice_line": 70,
+              "option_text": "ACPU한테서 잘 도망치지"
+            }
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_jackal_001__foa_001",
+          "from_speaker": "자칼",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "지휘관!!!11",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_jackal_001__chb_001",
+          "choice_line": 70,
+          "options": [
+            {
+              "item_id": "blabla_jackal_001__chb_001_opt_01",
+              "option_text": "ACPU한테서 잘 도망치지",
+              "continuation_summary": "자칼이 동의하며 ACPU가 매일 자신만 보면 쫓아와서 귀찮지만 매일 도망쳐서 이기니 재미있다고 말한다."
+            },
+            {
+              "item_id": "blabla_jackal_001__chb_001_opt_02",
+              "option_text": "총 쏘는 걸 잘하지",
+              "continuation_summary": "자칼이 동의하며 총을 쏘면 펑펑 터져서 엄청 재미있다고 말한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_jackal_001__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관에게 누군가 자신더러 지휘관과 같이 다니라고 했다고 전한다.",
+          "line_start": 3,
+          "line_end": 11,
+          "claim_line": 10,
+          "quote": "ㅋㅋㅋ\n지휘관!!!11\n나보고 지휘관이랑 같이 다니라던데",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관에게 같이 다니면서 무엇을 할 것인지 묻고 재미있는 것을 하면 좋겠다고 말한다.",
+          "line_start": 12,
+          "line_end": 17,
+          "claim_line": null,
+          "quote": "같이 다니면서 뭐 할 거야??\n재밌는 거 하면 좋겠다!!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 무엇을 하고 싶은지 묻는다.",
+          "line_start": 18,
+          "line_end": 20,
+          "claim_line": null,
+          "quote": "자칼은 뭘 하고 싶은데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 자신이 잘하는 것을 하고 싶고, 못하는 것은 재미없어서 하기 싫다고 답한다.",
+          "line_start": 21,
+          "line_end": 32,
+          "claim_line": 25,
+          "quote": "나는\n내가 잘하는 거 하고 싶어!!\n못하는 건 하기 싫어!!\n못하니까 재미없어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 못하는 일은 누구나 재미없다고 공감한다.",
+          "line_start": 33,
+          "line_end": 35,
+          "claim_line": 34,
+          "quote": "못하는 건 누구나 재미없어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관의 말에 동의하며 잘하는 것만 해도 충분히 재미있다고 말한다.",
+          "line_start": 36,
+          "line_end": 41,
+          "claim_line": 40,
+          "quote": "ㅇㅇ맞아!!\n잘하는 것만 해도 충분히 재미있ㅇ어!!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 잘하는 것이 무엇인지 묻는다.",
+          "line_start": 42,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "자칼이 잘 하는 건 뭐야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 자신은 달리는 것과 튼튼한 이빨로 물어뜯는 것을 잘하고 대장의 말도 잘 듣는다고 답한 뒤 더 떠올리려다 망설인다.",
+          "line_start": 45,
+          "line_end": 68,
+          "claim_line": 49,
+          "quote": "나는 달리는 거 잘해!!\n물어뜯는 것도 잘해!!\n이빨 튼튼하거든!!\n그리고 또\n대장 말도 잘 듣고\n그리고 또\n어\n음",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼은 ACPU한테서 잘 도망친다고 말한다.",
+          "line_start": 71,
+          "line_end": 71,
+          "claim_line": 71,
+          "quote": "[OPTION TEXT=\"ACPU한테서 잘 도망치지\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 70,
+            "option_text": "ACPU한테서 잘 도망치지"
+          }
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관의 말에 동의하며, ACPU가 매일 자신만 보면 쫓아와서 귀찮지만 매일 자신이 도망쳐서 이기니 재미있다고 말한다.",
+          "line_start": 72,
+          "line_end": 86,
+          "claim_line": 79,
+          "quote": "ㅇㅇㅇㅇㅇㅇ\n나 잘 도망쳐\n걔들은 맨날 나만 보면 쫓아와ㅏ!!\n귀찮아!!\n그래도 매일 내가 이겨서 재밌어!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 70,
+            "option_text": "ACPU한테서 잘 도망치지"
+          }
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼은 총 쏘는 것을 잘한다고 말한다.",
+          "line_start": 88,
+          "line_end": 88,
+          "claim_line": 88,
+          "quote": "[OPTION TEXT=\"총 쏘는 걸 잘하지\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 70,
+            "option_text": "총 쏘는 걸 잘하지"
+          }
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관의 말에 동의하며 총을 잘 쏘고 쏘면 펑펑 터져서 엄청 재미있다고 말한다.",
+          "line_start": 89,
+          "line_end": 97,
+          "claim_line": 96,
+          "quote": "ㅇㅇㅇ맞아\n총 잘 쏴\n쏘면 막 펑펑 터져서 엄청 재밌어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 70,
+            "option_text": "총 쏘는 걸 잘하지"
+          }
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관에게 자신이 잘하는 일을 지금 하러 갈 것이냐고 묻고 빨리 가자고 재촉한다.",
+          "line_start": 101,
+          "line_end": 109,
+          "claim_line": null,
+          "quote": "그럼 지휘관 그거 하러 갈 거야?\n지금 갈 거야?\n빨리 가자",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 지금 당장 가자는 것이냐고 되묻는다.",
+          "line_start": 107,
+          "line_end": 112,
+          "claim_line": null,
+          "quote": "빨리 가자\n지금?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지금 가자고 답하더니 기다리지 못하고 자신이 먼저 하고 있을 테니 빨리 오라고 말한다.",
+          "line_start": 113,
+          "line_end": 127,
+          "claim_line": null,
+          "quote": "ㅇㅇ지금\n아\n안되겠다\n나 먼저 하고 있을게\n빨리 와",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 먼저 가려는 자칼을 다급히 불러 세운다.",
+          "line_start": 128,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "자칼 잠깐",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼은 지휘관의 메시지에 답장하지 않는다.",
+          "line_start": 131,
+          "line_end": 133,
+          "claim_line": null,
+          "quote": "···자칼은 답장이 없다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_jackal_001__clh_001",
+          "keyword": "튼튼한 이빨과 물어뜯기",
+          "category": "trait",
+          "subject": "자칼",
+          "detail": "자칼은 이빨이 튼튼해서 물어뜯는 것을 잘한다고 말한다.",
+          "line_start": 48,
+          "line_end": 53,
+          "quote": "물어뜯는 것도 잘해!!\n이빨 튼튼하거든!!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_jackal_001__rln_001",
+          "subject": "자칼",
+          "target": "지휘관",
+          "relation_or_change": "누군가에게 지휘관과 같이 다니라는 말을 들었다고 함",
+          "epistemic_type": "character_claim",
+          "claimant": "자칼",
+          "line_start": 9,
+          "line_end": 11,
+          "claim_line": 10,
+          "quote": "나보고 지휘관이랑 같이 다니라던데",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__rln_002",
+          "subject": "자칼",
+          "target": "대장",
+          "relation_or_change": "자신이 대장의 말을 잘 듣는다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "자칼",
+          "line_start": 57,
+          "line_end": 59,
+          "claim_line": 58,
+          "quote": "대장 말도 잘 듣고",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_001__rln_003",
+          "subject": "자칼",
+          "target": "ACPU",
+          "relation_or_change": "ACPU가 매일 자신만 보면 쫓아와서 귀찮지만 매일 자신이 도망쳐서 이긴다고 말함",
+          "epistemic_type": "character_claim",
+          "claimant": "자칼",
+          "line_start": 71,
+          "line_end": 86,
+          "claim_line": 79,
+          "quote": "[OPTION TEXT=\"ACPU한테서 잘 도망치지\"]\nㅇㅇㅇㅇㅇㅇ\n나 잘 도망쳐\n걔들은 맨날 나만 보면 쫓아와ㅏ!!\n귀찮아!!\n그래도 매일 내가 이겨서 재밌어!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 70,
+            "option_text": "ACPU한테서 잘 도망치지"
+          }
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_jackal_001__uec_001",
+          "surface_text": "대장",
+          "suggested_type": "alias",
+          "line_start": 58
+        },
+        {
+          "item_id": "blabla_jackal_001__uec_002",
+          "surface_text": "ACPU",
+          "suggested_type": "squad",
+          "line_start": 71
+        }
+      ]
+    },
+    {
+      "scene_id": "blabla_jackal_002",
+      "title_id": "blabla__personal__jackal",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/jackal.txt",
+      "source_sha256": "256850699d898aed84731e4a050980d2b98d6213b37bd4d0f1dca24e6ab1f76a",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "자칼이 물탱크를 물어뜯고 놀다가 출동한 ACPU(폴리, 미란다)의 모자 두 개를 훔쳐 달아났다고 자랑하자, 지휘관이 자칼은 자신과만 놀아야 한다며 달래고 머리를 백 번 쓰다듬어 주기로 약속해 모자를 돌려주게 한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_jackal_002__rvo_001",
+            "speaker_label": "자칼",
+            "entity_id": "char_자칼",
+            "medium": "messenger",
+            "line_start": 6,
+            "line_end": 8,
+            "quote": "나 방금 ACPU랑 놀고 왔어!!"
+          },
+          {
+            "item_id": "blabla_jackal_002__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 23,
+            "line_end": 25,
+            "quote": "ACPU는 폴리랑 미란다 둘이"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_jackal_002__mnt_001",
+            "surface_text": "ACPU",
+            "entity_id": null,
+            "entity_type": "squad",
+            "line_start": 6,
+            "line_end": 8,
+            "quote": "나 방금 ACPU랑 놀고 왔어!!",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_jackal_002__mnt_002",
+            "surface_text": "폴리",
+            "entity_id": "char_폴리",
+            "entity_type": "character",
+            "line_start": 23,
+            "line_end": 25,
+            "quote": "ACPU는 폴리랑 미란다 둘이",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_jackal_002__mnt_003",
+            "surface_text": "미란다",
+            "entity_id": "char_미란다",
+            "entity_type": "character",
+            "line_start": 23,
+            "line_end": 25,
+            "quote": "ACPU는 폴리랑 미란다 둘이",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_jackal_002__foa_001",
+          "from_speaker": "자칼",
+          "to_target": "지휘관",
+          "address_term": "지휘관",
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "지휘관!!!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_jackal_002__chb_001",
+          "choice_line": 10,
+          "options": [
+            {
+              "item_id": "blabla_jackal_002__chb_001_opt_01",
+              "option_text": "폴리랑?",
+              "continuation_summary": null
+            },
+            {
+              "item_id": "blabla_jackal_002__chb_001_opt_02",
+              "option_text": "미란다랑?",
+              "continuation_summary": null
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_jackal_002__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관에게 방금 ACPU와 놀고 왔다고 말한다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": 7,
+          "quote": "지휘관!!!\n나 방금 ACPU랑 놀고 왔어!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 폴리와 놀고 온 것이냐고 묻는다.",
+          "line_start": 11,
+          "line_end": 12,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"폴리랑?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "폴리랑?"
+          }
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_003",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 미란다와 놀고 온 것이냐고 묻는다.",
+          "line_start": 13,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "[OPTION TEXT=\"미란다랑?\"]",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "미란다랑?"
+          }
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 폴리와 미란다라는 이름을 알아듣지 못하고 ACPU와 놀았다고 다시 강조한다.",
+          "line_start": 17,
+          "line_end": 22,
+          "claim_line": 21,
+          "quote": "??\n아니 ACPU랑 놀았다니까!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 ACPU는 폴리와 미란다 두 사람이라고 설명하려 한다.",
+          "line_start": 23,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "ACPU는 폴리랑 미란다 둘이",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관의 설명을 넘기며 오늘 물탱크에서 놀고 있었는데 갑자기 ACPU가 왔다고 말한다.",
+          "line_start": 26,
+          "line_end": 34,
+          "claim_line": 30,
+          "quote": "아무튼 ㅇ무튼!!\n내가 오늘 물탱크에서 놀고 있었거든!\n그런데 갑자기 ACPU가 왔어!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_007",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 물탱크에서 무엇을 하고 놀고 있었는지 묻는다.",
+          "line_start": 35,
+          "line_end": 37,
+          "claim_line": null,
+          "quote": "물탱크에서 뭘 하고 놀고 있었는데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 강화 플라스틱으로 된 질긴 물탱크를 물어뜯고 놀고 있었다며, 물어뜯다 보면 뜯어지면서 큰 소리와 함께 물이 쏟아져 나와 엄청 재미있다고 답한다.",
+          "line_start": 38,
+          "line_end": 58,
+          "claim_line": 39,
+          "quote": "물어뜯고 놀고 있었ㅓ!!!\n강화 플라스틱인가 뭔가라고 해서\n되게 질긴데 물어 뜯고 있다 보면\n빢!!!!! 하고 뜯어져서\n엄청 재밌어!!!\n물이 콸코라 나오고!!!\n소리도 엄청 커!!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 물탱크에서 놀던 중 ACPU가 또 자신에게 소리 지르며 다가오길래 ACPU의 모자를 훔쳤다고 말한다.",
+          "line_start": 62,
+          "line_end": 70,
+          "claim_line": 69,
+          "quote": "그러다가 ACPU가 왔는데\n또 나한테 막 소리 지르면서 오더라고!!\n그ㅐ서 모자 훔쳤어!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 모자를 훔쳐 도망가자 ACPU가 더 소리 지르며 쫓아왔고, ACPU는 싫어했지만 함께 달리며 놀아보니 재미있었다고 말한다.",
+          "line_start": 74,
+          "line_end": 88,
+          "claim_line": 75,
+          "quote": "모자 훔쳐서 도망가니가 더 소리 지르면서 쪼ㅈ아왔ㅓ!!\n그래서 엄청 달렸어!!!1!!\n그랬더니 ACPU도 같이 달렸어!!\nACPU는 싷어했는데\n같이 놀아보니까 재밌었어!!!",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 훔친 모자는 어떻게 했는지 묻는다.",
+          "line_start": 89,
+          "line_end": 91,
+          "claim_line": null,
+          "quote": "모자는 어떻게 했는데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 훔친 ACPU의 모자 두 개를 지금 자신이 모두 쓰고 있다고 답한다.",
+          "line_start": 92,
+          "line_end": 97,
+          "claim_line": 96,
+          "quote": "지금 내가 쓰고 있지!\n두개다 쓰고 있써!!!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "자칼이 ACPU의 모자 두 개를 모두 훔쳐 쓰고 있다는 말에 지휘관이 두통을 느낀다.",
+          "line_start": 98,
+          "line_end": 100,
+          "claim_line": null,
+          "quote": "···머리가 아파온다",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 훔친 모자를 돌려줘야 한다고 말한다.",
+          "line_start": 101,
+          "line_end": 103,
+          "claim_line": null,
+          "quote": "돌려줘야 해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 모자를 가지고 있으면 ACPU와 다시 놀 수 있는데 왜 돌려줘야 하냐며 빨리 와서 같이 놀면 좋겠다고 말한다.",
+          "line_start": 104,
+          "line_end": 115,
+          "claim_line": 111,
+          "quote": "응???\n왜??\n이거 가지고 있으면 ACPU랑 다시 놀 수 있는데 오ㅐ??\n히히힣 빨리 와서 같이 놀면 좋겠다",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_016",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관에게도 와서 같이 놀겠냐고 묻는다.",
+          "line_start": 116,
+          "line_end": 118,
+          "claim_line": null,
+          "quote": "지휘관도 와서 같이 놀래??",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 거듭 모자를 돌려주라고 지시한다.",
+          "line_start": 119,
+          "line_end": 121,
+          "claim_line": null,
+          "quote": "돌려줘 자칼",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_018",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 모자를 돌려주기 싫다며 거절하고, 자신과 ACPU가 노는 것이 싫으냐고 묻는다.",
+          "line_start": 122,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "싫은데\n아까부터 자꾸 돌려주라고 하네\n나랑 ACPU가 노는 게 싫어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼과 ACPU가 노는 것이 싫다고 답한다.",
+          "line_start": 128,
+          "line_end": 133,
+          "claim_line": 132,
+          "quote": "나랑 ACPU가 노는 게 싫어?\n응 싫어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 왜 싫은 것이냐며 자신이 재미있는 것이 싫으냐고 따져 묻는다.",
+          "line_start": 134,
+          "line_end": 139,
+          "claim_line": null,
+          "quote": "왜!!!!\n내가 재밌는 게 실허!?!??!?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼은 자신과만 놀아야 하기 때문이라고 답한다.",
+          "line_start": 140,
+          "line_end": 142,
+          "claim_line": 141,
+          "quote": "자칼은 나랑만 놀아야 되니까",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관의 말 뜻을 알아차리고 질투하는 것이냐고 묻는다.",
+          "line_start": 143,
+          "line_end": 154,
+          "claim_line": 153,
+          "quote": "어???\n어어어어!!!\n어 나 이거 알아!!!\n질투하는 거야????",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 질투하는 것이 맞다고 인정한다.",
+          "line_start": 152,
+          "line_end": 157,
+          "claim_line": 156,
+          "quote": "질투하는 거야????\nㅇㅇ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_024",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 기뻐하며 모자를 다시 돌려놓고 오겠다고 약속하고, 대신 자신과 많이 놀아달라고 했다가 머리를 백 번 쓰다듬어 달라고 요구한다.",
+          "line_start": 158,
+          "line_end": 175,
+          "claim_line": null,
+          "quote": "헿헤헤\n알았어 그럼 이거 다시 돌려놓고 올게\n대신\n지휘관이 나랑 많이 놓아줘야 해\n아니다\n머리 백번 쓰다듬어 줘!!!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 백 번 쓰다듬어 주는 정도는 간단하다며 자칼의 요구를 수락한다.",
+          "line_start": 176,
+          "line_end": 178,
+          "claim_line": null,
+          "quote": "백번 정도야 간단하지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_026",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 알겠다며 얼른 모자를 돌려놓고 오겠다고 인사한다.",
+          "line_start": 179,
+          "line_end": 184,
+          "claim_line": null,
+          "quote": "알겠어!!!\n그럼 얼른 갔따올께!!",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__eac_027",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 폴리와 미란다를 만나면 자칼 대신 사과해야겠다고 생각한다.",
+          "line_start": 185,
+          "line_end": 187,
+          "claim_line": null,
+          "quote": "···폴리와 미란다를 만나면 대신 사과해야겠다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_jackal_002__clh_001",
+          "keyword": "물탱크 물어뜯기",
+          "category": "trait",
+          "subject": "자칼",
+          "detail": "자칼은 강화 플라스틱으로 된 질긴 물탱크를 물어뜯어 터뜨리며 노는 버릇과 치악력을 지니고 있다.",
+          "line_start": 38,
+          "line_end": 52,
+          "quote": "물어뜯고 놀고 있었ㅓ!!!\n강화 플라스틱인가 뭔가라고 해서\n되게 질긴데 물어 뜯고 있다 보면\n빢!!!!! 하고 뜯어져서\n엄청 재밌어!!!",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_jackal_002__rln_001",
+          "subject": "폴리",
+          "target": "ACPU",
+          "relation_or_change": "미란다와 함께 ACPU 소속 두 사람 중 한 명이라고 언급됨",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 23,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "ACPU는 폴리랑 미란다 둘이",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_002__rln_002",
+          "subject": "미란다",
+          "target": "ACPU",
+          "relation_or_change": "폴리와 함께 ACPU 소속 두 사람 중 한 명이라고 언급됨",
+          "epistemic_type": "character_claim",
+          "claimant": "지휘관",
+          "line_start": 23,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "ACPU는 폴리랑 미란다 둘이",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_jackal_002__uec_001",
+          "surface_text": "ACPU",
+          "suggested_type": "squad",
+          "line_start": 7
+        }
+      ]
+    },
+    {
+      "scene_id": "blabla_jackal_003",
+      "title_id": "blabla__personal__jackal",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/jackal.txt",
+      "source_sha256": "404961206c469f64a9aef1996415c84700df5ae6d565be02f108a21b13ea27b1",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "자칼이 대장에게 받은 개껌맛 허헥트를 입에 가득 넣은 채 발음이 새는 소리 그대로 채팅을 치자 지휘관이 의아해하고, 자칼은 지휘관 몫도 남겨 놓을 테니 와서 먹어 보라고 권한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_jackal_003__rvo_001",
+            "speaker_label": "자칼",
+            "entity_id": "char_자칼",
+            "medium": "messenger",
+            "line_start": 18,
+            "line_end": 20,
+            "quote": "나흔 히금 마힜는거 먹고 히허"
+          },
+          {
+            "item_id": "blabla_jackal_003__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 9,
+            "line_end": 11,
+            "quote": "쉬고 있어"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_jackal_003__mnt_001",
+            "surface_text": "대장",
+            "entity_id": null,
+            "entity_type": "character",
+            "line_start": 21,
+            "line_end": 23,
+            "quote": "대장이 개껌맛 허헥트 사다줬거흔",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_jackal_003__mnt_002",
+            "surface_text": "개껌맛 허헥트",
+            "entity_id": null,
+            "entity_type": "item",
+            "line_start": 21,
+            "line_end": 23,
+            "quote": "대장이 개껌맛 허헥트 사다줬거흔",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_jackal_003__foa_001",
+          "from_speaker": "자칼",
+          "to_target": "지휘관",
+          "address_term": "지히간",
+          "line_start": 3,
+          "line_end": 8,
+          "quote": "지히간\n머해",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_jackal_003__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관에게 지금 무엇을 하고 있는지 묻는다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "지히간\n머해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 쉬고 있다고 답한다.",
+          "line_start": 9,
+          "line_end": 11,
+          "claim_line": 10,
+          "quote": "쉬고 있어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 대장이 개껌맛 허헥트를 사다 주어서 지금 맛있는 것을 먹고 있다고 말한다.",
+          "line_start": 12,
+          "line_end": 23,
+          "claim_line": 22,
+          "quote": "그해?\n헤헤헤헤헤\n나흔 히금 마힜는거 먹고 히허\n대장이 개껌맛 허헥트 사다줬거흔",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼에게 자판이 고장 났는지 묻는다.",
+          "line_start": 24,
+          "line_end": 26,
+          "claim_line": null,
+          "quote": "자판 고장 났어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관에게 무슨 말이냐고 되묻는다.",
+          "line_start": 27,
+          "line_end": 32,
+          "claim_line": null,
+          "quote": "??\n무흔 말히야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼의 채팅 글자가 이상해서 물었다고 설명한다.",
+          "line_start": 33,
+          "line_end": 35,
+          "claim_line": 34,
+          "quote": "채팅이 이상해서",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 대장이 개껌맛 허헥트를 엄청 많이 줘서 입에 가득 넣어서 먹고 있기 때문이라며 자랑하는 것은 아니라고 말한다.",
+          "line_start": 36,
+          "line_end": 47,
+          "claim_line": 43,
+          "quote": "아ㅎㅎㅎㅎㅎ\n대장이 개껌맛 허헥트를 험청 만히 훠서\n입에 가득 너허허 헉고 있거흔\n자항하는 건 하니고ㅎㅎㅎ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관도 개껌맛 허헥트를 먹고 싶으냐고 묻는다.",
+          "line_start": 51,
+          "line_end": 53,
+          "claim_line": null,
+          "quote": "지히간도 헉고 싶허??",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 입에 음식이 가득 있는 것과 자판으로 입력하는 채팅이 무슨 상관이냐고 묻는다.",
+          "line_start": 54,
+          "line_end": 56,
+          "claim_line": null,
+          "quote": "입에 음식이 가득 있는 거랑 자판이랑 무슨 상관이야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 입에 음식이 가득 있으면 말을 잘 못하기 때문이라고 답한다.",
+          "line_start": 57,
+          "line_end": 65,
+          "claim_line": 64,
+          "quote": "???\n그햐\n입에 흠힉이 가득 있흐면 말흘 할 못하히까",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자칼의 대답에 어이없어하며 다시 설명하려 한다.",
+          "line_start": 66,
+          "line_end": 68,
+          "claim_line": null,
+          "quote": "아니 그러니까",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 지휘관도 먹고 싶다는 뜻으로 받아들이고 지휘관 몫의 개껌맛 허헥트도 남겨 놓을 테니 시간 나면 와서 먹어 보라고 권한다.",
+          "line_start": 69,
+          "line_end": 80,
+          "claim_line": null,
+          "quote": "ㅎㅎㅎㅎ\n할핬어 할핬어\n지히간 거도 함겨노흐게\n히간 나현 와허 먹허바",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "지휘관이 망설이자 자칼이 알겠냐고 재차 확인한다.",
+          "line_start": 81,
+          "line_end": 86,
+          "claim_line": null,
+          "quote": "음\n알헸히???",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 알겠다고 답한다.",
+          "line_start": 84,
+          "line_end": 89,
+          "claim_line": null,
+          "quote": "알헸히???\n알겠어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_jackal_003__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "자칼",
+          "summary": "자칼이 웃으며 개껌맛 허헥트가 맛있다고 말한다.",
+          "line_start": 90,
+          "line_end": 95,
+          "claim_line": 94,
+          "quote": "ㅎㅎㅎㅎ\n마힜다",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_jackal_003__clh_001",
+          "keyword": "입에 음식을 물고 말하듯 채팅 입력",
+          "category": "trait",
+          "subject": "자칼",
+          "detail": "자칼은 입에 음식이 가득 있으면 말을 잘 못한다며 문자 채팅도 발음이 새는 소리 그대로('나흔 히금 마힜는거 먹고 히허') 입력한다.",
+          "line_start": 57,
+          "line_end": 65,
+          "quote": "???\n그햐\n입에 흠힉이 가득 있흐면 말흘 할 못하히까",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_jackal_003__uec_001",
+          "surface_text": "대장",
+          "suggested_type": "alias",
+          "line_start": 22
+        },
+        {
+          "item_id": "blabla_jackal_003__uec_002",
+          "surface_text": "개껌맛 허헥트",
+          "suggested_type": "item",
+          "line_start": 22
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,936 @@
+{
+  "schema_version": "1.3.0",
+  "generated_at": "2026-11-01T10:02:07.174Z",
+  "title_id": "blabla__personal__hongryeon",
+  "category": "blabla",
+  "title": "홍련",
+  "source_file": "public/scripts/blabla/personal/hongryeon.txt",
+  "scene_count": 3,
+  "scenes": [
+    {
+      "scene_id": "blabla_hongryeon_001",
+      "title_id": "blabla__personal__hongryeon",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/hongryeon.txt",
+      "source_sha256": "ea408d5d35ef3cfd992618a859102aef30a72f1d3b3232601a31376a6c710165",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "홍련이 지휘관에게 지상을 헤매다 구한 좋은 술을 함께 마시자고 청하고, 지휘관의 집에 있는 방주의 술도 맛보고 싶다며 나중에 연락하겠다고 한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_hongryeon_001__rvo_001",
+            "speaker_label": "홍련",
+            "entity_id": "char_홍련",
+            "medium": "messenger",
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "도령 혹시도령은술을좀하는가?"
+          },
+          {
+            "item_id": "blabla_hongryeon_001__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 44,
+            "line_end": 46,
+            "quote": "그런 거라면 언제든 괜찮아"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_hongryeon_001__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 32,
+            "line_end": 34,
+            "quote": "내지상을헤매다좋은술을구했는데",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_hongryeon_001__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 68,
+            "line_end": 70,
+            "quote": "안그래도방주의술은어떤맛일지심히궁금했었는데",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_hongryeon_001__foa_001",
+          "from_speaker": "홍련",
+          "to_target": "지휘관",
+          "address_term": "도령",
+          "line_start": 3,
+          "line_end": 8,
+          "quote": "도령 혹시도령은술을좀하는가?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_hongryeon_001__chb_001",
+          "choice_line": 10,
+          "options": [
+            {
+              "item_id": "blabla_hongryeon_001__chb_001_opt_01",
+              "option_text": "술은 좋아하는 편이야",
+              "continuation_summary": "홍련이 듣던 중 반가운 소리라며 기뻐한다."
+            },
+            {
+              "item_id": "blabla_hongryeon_001__chb_001_opt_02",
+              "option_text": "술은 별로 안 좋아 해",
+              "continuation_summary": "홍련이 아쉬워하고 지휘관이 왜 그러는지 묻는다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_hongryeon_001__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관에게 술을 좀 마시는지 묻는다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "도령 혹시도령은술을좀하는가?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 술을 좋아하는 편이라고 답한다.",
+          "line_start": 11,
+          "line_end": 11,
+          "claim_line": 11,
+          "quote": "술은 좋아하는 편이야",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "술은 좋아하는 편이야"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관이 술을 좋아한다는 말에 듣던 중 반가운 소리라며 기뻐한다.",
+          "line_start": 12,
+          "line_end": 17,
+          "claim_line": 16,
+          "quote": "오 그거듣던중반가운소리군",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "술은 좋아하는 편이야"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 술은 별로 좋아하지 않는다고 답한다.",
+          "line_start": 19,
+          "line_end": 19,
+          "claim_line": 19,
+          "quote": "술은 별로 안 좋아 해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "술은 별로 안 좋아 해"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관이 술을 별로 좋아하지 않는다는 말에 아쉽다고 말한다.",
+          "line_start": 20,
+          "line_end": 25,
+          "claim_line": 24,
+          "quote": "그런가 그거아쉽군",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "술은 별로 안 좋아 해"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 홍련에게 왜 아쉬워하는지 묻는다.",
+          "line_start": 26,
+          "line_end": 28,
+          "claim_line": null,
+          "quote": "왜?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "술은 별로 안 좋아 해"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지상을 헤매다 좋은 술을 구했는데 나눠 마실 사람이 없어 곤란해하던 참이라며 지휘관이 괜찮다면 한잔 나누고 싶다고 말한다.",
+          "line_start": 32,
+          "line_end": 43,
+          "claim_line": 33,
+          "quote": "내지상을헤매다좋은술을구했는데 이걸나눠마실사람이없어 곤란해하고있던참이네 도령만괜찮다면한잔나누고싶네만",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 홍련과 술을 한잔 나누는 것이라면 언제든 괜찮다고 승낙한다.",
+          "line_start": 44,
+          "line_end": 46,
+          "claim_line": null,
+          "quote": "그런 거라면 언제든 괜찮아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 시간 날 때 한번 지휘관을 찾아가겠다고 말한다.",
+          "line_start": 47,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "오호 알겠네 시간날때한번찾아가겠네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관의 집에 쟁여 놓은 술이 있는지 묻는다.",
+          "line_start": 56,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "그런데혹시도령 도령네집에쟁여놓은술은좀없는가?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 집에 쟁여 놓은 술이 있다고 답한다.",
+          "line_start": 62,
+          "line_end": 64,
+          "claim_line": 63,
+          "quote": "있어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 방주의 술이 어떤 맛일지 심히 궁금했는데 빠른 시일 내에 맛볼 수 있겠다고 기대한다.",
+          "line_start": 65,
+          "line_end": 73,
+          "claim_line": 69,
+          "quote": "오호오호 안그래도방주의술은어떤맛일지심히궁금했었는데 빠른시일내에맛볼수있겠구만",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_013",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 홍련에게 언제 올 것인지 묻는다.",
+          "line_start": 74,
+          "line_end": 76,
+          "claim_line": null,
+          "quote": "언제 올 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_001__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 언제 갈지는 모르니 너무 기다리지 말라며 나중에 연락하겠다고 답한다.",
+          "line_start": 77,
+          "line_end": 85,
+          "claim_line": 78,
+          "quote": "모르네 그러니너무기다리진말게나 나중에연락하겠네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_hongryeon_001__clh_001",
+          "keyword": "띄어쓰기 없는 예스러운 말투",
+          "category": "trait",
+          "subject": "홍련",
+          "detail": "메신저에서 띄어쓰기를 하지 않고 '도령', '~하는가', '~겠네' 같은 예스러운 어투를 사용한다.",
+          "line_start": 3,
+          "line_end": 8,
+          "quote": "도령 혹시도령은술을좀하는가?",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_hongryeon_001__uec_001",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 33
+        },
+        {
+          "item_id": "blabla_hongryeon_001__uec_002",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 69
+        }
+      ]
+    },
+    {
+      "scene_id": "blabla_hongryeon_002",
+      "title_id": "blabla__personal__hongryeon",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/hongryeon.txt",
+      "source_sha256": "42dd41176a35c735bb76137e88aaf76c57929c7b0c15e993afed4f2a101592d5",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "홍련이 지상에서 발견한 술에 관한 책에서 여러 술이나 음료를 섞어 마시는 폭탄주에 대한 글을 읽었다며, 지휘관에게 방주에서 제일 맛있는 술을 준비해 두면 자신도 좋은 술을 구해 가서 함께 만들어 보자고 제안한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_hongryeon_002__rvo_001",
+            "speaker_label": "홍련",
+            "entity_id": "char_홍련",
+            "medium": "messenger",
+            "line_start": 9,
+            "line_end": 17,
+            "quote": "그렇지 안그래도술을들고가려고하는데 내가지상에서책한권을발견했네"
+          },
+          {
+            "item_id": "blabla_hongryeon_002__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 27,
+            "line_end": 29,
+            "quote": "폭탄주!"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_hongryeon_002__mnt_001",
+            "surface_text": "지상",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 15,
+            "line_end": 17,
+            "quote": "내가지상에서책한권을발견했네",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_hongryeon_002__mnt_002",
+            "surface_text": "방주",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 80,
+            "line_end": 82,
+            "quote": "방주에서제일맛있는술을준비해두게나",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_hongryeon_002__foa_001",
+          "from_speaker": "홍련",
+          "to_target": "지휘관",
+          "address_term": "도령",
+          "line_start": 77,
+          "line_end": 82,
+          "quote": "도령도 방주에서제일맛있는술을준비해두게나",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_hongryeon_002__chb_001",
+          "choice_line": 46,
+          "options": [
+            {
+              "item_id": "blabla_hongryeon_002__chb_001_opt_01",
+              "option_text": "지상의 술과 방주의 술을 섞자",
+              "continuation_summary": "홍련이 감탄한다."
+            },
+            {
+              "item_id": "blabla_hongryeon_002__chb_001_opt_02",
+              "option_text": "과연 맛이 괜찮을까",
+              "continuation_summary": "홍련이 해보지도 않고 약한 소리 하지 말라고 다독이자 지휘관이 한번 해보자고 답한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_hongryeon_002__eac_001",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "홍련이 부르자 지휘관이 술 이야기인지 추측한다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": 7,
+          "quote": "도령 술인가",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 술을 들고 가려 한다며, 지상에서 발견한 술에 관한 책에 폭탄주라는 것에 대한 글이 있었다고 말한다.",
+          "line_start": 9,
+          "line_end": 26,
+          "claim_line": 16,
+          "quote": "그렇지 안그래도술을들고가려고하는데 내가지상에서책한권을발견했네 놀랍게도술에관한책이었지 그런데그책에 폭탄주라는것에대한글이있더군",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 책에 적혀 있기로는 폭탄주가 여러 술 또는 음료를 맛있게 섞어 마시는 것이라고 설명한다.",
+          "line_start": 27,
+          "line_end": 38,
+          "claim_line": 37,
+          "quote": "폭탄주! 써져있기론 여러술또는음료를 맛있게섞어마시는거라고하네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관에게 자신과 함께 폭탄주에 도전해 볼 것인지 묻는다.",
+          "line_start": 39,
+          "line_end": 44,
+          "claim_line": null,
+          "quote": "어떤가 나와도전해볼텐가",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 지상의 술과 방주의 술을 섞자고 제안하고 홍련이 감탄한다.",
+          "line_start": 47,
+          "line_end": 50,
+          "claim_line": null,
+          "quote": "지상의 술과 방주의 술을 섞자 오",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 46,
+            "option_text": "지상의 술과 방주의 술을 섞자"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 폭탄주의 맛이 과연 괜찮을지 의문을 표한다.",
+          "line_start": 52,
+          "line_end": 52,
+          "claim_line": 52,
+          "quote": "과연 맛이 괜찮을까",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 46,
+            "option_text": "과연 맛이 괜찮을까"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관에게 해 보지도 않고 약한 소리를 하지 말라고 다독인다.",
+          "line_start": 53,
+          "line_end": 58,
+          "claim_line": 57,
+          "quote": "도령 해보지도않고약한소리말게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 46,
+            "option_text": "과연 맛이 괜찮을까"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 한번 폭탄주를 만들어 보자고 동의한다.",
+          "line_start": 59,
+          "line_end": 61,
+          "claim_line": null,
+          "quote": "좋아 한번 해보자",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 46,
+            "option_text": "과연 맛이 괜찮을까"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 자신들이 새로운 술을 만들어 내는 것이라며 기대감을 드러낸다.",
+          "line_start": 65,
+          "line_end": 73,
+          "claim_line": 69,
+          "quote": "역시도령이네 새로운술을우리가만들어내는거지 너무기대되는군",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_002__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 조만간 맛 좋은 술을 구해서 갈 테니 방주에서 제일 맛있는 술을 준비해 두라고 당부하고 지휘관이 알겠다고 답한다.",
+          "line_start": 74,
+          "line_end": 85,
+          "claim_line": null,
+          "quote": "조만간맛좋은술을구해서갈테니 도령도 방주에서제일맛있는술을준비해두게나 알겠어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_hongryeon_002__uec_001",
+          "surface_text": "지상",
+          "suggested_type": "location",
+          "line_start": 16
+        },
+        {
+          "item_id": "blabla_hongryeon_002__uec_002",
+          "surface_text": "방주",
+          "suggested_type": "location",
+          "line_start": 81
+        }
+      ]
+    },
+    {
+      "scene_id": "blabla_hongryeon_003",
+      "title_id": "blabla__personal__hongryeon",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/hongryeon.txt",
+      "source_sha256": "986f4b131e7b135244bdbe84747b6376a94f9fe8fa033a39e9fd8708d0c440ed",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "홍련이 지금까지 마신 술의 순위를 매기며 세상에서 제일 맛있는 술 1위가 무엇이라고 생각하는지 지휘관에게 묻고, 지휘관과 술 이야기를 하니 함께 마시고 싶어졌다며 지휘관이 좋아하는 술들을 가져가겠다고 한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_hongryeon_003__rvo_001",
+            "speaker_label": "홍련",
+            "entity_id": "char_홍련",
+            "medium": "messenger",
+            "line_start": 3,
+            "line_end": 8,
+            "quote": "도령 세상에서가장맛있는술이뭐인거같나"
+          },
+          {
+            "item_id": "blabla_hongryeon_003__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 76,
+            "line_end": 78,
+            "quote": "기다리고 있을게"
+          }
+        ],
+        "mentioned_only": [],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_hongryeon_003__foa_001",
+          "from_speaker": "홍련",
+          "to_target": "지휘관",
+          "address_term": "도령",
+          "line_start": 3,
+          "line_end": 8,
+          "quote": "도령 세상에서가장맛있는술이뭐인거같나",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_003__foa_002",
+          "from_speaker": "지휘관",
+          "to_target": "홍련",
+          "address_term": "네",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "달콤한 네 입술?",
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "달콤한 네 입술?"
+          }
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_hongryeon_003__chb_001",
+          "choice_line": 10,
+          "options": [
+            {
+              "item_id": "blabla_hongryeon_003__chb_001_opt_01",
+              "option_text": "달콤한 네 입술?",
+              "continuation_summary": "홍련이 안 본 사이에 개그가 많이 늘었다고 반응한다."
+            },
+            {
+              "item_id": "blabla_hongryeon_003__chb_001_opt_02",
+              "option_text": "공짜 술?",
+              "continuation_summary": "홍련이 자신도 인정하는 부분이라고 공감한다."
+            }
+          ]
+        },
+        {
+          "item_id": "blabla_hongryeon_003__chb_002",
+          "choice_line": 36,
+          "options": [
+            {
+              "item_id": "blabla_hongryeon_003__chb_002_opt_01",
+              "option_text": "홍련과 먹는 술",
+              "continuation_summary": "홍련이 지휘관이 자신 없는 사이에 술을 거하게 한 모양이라면서도 기분은 좋다고 말한다."
+            },
+            {
+              "item_id": "blabla_hongryeon_003__chb_002_opt_02",
+              "option_text": "종류 상관없이 공짜술이 최고지",
+              "continuation_summary": "홍련이 자신도 공짜 술을 마실 때가 더 달게 느껴졌다고 공감한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_hongryeon_003__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관에게 세상에서 가장 맛있는 술이 무엇인 것 같은지 묻는다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "도령 세상에서가장맛있는술이뭐인거같나",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 세상에서 가장 맛있는 술로 홍련의 달콤한 입술을 꼽으며 농담한다.",
+          "line_start": 11,
+          "line_end": 11,
+          "claim_line": 11,
+          "quote": "달콤한 네 입술?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "달콤한 네 입술?"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관에게 안 본 사이에 개그가 많이 늘었다고 말한다.",
+          "line_start": 12,
+          "line_end": 14,
+          "claim_line": 13,
+          "quote": "도령안본사이에개그가많이늘었구만",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "달콤한 네 입술?"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 세상에서 가장 맛있는 술은 공짜 술이라고 답한다.",
+          "line_start": 16,
+          "line_end": 16,
+          "claim_line": 16,
+          "quote": "공짜 술?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "공짜 술?"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 공짜 술이 가장 맛있다는 말은 자신도 인정한다고 동의한다.",
+          "line_start": 17,
+          "line_end": 19,
+          "claim_line": 18,
+          "quote": "그건나도인정하는부분이네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 10,
+            "option_text": "공짜 술?"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지금까지 마신 술을 바탕으로 순위를 매기고 있는데 어떤 술을 1위로 줘야 할지 모르겠다며 지휘관이 생각하는 제일 맛있는 술 1위는 무엇인지 묻는다.",
+          "line_start": 23,
+          "line_end": 34,
+          "claim_line": 24,
+          "quote": "지금까지먹은술을바탕으로순위를매기고있는데 어떤술을1위로줘야할지모르겠군 도령이생각했을때 제일맛있는술1위는무엇인가",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 제일 맛있는 술 1위는 홍련과 마시는 술이라고 답한다.",
+          "line_start": 37,
+          "line_end": 37,
+          "claim_line": 37,
+          "quote": "홍련과 먹는 술",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 36,
+            "option_text": "홍련과 먹는 술"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 오늘 지휘관이 자신 없는 사이에 술을 거하게 마신 모양이라면서도 기분은 좋다고 말한다.",
+          "line_start": 38,
+          "line_end": 46,
+          "claim_line": 45,
+          "quote": "허허오늘도령이나없는사이에술을한잔 거하게했나보구만 하지만기분은좋구려",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 36,
+            "option_text": "홍련과 먹는 술"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 종류에 상관없이 공짜 술이 최고라고 답한다.",
+          "line_start": 48,
+          "line_end": 48,
+          "claim_line": 48,
+          "quote": "종류 상관없이 공짜술이 최고지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 36,
+            "option_text": "종류 상관없이 공짜술이 최고지"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 자신도 공짜 술을 마실 때가 술이 더 달게 느껴졌다고 공감한다.",
+          "line_start": 49,
+          "line_end": 54,
+          "claim_line": 53,
+          "quote": "그렇지나도공짜술먹을때가 술이더달다고느껴졌네",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 36,
+            "option_text": "종류 상관없이 공짜술이 최고지"
+          }
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 지휘관과 술 이야기를 하니 또 술이 마시고 싶고, 어쩌면 지휘관과 함께 술을 마시고 싶은 것일지도 모르겠다고 말한다.",
+          "line_start": 58,
+          "line_end": 69,
+          "claim_line": 68,
+          "quote": "허허 도령이랑술얘기를하니까 또술이먹고싶군 어쩌면도령과술이먹고싶은걸지도모르겠네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_hongryeon_003__eac_012",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "홍련",
+          "summary": "홍련이 오랜만에 한잔하자며 지휘관이 좋아하는 술들을 다 가져가겠다고 말하고 지휘관이 기다리고 있겠다고 답한다.",
+          "line_start": 70,
+          "line_end": 78,
+          "claim_line": null,
+          "quote": "오랜만에한잔하세 도령이좋아하는술들을다가져가겠네 기다리고 있을게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": []
+    }
+  ]
+}
