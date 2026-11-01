@@ -92,11 +92,60 @@ const ELLIPSIS_DOTS_RE = /·{3,}/g;
 // 검사하지 않는다. 원문 장면 수로는 거르지 못한다: 29회차 `알리`(보드 기술)는 원문 83장면이지만 요약의 동사 `알리다`에
 // 311장면이 걸렸다(345건 모두 동사). 그다음은 11장면(`잡지`)이었다
 export const TERM_LEAK_MAX_SCENES = 30;
+// 25·28항: 자모를 풀어 친 글자(메신저의 기기 고장·오타 연출, 37회차 `blabla_ludmilla_004` "토ㅂㅡ가 이 장ㄱㅏㅂ은")를
+// 음절로 합친 글. 이름 찾기에만 원문과 함께 쓴다. 홀로 남은 받침은 앞 음절에 붙이고("추어ㄱ" → "추억", "가ㄴ직" → "간직"),
+// 앞 음절과 같은 홀모음·앞 음절 받침과 같은 홀자음은 지운다(36회차 `blabla_neve_001` "루ㅜ드밀라", "루ㅜ드밀ㄹ라").
+// 같은 자음이 이어지면(`ㅋㅋ`) 붙이지 않는다
+const HANGUL_JAMO_RE = /[ㄱ-ㅣ]/;
+const JAMO_INITIALS = 'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
+const JAMO_VOWELS = 'ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ';
+const JAMO_FINALS = ' ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ';
+const isJamoVowel = (ch) => ch !== undefined && JAMO_VOWELS.includes(ch);
+const finalIndexOf = (ch) => (ch && ch !== ' ' ? JAMO_FINALS.indexOf(ch) : -1);
+const syllableParts = (ch) => {
+  const code = ch?.codePointAt(0) ?? 0;
+  if (code < 0xac00 || code > 0xd7a3) return null;
+  const n = code - 0xac00;
+  return { l: Math.floor(n / 588), v: Math.floor((n % 588) / 28), t: n % 28 };
+};
+const syllableOf = (l, v, t = 0) => String.fromCodePoint(0xac00 + (l * 21 + v) * 28 + t);
+export const composeJamo = (text) => {
+  const chars = [...String(text)];
+  const out = [];
+  for (let i = 0; i < chars.length; i += 1) {
+    const ch = chars[i];
+    const l = JAMO_INITIALS.indexOf(ch);
+    if (l >= 0 && isJamoVowel(chars[i + 1])) {
+      const v = JAMO_VOWELS.indexOf(chars[i + 1]);
+      i += 1;
+      const t = finalIndexOf(chars[i + 1]);
+      if (t > 0 && !isJamoVowel(chars[i + 2])) {
+        out.push(syllableOf(l, v, t));
+        i += 1;
+      } else out.push(syllableOf(l, v));
+      continue;
+    }
+    const prev = syllableParts(out.at(-1));
+    const t = finalIndexOf(ch);
+    if (prev && prev.t === 0 && t > 0 && !isJamoVowel(chars[i + 1]) && chars[i + 1] !== ch) {
+      out[out.length - 1] = syllableOf(prev.l, prev.v, t);
+      continue;
+    }
+    if (prev && prev.t === 0 && isJamoVowel(ch) && JAMO_VOWELS.indexOf(ch) === prev.v) continue;
+    // 앞 음절의 받침과 같은 홀자음도 지운다("루드밀ㄹ라" → "루드밀라")
+    if (prev && prev.t > 0 && t === prev.t && !isJamoVowel(chars[i + 1]) && chars[i + 1] !== ch) continue;
+    out.push(ch);
+  }
+  return out.join('');
+};
 // 25항의 장면 글: 물결표도 지운다. 늘인 말(`탄~산수~`)도 그 이름이다(8회차 `bunny_x_777_04`). 이름 찾기에만 쓰고 인용 대조에는 쓰지 않는다.
 // 말줄임표(가운뎃점 세 개 이상)도 지운다: 끊어 말한 이름(`여··· 왕··· 님···`)도 그 이름이다(10회차 `main_06_08`).
 // 가운뎃점 하나(`A·B`)는 남긴다
-const termSceneText = (parts) =>
-  parts.filter(isNonEmptyString).join('\n').replace(/[\s~～]+/g, '').replace(ELLIPSIS_DOTS_RE, '');
+const termSceneText = (parts) => {
+  const joined = parts.filter(isNonEmptyString).join('\n');
+  const text = HANGUL_JAMO_RE.test(joined) ? `${joined}\n${composeJamo(joined)}` : joined;
+  return text.replace(/[\s~～]+/g, '').replace(ELLIPSIS_DOTS_RE, '');
+};
 // 이름의 낱말이 모두 장면에 있으면 있는 것으로 본다(띄어쓰기 차이, `실버건··· 스쿼드의`). 끝의 일반 낱말은 보지 않는다.
 // 후보 이름에 말줄임표가 들어 있을 수 있어(`수송··· 기`) 낱말에서도 지운다
 const termInScene = (sceneText, term) =>
@@ -2070,9 +2119,11 @@ export const validateShard = (shardData, batchInput, options = {}) => {
         }
         if (!shown) continue;
         // 띄어쓰기와 말줄임표는 무시한다(끊어 말한 이름 `지휘··· 관`, 10회차 `last_kingdom_28`)
+        // 자모를 풀어 친 표기도 합쳐 본다(37회차 `blabla_ludmilla_004` `ㅁㅣ카`)
         const flat = shown.replace(/\s+/g, '').replace(ELLIPSIS_DOTS_RE, '');
+        const flats = HANGUL_JAMO_RE.test(flat) ? [flat, composeJamo(flat)] : [flat];
         const labels = labelsById.get(id) ?? [];
-        if (labels.some((label) => flat === label || (label.length >= 2 && flat.includes(label)))) continue;
+        if (labels.some((label) => flats.some((f) => f === label || (label.length >= 2 && f.includes(label))))) continue;
         addWarning(
           'ENTITY_ID_SURFACE_MISMATCH',
           sid,

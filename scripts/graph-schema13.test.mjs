@@ -19,6 +19,7 @@ import {
 import {
   claimMiddleOtherSpeaker,
   claimStartsOtherSpeaker,
+  composeJamo,
   dialogueOnlyEvents,
   loadEntityRegistry,
   loadTermLexicon,
@@ -1480,6 +1481,44 @@ test('2.3-25 names not in the scene: warn on rare names only, ignoring word part
     termWarnings(scene('엑시아가 노벨에게 알리고 데이터 센터에 간다.')).map((w) => w.message.match(/"([^"]+)"/)[1]),
     ['데이터 센터']
   );
+});
+
+test('2.3-25/28 names typed as loose jamo (messenger typos) are composed before matching', async () => {
+  assert.equal(composeJamo('설온ㅈㅏㅇ에서의 추어ㄱ'), '설온장에서의 추억');
+  assert.equal(composeJamo('토ㅂㅡ가 이 장ㄱㅏㅂ은'), '토브가 이 장갑은');
+  assert.equal(composeJamo('ㅂㅏㅇ법ㅇㅡㄹ 차ㅈㅇㅏ'), '방법을 찾아');
+  assert.equal(composeJamo('가ㄴ직'), '간직');
+  assert.equal(composeJamo('루ㅜ드밀라랑 루ㅜ드밀ㄹ라'), '루드밀라랑 루드밀라');
+  assert.equal(composeJamo('ㅇㅇ? ㅋㅋㅋ ㅠㅠ'), 'ㅇㅇ? ㅋㅋㅋ ㅠㅠ'); // 같은 자음·모음이 이어진 말은 그대로
+
+  // 25항: 자모로 친 이름도 장면에 있는 것이다(37회차 blabla_ludmilla_004)
+  const lines = ['[SCENE START]', '루드밀라: 토ㅂㅡ가 이 장ㄱㅏㅂ은', '[SCENE END]'];
+  const batch = batchOf(makeInputScene('t13_jamo', lines));
+  const lexicon = { terms: new Map([['토브', 'registered character'], ['장갑', 'item name'], ['설온장', 'location name']]), sceneCountOf: () => 3 };
+  const scene = (summary, mentions = []) =>
+    emptyScene('t13_jamo', {
+      summary,
+      participants: { present_in_scene: present('루드밀라'), present_silent: [], remote_or_voice_only: [], mentioned_only: mentions, document_author: null },
+      events_and_claims: [event({ epistemic_type: 'character_claim', actor_or_speaker: '루드밀라', summary: '말한다.', line_start: 2, line_end: 2, claim_line: 2, quote: '토ㅂㅡ가 이 장ㄱㅏㅂ은' })],
+    });
+  const termWarnings = (s) => validateShard(shardOf(s), batch, { termLexicon: lexicon }).warnings.filter((w) => w.rule === 'TERM_NOT_IN_SCENE');
+  assert.equal(termWarnings(scene('토브가 장갑은 괜찮을 거라 했다고 전한다.')).length, 0);
+  assert.equal(termWarnings(scene('설온장 이야기를 한다.')).length, 1);
+
+  // 28항: 자모로 친 표기에 이은 등록 ID도 그 이름을 담는다
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-jamo-'));
+  try {
+    await fs.writeFile(
+      path.join(dir, 'entity_registry.json'),
+      JSON.stringify({ entities: [{ entity_id: 'char_토브', canonical_name: '토브', surface_labels: ['토브'] }, { entity_id: 'char_루드밀라', canonical_name: '루드밀라', surface_labels: ['루드밀라'] }] })
+    );
+    const registry = await loadEntityRegistry(dir);
+    const mention = { surface_text: '토ㅂㅡ', entity_id: 'char_토브', entity_type: 'character', line_start: 2, line_end: 2, quote: '토ㅂㅡ가 이 장ㄱㅏㅂ은' };
+    const res = validateShard(shardOf(scene('말한다.', [mention])), batch, { registry });
+    assert.equal(res.warnings.filter((w) => w.rule === 'ENTITY_ID_SURFACE_MISMATCH').length, 0);
+  } finally {
+    await fs.rm(dir, { recursive: true, force: true });
+  }
 });
 
 test('2.3-25 term lexicon: registry names without generic roles, merged and own candidates, corpus scene counts', async () => {
