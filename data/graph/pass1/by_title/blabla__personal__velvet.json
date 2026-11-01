@@ -1,0 +1,1442 @@
+{
+  "schema_version": "1.3.0",
+  "generated_at": "2026-11-01T08:09:08.360Z",
+  "title_id": "blabla__personal__velvet",
+  "category": "blabla",
+  "title": "벨벳",
+  "source_file": "public/scripts/blabla/personal/velvet.txt",
+  "scene_count": 3,
+  "scenes": [
+    {
+      "scene_id": "blabla_velvet_001",
+      "title_id": "blabla__personal__velvet",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/velvet.txt",
+      "source_sha256": "1e32b58c22fe78d5ce6fc520b6804ebe8086627ed93aa294b141b054deb955fc",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "벨벳이 지휘관 계정이 맞는지 확인한다며 '고구마'에 '감자'로 답하는 암구호를 정하고 지금 지휘관을 보고 있다고 농담해 지휘관을 놀라게 한 뒤, 메이드 카페에서 농땡이를 치다 걸렸다며 이따 또 연락하겠다고 한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_velvet_001__rvo_001",
+            "speaker_label": "벨벳",
+            "entity_id": "char_벨벳",
+            "medium": "messenger",
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "고구마"
+          },
+          {
+            "item_id": "blabla_velvet_001__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 6,
+            "line_end": 8,
+            "quote": "?"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_velvet_001__mnt_001",
+            "surface_text": "지휘관실",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 98,
+            "line_end": 100,
+            "quote": "나 지금 지휘관실인데?",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_velvet_001__mnt_002",
+            "surface_text": "메이드 카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 131,
+            "line_end": 133,
+            "quote": "메이드 카페에 있지~",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_velvet_001__foa_001",
+          "from_speaker": "벨벳",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 59,
+          "line_end": 61,
+          "quote": "주인님 순진하네~",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_velvet_001__chb_001",
+          "choice_line": 13,
+          "options": [
+            {
+              "item_id": "blabla_velvet_001__chb_001_opt_01",
+              "option_text": "뭐야?",
+              "continuation_summary": "지휘관이 무슨 뜻이냐고 묻자 벨벳이 센스가 없다며 암구호이니 적절하게 답어를 보냈어야 했다고 타박한다."
+            },
+            {
+              "item_id": "blabla_velvet_001__chb_001_opt_02",
+              "option_text": "감자",
+              "continuation_summary": "지휘관이 '감자'라고 답하자 벨벳이 암구호를 눈치챘다며 지휘관임을 확인하고 감탄한다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_velvet_001__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 '고구마'라고 보내고 지휘관이 물음표로 반응하자 다시 '고구마'라고 보낸다.",
+          "line_start": 3,
+          "line_end": 11,
+          "claim_line": null,
+          "quote": "고구마\n?\n고구마",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 '고구마'가 무슨 뜻이냐고 묻는다.",
+          "line_start": 14,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "뭐야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 13,
+            "option_text": "뭐야?"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 센스가 없다며 '고구마'는 암구호이니 적절하게 답어를 보냈어야 했다고 말한다.",
+          "line_start": 15,
+          "line_end": 23,
+          "claim_line": 19,
+          "quote": "주인님 정말 센스가 없네~\n암구호잖아\n적절하게 답어를 보냈어야지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 13,
+            "option_text": "뭐야?"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳의 '고구마'에 '감자'라고 답한다.",
+          "line_start": 25,
+          "line_end": 25,
+          "claim_line": null,
+          "quote": "감자",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 13,
+            "option_text": "감자"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관이 암구호를 눈치챘다며 지휘관임을 확인했다고 기뻐한다.",
+          "line_start": 26,
+          "line_end": 34,
+          "claim_line": 27,
+          "quote": "주인님인 거 확인♥\n역시 주인님이야\n이걸 눈치채다니",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 13,
+            "option_text": "감자"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_006",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 갑자기 웬 암구호냐고 묻는다.",
+          "line_start": 38,
+          "line_end": 40,
+          "claim_line": null,
+          "quote": "갑자기 웬 암구호?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 앞으로 둘만의 비밀 이야기를 잔뜩 할 것이니 지휘관 계정이 맞는지 제대로 확인하려고 암구호를 썼다고 설명한다.",
+          "line_start": 41,
+          "line_end": 52,
+          "claim_line": 51,
+          "quote": "앞으로 둘만의 비밀 이야기를\n잔~뜩 할거니까\n주인님 계정이 맞는지\n제대로 확인하려고ㅎㅎ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 앞으로도 '고구마'라고 하면 '감자'라고 대답해야 한다고 지시한다.",
+          "line_start": 53,
+          "line_end": 55,
+          "claim_line": null,
+          "quote": "그러니까 앞으로도 고구마 하면 감자라고 대답해야 해",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 프로필 사진만 봐도 자신인 줄 알지 않냐고 반박한다.",
+          "line_start": 56,
+          "line_end": 58,
+          "claim_line": 57,
+          "quote": "프사만 봐도 나인건 알잖아ㅋㅋㅋ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관이 순진하다며 프로필 사진만 봐서는 스캠 계정인지 해킹당한 계정인지 모르니 확신할 때까지 철두철미하게 의심해야 한다고 주장한다.",
+          "line_start": 59,
+          "line_end": 76,
+          "claim_line": 72,
+          "quote": "주인님 순진하네~\n프사만 보면 스캠 계정인지\n해킹당한 계정인지\n모르잖아?\n뭐든 철두철미 해야하는 법이라구\n확신할 때까지 의심해야지",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 이제 확신이 생겼는지 묻는다.",
+          "line_start": 77,
+          "line_end": 79,
+          "claim_line": null,
+          "quote": "이제 확신이 생겼어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 사실 지금 지휘관을 보고 있다며 직접 답장하는 것을 봤으니 지휘관이라고 확신한다고 말한다.",
+          "line_start": 80,
+          "line_end": 94,
+          "claim_line": 87,
+          "quote": "그럼~\n사실\n나 지금 주인님 보고 있거든\n직접 답장하는 거 봤으니까\n주인님이라고 확신해♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신이 보인다는 말에 놀라며 지금 지휘관실에 있다고 말한다.",
+          "line_start": 95,
+          "line_end": 100,
+          "claim_line": 99,
+          "quote": "내가 보인다고?\n나 지금 지휘관실인데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 웃으며 안 봐도 비디오라며 지휘관이 지금 주변을 둘러봤을 것이라고 짐작한다.",
+          "line_start": 101,
+          "line_end": 109,
+          "claim_line": 108,
+          "quote": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ\n안 봐도 비디오네\n주인님 지금 주변 둘러봤지?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_015",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 카메라라도 달아 둔 것이냐고 묻는다.",
+          "line_start": 110,
+          "line_end": 112,
+          "claim_line": null,
+          "quote": "카메라라도 달아 둔 거야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 자신이 스토커도 아닌데 무슨 카메라를 달겠냐며 부인한다.",
+          "line_start": 113,
+          "line_end": 115,
+          "claim_line": 114,
+          "quote": "내가 스토커도 아니고 무슨 카메라를 달아~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신이 주변을 둘러본 것을 어떻게 알았는지 묻는다.",
+          "line_start": 116,
+          "line_end": 118,
+          "claim_line": null,
+          "quote": "그럼 내가 둘러본 건 어떻게 알았어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관의 반응이 너무 확실해 누가 봐도 알았을 것이라며 그냥 농담해 본 것이니 걱정하지 말라고 말한다.",
+          "line_start": 119,
+          "line_end": 127,
+          "claim_line": 126,
+          "quote": "주인님 반응이 너무 확실하잖아\n내가 아니라도 알았을걸?\n그냥 농담 좀 해본 거니까 걱정 마ㅎㅎㅎㅎ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_019",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 지금 진짜 어디에 있는지 묻는다.",
+          "line_start": 128,
+          "line_end": 130,
+          "claim_line": null,
+          "quote": "그래서 진짜 어디 있는데",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_020",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 아직 일할 시간이라 메이드 카페에 있다고 답한다.",
+          "line_start": 131,
+          "line_end": 136,
+          "claim_line": 132,
+          "quote": "메이드 카페에 있지~\n아직 일할 시간이잖아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_021",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 한숨을 쉬며 진짜 지휘관실에 있는 줄 알고 깜짝 놀랐다고 말한다.",
+          "line_start": 137,
+          "line_end": 142,
+          "claim_line": 141,
+          "quote": "하\n진짜 지휘관실에 있는 줄 알고 깜짝 놀랐네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 이런 반응일 줄 알았으면 진짜 지휘관실에 숨어 있을 걸 그랬다며 숨어 있다가 나타났을 때의 반응도 궁금하다고 말하다가 말이 끊긴다.",
+          "line_start": 143,
+          "line_end": 151,
+          "claim_line": 147,
+          "quote": "이런 반응일 줄 알았으면\n진짜 숨어있을 걸 그랬다\n숨어있다가 나타났을 때 주인님 반응도 궁금한ㄱ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_023",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳에게서 잠시 메시지가 오지 않는다.",
+          "line_start": 152,
+          "line_end": 154,
+          "claim_line": null,
+          "quote": "벨벳에게서 메시지가 오지 않는다.",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_024",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 근무 중에 농땡이를 치고 있던 것을 들켰다고 말한다.",
+          "line_start": 155,
+          "line_end": 160,
+          "claim_line": 159,
+          "quote": "아\n농땡이 치고 있던 거 걸렸네ㅎ",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_025",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 근무 시간에는 일을 하라고 핀잔을 준다.",
+          "line_start": 161,
+          "line_end": 163,
+          "claim_line": null,
+          "quote": "근무 시간엔 일을 해···",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__eac_026",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관임을 확인했으니 이따가, 혹은 새벽에 또 메시지를 보낼 테니 핸드폰을 꼭 켜 두라고 당부한다.",
+          "line_start": 164,
+          "line_end": 175,
+          "claim_line": null,
+          "quote": "그럼 주인님이라고 확인도 했겠다\n이따 또 블라할게\n새벽에 할 수도 있으니까\n핸드폰 꼭 켜두고 있어~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_velvet_001__clh_001",
+          "keyword": "고구마",
+          "category": "code_or_number",
+          "subject": null,
+          "detail": "벨벳이 지휘관 계정이 맞는지 확인하기 위해 정한 암구호로, '고구마'라고 하면 '감자'라고 대답해야 한다.",
+          "line_start": 53,
+          "line_end": 55,
+          "quote": "그러니까 앞으로도 고구마 하면 감자라고 대답해야 해",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_001__clh_002",
+          "keyword": "확신할 때까지 의심해야지",
+          "category": "trait",
+          "subject": "벨벳",
+          "detail": "벨벳은 스캠이나 해킹 가능성을 염두에 두고 무엇이든 철두철미하게 확신할 때까지 의심해야 한다는 태도를 보인다.",
+          "line_start": 71,
+          "line_end": 76,
+          "quote": "뭐든 철두철미 해야하는 법이라구\n확신할 때까지 의심해야지",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_velvet_001__rln_001",
+          "subject": "벨벳",
+          "target": "메이드 카페",
+          "relation_or_change": "메이드 카페에서 근무하고 있음",
+          "epistemic_type": "character_claim",
+          "claimant": "벨벳",
+          "line_start": 131,
+          "line_end": 136,
+          "claim_line": 132,
+          "quote": "메이드 카페에 있지~\n아직 일할 시간이잖아",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_velvet_001__uec_001",
+          "surface_text": "지휘관실",
+          "suggested_type": "location",
+          "line_start": 99
+        },
+        {
+          "item_id": "blabla_velvet_001__uec_002",
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 132
+        }
+      ]
+    },
+    {
+      "scene_id": "blabla_velvet_002",
+      "title_id": "blabla__personal__velvet",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/velvet.txt",
+      "source_sha256": "41eb75f0087bf1b2ac5dd095037917340629510c0e80330dae81962781a1ae97",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "벨벳이 저번에 메이드 카페에서 소란이 있었을 때 도움을 준 다른 두 메이드에게 보답 선물을 고르는 것을 도와달라고 지휘관에게 부탁하면서 겸사겸사 데이트도 즐기고 싶었다고 밝히고, 지휘관이 이를 수락하자 내일 9시 쇼핑몰 앞에서 만나기로 약속한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_velvet_002__rvo_001",
+            "speaker_label": "벨벳",
+            "entity_id": "char_벨벳",
+            "medium": "messenger",
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "주인님~ 나 부탁이 하나 있는데ㅎ"
+          },
+          {
+            "item_id": "blabla_velvet_002__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 6,
+            "line_end": 8,
+            "quote": "ㅇ?"
+          }
+        ],
+        "mentioned_only": [
+          {
+            "item_id": "blabla_velvet_002__mnt_001",
+            "surface_text": "메이드 카페",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 18,
+            "line_end": 20,
+            "quote": "저번에 메이드 카페에서 소란 있었을 때",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_velvet_002__mnt_002",
+            "surface_text": "코코아",
+            "entity_id": "char_코코아",
+            "entity_type": "character",
+            "line_start": 27,
+            "line_end": 29,
+            "quote": "코코아는 그렇다 치더라도",
+            "chronology_type": "present",
+            "in_branch_option": null
+          },
+          {
+            "item_id": "blabla_velvet_002__mnt_003",
+            "surface_text": "쇼핑몰",
+            "entity_id": null,
+            "entity_type": "location",
+            "line_start": 179,
+            "line_end": 181,
+            "quote": "어쨌든 내일 9시 쇼핑몰 앞에서 보는 거야",
+            "chronology_type": "present",
+            "in_branch_option": null
+          }
+        ],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_velvet_002__foa_001",
+          "from_speaker": "벨벳",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "주인님~ 나 부탁이 하나 있는데ㅎ",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [
+        {
+          "item_id": "blabla_velvet_002__chb_001",
+          "choice_line": 76,
+          "options": [
+            {
+              "item_id": "blabla_velvet_002__chb_001_opt_01",
+              "option_text": "내일 같이 보러 가자",
+              "continuation_summary": "지휘관이 내일 같이 선물을 보러 가자고 하자 벨벳이 내일 9시 쇼핑몰 앞에서 만나자고 제안하고, 지휘관은 수락하면서도 선물 사는 것이 핑계가 아니냐고 묻는다."
+            },
+            {
+              "item_id": "blabla_velvet_002__chb_001_opt_02",
+              "option_text": "도와줄 수는 있는데···",
+              "continuation_summary": "지휘관이 도와줄 수는 있다며 말끝을 흐리자 벨벳이 다음 말이 무엇인지 묻고, 지휘관은 벨벳에게 다른 목적이 있는 것 같다고 짚는다."
+            }
+          ]
+        }
+      ],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_velvet_002__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 부탁이 하나 있다고 운을 떼고 지휘관이 반응하자 부탁을 들어주면 멋진 선물을 주겠다고 제안한다.",
+          "line_start": 3,
+          "line_end": 14,
+          "claim_line": null,
+          "quote": "주인님~ 나 부탁이 하나 있는데ㅎ\nㅇ?\n부탁 들어주면\n내가 멋진 선물을 줄게♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_002",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 무슨 부탁인지 묻는다.",
+          "line_start": 15,
+          "line_end": 17,
+          "claim_line": null,
+          "quote": "무슨 부탁인데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 저번에 메이드 카페에서 소란이 있었을 때 지휘관 말대로 해서 도움을 받았다며, 코코아는 그렇다 치더라도 다른 두 명에게는 해 준 게 없어 작은 선물을 할까 생각 중이라고 말한다.",
+          "line_start": 18,
+          "line_end": 35,
+          "claim_line": 34,
+          "quote": "저번에 메이드 카페에서 소란 있었을 때\n그때 주인님 말대로 해서\n애들한테 도움받았잖아?\n코코아는 그렇다 치더라도\n다른 두 명한테는 해 준 게 없으니까\n작은 선물이라도 할까 생각 중인데",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_004",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 선물을 고르는 일을 도와줄 수 있는지 묻는다.",
+          "line_start": 36,
+          "line_end": 38,
+          "claim_line": null,
+          "quote": "주인님이 좀 도와줄 수 있나~ 싶어서",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_005",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 다들 무언가를 바라고 벨벳을 도와준 것이 아니라고 말한다.",
+          "line_start": 39,
+          "line_end": 41,
+          "claim_line": 40,
+          "quote": "다들 뭔가 바라고 도와준 게 아니야",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 자신도 알지만 빚을 남겨 두고 싶지 않아 그러는 것이라며, '반드시 받은 만큼 갚는다'는 것이 뒷세계의 기본적인 룰이니 지휘관도 기억해 두면 좋겠다고 말한다.",
+          "line_start": 42,
+          "line_end": 59,
+          "claim_line": 55,
+          "quote": "알지 아는데\n그냥 내가 하고 싶어서 그래\n빚을 남겨두고 싶진 않으니까\n[반드시 받은 만큼 갚는다]\n뒷세계에선 아~주 기본적인 룰이라구\n주인님도 기억해 두면 좋을걸~♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 이제는 메이드니까 안 그래도 될 것이라고 말한다.",
+          "line_start": 60,
+          "line_end": 62,
+          "claim_line": 61,
+          "quote": "이젠 메이드니까 안 그래도 될 텐데",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_008",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 습관이 하루아침에 바뀌지는 않으니 당장은 익숙한 대로 하는 것이라며 도와줄 수 있는지 다시 묻는다.",
+          "line_start": 63,
+          "line_end": 74,
+          "claim_line": 64,
+          "quote": "습관이 하루아침에 바뀌진 않잖아?\n당장은 익숙한 대로 하는 거지\n아무튼\n도와줄 수 있어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_009",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 내일 같이 선물을 보러 가자고 제안한다.",
+          "line_start": 77,
+          "line_end": 77,
+          "claim_line": null,
+          "quote": "내일 같이 보러 가자",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 76,
+            "option_text": "내일 같이 보러 가자"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_010",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관이라면 그렇게 말해 줄 거라고 생각했다며 기뻐한다.",
+          "line_start": 78,
+          "line_end": 86,
+          "claim_line": 85,
+          "quote": "ㅎㅎㅎㅎㅎ\n주인님이라면\n그렇게 말해줄 거라고 생각했어♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 76,
+            "option_text": "내일 같이 보러 가자"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_011",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 내일 9시에 쇼핑몰 앞에서 만나는 것이 어떠냐고 제안한다.",
+          "line_start": 87,
+          "line_end": 92,
+          "claim_line": null,
+          "quote": "그럼 내일 9시에 쇼핑몰 앞에서 만나기\n어때?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 76,
+            "option_text": "내일 같이 보러 가자"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 만나는 것은 상관없다면서도 혹시 선물 사는 것은 핑계가 아니냐고 의문을 제기한다.",
+          "line_start": 93,
+          "line_end": 98,
+          "claim_line": 97,
+          "quote": "상관은 없어\n근데 혹시 선물 사는 건 핑계 아니야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 76,
+            "option_text": "내일 같이 보러 가자"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳을 도와줄 수는 있다며 말끝을 흐린다.",
+          "line_start": 100,
+          "line_end": 100,
+          "claim_line": 100,
+          "quote": "도와줄 수는 있는데···",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 76,
+            "option_text": "도와줄 수는 있는데···"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_014",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 다음 말이 무엇인지 묻는다.",
+          "line_start": 101,
+          "line_end": 106,
+          "claim_line": null,
+          "quote": "있는데?\n다음은 뭐야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 76,
+            "option_text": "도와줄 수는 있는데···"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 선물 외에 뭔가 다른 목적이 있는 것 같다고 추측한다.",
+          "line_start": 107,
+          "line_end": 109,
+          "claim_line": 108,
+          "quote": "뭔가 다른 목적이 있는 것 같네",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": {
+            "choice_line": 76,
+            "option_text": "도와줄 수는 있는데···"
+          }
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 다른 목적이 있다는 것을 들켜버렸다고 인정한다.",
+          "line_start": 113,
+          "line_end": 115,
+          "claim_line": 114,
+          "quote": "들켜버렸네ㅎ",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_017",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳에게 진짜 목적이 무엇인지 묻는다.",
+          "line_start": 116,
+          "line_end": 118,
+          "claim_line": null,
+          "quote": "진짜 목적이 뭔데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_018",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 진짜 목적은 선물이 맞지만, 선물을 사 주기로 결정한 뒤 겸사겸사 지휘관과 데이트도 즐길 수 있으면 좋겠다고 생각했을 뿐이라고 밝힌다.",
+          "line_start": 119,
+          "line_end": 133,
+          "claim_line": 129,
+          "quote": "당연히 진짜 목적은 선물이지\n근데 선물 사줘야겠다고 결정하고 나서\n겸사겸사~\n주인님이랑 데이트도 즐길 수 있으면 좋겠네\n라고 생각했을 뿐이야",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_019",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 설마 그랬다고 선물을 같이 안 골라주는 것은 아니지 않냐며 메이드들끼리 더 깊은 관계를 맺으려고 하는 것이라고 덧붙인다.",
+          "line_start": 134,
+          "line_end": 142,
+          "claim_line": 141,
+          "quote": "설마 이랬다고 같이 안 골라주는 건 아니지?\n메이드들끼리\n더 깊~은 관계를 맺으려고 하는 건데",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_020",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 목적이 어찌 됐든 의도는 좋으니 같이 가 주겠다고 승낙한다.",
+          "line_start": 143,
+          "line_end": 148,
+          "claim_line": null,
+          "quote": "목적이야 어찌 됐든 의도는 좋으니까\n같이 가줄게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_021",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 내일 데이트라고 말했다가 오타라며 농담하고 내일 도와주기로 약속한 것임을 확인받는다.",
+          "line_start": 149,
+          "line_end": 163,
+          "claim_line": null,
+          "quote": "정말이지?\n그럼 내일 데이트\n어머 데이트란다~\n오타인 거 알지?ㅎㅎㅎㅎ\n그럼 내일 도와주기로 약속한 거다?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_022",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 알겠다며 벨벳이 자신에게 주기로 한 멋진 선물도 기대하겠다고 말한다.",
+          "line_start": 164,
+          "line_end": 169,
+          "claim_line": 168,
+          "quote": "알았어\n나한테 줄 멋진 선물도 기대할게",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_023",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 선물 얘기를 잊지 않았다며 지휘관도 만만한 사람이 아니라고 평하고 혹시 선물이 목적이었냐고 농담한다.",
+          "line_start": 170,
+          "line_end": 178,
+          "claim_line": 174,
+          "quote": "그거 안 까먹었구나\n주인님도 만만한 사람이 아니었네\n아니면 그게 목적이었나~?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__eac_024",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 내일 9시 쇼핑몰 앞에서 보자며 절대 늦으면 안 되고 늦으면 선물이 아니라 벌을 받을지도 모른다고 경고한다.",
+          "line_start": 179,
+          "line_end": 187,
+          "claim_line": null,
+          "quote": "어쨌든 내일 9시 쇼핑몰 앞에서 보는 거야\n절~대 늦으면 안 돼\n늦으면 선물이 아니라 벌을 받을지도 모른다구♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [
+        {
+          "item_id": "blabla_velvet_002__clh_001",
+          "keyword": "메이드 카페 소란",
+          "category": "past_incident",
+          "subject": null,
+          "detail": "저번에 메이드 카페에서 소란이 있었을 때 벨벳이 지휘관의 말대로 해서 코코아와 다른 두 메이드에게 도움을 받았다.",
+          "line_start": 18,
+          "line_end": 32,
+          "quote": "저번에 메이드 카페에서 소란 있었을 때\n그때 주인님 말대로 해서\n애들한테 도움받았잖아?\n코코아는 그렇다 치더라도\n다른 두 명한테는 해 준 게 없으니까",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__clh_002",
+          "keyword": "반드시 받은 만큼 갚는다",
+          "category": "trait",
+          "subject": "벨벳",
+          "detail": "벨벳은 '반드시 받은 만큼 갚는다'는 뒷세계의 기본적인 룰을 습관처럼 따르며 빚을 남겨 두고 싶지 않아 한다.",
+          "line_start": 48,
+          "line_end": 56,
+          "quote": "빚을 남겨두고 싶진 않으니까\n[반드시 받은 만큼 갚는다]\n뒷세계에선 아~주 기본적인 룰이라구",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_velvet_002__rln_001",
+          "subject": "벨벳",
+          "target": "코코아",
+          "relation_or_change": "저번에 메이드 카페에서 소란이 있었을 때 코코아와 다른 두 명에게 도움을 받았으며, 코코아 외의 다른 두 명에게도 보답 선물을 하려 함",
+          "epistemic_type": "character_claim",
+          "claimant": "벨벳",
+          "line_start": 18,
+          "line_end": 35,
+          "claim_line": 28,
+          "quote": "저번에 메이드 카페에서 소란 있었을 때\n그때 주인님 말대로 해서\n애들한테 도움받았잖아?\n코코아는 그렇다 치더라도\n다른 두 명한테는 해 준 게 없으니까\n작은 선물이라도 할까 생각 중인데",
+          "refers_to_past": true,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__rln_002",
+          "subject": "벨벳",
+          "target": "지휘관",
+          "relation_or_change": "동료 메이드들의 선물을 사면서 겸사겸사 지휘관과 데이트도 즐기고 싶었다며 호감을 밝힘",
+          "epistemic_type": "character_claim",
+          "claimant": "벨벳",
+          "line_start": 122,
+          "line_end": 133,
+          "claim_line": 129,
+          "quote": "근데 선물 사줘야겠다고 결정하고 나서\n겸사겸사~\n주인님이랑 데이트도 즐길 수 있으면 좋겠네\n라고 생각했을 뿐이야",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_002__rln_003",
+          "subject": "벨벳",
+          "target": "메이드 카페",
+          "relation_or_change": "보답 선물을 통해 동료 메이드들과 더 깊은 관계를 맺으려 함",
+          "epistemic_type": "character_claim",
+          "claimant": "벨벳",
+          "line_start": 137,
+          "line_end": 142,
+          "claim_line": 141,
+          "quote": "메이드들끼리\n더 깊~은 관계를 맺으려고 하는 건데",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": [
+        {
+          "item_id": "blabla_velvet_002__uec_001",
+          "surface_text": "메이드 카페",
+          "suggested_type": "location",
+          "line_start": 19
+        },
+        {
+          "item_id": "blabla_velvet_002__uec_002",
+          "surface_text": "쇼핑몰",
+          "suggested_type": "location",
+          "line_start": 180
+        }
+      ]
+    },
+    {
+      "scene_id": "blabla_velvet_003",
+      "title_id": "blabla__personal__velvet",
+      "category": "blabla",
+      "source_file": "public/scripts/blabla/personal/velvet.txt",
+      "source_sha256": "8740d0e48bf324a5aeb0a6ea53881fc06f2fef9200ce518c1c70d06cc54cab1a",
+      "route": {
+        "is_branch_point": false,
+        "next_routes": [],
+        "incoming_routes": [],
+        "parallel_scene_ids": []
+      },
+      "mechanical_validated": true,
+      "chronology_type": "present",
+      "chronology_segments": [],
+      "is_plot_critical": false,
+      "summary": "벨벳이 지휘관에게 지금 무엇을 하는지 물으며 자신을 생각했다면 기다리지 말고 먼저 연락하는 것이 100점짜리 대답이라고 알려 주고, 결국 마지막에 지휘관 옆에 남는 것은 자신일 것이라고 말한다.",
+      "participants": {
+        "present_in_scene": [],
+        "present_silent": [],
+        "remote_or_voice_only": [
+          {
+            "item_id": "blabla_velvet_003__rvo_001",
+            "speaker_label": "벨벳",
+            "entity_id": "char_벨벳",
+            "medium": "messenger",
+            "line_start": 3,
+            "line_end": 7,
+            "quote": "주인님\n지금 뭐 해?"
+          },
+          {
+            "item_id": "blabla_velvet_003__rvo_002",
+            "speaker_label": "지휘관",
+            "entity_id": "char_지휘관",
+            "medium": "messenger",
+            "line_start": 9,
+            "line_end": 10,
+            "quote": "쉬고 있는데 무슨 일 있어?"
+          }
+        ],
+        "mentioned_only": [],
+        "document_author": null
+      },
+      "forms_of_address": [
+        {
+          "item_id": "blabla_velvet_003__foa_001",
+          "from_speaker": "벨벳",
+          "to_target": "지휘관",
+          "address_term": "주인님",
+          "line_start": 3,
+          "line_end": 4,
+          "quote": "주인님",
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__foa_002",
+          "from_speaker": "벨벳",
+          "to_target": "지휘관",
+          "address_term": "우리 주인님",
+          "line_start": 114,
+          "line_end": 115,
+          "quote": "자각은 있었구나 우리 주인님",
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "unknown_speakers": [],
+      "descriptor_speakers": [],
+      "same_scene_speaker_groups": [],
+      "cross_scene_hints": [],
+      "choice_branches": [],
+      "events_and_claims": [
+        {
+          "item_id": "blabla_velvet_003__eac_001",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 지금 무엇을 하고 있는지 묻는다.",
+          "line_start": 3,
+          "line_end": 8,
+          "claim_line": null,
+          "quote": "주인님\n지금 뭐 해?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_002",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 쉬고 있는 중이라며 벨벳에게 무슨 일이 있는지 되묻는다.",
+          "line_start": 9,
+          "line_end": 11,
+          "claim_line": 10,
+          "quote": "쉬고 있는데 무슨 일 있어?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_003",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관의 대답은 0점짜리라며 자신에게 블라가 오기를 기다리고 있었다고 해야 한다고 말하고, 무슨 일이 없으면 연락하면 안 되냐고 따진다.",
+          "line_start": 12,
+          "line_end": 23,
+          "claim_line": 16,
+          "quote": "아니지아니지\n이건 0점짜리 대답이야\n나한테 블라 오길 기다리고 있었다고 해야지~\n무슨 일 없으면 연락하면 안돼?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_004",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "무슨 일이 없으면 연락하면 안 되냐는 벨벳의 말에 지휘관이 그런 것은 아니라고 부인한다.",
+          "line_start": 21,
+          "line_end": 26,
+          "claim_line": 25,
+          "quote": "무슨 일 없으면 연락하면 안돼?\n아니···",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_005",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관에게 이번에는 제대로 된 대답을 보여 달라며 다시 지금 무엇을 하는지 묻는다.",
+          "line_start": 27,
+          "line_end": 38,
+          "claim_line": null,
+          "quote": "그럼 다시\n이번엔 제대로 보여줘\n주인님\n지금 뭐 해?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_006",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳을 생각하면서 쉬고 있었다고 다시 답한다.",
+          "line_start": 39,
+          "line_end": 41,
+          "claim_line": 40,
+          "quote": "벨벳 생각하면서 쉬고 있었어",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_007",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 자신이 알려 준 그대로 답하면 50점을 주려 했는데 대답을 이렇게 바꿀 줄은 몰랐다며 지휘관이 제법이라고 칭찬한다.",
+          "line_start": 42,
+          "line_end": 56,
+          "claim_line": 49,
+          "quote": "오\n내가 알려준 그대로 대답하면\n50점 주려고 했는데\n이렇게 바꿀 줄은 몰랐어\n주인님 제법인데?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_008",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 벨벳을 생각하며 쉬고 있었다는 자신의 대답은 몇 점이냐고 묻는다.",
+          "line_start": 57,
+          "line_end": 59,
+          "claim_line": null,
+          "quote": "그래서 이건 몇 점이야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_009",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관의 바꾼 대답도 0점이라고 매긴다.",
+          "line_start": 60,
+          "line_end": 65,
+          "claim_line": 64,
+          "quote": "응 이건\n0점",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_010",
+          "epistemic_type": "established_event",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 왜 바꾼 대답도 0점인지 이유를 묻는다.",
+          "line_start": 66,
+          "line_end": 68,
+          "claim_line": null,
+          "quote": "왜 이것도 0점이야",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_011",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 자신을 생각하고 있었다면 지휘관이 먼저 연락했어야 한다고 이유를 답한다.",
+          "line_start": 69,
+          "line_end": 77,
+          "claim_line": 76,
+          "quote": "그야~\n내 생각하고 있었으면\n먼저 연락했어야지~",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_012",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 그렇다면 앞서 벨벳이 알려 준 대답도 똑같이 0점이 아니냐고 반문한다.",
+          "line_start": 78,
+          "line_end": 80,
+          "claim_line": 79,
+          "quote": "그럼 벨벳이 말한 것도 똑같이 0점 아니야?",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_013",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 정답이라며 연락을 기다릴 정도면 그냥 기다리지 말고 먼저 연락해야 하고, 이것까지 알아채는 것이 100점을 맞는 방법이라고 설명한다.",
+          "line_start": 81,
+          "line_end": 98,
+          "claim_line": 94,
+          "quote": "정답♥\n이제 눈치챘구나\n연락을 기다릴 정도면\n그냥 기다리고 있을 게 아니라\n먼저 해야 돼\n이것까지 알아채는 게 100점 맞는 방법♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_014",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 100점을 맞기가 어렵다고 반응한다.",
+          "line_start": 99,
+          "line_end": 101,
+          "claim_line": 100,
+          "quote": "어렵네···",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_015",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관은 안 그래도 이 여자 저 여자를 다 홀리고 다니는데 이렇게 다 알려 줘도 괜찮을지 모르겠다고 말한다.",
+          "line_start": 102,
+          "line_end": 107,
+          "claim_line": 106,
+          "quote": "근데 이렇게 다 알려줘도 괜찮은지 모르겠네~\n안 그래도 이 여자 저 여자 다 홀리고 다니는데",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_016",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "지휘관",
+          "summary": "지휘관이 자신이 이 여자 저 여자를 다 홀리고 다니는 정도는 아니라고 답한다.",
+          "line_start": 108,
+          "line_end": 110,
+          "claim_line": 109,
+          "quote": "그 정도는 아니야",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        },
+        {
+          "item_id": "blabla_velvet_003__eac_017",
+          "epistemic_type": "character_claim",
+          "confidence": null,
+          "actor_or_speaker": "벨벳",
+          "summary": "벨벳이 지휘관이 완전히 부정하지는 않는 것을 보니 자각은 있었다며, 그래도 마지막에 지휘관 옆에 있는 것은 결국 자신일 테니 괜찮다고 말한다.",
+          "line_start": 111,
+          "line_end": 128,
+          "claim_line": 127,
+          "quote": "완전히 부정은 안하네~?\n자각은 있었구나 우리 주인님\n뭐\n그래도 괜찮아\n마지막에 주인님 옆에 있는 건\n결국 나일 테니까♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "clues_and_hooks": [],
+      "relationship_and_lore_notes": [
+        {
+          "item_id": "blabla_velvet_003__rln_001",
+          "subject": "벨벳",
+          "target": "지휘관",
+          "relation_or_change": "마지막에 지휘관 옆에 있는 것은 결국 자신일 것이라며 호감과 확신을 드러냄",
+          "epistemic_type": "character_claim",
+          "claimant": "벨벳",
+          "line_start": 117,
+          "line_end": 128,
+          "claim_line": 127,
+          "quote": "뭐\n그래도 괜찮아\n마지막에 주인님 옆에 있는 건\n결국 나일 테니까♥",
+          "refers_to_past": false,
+          "chronology_type": "present",
+          "in_branch_option": null
+        }
+      ],
+      "reviewed_gaps": [],
+      "unregistered_entity_candidates": []
+    }
+  ]
+}
