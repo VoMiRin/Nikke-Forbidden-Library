@@ -1078,6 +1078,11 @@ test('5 Pass 1 repair: only scenes with errors or CLAIM_OTHER_SPEAKERS are repai
     () => refreshBatchInput(batchInput, { ...manifestScenes, t13_qa: { ...manifestScenes.t13_qa, source_sha256: 'x' } }),
     /source text changed/
   );
+  // 다른 배치로 다시 추출된 장면(옛 결과)은 원문이 바뀌었어도 건너뛴다
+  assert.deepEqual(
+    refreshBatchInput(batchInput, { ...manifestScenes, t13_qa: { ...manifestScenes.t13_qa, source_sha256: 'x', batch_id: 'batch_new' } }).changedSceneIds,
+    []
+  );
 
   const graphDir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-repair-'));
   try {

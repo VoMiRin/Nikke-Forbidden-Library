@@ -45,6 +45,8 @@ export const refreshBatchInput = (batchInput, manifestScenes) => {
   const scenes = batchInput.scenes.map((scene) => {
     const mScene = manifestScenes[scene.scene_id];
     if (!mScene) throw new Error(`${scene.scene_id}: not in manifest.json`);
+    // 본문이 바뀌어 다른 배치로 다시 추출된 장면(옛 결과)은 병합기가 건너뛰므로 그대로 둔다(보수 4회차 batch_0161의 ark_guardian_13)
+    if (mScene.batch_id && batchInput.batch_id && mScene.batch_id !== batchInput.batch_id) return scene;
     const body = extractRawLinesFromNumberedScript(scene.numbered_script).join('\n');
     if (sha256(body) !== mScene.source_sha256) {
       throw new Error(

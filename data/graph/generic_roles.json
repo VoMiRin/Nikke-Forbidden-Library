@@ -1,7 +1,7 @@
 {
   "schema_version": "1.3.0",
   "description": "일반 역할 명사, 묘사형 별칭(descriptor_alias) 및 미상 화자(???) 초안. Pass 1에서는 is_generic_role: true, entity_id: null로 두며 descriptor_alias는 Pass 2 정체 후보 탐색 대상에 포함한다. descriptor_alias와 descriptor_excluded는 descriptor_review.json의 사용자 검토를 반영한 결과다 (1.6).",
-  "total_roles": 499,
+  "total_roles": 521,
   "descriptor_review_applied": true,
   "descriptor_alias_count": 3,
   "descriptor_alias_labels": [
@@ -12,6 +12,11 @@
   "unreviewed_descriptor_labels": [],
   "role_labels": [
     "???",
+    "1호",
+    "2호",
+    "3호",
+    "4호",
+    "6호",
     "가게 주인",
     "가난해 보이는 죄수",
     "가벼운 양산형 니케",
@@ -56,6 +61,7 @@
     "극장 관계자",
     "근엄한 장교",
     "근육질의 남자",
+    "기계음",
     "기뻐하는 남자 손님",
     "기뻐하는 주민",
     "기자",
@@ -131,6 +137,7 @@
     "두번째 친구",
     "또 다른 익숙한 목소리",
     "똑똑해보이는 여자",
+    "라이온",
     "라피의 목소리",
     "로열 남성",
     "로열 여성",
@@ -140,6 +147,7 @@
     "리본을 맨 여성",
     "리본을 맨 여자 조직원",
     "마른 체격의 병사",
+    "마스터",
     "매장의 노랫소리",
     "머리를 묶은 니케",
     "머리핀을 한 여자",
@@ -155,6 +163,7 @@
     "무법자들",
     "무전기",
     "문신을 한 경호원",
+    "물거품",
     "물자 분류 직원",
     "미스트 중독자",
     "미실리스 니케",
@@ -163,6 +172,8 @@
     "미트 미트 사장",
     "바리스타",
     "바빠보이는 여학생",
+    "반장",
+    "방장봇",
     "방주 난민",
     "방주난민",
     "방청객",
@@ -178,6 +189,7 @@
     "불량한 여자아이",
     "붉은 덤불의 보스",
     "붉은 덤불의 조직원",
+    "블랙박스",
     "비겁한 남자 손님",
     "비열한 남자 손님",
     "비웃는 니케",
@@ -256,7 +268,9 @@
     "아쉬워하는 여자 손님",
     "아우터 림 주민",
     "아우터림 남자",
+    "아웃로",
     "아이들",
+    "아주머니",
     "아파보이는 여자",
     "악에 받친 남자",
     "안경 쓴 병사",
@@ -324,6 +338,7 @@
     "염색한 소년",
     "영화 주인공",
     "영화 효과음",
+    "오렌지 퍼펙트",
     "온천 주인",
     "올빼미들",
     "옷가게 직원",
@@ -363,6 +378,7 @@
     "인터뷰 중인 여자 시민",
     "인형",
     "잉그리드 인형",
+    "자산가",
     "작은 소녀",
     "작은 소년",
     "재채기 하는 손님",
@@ -379,6 +395,7 @@
     "점퍼를 입은 남자",
     "점퍼를 입은 소년",
     "정신 없어 보이는 여학생",
+    "정의 괴도단",
     "정장 입은 남성",
     "정찰 부대 니케",
     "정찰 부대 리더",
@@ -415,6 +432,7 @@
     "지적인 여학생",
     "지켜보는 시민",
     "직원",
+    "진행자",
     "짧은 머리의 병사",
     "쭈뼛거리는 남자 손님",
     "쭈뼛거리는 여자",
@@ -438,11 +456,14 @@
     "코스프레를 한 남자",
     "코인 러시 경비원",
     "코인 러시 손님들",
+    "콜렉터",
     "퀸이라 불린 소녀",
     "클럽 지배인",
     "키 큰 병사",
+    "키티",
     "탈주 니케",
     "태블릿 스피커",
+    "테트라 커넥트",
     "투구를 쓴 소녀",
     "투덜거리는 여성",
     "투덜대는 여자 손님",
@@ -505,6 +526,7 @@
     "힘들어하는 여성",
     "A",
     "B",
+    "D.E.E.P.",
     "M.M.R. 연구원",
     "TV 소리",
     "V.T.C. 고위 간부",
@@ -518,8 +540,8 @@
       "entity_id": null,
       "role_category": "unknown_placeholder",
       "heuristic_reason": "미상 화자 표기",
-      "scene_count": 285,
-      "dialogue_line_count": 1071,
+      "scene_count": 286,
+      "dialogue_line_count": 1073,
       "sources": [
         "dialogue"
       ],
@@ -539,6 +561,97 @@
         "main_04_19",
         "main_06_07",
         "main_07_06"
+      ]
+    },
+    {
+      "speaker_label": "1호",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "numbered_unit",
+      "heuristic_reason": "번호가 붙은 일반 개체/훈련생 표기",
+      "scene_count": 1,
+      "dialogue_line_count": 31,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_11"
+      ]
+    },
+    {
+      "speaker_label": "2호",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "numbered_unit",
+      "heuristic_reason": "번호가 붙은 일반 개체/훈련생 표기",
+      "scene_count": 2,
+      "dialogue_line_count": 32,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_11",
+        "maria-n_12"
+      ]
+    },
+    {
+      "speaker_label": "3호",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "numbered_unit",
+      "heuristic_reason": "번호가 붙은 일반 개체/훈련생 표기",
+      "scene_count": 1,
+      "dialogue_line_count": 11,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_12"
+      ]
+    },
+    {
+      "speaker_label": "4호",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "numbered_unit",
+      "heuristic_reason": "번호가 붙은 일반 개체/훈련생 표기",
+      "scene_count": 1,
+      "dialogue_line_count": 16,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_12"
+      ]
+    },
+    {
+      "speaker_label": "6호",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "numbered_unit",
+      "heuristic_reason": "번호가 붙은 일반 개체/훈련생 표기",
+      "scene_count": 1,
+      "dialogue_line_count": 34,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_12"
       ]
     },
     {
@@ -1396,6 +1509,30 @@
       ],
       "sample_scenes": [
         "little_witch_trick_04"
+      ]
+    },
+    {
+      "speaker_label": "기계음",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 8,
+      "dialogue_line_count": 29,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "character_episodes",
+        "event_stories",
+        "outpost_stories"
+      ],
+      "sample_scenes": [
+        "memories_teller_14",
+        "memories_teller_16",
+        "memories_teller_17",
+        "hospital_05",
+        "delta_04"
       ]
     },
     {
@@ -2861,6 +2998,24 @@
       ]
     },
     {
+      "speaker_label": "라이온",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 1,
+      "dialogue_line_count": 76,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "main_story"
+      ],
+      "sample_scenes": [
+        "main_44_12"
+      ]
+    },
+    {
       "speaker_label": "라피의 목소리",
       "is_generic_role": true,
       "entity_id": null,
@@ -3034,6 +3189,25 @@
       ],
       "sample_scenes": [
         "privaty_01"
+      ]
+    },
+    {
+      "speaker_label": "마스터",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 2,
+      "dialogue_line_count": 36,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "character_episodes"
+      ],
+      "sample_scenes": [
+        "sugar_00",
+        "aria_03"
       ]
     },
     {
@@ -3335,6 +3509,24 @@
       ]
     },
     {
+      "speaker_label": "물거품",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 1,
+      "dialogue_line_count": 2,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "unbreakable_sphere_25"
+      ]
+    },
+    {
       "speaker_label": "물자 분류 직원",
       "is_generic_role": true,
       "entity_id": null,
@@ -3484,6 +3676,47 @@
       ],
       "sample_scenes": [
         "2x2_love_2ch_57"
+      ]
+    },
+    {
+      "speaker_label": "반장",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 4,
+      "dialogue_line_count": 25,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories",
+        "side_stories"
+      ],
+      "sample_scenes": [
+        "star_anis_22",
+        "pretty_star_02",
+        "pretty_star_09",
+        "pretty_star_12"
+      ]
+    },
+    {
+      "speaker_label": "방장봇",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 1,
+      "dialogue_line_count": 16,
+      "sources": [
+        "messenger_participant",
+        "messenger_sender"
+      ],
+      "categories": [
+        "character_episodes"
+      ],
+      "sample_scenes": [
+        "guillotine_00"
       ]
     },
     {
@@ -3770,6 +4003,27 @@
       ],
       "sample_scenes": [
         "queen's_order_12"
+      ]
+    },
+    {
+      "speaker_label": "블랙박스",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 3,
+      "dialogue_line_count": 46,
+      "sources": [
+        "messenger_participant",
+        "messenger_sender"
+      ],
+      "categories": [
+        "character_episodes"
+      ],
+      "sample_scenes": [
+        "mary_00",
+        "mary_03",
+        "mary_04"
       ]
     },
     {
@@ -4203,8 +4457,8 @@
       "entity_id": null,
       "role_category": "generic_role_noun",
       "heuristic_reason": "일반 역할/직업/인물 묘사 명사로 끝남",
-      "scene_count": 9,
-      "dialogue_line_count": 81,
+      "scene_count": 10,
+      "dialogue_line_count": 149,
       "sources": [
         "dialogue"
       ],
@@ -5087,15 +5341,18 @@
       "entity_id": null,
       "role_category": "generic_role_noun",
       "heuristic_reason": "일반 니케/지휘관/메이드 역할 표기",
-      "scene_count": 1,
-      "dialogue_line_count": 5,
+      "scene_count": 3,
+      "dialogue_line_count": 35,
       "sources": [
         "dialogue"
       ],
       "categories": [
-        "event_stories"
+        "event_stories",
+        "main_story"
       ],
       "sample_scenes": [
+        "chapter_50_14",
+        "chapter_50_16",
         "footstep_walk_run_12"
       ]
     },
@@ -5262,8 +5519,8 @@
       "entity_id": null,
       "role_category": "generic_role_noun",
       "heuristic_reason": "일반 역할/직업/인물 묘사 명사로 끝남",
-      "scene_count": 5,
-      "dialogue_line_count": 81,
+      "scene_count": 6,
+      "dialogue_line_count": 96,
       "sources": [
         "dialogue",
         "messenger_participant"
@@ -5275,9 +5532,9 @@
       "sample_scenes": [
         "main_23_05",
         "main_23_12",
+        "chapter_49_01",
         "dirty_backyard_03",
-        "dirty_backyard_08",
-        "dirty_backyard_11"
+        "dirty_backyard_08"
       ]
     },
     {
@@ -5296,6 +5553,24 @@
       ],
       "sample_scenes": [
         "neon_visioneye_02"
+      ]
+    },
+    {
+      "speaker_label": "아웃로",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 1,
+      "dialogue_line_count": 5,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "character_episodes"
+      ],
+      "sample_scenes": [
+        "crow_01"
       ]
     },
     {
@@ -5319,6 +5594,28 @@
         "LIE CAUSE RECOL_24",
         "LIE CAUSE RECOL_25",
         "sora_00"
+      ]
+    },
+    {
+      "speaker_label": "아주머니",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 4,
+      "dialogue_line_count": 13,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "character_episodes",
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "bow_wow_paradise_05",
+        "bunny_x_777_05",
+        "nya_nya_paradise_04",
+        "noise_02"
       ]
     },
     {
@@ -6618,7 +6915,7 @@
       "role_category": "generic_role_noun",
       "heuristic_reason": "일반 역할/직업/인물 묘사 명사로 끝남",
       "scene_count": 1,
-      "dialogue_line_count": 2,
+      "dialogue_line_count": 5,
       "sources": [
         "dialogue"
       ],
@@ -6645,6 +6942,26 @@
       ],
       "sample_scenes": [
         "vesti_03"
+      ]
+    },
+    {
+      "speaker_label": "오렌지 퍼펙트",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 2,
+      "dialogue_line_count": 62,
+      "sources": [
+        "messenger_participant",
+        "messenger_sender"
+      ],
+      "categories": [
+        "character_episodes"
+      ],
+      "sample_scenes": [
+        "pepper_01",
+        "pepper_04"
       ]
     },
     {
@@ -7384,6 +7701,27 @@
       ]
     },
     {
+      "speaker_label": "자산가",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 3,
+      "dialogue_line_count": 54,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "character_episodes",
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "phantom_thief_vs_detective_12",
+        "phantom_thief_vs_detective_13",
+        "rosanna_00"
+      ]
+    },
+    {
       "speaker_label": "작은 소녀",
       "is_generic_role": true,
       "entity_id": null,
@@ -7709,6 +8047,24 @@
       ],
       "sample_scenes": [
         "2x2_love_2ch_57"
+      ]
+    },
+    {
+      "speaker_label": "정의 괴도단",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 1,
+      "dialogue_line_count": 2,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "phantom_thief_vs_detective_13"
       ]
     },
     {
@@ -8412,6 +8768,29 @@
       ]
     },
     {
+      "speaker_label": "진행자",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 23,
+      "dialogue_line_count": 262,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "character_episodes",
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "miracle_snow_04",
+        "miracle_snow_05",
+        "dazzling_cupid_02",
+        "dazzling_cupid_03",
+        "one_more_time_00"
+      ]
+    },
+    {
       "speaker_label": "짧은 머리의 병사",
       "is_generic_role": true,
       "entity_id": null,
@@ -8859,6 +9238,28 @@
       ]
     },
     {
+      "speaker_label": "콜렉터",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 3,
+      "dialogue_line_count": 217,
+      "sources": [
+        "dialogue",
+        "messenger_participant",
+        "messenger_sender"
+      ],
+      "categories": [
+        "sub_quests"
+      ],
+      "sample_scenes": [
+        "콜렉터_00",
+        "콜렉터_01",
+        "콜렉터_02"
+      ]
+    },
+    {
       "speaker_label": "퀸이라 불린 소녀",
       "is_generic_role": true,
       "entity_id": null,
@@ -8915,6 +9316,24 @@
       ]
     },
     {
+      "speaker_label": "키티",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 1,
+      "dialogue_line_count": 5,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "sub_quests"
+      ],
+      "sample_scenes": [
+        "문구점_00"
+      ]
+    },
+    {
       "speaker_label": "탈주 니케",
       "is_generic_role": true,
       "entity_id": null,
@@ -8950,6 +9369,26 @@
       ],
       "sample_scenes": [
         "vesti_00"
+      ]
+    },
+    {
+      "speaker_label": "테트라 커넥트",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 2,
+      "dialogue_line_count": 76,
+      "sources": [
+        "messenger_participant",
+        "messenger_sender"
+      ],
+      "categories": [
+        "sub_quests"
+      ],
+      "sample_scenes": [
+        "테트라_커넥트_00",
+        "테트라_커넥트_01"
       ]
     },
     {
@@ -10195,6 +10634,26 @@
         "통화기록017515_02",
         "통화기록017515_03",
         "통화기록028594_00"
+      ]
+    },
+    {
+      "speaker_label": "D.E.E.P.",
+      "is_generic_role": true,
+      "entity_id": null,
+      "role_category": "generic_role_or_device",
+      "heuristic_reason": "일반 역할·익명·장치 기본 목록 일치",
+      "scene_count": 2,
+      "dialogue_line_count": 95,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories",
+        "main_story"
+      ],
+      "sample_scenes": [
+        "main_41_11",
+        "footstep_walk_run_20"
       ]
     },
     {

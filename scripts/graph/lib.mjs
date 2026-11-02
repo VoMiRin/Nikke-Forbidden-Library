@@ -166,6 +166,11 @@ export const DOCUMENT_FIELD_LABELS = new Set([
   '댓글',
   'RE',
   'FB', // 긴급뉴스대본_FB_3_final_2.pdf: 대본 수정 지시 항목명
+  // 갓데스 다큐멘터리 제작기: 기획서 항목명 (2026-11-02 레지스트리 재생성 점검에서 화자로 잡힘)
+  '가제',
+  '기획 의도',
+  '취재 대상',
+  '진행 상황',
 ]);
 
 /**
@@ -426,8 +431,13 @@ export const parseDialogueLine = (rawLine, options = {}) => {
   };
 };
 
+// 영문 제목 형식이 아닌 엔딩 카드 라벨. "아크레인저 극장판 [ACTION]: 크림슨 스카이는 성황리에 개봉했다."(ark_ranger_27)
+// "목표 지점까지의 최고 달성률 [ACTION]: 2.4%"(maria-n_02)는 미니게임 결과 카드다.
+const END_CARD_LABELS = new Set(['아크레인저 극장판', '목표 지점까지의 최고 달성률']);
+
 const isEndCardLine = (speakerLabel, rhsText, storyTitle) => {
   if (!rhsText) return false;
+  if (END_CARD_LABELS.has(String(speakerLabel ?? '').normalize('NFKC').trim())) return true;
   if (/^(?:END|AND|BEGIN|TO BE CONTINUED|THE END|COMPLETE|FALL|DASH|CONTINUED|REWRITE)\b[.·…?!\s]*$/i.test(rhsText)) {
     if (/^[A-Z0-9\s.,!'"■?-]+$/i.test(speakerLabel)) return true;
     if (storyTitle) {
@@ -462,6 +472,13 @@ export const isValidSpeakerLabel = (rawSpeaker, rhsText = '', _options = {}) => 
 
   return true;
 };
+
+// 1.5 (e) 예외: 시점 인물이 따로 있는 화자 라벨 없는 텍스트 어드벤처(3절 2항).
+// 이 장면들의 [OPTION] 줄은 시점 인물(document_author)의 선택이다. 지휘관 대사로 보면
+// 장면에 없는 지휘관이 참여자가 된다(WHITE MEMORY 32장면, 2026-11-02 진단).
+export const POV_TEXT_ADVENTURE_SCENE_PREFIXES = ['white_memory_', 'fading_affection_'];
+export const isPovTextAdventureScene = (sceneId) =>
+  POV_TEXT_ADVENTURE_SCENE_PREFIXES.some((prefix) => String(sceneId ?? '').startsWith(prefix));
 
 /**
  * 장면 본문(bodyLines)에서 기계적 사실(1.5 mechanical_ground_truth)을 추출한다.
@@ -571,8 +588,11 @@ export const extractSceneMechanicalGroundTruth = (scene, options = {}) => {
         topChoice._currentOpt = optObj;
       }
       // 1.5 (e): [OPTION TEXT="..."] 줄의 화자는 지휘관이다 (메신저 안의 선택지도 동일, 출처 option)
-      ensureSpeaker('지휘관', 'option', lineNo, true);
-      lineSpeaker[lineNo] = '지휘관';
+      // 예외: 시점 인물이 따로 있는 텍스트 어드벤처의 선택지는 그 시점 인물의 선택이므로 화자를 붙이지 않는다
+      if (!isPovTextAdventureScene(sceneId)) {
+        ensureSpeaker('지휘관', 'option', lineNo, true);
+        lineSpeaker[lineNo] = '지휘관';
+      }
       continue;
     }
 

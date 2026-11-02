@@ -1,56 +1,8 @@
 {
   "schema_version": "1.3.0",
   "description": "등록 대본 화자 기반 인물 정체 레지스트리 초안. 다른 이름으로 불린 두 화자의 병합은 반드시 대본 근거 검증(Pass 2/3)을 거쳐 수행한다 (1.6).",
-  "total_entities": 422,
+  "total_entities": 416,
   "entities": [
-    {
-      "entity_id": "char_handle_블랙로즈",
-      "canonical_name": "[블랙로즈]",
-      "entity_type": "character",
-      "surface_labels": [
-        "[블랙로즈]"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": true,
-      "scene_count": 2,
-      "dialogue_line_count": 9,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes",
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "d.ark_hero_02",
-        "maiden_02"
-      ]
-    },
-    {
-      "entity_id": "char_handle_사이코뮤",
-      "canonical_name": "[사이코뮤]",
-      "entity_type": "character",
-      "surface_labels": [
-        "[사이코뮤]"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": true,
-      "scene_count": 2,
-      "dialogue_line_count": 14,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes",
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "d.ark_hero_02",
-        "clay_02"
-      ]
-    },
     {
       "entity_id": "char_handle_점프만이살길",
       "canonical_name": "[점프만이살길]",
@@ -479,28 +431,6 @@
       ]
     },
     {
-      "entity_id": "char_그레그레",
-      "canonical_name": "그레그레",
-      "entity_type": "character",
-      "surface_labels": [
-        "그레그레"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 4,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "great_villain_union_00"
-      ]
-    },
-    {
       "entity_id": "char_그레이",
       "canonical_name": "그레이",
       "entity_type": "character",
@@ -531,13 +461,15 @@
       "canonical_name": "그레이브",
       "entity_type": "character",
       "surface_labels": [
-        "그레이브"
+        "그레이브",
+        "그레그레",
+        "에이브"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 123,
-      "dialogue_line_count": 2321,
+      "scene_count": 174,
+      "dialogue_line_count": 3621,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -559,7 +491,11 @@
         "main_30_10",
         "main_31_08",
         "main_31_09"
-      ]
+      ],
+      "alias_kinds": {
+        "그레그레": "nickname",
+        "에이브": "former_name"
+      }
     },
     {
       "entity_id": "char_그레텔",
@@ -571,8 +507,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 23,
-      "dialogue_line_count": 315,
+      "scene_count": 25,
+      "dialogue_line_count": 335,
       "sources": [
         "dialogue"
       ],
@@ -580,42 +516,15 @@
         "character_episodes",
         "event_lost_relics",
         "event_stories",
+        "main_story",
         "side_stories"
       ],
       "sample_scenes": [
+        "chapter_50_13",
+        "chapter_50_24",
         "old_tales_03",
         "old_tales_06",
-        "old_tales_12",
-        "old_tales_20",
-        "old_tales_24"
-      ]
-    },
-    {
-      "entity_id": "char_기계음",
-      "canonical_name": "기계음",
-      "entity_type": "character",
-      "surface_labels": [
-        "기계음"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 8,
-      "dialogue_line_count": 29,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes",
-        "event_stories",
-        "outpost_stories"
-      ],
-      "sample_scenes": [
-        "memories_teller_14",
-        "memories_teller_16",
-        "memories_teller_17",
-        "hospital_05",
-        "delta_04"
+        "old_tales_12"
       ]
     },
     {
@@ -821,8 +730,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 58,
-      "dialogue_line_count": 1547,
+      "scene_count": 68,
+      "dialogue_line_count": 1997,
       "sources": [
         "dialogue"
       ],
@@ -959,8 +868,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 825,
-      "dialogue_line_count": 7724,
+      "scene_count": 840,
+      "dialogue_line_count": 7911,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -988,13 +897,14 @@
       "canonical_name": "노라",
       "entity_type": "character",
       "surface_labels": [
-        "노라"
+        "노라",
+        "어린 노라"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 37,
-      "dialogue_line_count": 959,
+      "scene_count": 42,
+      "dialogue_line_count": 1109,
       "sources": [
         "dialogue"
       ],
@@ -1007,7 +917,10 @@
         "blank_ticket_02",
         "blank_ticket_03",
         "blank_ticket_04"
-      ]
+      ],
+      "alias_kinds": {
+        "어린 노라": "younger_self"
+      }
     },
     {
       "entity_id": "char_노벨",
@@ -1048,13 +961,14 @@
       "canonical_name": "노아",
       "entity_type": "character",
       "surface_labels": [
-        "노아"
+        "노아",
+        "어린 노아"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 49,
-      "dialogue_line_count": 1106,
+      "scene_count": 55,
+      "dialogue_line_count": 1216,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1077,7 +991,10 @@
         "main_20_01",
         "main_20_07",
         "main_20_10"
-      ]
+      ],
+      "alias_kinds": {
+        "어린 노아": "younger_self"
+      }
     },
     {
       "entity_id": "char_노이즈",
@@ -1202,7 +1119,8 @@
       "canonical_name": "니힐리스타",
       "entity_type": "character",
       "surface_labels": [
-        "니힐리스타"
+        "니힐리스타",
+        "화룡"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
@@ -1224,7 +1142,41 @@
         "main_20_09",
         "main_20_11",
         "main_20_12"
-      ]
+      ],
+      "alias_kinds": {
+        "화룡": "nickname"
+      }
+    },
+    {
+      "entity_id": "char_닥터_마리아",
+      "canonical_name": "닥터 마리아",
+      "entity_type": "character",
+      "surface_labels": [
+        "닥터 마리아",
+        "마리아 박사"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 24,
+      "dialogue_line_count": 820,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_lost_relics",
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_00",
+        "maria-n_01",
+        "maria-n_02",
+        "maria-n_03",
+        "maria-n_04"
+      ],
+      "alias_kinds": {
+        "마리아 박사": "same_person"
+      }
     },
     {
       "entity_id": "char_데이파라",
@@ -1331,8 +1283,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 195,
-      "dialogue_line_count": 4562,
+      "scene_count": 205,
+      "dialogue_line_count": 4724,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1393,8 +1345,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 174,
-      "dialogue_line_count": 2541,
+      "scene_count": 181,
+      "dialogue_line_count": 2621,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1475,8 +1427,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 81,
-      "dialogue_line_count": 1761,
+      "scene_count": 87,
+      "dialogue_line_count": 1810,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1574,28 +1526,6 @@
       ]
     },
     {
-      "entity_id": "char_라이온",
-      "canonical_name": "라이온",
-      "entity_type": "character",
-      "surface_labels": [
-        "라이온"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 76,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "main_story"
-      ],
-      "sample_scenes": [
-        "main_44_12"
-      ]
-    },
-    {
       "entity_id": "char_라푼젤",
       "canonical_name": "라푼젤",
       "entity_type": "character",
@@ -1605,8 +1535,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 167,
-      "dialogue_line_count": 2464,
+      "scene_count": 187,
+      "dialogue_line_count": 2738,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1640,8 +1570,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 178,
-      "dialogue_line_count": 2437,
+      "scene_count": 185,
+      "dialogue_line_count": 2507,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1673,8 +1603,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 944,
-      "dialogue_line_count": 9939,
+      "scene_count": 960,
+      "dialogue_line_count": 10187,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1730,8 +1660,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 18,
-      "dialogue_line_count": 634,
+      "scene_count": 22,
+      "dialogue_line_count": 715,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -1783,8 +1713,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 26,
-      "dialogue_line_count": 485,
+      "scene_count": 27,
+      "dialogue_line_count": 487,
       "sources": [
         "dialogue"
       ],
@@ -1868,8 +1798,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 68,
-      "dialogue_line_count": 1760,
+      "scene_count": 76,
+      "dialogue_line_count": 1887,
       "sources": [
         "dialogue"
       ],
@@ -2058,8 +1988,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 95,
-      "dialogue_line_count": 2683,
+      "scene_count": 98,
+      "dialogue_line_count": 2714,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -2468,7 +2398,8 @@
       "canonical_name": "리버렐리오",
       "entity_type": "character",
       "surface_labels": [
-        "리버렐리오"
+        "리버렐리오",
+        "해파리"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
@@ -2489,7 +2420,10 @@
         "main_40_05",
         "main_40_06",
         "main_40_07"
-      ]
+      ],
+      "alias_kinds": {
+        "해파리": "nickname"
+      }
     },
     {
       "entity_id": "char_리버린",
@@ -2635,13 +2569,14 @@
       "canonical_name": "리틀 머메이드",
       "entity_type": "character",
       "surface_labels": [
-        "리틀 머메이드"
+        "리틀 머메이드",
+        "세이렌"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 133,
-      "dialogue_line_count": 2509,
+      "scene_count": 136,
+      "dialogue_line_count": 2532,
       "sources": [
         "dialogue"
       ],
@@ -2658,7 +2593,10 @@
         "main_42_00",
         "main_42_01",
         "main_42_02"
-      ]
+      ],
+      "alias_kinds": {
+        "세이렌": "nickname"
+      }
     },
     {
       "entity_id": "char_린네",
@@ -2716,13 +2654,14 @@
       "canonical_name": "릴리바이스",
       "entity_type": "character",
       "surface_labels": [
-        "릴리바이스"
+        "릴리바이스",
+        "릴리스"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 72,
-      "dialogue_line_count": 1342,
+      "scene_count": 74,
+      "dialogue_line_count": 1407,
       "sources": [
         "dialogue"
       ],
@@ -2730,15 +2669,19 @@
         "character_episodes",
         "event_lost_relics",
         "event_stories",
+        "main_story",
         "special_stories"
       ],
       "sample_scenes": [
+        "chapter_50_16",
+        "chapter_50_28",
         "over_zone_00",
         "red_ash_00",
-        "red_ash_01",
-        "red_ash_02",
-        "red_ash_03"
-      ]
+        "red_ash_01"
+      ],
+      "alias_kinds": {
+        "릴리스": "nickname"
+      }
     },
     {
       "entity_id": "char_마나",
@@ -2828,6 +2771,477 @@
       ]
     },
     {
+      "entity_id": "char_마리아_102",
+      "canonical_name": "마리아-102",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-102"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 2,
+      "dialogue_line_count": 61,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_02",
+        "maria-n_03"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_105",
+      "canonical_name": "마리아-105",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-105"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 5,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_03"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_113",
+      "canonical_name": "마리아-113",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-113"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 3,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_03"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_2",
+      "canonical_name": "마리아-2",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-2"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 23,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_00"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_202",
+      "canonical_name": "마리아-202",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-202"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 10,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_03"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_234",
+      "canonical_name": "마리아-234",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-234"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 4,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_04"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_235",
+      "canonical_name": "마리아-235",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-235"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 12,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_04"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_24",
+      "canonical_name": "마리아-24",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-24"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 7,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_02"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_3",
+      "canonical_name": "마리아-3",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-3"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 2,
+      "dialogue_line_count": 22,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_00",
+        "maria-n_01"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_311",
+      "canonical_name": "마리아-311",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-311"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 3,
+      "dialogue_line_count": 35,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_04",
+        "maria-n_06",
+        "maria-n_07"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_320",
+      "canonical_name": "마리아-320",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-320"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 6,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_07"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_330",
+      "canonical_name": "마리아-330",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-330"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 7,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_07"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_331",
+      "canonical_name": "마리아-331",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-331"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 26,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_07"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_4",
+      "canonical_name": "마리아-4",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-4"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 14,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_01"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_446",
+      "canonical_name": "마리아-446",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-446"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 5,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_lost_relics"
+      ],
+      "sample_scenes": [
+        "marian_dialog_01"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_447",
+      "canonical_name": "마리아-447",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-447"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 4,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_lost_relics"
+      ],
+      "sample_scenes": [
+        "marian_dialog_01"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_448",
+      "canonical_name": "마리아-448",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-448"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 3,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_lost_relics"
+      ],
+      "sample_scenes": [
+        "marian_dialog_01"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_449",
+      "canonical_name": "마리아-449",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-449"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 4,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_lost_relics"
+      ],
+      "sample_scenes": [
+        "marian_dialog_01"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_5",
+      "canonical_name": "마리아-5",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-5"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 13,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_lost_relics"
+      ],
+      "sample_scenes": [
+        "marian_dialog_00"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_55",
+      "canonical_name": "마리아-55",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-55"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 1,
+      "dialogue_line_count": 11,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_02"
+      ]
+    },
+    {
+      "entity_id": "char_마리아_n",
+      "canonical_name": "마리아-n",
+      "entity_type": "character",
+      "surface_labels": [
+        "마리아-n"
+      ],
+      "is_generic_role": false,
+      "is_episode_or_blabla_hero": false,
+      "is_voice_or_handle_variant": false,
+      "scene_count": 9,
+      "dialogue_line_count": 224,
+      "sources": [
+        "dialogue"
+      ],
+      "categories": [
+        "event_lost_relics",
+        "event_stories"
+      ],
+      "sample_scenes": [
+        "maria-n_09",
+        "maria-n_10",
+        "maria-n_11",
+        "maria-n_12",
+        "maria-n_13"
+      ]
+    },
+    {
       "entity_id": "char_마리안",
       "canonical_name": "마리안",
       "entity_type": "character",
@@ -2837,8 +3251,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 98,
-      "dialogue_line_count": 1297,
+      "scene_count": 127,
+      "dialogue_line_count": 2543,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -2846,6 +3260,8 @@
       ],
       "categories": [
         "blabla",
+        "character_episodes",
+        "event_lost_relics",
         "event_stories",
         "main_story",
         "side_stories",
@@ -2884,29 +3300,6 @@
       ]
     },
     {
-      "entity_id": "char_마스터",
-      "canonical_name": "마스터",
-      "entity_type": "character",
-      "surface_labels": [
-        "마스터"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 2,
-      "dialogue_line_count": 36,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes"
-      ],
-      "sample_scenes": [
-        "sugar_00",
-        "aria_03"
-      ]
-    },
-    {
       "entity_id": "char_마스트",
       "canonical_name": "마스트",
       "entity_type": "character",
@@ -2916,8 +3309,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 125,
-      "dialogue_line_count": 2719,
+      "scene_count": 128,
+      "dialogue_line_count": 2755,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3001,8 +3394,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 190,
-      "dialogue_line_count": 3953,
+      "scene_count": 198,
+      "dialogue_line_count": 4118,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3034,8 +3427,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 123,
-      "dialogue_line_count": 2690,
+      "scene_count": 127,
+      "dialogue_line_count": 2703,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3096,13 +3489,15 @@
       "canonical_name": "메이든",
       "entity_type": "character",
       "surface_labels": [
-        "메이든"
+        "메이든",
+        "[블랙로즈]",
+        "블랙로즈"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 81,
-      "dialogue_line_count": 2078,
+      "scene_count": 86,
+      "dialogue_line_count": 2125,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3122,7 +3517,11 @@
         "main_23_17",
         "main_23_18",
         "miracle_snow_04"
-      ]
+      ],
+      "alias_kinds": {
+        "[블랙로즈]": "handle",
+        "블랙로즈": "handle"
+      }
     },
     {
       "entity_id": "char_메이슨_박사",
@@ -3392,8 +3791,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 85,
-      "dialogue_line_count": 2239,
+      "scene_count": 88,
+      "dialogue_line_count": 2266,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3439,28 +3838,6 @@
       ]
     },
     {
-      "entity_id": "char_물거품",
-      "canonical_name": "물거품",
-      "entity_type": "character",
-      "surface_labels": [
-        "물거품"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 2,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "unbreakable_sphere_25"
-      ]
-    },
-    {
       "entity_id": "char_뮤직_마스터",
       "canonical_name": "뮤직 마스터",
       "entity_type": "character",
@@ -3492,8 +3869,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 155,
-      "dialogue_line_count": 2130,
+      "scene_count": 158,
+      "dialogue_line_count": 2144,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3525,8 +3902,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 21,
-      "dialogue_line_count": 530,
+      "scene_count": 35,
+      "dialogue_line_count": 940,
       "sources": [
         "dialogue"
       ],
@@ -3671,8 +4048,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 76,
-      "dialogue_line_count": 1863,
+      "scene_count": 77,
+      "dialogue_line_count": 1886,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3758,8 +4135,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 101,
-      "dialogue_line_count": 2098,
+      "scene_count": 104,
+      "dialogue_line_count": 2129,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -3791,8 +4168,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 19,
-      "dialogue_line_count": 218,
+      "scene_count": 26,
+      "dialogue_line_count": 256,
       "sources": [
         "dialogue"
       ],
@@ -3806,32 +4183,6 @@
         "main_41_03",
         "main_41_07",
         "main_42_15"
-      ]
-    },
-    {
-      "entity_id": "char_반장",
-      "canonical_name": "반장",
-      "entity_type": "character",
-      "surface_labels": [
-        "반장"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 4,
-      "dialogue_line_count": 25,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories",
-        "side_stories"
-      ],
-      "sample_scenes": [
-        "star_anis_22",
-        "pretty_star_02",
-        "pretty_star_09",
-        "pretty_star_12"
       ]
     },
     {
@@ -3878,29 +4229,6 @@
       ],
       "sample_scenes": [
         "volume_02"
-      ]
-    },
-    {
-      "entity_id": "char_방장봇",
-      "canonical_name": "방장봇",
-      "entity_type": "character",
-      "surface_labels": [
-        "방장봇"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 16,
-      "sources": [
-        "messenger_participant",
-        "messenger_sender"
-      ],
-      "categories": [
-        "character_episodes"
-      ],
-      "sample_scenes": [
-        "guillotine_00"
       ]
     },
     {
@@ -3967,8 +4295,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 31,
-      "dialogue_line_count": 701,
+      "scene_count": 42,
+      "dialogue_line_count": 895,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -4049,8 +4377,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 133,
-      "dialogue_line_count": 2267,
+      "scene_count": 139,
+      "dialogue_line_count": 2330,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -4140,8 +4468,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 49,
-      "dialogue_line_count": 872,
+      "scene_count": 57,
+      "dialogue_line_count": 946,
       "sources": [
         "dialogue"
       ],
@@ -4352,26 +4680,25 @@
       ]
     },
     {
-      "entity_id": "char_붐가이",
-      "canonical_name": "붐가이",
+      "entity_id": "char_뷰티",
+      "canonical_name": "뷰티",
       "entity_type": "character",
       "surface_labels": [
-        "붐가이"
+        "뷰티"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
       "scene_count": 1,
-      "dialogue_line_count": 17,
+      "dialogue_line_count": 4,
       "sources": [
-        "messenger_participant",
-        "messenger_sender"
+        "dialogue"
       ],
       "categories": [
-        "blabla"
+        "main_story"
       ],
       "sample_scenes": [
-        "blabla_boomsday_01_001"
+        "chapter_50_27"
       ]
     },
     {
@@ -4462,8 +4789,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 69,
-      "dialogue_line_count": 1483,
+      "scene_count": 74,
+      "dialogue_line_count": 1505,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -4481,8 +4808,8 @@
         "main_13_03",
         "main_13_04",
         "main_13_05",
-        "blank_ticket_01",
-        "blank_ticket_03"
+        "chapter_49_09",
+        "chapter_50_00"
       ]
     },
     {
@@ -4542,57 +4869,6 @@
         "main_22_05",
         "main_22_06",
         "neverland_23"
-      ]
-    },
-    {
-      "entity_id": "char_블랙로즈",
-      "canonical_name": "블랙로즈",
-      "entity_type": "character",
-      "surface_labels": [
-        "블랙로즈"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 3,
-      "dialogue_line_count": 38,
-      "sources": [
-        "messenger_participant",
-        "messenger_sender"
-      ],
-      "categories": [
-        "blabla",
-        "character_episodes"
-      ],
-      "sample_scenes": [
-        "maiden_00",
-        "maiden_01",
-        "blabla_blackrose_s_001"
-      ]
-    },
-    {
-      "entity_id": "char_블랙박스",
-      "canonical_name": "블랙박스",
-      "entity_type": "character",
-      "surface_labels": [
-        "블랙박스"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 3,
-      "dialogue_line_count": 46,
-      "sources": [
-        "messenger_participant",
-        "messenger_sender"
-      ],
-      "categories": [
-        "character_episodes"
-      ],
-      "sample_scenes": [
-        "mary_00",
-        "mary_03",
-        "mary_04"
       ]
     },
     {
@@ -4753,8 +5029,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 97,
-      "dialogue_line_count": 2616,
+      "scene_count": 100,
+      "dialogue_line_count": 2640,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -4884,8 +5160,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 75,
-      "dialogue_line_count": 1278,
+      "scene_count": 89,
+      "dialogue_line_count": 1553,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5005,8 +5281,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 34,
-      "dialogue_line_count": 1033,
+      "scene_count": 39,
+      "dialogue_line_count": 1045,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5023,8 +5299,8 @@
         "chapter_47_05",
         "chapter_47_06",
         "chapter_48_07",
-        "over_the_horizon_00",
-        "over_the_horizon_01"
+        "chapter_49_09",
+        "chapter_50_01"
       ]
     },
     {
@@ -5060,8 +5336,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 84,
-      "dialogue_line_count": 2487,
+      "scene_count": 89,
+      "dialogue_line_count": 2511,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5080,7 +5356,7 @@
         "main_13_04",
         "main_13_05",
         "main_24_01",
-        "blank_ticket_01"
+        "chapter_49_09"
       ]
     },
     {
@@ -5202,8 +5478,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 103,
-      "dialogue_line_count": 2767,
+      "scene_count": 109,
+      "dialogue_line_count": 2898,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5260,8 +5536,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 210,
-      "dialogue_line_count": 3287,
+      "scene_count": 223,
+      "dialogue_line_count": 3449,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5321,8 +5597,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 11,
-      "dialogue_line_count": 88,
+      "scene_count": 16,
+      "dialogue_line_count": 107,
       "sources": [
         "dialogue"
       ],
@@ -5333,9 +5609,9 @@
       "sample_scenes": [
         "chapter_47_05",
         "chapter_48_07",
-        "over_the_horizon_01",
-        "over_the_horizon_02",
-        "over_the_horizon_03"
+        "chapter_49_09",
+        "chapter_50_01",
+        "chapter_50_03"
       ]
     },
     {
@@ -5496,8 +5772,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 12,
-      "dialogue_line_count": 125,
+      "scene_count": 17,
+      "dialogue_line_count": 135,
       "sources": [
         "dialogue"
       ],
@@ -5509,8 +5785,8 @@
         "chapter_47_05",
         "chapter_47_06",
         "chapter_48_07",
-        "over_the_horizon_01",
-        "over_the_horizon_02"
+        "chapter_49_09",
+        "chapter_50_01"
       ]
     },
     {
@@ -5523,8 +5799,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 167,
-      "dialogue_line_count": 1438,
+      "scene_count": 168,
+      "dialogue_line_count": 1455,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5612,8 +5888,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 156,
-      "dialogue_line_count": 3302,
+      "scene_count": 158,
+      "dialogue_line_count": 3341,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5764,8 +6040,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 905,
-      "dialogue_line_count": 13009,
+      "scene_count": 921,
+      "dialogue_line_count": 13273,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -5934,28 +6210,6 @@
       ]
     },
     {
-      "entity_id": "char_아웃로",
-      "canonical_name": "아웃로",
-      "entity_type": "character",
-      "surface_labels": [
-        "아웃로"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 5,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes"
-      ],
-      "sample_scenes": [
-        "crow_01"
-      ]
-    },
-    {
       "entity_id": "char_아이기스",
       "canonical_name": "아이기스",
       "entity_type": "character",
@@ -6040,54 +6294,6 @@
       ]
     },
     {
-      "entity_id": "char_아주머니",
-      "canonical_name": "아주머니",
-      "entity_type": "character",
-      "surface_labels": [
-        "아주머니"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 4,
-      "dialogue_line_count": 13,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes",
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "bow_wow_paradise_05",
-        "bunny_x_777_05",
-        "nya_nya_paradise_04",
-        "noise_02"
-      ]
-    },
-    {
-      "entity_id": "char_아크레인저_극장판",
-      "canonical_name": "아크레인저 극장판",
-      "entity_type": "character",
-      "surface_labels": [
-        "아크레인저 극장판"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 1,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "ark_ranger_27"
-      ]
-    },
-    {
       "entity_id": "char_아크레인저_레드",
       "canonical_name": "아크레인저 레드",
       "entity_type": "character",
@@ -6097,20 +6303,21 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 18,
-      "dialogue_line_count": 320,
+      "scene_count": 24,
+      "dialogue_line_count": 350,
       "sources": [
         "dialogue"
       ],
       "categories": [
-        "event_stories"
+        "event_stories",
+        "main_story"
       ],
       "sample_scenes": [
-        "ark_ranger_00",
-        "ark_ranger_01",
-        "ark_ranger_02",
-        "ark_ranger_04",
-        "ark_ranger_05"
+        "chapter_49_03",
+        "chapter_49_06",
+        "chapter_49_09",
+        "chapter_50_09",
+        "chapter_50_10"
       ]
     },
     {
@@ -6123,8 +6330,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 36,
-      "dialogue_line_count": 1011,
+      "scene_count": 42,
+      "dialogue_line_count": 1073,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -6134,14 +6341,15 @@
         "blabla",
         "character_episodes",
         "event_stories",
+        "main_story",
         "outpost_stories"
       ],
       "sample_scenes": [
-        "d.ark_hero_00",
-        "d.ark_hero_05",
-        "d.ark_hero_06",
-        "ark_ranger_00",
-        "ark_ranger_01"
+        "chapter_49_03",
+        "chapter_49_06",
+        "chapter_49_09",
+        "chapter_50_09",
+        "chapter_50_10"
       ]
     },
     {
@@ -6154,20 +6362,21 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 18,
-      "dialogue_line_count": 210,
+      "scene_count": 24,
+      "dialogue_line_count": 239,
       "sources": [
         "dialogue"
       ],
       "categories": [
-        "event_stories"
+        "event_stories",
+        "main_story"
       ],
       "sample_scenes": [
-        "ark_ranger_00",
-        "ark_ranger_01",
-        "ark_ranger_02",
-        "ark_ranger_04",
-        "ark_ranger_05"
+        "chapter_49_03",
+        "chapter_49_06",
+        "chapter_49_09",
+        "chapter_50_09",
+        "chapter_50_10"
       ]
     },
     {
@@ -6300,8 +6509,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 37,
-      "dialogue_line_count": 899,
+      "scene_count": 40,
+      "dialogue_line_count": 932,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -6320,7 +6529,7 @@
         "main_09_09",
         "main_14_04",
         "main_14_08",
-        "nya_nya_paradise_10"
+        "chapter_49_01"
       ]
     },
     {
@@ -6328,13 +6537,14 @@
       "canonical_name": "앤",
       "entity_type": "character",
       "surface_labels": [
-        "앤"
+        "앤",
+        "N102"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 26,
-      "dialogue_line_count": 575,
+      "scene_count": 51,
+      "dialogue_line_count": 1253,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -6352,7 +6562,10 @@
         "miracle_snow_09",
         "miracle_snow_10",
         "miracle_snow_11"
-      ]
+      ],
+      "alias_kinds": {
+        "N102": "former_name"
+      }
     },
     {
       "entity_id": "char_앨리스",
@@ -6397,8 +6610,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 4,
-      "dialogue_line_count": 75,
+      "scene_count": 8,
+      "dialogue_line_count": 147,
       "sources": [
         "dialogue"
       ],
@@ -6409,7 +6622,8 @@
         "main_44_07",
         "main_44_08",
         "chapter_48_01",
-        "chapter_48_06"
+        "chapter_48_06",
+        "chapter_50_01"
       ]
     },
     {
@@ -6422,8 +6636,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 107,
-      "dialogue_line_count": 1412,
+      "scene_count": 110,
+      "dialogue_line_count": 1443,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -6503,54 +6717,6 @@
       ]
     },
     {
-      "entity_id": "char_어린_노라",
-      "canonical_name": "어린 노라",
-      "entity_type": "character",
-      "surface_labels": [
-        "어린 노라"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": true,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 5,
-      "dialogue_line_count": 150,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "terminus_ticket_11",
-        "terminus_ticket_18",
-        "terminus_ticket_23",
-        "terminus_ticket_26",
-        "terminus_ticket_27"
-      ]
-    },
-    {
-      "entity_id": "char_어린_노아",
-      "canonical_name": "어린 노아",
-      "entity_type": "character",
-      "surface_labels": [
-        "어린 노아"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": true,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 3,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes"
-      ],
-      "sample_scenes": [
-        "noah_04"
-      ]
-    },
-    {
       "entity_id": "char_어린_슈엔",
       "canonical_name": "어린 슈엔",
       "entity_type": "character",
@@ -6608,8 +6774,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 3,
-      "dialogue_line_count": 67,
+      "scene_count": 7,
+      "dialogue_line_count": 174,
       "sources": [
         "dialogue"
       ],
@@ -6619,7 +6785,9 @@
       "sample_scenes": [
         "main_46_10",
         "chapter_48_01",
-        "chapter_48_06"
+        "chapter_48_06",
+        "chapter_50_01",
+        "chapter_50_02"
       ]
     },
     {
@@ -6632,8 +6800,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 45,
-      "dialogue_line_count": 999,
+      "scene_count": 63,
+      "dialogue_line_count": 1550,
       "sources": [
         "dialogue"
       ],
@@ -6735,35 +6903,6 @@
       ]
     },
     {
-      "entity_id": "char_에이브",
-      "canonical_name": "에이브",
-      "entity_type": "character",
-      "surface_labels": [
-        "에이브"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 48,
-      "dialogue_line_count": 1260,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes",
-        "event_lost_relics",
-        "event_stories",
-        "side_stories"
-      ],
-      "sample_scenes": [
-        "old_tales_00",
-        "old_tales_01",
-        "old_tales_02",
-        "old_tales_03",
-        "old_tales_05"
-      ]
-    },
-    {
       "entity_id": "char_에테르",
       "canonical_name": "에테르",
       "entity_type": "character",
@@ -6831,13 +6970,14 @@
       "canonical_name": "엑시아",
       "entity_type": "character",
       "surface_labels": [
-        "엑시아"
+        "엑시아",
+        "[사이코뮤]"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 114,
-      "dialogue_line_count": 2299,
+      "scene_count": 116,
+      "dialogue_line_count": 2313,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -6858,7 +6998,10 @@
         "main_08_02",
         "main_08_03",
         "main_08_04"
-      ]
+      ],
+      "alias_kinds": {
+        "[사이코뮤]": "handle"
+      }
     },
     {
       "entity_id": "char_엔더슨",
@@ -6870,8 +7013,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 74,
-      "dialogue_line_count": 1546,
+      "scene_count": 85,
+      "dialogue_line_count": 1872,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -6966,32 +7109,6 @@
       ]
     },
     {
-      "entity_id": "char_엘리시온_하퍼",
-      "canonical_name": "엘리시온 하퍼",
-      "entity_type": "character",
-      "surface_labels": [
-        "엘리시온 하퍼"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 6,
-      "dialogue_line_count": 130,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "enter_heaven_06",
-        "enter_heaven_07",
-        "enter_heaven_08",
-        "enter_heaven_09",
-        "enter_heaven_10"
-      ]
-    },
-    {
       "entity_id": "char_엘세리아_나인",
       "canonical_name": "엘세리아 나인",
       "entity_type": "character",
@@ -7024,8 +7141,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 159,
-      "dialogue_line_count": 2785,
+      "scene_count": 164,
+      "dialogue_line_count": 2854,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -7093,30 +7210,6 @@
       ]
     },
     {
-      "entity_id": "char_오렌지_퍼펙트",
-      "canonical_name": "오렌지 퍼펙트",
-      "entity_type": "character",
-      "surface_labels": [
-        "오렌지 퍼펙트"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 2,
-      "dialogue_line_count": 62,
-      "sources": [
-        "messenger_participant",
-        "messenger_sender"
-      ],
-      "categories": [
-        "character_episodes"
-      ],
-      "sample_scenes": [
-        "pepper_01",
-        "pepper_04"
-      ]
-    },
-    {
       "entity_id": "char_오스왈드",
       "canonical_name": "오스왈드",
       "entity_type": "character",
@@ -7181,8 +7274,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 18,
-      "dialogue_line_count": 250,
+      "scene_count": 20,
+      "dialogue_line_count": 280,
       "sources": [
         "dialogue"
       ],
@@ -7279,8 +7372,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 84,
-      "dialogue_line_count": 1471,
+      "scene_count": 91,
+      "dialogue_line_count": 1572,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -7495,8 +7588,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 46,
-      "dialogue_line_count": 1032,
+      "scene_count": 49,
+      "dialogue_line_count": 1079,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -7516,7 +7609,7 @@
         "main_09_09",
         "main_14_04",
         "main_14_08",
-        "bunny_x_777_03"
+        "chapter_49_01"
       ]
     },
     {
@@ -7529,8 +7622,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 143,
-      "dialogue_line_count": 3017,
+      "scene_count": 152,
+      "dialogue_line_count": 3163,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -7684,8 +7777,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 56,
-      "dialogue_line_count": 982,
+      "scene_count": 57,
+      "dialogue_line_count": 986,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -7764,13 +7857,15 @@
       "canonical_name": "일레그",
       "entity_type": "character",
       "surface_labels": [
-        "일레그"
+        "일레그",
+        "[붐가이]",
+        "붐가이"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 146,
-      "dialogue_line_count": 3252,
+      "scene_count": 150,
+      "dialogue_line_count": 3344,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -7790,7 +7885,11 @@
         "main_27_05",
         "main_27_06",
         "main_27_07"
-      ]
+      ],
+      "alias_kinds": {
+        "[붐가이]": "handle",
+        "붐가이": "handle"
+      }
     },
     {
       "entity_id": "char_잉그리드",
@@ -7802,8 +7901,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 110,
-      "dialogue_line_count": 2152,
+      "scene_count": 115,
+      "dialogue_line_count": 2202,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -7850,31 +7949,6 @@
       ]
     },
     {
-      "entity_id": "char_자산가",
-      "canonical_name": "자산가",
-      "entity_type": "character",
-      "surface_labels": [
-        "자산가"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 3,
-      "dialogue_line_count": 54,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes",
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "phantom_thief_vs_detective_12",
-        "phantom_thief_vs_detective_13",
-        "rosanna_00"
-      ]
-    },
-    {
       "entity_id": "char_자칼",
       "canonical_name": "자칼",
       "entity_type": "character",
@@ -7884,8 +7958,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 86,
-      "dialogue_line_count": 990,
+      "scene_count": 89,
+      "dialogue_line_count": 1009,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -8020,28 +8094,6 @@
       ],
       "sample_scenes": [
         "maiden_03"
-      ]
-    },
-    {
-      "entity_id": "char_정의_괴도단",
-      "canonical_name": "정의 괴도단",
-      "entity_type": "character",
-      "surface_labels": [
-        "정의 괴도단"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 2,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "phantom_thief_vs_detective_13"
       ]
     },
     {
@@ -8422,8 +8474,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 54,
-      "dialogue_line_count": 765,
+      "scene_count": 61,
+      "dialogue_line_count": 829,
       "sources": [
         "dialogue"
       ],
@@ -8449,8 +8501,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 3811,
-      "dialogue_line_count": 51341,
+      "scene_count": 3856,
+      "dialogue_line_count": 52446,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -8504,33 +8556,6 @@
       ]
     },
     {
-      "entity_id": "char_진행자",
-      "canonical_name": "진행자",
-      "entity_type": "character",
-      "surface_labels": [
-        "진행자"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 23,
-      "dialogue_line_count": 262,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "character_episodes",
-        "event_stories"
-      ],
-      "sample_scenes": [
-        "miracle_snow_04",
-        "miracle_snow_05",
-        "dazzling_cupid_02",
-        "dazzling_cupid_03",
-        "one_more_time_00"
-      ]
-    },
-    {
       "entity_id": "char_질",
       "canonical_name": "질",
       "entity_type": "character",
@@ -8566,8 +8591,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 64,
-      "dialogue_line_count": 1151,
+      "scene_count": 70,
+      "dialogue_line_count": 1246,
       "sources": [
         "dialogue"
       ],
@@ -9031,32 +9056,6 @@
       ]
     },
     {
-      "entity_id": "char_콜렉터",
-      "canonical_name": "콜렉터",
-      "entity_type": "character",
-      "surface_labels": [
-        "콜렉터"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 3,
-      "dialogue_line_count": 217,
-      "sources": [
-        "dialogue",
-        "messenger_participant",
-        "messenger_sender"
-      ],
-      "categories": [
-        "sub_quests"
-      ],
-      "sample_scenes": [
-        "콜렉터_00",
-        "콜렉터_01",
-        "콜렉터_02"
-      ]
-    },
-    {
       "entity_id": "char_콤",
       "canonical_name": "콤",
       "entity_type": "character",
@@ -9275,8 +9274,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 70,
-      "dialogue_line_count": 961,
+      "scene_count": 75,
+      "dialogue_line_count": 1001,
       "sources": [
         "dialogue"
       ],
@@ -9474,8 +9473,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 66,
-      "dialogue_line_count": 1190,
+      "scene_count": 69,
+      "dialogue_line_count": 1208,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -9485,15 +9484,16 @@
         "blabla",
         "character_episodes",
         "event_stories",
+        "main_story",
         "outpost_stories",
         "special_stories"
       ],
       "sample_scenes": [
+        "chapter_49_02",
+        "chapter_49_09",
+        "chapter_50_17",
         "a.c.p.u._freeze_02",
-        "a.c.p.u._freeze_03",
-        "a.c.p.u._freeze_04",
-        "a.c.p.u._freeze_05",
-        "a.c.p.u._freeze_06"
+        "a.c.p.u._freeze_03"
       ]
     },
     {
@@ -9522,28 +9522,6 @@
       ]
     },
     {
-      "entity_id": "char_키티",
-      "canonical_name": "키티",
-      "entity_type": "character",
-      "surface_labels": [
-        "키티"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 1,
-      "dialogue_line_count": 5,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "sub_quests"
-      ],
-      "sample_scenes": [
-        "문구점_00"
-      ]
-    },
-    {
       "entity_id": "char_킬로",
       "canonical_name": "킬로",
       "entity_type": "character",
@@ -9553,22 +9531,23 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 54,
-      "dialogue_line_count": 1044,
+      "scene_count": 57,
+      "dialogue_line_count": 1098,
       "sources": [
         "dialogue"
       ],
       "categories": [
         "character_episodes",
         "event_stories",
+        "main_story",
         "outpost_stories"
       ],
       "sample_scenes": [
+        "chapter_50_02",
+        "chapter_50_03",
+        "chapter_50_24",
         "last_kingdom_00",
-        "last_kingdom_01",
-        "last_kingdom_02",
-        "last_kingdom_03",
-        "last_kingdom_04"
+        "last_kingdom_01"
       ]
     },
     {
@@ -9670,30 +9649,6 @@
       ]
     },
     {
-      "entity_id": "char_테트라_커넥트",
-      "canonical_name": "테트라 커넥트",
-      "entity_type": "character",
-      "surface_labels": [
-        "테트라 커넥트"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 2,
-      "dialogue_line_count": 76,
-      "sources": [
-        "messenger_participant",
-        "messenger_sender"
-      ],
-      "categories": [
-        "sub_quests"
-      ],
-      "sample_scenes": [
-        "테트라_커넥트_00",
-        "테트라_커넥트_01"
-      ]
-    },
-    {
       "entity_id": "char_토마토쥬스",
       "canonical_name": "토마토쥬스",
       "entity_type": "character",
@@ -9759,8 +9714,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 34,
-      "dialogue_line_count": 368,
+      "scene_count": 38,
+      "dialogue_line_count": 439,
       "sources": [
         "dialogue"
       ],
@@ -9812,8 +9767,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 104,
-      "dialogue_line_count": 1468,
+      "scene_count": 107,
+      "dialogue_line_count": 1523,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10035,8 +9990,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 49,
-      "dialogue_line_count": 661,
+      "scene_count": 54,
+      "dialogue_line_count": 734,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10154,8 +10109,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 125,
-      "dialogue_line_count": 2405,
+      "scene_count": 128,
+      "dialogue_line_count": 2487,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10316,8 +10271,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 201,
-      "dialogue_line_count": 5699,
+      "scene_count": 204,
+      "dialogue_line_count": 5749,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10345,7 +10300,8 @@
       "canonical_name": "프리시아",
       "entity_type": "character",
       "surface_labels": [
-        "프리시아"
+        "프리시아",
+        "프리티"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
@@ -10365,7 +10321,10 @@
         "ark_guardian_05",
         "ark_guardian_06",
         "ark_guardian_12"
-      ]
+      ],
+      "alias_kinds": {
+        "프리티": "stage_name"
+      }
     },
     {
       "entity_id": "char_프리카",
@@ -10377,8 +10336,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 70,
-      "dialogue_line_count": 1323,
+      "scene_count": 71,
+      "dialogue_line_count": 1345,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10526,8 +10485,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 7,
-      "dialogue_line_count": 71,
+      "scene_count": 11,
+      "dialogue_line_count": 137,
       "sources": [
         "dialogue"
       ],
@@ -10577,8 +10536,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 63,
-      "dialogue_line_count": 1299,
+      "scene_count": 64,
+      "dialogue_line_count": 1301,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10763,8 +10722,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 38,
-      "dialogue_line_count": 949,
+      "scene_count": 41,
+      "dialogue_line_count": 989,
       "sources": [
         "dialogue"
       ],
@@ -10772,14 +10731,15 @@
         "character_episodes",
         "event_lost_relics",
         "event_stories",
+        "main_story",
         "side_stories"
       ],
       "sample_scenes": [
+        "chapter_50_12",
+        "chapter_50_13",
+        "chapter_50_24",
         "old_tales_00",
-        "old_tales_01",
-        "old_tales_02",
-        "old_tales_03",
-        "old_tales_05"
+        "old_tales_01"
       ]
     },
     {
@@ -10820,8 +10780,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 90,
-      "dialogue_line_count": 2592,
+      "scene_count": 93,
+      "dialogue_line_count": 2649,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10877,8 +10837,8 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 160,
-      "dialogue_line_count": 2662,
+      "scene_count": 180,
+      "dialogue_line_count": 2935,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10936,41 +10896,18 @@
       ]
     },
     {
-      "entity_id": "char_D_E_E_P",
-      "canonical_name": "D.E.E.P.",
-      "entity_type": "character",
-      "surface_labels": [
-        "D.E.E.P."
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 2,
-      "dialogue_line_count": 95,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "event_stories",
-        "main_story"
-      ],
-      "sample_scenes": [
-        "main_41_11",
-        "footstep_walk_run_20"
-      ]
-    },
-    {
       "entity_id": "char_E_H",
       "canonical_name": "E.H.",
       "entity_type": "character",
       "surface_labels": [
-        "E.H."
+        "E.H.",
+        "엘리시온 하퍼"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": true,
       "is_voice_or_handle_variant": false,
-      "scene_count": 47,
-      "dialogue_line_count": 1284,
+      "scene_count": 56,
+      "dialogue_line_count": 1467,
       "sources": [
         "dialogue",
         "messenger_participant",
@@ -10988,7 +10925,10 @@
         "main_22_13",
         "main_22_14",
         "main_24_08"
-      ]
+      ],
+      "alias_kinds": {
+        "엘리시온 하퍼": "former_name"
+      }
     },
     {
       "entity_id": "char_ELYSION_Line_0",
@@ -11012,32 +10952,6 @@
         "star_anis_12",
         "star_anis_18",
         "star_anis_23"
-      ]
-    },
-    {
-      "entity_id": "char_FB",
-      "canonical_name": "FB",
-      "entity_type": "character",
-      "surface_labels": [
-        "FB"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 5,
-      "dialogue_line_count": 5,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "lost_relics"
-      ],
-      "sample_scenes": [
-        "긴급뉴스대본_FB_3_final_2.pdf_00",
-        "긴급뉴스대본_FB_3_final_2.pdf_01",
-        "긴급뉴스대본_FB_3_final_2.pdf_02",
-        "긴급뉴스대본_FB_3_final_2.pdf_03",
-        "긴급뉴스대본_FB_3_final_2.pdf_04"
       ]
     },
     {
@@ -11212,37 +11126,6 @@
       ]
     },
     {
-      "entity_id": "char_N102",
-      "canonical_name": "N102",
-      "entity_type": "character",
-      "surface_labels": [
-        "N102"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": true,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 25,
-      "dialogue_line_count": 678,
-      "sources": [
-        "dialogue",
-        "messenger_participant",
-        "messenger_sender"
-      ],
-      "categories": [
-        "blabla",
-        "character_episodes",
-        "event_stories",
-        "outpost_stories"
-      ],
-      "sample_scenes": [
-        "miracle_snow_02",
-        "miracle_snow_03",
-        "miracle_snow_04",
-        "miracle_snow_05",
-        "miracle_snow_06"
-      ]
-    },
-    {
       "entity_id": "char_PD",
       "canonical_name": "PD",
       "entity_type": "character",
@@ -11299,22 +11182,23 @@
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 40,
-      "dialogue_line_count": 275,
+      "scene_count": 43,
+      "dialogue_line_count": 294,
       "sources": [
         "dialogue"
       ],
       "categories": [
         "character_episodes",
         "event_stories",
+        "main_story",
         "outpost_stories"
       ],
       "sample_scenes": [
+        "chapter_50_02",
+        "chapter_50_03",
+        "chapter_50_24",
         "last_kingdom_00",
-        "last_kingdom_01",
-        "last_kingdom_02",
-        "last_kingdom_03",
-        "last_kingdom_04"
+        "last_kingdom_01"
       ]
     },
     {
@@ -11431,16 +11315,6 @@
       "is_generic_role": true,
       "role_category": "unknown_placeholder"
     },
-    "[블랙로즈]": {
-      "entity_id": "char_handle_블랙로즈",
-      "is_generic_role": false,
-      "role_category": null
-    },
-    "[사이코뮤]": {
-      "entity_id": "char_handle_사이코뮤",
-      "is_generic_role": false,
-      "role_category": null
-    },
     "[점프만이살길]": {
       "entity_id": "char_handle_점프만이살길",
       "is_generic_role": false,
@@ -11476,10 +11350,35 @@
       "is_generic_role": false,
       "role_category": null
     },
+    "1호": {
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "numbered_unit"
+    },
+    "2호": {
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "numbered_unit"
+    },
     "2호 쉘터 관리계정": {
       "entity_id": "char_2호_쉘터_관리계정",
       "is_generic_role": false,
       "role_category": null
+    },
+    "3호": {
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "numbered_unit"
+    },
+    "4호": {
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "numbered_unit"
+    },
+    "6호": {
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "numbered_unit"
     },
     "9s2ba2": {
       "entity_id": "char_9s2ba2",
@@ -11736,11 +11635,6 @@
       "is_generic_role": true,
       "role_category": "generic_role_or_device"
     },
-    "그레그레": {
-      "entity_id": "char_그레그레",
-      "is_generic_role": false,
-      "role_category": null
-    },
     "그레이": {
       "entity_id": "char_그레이",
       "is_generic_role": false,
@@ -11772,9 +11666,9 @@
       "role_category": "generic_role_noun"
     },
     "기계음": {
-      "entity_id": "char_기계음",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "기린 보다 큼": {
       "entity_id": "char_기린_보다_큼",
@@ -12186,6 +12080,11 @@
       "is_generic_role": true,
       "role_category": "generic_role_noun"
     },
+    "닥터 마리아": {
+      "entity_id": "char_닥터_마리아",
+      "is_generic_role": false,
+      "role_category": null
+    },
     "단골 손님": {
       "entity_id": null,
       "is_generic_role": true,
@@ -12317,9 +12216,9 @@
       "role_category": null
     },
     "라이온": {
-      "entity_id": "char_라이온",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "라푼젤": {
       "entity_id": "char_라푼젤",
@@ -12586,6 +12485,111 @@
       "is_generic_role": true,
       "role_category": "descriptor_excluded"
     },
+    "마리아-102": {
+      "entity_id": "char_마리아_102",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-105": {
+      "entity_id": "char_마리아_105",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-113": {
+      "entity_id": "char_마리아_113",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-2": {
+      "entity_id": "char_마리아_2",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-202": {
+      "entity_id": "char_마리아_202",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-234": {
+      "entity_id": "char_마리아_234",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-235": {
+      "entity_id": "char_마리아_235",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-24": {
+      "entity_id": "char_마리아_24",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-3": {
+      "entity_id": "char_마리아_3",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-311": {
+      "entity_id": "char_마리아_311",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-320": {
+      "entity_id": "char_마리아_320",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-330": {
+      "entity_id": "char_마리아_330",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-331": {
+      "entity_id": "char_마리아_331",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-4": {
+      "entity_id": "char_마리아_4",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-446": {
+      "entity_id": "char_마리아_446",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-447": {
+      "entity_id": "char_마리아_447",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-448": {
+      "entity_id": "char_마리아_448",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-449": {
+      "entity_id": "char_마리아_449",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-5": {
+      "entity_id": "char_마리아_5",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-55": {
+      "entity_id": "char_마리아_55",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아-n": {
+      "entity_id": "char_마리아_n",
+      "is_generic_role": false,
+      "role_category": null
+    },
     "마리안": {
       "entity_id": "char_마리안",
       "is_generic_role": false,
@@ -12597,9 +12601,9 @@
       "role_category": null
     },
     "마스터": {
-      "entity_id": "char_마스터",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "마스트": {
       "entity_id": "char_마스트",
@@ -12772,9 +12776,9 @@
       "role_category": "generic_role_noun"
     },
     "물거품": {
-      "entity_id": "char_물거품",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "물자 분류 직원": {
       "entity_id": null,
@@ -12877,9 +12881,9 @@
       "role_category": null
     },
     "반장": {
-      "entity_id": "char_반장",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "반짝걸": {
       "entity_id": "char_반짝걸",
@@ -12892,9 +12896,9 @@
       "role_category": null
     },
     "방장봇": {
-      "entity_id": "char_방장봇",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "방주 난민": {
       "entity_id": null,
@@ -13051,8 +13055,8 @@
       "is_generic_role": true,
       "role_category": "generic_role_noun"
     },
-    "붐가이": {
-      "entity_id": "char_붐가이",
+    "뷰티": {
+      "entity_id": "char_뷰티",
       "is_generic_role": false,
       "role_category": null
     },
@@ -13086,15 +13090,10 @@
       "is_generic_role": false,
       "role_category": null
     },
-    "블랙로즈": {
-      "entity_id": "char_블랙로즈",
-      "is_generic_role": false,
-      "role_category": null
-    },
     "블랙박스": {
-      "entity_id": "char_블랙박스",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "블링블링": {
       "entity_id": "char_블링블링",
@@ -13732,9 +13731,9 @@
       "role_category": "generic_role_noun"
     },
     "아웃로": {
-      "entity_id": "char_아웃로",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "아이기스": {
       "entity_id": "char_아이기스",
@@ -13757,14 +13756,9 @@
       "role_category": null
     },
     "아주머니": {
-      "entity_id": "char_아주머니",
-      "is_generic_role": false,
-      "role_category": null
-    },
-    "아크레인저 극장판": {
-      "entity_id": "char_아크레인저_극장판",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "아크레인저 레드": {
       "entity_id": "char_아크레인저_레드",
@@ -13951,16 +13945,6 @@
       "is_generic_role": true,
       "role_category": "generic_role_noun"
     },
-    "어린 노라": {
-      "entity_id": "char_어린_노라",
-      "is_generic_role": false,
-      "role_category": null
-    },
-    "어린 노아": {
-      "entity_id": "char_어린_노아",
-      "is_generic_role": false,
-      "role_category": null
-    },
     "어린 니케": {
       "entity_id": null,
       "is_generic_role": true,
@@ -14021,11 +14005,6 @@
       "is_generic_role": false,
       "role_category": null
     },
-    "에이브": {
-      "entity_id": "char_에이브",
-      "is_generic_role": false,
-      "role_category": null
-    },
     "에테르": {
       "entity_id": "char_에테르",
       "is_generic_role": false,
@@ -14078,11 +14057,6 @@
     },
     "엘리시온 프랑카": {
       "entity_id": "char_엘리시온_프랑카",
-      "is_generic_role": false,
-      "role_category": null
-    },
-    "엘리시온 하퍼": {
-      "entity_id": "char_엘리시온_하퍼",
       "is_generic_role": false,
       "role_category": null
     },
@@ -14287,9 +14261,9 @@
       "role_category": "generic_role_noun"
     },
     "오렌지 퍼펙트": {
-      "entity_id": "char_오렌지_퍼펙트",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "오스왈드": {
       "entity_id": "char_오스왈드",
@@ -14622,9 +14596,9 @@
       "role_category": null
     },
     "자산가": {
-      "entity_id": "char_자산가",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "자칼": {
       "entity_id": "char_자칼",
@@ -14737,9 +14711,9 @@
       "role_category": "descriptor_excluded"
     },
     "정의 괴도단": {
-      "entity_id": "char_정의_괴도단",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "정장 입은 남성": {
       "entity_id": null,
@@ -15012,9 +14986,9 @@
       "role_category": null
     },
     "진행자": {
-      "entity_id": "char_진행자",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "질": {
       "entity_id": "char_질",
@@ -15232,9 +15206,9 @@
       "role_category": null
     },
     "콜렉터": {
-      "entity_id": "char_콜렉터",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "콤": {
       "entity_id": "char_콤",
@@ -15337,9 +15311,9 @@
       "role_category": null
     },
     "키티": {
-      "entity_id": "char_키티",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "킬로": {
       "entity_id": "char_킬로",
@@ -15377,9 +15351,9 @@
       "role_category": null
     },
     "테트라 커넥트": {
-      "entity_id": "char_테트라_커넥트",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "토마토쥬스": {
       "entity_id": "char_토마토쥬스",
@@ -15912,9 +15886,9 @@
       "role_category": null
     },
     "D.E.E.P.": {
-      "entity_id": "char_D_E_E_P",
-      "is_generic_role": false,
-      "role_category": null
+      "entity_id": null,
+      "is_generic_role": true,
+      "role_category": "generic_role_or_device"
     },
     "E.H.": {
       "entity_id": "char_E_H",
@@ -15923,11 +15897,6 @@
     },
     "ELYSION Line. 0": {
       "entity_id": "char_ELYSION_Line_0",
-      "is_generic_role": false,
-      "role_category": null
-    },
-    "FB": {
-      "entity_id": "char_FB",
       "is_generic_role": false,
       "role_category": null
     },
@@ -15968,11 +15937,6 @@
     },
     "Ms. 0": {
       "entity_id": "char_Ms_0",
-      "is_generic_role": false,
-      "role_category": null
-    },
-    "N102": {
-      "entity_id": "char_N102",
       "is_generic_role": false,
       "role_category": null
     },
@@ -16028,6 +15992,61 @@
     },
     "X": {
       "entity_id": "char_X",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "마리아 박사": {
+      "entity_id": "char_닥터_마리아",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "그레그레": {
+      "entity_id": "char_그레이브",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "에이브": {
+      "entity_id": "char_그레이브",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "N102": {
+      "entity_id": "char_앤",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "엘리시온 하퍼": {
+      "entity_id": "char_E_H",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "붐가이": {
+      "entity_id": "char_일레그",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "[블랙로즈]": {
+      "entity_id": "char_메이든",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "블랙로즈": {
+      "entity_id": "char_메이든",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "[사이코뮤]": {
+      "entity_id": "char_엑시아",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "어린 노라": {
+      "entity_id": "char_노라",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "어린 노아": {
+      "entity_id": "char_노아",
       "is_generic_role": false,
       "role_category": null
     }

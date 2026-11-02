@@ -1,0 +1,2114 @@
+{
+  "Q6_consistency": {
+    "manifest_scenes": 5560,
+    "manifest_batches_listed": 22,
+    "manifest_distinct_scene_batch_ids": 439,
+    "shard_batch_files": 439,
+    "active_scenes_found": 5560,
+    "active_scenes_missing": 0,
+    "by_title_scene_total": 5560,
+    "by_title_distinct_scenes": 5560,
+    "index_merged_scenes_count": 5560,
+    "index_merged_batches_count": 439,
+    "progress_batches_total": 442,
+    "progress_batches_non_batch_prefix": [
+      {
+        "id": "pilot_0001",
+        "status": "merged",
+        "scenes": 8
+      },
+      {
+        "id": "pilot_0002",
+        "status": "merged",
+        "scenes": 7
+      },
+      {
+        "id": "pilot_full_0025",
+        "status": "merged",
+        "scenes": 15
+      }
+    ],
+    "progress_scenes_total": 5560,
+    "progress_scene_status": {
+      "merged": 5560
+    },
+    "progress_scene_batch_mismatch": 0,
+    "progress_scene_sha_mismatch": 0,
+    "raw_text_sha_mismatch": 0,
+    "by_title_vs_reenriched_diff": 0,
+    "index_vs_rebuilt": {
+      "entities": {
+        "keys_index": 5153,
+        "keys_rebuilt": 5153,
+        "differing_keys": 0,
+        "examples": []
+      },
+      "relationships_by_entity": {
+        "keys_index": 1399,
+        "keys_rebuilt": 1399,
+        "differing_keys": 0,
+        "examples": []
+      },
+      "forms_of_address": {
+        "keys_index": 2566,
+        "keys_rebuilt": 2566,
+        "differing_keys": 0,
+        "examples": []
+      },
+      "clues_by_keyword": {
+        "keys_index": 7175,
+        "keys_rebuilt": 7175,
+        "differing_keys": 0,
+        "examples": []
+      },
+      "clues_by_category": {
+        "keys_index": 8,
+        "keys_rebuilt": 8,
+        "differing_keys": 0,
+        "examples": []
+      },
+      "unknown_speakers": {
+        "len_index": 1073,
+        "len_rebuilt": 1073,
+        "same": true
+      },
+      "descriptor_speakers": {
+        "len_index": 14,
+        "len_rebuilt": 14,
+        "same": true
+      },
+      "unregistered_candidates": {
+        "file": 4531,
+        "rebuilt": 4531,
+        "differing": 0
+      }
+    },
+    "active_batches": 439,
+    "index_batches_not_active": [],
+    "active_batches_not_in_index": [],
+    "stale_shard_scenes": 36,
+    "stale_examples": [
+      {
+        "scene_id": "over_zone_13",
+        "batch_id": "batch_0066",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "last_kingdom_21",
+        "batch_id": "batch_0098",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "lord_for_justice_13",
+        "batch_id": "batch_0136",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "reborn_evil_13",
+        "batch_id": "batch_0150",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "ark_guardian_13",
+        "batch_id": "batch_0161",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "ark_guardian_26",
+        "batch_id": "batch_0163",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "good_world_13",
+        "batch_id": "batch_0188",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "b-side_idol_13",
+        "batch_id": "batch_0193",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "bitter_spice_13",
+        "batch_id": "batch_0194",
+        "current_batch_id": "batch_0439"
+      },
+      {
+        "scene_id": "문구점_00",
+        "batch_id": "batch_0232",
+        "current_batch_id": "batch_0431"
+      }
+    ]
+  },
+  "Q3_null": {
+    "present_in_scene": {
+      "denominator": 18525,
+      "non_null": 17196,
+      "null": 1329,
+      "by_class": {
+        "generic:generic_role_noun": 620,
+        "generic:generic_role_or_device": 42,
+        "generic:descriptor_excluded": 392,
+        "not_in_registry": 66,
+        "generic:plural_group": 111,
+        "generic:numbered_unit": 84,
+        "descriptor_alias": 12,
+        "exact_registry_label": 2
+      }
+    },
+    "mentioned_only(non_character)": {
+      "denominator": 19076,
+      "non_null": 1,
+      "null": 19075,
+      "by_class": {
+        "non_character": 19075
+      }
+    },
+    "mentioned_only(character)": {
+      "denominator": 5581,
+      "non_null": 3549,
+      "null": 2032,
+      "by_class": {
+        "not_in_registry": 1681,
+        "exact_registry_label": 300,
+        "generic:generic_role_noun": 29,
+        "variant_of_registry_label": 3,
+        "generic:generic_role_or_device": 7,
+        "generic:plural_group": 8,
+        "generic:numbered_unit": 1,
+        "generic:descriptor_excluded": 3
+      }
+    },
+    "remote_or_voice_only": {
+      "denominator": 3342,
+      "non_null": 3123,
+      "null": 219,
+      "by_class": {
+        "generic:generic_role_noun": 148,
+        "generic:generic_role_or_device": 45,
+        "generic:descriptor_excluded": 11,
+        "generic:unknown_placeholder": 3,
+        "descriptor_alias": 2,
+        "not_in_registry": 7,
+        "exact_registry_label": 1,
+        "generic:plural_group": 2
+      }
+    },
+    "present_silent": {
+      "denominator": 892,
+      "non_null": 582,
+      "null": 310,
+      "by_class": {
+        "generic:generic_role_noun": 27,
+        "not_in_registry": 249,
+        "exact_registry_label": 10,
+        "generic:plural_group": 13,
+        "generic:generic_role_or_device": 10,
+        "generic:numbered_unit": 1
+      }
+    },
+    "unknown_speakers.resolved": {
+      "denominator": 616,
+      "non_null": 573,
+      "null": 43,
+      "by_class": {
+        "generic:generic_role_noun": 13,
+        "generic:plural_group": 8,
+        "not_in_registry": 6,
+        "generic:descriptor_excluded": 12,
+        "descriptor_alias": 1,
+        "generic:generic_role_or_device": 3
+      }
+    },
+    "document_author": {
+      "denominator": 664,
+      "non_null": 239,
+      "null": 425,
+      "by_class": {
+        "not_in_registry": 419,
+        "generic:generic_role_noun": 6
+      }
+    },
+    "descriptor_speakers.resolved": {
+      "denominator": 4,
+      "non_null": 3,
+      "null": 1,
+      "by_class": {
+        "not_in_registry": 1
+      }
+    }
+  },
+  "Q2_split_merge": {
+    "label_entity_mismatch_pairs": 32,
+    "surface_variant_groups": 117,
+    "registry_dup_groups": 0,
+    "surface_matches_registry": 130
+  },
+  "Q4_unregistered": {
+    "total_candidates": 4531,
+    "by_type": {
+      "location": 807,
+      "faction_or_species": 147,
+      "organization": 345,
+      "character": 731,
+      "squad": 202,
+      "concept": 431,
+      "item": 1395,
+      "alias": 265,
+      "event": 208
+    },
+    "registered_as_candidate": 151,
+    "variant_groups": 111,
+    "same_surface_multi_type": 299,
+    "candidate_scene_without_participant_key": 396,
+    "candidate_occurrences": 19141,
+    "top_by_frequency": [
+      {
+        "key": "location::방주",
+        "n": 864
+      },
+      {
+        "key": "faction_or_species::랩쳐",
+        "n": 653
+      },
+      {
+        "key": "faction_or_species::니케",
+        "n": 516
+      },
+      {
+        "key": "location::지상",
+        "n": 337
+      },
+      {
+        "key": "organization::중앙 정부",
+        "n": 252
+      },
+      {
+        "key": "faction_or_species::헬레틱",
+        "n": 215
+      },
+      {
+        "key": "location::지휘관실",
+        "n": 207
+      },
+      {
+        "key": "location::아우터 림",
+        "n": 188
+      },
+      {
+        "key": "location::전초기지",
+        "n": 184
+      },
+      {
+        "key": "character::퀸",
+        "n": 181
+      },
+      {
+        "key": "organization::미실리스",
+        "n": 156
+      },
+      {
+        "key": "location::메이드 카페",
+        "n": 139
+      },
+      {
+        "key": "location::에덴",
+        "n": 124
+      },
+      {
+        "key": "squad::카운터스",
+        "n": 124
+      },
+      {
+        "key": "concept::NIMPH",
+        "n": 121
+      },
+      {
+        "key": "location::코인 러시",
+        "n": 120
+      },
+      {
+        "key": "concept::침식",
+        "n": 115
+      },
+      {
+        "key": "squad::메티스",
+        "n": 106
+      },
+      {
+        "key": "organization::엘리시온",
+        "n": 104
+      },
+      {
+        "key": "item::언체인드",
+        "n": 101
+      },
+      {
+        "key": "squad::갓데스",
+        "n": 96
+      },
+      {
+        "key": "character::마리아",
+        "n": 91
+      },
+      {
+        "key": "squad::갓데스 스쿼드",
+        "n": 80
+      },
+      {
+        "key": "alias::세이렌",
+        "n": 78
+      },
+      {
+        "key": "squad::A.C.P.U.",
+        "n": 78
+      },
+      {
+        "key": "squad::앱솔루트",
+        "n": 72
+      },
+      {
+        "key": "location::궤도 엘리베이터",
+        "n": 71
+      },
+      {
+        "key": "faction_or_species::인류",
+        "n": 71
+      },
+      {
+        "key": "location::갱생관",
+        "n": 70
+      },
+      {
+        "key": "faction_or_species::필그림",
+        "n": 70
+      },
+      {
+        "key": "location::보호소",
+        "n": 67
+      },
+      {
+        "key": "organization::테트라",
+        "n": 66
+      },
+      {
+        "key": "location::로열 로드",
+        "n": 64
+      },
+      {
+        "key": "organization::M.M.R.",
+        "n": 63
+      },
+      {
+        "key": "item::어드마이어 호",
+        "n": 59
+      },
+      {
+        "key": "item::퍼펙트",
+        "n": 59
+      },
+      {
+        "key": "squad::마이티 툴즈",
+        "n": 52
+      },
+      {
+        "key": "character::글러트니",
+        "n": 51
+      },
+      {
+        "key": "character::7호",
+        "n": 50
+      },
+      {
+        "key": "organization::엔터 헤븐",
+        "n": 50
+      }
+    ]
+  },
+  "Q5_missing": {
+    "scenes": 5560,
+    "speaker_missing": 0,
+    "unknown_missing": 0,
+    "descriptor_missing": 0,
+    "name_mentions_checked": 17085,
+    "name_missing_everywhere": 1,
+    "name_only_unindexed": 280,
+    "by_name_top": [
+      [
+        "지휘관",
+        {
+          "nowhere": 0,
+          "only_unindexed": 38
+        }
+      ],
+      [
+        "스카이",
+        {
+          "nowhere": 0,
+          "only_unindexed": 38
+        }
+      ],
+      [
+        "마나",
+        {
+          "nowhere": 0,
+          "only_unindexed": 19
+        }
+      ],
+      [
+        "볼륨",
+        {
+          "nowhere": 1,
+          "only_unindexed": 7
+        }
+      ],
+      [
+        "레비",
+        {
+          "nowhere": 0,
+          "only_unindexed": 8
+        }
+      ],
+      [
+        "릴리",
+        {
+          "nowhere": 0,
+          "only_unindexed": 7
+        }
+      ],
+      [
+        "하란",
+        {
+          "nowhere": 0,
+          "only_unindexed": 6
+        }
+      ],
+      [
+        "트윙클",
+        {
+          "nowhere": 0,
+          "only_unindexed": 6
+        }
+      ],
+      [
+        "밀크",
+        {
+          "nowhere": 0,
+          "only_unindexed": 5
+        }
+      ],
+      [
+        "사라",
+        {
+          "nowhere": 0,
+          "only_unindexed": 5
+        }
+      ],
+      [
+        "아인",
+        {
+          "nowhere": 0,
+          "only_unindexed": 4
+        }
+      ],
+      [
+        "그레그레",
+        {
+          "nowhere": 0,
+          "only_unindexed": 4
+        }
+      ],
+      [
+        "슈가",
+        {
+          "nowhere": 0,
+          "only_unindexed": 4
+        }
+      ],
+      [
+        "블랙로즈",
+        {
+          "nowhere": 0,
+          "only_unindexed": 4
+        }
+      ],
+      [
+        "코코",
+        {
+          "nowhere": 0,
+          "only_unindexed": 4
+        }
+      ],
+      [
+        "시프티",
+        {
+          "nowhere": 0,
+          "only_unindexed": 4
+        }
+      ],
+      [
+        "그레이브",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "리타",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "미러",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "맥스",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "민트",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "리버렐리오",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "아주머니",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "요한",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "그레텔",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "아크레인저 블랙",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "PD",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "에이드",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "콜렉터",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "소다",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "잉크",
+        {
+          "nowhere": 0,
+          "only_unindexed": 3
+        }
+      ],
+      [
+        "아서",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "비스킷",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "라라",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "고스트",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "티미",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "크라운",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "붐가이",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "루비",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ],
+      [
+        "매운맛",
+        {
+          "nowhere": 0,
+          "only_unindexed": 2
+        }
+      ]
+    ]
+  },
+  "Q1_label_entity": {
+    "handoff_candidates": 52,
+    "commander_text_candidates": 21,
+    "titles_flagged": [
+      {
+        "title_id": "main_story__chapter_24",
+        "handoffs": 3,
+        "strong_handoffs": 3,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_49",
+        "handoffs": 3,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__lion_heart",
+        "handoffs": 3,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "side_stories__gingerbread_house",
+        "handoffs": 3,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_23",
+        "handoffs": 2,
+        "strong_handoffs": 1,
+        "commander_text": 2
+      },
+      {
+        "title_id": "event_stories__miracle_snow",
+        "handoffs": 2,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__sea_you_again",
+        "handoffs": 2,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__wave_to_you",
+        "handoffs": 2,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__볼륨",
+        "handoffs": 2,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__밀크_블루밍_바니",
+        "handoffs": 2,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__ark_guardian",
+        "handoffs": 1,
+        "strong_handoffs": 1,
+        "commander_text": 9
+      },
+      {
+        "title_id": "main_story__chapter_17",
+        "handoffs": 1,
+        "strong_handoffs": 1,
+        "commander_text": 3
+      },
+      {
+        "title_id": "main_story__chapter_02",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_04",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_20",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_29",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_39",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_40",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_42",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_44",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_47",
+        "handoffs": 1,
+        "strong_handoffs": 1,
+        "commander_text": 0
+      },
+      {
+        "title_id": "main_story__chapter_50",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__d-outsiders",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__bluewater_island",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__beauty_full_shot",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__phantom_thief_vs_detective",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__boom_the_ghost",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__absolute",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "event_stories__fatal_maid",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "side_stories__wordless",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "sub_quests__세르반",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "sub_quests__든_셀",
+        "handoffs": 1,
+        "strong_handoffs": 1,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__네온",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__길로틴",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__모더니아",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__레드_후드",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__라푼젤_퓨어_그레이스",
+        "handoffs": 1,
+        "strong_handoffs": 0,
+        "commander_text": 0
+      },
+      {
+        "title_id": "character_episodes__마르차나_마린_스터디",
+        "handoffs": 1,
+        "strong_handoffs": 1,
+        "commander_text": 0
+      },
+      {
+        "title_id": "sub_quests__중앙_정부_공식",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 6
+      },
+      {
+        "title_id": "main_story__chapter_46",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 4
+      },
+      {
+        "title_id": "main_story__chapter_19",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 3
+      },
+      {
+        "title_id": "event_stories__new_year_new_sword",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 3
+      },
+      {
+        "title_id": "event_stories__for_rest",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 3
+      },
+      {
+        "title_id": "event_stories__maria-n",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 3
+      },
+      {
+        "title_id": "event_lost_relics__white_memory",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 3
+      },
+      {
+        "title_id": "main_story__chapter_01",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 2
+      },
+      {
+        "title_id": "event_stories__arcane_archive",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 2
+      },
+      {
+        "title_id": "event_stories__reborn_evil",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 2
+      },
+      {
+        "title_id": "main_story__chapter_14",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      },
+      {
+        "title_id": "main_story__chapter_36",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      },
+      {
+        "title_id": "event_stories__footstep_walk_run",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      },
+      {
+        "title_id": "event_stories__2x2_love_1ch",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      },
+      {
+        "title_id": "sub_quests__김작가",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      },
+      {
+        "title_id": "sub_quests__에덴_Notice",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      },
+      {
+        "title_id": "outpost_stories__교회",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      },
+      {
+        "title_id": "character_episodes__리타",
+        "handoffs": 0,
+        "strong_handoffs": 0,
+        "commander_text": 1
+      }
+    ],
+    "option_pov_scenes": 122,
+    "handoff_list": [
+      {
+        "kind": "handoff",
+        "scene_id": "main_02_08",
+        "batch_id": "batch_0001",
+        "L": "시프티",
+        "N": "지휘관",
+        "entity_L": "char_시프티",
+        "lastL": 6,
+        "firstN": 9,
+        "L_scene_count": 8,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_04_14",
+        "batch_id": "batch_0002",
+        "L": "잉그리드",
+        "N": "시프티",
+        "entity_L": "char_잉그리드",
+        "lastL": 88,
+        "firstN": 91,
+        "L_scene_count": 1,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_17_09",
+        "batch_id": "batch_0010",
+        "L": "시프티",
+        "N": "마리안",
+        "entity_L": "char_시프티",
+        "lastL": 146,
+        "firstN": 149,
+        "L_scene_count": 1,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_20_01",
+        "batch_id": "batch_0012",
+        "L": "이사벨",
+        "N": "하란",
+        "entity_L": "char_이사벨",
+        "lastL": 5,
+        "firstN": 7,
+        "L_scene_count": 6,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_23_00",
+        "batch_id": "batch_0016",
+        "L": "라피",
+        "N": "지휘관",
+        "entity_L": "char_라피",
+        "lastL": 11,
+        "firstN": 14,
+        "L_scene_count": 12,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_23_12",
+        "batch_id": "batch_0017",
+        "L": "사쿠라",
+        "N": "콘실리에리",
+        "entity_L": "char_사쿠라",
+        "lastL": 35,
+        "firstN": 37,
+        "L_scene_count": 2,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_24_03",
+        "batch_id": "batch_0018",
+        "L": "사쿠라",
+        "N": "콘실리에리",
+        "entity_L": "char_사쿠라",
+        "lastL": 84,
+        "firstN": 86,
+        "L_scene_count": 1,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_24_13",
+        "batch_id": "batch_0018",
+        "L": "자칼",
+        "N": "에닉",
+        "entity_L": "char_자칼",
+        "lastL": 81,
+        "firstN": 84,
+        "L_scene_count": 2,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_24_13",
+        "batch_id": "batch_0018",
+        "L": "바이퍼",
+        "N": "에닉",
+        "entity_L": "char_바이퍼",
+        "lastL": 82,
+        "firstN": 84,
+        "L_scene_count": 6,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_29_19",
+        "batch_id": "batch_0026",
+        "L": "드릴리",
+        "N": "프레자일",
+        "entity_L": "char_드릴리",
+        "lastL": 9,
+        "firstN": 12,
+        "L_scene_count": 15,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_39_04",
+        "batch_id": "batch_0038",
+        "L": "라피",
+        "N": "나유타",
+        "entity_L": "char_라피",
+        "lastL": 113,
+        "firstN": 115,
+        "L_scene_count": 8,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_40_03",
+        "batch_id": "batch_0040",
+        "L": "맥스웰",
+        "N": "레비아탄",
+        "entity_L": "char_맥스웰",
+        "lastL": 168,
+        "firstN": 171,
+        "L_scene_count": 8,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_42_15",
+        "batch_id": "batch_0046",
+        "L": "맥스웰",
+        "N": "리버렐리오",
+        "entity_L": "char_맥스웰",
+        "lastL": 462,
+        "firstN": 464,
+        "L_scene_count": 1,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "main_44_08",
+        "batch_id": "batch_0048",
+        "L": "아니스",
+        "N": "리버렐리오",
+        "entity_L": "char_아니스",
+        "lastL": 189,
+        "firstN": 192,
+        "L_scene_count": 13,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "chapter_47_06",
+        "batch_id": "batch_0056",
+        "L": "시엘로",
+        "N": "버닝엄",
+        "entity_L": "char_시엘로",
+        "lastL": 53,
+        "firstN": 56,
+        "L_scene_count": 2,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "chapter_49_00",
+        "batch_id": "batch_0418",
+        "L": "바하무트",
+        "N": "지즈",
+        "entity_L": "char_바하무트",
+        "lastL": 8,
+        "firstN": 11,
+        "L_scene_count": 3,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "chapter_49_09",
+        "batch_id": "batch_0419",
+        "L": "율하",
+        "N": "트로니",
+        "entity_L": "char_율하",
+        "lastL": 257,
+        "firstN": 260,
+        "L_scene_count": 2,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "chapter_49_09",
+        "batch_id": "batch_0419",
+        "L": "애드미",
+        "N": "트로니",
+        "entity_L": "char_애드미",
+        "lastL": 258,
+        "firstN": 260,
+        "L_scene_count": 2,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "chapter_50_00",
+        "batch_id": "batch_0420",
+        "L": "에닉",
+        "N": "파피용",
+        "entity_L": "char_에닉",
+        "lastL": 74,
+        "firstN": 77,
+        "L_scene_count": 2,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "miracle_snow_02",
+        "batch_id": "batch_0059",
+        "L": "미카",
+        "N": "루피",
+        "entity_L": "char_미카",
+        "lastL": 4,
+        "firstN": 7,
+        "L_scene_count": 1,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "miracle_snow_27",
+        "batch_id": "batch_0060",
+        "L": "N102",
+        "N": "앤",
+        "entity_L": "char_N102",
+        "lastL": 22,
+        "firstN": 24,
+        "L_scene_count": 9,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "d-outsiders_01",
+        "batch_id": "batch_0061",
+        "L": "엔더슨",
+        "N": "슈엔",
+        "entity_L": "char_엔더슨",
+        "lastL": 43,
+        "firstN": 46,
+        "L_scene_count": 2,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "bluewater_wisland_25",
+        "batch_id": "batch_0073",
+        "L": "얀",
+        "N": "볼트",
+        "entity_L": "char_얀",
+        "lastL": 122,
+        "firstN": 124,
+        "L_scene_count": 11,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "sea_you_again_20",
+        "batch_id": "batch_0076",
+        "L": "메어리",
+        "N": "볼트",
+        "entity_L": "char_메어리",
+        "lastL": 54,
+        "firstN": 57,
+        "L_scene_count": 18,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "sea_you_again_20",
+        "batch_id": "batch_0076",
+        "L": "페퍼",
+        "N": "볼트",
+        "entity_L": "char_페퍼",
+        "lastL": 55,
+        "firstN": 57,
+        "L_scene_count": 14,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "lion_heart_08",
+        "batch_id": "batch_0089",
+        "L": "네로",
+        "N": "그레이",
+        "entity_L": "char_네로",
+        "lastL": 63,
+        "firstN": 66,
+        "L_scene_count": 8,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "lion_heart_12",
+        "batch_id": "batch_0089",
+        "L": "루비",
+        "N": "그레이",
+        "entity_L": "char_루비",
+        "lastL": 189,
+        "firstN": 192,
+        "L_scene_count": 4,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "lion_heart_12",
+        "batch_id": "batch_0089",
+        "L": "그레이",
+        "N": "티미",
+        "entity_L": "char_그레이",
+        "lastL": 192,
+        "firstN": 195,
+        "L_scene_count": 5,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "beauty_full_shot_27",
+        "batch_id": "batch_0108",
+        "L": "길티",
+        "N": "바이퍼",
+        "entity_L": "char_길티",
+        "lastL": 35,
+        "firstN": 37,
+        "L_scene_count": 12,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "phantom_thief_vs_detective_14",
+        "batch_id": "batch_0113",
+        "L": "퀀시",
+        "N": "미란다",
+        "entity_L": "char_퀀시",
+        "lastL": 18,
+        "firstN": 20,
+        "L_scene_count": 13,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "boom_the_ghost_18",
+        "batch_id": "batch_0143",
+        "L": "토브",
+        "N": "팔팔이",
+        "entity_L": "char_토브",
+        "lastL": 47,
+        "firstN": 50,
+        "L_scene_count": 19,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "absolute_14",
+        "batch_id": "batch_0145",
+        "L": "라피",
+        "N": "베스티",
+        "entity_L": "char_라피",
+        "lastL": 51,
+        "firstN": 54,
+        "L_scene_count": 2,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "ark_guardian_26",
+        "batch_id": "batch_0439",
+        "L": "지휘관",
+        "N": "엔더슨",
+        "entity_L": "char_지휘관",
+        "lastL": 26,
+        "firstN": 28,
+        "L_scene_count": 16,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "fatal_maid_12",
+        "batch_id": "batch_0165",
+        "L": "프리바티",
+        "N": "마스트",
+        "entity_L": "char_프리바티",
+        "lastL": 11,
+        "firstN": 14,
+        "L_scene_count": 4,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "wave_to_you_27",
+        "batch_id": "batch_0200",
+        "L": "티아",
+        "N": "마르차나",
+        "entity_L": "char_티아",
+        "lastL": 56,
+        "firstN": 59,
+        "L_scene_count": 18,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "wave_to_you_27",
+        "batch_id": "batch_0200",
+        "L": "나가",
+        "N": "마르차나",
+        "entity_L": "char_나가",
+        "lastL": 57,
+        "firstN": 59,
+        "L_scene_count": 18,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "wordless_13",
+        "batch_id": "batch_0216",
+        "L": "마나",
+        "N": "유니",
+        "entity_L": "char_마나",
+        "lastL": 66,
+        "firstN": 68,
+        "L_scene_count": 7,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "gingerbreadhouse_18",
+        "batch_id": "batch_0223",
+        "L": "모리",
+        "N": "리틀 머메이드",
+        "entity_L": "char_모리",
+        "lastL": 53,
+        "firstN": 55,
+        "L_scene_count": 13,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "gingerbreadhouse_18",
+        "batch_id": "batch_0223",
+        "L": "베르누이아",
+        "N": "리틀 머메이드",
+        "entity_L": "char_베르누이아",
+        "lastL": 52,
+        "firstN": 55,
+        "L_scene_count": 10,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "gingerbreadhouse_18",
+        "batch_id": "batch_0223",
+        "L": "그레텔",
+        "N": "그레이브",
+        "entity_L": "char_그레텔",
+        "lastL": 93,
+        "firstN": 96,
+        "L_scene_count": 15,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "세르반_03",
+        "batch_id": "batch_0226",
+        "L": "네온",
+        "N": "세르반",
+        "entity_L": "char_네온",
+        "lastL": 97,
+        "firstN": 100,
+        "L_scene_count": 4,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "든_셀_00",
+        "batch_id": "batch_0228",
+        "L": "아니스",
+        "N": "엑시아",
+        "entity_L": "char_아니스",
+        "lastL": 80,
+        "firstN": 82,
+        "L_scene_count": 1,
+        "L_after": false,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "neon_01",
+        "batch_id": "batch_0265",
+        "L": "라피",
+        "N": "맥스웰",
+        "entity_L": "char_라피",
+        "lastL": 132,
+        "firstN": 135,
+        "L_scene_count": 4,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "guillotine_02",
+        "batch_id": "batch_0283",
+        "L": "길로틴",
+        "N": "잉그리드",
+        "entity_L": "char_길로틴",
+        "lastL": 128,
+        "firstN": 131,
+        "L_scene_count": 5,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "volume_00",
+        "batch_id": "batch_0296",
+        "L": "아니스",
+        "N": "볼륨",
+        "entity_L": "char_아니스",
+        "lastL": 147,
+        "firstN": 150,
+        "L_scene_count": 2,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "volume_00",
+        "batch_id": "batch_0296",
+        "L": "네온",
+        "N": "볼륨",
+        "entity_L": "char_네온",
+        "lastL": 148,
+        "firstN": 150,
+        "L_scene_count": 2,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "marian_p_01",
+        "batch_id": "batch_0302",
+        "L": "네온",
+        "N": "잉그리드",
+        "entity_L": "char_네온",
+        "lastL": 111,
+        "firstN": 114,
+        "L_scene_count": 5,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "redhood_04",
+        "batch_id": "batch_0316",
+        "L": "네온",
+        "N": "지휘관",
+        "entity_L": "char_네온",
+        "lastL": 13,
+        "firstN": 16,
+        "L_scene_count": 5,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "rapunzel_puregrace_00",
+        "batch_id": "batch_0330",
+        "L": "도로시",
+        "N": "지휘관",
+        "entity_L": "char_도로시",
+        "lastL": 18,
+        "firstN": 21,
+        "L_scene_count": 4,
+        "L_after": true,
+        "N_before": false
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "milk_bloomingbunny_03",
+        "batch_id": "batch_0341",
+        "L": "에이드",
+        "N": "밀크",
+        "entity_L": "char_에이드",
+        "lastL": 64,
+        "firstN": 66,
+        "L_scene_count": 4,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "milk_bloomingbunny_03",
+        "batch_id": "batch_0341",
+        "L": "슈가",
+        "N": "밀크",
+        "entity_L": "char_슈가",
+        "lastL": 63,
+        "firstN": 66,
+        "L_scene_count": 3,
+        "L_after": false,
+        "N_before": true
+      },
+      {
+        "kind": "handoff",
+        "scene_id": "marciana_marinestudy_00",
+        "batch_id": "batch_0350",
+        "L": "그레이브",
+        "N": "라피",
+        "entity_L": "char_그레이브",
+        "lastL": 18,
+        "firstN": 21,
+        "L_scene_count": 1,
+        "L_after": false,
+        "N_before": false
+      }
+    ]
+  },
+  "Q6_blind_spots": {
+    "scenes": 5560,
+    "events_and_claims": 120755,
+    "events_actor_registered": 100719,
+    "events_actor_registered_not_in_scene_keys": 0,
+    "document_author_nonnull": 664,
+    "document_author_not_in_participants": 279,
+    "cross_scene_hints": 706,
+    "choice_branches": 2946,
+    "same_scene_speaker_groups": 194,
+    "relationship_keys": 1399,
+    "relationship_keys_registry_name": 354,
+    "relationship_keys_matching_entity_bucket_label": 931,
+    "relationship_keys_other": 114,
+    "forms_of_address_entries": 20562,
+    "foa_target_registered": 16706
+  },
+  "checks_applied": [
+    {
+      "key": "shard:ark_guardian_",
+      "n": 16
+    },
+    {
+      "key": "shard:white_memory_",
+      "n": 32
+    },
+    {
+      "key": "{\"signal\":\"handoff\",\"handoff_scene\":\"main_24_03\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"signal\":\"handoff\",\"handoff_scene\":\"main_23_12\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"signal\":\"handoff\",\"handoff_scene\":\"main_24_13\"}",
+      "n": 8
+    },
+    {
+      "key": "{\"signal\":\"handoff\",\"handoff_scene\":\"chapter_47_06\"}",
+      "n": 2
+    },
+    {
+      "key": "{\"signal\":\"handoff\",\"handoff_scene\":\"든_셀_00\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"signal\":\"handoff\",\"handoff_scene\":\"marciana_marinestudy_00\"}",
+      "n": 1
+    },
+    {
+      "key": "shard:main_17_",
+      "n": 16
+    },
+    {
+      "key": "shard:arcane_archive_",
+      "n": 14
+    },
+    {
+      "key": "shard:중앙_정부_공식_",
+      "n": 3
+    },
+    {
+      "key": "shard:main_19_",
+      "n": 11
+    },
+    {
+      "key": "shard:ark_guardian_26#participants.present_in_scene[1]",
+      "n": 1
+    },
+    {
+      "key": "shard:ark_guardian_17#participants.present_in_scene[0]",
+      "n": 1
+    },
+    {
+      "key": "shard:white_memory_page_1001101#participants.present_in_scene[0]",
+      "n": 1
+    },
+    {
+      "key": "shard:white_memory_start#participants.present_in_scene[0]",
+      "n": 1
+    },
+    {
+      "key": "shard:fading_affection_2108#participants.present_in_scene[0]",
+      "n": 1
+    },
+    {
+      "key": "shard:main_24_03#participants.present_in_scene[4]",
+      "n": 1
+    },
+    {
+      "key": "shard:main_23_12#participants.present_in_scene[1]",
+      "n": 1
+    },
+    {
+      "key": "shard:main_24_03#participants.present_in_scene[6]",
+      "n": 1
+    },
+    {
+      "key": "shard:chapter_47_06#participants.present_in_scene[3]",
+      "n": 1
+    },
+    {
+      "key": "shard:든_셀_00#participants.present_in_scene[3]",
+      "n": 1
+    },
+    {
+      "key": "shard:marciana_marinestudy_00#participants.present_in_scene[5]",
+      "n": 1
+    },
+    {
+      "key": "shard:main_17_13#participants.present_in_scene[4]",
+      "n": 1
+    },
+    {
+      "key": "shard:arcane_archive_11#participants.present_in_scene[0]",
+      "n": 1
+    },
+    {
+      "key": "shard:중앙_정부_공식_00#participants.present_in_scene[0]",
+      "n": 1
+    },
+    {
+      "key": "shard:main_19_04#participants.present_in_scene[2]",
+      "n": 1
+    },
+    {
+      "key": "shard:maria-n_13#participants.present_in_scene[1]",
+      "n": 1
+    },
+    {
+      "key": "group:릴리바이스|릴리스",
+      "n": 1
+    },
+    {
+      "key": "group:머스탱|카네이션",
+      "n": 1
+    },
+    {
+      "key": "group:프리시아|프리티",
+      "n": 1
+    },
+    {
+      "key": "group:리버렐리오|해파리",
+      "n": 1
+    },
+    {
+      "key": "group:니힐리스타|화룡",
+      "n": 1
+    },
+    {
+      "key": "group:부사령관 아저씨|엔더슨",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_04_05\",\"label\":\"레드 후드\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_24_21\",\"label\":\"레드 후드\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_25_03\",\"label\":\"엑시아\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_30_09\",\"label\":\"아나키오르\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_30_13\",\"label\":\"식스오\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_31_11\",\"label\":\"베히모스\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_40_13\",\"label\":\"에닉\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_42_01\",\"label\":\"그레텔\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_46_02\",\"label\":\"이사벨\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"main_46_04\",\"label\":\"릴리바이스\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"chapter_49_09\",\"label\":\"릴리바이스\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"chapter_49_09\",\"label\":\"마리안\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"lion_heart_03\",\"label\":\"티미\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"lion_heart_06\",\"label\":\"티미\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"old_tales_01\",\"label\":\"그레텔\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"lord_for_justice_13\",\"label\":\"X\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"reborn_evil_13\",\"label\":\"X\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"goddess_fall_03\",\"label\":\"마리안\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"goddess_fall_20\",\"label\":\"이사벨\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"ark_guardian_26\",\"label\":\"에닉\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"over_zone_00\",\"label\":\"지휘관\"}",
+      "n": 1
+    },
+    {
+      "key": "{\"scene_id\":\"특이랩쳐보고서-후_00\",\"label\":\"지휘관\"}",
+      "n": 1
+    },
+    {
+      "key": "file:data/graph/unregistered_entity_candidates.json#alias::세이렌",
+      "n": 1
+    },
+    {
+      "key": "file:data/graph/unregistered_entity_candidates.json#faction_or_species::아웃로",
+      "n": 1
+    },
+    {
+      "key": "file:data/graph/unregistered_entity_candidates.json#organization::정의 괴도단",
+      "n": 1
+    },
+    {
+      "key": "missing:colorless_00#볼륨",
+      "n": 1
+    },
+    {
+      "key": "missing:main_14_09#지휘관",
+      "n": 1
+    },
+    {
+      "key": "missing:main_22_01#스카이",
+      "n": 1
+    },
+    {
+      "key": "missing:main_44_16#마나",
+      "n": 1
+    },
+    {
+      "key": "missing:main_37_09#레비",
+      "n": 1
+    },
+    {
+      "key": "missing:red_ash_17#릴리",
+      "n": 1
+    },
+    {
+      "key": "missing:main_28_07#트윙클",
+      "n": 1
+    },
+    {
+      "key": "missing:main_42_15#그레그레",
+      "n": 1
+    },
+    {
+      "key": "missing:d.ark_hero_01#블랙로즈",
+      "n": 1
+    },
+    {
+      "key": "missing:fool_metal_panic_05#시프티",
+      "n": 1
+    },
+    {
+      "key": "missing:chapter_49_05#리버렐리오",
+      "n": 1
+    },
+    {
+      "key": "missing:main_33_02#미러",
+      "n": 1
+    },
+    {
+      "key": "missing:license_to_kill_07#아주머니",
+      "n": 1
+    }
+  ],
+  "indexed_fields": {
+    "keyed": {
+      "entities": "participants 네 갈래: entity_id 또는 surface:<표기>",
+      "relationships_by_entity": "relationship_and_lore_notes의 subject·target 원문 표기",
+      "forms_of_address": "address_term",
+      "clues_by_keyword": "clues_and_hooks의 keyword",
+      "clues_by_category": "clues_and_hooks의 category"
+    },
+    "listed_unkeyed": [
+      "unknown_speakers",
+      "descriptor_speakers"
+    ],
+    "not_indexed": [
+      "summary",
+      "events_and_claims",
+      "participants.document_author",
+      "same_scene_speaker_groups",
+      "cross_scene_hints",
+      "choice_branches",
+      "reviewed_gaps",
+      "chronology_type/segments",
+      "is_plot_critical",
+      "unregistered_entity_candidates(별도 파일로만 집계)"
+    ]
+  },
+  "findings_by_question": {
+    "Q6": {
+      "판단 보류": 8
+    },
+    "Q3": {
+      "오류 의심": 20,
+      "연결 누락 의심": 294,
+      "판단 보류": 2
+    },
+    "Q2": {
+      "판단 보류": 26,
+      "정상": 5,
+      "오류 의심": 1,
+      "연결 누락 의심": 247
+    },
+    "Q4": {
+      "판단 보류": 151,
+      "연결 누락 의심": 260
+    },
+    "Q5": {
+      "판단 보류": 270,
+      "정상": 10,
+      "오류 의심": 1
+    },
+    "Q1": {
+      "판단 보류": 274,
+      "정상": 58,
+      "오류 의심": 48
+    },
+    "Q7": {
+      "판단 보류": 2
+    }
+  },
+  "source_checked_by_question": {
+    "Q6": 0,
+    "Q3": 22,
+    "Q2": 6,
+    "Q4": 1,
+    "Q5": 13,
+    "Q1": 16,
+    "Q7": 0
+  }
+}

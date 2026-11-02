@@ -853,3 +853,77 @@ test('5. merge-and-index merges validated shards, attaches manifest fields & ite
     await fs.rm(tmpDir, { recursive: true, force: true });
   }
 });
+
+test('1.5 (e) 예외: 시점 인물 텍스트 어드벤처의 선택지에는 지휘관 화자를 붙이지 않는다', () => {
+  const body = [
+    '[SCENE START]',
+    '스노우 화이트는 숲으로 향했다.',
+    '[CHOICE_START ID="c1"]',
+    '  [OPTION TEXT="대함 라이플로 쏜다." VALUE="o1"]',
+    '  [OPTION_END]',
+    '[CHOICE_END]',
+    '[SCENE END]',
+  ];
+  for (const sceneId of ['white_memory_page_1001101', 'fading_affection_2108']) {
+    const mgt = extractSceneMechanicalGroundTruth({ scene_id: sceneId, body_lines: body });
+    assert.equal(mgt.speakers.some((s) => s.speaker_label === '지휘관'), false, sceneId);
+    assert.equal(mgt.line_speaker['4'] ?? mgt.line_speaker[4], undefined, sceneId);
+    assert.ok(JSON.stringify(mgt.choices).includes('대함 라이플로 쏜다.'), sceneId); // 선택지 자체는 그대로 추출
+  }
+  // 일반 장면의 선택지는 그대로 지휘관 대사다
+  const normal = extractSceneMechanicalGroundTruth({ scene_id: 'main_01_00', body_lines: body });
+  const commander = normal.speakers.find((s) => s.speaker_label === '지휘관');
+  assert.ok(commander);
+  assert.deepEqual([...commander.sources], ['option']);
+  assert.equal(normal.line_speaker[4], '지휘관');
+});
+
+test('엔딩 카드 "아크레인저 극장판 [ACTION]: ..."은 화자가 아니다', () => {
+  const mgt = extractSceneMechanicalGroundTruth({
+    scene_id: 'ark_ranger_27',
+    body_lines: ['[SCENE START]', '아크레인저 극장판 [ACTION]: 크림슨 스카이는 성황리에 개봉했다.', '제이드[ACTION]: 구조를 요청한다', '[SCENE END]'],
+  });
+  const labels = mgt.speakers.map((s) => s.speaker_label);
+  assert.equal(labels.includes('아크레인저 극장판'), false);
+  assert.equal(labels.includes('제이드'), true);
+});
+
+test('키티(문구점 이야기 속 기계)는 일반 역할이다', () => {
+  const c = classifyGenericRole('키티');
+  assert.equal(c.is_generic_role, true);
+});
+
+test('기획서 항목명(가제·기획 의도 등)과 미니게임 결과 카드는 화자가 아니다', () => {
+  const mgt = extractSceneMechanicalGroundTruth({
+    scene_id: 'doc_00',
+    body_lines: ['가제 : 만들어진 여신', '기획 의도 : 만들어진 우상', '취재 대상 : 목격자', '진행 상황 : 현장 답사 예정', '목표 지점까지의 최고 달성률 [ACTION]: 2.4%'],
+  });
+  assert.deepEqual(mgt.speakers, []);
+});
+
+test('사용자가 분류한 집단·장치·역할 라벨은 일반 역할이고 VII·애니힐리오는 인물이다', () => {
+  for (const label of ['진행자', '기계음', '아주머니', '마스터', '자산가', '반장', '정의 괴도단', '아웃로', '콜렉터', '테트라 커넥트', 'D.E.E.P.', '라이온', '방장봇', '블랙박스', '물거품', '오렌지 퍼펙트']) {
+    assert.equal(classifyGenericRole(label).is_generic_role, true, label);
+  }
+  for (const label of ['VII', '애니힐리오']) {
+    assert.equal(classifyGenericRole(label).is_generic_role, false, label);
+  }
+});
+
+test('사용자 확인 별칭(마리아 박사 → 닥터 마리아)은 엔티티 하나로 묶인다', async () => {
+  const { entityRegistryDoc } = await buildInitialRegistry({ newScriptsData });
+  const doctor = entityRegistryDoc.entities.find((e) => e.canonical_name === '닥터 마리아');
+  assert.ok(doctor);
+  assert.deepEqual(doctor.surface_labels, ['닥터 마리아', '마리아 박사']);
+  assert.equal(entityRegistryDoc.speaker_lookup['마리아 박사'].entity_id, doctor.entity_id);
+  assert.equal(entityRegistryDoc.entities.some((e) => e.canonical_name === '마리아 박사'), false);
+});
+
+test('MARIA-n의 번호 붙은 지휘관 1호~6호는 번호 붙은 일반 개체다', () => {
+  for (const label of ['1호', '2호', '3호', '4호', '6호']) {
+    const c = classifyGenericRole(label);
+    assert.equal(c.is_generic_role, true, label);
+    assert.equal(c.category, 'numbered_unit', label);
+  }
+  assert.equal(classifyGenericRole('7호').is_generic_role, false);
+});

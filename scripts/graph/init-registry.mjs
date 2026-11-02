@@ -51,10 +51,56 @@ const GENERIC_EXACT_LABELS = new Set([
   '나루 부대',
   '붉은 덤불의 보스',
   '화재 전문가',
+  // 2026-11-02 사용자 판단(Pass 1 진단 대조 뒤). 레지스트리가 화자 라벨로 만들어져 인물로 잘못 등록됐던 라벨
+  // 이야기 속 기계·사물
+  '키티',
+  '방장봇',
+  '블랙박스',
+  '물거품', // 세이렌의 무장
+  '오렌지 퍼펙트', // 음식
+  // 이야기마다 다른 사람인 역할 라벨
+  '진행자',
+  '기계음',
+  '아주머니',
+  '마스터',
+  '자산가',
+  '반장',
+  // 집단 이름. null로 두면 대사와 조직 언급이 같은 surface: 키로 모인다
+  '정의 괴도단',
+  '아웃로',
+  '콜렉터',
+  '테트라 커넥트',
+  'D.E.E.P.',
+  '라이온',
 ]);
 
 const GENERIC_ROLE_NOUN_RE =
   /(?:병사|연구원|양산형\s*니케|시민|주민|여자주민|남자주민|남자|여자|남성|여성|소년|소녀|아이|남자아이|여자아이|어린이|학생|여학생|남학생|신입생|선생|여선생|선생님|교수|교관|손님|점원|직원|종업원|웨이트리스|바리스타|기자|카메라맨|촬영\s*기사|촬영\s*스탭|스태프|스탭|심사위원|사회자|아나운서|앵커|방송인|게스트|가수|배우|여배우|영화\s*주인공|매니저|감독|경비원|경호원|경찰|형사|죄수|간부|임원|조직원|부하|대원|부대원|요원|팀원|회원|신도|교도|여사제|사제|의사|간호사|수리공|미케닉|선원|승무원|노숙자|난민|방주난민|귀빈|재력가|통신병|장교|소대장|팀장|리더|지배인|원장|할머니|할아버지|아버지|어머니|오퍼레이터|안내원|접수원|비서|사장|주인|타겟|소리|효과음|스피커|스태츄|관중|관객|방청객|관광객|승객|꼬마|남편|동료|친구|후보생|훈련생|훈련병|중독자|장수|팬|치어리더|개발자|관계자|인형|올빼미)(?:\s*[A-Z0-9\d호]+|\s*\d+)?$/;
+
+// 사용자가 확인한 같은 인물의 다른 표기: 별칭 표기 → { 정식 라벨, 종류 } (1.6).
+// 정식 라벨의 엔티티 하나에 surface_labels로 묶고 alias_kinds에 종류를 적는다. 별칭이 화자 라벨이면 speaker_lookup도 같은 entity_id를 가리킨다.
+// 종류: same_person(같은 인물의 다른 라벨), nickname(별명), stage_name(활동명), former_name(옛 이름), younger_self(어린 시절), handle(게임·메신저 핸들)
+// 장면 데이터의 원래 표기(speaker_label·surface_text)는 바꾸지 않으므로, 언제 어떤 이름으로 불렸는지는 장면에 남는다.
+export const USER_CONFIRMED_ALIASES = new Map([
+  // 2026-11-02 사용자 확인
+  ['마리아 박사', { canonical: '닥터 마리아', kind: 'same_person' }], // MARIA-n·FADING AFFECTION
+  ['세이렌', { canonical: '리틀 머메이드', kind: 'nickname' }], // main_36_07 L24
+  ['해파리', { canonical: '리버렐리오', kind: 'nickname' }], // eden_spear_10 L76~78
+  ['화룡', { canonical: '니힐리스타', kind: 'nickname' }], // eden_spear_04 L14
+  ['릴리스', { canonical: '릴리바이스', kind: 'nickname' }], // goddess_fall_27 L178, main_46_04 L36
+  ['프리티', { canonical: '프리시아', kind: 'stage_name' }], // pretty_star_07 L66
+  ['그레그레', { canonical: '그레이브', kind: 'nickname' }], // main_42_15 L53~54
+  ['에이브', { canonical: '그레이브', kind: 'former_name' }], // 사용자: 에이브였다가 그레이브로 이름이 바뀜
+  ['N102', { canonical: '앤', kind: 'former_name' }],
+  ['엘리시온 하퍼', { canonical: 'E.H.', kind: 'former_name' }],
+  ['[붐가이]', { canonical: '일레그', kind: 'handle' }],
+  ['붐가이', { canonical: '일레그', kind: 'handle' }],
+  ['[블랙로즈]', { canonical: '메이든', kind: 'handle' }],
+  ['블랙로즈', { canonical: '메이든', kind: 'handle' }],
+  ['[사이코뮤]', { canonical: '엑시아', kind: 'handle' }], // 괄호 없는 "사이코뮤"는 개발 개념 용례가 있어 넣지 않는다
+  ['어린 노라', { canonical: '노라', kind: 'younger_self' }],
+  ['어린 노아', { canonical: '노아', kind: 'younger_self' }],
+]);
 
 const NAMED_CHARACTER_EXCEPTIONS = new Set([
   '지휘관',
@@ -136,7 +182,8 @@ export const classifyGenericRole = (
     };
   }
 
-  if (/^(?:나루|펭군|훈련생)\s*\d+호$/.test(label)) {
+  // MARIA-n의 번호 붙은 지휘관(1호~6호, 2026-11-02 사용자 결정). 7호는 FADING AFFECTION 시점 인물이라 넣지 않는다
+  if (/^(?:나루|펭군|훈련생)\s*\d+호$/.test(label) || /^[1-6]호$/.test(label)) {
     return {
       is_generic_role: true,
       category: 'numbered_unit',
@@ -365,8 +412,13 @@ export const buildInitialRegistry = async (options = {}) => {
   const speakerLookup = {};
   const usedEntityIds = new Set();
 
+  const deferredAliases = [];
   for (const label of sortedLabels) {
     const st = speakerStats.get(label);
+    if (USER_CONFIRMED_ALIASES.has(label) && speakerStats.has(USER_CONFIRMED_ALIASES.get(label).canonical)) {
+      deferredAliases.push(label);
+      continue;
+    }
     const classification = applyDescriptorReview(
       label,
       classifyGenericRole(label, knownNamedSet, st.dialogue_line_count),
@@ -414,6 +466,27 @@ export const buildInitialRegistry = async (options = {}) => {
         is_generic_role: false,
         role_category: null,
       };
+    }
+  }
+
+  // 사용자 확인 별칭은 정식 라벨의 엔티티에 묶는다. 화자가 아닌 별칭(세이렌 등)도 surface_labels에 넣는다
+  for (const [alias, { canonical, kind }] of USER_CONFIRMED_ALIASES) {
+    const target = entities.find((e) => e.canonical_name === canonical);
+    if (!target) {
+      if (speakerStats.has(alias) || speakerStats.has(canonical)) {
+        throw new Error(`USER_CONFIRMED_ALIASES: ${alias} → ${canonical} 정식 라벨이 인물 엔티티가 아니다`);
+      }
+      continue; // 테스트용 작은 대본 묶음처럼 두 라벨이 모두 없으면 건너뛴다
+    }
+    if (!target.surface_labels.includes(alias)) target.surface_labels = [...target.surface_labels, alias];
+    target.alias_kinds = { ...(target.alias_kinds ?? {}), [alias]: kind };
+    if (deferredAliases.includes(alias)) {
+      const st = speakerStats.get(alias);
+      target.scene_count += st.scene_count;
+      target.dialogue_line_count += st.dialogue_line_count;
+      target.sources = [...new Set([...target.sources, ...st.sources])].sort();
+      target.categories = [...new Set([...target.categories, ...st.categories])].sort();
+      speakerLookup[alias] = { entity_id: target.entity_id, is_generic_role: false, role_category: null };
     }
   }
 
