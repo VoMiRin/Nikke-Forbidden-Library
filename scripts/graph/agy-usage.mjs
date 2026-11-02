@@ -94,13 +94,17 @@ export const createdSubagentIds = (steps) => {
 export const labelOf = (steps) => {
   const first = steps.find((s) => s.type === 'SYSTEM_MESSAGE' || s.type === 'USER_INPUT');
   const text = first ? contentOf(first) : '';
-  const role = text.includes('독립 검토자')
-    ? 'review'
-    : text.includes('보수 서브에이전트')
-      ? 'repair'
-      : text.includes('추출 서브에이전트')
-        ? 'extract'
-        : 'other';
+  // 지시문 첫머리의 "너는 …다"가 역할이다. 보수 지시문에도 "독립 검토자가 짚은"이 들어 있으므로
+  // 정해진 순서로 찾지 않고 가장 먼저 나온 역할 문구를 쓴다.
+  const ROLE_PHRASES = [
+    ['독립 검토자', 'review'],
+    ['보수 서브에이전트', 'repair'],
+    ['추출 서브에이전트', 'extract'],
+  ];
+  const role =
+    ROLE_PHRASES.map(([phrase, name]) => [text.indexOf(phrase), name])
+      .filter(([at]) => at >= 0)
+      .sort((a, b) => a[0] - b[0])[0]?.[1] ?? 'other';
   const job = /\bjob\s*(\d+)/.exec(text)?.[1];
   const part = /--part\s+(\d+)/.exec(text)?.[1] ?? /\.part(\d+)\.json/.exec(text)?.[1];
   const batches = [...new Set([...text.matchAll(/\bbatch_\d{4}\b/g)].map((m) => m[0]))];

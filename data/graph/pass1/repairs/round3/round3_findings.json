@@ -1,0 +1,136 @@
+{
+  "round": "round3",
+  "note": "Pass 1 본 실행 42·44회차 독립 표본 검토가 짚었지만 고치지 않은 의미 오류 13건. 검토자의 판단이므로 보수자가 원문으로 다시 확인한다.",
+  "findings": [
+    {
+      "id": "W42-1",
+      "batch_id": "batch_0423",
+      "scene_id": "chapter_50_14",
+      "type": "2. 잘못 분류된 참여자",
+      "lines": "L636~645",
+      "path": "participants.present_in_scene",
+      "finding": "지휘관 일행은 떠오르는 승리의 날개 호 위에 있고(L612, L630 \"아래를 바라본다.\"), 은화는 아래쪽 전장의 베히모스 머리 위에 탄 채(L636) 통신으로만 말한다(L638 \"꼴통 후배. 들리나?\", L643 \"통신이 되니까 속이 다 시원하군.\"). 은화가 이 장면에서 통신으로만 말했다면 present_in_scene이 아니라 remote_or_voice_only(medium: \"comm\")다. 장면 앞쪽에서 은화가 현장에서 직접 말한 줄이 있으면 present_in_scene이 맞으므로 그대로 둔다(3절 2항 \"한 인물은 한 갈래에만\").",
+      "source": "data/graph/reports/pass1_wave_0418-0427_2026-11-02.md 5.2절 2)-1"
+    },
+    {
+      "id": "W42-2",
+      "batch_id": "batch_0423",
+      "scene_id": "chapter_50_14",
+      "type": "4. 관계 메모 기준 위반",
+      "lines": "L384~388",
+      "path": "relationship_and_lore_notes",
+      "finding": "마리안이 \"저는 유일하게 남은 퀸이 되어. 랩쳐들을 통솔할 거예요.\"(L385~386)라고 자신과 랩쳐 사이의 지휘·통솔 관계를 직접 밝히는데, events_and_claims[77](L384~388)에만 있고 관계 메모(마리안 → 랩쳐, character_claim, claimant: 마리안)가 빠졌다(3절 9항).",
+      "source": "data/graph/reports/pass1_wave_0418-0427_2026-11-02.md 5.2절 2)-2"
+    },
+    {
+      "id": "W42-3",
+      "batch_id": "batch_0423",
+      "scene_id": "chapter_50_14",
+      "type": "3. 사실·주장 혼동",
+      "lines": "L572~578",
+      "path": "events_and_claims[115]",
+      "finding": "L572~573 \"···모든 랩쳐의 움직임이 멈춘다. 갑자기, 멈춘다.\"는 지문이 직접 보여 준 사건(established_event)인데, 따로 적지 않고 지휘관의 character_claim(L572~578, claim_line 576 \"···세이렌.\") 하나에 묶었다. 랩쳐가 멈춘 것은 사건으로, 그 원인이 세이렌이라는 것은 지휘관의 주장으로 나눈다(3절 6항). 보고서에는 events_and_claims[99]로 적혀 있으나 지금 샤드에서 이 범위는 [115]다.",
+      "source": "data/graph/reports/pass1_wave_0418-0427_2026-11-02.md 5.2절 2)-3"
+    },
+    {
+      "id": "W42-4",
+      "batch_id": "batch_0427",
+      "scene_id": "maria-n_05",
+      "type": "7. 주장 화자·claim_line",
+      "lines": "L12~16",
+      "path": "events_and_claims[1]",
+      "finding": "L12~16을 닥터 마리아(claim_line 14)의 character_claim 하나로 묶으면서, 사이의 L15 에닉 \"텍스트를 확인한 이력을 확인했습니다.\"(아무것도 온 게 없다는 닥터 마리아의 말을 반박하는 에닉 자신의 주장)를 따로 나누지 않았다. 에닉의 항목을 따로 만든다(3절 6항).",
+      "source": "data/graph/reports/pass1_wave_0418-0427_2026-11-02.md 5.2절 3)-1"
+    },
+    {
+      "id": "W42-5",
+      "batch_id": "batch_0427",
+      "scene_id": "maria-n_05",
+      "type": "3. 사실·주장 혼동",
+      "lines": "L21~24",
+      "path": "events_and_claims[4]",
+      "finding": "L20에서 닥터 마리아가 우연이라고 한 말에 대해 에닉이 \"우연으로 인해, 제 연락을 받으신 것으로 이해해도 괜찮겠습니까?\"(L21)라고 묻고 닥터 마리아가 \"···그래.\"(L22)라고 확인·동의한 대화를 established_event로 적었다. 인물의 확인·동의 대사는 그 화자의 character_claim이다(3절 6항).",
+      "source": "data/graph/reports/pass1_wave_0418-0427_2026-11-02.md 5.2절 3)-2"
+    },
+    {
+      "id": "W42-6",
+      "batch_id": "batch_0427",
+      "scene_id": "maria-n_05",
+      "type": "4. 관계 메모 기준 위반",
+      "lines": "L33~45",
+      "path": "relationship_and_lore_notes",
+      "finding": "에닉이 실버건 스쿼드의 목적이 최초이자 최강의 니케 릴리바이스의 재현이라고 말하고(L33~34), 그 양성 방법이 닥터 마리아의 뇌 정보를 복사한 NIMPH를 다른 여성의 뇌에 덮어써 니케로 생산하는 것이라고 추정해 설명하는데(L38~45, \"추정됩니다\", L46 \"여기까지 맞습니까?\"), 관계 메모에는 에블라 박사 관련 항목만 있고 실버건 스쿼드와 릴리바이스·닥터 마리아 사이의 설정·창조 관계가 빠졌다(3절 9항). 에닉의 추정이므로 character_claim, claimant 에닉으로 적는다. 뒤 줄에서 닥터 마리아가 이를 확인하면 그 확인도 근거로 본다.",
+      "source": "data/graph/reports/pass1_wave_0418-0427_2026-11-02.md 5.2절 3)-3"
+    },
+    {
+      "id": "W44-1",
+      "batch_id": "batch_0439",
+      "scene_id": "ark_guardian_26",
+      "type": "1. 빠진 것(호칭)",
+      "lines": "L130~133",
+      "path": "forms_of_address",
+      "finding": "라푼젤이 릴리바이스를 \"릴리스\"라고 부르는 호칭(L130 \"릴리스···! 릴리스···!\", L133)이 빠졌다. 같은 장면의 지휘관(L14)·엔더슨(L41)의 \"릴리스\"는 적혀 있다(3절 10항).",
+      "source": "data/graph/reports/pass1_wave_0433-0439_2026-11-02.md 5.2절 1"
+    },
+    {
+      "id": "W44-2",
+      "batch_id": "batch_0439",
+      "scene_id": "ark_guardian_26",
+      "type": "6. 호칭",
+      "lines": "L86~88",
+      "path": "forms_of_address (address_term \"내 동생들\", line_start 88)",
+      "finding": "릴리바이스가 전장이 한눈에 보이는 먼 곳(L58~59)에서 벽에 기대앉아(L86) 대원들을 바라보며 \"···다 컸네. 멋있다. 내 동생들.\"이라고 혼잣말한 것을, 상대를 직접 부른 호칭으로 적었다. 상대에게 건넨 말이 아니면 호칭이 아니다(3절 10항).",
+      "source": "data/graph/reports/pass1_wave_0433-0439_2026-11-02.md 5.2절 2"
+    },
+    {
+      "id": "W44-3",
+      "batch_id": "batch_0439",
+      "scene_id": "ark_guardian_26",
+      "type": "7. 주장 화자·타 화자 묶음",
+      "lines": "L190~192",
+      "path": "events_and_claims[29]",
+      "finding": "L190 도로시 \"양산형 헬레틱이라도 오면 끝이에요.\"는 도로시 자신의 경고·판단(character_claim)인데, 도로시 항목 없이 홍련의 주장 항목(L190~192, actor_or_speaker 홍련)에 묶였다. 도로시 항목을 따로 만든다(3절 6항).",
+      "source": "data/graph/reports/pass1_wave_0433-0439_2026-11-02.md 5.2절 3"
+    },
+    {
+      "id": "W44-4",
+      "batch_id": "batch_0439",
+      "scene_id": "good_world_13",
+      "type": "5. 뜻이 뒤집힌 요약",
+      "lines": "L15~31",
+      "path": "events_and_claims[1], clues_and_hooks[0], relationship_and_lore_notes[0]",
+      "finding": "L22~23 백학 \"그래서 아이들을 위해 그렇게나 많은 편지를 미리 써두고, 직접 후원하는 친구들을 만나러 가지 못하셨죠.\"에서 총사령관이 후원하고 만나러 가지 못한 대상은 \"아이들\"·\"직접 후원하는 친구들\"(복수)이다. 백학이 지휘관을 부르는 \"친구\"와 혼동해 세 곳 모두 총사령관이 지휘관을 후원했다고 적었다. 원문에 없는 내용이므로 대상을 원문대로 고친다. 관계 메모(총사령관 → 지휘관)는 원문에 근거가 없으면 지운다(3절 6·9항).",
+      "source": "data/graph/reports/pass1_wave_0433-0439_2026-11-02.md 5.2절 4"
+    },
+    {
+      "id": "W44-5",
+      "batch_id": "batch_0439",
+      "scene_id": "lord_for_justice_13",
+      "type": "5. 뜻이 뒤집힌 요약(시점)",
+      "lines": "L87~93",
+      "path": "chronology_segments, events_and_claims[8]",
+      "finding": "검토자 판단: L87~93 K의 말(\"간다. 다음에 또 보자.\"로 끝남)은 L98~107과 마찬가지로 지휘관의 선택지(L84 → L95) 사이에 끼운 과거 회상 연출인데, chronology_segments에서 빠져 현재 구간으로 처리됐고, events_and_claims[8] 요약은 L93을 빼고 현재 대사를 \"~였다고 말한다\"는 과거 회고로 바꿔 적었다. 원문을 다시 읽어 L87~93이 회상 연출이면 chronology_segments에 넣고 요약을 그 구간에서 K가 한 말대로 고친다. 회상 연출이 아니라고 판단하면 구간은 그대로 두되, 요약의 시제 변형과 L93 누락만 고친다(3절 2·6항).",
+      "source": "data/graph/reports/pass1_wave_0433-0439_2026-11-02.md 5.2절 5"
+    },
+    {
+      "id": "W44-6",
+      "batch_id": "batch_0439",
+      "scene_id": "lord_for_justice_13",
+      "type": "4. 관계 메모 기준 위반",
+      "lines": "L102~107",
+      "path": "relationship_and_lore_notes[1]",
+      "finding": "회상 속에서 D가 수단이 깨끗해야 한다고 하자 K가 자기 방식대로 하겠다고 받아친 일회성 말다툼으로, 이미 events_and_claims[11]·[12]에 있다. 두 인물의 관계 상태(소속·지휘·신뢰·적대 등)를 직접 말하거나 바꾸는 대사가 아니므로 관계 메모(K → D)에서 뺀다(3절 9항 판단 기준).",
+      "source": "data/graph/reports/pass1_wave_0433-0439_2026-11-02.md 5.2절 6"
+    },
+    {
+      "id": "W44-7",
+      "batch_id": "batch_0434",
+      "scene_id": "white_memory_20",
+      "type": "6. 호칭",
+      "lines": "L3~5",
+      "path": "forms_of_address[0]",
+      "finding": "\"언니의 머리가 없다.\", \"언니의 몸통만 덩그러니.\"(L3~4)는 스노우 화이트가 독백 속에서 릴리바이스를 3인칭으로 가리킨 말이다. 상대를 직접 부른 호칭이 아니므로 forms_of_address[0](address_term \"언니\")을 뺀다(3절 10항).",
+      "source": "data/graph/reports/pass1_wave_0433-0439_2026-11-02.md 5.2절 7"
+    }
+  ]
+}

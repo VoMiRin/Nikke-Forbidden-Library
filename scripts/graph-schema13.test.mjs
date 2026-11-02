@@ -45,9 +45,12 @@ import { checkReviewQuotes } from './graph/check-review-quotes.mjs';
 import { planBatches } from './graph/build-manifest.mjs';
 import { applyDescriptorReview } from './graph/init-registry.mjs';
 import {
+  addReviewFindings,
   checkRepair,
+  parseReviewFindings,
   planRepairJobs,
   prepareRepair,
+  REVIEW_FINDING_RULE,
   refreshBatchInput,
   repairInputPathOf,
   repairOutputPathOf,
@@ -1148,6 +1151,45 @@ test('5 Pass 1 repair: only scenes with errors or CLAIM_OTHER_SPEAKERS are repai
   assert.equal(jobs.length, 3);
   assert.deepEqual(jobs.flatMap((j) => j.batch_ids).sort(), ['a', 'b', 'c', 'd', 'e']);
   assert.ok(Math.max(...jobs.map((j) => j.input_bytes)) <= 256);
+});
+
+test('5 Pass 1 repair: --findings adds review-flagged scenes that the validator does not catch', async () => {
+  const batchInput = { ...batchOf(makeInputScene('t13_claim', CLAIM_LINES), makeInputScene('t13_qa', QA_LINES)), batch_id: 'batch_rev' };
+  const shard = { ...shardOf(claimScene([rapiClaim(8)]), qaScene()), batch_id: 'batch_rev' };
+  const finding = (over = {}) => ({
+    id: 'R1', batch_id: 'batch_rev', scene_id: 't13_qa', type: '3. 사실·주장 혼동', lines: 'L2~3',
+    finding: '지문이 보여 준 일을 주장으로 적었다.', source: 'reports/x.md 5.2절', ...over,
+  });
+
+  assert.throws(() => parseReviewFindings({ findings: [] }), /non-empty/);
+  assert.throws(() => parseReviewFindings({ findings: [finding({ lines: '' })] }), /R1: missing lines/);
+  assert.throws(() => parseReviewFindings({ findings: [finding(), finding()] }), /R1: duplicate id/);
+  assert.throws(() => addReviewFindings(new Map(), shard, [finding({ scene_id: 'nope' })]), /nope is not in batch_rev/);
+  assert.throws(() => addReviewFindings(new Map(), shard, [finding({ batch_id: 'batch_x' })]), /is not batch_rev/);
+
+  const graphDir = await fs.mkdtemp(path.join(os.tmpdir(), 'graph-repair-rev-'));
+  try {
+    for (const dir of ['batches', 'shards']) await fs.mkdir(path.join(graphDir, 'pass1', dir), { recursive: true });
+    await fs.writeFile(path.join(graphDir, 'pass1', 'batches', 'batch_rev.json'), JSON.stringify(batchInput));
+    await fs.writeFile(path.join(graphDir, 'pass1', 'shards', 'batch_rev.json'), JSON.stringify(shard));
+    const bodyHash = (lines) => sha256(lines.join('\n'));
+    const manifestScenes = {
+      t13_claim: { source_sha256: bodyHash(CLAIM_LINES), mechanical_ground_truth: batchInput.scenes[0].mechanical_ground_truth },
+      t13_qa: { source_sha256: bodyHash(QA_LINES), mechanical_ground_truth: batchInput.scenes[1].mechanical_ground_truth },
+    };
+    // 검증기는 t13_claim만 고르고, 검토 지적이 t13_qa를 더한다. 다른 배치의 지적은 무시한다
+    const findings = parseReviewFindings({ findings: [finding(), finding({ id: 'R2', batch_id: 'batch_other' })] });
+    const prepared = await prepareRepair('batch_rev', { graphDir, manifestScenes, findings });
+    assert.deepEqual([...prepared.issues.keys()].sort(), ['t13_claim', 't13_qa']);
+    const repairInput = JSON.parse(await fs.readFile(repairInputPathOf('batch_rev', graphDir), 'utf8'));
+    const qa = repairInput.scenes.find((s) => s.scene_id === 't13_qa');
+    assert.deepEqual(qa.issues, [
+      { severity: 'review', rule: REVIEW_FINDING_RULE, id: 'R1', type: '3. 사실·주장 혼동', lines: 'L2~3', path: null, message: '지문이 보여 준 일을 주장으로 적었다.', source: 'reports/x.md 5.2절' },
+    ]);
+    assert.deepEqual(qa.current_output, shard.scenes[1]);
+  } finally {
+    await fs.rm(graphDir, { recursive: true, force: true });
+  }
 });
 
 test('2.3-24 premature identity: a name revealed later in the scene must not be used before the reveal line', () => {

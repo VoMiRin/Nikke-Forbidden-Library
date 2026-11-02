@@ -9,7 +9,8 @@ import { extractRawLinesFromNumberedScript, loadEntityRegistry, validateShard } 
 const __filename = fileURLToPath(import.meta.url);
 
 // 5절 Pass 1 보수: 이미 검증을 통과한 샤드에서 문제가 있는 장면만 다시 쓰게 한다.
-// - 대상 장면: 지금 배치 입력·검증기로 다시 검증했을 때 오류가 있거나 REPAIR_WARNING_RULES 경고가 있는 장면
+// - 대상 장면: 지금 배치 입력·검증기로 다시 검증했을 때 오류가 있거나 REPAIR_WARNING_RULES 경고가 있는 장면,
+//   그리고 prepare --findings로 넘긴 독립 표본 검토 지적(REVIEW_FINDING)이 있는 장면
 // - 서브에이전트는 대상 장면만 담은 보수 입력을 읽고, 대상 장면마다 바꾼 최상위 필드만 보수 출력에 쓴다
 //   (배열 인덱스 패치가 아니라 필드 통째 교체. 쓰지 않은 필드는 지금 결과 그대로 남는다)
 // - 보수 출력은 기존 샤드에서 대상 장면에만 덮어써 검증하므로, 대상이 아닌 장면은 바뀔 수 없다
@@ -70,6 +71,50 @@ export const collectRepairIssues = (shard, batchInput, options = {}) => {
   };
   for (const err of result.errors) add('error', err);
   for (const warning of result.warnings) if (REPAIR_WARNING_RULES.has(warning.rule)) add('warning', warning);
+  return issues;
+};
+
+// 독립 표본 검토가 짚은 의미 오류(검증기가 잡지 못하는 것)를 보수 사유로 넣을 때 쓰는 규칙 이름
+export const REVIEW_FINDING_RULE = 'REVIEW_FINDING';
+const FINDING_FIELDS = ['id', 'batch_id', 'scene_id', 'type', 'lines', 'finding', 'source'];
+
+/**
+ * 검토 지적 목록 파일({ findings: [...] })을 읽어 형식을 확인한다.
+ * 항목마다 id·batch_id·scene_id·type·lines·finding·source가 있어야 하고 id는 겹치지 않는다. path는 선택이다.
+ */
+export const parseReviewFindings = (doc) => {
+  const findings = doc?.findings;
+  if (!Array.isArray(findings) || findings.length === 0) throw new Error('findings file must have a non-empty "findings" array');
+  const seen = new Set();
+  for (const f of findings) {
+    const missing = FINDING_FIELDS.filter((k) => typeof f?.[k] !== 'string' || f[k].trim() === '');
+    if (missing.length > 0) throw new Error(`finding ${f?.id ?? '(no id)'}: missing ${missing.join(', ')}`);
+    if (seen.has(f.id)) throw new Error(`finding ${f.id}: duplicate id`);
+    seen.add(f.id);
+  }
+  return findings;
+};
+
+/**
+ * 검토 지적을 장면별 보수 사유에 더한다. 지적한 장면이 샤드에 없으면 실패한다.
+ */
+export const addReviewFindings = (issues, shard, findings) => {
+  const sceneIds = new Set(shard.scenes.map((s) => s.scene_id));
+  for (const f of findings) {
+    if (f.batch_id !== shard.batch_id) throw new Error(`finding ${f.id}: batch_id ${f.batch_id} is not ${shard.batch_id}`);
+    if (!sceneIds.has(f.scene_id)) throw new Error(`finding ${f.id}: ${f.scene_id} is not in ${shard.batch_id}`);
+    if (!issues.has(f.scene_id)) issues.set(f.scene_id, []);
+    issues.get(f.scene_id).push({
+      severity: 'review',
+      rule: REVIEW_FINDING_RULE,
+      id: f.id,
+      type: f.type,
+      lines: f.lines,
+      path: f.path ?? null,
+      message: f.finding,
+      source: f.source,
+    });
+  }
   return issues;
 };
 
@@ -140,7 +185,7 @@ export const planRepairJobs = (bytesByBatch, maxBytesPerJob = MAX_REPAIR_INPUT_B
   return jobs.map((j, idx) => ({ job: idx + 1, batch_ids: j.batch_ids.sort(), input_bytes: j.input_bytes }));
 };
 
-export const prepareRepair = async (batchId, { graphDir = GRAPH_DATA_DIR, manifestScenes } = {}) => {
+export const prepareRepair = async (batchId, { graphDir = GRAPH_DATA_DIR, manifestScenes, findings = [] } = {}) => {
   const batchInputPath = batchInputPathOf(batchId, graphDir);
   const shardPath = shardPathOf(batchId, graphDir);
   if (!fsSync.existsSync(shardPath)) throw new Error(`${batchId}: no shard at ${shardPath}`);
@@ -165,7 +210,11 @@ export const prepareRepair = async (batchId, { graphDir = GRAPH_DATA_DIR, manife
   const { batchInput, changedSceneIds } = refreshBatchInput(originalInput, manifestScenes);
   if (changedSceneIds.length > 0) await writeJsonAtomic(batchInputPath, batchInput);
 
-  const issues = collectRepairIssues(shard, batchInput, { registry: await loadEntityRegistry(graphDir) });
+  const issues = addReviewFindings(
+    collectRepairIssues(shard, batchInput, { registry: await loadEntityRegistry(graphDir) }),
+    shard,
+    findings.filter((f) => f.batch_id === batchId)
+  );
   const inputPath = repairInputPathOf(batchId, graphDir);
   if (issues.size > 0) {
     await writeJsonAtomic(inputPath, buildRepairInput(batchInput, shard, issues));
@@ -224,18 +273,28 @@ export const checkRepair = async (batchId, { graphDir = GRAPH_DATA_DIR } = {}) =
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
-  const [command, ...batchIds] = process.argv.slice(2);
-  const usage = 'Usage: node scripts/graph/repair-pass1.mjs <prepare|check|apply> <batch_id> [batch_id...]';
+  const [command, ...rest] = process.argv.slice(2);
+  const findingsFlag = rest.indexOf('--findings');
+  const findingsPath = findingsFlag >= 0 ? rest[findingsFlag + 1] : null;
+  const batchIds = findingsFlag >= 0 ? rest.filter((_, i) => i !== findingsFlag && i !== findingsFlag + 1) : rest;
+  const usage =
+    'Usage: node scripts/graph/repair-pass1.mjs prepare <batch_id> [batch_id...] [--findings <file>]\n' +
+    '       node scripts/graph/repair-pass1.mjs <check|apply> <batch_id> [batch_id...]\n' +
+    '  --findings: 독립 표본 검토가 짚은 의미 오류 목록({ findings: [...] }). 그 장면도 보수 대상에 넣는다(prepare 전용)';
   const rel = (p) => path.relative(process.cwd(), p);
 
   const run = async () => {
     if (batchIds.length === 0 || !['prepare', 'check', 'apply'].includes(command)) throw new Error(usage);
+    if (findingsFlag >= 0 && (command !== 'prepare' || !findingsPath)) throw new Error(usage);
 
     if (command === 'prepare') {
       const manifestScenes = (await readJson(path.join(GRAPH_DATA_DIR, 'manifest.json'))).scenes ?? {};
+      const findings = findingsPath ? parseReviewFindings(await readJson(findingsPath)) : [];
+      const outside = [...new Set(findings.map((f) => f.batch_id))].filter((b) => !batchIds.includes(b));
+      if (outside.length > 0) throw new Error(`findings name batches not given to prepare: ${outside.join(', ')}`);
       const bytes = {};
       for (const batchId of batchIds) {
-        const { changedSceneIds, issues } = await prepareRepair(batchId, { manifestScenes });
+        const { changedSceneIds, issues } = await prepareRepair(batchId, { manifestScenes, findings });
         bytes[batchId] = issues.size > 0 ? (await fs.stat(repairInputPathOf(batchId))).size : 0;
         const rules = {};
         for (const list of issues.values()) for (const i of list) rules[i.rule] = (rules[i.rule] ?? 0) + 1;

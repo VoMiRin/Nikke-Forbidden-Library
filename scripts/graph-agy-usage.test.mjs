@@ -43,7 +43,7 @@ test('5 agy usage: only the latest request of the supervisor and the subagents i
     ]);
     await writeSession(brainDir, SUB_OLD, [{ step_index: 0, type: 'SYSTEM_MESSAGE', content: '추출 서브에이전트' }, response(1, 999, 999, 999)]);
     await writeSession(brainDir, SUB_NEW, [
-      { step_index: 0, type: 'SYSTEM_MESSAGE', content: '너는 GraphRAG Pass 1 보수 서브에이전트다. job 3 맡은 배치: batch_0236, batch_0001' },
+      { step_index: 0, type: 'SYSTEM_MESSAGE', content: '너는 GraphRAG Pass 1 보수 서브에이전트다. 독립 검토자가 짚은 장면만 고친다. job 3 맡은 배치: batch_0236, batch_0001' },
       response(1, 50, 500, 5),
       { step_index: 2, type: 'GENERIC', content: 'File Path: `file:///repo/scripts/graph/validate-output.mjs`\n...' },
       response(3, 60, 600, 6, [
