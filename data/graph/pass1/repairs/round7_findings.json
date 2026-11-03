@@ -1,0 +1,106 @@
+{
+  "round": "round7",
+  "note": "보수 3·5·6회차 보수자·검토자가 무관 오류로 보고한 것(pass1_open_issues.md 51·54·55절) 중, Claude가 원문과 지금 샤드(6회차 병합 뒤, b930fdb)로 다시 확인해 오류로 본 10건이다(2026-11-03). 앞쪽 줄의 대상을 풀어 쓴 것(3절 6항), 한 장면 안의 같은 쌍 호칭, 제목에 있는 낱말은 넣지 않았다. 장면 밖 표현 2건은 같은 장면의 모든 문자열 필드에서 그 표현을 찾았고, 지적한 곳 말고는 없다(quote 제외).",
+  "findings": [
+    {
+      "id": "R7-1",
+      "batch_id": "batch_0161",
+      "scene_id": "ark_guardian_10",
+      "type": "5. 뜻이 뒤집힌 요약(추측을 단정함, 장면에 없는 표현)",
+      "lines": "L24~28",
+      "path": "clues_and_hooks[1].detail",
+      "finding": "단서 detail \"내부에 수많은 사람이 대피해 있다\"는 원문보다 강하다. L28 지휘관은 \"저 안에 몇 명의 사람이 있는지 모른다. 모르긴 몰라도 무지하게 많겠지.\"라고 모른다며 추측했을 뿐이고, \"대피\"라는 말은 이 장면 원문과 제목에 없다. 같은 장면 events_and_claims[6](L25~28)은 \"무지하게 많은 사람이 있을 것이라고\" 추측으로 맞게 적었다. 이 범위가 말한 대로(지휘관이 그렇게 추측함) 쓴다(3절 6항, 추측·유보 표현을 빼지 않는다).",
+      "source": "data/graph/reports/pass1_repair_round5_2026-11-03.md 6.2절(ark_guardian_10), pass1_open_issues.md 54절"
+    },
+    {
+      "id": "R7-2",
+      "batch_id": "batch_0294",
+      "scene_id": "ether_04",
+      "type": "5. 범위 밖 내용 혼입(장면에 없는 표현)",
+      "lines": "L171~175",
+      "path": "events_and_claims[29].summary",
+      "finding": "요약 \"에테르는 니케 생체 실험이 비밀이 아니게 되더라도\"의 \"생체 실험\"은 이 장면 원문(233줄)과 제목에 없다. 원문은 L171 \"글쎄. 비밀이 아니게 된다고 하더라도.\", L172 \"인간들이 이 일에 조금이라도 관심을 가질까?\"다. 이 장면에서 같은 것을 가리킨 말은 \"실험\", L31 \"니케들은 계속해서 실험재료가 되고\" 등이다. \"이 일\"·\"비밀\"의 대상은 같은 장면 앞쪽 줄에서 풀 수 있는 만큼만 이 장면의 표현으로 쓴다(3절 6항). 다른 장면의 말은 가져오지 않는다.",
+      "source": "data/graph/reports/pass1_repair_round5_2026-11-03.md 6.2절(ether_04), pass1_open_issues.md 54절"
+    },
+    {
+      "id": "R7-3",
+      "batch_id": "batch_0162",
+      "scene_id": "ark_guardian_21",
+      "type": "7. 다른 화자의 주장을 한 항목에 묶음",
+      "lines": "L9~11",
+      "path": "events_and_claims[1]",
+      "finding": "지휘관의 character_claim(L9~11, claim_line 11) 안에 릴리바이스의 L10 \"보여주는 거죠. 갓데스의 릴리바이스가 여기 있다고.\"가 묶였고, L10을 다루는 릴리바이스 자신의 항목이 없다. L10은 자기 행동의 이유를 밝힌 독립된 말이므로 릴리바이스의 항목으로 따로 적고, 지휘관 항목은 지휘관의 말로 정리한다(3절 6항 \"서로 다른 화자가 각자 독립된 주장을 하면 화자마다 항목을 나눈다\").",
+      "source": "data/graph/reports/pass1_repair_round6_2026-11-03.md 6절(보수자 2번, 검토자 2번), pass1_open_issues.md 55절"
+    },
+    {
+      "id": "R7-4",
+      "batch_id": "batch_0162",
+      "scene_id": "ark_guardian_21",
+      "type": "7. 다른 화자의 주장을 한 항목에 묶음",
+      "lines": "L18~23",
+      "path": "events_and_claims[5]",
+      "finding": "지휘관의 character_claim(L18~23, claim_line 23) 안에 릴리바이스의 L20 \"왜 그래요? 갑자기 느끼하게 부르시네.\", L22 \"세상에. 저 죽이려고 작정했어요? 전투 중에 그런 말을 하다니.\"가 묶였고, 이 줄을 다루는 릴리바이스 자신의 항목이 없다. L22는 지휘관의 제안(L21)에 대한 핀잔·반응이므로 릴리바이스의 항목으로 따로 적는다(3절 6항). L21의 제안이 행위(제안)인지 주장인지는 3절 6항 \"말한 행위와 말한 내용을 구분하라\"로 판단한다.",
+      "source": "data/graph/reports/pass1_repair_round6_2026-11-03.md 6절(보수자 2번), pass1_open_issues.md 55절"
+    },
+    {
+      "id": "R7-5",
+      "batch_id": "batch_0162",
+      "scene_id": "ark_guardian_21",
+      "type": "7. 다른 화자의 말을 한 항목에 묶음(사건 주체 누락 포함)",
+      "lines": "L38~48",
+      "path": "events_and_claims[11]",
+      "finding": "라푼젤 단독의 established_event(L38~48) 안에 지휘관의 L38~39(포격형 랩쳐들이 자리를 잡고 양산형 친구들을 노리는 것 같다는 판단), 홍련의 L40 \"내가 가서 몽땅 베어버리겠네.\", 지휘관의 L41 \"냅둬. 라푼젤이 있다.\"가 묶였다. 이 줄을 다루는 지휘관·홍련 자신의 항목이 없고, 요약에서 L40이 빠졌다. 라푼젤이 막을 펼친 사건(L42~48)과 나누어, 지휘관·홍련의 말을 각자의 항목으로 적는다(3절 6항). 사건의 actor_or_speaker는 여러 명일 수 있다(2.3의 7항).",
+      "source": "data/graph/reports/pass1_repair_round6_2026-11-03.md 6절(검토자 3번), pass1_open_issues.md 55절"
+    },
+    {
+      "id": "R7-6",
+      "batch_id": "batch_0162",
+      "scene_id": "ark_guardian_21",
+      "type": "3. 사실·주장 혼동, 7. 다른 화자의 말을 한 항목에 묶음",
+      "lines": "L55~58",
+      "path": "events_and_claims[14]",
+      "finding": "지휘관의 character_claim(L55~58, claim_line 58) 하나에 지문이 보여 준 라푼젤의 공격(L55~56 \"라푼젤의 지팡이에서 황금색 빛무리가 뻗어나간다.\", \"랩쳐의 무리를 긁듯 스쳐 지나고, 폭발을 낳는다.\")과 라푼젤의 L57 \"보, 보셨나요? 공격 쪽 출력도 엄청 올라갔어요!\"가 묶였다. 이 줄을 다루는 다른 항목이 없다. L55~56은 라푼젤의 established_event, L57은 라푼젤의 character_claim, L58은 지휘관의 항목으로 나눈다(3절 6항).",
+      "source": "data/graph/reports/pass1_repair_round6_2026-11-03.md 6절(보수자 2번, 검토자 4번), pass1_open_issues.md 55절"
+    },
+    {
+      "id": "R7-7",
+      "batch_id": "batch_0162",
+      "scene_id": "ark_guardian_21",
+      "type": "7. 다른 화자의 주장을 한 항목에 묶음",
+      "lines": "L74~76",
+      "path": "events_and_claims[19]",
+      "finding": "도로시의 character_claim(L74~76, claim_line 76) 가운데에 지휘관의 L75 \"그래서 큰 거 한 방을 노려야지.\"가 묶였고, L75를 다루는 지휘관 자신의 항목이 없다. L75는 맞장구가 아니라 지휘관 자신의 방침이므로 지휘관의 항목으로 따로 적는다(3절 6항).",
+      "source": "data/graph/reports/pass1_repair_round6_2026-11-03.md 6절(보수자 2번), pass1_open_issues.md 55절"
+    },
+    {
+      "id": "R7-8",
+      "batch_id": "batch_0162",
+      "scene_id": "ark_guardian_21",
+      "type": "7. 다른 화자의 주장을 한 항목에 묶음",
+      "lines": "L77~80",
+      "path": "events_and_claims[20]",
+      "finding": "홍련의 character_claim(L77~80, claim_line 80) 가운데에 라푼젤의 L79 \"···작전 회의 때 안 들으셨군요.\"가 묶였고, L79를 다루는 라푼젤 자신의 항목이 없다. L79는 홍련에 대한 핀잔이므로 라푼젤의 항목으로 따로 적는다(3절 6항).",
+      "source": "data/graph/reports/pass1_repair_round6_2026-11-03.md 6절(보수자 2번), pass1_open_issues.md 55절"
+    },
+    {
+      "id": "R7-9",
+      "batch_id": "batch_0423",
+      "scene_id": "chapter_50_14",
+      "type": "7. 사건 주체 누락",
+      "lines": "L91~92",
+      "path": "events_and_claims[18].actor_or_speaker",
+      "finding": "established_event(L91~92)의 요약은 \"라피와 크라운이 ... 지휘관을 맞이한다\"인데 actor_or_speaker에는 \"크라운\"만 있다. 원문은 L91 라피 \"지휘관.\", L92 크라운 \"책사께서 오셨군요.\"다. established_event의 actor_or_speaker는 여러 명일 수 있으므로(2.3의 7항) 라피도 넣는다. 다른 필드는 바꿀 필요가 없다.",
+      "source": "data/graph/reports/pass1_repair_round3_2026-11-02.md 6.1절 1번, pass1_open_issues.md 51절"
+    },
+    {
+      "id": "R7-10",
+      "batch_id": "batch_0423",
+      "scene_id": "chapter_50_14",
+      "type": "5. 범위 밖 내용 혼입(뒤쪽 줄의 결과)",
+      "lines": "L547~564",
+      "path": "clues_and_hooks[7].detail",
+      "finding": "단서 detail 끝의 \"모든 랩쳐와 여신상의 움직임·수복을 멈춘다\"는 범위(L547~564) 밖 뒤쪽 줄의 결과다. 범위는 L563 리틀 머메이드 \"[정지.]\", L564 \"카학--!!\"에서 끝나고, 랩쳐가 멈춘 것은 L572 \"···모든 랩쳐의 움직임이 멈춘다.\", 여신상이 멈춘 것은 L587 \"여신상도 움직임을 멈췄다.\", L588 \"수복이 되지 않는다.\"다. detail을 범위 안의 내용으로 줄이거나, 결과까지 단서로 남기려면 범위와 quote를 그 줄까지 넓힌다(quote는 범위 원문 안에 있어야 한다, 2.3의 6항).",
+      "source": "data/graph/reports/pass1_repair_round3_2026-11-02.md 6.2절 2번, pass1_open_issues.md 51절"
+    }
+  ]
+}
