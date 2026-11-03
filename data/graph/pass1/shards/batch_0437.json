@@ -192,17 +192,18 @@
       "is_plot_critical": true,
       "summary": "일순간 멈춰 선 블랙스미스의 코어를 향해 마리안과 지휘관이 집중 사격하여 코어에 금이 가고, 코어를 깨뜨리면서 침식도가 1% 오른다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "마리안과 지휘관이 블랙스미스의 코어를 향해 집중 사격했다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 6,
             "line_end": 6,
             "quote": "마리안과 지휘관이 블랙스미스의 코어를 향해 집중 사격했다."
@@ -492,17 +493,18 @@
       "is_plot_critical": true,
       "summary": "마리안과 지휘관이 빌딩에서 내려와 랩쳐들과 조우하며 산책로 끝까지 걸어가 한때 신도시로 불렸던 무너진 도심을 마주하고, 마리안이 함께 앞을 바라보며 침식도가 1% 오른다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안과 지휘관은 빌딩에서 내려와, 산책로를 걸어갔다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안과 지휘관은 빌딩에서 내려와, 산책로를 걸어갔다."
@@ -654,6 +656,11 @@
           "surface_text": "침식도",
           "suggested_type": "concept",
           "line_start": 12
+        },
+        {
+          "surface_text": "랩쳐들",
+          "suggested_type": "faction_or_species",
+          "line_start": 3
         }
       ],
       "reviewed_gaps": []
@@ -858,13 +865,7 @@
       "is_plot_critical": true,
       "summary": "노을이 지며 세상이 붉게 물드는 동안 신도시 입구로 걸어가던 지휘관이 거점, 함정, 식량, 휴식처에 대해 이야기하며 마리안의 생각을 묻고, 마리안이 고개를 돌리자 침식도가 50% 오른다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -872,6 +873,13 @@
             "line_start": 15,
             "line_end": 15,
             "quote": "마리안은···."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 3,
+            "line_end": 4,
+            "quote": "두 사람은 신도시 입구를 향해 걸어간다.\n\"들어가면 뭐부터 해볼까?\""
           }
         ],
         "remote_or_voice_only": [],
@@ -1018,13 +1026,7 @@
       "is_plot_critical": true,
       "summary": "붉은 눈이 된 마리안을 마주한 남자가 벌써 시간이 이렇게 되었냐며 팔을 붙잡고 갈 것이냐고 묻자 마리안이 갈 것이라고 답하며 총을 장전하고, 남자를 죽여 침식도가 50% 오르며 침식 엔딩으로 이어진다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -1032,6 +1034,13 @@
             "line_start": 5,
             "line_end": 5,
             "quote": "남자가 마리안의 팔을 붙잡는다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 5,
+            "line_end": 10,
+            "quote": "남자가 마리안의 팔을 붙잡는다.\n\"가지 말라고 해도, 갈 거지?\"\n\"갈 거예요.\"\n철컥-\n[CHOICE_START ID=\"fading_affection_2271_choice\"]\n  [OPTION TEXT=\"[REDACT]지휘관을[/REDACT]남자를 죽인다.\" VALUE=\"option_227101\"]"
           }
         ],
         "remote_or_voice_only": [],
@@ -1199,17 +1208,18 @@
       "is_plot_critical": true,
       "summary": "호수 지역을 돌파해 신도시 입구에 도착한 마리안이 이상한 기시감에 발걸음을 늦추자 지휘관이 다가와 걱정하고, 마리안은 그를 안심시키거나 꿈을 이야기하거나 도망치자고 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안과 지휘관은 이제는 익숙하게, 호수 지역을 돌파하여 신도시에 도착한다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안과 지휘관은 이제는 익숙하게, 호수 지역을 돌파하여 신도시에 도착한다."
@@ -1648,13 +1658,7 @@
       "is_plot_critical": true,
       "summary": "마리안은 끝이 날지 알 수 없는 거짓된 사명과 굴레에서 벗어나 단 하루만이라도 지휘관과 함께 행복하게 살아가고 싶다고 생각하며, 지휘관에게 도망가자고 말할지 망설인다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -1666,6 +1670,14 @@
         ],
         "remote_or_voice_only": [],
         "mentioned_only": [
+          {
+            "surface_text": "지휘관",
+            "entity_id": "char_지휘관",
+            "entity_type": "character",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "단 하루만이라도 지휘관과 죽음을 걱정하는 것이 아니라, 어떻게 살아갈지 고민하며 보내고 싶다."
+          },
           {
             "surface_text": "침식도",
             "entity_id": null,
@@ -1777,13 +1789,7 @@
       "is_plot_critical": true,
       "summary": "도심 안을 걷던 지휘관이 들뜬 얼굴로 거점을 찾아보자고 하자 마리안이 익숙함을 느끼며 그를 바라보고, 직후 기습해 온 지상형 랩쳐 무리를 마리안이 모두 잡아내며 침식도가 1% 오른다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -1791,6 +1797,13 @@
             "line_start": 7,
             "line_end": 7,
             "quote": "마리안은 그 얼굴을 빤히 바라보았다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "지휘관이 도심 안을 걷는다."
           }
         ],
         "remote_or_voice_only": [],
@@ -2031,13 +2044,7 @@
       "is_plot_critical": true,
       "summary": "멍해 보인다는 지휘관의 걱정에 마리안이 낯선 곳이라 긴장했다고 답하지만, 함정이나 식량 확보를 제안하는 지휘관의 말에 또다시 기시감과 기억의 부재를 느끼고 이전에 같은 말을 했는지 물어 침식도가 1% 오른다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -2045,6 +2052,13 @@
             "line_start": 12,
             "line_end": 12,
             "quote": "마리안은 지휘관에게···."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "지휘관이 걱정스레 바라보다, 주위를 둘러본다."
           }
         ],
         "remote_or_voice_only": [],
@@ -2167,13 +2181,7 @@
       "is_plot_critical": true,
       "summary": "이전에 같은 말을 했었냐는 질문에 지휘관이 얼버무리며 난감해하는 표정 속에 아주 짧게 두려움이 스쳐 가고, 마리안은 그 두려움에서 아무것도 떠올리지 못하거나 비슷한 표정을 본 기억을 떠올린다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -2181,6 +2189,13 @@
             "line_start": 5,
             "line_end": 5,
             "quote": "마리안은 그 두려움에서···."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 2,
+            "line_end": 4,
+            "quote": "\"이전에··· 같은 말을 했었냐고?\"\n\"음··· 글쎄.\"\n난감해 하는 표정 속, 아주 짧게 스쳐간 두려움."
           }
         ],
         "remote_or_voice_only": [],
@@ -2495,17 +2510,18 @@
       "is_plot_critical": true,
       "summary": "마리안이 말이 없자 지휘관은 다급하게 말을 이어가며 언제 또 랩쳐가 올지 모르니 이만 움직이자고 제안하고, 마리안은 그의 다급한 행동에서 기억을 떠올릴지 선택의 기로에 선다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안이 말이 없자, 지휘관이 다급하게 말을 이어나간다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안이 말이 없자, 지휘관이 다급하게 말을 이어나간다."
@@ -2731,17 +2747,18 @@
       "is_plot_critical": true,
       "summary": "마리안이 계속 말이 없자 지휘관이 걱정 가득한 눈으로 바라보고, 마리안은 그 눈을 보며 기억을 떠올릴지 선택의 기로에 선다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "지휘관은 마리안이 계속 말이 없자, 걱정 가득한 눈으로 바라본다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 3,
             "line_end": 3,
             "quote": "지휘관은 마리안이 계속 말이 없자, 걱정 가득한 눈으로 바라본다."
@@ -2849,13 +2866,7 @@
       "is_plot_critical": true,
       "summary": "마리안은 호수의 북쪽 숲에서 오랫동안 랩쳐와 전투를 벌였던 날 그가 걱정스러운 눈으로 '아직··· 인가'라고 말했던 기억을 떠올리며, 그 눈이 살피던 걱정할 만한 변화의 대상이 자기 자신이었다는 것을 깨닫는다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -2992,13 +3003,7 @@
       "is_plot_critical": true,
       "summary": "마리안은 침식에 걸리는 순간 데이터 갱신이 멈춰 기억하지 못한다는 마리아 박사와의 기억을 떠올리고, 자신의 기억 공백이 침식 때문이었음을 깨달으며 그사이 지휘관이 어떻게 됐을지 결론을 내린다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -3006,6 +3011,13 @@
             "line_start": 4,
             "line_end": 4,
             "quote": "순간, 마리안은 마리아 박사와의 기억을 떠올린다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 13,
+            "line_end": 14,
+            "quote": "\"마리안?\"\n지휘관은 어떻게 됐을까?"
           }
         ],
         "remote_or_voice_only": [],
@@ -3300,17 +3312,18 @@
       "is_plot_critical": true,
       "summary": "랩쳐들을 모두 쓰러뜨린 마리안과 지휘관은 디코이를 설치하고 건물 최상층에 숨어들어 황금빛 노을을 바라보고, 마리안은 시간이 얼마 남지 않아 지금 이 순간도 지워질지 모른다는 직감에 진심을 물어보기로 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "얼마나 시간이 흘렀을까, 마리안과 지휘관은 몰아치는 랩쳐들을 모두 쓰러뜨린 후, 근처에 있는 안전해보이는 건물에 들어섰다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "얼마나 시간이 흘렀을까, 마리안과 지휘관은 몰아치는 랩쳐들을 모두 쓰러뜨린 후, 근처에 있는 안전해보이는 건물에 들어섰다."
@@ -6848,13 +6861,7 @@
       "is_plot_critical": true,
       "summary": "지난 기억을 떠올린 7호는 다시 구도심을 바라보며 마리안을 잊지 않기 위해 어디론가 가야 한다고 생각하지만, 그 장소가 생각나지 않아 기억을 떠올리려 애쓴다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -7250,14 +7257,16 @@
       "is_plot_critical": true,
       "summary": "구도심에 들어온 지휘관이 익숙한 진동을 느끼고 공격할지 도망칠지 선택한다.",
       "participants": {
-        "present_in_scene": [
+        "present_in_scene": [],
+        "present_silent": [
           {
-            "speaker_label": "지휘관",
+            "name": "지휘관",
             "entity_id": "char_지휘관",
-            "is_generic_role": false
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "구도심에 들어온 지휘관은 익숙한 진동을 느낀다."
           }
         ],
-        "present_silent": [],
         "remote_or_voice_only": [],
         "mentioned_only": [
           {
@@ -7568,13 +7577,7 @@
       "is_plot_critical": false,
       "summary": "7호가 놀라며 잠에서 깨어난다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -7773,13 +7776,7 @@
       "is_plot_critical": true,
       "summary": "구도심 광장에 도달한 7호는 호수로 가는 길이 생각나지 않아 괴로워하던 중, 상점 구역 근처에서 검은 고양이 한 마리를 발견하고 이전 기억을 떠올린다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -7938,13 +7935,7 @@
       "is_plot_critical": true,
       "summary": "7호는 과거 구도심에서 마리안이 호수로 가는 길을 알려 준 고양이가 잘 있는지 보고 싶다고 했던 말을 떠올리고, 어딘가로 걸어가는 고양이를 따라갈지 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -8283,13 +8274,7 @@
       "is_plot_critical": true,
       "summary": "고양이를 따라가 호수 산책로 오솔길을 찾은 7호는 길가에 핀 마리안을 닮은 파란 장미를 보고 희미해지는 마리안의 얼굴을 떠올리며 장미 한 송이를 꺾어 품에 넣은 뒤 앞으로 뛰어간다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -8625,13 +8610,7 @@
       "is_plot_critical": true,
       "summary": "7호는 호수를 지나 신도시로 향해야 하지만 가는 방법을 잊어버렸다는 것을 깨닫고, 주변을 둘러보다 호수를 헤엄쳐 갈지 지나가는 사슴을 볼지 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -8872,13 +8851,7 @@
       "is_plot_critical": true,
       "summary": "7호가 북쪽 숲으로 떠나가는 사슴을 보며 마리안과 사슴 가족을 봤던 기억을 떠올리지만 마리안의 말이 잊혀 가자 다급히 사슴을 쫓아 북쪽 숲으로 간다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -8990,7 +8963,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "7호, 지휘관",
+          "actor_or_speaker": "7호",
           "summary": "7호가 다급하게 사슴을 쫓아 북쪽 숲으로 간다.",
           "line_start": 16,
           "line_end": 19,
@@ -9069,13 +9042,7 @@
       "is_plot_critical": true,
       "summary": "7호가 놀라며 눈을 뜬다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -9113,7 +9080,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "7호, 지휘관",
+          "actor_or_speaker": "7호",
           "summary": "7호가 놀라며 눈을 뜬다.",
           "line_start": 2,
           "line_end": 6,
@@ -9284,13 +9251,7 @@
       "is_plot_critical": true,
       "summary": "북쪽 숲에서 사슴을 찾지 못한 7호가 랩쳐들을 피해 다니느라 소모된 체력의 한계와 현기증을 느끼며 바닥에 쓰러진다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -9367,7 +9328,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "7호, 지휘관",
+          "actor_or_speaker": "7호",
           "summary": "7호가 바닥에 쓰러진다.",
           "line_start": 7,
           "line_end": 10,
@@ -9388,6 +9349,11 @@
           "surface_text": "7호",
           "suggested_type": "character",
           "line_start": 5
+        },
+        {
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 4
         }
       ],
       "reviewed_gaps": []
@@ -9399,13 +9365,7 @@
       "is_plot_critical": true,
       "summary": "마리안과 호수 공원으로 소풍을 가기로 하며 도시락통을 정하려 가위바위보를 했던 기억과, 다 잊고 살라며 사랑한다고 말했던 마리안의 목소리가 교차하는 가운데 마리안에게 이기게 해 주기 위해 보를 낸다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [],
         "remote_or_voice_only": [],
         "mentioned_only": [
@@ -9662,8 +9622,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "가위바위보에서 보를 낸다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 가위바위보에서 보를 낸다.",
           "line_start": 28,
           "line_end": 28,
           "claim_line": null,
@@ -9673,8 +9633,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "가위바위보에서 보를 낸다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 가위바위보에서 보를 낸다.",
           "line_start": 30,
           "line_end": 30,
           "claim_line": null,
@@ -9684,8 +9644,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "가위바위보에서 보를 낸다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 가위바위보에서 보를 낸다.",
           "line_start": 32,
           "line_end": 32,
           "claim_line": null,
@@ -9789,13 +9749,7 @@
       "is_plot_critical": true,
       "summary": "가위바위보에서 일부러 져 준 뒤 귀여운 도시락통으로 결정하고 꼭 갔으면 좋겠다고 웃던 기억을 떠올리며, 함께하기 위해 반드시 가야 한다고 다짐하고 눈을 뜬다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [],
         "remote_or_voice_only": [],
         "mentioned_only": [],
@@ -9877,8 +9831,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "눈을 뜬다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 눈을 뜬다.",
           "line_start": 11,
           "line_end": 11,
           "claim_line": null,
@@ -10069,13 +10023,7 @@
       "is_plot_critical": true,
       "summary": "7호가 산책로를 따라 신도시로 달리다 중간이 움푹 팬 채 쓰러져 있는 거대한 빌딩을 발견하고 이곳에서 무엇과 싸웠었는지 떠올리려 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -10164,8 +10112,8 @@
         {
           "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "쓰러져 있는 거대한 빌딩에서 싸웠던 대상이 거대한 랩쳐였다고 떠올린다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 쓰러져 있는 거대한 빌딩에서 싸웠던 대상이 거대한 랩쳐였다고 떠올린다.",
           "line_start": 7,
           "line_end": 7,
           "claim_line": 7,
@@ -10175,8 +10123,8 @@
         {
           "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "쓰러져 있는 거대한 빌딩에서 싸웠던 대상이 랩쳐 무리였던 것 같다고 추측한다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 쓰러져 있는 거대한 빌딩에서 싸웠던 대상이 랩쳐 무리였던 것 같다고 추측한다.",
           "line_start": 9,
           "line_end": 9,
           "claim_line": 9,
@@ -10211,6 +10159,11 @@
           "surface_text": "신도시",
           "suggested_type": "location",
           "line_start": 2
+        },
+        {
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 7
         }
       ],
       "reviewed_gaps": []
@@ -10286,6 +10239,11 @@
           "surface_text": "7호",
           "suggested_type": "character",
           "line_start": 3
+        },
+        {
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 2
         }
       ],
       "reviewed_gaps": []
@@ -10361,6 +10319,11 @@
           "surface_text": "7호",
           "suggested_type": "character",
           "line_start": 4
+        },
+        {
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 3
         }
       ],
       "reviewed_gaps": []
@@ -10372,13 +10335,7 @@
       "is_plot_critical": true,
       "summary": "7호가 촉수를 뻗는 상대를 피해 여러 번 죽고 쓰러진 빌딩 아래에서 작전을 세워 외벽을 올라갔던 일을 회상하며 상대를 물리치기 위해 한 행동을 떠올린다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -10464,8 +10421,8 @@
         {
           "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "상대를 물리치기 위해 미끼가 되었다고 떠올린다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 상대를 물리치기 위해 미끼가 되었다고 떠올린다.",
           "line_start": 11,
           "line_end": 11,
           "claim_line": 11,
@@ -10475,8 +10432,8 @@
         {
           "epistemic_type": "character_claim",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "상대를 물리치기 위해 레버를 당겼다고 떠올린다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 상대를 물리치기 위해 레버를 당겼다고 떠올린다.",
           "line_start": 13,
           "line_end": 13,
           "claim_line": 13,
@@ -10576,6 +10533,11 @@
           "surface_text": "7호",
           "suggested_type": "character",
           "line_start": 3
+        },
+        {
+          "surface_text": "랩쳐",
+          "suggested_type": "faction_or_species",
+          "line_start": 2
         }
       ],
       "reviewed_gaps": []
@@ -10736,13 +10698,7 @@
       "is_plot_critical": true,
       "summary": "신도시를 향해 달리던 7호가 추억의 장소에서 과거를 떠올리면 마리아-n의 기억도 떠오를 것이라 말하다가 이상함을 느끼고 멈춰 선다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "7호",
@@ -10828,8 +10784,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "자리에 멈춰 선다.",
+          "actor_or_speaker": "7호",
+          "summary": "7호가 자리에 멈춰 선다.",
           "line_start": 6,
           "line_end": 6,
           "claim_line": null,

@@ -1,0 +1,5340 @@
+{
+  "schema_version": "1.3.0",
+  "batch_id": "batch_0434",
+  "scene_count": 20,
+  "scenes": [
+    {
+      "scene_id": "white_memory_page_1001211",
+      "title": "WHITE MEMORY",
+      "sub_title": "강변 011",
+      "line_count": 13,
+      "body_bytes": 697,
+      "raw_bytes": 762,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 스노우 화이트가 낚싯대를 만들어내자 둘은 본격적으로 낚시를 해보기로 한다.\n[L0003] 스노우 화이트는 낚싯대를···.\n[L0004] [CHOICE_START ID=\"white_memory_page_1001211_choice\"]\n[L0005]   [OPTION TEXT=\"본인이 사용한다.\" VALUE=\"option_100121101\"]\n[L0006]   [OPTION_END]\n[L0007]   [OPTION TEXT=\"홍련에게 넘겨준다.\" VALUE=\"option_100121102\"]\n[L0008]   [OPTION_END]\n[L0009] [CHOICE_END]\n[L0010] [SCENE END]\n[L0011] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0012] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001211_choice\" OPTION=\"option_100121101\" TARGET=\"white_memory_page_1001212\"]\n[L0013] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001211_choice\" OPTION=\"option_100121102\" TARGET=\"white_memory_page_1001213\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 4,
+              "end_line": 9,
+              "choice_id": "white_memory_page_1001211_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 5,
+                  "end_line": 6,
+                  "option_text": "본인이 사용한다.",
+                  "option_value": "option_100121101",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 7,
+                  "end_line": 8,
+                  "option_text": "홍련에게 넘겨준다.",
+                  "option_value": "option_100121102",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001211_choice",
+              "option": "option_100121101",
+              "target": "white_memory_page_1001212",
+              "is_default": false
+            },
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001211_choice",
+              "option": "option_100121102",
+              "target": "white_memory_page_1001213",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001211_choice",
+              "option": "option_100121101",
+              "target": "white_memory_page_1001212",
+              "is_default": false
+            },
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001211_choice",
+              "option": "option_100121102",
+              "target": "white_memory_page_1001213",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001208",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[1].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001211",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "스노우 화이트가 낚싯대를 만들어내자 홍련과 본격적으로 낚시를 해보기로 하고, 낚싯대를 본인이 사용할지 홍련에게 넘겨줄지 선택한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "스노우 화이트가 낚싯대를 만들어내자 둘은 본격적으로 낚시를 해보기로 한다."
+            },
+            {
+              "name": "홍련",
+              "entity_id": "char_홍련",
+              "line_start": 7,
+              "line_end": 7,
+              "quote": "[OPTION TEXT=\"홍련에게 넘겨준다.\" VALUE=\"option_100121102\"]"
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "낚싯대",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "스노우 화이트가 낚싯대를 만들어내자 둘은 본격적으로 낚시를 해보기로 한다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 4,
+            "options": [
+              {
+                "option_text": "본인이 사용한다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "홍련에게 넘겨준다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 홍련",
+            "summary": "스노우 화이트가 낚싯대를 만들어내자 두 사람은 본격적으로 낚시를 해보기로 한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "claim_line": null,
+            "quote": "스노우 화이트가 낚싯대를 만들어내자 둘은 본격적으로 낚시를 해보기로 한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트는 자신이 만든 낚싯대를 본인이 직접 사용하기로 한다.",
+            "line_start": 3,
+            "line_end": 5,
+            "claim_line": null,
+            "quote": "스노우 화이트는 낚싯대를···.\n[CHOICE_START ID=\"white_memory_page_1001211_choice\"]\n  [OPTION TEXT=\"본인이 사용한다.\" VALUE=\"option_100121101\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트는 자신이 만든 낚싯대를 홍련에게 넘겨주기로 한다.",
+            "line_start": 7,
+            "line_end": 7,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"홍련에게 넘겨준다.\" VALUE=\"option_100121102\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "낚싯대",
+            "suggested_type": "item",
+            "line_start": 2
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001219",
+      "title": "WHITE MEMORY",
+      "sub_title": "강변 019",
+      "line_count": 13,
+      "body_bytes": 756,
+      "raw_bytes": 821,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 하지만 무언가를 만드는 데 소질이 없는 홍련은 나뭇가지를 이용해 [낚싯대]를 만드는데 실패한다.\n[L0003] 민망해하던 홍련은···.\n[L0004] [CHOICE_START ID=\"white_memory_page_1001219_choice\"]\n[L0005]   [OPTION TEXT=\"자신의 검으로 낚시를 해보겠다고 한다.\" VALUE=\"option_100121901\"]\n[L0006]   [OPTION_END]\n[L0007]   [OPTION TEXT=\"돌무더기를 뒤져보자고 한다.\" VALUE=\"option_100121902\"]\n[L0008]   [OPTION_END]\n[L0009] [CHOICE_END]\n[L0010] [SCENE END]\n[L0011] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0012] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001219_choice\" OPTION=\"option_100121901\" TARGET=\"white_memory_page_1001220\"]\n[L0013] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001219_choice\" OPTION=\"option_100121902\" TARGET=\"white_memory_page_1001221\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 4,
+              "end_line": 9,
+              "choice_id": "white_memory_page_1001219_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 5,
+                  "end_line": 6,
+                  "option_text": "자신의 검으로 낚시를 해보겠다고 한다.",
+                  "option_value": "option_100121901",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 7,
+                  "end_line": 8,
+                  "option_text": "돌무더기를 뒤져보자고 한다.",
+                  "option_value": "option_100121902",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001219_choice",
+              "option": "option_100121901",
+              "target": "white_memory_page_1001220",
+              "is_default": false
+            },
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001219_choice",
+              "option": "option_100121902",
+              "target": "white_memory_page_1001221",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001219_choice",
+              "option": "option_100121901",
+              "target": "white_memory_page_1001220",
+              "is_default": false
+            },
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001219_choice",
+              "option": "option_100121902",
+              "target": "white_memory_page_1001221",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001218",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[11].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001219",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "무언가를 만드는 데 소질이 없는 홍련이 나뭇가지로 낚싯대를 만드는 데 실패하고, 자신의 검으로 낚시를 해볼지 돌무더기를 뒤져볼지 선택한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "홍련",
+              "entity_id": "char_홍련",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "하지만 무언가를 만드는 데 소질이 없는 홍련은 나뭇가지를 이용해 [낚싯대]를 만드는데 실패한다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "낚싯대",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "하지만 무언가를 만드는 데 소질이 없는 홍련은 나뭇가지를 이용해 [낚싯대]를 만드는데 실패한다."
+            },
+            {
+              "surface_text": "검",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "[OPTION TEXT=\"자신의 검으로 낚시를 해보겠다고 한다.\" VALUE=\"option_100121901\"]"
+            }
+          ],
+          "document_author": {
+            "name": null,
+            "entity_id": null,
+            "voices": [
+              "홍련"
+            ]
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 4,
+            "options": [
+              {
+                "option_text": "자신의 검으로 낚시를 해보겠다고 한다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "돌무더기를 뒤져보자고 한다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "홍련",
+            "summary": "무언가를 만드는 데 소질이 없는 홍련은 나뭇가지를 이용해 낚싯대를 만드는 데 실패한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "claim_line": null,
+            "quote": "하지만 무언가를 만드는 데 소질이 없는 홍련은 나뭇가지를 이용해 [낚싯대]를 만드는데 실패한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "홍련",
+            "summary": "민망해하던 홍련은 자신의 검으로 낚시를 해보겠다고 한다.",
+            "line_start": 3,
+            "line_end": 5,
+            "claim_line": null,
+            "quote": "민망해하던 홍련은···.\n[CHOICE_START ID=\"white_memory_page_1001219_choice\"]\n  [OPTION TEXT=\"자신의 검으로 낚시를 해보겠다고 한다.\" VALUE=\"option_100121901\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "홍련",
+            "summary": "민망해하던 홍련은 돌무더기를 뒤져보자고 제안한다.",
+            "line_start": 7,
+            "line_end": 7,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"돌무더기를 뒤져보자고 한다.\" VALUE=\"option_100121902\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "만들기에 소질 없음",
+            "category": "trait",
+            "subject": "홍련",
+            "detail": "홍련은 무언가를 만드는 데 소질이 없어 나뭇가지를 이용해 낚싯대를 만드는 데 실패한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "하지만 무언가를 만드는 데 소질이 없는 홍련은 나뭇가지를 이용해 [낚싯대]를 만드는데 실패한다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "낚싯대",
+            "suggested_type": "item",
+            "line_start": 2
+          },
+          {
+            "surface_text": "검",
+            "suggested_type": "item",
+            "line_start": 5
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001302",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 002",
+      "line_count": 12,
+      "body_bytes": 745,
+      "raw_bytes": 810,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 교외 지역에 다다른 스노우 화이트와 라푼젤은 랩쳐가 휩쓸고 가 무너진 건물들을 바라보다, 그나마 형체를 갖추고 있는 곳들 중 어디로 갈지 고민한다.\n[L0003] [CHOICE_START ID=\"white_memory_page_1001302_choice\"]\n[L0004]   [OPTION TEXT=\"공장으로 가본다.\" VALUE=\"option_100130201\"]\n[L0005]   [OPTION_END]\n[L0006]   [OPTION TEXT=\"민가로 가본다.\" VALUE=\"option_100130202\"]\n[L0007]   [OPTION_END]\n[L0008] [CHOICE_END]\n[L0009] [SCENE END]\n[L0010] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0011] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001302_choice\" OPTION=\"option_100130201\" TARGET=\"white_memory_page_1001303\"]\n[L0012] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001302_choice\" OPTION=\"option_100130202\" TARGET=\"white_memory_page_1001304\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 3,
+              "end_line": 8,
+              "choice_id": "white_memory_page_1001302_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 4,
+                  "end_line": 5,
+                  "option_text": "공장으로 가본다.",
+                  "option_value": "option_100130201",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "민가로 가본다.",
+                  "option_value": "option_100130202",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 11,
+              "if_choice": "white_memory_page_1001302_choice",
+              "option": "option_100130201",
+              "target": "white_memory_page_1001303",
+              "is_default": false
+            },
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001302_choice",
+              "option": "option_100130202",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 11,
+              "if_choice": "white_memory_page_1001302_choice",
+              "option": "option_100130201",
+              "target": "white_memory_page_1001303",
+              "is_default": false
+            },
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001302_choice",
+              "option": "option_100130202",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001301",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[19].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001302",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "교외 지역에 다다른 스노우 화이트와 라푼젤이 랩쳐가 휩쓸고 가 무너진 건물들 중 형체를 갖춘 공장과 민가 가운데 어디로 갈지 고민한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "교외 지역에 다다른 스노우 화이트와 라푼젤은 랩쳐가 휩쓸고 가 무너진 건물들을 바라보다, 그나마 형체를 갖추고 있는 곳들 중 어디로 갈지 고민한다."
+            },
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "교외 지역에 다다른 스노우 화이트와 라푼젤은 랩쳐가 휩쓸고 가 무너진 건물들을 바라보다, 그나마 형체를 갖추고 있는 곳들 중 어디로 갈지 고민한다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "교외 지역",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "교외 지역에 다다른 스노우 화이트와 라푼젤은 랩쳐가 휩쓸고 가 무너진 건물들을 바라보다, 그나마 형체를 갖추고 있는 곳들 중 어디로 갈지 고민한다."
+            },
+            {
+              "surface_text": "랩쳐",
+              "entity_id": null,
+              "entity_type": "faction_or_species",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "교외 지역에 다다른 스노우 화이트와 라푼젤은 랩쳐가 휩쓸고 가 무너진 건물들을 바라보다, 그나마 형체를 갖추고 있는 곳들 중 어디로 갈지 고민한다."
+            },
+            {
+              "surface_text": "공장",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "공장으로 가본다."
+            },
+            {
+              "surface_text": "민가",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 6,
+              "line_end": 6,
+              "quote": "민가로 가본다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 3,
+            "options": [
+              {
+                "option_text": "공장으로 가본다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "민가로 가본다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤",
+            "summary": "교외 지역에 다다른 스노우 화이트와 라푼젤이 랩쳐가 휩쓸고 가 무너진 건물들을 바라보다 그나마 형체를 갖추고 있는 곳들 중 어디로 갈지 고민한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "claim_line": null,
+            "quote": "교외 지역에 다다른 스노우 화이트와 라푼젤은 랩쳐가 휩쓸고 가 무너진 건물들을 바라보다, 그나마 형체를 갖추고 있는 곳들 중 어디로 갈지 고민한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤, 지휘관",
+            "summary": "스노우 화이트와 라푼젤이 공장으로 가보기로 한다.",
+            "line_start": 4,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "공장으로 가본다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤, 지휘관",
+            "summary": "스노우 화이트와 라푼젤이 민가로 가보기로 한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "민가로 가본다.",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "교외 지역",
+            "suggested_type": "location",
+            "line_start": 2
+          },
+          {
+            "surface_text": "랩쳐",
+            "suggested_type": "faction_or_species",
+            "line_start": 2
+          },
+          {
+            "surface_text": "공장",
+            "suggested_type": "location",
+            "line_start": 4
+          },
+          {
+            "surface_text": "민가",
+            "suggested_type": "location",
+            "line_start": 6
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001304",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 004",
+      "line_count": 17,
+      "body_bytes": 999,
+      "raw_bytes": 1064,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 두 사람은 민가에 생필품을 찾으러 갔으나, 대부분의 집은 랩쳐의 습격에 무너져 있는 상태였다.\n[L0003] 그나마 집안에 들어갈 수 있는 집은 3곳뿐.\n[L0004] 스노우 화이트는···.\n[L0005] [CHOICE_START ID=\"white_memory_page_1001304_choice\"]\n[L0006]   [OPTION TEXT=\"왼쪽 집으로 들어갔다.\" VALUE=\"option_100130401\"]\n[L0007]   [OPTION_END]\n[L0008]   [OPTION TEXT=\"가운데 위치한 집으로 들어갔다.\" VALUE=\"option_100130402\"]\n[L0009]   [OPTION_END]\n[L0010]   [OPTION TEXT=\"오른쪽 집으로 들어갔다.\" VALUE=\"option_100130403\"]\n[L0011]   [OPTION_END]\n[L0012] [CHOICE_END]\n[L0013] [SCENE END]\n[L0014] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0015] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001304_choice\" OPTION=\"option_100130401\" TARGET=\"white_memory_page_1001319\"]\n[L0016] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001304_choice\" OPTION=\"option_100130402\" TARGET=\"white_memory_page_1001322\"]\n[L0017] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001304_choice\" OPTION=\"option_100130403\" TARGET=\"white_memory_page_1001326\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 5,
+              "end_line": 12,
+              "choice_id": "white_memory_page_1001304_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "왼쪽 집으로 들어갔다.",
+                  "option_value": "option_100130401",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "가운데 위치한 집으로 들어갔다.",
+                  "option_value": "option_100130402",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 10,
+                  "end_line": 11,
+                  "option_text": "오른쪽 집으로 들어갔다.",
+                  "option_value": "option_100130403",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001304_choice",
+              "option": "option_100130401",
+              "target": "white_memory_page_1001319",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001304_choice",
+              "option": "option_100130402",
+              "target": "white_memory_page_1001322",
+              "is_default": false
+            },
+            {
+              "line": 17,
+              "if_choice": "white_memory_page_1001304_choice",
+              "option": "option_100130403",
+              "target": "white_memory_page_1001326",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001304_choice",
+              "option": "option_100130401",
+              "target": "white_memory_page_1001319",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001304_choice",
+              "option": "option_100130402",
+              "target": "white_memory_page_1001322",
+              "is_default": false
+            },
+            {
+              "line": 17,
+              "if_choice": "white_memory_page_1001304_choice",
+              "option": "option_100130403",
+              "target": "white_memory_page_1001326",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001302",
+              "choice_id": "white_memory_page_1001302_choice",
+              "option": "option_100130202",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001303"
+              ]
+            },
+            {
+              "from_scene_id": "white_memory_page_1001320",
+              "choice_id": "white_memory_page_1001320_choice",
+              "option": "option_100132001",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001332"
+              ]
+            },
+            {
+              "from_scene_id": "white_memory_page_1001321",
+              "choice_id": "white_memory_page_1001321_choice",
+              "option": "option_100132101",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001332"
+              ]
+            },
+            {
+              "from_scene_id": "white_memory_page_1001325",
+              "choice_id": "white_memory_page_1001325_choice",
+              "option": "option_100132501",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001332"
+              ]
+            },
+            {
+              "from_scene_id": "white_memory_page_1001331",
+              "choice_id": "white_memory_page_1001331_choice",
+              "option": "option_100133101",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001332"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001303",
+            "white_memory_page_1001332"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[21].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001304",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "두 사람이 민가에 생필품을 찾으러 갔으나 대부분의 집이 랩쳐의 습격에 무너져 있고 들어갈 수 있는 집은 3곳뿐이라 스노우 화이트가 어느 집으로 들어갈지 고른다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "스노우 화이트는···."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "민가",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "두 사람은 민가에 생필품을 찾으러 갔으나, 대부분의 집은 랩쳐의 습격에 무너져 있는 상태였다."
+            },
+            {
+              "surface_text": "랩쳐",
+              "entity_id": null,
+              "entity_type": "faction_or_species",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "두 사람은 민가에 생필품을 찾으러 갔으나, 대부분의 집은 랩쳐의 습격에 무너져 있는 상태였다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [
+          {
+            "text": "스노우 화이트와 함께 민가에 생필품을 찾으러 간 '두 사람' 중 다른 한 명은 라푼젤이다.",
+            "related_scene_ids": [
+              "white_memory_page_1001302"
+            ]
+          }
+        ],
+        "choice_branches": [
+          {
+            "choice_line": 5,
+            "options": [
+              {
+                "option_text": "왼쪽 집으로 들어갔다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "가운데 위치한 집으로 들어갔다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "오른쪽 집으로 들어갔다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "두 사람이 민가에 생필품을 찾으러 갔으나 대부분의 집은 랩쳐의 습격에 무너져 있고 들어갈 수 있는 집은 3곳뿐이다.",
+            "line_start": 2,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "두 사람은 민가에 생필품을 찾으러 갔으나, 대부분의 집은 랩쳐의 습격에 무너져 있는 상태였다. 그나마 집안에 들어갈 수 있는 집은 3곳뿐. 스노우 화이트는···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 왼쪽 집으로 들어간다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "왼쪽 집으로 들어갔다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 가운데 위치한 집으로 들어간다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "가운데 위치한 집으로 들어갔다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 오른쪽 집으로 들어간다.",
+            "line_start": 10,
+            "line_end": 10,
+            "claim_line": null,
+            "quote": "오른쪽 집으로 들어갔다.",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "민가",
+            "suggested_type": "location",
+            "line_start": 2
+          },
+          {
+            "surface_text": "랩쳐",
+            "suggested_type": "faction_or_species",
+            "line_start": 2
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001305",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 005",
+      "line_count": 14,
+      "body_bytes": 1003,
+      "raw_bytes": 1068,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 공장 안쪽에도 역시, 바깥쪽과 마찬가지로 사람들의 생필품이 여기저기 널려있었다.\n[L0003] 하지만, 통조림은 빈 깡통이거나 내용물이 터져 나와 부패된 상태였고, 생필품들도 찢기거나 부서져 있었다.\n[L0004] 지금 사용할 수 있는 온전한 것들을 찾아 헤매던 스노우 화이트와 라푼젤은, 조금 더 안쪽을 살펴보기 위해···.\n[L0005] [CHOICE_START ID=\"white_memory_page_1001305_choice\"]\n[L0006]   [OPTION TEXT=\"잠겨있는 문을 부수고 들어간다.\" VALUE=\"option_100130501\"]\n[L0007]   [OPTION_END]\n[L0008]   [OPTION TEXT=\"커튼으로 가려져 있는 방으로 들어간다.\" VALUE=\"option_100130502\"]\n[L0009]   [OPTION_END]\n[L0010] [CHOICE_END]\n[L0011] [SCENE END]\n[L0012] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0013] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001305_choice\" OPTION=\"option_100130501\" TARGET=\"white_memory_page_1001306\"]\n[L0014] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001305_choice\" OPTION=\"option_100130502\" TARGET=\"white_memory_page_1001307\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 5,
+              "end_line": 10,
+              "choice_id": "white_memory_page_1001305_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "잠겨있는 문을 부수고 들어간다.",
+                  "option_value": "option_100130501",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "커튼으로 가려져 있는 방으로 들어간다.",
+                  "option_value": "option_100130502",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001305_choice",
+              "option": "option_100130501",
+              "target": "white_memory_page_1001306",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001305_choice",
+              "option": "option_100130502",
+              "target": "white_memory_page_1001307",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001305_choice",
+              "option": "option_100130501",
+              "target": "white_memory_page_1001306",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001305_choice",
+              "option": "option_100130502",
+              "target": "white_memory_page_1001307",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001303",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[22].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001305",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "공장 안쪽의 통조림과 생필품들이 부패하거나 부서져 있어, 온전한 것을 찾던 스노우 화이트와 라푼젤이 더 안쪽을 살펴보기 위해 어디로 들어갈지 고른다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "지금 사용할 수 있는 온전한 것들을 찾아 헤매던 스노우 화이트와 라푼젤은, 조금 더 안쪽을 살펴보기 위해···."
+            },
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "지금 사용할 수 있는 온전한 것들을 찾아 헤매던 스노우 화이트와 라푼젤은, 조금 더 안쪽을 살펴보기 위해···."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "공장",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "공장 안쪽에도 역시, 바깥쪽과 마찬가지로 사람들의 생필품이 여기저기 널려있었다."
+            },
+            {
+              "surface_text": "통조림",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "하지만, 통조림은 빈 깡통이거나 내용물이 터져 나와 부패된 상태였고, 생필품들도 찢기거나 부서져 있었다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 5,
+            "options": [
+              {
+                "option_text": "잠겨있는 문을 부수고 들어간다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "커튼으로 가려져 있는 방으로 들어간다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤",
+            "summary": "공장 안쪽에도 생필품이 널려 있었으나 통조림은 빈 깡통이거나 부패했고 생필품들도 찢기거나 부서져 있어, 스노우 화이트와 라푼젤이 사용할 수 있는 온전한 것들을 찾아 더 안쪽을 살펴보려 한다.",
+            "line_start": 2,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "공장 안쪽에도 역시, 바깥쪽과 마찬가지로 사람들의 생필품이 여기저기 널려있었다. 하지만, 통조림은 빈 깡통이거나 내용물이 터져 나와 부패된 상태였고, 생필품들도 찢기거나 부서져 있었다. 지금 사용할 수 있는 온전한 것들을 찾아 헤매던 스노우 화이트와 라푼젤은, 조금 더 안쪽을 살펴보기 위해···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤, 지휘관",
+            "summary": "스노우 화이트와 라푼젤이 잠겨 있는 문을 부수고 들어간다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "잠겨있는 문을 부수고 들어간다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤, 지휘관",
+            "summary": "스노우 화이트와 라푼젤이 커튼으로 가려져 있는 방으로 들어간다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "커튼으로 가려져 있는 방으로 들어간다.",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "공장",
+            "suggested_type": "location",
+            "line_start": 2
+          },
+          {
+            "surface_text": "통조림",
+            "suggested_type": "item",
+            "line_start": 3
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001306",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 006",
+      "line_count": 14,
+      "body_bytes": 907,
+      "raw_bytes": 972,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 잠겨있는 문을 억지로 들어간 방에는 적은 양이지만 각종 통조림과 생필품들이 정리되어 있었다!\n[L0003] 일종의 창고의 용도로 쓰였던 것 같다고 판단한 두 사람은 식량 확보를 방을 돌아다니며 통조림 확보에 나선다.\n[L0004] 그러던 중 스노우 화이트는 쇼파 밑에 깔린 책을 발견한다.\n[L0005] [CHOICE_START ID=\"white_memory_page_1001306_choice\"]\n[L0006]   [OPTION TEXT=\"책을 꺼내보지 않는다.\" VALUE=\"option_100130601\"]\n[L0007]   [OPTION_END]\n[L0008]   [OPTION TEXT=\"책을 꺼내본다.\" VALUE=\"option_100130602\"]\n[L0009]   [OPTION_END]\n[L0010] [CHOICE_END]\n[L0011] [SCENE END]\n[L0012] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0013] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001306_choice\" OPTION=\"option_100130601\" TARGET=\"white_memory_page_1001308\"]\n[L0014] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001306_choice\" OPTION=\"option_100130602\" TARGET=\"white_memory_page_1001309\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 5,
+              "end_line": 10,
+              "choice_id": "white_memory_page_1001306_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "책을 꺼내보지 않는다.",
+                  "option_value": "option_100130601",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "책을 꺼내본다.",
+                  "option_value": "option_100130602",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001306_choice",
+              "option": "option_100130601",
+              "target": "white_memory_page_1001308",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001306_choice",
+              "option": "option_100130602",
+              "target": "white_memory_page_1001309",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001306_choice",
+              "option": "option_100130601",
+              "target": "white_memory_page_1001308",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001306_choice",
+              "option": "option_100130602",
+              "target": "white_memory_page_1001309",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001305",
+              "choice_id": "white_memory_page_1001305_choice",
+              "option": "option_100130501",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001307"
+              ]
+            },
+            {
+              "from_scene_id": "white_memory_page_1001313",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001307"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[23].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001306",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "잠겨 있는 문을 억지로 열고 들어간 방에서 두 사람이 통조림을 확보하던 중, 스노우 화이트가 쇼파 밑에 깔린 책을 발견한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "그러던 중 스노우 화이트는 쇼파 밑에 깔린 책을 발견한다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "통조림",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "잠겨있는 문을 억지로 들어간 방에는 적은 양이지만 각종 통조림과 생필품들이 정리되어 있었다!"
+            },
+            {
+              "surface_text": "책",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "그러던 중 스노우 화이트는 쇼파 밑에 깔린 책을 발견한다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [
+          {
+            "text": "스노우 화이트와 함께 창고 방에서 통조림 확보에 나선 '두 사람' 중 다른 한 명은 라푼젤이다.",
+            "related_scene_ids": [
+              "white_memory_page_1001305",
+              "white_memory_page_1001308",
+              "white_memory_page_1001309"
+            ]
+          }
+        ],
+        "choice_branches": [
+          {
+            "choice_line": 5,
+            "options": [
+              {
+                "option_text": "책을 꺼내보지 않는다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "책을 꺼내본다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "잠겨 있는 문을 억지로 열고 들어간 방에 적은 양이지만 각종 통조림과 생필품들이 정리되어 있어, 일종의 창고 용도로 쓰였던 것 같다고 판단한 두 사람이 방을 돌아다니며 통조림 확보에 나선다.",
+            "line_start": 2,
+            "line_end": 3,
+            "claim_line": null,
+            "quote": "잠겨있는 문을 억지로 들어간 방에는 적은 양이지만 각종 통조림과 생필품들이 정리되어 있었다! 일종의 창고의 용도로 쓰였던 것 같다고 판단한 두 사람은 식량 확보를 방을 돌아다니며 통조림 확보에 나선다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트가 쇼파 밑에 깔린 책을 발견한다.",
+            "line_start": 4,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "그러던 중 스노우 화이트는 쇼파 밑에 깔린 책을 발견한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 쇼파 밑의 책을 꺼내보지 않기로 한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "책을 꺼내보지 않는다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 쇼파 밑의 책을 꺼내보기로 한다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "책을 꺼내본다.",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "책",
+            "category": "item",
+            "subject": null,
+            "detail": "통조림과 생필품이 정리된 방의 쇼파 밑에 깔려 있던 책.",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "그러던 중 스노우 화이트는 쇼파 밑에 깔린 책을 발견한다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "통조림",
+            "suggested_type": "item",
+            "line_start": 2
+          },
+          {
+            "surface_text": "책",
+            "suggested_type": "item",
+            "line_start": 4
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001307",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 007",
+      "line_count": 20,
+      "body_bytes": 943,
+      "raw_bytes": 1008,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] \"이곳은···.\"\n[L0003] \n[L0004] 커튼으로 가려져 있던 방에는 사람들의 사진들과 성냥, 불 꺼진 양초들이 가득 놓여 있었다.\n[L0005] [부디 그곳에서는 평안하길.]\n[L0006] 벽 한편에는 죽은 이들을 애도하는 글귀들이 적혀있었다.\n[L0007] \n[L0008] \"떠나간 분들을 애도하는 곳이었나 보네요.\"\n[L0009] \n[L0010] 두 사람은 그곳을 바라보다가···.\n[L0011] [CHOICE_START ID=\"white_memory_page_1001307_choice\"]\n[L0012]   [OPTION TEXT=\"짧게 묵념한 후 떠나간다.\" VALUE=\"option_100130701\"]\n[L0013]   [OPTION_END]\n[L0014]   [OPTION TEXT=\"갖고 온 [액자]를 놓고 기도한다.\" VALUE=\"option_100130702\"]\n[L0015]   [OPTION_END]\n[L0016] [CHOICE_END]\n[L0017] [SCENE END]\n[L0018] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0019] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001307_choice\" OPTION=\"option_100130701\" TARGET=\"white_memory_page_1001313\"]\n[L0020] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001307_choice\" OPTION=\"option_100130702\" TARGET=\"white_memory_page_1001314\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 11,
+              "end_line": 16,
+              "choice_id": "white_memory_page_1001307_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 12,
+                  "end_line": 13,
+                  "option_text": "짧게 묵념한 후 떠나간다.",
+                  "option_value": "option_100130701",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 14,
+                  "end_line": 15,
+                  "option_text": "갖고 온 [액자]를 놓고 기도한다.",
+                  "option_value": "option_100130702",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 19,
+              "if_choice": "white_memory_page_1001307_choice",
+              "option": "option_100130701",
+              "target": "white_memory_page_1001313",
+              "is_default": false
+            },
+            {
+              "line": 20,
+              "if_choice": "white_memory_page_1001307_choice",
+              "option": "option_100130702",
+              "target": "white_memory_page_1001314",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 19,
+              "if_choice": "white_memory_page_1001307_choice",
+              "option": "option_100130701",
+              "target": "white_memory_page_1001313",
+              "is_default": false
+            },
+            {
+              "line": 20,
+              "if_choice": "white_memory_page_1001307_choice",
+              "option": "option_100130702",
+              "target": "white_memory_page_1001314",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001305",
+              "choice_id": "white_memory_page_1001305_choice",
+              "option": "option_100130502",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001306"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001306"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[24].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001307",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "커튼으로 가려져 있던 방에 사람들의 사진과 성냥, 불 꺼진 양초, 애도 글귀가 놓여 있는 것을 본 두 사람이 어떻게 할지 고른다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "성냥",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "커튼으로 가려져 있던 방에는 사람들의 사진들과 성냥, 불 꺼진 양초들이 가득 놓여 있었다."
+            },
+            {
+              "surface_text": "양초",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "커튼으로 가려져 있던 방에는 사람들의 사진들과 성냥, 불 꺼진 양초들이 가득 놓여 있었다."
+            },
+            {
+              "surface_text": "액자",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 14,
+              "line_end": 14,
+              "quote": "갖고 온 [액자]를 놓고 기도한다."
+            }
+          ],
+          "document_author": {
+            "name": null,
+            "entity_id": null,
+            "voices": [
+              "두 사람"
+            ]
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [
+          {
+            "text": "커튼으로 가려진 방에 들어온 '두 사람'은 스노우 화이트와 라푼젤이며, 존댓말로 애도하는 곳이었나 보다고 말한 인물은 라푼젤이다.",
+            "related_scene_ids": [
+              "white_memory_page_1001305",
+              "white_memory_page_1001313",
+              "white_memory_page_1001314"
+            ]
+          }
+        ],
+        "choice_branches": [
+          {
+            "choice_line": 11,
+            "options": [
+              {
+                "option_text": "짧게 묵념한 후 떠나간다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "갖고 온 [액자]를 놓고 기도한다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "두 사람",
+            "summary": "커튼으로 가려져 있던 방에는 사람들의 사진들과 성냥, 불 꺼진 양초들이 가득 놓여 있고, 벽 한편에는 평안을 비는 애도 글귀들이 적혀 있다.",
+            "line_start": 2,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "\"이곳은···.\" 커튼으로 가려져 있던 방에는 사람들의 사진들과 성냥, 불 꺼진 양초들이 가득 놓여 있었다. [부디 그곳에서는 평안하길.] 벽 한편에는 죽은 이들을 애도하는 글귀들이 적혀있었다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "두 사람",
+            "summary": "방 안을 본 한 사람이 이곳이 떠나간 분들을 애도하는 곳이었나 보다고 말하며 두 사람이 그곳을 바라본다.",
+            "line_start": 8,
+            "line_end": 10,
+            "claim_line": null,
+            "quote": "\"떠나간 분들을 애도하는 곳이었나 보네요.\" 두 사람은 그곳을 바라보다가···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "두 사람, 지휘관",
+            "summary": "두 사람이 짧게 묵념한 후 떠나간다.",
+            "line_start": 12,
+            "line_end": 12,
+            "claim_line": null,
+            "quote": "짧게 묵념한 후 떠나간다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "두 사람, 지휘관",
+            "summary": "두 사람이 갖고 온 액자를 놓고 기도한다.",
+            "line_start": 14,
+            "line_end": 14,
+            "claim_line": null,
+            "quote": "갖고 온 [액자]를 놓고 기도한다.",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "액자",
+            "category": "item",
+            "subject": null,
+            "detail": "애도하는 방에 놓고 기도할 수 있는 갖고 온 액자.",
+            "line_start": 14,
+            "line_end": 14,
+            "quote": "갖고 온 [액자]를 놓고 기도한다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "성냥",
+            "suggested_type": "item",
+            "line_start": 4
+          },
+          {
+            "surface_text": "양초",
+            "suggested_type": "item",
+            "line_start": 4
+          },
+          {
+            "surface_text": "액자",
+            "suggested_type": "item",
+            "line_start": 14
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001308",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 008",
+      "line_count": 15,
+      "body_bytes": 981,
+      "raw_bytes": 1046,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 생각보다 더 많은 양의 통조림을 얻었다는 것에 기뻐하는 두 사람.\n[L0003] 모아놓은 통조림들을 빤히 바라보던 라푼젤은 요즘 도로시도 그렇고 초소가 너무 우울한 분위기이니, 분위기 환기를 위해서 요리를 만들어서 서프라이즈를 해주자고 제안한다.\n[L0004] 이에 동의하는 스노우 화이트.\n[L0005] 라푼젤은 신이 나서···.\n[L0006] [CHOICE_START ID=\"white_memory_page_1001308_choice\"]\n[L0007]   [OPTION TEXT=\"자신의 느낌대로 요리를 만든다.\" VALUE=\"option_100130801\"]\n[L0008]   [OPTION_END]\n[L0009]   [OPTION TEXT=\"요리책을 보고 요리를 만든다.\" VALUE=\"option_100130802\"]\n[L0010]   [OPTION_END]\n[L0011] [CHOICE_END]\n[L0012] [SCENE END]\n[L0013] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0014] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001308_choice\" OPTION=\"option_100130801\" TARGET=\"white_memory_page_1001310\"]\n[L0015] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001308_choice\" OPTION=\"option_100130802\" TARGET=\"white_memory_page_1001311\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 6,
+              "end_line": 11,
+              "choice_id": "white_memory_page_1001308_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 7,
+                  "end_line": 8,
+                  "option_text": "자신의 느낌대로 요리를 만든다.",
+                  "option_value": "option_100130801",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 9,
+                  "end_line": 10,
+                  "option_text": "요리책을 보고 요리를 만든다.",
+                  "option_value": "option_100130802",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001308_choice",
+              "option": "option_100130801",
+              "target": "white_memory_page_1001310",
+              "is_default": false
+            },
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001308_choice",
+              "option": "option_100130802",
+              "target": "white_memory_page_1001311",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001308_choice",
+              "option": "option_100130801",
+              "target": "white_memory_page_1001310",
+              "is_default": false
+            },
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001308_choice",
+              "option": "option_100130802",
+              "target": "white_memory_page_1001311",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001306",
+              "choice_id": "white_memory_page_1001306_choice",
+              "option": "option_100130601",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001309"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001309"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[25].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001308",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "많은 통조림을 얻어 기뻐하던 중, 라푼젤이 요즘 도로시도 그렇고 초소 분위기가 우울하니 요리로 서프라이즈를 해주자고 제안하고 스노우 화이트가 동의한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "모아놓은 통조림들을 빤히 바라보던 라푼젤은 요즘 도로시도 그렇고 초소가 너무 우울한 분위기이니, 분위기 환기를 위해서 요리를 만들어서 서프라이즈를 해주자고 제안한다."
+            },
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "이에 동의하는 스노우 화이트."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "통조림",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "생각보다 더 많은 양의 통조림을 얻었다는 것에 기뻐하는 두 사람."
+            },
+            {
+              "surface_text": "도로시",
+              "entity_id": "char_도로시",
+              "entity_type": "character",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "모아놓은 통조림들을 빤히 바라보던 라푼젤은 요즘 도로시도 그렇고 초소가 너무 우울한 분위기이니, 분위기 환기를 위해서 요리를 만들어서 서프라이즈를 해주자고 제안한다."
+            },
+            {
+              "surface_text": "초소",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "모아놓은 통조림들을 빤히 바라보던 라푼젤은 요즘 도로시도 그렇고 초소가 너무 우울한 분위기이니, 분위기 환기를 위해서 요리를 만들어서 서프라이즈를 해주자고 제안한다."
+            },
+            {
+              "surface_text": "요리책",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 9,
+              "line_end": 9,
+              "quote": "요리책을 보고 요리를 만든다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 6,
+            "options": [
+              {
+                "option_text": "자신의 느낌대로 요리를 만든다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "요리책을 보고 요리를 만든다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤, 스노우 화이트",
+            "summary": "두 사람이 생각보다 더 많은 양의 통조림을 얻었다는 것에 기뻐한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "claim_line": null,
+            "quote": "생각보다 더 많은 양의 통조림을 얻었다는 것에 기뻐하는 두 사람.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤",
+            "summary": "라푼젤은 요즘 도로시도 그렇고 초소가 너무 우울한 분위기라고 말한다.",
+            "line_start": 3,
+            "line_end": 3,
+            "claim_line": 3,
+            "quote": "모아놓은 통조림들을 빤히 바라보던 라푼젤은 요즘 도로시도 그렇고 초소가 너무 우울한 분위기이니, 분위기 환기를 위해서 요리를 만들어서 서프라이즈를 해주자고 제안한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤",
+            "summary": "모아놓은 통조림들을 바라보던 라푼젤이 초소의 분위기 환기를 위해 요리를 만들어 서프라이즈를 해주자고 제안한다.",
+            "line_start": 3,
+            "line_end": 3,
+            "claim_line": null,
+            "quote": "모아놓은 통조림들을 빤히 바라보던 라푼젤은 요즘 도로시도 그렇고 초소가 너무 우울한 분위기이니, 분위기 환기를 위해서 요리를 만들어서 서프라이즈를 해주자고 제안한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트가 라푼젤의 요리 서프라이즈 제안에 동의한다.",
+            "line_start": 4,
+            "line_end": 5,
+            "claim_line": null,
+            "quote": "이에 동의하는 스노우 화이트. 라푼젤은 신이 나서···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤, 지휘관",
+            "summary": "라푼젤이 자신의 느낌대로 요리를 만든다.",
+            "line_start": 7,
+            "line_end": 7,
+            "claim_line": null,
+            "quote": "자신의 느낌대로 요리를 만든다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤, 지휘관",
+            "summary": "라푼젤이 요리책을 보고 요리를 만든다.",
+            "line_start": 9,
+            "line_end": 9,
+            "claim_line": null,
+            "quote": "요리책을 보고 요리를 만든다.",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "통조림",
+            "suggested_type": "item",
+            "line_start": 2
+          },
+          {
+            "surface_text": "초소",
+            "suggested_type": "location",
+            "line_start": 3
+          },
+          {
+            "surface_text": "요리책",
+            "suggested_type": "item",
+            "line_start": 9
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001314",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 014",
+      "line_count": 14,
+      "body_bytes": 913,
+      "raw_bytes": 978,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 라푼젤은 민가에서 가져온 [액자]를 바닥의 사진들 틈에 내려놓은 채, 성냥을 꺼내 양초에 불을 켜기 시작했다.\n[L0003] 이윽고 방 안에 있던 모든 초에 불이 켜지고, 라푼젤은 그 끝에 조용히 무릎을 꿇었다.\n[L0004] 그 모습을 묵묵히 바라보던 스노우 화이트는···.\n[L0005] [CHOICE_START ID=\"white_memory_page_1001314_choice\"]\n[L0006]   [OPTION TEXT=\"라푼젤과 함께 있는다.\" VALUE=\"option_100131401\"]\n[L0007]   [OPTION_END]\n[L0008]   [OPTION TEXT=\"라푼젤은 혼자 두고 다른 곳을 둘러본다.\" VALUE=\"option_100131402\"]\n[L0009]   [OPTION_END]\n[L0010] [CHOICE_END]\n[L0011] [SCENE END]\n[L0012] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0013] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001314_choice\" OPTION=\"option_100131401\" TARGET=\"white_memory_page_1001315\"]\n[L0014] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001314_choice\" OPTION=\"option_100131402\" TARGET=\"white_memory_page_1001316\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 5,
+              "end_line": 10,
+              "choice_id": "white_memory_page_1001314_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "라푼젤과 함께 있는다.",
+                  "option_value": "option_100131401",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "라푼젤은 혼자 두고 다른 곳을 둘러본다.",
+                  "option_value": "option_100131402",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001314_choice",
+              "option": "option_100131401",
+              "target": "white_memory_page_1001315",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001314_choice",
+              "option": "option_100131402",
+              "target": "white_memory_page_1001316",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001314_choice",
+              "option": "option_100131401",
+              "target": "white_memory_page_1001315",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001314_choice",
+              "option": "option_100131402",
+              "target": "white_memory_page_1001316",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001307",
+              "choice_id": "white_memory_page_1001307_choice",
+              "option": "option_100130702",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001313"
+              ]
+            },
+            {
+              "from_scene_id": "white_memory_page_1001316",
+              "choice_id": "white_memory_page_1001316_choice",
+              "option": "option_100131602",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001317"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001313",
+            "white_memory_page_1001317"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[34].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001314",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "라푼젤이 민가에서 가져온 액자를 사진들 틈에 내려놓고 방 안의 모든 양초에 불을 켠 뒤 무릎을 꿇자, 스노우 화이트가 어떻게 할지 고른다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤은 민가에서 가져온 [액자]를 바닥의 사진들 틈에 내려놓은 채, 성냥을 꺼내 양초에 불을 켜기 시작했다."
+            },
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "그 모습을 묵묵히 바라보던 스노우 화이트는···."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "민가",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤은 민가에서 가져온 [액자]를 바닥의 사진들 틈에 내려놓은 채, 성냥을 꺼내 양초에 불을 켜기 시작했다."
+            },
+            {
+              "surface_text": "액자",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤은 민가에서 가져온 [액자]를 바닥의 사진들 틈에 내려놓은 채, 성냥을 꺼내 양초에 불을 켜기 시작했다."
+            },
+            {
+              "surface_text": "성냥",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤은 민가에서 가져온 [액자]를 바닥의 사진들 틈에 내려놓은 채, 성냥을 꺼내 양초에 불을 켜기 시작했다."
+            },
+            {
+              "surface_text": "양초",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤은 민가에서 가져온 [액자]를 바닥의 사진들 틈에 내려놓은 채, 성냥을 꺼내 양초에 불을 켜기 시작했다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 5,
+            "options": [
+              {
+                "option_text": "라푼젤과 함께 있는다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "라푼젤은 혼자 두고 다른 곳을 둘러본다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤, 스노우 화이트",
+            "summary": "라푼젤이 민가에서 가져온 액자를 바닥의 사진들 틈에 내려놓고 성냥으로 방 안의 모든 양초에 불을 켠 뒤 무릎을 꿇자, 스노우 화이트가 그 모습을 묵묵히 바라본다.",
+            "line_start": 2,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "라푼젤은 민가에서 가져온 [액자]를 바닥의 사진들 틈에 내려놓은 채, 성냥을 꺼내 양초에 불을 켜기 시작했다. 이윽고 방 안에 있던 모든 초에 불이 켜지고, 라푼젤은 그 끝에 조용히 무릎을 꿇었다. 그 모습을 묵묵히 바라보던 스노우 화이트는···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 라푼젤과 함께 있기로 한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "라푼젤과 함께 있는다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 라푼젤을 혼자 두고 다른 곳을 둘러보기로 한다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "라푼젤은 혼자 두고 다른 곳을 둘러본다.",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "민가",
+            "suggested_type": "location",
+            "line_start": 2
+          },
+          {
+            "surface_text": "액자",
+            "suggested_type": "item",
+            "line_start": 2
+          },
+          {
+            "surface_text": "성냥",
+            "suggested_type": "item",
+            "line_start": 2
+          },
+          {
+            "surface_text": "양초",
+            "suggested_type": "item",
+            "line_start": 2
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001316",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 016",
+      "line_count": 14,
+      "body_bytes": 829,
+      "raw_bytes": 894,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 라푼젤을 두고 다시 공장 내부를 둘러보던 스노우 화이트는 익숙한 꽃향기를 맡는다.\n[L0003] 스노우 화이트는 향기가 나는 쪽을 찾아보다가 뒤뜰로 나가는 문을 발견한다.\n[L0004] 스노우 화이트는···.\n[L0005] [CHOICE_START ID=\"white_memory_page_1001316_choice\"]\n[L0006]   [OPTION TEXT=\"문을 열고 나가본다.\" VALUE=\"option_100131601\"]\n[L0007]   [OPTION_END]\n[L0008]   [OPTION TEXT=\"<color=#20B2AA>라푼젤에게로 돌아간다.</color>\" VALUE=\"option_100131602\"]\n[L0009]   [OPTION_END]\n[L0010] [CHOICE_END]\n[L0011] [SCENE END]\n[L0012] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0013] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001316_choice\" OPTION=\"option_100131601\" TARGET=\"white_memory_page_1001317\"]\n[L0014] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001316_choice\" OPTION=\"option_100131602\" TARGET=\"white_memory_page_1001314\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 5,
+              "end_line": 10,
+              "choice_id": "white_memory_page_1001316_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "문을 열고 나가본다.",
+                  "option_value": "option_100131601",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "<color=#20B2AA>라푼젤에게로 돌아간다.</color>",
+                  "option_value": "option_100131602",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001316_choice",
+              "option": "option_100131601",
+              "target": "white_memory_page_1001317",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001316_choice",
+              "option": "option_100131602",
+              "target": "white_memory_page_1001314",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001316_choice",
+              "option": "option_100131601",
+              "target": "white_memory_page_1001317",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001316_choice",
+              "option": "option_100131602",
+              "target": "white_memory_page_1001314",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001314",
+              "choice_id": "white_memory_page_1001314_choice",
+              "option": "option_100131402",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001315"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001315"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[37].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001316",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "라푼젤을 두고 공장 내부를 둘러보던 스노우 화이트가 익숙한 꽃향기가 나는 쪽에서 뒤뜰로 나가는 문을 발견하고 어떻게 할지 고른다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤을 두고 다시 공장 내부를 둘러보던 스노우 화이트는 익숙한 꽃향기를 맡는다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "entity_type": "character",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤을 두고 다시 공장 내부를 둘러보던 스노우 화이트는 익숙한 꽃향기를 맡는다."
+            },
+            {
+              "surface_text": "공장",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "라푼젤을 두고 다시 공장 내부를 둘러보던 스노우 화이트는 익숙한 꽃향기를 맡는다."
+            },
+            {
+              "surface_text": "뒤뜰",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "스노우 화이트는 향기가 나는 쪽을 찾아보다가 뒤뜰로 나가는 문을 발견한다."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 5,
+            "options": [
+              {
+                "option_text": "문을 열고 나가본다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "<color=#20B2AA>라푼젤에게로 돌아간다.</color>",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "라푼젤을 두고 다시 공장 내부를 둘러보던 스노우 화이트가 익숙한 꽃향기를 맡고 향기가 나는 쪽을 찾아보다가 뒤뜰로 나가는 문을 발견한다.",
+            "line_start": 2,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "라푼젤을 두고 다시 공장 내부를 둘러보던 스노우 화이트는 익숙한 꽃향기를 맡는다. 스노우 화이트는 향기가 나는 쪽을 찾아보다가 뒤뜰로 나가는 문을 발견한다. 스노우 화이트는···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 문을 열고 나가본다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "문을 열고 나가본다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 지휘관",
+            "summary": "스노우 화이트가 라푼젤에게로 돌아간다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "<color=#20B2AA>라푼젤에게로 돌아간다.</color>",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "꽃향기",
+            "category": "foreshadowing",
+            "subject": null,
+            "detail": "공장 내부를 둘러보던 스노우 화이트가 맡은 익숙한 꽃향기로, 뒤뜰로 나가는 문 쪽에서 난다.",
+            "line_start": 2,
+            "line_end": 3,
+            "quote": "라푼젤을 두고 다시 공장 내부를 둘러보던 스노우 화이트는 익숙한 꽃향기를 맡는다. 스노우 화이트는 향기가 나는 쪽을 찾아보다가 뒤뜰로 나가는 문을 발견한다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "공장",
+            "suggested_type": "location",
+            "line_start": 2
+          },
+          {
+            "surface_text": "뒤뜰",
+            "suggested_type": "location",
+            "line_start": 3
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001319",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 019",
+      "line_count": 16,
+      "body_bytes": 1084,
+      "raw_bytes": 1149,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다.\n[L0003] [낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람.\n[L0004] \n[L0005] [누구나 따라 할 수 있는 요리!] [오늘은 요리왕!]이라는 이름을 지닌 그것을 본 라푼젤은 식료품을 찾으면 요리를 해서 가져가도 좋겠다고 말한다.\n[L0006] 스노우 화이트는 라푼젤에게 이 요리책이 필요하냐고 묻고, 라푼젤은···.\n[L0007] [CHOICE_START ID=\"white_memory_page_1001319_choice\"]\n[L0008]   [OPTION TEXT=\"요리책이 필요하다고 한다.\" VALUE=\"option_100131901\"]\n[L0009]   [OPTION_END]\n[L0010]   [OPTION TEXT=\"요리책이 필요하지 않다고 한다.\" VALUE=\"option_100131902\"]\n[L0011]   [OPTION_END]\n[L0012] [CHOICE_END]\n[L0013] [SCENE END]\n[L0014] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0015] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001319_choice\" OPTION=\"option_100131901\" TARGET=\"white_memory_page_1001320\"]\n[L0016] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001319_choice\" OPTION=\"option_100131902\" TARGET=\"white_memory_page_1001321\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 7,
+              "end_line": 12,
+              "choice_id": "white_memory_page_1001319_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "요리책이 필요하다고 한다.",
+                  "option_value": "option_100131901",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 10,
+                  "end_line": 11,
+                  "option_text": "요리책이 필요하지 않다고 한다.",
+                  "option_value": "option_100131902",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001319_choice",
+              "option": "option_100131901",
+              "target": "white_memory_page_1001320",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001319_choice",
+              "option": "option_100131902",
+              "target": "white_memory_page_1001321",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001319_choice",
+              "option": "option_100131901",
+              "target": "white_memory_page_1001320",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001319_choice",
+              "option": "option_100131902",
+              "target": "white_memory_page_1001321",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001304",
+              "choice_id": "white_memory_page_1001304_choice",
+              "option": "option_100130401",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001322",
+                "white_memory_page_1001326"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001322",
+            "white_memory_page_1001326"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[41].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001319",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "왼쪽 집에 들어간 스노우 화이트와 라푼젤이 방주 포스터, 낙첨된 추첨권들, 요리책을 발견하고 요리책이 필요한지 이야기를 나눈다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "[누구나 따라 할 수 있는 요리!] [오늘은 요리왕!]이라는 이름을 지닌 그것을 본 라푼젤은 식료품을 찾으면 요리를 해서 가져가도 좋겠다고 말한다."
+            },
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 6,
+              "line_end": 6,
+              "quote": "스노우 화이트는 라푼젤에게 이 요리책이 필요하냐고 묻고, 라푼젤은···."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "방주",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다."
+            },
+            {
+              "surface_text": "방주 포스터",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다."
+            },
+            {
+              "surface_text": "추첨권",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 3,
+              "quote": "왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다.\n[낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람."
+            },
+            {
+              "surface_text": "요리책",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "[낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람."
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 7,
+            "options": [
+              {
+                "option_text": "요리책이 필요하다고 한다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "요리책이 필요하지 않다고 한다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤",
+            "summary": "왼쪽 집에 들어간 스노우 화이트와 라푼젤이 집 안에 흩뿌려진 방주 포스터들과 '낙첨'이라는 글자만 적혀 있는 수많은 추첨권, 그리고 요리책을 발견한다.",
+            "line_start": 2,
+            "line_end": 3,
+            "claim_line": null,
+            "quote": "왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다.\n[낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤",
+            "summary": "라푼젤이 '누구나 따라 할 수 있는 요리! 오늘은 요리왕!'이라는 요리책을 보고 식료품을 찾으면 요리를 해서 가져가도 좋겠다고 말한다.",
+            "line_start": 5,
+            "line_end": 5,
+            "claim_line": 5,
+            "quote": "[누구나 따라 할 수 있는 요리!] [오늘은 요리왕!]이라는 이름을 지닌 그것을 본 라푼젤은 식료품을 찾으면 요리를 해서 가져가도 좋겠다고 말한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트가 라푼젤에게 이 요리책이 필요하냐고 묻는다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "스노우 화이트는 라푼젤에게 이 요리책이 필요하냐고 묻고, 라푼젤은···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "요리책이 필요하다고 한다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"요리책이 필요하다고 한다.\" VALUE=\"option_100131901\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "요리책이 필요하지 않다고 한다.",
+            "line_start": 10,
+            "line_end": 10,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"요리책이 필요하지 않다고 한다.\" VALUE=\"option_100131902\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "방주 포스터",
+            "category": "item",
+            "subject": null,
+            "detail": "왼쪽 집 안에 '낙첨'이라 적힌 수많은 추첨권들과 함께 흩뿌려져 있던 방주 포스터.",
+            "line_start": 2,
+            "line_end": 3,
+            "quote": "왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다.\n[낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람."
+          },
+          {
+            "keyword": "추첨권",
+            "category": "item",
+            "subject": null,
+            "detail": "왼쪽 집 안에 흩뿌려져 있던 수많은 추첨권으로, 모두 '낙첨'이라는 글자만 적혀 있다.",
+            "line_start": 2,
+            "line_end": 3,
+            "quote": "왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다.\n[낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람."
+          },
+          {
+            "keyword": "요리책",
+            "category": "item",
+            "subject": null,
+            "detail": "왼쪽 집에서 발견된 '누구나 따라 할 수 있는 요리! 오늘은 요리왕!'이라는 이름의 요리책.",
+            "line_start": 3,
+            "line_end": 5,
+            "quote": "[낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람.\n\n[누구나 따라 할 수 있는 요리!] [오늘은 요리왕!]이라는 이름을 지닌 그것을 본 라푼젤은 식료품을 찾으면 요리를 해서 가져가도 좋겠다고 말한다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "방주 포스터",
+            "suggested_type": "item",
+            "line_start": 2
+          },
+          {
+            "surface_text": "추첨권",
+            "suggested_type": "item",
+            "line_start": 2
+          },
+          {
+            "surface_text": "요리책",
+            "suggested_type": "item",
+            "line_start": 3
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001320",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 020",
+      "line_count": 20,
+      "body_bytes": 1059,
+      "raw_bytes": 1124,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] \"요리책이 있어서 나쁠 건 없으니까요.\"\n[L0003] \n[L0004] 라고 말하는 라푼젤.\n[L0005] 스노우 화이트는 그 말에 동의한다.\n[L0006] 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.\n[L0007] \n[L0008] 수집품 획득: 요리책\n[L0009] [오늘은 요리왕!]이라고 적혀있는 요리책.\n[L0010] 일반 재료를 사용해 만드는 요리법 뿐만 아니라, 통조림 등 즉석식품을 이용한 간편 요리법도 함께 소개하고 있다.\n[L0011] [CHOICE_START ID=\"white_memory_page_1001320_choice\"]\n[L0012]   [OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100132001\"]\n[L0013]   [OPTION_END]\n[L0014]   [OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132002\"]\n[L0015]   [OPTION_END]\n[L0016] [CHOICE_END]\n[L0017] [SCENE END]\n[L0018] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0019] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001320_choice\" OPTION=\"option_100132001\" TARGET=\"white_memory_page_1001304\"]\n[L0020] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001320_choice\" OPTION=\"option_100132002\" TARGET=\"white_memory_page_1001332\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 11,
+              "end_line": 16,
+              "choice_id": "white_memory_page_1001320_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 12,
+                  "end_line": 13,
+                  "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                  "option_value": "option_100132001",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 14,
+                  "end_line": 15,
+                  "option_text": "공장으로 가보기로 한다.",
+                  "option_value": "option_100132002",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 19,
+              "if_choice": "white_memory_page_1001320_choice",
+              "option": "option_100132001",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 20,
+              "if_choice": "white_memory_page_1001320_choice",
+              "option": "option_100132002",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 19,
+              "if_choice": "white_memory_page_1001320_choice",
+              "option": "option_100132001",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 20,
+              "if_choice": "white_memory_page_1001320_choice",
+              "option": "option_100132002",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001319",
+              "choice_id": "white_memory_page_1001319_choice",
+              "option": "option_100131901",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001321"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001321"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[42].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001320",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "라푼젤이 요리책이 있어서 나쁠 건 없다고 말하자 스노우 화이트가 동의하며 수집품 '요리책'을 획득하고, 다음 행선지를 정한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "라고 말하는 라푼젤."
+            },
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "스노우 화이트는 그 말에 동의한다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "요리책",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 8,
+              "line_end": 9,
+              "quote": "수집품 획득: 요리책\n[오늘은 요리왕!]이라고 적혀있는 요리책."
+            },
+            {
+              "surface_text": "공장",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 14,
+              "line_end": 14,
+              "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132002\"]"
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": [
+              "라푼젤"
+            ]
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 11,
+            "options": [
+              {
+                "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "공장으로 가보기로 한다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤",
+            "summary": "라푼젤이 요리책이 있어서 나쁠 건 없다고 말한다.",
+            "line_start": 2,
+            "line_end": 4,
+            "claim_line": 4,
+            "quote": "\"요리책이 있어서 나쁠 건 없으니까요.\"\n\n라고 말하는 라푼젤.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트가 요리책이 있어서 나쁠 건 없다는 라푼젤의 말에 동의한다.",
+            "line_start": 5,
+            "line_end": 5,
+            "claim_line": 5,
+            "quote": "스노우 화이트는 그 말에 동의한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트와 라푼젤은 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": 6,
+            "quote": "더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트, 라푼젤",
+            "summary": "일반 재료 요리법과 통조림 등 즉석식품을 이용한 간편 요리법이 소개된 '[오늘은 요리왕!]' 요리책을 수집품으로 획득한다.",
+            "line_start": 8,
+            "line_end": 10,
+            "claim_line": null,
+            "quote": "수집품 획득: 요리책\n[오늘은 요리왕!]이라고 적혀있는 요리책.\n일반 재료를 사용해 만드는 요리법 뿐만 아니라, 통조림 등 즉석식품을 이용한 간편 요리법도 함께 소개하고 있다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "다른 집을 좀 더 둘러보기로 한다.",
+            "line_start": 12,
+            "line_end": 12,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100132001\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "공장으로 가 보기로 한다.",
+            "line_start": 14,
+            "line_end": 14,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132002\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "요리책",
+            "category": "item",
+            "subject": null,
+            "detail": "'오늘은 요리왕!'이라고 적혀 있는 수집품 요리책. 일반 재료 요리법뿐 아니라 통조림 등 즉석식품을 이용한 간편 요리법도 함께 소개하고 있다.",
+            "line_start": 8,
+            "line_end": 10,
+            "quote": "수집품 획득: 요리책\n[오늘은 요리왕!]이라고 적혀있는 요리책.\n일반 재료를 사용해 만드는 요리법 뿐만 아니라, 통조림 등 즉석식품을 이용한 간편 요리법도 함께 소개하고 있다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "요리책",
+            "suggested_type": "item",
+            "line_start": 8
+          },
+          {
+            "surface_text": "공장",
+            "suggested_type": "location",
+            "line_start": 14
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001321",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 021",
+      "line_count": 16,
+      "body_bytes": 847,
+      "raw_bytes": 912,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] \"요리는 기본 실력으로 하는 법이랍니다.\"\n[L0003] \n[L0004] 라고 자신만만하게 말하는 라푼젤.\n[L0005] 스노우 화이트는 그 말을 믿기로 한다.\n[L0006] 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.\n[L0007] [CHOICE_START ID=\"white_memory_page_1001321_choice\"]\n[L0008]   [OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100132101\"]\n[L0009]   [OPTION_END]\n[L0010]   [OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132102\"]\n[L0011]   [OPTION_END]\n[L0012] [CHOICE_END]\n[L0013] [SCENE END]\n[L0014] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0015] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001321_choice\" OPTION=\"option_100132101\" TARGET=\"white_memory_page_1001304\"]\n[L0016] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001321_choice\" OPTION=\"option_100132102\" TARGET=\"white_memory_page_1001332\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 7,
+              "end_line": 12,
+              "choice_id": "white_memory_page_1001321_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                  "option_value": "option_100132101",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 10,
+                  "end_line": 11,
+                  "option_text": "공장으로 가보기로 한다.",
+                  "option_value": "option_100132102",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001321_choice",
+              "option": "option_100132101",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001321_choice",
+              "option": "option_100132102",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001321_choice",
+              "option": "option_100132101",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001321_choice",
+              "option": "option_100132102",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001319",
+              "choice_id": "white_memory_page_1001319_choice",
+              "option": "option_100131902",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001320"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001320"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[43].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001321",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "라푼젤이 요리는 기본 실력으로 하는 법이라며 자신만만하게 말하자 스노우 화이트는 그 말을 믿기로 하고, 두 사람은 다음 행선지를 정한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "라고 자신만만하게 말하는 라푼젤."
+            },
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "스노우 화이트는 그 말을 믿기로 한다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "공장",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 10,
+              "line_end": 10,
+              "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132102\"]"
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": [
+              "라푼젤"
+            ]
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 7,
+            "options": [
+              {
+                "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "공장으로 가보기로 한다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤",
+            "summary": "라푼젤이 요리는 기본 실력으로 하는 법이라며 자신만만하게 말한다.",
+            "line_start": 2,
+            "line_end": 4,
+            "claim_line": 4,
+            "quote": "\"요리는 기본 실력으로 하는 법이랍니다.\"\n\n라고 자신만만하게 말하는 라푼젤.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트는 요리는 기본 실력으로 하는 법이라는 라푼젤의 말을 믿기로 한다.",
+            "line_start": 5,
+            "line_end": 5,
+            "claim_line": 5,
+            "quote": "스노우 화이트는 그 말을 믿기로 한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트와 라푼젤은 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": 6,
+            "quote": "더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "다른 집을 좀 더 둘러보기로 한다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100132101\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "공장으로 가 보기로 한다.",
+            "line_start": 10,
+            "line_end": 10,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132102\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "공장",
+            "suggested_type": "location",
+            "line_start": 10
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001322",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 022",
+      "line_count": 14,
+      "body_bytes": 877,
+      "raw_bytes": 942,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 가운데 위치한 집으로 들어간 두 사람은 누군가가 이미 한차례 왔다 간 듯, 텅 빈 집안 구석에 빈 통조림들만이 가지런히 쌓여있는 것을 발견한다.\n[L0003] 그리고 부서지거나 열려있는 다른 것들과 달리, 굳게 닫혀있는 방문 하나를 발견한다.\n[L0004] 두 사람은 이 문을···.\n[L0005] [CHOICE_START ID=\"white_memory_page_1001322_choice\"]\n[L0006]   [OPTION TEXT=\"열어보지 않는다.\" VALUE=\"option_100132201\"]\n[L0007]   [OPTION_END]\n[L0008]   [OPTION TEXT=\"열어본다.\" VALUE=\"option_100132202\"]\n[L0009]   [OPTION_END]\n[L0010] [CHOICE_END]\n[L0011] [SCENE END]\n[L0012] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0013] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001322_choice\" OPTION=\"option_100132201\" TARGET=\"white_memory_page_1001323\"]\n[L0014] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001322_choice\" OPTION=\"option_100132202\" TARGET=\"white_memory_page_1001324\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 5,
+              "end_line": 10,
+              "choice_id": "white_memory_page_1001322_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "열어보지 않는다.",
+                  "option_value": "option_100132201",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "열어본다.",
+                  "option_value": "option_100132202",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001322_choice",
+              "option": "option_100132201",
+              "target": "white_memory_page_1001323",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001322_choice",
+              "option": "option_100132202",
+              "target": "white_memory_page_1001324",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 13,
+              "if_choice": "white_memory_page_1001322_choice",
+              "option": "option_100132201",
+              "target": "white_memory_page_1001323",
+              "is_default": false
+            },
+            {
+              "line": 14,
+              "if_choice": "white_memory_page_1001322_choice",
+              "option": "option_100132202",
+              "target": "white_memory_page_1001324",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001304",
+              "choice_id": "white_memory_page_1001304_choice",
+              "option": "option_100130402",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001319",
+                "white_memory_page_1001326"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001319",
+            "white_memory_page_1001326"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[44].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001322",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "가운데 집에 들어간 두 사람이 구석에 가지런히 쌓인 빈 통조림들과 굳게 닫힌 방문 하나를 발견하고, 문을 열어 볼지 결정한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "빈 통조림",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "가운데 위치한 집으로 들어간 두 사람은 누군가가 이미 한차례 왔다 간 듯, 텅 빈 집안 구석에 빈 통조림들만이 가지런히 쌓여있는 것을 발견한다."
+            }
+          ],
+          "document_author": null
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 5,
+            "options": [
+              {
+                "option_text": "열어보지 않는다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "열어본다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "두 사람",
+            "summary": "가운데 위치한 집으로 들어간 두 사람이 텅 빈 집 안 구석에 가지런히 쌓여 있는 빈 통조림들과, 다른 것들과 달리 굳게 닫혀 있는 방문 하나를 발견한다.",
+            "line_start": 2,
+            "line_end": 3,
+            "claim_line": null,
+            "quote": "가운데 위치한 집으로 들어간 두 사람은 누군가가 이미 한차례 왔다 간 듯, 텅 빈 집안 구석에 빈 통조림들만이 가지런히 쌓여있는 것을 발견한다.\n그리고 부서지거나 열려있는 다른 것들과 달리, 굳게 닫혀있는 방문 하나를 발견한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "지문",
+            "summary": "텅 빈 집 안 구석에 빈 통조림들만 가지런히 쌓여 있는 것으로 보아 누군가가 이미 한차례 왔다 간 듯하다고 추측한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "claim_line": 2,
+            "quote": "가운데 위치한 집으로 들어간 두 사람은 누군가가 이미 한차례 왔다 간 듯, 텅 빈 집안 구석에 빈 통조림들만이 가지런히 쌓여있는 것을 발견한다.",
+            "refers_to_past": true
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "굳게 닫혀 있는 방문을 열어 보지 않는다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"열어보지 않는다.\" VALUE=\"option_100132201\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "굳게 닫혀 있는 방문을 열어 본다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"열어본다.\" VALUE=\"option_100132202\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "빈 통조림",
+            "category": "item",
+            "subject": null,
+            "detail": "가운데 집의 텅 빈 구석에 가지런히 쌓여 있어 누군가가 이미 한차례 왔다 간 흔적을 보여 주는 빈 통조림들.",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "가운데 위치한 집으로 들어간 두 사람은 누군가가 이미 한차례 왔다 간 듯, 텅 빈 집안 구석에 빈 통조림들만이 가지런히 쌓여있는 것을 발견한다."
+          },
+          {
+            "keyword": "방문",
+            "category": "foreshadowing",
+            "subject": null,
+            "detail": "가운데 집 안에서 부서지거나 열려 있는 다른 것들과 달리 굳게 닫혀 있는 방문.",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "그리고 부서지거나 열려있는 다른 것들과 달리, 굳게 닫혀있는 방문 하나를 발견한다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "빈 통조림",
+            "suggested_type": "item",
+            "line_start": 2
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001325",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 025",
+      "line_count": 12,
+      "body_bytes": 691,
+      "raw_bytes": 756,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.\n[L0003] [CHOICE_START ID=\"white_memory_page_1001325_choice\"]\n[L0004]   [OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100132501\"]\n[L0005]   [OPTION_END]\n[L0006]   [OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132502\"]\n[L0007]   [OPTION_END]\n[L0008] [CHOICE_END]\n[L0009] [SCENE END]\n[L0010] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0011] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001325_choice\" OPTION=\"option_100132501\" TARGET=\"white_memory_page_1001304\"]\n[L0012] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001325_choice\" OPTION=\"option_100132502\" TARGET=\"white_memory_page_1001332\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 3,
+              "end_line": 8,
+              "choice_id": "white_memory_page_1001325_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 4,
+                  "end_line": 5,
+                  "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                  "option_value": "option_100132501",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "공장으로 가보기로 한다.",
+                  "option_value": "option_100132502",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 11,
+              "if_choice": "white_memory_page_1001325_choice",
+              "option": "option_100132501",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001325_choice",
+              "option": "option_100132502",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 11,
+              "if_choice": "white_memory_page_1001325_choice",
+              "option": "option_100132501",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001325_choice",
+              "option": "option_100132502",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001323",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            },
+            {
+              "from_scene_id": "white_memory_page_1001324",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[47].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001325",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람이 다른 집을 둘러볼지 공장으로 갈지 결정한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "공장",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 6,
+              "line_end": 6,
+              "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132502\"]"
+            }
+          ],
+          "document_author": null
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 3,
+            "options": [
+              {
+                "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "공장으로 가보기로 한다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "지문",
+            "summary": "두 사람은 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "claim_line": 2,
+            "quote": "더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "다른 집을 좀 더 둘러보기로 한다.",
+            "line_start": 4,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100132501\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "공장으로 가 보기로 한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100132502\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "공장",
+            "suggested_type": "location",
+            "line_start": 6
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001328",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 028",
+      "line_count": 16,
+      "body_bytes": 900,
+      "raw_bytes": 965,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] \"스노우 화이트?\"\n[L0003] \n[L0004] 라푼젤의 부름과 함게 정신을 차린 스노우 화이트.\n[L0005] 라푼젤은 걱정스럽게 무슨 일이 있냐며 묻고, 스노우 화이트는 아무 일 없다며 자신은 신경 쓰지 말고 좀 더 둘러보라고 말한다.\n[L0006] 라푼젤이 알겠다며 떠나간 후, 스노우 화이트는 바닥에 떨어진 이 꽃을···.\n[L0007] [CHOICE_START ID=\"white_memory_page_1001328_choice\"]\n[L0008]   [OPTION TEXT=\"가져간다.\" VALUE=\"option_100132801\"]\n[L0009]   [OPTION_END]\n[L0010]   [OPTION TEXT=\"가져가지 않는다.\" VALUE=\"option_100132802\"]\n[L0011]   [OPTION_END]\n[L0012] [CHOICE_END]\n[L0013] [SCENE END]\n[L0014] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0015] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001328_choice\" OPTION=\"option_100132801\" TARGET=\"white_memory_page_1001329\"]\n[L0016] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001328_choice\" OPTION=\"option_100132802\" TARGET=\"white_memory_page_1001330\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 7,
+              "end_line": 12,
+              "choice_id": "white_memory_page_1001328_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 8,
+                  "end_line": 9,
+                  "option_text": "가져간다.",
+                  "option_value": "option_100132801",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 10,
+                  "end_line": 11,
+                  "option_text": "가져가지 않는다.",
+                  "option_value": "option_100132802",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001328_choice",
+              "option": "option_100132801",
+              "target": "white_memory_page_1001329",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001328_choice",
+              "option": "option_100132802",
+              "target": "white_memory_page_1001330",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 15,
+              "if_choice": "white_memory_page_1001328_choice",
+              "option": "option_100132801",
+              "target": "white_memory_page_1001329",
+              "is_default": false
+            },
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001328_choice",
+              "option": "option_100132802",
+              "target": "white_memory_page_1001330",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001327",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[50].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001328",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": true,
+        "summary": "라푼젤의 부름에 정신을 차린 스노우 화이트는 아무 일 없다며 라푼젤을 먼저 보내고, 바닥에 떨어진 꽃을 가져갈지 결정한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "라푼젤",
+              "entity_id": "char_라푼젤",
+              "line_start": 4,
+              "line_end": 5,
+              "quote": "라푼젤의 부름과 함게 정신을 차린 스노우 화이트.\n라푼젤은 걱정스럽게 무슨 일이 있냐며 묻고, 스노우 화이트는 아무 일 없다며 자신은 신경 쓰지 말고 좀 더 둘러보라고 말한다."
+            },
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 4,
+              "line_end": 5,
+              "quote": "라푼젤의 부름과 함게 정신을 차린 스노우 화이트.\n라푼젤은 걱정스럽게 무슨 일이 있냐며 묻고, 스노우 화이트는 아무 일 없다며 자신은 신경 쓰지 말고 좀 더 둘러보라고 말한다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": [
+              "라푼젤"
+            ]
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 7,
+            "options": [
+              {
+                "option_text": "가져간다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "가져가지 않는다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤, 스노우 화이트",
+            "summary": "라푼젤이 스노우 화이트를 부르자 스노우 화이트가 정신을 차린다.",
+            "line_start": 2,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "\"스노우 화이트?\"\n\n라푼젤의 부름과 함게 정신을 차린 스노우 화이트.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤, 스노우 화이트",
+            "summary": "라푼젤이 걱정스럽게 무슨 일이 있냐며 묻자, 스노우 화이트는 자신은 신경 쓰지 말고 좀 더 둘러보라고 말한다.",
+            "line_start": 5,
+            "line_end": 5,
+            "claim_line": null,
+            "quote": "라푼젤은 걱정스럽게 무슨 일이 있냐며 묻고, 스노우 화이트는 아무 일 없다며 자신은 신경 쓰지 말고 좀 더 둘러보라고 말한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트가 걱정하는 라푼젤에게 아무 일 없다고 말한다.",
+            "line_start": 5,
+            "line_end": 5,
+            "claim_line": 5,
+            "quote": "라푼젤은 걱정스럽게 무슨 일이 있냐며 묻고, 스노우 화이트는 아무 일 없다며 자신은 신경 쓰지 말고 좀 더 둘러보라고 말한다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "라푼젤, 스노우 화이트",
+            "summary": "라푼젤이 알겠다며 떠나간 후 스노우 화이트는 바닥에 떨어진 꽃을 어떻게 할지 고민한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "라푼젤이 알겠다며 떠나간 후, 스노우 화이트는 바닥에 떨어진 이 꽃을···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "바닥에 떨어진 꽃을 가져간다.",
+            "line_start": 8,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"가져간다.\" VALUE=\"option_100132801\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "바닥에 떨어진 꽃을 가져가지 않는다.",
+            "line_start": 10,
+            "line_end": 10,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"가져가지 않는다.\" VALUE=\"option_100132802\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001331",
+      "title": "WHITE MEMORY",
+      "sub_title": "교외 031",
+      "line_count": 12,
+      "body_bytes": 691,
+      "raw_bytes": 756,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.\n[L0003] [CHOICE_START ID=\"white_memory_page_1001331_choice\"]\n[L0004]   [OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100133101\"]\n[L0005]   [OPTION_END]\n[L0006]   [OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100133102\"]\n[L0007]   [OPTION_END]\n[L0008] [CHOICE_END]\n[L0009] [SCENE END]\n[L0010] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0011] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001331_choice\" OPTION=\"option_100133101\" TARGET=\"white_memory_page_1001304\"]\n[L0012] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001331_choice\" OPTION=\"option_100133102\" TARGET=\"white_memory_page_1001332\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 3,
+              "end_line": 8,
+              "choice_id": "white_memory_page_1001331_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 4,
+                  "end_line": 5,
+                  "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                  "option_value": "option_100133101",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 6,
+                  "end_line": 7,
+                  "option_text": "공장으로 가보기로 한다.",
+                  "option_value": "option_100133102",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 11,
+              "if_choice": "white_memory_page_1001331_choice",
+              "option": "option_100133101",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001331_choice",
+              "option": "option_100133102",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 11,
+              "if_choice": "white_memory_page_1001331_choice",
+              "option": "option_100133101",
+              "target": "white_memory_page_1001304",
+              "is_default": false
+            },
+            {
+              "line": 12,
+              "if_choice": "white_memory_page_1001331_choice",
+              "option": "option_100133102",
+              "target": "white_memory_page_1001332",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001329",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            },
+            {
+              "from_scene_id": "white_memory_page_1001330",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[53].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001331",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람이 다른 집을 둘러볼지 공장으로 갈지 결정한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "공장",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 6,
+              "line_end": 6,
+              "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100133102\"]"
+            }
+          ],
+          "document_author": null
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 3,
+            "options": [
+              {
+                "option_text": "<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "공장으로 가보기로 한다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "지문",
+            "summary": "두 사람은 더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한다.",
+            "line_start": 2,
+            "line_end": 2,
+            "claim_line": 2,
+            "quote": "더 이상 이 집에서 얻을 수 있는 것이 없다고 판단한 두 사람은···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "다른 집을 좀 더 둘러보기로 한다.",
+            "line_start": 4,
+            "line_end": 4,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"<color=#20B2AA>다른 집을 좀 더 둘러보기로 한다.</color>\" VALUE=\"option_100133101\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "공장으로 가 보기로 한다.",
+            "line_start": 6,
+            "line_end": 6,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"공장으로 가보기로 한다.\" VALUE=\"option_100133102\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "공장",
+            "suggested_type": "location",
+            "line_start": 6
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001401",
+      "title": "WHITE MEMORY",
+      "sub_title": "초원 001",
+      "line_count": 24,
+      "body_bytes": 1240,
+      "raw_bytes": 1305,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 스노우 화이트는 초원으로 향했다.\n[L0003] 햇살이 내리쬐는 평화로운 초원의 끝에, 나무에 둘러싸인 석관이 있었다.\n[L0004] 그곳에 [그녀]가 잠들어 있다.\n[L0005] \n[L0006] \"··· ···.\"\n[L0007] \n[L0008] 멀리서 그곳을 멍하니 바라보던 스노우 화이트는···.\n[L0009] [CHOICE_START ID=\"white_memory_page_1001401_choice\"]\n[L0010]   [OPTION TEXT=\"되돌아간다.\" VALUE=\"option_100140101\"]\n[L0011]   [OPTION_END]\n[L0012]   [OPTION TEXT=\"앞으로 나아간다.\" VALUE=\"option_100140102\"]\n[L0013]   [OPTION_END]\n[L0014]   [OPTION TEXT=\"주변을 둘러본다.\" VALUE=\"option_100140103\"]\n[L0015]   [OPTION_END]\n[L0016]   [OPTION TEXT=\"릴리바이스의 관을 다시 찾아간다.\" VALUE=\"option_100140104\"]\n[L0017]   [OPTION_END]\n[L0018] [CHOICE_END]\n[L0019] [SCENE END]\n[L0020] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0021] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001401_choice\" OPTION=\"option_100140101\" TARGET=\"white_memory_page_1001402\"]\n[L0022] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001401_choice\" OPTION=\"option_100140102\" TARGET=\"white_memory_page_1001403\"]\n[L0023] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001401_choice\" OPTION=\"option_100140103\" TARGET=\"white_memory_page_1001406\"]\n[L0024] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001401_choice\" OPTION=\"option_100140104\" TARGET=\"white_memory_page_1001408\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 9,
+              "end_line": 18,
+              "choice_id": "white_memory_page_1001401_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 10,
+                  "end_line": 11,
+                  "option_text": "되돌아간다.",
+                  "option_value": "option_100140101",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 12,
+                  "end_line": 13,
+                  "option_text": "앞으로 나아간다.",
+                  "option_value": "option_100140102",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 14,
+                  "end_line": 15,
+                  "option_text": "주변을 둘러본다.",
+                  "option_value": "option_100140103",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 16,
+                  "end_line": 17,
+                  "option_text": "릴리바이스의 관을 다시 찾아간다.",
+                  "option_value": "option_100140104",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 21,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140101",
+              "target": "white_memory_page_1001402",
+              "is_default": false
+            },
+            {
+              "line": 22,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140102",
+              "target": "white_memory_page_1001403",
+              "is_default": false
+            },
+            {
+              "line": 23,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140103",
+              "target": "white_memory_page_1001406",
+              "is_default": false
+            },
+            {
+              "line": 24,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140104",
+              "target": "white_memory_page_1001408",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 21,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140101",
+              "target": "white_memory_page_1001402",
+              "is_default": false
+            },
+            {
+              "line": 22,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140102",
+              "target": "white_memory_page_1001403",
+              "is_default": false
+            },
+            {
+              "line": 23,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140103",
+              "target": "white_memory_page_1001406",
+              "is_default": false
+            },
+            {
+              "line": 24,
+              "if_choice": "white_memory_page_1001401_choice",
+              "option": "option_100140104",
+              "target": "white_memory_page_1001408",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_start",
+              "choice_id": "white_memory_start_choice",
+              "option": "location_10014",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001101",
+                "white_memory_page_1001201",
+                "white_memory_page_1001301",
+                "white_memory_00",
+                "white_memory_endings"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001101",
+            "white_memory_page_1001201",
+            "white_memory_page_1001301",
+            "white_memory_00",
+            "white_memory_endings"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[55].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001401",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": true,
+        "summary": "스노우 화이트가 초원으로 향해 나무에 둘러싸인 석관을 멀리서 바라보며 어떻게 행동할지 결정한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [
+            {
+              "name": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "스노우 화이트는 초원으로 향했다."
+            }
+          ],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "초원",
+              "entity_id": null,
+              "entity_type": "location",
+              "line_start": 2,
+              "line_end": 3,
+              "quote": "스노우 화이트는 초원으로 향했다.\n햇살이 내리쬐는 평화로운 초원의 끝에, 나무에 둘러싸인 석관이 있었다."
+            },
+            {
+              "surface_text": "석관",
+              "entity_id": null,
+              "entity_type": "item",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "햇살이 내리쬐는 평화로운 초원의 끝에, 나무에 둘러싸인 석관이 있었다."
+            },
+            {
+              "surface_text": "릴리바이스",
+              "entity_id": "char_릴리바이스",
+              "entity_type": "character",
+              "line_start": 16,
+              "line_end": 16,
+              "quote": "[OPTION TEXT=\"릴리바이스의 관을 다시 찾아간다.\" VALUE=\"option_100140104\"]"
+            }
+          ],
+          "document_author": {
+            "name": "스노우 화이트",
+            "entity_id": "char_스노우_화이트",
+            "voices": []
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 9,
+            "options": [
+              {
+                "option_text": "되돌아간다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "앞으로 나아간다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "주변을 둘러본다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "릴리바이스의 관을 다시 찾아간다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트가 햇살이 내리쬐는 평화로운 초원으로 향하자, 초원의 끝에 나무에 둘러싸인 석관이 놓여 있다.",
+            "line_start": 2,
+            "line_end": 3,
+            "claim_line": null,
+            "quote": "스노우 화이트는 초원으로 향했다.\n햇살이 내리쬐는 평화로운 초원의 끝에, 나무에 둘러싸인 석관이 있었다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "character_claim",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트는 초원 끝 석관에 '그녀'가 잠들어 있다고 생각한다.",
+            "line_start": 3,
+            "line_end": 4,
+            "claim_line": 4,
+            "quote": "햇살이 내리쬐는 평화로운 초원의 끝에, 나무에 둘러싸인 석관이 있었다.\n그곳에 [그녀]가 잠들어 있다.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "스노우 화이트",
+            "summary": "스노우 화이트가 말없이 침묵하며 멀리서 석관이 있는 곳을 멍하니 바라본다.",
+            "line_start": 6,
+            "line_end": 8,
+            "claim_line": null,
+            "quote": "\"··· ···.\"\n\n멀리서 그곳을 멍하니 바라보던 스노우 화이트는···.",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "되돌아간다.",
+            "line_start": 10,
+            "line_end": 10,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"되돌아간다.\" VALUE=\"option_100140101\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "앞으로 나아간다.",
+            "line_start": 12,
+            "line_end": 12,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"앞으로 나아간다.\" VALUE=\"option_100140102\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "주변을 둘러본다.",
+            "line_start": 14,
+            "line_end": 14,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"주변을 둘러본다.\" VALUE=\"option_100140103\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "릴리바이스의 관을 다시 찾아간다.",
+            "line_start": 16,
+            "line_end": 16,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"릴리바이스의 관을 다시 찾아간다.\" VALUE=\"option_100140104\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "석관",
+            "category": "item",
+            "subject": null,
+            "detail": "평화로운 초원의 끝에 나무에 둘러싸여 놓여 있는 석관으로, 그곳에 '그녀'가 잠들어 있다.",
+            "line_start": 3,
+            "line_end": 4,
+            "quote": "햇살이 내리쬐는 평화로운 초원의 끝에, 나무에 둘러싸인 석관이 있었다.\n그곳에 [그녀]가 잠들어 있다."
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "초원",
+            "suggested_type": "location",
+            "line_start": 2
+          },
+          {
+            "surface_text": "석관",
+            "suggested_type": "item",
+            "line_start": 3
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_page_1001404",
+      "title": "WHITE MEMORY",
+      "sub_title": "초원 004",
+      "line_count": 17,
+      "body_bytes": 673,
+      "raw_bytes": 738,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] 지직-\n[L0003] 거리는 소음과 함께, 누군가의 목소리가 들렸다.\n[L0004] \n[L0005] [네가 스노우 화이트지?]\n[L0006] [안녕.]\n[L0007] [나는 릴···.]\n[L0008] [CHOICE_START ID=\"white_memory_page_1001404_choice\"]\n[L0009]   [OPTION TEXT=\"자리에 멈춰 선다.\" VALUE=\"option_100140401\"]\n[L0010]   [OPTION_END]\n[L0011]   [OPTION TEXT=\"앞으로 나아간다.\" VALUE=\"option_100140402\"]\n[L0012]   [OPTION_END]\n[L0013] [CHOICE_END]\n[L0014] [SCENE END]\n[L0015] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0016] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001404_choice\" OPTION=\"option_100140401\" TARGET=\"white_memory_11\"]\n[L0017] [NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001404_choice\" OPTION=\"option_100140402\" TARGET=\"white_memory_page_1001405\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 8,
+              "end_line": 13,
+              "choice_id": "white_memory_page_1001404_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 9,
+                  "end_line": 10,
+                  "option_text": "자리에 멈춰 선다.",
+                  "option_value": "option_100140401",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 11,
+                  "end_line": 12,
+                  "option_text": "앞으로 나아간다.",
+                  "option_value": "option_100140402",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001404_choice",
+              "option": "option_100140401",
+              "target": "white_memory_11",
+              "is_default": false
+            },
+            {
+              "line": 17,
+              "if_choice": "white_memory_page_1001404_choice",
+              "option": "option_100140402",
+              "target": "white_memory_page_1001405",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 16,
+              "if_choice": "white_memory_page_1001404_choice",
+              "option": "option_100140401",
+              "target": "white_memory_11",
+              "is_default": false
+            },
+            {
+              "line": 17,
+              "if_choice": "white_memory_page_1001404_choice",
+              "option": "option_100140402",
+              "target": "white_memory_page_1001405",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_page_1001403",
+              "choice_id": null,
+              "option": null,
+              "is_default": true,
+              "parallel_scene_ids": []
+            }
+          ],
+          "parallel_scene_ids": []
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[58].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_page_1001404",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": true,
+        "summary": "지직거리는 소음과 함께 누군가의 목소리가 들려와 스노우 화이트인지 묻고 자신을 '릴···'이라 소개하며, 자리에 멈춰 설지 앞으로 나아갈지 선택한다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "스노우 화이트",
+              "entity_id": "char_스노우_화이트",
+              "entity_type": "character",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "[네가 스노우 화이트지?]"
+            },
+            {
+              "surface_text": "릴···",
+              "entity_id": null,
+              "entity_type": "character",
+              "line_start": 7,
+              "line_end": 7,
+              "quote": "[나는 릴···.]"
+            }
+          ],
+          "document_author": {
+            "name": null,
+            "entity_id": null,
+            "voices": [
+              "누군가의 목소리"
+            ]
+          }
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 8,
+            "options": [
+              {
+                "option_text": "자리에 멈춰 선다.",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "앞으로 나아간다.",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "누군가의 목소리",
+            "summary": "지직거리는 소음과 함께 누군가의 목소리가 들려와 스노우 화이트인지 묻고 인사하며 자신을 '릴···'이라고 소개하다 끊긴다.",
+            "line_start": 2,
+            "line_end": 7,
+            "claim_line": null,
+            "quote": "지직-\n거리는 소음과 함께, 누군가의 목소리가 들렸다.\n\n[네가 스노우 화이트지?]\n[안녕.]\n[나는 릴···.]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "자리에 멈춰 선다.",
+            "line_start": 9,
+            "line_end": 9,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"자리에 멈춰 선다.\" VALUE=\"option_100140401\"]",
+            "refers_to_past": false
+          },
+          {
+            "epistemic_type": "established_event",
+            "confidence": null,
+            "actor_or_speaker": "지휘관",
+            "summary": "앞으로 나아간다.",
+            "line_start": 11,
+            "line_end": 11,
+            "claim_line": null,
+            "quote": "[OPTION TEXT=\"앞으로 나아간다.\" VALUE=\"option_100140402\"]",
+            "refers_to_past": false
+          }
+        ],
+        "clues_and_hooks": [
+          {
+            "keyword": "릴···",
+            "category": "foreshadowing",
+            "subject": null,
+            "detail": "소음과 함께 들려온 목소리가 스노우 화이트의 이름을 확인하고 자신을 '릴···'이라고 소개하다 끊긴다.",
+            "line_start": 2,
+            "line_end": 7,
+            "quote": "지직-\n거리는 소음과 함께, 누군가의 목소리가 들렸다.\n\n[네가 스노우 화이트지?]\n[안녕.]\n[나는 릴···.]"
+          }
+        ],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [
+          {
+            "surface_text": "릴···",
+            "suggested_type": "character",
+            "line_start": 7
+          }
+        ],
+        "reviewed_gaps": []
+      }
+    },
+    {
+      "scene_id": "white_memory_endings",
+      "title": "WHITE MEMORY",
+      "sub_title": "엔딩 회상",
+      "line_count": 71,
+      "body_bytes": 4269,
+      "raw_bytes": 4332,
+      "numbered_script": "[L0001] [SCENE START]\n[L0002] [CHOICE_START ID=\"white_memory_endings_choice\"]\n[L0003]   [OPTION TEXT=\"NORMAL ENDING — 탐색 종료\" VALUE=\"ending_00\"]\n[L0004]   [OPTION_END]\n[L0005]   [OPTION TEXT=\"NORMAL ENDING — 사슴은 좋은 양식이지\" VALUE=\"ending_01\"]\n[L0006]   [OPTION_END]\n[L0007]   [OPTION TEXT=\"NORMAL ENDING — 그 이름하여, 낚시?왕!\" VALUE=\"ending_02\"]\n[L0008]   [OPTION_END]\n[L0009]   [OPTION TEXT=\"NORMAL ENDING — 오늘은 요리왕!\" VALUE=\"ending_03\"]\n[L0010]   [OPTION_END]\n[L0011]   [OPTION TEXT=\"NORMAL ENDING — 안녕을 고하는 법\" VALUE=\"ending_04\"]\n[L0012]   [OPTION_END]\n[L0013]   [OPTION TEXT=\"BAD ENDING — 오늘은 굶는다\" VALUE=\"ending_05\"]\n[L0014]   [OPTION_END]\n[L0015]   [OPTION TEXT=\"BAD ENDING — 의미 없는 환상\" VALUE=\"ending_06\"]\n[L0016]   [OPTION_END]\n[L0017]   [OPTION TEXT=\"BAD ENDING — 떠난 사슴은 돌아오지 않아\" VALUE=\"ending_07\"]\n[L0018]   [OPTION_END]\n[L0019]   [OPTION TEXT=\"BAD ENDING — 물고기도 잠에 들었다\" VALUE=\"ending_08\"]\n[L0020]   [OPTION_END]\n[L0021]   [OPTION TEXT=\"BAD ENDING — 수중 학살자\" VALUE=\"ending_09\"]\n[L0022]   [OPTION_END]\n[L0023]   [OPTION TEXT=\"BAD ENDING — 내일은 요리왕?\" VALUE=\"ending_10\"]\n[L0024]   [OPTION_END]\n[L0025]   [OPTION TEXT=\"BAD ENDING — 걷지 못한 걸음\" VALUE=\"ending_11\"]\n[L0026]   [OPTION_END]\n[L0027]   [OPTION TEXT=\"TRUE ENDING — 땅에 묻어둔 추억\" VALUE=\"ending_12\"]\n[L0028]   [OPTION_END]\n[L0029]   [OPTION TEXT=\"TRUE ENDING — 레트로 후드\" VALUE=\"ending_13\"]\n[L0030]   [OPTION_END]\n[L0031]   [OPTION TEXT=\"TRUE ENDING — 화무십일홍\" VALUE=\"ending_14\"]\n[L0032]   [OPTION_END]\n[L0033]   [OPTION TEXT=\"TRUE ENDING — 양산 아래의 삶\" VALUE=\"ending_15\"]\n[L0034]   [OPTION_END]\n[L0035]   [OPTION TEXT=\"TRUE ENDING — 부끄러움 마저 그리운 우정\" VALUE=\"ending_16\"]\n[L0036]   [OPTION_END]\n[L0037]   [OPTION TEXT=\"TRUE ENDING — 아름다운 릴리바이스\" VALUE=\"ending_17\"]\n[L0038]   [OPTION_END]\n[L0039]   [OPTION TEXT=\"TRUE ENDING — 꽃과 함께 떠나가리\" VALUE=\"ending_18\"]\n[L0040]   [OPTION_END]\n[L0041]   [OPTION TEXT=\"TRUE ENDING — 길들여진 목줄\" VALUE=\"ending_19\"]\n[L0042]   [OPTION_END]\n[L0043]   [OPTION TEXT=\"HIDDEN ENDING — 언sl의머fl가사fk졌ek\" VALUE=\"ending_20\"]\n[L0044]   [OPTION_END]\n[L0045]   [OPTION TEXT=\"탐색 시작으로 돌아가기\" VALUE=\"return\"]\n[L0046]   [OPTION_END]\n[L0047] [CHOICE_END]\n[L0048] [SCENE END]\n[L0049] [NEXT_SUBCHAPTER_BUTTON TEXT=\"다음으로 이동\"]\n[L0050] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_00\" TARGET=\"white_memory_00\"]\n[L0051] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_01\" TARGET=\"white_memory_01\"]\n[L0052] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_02\" TARGET=\"white_memory_02\"]\n[L0053] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_03\" TARGET=\"white_memory_03\"]\n[L0054] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_04\" TARGET=\"white_memory_04\"]\n[L0055] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_05\" TARGET=\"white_memory_05\"]\n[L0056] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_06\" TARGET=\"white_memory_06\"]\n[L0057] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_07\" TARGET=\"white_memory_07\"]\n[L0058] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_08\" TARGET=\"white_memory_08\"]\n[L0059] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_09\" TARGET=\"white_memory_09\"]\n[L0060] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_10\" TARGET=\"white_memory_10\"]\n[L0061] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_11\" TARGET=\"white_memory_11\"]\n[L0062] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_12\" TARGET=\"white_memory_12\"]\n[L0063] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_13\" TARGET=\"white_memory_13\"]\n[L0064] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_14\" TARGET=\"white_memory_14\"]\n[L0065] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_15\" TARGET=\"white_memory_15\"]\n[L0066] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_16\" TARGET=\"white_memory_16\"]\n[L0067] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_17\" TARGET=\"white_memory_17\"]\n[L0068] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_18\" TARGET=\"white_memory_18\"]\n[L0069] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_19\" TARGET=\"white_memory_19\"]\n[L0070] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"ending_20\" TARGET=\"white_memory_20\"]\n[L0071] [NEXT_ROUTE IF_CHOICE=\"white_memory_endings_choice\" OPTION=\"return\" TARGET=\"white_memory_start\"]",
+      "mechanical_ground_truth": {
+        "speakers": [],
+        "unknowns": [],
+        "choices": {
+          "choice_blocks": [
+            {
+              "choice_line": 2,
+              "end_line": 47,
+              "choice_id": "white_memory_endings_choice",
+              "in_messenger": false,
+              "is_branching": true,
+              "options": [
+                {
+                  "line": 3,
+                  "end_line": 4,
+                  "option_text": "NORMAL ENDING — 탐색 종료",
+                  "option_value": "ending_00",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 5,
+                  "end_line": 6,
+                  "option_text": "NORMAL ENDING — 사슴은 좋은 양식이지",
+                  "option_value": "ending_01",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 7,
+                  "end_line": 8,
+                  "option_text": "NORMAL ENDING — 그 이름하여, 낚시?왕!",
+                  "option_value": "ending_02",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 9,
+                  "end_line": 10,
+                  "option_text": "NORMAL ENDING — 오늘은 요리왕!",
+                  "option_value": "ending_03",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 11,
+                  "end_line": 12,
+                  "option_text": "NORMAL ENDING — 안녕을 고하는 법",
+                  "option_value": "ending_04",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 13,
+                  "end_line": 14,
+                  "option_text": "BAD ENDING — 오늘은 굶는다",
+                  "option_value": "ending_05",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 15,
+                  "end_line": 16,
+                  "option_text": "BAD ENDING — 의미 없는 환상",
+                  "option_value": "ending_06",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 17,
+                  "end_line": 18,
+                  "option_text": "BAD ENDING — 떠난 사슴은 돌아오지 않아",
+                  "option_value": "ending_07",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 19,
+                  "end_line": 20,
+                  "option_text": "BAD ENDING — 물고기도 잠에 들었다",
+                  "option_value": "ending_08",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 21,
+                  "end_line": 22,
+                  "option_text": "BAD ENDING — 수중 학살자",
+                  "option_value": "ending_09",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 23,
+                  "end_line": 24,
+                  "option_text": "BAD ENDING — 내일은 요리왕?",
+                  "option_value": "ending_10",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 25,
+                  "end_line": 26,
+                  "option_text": "BAD ENDING — 걷지 못한 걸음",
+                  "option_value": "ending_11",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 27,
+                  "end_line": 28,
+                  "option_text": "TRUE ENDING — 땅에 묻어둔 추억",
+                  "option_value": "ending_12",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 29,
+                  "end_line": 30,
+                  "option_text": "TRUE ENDING — 레트로 후드",
+                  "option_value": "ending_13",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 31,
+                  "end_line": 32,
+                  "option_text": "TRUE ENDING — 화무십일홍",
+                  "option_value": "ending_14",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 33,
+                  "end_line": 34,
+                  "option_text": "TRUE ENDING — 양산 아래의 삶",
+                  "option_value": "ending_15",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 35,
+                  "end_line": 36,
+                  "option_text": "TRUE ENDING — 부끄러움 마저 그리운 우정",
+                  "option_value": "ending_16",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 37,
+                  "end_line": 38,
+                  "option_text": "TRUE ENDING — 아름다운 릴리바이스",
+                  "option_value": "ending_17",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 39,
+                  "end_line": 40,
+                  "option_text": "TRUE ENDING — 꽃과 함께 떠나가리",
+                  "option_value": "ending_18",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 41,
+                  "end_line": 42,
+                  "option_text": "TRUE ENDING — 길들여진 목줄",
+                  "option_value": "ending_19",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 43,
+                  "end_line": 44,
+                  "option_text": "HIDDEN ENDING — 언sl의머fl가사fk졌ek",
+                  "option_value": "ending_20",
+                  "body_line_count": 0
+                },
+                {
+                  "line": 45,
+                  "end_line": 46,
+                  "option_text": "탐색 시작으로 돌아가기",
+                  "option_value": "return",
+                  "body_line_count": 0
+                }
+              ]
+            }
+          ],
+          "next_routes": [
+            {
+              "line": 50,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_00",
+              "target": "white_memory_00",
+              "is_default": false
+            },
+            {
+              "line": 51,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_01",
+              "target": "white_memory_01",
+              "is_default": false
+            },
+            {
+              "line": 52,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_02",
+              "target": "white_memory_02",
+              "is_default": false
+            },
+            {
+              "line": 53,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_03",
+              "target": "white_memory_03",
+              "is_default": false
+            },
+            {
+              "line": 54,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_04",
+              "target": "white_memory_04",
+              "is_default": false
+            },
+            {
+              "line": 55,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_05",
+              "target": "white_memory_05",
+              "is_default": false
+            },
+            {
+              "line": 56,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_06",
+              "target": "white_memory_06",
+              "is_default": false
+            },
+            {
+              "line": 57,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_07",
+              "target": "white_memory_07",
+              "is_default": false
+            },
+            {
+              "line": 58,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_08",
+              "target": "white_memory_08",
+              "is_default": false
+            },
+            {
+              "line": 59,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_09",
+              "target": "white_memory_09",
+              "is_default": false
+            },
+            {
+              "line": 60,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_10",
+              "target": "white_memory_10",
+              "is_default": false
+            },
+            {
+              "line": 61,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_11",
+              "target": "white_memory_11",
+              "is_default": false
+            },
+            {
+              "line": 62,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_12",
+              "target": "white_memory_12",
+              "is_default": false
+            },
+            {
+              "line": 63,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_13",
+              "target": "white_memory_13",
+              "is_default": false
+            },
+            {
+              "line": 64,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_14",
+              "target": "white_memory_14",
+              "is_default": false
+            },
+            {
+              "line": 65,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_15",
+              "target": "white_memory_15",
+              "is_default": false
+            },
+            {
+              "line": 66,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_16",
+              "target": "white_memory_16",
+              "is_default": false
+            },
+            {
+              "line": 67,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_17",
+              "target": "white_memory_17",
+              "is_default": false
+            },
+            {
+              "line": 68,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_18",
+              "target": "white_memory_18",
+              "is_default": false
+            },
+            {
+              "line": 69,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_19",
+              "target": "white_memory_19",
+              "is_default": false
+            },
+            {
+              "line": 70,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_20",
+              "target": "white_memory_20",
+              "is_default": false
+            },
+            {
+              "line": 71,
+              "if_choice": "white_memory_endings_choice",
+              "option": "return",
+              "target": "white_memory_start",
+              "is_default": false
+            }
+          ]
+        },
+        "route": {
+          "is_branch_point": true,
+          "next_routes": [
+            {
+              "line": 50,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_00",
+              "target": "white_memory_00",
+              "is_default": false
+            },
+            {
+              "line": 51,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_01",
+              "target": "white_memory_01",
+              "is_default": false
+            },
+            {
+              "line": 52,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_02",
+              "target": "white_memory_02",
+              "is_default": false
+            },
+            {
+              "line": 53,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_03",
+              "target": "white_memory_03",
+              "is_default": false
+            },
+            {
+              "line": 54,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_04",
+              "target": "white_memory_04",
+              "is_default": false
+            },
+            {
+              "line": 55,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_05",
+              "target": "white_memory_05",
+              "is_default": false
+            },
+            {
+              "line": 56,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_06",
+              "target": "white_memory_06",
+              "is_default": false
+            },
+            {
+              "line": 57,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_07",
+              "target": "white_memory_07",
+              "is_default": false
+            },
+            {
+              "line": 58,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_08",
+              "target": "white_memory_08",
+              "is_default": false
+            },
+            {
+              "line": 59,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_09",
+              "target": "white_memory_09",
+              "is_default": false
+            },
+            {
+              "line": 60,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_10",
+              "target": "white_memory_10",
+              "is_default": false
+            },
+            {
+              "line": 61,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_11",
+              "target": "white_memory_11",
+              "is_default": false
+            },
+            {
+              "line": 62,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_12",
+              "target": "white_memory_12",
+              "is_default": false
+            },
+            {
+              "line": 63,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_13",
+              "target": "white_memory_13",
+              "is_default": false
+            },
+            {
+              "line": 64,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_14",
+              "target": "white_memory_14",
+              "is_default": false
+            },
+            {
+              "line": 65,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_15",
+              "target": "white_memory_15",
+              "is_default": false
+            },
+            {
+              "line": 66,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_16",
+              "target": "white_memory_16",
+              "is_default": false
+            },
+            {
+              "line": 67,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_17",
+              "target": "white_memory_17",
+              "is_default": false
+            },
+            {
+              "line": 68,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_18",
+              "target": "white_memory_18",
+              "is_default": false
+            },
+            {
+              "line": 69,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_19",
+              "target": "white_memory_19",
+              "is_default": false
+            },
+            {
+              "line": 70,
+              "if_choice": "white_memory_endings_choice",
+              "option": "ending_20",
+              "target": "white_memory_20",
+              "is_default": false
+            },
+            {
+              "line": 71,
+              "if_choice": "white_memory_endings_choice",
+              "option": "return",
+              "target": "white_memory_start",
+              "is_default": false
+            }
+          ],
+          "incoming_routes": [
+            {
+              "from_scene_id": "white_memory_start",
+              "choice_id": "white_memory_start_choice",
+              "option": "endings",
+              "is_default": false,
+              "parallel_scene_ids": [
+                "white_memory_page_1001101",
+                "white_memory_page_1001201",
+                "white_memory_page_1001301",
+                "white_memory_page_1001401",
+                "white_memory_00"
+              ]
+            }
+          ],
+          "parallel_scene_ids": [
+            "white_memory_page_1001101",
+            "white_memory_page_1001201",
+            "white_memory_page_1001301",
+            "white_memory_page_1001401",
+            "white_memory_00"
+          ]
+        },
+        "line_speaker": {}
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "rule": "SPEAKER_EXISTENCE",
+          "path": "$.scenes[67].participants.present_in_scene[0].speaker_label",
+          "message": "Speaker \"지휘관\" in present_in_scene does not exist in mechanical_ground_truth.speakers"
+        }
+      ],
+      "current_output": {
+        "scene_id": "white_memory_endings",
+        "chronology_type": "present",
+        "chronology_segments": [],
+        "is_plot_critical": false,
+        "summary": "WHITE MEMORY의 각 엔딩(노멀, 배드, 트루, 히든 엔딩)을 다시 보거나 탐색 시작으로 돌아가는 선택지 메뉴 장면이다.",
+        "participants": {
+          "present_in_scene": [
+            {
+              "speaker_label": "지휘관",
+              "entity_id": "char_지휘관",
+              "is_generic_role": false
+            }
+          ],
+          "present_silent": [],
+          "remote_or_voice_only": [],
+          "mentioned_only": [
+            {
+              "surface_text": "릴리바이스",
+              "entity_id": "char_릴리바이스",
+              "entity_type": "character",
+              "line_start": 37,
+              "line_end": 37,
+              "quote": "[OPTION TEXT=\"TRUE ENDING — 아름다운 릴리바이스\" VALUE=\"ending_17\"]"
+            }
+          ],
+          "document_author": null
+        },
+        "forms_of_address": [],
+        "unknown_speakers": [],
+        "descriptor_speakers": [],
+        "same_scene_speaker_groups": [],
+        "cross_scene_hints": [],
+        "choice_branches": [
+          {
+            "choice_line": 2,
+            "options": [
+              {
+                "option_text": "NORMAL ENDING — 탐색 종료",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "NORMAL ENDING — 사슴은 좋은 양식이지",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "NORMAL ENDING — 그 이름하여, 낚시?왕!",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "NORMAL ENDING — 오늘은 요리왕!",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "NORMAL ENDING — 안녕을 고하는 법",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "BAD ENDING — 오늘은 굶는다",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "BAD ENDING — 의미 없는 환상",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "BAD ENDING — 떠난 사슴은 돌아오지 않아",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "BAD ENDING — 물고기도 잠에 들었다",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "BAD ENDING — 수중 학살자",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "BAD ENDING — 내일은 요리왕?",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "BAD ENDING — 걷지 못한 걸음",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 땅에 묻어둔 추억",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 레트로 후드",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 화무십일홍",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 양산 아래의 삶",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 부끄러움 마저 그리운 우정",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 아름다운 릴리바이스",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 꽃과 함께 떠나가리",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "TRUE ENDING — 길들여진 목줄",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "HIDDEN ENDING — 언sl의머fl가사fk졌ek",
+                "continuation_summary": null
+              },
+              {
+                "option_text": "탐색 시작으로 돌아가기",
+                "continuation_summary": null
+              }
+            ]
+          }
+        ],
+        "events_and_claims": [],
+        "clues_and_hooks": [],
+        "relationship_and_lore_notes": [],
+        "unregistered_entity_candidates": [],
+        "reviewed_gaps": [
+          {
+            "line_start": 3,
+            "line_end": 45,
+            "reason": "WHITE MEMORY 미니게임의 엔딩 회상 메뉴 선택지 목록으로, 각 엔딩 장면으로 이동하거나 탐색 시작으로 돌아가는 분기 버튼만 나열되어 있어 추출할 사건·주장·관계가 없다."
+          }
+        ]
+      }
+    }
+  ]
+}

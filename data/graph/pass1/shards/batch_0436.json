@@ -160,13 +160,7 @@
       "is_plot_critical": true,
       "summary": "구도심에 들어온 마리안이 익숙한 진동을 느끼고, 공격하거나 경계하는 선택에 따라 침식도가 1% 상승한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -832,17 +826,18 @@
       "is_plot_critical": true,
       "summary": "마리안이 지휘관과 함께 익숙한 광장에 도착해 호수로 가려 하며, 오솔길로 향하거나 길을 떠올리지 못하는 선택에 따라 침식도가 1% 상승한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안은 지휘관과 함께 익숙한 광장에 도착한다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안은 지휘관과 함께 익숙한 광장에 도착한다."
@@ -977,17 +972,18 @@
       "is_plot_critical": true,
       "summary": "호수로 서둘러 가려는 마리안에게 지휘관이 들렀다 갈 곳이 없는지 묻고, 편의점에 고양이를 보러 가거나 갈 길을 서두르는 선택에 따라 침식도가 1% 상승한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "호수로 서둘러 가려는 마리안에게 지휘관이 묻는다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "호수로 서둘러 가려는 마리안에게 지휘관이 묻는다."
@@ -1496,13 +1492,7 @@
       "is_plot_critical": true,
       "summary": "편의점 안에 빈 통조림 깡통들만 있고 고양이가 없자, 지휘관이 창고 안도 확인해 보자고 말하고 마리안은 창고 안에 있던 사냥꾼을 떠올리며 혼자 들어가기로 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -1510,6 +1500,13 @@
             "line_start": 3,
             "line_end": 3,
             "quote": "마리안은 어두운 편의점의 문을 밀고 들어갔다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 8,
+            "line_end": 8,
+            "quote": "\"저 안에도 확인해봐야 하지 않아?\""
           }
         ],
         "remote_or_voice_only": [],
@@ -1972,17 +1969,18 @@
       "is_plot_critical": true,
       "summary": "창고 밖으로 나온 마리안과 지휘관이 편의점을 나서려던 순간 랩쳐가 다가오는 소리가 들리고, 숨어서 기다리면 침식도가 90%, 나가서 싸우면 침식도가 1% 상승한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "창고 밖으로 나온 마리안과 지휘관은 편의점 밖으로 나서려 한다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "창고 밖으로 나온 마리안과 지휘관은 편의점 밖으로 나서려 한다."
@@ -2539,13 +2537,7 @@
       "is_plot_critical": true,
       "summary": "남자가 마리안을 붙잡고 부르자, 선택지의 검열된 문구 끝에 남자를 쏜다는 선택을 하게 된다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -2563,7 +2555,16 @@
           }
         ],
         "remote_or_voice_only": [],
-        "mentioned_only": [],
+        "mentioned_only": [
+          {
+            "surface_text": "지휘관",
+            "entity_id": "char_지휘관",
+            "entity_type": "character",
+            "line_start": 6,
+            "line_end": 6,
+            "quote": "[OPTION TEXT=\"[REDACT]지휘관을[/REDACT]남자를 쏜다.\" VALUE=\"option_211801\"]"
+          }
+        ],
         "document_author": {
           "name": "마리안",
           "entity_id": "char_마리안",
@@ -2607,8 +2608,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "'지휘관을'이라는 표기가 검열된 채 남자를 쏜다는 선택을 한다.",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안이 '지휘관을'이라는 표기가 검열된 채 남자를 쏜다는 선택을 한다.",
           "line_start": 6,
           "line_end": 6,
           "claim_line": null,
@@ -2618,8 +2619,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "'쏘면 안 돼!'라는 문구가 검열된 채 남자를 쏜다는 선택을 한다.",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안이 '쏘면 안 돼!'라는 문구가 검열된 채 남자를 쏜다는 선택을 한다.",
           "line_start": 8,
           "line_end": 8,
           "claim_line": null,
@@ -2658,13 +2659,7 @@
       "is_plot_critical": true,
       "summary": "마리안이 남자를 뿌리치고 총을 겨눈 뒤 방아쇠를 당기며 침식도가 10% 상승하고 침식 엔딩으로 이어진다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -2720,8 +2715,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "방아쇠를 당기는 선택을 한다.",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안이 방아쇠를 당기는 선택을 한다.",
           "line_start": 6,
           "line_end": 6,
           "claim_line": null,
@@ -2935,17 +2930,18 @@
       "is_plot_critical": true,
       "summary": "마리안과 지휘관이 호수로 이어진 오솔길로 향하던 중, 지휘관이 길가에 핀 파란 장미를 건네고 긴장한 마리안에게 손을 내밀며 같이 걷자고 제안한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안은 지휘관과 함께 호수로 이어진 오솔길로 향했다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안은 지휘관과 함께 호수로 이어진 오솔길로 향했다."
@@ -3113,8 +3109,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "내밀어진 지휘관의 손을 바라보는 선택을 한다.",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안이 내밀어진 지휘관의 손을 바라보는 선택을 한다.",
           "line_start": 25,
           "line_end": 25,
           "claim_line": null,
@@ -3436,17 +3432,18 @@
       "is_plot_critical": true,
       "summary": "마리안과 지휘관이 햇살에 반짝이는 거대한 호수를 발견하고 다음 행동을 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "한참을 걸은 마리안과 지휘관은 마침내 햇살에 반짝이고 있는, 거대한 호수를 발견한다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "한참을 걸은 마리안과 지휘관은 마침내 햇살에 반짝이고 있는, 거대한 호수를 발견한다."
@@ -3516,7 +3513,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "호수의 풍경을 바라보는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 4,
           "line_end": 5,
@@ -3527,7 +3524,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "앞으로 나아가는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 7,
           "line_end": 8,
@@ -3538,7 +3535,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "블랙스미스와 맞서 싸우는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 10,
           "line_end": 11,
@@ -4062,17 +4059,18 @@
       "is_plot_critical": true,
       "summary": "마리안과 지휘관은 호수에서 목표 지점으로 가기 위해 위험하지만 빠른 북쪽 숲길과 멀지만 정비된 남쪽 산책로 중 하나를 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안과 지휘관은 호수에서 나아가야 할 길을 찾는다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안과 지휘관은 호수에서 나아가야 할 길을 찾는다."
@@ -4165,7 +4163,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "북쪽 숲으로 가는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 6,
           "line_end": 7,
@@ -4176,7 +4174,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "남쪽의 산책로로 가는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 9,
           "line_end": 10,
@@ -4546,17 +4544,18 @@
       "is_plot_critical": true,
       "summary": "북쪽 숲 도입부에 도달한 마리안과 지휘관은 일부 나무들이 쓰러져 있는 숲에서 이동 방향을 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "북쪽 숲의 도입부에 도달한 마리안과 지휘관."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "북쪽 숲의 도입부에 도달한 마리안과 지휘관."
@@ -4637,7 +4636,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "시야가 좁아도 나무가 많은 쪽으로 이동하는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 6,
           "line_end": 7,
@@ -4648,7 +4647,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "나무가 적어도 시야가 트인 곳으로 이동하는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 9,
           "line_end": 10,
@@ -4659,7 +4658,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "다른 길로 가보는 선택을 하고 침식도가 1% 상승한다.",
           "line_start": 12,
           "line_end": 13,
@@ -4945,13 +4944,7 @@
       "is_plot_critical": false,
       "summary": "나무가 많아 시야가 가려진 숲길에서 마리안이 블랙스미스의 기습을 경계하며 지휘관과 안부를 확인하던 중, 바스락거리는 소리가 들려 총을 쏠지 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -4959,6 +4952,13 @@
             "line_start": 3,
             "line_end": 3,
             "quote": "마리안은 언제 블랙스미스가 기습해올지 모른다는 생각에 신경을 더욱 곤두세웠다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 6,
+            "line_end": 7,
+            "quote": "\"아니야, 견딜 만해.\n마리안이야말로 경계하느라 힘들지?\""
           }
         ],
         "remote_or_voice_only": [],
@@ -5362,17 +5362,18 @@
       "is_plot_critical": false,
       "summary": "빽빽한 나무들 때문에 얼마나 더 가야 할지 가늠하기 어려운 가운데, 지금이라도 돌아갈지 묻는 지휘관에게 마리안이 답을 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "지휘관과 마리안은 한참 동안 앞을 향해 걸었다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "지휘관과 마리안은 한참 동안 앞을 향해 걸었다."
@@ -5502,17 +5503,18 @@
       "is_plot_critical": true,
       "summary": "마리안이 이 길의 끝까지 가보자고 제안하고 지휘관이 걱정스레 바라보다 동의하자, 고개를 끄덕이며 침식도가 90% 증가한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "지휘관이 마리안을 걱정스레 바라보다가 대답했다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 4,
             "line_end": 4,
             "quote": "지휘관이 마리안을 걱정스레 바라보다가 대답했다."
@@ -5701,17 +5703,18 @@
       "is_plot_critical": true,
       "summary": "숲속 깊이 들어간 지휘관은 같은 길을 맴돌고 있음을 느끼고 마리안의 눈이 붉게 물든 것을 발견하며, 시간 경과로 침식에 걸린 것인지 의심하는 사이 마리안은 본심이 지워진 채 가야 한다고 반복한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안과 지휘관이 숲속으로 조금 더 깊게 들어간다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안과 지휘관이 숲속으로 조금 더 깊게 들어간다."
@@ -5918,17 +5921,18 @@
       "is_plot_critical": true,
       "summary": "침식된 마리안의 인식에서 지휘관이 '남자'로 바뀌어 그를 뿌리치고 나아가며, 멀리서 거대한 진동이 울려 지휘관이 랩쳐를 부르는 것인지 경악하는 가운데 침식 엔딩으로 이어진다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "마리안이 [REDACT]지휘관을[/REDACT]남자를 뿌리치고 앞으로 나아간다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 3,
             "line_end": 3,
             "quote": "마리안이 [REDACT]지휘관을[/REDACT]남자를 뿌리치고 앞으로 나아간다."
@@ -6078,13 +6082,7 @@
       "is_plot_critical": false,
       "summary": "나무가 적은 쪽으로 오자 공중형 랩쳐들이 무리 지어 돌아다니고 있어, 빠르게 움직이면 전투가 일어날 것 같은 상황에서 마리안이 이동 방식을 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -6375,13 +6373,7 @@
       "is_plot_critical": false,
       "summary": "랩쳐를 피해 움직이는 데 생각보다 오랜 시간이 걸리자 지휘관이 속도를 올릴지 조심스레 묻고, 마리안이 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -6389,6 +6381,13 @@
             "line_start": 7,
             "line_end": 7,
             "quote": "마리안은···."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "한동안 심각하게 고민하던 지휘관이 조심스레 묻는다."
           }
         ],
         "remote_or_voice_only": [],
@@ -6940,17 +6939,18 @@
       "is_plot_critical": false,
       "summary": "빠르게 걷던 중 지휘관의 배에서 소리가 나자 마리안이 지휘관의 허기를 걱정하며 식사할 장소를 살피고, 큰 나무 주변에서 먹고 갈지 다음에 먹을지 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "지휘관과 마리안은 빠르게 걷고 또 걸었다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "지휘관과 마리안은 빠르게 걷고 또 걸었다."
@@ -7195,13 +7195,7 @@
       "is_plot_critical": true,
       "summary": "블랙스미스가 나타날지 모른다는 불안감에 식사를 미루고 이동하던 마리안과 지휘관은 쉴 곳을 찾지 못해 지쳐 가던 중 위협적인 소리를 듣고 피하려 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -7209,6 +7203,13 @@
             "line_start": 2,
             "line_end": 2,
             "quote": "언제 블랙스미스가 나타날지 모른다는 불안감에 마리안은 경계를 풀 수 없었다. 어느 곳도 안전하게 느껴지지 않았다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 4,
+            "line_end": 6,
+            "quote": "\"괜찮아. 그럼 조금만 더 가서 먹자.\"\n\"감사해요. 지휘관.\"\n둘은 조금 더 힘을 내보기로 했다."
           }
         ],
         "remote_or_voice_only": [],
@@ -7303,8 +7304,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "마리안, 지휘관",
-          "summary": "쿵쿵거리는 위협적인 소리가 들려오자 피해야 한다고 판단한다.",
+          "actor_or_speaker": "마리안",
+          "summary": "쿵쿵거리는 위협적인 소리가 들려오자 마리안이 피해야 한다고 판단한다.",
           "line_start": 10,
           "line_end": 14,
           "claim_line": null,
@@ -7330,13 +7331,7 @@
       "is_plot_critical": true,
       "summary": "지휘관이 육포를 반으로 나누어 같이 먹자며 내밀자 마리안이 이를 받아들고 침식도가 10% 상승한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -7344,6 +7339,13 @@
             "line_start": 5,
             "line_end": 5,
             "quote": "그리고 마리안에게 내밀었다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "지휘관이 육포를 반으로 나눈다."
           }
         ],
         "remote_or_voice_only": [],
@@ -7586,17 +7588,18 @@
       "is_plot_critical": false,
       "summary": "숲의 끝을 향해 걷던 지휘관과 마리안은 지도에 없는 거대한 지면 균열에 가로막혀 건너편의 목표 지점인 공장지대를 바라보며 다른 길로 가보기로 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "지휘관과 마리안은 다시 숲의 끝을 향해 빠르게 걸어나갔다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 3,
             "line_end": 3,
             "quote": "지휘관과 마리안은 다시 숲의 끝을 향해 빠르게 걸어나갔다."
@@ -7854,17 +7857,18 @@
       "is_plot_critical": false,
       "summary": "마리안과 지휘관은 익숙한 진동을 느끼고 블랙스미스임을 확신한 뒤, 가까운 곳에 숨을지 신중하게 숨을 곳을 찾을지 맞서 싸울지 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 4,
+            "line_end": 4,
+            "quote": "마리안과 지휘관은 익숙한 진동을 느낀다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 4,
             "line_end": 4,
             "quote": "마리안과 지휘관은 익숙한 진동을 느낀다."
@@ -7937,7 +7941,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "마리안, 지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "급하니까 가까운 곳에 아무 데나 숨기로 하고 침식도가 1% 오른다.",
           "line_start": 7,
           "line_end": 8,
@@ -7948,7 +7952,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "마리안, 지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "먼 곳이라도 신중하게 숨을 곳을 찾아보기로 하고 침식도가 1% 오른다.",
           "line_start": 10,
           "line_end": 11,
@@ -7959,7 +7963,7 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "마리안, 지휘관",
+          "actor_or_speaker": "마리안",
           "summary": "블랙스미스와 맞서 싸우기로 하고 침식도가 1% 오른다.",
           "line_start": 13,
           "line_end": 14,
@@ -8179,13 +8183,7 @@
       "is_plot_critical": false,
       "summary": "무너진 건물 안으로 들어간 마리안은 깊어지는 물과 어두운 내부를 걱정하는 지휘관의 말을 듣고 더 안으로 들어갈지 밖으로 나가 다시 찾을지 고민한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -8193,6 +8191,13 @@
             "line_start": 2,
             "line_end": 2,
             "quote": "건물 안쪽으로 들어간 마리안은 눈앞에 고인 물을 바라보았다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "지휘관이 걱정스레 바라본다."
           }
         ],
         "remote_or_voice_only": [],
@@ -8507,13 +8512,7 @@
       "is_plot_critical": true,
       "summary": "블랙스미스가 니케인 자신만 노릴 것이라 예상한 마리안은 지난번처럼 자신을 구하려 달려오는 지휘관을 보고, 지휘관을 밀어낼지 촉수에 총을 난사할지 선택한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -8521,6 +8520,13 @@
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안은 블랙스미스가 분명 니케인 자신만을 노리고 촉수를 뻗어올 것이라고 예상한다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 5,
+            "line_end": 5,
+            "quote": "마리안은 자신을 향해 달려오는 지휘관을 바라본다."
           }
         ],
         "remote_or_voice_only": [],
@@ -8850,17 +8856,18 @@
       "is_plot_critical": true,
       "summary": "무너질 듯한 건물 안으로 숨어든 마리안은 눈앞이 붉어지고 지휘관을 남자와 혼동하는 이상 징후를 느끼며, 혹시라도 자신이 이상해지면이라며 지휘관에게 총을 건넨다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안과 지휘관은 무너질 것 같은 건물 안으로 간신히 숨어들어갔다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안과 지휘관은 무너질 것 같은 건물 안으로 간신히 숨어들어갔다."
@@ -8975,17 +8982,18 @@
       "is_plot_critical": true,
       "summary": "마리안이 시간이 없다며 자신의 머리에 총을 쏴달라고 간청하자, 지휘관이 떨리는 손으로 마리안에게 총을 쏘고 침식 엔딩으로 이어진다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안이 자신이 가지고 있던 총을 지휘관에게 넘겨준다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "마리안이 자신이 가지고 있던 총을 지휘관에게 넘겨준다."
@@ -9131,13 +9139,7 @@
       "is_plot_critical": true,
       "summary": "쓰러져 있는 빌딩 앞에서 지휘관이 외벽을 타고 올라갈 수 있겠다고 말하자, 마리안은 블랙스미스의 진동이 가까워지는 가운데 다른 건물을 찾을지, 외벽을 오를지, 깨진 창문으로 들어갈지 고민한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -9145,6 +9147,13 @@
             "line_start": 4,
             "line_end": 4,
             "quote": "마리안은 이곳에 올라가기라도 해야 할지 다른 곳을 찾아봐야 할지 망설인다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 2,
+            "line_end": 3,
+            "quote": "\"이 건물을 다리처럼 타고 올라갈 수도 있을 거 같은데, 어떻게 할까?\"\n지휘관의 말대로 쓰러져 있는 빌딩의 경사진 외벽을 다리처럼 여기고 올라갈 수 있을 것 같다."
           }
         ],
         "remote_or_voice_only": [],
@@ -9646,17 +9655,18 @@
       "is_plot_critical": true,
       "summary": "은신처에 주저앉은 마리안이 수많은 죽음을 떠올리며 어떻게 지휘관을 살리고 도망칠 수 있을지, 차라리 죽고 다시 시작할지 고뇌하던 중 어깨를 두드리는 지휘관의 부름에 고개를 든다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 3,
+            "line_end": 3,
+            "quote": "마리안과 지휘관은 바닥에 주저앉았다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 3,
             "line_end": 3,
             "quote": "마리안과 지휘관은 바닥에 주저앉았다."
@@ -9802,17 +9812,18 @@
       "is_plot_critical": true,
       "summary": "지휘관이 마리안을 지켜내지 못할까 봐 두렵지만 옆에 있어 다행이라고 고백하자, 마리안은 지휘관도 자신과 같은 마음으로 자신을 지키려 했음을 깨닫고 진심을 전하기로 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
             "entity_id": "char_마리안",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "지휘관이 마리안과 눈을 마주쳤다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
             "line_start": 2,
             "line_end": 2,
             "quote": "지휘관이 마리안과 눈을 마주쳤다."
@@ -10145,13 +10156,7 @@
       "is_plot_critical": true,
       "summary": "지금 전력으로는 정면 승부가 무리이니 다른 방법이 없을지 묻는 지휘관의 말에, 마리안은 더 고민해 볼지 함정을 만들어볼지 생각한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -10159,6 +10164,13 @@
             "line_start": 3,
             "line_end": 3,
             "quote": "그 말에 마리안은 정면 승부가 아닌 다른 방법을 떠올려 본다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "\"지금 우리의 전력으로는 정면 승부하는 건 무리일 것 같은데, 정면으로 승부하는 것 말고 다른 방법이 없을까?\""
           }
         ],
         "remote_or_voice_only": [],
@@ -10253,13 +10265,7 @@
       "is_plot_critical": true,
       "summary": "긴 시간을 고민해도 답이 나오지 않자 남자가 밖으로 나가보자며 마리안과 눈을 마주치고, 붉은 눈이 된 마리안을 보며 시간이 다 됐다고 말한 뒤 침식 엔딩으로 이어진다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -10577,13 +10583,7 @@
       "is_plot_critical": true,
       "summary": "빌딩 위로 다시 올라간 마리안과 지휘관은 전력 제어반과 호숫물 속으로 늘어진 전력선을 확인하고, 타이밍에 맞춰 레버를 당기기 위해 미끼가 필요하다는 점을 마주한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -10591,6 +10591,13 @@
             "line_start": 3,
             "line_end": 3,
             "quote": "마리안은 전력 제어반을 열어 내부를 확인한다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 17,
+            "line_end": 17,
+            "quote": "마리안은 결심한 듯 지휘관을 바라보았다."
           }
         ],
         "remote_or_voice_only": [],
@@ -10684,8 +10691,8 @@
         {
           "epistemic_type": "established_event",
           "confidence": null,
-          "actor_or_speaker": "지휘관",
-          "summary": "미끼가 되겠다고 말하고 침식도가 1% 증가한다.",
+          "actor_or_speaker": "마리안",
+          "summary": "마리안이 미끼가 되겠다고 말하고 침식도가 1% 증가한다.",
           "line_start": 19,
           "line_end": 20,
           "claim_line": null,
@@ -10867,13 +10874,7 @@
       "is_plot_critical": true,
       "summary": "쓰러진 빌딩 앞에서 블랙스미스의 진동을 확인한 뒤 지휘관은 먼저 외벽을 올라 전력 제어반으로 향하고, 마리안은 다가온 블랙스미스가 촉수를 뻗자 뛸 준비를 한다.",
       "participants": {
-        "present_in_scene": [
-          {
-            "speaker_label": "지휘관",
-            "entity_id": "char_지휘관",
-            "is_generic_role": false
-          }
-        ],
+        "present_in_scene": [],
         "present_silent": [
           {
             "name": "마리안",
@@ -10888,6 +10889,13 @@
             "line_start": 12,
             "line_end": 12,
             "quote": "블랙스미스가 육안으로 들어왔다."
+          },
+          {
+            "name": "지휘관",
+            "entity_id": "char_지휘관",
+            "line_start": 2,
+            "line_end": 2,
+            "quote": "마리안과 지휘관은 쓰러진 빌딩 앞에 섰다."
           }
         ],
         "remote_or_voice_only": [],

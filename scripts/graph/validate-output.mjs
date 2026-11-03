@@ -255,6 +255,26 @@ const ENTITY_PARTICIPANT_FIELDS = [
   ['mentioned_only', 'surface_text'],
 ];
 
+// entity_id를 갖는 항목: [장면 안 경로, 항목, 표기]. 참여자 네 갈래, document_author, 정체 공개(27·28·29항)
+export const linkedEntityItems = (scene) => {
+  const participants = scene?.participants && typeof scene.participants === 'object' ? scene.participants : {};
+  const linked = [];
+  for (const [key, textKey] of ENTITY_PARTICIPANT_FIELDS) {
+    if (!Array.isArray(participants[key])) continue;
+    participants[key].forEach((p, idx) => linked.push([`participants.${key}[${idx}]`, p, p?.[textKey]]));
+  }
+  const da = participants.document_author;
+  if (da && typeof da === 'object') linked.push(['participants.document_author', da, da.name]);
+  for (const key of ['unknown_speakers', 'descriptor_speakers']) {
+    if (!Array.isArray(scene?.[key])) continue;
+    scene[key].forEach((entry, idx) => {
+      const res = entry?.resolved_in_same_scene_to;
+      if (res && typeof res === 'object') linked.push([`${key}[${idx}].resolved_in_same_scene_to`, res, res.surface_text]);
+    });
+  }
+  return linked;
+};
+
 export const UNREGISTERED_ENTITY_TYPE_ENUM = new Set([
   'character',
   'alias',
@@ -2118,22 +2138,7 @@ export const validateShard = (shardData, batchInput, options = {}) => {
     // 4회차에 레지스트리에 없는 ID가 40건 나왔고(`char_스노우 화이트`, `loc_방주`), 사전 지식으로 붙인 ID도 있었다(`금장발` → `char_라푼젤`)
     if (options.registry) {
       const { ids, labelsById, idByLabel } = options.registry;
-      const participants = scene.participants && typeof scene.participants === 'object' ? scene.participants : {};
-      const linked = [];
-      for (const [key, textKey] of ENTITY_PARTICIPANT_FIELDS) {
-        if (!Array.isArray(participants[key])) continue;
-        participants[key].forEach((p, idx) => linked.push([`participants.${key}[${idx}]`, p, p?.[textKey]]));
-      }
-      const da = participants.document_author;
-      if (da && typeof da === 'object') linked.push(['participants.document_author', da, da.name]);
-      for (const key of ['unknown_speakers', 'descriptor_speakers']) {
-        if (!Array.isArray(scene[key])) continue;
-        scene[key].forEach((entry, idx) => {
-          const res = entry?.resolved_in_same_scene_to;
-          if (res && typeof res === 'object') linked.push([`${key}[${idx}].resolved_in_same_scene_to`, res, res.surface_text]);
-        });
-      }
-      for (const [rel, obj, surface] of linked) {
+      for (const [rel, obj, surface] of linkedEntityItems(scene)) {
         if (!isNonEmptyString(obj?.entity_id)) continue;
         const id = obj.entity_id;
         const shown = isNonEmptyString(surface) ? surface.trim() : null;
@@ -2204,6 +2209,26 @@ export const validateShard = (shardData, batchInput, options = {}) => {
             `Invalid line_start ${cand.line_start} (scene has ${totalLines} lines)`
           );
         }
+      });
+
+      // 29. 이미 entity_id로 연결한 표기를 미등록 후보에 또 적으면 경고(3절 2항: 후보는 레지스트리에 없는 것만).
+      // 4회차 0단계가 null 항목을 기계적으로 연결한 뒤 후보가 그대로 남아(363건/270장면) 보수자·검토자가 중복 등재로 거듭 지적했다
+      const linkedIdBySurface = new Map();
+      for (const [rel, obj, surface] of linkedEntityItems(scene)) {
+        if (!isNonEmptyString(obj?.entity_id) || !isNonEmptyString(surface)) continue;
+        const key = surface.normalize('NFKC').trim();
+        if (!linkedIdBySurface.has(key)) linkedIdBySurface.set(key, [obj.entity_id, rel]);
+      }
+      scene.unregistered_entity_candidates.forEach((cand, idx) => {
+        if (!isNonEmptyString(cand?.surface_text)) return;
+        const hit = linkedIdBySurface.get(cand.surface_text.normalize('NFKC').trim());
+        if (!hit) return;
+        addWarning(
+          'LINKED_SURFACE_IN_CANDIDATES',
+          sid,
+          `${sceneBasePath}.unregistered_entity_candidates[${idx}]`,
+          `"${cand.surface_text}" is already linked to "${hit[0]}" in ${hit[1]}. Remove it from unregistered_entity_candidates (candidates are only for names not in the registry)`
+        );
       });
     }
   }

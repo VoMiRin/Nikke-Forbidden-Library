@@ -126,7 +126,10 @@ GRAPH_RAG_PASS1_RULES.md의 3절을 읽어라. 검증기와 scripts/ 아래 소�
       - 선택지([OPTION])는 시점 인물(document_author.name)의 선택이다. 지휘관의 대사·행동·주장으로 적지 않는다.
       - 지휘관이 라벨 없는 대사나 지문으로 현장에 실제로 있으면 present_silent에 원문 근거와 함께 넣고, 그 대사는
         document_author.voices에 적는다. 현장에 없으면 참여자에서 뺀다. 이름만 나오면 mentioned_only에 넣는다.
-      - 선택지를 지휘관의 사건·주장·관계로 적은 항목은 시점 인물의 것으로 고친다. 시점 인물이 없으면 "지문"의 주장으로 둔다.
+      - 선택지를 지휘관의 사건·주장·관계로 적은 항목은 시점 인물의 것으로 고친다. 사실·주장 구분(epistemic_type)은 그대로 둔다.
+        시점 인물이 없으면 행위자·화자를 "지문"으로 바꾸되, 기록 선택·메뉴 선택 같은 행동은 사건(established_event)으로 두고,
+        독백의 추론·판단·다짐만 "지문"의 주장(character_claim)으로 둔다(규칙 3절 6항).
+        (2026-11-02 수정: 처음 문구 "시점 인물이 없으면 지문의 주장으로 둔다"가 사건까지 주장으로 바꾸게 해 fading_affection_start에서 6건이 잘못 바뀌었다)
    b. rule이 REVIEW_FINDING이고 id가 B-로 시작하는 것(과거 지휘관 라벨):
       - data/graph/pass1/repairs/round4_title_verdicts.json의 판정을 따른다. 장면마다 다시 판정하지 마라.
       - 판정이 char_엔더슨이면 지적 path의 지휘관 항목 entity_id를 char_엔더슨으로 바꾼다. 라벨·표기는 바꾸지 않는다.

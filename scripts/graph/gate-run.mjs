@@ -8,6 +8,10 @@ const __filename = fileURLToPath(import.meta.url);
 // 측정 게이트(GRAPH_RAG_PASS1_GATE.md) 검색 스크립트.
 // 질문 문장만 보고 Pass 1 역색인(pass1_index.json)에서 후보 장면을 낸다. 모델 판단은 없다. 정답 파일은 읽지 않는다.
 // 방식(2026-11-02, 질문 내용을 보기 전에 고정):
+// v1.2(2026-11-03, 보수 4회차 재측정 뒤 수정): 별칭을 인물에 합치자 별칭 검색어가 인물 전체 장면을 가리켜 희소도가 떨어졌다(G108).
+//   - 별칭(레지스트리 alias_kinds)은 그 표기가 적힌 장면만 찾는다
+//   - 인물에 연결된 항목도 장면별 표기(speaker_label·name·surface_text)로 찾는다
+//   나머지는 v1.1과 같다. 보수 전·뒤 인덱스에 같은 v1.2를 적용해 비교한다
 //  1. 질문 문장에서 인덱스 키와 일치하는 낱말을 찾는다. 앞은 한글·영숫자가 아니고 뒤는 끝·한글 아님·조사여야 한다.
 //     같은 자리에서 겹치면 긴 키만 쓴다. 키는 2글자 이상(`???`는 예외).
 //     대상: entities(entity_id 키는 레지스트리 이름, surface: 키는 그 표기), relationships_by_entity, forms_of_address,
@@ -58,12 +62,20 @@ export const buildTermPostings = (index, registry) => {
     p.sources.add(source);
   };
   const entById = new Map((registry?.entities ?? []).map((e) => [e.entity_id, e]));
+  const ENTITY_FIELDS = ['present_in_scene', 'present_silent', 'remote_or_voice_only', 'mentioned_only'];
+  const labelOfEntry = (x) => x.speaker_label ?? x.name ?? x.surface_text ?? null;
   for (const [key, b] of Object.entries(index.entities)) {
-    const scenes = ['present_in_scene', 'present_silent', 'remote_or_voice_only', 'mentioned_only'].flatMap((f) => b[f].map((x) => x.scene_id));
+    const scenes = ENTITY_FIELDS.flatMap((f) => b[f].map((x) => x.scene_id));
     if (key.startsWith('surface:')) addTerm(key.slice('surface:'.length), scenes, 'entity_surface');
     else {
+      // v1.2: 별칭(alias_kinds: 핸들·옛 이름·별명 등)은 인물 전체 장면이 아니라 그 표기가 나온 장면만 찾는다(아래 표기별 항목)
       const e = entById.get(key);
-      for (const n of new Set([e?.canonical_name, ...(e?.surface_labels ?? []), b.canonical_or_surface].filter(Boolean))) addTerm(n, scenes, 'entity');
+      const aliases = new Set(Object.keys(e?.alias_kinds ?? {}).map(nfkc));
+      for (const n of new Set([e?.canonical_name, ...(e?.surface_labels ?? []), b.canonical_or_surface].filter(Boolean))) {
+        if (!aliases.has(nfkc(n))) addTerm(n, scenes, 'entity');
+      }
+      // v1.2: 장면마다 그 장면에 적힌 표기로도 찾는다(인물에 연결된 뒤에도 "이 장면에서는 [사이코뮤]·지휘관으로 나옴"을 잃지 않게)
+      for (const f of ENTITY_FIELDS) for (const x of b[f]) if (labelOfEntry(x)) addTerm(labelOfEntry(x), [x.scene_id], 'entity_label');
     }
   }
   for (const [k, arr] of Object.entries(index.relationships_by_entity)) addTerm(k, arr.map((x) => x.scene_id), 'relationship');
@@ -161,18 +173,23 @@ export const runGate = ({ questionsPath, graphDir = GRAPH_DATA_DIR }) => {
     index_generated_at: index.generated_at,
     index_scenes: index.merged_scenes_count,
     top_k: TOP_K,
-    method: 'gate-run.mjs v1.1 2026-11-02 (질문 낱말 ↔ 인덱스 키 문자열 일치, 희소도 합, 제목 가산; v1에서 "N챕터" 장 번호 형식 추가)',
+    method: 'gate-run.mjs v1.2 2026-11-03 (질문 낱말 ↔ 인덱스 키 문자열 일치, 희소도 합, 제목 가산; v1.1 "N챕터" 장 번호 형식; v1.2 별칭은 그 표기가 나온 장면만, 장면별 표기로도 찾음)',
     results: questions.map((q) => ({ question_id: q.question_id, type: q.type, ...runQuestion(q.question, ctx) })),
   };
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
-  const [questionsPath, outPath] = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  const gi = args.indexOf('--graph-dir');
+  const graphDir = gi >= 0 ? path.resolve(args[gi + 1]) : GRAPH_DATA_DIR;
+  const [questionsPath, outPath] = args.filter((a, i) => a !== '--graph-dir' && args[i - 1] !== '--graph-dir');
   if (!questionsPath || !outPath) {
-    console.error('사용법: node scripts/graph/gate-run.mjs <questions.jsonl> <출력 run.json>');
+    // --graph-dir: pass1_index.json·entity_registry.json·manifest.json이 있는 폴더(옛 커밋의 인덱스로 같은 방식을 다시 잴 때)
+    console.error('사용법: node scripts/graph/gate-run.mjs <questions.jsonl> <출력 run.json> [--graph-dir <폴더>]');
     process.exit(2);
   }
-  const run = runGate({ questionsPath });
+  const run = runGate({ questionsPath, graphDir });
+  run.graph_dir = path.relative(process.cwd(), graphDir) || '.';
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(run, null, 1));
   const noTerm = run.results.filter((r) => !r.terms.length && !r.titles.length).map((r) => r.question_id);

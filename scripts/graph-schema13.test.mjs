@@ -1360,6 +1360,24 @@ test('2.3-27/28 entity ids: ids outside the registry fail, registered ids on unr
     assert.equal(idWarnings(prior).length, 1);
     // 조사·호칭이 붙은 표기는 이름을 담고 있으면 통과
     assert.equal(idWarnings(run([mention('스노우 화이트와', 'char_스노우_화이트')])).length, 0);
+    // 29항: 연결한 표기를 미등록 후보에도 적으면 경고. null인 표기와 다른 표기의 후보는 그대로
+    const withCandidates = (mentions, candidates) =>
+      validateShard(
+        shardOf(
+          emptyScene('t13_ids', {
+            participants: { present_in_scene: [{ speaker_label: '라피', entity_id: 'char_라피', is_generic_role: false }], present_silent: [], remote_or_voice_only: [], mentioned_only: mentions, document_author: null },
+            events_and_claims: [event({ epistemic_type: 'character_claim', summary: '이야기한다.', line_start: 2, line_end: 2, claim_line: 2, quote: '스노우 화이트와 백설, 방주 이야기야.' })],
+            unregistered_entity_candidates: candidates.map((surface_text) => ({ surface_text, suggested_type: 'character', line_start: 2 })),
+          })
+        ),
+        batch,
+        { registry }
+      ).warnings.filter((w) => w.rule === 'LINKED_SURFACE_IN_CANDIDATES');
+    const dup = withCandidates([mention('스노우 화이트', 'char_스노우_화이트'), mention('백설', null)], ['스노우 화이트', '백설', '방주']);
+    assert.equal(dup.length, 1);
+    assert.match(dup[0].message, /"스노우 화이트" is already linked to "char_스노우_화이트"/);
+    // 화자 갈래의 표기도 본다
+    assert.equal(withCandidates([], ['라피']).length, 1);
     // 화자 갈래의 ID도 본다. 레지스트리 없이 검증하면 보지 않는다
     assertFails(run([], [{ speaker_label: '라피', entity_id: 'char_rapi', is_generic_role: false }]), 'ENTITY_ID_NOT_IN_REGISTRY');
     assertValid(

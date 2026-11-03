@@ -88,3 +88,37 @@ test('보충 질문 형식 검사(--no-title): 질문에 이야기 제목·장 �
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+import { buildTermPostings } from './graph/gate-run.mjs';
+
+test('측정 게이트 검색 v1.2: 별칭은 그 표기가 나온 장면만, 연결된 항목도 장면별 표기로 찾는다', () => {
+  const bucket = (entries) => ({ present_in_scene: entries, present_silent: [], remote_or_voice_only: [], mentioned_only: [] });
+  const index = {
+    entities: {
+      char_엑시아: bucket([
+        { scene_id: 'a', speaker_label: '엑시아' },
+        { scene_id: 'b', speaker_label: '[사이코뮤]' },
+        { scene_id: 'c', speaker_label: '엑시아' },
+      ]),
+      char_엔더슨: bucket([{ scene_id: 'd', speaker_label: '지휘관' }, { scene_id: 'e', speaker_label: '엔더슨' }]),
+      char_지휘관: bucket([{ scene_id: 'f', speaker_label: '지휘관' }]),
+    },
+    relationships_by_entity: {},
+    forms_of_address: {},
+    clues_by_keyword: {},
+    descriptor_speakers: [],
+    unknown_speakers: [],
+  };
+  const registry = {
+    entities: [
+      { entity_id: 'char_엑시아', canonical_name: '엑시아', surface_labels: ['엑시아', '[사이코뮤]'], alias_kinds: { '[사이코뮤]': 'handle' } },
+      { entity_id: 'char_엔더슨', canonical_name: '엔더슨', surface_labels: ['엔더슨'] },
+      { entity_id: 'char_지휘관', canonical_name: '지휘관', surface_labels: ['지휘관'] },
+    ],
+  };
+  const p = buildTermPostings(index, registry);
+  assert.deepEqual([...p.get('[사이코뮤]').scenes].sort(), ['b']); // 별칭: 표기가 나온 장면만
+  assert.deepEqual([...p.get('엑시아').scenes].sort(), ['a', 'b', 'c']); // 본이름: 인물 전체
+  assert.deepEqual([...p.get('지휘관').scenes].sort(), ['d', 'f']); // 엔더슨에 연결된 "지휘관" 장면도 표기로 잡힌다
+  assert.deepEqual([...p.get('엔더슨').scenes].sort(), ['d', 'e']);
+});

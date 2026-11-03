@@ -1,0 +1,439 @@
+{
+ "overall": {
+  "questions": 15,
+  "scene_recall@10": 0.632,
+  "question_all@10": 5,
+  "scene_recall@20": 0.658,
+  "question_all@20": 6,
+  "scene_recall@50": 0.789,
+  "question_all@50": 8,
+  "median_candidates": 434
+ },
+ "by_type": {
+  "alias_mentions": {
+   "questions": 3,
+   "scene_recall@10": 0.714,
+   "question_all@10": 1,
+   "scene_recall@20": 0.714,
+   "question_all@20": 1,
+   "scene_recall@50": 0.714,
+   "question_all@50": 1,
+   "median_candidates": 377
+  },
+  "document_author": {
+   "questions": 2,
+   "scene_recall@10": 0.8,
+   "question_all@10": 1,
+   "scene_recall@20": 0.8,
+   "question_all@20": 1,
+   "scene_recall@50": 0.8,
+   "question_all@50": 1,
+   "median_candidates": 1118
+  },
+  "group_or_device_label": {
+   "questions": 2,
+   "scene_recall@10": 0.5,
+   "question_all@10": 0,
+   "scene_recall@20": 0.5,
+   "question_all@20": 0,
+   "scene_recall@50": 0.833,
+   "question_all@50": 1,
+   "median_candidates": 383
+  },
+  "other": {
+   "questions": 3,
+   "scene_recall@10": 0.714,
+   "question_all@10": 2,
+   "scene_recall@20": 0.714,
+   "question_all@20": 2,
+   "scene_recall@50": 0.857,
+   "question_all@50": 2,
+   "median_candidates": 434
+  },
+  "past_title_speaker": {
+   "questions": 3,
+   "scene_recall@10": 0.625,
+   "question_all@10": 1,
+   "scene_recall@20": 0.625,
+   "question_all@20": 1,
+   "scene_recall@50": 0.875,
+   "question_all@50": 2,
+   "median_candidates": 4469
+  },
+  "pov_text_adventure": {
+   "questions": 2,
+   "scene_recall@10": 0.4,
+   "question_all@10": 0,
+   "scene_recall@20": 0.6,
+   "question_all@20": 1,
+   "scene_recall@50": 0.6,
+   "question_all@50": 1,
+   "median_candidates": 563
+  }
+ },
+ "missing_answers": [],
+ "rows": [
+  {
+   "question_id": "G101",
+   "type": "past_title_speaker",
+   "required": 3,
+   "candidate_count": 4469,
+   "ranks": [
+    {
+     "scene_id": "ark_guardian_26",
+     "rank": 23
+    },
+    {
+     "scene_id": "red_ash_00",
+     "rank": 5
+    },
+    {
+     "scene_id": "snowwhite_young_00",
+     "rank": null
+    }
+   ],
+   "hit@10": 1,
+   "all@10": false,
+   "hit@20": 1,
+   "all@20": false,
+   "hit@50": 2,
+   "all@50": false
+  },
+  {
+   "question_id": "G102",
+   "type": "past_title_speaker",
+   "required": 2,
+   "candidate_count": 4774,
+   "ranks": [
+    {
+     "scene_id": "rapunzel_puregrace_04",
+     "rank": 4
+    },
+    {
+     "scene_id": "old_tales_16",
+     "rank": 1
+    }
+   ],
+   "hit@10": 2,
+   "all@10": true,
+   "hit@20": 2,
+   "all@20": true,
+   "hit@50": 2,
+   "all@50": true
+  },
+  {
+   "question_id": "G103",
+   "type": "past_title_speaker",
+   "required": 3,
+   "candidate_count": 736,
+   "ranks": [
+    {
+     "scene_id": "over_zone_18",
+     "rank": 3
+    },
+    {
+     "scene_id": "over_zone_22",
+     "rank": 9
+    },
+    {
+     "scene_id": "red_ash_19",
+     "rank": 49
+    }
+   ],
+   "hit@10": 2,
+   "all@10": false,
+   "hit@20": 2,
+   "all@20": false,
+   "hit@50": 3,
+   "all@50": true
+  },
+  {
+   "question_id": "G104",
+   "type": "pov_text_adventure",
+   "required": 2,
+   "candidate_count": 403,
+   "ranks": [
+    {
+     "scene_id": "white_memory_19",
+     "rank": null
+    },
+    {
+     "scene_id": "white_memory_20",
+     "rank": null
+    }
+   ],
+   "hit@10": 0,
+   "all@10": false,
+   "hit@20": 0,
+   "all@20": false,
+   "hit@50": 0,
+   "all@50": false
+  },
+  {
+   "question_id": "G105",
+   "type": "pov_text_adventure",
+   "required": 3,
+   "candidate_count": 563,
+   "ranks": [
+    {
+     "scene_id": "fading_affection_1116",
+     "rank": 1
+    },
+    {
+     "scene_id": "fading_affection_3003",
+     "rank": 2
+    },
+    {
+     "scene_id": "fading_affection_3103",
+     "rank": 15
+    }
+   ],
+   "hit@10": 2,
+   "all@10": false,
+   "hit@20": 3,
+   "all@20": true,
+   "hit@50": 3,
+   "all@50": true
+  },
+  {
+   "question_id": "G106",
+   "type": "alias_mentions",
+   "required": 2,
+   "candidate_count": 377,
+   "ranks": [
+    {
+     "scene_id": "main_35_11",
+     "rank": null
+    },
+    {
+     "scene_id": "main_42_02",
+     "rank": 2
+    }
+   ],
+   "hit@10": 1,
+   "all@10": false,
+   "hit@20": 1,
+   "all@20": false,
+   "hit@50": 1,
+   "all@50": false
+  },
+  {
+   "question_id": "G107",
+   "type": "alias_mentions",
+   "required": 2,
+   "candidate_count": 267,
+   "ranks": [
+    {
+     "scene_id": "nihilister_03",
+     "rank": null
+    },
+    {
+     "scene_id": "eden_spear_10",
+     "rank": 3
+    }
+   ],
+   "hit@10": 1,
+   "all@10": false,
+   "hit@20": 1,
+   "all@20": false,
+   "hit@50": 1,
+   "all@50": false
+  },
+  {
+   "question_id": "G108",
+   "type": "alias_mentions",
+   "required": 3,
+   "candidate_count": 854,
+   "ranks": [
+    {
+     "scene_id": "d.ark_hero_02",
+     "rank": 1
+    },
+    {
+     "scene_id": "clay_02",
+     "rank": 2
+    },
+    {
+     "scene_id": "elevator_01",
+     "rank": 4
+    }
+   ],
+   "hit@10": 3,
+   "all@10": true,
+   "hit@20": 3,
+   "all@20": true,
+   "hit@50": 3,
+   "all@50": true
+  },
+  {
+   "question_id": "G109",
+   "type": "other",
+   "required": 3,
+   "candidate_count": 228,
+   "ranks": [
+    {
+     "scene_id": "main_41_13",
+     "rank": 2
+    },
+    {
+     "scene_id": "main_42_10",
+     "rank": 1
+    },
+    {
+     "scene_id": "main_44_16",
+     "rank": 3
+    }
+   ],
+   "hit@10": 3,
+   "all@10": true,
+   "hit@20": 3,
+   "all@20": true,
+   "hit@50": 3,
+   "all@50": true
+  },
+  {
+   "question_id": "G110",
+   "type": "other",
+   "required": 2,
+   "candidate_count": 434,
+   "ranks": [
+    {
+     "scene_id": "over_zone_25",
+     "rank": 7
+    },
+    {
+     "scene_id": "goddess_fall_02",
+     "rank": 1
+    }
+   ],
+   "hit@10": 2,
+   "all@10": true,
+   "hit@20": 2,
+   "all@20": true,
+   "hit@50": 2,
+   "all@50": true
+  },
+  {
+   "question_id": "G111",
+   "type": "other",
+   "required": 2,
+   "candidate_count": 1770,
+   "ranks": [
+    {
+     "scene_id": "ark_guardian_03",
+     "rank": null
+    },
+    {
+     "scene_id": "over_zone_23",
+     "rank": 21
+    }
+   ],
+   "hit@10": 0,
+   "all@10": false,
+   "hit@20": 0,
+   "all@20": false,
+   "hit@50": 1,
+   "all@50": false
+  },
+  {
+   "question_id": "G112",
+   "type": "group_or_device_label",
+   "required": 3,
+   "candidate_count": 383,
+   "ranks": [
+    {
+     "scene_id": "old_tales_00",
+     "rank": 2
+    },
+    {
+     "scene_id": "gingerbreadhouse_06",
+     "rank": 25
+    },
+    {
+     "scene_id": "unbreakable_sphere_27",
+     "rank": 9
+    }
+   ],
+   "hit@10": 2,
+   "all@10": false,
+   "hit@20": 2,
+   "all@20": false,
+   "hit@50": 3,
+   "all@50": true
+  },
+  {
+   "question_id": "G113",
+   "type": "group_or_device_label",
+   "required": 3,
+   "candidate_count": 260,
+   "ranks": [
+    {
+     "scene_id": "main_22_05",
+     "rank": 1
+    },
+    {
+     "scene_id": "neverland_23",
+     "rank": 40
+    },
+    {
+     "scene_id": "rouge_02",
+     "rank": null
+    }
+   ],
+   "hit@10": 1,
+   "all@10": false,
+   "hit@20": 1,
+   "all@20": false,
+   "hit@50": 2,
+   "all@50": false
+  },
+  {
+   "question_id": "G114",
+   "type": "document_author",
+   "required": 3,
+   "candidate_count": 1118,
+   "ranks": [
+    {
+     "scene_id": "old_tales_lost_09",
+     "rank": 1
+    },
+    {
+     "scene_id": "old_tales_lost_10",
+     "rank": null
+    },
+    {
+     "scene_id": "old_tales_20",
+     "rank": 10
+    }
+   ],
+   "hit@10": 2,
+   "all@10": false,
+   "hit@20": 2,
+   "all@20": false,
+   "hit@50": 2,
+   "all@50": false
+  },
+  {
+   "question_id": "G115",
+   "type": "document_author",
+   "required": 2,
+   "candidate_count": 272,
+   "ranks": [
+    {
+     "scene_id": "unbreakable_sphere_lost_03",
+     "rank": 1
+    },
+    {
+     "scene_id": "unbreakable_sphere_dialog_11",
+     "rank": 2
+    }
+   ],
+   "hit@10": 2,
+   "all@10": true,
+   "hit@20": 2,
+   "all@20": true,
+   "hit@50": 2,
+   "all@50": true
+  }
+ ]
+}
