@@ -100,6 +100,8 @@ export const USER_CONFIRMED_ALIASES = new Map([
   ['[사이코뮤]', { canonical: '엑시아', kind: 'handle' }], // 괄호 없는 "사이코뮤"는 개발 개념 용례가 있어 넣지 않는다
   ['어린 노라', { canonical: '노라', kind: 'younger_self' }],
   ['어린 노아', { canonical: '노아', kind: 'younger_self' }],
+  // 2026-11-04 사용자 확인
+  ['레비', { canonical: '레비아탄', kind: 'nickname' }], // mudfish_04: 헬레틱이 되기 전 서로 '레비'·'세이렌'으로 부르기로 함
 ]);
 
 const NAMED_CHARACTER_EXCEPTIONS = new Set([

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.3.0",
   "description": "등록 대본 화자 기반 인물 정체 레지스트리 초안. 다른 이름으로 불린 두 화자의 병합은 반드시 대본 근거 검증(Pass 2/3)을 거쳐 수행한다 (1.6).",
-  "total_entities": 416,
+  "total_entities": 415,
   "entities": [
     {
       "entity_id": "char_handle_점프만이살길",
@@ -1763,43 +1763,18 @@
       ]
     },
     {
-      "entity_id": "char_레비",
-      "canonical_name": "레비",
+      "entity_id": "char_레비아탄",
+      "canonical_name": "레비아탄",
       "entity_type": "character",
       "surface_labels": [
+        "레비아탄",
         "레비"
       ],
       "is_generic_role": false,
       "is_episode_or_blabla_hero": false,
       "is_voice_or_handle_variant": false,
-      "scene_count": 11,
-      "dialogue_line_count": 558,
-      "sources": [
-        "dialogue"
-      ],
-      "categories": [
-        "side_stories"
-      ],
-      "sample_scenes": [
-        "mudfish_04",
-        "mudfish_05",
-        "mudfish_06",
-        "mudfish_07",
-        "mudfish_08"
-      ]
-    },
-    {
-      "entity_id": "char_레비아탄",
-      "canonical_name": "레비아탄",
-      "entity_type": "character",
-      "surface_labels": [
-        "레비아탄"
-      ],
-      "is_generic_role": false,
-      "is_episode_or_blabla_hero": false,
-      "is_voice_or_handle_variant": false,
-      "scene_count": 76,
-      "dialogue_line_count": 1887,
+      "scene_count": 87,
+      "dialogue_line_count": 2445,
       "sources": [
         "dialogue"
       ],
@@ -1815,7 +1790,10 @@
         "main_33_06",
         "main_33_07",
         "main_33_08"
-      ]
+      ],
+      "alias_kinds": {
+        "레비": "nickname"
+      }
     },
     {
       "entity_id": "char_레오나",
@@ -12265,11 +12243,6 @@
       "is_generic_role": false,
       "role_category": null
     },
-    "레비": {
-      "entity_id": "char_레비",
-      "is_generic_role": false,
-      "role_category": null
-    },
     "레비아탄": {
       "entity_id": "char_레비아탄",
       "is_generic_role": false,
@@ -16047,6 +16020,11 @@
     },
     "어린 노아": {
       "entity_id": "char_노아",
+      "is_generic_role": false,
+      "role_category": null
+    },
+    "레비": {
+      "entity_id": "char_레비아탄",
       "is_generic_role": false,
       "role_category": null
     }
