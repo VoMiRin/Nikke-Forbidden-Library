@@ -1,5 +1,5 @@
 
-# Nikke-Forbidden-Library
+# 니케 금서고
 니케 스토리들을 모아놓은 프로젝트입니다.
 
 ## 구조
@@ -12,6 +12,17 @@
 - 프로덕션 빌드는 홈·분류·장면의 HTML을 미리 생성합니다. 장면 주소는 `/stories/<분류>/<장면 ID>/`이며 기존 쿼리 주소도 계속 열립니다.
 
 ## 로컬 실행
+Node.js는 `.nvmrc`에 지정한 **22.23.4**를 사용합니다. 이 버전은
+[2026-10-21 보안 업데이트](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases)를 포함합니다.
+`npm install`이나 `npm audit fix`만으로 Node.js 런타임이 업데이트되지는 않습니다.
+
+nvm을 사용한다면 프로젝트 디렉터리에서 아래 명령으로 설치·전환합니다.
+
+```bash
+nvm install
+nvm use
+```
+
 `.env.development.local`에 개발 전용 Gemini API 키를 입력합니다. 이 파일은 Git에 포함되지 않습니다.
 
 ```dotenv
@@ -195,8 +206,20 @@ AI 출처는 제공자의 인용 문맥이 로컬 원문의 한 장면에만 정
 
 SEO 목표는 **“니케 금서고”로 홈페이지 찾기**입니다. 홈에 사이트명·소개·WebSite 구조화 데이터를 제공하고 사이트맵에는 홈만 포함합니다. 장면·분류 HTML은 `noindex,follow`, 원문 TXT와 검색용 JSON은 HTTP `X-Robots-Tag: noindex`로 검색 노출을 제외합니다. 크롤러가 제외 설정을 읽을 수 있도록 해당 경로를 robots.txt로 차단하지 않습니다. 스토리 추가 시 SSG 자동 생성과 사이트 내부 검색·공유는 유지됩니다.
 
+페이지 제목·공유 제목·상단과 하단의 사이트명은 “니케 금서고”로 통일하고, WebSite 별칭에는 한국어 약칭 “금서고”만 제공합니다. Google 검색은 검색어별 노출 허용·차단을 지원하지 않으므로 영문 이름을 제거해도 도메인·외부 링크 등의 신호로 영문 검색에 노출될 수 있습니다. 배포 후 Search Console의 URL 검사에서 홈페이지 재색인을 요청할 수 있으며, 반영은 즉시 이루어지지 않습니다. 자세한 안내는 [Google 사이트 이름](https://developers.google.com/search/docs/appearance/site-names)과 [재크롤링 요청](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)을 참고하세요.
+
 ## Cloud Run 검색 API 배포
 검색 API 이미지는 [`server/Dockerfile`](/home/vomirin/nikke-script-archive/server/Dockerfile:1)를 사용합니다.
+
+Node.js 보안 업데이트는 이미지 재빌드와 Cloud Run 재배포가 필요합니다.
+Cloud Build는 `--pull`로 `node:22-slim` 기반 이미지를 새로 확인합니다. 공식 Docker 태그의 보안 패치 반영을
+기다리지 않도록, Dockerfile은 공식 Node.js 22.23.4 Linux x64 배포 파일을 SHA-256으로 검증한 뒤
+런타임에 설치합니다. 대상은 Cloud Run의 `linux/amd64`입니다.
+`npm ci --engine-strict`는 `package.json`의 Node.js 요구 버전(22.23.4 이상인 22.x)을 강제합니다.
+다음 런타임 업데이트 때는 Dockerfile의 배포 파일 URL·체크섬, `.nvmrc`, `engines`를 함께 갱신하세요.
+또한 `firebase.json`의 `/api/**` rewrite가 `pinTag: true`이므로 Firebase Hosting도 배포해야
+사이트가 새 Cloud Run revision을 사용합니다. `npm run deploy`는 기본 설정으로 이 두 배포를 모두 수행합니다.
+보안 업데이트 배포에서는 `DEPLOY_HOSTING=0`으로 Hosting 배포를 생략하지 마세요.
 
 예시:
 ```bash

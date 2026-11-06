@@ -2,6 +2,7 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args:
       - build
+      - --pull
       - -f
       - server/Dockerfile
       - -t

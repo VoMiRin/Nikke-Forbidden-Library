@@ -1,6 +1,7 @@
 import React from 'react';
 import { NikkeLogo } from './NikkeLogo';
 import { MenuIcon, MoonIcon, SunIcon } from './Icons';
+import { SITE_NAME } from '../lib/seo.mjs';
 
 interface HeaderProps {
   onToggleSidebar?: () => void;
@@ -74,14 +75,11 @@ export const Header: React.FC<HeaderProps> = ({
           <a
             href="/"
             onClick={handleLogoClick}
-            aria-label="금서고 홈"
+            aria-label={`${SITE_NAME} 홈`}
             className="flex min-w-0 items-center gap-3 rounded-lg text-nikke-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-nikke-accent max-sm:flex-1 max-sm:gap-2.5"
           >
             <NikkeLogo aria-hidden="true" className="h-6 w-4 shrink-0 sm:h-8 sm:w-[22px]" />
-            <span className="flex min-w-0 items-baseline gap-2.5">
-              <span className="font-headline text-lg font-bold sm:text-xl">금서고</span>
-              <span className="hidden truncate text-[13px] text-nikke-text-muted sm:inline">Nikke Forbidden Library</span>
-            </span>
+            <span className="whitespace-nowrap font-headline text-lg font-bold sm:text-xl">{SITE_NAME}</span>
           </a>
         </div>
         <nav aria-label="주 메뉴" className="hidden gap-7 self-stretch sm:flex">
