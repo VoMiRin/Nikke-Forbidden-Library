@@ -156,3 +156,38 @@ data/graph/manifest.json
 data/graph/pass1/batches/
 data/graph/pass1/waves/
 data/graph/pass1/part_inputs/
+
+# GraphRAG: keep current shards, progress, registry, indexes and tools.
+# Merged shards contain the part outputs; old versions and review runs stay local.
+/data/graph/pass1/parts/
+/data/graph/pass1/repairs/
+/data/graph/pass1/shards_*/
+/data/graph/pilot/
+/data/graph/reports/
+/data/graph/gate/runs/
+/data/graph/pass1_density_report.json
+
+# Keep the README and the two GraphRAG documents required by its tooling.
+# Work reports and one-off instructions stay on this computer.
+/*.md
+!/README.md
+!/GRAPH_RAG_SPEC.md
+!/GRAPH_RAG_PASS1_RULES.md
+
+# Local editor/assistant settings and design drafts
+/.vscode/
+/.claude/
+/.codex
+/.agents/
+/.aws/
+/stitch/
+/.gemini-file-search-manifest.development.json
+
+# Generated version stamp and unused scaffolding
+/public/app-version.json
+/metadata.json
+/scriptContents.ts
+/scripts/splitConstants.js
+
+# Windows download metadata
+*:Zone.Identifier

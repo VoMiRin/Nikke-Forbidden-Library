@@ -67,6 +67,20 @@ git commit -m "Update scripts"
 git push
 ```
 
+## GitHub에 보관하는 파일
+
+웹 앱 소스, 스토리 원문과 메타데이터, 빌드·배포·검증 도구 및 설정을 보관합니다.
+운영용 `.gemini-file-search-manifest.json`도 증분 동기화에 필요하므로 함께 커밋합니다.
+
+GraphRAG는 향후 서버에서 사용할 인덱스·타이틀별 데이터와 이를 다시 만드는 데 필요한
+현재 샤드, 레지스트리, 진행 상태, 연표 원본 및 도구를 보관합니다.
+`GRAPH_RAG_SPEC.md`와 `GRAPH_RAG_PASS1_RULES.md`는 도구와 테스트가 읽으므로 유지합니다.
+
+작업 보고서, 디자인 시안, 개인 도구 설정, GraphRAG 보수 중간 파일·예전 샤드·파일럿 결과는
+`.gitignore`로 제외합니다. 분할 결과는 합쳐진 샤드에 보관하므로 따로 커밋하지 않습니다.
+제외한 파일은 로컬에 남으며, 이후 `git add .`를 실행해도 올라가지 않습니다.
+이미 추적하던 파일은 `git rm --cached`로 최신 파일 목록에서 제외하며, 과거 커밋에는 남습니다.
+
 ## 검색 API 실행
 ```bash
 npm run search-api
@@ -78,7 +92,7 @@ npm run search-api
 
 분류를 좁히려면 `category=event_stories` 같은 분류 키를 추가합니다. 서버와 정적 fallback은 같은 검색 모듈을 사용하며, 일치 위치 주변의 스니펫과 제목/본문 일치 구분을 반환합니다. 분류는 결과 개수 제한 전에 적용됩니다.
 
-빌드 시 `public/speakers.json`(화자 요약)과 `public/speaker-index.json`(화자별 장면)도 생성됩니다. 검색 화면에서 화자 자동완성과 “화자별 기록 보기”를 사용할 수 있습니다. 자세한 집계 기준, AI 출처 링크 범위와 검증 결과는 [백엔드 개선 결과](BACKEND_WORK_RESULT.md)에 있습니다.
+빌드 시 `public/speakers.json`(화자 요약)과 `public/speaker-index.json`(화자별 장면)도 생성됩니다. 검색 화면에서 화자 자동완성과 “화자별 기록 보기”를 사용할 수 있습니다.
 
 코드 검사:
 
@@ -186,7 +200,7 @@ npm run gpt:knowledge:build
 
 결과는 Git에서 제외되는 `custom_gpt_knowledge/`에 생성됩니다. `manifest.json`의 `uploadFiles`에 나열된 파일만 GPT Knowledge에 업로드하세요. 생성기는 메타데이터에 등록되지 않은 비어 있지 않은 원문도 직접 탐지해 포함하고, 누락된 본문이나 설정된 최대 업로드 파일 수 초과가 있으면 실패합니다.
 
-GPT 이름, 설명, Instructions, 기능 설정, 비공개 저장 및 Preview 점검 순서는 [`CUSTOM_GPT_SETUP.md`](./CUSTOM_GPT_SETUP.md)를 따릅니다. 실제 붙여 넣을 지시문은 [`CUSTOM_GPT_INSTRUCTIONS.md`](./CUSTOM_GPT_INSTRUCTIONS.md)에 있습니다. 답변 형식을 고정하지 않으며, 필요한 경우에만 확인된 사실과 해석·추측을 자연스럽게 구분하도록 작성되어 있습니다.
+GPT 설정과 지시문 등 개인용 작업 안내는 로컬에서 관리합니다. 지식 파일은 위 생성 명령과 `manifest.json`의 업로드 목록을 기준으로 사용하세요.
 
 ## 빌드
 ```bash
@@ -202,14 +216,12 @@ SSG는 별도 서버 없이 Firebase Hosting에서 제공됩니다. 원문 누�
 
 AI 출처는 제공자의 인용 문맥이 로컬 원문의 한 장면에만 정확하게 일치할 때 장면 주소로 연결합니다. 문맥이 없거나 불명확하면 타이틀/분류 링크를 유지합니다. 이 검증에 필요한 원문 파일도 Cloud Run 이미지에 포함됩니다.
 
-구현 범위·프런트 연동 변경·검증과 제한은 [SSG·백엔드 추가 작업 결과](SSG_BACKEND_WORK_RESULT.md)를 참고하세요.
-
 SEO 목표는 **“니케 금서고”로 홈페이지 찾기**입니다. 홈에 사이트명·소개·WebSite 구조화 데이터를 제공하고 사이트맵에는 홈만 포함합니다. 장면·분류 HTML은 `noindex,follow`, 원문 TXT와 검색용 JSON은 HTTP `X-Robots-Tag: noindex`로 검색 노출을 제외합니다. 크롤러가 제외 설정을 읽을 수 있도록 해당 경로를 robots.txt로 차단하지 않습니다. 스토리 추가 시 SSG 자동 생성과 사이트 내부 검색·공유는 유지됩니다.
 
 페이지 제목·공유 제목·상단과 하단의 사이트명은 “니케 금서고”로 통일하고, WebSite 별칭에는 한국어 약칭 “금서고”만 제공합니다. Google 검색은 검색어별 노출 허용·차단을 지원하지 않으므로 영문 이름을 제거해도 도메인·외부 링크 등의 신호로 영문 검색에 노출될 수 있습니다. 배포 후 Search Console의 URL 검사에서 홈페이지 재색인을 요청할 수 있으며, 반영은 즉시 이루어지지 않습니다. 자세한 안내는 [Google 사이트 이름](https://developers.google.com/search/docs/appearance/site-names)과 [재크롤링 요청](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)을 참고하세요.
 
 ## Cloud Run 검색 API 배포
-검색 API 이미지는 [`server/Dockerfile`](/home/vomirin/nikke-script-archive/server/Dockerfile:1)를 사용합니다.
+검색 API 이미지는 [`server/Dockerfile`](server/Dockerfile)을 사용합니다.
 
 Node.js 보안 업데이트는 이미지 재빌드와 Cloud Run 재배포가 필요합니다.
 Cloud Build는 `--pull`로 `node:22-slim` 기반 이미지를 새로 확인합니다. 공식 Docker 태그의 보안 패치 반영을
@@ -282,7 +294,7 @@ gcloud run deploy nikke-search-api \
 
 1. WSL에서 프로젝트 루트로 이동
 ```bash
-cd /home/vomirin/nikke-script-archive
+cd ~/nikke-script-archive
 ```
 
 2. 스크립트나 프런트 코드를 수정
