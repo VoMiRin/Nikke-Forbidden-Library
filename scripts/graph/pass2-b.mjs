@@ -1,8 +1,10 @@
+import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GRAPH_DATA_DIR, normalizeWhitespaceOnly, writeJsonAtomic } from './lib.mjs';
+import { planWaves, sampleAuditCases, selectWave, splitBundle, unitElementKey } from './pass2-b-plan.mjs';
 import {
   CONFIDENCE_ENUM,
   ENTITY_TYPE_ENUM,
@@ -28,14 +30,16 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 
 // Pass 2 B. 정체 후보(명세 5절 Pass 2 B, 초안 5절 B-0·B-1, 6절, 7절).
-//   node scripts/graph/pass2-b.mjs build [--pilot | --titles=a,b] [--run=pilot|main]
-//   node scripts/graph/pass2-b.mjs status [--run=...]
+//   node scripts/graph/pass2-b.mjs build [--pilot | --titles=a,b | --all] [--max-units=20] [--wave-size=20] [--run=pilot|probe|probe-retest|main]
+//   node scripts/graph/pass2-b.mjs status [--wave=N] [--run=...]
 //   node scripts/graph/pass2-b.mjs validate <bundle_id> [--run=...]
 //   node scripts/graph/pass2-b.mjs show <scene_id> [시작줄 끝줄]      (원문 보기)
-//   node scripts/graph/pass2-b.mjs grep <낱말> --bundle=<bundle_id>   (등록 원문 전체 검색, search_log.jsonl에 기록)
+//   node scripts/graph/pass2-b.mjs grep <낱말> --bundle=<bundle_id> [--limit=30] [--offset=0]   (등록 원문 전체 검색, search_log.jsonl에 기록)
 //   node scripts/graph/pass2-b.mjs entity <이름>                      (레지스트리 찾기)
 //   node scripts/graph/pass2-b.mjs finish [--run=...]
 //   node scripts/graph/pass2-b.mjs review-check [--run=...]
+//   node scripts/graph/pass2-b.mjs audit-input --wave=N [--rate=0.1] [--judge-family=gemini] [--run=...]
+//   node scripts/graph/pass2-b.mjs audit-check --wave=N [--run=...]
 //   node scripts/graph/pass2-b.mjs answers-template --out=<저장소 밖 경로> [--run=...]
 //   node scripts/graph/pass2-b.mjs score --answers=<저장소 밖 경로> [--run=...]
 // build(B-0)는 기계 작업이다. 판정(군중인지, 누구인지)은 하지 않는다. 군중 표시는 힌트다.
@@ -74,7 +78,9 @@ const MASKED_AUTHOR_SUFFIX_RE = /(작성자|기록자|녹음자|화자|발신자
 const AUTHOR_MODIFIERS = new Set(['어느', '어떤', '익명의', '익명', '미상의', '신임', '정체불명의']);
 const EXTRA_GENERIC_WORDS = new Set(['남자', '여자', '여자친구', '남자친구', '장교', '병사', '군인', '소년', '소녀']);
 
-const runRoot = (run) => (run === 'main' ? path.join(GRAPH_DATA_DIR, 'pass2') : path.join(GRAPH_DATA_DIR, 'pass2', 'pilot'));
+const RUNS = new Set(['pilot', 'probe', 'probe-retest', 'main']);
+const runRoot = (run) => (run === 'main' ? path.join(GRAPH_DATA_DIR, 'pass2') : path.join(GRAPH_DATA_DIR, 'pass2', run));
+const RULES_PATH = path.resolve(GRAPH_DATA_DIR, '..', '..', 'GRAPH_RAG_PASS2_B_RULES.md');
 const pathsOf = (run) => {
   const root = runRoot(run);
   return {
@@ -82,6 +88,7 @@ const pathsOf = (run) => {
     bundles: path.join(root, 'bundles'),
     plan: path.join(root, 'bundles', 'plan.json'),
     shards: path.join(root, 'shards'),
+    stamps: path.join(root, 'stamps'),
     merged: path.join(root, 'merged', 'B_candidates.json'),
     progress: path.join(root, 'progress.json'),
     log: path.join(root, 'validation_log.jsonl'),
@@ -396,7 +403,8 @@ const scriptFileText = (titleDoc, store) => {
   return parts.join('\n');
 };
 
-export const buildBundles = async ({ titleIds, run }) => {
+export const buildBundles = async ({ titleIds, run, skipEmpty = false, maxUnits = 20, waveSize = 20 }) => {
+  if (!isPositiveInt(maxUnits) || !isPositiveInt(waveSize)) throw new Error('max-units・wave-size는 1 이상의 정수다');
   const P = pathsOf(run);
   const byTitle = loadByTitle();
   const store = new SceneStore();
@@ -409,6 +417,7 @@ export const buildBundles = async ({ titleIds, run }) => {
     const doc = byTitle.get(tid);
     if (!doc) throw new Error(`by_title에 없는 이야기: ${tid}`);
     const { units, a2Authors } = buildUnitsForTitle(doc, store, { genericLabels, registry });
+    if (skipEmpty && units.length === 0) continue;
     for (const u of units) for (const t of u._terms.keys()) allTerms.add(t);
     built.push({ doc, units, a2Authors });
   }
@@ -509,32 +518,36 @@ export const buildBundles = async ({ titleIds, run }) => {
       scan: { terms, dropped_terms: dropped, hits: scanHits },
       routed_to_a2: a2Authors,
     };
-    const bundlePath = path.join(P.bundles, `${bundleId}.json`);
-    await writeJsonAtomic(bundlePath, bundle);
     await fsp.writeFile(path.join(P.bundles, `${bundleId}.script.txt`), scriptFileText(doc, store), 'utf8');
-    const count = (t) => units.filter((u) => u.unit_type === t).length;
-    planBundles.push({
-      bundle_id: bundleId,
-      title_id: doc.title_id,
-      title: doc.title,
-      units: units.length,
-      unit_types: {
-        unknown_group: count('unknown_group'),
-        unknown_line: count('unknown_line'),
-        descriptor: count('descriptor'),
-        author: count('author'),
-        voice: count('voice'),
-      },
-      crowd_hints: units.filter((u) => u.crowd_hint.flag).length,
-      scan_hits: scanHits.length,
-      routed_to_a2: a2Authors.length,
-      input: relPath(bundlePath),
-      script: bundle.script_file,
-      output: relPath(path.join(P.shards, `${bundleId}.json`)),
-      validate: `node scripts/graph/pass2-b.mjs validate ${bundleId}${run === 'main' ? ' --run=main' : ''}`,
-    });
+    for (const part of splitBundle(bundle, maxUnits)) {
+      const partId = part.bundle_id;
+      const bundlePath = path.join(P.bundles, `${partId}.json`);
+      await writeJsonAtomic(bundlePath, part);
+      const count = (t) => part.units.filter((u) => u.unit_type === t).length;
+      planBundles.push({
+        bundle_id: partId,
+        ...(part.parent_bundle_id ? { parent_bundle_id: part.parent_bundle_id, part_index: part.part_index, part_count: part.part_count } : {}),
+        title_id: doc.title_id,
+        title: doc.title,
+        units: part.units.length,
+        unit_types: {
+          unknown_group: count('unknown_group'),
+          unknown_line: count('unknown_line'),
+          descriptor: count('descriptor'),
+          author: count('author'),
+          voice: count('voice'),
+        },
+        crowd_hints: part.units.filter((u) => u.crowd_hint.flag).length,
+        scan_hits: part.scan.hits.length,
+        routed_to_a2: part.part_index > 1 ? 0 : a2Authors.length,
+        input: relPath(bundlePath),
+        script: bundle.script_file,
+        output: relPath(path.join(P.shards, `${partId}.json`)),
+        validate: `node scripts/graph/pass2-b.mjs validate ${partId}${run === 'pilot' ? '' : ` --run=${run}`}`,
+      });
+    }
   }
-  const plan = { run, generated_at: new Date().toISOString(), bundles: planBundles };
+  const plan = { run, generated_at: new Date().toISOString(), max_units: maxUnits, wave_size: waveSize, bundles: planWaves(planBundles, waveSize) };
   await writeJsonAtomic(P.plan, plan);
   return plan;
 };
@@ -542,19 +555,35 @@ export const buildBundles = async ({ titleIds, run }) => {
 // ---------------------------------------------------------------------------
 // 검증기(초안 7절, B 부분)
 
-const unitElementKey = (ref) =>
-  ref.unknown_id != null
-    ? `${ref.item_id}|unk:${ref.unknown_id}`
-    : ref.voice_index != null
-      ? `${ref.item_id}|voice:${ref.voice_index}`
-      : `${ref.item_id}`;
-
 const LINK_KEYS = new Set([
   'link_id', 'link_type', 'subject', 'target', 'verdict', 'confidence', 'rationale',
   'supporting_evidence', 'contradicting_evidence', 'alternatives', 'search_hints',
 ]);
 const MERGER_ONLY = new Set(['evidence_scenes', 'release_order']);
 const C_ONLY = new Set(['roles']);
+
+/** 단위를 넘어 한 연결로 합칠 수 있는 라벨(규칙 3.5). 묘사형·작성자만 값이 있다 */
+const mergeLabelOf = (unit) => {
+  if (unit.unit_type === 'descriptor') return `descriptor:${unit.pass1?.descriptor?.speaker_label}`;
+  if (unit.unit_type === 'author') return `author:${unit.pass1?.author?.name ?? ''}`;
+  return null;
+};
+
+/** 공개 줄에 나와야 할 후보의 이름과 등록 별칭 */
+const targetNames = (target, ctx) => {
+  const entity = ctx.registry.get(target?.entity_id) ?? ctx.pass2Entities.get(target?.entity_id);
+  return [target?.name, entity?.canonical_name, ...(entity?.surface_labels ?? [])].filter(isNonEmptyString);
+};
+
+/** 지휘관의 선택지 자체에는 화자 이름이 없으므로, 실제 선택지 한 줄 전체 인용만 예외로 받는다. */
+const isCommanderChoice = (ev, target, ctx) => {
+  if (target?.entity_id !== 'char_지휘관' || !isNonEmptyString(ev.quote)) return false;
+  const quote = normalizeWhitespaceOnly(ev.quote);
+  return (ctx.store.lines(ev.scene_id) ?? []).slice(ev.line_start, ev.line_end + 1).some((line) => {
+    const m = line.trim().match(/^\[OPTION TEXT="(.*)"\]$/);
+    return m && (quote === normalizeWhitespaceOnly(m[0]) || quote === normalizeWhitespaceOnly(m[1]));
+  });
+};
 
 /**
  * B 샤드 검증. ctx: { store(SceneStore 호환: has(), lines()), registry: Map, pass2Entities: Map }
@@ -648,6 +677,12 @@ export const validateBShard = (shard, bundle, ctx) => {
       covered.set(key, link.link_id ?? p);
     });
 
+    const linkedUnitIds = [...new Set((Array.isArray(link.subject) ? link.subject : []).map((r) => elements.get(unitElementKey(r ?? {}))).filter(Boolean))];
+    if (linkedUnitIds.length > 1) {
+      const labels = new Set(linkedUnitIds.map((id) => mergeLabelOf(bundle.units.find((u) => u.unit_id === id))));
+      if (labels.has(null) || labels.size > 1) err('UNIT_MERGE', `${p}.subject`, `${linkedUnitIds.join(', ')}를 한 연결로 합칠 수 없다. 단위마다 연결을 따로 만든다(같은 라벨의 묘사형·작성자만 합칠 수 있다)`);
+    }
+
     // target
     if (!Array.isArray(link.target)) err('SCHEMA', `${p}.target`, 'target은 배열이다');
     else {
@@ -660,6 +695,7 @@ export const validateBShard = (shard, bundle, ctx) => {
         for (const k of Object.keys(t)) if (!['ref', 'entity_id', 'name', 'entity_type'].includes(k)) err('SCHEMA', `${tp}.${k}`, `알 수 없는 필드 ${k}`);
         if (!ENTITY_TYPE_ENUM.has(t.entity_type)) err('ENUM', `${tp}.entity_type`, `entity_type은 ${[...ENTITY_TYPE_ENUM].join(' | ')} 중 하나다`);
         checkEntityRef(t, tp, { requireName: true });
+        if (link.verdict === '정체 후보 있음' && ['squad', 'organization'].includes(t.entity_type)) err('GROUP_TARGET', tp, '개인 정체가 집단으로만 좁혀졌으면 판단 보류로 두고 target에 그 집단을 적는다');
       });
     }
 
@@ -682,6 +718,12 @@ export const validateBShard = (shard, bundle, ctx) => {
           return false;
         });
         if (!outside) warn('EVIDENCE_ONLY_SUBJECT_LINES', `${p}.supporting_evidence`, '근거가 판정 대상 줄뿐이다. 후보를 가리키는 다른 줄(호칭·행동·이후 장면)이 없으면 판단 보류를 검토한다');
+        const names = targetNames(Array.isArray(link.target) ? link.target[0] : null, ctx);
+        link.supporting_evidence.forEach((ev, j) => {
+          if (ev?.reveals_identity !== true || !names.length) return;
+          const text = String(ev.quote ?? '');
+          if (!names.some((n) => makeTermMatcher(n)(text)) && !isCommanderChoice(ev, link.target?.[0], ctx)) warn('REVEAL_WITHOUT_NAME', `${p}.supporting_evidence[${j}]`, 'quote 자체에 후보의 이름이나 등록 별칭이 없는데 reveals_identity가 true다. 범위만 넓히지 말고 실제 공개 근거를 인용하거나 false로 고친다');
+        });
       }
     }
     if (!Array.isArray(link.contradicting_evidence)) err('SCHEMA', `${p}.contradicting_evidence`, 'contradicting_evidence는 배열이다(없으면 [])');
@@ -693,9 +735,11 @@ export const validateBShard = (shard, bundle, ctx) => {
       link.alternatives.forEach((a, j) => {
         const ap = `${p}.alternatives[${j}]`;
         if (!a || typeof a !== 'object') return err('SCHEMA', ap, '대안은 객체다');
-        for (const k of Object.keys(a)) if (!['entity_id', 'name', 'why'].includes(k)) err('SCHEMA', `${ap}.${k}`, `알 수 없는 필드 ${k}`);
+        for (const k of Object.keys(a)) if (!['entity_id', 'name', 'why', 'supporting_evidence'].includes(k)) err('SCHEMA', `${ap}.${k}`, `알 수 없는 필드 ${k}`);
         checkEntityRef(a, ap, { requireName: true });
         if (!isNonEmptyString(a.why)) err('SCHEMA', `${ap}.why`, '대안마다 why를 적는다');
+        if (!Array.isArray(a.supporting_evidence) || a.supporting_evidence.length === 0) err('EVIDENCE', `${ap}.supporting_evidence`, '대안 후보의 원문 근거는 alternatives의 supporting_evidence에 따로 적는다');
+        else a.supporting_evidence.forEach((ev, k) => checkEvidence(ev, `${ap}.supporting_evidence[${k}]`, { allowReveal: false, requireReveal: false }));
       });
     }
     if (!Array.isArray(link.search_hints) || link.search_hints.some((h) => typeof h !== 'string')) err('SCHEMA', `${p}.search_hints`, 'search_hints는 문자열 배열이다(없으면 [])');
@@ -732,7 +776,7 @@ export const enrichLink = (link, bundle, { store, releaseDates }) => {
       subjectScenes.add(sid);
     }
   }
-  for (const ev of [...link.supporting_evidence, ...link.contradicting_evidence]) {
+  for (const ev of [...link.supporting_evidence, ...link.contradicting_evidence, ...(link.alternatives ?? []).flatMap((a) => a.supporting_evidence ?? [])]) {
     ranges.push({ scene_id: ev.scene_id, line_start: ev.line_start, line_end: ev.line_end });
   }
   const seen = new Set();
@@ -802,6 +846,38 @@ const validateOne = (P, bundleId, ctx) => {
 
 const countBy = (list) => list.reduce((acc, x) => ((acc[x.code] = (acc[x.code] ?? 0) + 1), acc), {});
 
+const sha256 = (text) => createHash('sha256').update(text).digest('hex');
+
+/** 규칙·입력·출력의 해시. 묶음의 generated_at은 다시 빌드할 때마다 바뀌므로 뺀다 */
+export const computeStamp = ({ rulesText, bundle, scriptText, shardText }) => {
+  const { generated_at: _generatedAt, ...stableBundle } = bundle;
+  return {
+    rules_sha256: sha256(rulesText),
+    input_sha256: sha256(`${JSON.stringify(stableBundle)}\n${scriptText}`),
+    shard_sha256: sha256(shardText),
+  };
+};
+
+/** 검증 통과 기록을 지금도 믿을 수 있는지. 믿을 수 없으면 이유를 돌려준다 */
+export const staleReason = (recorded, current) => {
+  if (!recorded) return '검증 기록이 없다';
+  if (recorded.rules_sha256 !== current.rules_sha256) return '판정 규칙이 바뀌었다';
+  if (recorded.input_sha256 !== current.input_sha256) return '묶음이나 대본이 바뀌었다';
+  if (recorded.shard_sha256 !== current.shard_sha256) return '검증 뒤 출력이 바뀌었다';
+  return null;
+};
+
+const stampPath = (P, bundleId) => path.join(P.stamps, `${bundleId}.json`);
+
+const currentStamp = (P, bundleId, bundle) => computeStamp({
+  rulesText: fs.readFileSync(RULES_PATH, 'utf8'),
+  bundle,
+  scriptText: fs.readFileSync(path.resolve(bundle.script_file), 'utf8'),
+  shardText: fs.readFileSync(path.join(P.shards, `${bundleId}.json`), 'utf8'),
+});
+
+const staleReasonOf = (P, bundleId, bundle) => staleReason(readJsonIfExists(stampPath(P, bundleId)), currentStamp(P, bundleId, bundle));
+
 const printResult = (bundleId, r) => {
   const tag = r.status === 'pass' ? (r.warnings.length ? '[WARN]' : '[PASS]') : '[FAIL]';
   console.log(`${tag} ${bundleId}: 오류 ${r.errors.length}건, 경고 ${r.warnings.length}건`);
@@ -817,14 +893,21 @@ const argValue = (args, name) => {
 const main = async () => {
   const [cmd, ...args] = process.argv.slice(2);
   const run = argValue(args, 'run') ?? 'pilot';
-  if (!['pilot', 'main'].includes(run)) throw new Error('--run은 pilot 또는 main이다');
+  if (!RUNS.has(run)) throw new Error(`--run은 ${[...RUNS].join(' | ')} 중 하나다`);
   const P = pathsOf(run);
 
   if (cmd === 'build') {
     const titlesArg = argValue(args, 'titles');
-    const titleIds = titlesArg ? titlesArg.split(',').map((s) => s.trim()).filter(Boolean) : args.includes('--pilot') || run === 'pilot' ? PILOT_TITLES : null;
-    if (!titleIds) throw new Error('main 실행은 --titles=를 지정한다(본 실행 목록은 파일럿 뒤에 정한다)');
-    const plan = await buildBundles({ titleIds, run });
+    const all = args.includes('--all');
+    const titleIds = titlesArg
+      ? titlesArg.split(',').map((s) => s.trim()).filter(Boolean)
+      : all
+        ? [...loadByTitle().keys()]
+        : args.includes('--pilot') || run === 'pilot'
+          ? PILOT_TITLES
+          : null;
+    if (!titleIds) throw new Error(`${run} 실행은 --titles= 또는 --all을 지정한다`);
+    const plan = await buildBundles({ titleIds, run, skipEmpty: all, maxUnits: Number(argValue(args, 'max-units') ?? 20), waveSize: Number(argValue(args, 'wave-size') ?? 20) });
     let total = 0;
     for (const b of plan.bundles) {
       total += b.units;
@@ -832,17 +915,18 @@ const main = async () => {
       console.log(`${b.bundle_id}: 단위 ${b.units}(???묶음 ${t.unknown_group}, ???한줄 ${t.unknown_line}, 묘사형 ${t.descriptor}, 작성자 ${t.author}, 목소리 ${t.voice}), 군중 힌트 ${b.crowd_hints}, 스캔 결과 ${b.scan_hits}줄, A-2로 보낸 작성자 ${b.routed_to_a2}`);
       console.log(`  input: ${b.input}\n  script: ${b.script}\n  output: ${b.output}\n  validate: ${b.validate}`);
     }
-    console.log(`[build] 묶음 ${plan.bundles.length}개, 판정 단위 ${total}개 → ${relPath(P.plan)}`);
+    console.log(`[build] 묶음 ${plan.bundles.length}개, 판정 단위 ${total}개, ${Math.max(0, ...plan.bundles.map((b) => b.wave))}회차 → ${relPath(P.plan)}`);
     return;
   }
 
   if (cmd === 'status') {
     const plan = loadPlan(P);
     const ctx = makeCtx();
-    for (const b of plan.bundles) {
+    for (const b of selectWave(plan, argValue(args, 'wave') === null ? null : Number(argValue(args, 'wave')))) {
       const r = validateOne(P, b.bundle_id, ctx);
-      const st = r.status === 'missing' ? '[new]' : r.status === 'pass' ? '[done]' : '[rerun]';
-      console.log(`${st} ${b.bundle_id} (단위 ${b.units})`);
+      const stale = r.status === 'pass' ? staleReasonOf(P, b.bundle_id, r.bundle) : null;
+      const st = r.status === 'missing' ? '[new]' : r.status === 'pass' && !stale ? '[done]' : '[rerun]';
+      console.log(`${st} ${b.bundle_id} (단위 ${b.units})${stale ? ` — ${stale}` : ''}`);
     }
     return;
   }
@@ -853,6 +937,9 @@ const main = async () => {
     const r = validateOne(P, bundleId, makeCtx());
     printResult(bundleId, r);
     await fsp.mkdir(P.root, { recursive: true });
+    if (r.status === 'pass') {
+      await writeJsonAtomic(stampPath(P, bundleId), { ...currentStamp(P, bundleId, r.bundle), validated_at: new Date().toISOString() });
+    }
     await fsp.appendFile(
       P.log,
       `${JSON.stringify({ at: new Date().toISOString(), bundle_id: bundleId, status: r.status, errors: countBy(r.errors), warnings: countBy(r.warnings) })}\n`
@@ -873,11 +960,12 @@ const main = async () => {
       const r = validateOne(P, b.bundle_id, ctx);
       const attempts = log.filter((x) => x.bundle_id === b.bundle_id);
       const firstFail = attempts.length ? attempts[0].status !== 'pass' : null;
-      progress[b.bundle_id] = { status: r.status === 'pass' ? 'merged' : r.status, validations: attempts.length, first_validation_failed: firstFail, errors: countBy(r.errors), warnings: countBy(r.warnings) };
-      console.log(`${b.bundle_id}: ${progress[b.bundle_id].status} (검증 ${attempts.length}회${firstFail ? ', 첫 검증 실패' : ''}, 남은 오류 ${r.errors.length}, 경고 ${r.warnings.length})`);
+      const stale = r.status === 'pass' ? staleReasonOf(P, b.bundle_id, r.bundle) : null;
+      progress[b.bundle_id] = { status: stale ? 'stale' : r.status === 'pass' ? 'merged' : r.status, stale_reason: stale, validations: attempts.length, first_validation_failed: firstFail, errors: countBy(r.errors), warnings: countBy(r.warnings) };
+      console.log(`${b.bundle_id}: ${progress[b.bundle_id].status}${stale ? `(${stale})` : ''} (검증 ${attempts.length}회${firstFail ? ', 첫 검증 실패' : ''}, 남은 오류 ${r.errors.length}, 경고 ${r.warnings.length})`);
       for (const w of r.warnings) console.log(`  WARN ${w.code} ${w.path}: ${w.message}`);
       for (const e of r.errors) console.log(`  ERROR ${e.code} ${e.path}: ${e.message}`);
-      if (r.status !== 'pass') continue;
+      if (r.status !== 'pass' || stale) continue;
       for (const link of r.shard.candidate_links) {
         const enriched = enrichLink(link, r.bundle, { store: ctx.store, releaseDates });
         merged.push({ bundle_id: b.bundle_id, title_id: b.title_id, ...enriched });
@@ -905,10 +993,57 @@ const main = async () => {
     const input = readJsonIfExists(P.reviewInput);
     const out = readJsonIfExists(P.reviewOutput);
     if (!input || !out) throw new Error('검토 입력 또는 출력이 없다');
-    const r = checkReview(input, out);
+    const r = checkReview(input, out, { store: new SceneStore() });
     for (const e of r.errors) console.log(`  ERROR ${e}`);
     console.log(`${r.errors.length ? '[FAIL]' : '[PASS]'} 검토 ${r.reviewed}/${input.items.length}건, 판정 ${JSON.stringify(r.judgments)}`);
     if (r.errors.length) process.exitCode = 1;
+    return;
+  }
+
+  if (cmd === 'audit-input' || cmd === 'audit-check') {
+    const wave = Number(argValue(args, 'wave'));
+    const plan = loadPlan(P);
+    const selected = selectWave(plan, wave);
+    const ctx = makeCtx();
+    const bundleStamps = [];
+    const bundles = new Map();
+    const links = [];
+    for (const b of selected) {
+      const r = validateOne(P, b.bundle_id, ctx);
+      if (r.status !== 'pass') throw new Error(`${b.bundle_id}: 미완료 또는 검증 실패`);
+      const stale = staleReasonOf(P, b.bundle_id, r.bundle);
+      if (stale) throw new Error(`${b.bundle_id}: ${stale}`);
+      bundleStamps.push({ bundle_id: b.bundle_id, ...currentStamp(P, b.bundle_id, r.bundle) });
+      bundles.set(b.bundle_id, r.bundle);
+      links.push(...r.shard.candidate_links.map((link) => ({ bundle_id: b.bundle_id, ...link })));
+    }
+    const auditDir = path.join(P.root, 'audit');
+    const inputPath = path.join(auditDir, `wave_${pad(wave)}_input.json`);
+    const outputPath = path.join(auditDir, `wave_${pad(wave)}_output.json`);
+    if (cmd === 'audit-input') {
+      const judgeFamily = argValue(args, 'judge-family') ?? 'gemini';
+      if (!['gemini', 'gpt', 'claude'].includes(judgeFamily)) throw new Error('judge-family는 gemini | gpt | claude 중 하나다');
+      const previous = readJsonIfExists(inputPath);
+      const sample = sampleAuditCases({ planBundles: selected, bundles, links, rate: Number(argValue(args, 'rate') ?? 0.1), seed: `${run}/${wave}`, includeIds: previous?.items.map((x) => x.audit_id) ?? [] });
+      const input = {
+        schema_version: 'pass2-audit-input-0.1.0', run, wave,
+        judge_family: judgeFamily,
+        bundle_stamps: bundleStamps,
+        ...sample,
+      };
+      input.source_sha256 = sha256(JSON.stringify(input));
+      await writeJsonAtomic(inputPath, input);
+      console.log(`[audit-input] 회차 ${wave}: ${sample.sampled_units}/${sample.population_units}단위 (${sample.strata.length}개 층, 각 층 최소 1개) → ${relPath(inputPath)}`);
+      console.log(`[audit-input] 다른 모델의 감사 출력 → ${relPath(outputPath)}`);
+    } else {
+      const input = readJsonIfExists(inputPath);
+      const out = readJsonIfExists(outputPath);
+      if (!input || !out) throw new Error('감사 입력 또는 출력이 없다');
+      const r = checkAudit(input, out, { store: ctx.store, bundleStamps });
+      for (const e of r.errors) console.log(`  ERROR ${e}`);
+      console.log(`${r.errors.length ? '[FAIL]' : '[PASS]'} 감사 ${r.reviewed}/${input.items.length}단위, 판정 ${JSON.stringify(r.judgments)}`);
+      if (r.errors.length) process.exitCode = 1;
+    }
     return;
   }
 
@@ -928,7 +1063,7 @@ const main = async () => {
     await fsp.mkdir(path.dirname(path.resolve(out)), { recursive: true });
     await fsp.writeFile(out, `${lines.join('\n')}\n`, 'utf8');
     console.log(`[answers-template] 단위 ${lines.length}개 → ${out}`);
-    console.log('answer: {"entity_id": "char_..."} 또는 {"name": "..."} 또는 "crowd". 모르는 단위는 줄을 지운다.');
+    console.log('answer: {"entity_id": "char_..."} 또는 {"name": "..."} 또는 "crowd" 또는 "hold"(보류가 맞는 단위). 모르는 단위는 줄을 지운다.');
     return;
   }
 
@@ -939,9 +1074,14 @@ const main = async () => {
     const merged = readJsonIfExists(P.merged);
     if (!merged) throw new Error('병합 결과가 없다. finish를 먼저 실행한다');
     const bundles = new Map(plan.bundles.map((b) => [b.bundle_id, loadBundle(P, b.bundle_id)]));
-    const answers = fs.readFileSync(ans, 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l)).filter((a) => a.answer !== null);
+    const allAnswers = fs.readFileSync(ans, 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l)).filter((a) => a.answer !== null);
+    const scope = argValue(args, 'answers-scope');
+    if (scope !== null && scope !== 'plan') throw new Error('--answers-scope은 plan만 지원한다');
+    const bundleIds = new Set(plan.bundles.map((b) => b.bundle_id));
+    const answers = scope === 'plan' ? allAnswers.filter((a) => bundleIds.has(a.bundle_id)) : allAnswers;
     const review = readJsonIfExists(P.reviewOutput);
     const s = scoreB({ plan, bundles, merged, answers, review });
+    if (scope) s.answer_scope = { scope, excluded_answers: allAnswers.length - answers.length };
     console.log(JSON.stringify(s, null, 2));
     return;
   }
@@ -966,15 +1106,19 @@ const main = async () => {
     if (term.length < 2) throw new Error('검색어는 2글자 이상이다');
     const bundle = argValue(args, 'bundle');
     const limit = Number(argValue(args, 'limit')) || 30;
+    const offset = Math.max(0, Number(argValue(args, 'offset')) || 0);
     const store = new SceneStore();
     const r = scanTerms(store, [term]).get(term);
-    console.log(`"${term}": 장면 ${r.scene_count}개, ${r.hits.length}줄${r.hits.length > limit ? ` (앞 ${limit}줄만, --limit=으로 늘린다)` : ''}`);
-    for (const h of r.hits.slice(0, limit)) {
+    const shown = r.hits.slice(offset, offset + limit);
+    const end = offset + shown.length;
+    const range = offset > 0 || end < r.hits.length ? ` (${shown.length ? `${offset + 1}~${end}번째 줄 표시` : '표시할 줄 없음'}${end < r.hits.length ? `, 이어 보기: --offset=${end}` : ''})` : '';
+    console.log(`"${term}": 장면 ${r.scene_count}개, ${r.hits.length}줄${range}`);
+    for (const h of shown) {
       const meta = store.meta(h.scene_id);
       console.log(`${h.scene_id} [${lineTag(h.line)}] (${meta.title_id}) ${store.lines(h.scene_id)[h.line]}`);
     }
     await fsp.mkdir(P.root, { recursive: true });
-    await fsp.appendFile(path.join(P.root, 'search_log.jsonl'), `${JSON.stringify({ at: new Date().toISOString(), bundle_id: bundle, term, scenes: r.scene_count, lines: r.hits.length })}\n`);
+    await fsp.appendFile(path.join(P.root, 'search_log.jsonl'), `${JSON.stringify({ at: new Date().toISOString(), bundle_id: bundle, term, scenes: r.scene_count, lines: r.hits.length, limit, offset, shown: shown.length })}\n`);
     return;
   }
 
@@ -988,7 +1132,7 @@ const main = async () => {
     return;
   }
 
-  console.log('사용법: build | status | validate <bundle_id> | show <scene_id> [시작 끝] | grep <낱말> --bundle=<bundle_id> | entity <이름> | finish | review-check | answers-template --out= | score --answers=  [--run=pilot|main]');
+  console.log('사용법: build [--max-units=20 --wave-size=20] | status [--wave=N] | validate <bundle_id> | show <scene_id> [시작 끝] | grep <낱말> --bundle=<bundle_id> [--limit= --offset=] | entity <이름> | finish | review-check | audit-input --wave=N [--rate=0.1] | audit-check --wave=N | answers-template --out= | score --answers= [--answers-scope=plan]  [--run=pilot|probe|probe-retest|main]');
   process.exitCode = 1;
 };
 
@@ -1001,7 +1145,7 @@ export const REVIEW_PROBLEMS = new Set([
   'missed_candidate', // 원문에 후보가 드러나는데 판단 보류·군중으로 둠
   'should_be_crowd',
   'should_not_be_crowd',
-  'subject_split', // 묶음이 두 사람인데 하나로 둠, 또는 반대
+  'subject_split', // 한 연결에 다른 사람이 섞임(같은 사람을 단위별로 나눈 것은 문제가 아니다)
   'evidence_not_support', // 근거 줄이 판정을 지지하지 않음
   'reveals_identity_wrong',
   'confidence_too_high',
@@ -1009,7 +1153,23 @@ export const REVIEW_PROBLEMS = new Set([
   'other',
 ]);
 
-export const checkReview = (input, out) => {
+const compactText = (text) => String(text ?? '').replace(/\s+/g, '');
+
+/** 검토 인용 하나를 원문 한 줄과 대조한다. 화자 라벨까지 포함해 그 줄 전체가 같아야 한다 */
+const citationProblem = (cite, store) => {
+  if (!cite || typeof cite !== 'object' || Array.isArray(cite)) return '인용은 {scene_id, line, quote} 객체다';
+  const unknown = Object.keys(cite).filter((k) => !['scene_id', 'line', 'quote'].includes(k));
+  if (unknown.length) return `알 수 없는 필드 ${unknown.join(', ')}`;
+  if (!isNonEmptyString(cite.scene_id) || !store.has(cite.scene_id)) return `등록 장면이 아니다: ${cite.scene_id}`;
+  if (!isPositiveInt(cite.line)) return 'line은 1 이상의 정수다';
+  if (!isNonEmptyString(cite.quote)) return 'quote가 비었다';
+  const source = store.lines(cite.scene_id)[cite.line];
+  if (source === undefined) return `${cite.scene_id}에 L${cite.line}이 없다`;
+  if (compactText(source) !== compactText(cite.quote)) return `${cite.scene_id} L${cite.line}의 원문과 다르다. 원문: ${source.trim().slice(0, 60)}`;
+  return null;
+};
+
+export const checkReview = (input, out, { store }) => {
   const errors = [];
   const ids = new Set(input.items.map((x) => x.link_id));
   const seen = new Set();
@@ -1023,12 +1183,41 @@ export const checkReview = (input, out) => {
     if (!Array.isArray(r.problems) || r.problems.some((p) => !REVIEW_PROBLEMS.has(p))) errors.push(`reviews[${i}].problems는 ${[...REVIEW_PROBLEMS].join(', ')} 중에서 고른 배열`);
     if (r.judgment === '틀림' && !(r.problems?.length)) errors.push(`reviews[${i}] 틀림이면 problems를 하나 이상 적는다`);
     if (!isNonEmptyString(r.reason)) errors.push(`reviews[${i}].reason이 비었다`);
+    if (!Array.isArray(r.evidence) || r.evidence.length === 0) errors.push(`reviews[${i}].evidence에 원문 인용을 하나 이상 적는다`);
+    else r.evidence.forEach((cite, j) => {
+      const problem = citationProblem(cite, store);
+      if (problem) errors.push(`reviews[${i}].evidence[${j}] ${problem}`);
+    });
   }
   for (const id of ids) if (!seen.has(id)) errors.push(`검토하지 않은 연결 ${id}`);
   return { errors, reviewed: seen.size, judgments };
 };
 
+/** 원문 인용 검사는 기계가, 의미 판단은 다른 모델이 한다. 표본 통과는 모집단 무오류의 증명이 아니다. */
+export const checkAudit = (input, out, { store, bundleStamps }) => {
+  const errors = [];
+  const { source_sha256, ...source } = input;
+  if (source_sha256 !== sha256(JSON.stringify(source))) errors.push('감사 입력의 해시가 맞지 않는다');
+  if (JSON.stringify(input.bundle_stamps) !== JSON.stringify(bundleStamps)) errors.push('감사 이후 규칙·입력·출력 또는 회차 구성이 바뀌었다. 감사 입력을 다시 만든다');
+  if (out.schema_version !== 'pass2-audit-0.1.0') errors.push('schema_version은 pass2-audit-0.1.0이다');
+  if (out.input_sha256 !== source_sha256) errors.push('다른 감사 입력에 대한 출력이다');
+  if (!['gemini', 'gpt', 'claude', 'human'].includes(out.auditor_family) || out.auditor_family === input.judge_family) errors.push('판정 모델과 다른 모델 계열(또는 사람)이 감사해야 한다');
+  if (!isNonEmptyString(out.auditor_model) || !isNonEmptyString(out.auditor_session)) errors.push('감사 모델명과 별도 세션 ID를 적는다');
+  if (!Array.isArray(out.reviews)) return { errors: [...errors, 'reviews는 배열이다'], reviewed: 0, judgments: {} };
+  const reviewed = checkReview(
+    { items: input.items.map((x) => ({ link_id: x.audit_id })) },
+    { reviews: out.reviews.map((r) => ({ ...r, link_id: r?.audit_id })) },
+    { store },
+  );
+  errors.push(...reviewed.errors);
+  for (const r of out.reviews) {
+    if (r?.judgment !== '맞음' || r.problems?.length) errors.push(`${r?.audit_id}: 감사 지적 또는 판단 불가가 남았다. 수정·재감사 뒤 다음 회차로 간다`);
+  }
+  return { ...reviewed, errors };
+};
+
 const normName = (s) => normalizeWhitespaceOnly(s ?? '').replace(/\s/g, '');
+const SEARCH_BUDGET_TAG = '[검색 예산 소진]'; // 규칙 3.4. 충분히 찾아도 근거가 없는 보류와 구분한다
 
 export const scoreB = ({ plan, bundles, merged, answers, review }) => {
   // 대상 누락률: 판정 단위 원소 중 병합된 연결에 없는 것
@@ -1050,21 +1239,41 @@ export const scoreB = ({ plan, bundles, merged, answers, review }) => {
       if (all) unitsCovered += 1;
     }
   }
-  // 후보 재현율: 정답 단위마다 그 단위의 연결(원소가 나뉘었으면 모두)에서 정답이 target 또는 alternatives에 있는지
+  // 정답 종류별 결과. 정체 정답은 '정체 후보 있음' 연결에서만 적중으로 친다(보류 연결의 target은 후보를 낸 것이 아니다)
+  const answerKindOf = (answer) => (answer === 'crowd' ? 'crowd' : answer === 'hold' ? 'hold' : 'identity');
   const perAnswer = answers.map((a) => {
+    const base = { bundle_id: a.bundle_id, unit_id: a.unit_id, answer_kind: answerKindOf(a.answer) };
     const u = bundles.get(a.bundle_id)?.units.find((x) => x.unit_id === a.unit_id);
-    if (!u) return { ...a, result: 'unit_not_found' };
+    if (!u) return { ...base, result: 'unit_not_found' };
     const links = [...new Set(u.subject_refs.map((r) => linkByElement.get(`${a.bundle_id}|${unitElementKey(r)}`)).filter(Boolean))];
-    if (!links.length) return { bundle_id: a.bundle_id, unit_id: a.unit_id, result: 'not_merged' };
+    if (!links.length) return { ...base, result: 'not_merged' };
     const match = (e) =>
       (a.answer?.entity_id && e.entity_id === a.answer.entity_id) || (a.answer?.name && normName(e.name) === normName(a.answer.name));
     let result = 'miss';
-    if (a.answer === 'crowd') result = links.every((l) => l.link_type === 'crowd') ? 'target' : 'miss';
-    else if (links.some((l) => l.target.some(match))) result = 'target';
-    else if (links.some((l) => (l.alternatives ?? []).some(match))) result = 'alternative';
-    return { bundle_id: a.bundle_id, unit_id: a.unit_id, links: links.map((l) => l.link_id), verdicts: links.map((l) => l.verdict), result };
+    if (a.answer === 'crowd') result = links.every((l) => l.link_type === 'crowd') ? 'correct' : 'miss';
+    else if (a.answer === 'hold') result = links.every((l) => l.verdict === '판단 보류') ? 'correct' : 'miss';
+    else {
+      const named = links.filter((l) => l.verdict === '정체 후보 있음');
+      const held = links.filter((l) => l.verdict === '판단 보류');
+      const hitsTarget = (l) => l.target.some(match);
+      if (named.length === links.length && named.every(hitsTarget)) result = 'target';
+      else if (named.some(hitsTarget)) result = 'partial'; // 단위가 나뉘어 일부 연결만 맞음
+      else if (named.some((l) => (l.alternatives ?? []).some(match))) result = 'alternative';
+      else if (held.some((l) => hitsTarget(l) || (l.alternatives ?? []).some(match))) result = 'held_with_answer';
+    }
+    return { ...base, links: links.map((l) => l.link_id), verdicts: links.map((l) => l.verdict), result };
   });
-  const hit = perAnswer.filter((x) => x.result === 'target' || x.result === 'alternative').length;
+  const byAnswerKind = {};
+  for (const x of perAnswer) {
+    const entry = (byAnswerKind[x.answer_kind] ??= { answers: 0, results: {} });
+    entry.answers += 1;
+    entry.results[x.result] = (entry.results[x.result] ?? 0) + 1;
+  }
+  const identityResults = byAnswerKind.identity?.results ?? {};
+  const identityAnswers = byAnswerKind.identity?.answers ?? 0;
+  const inTarget = identityResults.target ?? 0;
+  const inAlternative = identityResults.alternative ?? 0;
+  const held = merged.links.filter((l) => l.verdict === '판단 보류');
   let misLink = null;
   if (review?.reviews) {
     const judged = review.reviews.filter((r) => r.judgment !== '판단 불가');
@@ -1080,7 +1289,15 @@ export const scoreB = ({ plan, bundles, merged, answers, review }) => {
       refs_covered: elementsCovered,
       rate: elementsTotal ? +((elementsTotal - elementsCovered) / elementsTotal).toFixed(3) : 0,
     },
-    candidate_recall: { answers: perAnswer.length, hit, in_target: perAnswer.filter((x) => x.result === 'target').length, rate: perAnswer.length ? +(hit / perAnswer.length).toFixed(3) : null },
+    candidate_recall: {
+      answers: identityAnswers,
+      hit: inTarget + inAlternative,
+      in_target: inTarget,
+      in_alternative: inAlternative,
+      rate: identityAnswers ? +((inTarget + inAlternative) / identityAnswers).toFixed(3) : null,
+    },
+    by_answer_kind: byAnswerKind,
+    holds: { total: held.length, search_budget_exhausted: held.filter((l) => l.rationale.startsWith(SEARCH_BUDGET_TAG)).length },
     mislink: misLink,
     per_answer: perAnswer,
   };
