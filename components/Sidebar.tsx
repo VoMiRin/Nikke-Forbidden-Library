@@ -131,6 +131,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
     ? (sections.find(section => section.name === pickedSection)?.name ?? sections[0].name)
     : null;
 
+  // 타이틀 안의 세부 구분(예: FADING AFFECTION 루트별 기록) 탭. 한 번에 한 타이틀만 펼치므로 값 하나로 충분하다
+  const selectedTitleSection = scripts.find(script => script.id === selectedScriptId)?.titleSection ?? null;
+  const [pickedTitleSection, setPickedTitleSection] = useState<string | null>(selectedTitleSection);
+  useEffect(() => {
+    setPickedTitleSection(selectedTitleSection);
+  }, [selectedScriptId, selectedTitleSection]);
+
   const groupedScripts = useMemo(() => {
     if (hideScriptListAndSearch || !scripts || scripts.length === 0) return {};
 
@@ -378,6 +385,39 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     ? categories.find(c => c.key === subScriptsArray[0].categoryKey)?.name
                     : undefined;
 
+                  const titleSections = isExpanded && !searchTerm ? listSections(subScriptsArray, script => script.titleSection) : [];
+                  const currentTitleSection = titleSections.length > 1
+                    ? (titleSections.find(section => section.name === pickedTitleSection)?.name ?? titleSections[0].name)
+                    : null;
+                  const scenesOutsideTabs = currentTitleSection ? subScriptsArray.filter(script => !script.titleSection) : subScriptsArray;
+                  const scenesInTab = currentTitleSection ? subScriptsArray.filter(script => script.titleSection === currentTitleSection) : [];
+
+                  const renderScene = (script: Script, sceneIndex: number) => {
+                    const isSelected = selectedScriptId === script.id;
+                    return (
+                      <li key={script.id}>
+                        <a
+                          href={scenePath(script.categoryKey, script.id)}
+                          ref={(element) => {
+                            scriptItemRefs.current[script.id] = element;
+                          }}
+                          onClick={event => followInApp(event, () => onSelectScript(script.id))}
+                          className={`-ml-[3px] flex min-h-10 w-full items-center gap-3 border-l-2 py-2 pl-3.5 text-left text-sm ${
+                            isSelected
+                              ? 'border-nikke-accent font-semibold text-nikke-text-primary'
+                              : 'border-transparent text-nikke-text-secondary hover:text-nikke-text-primary'
+                          }`}
+                          aria-current={isSelected ? 'page' : undefined}
+                        >
+                          <span className={`font-mono text-[11px] ${isSelected ? 'text-nikke-accent' : 'text-nikke-text-muted'}`}>
+                            {String(sceneIndex + 1).padStart(2, '0')}
+                          </span>
+                          <span className="min-w-0 flex-1">{script.subTitle || script.title}</span>
+                        </a>
+                      </li>
+                    );
+                  };
+
                   return (
                     <li key={groupKey} className={`border-b border-nikke-border ${isExpanded ? 'pb-2.5' : ''}`}>
                       {searchTerm && categoryNameForGroup && (
@@ -412,33 +452,34 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         </button>
                       </div>
                       {isExpanded && (
-                        <ol id={contentsId} className="ml-px border-l border-nikke-border pl-0.5">
-                          {subScriptsArray.map((script, sceneIndex) => {
-                            const isSelected = selectedScriptId === script.id;
-                            return (
-                              <li key={script.id}>
-                                <a
-                                  href={scenePath(script.categoryKey, script.id)}
-                                  ref={(element) => {
-                                    scriptItemRefs.current[script.id] = element;
-                                  }}
-                                  onClick={event => followInApp(event, () => onSelectScript(script.id))}
-                                  className={`-ml-[3px] flex min-h-10 w-full items-center gap-3 border-l-2 py-2 pl-3.5 text-left text-sm ${
-                                    isSelected
-                                      ? 'border-nikke-accent font-semibold text-nikke-text-primary'
-                                      : 'border-transparent text-nikke-text-secondary hover:text-nikke-text-primary'
-                                  }`}
-                                  aria-current={isSelected ? 'page' : undefined}
-                                >
-                                  <span className={`font-mono text-[11px] ${isSelected ? 'text-nikke-accent' : 'text-nikke-text-muted'}`}>
-                                    {String(sceneIndex + 1).padStart(2, '0')}
-                                  </span>
-                                  <span className="min-w-0 flex-1">{script.subTitle || script.title}</span>
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ol>
+                        <div id={contentsId}>
+                          {scenesOutsideTabs.length > 0 && (
+                            <ol className="ml-px border-l border-nikke-border pl-0.5">
+                              {scenesOutsideTabs.map(renderScene)}
+                            </ol>
+                          )}
+                          {currentTitleSection && (
+                            <>
+                              <div className="my-2.5">
+                                <SectionTabs
+                                  sections={titleSections}
+                                  activeSection={currentTitleSection}
+                                  hrefFor={section => scenePath(
+                                    subScriptsArray[0].categoryKey,
+                                    (subScriptsArray.find(script => script.titleSection === section) ?? subScriptsArray[0]).id,
+                                  )}
+                                  onSelect={setPickedTitleSection}
+                                  size="sm"
+                                  label={`${displayGroupTitle} 세부 구분`}
+                                  wrap
+                                />
+                              </div>
+                              <ol className="ml-px border-l border-nikke-border pl-0.5">
+                                {scenesInTab.map(renderScene)}
+                              </ol>
+                            </>
+                          )}
+                        </div>
                       )}
                     </li>
                   );

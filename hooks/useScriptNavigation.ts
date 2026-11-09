@@ -34,12 +34,16 @@ const CROSS_CHAPTER_CATEGORIES = new Set(['main_story']);
 
 /**
  * 이전/다음 이동 범위에 들어가는 장면 목록.
- * 메인 스토리는 분류 전체(챕터 순서대로)를, 그 외 분류는 같은 타이틀 안의 장면만 돌려준다.
+ * 메인 스토리는 분류 전체(챕터 순서대로)를, 그 외 분류는 같은 타이틀의 같은 세부 구분 안의 장면만 돌려준다.
  */
 export const getSequentialScripts = (scripts: Script[], currentScript: Script): Script[] => (
   CROSS_CHAPTER_CATEGORIES.has(currentScript.categoryKey)
     ? scripts.filter(s => s.categoryKey === currentScript.categoryKey)
-    : scripts.filter(s => s.categoryKey === currentScript.categoryKey && s.title === currentScript.title)
+    : scripts.filter(s => (
+      s.categoryKey === currentScript.categoryKey
+      && s.title === currentScript.title
+      && s.titleSection === currentScript.titleSection
+    ))
 );
 
 export function useScriptNavigation({

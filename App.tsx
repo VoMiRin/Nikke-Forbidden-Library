@@ -280,7 +280,7 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
     const numbers = new Map<string, number>();
     const countsByTitle = new Map<string, number>();
     for (const entry of scripts) {
-      const titleKey = `${entry.categoryKey}@@${entry.title}`;
+      const titleKey = `${entry.categoryKey}@@${entry.title}@@${entry.titleSection ?? ''}`;
       const nextNumber = (countsByTitle.get(titleKey) ?? 0) + 1;
       countsByTitle.set(titleKey, nextNumber);
       numbers.set(entry.id, nextNumber);
@@ -301,6 +301,7 @@ const App: React.FC<{ initialData?: AppInitialData }> = ({ initialData }) => {
     return scripts.filter(entry => (
       entry.categoryKey === selectedScript.categoryKey
       && entry.title === selectedScript.title
+      && entry.titleSection === selectedScript.titleSection
     ));
   }, [scripts, selectedScript]);
 
