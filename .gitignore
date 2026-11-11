@@ -172,13 +172,14 @@ data/graph/pass1/part_inputs/
 /data/graph/pass2/probe/
 /data/graph/pass2/probe-retest/
 
-# Keep the README and the two GraphRAG documents required by its tooling.
+# Keep the README and the GraphRAG documents required by its tooling.
 # Work reports and one-off instructions stay on this computer.
 /*.md
 !/README.md
-!/GRAPH_RAG_SPEC.md
-!/GRAPH_RAG_PASS1_RULES.md
-!/GRAPH_RAG_PASS2_B_RULES.md
+/docs/graphrag/*.md
+!/docs/graphrag/GRAPH_RAG_SPEC.md
+!/docs/graphrag/GRAPH_RAG_PASS1_RULES.md
+!/docs/graphrag/GRAPH_RAG_PASS2_B_RULES.md
 
 # Local editor/assistant settings and design drafts
 /.vscode/

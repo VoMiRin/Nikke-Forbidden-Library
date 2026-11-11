@@ -9,8 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 // 서브에이전트는 스텝마다 읽은 내용을 다시 보내므로, 읽는 분량이 곧 입력 토큰이다.
 // 규칙 파일은 명세에서 그대로 잘라 만들고 직접 고치지 않는다. 명세를 고치면 다시 만든다.
 
-export const SPEC_PATH = path.join(ROOT_DIR, 'GRAPH_RAG_SPEC.md');
-export const PASS1_RULES_PATH = path.join(ROOT_DIR, 'GRAPH_RAG_PASS1_RULES.md');
+export const SPEC_PATH = path.join(ROOT_DIR, 'docs', 'graphrag', 'GRAPH_RAG_SPEC.md');
+export const PASS1_RULES_PATH = path.join(ROOT_DIR, 'docs', 'graphrag', 'GRAPH_RAG_PASS1_RULES.md');
 
 // 명세의 제목 줄 앞부분. 제목부터 다음 제목(수준 무관) 전까지가 한 절이다.
 // 3절·4절은 하위 제목이 없으므로 절 전체가 들어간다.

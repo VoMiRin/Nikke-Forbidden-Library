@@ -74,7 +74,8 @@ git push
 
 GraphRAG는 향후 서버에서 사용할 인덱스·타이틀별 데이터와 이를 다시 만드는 데 필요한
 현재 샤드, 레지스트리, 진행 상태, 연표 원본 및 도구를 보관합니다.
-`GRAPH_RAG_SPEC.md`와 `GRAPH_RAG_PASS1_RULES.md`는 도구와 테스트가 읽으므로 유지합니다.
+GraphRAG 문서는 `docs/graphrag/`에 모았습니다. 그중 `GRAPH_RAG_SPEC.md`, `GRAPH_RAG_PASS1_RULES.md`,
+`GRAPH_RAG_PASS2_B_RULES.md`는 도구와 테스트가 읽으므로 보관하고, 나머지 지시서·보고서는 제외합니다.
 
 작업 보고서, 디자인 시안, 개인 도구 설정, GraphRAG 보수 중간 파일·예전 샤드·파일럿 결과는
 `.gitignore`로 제외합니다. 분할 결과는 합쳐진 샤드에 보관하므로 따로 커밋하지 않습니다.

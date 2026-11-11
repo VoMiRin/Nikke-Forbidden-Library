@@ -80,7 +80,7 @@ const EXTRA_GENERIC_WORDS = new Set(['남자', '여자', '여자친구', '남자
 
 const RUNS = new Set(['pilot', 'probe', 'probe-retest', 'main']);
 const runRoot = (run) => (run === 'main' ? path.join(GRAPH_DATA_DIR, 'pass2') : path.join(GRAPH_DATA_DIR, 'pass2', run));
-const RULES_PATH = path.resolve(GRAPH_DATA_DIR, '..', '..', 'GRAPH_RAG_PASS2_B_RULES.md');
+const RULES_PATH = path.resolve(GRAPH_DATA_DIR, '..', '..', 'docs', 'graphrag', 'GRAPH_RAG_PASS2_B_RULES.md');
 const pathsOf = (run) => {
   const root = runRoot(run);
   return {
