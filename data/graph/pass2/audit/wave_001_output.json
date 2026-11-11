@@ -1,0 +1,421 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "221d74e7590590c04e4e87f153a5b7bbd0b2442aab4907e8b502861c7accf5d7",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1c635-663e-7f43-9624-23dd4272a292",
+  "reviews": [
+    {
+      "audit_id": "B1__character_episodes__마스트:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "L44~46은 촬영장에서 감탄하는 마스트를 비웃는 연속 발화로, 세 참조를 다른 사람으로 나눌 근거가 없다. 지휘관의 조용히 하자는 말은 마스트에게 이어지고, 익명 화자에게 이름을 붙이거나 직접 답하는 대화는 아니다. 이후 배우가 마스트를 비난한다는 사실만으로 앞선 웃음의 주인까지 그 배우로 연결할 수는 없다. 확인한 원문과 해당 발언의 전체 검색에서 특정 개인 후보를 지지하는 연결이 없어 군중·엑스트라, 빈 target·alternatives가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "mast_02",
+          "line": 31,
+          "quote": "우리는 지시에 따라 세트장을 이리저리 돌아다니며 촬영에 함께했다."
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 43,
+          "quote": "마스트: 이건 정말 기적이 아니겠수!"
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 44,
+          "quote": "???: 킥킥···."
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 45,
+          "quote": "???: 촬영 현장 처음인가 봐."
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 46,
+          "quote": "???: 킥킥킥."
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 53,
+          "quote": "  [OPTION TEXT=\"···조용히 하자.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__노벨:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "L170~174는 음식을 뒤적이고 삼킨 뒤 맛에 놀라는 한 사람의 연속 행동으로 다섯 참조를 함께 묶을 수 있다. 해결편에서 엑시아는 라운지 방문과 엠마의 요리에서 느낀 낯선 신맛을 인정하고, 조이스틱에 남은 요거트 성분도 이 해석을 뒷받침한다. 네온의 안경 회수 및 엠마의 요리 재료 사용과 대조하면 엑시아가 가장 유력하지만, 익명 독백의 직접 재현은 없고 개인실에서 게임하며 먹었다는 단서와 말투 차이가 남는다. 이 반대 근거를 기록하고 confidence를 가능성, reveals_identity를 모두 false로 제한한 것이 적절하다. 랩을 씌운 음식의 근거는 식사 경위와 부스럭거림을 설명하는 단서로서 대안 후보만의 근거가 아니다.",
+      "evidence": [
+        {
+          "scene_id": "novel_00",
+          "line": 169,
+          "quote": "오전 ??:00, 니케 숙소 내 라운지."
+        },
+        {
+          "scene_id": "novel_00",
+          "line": 172,
+          "quote": "???: 우물우물··· 꿀꺽."
+        },
+        {
+          "scene_id": "novel_00",
+          "line": 174,
+          "quote": "???: ···이 맛은?!"
+        },
+        {
+          "scene_id": "novel_03",
+          "line": 212,
+          "quote": "마나: 당신들의 가설대로 조이스틱에 묻은 건, 100% 생딸기 요거트가 맞습니다."
+        },
+        {
+          "scene_id": "novel_04",
+          "line": 35,
+          "quote": "    노벨: 네온은 이 사건에 아무런 지분이 없는 것입니다."
+        },
+        {
+          "scene_id": "novel_04",
+          "line": 88,
+          "quote": "엠마: 내가 작년에 넣어둔 단백질 믹스인 줄 알았어."
+        },
+        {
+          "scene_id": "novel_04",
+          "line": 91,
+          "quote": "  [OPTION TEXT=\"그렇다면 엑시아가 게임을 하면서 먹었던 건···.\"]"
+        },
+        {
+          "scene_id": "novel_04",
+          "line": 99,
+          "quote": "엑시아: 평소의 기괴한 맛 속에- 알 수 없는 신맛이 섞여 있던 게-"
+        },
+        {
+          "scene_id": "novel_04",
+          "line": 108,
+          "quote": "  [OPTION TEXT=\"···그럼 네온뿐만 아니라 엑시아도 라운지에 갔었던 거야?\"]"
+        },
+        {
+          "scene_id": "novel_04",
+          "line": 109,
+          "quote": "    엑시아: 아- 딱히 숨길 생각은 없었습니다만-"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__루드밀라_윈터_오너:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "L3~4의 두 참조는 한 원장의 연속 발화다. neverland_15 L3~7에서 같은 촬영 상황과 로열의 응답을 포함한 사건이 재현되고 대상의 두 대사에 고아원 원장이라는 화자 표기가 붙는다. 일반적인 직무가 비슷하다는 추론이나 집단의 특정에 그치지 않으므로, 실명이 없어도 원문 표기의 미등록 개인 후보를 남길 수 있다. entity 조회 결과에 따른 entity_id:null, name:고아원 원장과 유력한 해석이 타당하다. 동일 사건을 해당 화자로 재현한 두 인용의 reveals_identity:true도 성립하며, 다른 장면에서 미카가 원장을 설명하는 줄은 간접 보조 근거로 false를 유지한 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "ludmilla_winterowner_01",
+          "line": 3,
+          "quote": "???: ···아이들은 제 목숨과도 같아요."
+        },
+        {
+          "scene_id": "ludmilla_winterowner_01",
+          "line": 4,
+          "quote": "???: 천사 고아원에 있는 우리 아이들이 어엿한 성인이 될 때까지. 무슨 일이 있어도 책임질 겁니다."
+        },
+        {
+          "scene_id": "ludmilla_winterowner_01",
+          "line": 6,
+          "quote": "???: 원장님의 그 뜻 이루실 수 있도록···."
+        },
+        {
+          "scene_id": "neverland_15",
+          "line": 3,
+          "quote": "고아원 원장: ···아이들은 제 목숨과도 같아요."
+        },
+        {
+          "scene_id": "neverland_15",
+          "line": 4,
+          "quote": "고아원 원장: 천사 고아원에 있는 우리 아이들이 어엿한 성인이 될 때까지. 무슨 일이 있어도 책임질 겁니다."
+        },
+        {
+          "scene_id": "neverland_15",
+          "line": 6,
+          "quote": "로열 여성: 원장님의 그 뜻 이루실 수 있도록···."
+        },
+        {
+          "scene_id": "mica_01",
+          "line": 49,
+          "quote": "미카: 네! 고아원 원장님이요."
+        },
+        {
+          "scene_id": "mica_01",
+          "line": 50,
+          "quote": "미카: 저랑 벨로타랑 니케가 되기 전에 있었던 곳에 있어요!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__메어리:U03",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "뉴스에 놀란 인물의 메신저가 울리고 메어리가 뉴스 시청 여부를 묻는 가운데 본인 발신 표기가 블랙박스로 드러난다. 이어 도착 예고, 초인종, 현관으로의 이동과 D의 등장까지 이어져 다섯 참조를 같은 개인으로 보는 것이 타당하다. 중앙 정부 관계자라는 소속만으로 개인을 추정한 것이 아니며, 미등록인 블랙박스를 entity_id:null로 남긴 것도 맞다. L9~18의 quote 자체에 뉴스 수신자와 본인 발신자의 연결 및 이름이 포함되어 유력한 해석과 reveals_identity:true를 뒷받침한다. D의 자기소개는 별개 화자의 말이므로 그 인용을 false로 둔 것도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "mary_04",
+          "line": 7,
+          "quote": "???: 저게 무슨 말이야."
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 8,
+          "quote": "???: 저 상자는 분명 그 여자랑···!"
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 15,
+          "quote": "    오늘의 뉴스는 재미있게 시청하셨나요?"
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 17,
+          "quote": "  [MSG SENDER=\"블랙박스\" IS_SENDER=\"true\"]"
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 18,
+          "quote": "    너 어떻게 살아있어?"
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 48,
+          "quote": "    이제 슬슬 도착할 때가 됐는데?"
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 52,
+          "quote": "???: !!"
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 55,
+          "quote": "???: 누구세요?"
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 56,
+          "quote": "D: D."
+        },
+        {
+          "scene_id": "mary_04",
+          "line": 58,
+          "quote": "???: 어떻게 집 안에···!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__앨리스:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사탕을 거부한 선택지 안에서 L124와 L126은 사탕 장수를 붙잡아 폭행을 말리는 같은 인물의 연속 발화이며, 중간에 이거 놔라고 답하는 사탕 장수와는 별개다. 직접 대화에 개입하는 목소리여서 주변 군중으로 처리할 근거는 부족하다. 뇌 손상 우려와 후속 가해자 체포 서술은 공범이라는 정황 해석을 뒷받침하지만 개인 이름이나 다른 장면의 특정 화자와 직접 연결하지 않는다. 이후 등장한 폴리·미란다·지휘관이나 과거 병원 장면의 의료진을 이 목소리로 정할 근거도 없다. 확인한 후속 장면 및 검색으로 개인 후보를 가릴 수 없어 target을 비운 판단 보류와 모든 reveals_identity:false가 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "alice_02",
+          "line": 123,
+          "quote": "    사탕 장수가 앨리스를 수차례 내려쳤습니다."
+        },
+        {
+          "scene_id": "alice_02",
+          "line": 124,
+          "quote": "    ???: 그만해!"
+        },
+        {
+          "scene_id": "alice_02",
+          "line": 125,
+          "quote": "    사탕 장수: 이거 놔!"
+        },
+        {
+          "scene_id": "alice_02",
+          "line": 126,
+          "quote": "    ???: 뇌가 다치면 어쩌려고 그래!"
+        },
+        {
+          "scene_id": "alice_03",
+          "line": 33,
+          "quote": "미란다: 가해자도 모두 잡았습니다!"
+        },
+        {
+          "scene_id": "alice_03",
+          "line": 44,
+          "quote": "폴리: 니케의 몸이 탐난다고 다리를 부숴놓다닝···."
+        },
+        {
+          "scene_id": "alice_03",
+          "line": 46,
+          "quote": "폴리: 지휘관이 이 애가 보낸 신호를 보지 않았으면 큰일 날 뻔했네여."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__마스트:U02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "L171은 현장 전체에 던진 배우의 질문을 듣고 옆의 익명 인물에게 바다를 본 적이 있는지 묻는 말이다. L172~174도 이름 없는 목소리끼리 이어지는 짧은 반응이다. 이름 있는 배우의 질문이 앞에 있지만 이 개인을 지목하거나 이름으로 받는 대화는 아니므로 규칙 3.3의 군중·엑스트라에 해당한다. 해당 발언의 전체 검색에서도 개인으로 이어지는 근거가 확인되지 않았고 대상 한 참조와 빈 target·alternatives가 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "mast_02",
+          "line": 170,
+          "quote": "잭 로우 역의 배우: 여기서 바다 본 적 있는 사람~?"
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 171,
+          "quote": "???: 야, 넌 바다 본 적 있어?"
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 172,
+          "quote": "???: 몰라. 박물관에서 보긴 했던 것 같은데."
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 173,
+          "quote": "???: 알게 뭐야."
+        },
+        {
+          "scene_id": "mast_02",
+          "line": 174,
+          "quote": "???: 다 CG로 만들겠지 뭐."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__솔린:U05",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "L234는 솔린이 인간이던 때의 기차역 테러를 회상하는 부분에서 구조 책임을 서로 떠넘기는 익명 인물 중 하나의 발언이다. 주변 대사와 해당 발언의 전체 검색에서 특정 개인 후보로 연결할 단서는 확인되지 않았다. 뒤의 지휘관 선택지는 현재의 솔린에게 건네는 말이므로 과거 익명 화자의 직접 공개가 아니다. 시간대를 구분하여 군중·엑스트라로 판단하고 대상 한 참조와 빈 target을 둔 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "soline_03",
+          "line": 224,
+          "quote": "솔린: ···인간이었을 때 열차 사고가 났어."
+        },
+        {
+          "scene_id": "soline_03",
+          "line": 226,
+          "quote": "솔린: 난 그때 기차역에 있었는데 테러가 일어났었대."
+        },
+        {
+          "scene_id": "soline_03",
+          "line": 230,
+          "quote": "???: 저 애. 다리를 다쳤나 봐요."
+        },
+        {
+          "scene_id": "soline_03",
+          "line": 233,
+          "quote": "???: 나도 못해! 사람 좋은 척하다 죽을 일 있어?"
+        },
+        {
+          "scene_id": "soline_03",
+          "line": 234,
+          "quote": "???: 지금 누가 얘기 꺼낸 거야. 꺼낸 사람이 해!"
+        },
+        {
+          "scene_id": "soline_03",
+          "line": 235,
+          "quote": "???: 내 몸 간수하기도 힘든데 저런 짐을···!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__델타_닌자_시프:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "L179는 합쇼체로 더 가까이 가겠다고 말한 L178 직후의 당황한 탄성이다. 낙하 뒤 등장한 미란다의 말투와 다른 원문의 어라라는 탄성이 맞아 미란다를 우선 후보로 둘 수 있다. 다만 세 사람이 함께 천장에 있고 짧은 탄성에 개인을 직접 가르는 특징이 없으므로 가능성을 넘기는 것은 어렵다. 연결은 이를 가능성과 reveals_identity:false로 처리하고, 퀀시와 팬텀의 동석 및 말투·탄성 근거를 각각 alternatives에 분리했다. 대상 참조도 L179 하나만 포함하며 target 근거에 대안만의 근거가 섞이지 않았다.",
+      "evidence": [
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line": 176,
+          "quote": "???: 너, 너무 가까이 가지 마시오. 이러다 떨어지면 어쩌려고 그러시오?"
+        },
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line": 177,
+          "quote": "???: 뭐 어때~ 그냥 귀만 가까이 대는 건데~ 키킥."
+        },
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line": 178,
+          "quote": "???: 아직 소리가 잘 안 들립니다! 더 가까이 가보겠습니다!"
+        },
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line": 179,
+          "quote": "???: 어··· 어라?"
+        },
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line": 183,
+          "quote": "그곳에서 괴도단이 침대 위로 쏟아져 내렸다."
+        },
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line": 188,
+          "quote": "미란다: 안녕하십니까! 지휘관!"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line": 77,
+          "quote": "미란다: 어라?"
+        },
+        {
+          "scene_id": "seedy_club_08",
+          "line": 136,
+          "quote": "팬텀: 어라···?"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__앤_미라클_페어리:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "L11 직후 라피·네온·아니스가 함께 나타나므로 이름 없는 군중의 목소리로 보기는 어렵다. 그러나 축하 인사만으로 셋 중 한 사람을 구별할 수 없고 합창일 가능성도 남는다. 준비 연락을 맡은 아니스, 폭죽을 든 네온, 케이크를 든 라피의 근거는 각각 원문과 맞지만 어느 한 사람의 단독 발화를 입증하지 않는다. 해당 인사의 전체 검색에서도 직접 연결은 확인되지 않았다. 세 사람을 대안으로 기록하고 target을 비운 판단 보류, reveals_identity:false가 적절하며 소속 집단을 개인 정체로 올린 문제도 없다.",
+      "evidence": [
+        {
+          "scene_id": "anne_miraclefairy_03",
+          "line": 11,
+          "quote": "???: 메리 크리스마스-!"
+        },
+        {
+          "scene_id": "anne_miraclefairy_03",
+          "line": 12,
+          "quote": "폭죽 소리와 함께 불이 켜지고,"
+        },
+        {
+          "scene_id": "anne_miraclefairy_03",
+          "line": 13,
+          "quote": "마일드 크로켓을 켜켜이 쌓은 케이크를 든 라피와,"
+        },
+        {
+          "scene_id": "anne_miraclefairy_03",
+          "line": 14,
+          "quote": "폭죽을 든 네온."
+        },
+        {
+          "scene_id": "anne_miraclefairy_03",
+          "line": 15,
+          "quote": "탄산수 병을 든 아니스가 나타났다."
+        },
+        {
+          "scene_id": "anne_miraclefairy_03",
+          "line": 17,
+          "quote": "아니스: 뭐해, 앤. 얼른 촛불 불어!"
+        },
+        {
+          "scene_id": "anne_miraclefairy_00",
+          "line": 92,
+          "quote": "아니스: 준비가 다 되면 연락할게."
+        },
+        {
+          "scene_id": "anne_miraclefairy_00",
+          "line": 101,
+          "quote": "라피, 네온, 아니스가 서둘러 떠나가 버렸다."
+        }
+      ]
+    }
+  ]
+}

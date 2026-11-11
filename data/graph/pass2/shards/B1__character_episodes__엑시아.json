@@ -1,0 +1,123 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "B1__character_episodes__엑시아",
+  "candidate_links": [
+    {
+      "link_id": "B1__character_episodes__엑시아__001",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "exia_02__unk_003",
+          "unknown_id": "unk_exia_02_L0081"
+        },
+        {
+          "ref": "item",
+          "item_id": "exia_02__unk_004",
+          "unknown_id": "unk_exia_02_L0082"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_폴리",
+          "name": "폴리",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "가능성",
+      "rationale": "문밖에서 A.C.P.U. 소속과 불법 동물 포획 신고 출동을 외친 직후 문을 열고 진입한 인물이 폴리와 미란다뿐이며, 폴리가 현장에서 동물 포획 혐의 구속을 주도하고 다른 불법 동물 포획 돌입 장면(poli_00, poli_04)에서도 평소 말투 대신 반말로 'A.C.P.U 닷!', '다들 제자리에 멈춰!'라고 외치는 반면 미란다는 돌입 시에도 '-습니다'체를 유지하므로 폴리를 유력 후보로 본다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "exia_02",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "???: A.C.P.U.다!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "exia_02",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "???: 불법 동물 포획 신고를 받고 출동했다! 지금 당장 문 열어!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "exia_02",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "쾅! 벌컥-!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "exia_02",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "폴리: ··· ···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "exia_02",
+          "line_start": 99,
+          "line_end": 100,
+          "quote": "폴리: 음, 그러니까 동식물 관리법 제 13조 1항에 따라··· ··· 두 사람을 동물 포획 혐의로 현장 구속할게여.\n폴리: 미란다, 수갑 좀 주실래영?",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "poli_00",
+          "line_start": 23,
+          "line_end": 24,
+          "quote": "폴리: A.C.P.U 닷!\n폴리: 다들 제자리에 멈춰···!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "poli_00",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "미란다: 동물 불법 포획 관련 신고가 들어왔습니다! 순순히 투항···?",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 17,
+          "line_end": 18,
+          "quote": "폴리: A.C.P.U 닷!\n폴리: 다들 제자리에 멈춰!",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "exia_02",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "폴리: ··· ···아, 그런가여?"
+        }
+      ],
+      "alternatives": [
+        {
+          "entity_id": "char_미란다",
+          "name": "미란다",
+          "why": "문밖 외침 직후 폴리와 함께 문을 열고 진입해 연행을 진행한 A.C.P.U. 대원이지만, 현장 구속을 폴리가 주도하고 다른 불법 동물 포획 돌입 장면(poli_00 L0026)에서도 반말이 아닌 '-습니다'체를 유지하므로 대안으로 남긴다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "exia_02",
+              "line_start": 84,
+              "line_end": 84,
+              "quote": "미란다: ··· ···."
+            },
+            {
+              "scene_id": "exia_02",
+              "line_start": 108,
+              "line_end": 108,
+              "quote": "미란다: 일단은 서로 가서 이야기하시겠습니다!"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep으로 'A.C.P.U.다', '동물 포획', '출동했다', '문 열어', '신고를 받고'를 검색해 poli_02를 확인하고, 이어서 show로 폴리와 미란다의 출동 장면(poli_00 L0023~L0026, poli_04 L0017~L0018)을 읽어 폴리가 돌입 시 반말 구호('A.C.P.U 닷!', '다들 제자리에 멈춰!')를 쓰는 반면 미란다는 돌입 시에도 '-습니다'체를 유지함을 확인함"
+      ]
+    }
+  ]
+}

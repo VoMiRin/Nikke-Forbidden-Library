@@ -1,0 +1,525 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "f03dc88a639d3f247954cdfa8e26817b2ce70f83eca957e22a801de30c84ba99",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1ca9a-0c78-7552-b543-28be97725ad6",
+  "reviews": [
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_006:U108",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 subject는 쓰러진 7호가 마리안과의 약속을 떠올리는 연속된 1인칭 기록이다. 3122의 일부러 져준 사람의 말이 maria-n_18의 지휘관 선택지와 일치하고, 3121의 작별 인사는 maria-n_24에서 마리안이 지휘관에게 하는 말과 일치한다. 단순한 유사 문구가 아니라 도시락통을 정하는 가위바위보와 작별이라는 같은 사건이므로 지휘관 후보와 유력한 해석이 타당하다. 두 작성자 참조에 마리안의 목소리가 섞인 것은 아니며, 같은 사건의 선택지 전체 및 작별 상대를 명시한 인용의 reveals_identity도 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3121",
+          "line": 22,
+          "quote": "[\"우리의 이야기는 여기서 끝이니까.\"]"
+        },
+        {
+          "scene_id": "fading_affection_3122",
+          "line": 2,
+          "quote": "[\"앗, 이런. 져버렸잖아?\"]"
+        },
+        {
+          "scene_id": "fading_affection_3122",
+          "line": 3,
+          "quote": "내가 일부러 져준 것을 안다는 듯,"
+        },
+        {
+          "scene_id": "maria-n_18",
+          "line": 167,
+          "quote": "  [OPTION TEXT=\"앗, 이런. 져버렸잖아?\"]"
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 237,
+          "quote": "지휘관의 얼굴을 빤히 바라본다."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 241,
+          "quote": "마리안: 우리의 이야기는 여기서 끝이니까."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_003:U51",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "촉수에 스친 마리안을 부르는 목소리는 함께 움직이는 지휘관의 말로 읽힌다. 다만 해당 외침 자체에 발화자를 명시한 지문은 없으므로, 두 사람의 행동과 마리안의 응답을 통한 추론으로 구분한 가능성 및 reveals_identity: false가 적절하다. 2117의 지휘관·7호 교차 표기와 maria-n_26의 임명 기록으로 등록 지휘관과의 연결도 뒷받침된다. 마리안의 숙이라는 지시와 괜찮다는 응답은 별도 상대의 대사이며, 이 voice 참조 전체를 군중이나 마리안으로 돌릴 근거는 없다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2247",
+          "line": 3,
+          "quote": "지휘관이 몸을 숙이는 것과 동시에, 마리안은 날아오는 촉수를 향해 총을 난사했다."
+        },
+        {
+          "scene_id": "fading_affection_2247",
+          "line": 6,
+          "quote": "또 다른 촉수가 마리안의 옆구리를 스치고 지나간다."
+        },
+        {
+          "scene_id": "fading_affection_2247",
+          "line": 7,
+          "quote": "\"마리안!!\""
+        },
+        {
+          "scene_id": "fading_affection_2247",
+          "line": 8,
+          "quote": "\"괜찮··· 아요···!\""
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line": 480,
+          "quote": "에닉: 7호의 행방 확인 중."
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line": 481,
+          "quote": "에닉: 니케 마리아 타입 처분 후 스쿼드 04-F의 지휘관으로 임명."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_005:U96",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "창가의 마리안이 지휘관을 부르고, 상대가 위험하다고 외치며 손을 뻗는 연속된 행동을 지문이 지휘관의 것으로 명시한다. 이 호명·응답·동작을 함께 담은 인용은 대상 목소리를 지휘관에게 거의 직접 연결하므로 유력한 해석과 reveals_identity: true가 적절하다. 다음에 다시 시작하겠다는 마리안의 말과 대상의 경고를 구별했으며, 죽음의 분기라는 이유로 다른 시대의 지휘관을 연결한 것도 아니다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_6211",
+          "line": 5,
+          "quote": "\"지휘관.\""
+        },
+        {
+          "scene_id": "fading_affection_6211",
+          "line": 7,
+          "quote": "\"거기서 뭐 하는 거야, 위험···!\""
+        },
+        {
+          "scene_id": "fading_affection_6211",
+          "line": 8,
+          "quote": "\"다음에 다시 시작하면, 그땐 제가 더 서두를 테니까.\""
+        },
+        {
+          "scene_id": "fading_affection_6211",
+          "line": 9,
+          "quote": "지휘관이 마리안에게 손을 뻗는다."
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line": 481,
+          "quote": "에닉: 니케 마리아 타입 처분 후 스쿼드 04-F의 지휘관으로 임명."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_003:U43",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "육포를 반으로 나누는 주체를 지휘관이라고 명시한 뒤 자, 같이 먹자라는 말과 마리안에게 내미는 행동이 이어진다. 대상 목소리와 이름이 같은 인용에서 연결되므로 지휘관 후보, 유력한 해석, 첫 근거의 reveals_identity: true가 타당하다. 3123의 7호가 나눠줄 사람이 없음을 떠올리는 장면은 사건을 보강하는 간접 근거로만 처리되어 있고, 별도의 인물이나 대안 후보의 근거가 섞이지 않았다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2234",
+          "line": 3,
+          "quote": "지휘관이 육포를 반으로 나눈다."
+        },
+        {
+          "scene_id": "fading_affection_2234",
+          "line": 4,
+          "quote": "\"자.\""
+        },
+        {
+          "scene_id": "fading_affection_2234",
+          "line": 5,
+          "quote": "그리고 마리안에게 내밀었다."
+        },
+        {
+          "scene_id": "fading_affection_2234",
+          "line": 6,
+          "quote": "\"같이 먹자.\""
+        },
+        {
+          "scene_id": "fading_affection_3123",
+          "line": 12,
+          "quote": "반절을 나눠줄 사람은 곁에 없다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_005:U87",
+      "judgment": "맞음",
+      "problems": [
+        "reveals_identity_wrong"
+      ],
+      "reason": "지휘관 후보 자체는 타당하다. 건물 창가의 대화가 2318로 이어지고, 그 장면에서 마리안이 상대를 지휘관으로 부르며 지문도 그 응답자를 지휘관으로 명시하므로 연결 전체의 유력한 해석은 유지할 수 있다. 다만 첫 supporting_evidence인 2317 L2-6은 마리안과 지휘관이 함께 들어와 창밖을 본다는 지문 및 화자 없는 대사로 구성되어, 인용 자체가 후우·시간·노을 발언을 지휘관에게 직접 귀속하지는 않는다. 두 사람 중 누구의 말인지 주변 대화로 추론해야 하는 이 근거의 reveals_identity는 false여야 한다. 2318 L2-5의 직접 호명·응답 인용에 붙인 true와 구별해야 한다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2317",
+          "line": 2,
+          "quote": "얼마나 시간이 흘렀을까, 마리안과 지휘관은 몰아치는 랩쳐들을 모두 쓰러뜨린 후, 근처에 있는 안전해보이는 건물에 들어섰다."
+        },
+        {
+          "scene_id": "fading_affection_2317",
+          "line": 3,
+          "quote": "\"후우··· 큰일 날 뻔했네.\""
+        },
+        {
+          "scene_id": "fading_affection_2317",
+          "line": 4,
+          "quote": "디코이를 설치하고 건물의 최상층에 숨어들어온 지휘관과 마리안은 창밖을 바라보았다."
+        },
+        {
+          "scene_id": "fading_affection_2317",
+          "line": 5,
+          "quote": "\"시간이 벌써 이렇게 됐구나.\""
+        },
+        {
+          "scene_id": "fading_affection_2317",
+          "line": 6,
+          "quote": "\"노을이 지네.\""
+        },
+        {
+          "scene_id": "fading_affection_2318",
+          "line": 2,
+          "quote": "\"지휘관.\""
+        },
+        {
+          "scene_id": "fading_affection_2318",
+          "line": 4,
+          "quote": "\"마리안···?\""
+        },
+        {
+          "scene_id": "fading_affection_2318",
+          "line": 5,
+          "quote": "지휘관이 마리안을, 붉은색으로 서서히 물들어가는 눈을 바라본다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_006:U105",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "회상 대사를 소개하는 3110 L2가 마리안이 들르고 싶은 곳을 말했던 일이라고 직접 명시하고, 뒤따르는 고양이 대사가 원사건 2110과 일치한다. 현재 고양이를 보고 말하는 7호와 회상 속 마리안의 목소리를 구별한 단일 참조이며, 마리안 후보와 유력한 해석이 적절하다. 두 supporting_evidence 모두 마리안의 이름과 해당 발화를 연결하는 지문을 실제 quote 안에 포함하므로 reveals_identity: true도 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3110",
+          "line": 2,
+          "quote": "구도심에서 언젠가··· 마리안이 어딘가를 들렀다 가고 싶은 곳이 있다고 한 적이 있었다."
+        },
+        {
+          "scene_id": "fading_affection_3110",
+          "line": 3,
+          "quote": "[\"고양이··· 를 [REDACT]보고[/REDACT] 싶은데···.\"]"
+        },
+        {
+          "scene_id": "fading_affection_2110",
+          "line": 2,
+          "quote": "\"고양이··· 를 보고 싶은데···.\""
+        },
+        {
+          "scene_id": "fading_affection_2110",
+          "line": 6,
+          "quote": "마리안이 망설였다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_001:U19",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관이 마리안에게 묻는다고 직접 서술한 다음 이제 나가도 되지 않느냐는 발화가 나온다. 이어지는 마리안의 나가야 한다는 말과 이를 듣고 이름을 부르는 지휘관의 말을 구별할 수 있으므로 voice 참조에 다른 화자를 합친 문제는 없다. 직접 발화 지문을 포함한 첫 근거의 true와 유력한 해석이 타당하며, 다른 사건의 7호 관련 근거를 false로 둔 것도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2115",
+          "line": 8,
+          "quote": "지휘관이 미동 없이 밖을 바라보는 마리안에게 묻는다."
+        },
+        {
+          "scene_id": "fading_affection_2115",
+          "line": 9,
+          "quote": "\"이제 나가도 되지 않을···.\""
+        },
+        {
+          "scene_id": "fading_affection_2115",
+          "line": 12,
+          "quote": "\"나가야 해요.\""
+        },
+        {
+          "scene_id": "fading_affection_2115",
+          "line": 13,
+          "quote": "\"마리안?\""
+        },
+        {
+          "scene_id": "fading_affection_2115",
+          "line": 14,
+          "quote": "지휘관이 마리안을 바라본다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_006:U110",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사랑스럽게 웃는 얼굴은 귀여운 도시락통으로 결정되었다고 말하고 소풍을 바라는 상대를 가리킨다. 같은 가위바위보 사건의 maria-n_18에서 두 발화가 모두 마리안의 이름 붙은 대사로 재현되므로 마리안 후보와 유력한 해석이 타당하다. 3122 L2의 져버렸다는 말은 작성자 자신의 회상 발화로, 이 상대 목소리와 구별된다. 대상 장면 근거는 false, 이름 붙은 원사건 대사는 true로 구분되어 있다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3122",
+          "line": 3,
+          "quote": "내가 일부러 져준 것을 안다는 듯,"
+        },
+        {
+          "scene_id": "fading_affection_3122",
+          "line": 4,
+          "quote": "[\"그럼 도시락통은 귀여운 걸로 결정이네요. 맞죠?\"]"
+        },
+        {
+          "scene_id": "fading_affection_3122",
+          "line": 5,
+          "quote": "사랑스럽게 웃는 얼굴."
+        },
+        {
+          "scene_id": "fading_affection_3122",
+          "line": 6,
+          "quote": "[\"꼭, 갔으면 좋겠네요.\"]"
+        },
+        {
+          "scene_id": "maria-n_18",
+          "line": 171,
+          "quote": "마리안: 그럼 도시락통은 귀여운 걸로 결정이네요. 맞죠?"
+        },
+        {
+          "scene_id": "maria-n_18",
+          "line": 193,
+          "quote": "마리안: 꼭, 갔으면 좋겠네요."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_001:U09",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리안에게 위험을 알리는 동행자는 직후 지문에서 지휘관으로 명시되고, 격려하는 발화에도 지휘관이 웃었다는 지문이 직접 이어진다. 특히 L17-18은 이름과 해당 발화를 같은 인용 안에서 연결하므로 지휘관 후보와 유력한 해석, reveals_identity: true가 타당하다. 마리안의 사과나 둘이라는 되뇌임은 상대의 대사이며, 이름만 언급된 제3자를 대상 화자로 잘못 지정한 경우가 아니다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2103",
+          "line": 5,
+          "quote": "\"마리안, 조심해!\""
+        },
+        {
+          "scene_id": "fading_affection_2103",
+          "line": 8,
+          "quote": "지휘관이 뒤이어 떨어져 내리는 랩쳐를 향해 총을 쐈다."
+        },
+        {
+          "scene_id": "fading_affection_2103",
+          "line": 17,
+          "quote": "\"괜찮아. 이게 둘이 함께 다니는 장점 아니겠어?\""
+        },
+        {
+          "scene_id": "fading_affection_2103",
+          "line": 18,
+          "quote": "지휘관이 웃었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_001:U15",
+      "judgment": "맞음",
+      "problems": [
+        "reveals_identity_wrong"
+      ],
+      "reason": "지휘관 후보 자체는 타당하다. 2108에서 지휘관이 들를 곳을 묻고, 해당 선택의 다음 장면인 2111에서 마리안이 없다고 답한 뒤 상대가 수긍하므로 같은 대화의 연속성에 따른 유력한 해석은 유지할 수 있다. 그러나 true를 붙인 2111 L2-6의 quote 자체에는 수긍하는 발화자를 지휘관이라고 명시하거나 그 이름으로 부르는 부분이 없다. 마리안의 판단과 두 사람이 함께 떠난다는 지문만 있어, 어··· 음, 그래의 화자는 인접 장면의 질문과 대화 교대에서 추론해야 한다. 이 인용의 reveals_identity는 false로 고쳐야 하며, 주변 장면을 종합한 후보 판정과 개별 quote의 직접 공개 여부를 구별해야 한다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2108",
+          "line": 2,
+          "quote": "호수로 서둘러 가려는 마리안에게 지휘관이 묻는다."
+        },
+        {
+          "scene_id": "fading_affection_2108",
+          "line": 3,
+          "quote": "\"혹시 들렀다 가야 할 곳은 없어?\""
+        },
+        {
+          "scene_id": "fading_affection_2111",
+          "line": 3,
+          "quote": "\"더 볼일은 없을 것 같아요.\""
+        },
+        {
+          "scene_id": "fading_affection_2111",
+          "line": 4,
+          "quote": "마리안은 알 수 없는 불안함에, 빨리 호수 쪽으로 넘어가야겠다고 판단했다."
+        },
+        {
+          "scene_id": "fading_affection_2111",
+          "line": 5,
+          "quote": "\"어··· 음, 그래.\""
+        },
+        {
+          "scene_id": "fading_affection_2111",
+          "line": 6,
+          "quote": "마리안과 지휘관은 구도심을 뒤로한 채, 앞으로 나아갔다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_006:U106",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "회상에서 마리안에게 호수의 느낌을 묻는 사람은 작성자이고, 머뭇거리며 예쁘다고 답하는 상대를 3114 L9가 마리안으로 직접 명시한다. 원사건 2203에도 같은 질문·대답과 마리안의 내면 서술이 이어져, 단순히 비슷한 말버릇으로 연결한 것이 아니다. 두 근거에 이름과 발화의 연결이 모두 있으므로 마리안 후보, 유력한 해석, reveals_identity: true가 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3114",
+          "line": 8,
+          "quote": "[\"[REDACT]예[/REDACT]···? 저는···.\"]"
+        },
+        {
+          "scene_id": "fading_affection_3114",
+          "line": 9,
+          "quote": "마리안이 머뭇거리다,"
+        },
+        {
+          "scene_id": "fading_affection_3114",
+          "line": 10,
+          "quote": "[\"···예쁘[REDACT]네[/REDACT]요.\"]"
+        },
+        {
+          "scene_id": "fading_affection_2203",
+          "line": 10,
+          "quote": "\"마리안은 어때? 기분 전환도 되고 좋지 않아?\""
+        },
+        {
+          "scene_id": "fading_affection_2203",
+          "line": 12,
+          "quote": "마리안은 이곳에서 홀로 겪었던 수많은 죽음들이 떠올랐지만,"
+        },
+        {
+          "scene_id": "fading_affection_2203",
+          "line": 13,
+          "quote": "\"···예쁘네요.\""
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_002:U21",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리안을 부른 남자를 바로 다음 지문이 지휘관·7호로 교차 표기한다. REDACT 표기는 기억의 혼란을 나타내지만, 여러 사람이 동시에 부르거나 발화자가 바뀐다는 근거는 아니다. 직전 2115의 지휘관과 이어지며, maria-n_13의 7호라는 자기 호칭 및 지휘관이라고 부르겠다는 말, maria-n_26의 임명 기록도 연결을 지지한다. 따라서 보류나 군중으로 돌릴 이유가 없고 유력한 해석 및 대상 지문의 true가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2117",
+          "line": 6,
+          "quote": "\"마리안!!\""
+        },
+        {
+          "scene_id": "fading_affection_2117",
+          "line": 7,
+          "quote": "[REDACT]지휘관[/REDACT]이 [REDACT]7호[/REDACT]가 아니 [REDACT]지휘관[/REDACT]이 아니 [REDACT]7호[/REDACT]가 남자가 마리안을 불렀지만, 뒤돌아보지 않는다."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 256,
+          "quote": "  [OPTION TEXT=\"다들 7호라고 부르던데.\"]"
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 289,
+          "quote": "마리아-n: 그럼, 지휘관이라고 부를게요."
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line": 480,
+          "quote": "에닉: 7호의 행방 확인 중."
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line": 481,
+          "quote": "에닉: 니케 마리아 타입 처분 후 스쿼드 04-F의 지휘관으로 임명."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_005:U94",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "촉수를 붙잡고 마리안에게 도망치라고 외치는 인물을 지문이 지휘관이라고 직접 명시하고, 마리안도 그 이름으로 부른다. 같은 인용 안에서 대상 발화와 이름이 연결되므로 지휘관 후보, 유력한 해석, 첫 근거의 true가 타당하다. maria-n_19는 다른 부상 사건이므로 그 근거를 직접 공개로 취급하지 않은 false도 적절하다. 대상 장면에서 두 사람이 사망하는 분기는 동일 동행자의 다른 전개이며, 별개 지휘관이라는 반대 근거가 되지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_6204",
+          "line": 8,
+          "quote": "지휘관이 필사적으로 촉수를 붙잡는다."
+        },
+        {
+          "scene_id": "fading_affection_6204",
+          "line": 9,
+          "quote": "\"절대··· 널··· 잡아가게··· 놔두지 않아.\""
+        },
+        {
+          "scene_id": "fading_affection_6204",
+          "line": 10,
+          "quote": "\"지휘관···!!\""
+        },
+        {
+          "scene_id": "fading_affection_6204",
+          "line": 11,
+          "quote": "\"쿨럭···! 도망··· 쳐···!\""
+        },
+        {
+          "scene_id": "fading_affection_6204",
+          "line": 12,
+          "quote": "지휘관이 필사적으로 외친다."
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line": 481,
+          "quote": "에닉: 니케 마리아 타입 처분 후 스쿼드 04-F의 지휘관으로 임명."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__fading_affection__part_006:U111",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "그날의 소리로 회상된 두 외침은 원사건 2266에서도 마리안과 지휘관의 공동 사격 직후 화자 구분 없이 나온다. 한 사람이 둘 다 말했는지, 각각 다른 사람이 말했는지 결정할 수 없어 한 인물로 확정하거나 subject를 임의로 분할할 수 없다. public/scripts에서 부서져라 및 블랙스미스의 코어를 검색해도 이 사건의 두 발화자를 구별하는 이름 붙은 재현은 찾지 못했다. 다른 이야기의 같은 감탄사는 사건이 달라 후보 근거가 아니다. 따라서 target을 비운 판단 보류와 직접 공개를 주장하지 않은 false가 타당하며, 이름 없는 군중으로 볼 상황도 아니다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3129",
+          "line": 3,
+          "quote": "\"그게 촉수를 뻗기 전에, 함께 집중 사격해서···.\""
+        },
+        {
+          "scene_id": "fading_affection_3129",
+          "line": 4,
+          "quote": "귓가에 그날의 소리가 들려오는 듯했다."
+        },
+        {
+          "scene_id": "fading_affection_3129",
+          "line": 6,
+          "quote": "[\"제발···!\"]"
+        },
+        {
+          "scene_id": "fading_affection_3129",
+          "line": 7,
+          "quote": "[\"부서져라!!\"]"
+        },
+        {
+          "scene_id": "fading_affection_2266",
+          "line": 6,
+          "quote": "마리안과 지휘관이 블랙스미스의 코어를 향해 집중 사격했다."
+        },
+        {
+          "scene_id": "fading_affection_2266",
+          "line": 7,
+          "quote": "\"제발···!\""
+        },
+        {
+          "scene_id": "fading_affection_2266",
+          "line": 8,
+          "quote": "\"부서져라!!\""
+        }
+      ]
+    }
+  ]
+}

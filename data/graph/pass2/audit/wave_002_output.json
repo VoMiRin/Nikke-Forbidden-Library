@@ -1,0 +1,385 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "902d6dc48ddf432496f8a4ed0f00fe22a919687a2fe24908c9ef64f3f855bb7f",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1c8ef-5c4f-7fa2-8055-67e051d9f538",
+  "reviews": [
+    {
+      "audit_id": "B1__event_lost_relics__old_tales_lost:U03",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 기록을 각각 확인했다. 13의 아나키오르 찬양과 화합의 기원은 레드 슈즈의 발언과 일치하고, 14의 '저를 기반으로 한' 인격 데이터는 자신의 인격을 침식에 심었다는 레드 슈즈의 설명과 연결된다. 미러도 유사한 말투와 퀸 관련 표현을 쓰므로 14의 작성자를 직접 확정할 수는 없지만, 원본 인격을 자칭하는 내용에 따라 레드 슈즈를 우선 후보로 두고 미러를 대안으로 남긴 '가능성'은 타당하다. goddess_fall_09 L69는 원본과 파생 인격을 구별하는 보조 단서로만 볼 수 있으며, 직접 공개로 처리하지 않은 점도 맞다. 현재 원문만으로 두 참조를 서로 다른 작성자로 나눌 근거는 충분하지 않다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_lost_13",
+          "line": 6,
+          "quote": "저를이끌어주소서화합의로의길을이끌어주소서"
+        },
+        {
+          "scene_id": "old_tales_lost_14",
+          "line": 6,
+          "quote": "인격 박리에, 저를 기반으로 한 더욱 진화된 인격 데이터까지 동원해서"
+        },
+        {
+          "scene_id": "old_tales_20",
+          "line": 45,
+          "quote": "레드 슈즈: 그래서 제 인격 데이터를 침식에 심어서, 랩쳐의 기준으로 [생각할 수 있게] 서포트하는 역할로 만들어봤어요."
+        },
+        {
+          "scene_id": "old_tales_20",
+          "line": 113,
+          "quote": "레드 슈즈: 헬레틱으로의 길을. 화합으로의 길을."
+        },
+        {
+          "scene_id": "goddess_fall_09",
+          "line": 69,
+          "quote": "미러: 지금 이 모습도 제 인격 데이터의 기반이 된 것의 모습을 흉내 내고 있을 뿐이고요."
+        },
+        {
+          "scene_id": "chapter_50_04",
+          "line": 352,
+          "quote": "미러: 하지만 그거 아시나요."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__unbreakable_sphere_lost:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네 기록은 글러트니 안의 정원 조성, 숨구멍 발견, 물거품 공방과 막 제작, 신데렐라 인형 발송으로 이어지는 동일 작성자의 기록이다. 리틀 머메이드가 이름 붙은 화자로 이 공간을 만들고 인형을 지상으로 보낸 일을 직접 회고하며, 필드 대화의 홀로그램도 인형에 언령을 넣는 행위를 재현한다. 따라서 단순한 능력·장소 유사성을 넘는 동일 사건의 연결로 '유력한 해석'과 해당 공개 근거의 true 처리가 타당하다. 세이렌은 등록 별칭이며 네 subject 모두 해당 후보와 부합한다.",
+      "evidence": [
+        {
+          "scene_id": "unbreakable_sphere_lost_00",
+          "line": 2,
+          "quote": "글러트니 안에서 물거품 정원을 다 만든 지 한 달? 정도가 된 것 같다. "
+        },
+        {
+          "scene_id": "unbreakable_sphere_lost_01",
+          "line": 10,
+          "quote": "에이브가 내게 준 물거품이라면··· 반드시."
+        },
+        {
+          "scene_id": "unbreakable_sphere_lost_02",
+          "line": 10,
+          "quote": "글러트니의 코어로부터 시선을 피하기 위해 [물거품 막]을 만든 것처럼."
+        },
+        {
+          "scene_id": "unbreakable_sphere_lost_03",
+          "line": 2,
+          "quote": "밖으로 올려보낼 첫 번째 물거품으로, 신데렐라를 닮은 아이를 만드는 데 성공했다."
+        },
+        {
+          "scene_id": "unbreakable_sphere_14",
+          "line": 27,
+          "quote": "리틀 머메이드: [물거품을 크게 확장해서, 글러트니의 코어로부터 시선을 가렸어.]"
+        },
+        {
+          "scene_id": "unbreakable_sphere_14",
+          "line": 32,
+          "quote": "리틀 머메이드: [하늘로 쏘아 올려, 지상으로 내보냈어.]"
+        },
+        {
+          "scene_id": "unbreakable_sphere_dialog_20",
+          "line": 4,
+          "quote": "리틀 머메이드: [이번에 만들 건··· 신데렐라 인형이네.]"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__old_tales_mini_memory:U04",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "02.wav부터 04.wav까지 침식의 설득, 협박, 자기 정체성 붕괴가 연속되고, 앞선 01.wav의 침식 정보를 기록하려는 니케와 연결된다. 기록자는 침식의 목소리를 듣는 피해자이므로 그 목소리의 원형이나 신데렐라를 곧바로 작성자로 올릴 수 없다. 개인 이름·고유 식별 단서는 확인되지 않았고 관련 원문 검색에서도 추가 공개를 찾지 못했으므로 세 작성자 참조를 함께 보류한 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_mini_memory_10",
+          "line": 3,
+          "quote": "저… 저는 침식에 걸린 니케입니다."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_11",
+          "line": 8,
+          "quote": "전 이게 [침식의 목소리]라고 생각합니다. "
+        },
+        {
+          "scene_id": "old_tales_mini_memory_12",
+          "line": 6,
+          "quote": "협박하고 있어요. 무서워요. 무섭게 말해요."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_13",
+          "line": 5,
+          "quote": "저는, 나는, 저는, 난, 침식을 기록을 해야 하는데…."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__red_ash_mini:U04",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "23개 대상 줄은 숨겨진 게임 데이터에 들어온 하나의 미완성 A.I.가 자기 개발 상황과 구상을 설명하는 연속 발화다. 메인 A.I.의 카운터라는 역할과 시뮬레이션 룸 구상이, 다른 장면의 잉크에 대한 설명 및 잉크 자신의 게임 제작 발언과 함께 맞아떨어진다. 다만 과거의 이 화자를 잉크라고 직접 부르는 줄은 없으므로 후보를 '가능성'으로 두고 제3자의 설명과 다른 사건의 말버릇을 모두 reveals_identity:false로 처리한 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_mini_07",
+          "line": 13,
+          "quote": "???: 제목은 시뮬레이션 룸 같은 거로 하고."
+        },
+        {
+          "scene_id": "red_ash_mini_07",
+          "line": 19,
+          "quote": "???: 나 원래는 ※※의 메인 A.I. 카운터로 극비리에 개발 중이거든."
+        },
+        {
+          "scene_id": "main_44_11",
+          "line": 65,
+          "quote": "에닉: 잉크라는 존재가 있으나, 제어가 불가능 해 행동 범위를 시뮬레이션 룸만으로 한정했습니다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_04",
+          "line": 152,
+          "quote": "잉크: 몰입감 넘치면서도 재미난 게임을 하나 만들 수 있겠다 싶더라고."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__coins_in_rush:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "12개 대상 줄은 조명 차단 뒤 한 디스플레이를 통해 현상금을 거는 동일 방송자의 발화다. 후속 장면에서 그 사건의 괴도라는 질문에 응한 인물이 벨벳이라고 직접 소개하고, 사라진 타겟의 사진을 제시하며 돌려주는 조건을 말한다. 머스탱과의 대화도 이벤트 직전 등장과 발언의 당사자를 벨벳으로 연결한다. 말투만의 추론이 아니므로 벨벳·유력한 해석이 타당하고, 이름을 밝히는 인용의 true와 나머지 정황 근거의 false도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_13",
+          "line": 79,
+          "quote": "???: 무려, 1억 크레디트를 줄게♥"
+        },
+        {
+          "scene_id": "coins_in_rush_15",
+          "line": 103,
+          "quote": "머스탱: 원래 Target도, 괴도가 데려간 것 같으니까Yo."
+        },
+        {
+          "scene_id": "coins_in_rush_17",
+          "line": 15,
+          "quote": "???: 응."
+        },
+        {
+          "scene_id": "coins_in_rush_17",
+          "line": 65,
+          "quote": "벨벳: 나는 벨벳."
+        },
+        {
+          "scene_id": "coins_in_rush_17",
+          "line": 181,
+          "quote": "벨벳: 열심히 안 하면, 얘 안 돌려줄 거다?"
+        },
+        {
+          "scene_id": "coins_in_rush_20",
+          "line": 22,
+          "quote": "머스탱: 그래서 그렇게, 화려하게 등장한 거였군Yo."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__폴리:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "키메라라고 외치는 두 줄에 폴리가 직접 반응하고, 그 범인을 향해 뛰어들자 비명과 제압이 이어진다. 따라서 세 참조를 체포되는 한 범인으로 묶는 것이 자연스럽고 군중으로 처리할 수 없다. 앞선 수사 장면에서 엘리시온을 떠난 동물 실험 연구원이라는 역할까지는 드러나지만 이름이나 고유 별칭으로 이어지지는 않는다. 관련 원문 검색에서도 추가 신원을 찾지 못했으므로 target을 비운 판단 보류가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "poli_04",
+          "line": 19,
+          "quote": "???: 말도 안 돼! 키메라다!"
+        },
+        {
+          "scene_id": "poli_04",
+          "line": 21,
+          "quote": "폴리: 누가 개 키메라라는 거냐앗!"
+        },
+        {
+          "scene_id": "poli_04",
+          "line": 24,
+          "quote": "폴리가 범인을 쓰러뜨리고 올라타 총을 겨눴다."
+        },
+        {
+          "scene_id": "poli_03",
+          "line": 193,
+          "quote": "폴리: 범인은 그 연구원이에여!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__character_episodes__폴크방:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "대상은 결승전에서 폴크방이 다시 달려나가는 순간의 환호이며, 바로 다음 지문이 '사람들의 환호'라고 설명하고 TV 중계도 관중의 환호로 재확인한다. 폴크방의 '감독님'은 이 익명 화자에게 답하여 신원을 드러내는 대사가 아니다. 특정 개인으로 연결할 단서가 없으므로 군중·엑스트라, 빈 target·alternatives, reveals_identity를 쓰지 않은 근거 구성이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "folkwang_04",
+          "line": 23,
+          "quote": "???: 와아아아아-!"
+        },
+        {
+          "scene_id": "folkwang_04",
+          "line": 24,
+          "quote": "사람들의 환호 속에서 마침내."
+        },
+        {
+          "scene_id": "folkwang_04",
+          "line": 29,
+          "quote": "TV 소리: [그녀는 자신의 땀을 이용한 기술, 스웨트 슬라이드로 미끄러지듯 앞으로 나아가 많은 관중들의 환호를···.]"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__colorless:U02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "츠바이가 과거 학생들의 진로 희망을 떠올리는 장면이며, 후속 설명은 바리스타를 희망한 사람을 루아, 그 커피를 파는 카페를 운영하려던 사람을 피어로 구분한다. 따라서 L24의 후보는 루아이고 인접한 L25의 화자와 혼동하지 않았다. 이는 제3자가 전한 진로 희망과 기억 속 발언을 대조한 추론이므로 '가능성' 및 reveals_identity:false가 타당하다. 루아는 레지스트리에 없지만 원문에 이름이 있어 null ID의 개인 후보로 남긴 것도 맞다.",
+      "evidence": [
+        {
+          "scene_id": "colorless_02",
+          "line": 22,
+          "quote": "언젠가 츠바이가 들었던 목소리가 하나둘 겹쳐졌다."
+        },
+        {
+          "scene_id": "colorless_02",
+          "line": 24,
+          "quote": "???: 커피 마시는 거··· 좋아하니까··· 바리스타라고···. 안 어울릴까···?"
+        },
+        {
+          "scene_id": "colorless_11",
+          "line": 34,
+          "quote": "츠바이: 루아 선배는 바리스타를 해보고 싶다고."
+        },
+        {
+          "scene_id": "colorless_11",
+          "line": 35,
+          "quote": "츠바이: 피어는 그런 루아 선배가 만든 커피를 파는 카페를 운영하고 싶다고."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__a_c_p_u__freeze:U03",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "호러 존에서 웃음소리에 키리가 비명을 지른 뒤, 다음 장면은 같은 장소에서 드레이크를 마주한 키리의 사과로 이어진다. 드레이크가 귀신이 아니라 빌런으로 보고 놀라라고 답하고 키리도 그 반응을 다시 해 보므로, 직전 놀람의 상대를 이름 붙은 화자로 확인하는 연속 사건이다. 앞서 사탕을 주고 떠난 분장한 여자와 혼동하지 않았으며 드레이크·유력한 해석과 해당 대사의 reveals_identity:true가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "a.c.p.u._freeze_07",
+          "line": 102,
+          "quote": "???: 후··· 후후···."
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_08",
+          "line": 10,
+          "quote": "키리: 제가 너무 귀신 보듯 놀랐죠, 죄송해요···."
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_08",
+          "line": 12,
+          "quote": "드레이크: 난 귀신이 아니라 빌런이다."
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_08",
+          "line": 13,
+          "quote": "드레이크: 앞으로는 빌런 보듯 놀라도록 해라!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__boom_the_ghost:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엔진룸으로 향하던 일행이 들은 '잘 가'는 후속 장면에서 밝혀지는 홀로그램의 외형·행동과 하위 홀로그램들의 반복 발화에 연결된다. 그러나 동일 계열의 하위 개체가 여럿이며 이 목소리를 알프레드나 이름 있는 상위 홀로그램 중 하나로 연결할 근거는 없다. 집단 표기 '하위 홀로그램들'까지만 남기고 개인 판정을 보류한 것은 집단 한정 규칙에 부합한다. 일행이 직접 듣고 반응하는 사건의 목소리를 단순 군중으로 돌리지 않았고 공개 플래그도 모두 false로 유지했다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_05",
+          "line": 31,
+          "quote": "???: 잘 가."
+        },
+        {
+          "scene_id": "boom_the_ghost_05",
+          "line": 39,
+          "quote": "라피: 잠깐··· 만. 방금 무슨 소리 들리지 않았어?"
+        },
+        {
+          "scene_id": "boom_the_ghost_13",
+          "line": 37,
+          "quote": "일레그: 홀로그램이에여."
+        },
+        {
+          "scene_id": "boom_the_ghost_15",
+          "line": 14,
+          "quote": "알프레드: 아무튼 이 상위 홀로그램들이 각 영역을 담당하는데, 이들의 하위에 수많은 일반 홀로그램이 있습니다유토."
+        },
+        {
+          "scene_id": "boom_the_ghost_15",
+          "line": 71,
+          "quote": "하위 홀로그램: 잘 가아아--!!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__red_ash_mini:U03",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "voice_index 1은 신데렐라의 대괄호 발언과 구별되는 거울의 붙임표 발언이다. old_tales_08에서 '난 누구니'에 대한 답부터 갓데스를 위한다는 말을 퀸을 위한 말로 바꾸는 결말까지 같은 문답과 침식 사건이 화자 미러의 대사로 재현된다. 따라서 작성자나 신데렐라의 목소리를 섞지 않은 미러 연결이 맞고, 같은 사건의 이름 붙은 대사를 공개 근거로 삼은 유력한 해석도 타당하다. 문장부호 차이는 있으나 동일 문답의 대응은 명확하다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_mini_06",
+          "line": 8,
+          "quote": "-네가 누구인지는 중요하지 않단다-"
+        },
+        {
+          "scene_id": "red_ash_mini_06",
+          "line": 51,
+          "quote": "-모든 것은 퀸을 위해-"
+        },
+        {
+          "scene_id": "old_tales_08",
+          "line": 4,
+          "quote": "미러: 네가 누구인지는 중요하지 않단다."
+        },
+        {
+          "scene_id": "old_tales_08",
+          "line": 75,
+          "quote": "미러: 모든 것은 퀸을 위해."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__old_tales_mini_memory:U06",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "voice_index 0의 '침식 개체'는 총성 이전에 머릿속 목소리를 묘사하고 퀸을 위해를 반복하는 피해자의 목소리다. 총성과 쓰러지는 소리 뒤의 '침식 개체 사살 완료'를 말한 별도 화자와 구분해야 하며, 입력 연결은 전반부의 목소리만 근거로 삼아 이 구분을 지켰다. 앞선 음성 기록자와의 연속성은 확인되지만 개인 이름은 확인되지 않았으므로 보류가 타당하며 미러나 사살자로 치환할 수 없다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_mini_memory_13",
+          "line": 8,
+          "quote": "후후, 퀸을 위해."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_14",
+          "line": 3,
+          "quote": "목소리가 들려요. 머릿속에서 달콤한 목소리가…."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_14",
+          "line": 6,
+          "quote": "퀸을 위해 퀸을 위해 퀸을 위해 퀸을 위해 퀸을 위해 퀸을 위해 퀸을 위-"
+        },
+        {
+          "scene_id": "old_tales_mini_memory_14",
+          "line": 8,
+          "quote": "(탕-! 하는 소리가 들린다.)"
+        },
+        {
+          "scene_id": "old_tales_mini_memory_14",
+          "line": 11,
+          "quote": "침식 개체 사살 완료."
+        }
+      ]
+    }
+  ]
+}

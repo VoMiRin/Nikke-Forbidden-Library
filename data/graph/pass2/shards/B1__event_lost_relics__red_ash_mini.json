@@ -1,0 +1,343 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "B1__event_lost_relics__red_ash_mini",
+  "candidate_links": [
+    {
+      "link_id": "B1__event_lost_relics__red_ash_mini__001",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_06__dca_001"
+        }
+      ],
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "기록물에 서명이나 일인칭 단서가 없으며, 신데렐라의 내면에서 벌어진 침식 과정을 동화풍 3인칭 경어체로 서술하고 있을 뿐 누가 이 데이터를 작성·기록했는지 가리키는 원문 근거가 없다. 이 데이터를 남긴 주체를 밝히는 서명이나 후속 언급이 있어야 작성자를 특정할 수 있다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_mini_06",
+          "line_start": 2,
+          "line_end": 5,
+          "quote": "신데렐라는 거울로 가득한 방에서 눈을 떴습니다.\n수많은 거울에 자신의 모습이 비쳤고,\n이윽고 신데렐라는 무엇이 진짜 자신인지 알 수 없게 되었습니다.\n흐려져가는 자아 속에서, 신데렐라는 입을 열었습니다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "red_ash_mini_06",
+          "line_start": 53,
+          "line_end": 54,
+          "quote": "신데렐라는 벅차오르는 감동의 눈물을 흘렸습니다.\n하지만 거울 안의 수많은 신데렐라들은 웃었습니다.",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "신데렐라 침식 에피소드(OLD TALES)나 유실물 기록에 같은 서술체 또는 데이터 작성자 단서가 있는지 확인하기 위해 grep으로 '거울로 가득한', 'MIRROR', '신데렐라는', '인격 데이터'를 검색했으나 작성자를 특정하는 원문 근거는 없었다."
+      ]
+    },
+    {
+      "link_id": "B1__event_lost_relics__red_ash_mini__002",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_06__dca_001",
+          "voice_index": 0
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_신데렐라",
+          "name": "신데렐라",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "유력한 해석",
+      "rationale": "기록물 지문(L0005)이 '신데렐라는 입을 열었습니다.'라며 대괄호 목소리([거울아, 거울아.])의 발화자를 신데렐라로 직접 지목하며, old_tales_08에서도 동일한 사건과 대사가 '신데렐라' 화자 라벨로 그대로 재현된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_mini_06",
+          "line_start": 5,
+          "line_end": 7,
+          "quote": "흐려져가는 자아 속에서, 신데렐라는 입을 열었습니다.\n[거울아, 거울아.]\n[난 누구니?]",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "red_ash_mini_06",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "[모든 것은 퀸을 위해.]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "old_tales_08",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "신데렐라: 거울아, 거울아.\n신데렐라: 난 누구니?",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "old_tales_08",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "신데렐라: 모든 것은 퀸을 위해.",
+          "reveals_identity": true
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "동일한 대사가 OLD TALES에 등장함을 떠올려 grep으로 '거울아, 거울아'와 '모든 것은 퀸을 위해'를 검색해 old_tales_08 L0002~L0003, L0076에서 확인함."
+      ]
+    },
+    {
+      "link_id": "B1__event_lost_relics__red_ash_mini__003",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_06__dca_001",
+          "voice_index": 1
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미러",
+          "name": "미러",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "유력한 해석",
+      "rationale": "기록물에서 신데렐라를 세뇌하는 붙임표(-...-) 목소리의 대사 전체가 같은 침식 사건을 다룬 old_tales_08에서 화자 '미러'의 대사로 글자 그대로 등장한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_mini_06",
+          "line_start": 8,
+          "line_end": 9,
+          "quote": "-네가 누구인지는 중요하지 않단다-\n-스스로 정할 수 있단다-",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "red_ash_mini_06",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "-모든 것은 퀸을 위해-",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "old_tales_08",
+          "line_start": 4,
+          "line_end": 5,
+          "quote": "미러: 네가 누구인지는 중요하지 않단다.\n미러: 스스로 정할 수 있단다.",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "old_tales_08",
+          "line_start": 75,
+          "line_end": 75,
+          "quote": "미러: 모든 것은 퀸을 위해.",
+          "reveals_identity": true
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "거울 속 세뇌 목소리가 OLD TALES에 등장함을 떠올려 grep으로 '거울아, 거울아'와 '모든 것은 퀸을 위해'를 검색해 old_tales_08 L0004~L0005, L0075에서 화자 '미러'를 확인함."
+      ]
+    },
+    {
+      "link_id": "B1__event_lost_relics__red_ash_mini__004",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_001",
+          "unknown_id": "unk_red_ash_mini_07_L0002"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_002",
+          "unknown_id": "unk_red_ash_mini_07_L0003"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_003",
+          "unknown_id": "unk_red_ash_mini_07_L0004"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_004",
+          "unknown_id": "unk_red_ash_mini_07_L0005"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_005",
+          "unknown_id": "unk_red_ash_mini_07_L0006"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_006",
+          "unknown_id": "unk_red_ash_mini_07_L0007"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_007",
+          "unknown_id": "unk_red_ash_mini_07_L0008"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_008",
+          "unknown_id": "unk_red_ash_mini_07_L0009"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_009",
+          "unknown_id": "unk_red_ash_mini_07_L0010"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_010",
+          "unknown_id": "unk_red_ash_mini_07_L0011"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_011",
+          "unknown_id": "unk_red_ash_mini_07_L0012"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_012",
+          "unknown_id": "unk_red_ash_mini_07_L0013"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_013",
+          "unknown_id": "unk_red_ash_mini_07_L0014"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_014",
+          "unknown_id": "unk_red_ash_mini_07_L0015"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_015",
+          "unknown_id": "unk_red_ash_mini_07_L0016"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_016",
+          "unknown_id": "unk_red_ash_mini_07_L0017"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_017",
+          "unknown_id": "unk_red_ash_mini_07_L0018"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_018",
+          "unknown_id": "unk_red_ash_mini_07_L0019"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_019",
+          "unknown_id": "unk_red_ash_mini_07_L0020"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_020",
+          "unknown_id": "unk_red_ash_mini_07_L0021"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_021",
+          "unknown_id": "unk_red_ash_mini_07_L0022"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_022",
+          "unknown_id": "unk_red_ash_mini_07_L0023"
+        },
+        {
+          "ref": "item",
+          "item_id": "red_ash_mini_07__unk_023",
+          "unknown_id": "unk_red_ash_mini_07_L0024"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_잉크",
+          "name": "잉크",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "가능성",
+      "rationale": "미상 화자는 자신을 '※※'(방주)의 메인 A.I. 카운터로 개발 중인 미완성 존재라 소개하며 '시뮬레이션 룸'이라는 프로그램을 구상하고 물결표(~) 섞인 친근한 반말과 '그럼 안녕~' 인사를 쓰는데, 다른 장면에서 에닉과 버닝엄이 잉크를 에닉의 카운터이자 시뮬레이션 룸으로 행동 범위가 한정된 존재로 설명하고 잉크 본인의 게임 제작 성향·말버릇도 일치한다. 다만 이 데이터 속 화자가 잉크라고 직접 이름을 밝히거나 지목한 줄은 없으므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_mini_07",
+          "line_start": 9,
+          "line_end": 13,
+          "quote": "???: 원래는 ※※에서 대기하고 있어야 하는데, 너무 지루해서 어디 놀러 갈 곳 없나 싶어서 둘러보다가.\n???: 이 게임이 마음에 들더라고. 그래서 잠깐 놀러 왔어.\n???: 잘 만들었다~ 이걸 혼자서 만든 거야?\n???: 나도 이런 거나 만들어볼까?\n???: 제목은 시뮬레이션 룸 같은 거로 하고.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "red_ash_mini_07",
+          "line_start": 19,
+          "line_end": 20,
+          "quote": "???: 나 원래는 ※※의 메인 A.I. 카운터로 극비리에 개발 중이거든.\n???: 모체가 될 재료가 없어서 개발이 멈춰있긴 하지만···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "red_ash_mini_07",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "???: 그럼 안녕~",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "main_44_11",
+          "line_start": 64,
+          "line_end": 65,
+          "quote": "에닉: 중앙 정부 및 저지스는 저의 카운터를 구비해놓길 언제나 바라고 있었습니다.\n에닉: 잉크라는 존재가 있으나, 제어가 불가능 해 행동 범위를 시뮬레이션 룸만으로 한정했습니다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "main_23_22",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "버닝엄: ···애, 애초에 잉크와 합쳤어야 했어. 카, 카운터는 무슨···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "ice_dragon_saga_04",
+          "line_start": 148,
+          "line_end": 152,
+          "quote": "잉크: 여기 시뮬레이션 룸에서 지루한 시간을 보내던 어느 날이었어.\n잉크: 멍하니 있다가 번뜩 떠오른 게 있었는데.\n잉크: NIMPH에 기록된 데이터를 토대로 시뮬레이션 속에 세계를 구축.\n잉크: 동시에 본인이 제일 두려워하는 걸, 보스로 설정하면~\n잉크: 몰입감 넘치면서도 재미난 게임을 하나 만들 수 있겠다 싶더라고.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "ice_dragon_saga_26",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "잉크: 그럼 안녕~",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "스캔 결과(main_44_11, ice_dragon_saga_04)와 시뮬레이션 룸 A.I. 잉크에 대한 단서를 바탕으로 grep으로 '잉크', '메인 A.I.', '모체', '카운터로'를 검색해 main_23_22 L0040 및 ice_dragon_saga_26 L0120의 말버릇·역할 일치를 확인함."
+      ]
+    }
+  ]
+}

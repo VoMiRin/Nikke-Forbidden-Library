@@ -1,0 +1,202 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "B1__character_episodes__델타_닌자_시프",
+  "candidate_links": [
+    {
+      "link_id": "B1__character_episodes__델타_닌자_시프__001",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "delta_ninjathief_00__unk_005",
+          "unknown_id": "unk_delta_ninjathief_00_L0179"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미란다",
+          "name": "미란다",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "가능성",
+      "rationale": "천장 위에서 엿듣던 세 명(팬텀·퀀시·미란다) 가운데 합쇼체를 쓰는 미란다 목소리(L0178)가 더 가까이 가보겠다고 움직인 직후 '어··· 어라?' 하고 당황하며 타일이 떨어지므로 미란다가 가장 유력하나, 어미가 없는 짧은 탄성이고 세 명이 함께 천장에 있었으므로 간접 추론(가능성)으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line_start": 178,
+          "line_end": 181,
+          "quote": "???: 아직 소리가 잘 안 들립니다! 더 가까이 가보겠습니다!\n???: 어··· 어라?\n덜컥-\n천장의 타일이 떨어지고,",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line_start": 188,
+          "line_end": 188,
+          "quote": "미란다: 안녕하십니까! 지휘관!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 76,
+          "line_end": 77,
+          "quote": "미란다: 앗, 드디어 열었습니다!\n미란다: 어라?",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "entity_id": "char_퀀시",
+          "name": "퀀시",
+          "why": "같은 천장 위에서 귀를 가까이 대고 엿듣다가 함께 떨어진 일행이나, 타일이 무너지기 직전 더 가까이 이동하겠다고 말한 쪽은 미란다이므로 후순위 대안으로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 177,
+              "line_end": 177,
+              "quote": "???: 뭐 어때~ 그냥 귀만 가까이 대는 건데~ 키킥."
+            },
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 187,
+              "line_end": 187,
+              "quote": "퀀시: 키킥, 교관님 안녕~"
+            }
+          ]
+        },
+        {
+          "entity_id": "char_팬텀",
+          "name": "팬텀",
+          "why": "같은 천장 위에 있다가 함께 떨어진 일행이고 다른 장면에서 '어라···?'라는 탄성을 쓴 적도 있으나, 이 장면에서는 가까이 가지 말라고 말리는 입장이었으므로 직전에 더 다가간 미란다보다 후순위 대안으로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 176,
+              "line_end": 176,
+              "quote": "???: 너, 너무 가까이 가지 마시오. 이러다 떨어지면 어쩌려고 그러시오?"
+            },
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 185,
+              "line_end": 186,
+              "quote": "팬텀: 아하하하···.\n팬텀: 좋은 밤이요, 그대."
+            },
+            {
+              "scene_id": "seedy_club_08",
+              "line_start": 136,
+              "line_end": 136,
+              "quote": "팬텀: 어라···?"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "합쇼체를 쓰는 미란다가 당황할 때 짧은 탄성 '어라?'를 쓰는지 확인하기 위해 '어··· 어라'와 '미란다: 어라'를 grep하여 phantom_thief_vs_detective_00 L0077에서 확인함."
+      ]
+    },
+    {
+      "link_id": "B1__character_episodes__델타_닌자_시프__002",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "delta_ninjathief_00__unk_006",
+          "unknown_id": "unk_delta_ninjathief_00_L0182"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "괴도단",
+          "entity_type": "organization"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "천장 타일이 떨어지며 괴도단 세 명(팬텀·퀀시·미란다)이 한꺼번에 침대 위로 쏟아져 내릴 때 울린 추락 비명으로, 원문 지문이 '괴도단'으로 묶어 서술하고 비명 자체에도 개인 말투 특징이 없어 셋 중 특정 한 명의 비명인지 일행의 동시 비명인지 가릴 수 없으므로 원문 집단 표기('괴도단')까지만 남기고 판단을 보류한다(누가 비명을 질렀는지 가리키는 지문이나 대사가 있어야 개인을 특정할 수 있음).",
+      "supporting_evidence": [
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line_start": 180,
+          "line_end": 184,
+          "quote": "덜컥-\n천장의 타일이 떨어지고,\n???: 으··· 으아아아악!\n그곳에서 괴도단이 침대 위로 쏟아져 내렸다.\n우당탕탕-!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "delta_ninjathief_00",
+          "line_start": 185,
+          "line_end": 188,
+          "quote": "팬텀: 아하하하···.\n팬텀: 좋은 밤이요, 그대.\n퀀시: 키킥, 교관님 안녕~\n미란다: 안녕하십니까! 지휘관!",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "entity_id": "char_팬텀",
+          "name": "팬텀",
+          "why": "침대 위로 쏟아져 내린 괴도단원 중 한 명이며 다른 장면(seedy_club_08)에서도 거의 동일한 철자의 비명('으··· 으아아아악-!')을 지르지만, 세 명이 동시에 추락해 팬텀 단독 발화로 단정할 수 없다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 185,
+              "line_end": 186,
+              "quote": "팬텀: 아하하하···.\n팬텀: 좋은 밤이요, 그대."
+            },
+            {
+              "scene_id": "seedy_club_08",
+              "line_start": 138,
+              "line_end": 138,
+              "quote": "팬텀: 으··· 으아아아악-!"
+            }
+          ]
+        },
+        {
+          "entity_id": "char_미란다",
+          "name": "미란다",
+          "why": "직전에 천장 타일 가까이 다가간 인물로 보이고 이 이야기 다른 장면(delta_ninjathief_03)에서도 추락하며 유사한 비명('으··· 으아아아아아!')을 지르지만, 타일이 무너지며 세 명이 함께 쏟아져 내렸으므로 미란다 단독 발화로 단정할 수 없다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 188,
+              "line_end": 188,
+              "quote": "미란다: 안녕하십니까! 지휘관!"
+            },
+            {
+              "scene_id": "delta_ninjathief_03",
+              "line_start": 127,
+              "line_end": 127,
+              "quote": "미란다: 으··· 으아아아아아!"
+            }
+          ]
+        },
+        {
+          "entity_id": "char_퀀시",
+          "name": "퀀시",
+          "why": "천장 위에서 귀를 가까이 대고 있다가 함께 침대 위로 쏟아져 내린 괴도단원 중 한 명이나, 비명에 고유 말투가 없어 퀀시 단독 발화로 특정할 수 없다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 177,
+              "line_end": 177,
+              "quote": "???: 뭐 어때~ 그냥 귀만 가까이 대는 건데~ 키킥."
+            },
+            {
+              "scene_id": "delta_ninjathief_00",
+              "line_start": 187,
+              "line_end": 187,
+              "quote": "퀀시: 키킥, 교관님 안녕~"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "비명 표현 '으··· 으아아'와 '퀀시: 으아'를 grep하여 팬텀(seedy_club_08 L0138)과 미란다(delta_ninjathief_03 L0127) 모두 유사한 비명을 쓰는 것을 확인함."
+      ]
+    }
+  ]
+}

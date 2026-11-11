@@ -1,0 +1,521 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "1ad74768660d27e194a53159f42617a04115a2b6146b6c299d83fe1342e40489",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1c946-7e4b-70c3-babc-c73cee77b5a0",
+  "reviews": [
+    {
+      "audit_id": "B1__event_stories__sea_you_again:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "도입부의 바다·출격·전용 수영장에 관한 1인칭 독백이 마지막 장면에서 이어지고, 첫 전투를 마친 같은 화자가 자신의 이름을 어드마이어 호라고 밝힌다. 단순히 군함의 역할을 제3자가 설명한 경우가 아니라 독백 주체의 자기소개이므로 정체 후보 있음·유력한 해석이 타당하다. 레지스트리 조회에서 미등록임을 확인했으며 null ID도 적절하다. 이름을 밝히는 27장면 L0087만 직접 공개로 표시하고 나머지 독백은 false로 둔 구분에도 문제가 없다.",
+      "evidence": [
+        {
+          "scene_id": "sea_you_again_00",
+          "line": 2,
+          "quote": "나는 새파란 하늘 아래, 드넓은 바다 위에서."
+        },
+        {
+          "scene_id": "sea_you_again_00",
+          "line": 6,
+          "quote": "지금은 나만을 위한 멋진 수영장에서 쉬는 중이다."
+        },
+        {
+          "scene_id": "sea_you_again_27",
+          "line": 80,
+          "quote": "나는 새파란 하늘 아래, 드넓은 바다 위에서."
+        },
+        {
+          "scene_id": "sea_you_again_27",
+          "line": 85,
+          "quote": "그 전투의 여파로 나는 다시 수영장에서 쉬고 있다."
+        },
+        {
+          "scene_id": "sea_you_again_27",
+          "line": 87,
+          "quote": "내 이름은 [어드마이어 호]."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__lost_relics__UFO챈_zip:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "01·02장면의 본문이 앞서 외계인 목격 글을 올린 작성자임을 각각 자칭하므로 세 author 참조를 같은 연재 작성자로 묶을 근거가 있다. 궤도 엘리베이터 근처 거주, 군부대 동행, 입대 예정은 개인의 이름을 밝히지 않으며 챈러·원챈러도 실명이나 고유한 서명이 아니다. 원챈러를 검색해도 이 기록 외에 정체를 잇는 원문을 찾지 못했다. 댓글 작성자들의 말과 본문 작성자를 같은 개인으로 합치지 않은 채 target을 비우고 보류한 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "UFO챈.zip_00",
+          "line": 3,
+          "quote": "근데 울집이 그 근처라. ㄹㅇ로 외계인 직관함."
+        },
+        {
+          "scene_id": "UFO챈.zip_01",
+          "line": 2,
+          "quote": "전에 외계인 봤다고 올린 챈러임."
+        },
+        {
+          "scene_id": "UFO챈.zip_02",
+          "line": 2,
+          "quote": "지금은 성지가 된 외계인 글 올린 챈러임."
+        },
+        {
+          "scene_id": "UFO챈.zip_02",
+          "line": 3,
+          "quote": "지금 군부대랑 같이 움직이고 있고, 다음주쯤 입대할 거 같음."
+        },
+        {
+          "scene_id": "UFO챈.zip_02",
+          "line": 11,
+          "quote": "  ㄴ 원챈러 살아있어? 더 이상 글이 안올라오는데"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__memories_teller:U02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "대상 다섯 줄은 콤과 숨바꼭질하는 동일한 벙커의 아이이며, 헤르민이 우리 딸이라고 가리키는 아이와 이어진다. 이후 콤은 아트에게 이름을 지어준 경위를 설명하고 직접 너는 벙커의 아이라고 말한다. 29장면 L0017~0024 인용은 아트라는 호명과 벙커의 아이와의 동일성을 함께 포함하므로 reveals_identity: true와 유력한 해석이 타당하다. 과거 인간이던 아이가 방주에서 니케가 된 과정도 해당 장면에 설명되므로 시점 차이를 다른 사람으로 볼 이유가 없다. 33장면의 기억 회복은 보조 근거이며 인용 자체에 벙커의 아이와의 연결이 없어 false로 둔 것도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "memories_teller_22",
+          "line": 7,
+          "quote": "벙커의 아이: 그럼 내가 숨을 테니까, 1분 세고 찾아요!"
+        },
+        {
+          "scene_id": "memories_teller_22",
+          "line": 21,
+          "quote": "중년 헤르민: ···항상 우리 딸이랑 잘 놀아줘서 고맙습니다."
+        },
+        {
+          "scene_id": "memories_teller_29",
+          "line": 11,
+          "quote": "콤: 니케가 되었다."
+        },
+        {
+          "scene_id": "memories_teller_29",
+          "line": 18,
+          "quote": "콤: 방주에 오자마자 내가 이름 지어줬다."
+        },
+        {
+          "scene_id": "memories_teller_29",
+          "line": 21,
+          "quote": "콤: 아트. 나를 기억하나?"
+        },
+        {
+          "scene_id": "memories_teller_29",
+          "line": 23,
+          "quote": "콤: 너는 벙커의 아이다."
+        },
+        {
+          "scene_id": "memories_teller_33",
+          "line": 179,
+          "quote": "아트: 기억··· 해요."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__school_of_lock:U02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 외침은 교문 앞에서 시험 징크스 기행을 벌이는 학생 무리의 등장에 속한다. 뒤이어 검은 천을 쓴 학생들이 몰려오고 다크서클이 심한 학생의 선창과 집단 응답이 이어지지만, 대상 두 줄을 특정한 개인에게 연결하는 호명이나 공개는 없다. 다크서클이 심한 학생의 목소리일 가능성은 남아도 원문으로 개인 연결을 정할 수 없으며, 지휘관의 놀라는 선택지만으로 이 외침을 특정 인물과의 개별 대화라고 보기는 어렵다. 마르차나의 설명과 다른 원문의 오른발부터 검색 결과도 실명 후보를 추가하지 않으므로 군중·엑스트라 판정과 빈 target이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "school_of_lock_02",
+          "line": 4,
+          "quote": "???: 드디어 나타났다!!"
+        },
+        {
+          "scene_id": "school_of_lock_02",
+          "line": 5,
+          "quote": "???: 오른발부터 교문을 넘는 사람!"
+        },
+        {
+          "scene_id": "school_of_lock_02",
+          "line": 10,
+          "quote": "학교 안쪽에서 검은 천을 쓴 학생들이 우르르 달려왔다."
+        },
+        {
+          "scene_id": "school_of_lock_02",
+          "line": 18,
+          "quote": "검은 천을 쓴 학생들: 오오! 믿습니다!"
+        },
+        {
+          "scene_id": "school_of_lock_03",
+          "line": 55,
+          "quote": "마르차나: 아까 보셨듯 필기시험 전의 학교는 기행과 소란스러움으로 가득 차 있습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__lord_for_justice:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "대상 다섯 줄은 K의 통화에서 X로 화자가 바뀌기 전 무기질한 목소리의 연속 발화이고, X의 줄을 subject에 섞지 않았다. 뒤의 통화에서 VII 역시 무기질한 목소리로 등장하며, K의 임무와 기억 소거를 지시하는 저지스 윗줄이라는 역할도 부합해 VII를 개인 후보로 둘 간접 근거가 있다. 다만 첫 통화의 화자가 VII라고 직접 밝혀지지는 않으므로 다른 저지스 관계자일 여지를 남겨야 한다. 가능성으로 제한하고 다른 통화의 VII 자기소개까지 reveals_identity: false로 둔 판정은 이 한계를 반영한다. X의 소개 인용도 화자 교체와 관계를 보여주는 맥락이며 X를 대상의 직접 정체로 오인하지 않았다.",
+      "evidence": [
+        {
+          "scene_id": "lord_for_justice_00",
+          "line": 42,
+          "quote": "???: 보고."
+        },
+        {
+          "scene_id": "lord_for_justice_00",
+          "line": 47,
+          "quote": "???: 즉시 집행할 것."
+        },
+        {
+          "scene_id": "lord_for_justice_00",
+          "line": 52,
+          "quote": "조금 전의 무기질한 목소리와는 다른, 노인의 목소리가 핸드폰에서 흘러나왔다."
+        },
+        {
+          "scene_id": "lord_for_justice_05",
+          "line": 133,
+          "quote": "통화 버튼을 누르자, 핸드폰에서 무기질한 목소리가 흘러나왔다."
+        },
+        {
+          "scene_id": "lord_for_justice_05",
+          "line": 139,
+          "quote": "VII: VII."
+        },
+        {
+          "scene_id": "lord_for_justice_07",
+          "line": 35,
+          "quote": "K: [저지스]가, 그것도 윗줄이 타겟이라고?"
+        },
+        {
+          "scene_id": "lord_for_justice_11",
+          "line": 14,
+          "quote": "VII: 지우라고 지시한 것도 나이고,"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__new_year_new_sword:U02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "홍련을 깨우며 장화와 중위를 언급하던 목소리가 공격받은 직후, 문밖에 쓰러진 한 니케가 홍련을 다시 부르고 장화가 중위를 죽이러 갔다는 경고를 이어간다. 두 subject는 같은 부상자의 연속 발화로 연결되고, 서 있는 두 동료와도 구별된다. 실명은 없지만 쓰러져 있는 니케라는 원문 화자 라벨로 특정 개인을 가리킬 수 있어 소속 집단만 알아낸 경우와는 다르다. 미등록 조회 결과에 따른 null ID, 유력한 해석, 동일 사건의 해당 화자 라벨이 포함된 두 인용의 직접 공개 표시는 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "new_year_new_sword_10",
+          "line": 22,
+          "quote": "???: 홍ㄹ···!"
+        },
+        {
+          "scene_id": "new_year_new_sword_10",
+          "line": 24,
+          "quote": "???: 일어나! 지금··· 장화가··· 중위님을··· 크헉!"
+        },
+        {
+          "scene_id": "new_year_new_sword_10",
+          "line": 28,
+          "quote": "쓰러져 있는 니케: 홍··· 련···."
+        },
+        {
+          "scene_id": "new_year_new_sword_10",
+          "line": 30,
+          "quote": "이를 묵묵히 바라보고 있는 두 명의 니케."
+        },
+        {
+          "scene_id": "new_year_new_sword_10",
+          "line": 35,
+          "quote": "쓰러져 있던 니케가 홍련의 발목을 움켜쥐었다."
+        },
+        {
+          "scene_id": "new_year_new_sword_10",
+          "line": 36,
+          "quote": "쓰러져 있는 니케: 장화를··· 막아야··· 해··· 중위를··· 죽이러 갔···!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__persona_on_frontline:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여덟 subject는 모나에게 경로와 변신을 묻고 페르소나를 쓰는 상대 화자의 줄이며, 이몸이라는 말투로 응답하는 모나의 줄을 포함하지 않는다. 다음 만남에서 철가면을 쓴 괴도가 모나에게 대화를 제안하고, 이어진 카페 장면에서 퀸으로 자기소개한다. 이름이 공개된 두 사람이 어제와 오늘의 만남을 명시적으로 인정하므로 단순한 말투 유사성을 넘어 대상 사건과 연결되며 유력한 해석이 적절하다. 09장면의 자기소개·동일 사건 설명과 26장면의 실명 자기소개는 인용 안에 후보 이름 및 연결이 있고, 나머지 상황 근거는 false로 구분되어 있다.",
+      "evidence": [
+        {
+          "scene_id": "persona_on_frontline_01",
+          "line": 116,
+          "quote": "???: 모나. 다음 경로는?"
+        },
+        {
+          "scene_id": "persona_on_frontline_01",
+          "line": 124,
+          "quote": "???: 모나, 변신하는 건 어때?"
+        },
+        {
+          "scene_id": "persona_on_frontline_01",
+          "line": 131,
+          "quote": "???: ···페르소나!"
+        },
+        {
+          "scene_id": "persona_on_frontline_08",
+          "line": 51,
+          "quote": "철가면 같은 마스크를 쓴 괴도가, 고양이 같은 괴도를 바라본다."
+        },
+        {
+          "scene_id": "persona_on_frontline_08",
+          "line": 53,
+          "quote": "???: ···모나. 잠깐 이야기해봐도 괜찮지 않을까? 아무래도 적처럼 보이지는 않아."
+        },
+        {
+          "scene_id": "persona_on_frontline_09",
+          "line": 56,
+          "quote": "퀸(마코토): 반가워. [퀸]이라고 부르면 돼."
+        },
+        {
+          "scene_id": "persona_on_frontline_09",
+          "line": 165,
+          "quote": "모나: 아무튼. 어제랑 오늘, 너희들과 만났을 때는 그것들을 처리하고 다니고 있었던 거다."
+        },
+        {
+          "scene_id": "persona_on_frontline_26",
+          "line": 257,
+          "quote": "퀸(마코토): ···내 이름은 [니지마 마코토]라고 해. 앞으로는 [마코토]라고 불러주면 기쁠 것 같아."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__new_year_new_sword:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "총 대신 검으로 랩쳐 무리에 뛰어들기를 두려워하는 두 줄은 지문이 누군가의 말 한마디로 받으므로 같은 화자로 묶을 수 있다. 홍련의 반응 뒤 장화가 직접 대답하기 때문에 장면을 채우는 군중으로 처리하기도 어렵다. 앞 장면의 임무 설명으로 근접 전투 스쿼드 구성원인 것은 알 수 있지만, 나머지 구성원 중 누구인지는 원문에 특정되지 않는다. 원문에 등장하는 실제 소속 스쿼드를 squad target으로 남기되 개인 후보로 승격하지 않고 verdict·confidence를 모두 판단 보류로 둔 처리가 타당하다. 개인을 공개하는 근거가 없어 reveals_identity를 모두 false로 둔 것도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "new_year_new_sword_03",
+          "line": 54,
+          "quote": "인류연합군 장교: 근접 전투 스쿼드라는 이름으로,  임무를 받아 전장에 나설 수 있게 되었다."
+        },
+        {
+          "scene_id": "new_year_new_sword_03",
+          "line": 55,
+          "quote": "인류연합군 장교: 따, 따라서 근접형으로 제작된 특수 개량 양산 개체 A,  근접 전투형 니케 10명은."
+        },
+        {
+          "scene_id": "new_year_new_sword_04",
+          "line": 76,
+          "quote": "???: [저 안에 뛰어들어서··· 저것들을 베어야 한다는 거지?]"
+        },
+        {
+          "scene_id": "new_year_new_sword_04",
+          "line": 77,
+          "quote": "???: [총이 아니라··· 검을 들고···.]"
+        },
+        {
+          "scene_id": "new_year_new_sword_04",
+          "line": 79,
+          "quote": "잔뜩 긴장한 누군가의 말 한마디가,"
+        },
+        {
+          "scene_id": "new_year_new_sword_04",
+          "line": 86,
+          "quote": "장화: 그래?"
+        },
+        {
+          "scene_id": "new_year_new_sword_04",
+          "line": 87,
+          "quote": "장화: 난 검이라서 좀 더 쉬울 거 같은데."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__lion_heart:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "그레이의 발화와 반응 사이에 멀리서 들린 하울링이 들어가므로 대상 울음소리를 그레이에게 연결할 수 없다. 레오나는 근처의 늑대 무리를 언급하고, 이후에도 그레이가 보았던 숲속 늑대 무리를 별도로 가리킨다. 특정 이름 있는 개체와의 대화나 정체 공개는 없고 배경 무리의 울음으로 기능하므로 군중·엑스트라, 빈 target·alternatives가 타당하다. 늑대 무리라는 종별 설명을 개인의 정체로 승격한 문제도 없다.",
+      "evidence": [
+        {
+          "scene_id": "lion_heart_10",
+          "line": 54,
+          "quote": "???: 아오오오-"
+        },
+        {
+          "scene_id": "lion_heart_10",
+          "line": 55,
+          "quote": "그레이: ··· ···!"
+        },
+        {
+          "scene_id": "lion_heart_10",
+          "line": 57,
+          "quote": "갑작스레 멀리서 들린 하울링 소리에, 그레이가 몸을 낮췄다."
+        },
+        {
+          "scene_id": "lion_heart_10",
+          "line": 63,
+          "quote": "레오나: 근처에 늑대 무리가 있나 봐."
+        },
+        {
+          "scene_id": "lion_heart_12",
+          "line": 190,
+          "quote": "레오나: 그레이, 숲 안쪽에 있는 늑대 무리가 있는 거 너도 봤잖아."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__phantom_thief_vs_detective:U02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "어둠 속의 짧게 끊긴 두 발화만으로 팬텀과 퀀시의 순서를 확정할 수는 없다. 다만 같은 장면에서 퀀시는 상대를 너라고 부르고 팬텀은 당신·그대를 쓰며, 팬텀은 퀀시의 정체와 악행을 캐묻다가 중단된 상태다. 따라서 너는 누구라는 첫 물음에 내가 묻고 싶다고 응수한 둘째 목소리를 팬텀으로 보는 간접 해석은 가능하다. 확신도를 가능성으로 제한하고 퀀시를 근거 있는 대안으로 유지한 판정이 타당하다. 퀀시의 등장 대사는 alternatives 쪽에 분리되어 있고, 팬텀의 이름이 나오는 다른 줄도 대상 발화를 직접 공개하지 않으므로 false로 둔 구분에 문제가 없다.",
+      "evidence": [
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line": 35,
+          "quote": "퀀시: 아! 너 때문에 경보음이 울린 거구나!"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line": 44,
+          "quote": "팬텀: 당신은 대체 얼마나 악한 짓을-"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line": 91,
+          "quote": "???: 너는··· 누구···."
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line": 92,
+          "quote": "???: 내가··· 묻고 싶은···."
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line": 102,
+          "quote": "팬텀: 아···!"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line": 104,
+          "quote": "퀀시: 아, 교관님! 좋은 새벽!"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_01",
+          "line": 20,
+          "quote": "팬텀: 내, 내가 말이오?"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_stories__persona_on_frontline:U02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "레오나 곁에 있던 곰 모양의 존재가 이어지는 장면에서 곰…? 라벨로 반응하고, 달려온 유키코가 그 존재를 곰이라고 부른다. 다음 장면에서는 유키코가 곰이라고 불러달라고 소개하고 화자 라벨도 곰으로 바뀐다. 장면이 연속되고 같은 존재에 대한 호명·소개가 있어 등록 인물 char_곰에 대한 유력한 해석이 타당하다. 단순히 동물 종을 알아낸 경우가 아니며, 두 true 인용은 이 특정 존재를 곰이라는 호칭과 직접 연결한다. 다른 시대나 다른 곰을 합친 근거도 없다.",
+      "evidence": [
+        {
+          "scene_id": "persona_on_frontline_02",
+          "line": 91,
+          "quote": "???: ··· ···."
+        },
+        {
+          "scene_id": "persona_on_frontline_02",
+          "line": 92,
+          "quote": "···한 마리의 곰이었다."
+        },
+        {
+          "scene_id": "persona_on_frontline_03",
+          "line": 71,
+          "quote": "곰…?: 열면 안 된다곰!"
+        },
+        {
+          "scene_id": "persona_on_frontline_03",
+          "line": 112,
+          "quote": "???: 고, 곰! 괜찮아??"
+        },
+        {
+          "scene_id": "persona_on_frontline_03",
+          "line": 113,
+          "quote": "곰…?: 유, 유키코···!"
+        },
+        {
+          "scene_id": "persona_on_frontline_04",
+          "line": 71,
+          "quote": "유키코: ···네, 네. 일단은··· 곰이라고 불러주세요."
+        },
+        {
+          "scene_id": "persona_on_frontline_04",
+          "line": 76,
+          "quote": "곰: 곰은 곰곰이다곰!"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__lost_relics__UFO챈_zip:U16",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "voice_index 4는 원글 작성자의 생사를 묻는 네 번째 댓글에 해당한다. 질문은 원글 작성자를 제3자로 가리키고 다음 익명 댓글이 사망 소식을 답하므로, 작성자 본인의 목소리로 합칠 근거가 없다. 익명 이용자끼리의 짧은 소식 교환이며 특정 개인을 공개하는 이름이나 연결도 없어 군중·엑스트라 판정이 타당하다. 근거에 이웃 댓글이 함께 인용되어 있어도 subject는 네 번째 댓글의 참조 하나로 유지되어 있다.",
+      "evidence": [
+        {
+          "scene_id": "UFO챈.zip_02",
+          "line": 2,
+          "quote": "지금은 성지가 된 외계인 글 올린 챈러임."
+        },
+        {
+          "scene_id": "UFO챈.zip_02",
+          "line": 11,
+          "quote": "  ㄴ 원챈러 살아있어? 더 이상 글이 안올라오는데"
+        },
+        {
+          "scene_id": "UFO챈.zip_02",
+          "line": 12,
+          "quote": "  ㄴ 이사람 죽었다고 얼마전에 라디오에 나왔어요"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__lost_relics__UFO챈_zip:U04",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "voice_index 2는 사진의 디테일을 의심하는 두 번째 댓글이며, 사진을 올린 본문 작성자와 구별되는 익명 반응이다. 앞뒤의 합성 의심·성지순례 댓글도 이름 없는 이용자들의 반응일 뿐, 대상 목소리를 특정 인물로 잇지 않는다. 따라서 작성자와 별도의 군중·엑스트라로 처리하고 target을 비운 것이 타당하다. 인용 범위가 이웃 댓글을 포함하지만 한 voice 참조만 연결되어 있어 다른 댓글 작성자를 같은 개인으로 합친 문제는 없다.",
+      "evidence": [
+        {
+          "scene_id": "UFO챈.zip_00",
+          "line": 5,
+          "quote": "위에 사진 첨부해놨으니 보셈"
+        },
+        {
+          "scene_id": "UFO챈.zip_00",
+          "line": 8,
+          "quote": " ㄴ 디테일이 너무 높아서 오히려 의심스러운데."
+        },
+        {
+          "scene_id": "UFO챈.zip_00",
+          "line": 9,
+          "quote": " ㄴ 미래에서 성지순례 왔습니다. 위에 안믿는분들이 안타깝네요"
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__lost_relics__UFO챈_zip:U06",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "voice_index 0은 두 번째 게시글의 본문 목소리로, 첫 줄에서 전에 외계인을 봤다고 글을 올렸던 작성자임을 직접 말한다. 따라서 첫 글과 세 번째 글의 본문 작성자와 같은 사람으로 읽되, 작성자 단위와 목소리 단위의 연결을 따로 유지한 처리가 맞다. 외계인의 크기와 무장에 대한 관찰은 실명 공개가 아니고 챈러도 일반적인 이용자 호칭이다. 원문으로 개인 후보를 정하지 못하므로 author와 같이 빈 target 및 판단 보류를 유지한 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "UFO챈.zip_00",
+          "line": 3,
+          "quote": "근데 울집이 그 근처라. ㄹㅇ로 외계인 직관함."
+        },
+        {
+          "scene_id": "UFO챈.zip_01",
+          "line": 2,
+          "quote": "전에 외계인 봤다고 올린 챈러임."
+        },
+        {
+          "scene_id": "UFO챈.zip_01",
+          "line": 3,
+          "quote": "그때 본건 소형차만한 사이즈였는데 이번건 급이 다름."
+        },
+        {
+          "scene_id": "UFO챈.zip_01",
+          "line": 4,
+          "quote": "소형 빌라만한 사이즈인데 실탄으론 기스도 안남."
+        },
+        {
+          "scene_id": "UFO챈.zip_02",
+          "line": 2,
+          "quote": "지금은 성지가 된 외계인 글 올린 챈러임."
+        }
+      ]
+    }
+  ]
+}

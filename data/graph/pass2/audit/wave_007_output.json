@@ -1,0 +1,474 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "c7ec7f9d89ab71af184eba50a58d530ff3185857705660fa5e6cb27595323f90",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1ca28-9705-7ef3-8128-b32d8cf75e74",
+  "reviews": [
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U04",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여덟 subject의 장면 전체를 확인했다. 모두 탐색·회상·선택지·힌트를 서술하는 지문이며, 이 지문을 작성하거나 녹음한 작중 인물을 밝히는 서명이나 발언은 없다. 홍련의 말과 회상 속 그녀의 말은 기록 안의 목소리이지 지문 작성자의 실명 공개가 아니다. 특히 1001327·1001404의 들려오는 목소리를 작성자로 올릴 근거도 없다. 서로 다른 작성자가 확인되어 나눠야 하는 상황은 아니며, 작성자 후보 없이 판단 보류한 연결과 모든 reveals_identity:false가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001121",
+          "line": 12,
+          "quote": "거대한 아름드리나무 밑에서, [그녀]가 웃으며 지키지 못할 약속을 했다."
+        },
+        {
+          "scene_id": "white_memory_page_1001213",
+          "line": 2,
+          "quote": "홍련은 자신에게 맡기다니 의외라고 말한다."
+        },
+        {
+          "scene_id": "white_memory_page_1001214",
+          "line": 2,
+          "quote": "홍련은 가만히 있으면, 어떤 물고기도 오지 않는다며, 찌를 잘 흔들어야 큰 놈을 낚을 수 있다며 낚싯대를 요리조리 흔들어 대기 시작한다."
+        },
+        {
+          "scene_id": "white_memory_page_1001219",
+          "line": 2,
+          "quote": "하지만 무언가를 만드는 데 소질이 없는 홍련은 나뭇가지를 이용해 [낚싯대]를 만드는데 실패한다."
+        },
+        {
+          "scene_id": "white_memory_09",
+          "line": 10,
+          "quote": "힌트: 때로는 동료의 칼보다 성실하게 돌을 뒤지는 쪽이 나을 수도 있다."
+        },
+        {
+          "scene_id": "white_memory_page_1001307",
+          "line": 10,
+          "quote": "두 사람은 그곳을 바라보다가···."
+        },
+        {
+          "scene_id": "white_memory_page_1001327",
+          "line": 2,
+          "quote": "지직- 거리는 소음과 함께, 누군가의 목소리가 들렸다."
+        },
+        {
+          "scene_id": "white_memory_page_1001404",
+          "line": 3,
+          "quote": "거리는 소음과 함께, 누군가의 목소리가 들렸다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__sub_quests__피라:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라피의 감상에 응답한 미상 목소리 직후 라피가 뒤를 돌아보며 레드 후드라는 이름으로 부른다. 같은 발화 사건의 직접 호명이므로 레드 후드·유력한 해석 및 L228의 reveals_identity:true가 타당하다. 레드 후드가 완전히 떠났다는 앞 장면과 라피가 아무 일 없다고 답하는 대목도 확인했다. 실제 현장에 있는 인물의 발화인지 환청·잔향인지는 확정할 수 없지만, 그 한계는 반대 근거와 설명에 반영되어 있으며 목소리의 정체 후보를 뒤집지는 않는다.",
+      "evidence": [
+        {
+          "scene_id": "피라_02",
+          "line": 225,
+          "quote": "???: 그치? 끝내주지?"
+        },
+        {
+          "scene_id": "피라_02",
+          "line": 227,
+          "quote": "라피가 황급히 뒤를 돌아보았다."
+        },
+        {
+          "scene_id": "피라_02",
+          "line": 228,
+          "quote": "라피: ···레드 후드?"
+        },
+        {
+          "scene_id": "피라_00",
+          "line": 91,
+          "quote": "라피: 레드 후드는 떠났습니다. 완전히."
+        },
+        {
+          "scene_id": "피라_02",
+          "line": 230,
+          "quote": "  [OPTION TEXT=\"왜 그래? 무슨 일 있어?\"]"
+        },
+        {
+          "scene_id": "피라_02",
+          "line": 233,
+          "quote": "라피: ···아무것도 아닙니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "대상 장면은 그리운 얼굴의 여자가 스노우 화이트를 부를 뿐 화자 이름을 밝히지 않는다. 다시 그 얼굴을 보려는 선택, 하얀 실루엣의 재등장, 타임캡슐 회상, 그녀의 관을 찾아가려는 결심, 관 속 릴리바이스라는 서술이 이어져 릴리바이스를 간접적으로 지지한다. 빨간 꽃 경로에는 레드 후드의 음악 회상도 있지만 최초의 부름을 레드 후드로 직접 받는 줄은 없다. 릴리바이스를 가능성으로 남기고 관의 이름 공개도 이 목소리 자체의 공개로 처리하지 않은 판단이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001111",
+          "line": 7,
+          "quote": "\"스노우 화이트.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001113",
+          "line": 3,
+          "quote": "이유는 알 수 없지만, 환각 속에서 본 그 얼굴을 다시 한번 보고 싶었기 때문이다."
+        },
+        {
+          "scene_id": "white_memory_page_1001116",
+          "line": 2,
+          "quote": "하얀 꽃을 따라 걷던 스노우 화이트의 앞에 또다시 하얀 실루엣이 보였다."
+        },
+        {
+          "scene_id": "white_memory_page_1001119",
+          "line": 5,
+          "quote": "\"스노우 화이트.\""
+        },
+        {
+          "scene_id": "white_memory_12",
+          "line": 25,
+          "quote": "그리고 [그녀]와의 추억을 떠올리기 위해 [그녀]의 관이 있는 [초원]에 찾아가기로 결심했다."
+        },
+        {
+          "scene_id": "white_memory_18",
+          "line": 11,
+          "quote": "아주 길고 긴 길을 헤매어 스노우 화이트는 잠든 릴리바이스의 앞에 도착했다."
+        },
+        {
+          "scene_id": "white_memory_page_1001122",
+          "line": 3,
+          "quote": "레트로 음악을 사랑했던 그녀, [레드 후드]와 노래를 들었던 추억을."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U11",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "물고기를 잡은 사람은 스노우 화이트이고, 그 재주에 놀라 자네라고 부른 목소리가 감사 대상이다. 바로 앞 장면에서 스노우 화이트와 홍련이 작살 낚시를 하며, 다음 경로가 대상 장면으로 이어진다. 강변 도입부에서 홍련이 같은 호칭으로 낚시를 묻는 대사도 확인했다. 대상 발화에 이름이 붙거나 화자를 직접 호명하는 줄은 없으므로, 동행의 연속성과 말투에 따른 홍련·가능성 및 모든 reveals_identity:false는 타당하다. 스노우 화이트의 대답을 대상 목소리에 합친 흔적은 없다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_02",
+          "line": 6,
+          "quote": "스노우 화이트의 손에 잡힌 거대한 물고기가 힘차게 펄떡거렸다!"
+        },
+        {
+          "scene_id": "white_memory_02",
+          "line": 8,
+          "quote": "\"자네 이런 재주가 있었는가?!\""
+        },
+        {
+          "scene_id": "white_memory_page_1001210",
+          "line": 8,
+          "quote": "스노우 화이트와 홍련은 만들어 둔 작살을 모두 날렵하게 던져보았지만,"
+        },
+        {
+          "scene_id": "white_memory_page_1001210",
+          "line": 17,
+          "quote": "[NEXT_ROUTE DEFAULT TARGET=\"white_memory_02\"]"
+        },
+        {
+          "scene_id": "white_memory_page_1001201",
+          "line": 7,
+          "quote": "오래간만에 물고기를 보겠다며 신이 난 홍련이 물었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001201",
+          "line": 9,
+          "quote": "\"자네, 낚시는 할 줄 아나?\""
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_003:U44",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "감사 대상은 스노우 화이트의 독백 사이에 대괄호로 반복되는 인류 구원의 소원이다. 같은 장면은 언니를 릴리바이스로 지칭하고, 타임캡슐 장면 및 헤비암즈 회상에서는 같은 문구를 그녀·언니의 마지막 쪽지로 연결한다. 스노우 화이트가 되뇌는 말과 소원의 원래 주인을 구분하면 릴리바이스 후보가 타당하다. 다만 소원 인용에 릴리바이스라는 화자명이 직접 붙지는 않으므로 가능성으로 두고 L21의 이름 언급도 직접 공개로 처리하지 않은 것이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_20",
+          "line": 21,
+          "quote": "인정할 수 없어. 이런 끝은··· 언니에게··· 릴리바이스에게···!"
+        },
+        {
+          "scene_id": "white_memory_20",
+          "line": 38,
+          "quote": "언니의 소원을 인류를 머리를 찾아야 해."
+        },
+        {
+          "scene_id": "white_memory_20",
+          "line": 41,
+          "quote": "[인류를 구원할 수 있기를.]"
+        },
+        {
+          "scene_id": "white_memory_12",
+          "line": 14,
+          "quote": "[그녀]의 쪽지를 꺼냈다."
+        },
+        {
+          "scene_id": "white_memory_12",
+          "line": 16,
+          "quote": "[우리가 인류를 구원할 수 있기를.]"
+        },
+        {
+          "scene_id": "snowwhite_heavyarms_03",
+          "line": 25,
+          "quote": "[우리가 인류를 구원할 수 있기를.]"
+        },
+        {
+          "scene_id": "snowwhite_heavyarms_03",
+          "line": 26,
+          "quote": "스노우 화이트: ···언니."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_003:U41",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "스노우 화이트를 부른 대사 바로 뒤에서 지문이 이를 라푼젤의 부름이라고 명시한다. 이어지는 걱정과 질문도 라푼젤의 행동이며 스노우 화이트의 응답과 구별된다. 라푼젤·유력한 해석이 타당하고, L4의 인용 자체에 화자의 이름과 부름의 주체가 함께 있어 reveals_identity:true도 성립한다. 부름 속 스노우 화이트는 청자이므로 화자로 잘못 연결하지 않았다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001328",
+          "line": 2,
+          "quote": "\"스노우 화이트?\""
+        },
+        {
+          "scene_id": "white_memory_page_1001328",
+          "line": 4,
+          "quote": "라푼젤의 부름과 함게 정신을 차린 스노우 화이트."
+        },
+        {
+          "scene_id": "white_memory_page_1001328",
+          "line": 5,
+          "quote": "라푼젤은 걱정스럽게 무슨 일이 있냐며 묻고, 스노우 화이트는 아무 일 없다며 자신은 신경 쓰지 말고 좀 더 둘러보라고 말한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_002:U23",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "돌 밑에 통조림이 있을 수 있다는 대사에 이어 지문이 홍련의 말에 스노우 화이트가 수긍했다고 명시한다. 홍련이 화자이고 스노우 화이트가 듣는 사람이라는 연결이 인용 안에서 직접 성립한다. 홍련·유력한 해석과 reveals_identity:true가 모두 타당하며, 다른 사람의 대사를 합친 subject나 군중으로 볼 단서는 없다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001221",
+          "line": 2,
+          "quote": "\"혹시 아나? 이 돌 밑에 통조림이라도 묻혀있을지.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001221",
+          "line": 4,
+          "quote": "홍련의 말에 수긍하며 무너진 돌무더기를 탐색하기 시작한 스노우 화이트."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U16",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "열흘 붉은 꽃은 없다는 첫 발화는 스노우 화이트의 말이고, 이를 기억하느냐고 묻고 영원한 것은 없다고 답하는 목소리는 지문이 홍련으로 직접 연결한다. 입력은 후자의 목소리만 홍련에게 연결하고 있다. 두 supporting_evidence 모두 홍련의 이름과 해당 질문·응답을 함께 담으므로 유력한 해석과 reveals_identity:true가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_14",
+          "line": 4,
+          "quote": "스노우 화이트가 읊조리자, 홍련이 놀라 물었다."
+        },
+        {
+          "scene_id": "white_memory_14",
+          "line": 6,
+          "quote": "\"예전 일은 전부 잊은 줄 알았더니, 그걸 기억하고 있었나?\""
+        },
+        {
+          "scene_id": "white_memory_14",
+          "line": 8,
+          "quote": "스노우 화이트가 고개를 끄덕이자 홍련은 웃었다."
+        },
+        {
+          "scene_id": "white_memory_14",
+          "line": 13,
+          "quote": "이야기를 마친 홍련은 다시 강물에 낚싯대를 드리웠다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U07",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "강변 탐색에 홍련이 합류하고 함께 가자고 말한 뒤, 낚시를 할 줄 아는지 묻는 화자를 지문이 홍련으로 명시한다. 스노우 화이트는 고개를 끄덕이고 대답하는 쪽으로 구별된다. 두 인용 모두 같은 대화 안에서 이름과 대상 목소리를 연결하므로 홍련·유력한 해석 및 reveals_identity:true가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001201",
+          "line": 2,
+          "quote": "강변으로 탐색을 나선 스노우 화이트의 앞에 홍련이 나타났다."
+        },
+        {
+          "scene_id": "white_memory_page_1001201",
+          "line": 4,
+          "quote": "\"강으로 간다고? 그럼 나와 같이 감세!\""
+        },
+        {
+          "scene_id": "white_memory_page_1001201",
+          "line": 7,
+          "quote": "오래간만에 물고기를 보겠다며 신이 난 홍련이 물었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001201",
+          "line": 9,
+          "quote": "\"자네, 낚시는 할 줄 아나?\""
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U12",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "직접 따옴표 대사는 없지만 원문이 자신에게 맡기다니 의외라고 말하는 주체를 홍련으로 명시하고, 다음 문장도 같은 주체가 믿음에 보답하겠다고 말하는 내용이다. 간접화법이라는 형식과 화자 정체의 간접 추론은 별개다. 이 목소리는 홍련으로 직접 연결되므로 유력한 해석과 reveals_identity:true가 타당하다. 지문 작성자까지 홍련이라고 판단한 연결은 아니다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001213",
+          "line": 2,
+          "quote": "홍련은 자신에게 맡기다니 의외라고 말한다."
+        },
+        {
+          "scene_id": "white_memory_page_1001213",
+          "line": 3,
+          "quote": "그러곤 믿음에 보답하겠다고 말하며 강물에 낚싯대를 드리운다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U09",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "스노우 화이트가 홍련에게 나뭇가지 끝을 날카롭게 만들어 달라고 요청하고, 상대가 작살을 만들자는 뜻을 알아차려 답하는 한 대화다. 인용 자체가 요청 상대 홍련과 응답을 연결하며, 두 사람이 작살을 만든다는 후속 지문도 일치한다. 제3자의 역할 설명만으로 추정한 경우가 아니므로 홍련·유력한 해석과 첫 인용의 reveals_identity:true가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001209",
+          "line": 2,
+          "quote": "스노우 화이트는 홍련에게 나뭇가지를 내밀며, 끝을 날카롭게 만들어 달라고 한다."
+        },
+        {
+          "scene_id": "white_memory_page_1001209",
+          "line": 4,
+          "quote": "\"아하, 작살을 만들어보자는 거로군!\""
+        },
+        {
+          "scene_id": "white_memory_page_1001209",
+          "line": 6,
+          "quote": "두 사람은 열심히 작살을 만들어 낸다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_002:U25",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "양산을 도로시가 좋아하겠다고 말하는 목소리는 바로 뒤 지문에서 홍련이 양산을 보며 한 말로 명시된다. 도로시는 발화 내용에 언급된 선물의 수령자이고 화자가 아니다. 입력이 홍련을 후보로 선택했으며 그 이름과 발화 귀속을 함께 인용했으므로 유력한 해석과 reveals_identity:true가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_15",
+          "line": 2,
+          "quote": "\"양산이라··· 도로시가 좋아하겠군.\""
+        },
+        {
+          "scene_id": "white_memory_15",
+          "line": 4,
+          "quote": "어느새 홍련이 다가와 양산을 보며 말했다."
+        },
+        {
+          "scene_id": "white_memory_15",
+          "line": 6,
+          "quote": "두 사람은 리더 대리로 무리하고 있는 도로시를 위해, 이것이 그녀에게 선물이 되었으면 좋겠다는 생각에 [양산]을 든 채 초소로 돌아간다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U08",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "나무를 구해오겠다는 대사 뒤에 라며 주변을 둘러보던 홍련이라는 지문이 이어져 화자를 직접 밝힌다. 나뭇가지 크기를 묻는 사람도 같은 홍련이며, 스노우 화이트는 답을 선택하는 사람이다. 이름과 발화 연결이 인용 안에서 성립하므로 홍련·유력한 해석 및 reveals_identity:true가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001204",
+          "line": 2,
+          "quote": "\"낚싯대를 자네가 만들기로 했으니 나무는 내가 구해오겠네.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001204",
+          "line": 4,
+          "quote": "라며 주변을 둘러보던 홍련은 근처에 있는 나무를 보고는, 나뭇가지를 어떤 크기로 잘라줄지 물었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_002:U24",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "양산을 쓰는 이유를 묻는 사람은 스노우 화이트이고, 전장을 낙원처럼 느끼게 해준다고 답하는 사람은 도로시라고 지문이 명시한다. 첫 인용은 도로시의 이름과 답변을 함께 담아 직접 공개가 성립한다. 두 번째 인용에는 스노우 화이트의 짧은 되물음도 문맥으로 포함되지만 이를 별도 subject로 도로시에게 합친 것은 아니다. 도로시·유력한 해석과 각 reveals_identity 표기가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001223",
+          "line": 4,
+          "quote": "니케는 햇빛을 받아도 얼굴이 타지 않는데, 왜 양산을 쓰는 것인지 궁금해진 스노우 화이트가 물었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001223",
+          "line": 8,
+          "quote": "도로시는 웃으며 말했다."
+        },
+        {
+          "scene_id": "white_memory_page_1001223",
+          "line": 10,
+          "quote": "\"양산을 쓰고 있으면, 이곳이 전장이 아니라 햇살이 따뜻한··· [낙원] 같이 느껴지거든요.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001223",
+          "line": 14,
+          "quote": "\"후후, 언젠가 [방주]라는 것이 세워지면, 이렇게 양산 밑에 있는 삶이 일상이 되겠죠?\""
+        }
+      ]
+    },
+    {
+      "audit_id": "B1__event_lost_relics__white_memory__part_001:U05",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "대상 장면의 그녀는 타임캡슐에 각자의 소원을 넣고 역할을 다 하는 날 함께 열자고 제안한다. 헤비암즈 회상은 종이를 일곱 조각으로 나눈 동일한 타임캡슐 사건과 같은 두 대사를 릴리바이스의 지문·화자 표기로 다시 제시한다. 단순히 말버릇이 비슷한 다른 사건이 아니므로 릴리바이스·유력한 해석이 타당하다. 원 장면 인용은 false, 이름 붙은 동일 사건 인용은 true로 구분한 것도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001121",
+          "line": 3,
+          "quote": "[그녀]가 타임캡슐과 종이 한 장을 가져와 말했다."
+        },
+        {
+          "scene_id": "white_memory_page_1001121",
+          "line": 5,
+          "quote": "\"자, 여기 [캡슐]에 각자 소원을 적어서 넣는 거야.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001121",
+          "line": 7,
+          "quote": "종이를 일곱 갈래로 찢어, 각자 하고 싶은 말들을 캡슐에 적어 넣은 후."
+        },
+        {
+          "scene_id": "white_memory_page_1001121",
+          "line": 10,
+          "quote": "\"나중에··· 언젠가 우리의 역할을 다 하는 날. 이걸 다 같이 열어보자.\""
+        },
+        {
+          "scene_id": "snowwhite_heavyarms_02",
+          "line": 62,
+          "quote": "릴리바이스가 둥그런 타임캡슐과 7개로 나눈 종이를 내밀었다."
+        },
+        {
+          "scene_id": "snowwhite_heavyarms_02",
+          "line": 63,
+          "quote": "릴리바이스: 자, 여기 [캡슐]에 각자 소원을 적어서 넣는 거야."
+        },
+        {
+          "scene_id": "snowwhite_heavyarms_02",
+          "line": 75,
+          "quote": "릴리바이스: 나중에··· 언젠가 우리의 역할을 다 하는 날."
+        },
+        {
+          "scene_id": "snowwhite_heavyarms_02",
+          "line": 76,
+          "quote": "릴리바이스: 이걸 다 같이 열어보자."
+        }
+      ]
+    }
+  ]
+}

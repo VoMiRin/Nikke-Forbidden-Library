@@ -1,0 +1,73 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "B1__event_stories__jinx_player",
+  "candidate_links": [
+    {
+      "link_id": "B1__event_stories__jinx_player__001",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "jinx_player_08__unk_001",
+          "unknown_id": "unk_jinx_player_08_L0144"
+        },
+        {
+          "ref": "item",
+          "item_id": "jinx_player_08__unk_002",
+          "unknown_id": "unk_jinx_player_08_L0145"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_벨로타",
+          "name": "벨로타",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "유력한 해석",
+      "rationale": "보드게임 카페에서 루주가 더 이상 대전할 상대가 없다고 생각하던 순간 '여기야, 여기!', '아직 나랑 안 붙었어!'라고 외친 목소리(jinx_player_08 L143~145)는, 직후 이어지는 다음 장면 첫머리에서 구석 자리에 앉아 손을 흔들며 '아저씨, 루주, 여기야 여기!'라고 부른 뒤 게임을 제안하는 벨로타(jinx_player_09 L2~3, L12~14)로 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "jinx_player_08",
+          "line_start": 143,
+          "line_end": 143,
+          "quote": "루주: 이제 대전할 분이 더는 없는 것 같···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "jinx_player_08",
+          "line_start": 144,
+          "line_end": 144,
+          "quote": "???: 여기야, 여기!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "jinx_player_08",
+          "line_start": 145,
+          "line_end": 145,
+          "quote": "???: 아직 나랑 안 붙었어!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "jinx_player_09",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "벨로타: 아저씨, 루주, 여기야 여기!\n구석진 자리에서 벨로타가 환하게 웃으며 손을 붕붕 흔들고 있었다.",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "jinx_player_09",
+          "line_start": 12,
+          "line_end": 14,
+          "quote": "벨로타: 아까부터 지켜보고 있었는데 있지~\n벨로타: 루주는 어떤 게임이든지 엄청 잘 하네?\n벨로타: 그럼 과연, 이것도 잘할 수 있을까?",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

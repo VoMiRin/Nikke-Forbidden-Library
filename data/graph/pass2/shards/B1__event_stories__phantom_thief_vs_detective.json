@@ -1,0 +1,239 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "B1__event_stories__phantom_thief_vs_detective",
+  "candidate_links": [
+    {
+      "link_id": "B1__event_stories__phantom_thief_vs_detective__001",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_thief_vs_detective_00__unk_001",
+          "unknown_id": "unk_phantom_thief_vs_detective_00_L0091"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_퀀시",
+          "name": "퀀시",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "가능성",
+      "rationale": "구멍을 통해 잠든 지휘관의 방에 들어온 두 사람(퀀시, 팬텀)이 어둠 속에서 나눈 말 중 첫 대사로, 아직 팬텀의 정체를 모르던 퀀시가 팬텀에게 일관되게 쓰는 반말 2인칭 호칭 '너'('너는··· 누구···.')가 나타난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 91,
+          "line_end": 91,
+          "quote": "???: 너는··· 누구···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 35,
+          "line_end": 36,
+          "quote": "퀀시: 아! 너 때문에 경보음이 울린 거구나!\n팬텀: 무슨 소리오, 그대가 나오면서 경보음이 울린 것 아니오!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 55,
+          "line_end": 56,
+          "quote": "퀀시: 경찰한테 걸리면 너도 괜히 손해잖아!\n퀀시: 여기로 가면 제일 안전한 곳으로 통하게 되어 있어.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 104,
+          "line_end": 105,
+          "quote": "퀀시: 아, 교관님! 좋은 새벽!\n퀀시: 귀신이 아니라 도둑들이었지롱~",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_01",
+          "line_start": 53,
+          "line_end": 54,
+          "quote": "퀀시: 어쩐지 이상한 옷을 입고 있는 것 같더라니.\n퀀시: 괴도였구나!",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "entity_id": "char_팬텀",
+          "name": "팬텀",
+          "why": "퀀시와 함께 구멍을 통해 지휘관의 방에 들어와 어둠 속에서 속삭이던 다른 한 명이지만, 팬텀은 일관되게 '당신'·'그대'와 하오체를 쓰며 '너'라고 부르지 않으므로 대안으로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "phantom_thief_vs_detective_00",
+              "line_start": 102,
+              "line_end": 103,
+              "quote": "팬텀: 아···!\n팬텀: 결국 깨워버렸군."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep으로 \"팬텀: 너\"를 검색해 등록된 전체 장면에서 팬텀이 2인칭 대명사 '너'를 쓰지 않음을 확인하고, \"묻고 싶은\"·\"정의 괴도단\"을 검색해 다른 이야기에서 이 장면을 재언급하는 대사가 없음을 확인함."
+      ]
+    },
+    {
+      "link_id": "B1__event_stories__phantom_thief_vs_detective__002",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_thief_vs_detective_00__unk_002",
+          "unknown_id": "unk_phantom_thief_vs_detective_00_L0092"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_팬텀",
+          "name": "팬텀",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "가능성",
+      "rationale": "잠든 지휘관의 방에 퀀시와 함께 들어온 두 사람 중 '너는··· 누구···.'(L0091)라는 퀀시의 물음에 곧바로 응수한 다른 한 명의 목소리로, 앞서 퀀시의 정체를 캐묻다 중단된 바 있고 하오체에서도 1인칭 '내가'를 쓰는 팬텀이 유력하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 91,
+          "line_end": 92,
+          "quote": "???: 너는··· 누구···.\n???: 내가··· 묻고 싶은···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 43,
+          "line_end": 44,
+          "quote": "팬텀: ···죄수복 차림에, 탈옥이라니.\n팬텀: 당신은 대체 얼마나 악한 짓을-",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 70,
+          "line_end": 71,
+          "quote": "팬텀: ···절대 당신의 도움을 받는 것이 아니오.\n팬텀: 그저, 우연히 빠져나갈 구멍을 찾은 것뿐.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_00",
+          "line_start": 102,
+          "line_end": 103,
+          "quote": "팬텀: 아···!\n팬텀: 결국 깨워버렸군.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_01",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "팬텀: 내, 내가 말이오?",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "entity_id": "char_퀀시",
+          "name": "퀀시",
+          "why": "팬텀과 함께 구멍을 통해 지휘관의 방에 들어와 어둠 속에서 대화하던 다른 한 명이지만, 앞선 L0091('너는··· 누구···.')이 반말 호칭 '너'를 쓰는 퀀시의 발화로 보이므로 그에 응수한 L0092에서는 퀀시를 대안으로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "phantom_thief_vs_detective_00",
+              "line_start": 104,
+              "line_end": 105,
+              "quote": "퀀시: 아, 교관님! 좋은 새벽!\n퀀시: 귀신이 아니라 도둑들이었지롱~"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep으로 \"묻고 싶은\"·\"정의 괴도단\"을 검색해 다른 이야기에서 이 장면을 재언급하는 대사가 없음을 확인하고, \"팬텀: 너\"를 검색해 팬텀이 2인칭 '너'를 쓰지 않음을 확인함."
+      ]
+    },
+    {
+      "link_id": "B1__event_stories__phantom_thief_vs_detective__003",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_thief_vs_detective_02__unk_001",
+          "unknown_id": "unk_phantom_thief_vs_detective_02_L0117"
+        },
+        {
+          "ref": "item",
+          "item_id": "phantom_thief_vs_detective_02__unk_002",
+          "unknown_id": "unk_phantom_thief_vs_detective_02_L0118"
+        },
+        {
+          "ref": "item",
+          "item_id": "phantom_thief_vs_detective_02__unk_003",
+          "unknown_id": "unk_phantom_thief_vs_detective_02_L0119"
+        },
+        {
+          "ref": "item",
+          "item_id": "phantom_thief_vs_detective_02__unk_004",
+          "unknown_id": "unk_phantom_thief_vs_detective_02_L0120"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_노벨",
+          "name": "노벨",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "유력한 해석",
+      "rationale": "경보가 울린 집에서 두 용의자(팬텀, 퀀시)와 한 경찰(미란다)이 흔적 없이 사라진 현장을 보고 '이건, 사건인 것입니다···!'라고 말한 인물로, 뒤 장면(04화)에서 노벨 본인이 이틀 전 밤 그 집을 방문해 2명의 범인과 미란다가 방을 나간 흔적 없이 사라진 것을 보았다고 직접 밝히며 동일한 말버릇을 쓴다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_thief_vs_detective_02",
+          "line_start": 117,
+          "line_end": 120,
+          "quote": "???: 여기에 두 명의 용의자와 한 명의 경찰이 다녀갔고.\n???: 물건과 함께, 셋 다 흔적도 없이 사라졌다···.\n???: ··· ···.\n???: 이건, 사건인 것입니다···!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_04",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "노벨: 이틀 전 밤, 저는 신고를 받고 한 집을 방문한 것입니다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_04",
+          "line_start": 93,
+          "line_end": 93,
+          "quote": "노벨: 제가 갔을 때는 2명의 범인도, 미란다도 보이지 않았던 것입니다.",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_04",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "노벨: 방을 나간 흔적이 없던데, 어떻게 쫓아간 것입니까!",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_08",
+          "line_start": 150,
+          "line_end": 151,
+          "quote": "노벨: 이건···!!\n노벨: 사건인 것입니다아!!",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
