@@ -1169,7 +1169,7 @@ const citationProblem = (cite, store) => {
   return null;
 };
 
-export const checkReview = (input, out, { store }) => {
+export const checkReview = (input, out, { store, problems = REVIEW_PROBLEMS }) => {
   const errors = [];
   const ids = new Set(input.items.map((x) => x.link_id));
   const seen = new Set();
@@ -1180,7 +1180,7 @@ export const checkReview = (input, out, { store }) => {
     seen.add(r.link_id);
     if (!REVIEW_JUDGMENTS.has(r.judgment)) errors.push(`reviews[${i}].judgment는 ${[...REVIEW_JUDGMENTS].join(' | ')}`);
     judgments[r.judgment] = (judgments[r.judgment] ?? 0) + 1;
-    if (!Array.isArray(r.problems) || r.problems.some((p) => !REVIEW_PROBLEMS.has(p))) errors.push(`reviews[${i}].problems는 ${[...REVIEW_PROBLEMS].join(', ')} 중에서 고른 배열`);
+    if (!Array.isArray(r.problems) || r.problems.some((p) => !problems.has(p))) errors.push(`reviews[${i}].problems는 ${[...problems].join(', ')} 중에서 고른 배열`);
     if (r.judgment === '틀림' && !(r.problems?.length)) errors.push(`reviews[${i}] 틀림이면 problems를 하나 이상 적는다`);
     if (!isNonEmptyString(r.reason)) errors.push(`reviews[${i}].reason이 비었다`);
     if (!Array.isArray(r.evidence) || r.evidence.length === 0) errors.push(`reviews[${i}].evidence에 원문 인용을 하나 이상 적는다`);
@@ -1194,7 +1194,7 @@ export const checkReview = (input, out, { store }) => {
 };
 
 /** 원문 인용 검사는 기계가, 의미 판단은 다른 모델이 한다. 표본 통과는 모집단 무오류의 증명이 아니다. */
-export const checkAudit = (input, out, { store, bundleStamps }) => {
+export const checkAudit = (input, out, { store, bundleStamps, problems = REVIEW_PROBLEMS }) => {
   const errors = [];
   const { source_sha256, ...source } = input;
   if (source_sha256 !== sha256(JSON.stringify(source))) errors.push('감사 입력의 해시가 맞지 않는다');
@@ -1207,7 +1207,7 @@ export const checkAudit = (input, out, { store, bundleStamps }) => {
   const reviewed = checkReview(
     { items: input.items.map((x) => ({ link_id: x.audit_id })) },
     { reviews: out.reviews.map((r) => ({ ...r, link_id: r?.audit_id })) },
-    { store },
+    { store, problems },
   );
   errors.push(...reviewed.errors);
   for (const r of out.reviews) {
