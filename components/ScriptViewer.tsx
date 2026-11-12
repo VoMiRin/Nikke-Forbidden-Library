@@ -18,6 +18,7 @@ import {
 import { BranchIcon, ChevronLeftIcon, ChevronRightIcon, FourPointStarIcon, LinkIcon } from './Icons';
 import { NikkeLogo } from './NikkeLogo';
 import { toPlainInlineText } from './script/InlineText';
+import { titleDescriptionFor } from '../data/titleDescriptions';
 
 /** 선택지를 고르면 곧바로 이어지는 장면으로 넘어가는 텍스트 어드벤처 미니게임 (분류/파일) */
 const TEXT_ADVENTURE_FILES = new Set([
@@ -729,6 +730,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   };
 
   const sceneLabel = script ? (script.subTitle || script.title) : '';
+  const titleDescription = script ? titleDescriptionFor(script.categoryKey, script.title) : undefined;
   const scriptLabel = script ? `${script.title}${script.subTitle ? ` — ${script.subTitle}` : ''}` : '';
 
   if (!script) {
@@ -908,6 +910,9 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
           >
             {sceneLabel}
           </h1>
+          {titleDescription && (
+            <p className="mt-4 text-[15px] leading-relaxed text-nikke-text-muted max-sm:mt-3 max-sm:text-[13px]">{titleDescription}</p>
+          )}
           <div className="mt-7 flex flex-wrap items-center gap-2 max-sm:mt-5">
             <button
               type="button"

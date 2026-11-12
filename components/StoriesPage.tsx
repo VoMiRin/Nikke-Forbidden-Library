@@ -1,5 +1,6 @@
 import { categoryPath, scenePath, sectionPath } from '../lib/pageRoutes.mjs';
 import { listSections } from '../lib/sections';
+import { titleDescriptionFor } from '../data/titleDescriptions';
 import { followInApp } from '../lib/linkNavigation';
 import React, { useEffect, useMemo, useState } from 'react';
 import type { Script, ScriptCategory } from '../types';
@@ -272,6 +273,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
       || (chapterTitleFilter && chapterFilter === chapterTitleFilter
         ? chapter.title === chapterTitleFilter
         : normalizeFilterValue(chapter.title).includes(normalizedChapterFilter)
+          || normalizeFilterValue(titleDescriptionFor(effectiveCategoryKey ?? undefined, chapter.title) ?? '').includes(normalizedChapterFilter)
           || chapter.scripts.some(script => normalizeFilterValue(script.subTitle ?? '').includes(normalizedChapterFilter)))
     ));
   const showChapterFilter = chapterGroups.length > 8 || !!chapterTitleFilter;
@@ -363,6 +365,7 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
           const firstScript = chapter.scripts[0];
           const isSelected = selectedScriptId ? chapter.scripts.some(script => script.id === selectedScriptId) : false;
           const { number, name } = parseChapterTitle(chapter.title, index);
+          const description = titleDescriptionFor(firstScript.categoryKey, chapter.title);
 
           return (
             <li key={chapter.title} className="border-b border-nikke-border">
@@ -375,7 +378,9 @@ export const StoriesPage: React.FC<StoriesPageProps> = ({
                 <span className={`font-mono text-[15px] ${isSelected ? 'text-nikke-accent' : 'text-nikke-text-muted'}`}>{number}</span>
                 <span className="flex min-w-0 flex-wrap items-baseline gap-x-4 gap-y-1">
                   <span className="font-headline text-xl font-bold">{name}</span>
-                  {firstScript.subTitle && !/^\d+$/.test(firstScript.subTitle) && (
+                  {description ? (
+                    <span className="w-full text-sm text-nikke-text-secondary">{description}</span>
+                  ) : firstScript.subTitle && !/^\d+$/.test(firstScript.subTitle) && (
                     <span className="text-sm text-nikke-text-muted">{firstScript.subTitle}</span>
                   )}
                   <span className={`w-full text-[13px] sm:hidden ${isSelected ? 'text-nikke-highlight' : 'text-nikke-text-muted'}`}>
