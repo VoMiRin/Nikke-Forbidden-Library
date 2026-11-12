@@ -340,6 +340,10 @@ npm run deploy
 4. Cloud Run `nikke-search-api` 배포
 5. Firebase Hosting 배포
 
+현재 GraphRAG는 웹 앱·검색 API에 연결되어 있지 않으므로 `npm run deploy`로 기존 기능만 배포합니다.
+GraphRAG 데이터·도구·테스트·문서는 `.gcloudignore`로 Cloud Build 업로드에서도 제외합니다.
+Gemini File Search 증분 동기화는 기존 AI 검색용이며, GraphRAG 제외를 위해 끌 필요가 없습니다.
+
 기본값:
 - `PROJECT_ID`: 현재 `gcloud config get-value project`
 - `REGION`: `asia-northeast3`

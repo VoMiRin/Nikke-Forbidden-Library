@@ -349,4 +349,7 @@ export const lostRelicsScripts: ScriptData[] = [
     { id: '신임 장교의 일지_02', categoryKey: 'lost_relics', title: '신임 장교의 일지', subTitle: '세 번째 페이지', mainChapterFile: '신임 장교의 일지.txt' },
     { id: '신임 장교의 일지_03', categoryKey: 'lost_relics', title: '신임 장교의 일지', subTitle: '마지막 페이지', mainChapterFile: '신임 장교의 일지.txt' },
 
+    // 하지 말아야 할 일 (MARIA-n 하드 1-12 클리어 후 0스테이지에서 획득, 2026-11-12 추가)
+    { id: '하지 말아야 할 일_00', categoryKey: 'lost_relics', title: '하지 말아야 할 일', subTitle: '반쯤 불타버린 쪽지', mainChapterFile: '하지 말아야 할 일.txt' },
+
 ];

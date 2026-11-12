@@ -6,6 +6,12 @@
 
 #!include:.gitignore
 
+# GraphRAG is not used by the deployed app yet; keep it out of Cloud Build uploads.
+/data/graph/
+/scripts/graph/
+/scripts/graph-*.test.mjs
+/docs/graphrag/
+
 !.env.example
 !public/script-manifest.json
 !public/search-index.json
