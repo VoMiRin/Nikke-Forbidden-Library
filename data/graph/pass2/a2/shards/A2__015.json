@@ -1,0 +1,497 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__015",
+  "candidate_links": [
+    {
+      "link_id": "A2__015__001",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙정부 감사부",
+          "entity_type": "organization",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "miranda_04에서 미란다가 A.C.P.U.와 겸직 중인 본래 소속 부서를 가리킨다. 같은 장면 앞부분에서 해당 부서가 '중앙정부 감사부'(팀장 Mr. 0)로 명시되므로 미등록 조직 엔티티로 판정하고 온전한 표기인 '중앙정부 감사부'를 대표 이름으로 삼는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "miranda_04",
+          "line_start": 107,
+          "line_end": 107,
+          "quote": "감찰부를 그만둔다는 선택지도 있어."
+        },
+        {
+          "scene_id": "miranda_04",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "미란다: 이상한 말일지도 모르지만 저 감찰부를 그만두고 싶진 않습니다."
+        },
+        {
+          "scene_id": "miranda_04",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "폴리: 중앙정부 감사부 소속, 감찰관이라고여?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__002",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U002"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "오버시어 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "아이리·아비스타가 속한 오버시어 스쿼드를 그 직능으로 부르는 호칭이다. 같은 이야기 안에서 아니스가 '오버시어?'를 곧바로 '감찰 부대'로 받고, 두 사람이 '감찰 부대 오버시어 소속'이라고 자기소개한다. 오버시어와 다른 상위 조직이 있다는 원문은 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_36_09",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "아이리: 오버시어 스쿼드의 아이리예요."
+        },
+        {
+          "scene_id": "main_36_09",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "아니스: ···오버시어? 감찰 부대가 여기 왜 왔어? 우리 지휘관님 뭐 빼돌린 것 없는데?"
+        },
+        {
+          "scene_id": "main_37_03",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "아이리: 아이리입니다. 감찰 부대 오버시어 소속이죠."
+        },
+        {
+          "scene_id": "outdoor_swimming_pool_08",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "아비스타: 안녕하세요, 감찰 부대 오버시어 소속 아비스타라고 해요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__009",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U002"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_38",
+          "main_story__chapter_39"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "오버시어 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "38·39장에서는 아이리·아비스타가 자기 부대를 '감찰 부대'라고 말하거나 그렇게 불리지만 그 이야기 안에 오버시어라는 이름은 나오지 않는다. 36·37장의 자기소개를 옮겨 온 추론이므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_38_09",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "아이리: 우린 못 가요. 감찰 부대다 보니 아우터 림에 갈 이유도 없을뿐더러."
+        },
+        {
+          "scene_id": "main_39_18",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "아니스: 너, 너 내 뒷조사 했어? 감찰 부대면 그렇게 함부로 남의 정보 뒤져도 되는 거야!?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__003",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U003"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "오버시어 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "'감찰 부대'(U002)를 붙여 쓴 표기다. 44장에서 아이리가 '감찰부대 오버시어 소속'이라고 직접 자기소개한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_18",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "아이리: 아, 제 소개가 늦었네요. 감찰부대 오버시어 소속의 아이리라고 해요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__010",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U003"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_45",
+          "main_story__chapter_46"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "오버시어 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "45·46장에서 아이리가 자기 소속을 '감찰부대'라고 말하지만 그 이야기 안에 오버시어라는 이름은 나오지 않는다. 다른 장의 자기소개를 옮겨 온 추론이므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_45_05",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "아이리: 저는 감찰부대. 어지간한 스쿼드보단 끗발이 좋답니다?"
+        },
+        {
+          "scene_id": "main_46_19",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "아이리: 저는 감찰부대."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__004",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "갑옷",
+          "entity_type": "item",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "경비 팀장이 정예 경비원들이 옷 밑에 받쳐 입은 발광 강화 장비를 두고 한 번 '[갑옷]의 성능은 확실하군'이라고 말한다. 대괄호로 묶어 특정 강화 장비의 코드명·고유 명칭으로 부른 해석과, 같은 이야기의 '[회복실]'처럼 강조·비유 부호를 붙여 테크-웨어 모조 방호복을 보통명사 '갑옷'에 빗댄 해석이 모두 가능하고 가를 원문이 없어 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "coin_rush_show_down_19",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "경비 팀장: 흐음··· [갑옷]의 성능은 확실하군."
+        },
+        {
+          "scene_id": "coin_rush_show_down_19",
+          "line_start": 93,
+          "line_end": 93,
+          "quote": "경비 팀장: 좋아. 다들 개방 후 싸워라."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "coin_rush_show_down_25",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "슈엔: 하. 보나마나 미실리스의 테크-웨어를 흉내낸 싸구려겠지."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "같은 장면의 '[회복실]'처럼 대괄호가 일반 명사 강조에도 쓰이며, 후속 장면(coin_rush_show_down_25)에서도 고유 장비명 없이 '미실리스의 테크-웨어를 흉내낸 싸구려'로만 설명되어 방호 장비를 비유한 보통 낱말로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "coin_rush_show_down_19",
+              "line_start": 8,
+              "line_end": 8,
+              "quote": "마나: 탈락자들에게 굳이 제압탄을 사용한 후, [회복실]로 옮긴 것도 그 이유입니다."
+            },
+            {
+              "scene_id": "coin_rush_show_down_25",
+              "line_start": 102,
+              "line_end": 102,
+              "quote": "슈엔: 하. 보나마나 미실리스의 테크-웨어를 흉내낸 싸구려겠지."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__005",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U005"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "event_stories__ice_dragon_saga에서 시뮬레이션에 진입해 헬하임 전신갑옷 세트를 입은 지휘관을 부르는 호칭이다. 두 출현 장면 모두에서 지휘관 본인의 응답과 메이든의 호명으로 지휘관과 동일 인물임이 직접 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_07",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "율하: 후··· 시끄러우니 피해자 측 변호는 갑옷 기사, 네가 맡아라."
+        },
+        {
+          "scene_id": "ice_dragon_saga_07",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "갑옷 기사라면 나?"
+        },
+        {
+          "scene_id": "ice_dragon_saga_17",
+          "line_start": 151,
+          "line_end": 151,
+          "quote": "나레이션: 갑옷 기사와 나머지 용사 일행 사이에 거대한 얼음벽이 생겼습니다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_17",
+          "line_start": 152,
+          "line_end": 152,
+          "quote": "메이든: 지휘관···?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__006",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U006"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현에서 선박·크루즈의 바닥 위쪽 구역을 뜻하는 보통명사 '갑판'으로 쓰이며 특정 시설의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_06",
+          "line_start": 93,
+          "line_end": 93,
+          "quote": "도로시는 갑판 위를 돌아다니며 뭔가를 두리번거리며 찾고 있었다."
+        },
+        {
+          "scene_id": "dorothy_serendipity_04",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "도로시는 갑판에서 천천히 산책하고 있었다."
+        },
+        {
+          "scene_id": "eleggboomandshock_02",
+          "line_start": 140,
+          "line_end": 140,
+          "quote": "그래. 갑판으로 나가보자."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__007",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "갓데스 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "제시 출현과 occ·show로 확인한 미제시 출현을 포함한 102곳 모두 릴리바이스·도로시·라푼젤·스노우 화이트·홍련·레드 후드로 구성된 인류 최초의 니케 부대 '갓데스 스쿼드'를 가리킨다. U008 '갓데스 스쿼드'와 같은 대상이므로 같은 entity_key(E4)와 온전한 표기 '갓데스 스쿼드'로 묶는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_26_01",
+          "line_start": 417,
+          "line_end": 417,
+          "quote": "라피: [갓데스]."
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 418,
+          "line_end": 418,
+          "quote": "레드 후드는 갓데스 스쿼드의 니케다."
+        },
+        {
+          "scene_id": "over_zone_06",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "도로시: 우리는 갓데스에요."
+        },
+        {
+          "scene_id": "rapunzel_03",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "라푼젤: 우린 [갓데스] 스쿼드라 불렸어요. 후후, 조금 장난 같은 이름이죠?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__015__008",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "갓데스 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "제시 출현과 occ로 확인한 미제시 출현을 포함한 83곳 모두 인류 최초의 니케 스쿼드인 '갓데스 스쿼드'를 가리키는 고유 스쿼드명이다. U007 '갓데스'와 동일한 대상이므로 같은 entity_key(E4)를 부여한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_23_14",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "크로우: 갓데스 스쿼드의 얘기부터 해볼까."
+        },
+        {
+          "scene_id": "chapter_49_08",
+          "line_start": 226,
+          "line_end": 226,
+          "quote": "도로시: 갓데스 스쿼드의 리더."
+        },
+        {
+          "scene_id": "hongryeon_blackshadow_00",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "릴리바이스: 먼저 나. 릴리바이스. 갓데스 스쿼드의 리더를 맡고 있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

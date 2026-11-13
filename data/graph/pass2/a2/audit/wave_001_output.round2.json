@@ -1,0 +1,1892 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "f8b75d7eb84444cf9a0832d50d139c67bd7d6a6718fa4417cf00bc97df0ac967",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1d3d1-426f-7053-890b-bb89c026c2d9",
+  "reviews": [
+    {
+      "audit_id": "A2__009:U035",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "18장에서는 크로우가 IP를 바꾸어 여론을 만든 일을 자기 행위로 말한 뒤 JohnD의 최초 발의자임을 밝힌다. 따라서 18장 예외의 char_크로우·유력한 해석은 타당하다. 16·17·22장의 알리바이·추궁·폭탄 서명은 그 자백을 옮겨 연결하는 간접 근거이므로 기본 연결의 가능성도 적절하다. 엔터 헤븐이 명의를 분담했다는 반대 근거를 검토했지만, 크로우를 숨기기 위한 역할 분담으로 설명되며 이를 누락하지 않은 대안 기재도 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_16_11",
+          "line": 15,
+          "quote": "크로우: ···이 [JohnD]라는 놈이 나타나 이것저것 떠벌리기 시작한 이후로, 분위기가 완전히 반전됐지."
+        },
+        {
+          "scene_id": "main_18_17",
+          "line": 37,
+          "quote": "크로우: IP까지 바꿔가며 여론을 만들어놨는데."
+        },
+        {
+          "scene_id": "main_18_17",
+          "line": 43,
+          "quote": "크로우: [JohnD]."
+        },
+        {
+          "scene_id": "main_16_18",
+          "line": 9,
+          "quote": "바이퍼: 생각보다 엔터 헤븐 애들이 [JohnD] 역할을 잘 해줬어."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__010:U011",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일기의 긴 이름을 가진 직계 선배 셋, 우리 넷의 복수라는 관계가 33장의 니힐리스타·리버렐리오·인디빌리아 및 포비스트의 과거와 맞는다. entity에서 char_리버렐리오를 확인했다. 이니셜과 나열 순서만으로 확정할 수는 없지만 관계·사건 단서가 함께 있어 별칭 가능성이 타당하며, 다른 이야기의 근거이므로 유력한 해석으로 올리지 않은 점도 맞다.",
+      "evidence": [
+        {
+          "scene_id": "소녀의일기-절망편-_01",
+          "line": 3,
+          "quote": "N선배, L선배, I선배라고 부르기로 했다. 이름이 길어서 잘 안 외워진다."
+        },
+        {
+          "scene_id": "소녀의일기-절망편-_03",
+          "line": 3,
+          "quote": "우리 넷이 똘똘 뭉쳐서 직계들에게 본때를 보여주자고 했다."
+        },
+        {
+          "scene_id": "main_33_09",
+          "line": 51,
+          "quote": "베히모스: 니힐리스타, 리버렐리오, 인디빌리아."
+        },
+        {
+          "scene_id": "main_33_09",
+          "line": 52,
+          "quote": "베히모스: 우릴 깔아뭉개고 무시하고 짓밟던 녀석들 말이야."
+        },
+        {
+          "scene_id": "main_40_07",
+          "line": 49,
+          "quote": "리버렐리오: 시끄럽게 옆에서 떠들어대길래 치워버렸지만."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "가려진 표기 앞의 사과와 미하라의 응답이 main_04_14의 대화와 일치하며 그 원대사에는 지휘관이 명시된다. 새 인물이나 일반 낱말이 아니라 char_지휘관의 가린 호칭으로 연결하는 것이 타당하다. 다른 이야기의 회상 대조를 거치므로 가능성도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "mihara_bondingchain_03",
+          "line": 68,
+          "quote": "미하라: 후후. 정말 재밌는 사람이네. ■■■은."
+        },
+        {
+          "scene_id": "main_04_14",
+          "line": 48,
+          "quote": "      [OPTION TEXT=\"정말 미안.\"]"
+        },
+        {
+          "scene_id": "main_04_14",
+          "line": 51,
+          "quote": "    미하라: 후후. 정말 재밌는 사람이네. 지휘관은."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__018:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "코인 러시와 앨리스 에피소드에서 루주가 두 토끼를 블랑·누아르로 직접 대응시킨다. 결승전의 소다 상대가 블랑이고 앨리스가 그 상대를 하얀 토끼라고 서술하므로 검정 토끼는 entity로 확인한 char_누아르다. 기본 두 이야기의 유력한 해석과, 본명 없이 같은 호칭만 사용하는 blabla__personal__alice 예외의 가능성을 모두 확인했으며 범위 구분도 근거의 차이에 따른다.",
+      "evidence": [
+        {
+          "scene_id": "golden_coin_rush_03",
+          "line": 84,
+          "quote": "앨리스: 하얀 토끼 씨와 검정 토끼 씨는 찾지 못했지만."
+        },
+        {
+          "scene_id": "golden_coin_rush_03",
+          "line": 96,
+          "quote": "루주: 음, 누가 봐도 블랑과 누아르를 가리키는 말이잖아요?"
+        },
+        {
+          "scene_id": "alice_wonderlandbunny_01",
+          "line": 56,
+          "quote": "루주: 블랑이랑 누아르를 말하는 거라면,"
+        },
+        {
+          "scene_id": "golden_coin_rush_34",
+          "line": 11,
+          "quote": "소다와 블랑은 동시에 꼭대기에 도착했고."
+        },
+        {
+          "scene_id": "alice_wonderlandbunny_04",
+          "line": 10,
+          "quote": "그리고 하얀 토끼 씨를 상대로도 반짝임을 잃지 않은 반짝 토끼 씨의 모습을요."
+        },
+        {
+          "scene_id": "blabla_alice_008",
+          "line": 64,
+          "quote": "    하얀 토끼 씨랑 검정 토끼 씨도 초대해요!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__013:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 이야기에서 레오나와 함께 남은 티미가 확인되고, 머스탱은 레오나의 사육 자격과 Timi 돌봄을 함께 말한다. 영문 혼용 말투의 표기이며 entity의 char_티미와 같은 대상이다. 별칭·유력한 해석을 뒷받침한다.",
+      "evidence": [
+        {
+          "scene_id": "lion_heart_14",
+          "line": 34,
+          "quote": "머스탱: 따라서, 앞으로 보호소에서 일을 할 수도, Timi를 보살필 수도 없다는 Story 입니Da."
+        },
+        {
+          "scene_id": "lion_heart_13",
+          "line": 60,
+          "quote": "레오나와 티미는 이마를 맞대며."
+        },
+        {
+          "scene_id": "lion_heart_13",
+          "line": 67,
+          "quote": "네로: 보아하니 티미 빼고는 잘 보내주고 온 모양이구냥."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__018:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "전설의 검을 안고 자는 프림을 곧바로 검의 정령이라고 부르며 다음 장면에서도 프림 깨우기와 검의 정령 깨우기를 바꿔 말한다. 두 출현 모두 char_프림으로 직접 이어진다. 시뮬레이션 역할이라는 이유로 별도 인물을 만들지 않은 것도 규칙에 맞다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_10",
+          "line": 112,
+          "quote": "베스티: 그, 그야 예로부터 [용사의 검]을 지켜온 [검의 정령]이니까···?"
+        },
+        {
+          "scene_id": "ice_dragon_saga_10",
+          "line": 109,
+          "quote": "메이든: ···프림의 품속에요."
+        },
+        {
+          "scene_id": "ice_dragon_saga_11",
+          "line": 12,
+          "quote": "  [OPTION TEXT=\"일단은 프림을 깨울 방법부터 찾자.\"]"
+        },
+        {
+          "scene_id": "ice_dragon_saga_11",
+          "line": 22,
+          "quote": "  [OPTION TEXT=\"응. 검의 정령을 깨울 방법을 알고 싶어서···.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__004:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "기본 연결의 7개 이야기와 가능성 예외 3개를 모두 대조했다. 40장·48장, D.ARK HERO, WISDOM SPRING, 2X2 LOVE 2장, MARIA-n, FADING AFFECTION에는 7호와 지휘관을 잇는 호명·응답·자기소개 또는 지문이 있다. SCHOOL OF LOCK·WAVE TO YOU·MARIA-n 필드 대화는 학교 방문·카운터스 동행·마리안과의 관계를 통한 연결이어서 같은 char_지휘관의 가능성 예외가 타당하다. FADING AFFECTION의 occ 83곳을 조회하고 미제시 O0081(fading_affection_3130), O0023(fading_affection_3002), O0073(fading_affection_3126)을 각각 show로 확인했다. 모두 같은 기억을 되찾는 7호이며, 같은 이야기의 fading_affection_2117 L7이 지휘관과 7호를 직접 치환하므로 세 탐침에 적용된 A2__004__004도 맞다. shown이 0인 이야기는 없다.",
+      "evidence": [
+        {
+          "scene_id": "main_40_00",
+          "line": 43,
+          "quote": "라피: 언체인드와 7호에 대해 어떻게 알고 있지?"
+        },
+        {
+          "scene_id": "chapter_48_07",
+          "line": 194,
+          "quote": "다들 7호라고 부르던데."
+        },
+        {
+          "scene_id": "chapter_48_07",
+          "line": 207,
+          "quote": "???: 그럼, 지휘관이라고 부를게요."
+        },
+        {
+          "scene_id": "wisdom_spring_14",
+          "line": 48,
+          "quote": "에테르: 내가? 7호를? 그건 지엔이 한 거잖아."
+        },
+        {
+          "scene_id": "school_of_lock_14",
+          "line": 15,
+          "quote": "에테르: 7호가 우리 학교에 올 수 있게 되었지."
+        },
+        {
+          "scene_id": "wave_to_you_00",
+          "line": 20,
+          "quote": "에테르: 7호랑 카운터스가 들러서, 안전하다고 검증된 섬이라니까 랩쳐 걱정할 필요도 없고~"
+        },
+        {
+          "scene_id": "marian_dialog_05",
+          "line": 3,
+          "quote": "닥터 마리아: 프로젝트 A.D.의 산물."
+        },
+        {
+          "scene_id": "fading_affection_2117",
+          "line": 7,
+          "quote": "[REDACT]지휘관[/REDACT]이 [REDACT]7호[/REDACT]가 아니 [REDACT]지휘관[/REDACT]이 아니 [REDACT]7호[/REDACT]가 남자가 마리안을 불렀지만, 뒤돌아보지 않는다."
+        },
+        {
+          "scene_id": "fading_affection_3130",
+          "line": 2,
+          "quote": "7호는 희망에 가득 차 신도시를 향해 달린다."
+        },
+        {
+          "scene_id": "fading_affection_3002",
+          "line": 2,
+          "quote": "7호는 구도심에 들어가기 전, 자신이 이곳에 오기 전의 상황을 떠올렸다."
+        },
+        {
+          "scene_id": "fading_affection_3126",
+          "line": 4,
+          "quote": "7호는 빌딩 중간에 움푹 팬 부분을 바라본다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__009:U036",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "'가장 가까운' 지점에서 합류하라는 지시는 J 포인트가 여럿 있음을 보여 준다. 단일 고유 지명으로 새 엔티티를 만들지 않은 일반 낱말 판정이 규칙의 경계 사례에 맞다. 기능의 상세한 의미까지 확정하지 않은 가능성도 무리가 없다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_11",
+          "line": 7,
+          "quote": "지휘관: 가장 가까운 J 포인트에서 합류!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__007:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메신저에서는 임무 중 B 구역으로 이동한다는 말만 나오지만, 관련 이벤트에서 건물을 A와 B로 나누는 임시 분담 지시와 팬텀·미란다의 B 담당을 확인했다. 고유 지명보다 일회적인 구획 표기라는 해석이 타당하고, 다른 이야기의 설명을 이용하므로 가능성도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_phantomthiefvsdetective_001",
+          "line": 79,
+          "quote": "    나와 미란다는 B 구역으로 잘 가고 잇쏘"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_06",
+          "line": 5,
+          "quote": "팬텀: 그러니 구역을 A와 B로 나눈 후, 사람을 둘로 나누어 이동하는 게 좋을 듯하오."
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_06",
+          "line": 27,
+          "quote": "팬텀: 퀀시와 그대는 A 구역을 맡아주시오, 나와 미란다가 B 구역을 맡겠소."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__017:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "기본 범위인 기록물의 세 출현은 큰 사람의 흔적을 보고 거인이라는 보통 부류를 추측하는 용법이다. 반면 persona_on_frontline_06은 전날 나타난 특정 존재를 되짚으며, _01에서도 거인과 괴도들이 함께 사라진다. 정체를 특정하지 못한 이 이야기만 unresolved로 나눈 예외가 적절하다. 일반 낱말 기본과 보류 예외 모두 확인했다.",
+      "evidence": [
+        {
+          "scene_id": "persona_on_frontline_06",
+          "line": 46,
+          "quote": "팬텀: 어젯밤에 괴도들을 쫓다가 본 거인과 비슷한 느낌이오."
+        },
+        {
+          "scene_id": "거인을찾아서.txt_01",
+          "line": 5,
+          "quote": "한 명의 거인이 묻힌 것인가, "
+        },
+        {
+          "scene_id": "거인을찾아서.txt_01",
+          "line": 6,
+          "quote": "아니면 여러 명의 거인이 함께 몰려다니고 있는 것인가?"
+        },
+        {
+          "scene_id": "persona_on_frontline_01",
+          "line": 169,
+          "quote": "퀀시: 그런데 그 거인은 뭐였지? 괴도들이랑 같이 없어졌네."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__007:U030",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "coin_rush_show_down_17의 CEO는 리미트 해제를 허가한 특정 상관이고 바로 다음 선택지가 슈엔을 지목한다. 이 장면을 char_슈엔·유력한 해석 예외로 둔 것이 맞다. 기본 적용 장면 _19에서는 CEO들을 복수 직함으로 묶어 말하므로 일반 낱말이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "coin_rush_show_down_17",
+          "line": 132,
+          "quote": "신: CEO 허가 하에 그렇게 된거란 거지."
+        },
+        {
+          "scene_id": "coin_rush_show_down_17",
+          "line": 134,
+          "quote": "  [OPTION TEXT=\"···슈엔. 그렇게나 이기고 싶었구나.\"]"
+        },
+        {
+          "scene_id": "coin_rush_show_down_19",
+          "line": 24,
+          "quote": "마나: CEO들을 포함한 모든 사람들을 시합에 더 집중시키기 위해서··· 일지도 모르겠습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "연구실의 여러 캡슐 중 탑승할 기체를 번호로 구별한 장비 표현이다. 뒤의 8개 기계 배치 설명까지 확인했으며, 특정 제품이나 고유 이름을 명명하는 장면이 아니어서 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_17",
+          "line": 68,
+          "quote": "남성 연구원: 1번 캡슐에 탑승하세요."
+        },
+        {
+          "scene_id": "project_matis_17",
+          "line": 84,
+          "quote": "슈엔은 연구실에 배치된 8개의 거대한 기계를 바라보았다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "매장에 들어온 프림이 눕는 휴게 공간을 기능에 따라 고객 라운지라고 부른다. 별도의 시설 고유명이라는 단서는 없고 소파와 함께 일반 매장 시설을 서술하므로 기본 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "yan_03",
+          "line": 108,
+          "quote": "대뜸 고객 라운지 소파에 드러누워 버렸다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__007:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "직전 main_16_08에서 라피가 대로를 기준으로 마을을 양분해 서쪽을 B구역으로 정한다. 따라서 원문은 임시 수색 구획이며, 기존 고유 지명이나 다른 이야기의 B 구역과 동일 장소로 묶지 않은 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_16_09",
+          "line": 2,
+          "quote": "··· ···얼마 후, B구역."
+        },
+        {
+          "scene_id": "main_16_08",
+          "line": 17,
+          "quote": "라피: 지금부터 대로를 중심으로 구역을 양분."
+        },
+        {
+          "scene_id": "main_16_08",
+          "line": 18,
+          "quote": "라피: 동쪽 A구역은 카운터스가,  서쪽 B구역은 이그조틱이 수색한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__017:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "수정 지역에서 발견한 시설과 과거 방주 밀봉 때 파괴할 시설은 서로 다르다. 공통 표기는 크기를 묘사한 '거대'와 장비명 '엘리베이터'이며, OVER ZONE에서도 곧 엘리베이터라고 풀어 부른다. 서로 다른 대상을 같은 고유 시설로 합치지 않은 일반 낱말 처리가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_00",
+          "line": 4,
+          "quote": "시프티: 먼저, 통칭 수정 지역에서 발견한 거대 엘리베이터는 명백히 인공물이라고 확정."
+        },
+        {
+          "scene_id": "over_zone_20",
+          "line": 8,
+          "quote": "남자의 목소리: 다음 목표인 거대 엘리베이터를 통해 물자와 식량을 보내겠습니다."
+        },
+        {
+          "scene_id": "over_zone_20",
+          "line": 14,
+          "quote": "남자의 목소리: 수령하신 후 엘리베이터를 파괴해 주시면 감사하겠습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__019:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "경비용이라는 용도와 '다수'라는 수량으로 저택에 배치된 니케들을 설명한다. 이름 붙은 스쿼드나 새로운 종족명이 아니므로 일반 낱말이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "milk_00",
+          "line": 9,
+          "quote": "프림: 경비용 니케. 다수."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__019:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "광고가 가져다 줄 물건의 예시를 집문서·가족 유품과 함께 나열한다. 특정 반지의 이름이 아닌 상품·소지품 일반의 용법이므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "광고팜플렛_00",
+          "line": 3,
+          "quote": "미처 챙겨오지 못한 내 집문서, 결혼 반지, 가족의 유품 등."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__009:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱이 지상에서 싸우는 자신의 니케들을 복수형 Goddess들로 높여 부르는 대목이다. 특정 과거 스쿼드의 정식 명칭이라는 근거 없이 갓데스로 연결하지 않고 비유적 보통 표현으로 둔 것이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "cherry_blossom_07",
+          "line": 124,
+          "quote": "머스탱: Me의 Goddess들이 목숨을 걸고 저 지상 위의 전장을 누비는 것이 결코 헛된 일이 아니었다Go."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__013:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "제시된 7곳 모두 방송·드라마·게임 화면을 보여 주는 수상기를 뜻한다. 장소마다 서로 다른 물건이며 같은 고유 기체를 가리키는 이름이 아니므로 일반 낱말 기본이 전 범위에 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_04",
+          "line": 54,
+          "quote": "바닥에 반쯤 파묻혀 있는 TV를 가리킨다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U037",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "은화의 훈련 장면에서 차례로 조작하는 드론 중 두 번째 기체를 가리킨다. 순번에 따른 보통 장비 표현이며 고유 모델명·개체명은 아니므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "eunhwa_03",
+          "line": 134,
+          "quote": "2번 드론을 어디로 움직일까?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__019:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "시민들에게 나눠 줄 사탕을 경찰 배지 모양으로 설명하고, 이어 카운터스 사탕을 만들자는 말이 나온다. 제품의 고유 이름보다 모양을 붙인 일반 물품 표현이므로 기본 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "a.c.p.u._freeze_02",
+          "line": 85,
+          "quote": "폴리: 저희도 시민들에게 나눠줄 경찰 배지 사탕을 준비해 뒀다구영."
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_02",
+          "line": 87,
+          "quote": "네온: 그럼 저희는 카운터스 사탕을 만들어요!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__016:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "요리 중 상처를 입었다는 말에 갓데시움 재질의 검 같은 물건을 사용했느냐고 가정한다. 민트는 곧 부정하며 일상용 바디라고 설명한다. 실제 특정 무기를 지칭하는 고유 이름이 아니므로 일반 낱말이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_38_07",
+          "line": 44,
+          "quote": "네온: 응? 니케가 칼에 상처도 나나요? 갓데시움 소드 같은 걸로 요리하는 건가요?"
+        },
+        {
+          "scene_id": "main_38_07",
+          "line": 45,
+          "quote": "민트: 후후. 아니."
+        },
+        {
+          "scene_id": "main_38_07",
+          "line": 46,
+          "quote": "민트: 우린 일상용 바디 중에서도 가장 사람과 가까운 바디를 착용해."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__017:U028",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "홍련의 무기를 '자신의 검'이라고 서술하거나 휘두르는 행동을 설명하는 다섯 출현이다. '[언니]'와 '[검]'의 강조 표기만으로 무기의 고유명이나 언니 개인의 별칭이 되지는 않으므로 일반 낱말 기본이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001216",
+          "line": 34,
+          "quote": "자신의 검을 그리운 듯 바라보며···."
+        },
+        {
+          "scene_id": "white_memory_page_1001216",
+          "line": 36,
+          "quote": "\"그것이 내 [언니]가 나의 [검]이 되며 알려준 교훈이지.\""
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "전설의 총 파츠 위치를 알려 주는 자료를 오래된 문헌이라고 설명한다. 두 출현이 같은 자료를 되짚기는 하지만 '고대 문헌' 자체는 문헌의 고유 제목을 명명하는 표현이 아니므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "neon_02",
+          "line": 12,
+          "quote": "맥스웰: 파츠의 위치에 대한 고대 문헌이 있어."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "숫자를 눌러 계산해야 할 기기의 화면에 게임이 떠 있는 상황이다. 기기의 일반 종류인 계산기를 가리키며 고유 제품명은 아니므로 기본 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "eleggboomandshock_01",
+          "line": 75,
+          "quote": "얀이 계산기를 눈앞에다가 들이밀었다."
+        },
+        {
+          "scene_id": "eleggboomandshock_01",
+          "line": 77,
+          "quote": "얀: 계산할라고 숫자를 아무리 눌러도, 게임 화면이 쪼금씩 움직이기만 하고, 안 사라진다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__016:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "폴리라는 이름표가 붙은 물건의 종류가 개 목걸이이다. 이름표의 이름과 목걸이 자체의 고유 이름을 혼동하지 않은 일반 낱말 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "poli_01",
+          "line": 236,
+          "quote": "폴리라는 이름표와 엘리시온의 심벌이 달린 개 목걸이다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__016:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여러 경비원의 비정상적 힘을 보고 '같은거라도'라고 추측하는 장비 종류다. 고유 장비명이나 명명된 개체를 지시하지 않으므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "coin_rush_show_down_23",
+          "line": 9,
+          "quote": "신: 뭐야. 강화 슈트 같은거라도 다 갖춰 입은거야?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__018:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "게임기 삽입구에 넣는 매체를 사용법 문맥에서 부른다. 게임 내용의 고유 제목이 아닌 일반 물품명이므로 일반 낱말이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "radio_tower_09",
+          "line": 70,
+          "quote": "엑시아: 그리고 제가 드린 게임칩을 삽입구에 넣어줍니다-"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__014:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "탐정 펜을 평소 넣어 다니는 소지품을 말한다. 가방에 별도 고유명이나 인격적 호칭이 부여되지 않으므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "police_station_05",
+          "line": 42,
+          "quote": "노벨: 가방 속에 항상 넣어 다니는데,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__011:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현 모두 지휘관에게 Rabbit 역할을 맡아 달라고 요청하는 말이다. 같은 이야기 _00에서 그 역할을 미끼라고 풀고 _15에서는 추격 행사의 쫓기는 역할로 사용한다. 특정 인물의 정착된 이름이라기보다 맡을 역할에 대한 비유이므로 일반 낱말이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_01",
+          "line": 139,
+          "quote": "머스탱: Rabbit이 되어주십시Oh."
+        },
+        {
+          "scene_id": "coins_in_rush_00",
+          "line": 68,
+          "quote": "머스탱: Commander가 미끼가 되는 거Jyo."
+        },
+        {
+          "scene_id": "coins_in_rush_02",
+          "line": 4,
+          "quote": "머스탱: Rabbit이 되어주십시Oh."
+        },
+        {
+          "scene_id": "coins_in_rush_15",
+          "line": 13,
+          "quote": "머스탱: 이 Event에는, 불쌍한 Rabbit을 잡으려는 악당이 등장합니Da!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__017:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "바로 앞 지문의 걱정스러운 눈길을 요약한 미니게임 저장 메모리 이름표이다. 별도 인물·물건의 이름이 아니며 규칙 3.2의 기록 이름표 사례대로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2228",
+          "line": 12,
+          "quote": "메모리 저장: 저장된 메모리 : 걱정하는 눈"
+        },
+        {
+          "scene_id": "fading_affection_2228",
+          "line": 10,
+          "quote": "마리안은 걱정스레 자신을 바라보던 눈을 떠올리며 그 뒤를 따랐다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__006:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "소대장이 타고 온 차량을 지휘관에게 사용하라고 권하며 차종을 ATV라고 부른다. 기체를 새로 명명하는 문맥이 아니라 일반 차량 종류이므로 기본 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "ark_guardian_17",
+          "line": 117,
+          "quote": "중앙 정부 소대장: 이 앞으로 가면 격납고입니다. 제가 타고 온 ATV가 있는데, 그걸 사용해 주십시오."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__019:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네로가 상태를 확인하는 검사 결과 용지를 일반 명사로 부르는 장면이다. 문서의 고유 제목이나 별칭이 없어 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "nya_nya_paradise_09",
+          "line": 7,
+          "quote": "네로는 심각한 표정으로 결과지를 보고 있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "왕국이 어떤 건물인지를 '관광지로 쓰이던 인공섬의 고성'으로 설명하고 다른 출현도 저 고성·거대한 고성 같은 건물 종류 표현이다. 같은 왕국 건물을 지시하는 사실만으로 이 보통명사 자체를 고유 지명으로 보지는 않은 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "last_kingdom_03",
+          "line": 61,
+          "quote": "차임: 그래. 왕국은 원래 관광지로 쓰이던 인공섬의 고성이니라."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__014:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "D가 건네는 보호 장비의 종류·구조를 간이 방독면이라고 서술한다. 고유 명명이나 모델명 없이 쓰인 일반 물품명이므로 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "kill_the_lord_12",
+          "line": 115,
+          "quote": "D는 내게 간이 방독면을 건넸다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__018:U011",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "처음에는 검은색 갑주를 입은 니케의 외형과 헬레틱이라는 분류를 결합해 서술하고, 다음 장면에서는 같은 외형의 여러 개체를 '검은 헬레틱들'이라 부른다. 한 인물의 고정 별칭이나 이름 붙인 별도 종족으로 단정할 근거는 없으므로 수식 보통 표현 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "ark_guardian_13",
+          "line": 35,
+          "quote": "검은 헬레틱은 폭발에 휘말려 몸이 이리저리 휘청인다."
+        },
+        {
+          "scene_id": "ark_guardian_13",
+          "line": 27,
+          "quote": "검은색 갑주를 입은 니케가 부유한 채 일행을 내려다보고 있다."
+        },
+        {
+          "scene_id": "ark_guardian_13",
+          "line": 31,
+          "quote": "릴리바이스: ···헬레틱이네."
+        },
+        {
+          "scene_id": "ark_guardian_14",
+          "line": 15,
+          "quote": "검은 헬레틱들이 착지한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__005:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "참치 대뱃살과 나란히 제시되는 음식 선택지이다. 등급을 붙인 한우 일반을 뜻하며 특정 상품의 고유 이름이 아니므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_n102_003",
+          "line": 29,
+          "quote": "      [OPTION TEXT=\"A++ 한우\"]"
+        },
+        {
+          "scene_id": "blabla_n102_003",
+          "line": 31,
+          "quote": "      [OPTION TEXT=\"참치 대뱃살\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__012:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "방패처럼 보이는 부품이 무엇인지 묻자 머스탱이 영문 보통명사 Speaker로 답한다. 소리를 내는 장치 종류를 설명하는 용법이므로 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_45_01",
+          "line": 46,
+          "quote": "머스탱: Yes! Speaker입니Da!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__007:U028",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "봉투에서 여러 USB와 CD가 함께 쏟아져 나오는 장면이다. 저장매체의 종류와 그 안의 드라마 제목을 구별한 일반 낱말 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "observation_post_09",
+          "line": 45,
+          "quote": "그 안에서는 여러 USB와 CD가 쏟아져나왔다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__005:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "찾아서 기기에 넣는 건전지의 규격을 AAA로 말한다. 고유 물품명이 아닌 규격을 붙인 보통 명사구이므로 일반 낱말이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "fool_metal_panic_04",
+          "line": 41,
+          "quote": "센티: 찾았슴다. 여기, AAA 건전지임다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__014:U040",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라플라스에게 넣지 못했던 부품을 다른 니케에게 장착하자는 말이다. 기능별 부품 종류인 감지 센서이며 고유 제품명은 아니므로 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_25",
+          "line": 204,
+          "quote": "지엔: 라플라스 씨한테 못 넣은 감지 센서 넣어주면 딱이겠네."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__012:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아이돌 그룹명이 상품을 수식하지만 굿즈 전체를 특정 단일 물품의 이름으로 만들지는 않는다. 가게에 두고 온 관련 상품들을 통칭하는 표현이므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "anis_star_04",
+          "line": 128,
+          "quote": "  [OPTION TEXT=\"그러고 보니 T.T. STAR 굿즈는 가게에 두고 왔네.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__010:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 행사에서 Main 이벤트·Main Event·메인 이벤트를 혼용하며, 루주는 메인 이벤트를 한 번 더 했다는 식으로 풀어 말한다. 본행사라는 일반 역할 표현을 고유 행사명으로 만들지 않은 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_21",
+          "line": 138,
+          "quote": "안내 방송: 앞으로 1Hour. Main Event가 Start할 때까지 잡히지 않는다Myeon,"
+        },
+        {
+          "scene_id": "coins_in_rush_26",
+          "line": 65,
+          "quote": "머스탱: Main 이벤트가 시작하기 전의 Chasing Event!"
+        },
+        {
+          "scene_id": "coins_in_rush_26",
+          "line": 82,
+          "quote": "루주: 네. 사실상 메인 이벤트를 한 번 더 한 정도···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__009:U031",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여섯 출현은 미사일을 설명하거나 공중 폭격과 나란히 일반 공격 수단을 말한다. 특정 사건에서 발사한 무기를 되짚더라도 ICBM 자체는 무기 종류의 보통 용어이므로 일반 낱말 기본이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_38_12",
+          "line": 92,
+          "quote": "맥스웰: 엄청 예전에 궤도 엘리베이터로 쏜 ICBM을 잡아먹고, 그 에너지를 그대로 뱉어내서 발사 지점을 쑥대밭으로 만들었다고 했어."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "바이퍼가 착용한 초커의 성능을 수식하는 말이다. 개체의 별도 이름이나 제품 모델을 명명하지 않으므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_39_12",
+          "line": 65,
+          "quote": "네온: 아우터 림 밖을 나갈 수 없고, 고성능 초커를 차고 있는 걸로는 부족해요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "먹는 양을 12인분으로 세는 음식 일반의 용법이다. 특정 대상의 이름이 아니므로 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_littlecannon_004",
+          "line": 34,
+          "quote": "    평소에 고기 12인분에"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__019:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "게임기에 넣는 작은 플라스틱 매체를 게임팩이라고 풀어 설명한다. 고유 게임 제목이나 별도 제품명을 가리키지 않으므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "radio_tower_09",
+          "line": 33,
+          "quote": "엑시아: 그다음, 게임팩을 게임기 안에 넣습니다-"
+        },
+        {
+          "scene_id": "radio_tower_09",
+          "line": 34,
+          "quote": "백학: 게임팩이 아까 주셨던 이 작은 플라스틱이죠?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__018:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "놀 만한 시설의 한 종류를 '게임센터 같은 곳'으로 제안한다. 상호나 고유 시설명이 아닌 일반 오락시설 표현이므로 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "life_again_06",
+          "line": 45,
+          "quote": "  [OPTION TEXT=\"게임센터 같은 곳도 있는데, 어때?\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__002:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관의 태도를 복수의 회사 대표들과 빗대는 표현이다. 특정 대표 한 사람을 CEO라는 호칭으로 부르는 출현이나 정식 조직명은 아니므로 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "maxwell_01",
+          "line": 94,
+          "quote": "    맥스웰: 방금 되게 3대 CEO들 같았어."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__014:U014",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일지 작성자가 기록을 남길 때 사용하는 입력 장치의 종류이다. 가상 키보드 자체에 고유 이름이 부여된 것이 아니므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "하모니큐브관찰일지_00",
+          "line": 4,
+          "quote": "죽기 전까지 가상 키보드를 두드리는 것 밖에 없겠지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__002:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 이야기 _18에서 2차 바디 생성 실험을 시작하고 실패하는 과정을 확인했다. 표본의 2차 생성 바디는 그 두 번째 실험에서 만들던 바디를 설명하며, 독립적인 모델명·기술명으로 명명하지 않았으므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_25",
+          "line": 52,
+          "quote": "맥스웰: 2차 생성 바디를 실패하게 만든 알약. 내가 너한테 가져다 준 거."
+        },
+        {
+          "scene_id": "project_matis_18",
+          "line": 113,
+          "quote": "슈엔: 2차 바디 생성, 시작하자."
+        },
+        {
+          "scene_id": "project_matis_18",
+          "line": 131,
+          "quote": "2차 바디 생성 실험은 실험체들이 캡슐 속에서 모두 녹아내린 상태로,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__013:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현 모두 코인 러시에서 VIP가 이용하는 대기 공간을 기능에 따라 부른다. 고유 구역명으로 별도 명명하는 근거가 없어 일반 시설 표현으로 처리한 것이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_19",
+          "line": 182,
+          "quote": "밀크: 엉. VIP 대기실에서 나올 때 카메라에 살짝 찍혔다나 봐."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U027",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "노래방 점수 조건을 충족하면 주는 쿠폰을 혜택·시간으로 설명한다. 상품의 고유 이름이 아니므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "2x2_love_1ch_07",
+          "line": 380,
+          "quote": "    츠바이: 노래방에서 100점을 맞으면, 1시간 무료 이용권을 준다고 들었어요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__016:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "수업·운동·축제 공연에 쓰는 학교 시설을 강당이라고 부르는 세 출현이다. 특정 건물의 고유 명칭보다 일반 시설명이라는 해석이 원문에 맞다.",
+      "evidence": [
+        {
+          "scene_id": "2x2_love_1ch_09",
+          "line": 176,
+          "quote": "    프리바티의 지시에 따라 강당 안을 달리기 시작했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__017:U031",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "뉴스는 시민이 본 윤곽 흐릿하고 새카만 그림자를 '검은 괴물'로 묘사한다. 뒤의 D-섀도 명명과도 대조했으나, 표본 표기 자체는 아직 정식 종족명이나 특정 개체의 이름이 아니라 외형을 전하는 보통 표현이다. 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "persona_on_frontline_00",
+          "line": 15,
+          "quote": "아나운서: [검은 괴물]을 보았다는 목격담이 이어지고 있어,"
+        },
+        {
+          "scene_id": "persona_on_frontline_00",
+          "line": 32,
+          "quote": "인터뷰 중인 여자 시민: 분명히 가까이 있었는데도, 윤곽만 흐릿하고 새카만··· 그림자요."
+        },
+        {
+          "scene_id": "persona_on_frontline_10",
+          "line": 85,
+          "quote": "퀀시: 그럼 일단 차별화해서 [D-섀도]는 어때?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "튜브에 달아 닻을 빠르게 쏘는 장치의 기능을 그대로 풀어 말한다. 고유 제품명·기술명을 붙인 문맥이 아니므로 일반 낱말이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "mary_baygoddess_03",
+          "line": 99,
+          "quote": "네온: 예. 리타한테 부탁해서 고속 닻 발사 장치를 튜브에 달았거든요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "교사가 필기시험의 교시와 과목을 안내하는 문맥이다. 별도의 고유 행사 이름이 아니라 시험 시간표 표현이므로 일반 낱말이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "school_of_lock_06",
+          "line": 35,
+          "quote": "마르차나: 그럼 1교시 지휘 영역입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__020:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "25개 이야기의 제시 40곳은 신고·출근·구금·방문 대상인 치안 기관 또는 시설을 경찰서라는 보통명사로 부른다. occ에서 유일한 미제시 O0011을 확인하고 police_station_07 L1~16을 show로 읽었다. 폴리의 호출을 받고 방문한 장소를 같은 일반 시설명으로 표현하므로 탐침에 적용된 A2__020__001도 맞다. shown이 0인 이야기는 없으며, 고유 이름 없는 시설을 서로 다른 시점·장소라는 이유만으로 새 엔티티로 합치지 않은 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "bow_wow_paradise_02",
+          "line": 76,
+          "quote": "비스킷: ···경찰서에서 연락 왔어요."
+        },
+        {
+          "scene_id": "police_station_07",
+          "line": 2,
+          "quote": "나는 갑작스러운 폴리의 호출을 받고, 경찰서로 향했다."
+        },
+        {
+          "scene_id": "police_station_07",
+          "line": 9,
+          "quote": "  [OPTION TEXT=\"경찰서 앞에서 뭐 해?\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__003:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "딸의 증명사진을 선물한 다리가 불편한 503호의 특정 환자이며, entity에서 이 표기의 등록 인물은 없었다. 같은 이야기 _26의 503호 휠체어 아주머니와 병원·호실·신체 상태가 일치한다. E8의 인물 및 리페어 센터 qualifier가 타당하고, 두 호칭의 동일성은 간접 단서여서 가능성으로 둔 것도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "bluewater_wisland_19",
+          "line": 71,
+          "quote": "메어리: 다리가 불편한 503호 환자분의 딸아이 증명사진···."
+        },
+        {
+          "scene_id": "bluewater_wisland_19",
+          "line": 84,
+          "quote": "페퍼: 저 또 갑자기 리페어 센터에 돌아가고 싶어졌잖아요~!"
+        },
+        {
+          "scene_id": "bluewater_wisland_26",
+          "line": 120,
+          "quote": "안대를 낀 아이: 저희만 그런 거 아니에요. 503호의 휠체어 아줌마도···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__018:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 연결을 모두 확인했다. A.C.P.U. FREEZE의 기본은 중앙 공원의 명시된 네 구역 중 게임 존(E7)이다. 같은 순찰을 이야기하는 메신저 예외는 그 장소를 간접적으로 잇기 때문에 같은 E7·가능성이 적절하다. GOLDEN COIN RUSH는 건물 2층에 명시된 별도 게임 존으로 E8·유력한 해석 및 다른 qualifier를 사용한 구분이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "a.c.p.u._freeze_05",
+          "line": 51,
+          "quote": "폴리: 메인 존, 호러 존, 디저트 존, 게임 존. 이렇게영."
+        },
+        {
+          "scene_id": "golden_coin_rush_05",
+          "line": 186,
+          "quote": "코인 러시의 2층에는 [게임 존]과 [드링크 존]이 있다."
+        },
+        {
+          "scene_id": "blabla_freezeacpu_003",
+          "line": 133,
+          "quote": "    게임 존이라"
+        },
+        {
+          "scene_id": "blabla_freezeacpu_003",
+          "line": 136,
+          "quote": "    온갖 게임들 하면서 잘 놀고 있다구요"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__019:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일곱 이야기의 출현은 아우터 림과 방주 도시를 나누는 특정 경계 시설을 일관되게 되짚는다. 극장 장면도 영화 속 벽이 아니라 현실의 아우터 림과 비교하면서 그 경계 시설을 설명한다. 콜렉터의 방주 침공 이야기와 네온의 재방문 장면을 추가 확인했으며, 같은 location으로 묶는 기본 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_43_11",
+          "line": 203,
+          "quote": "프린세스: 가··· 자···! 격벽 앞에서 기다리고 있을 거야···!"
+        },
+        {
+          "scene_id": "theater_02",
+          "line": 60,
+          "quote": "크로우: 일단 아우터 림과 도시를 가르는 [격벽]이 없으니"
+        },
+        {
+          "scene_id": "콜렉터_02",
+          "line": 39,
+          "quote": "    아우터 림은 난리가 났지만요"
+        },
+        {
+          "scene_id": "콜렉터_02",
+          "line": 48,
+          "quote": "    격벽이 있으니까요"
+        },
+        {
+          "scene_id": "neon_visioneye_03",
+          "line": 36,
+          "quote": "나는 격벽 주변을 천천히 둘러봤다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__011:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현 모두 머스탱이 갱생관·방주 및 E.H.의 활동과 관련된 구역을 영어로 부른다. 같은 아우터 림 지명이고 사람을 가리키지 않으므로 새 location 판정이 타당하다. 동명의 다른 장소를 의심할 문맥은 없다.",
+      "evidence": [
+        {
+          "scene_id": "main_40_15",
+          "line": 14,
+          "quote": "머스탱: 그 절실함이, 갱생관은 물론 Outer Rim까지 당신을 이끌었Jyo."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__005:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "34장에서 A 필러의 강화 버전이라고 직접 소개되고, 이벤트와 필드 대화는 그 병기의 사출·회수·에너지 폭주를 일관되게 이어 간다. 13곳 모두 같은 이름의 병기를 가리키므로 item·유력한 해석 기본이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_34_13",
+          "line": 105,
+          "quote": "시프티: 수정 지역은 A 필러의 강화 버전인 AA 필러로 한 번에 섬멸할 예정이에요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "원문이 슈엔의 할머니이자 니케 프로토타입을 만든 초대 대표라는 관계를 직접 명시한다. 현재의 CEO나 일반 직책과 구별되는 특정 인물이므로 일반 낱말이 아니다. 등록 검색에서도 해당 인물이 확인되지 않았으며, 직함을 이름으로 쓰고 미실리스 초대 CEO·슈엔의 할머니로 한정한 새 인물 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_01",
+          "line": 110,
+          "quote": "맥스웰: 그래. 네 할머니인 1대 CEO께서 모든 니케의 프로토타입을 만들고,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__010:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱이 트로니의 소속 회사를 Tetra·Elysion과 나란히 영어로 부른다. 개인 별칭이나 종족이 아니라 미실리스 인더스트리라는 기업이므로 organization 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "ark_ranger_21",
+          "line": 79,
+          "quote": "머스탱: Missilis 최고의 Mechanic 트로니가 Ark Machine을 실전 사양으로 Customize 해 줄 겁니Da!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__007:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "표본에서는 치료제를 보내는 곳으로 나오며 ether_02의 복도에는 CASE. 04 방문이 실제로 존재한다. 추상 실험 단계만을 뜻하는 표현이 아니라 번호가 붙은 특정 실험실이므로 새 location 판정이 타당하다. CASE. 03과 별도 E18을 쓴 것도 맞다.",
+      "evidence": [
+        {
+          "scene_id": "ether_03",
+          "line": 117,
+          "quote": "에테르: [CASE. 03]과 [CASE. 04]로 보내서."
+        },
+        {
+          "scene_id": "ether_02",
+          "line": 127,
+          "quote": "[CASE. 04]의 방문도."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__010:U029",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엑시아가 미실리스에서 개발한 고밀도 입자포의 모델이라고 직접 설명한다. 고유 모델명 MSIC-007을 item으로 둔 판정과 유력한 해석이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_08_06",
+          "line": 3,
+          "quote": "엑시아: MSIC-007 입니다- 미실리스에서 개발한 고밀도 입자포 모델입니다-"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__011:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "문서에 계획명이 표시되고 바이러스 확산·심판자 유도·완수 조건이 함께 적혀 있다. 실제 벌어진 사건 자체보다 명명된 프로젝트·계획이므로 concept 판정이 맞다. 두 출현의 동일한 제목도 일치한다.",
+      "evidence": [
+        {
+          "scene_id": "reborn_evil_16",
+          "line": 45,
+          "quote": "[PROJECT. REBORN EVIL]"
+        },
+        {
+          "scene_id": "reborn_evil_16",
+          "line": 49,
+          "quote": "[REBORN EVIL] 프로젝트를 시행함."
+        },
+        {
+          "scene_id": "reborn_evil_16",
+          "line": 50,
+          "quote": "NEO 바이러스를 방주 내에 광범위하게 확산시킨 뒤."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__014:U035",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "델타가 정리 완료를 보고하는 감시탑의 특정 제4창고를 식별하는 복합 시설명이다. 막연한 창고 일반이 아니라 위치와 번호로 한정된 시설이므로 location 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_delta_006",
+          "line": 7,
+          "quote": "    감시탑 제4창고 정리 작업 완료했습니다"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__012:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에피넬이 새 트릭의 명명 의도를 설명하고 다음 출현에서 같은 이름을 외친다. 이름을 붙인 기술이므로 concept·유력한 해석이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "epinel_03",
+          "line": 76,
+          "quote": "  [OPTION TEXT=\"SAFE 50-50.\"]"
+        },
+        {
+          "scene_id": "epinel_03",
+          "line": 78,
+          "quote": "    에피넬: 베이스가 되는 트릭인 50-50에, 안전하다는 의미(Safe)를 더한 거지?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__006:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "D가 B.S.T.를 Biohazard Strike Team으로 풀고 생물재해 처리 부서라고 직접 설명한다. 위장 신분에서 소개된 부서라는 한계는 있으나 원문 안에서 명명된 조직이며, 세 출현 모두 그 소속을 되짚는다. 개인 별칭이나 종족으로 처리하지 않은 organization 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "reborn_evil_20",
+          "line": 107,
+          "quote": "D: B.S.T. 소속 윈터스, 라고 합니다."
+        },
+        {
+          "scene_id": "reborn_evil_20",
+          "line": 109,
+          "quote": "D: Biohazard Strike Team."
+        },
+        {
+          "scene_id": "reborn_evil_20",
+          "line": 110,
+          "quote": "D: 방주에서 일어난 생물재해를 처리하는 부서입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__003:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사장이 지정한 다음 날 오전 6시의 장소가 이어지는 장면의 '3번 물류 창고'와 그대로 일치한다. 같은 이야기의 같은 시설에 대한 띄어쓰기 변형이므로 E2 및 C.O.L. 물류 창고 qualifier가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "license_to_kill_07",
+          "line": 115,
+          "quote": "사장: 그럼 내일 아침 6시까지, 3번 물류창고로 와주세요."
+        },
+        {
+          "scene_id": "license_to_kill_08",
+          "line": 2,
+          "quote": "다음날. 아침 6시. 3번 물류 창고."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__013:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "바로 다음 메시지가 '이 좌표에서 나와 합류하자'라고 설명한다. 특정 합류 좌표를 나타내는 위치 식별자이므로 새 location 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "랩칠리언_00",
+          "line": 101,
+          "quote": "    UGF 30.49"
+        },
+        {
+          "scene_id": "랩칠리언_00",
+          "line": 104,
+          "quote": "    이 좌표에서 나와 합류하자!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에닉이 일곱 조율자의 개체 번호를 열거하고, 50장에서 랩쳐 06을 슬로스라고 따로 구별한다. 여섯 번째 개별 존재의 코드이며 종족 전체나 일반 숫자가 아니므로 새 개체 판정이 타당하다. entity 검색의 부분 일치 wjd0684는 문맥상 무관하며 슬로스는 등록되어 있지 않다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 558,
+          "quote": "나유타: 랩쳐 06. 생명 휴면 보전 장치. 슬로스."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__007:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "치료제를 보내는 CASE. 03은 ether_02에서 실제 방문으로도 확인된다. 개념적 실험 단계가 아니라 이름 붙은 실험실이므로 새 location이 맞으며 CASE. 04의 E18과 다른 E17로 구분한 것도 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "ether_03",
+          "line": 117,
+          "quote": "에테르: [CASE. 03]과 [CASE. 04]로 보내서."
+        },
+        {
+          "scene_id": "ether_02",
+          "line": 128,
+          "quote": "[CASE. 03]의 방문도."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__006:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "킬로는 말을 하는 리얼계 로봇의 사례를 ARX라는 식별자로 든다. 특정 로봇 또는 로봇 모델의 이름이라는 범위에서 item 판정이 타당하다. 원문이 밝히지 않은 작품명이나 세부 기체 번호를 외부 지식으로 보충하지 않은 점도 맞다.",
+      "evidence": [
+        {
+          "scene_id": "kilo_00",
+          "line": 105,
+          "quote": "킬로: ARX도 그런데요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__011:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아크레인저의 방주 방어 작전 완료를 알리는 표시이며 사건 일반을 서술하는 문장이 아니다. 같은 작전명의 대문자 변형으로 처리한 concept 및 E6 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "ark_ranger_26",
+          "line": 138,
+          "quote": "OPERATION CRIMSON SKY [ACTION]: COMPLETE"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__003:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱이 우승 스쿼드를 777 Squad라고 소개하고 블랑을 대표로 부른다. 이후 여섯 출현도 같은 참가 팀의 승부를 이어 가므로 특정 스쿼드의 영문 혼용 표기로 본 판정이 타당하다. organization이나 종족 대신 squad를 쓴 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "golden_coin_rush_00",
+          "line": 5,
+          "quote": "머스탱: 777 Squad 입니Da~!!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__006:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라푼젤이 리페어 센터에 전달할 치료 규격을 B-2로 지정하고 피나가 그 코드를 되받는다. 수복 방식의 특정 규격명이며 별도 물건·인물이 아니므로 concept 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "ark_guardian_11",
+          "line": 146,
+          "quote": "라푼젤: 알겠어요. 부탁드릴게요. 리페어 센터로 가면 B-2 사양으로 치료해달라고 해주세요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__001:U030",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "주요 인원의 방주 이주가 이루어진 첫 번째 밀봉을 이후 단계와 대비하는 특정 과거 사건이다. 방주 밀봉이라는 사건 문맥을 포함해 이름을 확장하고 event로 둔 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "ark_guardian_17",
+          "line": 23,
+          "quote": "V.T.C. 여사제: 어차피 인류는 졌습니다. 주요 인원은 이미 1차 밀봉 때 방주로 모두 내려갔습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__003:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "20개 이야기의 27곳이 니케를 만드는 정해진 세 기업을 통칭한다. 아니스가 엘리시온·미실리스 인더스트리·테트라 라인을 직접 열거하므로 임의의 큰 회사 세 곳을 뜻하는 일반 표현이 아니다. CEO의 시대별 교체와 회사 집단의 동일성을 혼동하지 않은 organization 기본이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_02_13",
+          "line": 21,
+          "quote": "네온: 이분은 니케 제작 3대 회사 중 하나인 미실리스 인더스트리의 CEO인 슈엔 님이에요."
+        },
+        {
+          "scene_id": "anis_01",
+          "line": 110,
+          "quote": "아니스: 그게 다 3대 회사가 있기에 가능한 일이야."
+        },
+        {
+          "scene_id": "anis_01",
+          "line": 111,
+          "quote": "아니스: 지휘관님도 알고 있지? 엘리시온, 미실리스 인더스트리, 테트라 라인."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__002:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "크로우가 제조사들에 연락하라고 한 뒤 잉그리드·슈엔·머스탱을 열거한다. 특정 세 기업의 집합을 가리키며 세 대표 개인을 하나의 character로 묶는 표현이 아니다. 3대 기업을 새 organization으로 둔 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "crow_03",
+          "line": 59,
+          "quote": "크로우: 정 못 믿겠다면 3대 니케 제조사에 연락해 보도록 해."
+        },
+        {
+          "scene_id": "crow_03",
+          "line": 60,
+          "quote": "크로우: 잉그리드. 슈엔. 머스탱."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__006:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 메시지가 같은 탐색 구역의 식별자 AREA F-031을 반복한다. 일정이나 일반 지역 종류가 아니라 한 구역을 지정하므로 location 기본이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "핸섬_커맨더_00",
+          "line": 88,
+          "quote": "    너 AREA F-031로 탐색 다닌다며?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__009:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "파피용이 전송 완료를 보고한 E 폴더를 뒤에서 병기 개발 자료라고 설명한다. 일반 폴더 기능이 아니라 특정 자료 묶음을 구별하는 이름이므로 디지털 자료 물품인 item 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "eden_spear_09",
+          "line": 5,
+          "quote": "    E 폴더 전송 완료"
+        },
+        {
+          "scene_id": "eden_spear_09",
+          "line": 14,
+          "quote": "    병기 개발 쪽 자료던데"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__007:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일레그가 방주 사람들이 진짜 하늘을 보고 모든 디스플레이에 BOOM을 설치할 수 있는 미래를 설명한 뒤 그것을 BOOMS DAY라고 부른다. 작품의 종료 표시에만 나온 문자열이 아니라 대사 속에서 이름을 붙인 이상·목표이므로 concept 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "booms_day_14",
+          "line": 50,
+          "quote": "일레그: BOOMS DAY가 올 수 있도록 말이져!"
+        },
+        {
+          "scene_id": "booms_day_14",
+          "line": 36,
+          "quote": "일레그: 방주의 모든 사람들이 진짜 하늘을 볼 수 있도록."
+        },
+        {
+          "scene_id": "booms_day_14",
+          "line": 37,
+          "quote": "일레그: 방주 내 모든 디스플레이에 BOOM을 설치할 수 있도록."
+        },
+        {
+          "scene_id": "booms_day_14",
+          "line": 38,
+          "quote": "일레그: 방주가 사라지는 날이 올 수 있도록!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__012:U021",
+      "judgment": "맞음",
+      "problems": [
+        "other"
+      ],
+      "reason": "13곳은 같은 아이돌 그룹을 가리키며 organization·유력한 해석 및 같은 E17로 묶는 의미 판정은 맞다. 다만 A2__012__022의 대표명 name은 약칭 'T.T. STAR'로 되어 있다. 근거 자체인 main_35_10 L32가 '트윙클 트라이 스타'를 온전한 이름으로 밝히고 T.T.STAR를 줄임말이라고 명시하므로, 규칙 3.4의 가장 온전한 원문 표기를 쓰라는 요구에 따라 대표명을 정리해야 한다.",
+      "evidence": [
+        {
+          "scene_id": "main_35_10",
+          "line": 32,
+          "quote": "아니스: 그··· 트윙클 트라이 스타라고··· 줄여서 T.T.STAR."
+        },
+        {
+          "scene_id": "main_40_13",
+          "line": 48,
+          "quote": "미세스 미스: T.T.STAR? 이름은 알아. 마이너에선 제법 유명했던 아이돌 그룹이잖니."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__003:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "번호와 모델명이 함께 주어지고 랩쳐 침략의 경로가 된 특정 엘리베이터 시설을 식별한다. 임의의 대형 엘리베이터를 묘사하는 표현과 달리 고유 시설 식별자이므로 location 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "데일리아크기사스크랩_04",
+          "line": 8,
+          "quote": "그는 지난 20일 73호기 엘리베이터(모델명 AHWDD-93760)를 통한 랩쳐 침략을 허용한 데 이어, 뒤이은 방어전에서도 실수를 반복했다. 마침내 마일즈 부사령관이 개입할 때까지 병력의 60% 이상을 손실하며··· (더보기)"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__009:U005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "은화가 총기의 명칭을 ELY-AR-17C라고 직접 밝히며 손잡이 개량을 설명한다. 일반 총기 종류가 아닌 모델명이므로 item·유력한 해석이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "armory_02",
+          "line": 47,
+          "quote": "은화: ELY-AR-17C라고 하지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__010:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "M.M.R. 메신저의 전력 점검 대상 구역이고, 같은 에테르가 WISDOM SPRING에서 LEVEL D 구역의 검진 장소를 언급한다. 시설 내 명시적 구역 코드가 일치하므로 새 location과 같은 E1로 잇는 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_mmr_004",
+          "line": 66,
+          "quote": "    오늘 LEVEL D 구역 전력 점검한다고 했잖아"
+        },
+        {
+          "scene_id": "wisdom_spring_14",
+          "line": 7,
+          "quote": "에테르: [LEVEL D] 구역에 돌아왔을 때, 7호가 쓰러져서 검진해 봤잖아."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__010:U013",
+      "judgment": "맞음",
+      "problems": [
+        "other"
+      ],
+      "reason": "기본 연구 기관과 WORDLESS의 스쿼드 예외를 모두 확인했다. novel_03은 군사 연구 기관이라고 설명하고 wordless_02~03은 다른 스쿼드들과 함께 M.M.R. 스쿼드를 직접 명시하므로 E9 organization과 E10 squad의 구분은 타당하다. 전체 72곳을 occ로 조회했으며 미제시 탐침 O0002(main_24_15 L11), O0039(wisdom_spring_11 L157), O0036(wisdom_spring_06 L29)을 show로 읽었다. 방문할 기관·기관의 심층 시설·무기 제작 기관이어서 모두 A2__010__013의 기본 대상에 맞다. 추가로 wisdom_spring_07 L58에서 연구소 소속과 스쿼드 소속을 구별하는 설명도 확인했고 shown이 0인 이야기는 없다. 다만 기본 target.name을 'M.M.R.'로만 둔 것은 novel_03 L210에 제시된 온전한 명칭 '미실리스 군사 연구 센터'를 대표명으로 쓰라는 규칙 3.4에 맞게 정리할 필요가 있다.",
+      "evidence": [
+        {
+          "scene_id": "main_24_16",
+          "line": 2,
+          "quote": "M.M.R. 심부."
+        },
+        {
+          "scene_id": "novel_03",
+          "line": 210,
+          "quote": "오후 08:00, M.M.R.(미실리스 군사 연구 센터)."
+        },
+        {
+          "scene_id": "novel_03",
+          "line": 214,
+          "quote": "마나: 우리는 본질적으로 군사 연구 기관이고. 이쪽 일만으로도 눈코 뜰새없이 바쁩니다."
+        },
+        {
+          "scene_id": "wordless_02",
+          "line": 18,
+          "quote": "마나: 그래서 메티스와 M.M.R.은 물론이고  마이티 툴즈, 일렉트릭 쇼크 스쿼드 등."
+        },
+        {
+          "scene_id": "wordless_03",
+          "line": 56,
+          "quote": "마나: 이전의 당신이나 M.M.R. 스쿼드와 같이 슈엔의 최측근인 니케들만 그 존재를 알고 있습니다."
+        },
+        {
+          "scene_id": "main_24_15",
+          "line": 11,
+          "quote": "도로시: M.M.R.이라 불리는 곳이 있다고 들었는데, 거길 볼 수 있을까요?"
+        },
+        {
+          "scene_id": "wisdom_spring_11",
+          "line": 157,
+          "quote": "  [OPTION TEXT=\"여기 처음 와본 내가 M.M.R. 심층부에서 익숙함을 느낀다는 게.\"]"
+        },
+        {
+          "scene_id": "wisdom_spring_06",
+          "line": 29,
+          "quote": "  [OPTION TEXT=\"나한테 M.M.R.에서 신식 무기를 만들어준다고 연락했잖아.\"]"
+        },
+        {
+          "scene_id": "wisdom_spring_07",
+          "line": 58,
+          "quote": "마나: M.M.R. 소속 연구원이자,  M.M.R. 스쿼드 소속의 니케죠."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__006:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "19개 이야기의 제시 40곳과 occ로 조회한 미제시 12곳의 위치·인용행이 같은 AZX 열차를 가리킨다. 세 탐침 O0026(terminus_ticket_21 L69), O0023(terminus_ticket_12 L64), O0036(train_station_08 L7)을 각각 show로 확인했으며 승객 수송·구조·차량 서비스 맥락이 모두 일치한다. 따라서 A2__006__018의 새 item 기본 적용은 맞다. 열차 그림·배지의 출현도 그림이 본뜨는 같은 열차를 지시하며, shown이 0인 이야기는 없다.",
+      "evidence": [
+        {
+          "scene_id": "main_13_04",
+          "line": 3,
+          "quote": "디젤: 지상용 단독부상열차 AZX 랍니다."
+        },
+        {
+          "scene_id": "terminus_ticket_21",
+          "line": 69,
+          "quote": "브리드: 승객이 원하신다면, 안전하게 모시는 것이 AZX의 기관사 아니겠습니까."
+        },
+        {
+          "scene_id": "terminus_ticket_12",
+          "line": 64,
+          "quote": "디젤: AZX가 옵니다!"
+        },
+        {
+          "scene_id": "train_station_08",
+          "line": 7,
+          "quote": "솔린: 우리 AZX의 퀄리티가 좋아지는 거니까, 들뜰 만하지!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__005:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "기본은 방주의 경찰 니케 스쿼드이며 시뮬레이션 속 같은 역할도 실제 스쿼드로 잇는 규칙에 맞다. occ로 94곳을 조회하고 세 탐침 O0036(reborn_evil_06 L37), O0038(reborn_evil_26 L26), O0047(persona_on_frontline_11 L74)을 show로 확인했다. 각각 키리의 소속 소개, 폴리의 자칭, 미란다·폴리의 출동이어서 A2__005__001이 맞다. shown이 0인 10개 이야기도 모두 확인했다: bunny_x_777_03(O0013), coins_in_rush_01·04·05(O0031~33), blank_ticket_02(O0042), fatal_maid_06(O0043), ark_ranger_04·08(O0044~45), miranda_00~04(O0061~65), admi_00(O0068), maiden_00(O0070), quiry_00·02~04(O0080~83), arkrangerblack_01(O0089). 경찰 행정 전체를 환유하는 표현이나 '경찰관이기 전에 한 스쿼드', 기동타격대라는 표현은 넓은 조직 해석의 여지가 있으나 별도 동명 조직으로 나눌 직접 근거는 부족하다. 추가 원문 new_year_new_sword_00 L13의 명시적인 'A.C.P.U. 스쿼드'와 반복되는 소속·출동 주체가 현재 squad 판정을 뒷받침한다.",
+      "evidence": [
+        {
+          "scene_id": "main_16_01",
+          "line": 4,
+          "quote": "자칼: 총을 아무리 쏴 갈겨도 A.C.P.U.가 안 와!"
+        },
+        {
+          "scene_id": "new_year_new_sword_00",
+          "line": 13,
+          "quote": "A.C.P.U. 스쿼드."
+        },
+        {
+          "scene_id": "reborn_evil_06",
+          "line": 37,
+          "quote": "키리: A.C.P.U. 소속 키리라고 합니다."
+        },
+        {
+          "scene_id": "reborn_evil_26",
+          "line": 26,
+          "quote": "폴리: 저희 A.C.P.U.도 두 눈 부릅뜨고 지켜볼게여."
+        },
+        {
+          "scene_id": "persona_on_frontline_11",
+          "line": 74,
+          "quote": "미란다: A.C.P.U.가 왔습니다!"
+        },
+        {
+          "scene_id": "miranda_02",
+          "line": 55,
+          "quote": "폴리: 우리는 같은 A.C.P.U. 소속 경찰관이기 전에 한 스쿼드 잖아여?"
+        },
+        {
+          "scene_id": "ark_ranger_04",
+          "line": 42,
+          "quote": "아크레인저 레드: A.F.F.에서 수습이 안 돼서 트라이앵글이랑 A.C.P.U.의 기동타격대까지 동원해서 사람들을 [쫓아냈어]."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__014:U003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "단순한 VIP 등급을 설명하는 것처럼 보일 수 있지만 뒤에서 북부에서 호위해 온 VVIP 한 사람이 방주에서 회복 중이라고 명시한다. 정체를 묻자 극비라고 답해 등록 인물인지 새 인물인지 정할 수 없다. 특정인을 일반 낱말로 남기지 않은 unresolved가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_50_23",
+          "line": 130,
+          "quote": "은화: VIP 호위··· 아니, 정확히는 VVIP 호위 임무였어."
+        },
+        {
+          "scene_id": "chapter_50_23",
+          "line": 139,
+          "quote": "은화: 지금 VVIP는 방주에서 회복 중이다."
+        },
+        {
+          "scene_id": "chapter_50_23",
+          "line": 142,
+          "quote": "  [OPTION TEXT=\"그 VVIP라는 사람이 누군데?\"]"
+        },
+        {
+          "scene_id": "chapter_50_23",
+          "line": 145,
+          "quote": "은화: 극비다. 알려줄 수 없어."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__014:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "로망티스트가 현재 수감된 곳에서 휴대전화 사용을 허락한 특정 한 사람을 말한다. '간수장으로 있어서'라는 직책 서술도 있지만 그 자리의 지시 대상은 특정인이다. 본명·동일인 연결 근거가 없으므로 일반 낱말이나 새 인물로 단정하지 않은 unresolved와 한정 설명이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "로망티스트_01",
+          "line": 236,
+          "quote": "    그래도 여기에 낚시의 로-망을 아는 이가 간수장으로 있어서"
+        },
+        {
+          "scene_id": "로망티스트_01",
+          "line": 239,
+          "quote": "    핸드폰은 사용할 수 있게 해줬소"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__017:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "재계약일을 놓친 아르카나를 가게에서 쫓아낸 특정 임대인을 가리킨다. 건물주 일반을 논하는 문장이 아니지만 본명이나 등록 인물 여부는 드러나지 않는다. 특정인을 보류 대상으로 두고 가게 건물주로 한정한 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "arcane_archive_14",
+          "line": 61,
+          "quote": "아르카나: 건물주님도 참 그래요."
+        },
+        {
+          "scene_id": "arcane_archive_14",
+          "line": 54,
+          "quote": "아르카나: 누가 하필 가게 재계약일에 기억을 잃을 줄 알았나?"
+        },
+        {
+          "scene_id": "arcane_archive_14",
+          "line": 63,
+          "quote": "아르카나: 월세 한 번도 밀린 적 없는데, 기다렸다는 듯이 쫓아내는 게 어딨어. 그쵸."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__010:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "41장의 '심층 중에서 심층'만으로 LEVEL E와 동일 구역이라고 확정하기 어렵다. WISDOM SPRING은 LEVEL E를 심층부라고도 부르지만 LEVEL P는 심층부보다 더 심연인 곳이라고 별도로 설명한다. 해당 장면에는 층 코드가 없으므로 깊은 시설의 일반 설명과 특정 구역 호칭을 가를 근거가 부족하다. LEVEL E를 확정 연결하지 않은 unresolved가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_41_12",
+          "line": 21,
+          "quote": "에테르: ···여긴 M.M.R.의 심층부야."
+        },
+        {
+          "scene_id": "wisdom_spring_03",
+          "line": 11,
+          "quote": "에테르: [LEVEL E] 구역이라고도 불리는데,"
+        },
+        {
+          "scene_id": "wisdom_spring_03",
+          "line": 12,
+          "quote": "에테르: 그냥 쉽게, 심층부라고도 부르고 있어."
+        },
+        {
+          "scene_id": "wisdom_spring_04",
+          "line": 39,
+          "quote": "에테르: [LEVEL P] 버튼은 누르면 안 된다?"
+        },
+        {
+          "scene_id": "wisdom_spring_04",
+          "line": 40,
+          "quote": "에테르: 그건 심층부보다 더 심연인 곳이니까."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__015:U003",
+      "judgment": "틀림",
+      "problems": [
+        "should_be_new_entity",
+        "evidence_not_support"
+      ],
+      "reason": "A2__015__003의 전 범위 보류는 과도하다. main_44_18 L11은 '감찰부대 오버시어 소속'이라는 자기소개로 표본의 대상을 직접 잇고, main_36_09 L36~38은 오버시어 스쿼드와 감찰 부대를 연속해서 치환한다. 나머지 표본 main_45_05와 main_46_19도 같은 아이리가 자신의 소속과 감찰 업무를 말한다. 별개의 상위 조직이 존재한다는 원문 근거 없이 역할·권한 설명을 경쟁 대상처럼 취급할 이유는 부족하므로, 적어도 44장 출현은 오버시어 스쿼드의 new_entity(squad)로 해소해야 한다. 다른 장에서 소속 관계를 옮겨 잇는 부분은 같은 대상의 가능성으로 나눌 수 있다. 또한 generic_term 대안의 guillotine_03 L59는 길로틴의 익스터너 소속 설명으로, 이 표기의 일반 낱말 해석을 뒷받침하지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "main_44_18",
+          "line": 11,
+          "quote": "아이리: 아, 제 소개가 늦었네요. 감찰부대 오버시어 소속의 아이리라고 해요."
+        },
+        {
+          "scene_id": "main_36_09",
+          "line": 36,
+          "quote": "아이리: 오버시어 스쿼드의 아이리예요."
+        },
+        {
+          "scene_id": "main_36_09",
+          "line": 38,
+          "quote": "아니스: ···오버시어? 감찰 부대가 여기 왜 왔어? 우리 지휘관님 뭐 빼돌린 것 없는데?"
+        },
+        {
+          "scene_id": "main_45_05",
+          "line": 16,
+          "quote": "아이리: 저는 감찰부대. 어지간한 스쿼드보단 끗발이 좋답니다?"
+        },
+        {
+          "scene_id": "main_46_19",
+          "line": 44,
+          "quote": "아이리: 저는 감찰부대."
+        },
+        {
+          "scene_id": "guillotine_03",
+          "line": 59,
+          "quote": "길로틴: 아니, 정확하게는··· [협회]에서 비밀리에 편성한 니케 처분 부대, 익스터너의 멤버지."
+        }
+      ]
+    }
+  ]
+}

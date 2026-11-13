@@ -1,0 +1,1789 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__014",
+  "candidate_links": [
+    {
+      "link_id": "A2__014__001",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "지휘관이 '리타가 데리고 있는 볼트'를 묻자 미실리스 연구팀이 '해당 니케가 지닌 VOLT-N00는 이제는 몇 남지 않은 원형 모델 중 하나입니다'라고 답한다. 앞선 'VOLT-JU052 통칭 볼트 주니어'처럼 등록 인물 '볼트'(char_볼트) 개체의 정식 코드명으로 읽히는 근거와, 복수 개체가 제작된 원형·구형 로봇 모델명(item)으로 읽히는 근거가 한 문맥 안에 함께 있어 어느 한쪽으로 단정하지 않고 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "미실리스_연구팀_00",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "리타가 데리고 있는 볼트와 같은 거야?"
+        },
+        {
+          "scene_id": "미실리스_연구팀_00",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "해당 니케가 지닌 VOLT-N00는 이제는 몇 남지 않은"
+        },
+        {
+          "scene_id": "미실리스_연구팀_00",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "원형 모델 중 하나입니다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "alias",
+          "entity_id": "char_볼트",
+          "name": "볼트",
+          "entity_type": "character",
+          "why": "'VOLT-JU052 통칭 볼트 주니어'와 같은 명명 구조에서 리타가 데리고 있는 로봇개 '볼트' 개체의 정식 관리 코드명으로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "미실리스_연구팀_00",
+              "line_start": 31,
+              "line_end": 31,
+              "quote": "리타가 데리고 있는 볼트와 같은 거야?"
+            },
+            {
+              "scene_id": "미실리스_연구팀_00",
+              "line_start": 40,
+              "line_end": 40,
+              "quote": "해당 니케가 지닌 VOLT-N00는 이제는 몇 남지 않은"
+            }
+          ]
+        },
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "VOLT-N00",
+          "entity_type": "item",
+          "why": "'이제는 몇 남지 않은 원형 모델 중 하나', '말씀하신 구형 모델'이라는 서술에 따라 단일 개체 별칭이 아닌 원형 로봇 모델명으로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "미실리스_연구팀_00",
+              "line_start": 43,
+              "line_end": 43,
+              "quote": "원형 모델 중 하나입니다"
+            },
+            {
+              "scene_id": "미실리스_연구팀_00",
+              "line_start": 55,
+              "line_end": 55,
+              "quote": "그러니 말씀하신 구형 모델과는 엄연히 다른 것이라고 할 수 있습니다"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__002",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U002"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "VOLT 시리즈",
+          "entity_type": "item",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "미실리스 인더스트리 연구팀이 개발한 지원형 로봇 제품군을 가리키는 고유 시리즈 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "미실리스_연구팀_00",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "저희가 개발한 지원형 로봇"
+        },
+        {
+          "scene_id": "미실리스_연구팀_00",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "VOLT 시리즈의 신형 모델 VOLT-JU052"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__003",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U003"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "출현 줄(L130)에서는 'VIP 호위'와 대비된 'VVIP 호위 임무'로 말하나, 바로 뒤 대사(L133, L139, L142, L145)에서 북부에서 방주로 이송되어 회복 중인 특정 한 사람을 가리키며 은화가 그 정체를 '극비다. 알려줄 수 없어'라고 밝혀 등록 인물인지 미등록 인물인지 원문만으로 정할 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_50_23",
+          "line_start": 130,
+          "line_end": 130,
+          "quote": "은화: VIP 호위··· 아니, 정확히는 VVIP 호위 임무였어."
+        },
+        {
+          "scene_id": "chapter_50_23",
+          "line_start": 139,
+          "line_end": 139,
+          "quote": "은화: 지금 VVIP는 방주에서 회복 중이다."
+        },
+        {
+          "scene_id": "chapter_50_23",
+          "line_start": 142,
+          "line_end": 142,
+          "quote": "[OPTION TEXT=\"그 VVIP라는 사람이 누군데?\"]"
+        },
+        {
+          "scene_id": "chapter_50_23",
+          "line_start": 145,
+          "line_end": 145,
+          "quote": "은화: 극비다. 알려줄 수 없어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "VVIP",
+          "entity_type": "character",
+          "qualifier": "북부에서 방주로 호위된 인물",
+          "why": "은화와 언리미티드 스쿼드가 북부에서 방주로 호위한 뒤 회복 중인 특정 인물을 가리키며, 미등록 인물일 경우 해당 호칭으로 구분된다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "chapter_50_23",
+              "line_start": 131,
+              "line_end": 131,
+              "quote": "은화: 북부에서 방주까지 호위하는 임무였다."
+            },
+            {
+              "scene_id": "chapter_50_23",
+              "line_start": 139,
+              "line_end": 139,
+              "quote": "은화: 지금 VVIP는 방주에서 회복 중이다."
+            }
+          ]
+        },
+        {
+          "link_type": "generic_term",
+          "why": "출현 줄 자체('VIP 호위··· 아니, 정확히는 VVIP 호위 임무였어')는 경호 대상의 중요도 등급을 뜻하는 보통 표현으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "chapter_50_23",
+              "line_start": 130,
+              "line_end": 130,
+              "quote": "은화: VIP 호위··· 아니, 정확히는 VVIP 호위 임무였어."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__004",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "머스탱 특유의 영문 혼용 말투로 와이어 액션에 쓰는 보호장비라는 일반 용도를 설명한 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "golden_coin_rush_26",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "머스탱: 이건 바로, Wire Action용 보호장비 입니Da!"
+        },
+        {
+          "scene_id": "golden_coin_rush_26",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "머스탱: 어깨와 가슴에 고정을 하Go, Signal을 주면."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__005",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U005"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "With Nikke",
+          "entity_type": "event",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "테트라 라인과 머스탱 CEO가 프리티의 인기에 힘입어 전개·후원한 니케 인권 캠페인 및 연설회 행사를 가리키는 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "footstep_walk_run_11",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "웬디: 갓데스 폴 사건과 테트라 라인의 머스탱 CEO가 추진한 With Nikke 캠페인 덕분에."
+        },
+        {
+          "scene_id": "pretty_star_05",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "테트라 라인은 프리티의 인기에 힘입어 [With Nikke] 캠페인을 전개."
+        },
+        {
+          "scene_id": "pretty_star_06",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "프리시아: 다음이 그거였지? With Nikke 연설회."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__006",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U006"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "WWD-440",
+          "entity_type": "item",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "메카 시프티가 자신의 기체에 뿌려 달라고 요청하는 작중 고유 분사형 제품명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fool_burst_day_11",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "메카 시프티: 지휘관. WWD-440 좀 뿌려줘요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__007",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "XXX 방송국",
+          "entity_type": "organization",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "기자 본인이 소속을 밝히며 언급한 특정 방송국의 가린 표기로, 원문에 실제 이름이 드러나지 않으므로 표기 그대로 기관 엔티티로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "drake_greatvillain_03",
+          "line_start": 95,
+          "line_end": 95,
+          "quote": "남자 기자: 드레이크 씨, XXX 방송국에서 나왔습니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__008",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "xx마트",
+          "entity_type": "location",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "기록물 작성자가 물자를 수거한 특정 마트 지점의 가린 표기로, 본래 이름이 드러나지 않으므로 표기 그대로 장소 엔티티로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "장보기목록_03",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "(xx마트는 이제 다 털림, 다음 지역으로 이동해야함)"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__009",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U009"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "XX 중학교",
+          "entity_type": "organization",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "학부모에게 가정통신문을 보내고 원격수업과 폐교를 결정한 특정 중학교의 가린 표기로, 본래 이름이 드러나지 않으므로 표기 그대로 기관 엔티티로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "XX중학교가정통신문_00",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "XX 중학교의 교육 활동에 많은 관심과 애정을 보내주시는 학부모님께 깊은 감사를 드리며"
+        },
+        {
+          "scene_id": "XX중학교가정통신문_02",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "XX 중학교는 정상적인 운영이 불가하다는 판단에 따라, 5월 20일부로 폐교를 결정하게 되었습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__010",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U010"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "YONG Bakery",
+          "entity_type": "organization",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "루피가 몽블랑 다과를 부탁하며 지목한 특정 베이커리 브랜드·업체 고유명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "courthouse_03",
+          "line_start": 140,
+          "line_end": 140,
+          "quote": "루피: 진짜?? 루피는 [YONG Bakery] 몽블랑으로 부탁해☆"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__011",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U011"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "가넷",
+          "entity_type": "character",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "과거 클레이(루비)·오팔과 같은 그룹에서 활동하다가 사고 전환이 와서 폐기된 미등록 니케 개인이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "clay_more_04",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "남자 지배인: 왜 쟤랑 같은 그룹 애들 있었잖아! 싸움 잘하는 [오팔] 이나 인기 많은 [가넷] 같은 놈들!"
+        },
+        {
+          "scene_id": "clay_more_04",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "여자 매니저: 둘 다 부품을 자주 교체해서 그런지, 얼마 전에 사고 전환이 와서 폐기했어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__012",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U012"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "팬텀이 일행에게 준비해 주지 못했다고 말한 괴도용 얼굴 가리개 일반을 뜻하는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_08",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "팬텀: 가면을 준비해 주지 못해서 미안하오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__013",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U013"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "노벨이 탐정 펜을 넣어 다니는 일반 소지품 가방을 뜻하는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "police_station_05",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "노벨: 가방 속에 항상 넣어 다니는데,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__014",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U014"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "일지 작성자가 기록을 남기기 위해 두드리는 입력 장치를 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "하모니큐브관찰일지_00",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "죽기 전까지 가상 키보드를 두드리는 것 밖에 없겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__015",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U015"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "길로틴이 메이든의 게임 아바타명 '블랙로즈'를 부르며 '[가상화 필드] 안에서 효율적으로 움직이기 위한 수련 중'이라 말한 뒤 곧바로 '솔직하게 말하지. 실은 [파이널 퀘스트 온라인]이란 게임을 시작했는데'라고 밝힌다. 가상 공간·온라인 게임 일반을 특유의 말투로 포장한 보통 표현으로 읽히는 동시에, 해당 자리에서 함께 접속하자고 청한 게임 '파이널 퀘스트 온라인'을 에둘러 가리킨 표현으로도 읽혀 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_04",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "길로틴: 블랙로즈, 부탁이 있다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_04",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "길로틴: [가상화 필드] 안에서 효율적으로 움직이기 위한 수련 중인데, 함께···."
+        },
+        {
+          "scene_id": "ice_dragon_saga_04",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "길로틴: 실은 [파이널 퀘스트 온라인]이란 게임을 시작했는데,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "온라인 게임 속 가상 공간 일반을 길로틴 특유의 중2병 어투로 둘러댄 보통 표현으로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "ice_dragon_saga_04",
+              "line_start": 44,
+              "line_end": 44,
+              "quote": "길로틴: 흠. 크흠. 알겠다. 알겠어. 솔직하게 말하지."
+            },
+            {
+              "scene_id": "ice_dragon_saga_04",
+              "line_start": 45,
+              "line_end": 45,
+              "quote": "길로틴: 실은 [파이널 퀘스트 온라인]이란 게임을 시작했는데,"
+            }
+          ]
+        },
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "파이널 퀘스트 온라인",
+          "entity_type": "item",
+          "why": "메이든을 '파이널 퀘스트 온라인' 속 아바타명 '블랙로즈'로 호명하며 함께 수련(파티 플레이)하자고 청했으므로 그 게임을 가리킨 표현으로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "ice_dragon_saga_04",
+              "line_start": 34,
+              "line_end": 34,
+              "quote": "길로틴: 블랙로즈, 부탁이 있다."
+            },
+            {
+              "scene_id": "ice_dragon_saga_04",
+              "line_start": 53,
+              "line_end": 53,
+              "quote": "길로틴: 그대의 아바타인 [블랙로즈]가 [파이널 퀘스트 온라인] 속에서 전설적인 존재란 걸."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__016",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U016"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'엘리시온 타워 내 가상 훈련실(1F)'처럼 건물명과 층수 수식어가 붙어 쓰이는 일반 훈련 시설 종류를 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eunhwa_01",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "··· ···얼마 후. 엘리시온 타워 내 가상 훈련실(1F)."
+        },
+        {
+          "scene_id": "eunhwa_02",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "··· ···얼마 후, 엘리시온 타워 내 가상 훈련실."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__017",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U017"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "방 안에 비치된 의복인 가운을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "soda_twinklingbunny_01",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "소다: 방에 가운이 준비되어 있었군요오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__018",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U018"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "네온이 만든 섬 안내 책자('이 섬의 가이드 북')를 뜻하는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sea_you_again_06",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "네온: 저 이 섬의 가이드 북까지 다 만들었는데요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__019",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U019"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "A 필러 발사 좌표를 유도하기 위한 일반 유도 신호를 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_31_04",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "마나: 예. 좌표 확인. 가이드 시그널을 향해 A 필러를 발사합니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__020",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U020"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "main_story__chapter_50 안에서 요한이 역습에 나선 주인공 지휘관을 언급하자 노아가 '가짜'라고 부르며(chapter_50_00 L138~139), 같은 이야기의 chapter_50_07 L39~41에서 네온이 '그 가짜라는 호칭. 저희 스승님 전용 호칭 아니었나요?'라고 묻고 노아가 인정하여 등록 인물 지휘관(char_지휘관)의 별칭임이 이야기 안에서 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_50_00",
+          "line_start": 138,
+          "line_end": 138,
+          "quote": "요한: 그 녀석이 역습에 나섰으니까. 그럴 여유는 없겠지."
+        },
+        {
+          "scene_id": "chapter_50_00",
+          "line_start": 139,
+          "line_end": 139,
+          "quote": "노아: 에엑? 뭐야. 언제부터 가짜를 그렇게 신용한 거야?"
+        },
+        {
+          "scene_id": "chapter_50_07",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "네온: 그 가짜라는 호칭. 저희 스승님 전용 호칭 아니었나요?"
+        },
+        {
+          "scene_id": "chapter_50_07",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "노아: 엇, 그러네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "노아가 주인공 지휘관을 부르는 별칭임을 grep(노아:, --title=main_story__chapter_50)으로 chapter_50_07 L39~41에서 확인"
+      ]
+    },
+    {
+      "link_id": "A2__014__021",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U020"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "side_stories__eden_spear"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "side_stories__eden_spear에는 주인공 지휘관이 등장하지 않으며, 방주에 구멍이 났다는 소식에 이사벨이 가려 하고 집요하게 지켜보는 대상이라는 단서(eden_spear_00 L37, L53~54, eden_spear_02 L25~30)와 다른 이야기에서 확인한 노아의 호칭·이사벨과의 관계를 옮겨 와 등록 인물 지휘관(char_지휘관)으로 추론한 곳이므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eden_spear_00",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "이사벨: 아니, 가는 게 좋을 것 같네요. 꼭 가야 해요."
+        },
+        {
+          "scene_id": "eden_spear_00",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "노아: 가짜 보고 싶어서 아주 안달이 났네."
+        },
+        {
+          "scene_id": "eden_spear_02",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "노아: 가짜도 그것 때문에 고생 좀 한 걸로 하는데."
+        },
+        {
+          "scene_id": "eden_spear_02",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "이사벨: 감시가 아니라 지켜보고 있는 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__022",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U021"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "축제 부스에서 구매해 장난에 쓰는 일반 모형 소품을 가리키는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "little_witch_trick_05",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "제목 [ACTION]: 가짜 손 사서 친구 어깨에 올려둠 ㅋㅋㅋ"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__023",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U022"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_온리_원",
+          "name": "온리 원",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "main_story__chapter_42에서 인간·리버렐리오·포비스트가 잡기 위해 협력한 '가짜 퀸'(main_42_05 L199)이 같은 이야기의 교전 장면(main_42_14 L49, L123~125)과 직후 대화(main_42_15 L401)에서 화자명 '온리 원'으로 직접 등장하므로 등록 인물 온리 원(char_온리_원)의 별칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_42_05",
+          "line_start": 199,
+          "line_end": 199,
+          "quote": "리버렐리오: 가짜 퀸을 잡기 위해."
+        },
+        {
+          "scene_id": "main_42_14",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "라피: 지휘관! 퀸의 다크 매터가 벗겨졌습니다!"
+        },
+        {
+          "scene_id": "main_42_14",
+          "line_start": 125,
+          "line_end": 125,
+          "quote": "온리 원: ···안아··· 줘."
+        },
+        {
+          "scene_id": "main_42_15",
+          "line_start": 401,
+          "line_end": 401,
+          "quote": "레비아탄: 우리가 만든 애야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep(온리 원)으로 main_42_14~15 및 chapter_50_15, chapter_50_27의 직접 등장·발화 확인"
+      ]
+    },
+    {
+      "link_id": "A2__014__024",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U022"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_50"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_온리_원",
+          "name": "온리 원",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "chapter_50_01 L144·L152~154에서 미러는 '온리 원'이라는 이름을 부르지 않고 '되다만 것들이 만든 가짜 퀸'이 퀸을 압도하고 마리안에게 것을 넘겨주었다고만 말하며, 이전 이야기에서 확인한 포비스트의 제작 경위와 chapter_50_15 L687~689에서 온리 원이 코어·인자를 넘겨줘 더는 퀸이 아니라고 말한 사건 단서를 맞춰 추론하므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_50_01",
+          "line_start": 144,
+          "line_end": 144,
+          "quote": "미러: 그리고 마리안. 그 되다만 것들이 만든 가짜 퀸의 것을 이어받아 다시 기어나왔군요."
+        },
+        {
+          "scene_id": "chapter_50_01",
+          "line_start": 154,
+          "line_end": 154,
+          "quote": "미러: 하지만 왜 그러지 않았을까···. 거기다 마리안에게 넘겨주기까지···."
+        },
+        {
+          "scene_id": "chapter_50_15",
+          "line_start": 687,
+          "line_end": 687,
+          "quote": "요한: 코어와 인자를 넘겨줬기 때문인가?"
+        },
+        {
+          "scene_id": "chapter_50_15",
+          "line_start": 689,
+          "line_end": 689,
+          "quote": "온리 원: 그래서 나 이제 퀸 아니야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__025",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U023"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_온리_원",
+          "name": "온리 원",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "바로 앞 장면(main_42_14)과 같은 장면 앞부분(main_42_15)에서 아니스의 공격 직후 방송에 노출되고 포비스트가 맡게 된 '온리 원'을 맥스웰이 방주 측 보고 명칭인 '가칭 퀸'으로 지칭하므로 등록 인물 온리 원(char_온리_원)의 별칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_42_14",
+          "line_start": 125,
+          "line_end": 125,
+          "quote": "온리 원: ···안아··· 줘."
+        },
+        {
+          "scene_id": "main_42_15",
+          "line_start": 427,
+          "line_end": 427,
+          "quote": "맥스웰: 방주로 향하는 가칭 퀸을 저지하는데 메티스의 기여도가 높··· 나? 아무튼 그렇게 보고되었으니까."
+        },
+        {
+          "scene_id": "main_42_15",
+          "line_start": 431,
+          "line_end": 431,
+          "quote": "맥스웰: 방송까지 타버렸잖아. 아니스의 공격 직후 방송은 끈 모양이지만."
+        },
+        {
+          "scene_id": "main_42_15",
+          "line_start": 437,
+          "line_end": 437,
+          "quote": "맥스웰: 포비스트가 붙었으니 어지간한 상황에서는 문제가 없을 테지만, 걱정되는 건 사실이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__026",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U024"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "율하가 이어서 '일반 쉘터도 안 돼'라고 대비하듯 고유 시설명이 아니라 용도·대상 수식어가 붙은 쉘터 종류를 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_49_01",
+          "line_start": 118,
+          "line_end": 118,
+          "quote": "율하: 간부용 안전 쉘터로 들어가있어. 방해야."
+        },
+        {
+          "scene_id": "chapter_49_01",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "율하: 일반 쉘터도 안 돼. 네 그 부정적인 생각은 전염되니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__027",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U025"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "간수장",
+          "entity_type": "character",
+          "entity_key": "E14",
+          "qualifier": "로망티스트가 수감된 곳의 간수장"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "로망티스트가 붙잡혀 온 곳('여기')에서 휴대전화 사용을 허락해 준 특정 한 사람을 직함으로 가리킨다(규칙 3.2 직함·호칭). 본명이 나오지 않고 등록 인물이 아니라는 근거도 없어 누구인지 정할 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "로망티스트_01",
+          "line_start": 236,
+          "line_end": 236,
+          "quote": "그래도 여기에 낚시의 로-망을 아는 이가 간수장으로 있어서"
+        },
+        {
+          "scene_id": "로망티스트_01",
+          "line_start": 239,
+          "line_end": 239,
+          "quote": "핸드폰은 사용할 수 있게 해줬소"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'-으로 있어서'로 그 사람이 맡은 직책을 서술하는 직함으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "로망티스트_01",
+              "line_start": 236,
+              "line_end": 236,
+              "quote": "그래도 여기에 낚시의 로-망을 아는 이가 간수장으로 있어서"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__028",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U026"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "D가 건네준 일반 보호 장비를 가리키는 수식어 결합 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "kill_the_lord_12",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "D는 내게 간이 방독면을 건넸다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__029",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U027"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "세실이 성능 테스트를 위해 임시로 만든 공간을 '간이 시뮬레이션 룸··· 이라고 봐주시면 될 것 같네요'라며 보통명사로 풀어 설명한 일반 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapunzel_sanctuary_01",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "세실: 조악하긴 하지만 간이 시뮬레이션 룸··· 이라고 봐주시면 될 것 같네요."
+        },
+        {
+          "scene_id": "rapunzel_sanctuary_01",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "세실: 당신들의 성능 테스트를 위해 임시로 제작했어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__030",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U028"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "진료소에 비치된 일반 가구를 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "bluewater_wisland_23",
+          "line_start": 132,
+          "line_end": 132,
+          "quote": "메어리: 제가 진료소의 간이 침대를 꺼내올 테니까,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__031",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U029"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "감각 교환",
+          "entity_type": "concept",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "여러 이야기에서 미하라가 대상과 감각을 맞바꾸기 위해 개방·사용하는 고유 능력·기술 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_12_10",
+          "line_start": 96,
+          "line_end": 96,
+          "quote": "슈엔: 감각 교환 후 자결해!"
+        },
+        {
+          "scene_id": "unbreakable_sphere_06",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "그리고 이 [나무]와 감각 교환을 하기 위해 능력을 개방했다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__032",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U030"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "아리아가 이번 오페라 공연의 소피아 역을 맡은 상황을 두고 '차라리 감독이 어느 실력 없는 무명 가수를 발굴해서, 소피아 역을 맡겼다면'이라고 말한다. 해당 공연의 연출자를 가리키는 직함으로 읽히나 원문에 정체에 관한 단서가 전혀 없어 등록 인물인지 미등록 인물인지 가릴 수 없고, 가정문 속 직책 일반 표현으로 읽힐 여지도 함께 있어 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "aria_00",
+          "line_start": 107,
+          "line_end": 107,
+          "quote": "아리아: 맞아. 이번 공연에서 나는 지나치게 능숙해서도 안 되고,"
+        },
+        {
+          "scene_id": "aria_00",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "아리아: 차라리 감독이 어느 실력 없는 무명 가수를 발굴해서,"
+        },
+        {
+          "scene_id": "aria_00",
+          "line_start": 121,
+          "line_end": 121,
+          "quote": "아리아: 소피아 역을 맡겼다면 더 수월했을 것 같네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "감독",
+          "entity_type": "character",
+          "qualifier": "아리아 출연 오페라 소피아 감독",
+          "why": "이번 오페라 공연에서 아리아에게 소피아 역을 맡긴 특정 연출자가 미등록 인물일 경우 해당 직함으로 구별되는 인물 엔티티가 된다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "aria_00",
+              "line_start": 120,
+              "line_end": 120,
+              "quote": "아리아: 차라리 감독이 어느 실력 없는 무명 가수를 발굴해서,"
+            },
+            {
+              "scene_id": "aria_00",
+              "line_start": 121,
+              "line_end": 121,
+              "quote": "아리아: 소피아 역을 맡겼다면 더 수월했을 것 같네."
+            }
+          ]
+        },
+        {
+          "link_type": "generic_term",
+          "why": "가정법 문장 속에서 특정 인물의 고유 호칭이 아니라 공연 연출자라는 직책 일반을 말한 표현으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "aria_00",
+              "line_start": 120,
+              "line_end": 120,
+              "quote": "아리아: 차라리 감독이 어느 실력 없는 무명 가수를 발굴해서,"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__033",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U031"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "정체가 특정되지 않은 부품('이 부품')의 호환 규격 구분('베타 타입과 감마 타입', '감마 타입 부품')으로 쓰인 일반 규격·유형 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "train_station_03",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "브리드: 그런데 베타 타입과 감마 타입이 있는데···. 뭐가 에피넬의 보드에 맞을지는 모르겠어요."
+        },
+        {
+          "scene_id": "train_station_03",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "브리드: 그런데 감마 타입 부품을 추천한 이유가 있나요? 저는 베타 타입이 좀 더 맞을 것 같습니다만."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__034",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U032"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙정부 감사부",
+          "entity_type": "organization",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "미란다가 감찰관으로 소속된 중앙정부 산하 부서를 가리키는 고유 기관명이며, 원문에 나온 가장 온전한 표기인 '중앙정부 감사부'를 대표 이름으로 적는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line_start": 238,
+          "line_end": 238,
+          "quote": "율하: 감사부 발칵 뒤집히고, 그 여파가 여기까지 온 거지."
+        },
+        {
+          "scene_id": "miranda_00",
+          "line_start": 154,
+          "line_end": 154,
+          "quote": "감사부 팀장입니다"
+        },
+        {
+          "scene_id": "miranda_04",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "폴리: 중앙정부 감사부 소속, 감찰관이라고여?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__035",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U033"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_Mr_0",
+          "name": "Mr. 0",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "persona_on_frontline_19에서 감사부 소속 감찰관인 미란다가 자신의 상관인 감사부 팀장님에게서 들은 정보를 말하며, 다른 이야기인 miranda_00 L153~154에서 등록 인물 Mr. 0(char_Mr_0)이 미란다에게 자신을 '감사부 팀장입니다'라고 직접 소개한다. 다른 이야기에서 확인한 소속·상관 관계를 옮겨 와 같은 인물로 추론한 연결이므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line_start": 253,
+          "line_end": 253,
+          "quote": "미란다: 그렇습니다! 감사부 팀장님이십니다!"
+        },
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line_start": 263,
+          "line_end": 263,
+          "quote": "그 말에 미란다가 원래 감사부 소속, 비밀리에 파견된 감찰관이라는···."
+        },
+        {
+          "scene_id": "miranda_00",
+          "line_start": 153,
+          "line_end": 154,
+          "quote": "[MSG SENDER=\"Mr. 0\"]\n    감사부 팀장입니다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "U032 발췌(miranda_00 L153~154)에서 Mr. 0의 자기소개를 확인하고 entity 명령으로 char_Mr_0 등록 ID를 검증함"
+      ]
+    },
+    {
+      "link_id": "A2__014__036",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U034"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "같은 이야기의 main_39_13 L7~11에서 에닉이 아우터 림에 '감시역'으로 배치한 두 니케 '엔드리스'(등록)와 '이터니티'(미등록)를 가리키는 맥락이나, 고유 스쿼드·집단 명칭이나 단일 인물의 별칭이 아니라 감시역을 맡은 둘을 지시어와 보통명사 복수형('그 감시꾼들')으로 부른 일반 역할 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_11",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "자칼: 그 감시꾼들 때문에 그래? 내가 가서 물어버릴까?"
+        },
+        {
+          "scene_id": "main_39_13",
+          "line_start": 7,
+          "line_end": 8,
+          "quote": "E.H.: ···엔드리스.\nE.H.: 그리고 이터니티."
+        },
+        {
+          "scene_id": "main_39_13",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "E.H.: 응. 방주 테러 사건의 원인을 아우터 림에서 제공했다고 판단해서, 감시역으로 배치해 놓은 거지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__037",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U035"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "감시탑 제4창고",
+          "entity_type": "location",
+          "entity_key": "E11"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "델타가 정리 작업을 마쳤다고 보고한 감시탑 내 번호가 매겨진 특정 시설('제4창고') 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_delta_006",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "감시탑 제4창고 정리 작업 완료했습니다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__038",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U036"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "같은 이야기의 blabla_delta_006 L7('감시탑 제4창고')에서 보듯 감시탑에는 번호로 구분되는 창고들이 있으며, '감시탑 창고를 정리하다가'는 특정 고유 시설명이 아니라 감시탑에 딸린 창고를 일컫는 수식어 결합 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_delta_003",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "감시탑 창고를 정리하다가 오래된 상자를 발견했습니다"
+        },
+        {
+          "scene_id": "blabla_delta_006",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "감시탑 제4창고 정리 작업 완료했습니다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__039",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U037"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "감응 촉매제",
+          "entity_type": "item",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "액화 재머 조합에 사용되며 감각 예민도를 높이는 작중 고유 화학 용액 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "emma_tactical_00",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "엠마: 이건··· 액화 재머 조합에 쓰이는 용액이잖아?"
+        },
+        {
+          "scene_id": "emma_tactical_00",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "엠마: 감응 촉매제··· 감각 예민도를 올려주는 용액이네."
+        },
+        {
+          "scene_id": "emma_tactical_03",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "엠마: 방금 조합한 향수, 감응 촉매제가 섞인 향수였어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__040",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U038"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "감자 맛 퍼펙트",
+          "entity_type": "item",
+          "entity_key": "E13"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주의 고유 식품 '퍼펙트'의 특정 맛 제품('고구마 맛 퍼펙트'와 구별되는 품목)을 가리키는 고유 품목명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "mica_04",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "미카: 저번에 고구마 맛 퍼펙트를 받은 보답으로."
+        },
+        {
+          "scene_id": "mica_04",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "미카: 폴리한테 감자 맛 퍼펙트 가져다주기로 했어요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__041",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U039"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "일반 간식인 감자칩을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d_02",
+          "line_start": 149,
+          "line_end": 149,
+          "quote": "[OPTION TEXT=\"감자칩을 말하는 거였어.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__014__042",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U040"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "니케 신체에 넣는 일반 부품 종류인 감지 센서를 가리키는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_25",
+          "line_start": 204,
+          "line_end": 204,
+          "quote": "지엔: 라플라스 씨한테 못 넣은 감지 센서 넣어주면 딱이겠네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

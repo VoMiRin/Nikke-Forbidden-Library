@@ -1,0 +1,1627 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__001",
+  "candidate_links": [
+    {
+      "link_id": "A2__001__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주",
+          "entity_type": "location",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "red_ash_mini_07에서 건설 중인 두 글자 장소 「※※」의 메인 A.I. 카운터로 극비 개발 중이며 '시뮬레이션 룸'을 만들겠다고 말하는 화자는, main_44_11에서 방주 제어 A.I. 에닉의 카운터로 존재하나 행동 범위가 시뮬레이션 룸으로 한정되었다고 서술된 잉크와 대응하므로 가린 장소 「※※」는 방주를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_mini_07",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "???: 원래는 ※※에서 대기하고 있어야 하는데, 너무 지루해서 어디 놀러 갈 곳 없나 싶어서 둘러보다가."
+        },
+        {
+          "scene_id": "red_ash_mini_07",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "???: 제목은 시뮬레이션 룸 같은 거로 하고."
+        },
+        {
+          "scene_id": "red_ash_mini_07",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "???: ※※는 잘 만들어지고 있어. 잘 만들어질 거고."
+        },
+        {
+          "scene_id": "red_ash_mini_07",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "???: 나 원래는 ※※의 메인 A.I. 카운터로 극비리에 개발 중이거든."
+        },
+        {
+          "scene_id": "main_44_11",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "에닉: 중앙 정부 및 저지스는 저의 카운터를 구비해놓길 언제나 바라고 있었습니다."
+        },
+        {
+          "scene_id": "main_44_11",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "에닉: 잉크라는 존재가 있으나, 제어가 불가능 해 행동 범위를 시뮬레이션 룸만으로 한정했습니다."
+        },
+        {
+          "scene_id": "main_44_11",
+          "line_start": 74,
+          "line_end": 74,
+          "quote": "에닉: 방주 제어 A.I.가 개입할 수 없는, 고유 영역은 존재할 수 있는가. 에 대한 실험인 것으로 추정합니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "시뮬레이션 룸 및 메인 A.I. 카운터 단서로 grep(메인 A.I., 카운터로)을 실행하여 main_44_11 L64~74의 방주 제어 A.I. 에닉 카운터 및 잉크 설정을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__001__002",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "mihara_bondingchain_03에서 기억 소거로 가려진 세 글자 호칭 「■■■」 앞뒤의 회상 대사('[정말 미안.]', '후후. 정말 재밌는 사람이네. ■■■은.')가 main_04_14에서 지휘관에게 한 미하라의 대사('후후. 정말 재밌는 사람이네. 지휘관은.')와 그대로 일치하므로 등록 인물 char_지휘관을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "mihara_bondingchain_03",
+          "line_start": 67,
+          "line_end": 67,
+          "quote": "???: [정말 미안.]"
+        },
+        {
+          "scene_id": "mihara_bondingchain_03",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "미하라: 후후. 정말 재밌는 사람이네. ■■■은."
+        },
+        {
+          "scene_id": "main_04_14",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "[OPTION TEXT=\"정말 미안.\"]"
+        },
+        {
+          "scene_id": "main_04_14",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "미하라: 후후. 정말 재밌는 사람이네. 지휘관은."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "미하라의 회상 대사를 grep(고통은 날 다시 태어나게, 정말 재밌는 사람이네)으로 검색해 main_04_14 L51의 원 대사를 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__001__003",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "fading_affection에서 마리안과 동행한 「지휘관」의 일부 손상된 메모리 표기가 「■휘■」이며(fading_affection_memory_1225에서 마리안에게 말을 건네는 발화자), maria-n_24·26과 main_00_01·chapter_50_26을 통해 마리안과 반복 동행하다 BA-01 추락으로 이어지는 인물이 char_지휘관임이 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fading_affection_7205",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "메모리 저장: 일부만 남은 메모리 : ■휘■"
+        },
+        {
+          "scene_id": "fading_affection_memory_1225",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "■휘■"
+        },
+        {
+          "scene_id": "fading_affection_memory_1225",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "마리안은 ■■게 생각해?"
+        },
+        {
+          "scene_id": "fading_affection_route_12",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "마리안과 지휘관은 나아갈 곳을 찾는다."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "마리안: 지휘관. 어서 와요."
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "마리안: BA-01다운! BA-01다운!"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 312,
+          "line_end": 312,
+          "quote": "[OPTION TEXT=\"···그를 위한 수단이 나와 마리안. 이었구나.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐 02",
+          "entity_type": "character",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "maria-n_17에서 머신 메사이어 프로젝트의 일곱 조율자 중 두 번째 개체인 '랩쳐 02'를 앞의 '랩쳐'를 생략해 부른 표기이며, chapter_50_26에서 독자적 행동 양식을 지닌 일곱 조율자 중 하나인 '랩쳐 02(글러트니)'로 온전한 표기가 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 404,
+          "line_end": 404,
+          "quote": "나유타: 정확히는, 일곱 조율자 모두가 행동 양식이 다르다고 보는 게 맞겠지."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 554,
+          "line_end": 554,
+          "quote": "나유타: 랩쳐 02. 폐물 순환 재생 장치. 글러트니."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "일곱 조율자 설정 확인을 위해 grep(조율자)을 실행하여 chapter_50_26 L294 및 L553~559의 정식 명칭을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__001__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐 03",
+          "entity_type": "character",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "maria-n_17에서 머신 메사이어 프로젝트의 일곱 조율자 중 세 번째 개체인 '랩쳐 03'을 가리키며, chapter_50_26에서 '랩쳐 03(엔비)'으로 확인되는 미등록 개별 존재다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 404,
+          "line_end": 404,
+          "quote": "나유타: 정확히는, 일곱 조율자 모두가 행동 양식이 다르다고 보는 게 맞겠지."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 555,
+          "line_end": 555,
+          "quote": "나유타: 랩쳐 03. 우수 생태 모방 장치. 엔비."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__006",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐 04",
+          "entity_type": "character",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "maria-n_17에서 머신 메사이어 프로젝트의 일곱 조율자 중 네 번째 개체인 '랩쳐 04'를 가리키며, chapter_50_26에서 '랩쳐 04(라스)'로 확인되는 미등록 개별 존재다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 404,
+          "line_end": 404,
+          "quote": "나유타: 정확히는, 일곱 조율자 모두가 행동 양식이 다르다고 보는 게 맞겠지."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 556,
+          "line_end": 556,
+          "quote": "나유타: 랩쳐 04. 행성 위협 대응 장치. 라스."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__007",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐 05",
+          "entity_type": "character",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "maria-n_17에서 머신 메사이어 프로젝트의 일곱 조율자 중 다섯 번째 개체인 '랩쳐 05'를 가리키며, chapter_50_26에서 '랩쳐 05(그리드)'로 확인되는 미등록 개별 존재다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 404,
+          "line_end": 404,
+          "quote": "나유타: 정확히는, 일곱 조율자 모두가 행동 양식이 다르다고 보는 게 맞겠지."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 557,
+          "line_end": 557,
+          "quote": "나유타: 랩쳐 05. 자원 탐색 집적 장치. 그리드."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__008",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐 06",
+          "entity_type": "character",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "maria-n_17에서 머신 메사이어 프로젝트의 일곱 조율자 중 여섯 번째 개체인 '랩쳐 06'을 가리키며, chapter_50_26에서 '랩쳐 06(슬로스)'으로 확인되는 미등록 개별 존재다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 404,
+          "line_end": 404,
+          "quote": "나유타: 정확히는, 일곱 조율자 모두가 행동 양식이 다르다고 보는 게 맞겠지."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 558,
+          "line_end": 558,
+          "quote": "나유타: 랩쳐 06. 생명 휴면 보전 장치. 슬로스."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__009",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐 07",
+          "entity_type": "character",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "maria-n_17에서 머신 메사이어 프로젝트의 일곱 조율자 중 일곱 번째 개체인 '랩쳐 07'을 가리키며, chapter_50_26에서 '랩쳐 07(러스트)'로 확인되는 미등록 개별 존재다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 404,
+          "line_end": 404,
+          "quote": "나유타: 정확히는, 일곱 조율자 모두가 행동 양식이 다르다고 보는 게 맞겠지."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 559,
+          "line_end": 559,
+          "quote": "나유타: 랩쳐 07. 생명 탄생 촉진 장치. 러스트."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "09-10F 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "footstep_walk_run에서 라피(RR-15436)와 세이라 등이 소속되어 있었다가 자원 채취 중 전멸한 양산형 니케 부대의 고유 스쿼드명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "footstep_walk_run_07",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "싸구려 술과 안주가 놓인 테이블 위. 09-10F 스쿼드 모두가 빙 둘러앉아있었다."
+        },
+        {
+          "scene_id": "footstep_walk_run_08",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "가벼운 양산형 니케: 너 최근 09-10F 스쿼드에 있었지?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "인공 식량 '[퍼펙트]'나 첨가제가 아닌 진짜 생딸기 100%로 만든 요거트를 뜻하는 수식어가 붙은 보통 음식 표현으로(novel_00 L23, novel_01 L15·35), 상호 '[요거트 밤]'(novel_04 L122)과 달리 대괄호 없이 일반 음식 설명으로 풀려 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "novel_00",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "[OPTION TEXT=\"100% 생딸기 요거트라고 들어봤어?\"]"
+        },
+        {
+          "scene_id": "novel_00",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "노벨: 딸기맛 퍼펙트나 첨가제가 아닌 100% 생딸기 요거트를 구매했다는 것입니까?"
+        },
+        {
+          "scene_id": "novel_01",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "노벨: 오늘은 드디어 100% 생딸기 요거트를 먹는 날이니까!"
+        },
+        {
+          "scene_id": "novel_01",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "엠마: 어머 신기하다! 생 딸기라니 그거 땅에서 자란 진짜 딸기라는 거 아니야?"
+        },
+        {
+          "scene_id": "novel_01",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "엑시아: 아- 제발 그냥 요거트라고 하세요-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__012",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "100% 생딸기 요거트 살해 사건",
+          "entity_type": "event",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "노벨 개인 에피소드에서 숙소 냉장고의 요거트가 사라진 일을 탐정 사건처럼 대괄호로 묶어 명명한 고유 사건명이며, novel_04에서도 '[요거트 살해 사건] 종결'로 지칭된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "novel_01",
+          "line_start": 107,
+          "line_end": 107,
+          "quote": "··· ···그렇게 [100% 생딸기 요거트 살해 사건]은, 하루 만에 종결되는 듯했다."
+        },
+        {
+          "scene_id": "novel_04",
+          "line_start": 121,
+          "line_end": 121,
+          "quote": "오전 12:00, [요거트 살해 사건] 종결."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__013",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1000 크레디트 샵",
+          "entity_type": "organization",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "얀과 지휘관이 기획하여 대괄호 표기 '[1000 크레디트 샵]'으로 출범시키고 방주 전역으로 확산시킨 특정 상점 브랜드·체인이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "yan_04",
+          "line_start": 165,
+          "line_end": 165,
+          "quote": "머지않아 [1000 크레디트 샵]이라는 구체적인 형태로 실현되어,"
+        },
+        {
+          "scene_id": "yan_04",
+          "line_start": 166,
+          "line_end": 166,
+          "quote": "어마어마한 속도로 방주 전체에 퍼져 나갔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__014",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "101",
+          "entity_type": "character",
+          "entity_key": "E11",
+          "qualifier": "니케 마리아 모델 101번째 개체"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "닥터 마리아가 새로 온 마리아-102를 보고 직전 순번 개체로 착각해 부른 특정 니케 개체이며 레지스트리에 등록되어 있지 않다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_02",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "닥터 마리아: ···101?"
+        },
+        {
+          "scene_id": "maria-n_02",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "마리아-102: 후후. 102예요, 박사님."
+        },
+        {
+          "scene_id": "maria-n_02",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "닥터 마리아: 아, 아아. 그래. 미안해. 착각했어. 미안."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__015",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "2번 창고",
+          "entity_type": "location",
+          "entity_key": "E12",
+          "qualifier": "오버 더 호라이즌 시설 내 구 12번 정비소(g12)"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "오버 더 호라이즌 시설 내 구역 'g12'로도 불리며 현재 '2번 창고'(U038)로 쓰이는 특정 시설 공간의 옛 명칭이므로 U038과 동일한 장소 엔티티(E12)로 묶는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_the_horizon_07",
+          "line_start": 75,
+          "line_end": 75,
+          "quote": "소라: g12는 그거예요. 2번 창고."
+        },
+        {
+          "scene_id": "over_the_horizon_07",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "소라: 예전에 2번 창고 자리가 12번 정비소였거든요."
+        },
+        {
+          "scene_id": "over_the_horizon_07",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "소라: 그래서 이곳에서 일한 지 오래된 사람들은 아직도 거길 g12라고 부르고 있어요~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__016",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 13 브리핑 룸",
+          "entity_type": "location",
+          "entity_key": "E13"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "챕터 23과 챕터 25에서 버닝엄·엔더슨·도반 등 중앙 정부 수뇌부가 사용하는 방주 중앙 정부 내 특정 회의 시설을 가리키며, main_25_08 L3에 온전한 표기 '중앙 정부 13 브리핑 룸'이 나온다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_23_01",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "버닝엄: 그, 그래. 에, 에닉. 13 브리핑 룸으로 안내해 줘."
+        },
+        {
+          "scene_id": "main_25_08",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "중앙 정부 13 브리핑 룸."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__017",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "13호쉘터",
+          "entity_type": "location",
+          "entity_key": "E14"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "서브 퀘스트 '문구점'에서 스마일마트와 오고 가는 경로의 목적지로 언급된 특정 번호 쉘터 시설이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "문구점_00",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "스마일마트에서 13호쉘터로 오고가는로보트입니다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__018",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "17호 쉘터",
+          "entity_type": "location",
+          "entity_key": "E15"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "트라이앵글 스쿼드 프리바티가 지원 요청 합류 지점으로 지목한 특정 번호 쉘터 시설이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "중앙정부_트라이앵글_00",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "위치는 17호 쉘터 앞입니다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__019",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "미미르 부속 고등학교 필기시험에서 교사 마르차나가 첫 번째 교시와 시험 과목(지휘 영역)을 안내하는 일반 시험 시간표·과목 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "school_of_lock_06",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "마르차나: 그럼 1교시 지휘 영역입니다."
+        },
+        {
+          "scene_id": "school_of_lock_06",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "마르차나: 시작하세요."
+        },
+        {
+          "scene_id": "school_of_lock_06",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "학생들은 묵묵히 태블릿에 띄워진 시험지를 보고 문제를 풀어나갔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__020",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1대 CEO",
+          "entity_type": "character",
+          "entity_key": "E16",
+          "qualifier": "미실리스 인더스트리 1대 CEO, 슈엔의 할머니"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "슈엔의 친할머니이자 모든 니케의 프로토타입과 페어리테일 타입을 개발한 미실리스 초대 대표 개인을 가리키며, 레지스트리에 없고 원문에도 다른 본명이 등장하지 않으므로 직함 규칙(3.2절)에 따라 새 개인 엔티티로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_01",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "슈엔: 할머님이 만드셨다고 했어!"
+        },
+        {
+          "scene_id": "project_matis_01",
+          "line_start": 110,
+          "line_end": 110,
+          "quote": "맥스웰: 그래. 네 할머니인 1대 CEO께서 모든 니케의 프로토타입을 만들고,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "본명 존재 여부를 확인하기 위해 grep(할머님, 프로토타입, 할머니)을 실행했으나 다른 본명이 없고 미등록 인물임을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__001__021",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "실전 훈련 중 지휘관이 순차적으로 조작하는 여러 정찰용 드론('1번 드론', '2번 드론', '3번 드론')에 번호를 붙여 구분한 일반 장비 지칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "은화: ···삼류. 드론 조작은 아직이냐."
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "···1번 드론을 어디로 움직일까?"
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 134,
+          "line_end": 134,
+          "quote": "2번 드론을 어디로 움직일까?"
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 158,
+          "line_end": 158,
+          "quote": "3번 드론을 어디로 움직일까?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "연구실에 배치된 8개의 바디 메이커 기계 중 첫 번째 캡슐을 번호로 지칭한 수식어 결합 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_17",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "남성 연구원: 1번 캡슐에 탑승하세요."
+        },
+        {
+          "scene_id": "project_matis_17",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "라플라스는 떨리는 마음을 다잡고 캡슐로 다가가,"
+        },
+        {
+          "scene_id": "project_matis_17",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "슈엔은 연구실에 배치된 8개의 거대한 기계를 바라보았다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__023",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "은화가 게임 전술을 복기하며 '뒤의 서포트 부대'와 대비해 선봉에 배치한 첫 번째 편성 부대를 가리킨 일반 전술 편제 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_eunhwa_006",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "뒤의 서포트 부대는 후퇴시키고"
+        },
+        {
+          "scene_id": "blabla_eunhwa_006",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "선봉의 1부대가 어그로를 끌게 했어야 한다고"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__024",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1세대 랩쳐",
+          "entity_type": "faction_or_species",
+          "entity_key": "E17"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "1차 랩쳐 침공기에 등장해 유기물을 통해 동력원을 보강하던 초기 세대 랩쳐군을 세계관에서 묶어 부르는 고유 부류명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_35_05",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "잉그리드: 1세대 랩쳐의 코어 재고가 남아있어 바로 작업에 착수했으나."
+        },
+        {
+          "scene_id": "d.ark_hero_04",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "일레그: 1세대 랩쳐가 유기물을 통해 동력원을 보강하는 것과 비슷한 양상임을 떠올려보면."
+        },
+        {
+          "scene_id": "특이랩쳐보고서-전_01",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "저 모델은 내 기억이 맞는다면 분명 1세대 랩쳐다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 단일 물건의 고유 이름이 아니라 '1세대 랩쳐의 코어'(main_35_05 L8) 일반을 조사를 생략해 이른 합성 보통 표현으로, 창고 재고 중 아무 개체나 확보 대상이 된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_35_03",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "[OPTION TEXT=\"1차 침공 때부터 지금까지 활동하는 랩쳐의 코어가 필요하다고 했던 걸로 기억해.\"]"
+        },
+        {
+          "scene_id": "main_35_03",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "잉그리드: 물류 창고를 뒤져보면 하나쯤 나올지도 모른다. 없다고 하더라도 앱솔루트에게 의뢰하면 금방이겠지."
+        },
+        {
+          "scene_id": "main_35_03",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "잉그리드: 1세대 랩쳐 코어 확보 여부에 따라 다르다."
+        },
+        {
+          "scene_id": "main_35_03",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "잉그리드: 재고가 있다고 해도 금방 되는 일은 아니다. 연락이 갈 때까지 느긋하게 쉬는 게 좋겠군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__026",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 고유 대상인 '초거대 코어'의 성질(영구 동력이 아닌 1세대 랩쳐 계열의 코어)을 서술어로 풀어 설명한 수식어 결합 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_45_03",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "일레그: 초거대 코어는 1세대 코어예여."
+        },
+        {
+          "scene_id": "main_45_03",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "일레그: 영구 동력이 아니져."
+        },
+        {
+          "scene_id": "main_45_03",
+          "line_start": 100,
+          "line_end": 100,
+          "quote": "트로니: ···생체 조직을 섭취해 동력을 유지하고 있다는 말이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__027",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "노래방에서 100점을 맞으면 지급하는 일반 경품 쿠폰을 가리키는 수식어 결합 보통 명사구다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2x2_love_1ch_07",
+          "line_start": 380,
+          "line_end": 380,
+          "quote": "츠바이: 노래방에서 100점을 맞으면, 1시간 무료 이용권을 준다고 들었어요."
+        },
+        {
+          "scene_id": "2x2_love_1ch_07",
+          "line_start": 381,
+          "line_end": 381,
+          "quote": "츠바이: 본 적은 없는데, 진짜였네요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__028",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "단일 인물이나 이름 붙은 집단·종족이 아니라 프로젝트 A.D.의 개별 실험체 1호부터 6호까지 여섯 개체를 숫자 범위로 묶어 지칭한 일반 범위 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_16",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "닥터 마리아: ···대답해. 1에서 6호는 그렇게 한 번씩만 시도했으면서, 7호는 왜 자꾸 다시 만들어서 투입하는 거야."
+        },
+        {
+          "scene_id": "maria-n_12",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "에닉: 1호. 달성률 0.3% 달성 후 사망."
+        },
+        {
+          "scene_id": "maria-n_12",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "에닉: 2호."
+        },
+        {
+          "scene_id": "maria-n_12",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "에닉: 3호."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__029",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1차 랩쳐 침공",
+          "entity_type": "event",
+          "entity_key": "E18"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현이 랩쳐가 최초로 침공하여 갓데스 스쿼드가 활약하고 인류가 방주로 이주하게 된 역사적 전쟁 사건 하나를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_17_10",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "라푼젤: [1차 랩쳐 침공] 때라는 거?"
+        },
+        {
+          "scene_id": "no_caller_id_03",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "라피: 1차 랩쳐 침공 때 지상의 인류는 방주로 이동했습니다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "나유타: 그렇소. 1차 랩쳐 침공이라 불리는 사건이외다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__030",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1차 방주 밀봉",
+          "entity_type": "event",
+          "entity_key": "E19"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "ark_guardian_17에서 방주 밀봉 작전 중 주요 인원이 먼저 방주로 내려간 첫 단계 사건을 가리키며, U031의 '1차 방주 밀봉'과 동일한 사건(E19)의 축약 표기다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_17",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "지휘관: 지금 방주 밀봉 동안 입구를 지키는 작전을 수행 중이고."
+        },
+        {
+          "scene_id": "ark_guardian_17",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "V.T.C. 여사제: 어차피 인류는 졌습니다. 주요 인원은 이미 1차 밀봉 때 방주로 모두 내려갔습니다."
+        },
+        {
+          "scene_id": "신임 장교의 일지_03",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "1차 방주 밀봉이 끝났다. 이번에도 갓데스 스쿼드가 해냈다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__031",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U031" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1차 방주 밀봉",
+          "entity_type": "event",
+          "entity_key": "E19"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "갓데스 스쿼드가 입구를 방어하며 수행한 방주 밀봉의 1차 작전·사건으로, U030('1차 밀봉')과 동일한 사건(E19)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "신임 장교의 일지_03",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "1차 방주 밀봉이 끝났다. 이번에도 갓데스 스쿼드가 해냈다."
+        },
+        {
+          "scene_id": "ark_guardian_17",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "V.T.C. 여사제: 어차피 인류는 졌습니다. 주요 인원은 이미 1차 밀봉 때 방주로 모두 내려갔습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__032",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U032" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1차 지상 탈환전",
+          "entity_type": "event",
+          "entity_key": "E20"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주 이주 이후 인류가 최초로 시도했다가 패배한 대규모 지상 반격 전쟁을 가리키는 고유 사건명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_23_14",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "크로우: 1차 지상 탈환전은 처참히 실패했지."
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "중앙 정부 간부: 1차 지상 탈환전 대비 100배의 규모로 진행되며!"
+        },
+        {
+          "scene_id": "footstep_walk_run_14",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "레드 후드: 1차 지상 탈환전을 시도했는데 완패."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__033",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U033" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1차 랩쳐 침공",
+          "entity_type": "event",
+          "entity_key": "E18"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현이 U029의 '1차 랩쳐 침공'을 줄여 부른 표기로, 동일한 역사적 침공 사건(E18)을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_17_13",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "라피: 레드 후드, 1차 침공의 니케. 그리고 전설의 지휘관."
+        },
+        {
+          "scene_id": "for_rest_01",
+          "line_start": 117,
+          "line_end": 117,
+          "quote": "마나: 1차 침공 직후 방주로 내려왔을 당시엔 생산 시스템이 제대로 구축되지 않았으니까요."
+        },
+        {
+          "scene_id": "drake_03",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "드레이크: 1차 침공 때 미처 방주로 피난하지 못 한 이들의 넋을 기리는 행사지."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "나유타: 그렇소. 1차 랩쳐 침공이라 불리는 사건이외다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__034",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U034" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1차 랩쳐 침공",
+          "entity_type": "event",
+          "entity_key": "E18"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "noah_00에서 '[1차 침공기] 때 큰 전투'로 묶여 쓰이는 등 모든 출현이 U029·U033의 '1차 랩쳐 침공' 전쟁 시기를 가리키므로 동일한 사건 엔티티(E18)로 연결한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_15_08",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "루피: 참고로 루피가 챙긴 건 1차 침공기 전에 제작된 한정판 명품백이랑, 비슷한 시기에 생산된 명품 시계야☆"
+        },
+        {
+          "scene_id": "든_셀_00",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "라피: 1차 침공기 때의 격전지로군요."
+        },
+        {
+          "scene_id": "noah_00",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "노아: 엉. 사실 여기가 [1차 침공기] 때 큰 전투가 있었던 곳이라."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "나유타: 그렇소. 1차 랩쳐 침공이라 불리는 사건이외다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__035",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U035" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1차 지상 탈환전",
+          "entity_type": "event",
+          "entity_key": "E20"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "2차 지상 탈환전을 앞두고 니케 생산량을 '1차 탈환전 대비 100배 이상'으로 비교한 기사 표현으로, U032('1차 지상 탈환전')의 축약 표기이므로 동일 엔티티(E20)로 묶는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "데일리아크기사스크랩_00",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "(데일리아크) 마르셀 버몬트 기자 = 중앙 정부에서 이르면 내년 초, 2차 지상 탈환전을 위한 대대적인 군비 증강을 예고했다."
+        },
+        {
+          "scene_id": "데일리아크기사스크랩_00",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "마일즈 부사령관은 오늘 오전 기자회견을 통해 [올해 내로 니케 생산량을 대폭 늘릴 예정]이라고 밝혔다. 구체적인 수치는 공개할 수 없지만, 대략 1차 탈환전 대비 100배 이상이 될 것으로 보고 있으며··· (더보기)"
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "중앙 정부 간부: 1차 지상 탈환전 대비 100배의 규모로 진행되며!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__036",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U036" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "1호",
+          "entity_type": "character",
+          "entity_key": "E21",
+          "qualifier": "프로젝트 A.D. 실험체 1호"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "maria-n에서 니케 마리아 모델과 함께 처음 전장에 투입되었다가 랩쳐 총격으로 사망한 프로젝트 A.D. 첫 번째 실험체 개인이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_11",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "1호: 니케 주제에 허락없이 말 걸지 마."
+        },
+        {
+          "scene_id": "maria-n_12",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "에닉: 프로젝트 A.D.의 결과물을 니케 마리아 모델과 함께 전장에 투입."
+        },
+        {
+          "scene_id": "maria-n_12",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "에닉: 1호. 달성률 0.3% 달성 후 사망."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__037",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U037" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "실전 훈련 중 지휘관이 순차적으로 조작하는 여러 정찰용 드론('1번 드론', '2번 드론', '3번 드론') 중 두 번째 기체를 가리키는 일반 장비 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 133,
+          "line_end": 133,
+          "quote": "은화: 삼류. 다음 비춰 봐."
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 134,
+          "line_end": 134,
+          "quote": "2번 드론을 어디로 움직일까?"
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "···1번 드론을 어디로 움직일까?"
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 158,
+          "line_end": 158,
+          "quote": "3번 드론을 어디로 움직일까?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__038",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U038" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "2번 창고",
+          "entity_type": "location",
+          "entity_key": "E12",
+          "qualifier": "오버 더 호라이즌 시설 내 구 12번 정비소(g12)"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "오버 더 호라이즌 시설 지도상의 특정 창고 공간으로, 과거 '12번 정비소'(U015) 자리였으며 약칭 'g12'로 불리는 동일한 장소 엔티티(E12)다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_the_horizon_07",
+          "line_start": 75,
+          "line_end": 75,
+          "quote": "소라: g12는 그거예요. 2번 창고."
+        },
+        {
+          "scene_id": "over_the_horizon_07",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "소라: 예전에 2번 창고 자리가 12번 정비소였거든요."
+        },
+        {
+          "scene_id": "over_the_horizon_07",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "소라: 그래서 이곳에서 일한 지 오래된 사람들은 아직도 거길 g12라고 부르고 있어요~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__039",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U039" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "2세대 페어리 테일 모델",
+          "entity_type": "faction_or_species",
+          "entity_key": "E22"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "old_tales와 ark_guardian의 네 출현 모두 인류연합군과 V.T.C.가 갓데스의 데이터를 토대로 만든 차세대기 '2세대 페어리 테일 모델' 니케군(아나키오르 사태로 배신자 혐의 조사를 받은 부류)을 줄여 부른 표기다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "old_tales_01",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "레드 슈즈: 갓데스의 데이터를 토대로 만들어진 차세대기. 2세대 페어리 테일 모델이죠."
+        },
+        {
+          "scene_id": "old_tales_10",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "에이브: 2세대는 지금 모두!"
+        },
+        {
+          "scene_id": "ark_guardian_01",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "라푼젤: 2세대 분들이 만들어지고 있던 곳에서 봤던 융합체."
+        },
+        {
+          "scene_id": "ark_guardian_12",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "오스왈드: 2세대는··· 배신자 혐의로 조사 중···."
+        },
+        {
+          "scene_id": "ark_guardian_19",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "오스왈드: 2세대를 모두 모아 아나키오르를 추적하겠습니다. 준비해 주십시오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__001__040",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U040" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "2세대 니케",
+          "entity_type": "faction_or_species",
+          "entity_key": "E23"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "인간 신경 조직과 유사한 압력 센서를 지녀 지상 병원에서 팔다리를 잃은 인간들에게 임시 이식용 부품으로 널리 쓰인 양산·보급 세대의 니케 부류로, 천문학적 비용으로 소수 제작된 '2세대 페어리 테일 모델'(U039)과는 다른 별개의 니케 세대 부류(E23)다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "콜렉터_01",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "그냥 잘라내고 니케 다리 파츠를 끼웠습죠"
+        },
+        {
+          "scene_id": "콜렉터_01",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "2세대 니케 부품이라 인체 거부 반응도 없습니다요"
+        },
+        {
+          "scene_id": "저스틴_00",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "현재 리페어 센터에서는 2세대 니케 부품이 필요합니다."
+        },
+        {
+          "scene_id": "저스틴_00",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "임시로 2세대 니케 부품을 이식했었습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "2세대 니케의 세계관 용례를 확인하기 위해 grep(세대 니케)을 실행하여 저스틴_00 L49~88의 지상 병원 이식용 2세대 니케 부품 언급을 확인함"
+      ]
+    }
+  ]
+}

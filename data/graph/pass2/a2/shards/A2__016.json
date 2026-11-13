@@ -1,0 +1,802 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__016",
+  "candidate_links": [
+    {
+      "link_id": "A2__016__001",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엔더슨",
+          "name": "엔더슨",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "over_zone_18(방주 밀봉 직후 통신)과 arcane_archive_11(갓데스 스쿼드 기록서)에서 모두 갓데스 스쿼드를 이끈 인간 지휘관을 가리키며, maria-n_17에서 에닉이 방주 완전 밀봉 작전 아크 가디언 당시의 '갓데스 스쿼드의 지휘관 엔더슨'을 명시한다. 다만 출현 이야기 안에서는 엔더슨이라는 본명이 직접 이어지지 않고 다른 이야기의 기록으로 추론하므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_zone_18",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "남자의 목소리: 지휘관이라 하시면··· 갓데스 스쿼드의 지휘관을 말씀하시는 겁니까?"
+        },
+        {
+          "scene_id": "arcane_archive_11",
+          "line_start": 144,
+          "line_end": 144,
+          "quote": "갓데스 스쿼드의 지휘관에 관한 내용은 어디에서도 찾을 수 없었다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 155,
+          "line_end": 155,
+          "quote": "에닉: 방주 완전 밀봉 작전 아크 가디언 당시, 갓데스 스쿼드의 지휘관 엔더슨에게서 발견했습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"갓데스 스쿼드의 지휘관\"으로 확인한 maria-n_17 L155에서 갓데스 스쿼드의 지휘관이 엔더슨임이 명시됨"
+      ]
+    },
+    {
+      "link_id": "A2__016__002",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엔더슨",
+          "name": "엔더슨",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "신임 장교의 일지_01·02에서 1차 방주 밀봉 시기 릴리바이스 소령과 함께 다닌 '갓데스 스쿼드의 지휘관님'을 줄여 부른 표현이다. maria-n_17에서 아크 가디언 당시 갓데스 스쿼드의 지휘관이 엔더슨임이 확인되나, 본 일지 안에서는 본명이 직접 나오지 않고 다른 이야기의 근거를 옮겨 추론하므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "신임 장교의 일지_01",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "젊은 장교들 사이에서는 갓데스 지휘관님의 인기가 심상치 않아서,"
+        },
+        {
+          "scene_id": "신임 장교의 일지_02",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "오늘 본부에서 갓데스 스쿼드의 지휘관님을 보았다."
+        },
+        {
+          "scene_id": "신임 장교의 일지_02",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "그리고 업무 중 갓데스 지휘관에 대한 평가 문서를 읽었다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 155,
+          "line_end": 155,
+          "quote": "에닉: 방주 완전 밀봉 작전 아크 가디언 당시, 갓데스 스쿼드의 지휘관 엔더슨에게서 발견했습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "U001 grep으로 확인한 maria-n_17 L155에서 갓데스 스쿼드의 지휘관이 엔더슨임이 명시됨"
+      ]
+    },
+    {
+      "link_id": "A2__016__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "갓데스 폴",
+          "entity_type": "event",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현에서 모델 ZX를 필두로 탑승 니케들이 자폭해 대참사를 막고 방주 내 니케 인권 개선의 계기가 된 특정 역사적 사건 '[갓데스 폴]'을 가리키는 고유 사건명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_23_14",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "크로우: 2차 지상 탈환전 실패, 최초의 니케 연예인 프리티의 사망, 모델 ZX의 갓데스 폴 사건."
+        },
+        {
+          "scene_id": "footstep_walk_run_02",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "의사: 이 일련의 사건에 [갓데스 폴]이라는 이름이 붙었고, 추모 행렬이 계속 이어지고 있어."
+        },
+        {
+          "scene_id": "elevator_00",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "라피: 그 후, 해당 사건은 [갓데스 폴]이라 이름 붙여졌고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "갓데시움",
+          "entity_type": "item",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현에서 니케 바디·AZX·장비·각종 제품 제작에 쓰이는 세계관 고유의 특수 금속 소재 '갓데시움'을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_13_04",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "디젤: AZX는 갓데시움 비중이 무려 30%나 되거든요!"
+        },
+        {
+          "scene_id": "main_15_08",
+          "line_start": 22,
+          "line_end": 23,
+          "quote": "얀: 내는 그냥 갓데시움 위주로 챙겼다."
+        },
+        {
+          "scene_id": "main_21_01",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "세실: 아무튼 각종 금속과 갓데시움은 물론이고,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__005",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "갓데시움 도마",
+          "entity_type": "item",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "단 한 번 나온 표현으로, 대괄호 '[갓데시움 도마]'로 표기되어 달란트 몰에서 사은품과 함께 판매하는 특정 제품의 고유 상품명으로 읽히기도 하지만, 바로 이어지는 선택지에서 '초고가인 갓데시움제' 도마로 풀어 써 소재 수식어가 붙은 보통 표현으로도 읽히므로 양쪽 근거가 비슷해 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "yan_01",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "네온: 무려 [갓데시움 도마]를 사고 공짜로 받은 거라고요!"
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "yan_01",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "[OPTION TEXT=\"도마를 굳이 초고가인 갓데시움제로 쓸 필요가···?\"]"
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "바로 뒤 선택지에서 '도마를 굳이 초고가인 갓데시움제로 쓸 필요가'라고 풀어 써, 고유 제품명이 아니라 갓데시움 소재로 만든 도마를 뜻하는 수식 표현으로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "yan_01",
+              "line_start": 88,
+              "line_end": 88,
+              "quote": "[OPTION TEXT=\"도마를 굳이 초고가인 갓데시움제로 쓸 필요가···?\"]"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep \"갓데시움 도마\"로 확인한 결과 yan_01 L86 외 다른 출현 없음"
+      ]
+    },
+    {
+      "link_id": "A2__016__006",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'갓데시움 소드 같은 걸로 요리하는 건가요?'처럼 니케가 요리하다 다쳤다는 말에 갓데시움 재질의 검 따위를 가정해 묻는 보통 표현이며, 특정 고유 무기를 가리키지 않는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_38_07",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "네온: 응? 니케가 칼에 상처도 나나요? 갓데시움 소드 같은 걸로 요리하는 건가요?"
+        },
+        {
+          "scene_id": "main_38_07",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "민트: 후후. 아니."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "온건파와 대비하여 강경한 방식을 주장하는 부류·입장을 가리키는 보통 낱말로, 엔터 헤븐 내부 분파를 서술할 때뿐 아니라 다른 부대의 성향을 설명할 때도 두루 쓰이며 고유한 조직 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "enter_heaven_10",
+          "line_start": 180,
+          "line_end": 181,
+          "quote": "E.H.: 기존 방식으로는 안된다며 자극적인 일을 벌여야 한다는 강경파."
+        },
+        {
+          "scene_id": "privaty_03",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "라피: 워낙 강경파에 과격한 대응으로 테러범들과 수많은 전투를 치러야 했지만."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "학교 건물의 일반 시설인 강당을 가리키는 보통 낱말이지 고유 지명이나 시설 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2x2_love_1ch_09",
+          "line_start": 176,
+          "line_end": 176,
+          "quote": "프리바티의 지시에 따라 강당 안을 달리기 시작했다."
+        },
+        {
+          "scene_id": "2x2_love_1ch_17",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "아무도 없는 텅 빈 강당."
+        },
+        {
+          "scene_id": "2x2_love_2ch_22",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "평범한 여학생: 2시에 강당에서 공연이 시작될 예정입니다. 많은 관심 부탁드립니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__009",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "보호소의 개들, 볼트와 맥스, 또는 개 일반을 복수로 이르는 보통 낱말이며 고유한 집단이나 종족 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "bow_wow_paradise_04",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "폴리: 비스킷은 보호소 강아지들을 많이 좋아하시는군영."
+        },
+        {
+          "scene_id": "bow_wow_paradise_07",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "휘파람을 불자, 볼트와 맥스는 날 쳐다봤고. 나는 강아지들 앞에서 공을 들어 보였다."
+        },
+        {
+          "scene_id": "secret_garden_03",
+          "line_start": 8,
+          "line_end": 9,
+          "quote": "비스킷: 제 꿈이 이런 넓은 곳에서 강아지들이랑 원 없이 뛰어놀고 산책하는 거라서요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__010",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "비스킷이 돌보는 강아지들을 친근하게 부른 보통 표현으로, 이어지는 길로틴의 답장에서도 '강아지들'이라는 보통명사로 받아 쓰며 고유한 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_lionheart_001",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "저희 강아지 친구들은 잘 놀고 있나요? UㅇᴥㅇU"
+        },
+        {
+          "scene_id": "blabla_lionheart_001",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "강아지들은 방금 산책을 끝마쳤다"
+        },
+        {
+          "scene_id": "blabla_lionheart_002",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "강아지 친구들한테 물어봤는데요"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "유령들이 있는 쪽에서 여러 개가 계속 날아와 떨어진 철제 상자들을 묘사하는 수식어가 붙은 보통 표현이지 고유한 물건 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_07",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "···큰 강철 상자가 우리 뒤에 떨어져 있다."
+        },
+        {
+          "scene_id": "boom_the_ghost_07",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "···유령들이 있는 곳에서 강철 상자가 계속 날아온다."
+        },
+        {
+          "scene_id": "boom_the_ghost_08",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "[OPTION TEXT=\"나··· 분명히 날아오는 강철 상자에 맞았는데···.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "낚시꾼을 비유적으로 이르는 관용적 보통 낱말로, 얀의 비유('무슨 낚싯바늘 갖다 강태공을 할라는 것도 아니고'), 지휘관의 농담 선택지, 메어리의 대사 등 여러 인물에게 두루 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "workshop_05",
+          "line_start": 94,
+          "line_end": 94,
+          "quote": "얀: 무슨 낚싯바늘 갖다 강태공을 할라는 것도 아니고 대체 뭔···."
+        },
+        {
+          "scene_id": "neve_02",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "[OPTION TEXT=\"나의 또 다른 이름은 강태공이야.\"]"
+        },
+        {
+          "scene_id": "mary_baygoddess_03",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "메어리: 그럼 저는 강태공이 되어 물고기를 낚아 볼게요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__013",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'강화 슈트 같은거라도 다 갖춰 입은거야?'처럼 경비원들의 비정상적인 힘을 보고 추측·가정하며 말한 일반 보통 표현이며 특정 장비를 가리키지 않는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "coin_rush_show_down_23",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "신: 뭐야. 강화 슈트 같은거라도 다 갖춰 입은거야?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__014",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "강화 시술",
+          "entity_type": "concept",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "event_stories__maria-n 전반에서 닥터 마리아가 마리안의 출동 전 NIMPH 기능 강화를 명목으로 시행한 특정 위장 시술('[강화 시술]', 실제로는 침식·기억 단절을 수반하는 실험 절차)을 일관되게 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_11",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "닥터 마리아: 너는 출동하기 전에 어··· [강화 시술]을 받게 될거야."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line_start": 401,
+          "line_end": 401,
+          "quote": "[강화 시술] 후 수송기에 몸을 싣는다."
+        },
+        {
+          "scene_id": "maria-n_23",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "마리안: 아무것도 변하는 게 없는 [강화 시술]."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__015",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "개껌맛 허헥트",
+          "entity_type": "item",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "입에 음식을 가득 넣은 자칼이 '개껌맛 퍼펙트'를 뭉개어 적은 1회성 표현으로, 방주 대체 식품 퍼펙트의 특정 제품명을 가리키는 것으로도 읽히고 '고구마맛 퍼펙트'처럼 맛 수식어를 붙인 일반 표현으로도 읽혀 어느 쪽인지 가를 원문이 부족하므로 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_jackal_003",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "대장이 개껌맛 허헥트 사다줬거흔"
+        },
+        {
+          "scene_id": "blabla_jackal_003",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "입에 가득 너허허 헉고 있거흔"
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "delta_01",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "아니스: 난 냉동고에 얼려둔 고구마맛 퍼펙트로 대충 떼울까 했거든."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "방주에서 여러 맛의 퍼펙트를 '~맛 퍼펙트'처럼 수식어를 붙여 부르는 일반 표현의 변형 발음 표기로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "delta_01",
+              "line_start": 37,
+              "line_end": 37,
+              "quote": "아니스: 난 냉동고에 얼려둔 고구마맛 퍼펙트로 대충 떼울까 했거든."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep \"개껌맛\"·\"퍼펙트\"로 확인한 결과 blabla_jackal_003 외 '개껌맛 퍼펙트' 직접 표기는 없으며, 다른 장면들에서 '~맛 퍼펙트' 용례 확인"
+      ]
+    },
+    {
+      "link_id": "A2__016__016",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_루피",
+          "name": "루피",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "플로라가 '저번에 방주에서 뵌 개나리님'이라고 언급하는데, flora_00과 shopping_mall_09에서 플로라가 방주에서 만난 루피를 '개나리님'으로 부르고 루피가 이에 응답하는 사실이 확인된다. 다만 secret_garden_00 장면 안에서는 루피가 직접 이어지지 않고 다른 이야기의 호칭 관계를 옮겨 추론하므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "secret_garden_00",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "플로라: 아, 참. 저번에 방주에서 뵌 개나리님 한분이 계신데, 그분도 팬지처럼 예뻤답니다."
+        },
+        {
+          "scene_id": "flora_00",
+          "line_start": 42,
+          "line_end": 43,
+          "quote": "???: 죄송해요. 다음에 조금 더 자세히 볼게요, 개나리님."
+        },
+        {
+          "scene_id": "shopping_mall_09",
+          "line_start": 28,
+          "line_end": 30,
+          "quote": "루피: 맞아, 저번에 날 개나리라고 불렀던 걔잖아!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"개나리\"로 flora_00 L42-43 및 shopping_mall_09 L28-30에서 플로라가 루피를 개나리님으로 부르는 원문 확인"
+      ]
+    },
+    {
+      "link_id": "A2__016__017",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "손잡이·총몸과 함께 총기의 일반 부품을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "neon_03",
+          "line_start": 204,
+          "line_end": 204,
+          "quote": "조금도 극적이지 않은 분위기에서, 상자 안에 보관된 녹슨 개머리판을 찾을 수 있었다."
+        },
+        {
+          "scene_id": "neon_04",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "네온: 이것이 마지막 부품인 개머리판이에요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__018",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "개가 차는 목걸이를 뜻하는 보통 낱말로, 문장 안에서 '폴리라는 이름표와 엘리시온의 심벌이 달린'이라는 수식을 받아 쓰일 뿐 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_01",
+          "line_start": 236,
+          "line_end": 236,
+          "quote": "폴리라는 이름표와 엘리시온의 심벌이 달린 개 목걸이다!"
+        },
+        {
+          "scene_id": "poli_01",
+          "line_start": 243,
+          "line_end": 243,
+          "quote": "폴리: 뭐예여 이거? 엘리시온 심벌이 달린 개 목걸이?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__019",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "개심",
+          "entity_type": "concept",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "퀸(마코토)이 섀도를 쓰러뜨려 '[보물]'을 빼앗으면 악당의 뒤틀린 마음이 바로잡히고 죄를 인정하게 되는 현상을 가리켜 '우리는 그걸 [개심]이라고 부르고 있어'라고 명시한 고유 개념명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_26",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "퀸(마코토): 그리고 [보물]을 빼앗으면 악당의 뒤틀린 마음은 바로잡히고, 자신의 죄를 인정하게 돼. 우리는 그걸 [개심]이라고 부르고 있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__020",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "개인전 [MEMORIES TELLER] 커플 입장권",
+          "entity_type": "item",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "에닉이 프리바티에게 보낸 아트의 개인전 '[MEMORIES TELLER]' 초대용 E-티켓에 적힌 고유 티켓 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "memories_teller_33",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "- 개인전 [MEMORIES TELLER] 커플 입장권 - 이라고 쓰인 E-티켓이 프리바티의 핸드폰에 출력되어 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__021",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'사람을 개··· 개 키메라 취급하다닛!'처럼 개와 사람이 섞인 키메라라는 뜻으로 쓴 수식·비유적 보통 표현이며, poli_02에서도 '동물과 사람 유전자를 섞은 키메라'라는 일반 표현으로 풀어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_01",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "폴리: 사람을 개··· 개 키메라 취급하다닛!"
+        },
+        {
+          "scene_id": "poli_02",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "맥스웰: 동물과 사람 유전자를 섞은 키메라나."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "크루즈선 내 투숙 방을 가리키는 보통 낱말이지 고유한 장소 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_06",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "프림은 몸을 일으켜 객실을 둘러봤다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__016__023",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "단체 대화방과 대비해 개인 간 1:1 블라블라 메시지('개인 블라')를 가리키는 일상적 줄임 표현으로, 여러 인물이 임의의 상대와의 개인 연락을 말할 때 두루 쓰이며 특정 단일 대상을 가리키는 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_siegeperilous_002",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "갠블라 놔두고"
+        },
+        {
+          "scene_id": "blabla_romanticvalentine_001",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "갠블라 해보겠수"
+        },
+        {
+          "scene_id": "blabla_blueezs_001",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "왜 개인 블라를 보내지 않고 이렇게 보낸 거야?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
