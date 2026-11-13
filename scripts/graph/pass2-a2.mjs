@@ -1336,6 +1336,7 @@ const main = async () => {
       await writeJsonAtomic(inputPath, input);
       console.log(`[audit-input] 회차 ${wave}: ${sample.sampled_units}/${sample.population_units}단위 (${sample.strata.length}개 층, 각 층 최소 1개) → ${relPath(inputPath)}`);
       console.log(`[audit-input] 다른 모델의 감사 출력 → ${relPath(outputPath)}`);
+      for (const c of sample.strata) console.log(`  층 ${c.stratum}: 모집단 ${c.population}, 표본 ${c.sampled} (비율 ${c.rate})`);
     } else {
       const input = readJsonIfExists(inputPath);
       const out = readJsonIfExists(outputPath);
@@ -1343,6 +1344,15 @@ const main = async () => {
       const r = checkAudit(input, out, { store: ctx.store, bundleStamps, problems: A2_REVIEW_PROBLEMS });
       for (const e of r.errors) console.log(`  ERROR ${e}`);
       console.log(`${r.errors.length ? '[FAIL]' : '[PASS]'} 감사 ${r.reviewed}/${input.items.length}단위, 판정 ${JSON.stringify(r.judgments)}`);
+      // 보고서용: 감독관이 감사 출력 JSON을 직접 열지 않도록 실제 모델·세션, 문제 코드 수, 맞음이 아닌 판단의 원문을 출력한다
+      const reviews = Array.isArray(out.reviews) ? out.reviews : [];
+      const problemCounts = reviews.flatMap((x) => x.problems ?? []).reduce((acc, c) => ((acc[c] = (acc[c] ?? 0) + 1), acc), {});
+      console.log(`[audit-check] 감사자 ${out.auditor_family ?? '?'} / ${out.auditor_model ?? '?'} / 세션 ${out.auditor_session ?? '?'}, 문제 코드 ${JSON.stringify(problemCounts)}`);
+      for (const x of reviews.filter((y) => y.judgment !== '맞음' || (y.problems ?? []).length)) {
+        console.log(`  ${x.audit_id} [${x.judgment}] ${(x.problems ?? []).join(', ') || '-'}`);
+        console.log(`    이유: ${x.reason ?? ''}`);
+        if (x.evidence) console.log(`    근거: ${typeof x.evidence === 'string' ? x.evidence : JSON.stringify(x.evidence)}`);
+      }
       if (r.errors.length) process.exitCode = 1;
     }
     return;
