@@ -5,6 +5,8 @@ import {
   buildUnits,
   collectA2Items,
   compareSampling,
+  exceptionScopeCounts,
+  findMergeCandidates,
   groupOccurrences,
   mergeA2,
   packUnits,
@@ -168,6 +170,13 @@ test('검증기: 기본 판정 + 이야기 예외는 통과', () => {
   const r = validateA2Shard(goodShard(), bundle, ctx, occMap);
   assert.deepEqual(r.errors, []);
   assert.deepEqual(r.warnings, []);
+});
+
+test('검증기: 같은 대상을 근거 종류에 따라 유력한 해석·가능성 두 연결로 나눠도 통과(규칙 3.3·3.6절)', () => {
+  const s = goodShard();
+  Object.assign(s.candidate_links[1], { target: [ent('소피아', 'character', 'E1', '2호 쉘터 관리자')], confidence: '가능성' });
+  const r = validateA2Shard(s, bundle, ctx, occMap);
+  assert.deepEqual(r.errors, []);
 });
 
 test('검증기: 기본 판정 누락·중복, 표기가 없는 범위, 예외 범위마다 근거', () => {
@@ -352,4 +361,65 @@ test('감사 표본: 층마다 최소 하나, 골라 보여 준 단위에는 못
   assert.equal(probe[0].shown, false);
   assert.equal(probe[0].applied_scope, 'default');
   assert.deepEqual(sampleA2Audit(args).items.map((x) => x.audit_id), a.items.map((x) => x.audit_id));
+});
+
+test('제시·미제시 불일치: 유형·이름이 같고 qualifier만 다른 것은 불일치에서 빼고 따로 센다', () => {
+  const occs = [
+    { occ_id: 'O1', scene_id: 's1', title_id: 't1', item_ids: ['i1'], shown: true },
+    { occ_id: 'O2', scene_id: 's2', title_id: 't2', item_ids: ['i2'], shown: false },
+  ];
+  const t = (name, qualifier, type = 'character') => [{ ref: 'entity', entity_id: null, name, entity_type: type, entity_key: 'E1', qualifier }];
+  const main = { surface: '퀸', occurrences: occs, links: [{ link_type: 'new_entity', confidence: '유력한 해석', scope: { default: true }, target: t('퀸', '랩쳐의 초대 수장') }] };
+  const check = { surface: '퀸', occurrences: occs, links: [
+    { link_type: 'new_entity', confidence: '유력한 해석', scope: { default: true }, target: t('퀸', '원래의 랩쳐 퀸') },
+    { link_type: 'new_entity', confidence: '유력한 해석', scope: { title_ids: ['t2'] }, target: t('퀸', '등급', 'faction_or_species') },
+  ] };
+  const r = compareSampling({ main, check });
+  assert.equal(r.agree, 0);
+  assert.equal(r.differ_qualifier_only, 1);
+  assert.equal(r.differ_shown, 0);
+  assert.equal(r.differ_not_shown, 1);
+});
+
+test('병합 후보: 묶음을 넘어 변형 열쇠(꼬리말 제거)가 겹치면 후보, 스쿼드·조직은 같은 무리, 다른 유형·같은 묶음은 아님', () => {
+  const G = (bundle_id, key, canonical_name, entity_type, surfaces) => ({ group_key: `${bundle_id}#${key}`, bundle_id, canonical_name, entity_type, qualifier: null, surfaces: new Set(surfaces) });
+  const c = findMergeCandidates([
+    G('A2__004', 'E3', '리틀 캐논 스쿼드', 'squad', ['리틀 캐논 스쿼드']),
+    G('A2__014', 'E2', '리틀 캐논', 'squad', ['폭죽놀이단']),
+    G('A2__020', 'E1', '리틀캐논', 'organization', ['리틀캐논']),
+    G('A2__021', 'E1', '리틀 캐논', 'item', ['리틀 캐논']),
+    G('A2__005', 'E1', '방주', 'location', ['방주']),
+    G('A2__005', 'E2', '방주', 'location', ['방주']),
+    G('A2__006', 'E1', '중앙 정부', 'organization', ['중앙 정부']),
+    G('A2__007', 'E1', '중앙정부', 'organization', ['중앙정부']),
+  ]);
+  assert.equal(c.length, 2);
+  const little = c.find((x) => x.groups.some((g) => g.canonical_name === '리틀 캐논 스쿼드'));
+  assert.deepEqual(little.groups.map((g) => g.group_key).sort(), ['A2__004#E3', 'A2__014#E2', 'A2__020#E1']);
+  assert.equal(little.match, 'variant');
+  const gov = c.find((x) => x.groups.some((g) => g.canonical_name === '중앙 정부'));
+  assert.equal(gov.match, 'same_name');
+});
+
+test('감사 표본: 기본 판정이 일반 낱말인 층은 비율을 3배로 한다', () => {
+  const units = Array.from({ length: 10 }, (_, i) => ({ unit_id: `U${String(i + 1).padStart(3, '0')}`, surface: `표기${i}`, sampled: false }));
+  const links = units.map((u, i) => ({ link_id: `A2__001__${i}`, link_type: i < 5 ? 'generic_term' : 'new_entity', confidence: '유력한 해석', subject: [{ ref: 'unit', unit_id: u.unit_id }], scope: { default: true }, target: [] }));
+  const a = sampleA2Audit({ planBundles: [{ bundle_id: 'A2__001', input: 'i', script: 's' }], bundles: new Map([['A2__001', { bundle_id: 'A2__001', units }]]), shards: new Map([['A2__001', { candidate_links: links }]]), rate: 0.2, seed: 's' });
+  const by = Object.fromEntries(a.strata.map((s) => [s.stratum.split('/')[0], s]));
+  assert.equal(by.generic_term.sampled, 3);
+  assert.ok(Math.abs(by.generic_term.rate - 0.6) < 1e-9);
+  assert.equal(by.new_entity.sampled, 1);
+});
+
+test('finish 예외 집계: 기본은 빼고 이야기·장면·출현 범위와 그 조합을 따로 센다', () => {
+  const shard = { candidate_links: [
+    { scope: { default: true } },
+    { scope: { title_ids: ['ta'] } },
+    { scope: { title_ids: ['ta', 'tb'], scene_ids: ['a1'] } },
+    { scope: { scene_ids: ['b1'] } },
+    { scope: { occ_ids: ['O0001'] } },
+    { scope: { title_ids: ['tb'] } },
+  ] };
+  assert.deepEqual(exceptionScopeCounts(shard), { total: 5, 이야기: 2, '이야기+장면': 1, 장면: 1, 출현: 1 });
+  assert.deepEqual(exceptionScopeCounts({ candidate_links: [{ scope: { default: true } }] }), { total: 0 });
 });

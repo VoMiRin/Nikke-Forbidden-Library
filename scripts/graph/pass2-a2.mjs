@@ -31,7 +31,7 @@ const __filename = fileURLToPath(import.meta.url);
 //   node scripts/graph/pass2-a2.mjs validate <bundle_id> [--run=...]
 //   node scripts/graph/pass2-a2.mjs occ <bundle_id> <unit_id> [--title=<title_id>] [--offset=0] [--limit=50] [--run=...]   (단위의 출현 전부)
 //   node scripts/graph/pass2-a2.mjs show <scene_id> [시작줄 끝줄]
-//   node scripts/graph/pass2-a2.mjs grep <낱말> --bundle=<bundle_id> --unit=<unit_id> [--title=<title_id>] [--limit=30] [--offset=0] [--run=...]
+//   node scripts/graph/pass2-a2.mjs grep <낱말> --bundle=<bundle_id> --unit=<unit_id> [--title=<title_id>[,…]] [--limit=30(최대 100)] [--offset=0] [--run=...]
 //   node scripts/graph/pass2-a2.mjs entity <이름>
 //   node scripts/graph/pass2-a2.mjs finish [--run=...]
 //   node scripts/graph/pass2-a2.mjs compare-check [--run=...]          (골라 보여 준 판정 ↔ 전부 보여 준 판정)
@@ -84,11 +84,16 @@ export const PILOT_SURFACES = [
 export const PILOT_CHECK_SURFACES = ['7호', '퀸', '전초기지', '에덴', '포비스트', '지상'];
 /** 감사 때 골라 보여 준 단위마다 따로 뽑아 주는 못 본 출현 수(초안 12.6절) */
 export const AUDIT_UNSEEN_PROBES = 3;
+/** 기본 판정이 generic_term인 층의 감사 비율 배수(파일럿 2026-11-13: 일반 낱말 표본 5개 중 3개 지적) */
+export const AUDIT_GENERIC_RATE_FACTOR = 3;
 export const ENTITY_KEY_RE = /^E\d{1,3}$/;
 export const PILOT_SINGLETONS_PER_TYPE = 2;
 
-const RUNS = new Set(['pilot', 'main']);
-const runRoot = (run) => path.join(GRAPH_DATA_DIR, 'pass2', run === 'main' ? 'a2' : 'a2-pilot');
+// retest·retest2: 파일럿 뒤 규칙을 고치고 일부 묶음만 다시 판정하는 실행(copy-bundles로 파일럿 묶음을 그대로 옮겨 온다).
+// retest2는 재시험 감사 뒤 규칙을 한 번 더 고친 실행이며, 앞 재시험 결과를 덮지 않으려고 폴더를 따로 쓴다
+const RUNS = new Set(['pilot', 'retest', 'retest2', 'main']);
+const RUN_DIRS = { pilot: 'a2-pilot', retest: 'a2-retest', retest2: 'a2-retest2', main: 'a2' };
+const runRoot = (run) => path.join(GRAPH_DATA_DIR, 'pass2', RUN_DIRS[run]);
 const RULES_PATH = path.resolve(GRAPH_DATA_DIR, '..', '..', 'docs', 'graphrag', 'GRAPH_RAG_PASS2_A2_RULES.md');
 const B_MERGED_PATH = path.join(GRAPH_DATA_DIR, 'pass2', 'merged', 'B_candidates.json');
 const pathsOf = (run) => {
@@ -790,6 +795,57 @@ export const assignEntityIds = (groups) => {
   return groups;
 };
 
+/** 병합 후보에서 같은 무리로 보는 유형. 스쿼드와 조직은 판정자마다 갈릴 수 있다 */
+const MERGE_TYPE_CLASS = { squad: 'group', organization: 'group' };
+/** 병합 후보 열쇠에서 떼는 꼬리말(유형 무리별). `리틀 캐논 스쿼드`·`리틀 캐논`, `어드마이어 호`·`어드마이어` */
+const MERGE_SUFFIXES = { group: ['스쿼드', 'squad', '인더스트리', 'industries', '그룹', '팀'], item: ['호'] };
+const mergeKeysOf = (g) => {
+  const cls = MERGE_TYPE_CLASS[g.entity_type] ?? g.entity_type;
+  const keys = new Set();
+  for (const name of [g.canonical_name, ...g.surfaces]) {
+    const k = variantKey(name);
+    if (!k) continue;
+    keys.add(k);
+    for (const suf of MERGE_SUFFIXES[cls] ?? []) if (k.endsWith(suf) && k.length - suf.length >= 2) keys.add(k.slice(0, -suf.length));
+  }
+  return [...keys].map((k) => `${cls}|${k}`);
+};
+
+/**
+ * 묶음을 넘어 같은 대상일 수 있는 무리를 후보로만 남긴다(합치지 않는다, 초안 12.4절).
+ * 이름·표기의 변형 열쇠(공백·기호·대소문자 제거, 유형별 꼬리말 제거)가 하나라도 겹치고 유형 무리가 같으면 한 후보로 묶는다.
+ */
+export const findMergeCandidates = (groups) => {
+  const parent = new Map(groups.map((g) => [g.group_key, g.group_key]));
+  const find = (x) => (parent.get(x) === x ? x : (parent.set(x, find(parent.get(x))), parent.get(x)));
+  const byKey = new Map();
+  for (const g of groups) {
+    for (const k of mergeKeysOf(g)) {
+      if (!byKey.has(k)) byKey.set(k, []);
+      byKey.get(k).push(g);
+    }
+  }
+  for (const list of byKey.values()) for (const g of list.slice(1)) parent.set(find(g.group_key), find(list[0].group_key));
+  const comps = new Map();
+  for (const g of groups) {
+    const r = find(g.group_key);
+    if (!comps.has(r)) comps.set(r, []);
+    comps.get(r).push(g);
+  }
+  return [...comps.values()]
+    .filter((list) => new Set(list.map((g) => g.bundle_id)).size > 1)
+    .map((list) => {
+      const exact = new Set(list.map((g) => `${g.entity_type}|${normName(g.canonical_name)}`)).size === 1;
+      const shared = [...byKey.entries()].filter(([, gs]) => gs.length > 1 && gs.some((g) => list.includes(g))).map(([k]) => k).sort();
+      return {
+        signature: exact ? `${list[0].entity_type}|${normName(list[0].canonical_name)}` : shared.join(' / '),
+        match: exact ? 'same_name' : 'variant',
+        groups: list.map((g) => ({ group_key: g.group_key, entity_id: g.entity_id ?? null, canonical_name: g.canonical_name, entity_type: g.entity_type, qualifier: g.qualifier, surfaces: [...g.surfaces].sort() })),
+      };
+    })
+    .sort((a, b) => a.signature.localeCompare(b.signature));
+};
+
 /**
  * 결과: 항목별 해소(resolutions), ID를 준 새 엔티티(entities), ID 없는 표기 묶음(terms), 묶음을 넘는 병합 후보.
  * mainBundles: [{ bundle, shard, occurrences }]
@@ -843,14 +899,7 @@ export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS }) => {
   const out = (g) => ({ ...g, surfaces: [...g.surfaces].sort(), units: [...g.units].sort(), title_ids: [...g.title_ids].sort() });
   const entities = used.filter((g) => g.entity_id).map(out).sort((a, b) => a.entity_id.localeCompare(b.entity_id));
   const terms = used.filter((g) => !g.entity_id).map(out).sort((a, b) => a.canonical_name.localeCompare(b.canonical_name) || a.group_key.localeCompare(b.group_key));
-  // 묶음을 넘어 이름·유형이 같은 무리: 합치지 않고 후보로만 남긴다
-  const bySig = new Map();
-  for (const g of used) {
-    const sig = `${g.entity_type}|${normName(g.canonical_name)}`;
-    if (!bySig.has(sig)) bySig.set(sig, []);
-    bySig.get(sig).push(g);
-  }
-  const mergeCandidates = [...bySig.entries()].filter(([, list]) => new Set(list.map((g) => g.bundle_id)).size > 1).map(([sig, list]) => ({ signature: sig, groups: list.map((g) => ({ group_key: g.group_key, entity_id: g.entity_id ?? null, qualifier: g.qualifier, surfaces: [...g.surfaces].sort() })) }));
+  const mergeCandidates = findMergeCandidates(used);
   // 완료 조건: 모든 참조 ID가 표에 있다
   const ids = new Set(entities.map((e) => e.entity_id));
   const dangling = resolutions.filter((r) => r.assigned_entity_id && !ids.has(r.assigned_entity_id)).length;
@@ -864,6 +913,8 @@ export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS }) => {
 export const compareSampling = ({ main, check }) => {
   // main/check: { surface, links, occurrences, bundle_id }
   const key = (link, bundleId) => (link ? targetKey(link.link_type, link.target[0], bundleId) : 'none');
+  // qualifier는 판정자가 자유 서술로 적으므로, 유형·이름이 같고 qualifier만 다른 것은 따로 센다
+  const looseKey = (link) => (link ? targetKey(link.link_type, link.target[0] ? { ...link.target[0], qualifier: null } : link.target[0]) : 'none');
   const mainRes = new Map(resolveOccurrences(main.links, main.occurrences).map((x) => [x.occurrence.item_ids.join(','), x]));
   const rows = [];
   for (const c of resolveOccurrences(check.links, check.occurrences)) {
@@ -884,6 +935,7 @@ export const compareSampling = ({ main, check }) => {
       main_confidence: m.link?.confidence ?? null,
       check_confidence: c.link?.confidence ?? null,
       agree: a === b,
+      agree_ignoring_qualifier: looseKey(m.link) === looseKey(c.link),
     });
   }
   const defMain = main.links.find((l) => l.scope?.default);
@@ -894,8 +946,10 @@ export const compareSampling = ({ main, check }) => {
     occurrences: rows.length,
     agree: count((r) => r.agree),
     agree_confidence_differs: count((r) => r.agree && r.main_confidence !== r.check_confidence),
-    differ_shown: count((r) => !r.agree && r.shown_in_main),
-    differ_not_shown: count((r) => !r.agree && !r.shown_in_main),
+    differ_qualifier_only: count((r) => !r.agree && r.agree_ignoring_qualifier),
+    // 불일치는 qualifier만 다른 것을 뺀 실제 판정 차이다
+    differ_shown: count((r) => !r.agree_ignoring_qualifier && r.shown_in_main),
+    differ_not_shown: count((r) => !r.agree_ignoring_qualifier && !r.shown_in_main),
     default_main: defMain ? `${key(defMain)}/${defMain.confidence}` : null,
     default_check: defCheck ? `${key(defCheck)}/${defCheck.confidence}` : null,
     exceptions_main: main.links.filter((l) => !l.scope?.default).length,
@@ -1004,10 +1058,11 @@ export const sampleA2Audit = ({ planBundles, bundles, shards, occurrencesByBundl
   const items = [];
   const counts = [];
   for (const [stratum, list] of [...strata].sort(([a], [b]) => a.localeCompare(b))) {
-    const n = Math.ceil(list.length * rate);
+    const r = stratum.startsWith('generic_term/') ? Math.min(1, rate * AUDIT_GENERIC_RATE_FACTOR) : rate;
+    const n = Math.ceil(Math.round(list.length * r * 1e9) / 1e9); // 0.2×3×5 같은 부동소수 오차로 하나 더 뽑지 않게
     const chosen = [...new Set([...list.toSorted((a, b) => rank(a).localeCompare(rank(b))).slice(0, n), ...list.filter((x) => required.has(x.audit_id))])];
     items.push(...chosen);
-    counts.push({ stratum, population: list.length, sampled: chosen.length });
+    counts.push({ stratum, rate: r, population: list.length, sampled: chosen.length });
   }
   return { population_units: total, sampled_units: items.length, rate, strata: counts, items };
 };
@@ -1046,6 +1101,21 @@ const validateOne = (P, bundleId, ctx) => {
   const { errors, warnings } = validateA2Shard(s.shard, bundle, ctx, occMapOf(occ));
   return { bundle, occ, shard: s.shard, status: errors.length ? 'fail' : 'pass', errors, warnings };
 };
+/** 예외 연결(기본이 아닌 연결)을 범위 종류별로 센다. 한 연결이 이야기·장면을 함께 가지면 조합으로 센다(2차 재시험 보고서 7절 제안) */
+export const exceptionScopeCounts = (shard) => {
+  const out = { total: 0 };
+  for (const l of shard?.candidate_links ?? []) {
+    const sc = l.scope ?? {};
+    if (sc.default) continue;
+    const kinds = [['title_ids', '이야기'], ['scene_ids', '장면'], ['occ_ids', '출현']].filter(([k]) => Array.isArray(sc[k]) && sc[k].length).map(([, name]) => name);
+    const key = kinds.join('+') || '범위 없음';
+    out[key] = (out[key] ?? 0) + 1;
+    out.total += 1;
+  }
+  return out;
+};
+const fmtExceptions = ({ total, ...rest }) => `예외 연결 ${total}${total ? ` ${JSON.stringify(rest)}` : ''}`;
+
 const countBy = (list) => list.reduce((acc, x) => ((acc[x.code] = (acc[x.code] ?? 0) + 1), acc), {});
 const stampPath = (P, bundleId) => path.join(P.stamps, `${bundleId}.json`);
 const inputText = (bundle) => `${fs.readFileSync(path.resolve(bundle.script_file), 'utf8')}\n${fs.readFileSync(path.resolve(bundle.occurrences_file), 'utf8')}`;
@@ -1084,6 +1154,7 @@ const main = async () => {
   const P = pathsOf(run);
 
   if (cmd === 'build') {
+    if (run.startsWith('retest')) throw new Error(`${run}는 build하지 않는다. copy-bundles로 파일럿 묶음을 옮겨 온다`);
     const pilot = args.includes('--pilot') || (run === 'pilot' && !args.includes('--all'));
     if (!pilot && !args.includes('--all')) throw new Error('main 실행은 --all을 지정한다');
     const plan = await buildA2({
@@ -1101,6 +1172,31 @@ const main = async () => {
     console.log(`[build] 판정 항목 ${pop.items_judged}(같은 장면 참여자 표시 ${pop.items_participant_match}), 사용자 제외 ${pop.items_excluded}, 표기 ${pop.surfaces}개 중 계획 ${pop.surfaces_in_plan}개`);
     if (pop.missing_pilot_surfaces.length) console.log(`[build] 파일럿 표기 중 모집단에 없는 것: ${pop.missing_pilot_surfaces.join(', ')}`);
     console.log(`[build] 묶음 ${plan.bundles.length}개 → ${relPath(P.plan)}`);
+    return;
+  }
+
+  if (cmd === 'copy-bundles') {
+    // 다른 실행의 묶음을 고치지 않고 옮겨 온다. build를 다시 돌리지 않으므로 표본·발췌가 같다
+    const from = argValue(args, 'from');
+    const ids = (argValue(args, 'bundles') ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+    if (!RUNS.has(from) || from === run || !ids.length) throw new Error('copy-bundles --from=<run> --bundles=A2__001,A2__002 --run=<다른 run>');
+    if (fs.existsSync(P.plan)) throw new Error(`이미 계획이 있다: ${relPath(P.plan)}. 지우고 다시 하거나 그대로 쓴다`);
+    const S = pathsOf(from);
+    const src = loadPlan(S);
+    await fsp.mkdir(P.bundles, { recursive: true });
+    const bundles = [];
+    for (const id of ids) {
+      const b = src.bundles.find((x) => x.bundle_id === id);
+      if (!b) throw new Error(`${from} 계획에 없는 묶음: ${id}`);
+      const rel = (name) => relPath(path.join(P.bundles, name));
+      for (const ext of ['excerpts.txt', 'occurrences.json']) await fsp.copyFile(path.join(S.bundles, `${id}.${ext}`), path.join(P.bundles, `${id}.${ext}`));
+      const bundle = loadBundle(S, id);
+      await writeJsonAtomic(path.join(P.bundles, `${id}.json`), { ...bundle, script_file: rel(`${id}.excerpts.txt`), occurrences_file: rel(`${id}.occurrences.json`), copied_from: { run: from, input: b.input } });
+      bundles.push({ ...b, input: rel(`${id}.json`), script: rel(`${id}.excerpts.txt`), occurrences: rel(`${id}.occurrences.json`), output: relPath(path.join(P.shards, `${id}.json`)), validate: `node scripts/graph/pass2-a2.mjs validate ${id} --run=${run}`, wave: 1 });
+    }
+    await writeJsonAtomic(P.plan, { ...src, run, generated_at: new Date().toISOString(), copied_from: { run: from, plan_sha256: sha256(fs.readFileSync(S.plan, 'utf8')) }, bundles });
+    for (const b of bundles) console.log(`${b.bundle_id} [${b.kind}] 단위 ${b.units}: ${b.surfaces.join(', ')}`);
+    console.log(`[copy-bundles] ${from} → ${run}: 묶음 ${bundles.length}개 → ${relPath(P.plan)}`);
     return;
   }
 
@@ -1139,7 +1235,9 @@ const main = async () => {
       const stale = r.status === 'pass' ? staleReasonOf(P, b.bundle_id, r.bundle) : null;
       const passStatus = b.kind === 'A2' ? 'merged' : 'done_check_only';
       progress[b.bundle_id] = { kind: b.kind, status: stale ? 'stale' : r.status === 'pass' ? passStatus : r.status, stale_reason: stale, validations: attempts.length, first_validation_failed: attempts.length ? attempts[0].status !== 'pass' : null, errors: countBy(r.errors), warnings: countBy(r.warnings) };
-      console.log(`${b.bundle_id} [${b.kind}]: ${progress[b.bundle_id].status}${stale ? `(${stale})` : ''} (검증 ${attempts.length}회, 남은 오류 ${r.errors.length}, 경고 ${r.warnings.length})`);
+      const exc = r.shard ? exceptionScopeCounts(r.shard) : null;
+      if (exc) progress[b.bundle_id].exceptions = exc;
+      console.log(`${b.bundle_id} [${b.kind}]: ${progress[b.bundle_id].status}${stale ? `(${stale})` : ''} (검증 ${attempts.length}회, 남은 오류 ${r.errors.length}, 경고 ${r.warnings.length}${exc ? `, ${fmtExceptions(exc)}` : ''})`);
     }
     const done = doneBundles(P, plan, ctx, 'A2');
     const m = mergeA2({ mainBundles: done });
@@ -1153,10 +1251,12 @@ const main = async () => {
     const byDecider = m.resolutions.reduce((acc, r) => ((acc[r.decided_by] = (acc[r.decided_by] ?? 0) + 1), acc), {});
     const byScope = m.resolutions.reduce((acc, r) => { const k = `${r.applied_scope}/${r.shown ? 'shown' : 'not_shown'}`; acc[k] = (acc[k] ?? 0) + 1; return acc; }, {});
     console.log(`[finish] 병합 ${done.length}/${plan.bundles.filter((b) => b.kind === 'A2').length}묶음(누락 ${missing.length}), 항목 ${m.resolutions.length}건 ${JSON.stringify(byType)}`);
-    console.log(`[finish] 결정 출처 ${JSON.stringify(byDecider)}, 적용 범위/제시 ${JSON.stringify(byScope)}`);
+    console.log(`[finish] 결정 출처(항목 수) ${JSON.stringify(byDecider)}, 적용 범위/제시(항목 수) ${JSON.stringify(byScope)}`);
     console.log(`[finish] 새 엔티티 ${m.entities.length}개(여러 표기에서 모인 것 ${m.entities.filter((e) => e.surfaces.length > 1).length}), ID 없는 표기 묶음 ${m.terms.length}개, 묶음을 넘는 병합 후보 ${m.mergeCandidates.length}개(합치지 않음)`);
+    for (const c of m.mergeCandidates) console.log(`  병합 후보 [${c.match}] ${c.signature}: ${c.groups.map((g) => `${g.entity_id ?? g.group_key}(${g.surfaces.join('·')})`).join(' ↔ ')}`);
     const disagree = m.userChecks.filter((x) => !x.judge_agrees);
-    if (m.userChecks.length) console.log(`[finish] 사용자 확인 표기: 출현 ${m.userChecks.length}곳, 판정자와 다른 곳 ${disagree.length}`);
+    const userItems = m.resolutions.filter((r) => r.decided_by === 'user').length;
+    if (m.userChecks.length) console.log(`[finish] 사용자 확인 표기: 출현 ${m.userChecks.length}곳(항목 ${userItems}건), 판정자와 다른 출현 ${disagree.length}곳`);
     console.log(`[finish] → ${relPath(P.merged)}/`);
     return;
   }
@@ -1185,7 +1285,7 @@ const main = async () => {
     await writeJsonAtomic(path.join(P.merged, 'sampling_check.json'), { schema_version: PASS2_SCHEMA_VERSION, run, generated_at: new Date().toISOString(), pending_check_bundles: pending, results });
     for (const r of results) {
       if (r.error) console.log(`${r.surface}: ${r.error}`);
-      else console.log(`${r.surface}: 출현 ${r.occurrences}곳 중 일치 ${r.agree}(확신도만 다름 ${r.agree_confidence_differs}), 불일치 ${r.differ_shown + r.differ_not_shown}(본 판정의 제시 출현 ${r.differ_shown} / 미제시 출현 ${r.differ_not_shown}) · 기본 ${r.default_main} ↔ ${r.default_check} · 예외 ${r.exceptions_main} ↔ ${r.exceptions_check}`);
+      else console.log(`${r.surface}: 출현 ${r.occurrences}곳 중 일치 ${r.agree}(확신도만 다름 ${r.agree_confidence_differs}), qualifier만 다름 ${r.differ_qualifier_only}, 불일치 ${r.differ_shown + r.differ_not_shown}(본 판정의 제시 출현 ${r.differ_shown} / 미제시 출현 ${r.differ_not_shown}) · 기본 ${r.default_main} ↔ ${r.default_check} · 예외 ${r.exceptions_main} ↔ ${r.exceptions_check}`);
     }
     if (pending) console.log(`[compare-check] 완료되지 않은 비교 묶음 ${pending}개`);
     console.log(`[compare-check] → ${relPath(path.join(P.merged, 'sampling_check.json'))}`);
@@ -1287,15 +1387,17 @@ const main = async () => {
   if (cmd === 'grep') {
     const term = args.filter((a) => !a.startsWith('--')).join(' ').trim();
     const title = argValue(args, 'title');
-    if (term.length < 1 || (term.length < 2 && !title)) throw new Error('검색어는 2글자 이상이다. 한 글자 검색어는 --title=<title_id>로 이야기를 정할 때만 쓴다');
+    const titles = title ? [...new Set(title.split(',').map((t) => t.trim()).filter(Boolean))] : [];
+    if (term.length < 1 || (term.length < 2 && !titles.length)) throw new Error('검색어는 2글자 이상이다. 한 글자 검색어는 --title=<title_id>로 이야기를 정할 때만 쓴다');
     const bundle = argValue(args, 'bundle');
     const unit = argValue(args, 'unit');
-    if (!bundle || !unit) throw new Error('grep <낱말> --bundle=<bundle_id> --unit=<unit_id> [--title=<title_id>]');
-    const limit = Number(argValue(args, 'limit')) || 30;
+    if (!bundle || !unit) throw new Error('grep <낱말> --bundle=<bundle_id> --unit=<unit_id> [--title=<title_id>[,<title_id>…]]');
+    const limitExplicit = argValue(args, 'limit') !== null; // 로그에서 --limit 생략(기본 30)과 --limit=30을 가른다
+    const limit = Math.min(100, Math.max(1, Number(argValue(args, 'limit')) || 30)); // 규칙 2.3절: 최대 100
     const offset = Math.max(0, Number(argValue(args, 'offset')) || 0);
     const store = new SceneStore();
-    if (title && !store.titleIndex.has(title)) throw new Error(`등록 이야기가 아니다: ${title}`);
-    const scoped = title ? { allSceneIds: () => store.titles[store.titleIndex.get(title)].scene_ids.filter((id) => store.has(id)), lines: (id) => store.lines(id) } : store;
+    for (const t of titles) if (!store.titleIndex.has(t)) throw new Error(`등록 이야기가 아니다: ${t}`);
+    const scoped = titles.length ? { allSceneIds: () => titles.flatMap((t) => store.titles[store.titleIndex.get(t)].scene_ids.filter((id) => store.has(id))), lines: (id) => store.lines(id) } : store;
     const r = scanTerms(scoped, [term]).get(term);
     const shown = r.hits.slice(offset, offset + limit);
     const end = offset + shown.length;
@@ -1303,7 +1405,7 @@ const main = async () => {
     console.log(`"${term}": 장면 ${r.scene_count}개, ${r.hits.length}줄${range}`);
     for (const h of shown) console.log(`${h.scene_id} [${lineTag(h.line)}] (${store.meta(h.scene_id).title_id}) ${store.lines(h.scene_id)[h.line]}`);
     await fsp.mkdir(P.root, { recursive: true });
-    await fsp.appendFile(P.searchLog, `${JSON.stringify({ at: new Date().toISOString(), bundle_id: bundle, unit_id: unit, term, title: title ?? null, scenes: r.scene_count, lines: r.hits.length, limit, offset, shown: shown.length })}\n`);
+    await fsp.appendFile(P.searchLog, `${JSON.stringify({ at: new Date().toISOString(), bundle_id: bundle, unit_id: unit, term, title: titles.length ? titles.join(',') : null, titles, scenes: r.scene_count, lines: r.hits.length, limit, limit_explicit: limitExplicit, offset, shown: shown.length })}\n`);
     return;
   }
 
@@ -1317,7 +1419,7 @@ const main = async () => {
     return;
   }
 
-  console.log('사용법: build [--pilot|--all] | status [--wave=N] | validate <bundle_id> | occ <bundle_id> <unit_id> [--title=] | show <scene_id> [시작 끝] | grep <낱말> --bundle= --unit= [--title=] [--limit= --offset=] | entity <이름> | finish | compare-check | b-update-preview | audit-input --wave=N [--rate=0.1] | audit-check --wave=N  [--run=pilot|main]');
+  console.log('사용법: build [--pilot|--all] | status [--wave=N] | validate <bundle_id> | occ <bundle_id> <unit_id> [--title=] | show <scene_id> [시작 끝] | grep <낱말> --bundle= --unit= [--title=a,b] [--limit= --offset=] | entity <이름> | finish | compare-check | b-update-preview | audit-input --wave=N [--rate=0.1] | audit-check --wave=N  [--run=pilot|retest|retest2|main] | copy-bundles --from=pilot --bundles=A2__001,… --run=retest');
   process.exitCode = 1;
 };
 

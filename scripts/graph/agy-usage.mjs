@@ -100,6 +100,8 @@ export const labelOf = (steps) => {
     ['독립 검토자', 'review'],
     ['보수 서브에이전트', 'repair'],
     ['추출 서브에이전트', 'extract'],
+    ['A-2 판정자', 'a2-judge'],
+    ['B 판정자', 'b-judge'],
   ];
   const role =
     ROLE_PHRASES.map(([phrase, name]) => [text.indexOf(phrase), name])
@@ -108,7 +110,9 @@ export const labelOf = (steps) => {
   const job = /\bjob\s*(\d+)/.exec(text)?.[1];
   const part = /--part\s+(\d+)/.exec(text)?.[1] ?? /\.part(\d+)\.json/.exec(text)?.[1];
   const batches = [...new Set([...text.matchAll(/\bbatch_\d{4}\b/g)].map((m) => m[0]))];
-  const where = role === 'review' ? '' : batches.slice(0, 3).join('+') + (batches.length > 3 ? '+…' : '');
+  // Pass 2 판정자는 지시문의 묶음 ID(A2__001, A2C__001)를 쓴다
+  const a2Bundles = [...new Set([...text.matchAll(/\bA2C?__\d{3}\b/g)].map((m) => m[0]))];
+  const where = role === 'review' ? '' : role === 'a2-judge' ? a2Bundles.slice(0, 3).join('+') : batches.slice(0, 3).join('+') + (batches.length > 3 ? '+…' : '');
   return [role, where, part ? `part${part}` : '', job && role === 'repair' ? `job${job}` : ''].filter(Boolean).join(' ');
 };
 
