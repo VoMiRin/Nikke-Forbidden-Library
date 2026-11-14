@@ -1,0 +1,742 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__025",
+  "candidate_links": [
+    {
+      "link_id": "A2__025__001",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "같은 이야기의 다른 장면에서 '구도심의 거대한 광장'으로 풀어 쓰고 '구도심 입구', '상점 구역'과 나란히 쓰여 고유 지명이 아니라 구도심에 있는 광장을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "fading_affection_3109", "line_start": 2, "line_end": 2, "quote": "구도심 광장에 도달한 7호는 호수로 가기 위해, 길을 찾는다." },
+        { "scene_id": "fading_affection_1105", "line_start": 2, "line_end": 2, "quote": "마리아는 구도심의 거대한 광장에 도달한다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["fading_affection 내 구도심 관련 표현 확인을 위해 grep 구도심 실행(fading_affection_1105 L2 확인)"]
+    },
+    {
+      "link_id": "A2__025__002",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "솜사탕이 무엇으로 만들어졌는지 농담으로 답할 때 자연 현상인 구름을 가리키는 보통명사로 쓰였다.",
+      "supporting_evidence": [
+        { "scene_id": "alice_01", "line_start": 29, "line_end": 29, "quote": "앨리스는 솜사탕을 눌러보았습니다." },
+        { "scene_id": "alice_01", "line_start": 34, "line_end": 34, "quote": "아니, 구름으로 만든 거야." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "구불구불 강 3", "entity_type": "location", "entity_key": "E1" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "레드 후드의 고향 마을을 끼고 흐르는 특정 강을 차임 일행이 번호를 붙여 부르는 고유 지명이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_26_03", "line_start": 95, "line_end": 95, "quote": "레드 후드: 마을을 끼고 흐르는 강이 좀 특이했는데." },
+        { "scene_id": "main_26_03", "line_start": 110, "line_end": 110, "quote": "차임: 구불구불 강 3이구나. 세부 디테일은 좀 다르지만 맞을 거다." },
+        { "scene_id": "main_26_03", "line_start": 111, "line_end": 111, "quote": "차임: 우리가 위치를 안다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["다른 장면 출현 여부를 확인하기 위해 grep 구불구불 강 실행"]
+    },
+    {
+      "link_id": "A2__025__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "구세주", "entity_type": "concept", "entity_key": "E2", "qualifier": "화양연화 모임의 신앙 대상" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "화양연화 모임에서 카밀라와 신도들이 검은 스크린 앞에서 집단 환각으로 보며 기적을 빈 특정 허상의 신앙 대상을 일관되게 가리킨다. 실존 인물이 아닌 집단 환각 속 허상임이 원문에서 밝혀지며 다른 이름은 없다.",
+      "supporting_evidence": [
+        { "scene_id": "kill_the_lord_08", "line_start": 139, "line_end": 139, "quote": "카밀라: 구세주께서 기적을 베풀어주시기로 했어요." },
+        { "scene_id": "kill_the_lord_09", "line_start": 8, "line_end": 8, "quote": "사람들: 오오, 구세주님···!" },
+        { "scene_id": "kill_the_lord_09", "line_start": 9, "line_end": 9, "quote": "스크린엔 아무것도 없었다." },
+        { "scene_id": "kill_the_lord_10", "line_start": 55, "line_end": 55, "quote": "젊은 여자: 저희는 구세주님을 만나고 행복을 찾았거든요." },
+        { "scene_id": "kill_the_lord_12", "line_start": 160, "line_end": 160, "quote": "D: 구세주가 있다고 사람들에게 거짓말을 했다." },
+        { "scene_id": "kill_the_lord_12", "line_start": 161, "line_end": 161, "quote": "D: 그 허상을 믿고 기도하면 기적이 일어난다고도 이야기했지." },
+        { "scene_id": "kill_the_lord_13", "line_start": 3, "line_end": 3, "quote": "구세주를 빼앗다니, 그게··· 무슨 말이야?" },
+        { "scene_id": "kill_the_lord_13", "line_start": 49, "line_end": 49, "quote": "조사 결과, 사람들은 단체로 환각을 보고 있었던 것으로 확인되었다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__005",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "유니와 길티 등 여러 인물이 착용한 신체의 자유를 제한하는 도구를 두루 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "unbreakable_sphere_07", "line_start": 164, "line_end": 164, "quote": "미하라: 구속구가···!" },
+        { "scene_id": "coin_rush_show_down_17", "line_start": 138, "line_end": 138, "quote": "아무튼 컨버터도, 구속구도 허가 없이는 벗지 마. 너무 위험해." },
+        { "scene_id": "shopping_mall_13", "line_start": 5, "line_end": 5, "quote": "길티: 게다가 구속구 때문에 무방비해서, 자꾸 신이나 다른 애들이 내 겨드랑이를 괴롭히잖아아···." },
+        { "scene_id": "radio_tower_03", "line_start": 39, "line_end": 39, "quote": "손발이 구속구에 묶여 있거든." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__006",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "같은 장면에서 곧바로 '끈'으로도 줄여 부르는 구속용 끈 일반을 가리키는 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "guilty_00", "line_start": 21, "line_end": 21, "quote": "마나: 자신을 해칠 것같이 보이지 않아서 구속 끈을 풀어주었다더군요. 조심성 없이···." },
+        { "scene_id": "guilty_00", "line_start": 28, "line_end": 28, "quote": "마나: 절대, 어떤 식으로 방심을 시켜도 끈을 풀어주지 마세요." },
+        { "scene_id": "guilty_02", "line_start": 50, "line_end": 50, "quote": "죄수: 어···? 구속 끈이···?!" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "유니가 찬 것과 미하라에게 새로 탑재한 것 등 복수의 폭탄형 구속 장치를 '목걸이', '구속 목걸이'로 부르는 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "wordless_12", "line_start": 29, "line_end": 29, "quote": "미하라: 제 목에 유니와 같은 목걸이를 걸게 해주세요." },
+        { "scene_id": "wordless_12", "line_start": 31, "line_end": 31, "quote": "슈엔: 설마 그 구속 목걸이를 말하는 거야?" },
+        { "scene_id": "wordless_13", "line_start": 15, "line_end": 15, "quote": "마나: 요청하신 구속 목걸이 탑재 및," }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "지나간 옛 시대를 뜻하는 보통명사로 쓰였다.",
+      "supporting_evidence": [
+        { "scene_id": "library_03", "line_start": 41, "line_end": 41, "quote": "율리아: 구시대의 명장이 벼려냈다는 그 악보는,  단 한번 연주하는 것만으로도 마치···." },
+        { "scene_id": "library_03", "line_start": 43, "line_end": 43, "quote": "율리아: ···그리고 저는, 구시대의 음악을 전승하는 사명을 지닌 몸." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__009",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "앞에서 '호텔'로 언급된 건물을 두고 구시대의 수상 호텔이 어떻게 생겼는지 궁금하다고 말한 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "bluewater_wisland_17", "line_start": 7, "line_end": 7, "quote": "리타: 마침 라피가 야자수 숲 너머에 번듯하게 잘 지어진 호텔이 있다고 하더구나?" },
+        { "scene_id": "bluewater_wisland_17", "line_start": 18, "line_end": 18, "quote": "얀: 내도 이쪽에 합류할게. 구시대 수상 호텔은 어떻게 생겼는지 궁금하기도 하고." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__010",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "앨리스가 말한 '큰 다리'를 두고 옛 시대에 지어진 큰 다리라고 설명한 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "alone_survivor_05", "line_start": 10, "line_end": 10, "quote": "앨리스: 저기 저 큰~ 다리 밑에서요!" },
+        { "scene_id": "alone_survivor_05", "line_start": 11, "line_end": 11, "quote": "루드밀라: ···구시대의 대교인가." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__011",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "구시대 잡학 사전", "entity_type": "item", "entity_key": "E3" }],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "한 번만 나온 표현으로, 네온이 읽은 특정 도서의 고유 제목으로도 구시대 지식을 담은 잡학 사전 일반을 가리키는 보통 표현으로도 읽히며 어느 쪽인지 가를 원문 근거가 없다.",
+      "supporting_evidence": [
+        { "scene_id": "bluewater_wisland_08", "line_start": 90, "line_end": 90, "quote": "네온: 저, 구시대 잡학 사전에서 봤거든요." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "문장부호 표시 없이 한 번만 언급되어 구시대에 관한 잡학 사전 일반을 뜻하는 보통 표현으로도 읽힌다.",
+          "supporting_evidence": [
+            { "scene_id": "bluewater_wisland_08", "line_start": 90, "line_end": 90, "quote": "네온: 저, 구시대 잡학 사전에서 봤거든요." }
+          ]
+        }
+      ],
+      "search_hints": ["다른 장면에서 도서명으로 쓰이는지 확인하기 위해 grep 잡학 사전 실행"]
+    },
+    {
+      "link_id": "A2__025__012",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_고스트", "name": "고스트", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "미들 시티 관리 A.I.인 등록 인물 '고스트'가 사용자 등록을 마친 지휘관에게 자신을 정식 기능 명칭인 '구역관리보호자율체'로 소개하며 명령을 받겠다고 말하는 대목이다.",
+      "supporting_evidence": [
+        { "scene_id": "고스트_00", "line_start": 22, "line_end": 22, "quote": "사용자로 등록해 주신 GHOST 님이 맞으십니까?" },
+        { "scene_id": "고스트_00", "line_start": 28, "line_end": 28, "quote": "구역관리보호자율체의 사용자가 되신 것을 환영합니다." },
+        { "scene_id": "고스트_00", "line_start": 31, "line_end": 31, "quote": "현 시간부로 명령을 내릴 수 있습니다." },
+        { "scene_id": "고스트_00", "line_start": 99, "line_end": 99, "quote": "라피: 고스트는 사실상 에닉의 프로토 타입이나 마찬가지니까." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["GHOST 호칭 및 자율체 용례 확인을 위해 grep GHOST, grep 자율체 실행(고스트_00 L22, main_14_17 L44 확인)"]
+    },
+    {
+      "link_id": "A2__025__013",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "앞 장면에서 '연구소 지부', '연구소'로 불린 옛 연구소 터를 풀어 가리키며 '네가 막 다녀온 그곳'이라고 덧붙인 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "eunhwa_03", "line_start": 5, "line_end": 5, "quote": "은화: 작전 목표는 연구소 지부 내에서의 생존." },
+        { "scene_id": "eunhwa_04", "line_start": 92, "line_end": 92, "quote": "엠마: 구 연구소 부지 근처. 네가 막 다녀온 그곳이야." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["은화 에피소드 내 해당 장소 표현 확인을 위해 grep 연구소 실행(eunhwa_03 L5 확인)"]
+    },
+    {
+      "link_id": "A2__025__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "방주 도서관이 처음 세워졌을 때 쓰던 옛 열람실이라는 뜻의 보통 표현으로 설명하며, 장소의 호칭으로는 '금서고'를 쓰겠다고 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "arcane_archive_09", "line_start": 138, "line_end": 138, "quote": "아르카나: 예~엣날에 방주 도서관이 처음 세워졌을 때 사용하던 열람실이거든요." },
+        { "scene_id": "arcane_archive_09", "line_start": 140, "line_end": 140, "quote": "아르카나: 구 열람실인 여기는 금서고로 사용 중이죠." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__015",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "구원의 성화", "entity_type": "organization", "entity_key": "E4" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "두 이야기 모두에서 랩쳐를 신·심판자로 모시는 동일한 사이비 종교 단체의 고유 이름으로 직접 설명된다.",
+      "supporting_evidence": [
+        { "scene_id": "reborn_evil_16", "line_start": 48, "line_end": 48, "quote": "이에 우리 [구원의 성화]는 심판자가 인류를 종말로 이끌 수 있도록," },
+        { "scene_id": "reborn_evil_21", "line_start": 2, "line_end": 2, "quote": "[구원의 성화]" },
+        { "scene_id": "reborn_evil_21", "line_start": 3, "line_end": 3, "quote": "랩쳐를 하늘에서 내려온 심판자라 부르며," },
+        { "scene_id": "데이파라_00", "line_start": 242, "line_end": 242, "quote": "저희 엄마는 구원의 성화라는" },
+        { "scene_id": "데이파라_00", "line_start": 245, "line_end": 245, "quote": "사이비 종교에 빠져버리셨어요" },
+        { "scene_id": "데이파라_00", "line_start": 248, "line_end": 248, "quote": "랩쳐를 신으로 모시는 종교라" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__016",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "구조대원 교육에 쓰이는 자료를 가리키는 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "ark_ranger_05", "line_start": 17, "line_end": 17, "quote": "구조대원용 교육 자료를 보면서 걷는다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__017",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "구조 신호를 보내는 장비 일반을 뜻하는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "조난일지_02", "line_start": 5, "line_end": 5, "quote": "구조 신호기에 수정 침투." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__018",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "맥스웰이 사려는 인형의 종류를 설명하는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "toy_shop_02", "line_start": 98, "line_end": 98, "quote": "맥스웰: 사람 허리까지 오는 크기의 구체관절인형인데." },
+        { "scene_id": "toy_shop_02", "line_start": 99, "line_end": 99, "quote": "맥스웰: 분해를 할 수 있어야 하는 제품이야. 그리고···." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__019",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "미결 수용 시설 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_15", "line_start": 38, "line_end": 38, "quote": "시프티: 아직 별 얘기가 없네요. 구치소에 갇혀있다는 것 말고는 새 소식이 없어요." },
+        { "scene_id": "main_30_17", "line_start": 2, "line_end": 2, "quote": "방주 내 구치소." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고유 등급이나 종족 이름이 아니라 '구형' 수식어와 복수 접미사가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "full_fool_day_03", "line_start": 30, "line_end": 30, "quote": "시프티: 일부러 구형 랩쳐들이 나오는 곳으로 골라 왔거든요!" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__021",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "그레이브가 해당 공간의 시설 종류와 기능을 설명하며 쓴 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "great_villain_union_07", "line_start": 178, "line_end": 178, "quote": "그레이브: 이곳은 구형 예비 전력 시설이다." },
+        { "scene_id": "great_villain_union_07", "line_start": 179, "line_end": 179, "quote": "그레이브: 에너지가 임계치 이하로 떨어지면 자동으로 가동된다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "조리 도구인 국자를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "chocolate_please_04", "line_start": 121, "line_end": 121, "quote": "블랑이 야구 배트를 들 듯, 국자를 꺼내들었다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__023",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "국장님", "entity_type": "character", "entity_key": "E5", "qualifier": "갓데스 다큐멘터리 제작기 작성자의 상관" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주 이주 이전 다큐멘터리 제작사에서 작성자를 현장으로 내보낸 특정 상관 한 사람을 가리키는 직함이다. 해당 시기·소속으로 같은 직함을 쓰는 등록 인물이 없고 본명도 나오지 않으므로 미등록 인물로 판정한다.",
+      "supporting_evidence": [
+        { "scene_id": "갓데스 다큐멘터리 제작기_00", "line_start": 9, "line_end": 9, "quote": "···라고 국장님에게 말했다가 직접 보고 오라며 현장으로 쫓겨났다." },
+        { "scene_id": "갓데스 다큐멘터리 제작기_00", "line_start": 10, "line_end": 10, "quote": "젠장, 블랙기업 같으니라고. 이번 기획만 끝내고 때려쳐야지." },
+        { "scene_id": "갓데스 다큐멘터리 제작기_03", "line_start": 5, "line_end": 5, "quote": "진행 상황 : 촬영 완료. 편집 및 검수는 방주 이주 후 진행 예정." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["등록 인물 중 국장 직함 사용자 확인을 위해 grep 국장, grep 다큐멘터리 실행"]
+    },
+    {
+      "link_id": "A2__025__024",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "꽃병에 꽂힌 꽃의 종류인 국화를 뜻하는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "pretty_star_02", "line_start": 190, "line_end": 190, "quote": "그리고 책상 위의 작은 꽃병에, 국화 한 송이가 꽃혀있다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "예외로 나눈 main_story__chapter_44 밖의 유일한 출현인 sub_quests__세르반에서는 '군 고위 관계자'처럼 군대 일반을 뜻하는 보통명사로 쓰였다.",
+      "supporting_evidence": [
+        { "scene_id": "세르반_00", "line_start": 16, "line_end": 16, "quote": "군 고위 관계자의 차남이랍니다" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__026",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "title_ids": ["main_story__chapter_44"] },
+      "target": [{ "ref": "entity", "entity_id": "char_지휘관", "name": "지휘관", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "사쿠라가 '군께서 참여했지요'라고 말하자 로산나가 같은 인물을 '미스터'로 받으며 동의하고, 같은 챕터에서 E.H.가 지휘관의 합류에 감사한다. 사쿠라·로산나 개인 에피소드에서 각각 지휘관을 '군', '미스터'로 호명하는 관계를 옮겨 와 추론한 연결이므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        { "scene_id": "main_44_15", "line_start": 54, "line_end": 54, "quote": "사쿠라: 군께서 참여했지요. 3일도 많다고 생각합니다만." },
+        { "scene_id": "main_44_15", "line_start": 55, "line_end": 55, "quote": "로산나: 뭐, 그건 그렇지. 미스터라면 충분하겠지." },
+        { "scene_id": "main_44_17", "line_start": 31, "line_end": 31, "quote": "E.H.: 지휘관. 협력에 감사할게." },
+        { "scene_id": "sakura_04", "line_start": 113, "line_end": 113, "quote": "사쿠라: 군께서 원하시던 정답은 아니겠으나, 그에 가까운 무언가는 이뤄낸 듯합니다." },
+        { "scene_id": "rosanna_00", "line_start": 72, "line_end": 72, "quote": "로산나: 안녕~ 친애하는 나의 미스터." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["main_story__chapter_44 내 사쿠라·로산나의 직접 호명 여부 확인을 위해 grep 사쿠라, grep 미스터 실행 후 sakura_04 L113, rosanna_00 L72 확인"]
+    },
+    {
+      "link_id": "A2__025__027",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'군대 소집', '군대가 날 구해줄 거다'처럼 국가 무력 조직 일반을 가리키는 보통명사로 쓰였다.",
+      "supporting_evidence": [
+        { "scene_id": "어느남자의수기_00", "line_start": 4, "line_end": 4, "quote": "이대로 조금만 더 버티면 군대가 날 구해줄 거다." },
+        { "scene_id": "어느남자의수기_01", "line_start": 3, "line_end": 3, "quote": "설마 군대가 진 건가?" },
+        { "scene_id": "여자친구의편지_00", "line_start": 2, "line_end": 2, "quote": "자기가 군대 소집으로 떠난 지 이틀이 됐네." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__028",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "양산형 니케들의 인식표와 갓데스 스쿼드 지휘관의 인식표 등 군용 인식표 물품 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "alone_survivor_05", "line_start": 7, "line_end": 7, "quote": "앨리스가 표면에 살얼음이 낀 군번줄 두 개를 내밀었다." },
+        { "scene_id": "ark_guardian_25", "line_start": 126, "line_end": 126, "quote": "지휘관의 군번줄이 바닥에 떨어진다." },
+        { "scene_id": "white_memory_page_1001406", "line_start": 12, "line_end": 12, "quote": "자세히 바라보자, 그것이 [군번줄]이라는 것을 알 수 있었다." },
+        { "scene_id": "white_memory_19", "line_start": 2, "line_end": 2, "quote": "스노우 화이트는 발치에 있던 [군번줄]을 집어 들었다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__029",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "엘리베이터 앞에 모여 있던 불특정 군인들을 복장으로 묘사한 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "memories_teller_32", "line_start": 106, "line_end": 106, "quote": "의료팀과 군복을 입은 인간들 수 명." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__030",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "앞 줄의 '군복을 입은 인간들 수 명' 가운데 한 단역 인물을 옷차림으로 가리킨 수식어 붙은 보통 표현이며 고유한 이름이 아니다.",
+      "supporting_evidence": [
+        { "scene_id": "memories_teller_32", "line_start": 106, "line_end": 106, "quote": "의료팀과 군복을 입은 인간들 수 명." },
+        { "scene_id": "memories_teller_32", "line_start": 112, "line_end": 112, "quote": "군복 차림의 남자가 험악한 표정으로 뭔가를 말하려 한다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["memories_teller 내 군복 인물 재등장 여부 확인을 위해 grep 군복 실행"]
+    },
+    {
+      "link_id": "A2__025__031",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "1세대 니케 시절부터 현재 방주까지 시대를 가리지 않고 군 수뇌부나 군사 계통 일반을 뜻하는 보통명사로 두루 쓰이며 특정 단체의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        { "scene_id": "license_to_kill_09", "line_start": 4, "line_end": 4, "quote": "군부와 이어져있다는 것이 이런 의미인 건가." },
+        { "scene_id": "bluewater_wisland_27", "line_start": 12, "line_end": 12, "quote": "엔더슨: 때문에 지금 자네에 대한 군부의 여론은 아주 좋아." },
+        { "scene_id": "세르반_00", "line_start": 49, "line_end": 49, "quote": "아무튼 그 일로 군부에서 제게 훈장을 내렸었는데" },
+        { "scene_id": "crow_03", "line_start": 89, "line_end": 89, "quote": "군부의 필요에 의해서." },
+        { "scene_id": "white_memory_page_1001407", "line_start": 3, "line_end": 3, "quote": "용병 출신이라고 했던, 군부와는 어울리지 않는 거친 분위기의 남자." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["군부의 시대·맥락별 쓰임 확인을 위해 grep 군부 실행(white_memory_page_1001407 L3 등 확인)"]
+    },
+    {
+      "link_id": "A2__025__032",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U031" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'가까운 군 부대 방문'이라고 안내해 여러 군 부대가 있음을 직접 보여 주는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "지휘관모집공고_00", "line_start": 6, "line_end": 6, "quote": " - 접수 및 문의 방법: 가까운 군 부대 방문" },
+        { "scene_id": "지휘관모집공고_01", "line_start": 6, "line_end": 6, "quote": " - 접수 및 문의 방법: 가까운 군 부대 방문" },
+        { "scene_id": "지휘관모집공고_02", "line_start": 7, "line_end": 7, "quote": " - 접수 및 문의 방법: 가까운 군 부대 방문" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__033",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U032" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "게시판 작성자가 동행 중인 불특정 군부대를 보통명사로 일컬은 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "UFO챈.zip_02", "line_start": 3, "line_end": 3, "quote": "지금 군부대랑 같이 움직이고 있고, 다음주쯤 입대할 거 같음." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__034",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U033" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "직전 챕터에서 '폐허 쪽에 오래된 시설이 있음', '원래는 군수품 제조 시설임'으로 소개된 뒤 '군수품 제조 공장', '공장'으로도 바꿔 부르는 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_08_01", "line_start": 2, "line_end": 2, "quote": "아니스: 통신 차단 물질로 만든 벽이야. 군수품 제조 공장이 근처라서 운이 좋았어." },
+        { "scene_id": "main_09_00", "line_start": 2, "line_end": 2, "quote": "엑시아: 군수품 제조 공장- 입-장-" },
+        { "scene_id": "main_09_00", "line_start": 5, "line_end": 5, "quote": "엑시아: 1차 침공 말기까지 굴러가던 공장이라 그럴 겁니다-" },
+        { "scene_id": "main_07_11", "line_start": 41, "line_end": 41, "quote": "원래는 군수품 제조 시설임" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__035",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U034" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "폐허 쪽의 오래된 시설이 원래 어떤 용도의 시설이었는지 보통명사로 설명한 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_07_11", "line_start": 38, "line_end": 38, "quote": "폐허 쪽에 오래된 시설이 있음" },
+        { "scene_id": "main_07_11", "line_start": 41, "line_end": 41, "quote": "원래는 군수품 제조 시설임" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__036",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U035" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'홍련이 가지고 다니던 것과 동일한 시리즈의 군용 나이프'라고 설명하듯 특정 고유 무기가 아니라 군용 나이프 일반을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "white_memory_page_1001215", "line_start": 4, "line_end": 4, "quote": "홍련이 낚은 건 [군용 나이프]였다." },
+        { "scene_id": "white_memory_page_1001216", "line_start": 8, "line_end": 8, "quote": "그때, 홍련이 날아가는 새를 향해 [군용 나이프]를 던졌다." },
+        { "scene_id": "white_memory_14", "line_start": 17, "line_end": 17, "quote": "홍련이 가지고 다니던 것과 동일한 시리즈의 군용 나이프." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__037",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U036" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "군용 퍼팩트 바", "entity_type": "item", "entity_key": "E6" }],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "세계관 고유 식품인 퍼펙트(퍼팩트) 가운데 지휘관이 특정 맛과 식감으로 즉시 알아보는 군용 제품 이름으로도 읽히고, 바로 뒤 대사에서 '군용 퍼팩트'로 줄여 부르듯 퍼펙트 바에 '군용' 수식어가 붙은 보통 표현으로도 읽혀 단정하기 어렵다.",
+      "supporting_evidence": [
+        { "scene_id": "eh_01", "line_start": 69, "line_end": 69, "quote": "E.H.: 평소에 유통기한이 넉넉한 군용 퍼팩트 바를 먹고 있어." },
+        { "scene_id": "eh_01", "line_start": 71, "line_end": 71, "quote": "군용 퍼팩트라면··· 그 아무 맛도 안 나고 퍽퍽하기만 한···?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'퍼펙트 바'에 용도를 뜻하는 '군용'이 붙은 수식 표현으로, 다음 줄에서도 '바'를 떼고 '군용 퍼팩트'로 부른다.",
+          "supporting_evidence": [
+            { "scene_id": "eh_01", "line_start": 71, "line_end": 71, "quote": "군용 퍼팩트라면··· 그 아무 맛도 안 나고 퍽퍽하기만 한···?" }
+          ]
+        }
+      ],
+      "search_hints": ["퍼팩트 및 퍼펙트 바 용례 확인을 위해 grep 퍼팩트, grep 군용 퍼펙트, grep 퍼펙트 바 실행"]
+    },
+    {
+      "link_id": "A2__025__038",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U037" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "현장에 모여든 불특정 다수의 군인을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "통화기록017515_00", "line_start": 3, "line_end": 3, "quote": "B : 어. 안 그래도 좀 전부터 군인들 모이고 난리 났어." },
+        { "scene_id": "통화기록017515_01", "line_start": 4, "line_end": 4, "quote": "B : 군인들도 점점 모이고 있어. 진짜 외계인이 오나 봐." },
+        { "scene_id": "통화기록017515_02", "line_start": 12, "line_end": 12, "quote": "B : 군인들이 지금 뭐라고 방송하고 있어. 이따가 전화할게." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__039",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U038" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "정체불명의 거대한 공격 대상을 처음 보고 건설 기계인 굴삭기인지 의문을 표하며 비유·추측한 보통명사 쓰임이다.",
+      "supporting_evidence": [
+        { "scene_id": "반드시사수하라_04", "line_start": 2, "line_end": 2, "quote": "···뭐, 뭐야, 저거." },
+        { "scene_id": "반드시사수하라_04", "line_start": 3, "line_end": 3, "quote": "굴삭기··· 인가?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": ["굴삭형 랩쳐 별칭 여부 확인을 위해 grep 그레이브 디거, grep 굴삭기, grep 방주 후보 실행"]
+    },
+    {
+      "link_id": "A2__025__040",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U039" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "블랙넷에서 거래된 거대 폭탄의 종류와 용도를 '굴착용 폭탄'으로 설명하는 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_22_10", "line_start": 26, "line_end": 26, "quote": "도라: 굴착용 폭탄이야." },
+        { "scene_id": "main_22_10", "line_start": 28, "line_end": 28, "quote": "도라: 랩쳐용으로도 사용할 수 없어. 수직으로 작용하는 힘이 큰 물건이라서." },
+        { "scene_id": "main_22_14", "line_start": 15, "line_end": 15, "quote": "E.H.: ···굴착용 폭탄이··· 왜···." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__025__041",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U040" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "사망한 지휘관 곁에서 확인된 화기 종류를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "조난일지_03", "line_start": 5, "line_end": 5, "quote": "권총 확인. 잔여 탄환 1발." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
