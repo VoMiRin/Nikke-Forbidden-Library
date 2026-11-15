@@ -1,0 +1,642 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__042",
+  "candidate_links": [
+    {
+      "link_id": "A2__042__001",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "관측소 장비나 앵커의 체내에 탑재된 탐지 장비 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "observation_post_05", "line_start": 15, "line_end": 15, "quote": "앵커: 아무도 없고, 레이더엔 온갖 게 잡히고." },
+        { "scene_id": "anchor_00", "line_start": 84, "line_end": 84, "quote": "헬름: 앵커는 체내에 고성능 레이더를 탑재하고 있어." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__002",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_카밀라", "name": "카밀라", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "kill_the_lord 이야기에서 암살 타깃인 카밀라 해링턴(등록 인물 카밀라)의 통칭이 [레이디]라고 직접 소개되고, 이후 장면에서도 카밀라를 타겟 레이디로 지칭한다.",
+      "supporting_evidence": [
+        { "scene_id": "kill_the_lord_01", "line_start": 34, "line_end": 34, "quote": "K: 이름은 카밀라 해링턴, 나이는 24세." },
+        { "scene_id": "kill_the_lord_01", "line_start": 47, "line_end": 47, "quote": "D: 타켓. 통칭 [레이디]는 일주일에 한 번씩 사교 모임을 주최하고 있어." },
+        { "scene_id": "kill_the_lord_13", "line_start": 11, "line_end": 11, "quote": "카밀라를 바라보았다." },
+        { "scene_id": "kill_the_lord_13", "line_start": 47, "line_end": 47, "quote": "타겟 레이디는 자살 시도를 했지만, 실패." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__003",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "title_ids": ["character_episodes__d_킬러_와이프"] },
+      "target": [{ "ref": "entity", "entity_id": "char_카밀라", "name": "카밀라", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "D가 지난번 부부 연기 임무에서 쫓던 타깃 [레이디]를 회상하는 대사로, 이 이야기 안에는 카밀라라는 본명이 나오지 않아 kill_the_lord의 사건 맥락을 옮겨 추론한 연결이다.",
+      "supporting_evidence": [
+        { "scene_id": "d_killerwife_00", "line_start": 7, "line_end": 7, "quote": "D: 타깃 [레이디]를 쫓는 임무에서 입고 있었던 건 기억하지 못하는 모양이군." },
+        { "scene_id": "d_killerwife_00", "line_start": 54, "line_end": 54, "quote": "D: 다시 한번 부부를 연기해 보는 게 적절한 난이도일 것 같으니까." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "레이첼 호프", "entity_type": "character", "entity_key": "E1" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "미실리스 과학기술연구소에 뇌 기증 및 니케 실험을 신청한 미등록 민간인 인물의 고유한 이름이다.",
+      "supporting_evidence": [
+        { "scene_id": "통화기록028594_00", "line_start": 5, "line_end": 5, "quote": "B: 레이첼 호프. 희망이 가득하다고 할 때 그 희망이에요." },
+        { "scene_id": "통화기록028594_01", "line_start": 4, "line_end": 4, "quote": "B: 얼마 전에 제 딸, 레이첼 호프가 니케 실험에 참가했었는데요." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "레인보우 불렛", "entity_type": "item", "entity_key": "E2" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "네온이 리틀 캐논에게 부탁해 제작한 무지개색 폭발 특제 탄환의 고유 명칭이다.",
+      "supporting_evidence": [
+        { "scene_id": "테트라_커넥트_00", "line_start": 88, "line_end": 88, "quote": "네온: 이 레인보우 불렛을!" },
+        { "scene_id": "테트라_커넥트_00", "line_start": 90, "line_end": 90, "quote": "네온: 이 총알은 있죠. 쏠 때의 폭발이 무지개색으로 빛나요." },
+        { "scene_id": "테트라_커넥트_00", "line_start": 91, "line_end": 91, "quote": "네온: 리틀 캐논에게 부탁한 특제품이죠." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__006",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "레인보우 피치", "entity_type": "item", "entity_key": "E3" }],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "한 번 등장한 칵테일 메뉴 이름으로, 대칭 선택지에 작중 고유 명칭인 아쿠아 슈터 칵테일이 함께 나와 작중 고유 음료 제품명으로 읽히기도 하지만, 대괄호 없이 간단한 기본 칵테일 레시피의 하나로 설명되어 일반 음료·요리 이름으로도 비슷하게 읽힌다.",
+      "supporting_evidence": [
+        { "scene_id": "trendy_bar_06", "line_start": 50, "line_end": 50, "quote": "에이드: 레인보우 피치." },
+        { "scene_id": "trendy_bar_06", "line_start": 64, "line_end": 64, "quote": "에이드: 아쿠아 슈터 칵테일." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "에이드가 배워 둔 간단한 기본 칵테일 레시피 중 하나로 언급되며 재료를 섞어 반복 제작하는 일반 음료·요리 종류 이름으로도 읽힌다.",
+          "supporting_evidence": [
+            { "scene_id": "trendy_bar_06", "line_start": 22, "line_end": 22, "quote": "에이드: 음주를 즐기는 주인님들을 위해서 간단한 것만 배워둔 거였어요." },
+            { "scene_id": "trendy_bar_06", "line_start": 51, "line_end": 51, "quote": "에이드: 들어가는 재료도 적고, 양조절도 간단해서 아까도 쉽게 만드셨잖아요." }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "맥스웰이 사용하는 화기의 종류인 전자기 가속 화기(레일건) 일반을 가리키는 보통명사로 쓰였다.",
+      "supporting_evidence": [
+        { "scene_id": "main_41_06", "line_start": 21, "line_end": 21, "quote": "맥스웰: 레일건이라고 들어봤어?" },
+        { "scene_id": "main_42_05", "line_start": 76, "line_end": 76, "quote": "지즈: 레일건이야. 내, 내가 맞아봐서 잘 알아. 내 날개를 다 뚫고 들어왔어." },
+        { "scene_id": "chapter_49_06", "line_start": 77, "line_end": 77, "quote": "쾅! 쾅! 하며 레일건이 발사되고, 랩쳐들의 몸통을 꿰뚫는다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__008",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "레일 푸드트럭", "entity_type": "event", "entity_key": "E4" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "인피니티 레일 스쿼드가 기차역에서 개최한 특정 행사의 고유한 이름이다.",
+      "supporting_evidence": [
+        { "scene_id": "train_station_01", "line_start": 10, "line_end": 10, "quote": "디젤: 네~ 인피니티 레일에서 작은 이벤트를 열기로 했어요~" },
+        { "scene_id": "train_station_01", "line_start": 11, "line_end": 11, "quote": "디젤: 바로바로 [레일 푸드트럭] 이랍니다~" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__009",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 작품 제목이 아니라 오페라의 성악 형식인 서창(레치타티보) 일반을 가리키는 음악 용어다.",
+      "supporting_evidence": [
+        { "scene_id": "aria_00", "line_start": 74, "line_end": 74, "quote": "아리아: 그냥 레치타티보 몇 소절을 불러 볼게." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__010",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "음반을 파는 가게 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "blabla_rapi_007", "line_start": 19, "line_end": 19, "quote": "오늘 아니스를 따라서 레코드 샵에 가서," },
+        { "scene_id": "blabla_rapi_007", "line_start": 22, "line_end": 22, "quote": "음반을 하나 사 왔습니다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "즉석 조리용 수프 식품 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "old_tales_16", "line_start": 60, "line_end": 60, "quote": "에이브는 레토르트 수프를 신데렐라에게 건넸다." },
+        { "scene_id": "old_tales_16", "line_start": 61, "line_end": 61, "quote": "강렬한 화학조미료의 냄새와, 김이 모락모락 피어나는 수프였다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__012",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "레트로 게임 위크", "entity_type": "event", "entity_key": "E5" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "아크 게임쇼의 부대행사로 고전 게임 패키지를 전시하는 특정 행사의 고유한 이름이다.",
+      "supporting_evidence": [
+        { "scene_id": "booms_day_04", "line_start": 9, "line_end": 9, "quote": "엑시아: [레트로 게임 위크]가 열린다고 해요-" },
+        { "scene_id": "booms_day_06", "line_start": 47, "line_end": 47, "quote": "아나운서: 부대행사 [레트로 게임 위크]에서는 고전 FPS 명작, [BOOM]을 비롯한." },
+        { "scene_id": "blabla_boomsday_02_001", "line_start": 76, "line_end": 76, "quote": "레트로 게임 위크부터 가져" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__013",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_홍련", "name": "홍련", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "장화가 동생인 홍련을 부르는 애칭으로, 같은 이야기(goddess_fall_08)에서 장화가 말한 련이를 나유타가 홍련 소저로 바로 받아 동일 인물임이 직접 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "goddess_fall_09", "line_start": 14, "line_end": 14, "quote": "장화: 이 일련의 일들이 련이랑 관계있어?" },
+        { "scene_id": "goddess_fall_27", "line_start": 184, "line_end": 184, "quote": "장화: 련이는?" },
+        { "scene_id": "goddess_fall_08", "line_start": 97, "line_end": 97, "quote": "장화: 내가 나서면 련이가 불행해질 거야." },
+        { "scene_id": "goddess_fall_08", "line_start": 98, "line_end": 98, "quote": "나유타: 지금이라고 딱히 행복해보이진 않소만, 홍련 소저는." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__014",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_홍련", "name": "홍련", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "장화가 동생 홍련을 부르는 호칭으로, main_story__chapter_46에서는 스노우 화이트가, event_stories__goddess_fall에서는 나유타가 이를 각각 홍련으로 바로 받아 두 이야기 모두에서 직접 확인된다.",
+      "supporting_evidence": [
+        { "scene_id": "main_46_05", "line_start": 45, "line_end": 45, "quote": "장화: 련이한테 좋은 걸 준 적이 한 번도 없었던 것 같아서야." },
+        { "scene_id": "main_46_05", "line_start": 61, "line_end": 61, "quote": "장화: 련이가 지금 내 상태에 대해 알게 되면 반드시 손을 내밀겠지." },
+        { "scene_id": "main_46_05", "line_start": 67, "line_end": 67, "quote": "스노우 화이트: 그래. 홍련에게는 절대 말하지 않겠다." },
+        { "scene_id": "goddess_fall_08", "line_start": 97, "line_end": 97, "quote": "장화: 내가 나서면 련이가 불행해질 거야." },
+        { "scene_id": "goddess_fall_08", "line_start": 98, "line_end": 98, "quote": "나유타: 지금이라고 딱히 행복해보이진 않소만, 홍련 소저는." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "가능성",
+      "rationale": "고유 행사명 표지나 주최 명칭 없이 로고송을 모집하는 공모전이라는 수식어가 붙은 보통 표현으로 쓰였으며, 뒤이어 단순히 공모전으로 줄여 부르고 행사 성격 일반을 설명하는 말로 쓰인다.",
+      "supporting_evidence": [
+        { "scene_id": "theater_12", "line_start": 9, "line_end": 9, "quote": "[OPTION TEXT=\"로고송 공모전에 참여하고 싶다는데, 나 혼자 어떻게 도와야 할지 모르겠어서.\"]" },
+        { "scene_id": "theater_12", "line_start": 112, "line_end": 112, "quote": "프리카: 로고송 공모전이라며, 그럼 굳이 디젤의 실력이 늘 필욘 없지." },
+        { "scene_id": "theater_12", "line_start": 142, "line_end": 142, "quote": "민트: 저, 궁금한 게 있는데··· 왜 공모전에 참가하려 하신 건가요?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__016",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로드 급 랩쳐", "entity_type": "faction_or_species", "entity_key": "E6" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "콜링 시그널을 사용할 수 있는 중상위 등급의 랩쳐 부류(로드 급 랩쳐)를 묶어 부르는 세계관 고유 등급명이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_27_15", "line_start": 56, "line_end": 56, "quote": "플로라: 하지만 좀 전의 랩쳐는 원형이 로드 급입니다. 코어의 크기가 크고, 에너지도 더 많죠." },
+        { "scene_id": "main_35_16", "line_start": 110, "line_end": 110, "quote": "라피: 콜링 시그널은 로드 급 이상만 사용할 수 있는 랩쳐 집결 신호입니다." },
+        { "scene_id": "랩칠리언_04", "line_start": 118, "line_end": 118, "quote": "랩칠리언: 가까이에서 관찰한 로드 급 랩쳐는?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__017",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로드 급 랩쳐", "entity_type": "faction_or_species", "entity_key": "E6" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "로드 급 랩쳐의 붙여쓰기 변형 표기로, 모든 출현에서 동일한 랩쳐 등급 부류를 가리킨다.",
+      "supporting_evidence": [
+        { "scene_id": "main_18_10", "line_start": 35, "line_end": 35, "quote": "맥스웰: 보통 콜링 시그널로 이끌려 오는 녀석들은 선두에 있는 로드급을 잡으면 와해되곤 하니까." },
+        { "scene_id": "memories_teller_25", "line_start": 37, "line_end": 37, "quote": "콤: 로드급 이상의 랩쳐와 조우하지만 않으면 된다." },
+        { "scene_id": "eunhwa_04", "line_start": 93, "line_end": 93, "quote": "엠마: ···듣자니 올빼미들 실전 훈련 중에, 로드급이 난입했다며?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__018",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로드 급 랩쳐", "entity_type": "faction_or_species", "entity_key": "E6" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "세계관에서 특정 등급의 랩쳐 부류를 묶어 부르는 고유 명칭이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_09_07", "line_start": 2, "line_end": 2, "quote": "라피: 전방, 로드 급 랩쳐." },
+        { "scene_id": "memories_teller_29", "line_start": 8, "line_end": 8, "quote": "콤: 우리는 복귀하는 과정에서 로드 급 랩쳐와 마주쳤다." },
+        { "scene_id": "maria-n_07", "line_start": 25, "line_end": 25, "quote": "상대는 로드 급 랩쳐." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__019",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로드 급 랩쳐", "entity_type": "faction_or_species", "entity_key": "E6" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "로드 급 랩쳐의 띄어쓰기 변형 표기로, 동일한 랩쳐 등급 부류를 가리킨다.",
+      "supporting_evidence": [
+        { "scene_id": "eunhwa_03", "line_start": 40, "line_end": 40, "quote": "은화: ···저건 로드급 랩쳐다." },
+        { "scene_id": "blabla_vesti_004", "line_start": 107, "line_end": 107, "quote": "오늘 로드급 랩쳐 무리를 만낫는데" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "재료를 굴려 납작하게 만드는 롤러 장비 일반을 가리키는 보통명사이며, 같은 장면 뒤에서도 롤러라고 줄여 부른다.",
+      "supporting_evidence": [
+        { "scene_id": "거꾸로적힌기록_02", "line_start": 5, "line_end": 5, "quote": "역시 로드 롤러를 이용하길 잘 했다고!" },
+        { "scene_id": "거꾸로적힌기록_02", "line_start": 7, "line_end": 7, "quote": "로드 롤러에 불을 붙여서 뜨겁게 만들어 재료 위에 데굴데굴 굴렸다." },
+        { "scene_id": "거꾸로적힌기록_02", "line_start": 18, "line_end": 18, "quote": "롤러를 거대하게 만들어 건물도 죄다 납작하게 만들어서 붙여 가져오면 된다는걸!" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__021",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로드웰 저택", "entity_type": "location", "entity_key": "E7" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "삼엄한 경보 시설로 유명하며 의뢰 물품이 보관되어 있던 특정 저택의 고유 명칭이다.",
+      "supporting_evidence": [
+        { "scene_id": "milk_00", "line_start": 2, "line_end": 2, "quote": "슈가: 로드웰 저택에서 물건 하나를 되찾아 달라는 의뢰?" },
+        { "scene_id": "milk_01", "line_start": 8, "line_end": 8, "quote": "도라: 로드웰 저택에 보관되어 있었어. 얼마 전까지는." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__022",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로맨스의 정석", "entity_type": "item", "entity_key": "E8" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "김작가가 3년 전 집필해 웹툰·애니메이션·드라마화까지 된 작중 소설 작품의 고유 제목이다.",
+      "supporting_evidence": [
+        { "scene_id": "김작가_00", "line_start": 22, "line_end": 22, "quote": "3년 전 [로맨스의 정석]이라는 소설을 썼고" },
+        { "scene_id": "김작가_00", "line_start": 25, "line_end": 25, "quote": "그 작품은 웹툰화, 애니메이션화, 그리고 드라마화까지 되어서 어마어마한 인기를 끌었지" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__023",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로맨틱 밸런타인", "entity_type": "concept", "entity_key": "E9" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "스윗 조니 Ver.2.14가 공장에서 운영하던 빅데이터 기반 연애 상담 및 상황극 프로그램의 고유한 이름이다.",
+      "supporting_evidence": [
+        { "scene_id": "romantic_valentine_05", "line_start": 105, "line_end": 105, "quote": "스윗 조니 Ver.2.14: ···[로맨틱 밸런타인]." },
+        { "scene_id": "romantic_valentine_05", "line_start": 114, "line_end": 114, "quote": "스윗 조니 Ver.2.14: 그건 빅데이터를 기반으로 한 연애 상담 프로그램이었다." },
+        { "scene_id": "romantic_valentine_07", "line_start": 177, "line_end": 177, "quote": "스윗 조니 Ver.2.14: 그렇다. [로맨틱 밸런타인]은 연애 상담 프로그램이었다." },
+        { "scene_id": "romantic_valentine_12", "line_start": 19, "line_end": 19, "quote": "스윗 조니 Ver.2.14: [로맨틱 밸런타인]에 배드 엔드는 존재해서는 안 된다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__024",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로밍오와 쥴니엣", "entity_type": "item", "entity_key": "E10" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "시그널이 시청하는 작중 TV 로맨스 드라마의 고유한 제목이다.",
+      "supporting_evidence": [
+        { "scene_id": "signal_00", "line_start": 6, "line_end": 6, "quote": "???: 아, 오늘 [로밍오와 쥴니엣]하는 날이었네?" },
+        { "scene_id": "signal_00", "line_start": 9, "line_end": 9, "quote": "엠마: 후후, 시그널은 여전히 로맨스 드라마를 좋아하는구나?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__025",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로버", "entity_type": "character", "entity_key": "E11" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "스마일 박스 행사에서 자신의 이름을 로버라고 밝히며 민트에게 멘트를 요청한 미등록 팬 인물이다.",
+      "supporting_evidence": [
+        { "scene_id": "star_anis_16", "line_start": 29, "line_end": 29, "quote": "자신의 이름이 로버라고 알려준다." },
+        { "scene_id": "star_anis_16", "line_start": 30, "line_end": 30, "quote": "민트에게 사랑해요 로버라고 크게 외쳐달라고 한다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__026",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_K", "name": "K", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "K가 수상한 스팸 발신자(리나)의 정체를 캐기 위해 다른 계정(부계)을 만들어 대화할 때 쓴 자신의 가명임이 같은 장면에서 직접 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "blabla_k_003", "line_start": 63, "line_end": 63, "quote": "잠깐만 다른 계정으로 해서" },
+        { "scene_id": "blabla_k_003", "line_start": 66, "line_end": 66, "quote": "로버트 : 어디 가서 놀건데 리나 : 전 아무데나 좋긴한데··· 리나 : 오빠, 돈 많아? 로버트 : 많아 리나 : 진짜?? 얼마나? 로버트 : 만나서 얘기하자 리나 : ㅎㅎ오빠 그렇게 나 보고 싶어? 리나 : 나 좀 비싼데 괜찮아? 로버트 : 얼마나 비싸길래?" },
+        { "scene_id": "blabla_k_003", "line_start": 99, "line_end": 99, "quote": "근데 생각보다 블라 잘 쓰네? 부계도 만들고" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__027",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_슈엔", "name": "슈엔", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "플로라가 미실리스 사장 슈엔을 부르는 꽃 이름 호칭으로, for_rest_01에서 마나가 슈엔의 지시사항이라고 한 말을 플로라가 로벨리아님의 지시사항으로 되묻고 마나가 긍정하며, secret_garden에서도 로벨리아 님 사칭을 슈엔 사칭으로 직접 받는다.",
+      "supporting_evidence": [
+        { "scene_id": "secret_garden_13", "line_start": 107, "line_end": 107, "quote": "리안: 사장님 지시사항이 있어서 잠깐 들렀습니다." },
+        { "scene_id": "secret_garden_13", "line_start": 108, "line_end": 108, "quote": "플로라: 로벨리아 님의 지시사항이요?" },
+        { "scene_id": "secret_garden_08", "line_start": 107, "line_end": 107, "quote": "플로라: 정원 개방을 허락했다며 이 모든 공을 로벨리아 님께 돌리는 겁니다." },
+        { "scene_id": "secret_garden_08", "line_start": 109, "line_end": 109, "quote": "[OPTION TEXT=\"슈엔을 사칭한다라··· 괜찮을까.\"]" },
+        { "scene_id": "for_rest_01", "line_start": 144, "line_end": 144, "quote": "마나: 제가 정원에 방문한 건 슈엔의 지시사항을 전달하기 위해서였습니다." },
+        { "scene_id": "for_rest_01", "line_start": 145, "line_end": 145, "quote": "플로라: 로벨리아님의 지시사항이요?" },
+        { "scene_id": "for_rest_01", "line_start": 146, "line_end": 146, "quote": "마나: 예." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__028",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "title_ids": ["event_stories__coin_rush_show_down"] },
+      "target": [{ "ref": "entity", "entity_id": "char_슈엔", "name": "슈엔", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "미실리스 소속 정원 담당인 플로라가 정원을 함부로 대하는 상관으로 언급하는 인물로, 이 이야기 안에는 로벨리아가 슈엔이라는 직접 풀이가 없어 미실리스 소속 맥락과 다른 이야기의 호칭 관계를 옮겨 추론한 연결이다.",
+      "supporting_evidence": [
+        { "scene_id": "coin_rush_show_down_02", "line_start": 40, "line_end": 40, "quote": "마나: 슈엔 CEO는 이 시합에서 반드시 이기고 싶어 심혈을 기울였습니다." },
+        { "scene_id": "coin_rush_show_down_02", "line_start": 95, "line_end": 95, "quote": "플로라: 그렇게 되면 정원의 위상이 더 올라갈 것이고, 로벨리아 님도 함부로 할 수 없게 될 테니까요." },
+        { "scene_id": "coin_rush_show_down_02", "line_start": 101, "line_end": 101, "quote": "플로라: 변덕이 심한 로벨리아 님에게서 살아남기 위해서는 저도 다음을 준비해야 하니까요." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__029",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_슈엔", "name": "슈엔", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "secret_garden에서 플로라가 슈엔 사장을 부르는 호칭으로, 로벨리아 님의 특별 지시로 꾸미자는 말에 지휘관이 슈엔 사칭이라고 직접 받으며 비서 리안도 슈엔 사장님의 지시임을 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "secret_garden_00", "line_start": 42, "line_end": 42, "quote": "플로라: 그래도 로벨리아 님이 직접 쓰신 거기도 하고. 샐비어님께서 여기까지 오셨으니 다 읽어주는 게 예의 아닐까요?" },
+        { "scene_id": "secret_garden_08", "line_start": 100, "line_end": 100, "quote": "플로라: 로벨리아 님의 특별 지시로 정원을 개방한다고 할 겁니다." },
+        { "scene_id": "secret_garden_08", "line_start": 109, "line_end": 109, "quote": "[OPTION TEXT=\"슈엔을 사칭한다라··· 괜찮을까.\"]" },
+        { "scene_id": "secret_garden_11", "line_start": 80, "line_end": 80, "quote": "리안: 제가 정원에 온 이유는 슈엔 사장님의 지시사항 때문입니다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__030",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "title_ids": ["blabla__group__secretgarden"] },
+      "target": [{ "ref": "entity", "entity_id": "char_슈엔", "name": "슈엔", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "슈엔 사장님이 정원 개방을 지지했다는 홍보 포스터 사건을 다루는 대화에서 플로라가 정원 폐쇄를 지시한 상관을 로벨리아 님으로 부르나, 대화 안에 직접 호명 대조는 없어 문맥과 secret_garden의 호칭 관계로 추론된다.",
+      "supporting_evidence": [
+        { "scene_id": "blabla_secretgarden_003", "line_start": 61, "line_end": 61, "quote": "슈엔사장님이 정원 개방에 전폭적인 지지를 해줬다" },
+        { "scene_id": "blabla_secretgarden_003", "line_start": 133, "line_end": 133, "quote": "로벨리아 님도 홍보 포스터를 보게 되셔서" },
+        { "scene_id": "blabla_secretgarden_003", "line_start": 136, "line_end": 136, "quote": "정원을 당장 없애고" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__031",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "길로틴이 말한 고유 도서 [어둠의 서]와 대비하여 킬로가 탈로스 수리법을 배우기 위해 찾던 로봇 정비 서적 일반을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        { "scene_id": "library_07", "line_start": 59, "line_end": 59, "quote": "킬로: 저는 로봇 정비서를 찾고 있었어요!" },
+        { "scene_id": "library_07", "line_start": 67, "line_end": 67, "quote": "킬로: 최소한 작동은 할 수 있도록 간단하게 손 보는 법은 알아야겠더라고요." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__032",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "건물 입구 홀을 뜻하는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "neon_04", "line_start": 135, "line_end": 135, "quote": "잉그리드: 로비에 입장하자마자 볼 수 있도록 전시해놓겠다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__033",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'라푼젤의 로사리오', '제 로사리오'처럼 소유 수식을 받는 성물(묵주) 보통명사로 쓰였으며 특정 물건의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        { "scene_id": "over_zone_17", "line_start": 46, "line_end": 46, "quote": "그것들은 곧 라푼젤의 로사리오로 들어갔다." },
+        { "scene_id": "rapunzel_02", "line_start": 49, "line_end": 49, "quote": "라푼젤의 로사리오로 날아들어 사라졌다." },
+        { "scene_id": "rapunzel_02", "line_start": 124, "line_end": 124, "quote": "라푼젤: 좀 전에 제 로사리오로 들어온 황금색 입자는." },
+        { "scene_id": "rapunzel_04", "line_start": 70, "line_end": 70, "quote": "라푼젤은 대답 대신 로사리오를 어루만지며 작게 중얼거렸다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__034",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U031" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "페어리 테일 모델 1번", "entity_type": "character", "entity_key": "E12" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "릴리바이스를 베이스로 마이너 그레이드 없이 제작되었다가 힘을 감당하지 못해 사망하여 결번이 된 특정 미등록 인물(페어리 테일 모델 1번)을 가리킨다.",
+      "supporting_evidence": [
+        { "scene_id": "red_ash_lost_16", "line_start": 27, "line_end": 27, "quote": "지휘관: 여기 와서 말이라도 걸면, 로스트 넘버가 대답이라도 해 준대?" },
+        { "scene_id": "red_ash_lost_16", "line_start": 29, "line_end": 29, "quote": "지휘관: 죽었잖아. 결번이라고. 그럼 로스트 넘버지 뭐야." },
+        { "scene_id": "red_ash_lost_16", "line_start": 35, "line_end": 35, "quote": "지휘관: 프로토타입인 너를 베이스로 페어리 테일 모델 1번을 만들었다." },
+        { "scene_id": "red_ash_lost_16", "line_start": 36, "line_end": 36, "quote": "지휘관: 마이너 그레이드를 하지 않고 그대로 제작하는 바람에, 신체의 힘을 감당할 수 없어서 죽었다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__042__035",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U032" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "로스트 섹터", "entity_type": "concept", "entity_key": "E13" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "하모니 큐브가 연산하여 생성하는 방주 기초 구조물 구역을 일컫는 세계관 고유 개념으로, 여러 지역에 형성되거나 비유적으로 인용된다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_13", "line_start": 4, "line_end": 4, "quote": "라피: 로스트 섹터야." },
+        { "scene_id": "main_31_01", "line_start": 42, "line_end": 42, "quote": "마나: 방주 기초 구조물, 즉 로스트 섹터를 [덮어씌웁니다]." },
+        { "scene_id": "main_31_04", "line_start": 41, "line_end": 41, "quote": "[OPTION TEXT=\"···로스트 섹터가 됐네.\"]" },
+        { "scene_id": "unbreakable_sphere_01", "line_start": 71, "line_end": 71, "quote": "미하라: 새로운 로스트 섹터 같은 건가···." },
+        { "scene_id": "milk_04", "line_start": 30, "line_end": 30, "quote": "슈가: 그런데 장소가 안 좋아. 소규모 로스트 섹터라고 보는 게 낫겠어." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
