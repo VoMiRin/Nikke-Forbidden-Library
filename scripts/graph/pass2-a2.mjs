@@ -36,7 +36,7 @@ const __filename = fileURLToPath(import.meta.url);
 //   node scripts/graph/pass2-a2.mjs finish [--run=...]
 //   node scripts/graph/pass2-a2.mjs compare-check [--run=...]          (골라 보여 준 판정 ↔ 전부 보여 준 판정)
 //   node scripts/graph/pass2-a2.mjs b-update-preview [--run=...]       (A-2 뒤 B 갱신 미리 보기. B 결과는 고치지 않는다)
-//   node scripts/graph/pass2-a2.mjs b-update --run=main                (공식 표로 B 미등록 대상 ID 채움 → data/graph/pass2/merged/B_candidates_a2.json)
+//   node scripts/graph/pass2-a2.mjs b-update --run=main                (재판정 PASS 결과로 바꿔 끼우고 공식 표로 B 미등록 대상 ID 채움 → data/graph/pass2/merged/B_candidates_a2.json)
 //   node scripts/graph/pass2-a2.mjs b-rejudge-build --run=main         (b-update의 재판정 후보 → B 재판정 묶음 data/graph/pass2/rejudge/bundles/)
 //   node scripts/graph/pass2-a2.mjs promote --run=main                 (실행 결과 표 + a2/curation.json → 공식 표 data/graph/pass2/entities.json·terms.json)
 //   node scripts/graph/pass2-a2.mjs audit-input --wave=N [--rate=0.1] [--judge-family=gemini] [--run=...]
@@ -1215,6 +1215,47 @@ export const applyBUpdate = ({ bLinks, rows, entities, registry = new Map() }) =
 };
 
 /** 재판정 묶음 ID(B 본 묶음 하나당 하나). 연결 ID는 이 ID에 __NNN을 붙인다 */
+/**
+ * B 재판정 결과 끼우기(초안 8절 5번): replaced의 B 본 실행 연결을 빼고, 같은 묶음의 재판정 연결을 그 자리에 넣는다.
+ * 묶음마다 뺀 연결과 넣는 연결이 덮는 단위 원소가 같아야 한다. 넣는 연결에는 rejudge_of(뺀 연결 ID)를 붙인다.
+ */
+export const applyRejudge = ({ bLinks, replaced, rejudgeLinks }) => {
+  const subjectKeys = (links) => links.flatMap((l) => l.subject.map((s) => `${s.item_id}#${s.voice_index ?? ''}`)).sort();
+  const byId = new Map(bLinks.map((l) => [l.link_id, l]));
+  const replacedByBundle = new Map();
+  for (const r of replaced) {
+    const link = byId.get(r.link_id);
+    if (!link) throw new Error(`${r.link_id}: 바꿀 연결이 B 결과에 없다`);
+    if (link.bundle_id !== r.bundle_id) throw new Error(`${r.link_id}: 묶음이 다르다(${link.bundle_id} / ${r.bundle_id})`);
+    if (!replacedByBundle.has(r.bundle_id)) replacedByBundle.set(r.bundle_id, []);
+    replacedByBundle.get(r.bundle_id).push(link);
+  }
+  const newByBundle = new Map();
+  for (const l of rejudgeLinks) {
+    const main = [...replacedByBundle.keys()].find((b) => rejudgeBundleIdOf(b) === l.bundle_id);
+    if (!main) throw new Error(`${l.link_id}: 재판정 묶음 ${l.bundle_id}에 바꿀 연결이 없다`);
+    if (!newByBundle.has(main)) newByBundle.set(main, []);
+    newByBundle.get(main).push(l);
+  }
+  for (const [bid, olds] of replacedByBundle) {
+    const news = newByBundle.get(bid) ?? [];
+    if (JSON.stringify(subjectKeys(olds)) !== JSON.stringify(subjectKeys(news))) throw new Error(`${bid}: 뺀 연결과 재판정 연결이 덮는 단위 원소가 다르다`);
+  }
+  const replacedIds = new Set(replaced.map((r) => r.link_id));
+  const links = [];
+  for (const l of bLinks) {
+    if (!replacedIds.has(l.link_id)) {
+      links.push(l);
+      continue;
+    }
+    const olds = replacedByBundle.get(l.bundle_id);
+    if (olds[0].link_id !== l.link_id) continue;
+    const rejudgeOf = olds.map((o) => o.link_id);
+    links.push(...newByBundle.get(l.bundle_id).map((n) => ({ ...n, rejudge_of: rejudgeOf })));
+  }
+  return { links, removed: replacedIds.size, added: rejudgeLinks.length };
+};
+
 export const rejudgeBundleIdOf = (mainBundleId) => `${mainBundleId}__rj`;
 export const B_REJUDGE_CONTEXT_MAX_OCC = 8;
 
@@ -1595,8 +1636,33 @@ const main = async () => {
     if (!res || !official || !b) throw new Error('A-2 해소(finish)·공식 표(promote)·B 병합 결과 중 없는 것이 있다');
     const store = new SceneStore();
     const resolutions = officialResolutions(res.resolutions, official);
-    const rows = previewBUpdate({ bLinks: b.links, entities: official.entities, resolutions, store });
-    const { links, filled } = applyBUpdate({ bLinks: b.links, rows, entities: official.entities, registry: loadRegistry() });
+    // 재판정을 만들었으면(rejudge/replaced.json) 감사를 통과한 재판정 결과로 바꿔 끼운 뒤 채운다
+    const RJ = path.join(GRAPH_DATA_DIR, 'pass2', 'rejudge');
+    const replacedDoc = readJsonIfExists(path.join(RJ, 'replaced.json'));
+    let bLinks = b.links;
+    let rejudgeSource = null;
+    if (replacedDoc) {
+      const rj = readJsonIfExists(path.join(RJ, 'merged', 'B_candidates.json'));
+      const auditIn = readJsonIfExists(path.join(RJ, 'audit', 'wave_001_input.json'));
+      const auditOut = readJsonIfExists(path.join(RJ, 'audit', 'wave_001_output.json'));
+      if (!rj || !auditIn || !auditOut) throw new Error('재판정 묶음이 있는데 재판정 병합 결과나 감사 입력·출력이 없다. 재판정을 마치고(audit-check --run=rejudge PASS) 다시 한다');
+      const { source_sha256, ...src } = auditIn;
+      if (source_sha256 !== sha256(JSON.stringify(src)) || auditOut.input_sha256 !== source_sha256) throw new Error('재판정 감사 출력이 지금 감사 입력에 대한 것이 아니다');
+      if (!Array.isArray(auditOut.reviews) || auditOut.reviews.length !== auditIn.items.length || auditOut.reviews.some((r) => r.judgment !== '맞음' || r.problems?.length)) throw new Error('재판정 감사가 전부 맞음이 아니다(audit-check --run=rejudge --wave=1)');
+      const shardLinkIds = [];
+      for (const s of auditIn.bundle_stamps) {
+        const text = fs.readFileSync(path.join(RJ, 'shards', `${s.bundle_id}.json`), 'utf8');
+        if (sha256(text) !== s.shard_sha256) throw new Error(`${s.bundle_id}: 감사 뒤 재판정 출력이 바뀌었다`);
+        shardLinkIds.push(...JSON.parse(text).candidate_links.map((l) => l.link_id));
+      }
+      if (JSON.stringify(shardLinkIds.sort()) !== JSON.stringify(rj.links.map((l) => l.link_id).sort())) throw new Error('재판정 병합 결과가 감사한 출력과 다르다(finish --run=rejudge)');
+      const r = applyRejudge({ bLinks: b.links, replaced: replacedDoc.replaced, rejudgeLinks: rj.links });
+      bLinks = r.links;
+      rejudgeSource = { rejudge_generated_at: rj.generated_at, audit_input_sha256: source_sha256, auditor_model: auditOut.auditor_model, auditor_session: auditOut.auditor_session, removed: r.removed, added: r.added };
+      console.log(`[b-update] 재판정 반영: B 연결 ${r.removed}건을 재판정 연결 ${r.added}건으로 바꿈(감사 ${auditOut.auditor_model} PASS)`);
+    }
+    const rows = previewBUpdate({ bLinks, entities: official.entities, resolutions, store });
+    const { links, filled } = applyBUpdate({ bLinks, rows, entities: official.entities, registry: loadRegistry() });
     // 다시 판정할 후보(초안 8절 5번): B 판단 보류 중 같은 이야기에 A-2가 인물(별칭·새 인물)을 이은 것. 판정은 하지 않고 목록만 남긴다
     const personLink = (r) => r.link_type === 'alias' || (r.link_type === 'new_entity' && official.entities.some((e) => e.entity_id === r.assigned_entity_id && e.entity_type === 'character'));
     const personByTitle = new Map();
@@ -1606,8 +1672,8 @@ const main = async () => {
       personByTitle.get(r.title_id).push(r);
     }
     const rejudge = [];
-    for (const l of b.links) {
-      if (l.verdict !== '판단 보류') continue;
+    for (const l of bLinks) {
+      if (l.verdict !== '판단 보류' || l.rejudge_of) continue;
       const inTitle = personByTitle.get(l.title_id) ?? [];
       if (!inTitle.length) continue;
       const scenes = new Set([...(l.supporting_evidence ?? []).map((e) => e.scene_id), ...l.subject.map((s) => store.meta(s.item_id?.split('__')[0])?.scene_id).filter(Boolean)]);
@@ -1621,8 +1687,8 @@ const main = async () => {
       kind: 'B',
       run: b.run,
       generated_at: new Date().toISOString(),
-      note: 'B 병합 결과(B_candidates.json)에 A-2 공식 표로 미등록 대상 ID를 채운 것(초안 8절 5번). 채운 대상에는 a2_fill이 붙는다. B_candidates.json은 고치지 않았다',
-      source: { b_generated_at: b.generated_at, official_generated_at: official.generated_at, a2_resolutions_generated_at: res.generated_at },
+      note: 'B 병합 결과(B_candidates.json)에 A-2 공식 표로 미등록 대상 ID를 채운 것(초안 8절 5번). 재판정을 마쳤으면 바꾼 연결은 재판정 연결(rejudge_of)로 들어간다. 채운 대상에는 a2_fill이 붙는다. B_candidates.json은 고치지 않았다',
+      source: { b_generated_at: b.generated_at, official_generated_at: official.generated_at, a2_resolutions_generated_at: res.generated_at, rejudge: rejudgeSource },
       update_rows: rows,
       rejudge_candidates: rejudge,
       links,
@@ -1630,7 +1696,7 @@ const main = async () => {
     const by = rows.reduce((acc, r) => ((acc[r.result] = (acc[r.result] ?? 0) + 1), acc), {});
     for (const r of rows.filter((x) => x.result !== 'keep')) console.log(`${r.result} ${r.link_id} "${r.name}" → ${r.entity_id ?? r.candidates?.join(', ')} (${r.basis})`);
     console.log(`[b-update] B 미등록 대상 ${rows.length}건 ${JSON.stringify(by)}, 채움 ${filled}건`);
-    console.log(`[b-update] 다시 판정할 후보(B 판단 보류 중 같은 이야기에 A-2 인물 연결): ${rejudge.length}건(같은 장면 ${rejudge.filter((x) => x.same_scene).length}건). 판정은 하지 않았다`);
+    console.log(`[b-update] 다시 판정할 후보(B 판단 보류 중 같은 이야기에 A-2 인물 연결, 재판정한 연결 제외): ${rejudge.length}건(같은 장면 ${rejudge.filter((x) => x.same_scene).length}건). 판정은 하지 않았다`);
     console.log(`[b-update] → ${relPath(out)}`);
     return;
   }

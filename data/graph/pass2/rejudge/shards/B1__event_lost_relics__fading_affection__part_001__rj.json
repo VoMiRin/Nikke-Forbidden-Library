@@ -1,0 +1,247 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "B1__event_lost_relics__fading_affection__part_001__rj",
+  "candidate_links": [
+    {
+      "link_id": "B1__event_lost_relics__fading_affection__part_001__rj__001",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "fading_affection_1116__dca_001",
+          "voice_index": 0
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_사냥꾼",
+          "name": "사냥꾼",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "유력한 해석",
+      "rationale": "마리아의 기록 안 편의점 창고 장면(fading_affection_1116)에서 바닥에 쓰인 붉은 글자들을 남긴 라벨 없는 목소리다. 기록물 작성자인 마리아가 아니라 창고 구석 석궁 함정 아래 해골로 남은 사냥꾼이 남긴 글귀임이 후속 장면(fading_affection_1139)의 '사냥꾼이 남긴 마지막 문구' 서술과 저장된 메모리(fading_affection_memory_1110)의 '사냥꾼의 기록' 서술에서 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "그리고 창고 구석 석궁 함정 아래, 선반에 기대 웅크리고 앉아 있는 사냥꾼의···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "그리고 창고 바닥에 쓰인, 붉은 글자들을 바라보았다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "[무서워. 여기 숨자. 들어오면 죽일 거야.]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "[식량도 있고 함정도 설치했어.]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "마리아는 마지막 문구를 바라본다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "[그런데 나는 왜 살고 싶어 하는 거지?]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1139",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "마리아는 문득, 편의점 창고에서 보았던 사냥꾼이 남긴 마지막 문구를 떠올렸다.",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "fading_affection_1139",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "[그런데 나는 왜 살고 싶어 하는 거지?]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_memory_1110",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "편의점 창고 안쪽에서 함정을 설치했던 사냥꾼의 기록을 봤어.",
+          "reveals_identity": true
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "a2_context의 '사냥꾼'(char2_사냥꾼) 단서를 참고해 entity 조회 및 show로 관련 장면을 확인하고, 다른 이야기에 같은 문구('왜 살고 싶어 하는 거지', '석궁 함정')가 나오는지 grep으로 대조함."
+      ]
+    },
+    {
+      "link_id": "B1__event_lost_relics__fading_affection__part_001__rj__002",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "fading_affection_1139__dca_001",
+          "voice_index": 0
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_사냥꾼",
+          "name": "사냥꾼",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "유력한 해석",
+      "rationale": "마리아의 기록(fading_affection_1139) 안에서 마리아가 떠올린 '[그런데 나는 왜 살고 싶어 하는 거지?]' 문구의 라벨 없는 목소리다. 기록물 작성자인 마리아가 아니라 직전 지문에서 '편의점 창고에서 보았던 사냥꾼이 남긴 마지막 문구'라고 직접 밝힌 사냥꾼이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fading_affection_1139",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "마리아는 문득, 편의점 창고에서 보았던 사냥꾼이 남긴 마지막 문구를 떠올렸다.",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "fading_affection_1139",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "[그런데 나는 왜 살고 싶어 하는 거지?]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "그리고 창고 구석 석궁 함정 아래, 선반에 기대 웅크리고 앉아 있는 사냥꾼의···.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "마리아는 마지막 문구를 바라본다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1116",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "[그런데 나는 왜 살고 싶어 하는 거지?]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_memory_1110",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "편의점 창고 안쪽에서 함정을 설치했던 사냥꾼의 기록을 봤어.",
+          "reveals_identity": true
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "a2_context의 '사냥꾼'(char2_사냥꾼) 단서를 참고해 entity 조회 및 show로 관련 장면을 확인함."
+      ]
+    },
+    {
+      "link_id": "B1__event_lost_relics__fading_affection__part_001__rj__003",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "fading_affection_2113__dca_001",
+          "voice_index": 1
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_사냥꾼",
+          "name": "사냥꾼",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "정체 후보 있음",
+      "confidence": "유력한 해석",
+      "rationale": "마리안의 기록 안 편의점 창고 장면(fading_affection_2113)에서 바닥에 적힌 글자 '[그런데 나는 왜 살고 싶어 하는 거지?]'의 라벨 없는 목소리다. 기록물 작성자인 마리안이 아니라 창고 안에 해골로 남아 있던 사냥꾼이 남긴 글귀이며, 다른 장면(fading_affection_1139, fading_affection_memory_1110)에서도 같은 창고 바닥 문구가 사냥꾼이 남긴 기록임이 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fading_affection_2112",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "마리안은 창고 안에 있던 사냥꾼을 떠올렸다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_2113",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "창고 안에는 사냥꾼의 해골만 그 자리 그대로 홀로 외로이 놓여 있었다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_2113",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "마리안은 바닥에 적힌 글자를 바라본다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_2113",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "[그런데 나는 왜 살고 싶어 하는 거지?]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_1139",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "마리아는 문득, 편의점 창고에서 보았던 사냥꾼이 남긴 마지막 문구를 떠올렸다.",
+          "reveals_identity": true
+        },
+        {
+          "scene_id": "fading_affection_1139",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "[그런데 나는 왜 살고 싶어 하는 거지?]",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "fading_affection_memory_1110",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "편의점 창고 안쪽에서 함정을 설치했던 사냥꾼의 기록을 봤어.",
+          "reveals_identity": true
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "a2_context의 '사냥꾼'(char2_사냥꾼) 단서를 참고해 entity 조회 및 show로 관련 장면을 확인함."
+      ]
+    }
+  ]
+}

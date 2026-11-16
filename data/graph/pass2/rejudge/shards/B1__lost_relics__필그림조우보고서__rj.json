@@ -1,0 +1,106 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "B1__lost_relics__필그림조우보고서__rj",
+  "candidate_links": [
+    {
+      "link_id": "B1__lost_relics__필그림조우보고서__rj__001",
+      "link_type": "identity",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "필그림조우보고서_00__dca_001"
+        },
+        {
+          "ref": "item",
+          "item_id": "필그림조우보고서_01__dca_001"
+        },
+        {
+          "ref": "item",
+          "item_id": "필그림조우보고서_02__dca_001"
+        },
+        {
+          "ref": "item",
+          "item_id": "필그림조우보고서_03__dca_001"
+        },
+        {
+          "ref": "item",
+          "item_id": "필그림조우보고서_04__dca_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "org_자원_채집_부대",
+          "name": "자원 채집 부대",
+          "entity_type": "organization"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "작성자는 개요(필그림조우보고서_00 L2, L11)에서 자신을 땅굴 부대 소속 니케로 밝히며 목격한 필그림에 대한 보고서를 남겼고, 이어지는 01~04장도 동일한 1인칭 보고 문체로 이어지는 같은 보고서의 세부 항목이다. 트레저_헌터_01 L119~120에서 땅굴 부대의 정식 명칭이 자원 채집 부대(org_자원_채집_부대)임이 확인되므로 소속 집단은 자원 채집 부대로 좁혀지나, 본문과 다른 이야기 어디에도 해당 부대 소속 니케 개인의 이름이나 필그림 추적자를 특정 인물로 잇는 단서가 없다. 필그림 조우 보고서를 작성했거나 필그림을 추적하는 자원 채집 부대 소속 니케 개인의 실명·별칭이 드러나는 원문이 있으면 정체를 정할 수 있다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "필그림조우보고서_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "나는 땅굴 부대 소속 니케다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "필그림조우보고서_00",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "이 기록은 그간 목격한 필그림에 대한 보고서다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "필그림조우보고서_01",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "조심스럽게 다가갔지만 눈보라가 심해져 만나지 못했다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "필그림조우보고서_02",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "조심스럽게 다가갔지만 갑작스러운 통신 이상으로 만나지 못했다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "필그림조우보고서_03",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "조심스럽게 다가갔지만 빠른 속도로 장소를 이탈했다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "필그림조우보고서_04",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "조심스럽게 다가갔지만 빛과 함께 사라졌다.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "트레저_헌터_01",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "라피: 자원 채집 부대가 정식 명칭입니다만.",
+          "reveals_identity": false
+        },
+        {
+          "scene_id": "트레저_헌터_01",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "라피: 주로 땅을 파고 다닌다고 해서 땅굴 부대로 자주 불리곤 하죠.",
+          "reveals_identity": false
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "a2_context의 땅굴 부대 → 자원 채집 부대(org_자원_채집_부대) 단서를 바탕으로 grep(\"땅굴 부대\", \"자원 채집 부대\", \"땅굴\", \"조우 보고서\")으로 전 원문을 대조하여 트레저_헌터_01 L119~120에서 정식 명칭 연결을 확인했고, 개인 후보로 이어지는 후속 기록이나 실명 니케가 없음을 확인함."
+      ]
+    }
+  ]
+}

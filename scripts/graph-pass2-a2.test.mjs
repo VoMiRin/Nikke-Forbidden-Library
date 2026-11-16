@@ -14,6 +14,7 @@ import {
   promoteA2,
   officialResolutions,
   applyBUpdate,
+  applyRejudge,
   a2ContextByTitle,
   buildRejudgeBundles,
   A2_CURATION_SCHEMA_VERSION,
@@ -573,4 +574,26 @@ test('B 재판정 묶음: 후보 연결의 단위만 남기고 옛 판정 없이
   assert.ok(!JSON.stringify(b).includes('판단 보류')); // 옛 판정은 넣지 않는다
   assert.deepEqual(replaced, [{ link_id: 'B1__t__001', bundle_id: 'B1__t', unit_ids: ['U01'] }]);
   assert.throws(() => buildRejudgeBundles({ bLinks, candidates: [{ link_id: 'B1__t__009' }], mainBundles: new Map([['B1__t', main]]), contextByTitle: ctx }), /B 결과에 없다/);
+});
+
+test('B 재판정 끼우기: 바꿀 연결 자리에 재판정 연결을 넣고 rejudge_of를 붙이며, 덮는 단위가 다르면 멈춘다', () => {
+  const s = (item, v) => ({ ref: 'item', item_id: item, ...(v == null ? {} : { voice_index: v }) });
+  const bLinks = [
+    { link_id: 'B1__t__001', bundle_id: 'B1__t', subject: [s('a__unk_001')] },
+    { link_id: 'B1__t__002', bundle_id: 'B1__t', subject: [s('a__unk_002'), s('a__dca_001', 0)] },
+    { link_id: 'B1__u__001', bundle_id: 'B1__u', subject: [s('b__unk_001')] },
+  ];
+  const replaced = [{ link_id: 'B1__t__002', bundle_id: 'B1__t', unit_ids: ['U02', 'U03'] }];
+  const rejudgeLinks = [
+    { link_id: 'B1__t__rj__001', bundle_id: 'B1__t__rj', subject: [s('a__dca_001', 0)] },
+    { link_id: 'B1__t__rj__002', bundle_id: 'B1__t__rj', subject: [s('a__unk_002')] },
+  ];
+  const r = applyRejudge({ bLinks, replaced, rejudgeLinks });
+  assert.deepEqual(r.links.map((l) => l.link_id), ['B1__t__001', 'B1__t__rj__001', 'B1__t__rj__002', 'B1__u__001']);
+  assert.deepEqual(r.links[1].rejudge_of, ['B1__t__002']);
+  assert.equal(r.removed, 1);
+  assert.equal(r.added, 2);
+  assert.throws(() => applyRejudge({ bLinks, replaced, rejudgeLinks: rejudgeLinks.slice(0, 1) }), /덮는 단위 원소가 다르다/);
+  assert.throws(() => applyRejudge({ bLinks, replaced: [{ link_id: 'B1__t__009', bundle_id: 'B1__t' }], rejudgeLinks }), /B 결과에 없다/);
+  assert.throws(() => applyRejudge({ bLinks, replaced, rejudgeLinks: [...rejudgeLinks, { link_id: 'B1__v__rj__001', bundle_id: 'B1__v__rj', subject: [] }] }), /바꿀 연결이 없다/);
 });
