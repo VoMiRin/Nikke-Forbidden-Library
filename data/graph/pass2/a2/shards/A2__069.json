@@ -1,0 +1,496 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__069",
+  "candidate_links": [
+    {
+      "link_id": "A2__069__001",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "블랙 다이아몬드 호",
+          "entity_type": "item",
+          "entity_key": "E1",
+          "qualifier": "작중 영화 '카스피안의 해적'의 대표 함선"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "작중 영화 「카스피안의 해적」의 대표 함선을 가리키는 고유한 이름이며 촬영 세트장에 재현된 함선으로도 언급된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "mast_02",
+          "line_start": 31,
+          "line_end": 32,
+          "quote": "우리는 지시에 따라 세트장을 이리저리 돌아다니며 촬영에 함께했다.\n그러다 카스피안의 해적의 대표 함선인 블랙 다이아몬드 호도 보고."
+        },
+        {
+          "scene_id": "mast_02",
+          "line_start": 94,
+          "line_end": 96,
+          "quote": "마스트: 선장 양반은 카스피안의 해적을 한 번만 봐서, 잭 로우의 진심 어린 눈동자를 못 느껴서 그런 거요.\n마스트: 그건 진짜였수.\n마스트: 배우가 아니라 한 명의 해적이 그 영화 안에서 숨 쉬고 있었수다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__002",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U002"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "블랙 러쉬",
+          "entity_type": "item",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "바 [아지트]에서 주문하는 커피 향 음료로 한 차례 등장하나, 작중 고유 브랜드·제품명(item)인지 바에서 조주하는 일반 칵테일·음료 종류(generic_term)인지 원문만으로 가를 근거가 부족하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "dolla_04",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "도라: ··· ···일단 주문부터 하자. 뭐 마실래?"
+        },
+        {
+          "scene_id": "dolla_04",
+          "line_start": 79,
+          "line_end": 80,
+          "quote": "도라: 블랙 러쉬? 커피 향을 좋아하나봐.\n도라: 실은 나도 그래. 그래서 같은 걸 주문했지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "바에서 '키스 온 더 비치', '메티니'와 나란히 주문하는 일반 칵테일·음료 메뉴 종류로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "dolla_04",
+              "line_start": 79,
+              "line_end": 80,
+              "quote": "도라: 블랙 러쉬? 커피 향을 좋아하나봐.\n도라: 실은 나도 그래. 그래서 같은 걸 주문했지."
+            },
+            {
+              "scene_id": "dolla_04",
+              "line_start": 118,
+              "line_end": 118,
+              "quote": "주문한 음료가 나왔다."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "현실 칵테일 '블랙 러시안'을 변형한 바 음료 이름으로 보이나, grep 확인 결과 dolla_04 외 다른 출현이 없어 고유 주류·음료 제품인지 일반 칵테일 종류인지 원문만으로 확정할 수 없음"
+      ]
+    },
+    {
+      "link_id": "A2__069__003",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U003"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_메이든",
+          "name": "메이든",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "같은 장면에서 엑시아가 '[블랙로즈]'를 호명하자 메이든이 '저, [블랙로즈]'라고 직접 대답하여 메이든의 게임 닉네임·아바타 이름임이 직접 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d.ark_hero_01",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "엑시아: [블랙로즈]- 보스 어그로 좀 받아주세요-"
+        },
+        {
+          "scene_id": "d.ark_hero_01",
+          "line_start": 21,
+          "line_end": 22,
+          "quote": "메이든: 예, 맡겨주세요.\n메이든: 저, [블랙로즈]. [사이코뮤]의 기대에 꼭 부응할게요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__004",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_메이든",
+          "name": "메이든",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "출현한 네 이야기 모든 장면에서 메이든 본인의 게임 닉네임·캐릭터 이름으로 호명·응답·자기소개가 직접 이루어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "miracle_snow_05",
+          "line_start": 67,
+          "line_end": 69,
+          "quote": "메이든은 달려 나갔다.\n진행자: 과연 엑시아 선수를 이길 플레이어는 없는 것일까요-!!\n진행자: 엇, 도전자가 있습니다! 닉네임은 블랙로즈!"
+        },
+        {
+          "scene_id": "ice_dragon_saga_04",
+          "line_start": 34,
+          "line_end": 35,
+          "quote": "길로틴: 블랙로즈, 부탁이 있다.\n메이든: 부탁이요?"
+        },
+        {
+          "scene_id": "ice_dragon_saga_05",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "메이든: 제 캐릭터 [블랙로즈]가 끼고 있기도 한 탱커 직업군의 종결템으로 최악의 보스 중 하나로 평가받는···."
+        },
+        {
+          "scene_id": "elevator_01",
+          "line_start": 31,
+          "line_end": 32,
+          "quote": "메이든: 어떻게 이런 우연이···.\n엑시아: [블랙로즈]- 지금 중요한 건 그게 아닙니다-"
+        },
+        {
+          "scene_id": "maiden_03",
+          "line_start": 171,
+          "line_end": 171,
+          "quote": "치유하는바람: 블랙로즈님 맞으시죠? 치유하는 바람이에요."
+        },
+        {
+          "scene_id": "maiden_03",
+          "line_start": 180,
+          "line_end": 180,
+          "quote": "메이든: 안녕하세요. 블랙로즈에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__005",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U005"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "수송기·시설의 기록 장치 또는 내부 구조를 해석·침투할 수 없는 기술·부품을 뜻하는 보통명사로 여러 대상에 두루 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_02",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "라피: 시프티. 수송기의 블랙박스 데이터를 보내주겠어?"
+        },
+        {
+          "scene_id": "chapter_48_03",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "장화: 자기 꼭두각시가 빼앗기는 건 또 싫어서, 내 몸 곳곳에 있는 블랙박스에 저런 걸 심어 놓은 거지."
+        },
+        {
+          "scene_id": "chapter_50_03",
+          "line_start": 443,
+          "line_end": 443,
+          "quote": "미러: 무슨 술수를 쓴지 궁금해 침투해봤지만, 저조차도 뚫을 수 없는 블랙박스가 있더군요."
+        },
+        {
+          "scene_id": "goddess_fall_mini_01",
+          "line_start": 11,
+          "line_end": 12,
+          "quote": "세실: ···흠. 블랙박스에는 이상이 없으니,\n세실: 시설이 복구되면서 함께 잠긴 건가 보네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__006",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U006"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "뇌·기억 등의 영역이 외부에서 접근·스캔할 수 없는 블랙박스 상태가 되는 현상 일반을 이르는 파생 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "wisdom_spring_07",
+          "line_start": 88,
+          "line_end": 89,
+          "quote": "마나: 니케의 뇌를 스캔하는 기술은 점점 발전되어 왔습니다.\n마나: 사고 전환이나 블랙박스화 등, 특수한 상황이 아니고서야."
+        },
+        {
+          "scene_id": "miracle_snow_27",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "슈엔: 블랙박스화되어서, 접근이 아예 불가능해."
+        },
+        {
+          "scene_id": "footstep_walk_run_25",
+          "line_start": 135,
+          "line_end": 135,
+          "quote": "엘리시온 미케닉: 블랙박스화 되어 있는 일부 영역이 있습니다만, 일주일 정도라 크게 의미는 없을 듯합니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__007",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "블랙 벨벳",
+          "entity_type": "item",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "'블랙 벨벳이라는 위스키'로 소개되며 고유한 병 외관으로 식별되는 특정 위스키 제품명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "trendy_bar_12",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "레이블: 저, 저는 블랙 벨벳이라는 위스키를 먹어보고 싶어요."
+        },
+        {
+          "scene_id": "trendy_bar_12",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "폴크방: 역시 맞죠? 위스키 병이 블랙 벨벳 같아 보여서 와봤어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__008",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "블랙스미스",
+          "entity_type": "faction_or_species",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "여러 개체가 각기 다른 시점·장소에 출현하며 니케를 포획하는 타일런트급 랩쳐 모델을 묶어 부르는 고유 코드네임이다. 미제시 출현 19곳도 occ·show로 확인한 결과 모두 같은 랩쳐 부류를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_05",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "시프티: 블랙스미스가 옵니다!"
+        },
+        {
+          "scene_id": "main_01_05",
+          "line_start": 52,
+          "line_end": 53,
+          "quote": "시프티: 코드 네임 블랙스미스! 타일런트 모델 중 하나입니다!\n시프티: 지상에 올라온 니케들을 포획해, 랩쳐의 부품으로 만드는 특수 개체예요!"
+        },
+        {
+          "scene_id": "hightech_toy_01",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "엔더슨: 아마 블랙스미스와 같은 랩쳐가 벌인 일이 아닐까 추측하고 있네."
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "미러: 인근에 블랙스미스가 있다면 데려와줘요."
+        },
+        {
+          "scene_id": "fading_affection_1203",
+          "line_start": 8,
+          "line_end": 9,
+          "quote": "블랙스미스가 마리아를 향해 다가오고 있었다.\n\"블랙스미스가··· 여기에도 있었구나.\""
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__009",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U009"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "블랙 타이푼",
+          "entity_type": "item",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현 이야기에서 슈가(및 카페 스위티)가 소유·탑승하는 고유한 이름의 바이크를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "cafe_03",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "슈가의 바이크 블랙 타이푼이 카페 입구를 그대로 뚫고 들어왔다!"
+        },
+        {
+          "scene_id": "brand_new_year_01",
+          "line_start": 4,
+          "line_end": 5,
+          "quote": "슈가: 부아아앙- 블랙 타이푼.\n근엄한 장교: 오토바이 관리가 잘 되어 있네요."
+        },
+        {
+          "scene_id": "main_44_16",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "슈가와 목단을 태운 블랙 타이푼이 아우터 림을 질주한다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__069__010",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U010"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "블랙 타이푼",
+          "entity_type": "item",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "슈가가 자신의 바이크 '블랙 타이푼'을 띄어쓰기 없이 의인화해 부른 변형 표기로 U009와 같은 대상이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_newflavor_001",
+          "line_start": 130,
+          "line_end": 130,
+          "quote": "그럼 우리 블랙타이푼의 밥도 상했을 텐데"
+        },
+        {
+          "scene_id": "cafe_03",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "슈가의 바이크 블랙 타이푼이 카페 입구를 그대로 뚫고 들어왔다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

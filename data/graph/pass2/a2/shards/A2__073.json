@@ -1,0 +1,1869 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__073",
+  "candidate_links": [
+    {
+      "link_id": "A2__073__001",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "같은 이야기 첫 장면에서 레오나가 주인공 화자를 '사육사님'이라 부르고, 그 화자가 자신을 '일일 사육사'로 지칭하며 메신저에서 지휘관으로 발신하므로 등록 인물 지휘관을 가리키는 호칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "lion_heart_06",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "레오나: 어차피 나 혼자는 못 올라갈 테니까, 사육사님께 같이 가달라고 부탁할 예정이었거든."
+        },
+        {
+          "scene_id": "lion_heart_01",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "레오나: 사육사님."
+        },
+        {
+          "scene_id": "lion_heart_01",
+          "line_start": 131,
+          "line_end": 135,
+          "quote": "···일일 사육사에게 연락을 해볼까?\n시간은 많이 늦었지만.\n분명 일어나 있을 것이다.\n[MESSENGER_START TITLE=\"길로틴\" PARTICIPANTS=\"지휘관,길로틴\"]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__002",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U002"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "구원의 성화",
+          "entity_type": "organization",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "화자인 2호 쉘터 관리계정은 '무슨 종교인진 모르겠지만'이라며 수식어가 붙은 보통 표현으로 말했으나, 이 집단에서 실종된 미성년자 딸을 둔 여성의 정황이 다른 이야기의 사이비 종교 [구원의 성화] 신도 엘세리아 나인과 맞물려 특정 단체 지칭과 일반 표현 해석이 양립한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "사이비 종교 단체의 사람들이 섞여 있어서요"
+        },
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "하도 자기들끼리 쉬쉬해서 무슨 종교인진 모르겠지만"
+        },
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "듣자니 그 여자 미성년자인 딸이 있는 것 같았거든요"
+        },
+        {
+          "scene_id": "reborn_evil_02",
+          "line_start": 142,
+          "line_end": 143,
+          "quote": "K: 중앙 정부 측 기록에 데이파라의 엄마,\nK: 엘세리아 나인이 [구원의 성화]란 사이비 종교에 빠져 있단 내용이 있더라고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "화자가 종교 이름을 모른다고 밝히며 정체불명의 사이비 집단을 일반 명사구로 묶어 표현한 것으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "2호_쉘터_관리계정_00",
+              "line_start": 49,
+              "line_end": 52,
+              "quote": "    하도 자기들끼리 쉬쉬해서 무슨 종교인진 모르겠지만\n  [MSG_END]\n  [MSG SENDER=\"2호 쉘터 관리계정\"]\n    정상적인 종교가 아닌 것만은 분명해요"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "실종 여성의 딸 단서를 따라 데이파라를 grep으로 검색해 확인한 reborn_evil_02 L139-L143"
+      ]
+    },
+    {
+      "link_id": "A2__073__003",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U003"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엑시아",
+          "name": "엑시아",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "같은 장면에서 엑시아의 격려에 메이든이 '[사이코뮤]의 기대에 꼭 부응할게요!'라고 답하고 엑시아가 곧바로 받아 대답하므로 엑시아의 게임 닉네임이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d.ark_hero_01",
+          "line_start": 20,
+          "line_end": 23,
+          "quote": "엑시아: 믿고 있습니- 다-\n메이든: 예, 맡겨주세요.\n메이든: 저, [블랙로즈]. [사이코뮤]의 기대에 꼭 부응할게요!\n엑시아: 좋은 마음가짐입니다-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__004",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엑시아",
+          "name": "엑시아",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "엘리베이터 장면에서 메이든이 '[사이코뮤]님 왜 안 움직이시지?'라고 부르자 엑시아가 직접 응답하므로 엑시아의 닉네임이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "elevator_01",
+          "line_start": 20,
+          "line_end": 21,
+          "quote": "메이든: ···어머? [사이코뮤]님 왜 안 움직이시지?\n엑시아: 보면 모릅니까- 버퍼링 돌고 있잖아-요-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__005",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "event_stories__ice_dragon_saga"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엑시아",
+          "name": "엑시아",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "메이든이 게임 PVP 상대로 '[사이코뮤]'를 언급하는데, 이 이야기 안에서는 엑시아와 직접 이어지지 않고 다른 이야기(d.ark_hero_01, elevator_01)의 닉네임 관계로 추론되므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_14",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "메이든: 이래 봬도 절 PVP에서 꺾은 건, [사이코뮤]뿐이니까요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "엑시아의 게임 닉네임 단서를 d.ark_hero_01 L22, elevator_01 L20에서 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__073__006",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_09"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사이코뮤",
+          "entity_type": "concept",
+          "entity_key": "E14",
+          "qualifier": "엑시아가 농담으로 말한 기술 이름"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "main_09_13에서 일행이 일제히 핸드폰을 들자 엑시아가 '사이코뮤 개발이 멀지 않은 것'이라고 말한다. 마음이 통하는 상황을 이름 붙은 기술·개념에 빗댄 것으로도, 비유적인 보통 표현으로도 읽히고 원문은 이 말을 풀어 주지 않는다. 엑시아의 게임 닉네임(elevator_01·ice_dragon_saga)과는 쓰임이 달라 별칭으로 잇지 않는다. 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_13",
+          "line_start": 35,
+          "line_end": 37,
+          "quote": "모두 일제히 핸드폰을 들었다.\n엑시아: 오오- 척하면 척인 것입니까-\n엑시아: 사이코뮤 개발이 멀지 않은 것입니-다-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "모두가 동시에 핸드폰을 든 상황을 두고 한 농담 속 비유 표현으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_09_13",
+              "line_start": 35,
+              "line_end": 37,
+              "quote": "모두 일제히 핸드폰을 들었다.\n엑시아: 오오- 척하면 척인 것입니까-\n엑시아: 사이코뮤 개발이 멀지 않은 것입니-다-"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__007",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U005"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사이클 오브 라이프",
+          "entity_type": "organization",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "중고 전자제품을 수리·재판매하는 기업 C.O.L.의 정식 명칭으로 원문에 직접 설명되는 고유한 기업 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_01",
+          "line_start": 35,
+          "line_end": 36,
+          "quote": "D: 타겟은 C.O.L.의 대표야.\nK: 사이클 오브 라이프라는 이름이야. 중고 전자제품을 사들여서 수리 후 재판매하는 기업이지."
+        },
+        {
+          "scene_id": "license_to_kill_11",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "사장: 그것이 우리 C.O.L.! 사이클 오브 라이프의 이념입니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__008",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U006"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_티미",
+          "name": "티미",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "길로틴이 백사자 앞에 무릎을 꿇고 '그대가 바로 사자의 왕이로군'이라 부르며 이름을 묻자 레오나가 '이 친구는 티미라고 해'라고 소개하므로 등록 인물 티미의 별칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "lion_heart_01",
+          "line_start": 219,
+          "line_end": 219,
+          "quote": "사자의 왕이라-"
+        },
+        {
+          "scene_id": "lion_heart_02",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "길로틴: 사자의 왕의 부름을 받고 이 자리에 섰다."
+        },
+        {
+          "scene_id": "lion_heart_02",
+          "line_start": 50,
+          "line_end": 58,
+          "quote": "길로틴: ···그대가 바로 사자의 왕이로군.\n레오나: 어엇.\n티미: 크헝?\n길로틴은 조심스레 레오나와 티미에게 다가갔고.\n경건한 몸짓으로 한쪽 무릎을 꿇었다.\n길로틴: 이 길로틴, 감히 그대에게 묻겠다.\n길로틴: 나는 그대를 무어라 부르면 되지?\n레오나: ···아.\n레오나: 이 친구는 티미라고 해."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__009",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사장",
+          "entity_type": "character",
+          "entity_key": "E3",
+          "qualifier": "C.O.L. 대표"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "기본 범위인 license_to_kill의 8곳 모두 암살 타겟인 C.O.L.(사이클 오브 라이프) 대표 한 사람을 가리키며, 본명 없이 통칭·화자 라벨 '사장'으로 등장하는 미등록 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_01",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "D: 타겟은 C.O.L.의 대표야."
+        },
+        {
+          "scene_id": "license_to_kill_01",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "D: 타겟. 통칭 [사장]은 중앙 정부에 대량의 기부금을 내고 있어."
+        },
+        {
+          "scene_id": "license_to_kill_11",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "사장: 드디어 바이오 메디컬 센터가 완공되었습니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__010",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "event_stories__kill_the_lord"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사장",
+          "entity_type": "character",
+          "entity_key": "E3",
+          "qualifier": "C.O.L. 대표"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "D와의 대화에서 떠올린 '지난번, 타겟 [사장]의 임무'로 C.O.L. 대표를 가리키지만, 다른 이야기(license_to_kill)의 임무 정보를 옮겨 와 연결하므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "kill_the_lord_07",
+          "line_start": 98,
+          "line_end": 99,
+          "quote": "D: 어떤 걸 이야기하는 거지?\n지난번, 타겟 [사장]의 임무를 맡았을 때의 결정을 떠올렸다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "D와 맡았던 타겟 [사장] 임무를 license_to_kill_01 L48에서 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__073__011",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_37"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_잉그리드",
+          "name": "잉그리드",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "마스트가 작전 합류를 위해 설득했다고 말한 '사장'을 라피가 곧바로 '교관'으로 받고, 이어지는 장면에서 그 교관이 엘리시온 CEO 잉그리드임이 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_37_02",
+          "line_start": 34,
+          "line_end": 37,
+          "quote": "마스트: 사장까지 설득했다 이거 아니요!\n마스트: 이야~ 이제 모두가 로망에 대해 알아준 것 아니겠수?\n앵커: 응. 대단해.\n라피: 글쎄··· 교관은 아무래도 좋았던 것 아닐까."
+        },
+        {
+          "scene_id": "main_37_05",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "헬름: 슈엔 CEO가 우리 교관에게 연락을 넣었어."
+        },
+        {
+          "scene_id": "main_37_05",
+          "line_start": 70,
+          "line_end": 73,
+          "quote": "라피: ···교관이 양보한 거네.\n라피: 이번 작전의 일등 공신이 메티스가 될 수 있게.\n맥스웰: ··· ···.\n맥스웰: 그렇게까지 해 줄 사이였어? 잉그리드랑 슈엔이."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__012",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "character_episodes__시그널"
+        ]
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "음료가 잘못 나온 가게에서 지휘관이 드라마 대사처럼 골라 본 '사장 불러와!'라는 항의 문구로, 특정 인물이 아니라 매장 책임자라는 직책 일반을 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "signal_00",
+          "line_start": 163,
+          "line_end": 165,
+          "quote": "  [OPTION TEXT=\"사장 불러와!\"]\n    시그널: !!!\n    시그널: 그, 그러다 진짜 사장님이 오면 어떡해요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__013",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_잉그리드",
+          "name": "잉그리드",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "49곳 전부를 occ·show로 대조한 결과, 예외 밖 7개 이야기(11곳)에서는 모두 엘리시온 소속 니케들이 '사장님'을 부르거나 언급하고 같은 이야기 안에서 잉그리드가 직접 그 상관으로 등장·명시된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_45_00",
+          "line_start": 71,
+          "line_end": 73,
+          "quote": "잉그리드: 이 놈! 엘리시온의 니케가 미사일스의 슬로건을 말하다니!\n네온: 아니, 사장님이 너무 아무 말도 안 하고 쳐다만 보시길래···.\n잉그리드: ···하아."
+        },
+        {
+          "scene_id": "main_45_07",
+          "line_start": 240,
+          "line_end": 241,
+          "quote": "에닉: 엘리시온에게 제공 받은 시험 운용 중인 기능입니다. 식스오가 해당 기능을 언락한 것은 예상 밖입니다.\n네온: 택티컬 택티컬 하면서 중력 같은 SF에 손을 대다니! 실망이에요 사장님!"
+        },
+        {
+          "scene_id": "d.ark_hero_04",
+          "line_start": 73,
+          "line_end": 74,
+          "quote": "메이든: 사장님, 방금 뭐라고···.\n잉그리드: 다시 한번 말해주지."
+        },
+        {
+          "scene_id": "d.ark_hero_12",
+          "line_start": 205,
+          "line_end": 205,
+          "quote": "메이든: 사장님. 메이든입니다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_04",
+          "line_start": 82,
+          "line_end": 90,
+          "quote": "잉그리드: 메이든.\n잉그리드: 지난번 임무에 실패한 제군께 무기한 근신 처분을 내리면서,\n잉그리드: 숙소 안에선 편하게 지내도 괜찮다고 말하긴 했다만.\n잉그리드: 그래도 너무 풀어지진 않았으면 한다.\n메이든: ··· ···.\n잉그리드: 그래서 생각은 좀 바뀌었나?\n메이든: ··· ···.\n메이든: 아니요. 제 생각은 여전히 그대로예요.\n잉그리드: 알겠다. 그럼 이게 제군의 마지막 임무가 되겠군."
+        },
+        {
+          "scene_id": "ice_dragon_saga_13",
+          "line_start": 58,
+          "line_end": 59,
+          "quote": "메이든: 사장님하고 약속했어요.\n메이든: 이번 임무를 끝으로 기억소거를 받기로요."
+        },
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 28,
+          "line_end": 31,
+          "quote": "잉그리드가 버튼을 누르자, 기계가 작동하기 시작했다.\n우우웅-\n시스템: [기억 소거 절차 개시]\n잉그리드: ···아슬아슬하게 권한 안쪽···."
+        },
+        {
+          "scene_id": "arcane_archive_01",
+          "line_start": 74,
+          "line_end": 74,
+          "quote": "팬텀: 사장님에게 부탁받아서, 내가 어떻게든 해보려 했지만··· 역부족이었소."
+        },
+        {
+          "scene_id": "blank_ticket_03",
+          "line_start": 103,
+          "line_end": 104,
+          "quote": "잉그리드: 음, 혹시 들리나.\n디젤: 어머, 잉그리드 사장님."
+        },
+        {
+          "scene_id": "blank_ticket_06",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "디젤: 오늘도 사장님에게 가봐야 할 것 같아요."
+        },
+        {
+          "scene_id": "maiden_00",
+          "line_start": 127,
+          "line_end": 137,
+          "quote": "메이든: 사장님. 저는 제 사랑을 찾았답니다.\n메이든: 그러니 방해하지 마시길.\n전화기 너머로 고성이 들려왔다.\n메이든: ··· ···.\n메이든: 감봉은··· 안됩니다.\n메이든: 복귀하겠습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"잉그리드야?\"]\n  [OPTION_END]\n[CHOICE_END]\n메이든: ···예."
+        },
+        {
+          "scene_id": "maiden_04",
+          "line_start": 222,
+          "line_end": 223,
+          "quote": "메이든: 예. 사장님, 메이든이에요.\n메이든: 마스크 오프 허가해 주세요."
+        },
+        {
+          "scene_id": "blabla_absolut_002",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "사장님이 뭐래?"
+        },
+        {
+          "scene_id": "blabla_absolut_006",
+          "line_start": 58,
+          "line_end": 64,
+          "quote": "    조금 전에 잉그리드 사장님을\n  [MSG_END]\n  [MSG SENDER=\"베스티\"]\n    만나러 갓엇는데\n  [MSG_END]\n  [MSG SENDER=\"베스티\"]\n    사장님이 눈을 감고는 가만히 앉아서"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__014",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "event_stories__reborn_evil",
+          "event_stories__2x2_love_1ch",
+          "outpost_stories__공방",
+          "character_episodes__팬텀",
+          "character_episodes__아르카나",
+          "blabla__personal__arcana",
+          "blabla__group__darkhero",
+          "blabla__group__blackrose_s"
+        ],
+        "scene_ids": [
+          "armory_09"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_잉그리드",
+          "name": "잉그리드",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "키리·아르카나·메이든(블랙로즈)·팬텀 등 엘리시온 소속 니케의 상관이나 은화의 '엘리시온 소속 니케... 자기네 사장님'을 가리켜 잉그리드에 해당하지만, 해당 이야기·장면 안에는 잉그리드의 이름이 직접 나오지 않아 다른 이야기에서 확인한 소속·상관 관계로 추론되므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "reborn_evil_05",
+          "line_start": 34,
+          "line_end": 35,
+          "quote": "키리: 사장님이 그러셨잖아요.\n키리: 상부에서 어떻게 해도 수사 허가를 내주지 않으니, 일단은 대기하라고요."
+        },
+        {
+          "scene_id": "2x2_love_1ch_39",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "아르카나: 뭐, 저희 사장님은 그럴 분 아니기는 하지만요."
+        },
+        {
+          "scene_id": "workshop_02",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "메이든: 사장님은 지금 마스크가 제일 안정적이라고 하시는데···."
+        },
+        {
+          "scene_id": "phantom_00",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "팬텀: 사장님의 명령을 받고 온 것이오?"
+        },
+        {
+          "scene_id": "arcana_03",
+          "line_start": 195,
+          "line_end": 195,
+          "quote": "아르카나: 이건 다 사장님이 저희를 위해서 열심히 기억 소거 기술을 개선하시고,"
+        },
+        {
+          "scene_id": "blabla_arcana_003",
+          "line_start": 94,
+          "line_end": 97,
+          "quote": "    저 그냥 사장님한테\n  [MSG_END]\n  [MSG SENDER=\"아르카나\"]\n    기억 전부 지워달라고 할게요ㅎㅎ"
+        },
+        {
+          "scene_id": "blabla_darkhero_002",
+          "line_start": 163,
+          "line_end": 163,
+          "quote": "맞다 메이든 근데 사장님이 왜 부른 거?"
+        },
+        {
+          "scene_id": "blabla_blackrose_s_001",
+          "line_start": 10,
+          "line_end": 13,
+          "quote": "    사장님께 크게 혼나긴 했지만\n  [MSG_END]\n  [MSG SENDER=\"블랙로즈\"]\n    그래도 길로틴이랑 같이 혼나니 나름 괜찮았어요"
+        },
+        {
+          "scene_id": "armory_09",
+          "line_start": 84,
+          "line_end": 85,
+          "quote": "아니스: 누가 엘리시온 소속 니케 아니랄까 봐, 자기네 사장님이 할 법한 소리를 하네.\n은화: ···쓸데없는 소리 하지 말고 잘 들어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "엘리시온 소속 니케들과 잉그리드의 상관 관계를 d.ark_hero_04 L73-L74, arcane_archive_00 L28-L31, maiden_00 L127-L137에서 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__073__015",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_35",
+          "main_story__chapter_36",
+          "event_stories__maid_in_valentine",
+          "event_stories__golden_coin_rush",
+          "event_stories__coins_in_rush",
+          "event_stories__b-side_idol",
+          "character_episodes__메어리",
+          "character_episodes__앨리스_원더랜드_바니"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_머스탱",
+          "name": "머스탱",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "이 8개 이야기에서는 테트라 소속 니케들이 부르는 '사장님'이 같은 이야기 안에서 직접 등장해 응답하거나 '머스탱 사장님'으로 명시되므로 등록 인물 머스탱의 별칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_35_06",
+          "line_start": 219,
+          "line_end": 219,
+          "quote": "아니스: 일단 사장님을 찾아갈 거야."
+        },
+        {
+          "scene_id": "main_35_10",
+          "line_start": 3,
+          "line_end": 4,
+          "quote": "아니스: 사장님.\n머스탱: Oh~! My 아니스!"
+        },
+        {
+          "scene_id": "main_36_04",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "네온: 우, 우리 사장님이 머스탱 사장님 부하도 아니잖아요. 따, 따르지 않아도 되지 않나요?"
+        },
+        {
+          "scene_id": "main_36_10",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "아니스: 우리 사장님이 청렴결백하다는 걸 알았으니까."
+        },
+        {
+          "scene_id": "maid_in_valentine_01",
+          "line_start": 27,
+          "line_end": 30,
+          "quote": "머스탱: Valentine 춰컬릿에는 True Heart가 담겨 있어야 해Yo.\n머스탱: This 춰컬릿에는 바로 그 근본적인 것이 빠져 있습니Da!\n머스탱: 안타깝지Man. 이 상태로는 Valentine Event를 허락할 수 없어Yo.\n에이드: 사장님, 하지만···."
+        },
+        {
+          "scene_id": "maid_in_valentine_09",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "에이드: 분명 사장님께도 지적받았었는데 잊고 있었어요···."
+        },
+        {
+          "scene_id": "golden_coin_rush_01",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "소다: 혹시라도 우승하게 되면 사장님께 소원을 말할 수 있잖아요~!"
+        },
+        {
+          "scene_id": "golden_coin_rush_05",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "소다: 머스탱 사장님의 황금칩···?!"
+        },
+        {
+          "scene_id": "golden_coin_rush_25",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "노이즈: 어! 사장님이 무대에 올라오고 있어."
+        },
+        {
+          "scene_id": "coins_in_rush_25",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "에이드: 사장님이 말씀하셨을 때도 조금 석연치 않은 부분이 있긴 했어요."
+        },
+        {
+          "scene_id": "coins_in_rush_26",
+          "line_start": 114,
+          "line_end": 115,
+          "quote": "루주: 그래도 악의를 가지고 하신 건 아닐 거예요.\n루주: ···머스탱 사장님이시니까요."
+        },
+        {
+          "scene_id": "b-side_idol_12",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "민트: 우리의 예쁜 사랑, 지켜봐주세요 사장님~\n머스탱: No-! 기다리십시Yo!"
+        },
+        {
+          "scene_id": "b-side_idol_13",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "민트: 사장님 일은, 대신 사과드릴게요."
+        },
+        {
+          "scene_id": "mary_00",
+          "line_start": 89,
+          "line_end": 91,
+          "quote": "  [OPTION TEXT=\"머스탱에게 부탁해보는 게 어때?\"]\n    메어리: !!\n    페퍼: 사, 사장님께요?"
+        },
+        {
+          "scene_id": "mary_04",
+          "line_start": 117,
+          "line_end": 117,
+          "quote": "메어리: 역시 그 상자는 사장님께 드리길 잘 했던 거 같아요."
+        },
+        {
+          "scene_id": "alice_wonderlandbunny_02",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "머스탱: Go~!!!"
+        },
+        {
+          "scene_id": "alice_wonderlandbunny_02",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "앨리스: 사장님이 준비한 게임이니까요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__016",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_44",
+          "event_stories__perfect_maid",
+          "event_stories__new_flavor",
+          "outpost_stories__병원",
+          "blabla__personal__mint",
+          "blabla__group__lionheart",
+          "blabla__group__cafesweety"
+        ],
+        "scene_ids": [
+          "secret_garden_08",
+          "armory_07"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_머스탱",
+          "name": "머스탱",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "아니스·코코아·크러스트·메어리·민트·레오나·프림·비스킷·앨리스 등 테트라 소속 니케들의 상관이며 말투 성대모사·전년도 밸런타인 사건 등 단서가 머스탱과 맞지만, 해당 이야기·장면 안에는 머스탱의 본명이 나오지 않아 간접 추론이므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_00",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "아니스: 사장님 말로는 광학 병기를 흡수한 다음 제어할 수 있다고는 하는데, 사실 잘 와닿지는 않아서."
+        },
+        {
+          "scene_id": "perfect_maid_01",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "    코코아: 작년에 사장님이 우리가 만든 밸런타인 초콜릿에 진심이 없따구,\n    코코아: 진심을 넣을 때까지 초콜릿을 만들지 말라고 해서 큰일이 나써서."
+        },
+        {
+          "scene_id": "new_flavor_01",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "크러스트: 사장님께서 지휘관님에게 가보라고 하셨거든요~"
+        },
+        {
+          "scene_id": "hospital_00",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "메어리: 사장님한테 새로 이빨을 만들어 달라고 할지도 몰라요."
+        },
+        {
+          "scene_id": "blabla_mint_001",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "아 사장님도 알고 있긴 해요"
+        },
+        {
+          "scene_id": "blabla_lionheart_005",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "사장님이랑은 잘 얘기했고"
+        },
+        {
+          "scene_id": "blabla_cafesweety_001",
+          "line_start": 15,
+          "line_end": 19,
+          "quote": "  [MSG SENDER=\"프림\"]\n    사장님\n  [MSG_END]\n  [MSG SENDER=\"프림\"]\n    호출"
+        },
+        {
+          "scene_id": "secret_garden_08",
+          "line_start": 74,
+          "line_end": 76,
+          "quote": "비스킷: 저도 약속시간을 못 지킬 때가 있어서 사장님께 말씀드릴때가 있는데.\n비스킷: Oh-! My Cute Puppy! Schedule이 의미 없군Yo-!\n비스킷: But! Time이 더 필요하면 어쩔 수 없Jyo! 알겠습니Da!"
+        },
+        {
+          "scene_id": "armory_07",
+          "line_start": 135,
+          "line_end": 135,
+          "quote": "앨리스: 저희 사장님이 토끼 옷이 많이 남았다고 하셨거든요~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "테트라 니케들과 머스탱의 상관 관계 및 사건·말투 단서를 main_35_10 L3-L4, maid_in_valentine_01 L27-L30, mary_00 L89-L91, b-side_idol_12 L15-L16에서 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__073__017",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "event_stories__license_to_kill"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사장",
+          "entity_type": "character",
+          "entity_key": "E3",
+          "qualifier": "C.O.L. 대표"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "이 이야기의 3곳(license_to_kill_03, 08, 09) 모두 C.O.L. 직원·관련자가 자사 대표인 통칭 '사장'(U007의 E3)을 높여 부르는 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_01",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "D: 타겟은 C.O.L.의 대표야."
+        },
+        {
+          "scene_id": "license_to_kill_03",
+          "line_start": 156,
+          "line_end": 157,
+          "quote": "현장 감독: 그리고 내일부터 사장님 직속으로 일해요.\nD: 와. 사장님 직속이요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__018",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "event_stories__star_anis"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_한슨",
+          "name": "한슨",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "프리티 스타 시절 아니스가 차를 운전하는 소속사 대표 한슨에게 직접 '사장님'이라 묻고 한슨이 대답하며, 이후 장면에서도 같은 소속사 대표 한슨을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "star_anis_01",
+          "line_start": 60,
+          "line_end": 61,
+          "quote": "아니스: 그럼 사장님은 저 어딘가에 높으신 분인가요?\n한슨: 그럴 리가. 예전에 등록되어 있던 차야."
+        },
+        {
+          "scene_id": "star_anis_17",
+          "line_start": 163,
+          "line_end": 164,
+          "quote": "아니스: 사장님은···?\n리스: 아직··· 연락이 없어."
+        },
+        {
+          "scene_id": "star_anis_21",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "아니스: 사장님은 어디 갔는지 며칠째 보이지도 않아."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__019",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "event_stories__project_matis"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엔메",
+          "name": "엔메",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "과거 시점 이야기에서 맥스웰이 말한 '사장님'을 슈엔이 곧바로 '아버님'으로 받고, 이어지는 장면에서 그 아버지가 등록 인물 엔메로 직접 등장하므로 현 사장 슈엔이 아니라 당시 사장 엔메를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_06",
+          "line_start": 100,
+          "line_end": 102,
+          "quote": "맥스웰: 사장님은 도대체 무슨 생각인 거지. 아무 의도가 없진 않을 거 같은데.\n슈엔: 의도가 있긴 무슨 의도가 있어!\n슈엔: 아버님은 그 녀석이랑 달라."
+        },
+        {
+          "scene_id": "project_matis_07",
+          "line_start": 6,
+          "line_end": 10,
+          "quote": "맥스웰: 그냥 네가 만든 설계도를 발표하고 사장님한테 보여주기만 하면 되는 건데.\n슈엔: 누가 그걸 몰라? 그래도 떨린다는 거잖아.\n맥스웰: 너 어차피 후계 안 노릴 거라며.\n맥스웰: 그럼 굳이 잘 할 필요 없잖아?\n슈엔: 그, 그래도··· 아버님이 보고 계시니까."
+        },
+        {
+          "scene_id": "project_matis_07",
+          "line_start": 30,
+          "line_end": 34,
+          "quote": "엔메: 메이드인 척 스파이를 하고 있었다니.\n엔메: 겁도 없군.\n라라라는 이름을 가진 소녀의 메이드가 스파이라는 명목으로,\n아버지의 손에 목숨을 잃었던 날을.\n그날 아버지가 소녀를 바라봤던 그 눈을 기억한다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__020",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "character_episodes__센티"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사장님",
+          "entity_type": "character",
+          "entity_key": "E4",
+          "qualifier": "센티 에피소드의 자재 판매장 사장"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "센티가 외상으로 자재를 받아 오는 방주 시내 특정 자재 판매장의 '성격이 불 같은 사장님' 한 사람을 가리키며 본명이 없는 미등록 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "centi_01",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "···얼마 후, 방주 시내의 자재 판매장 앞."
+        },
+        {
+          "scene_id": "centi_04",
+          "line_start": 166,
+          "line_end": 167,
+          "quote": "센티: 성격이 불 같은 사장님이 계시는 바로 그 매장임다!\n센티: 참고로 이번에도 외상으로 주셨슴다! 참 감사한 분임다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__021",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "scene_ids": [
+          "secret_garden_00"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "비서 리안이 미실리스 정기 연간 보고서를 근거로 정원 폐쇄를 지시한 상관을 '성격 나쁜 꼬맹··· 아니. 사장님'이라 부르고, 같은 이야기 secret_garden_08 L66에서도 그 폐쇄 지시권자가 '슈엔 사장님'으로 명시되므로 등록 인물 슈엔을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "secret_garden_00",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "리안: 안녕하십니까. 저는 사장님의 비서 리안입니다."
+        },
+        {
+          "scene_id": "secret_garden_00",
+          "line_start": 63,
+          "line_end": 65,
+          "quote": "리안: 아무래도 성격 나쁜 꼬맹··· 아니.\n리안: 사장님께서는 이번 연간 보고서를 보시고서는 이런 판단을 내린 게 아닐까 싶습니다.\n리안: 미실리스 정기 연간 보고서에 따르면. 정원 유지에 많은 돈이 쓰이고 있는 건 사실이니까요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__022",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U009"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "낱말의 뜻을 알아보려고 펼쳐 본 일반 서적(사전)을 말하며 고유한 물건 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "alice_00",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "낙원에 대해 궁금해진 앨리스는 사전을 찾아보았습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__023",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U010"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "여사제",
+          "entity_type": "character",
+          "entity_key": "E5",
+          "qualifier": "챕터 43에서 프린세스를 맡긴 사제"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "프린세스를 배드 드림에 맡기고 떠나 연락이 끊겼던 특정 인물로, 뒤 장면(main_43_10)에서 화자 라벨 '여사제'로 직접 등장하는 미등록 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_43_01",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "스톨 3세: 분명 너를 여기 놔두고 간 사제님이 금방 데리러 온다고 했을 테고."
+        },
+        {
+          "scene_id": "main_43_02",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "스톨 3세: 예전에 찾아왔던 사제님은 다시 안 왔죠?"
+        },
+        {
+          "scene_id": "main_43_10",
+          "line_start": 49,
+          "line_end": 55,
+          "quote": "여사제: 성하···!\n프린세스: 이놈···!\n빡!\n프린세스가 여사제의 다리를 걷어찬다.\n잠시 휘청이던 여사제가 자세를 추스른다.\n여사제: 정말···! 정말 살아계셨군요···!\n프린세스: 3년이다···! 3년 동안 나를 이런 곳에 처박아놓고 아무런 연락이 없다니 무슨 짓이지···!?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__024",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U011"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'수많은 사제 폭탄'처럼 사사로이 제조한 폭탄 여러 개를 이르는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "reborn_evil_24",
+          "line_start": 157,
+          "line_end": 157,
+          "quote": "엘리베이터 안. 수많은 사제 폭탄이 쌓여 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__025",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U012"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "직장을 그만두겠다는 일반 서류인 사직서를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_25",
+          "line_start": 160,
+          "line_end": 160,
+          "quote": "사직서를 내려놓았다."
+        },
+        {
+          "scene_id": "blabla_mmr_002",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "바로 사직서야"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__026",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U013"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "촬영한 일반 사진·사진 파일을 가리키는 보통명사이며 고유한 이름이 붙은 물건이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_29_19",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "프레자일: 리버린이 찍었다는 사진."
+        },
+        {
+          "scene_id": "blabla_underworldqueen_007",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "우리 같이 찍은 사진들 말이야"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__027",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U014"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "사진을 찍는 일반 기기인 카메라를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2x2_love_1ch_15",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "에이미는 아르카나가 꺼낸 사진기를 보고 생각에 잠겼다."
+        },
+        {
+          "scene_id": "롬_02",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "사진기_필요"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__028",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U015"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사진부",
+          "entity_type": "organization",
+          "entity_key": "E6",
+          "qualifier": "2x2 러브의 교내 동아리"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "연작 이야기 두 편에 걸쳐 주인공·아르카나·에이미가 소속되어 축제 부스를 운영하는 특정 교내 동아리 집단이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2x2_love_1ch_15",
+          "line_start": 102,
+          "line_end": 104,
+          "quote": "아르카나: 사진부와 점술부예요!\n에이미: 사진부?\n아르카나: 응응. 사진 막 열심히 찍는 동아리예요."
+        },
+        {
+          "scene_id": "2x2_love_1ch_19",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "그렇게 우리는 사진부 활동을 시작했다."
+        },
+        {
+          "scene_id": "2x2_love_2ch_31",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "축제 기간에 사진부에서 준비할 부스의 여러 시안과."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__029",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U016"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사천왕",
+          "entity_type": "organization",
+          "entity_key": "E7",
+          "qualifier": "백빙룡 대서사시의 [조직] 간부 집단"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "시뮬레이션 세계 속 백빙룡의 '[조직]'에 속한 4인 간부 집단(시프티·머스탱·슈엔·잉그리드)을 묶어 부르는 고유 집단명으로, 현실에 그대로 대응하는 단일 집단이 없는 그 세계만의 조직이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_03",
+          "line_start": 109,
+          "line_end": 110,
+          "quote": "드레이크: 용사 일행은 [조직]의 사천왕 중 제일 강력하다고 전해지는,\n드레이크: 시프티를 쓰러뜨리고 [겨울의 저주]가 퍼지는 속도를 늦추었다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_16",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "나레이션: 사천왕 머스탱은 달빛을 조명 삼아 화려한 춤사위를 이어나갔습니다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_19",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "잉그리드: 우리 사천왕이 나설 필요도 없었군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__030",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U017"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'사출용 엘리베이터 중 가장 가까운 것'이라는 대사가 같은 종류의 시설이 여럿임을 직접 보여 주므로 고유 시설 이름이 아닌 일반 시설 분류명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_18",
+          "line_start": 161,
+          "line_end": 161,
+          "quote": "라피: 방주에서 지상으로 올라가는 사출용 엘리베이터 중 가장 가까운 것을 마킹해줘."
+        },
+        {
+          "scene_id": "main_25_02",
+          "line_start": 296,
+          "line_end": 296,
+          "quote": "네온: 역시 사출용 엘리베이터가 빠져나간 곳부터 확인해 보는 게 좋겠죠?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__031",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U018"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "코노하나사쿠야",
+          "entity_type": "character",
+          "entity_key": "E8",
+          "qualifier": "유키코의 페르소나"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "유키코가 '내 마음에서 태어난 또 다른 나'로 설명하며 소환해 싸우는 고유 페르소나 개체 코노하나사쿠야를 줄여 부른 이름이며 미등록 대상이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_06",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "유키코: ···나와줘. 코노하나사쿠야!"
+        },
+        {
+          "scene_id": "persona_on_frontline_06",
+          "line_start": 30,
+          "line_end": 31,
+          "quote": "유키코: 이게 [페르소나].\n유키코: 간단히 설명하자면··· 내 마음에서 태어난 또 다른 나, 같은 느낌이야."
+        },
+        {
+          "scene_id": "persona_on_frontline_08",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "유키코: 사쿠야!"
+        },
+        {
+          "scene_id": "persona_on_frontline_24",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "유키코: 홀로그램 기술···?! 대단해. 정말 내 사쿠야처럼 나타나는 것처럼 보여!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__032",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U019"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "손에 들고 있던 사탕이나 거리에서 파는 사탕 등 먹는 간식 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "little_witch_trick_11",
+          "line_start": 158,
+          "line_end": 158,
+          "quote": "레이블은 바깥에 쌓인 빈 상자 앞에서, 손에 들고 있던 사탕을 일부러 떨어뜨렸다."
+        },
+        {
+          "scene_id": "alice_01",
+          "line_start": 189,
+          "line_end": 189,
+          "quote": "???: 사탕을 파는 사람이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__033",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U020"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사탕을 줄테니, 장난을 칠거야 장난감!",
+          "entity_type": "item",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "벨로타가 할로윈 선물로 만든 작동 장난감에 '이름하여, [사탕을 줄테니, 장난을 칠거야 장난감!]'이라고 직접 붙인 고유한 물건 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "workshop_09",
+          "line_start": 138,
+          "line_end": 138,
+          "quote": "벨로타: 이름하여, [사탕을 줄테니, 장난을 칠거야 장난감!]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__034",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U021"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사탕 장수",
+          "entity_type": "character",
+          "entity_key": "E10",
+          "qualifier": "앨리스 에피소드의 납치범"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "앞 장면들(alice_01, alice_02)에서 화자 라벨 '사탕 장수'로 등장해 앨리스를 폭행·납치하려 했던 특정 인간 남성을 앨리스가 높여 부른 표현이며 미등록 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "alice_01",
+          "line_start": 190,
+          "line_end": 190,
+          "quote": "사탕 장수: 이 거리에서 가장 맛있는 사탕을 파는 사람이지."
+        },
+        {
+          "scene_id": "alice_02",
+          "line_start": 117,
+          "line_end": 117,
+          "quote": "    사탕 장수는 평범한 인간이었기에 말할 수 없었습니다."
+        },
+        {
+          "scene_id": "alice_04",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "앨리스: 헤헤. 사탕 장수님을 만나서 병원에 오긴 했지만."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__035",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U022"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "사회부",
+          "entity_type": "organization",
+          "entity_key": "E11",
+          "qualifier": "TV 특종 비리를 밝혀라! 부서"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "Ms. 0가 'TV 특종 비리를 밝혀라!의 사회부 팀장'이라고만 한 차례 밝혀, 해당 방송 프로그램 안의 특정 취재 부서 집단으로 볼 해석과 언론사 부서 일반을 뜻하는 보통명사로 볼 해석을 원문만으로 가르기 어렵다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "miranda_01",
+          "line_start": 162,
+          "line_end": 165,
+          "quote": "    TV 특종 비리를 밝혀라!의 사회부 팀장 Ms. 0라고 합니다\n  [MSG_END]\n  [MSG SENDER=\"미란다\" IS_SENDER=\"true\"]\n    사회부?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'사회부'는 방송·언론사의 일반적인 취재 부서 직제 명칭으로 쓰인 보통명사로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "miranda_01",
+              "line_start": 162,
+              "line_end": 162,
+              "quote": "TV 특종 비리를 밝혀라!의 사회부 팀장 Ms. 0라고 합니다"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__036",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U023"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "산",
+          "entity_type": "character",
+          "entity_key": "E12",
+          "qualifier": "컬러리스의 만화 지망 선배"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "아인이 수학여행 중인 학생들의 소원을 언급하며 카르히와 나란히 '산 선배는 일상 만화 그리고 싶다고 했나?'라고 말한 특정 선배 학생 개인이며 레지스트리에 없는 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "colorless_08",
+          "line_start": 64,
+          "line_end": 66,
+          "quote": "아인: 카르히는 요리사가 돼서, 자기 요리로 맛없는 급식 갈아치울 거라고 했고.\n아인: 산 선배는 뭐라더라?\n아인: 일상 만화 그리고 싶다고 했나?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__073__037",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U024"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "산부인과",
+          "entity_type": "location",
+          "entity_key": "E13",
+          "qualifier": "배드 드림 공용 화장실 마지막 칸"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "main_43_09에 한 번 나오는 표현이다. 스톨 3세가 배드 드림 공용 화장실의 가장 마지막 칸을 먼저 특정하고(L58~60), 그 칸에서 아이들이 발견된 사정을 말한 뒤(L66~67) '그 칸을 산부인과라고 부르기도 해'라고 그 칸 하나에 붙은 이름을 직접 밝힌다(L69). 실제 진료과나 병원 일반을 말하는 출현이 아니므로 새 엔티티(location)로 두고 qualifier로 그 칸을 적는다. '재밌지?'·'하나도 재미없다'(L69~70)는 이 별칭의 어조일 뿐 특정 칸을 가리키는 이름 기능을 없애지 않으므로 반대 근거에 남긴다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_43_09",
+          "line_start": 58,
+          "line_end": 60,
+          "quote": "스톨 3세: 배드 드림에 공용 화장실이 있거든.\n스톨 3세: 공용 화장실이다 보니 관리가 엉망이고, 대부분은 작동을 안 해.\n스톨 3세: 그중 가장 마지막 칸은 이런저런 잡동사니를 넣어두는 칸으로 쓰는데."
+        },
+        {
+          "scene_id": "main_43_09",
+          "line_start": 66,
+          "line_end": 69,
+          "quote": "스톨 3세: 그 칸에서 발견된 아이 중 내가 세 번째.\n스톨 3세: 그래서 셋째라고 불러.\n프린세스: ··· ···.\n스톨 3세: 그 칸을 산부인과라고 부르기도 해. 재밌지?"
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "main_43_09",
+          "line_start": 69,
+          "line_end": 70,
+          "quote": "스톨 3세: 그 칸을 산부인과라고 부르기도 해. 재밌지?\n프린세스: 하나도 재미없다."
+        }
+      ],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

@@ -1,0 +1,1110 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__061",
+  "candidate_links": [
+    {
+      "link_id": "A2__061__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주의 역사",
+          "entity_type": "item",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "두 이야기 모두 274페이지에 미실리스 관련 내용이 실린 특정 역사 교과서 [방주의 역사]를 가리키는 고유 도서명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rei_02",
+          "line_start": 78,
+          "line_end": 79,
+          "quote": "    교과서 [방주의 역사], 274페이지.\n    슈엔이 갓 미실리스의 CEO가 되었을 당시의 사진이다."
+        },
+        {
+          "scene_id": "zwei_00",
+          "line_start": 93,
+          "line_end": 95,
+          "quote": "아인: 그럼 [방주의 역사] 274페이지 3번째 줄, 마지막 단어 뭔지 아시나요?\n츠바이: 274페이지라면···.\n츠바이: 미실리스일걸?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__002",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "정의 괴도단이 델타의 수련 임무를 위해 변장한 주인공 지휘관에게 붙인 가짜 통칭이다. 미란다가 브리핑 대상이 지휘관임을 말하고(delta_ninjathief_01 L98, 02 L58), 델타가 변장한 지휘관을 '방주의 종마'로 부르며(02 L84~86), 진상을 안 뒤에도 지휘관을 '방주의 종마'라 칭하며 감시를 자청한다(04 L127~128).",
+      "supporting_evidence": [
+        {
+          "scene_id": "delta_ninjathief_01",
+          "line_start": 79,
+          "line_end": 80,
+          "quote": "팬텀: 통칭 [방주의 종마].\n팬텀: 그는 방주에서 이름난 호색한이오."
+        },
+        {
+          "scene_id": "delta_ninjathief_01",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "미란다: 오늘 분명 지휘관에 대한 브리핑을 한다고··· 우, 우웁!"
+        },
+        {
+          "scene_id": "delta_ninjathief_02",
+          "line_start": 84,
+          "line_end": 86,
+          "quote": "델타: 당신이 방주의 종마입니까.\n델타: 예상대로 정말 험악한 인상을 하고 계시지 말입니다.\n···다행히 델타는 나를 알아보지 못하는 것 같다."
+        },
+        {
+          "scene_id": "delta_ninjathief_04",
+          "line_start": 127,
+          "line_end": 128,
+          "quote": "델타: 제가 지휘관의 감시를 맡아서 해도 되겠습니까?\n델타: 방주의 종마가 언제 다시 악행을 저지를지 모르지 않습니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__003",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'방주'에 일반 공간 명사 '입구'가 결합한 수식 표현이다. 같은 장면 안에서 '방주 입구'와 '밀봉된 방주의 입구'가 나란히 쓰이고(ark_guardian_18 L88·L90), '방주의 입구에 세워진 임시 초소'·'입구를 보호하고 있습니다'(over_zone_02 L36~37), '방주의 입구로 쓸 생각이었던 것 같네여!'(main_30_00 L38)처럼 보통명사로 풀어 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_zone_07",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "도로시: 방주 입구를 수호하지 못할 가능성이 점점 높아지고 있습니다."
+        },
+        {
+          "scene_id": "ark_guardian_18",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "방주 입구.\n갓데스 스쿼드, 지휘관의 방."
+        },
+        {
+          "scene_id": "ark_guardian_18",
+          "line_start": 88,
+          "line_end": 90,
+          "quote": "지휘관: 계속 여기서 진을 치고 기다리면서, 뒤늦게 방주 입구로 찾아온 사람들과 니케를 보호한다.\n지휘관: 2주 동안 아무도 오지 않는다면, 보호 중인 사람들과 함께 방주로 내려간다.\n지휘관: 그때에 한정해서, 밀봉된 방주의 입구를 연다. 이건 나와 릴리스가 미리 밑 작업을 해놓는다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '방주의 입구'로 over_zone_02 L36, ark_guardian_18 L90, main_30_00 L38 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "보석을 두른 재력가",
+          "entity_type": "character",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "같은 이야기 직전 장면(queen's_order_11 L10~12)에서 붉은 덤불이 몇 년째 밑에 들어가 더러운 일을 해 주고 폭탄 자금을 받은 특정 인물로 언급되며, 직후 장면(queen's_order_13 L117~121)에서 '보석을 두른 재력가'('마담')로 직접 등장해 헤도니아의 콘실리에리에게 사살된다. 등록 인물이 아닌 특정 미등록 개인이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "queen's_order_12",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "방주 재력가의 더러운 일을 처리하면서 폭탄을 사 모으고."
+        },
+        {
+          "scene_id": "queen's_order_11",
+          "line_start": 10,
+          "line_end": 12,
+          "quote": "사쿠라: 조사해 보니 붉은 덤불 쪽에서 몇 년째 방주의 재력가 밑에 들어가 일을 했더군요.\n사쿠라: 더러운 일을 한 대가로 큰돈을 받고,\n사쿠라: 그 돈을 폭탄을 사들이는데 쓴 모양입니다."
+        },
+        {
+          "scene_id": "queen's_order_13",
+          "line_start": 118,
+          "line_end": 121,
+          "quote": "콘실리에리: 마담께서 붉은 덤불이라는 갱단에게 많은 돈을 주셨다고 하여,\n콘실리에리: 저희 보스께서 안부를 전해달라고 하십니다.\n보석을 두른 재력가: !!!\n탕-!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '재력가'(--title=event_stories__queen_s_order)로 queen's_order_11 L10, queen's_order_13 L120 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 정보부",
+          "entity_type": "organization",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "시프티가 자신의 소속 기관으로 밝히는 방주의 공식 정보 부서(중앙 정부 정보부)다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_02",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "시프티: 지휘관님 안녕하세요? 방주 정보부 소속 오퍼레이터, 시프티라고 합니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__006",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 중앙 정부",
+          "entity_type": "organization",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "홍련이 지휘관의 소속 기관으로 언급하는 방주의 통치 기관(중앙 정부)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "trendy_bar_01",
+          "line_start": 134,
+          "line_end": 134,
+          "quote": "홍련: 맞군! 자네 여기 방주 중앙 정부 소속이었지? 도령이랑 자주 노닥거리다 보니 자꾸 잊는군그래."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__007",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 지휘부",
+          "entity_type": "organization",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "긴급 상황에서 글러트니 출현을 보고하려는 방주의 군 지휘 기관이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "unbreakable_sphere_00",
+          "line_start": 51,
+          "line_end": 53,
+          "quote": "마나: 긴급 상황입니다!!\n마나: 방주 지휘부에 연락을···!\n마나: 코드 네임 [글러트니]가 나타났다고 전달해 주세요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "크로우가 '그런 게 너희가 말하는 동료라면, 방주 총사령관과 나도 참 사이좋은 동료겠군'이라며 반어적 가정·비유로 방주 최고위 직책을 들어 말한 표현으로, 그 이야기의 특정 개인을 지칭하는 것이 아니다(규칙 3.2절 직함·호칭 경계 사례).",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_16_03",
+          "line_start": 45,
+          "line_end": 47,
+          "quote": "크로우: 누군 말하는 고철 덩어리로 전락하고,\n크로우: 누구는 그 고철이 세운 공로로 떵떵거리는 영웅이 될 텐데.\n크로우: 그런 게 너희가 말하는 동료라면,  방주 총사령관과 나도 참 사이좋은 동료겠군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '총사령관'으로 전체 용례 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__009",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "방주 이주 대상자를 뽑던 추첨권을 뜻하는 수식어 붙은 보통 표현이다. 트리나가 쥐고 있던 종이(for_rest_01 L16·L22), 헨리가 당첨된 추첨권(방주추첨권_00 L2, 방주추첨권_01 L6 '추첨권을 산 게 분명하다'), 풍문으로 언급되는 추첨권 일반(잘지내라친구_02 L2) 등 여러 개별 표와 제도 일반에 두루 쓰이며 특정 단일 물건의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "for_rest_01",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "???: 손에 쥔 건 뭐야?\n???: 방주 추첨권···."
+        },
+        {
+          "scene_id": "방주추첨권_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "아래층 헨리가 방주 추첨권에 당첨되었다고 한다."
+        },
+        {
+          "scene_id": "잘지내라친구_02",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "방주 추첨권인가 뭔가가 있다는데\n그게 이 촌구석까지 올리는 없고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '추첨권'으로 방주추첨권_01 L6, red_ash_15 L62, white_memory_page_1001319 L2 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 치어리딩 챔피언십",
+          "entity_type": "event",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "매년 봄 방주의 모든 치어리더팀이 모여 예선·본선을 치르고 아크 스포츠 페스타 대표 치어리더를 선발하는 공식 대회의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "one_more_time_00",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "진행자: 방주 치어리딩 챔피언십에 오신 것을 환영합니다!"
+        },
+        {
+          "scene_id": "one_more_time_01",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "베이: 이번에 방주 치어리딩 챔피언십이 열렸는데."
+        },
+        {
+          "scene_id": "one_more_time_01",
+          "line_start": 55,
+          "line_end": 56,
+          "quote": "베이: 매년 봄마다 개최하는 치어리딩 대회 같은 건데.\n베이: 방주에 있는 모든 치어리더팀이 모이는 아주 큰 대회야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__011",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 테러",
+          "entity_type": "event",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "10개 이야기의 16개 출현 모두 이그조틱 스쿼드·엔터 헤븐이 방주의 하늘을 뚫어 랩쳐와 헬레틱이 침입했던 동일 사건을 가리키는 고유 사건명이다. U013('방주 테러 사건')과 같은 사건이므로 동일 entity_key(E7)로 묶는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_11",
+          "line_start": 87,
+          "line_end": 88,
+          "quote": "에닉: 방주의 하늘이 뚫리는 사건이 발생합니다.\n에닉: 방주 테러."
+        },
+        {
+          "scene_id": "ark_ranger_07",
+          "line_start": 54,
+          "line_end": 56,
+          "quote": "아크레인저 레드: 방주 테러는 수습됐어.\n아크레인저 레드: 이그조틱 스쿼드가 방주 하늘에 구멍을 냈다는군.\n아크레인저 레드: 그 때문에 랩쳐들이 방주로 내려온 거고."
+        },
+        {
+          "scene_id": "enter_heaven_12",
+          "line_start": 193,
+          "line_end": 193,
+          "quote": "멜런: 방주 테러가 일어났을 때,  지상 엘리베이터에서 그 거대한 폭탄이랑 그냥 같이 죽어버리지!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__012",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 테러 계획서",
+          "entity_type": "item",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "챕터 3과 챕터 15에서 슈엔이 지휘관을 협박하는 데 쓰는 특정 위조 결재 문서 하나를 동일하게 '방주 테러 계획서'로 지칭하므로 특정 물건(문서)의 이름으로 볼 근거가 있는 반면, 제목 괄호 표기가 없고 같은 장면(main_15_12 L114·L126)에서 '테러 계획서라니까?'처럼 문서 성격을 일컫는 보통 표현으로 풀어 쓰고 있어 고유 이름과 수식어 붙은 보통 표현 양쪽 근거가 비슷하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_06",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "    거기서 방주 테러 계획서가 나왔더라?"
+        },
+        {
+          "scene_id": "main_15_12",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "    네 방주 테러 계획서"
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "main_15_12",
+          "line_start": 126,
+          "line_end": 126,
+          "quote": "    테러 계획서라니까?"
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "제목 꺾쇠괄호가 없고 main_15_12 L114·L126에서 '테러 계획서'로 줄여 범죄 문서의 성격을 강조하듯 말해, '방주 테러를 계획한 문서'라는 수식어 붙은 보통 표현으로 읽을 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_15_12",
+              "line_start": 126,
+              "line_end": 126,
+              "quote": "    테러 계획서라니까?"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep '테러 계획서'로 main_04_09 L88, main_15_12 L114·L126 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__013",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 테러",
+          "entity_type": "event",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "크로우·이그조틱 스쿼드 및 E.H.가 연루된 방주 테러를 가리키는 표기로, main_24_12 L6~7에서 '방주 테러 사건'과 '방주 테러'가 연속 문장으로 같은 사건을 가리킴이 직접 확인된다. U011과 동일 사건이므로 같은 entity_key(E7)로 묶는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_12",
+          "line_start": 6,
+          "line_end": 7,
+          "quote": "네온: 방주 테러 사건의 주동자이자 실행자로 확정되었어요.\n네온: 방주 테러 과정에서 휘말린 사람들은 이용당한 것뿐인 것도 확정되었고요."
+        },
+        {
+          "scene_id": "enter_heaven_01",
+          "line_start": 46,
+          "line_end": 47,
+          "quote": "잉그리드: 방주 테러 사건 이후 E.H.는 그동안의 죄를 속죄하고 싶다는 본인의 마지막 소원과.\n잉그리드: 사건에 대한 책임을 지기 위해 니케가 되었다."
+        },
+        {
+          "scene_id": "wordless_02",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "마나: 방주 테러 사건의 주범들이 미실리스의 니케들이란 게 밝혀진 후,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "미니게임 탐색 지문에서 집 안에 흩뿌려진 복수의 방주 홍보 포스터('[방주 포스터]들')를 수많은 '[추첨권]들', '[요리책]'과 나란히 가리키는 보통 표현이며 특정 단일 물건의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "white_memory_page_1001319",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "왼쪽 집에 들어간 두 사람은 집안에 흩뿌려진 [방주 포스터]들과 수많은 [추첨권]들을 발견한다.\n[낙첨]이란 글자만 적혀있는 추첨권과 [요리책]을 본 두 사람."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__015",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 프로젝트",
+          "entity_type": "concept",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "과거 V.T.C.가 '머신 메사이어 프로젝트'와 함께 인류의 명운을 걸고 추진했던 특정 대형 계획의 고유 프로젝트명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_43_14",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "지엔: 머신 메사이어 프로젝트, 방주 프로젝트 같은 인류의 명운을 건 프로젝트를 아무렇지도 않게 진행했어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '방주 프로젝트'로 단일 출현 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__016",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주 피난 작전",
+          "entity_type": "concept",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "전체 원문에서 전몰·실종자 기록부의 '[방주 피난 작전 도중 실종.]' 한 곳에만 등장하는 표현이다. 기록부에 적힌 별도의 공식 작전명일 수도 있고, 같은 장면 앞줄(L76·L92)에서 고유 작전명으로 쓰인 '아크 가디언 작전'과 달리 방주로 피난하는 작전을 풀어 쓴 보통 표현일 수도 있어 어느 쪽인지 가를 원문이 없다(규칙 3.2절 한 번 나온 이름처럼 보이는 표현).",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_11",
+          "line_start": 96,
+          "line_end": 97,
+          "quote": "[제이크 해리스. 38세.]\n[방주 피난 작전 도중 실종.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "같은 장면 L76·L92에서는 고유 작전명 '아크 가디언 작전'을 따로 쓰고 있어, '방주 피난 작전'은 방주 이주·피난 작전을 뜻하는 보통 표현일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "arcane_archive_11",
+              "line_start": 92,
+              "line_end": 92,
+              "quote": "[아크 가디언 작전에 참여. 이후 행적 미상.]"
+            },
+            {
+              "scene_id": "arcane_archive_11",
+              "line_start": 97,
+              "line_end": 97,
+              "quote": "[방주 피난 작전 도중 실종.]"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep '피난 작전'으로 전체 원문에서 단일 출현임을 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__017",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "행선지를 뜻하는 '방주행'에 보통명사 '엘리베이터'가 붙은 수식 표현이다. '이 앞으로 이틀 정도 가면 방주행 엘리베이터가 나온다'(main_44_07 L16), '방주행 엘리베이터와 가장 가까운 곳'(maria-n_26 L255) 및 여러 지상 엘리베이터의 존재(over_the_horizon_12 L29)에서 보듯 특정 단일 시설의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_07",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "스노우 화이트: ···이 앞으로 이틀 정도 가면 방주행 엘리베이터가 나온다."
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 255,
+          "line_end": 255,
+          "quote": "방주행 엘리베이터와 가장 가까운 곳··· 이었지."
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 225,
+          "line_end": 225,
+          "quote": "··· ···얼마 후, 방주행 엘리베이터."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '지상 엘리베이터'로 over_the_horizon_12 L29 등 복수 엘리베이터 용례 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__018",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'방주 후보였던 곳에는 모두 하모니 큐브가 있었어'(main_30_00 L19)에서 확인되듯, 방주 건설 후보지로 검토되었던 여러 장소들(후보군) 중 하나임을 뜻하는 수식 표현이지 특정 장소 하나의 고유 이름이 아니다(규칙 3.2절 같은 것이 여럿 있음을 원문이 보여 주는 표현).",
+      "supporting_evidence": [
+        {
+          "scene_id": "반드시사수하라_01",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "하, 하모니 큐브 발견! 하모니 큐브 발견!\n젠장···! 여기 방주 후보군이었잖아···!"
+        },
+        {
+          "scene_id": "main_30_00",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "트로니: 방주 후보였던 곳에는 모두 하모니 큐브가 있었어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '후보군', '하모니 큐브'로 main_30_00 L19 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__019",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "신체를 보호하기 위해 입는 일반 방탄조끼를 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "인터넷BJ라이브방송녹화분_02",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "어때요? 잘 만들었죠? 이제 여기서... 방탄조끼를 입어주면...."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'방주의 방호벽'처럼 침식 등을 막는 방어 장벽·시스템을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_07",
+          "line_start": 21,
+          "line_end": 22,
+          "quote": "시프티: 방주의 방호벽이 뚫린 걸까요?\n라피: 아니. 방호벽은 견고해. 침식 정도는 쉽게 걸러낼 거야."
+        },
+        {
+          "scene_id": "main_01_08",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "엔더슨: 방주의 방호벽은 최고일세. 절대 뚫리지 않지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__021",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "배드 드림",
+          "entity_type": "location",
+          "entity_key": "E11"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "8개 이야기의 14개 출현 모두 아우터 림 최대 규모의 환락가인 '배드 드림'을 일관되게 가리키는 고유 지명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_11",
+          "line_start": 46,
+          "line_end": 47,
+          "quote": "바이퍼: 배드 드림.\n바이퍼: 아우터 림 최대의 환락가지."
+        },
+        {
+          "scene_id": "d-outsiders_06",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "바이퍼: 배드 드림. 아우터 림에서 가장 큰 규모의 환락가."
+        },
+        {
+          "scene_id": "rosanna_03",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "    로산나: 난 배드 드림에서 태어났어. 아우터 림의 환락가. 들어 봤지?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'발전소 내부와 이어진 배수로'처럼 물을 빼내는 통로 시설 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_05",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "시프티: 발전소 내부와 이어진 배수로에요."
+        },
+        {
+          "scene_id": "main_02_06",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "라피: 배수로니까. 쌓여있던 것이 많았겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__023",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "베스트셀러",
+          "entity_type": "squad",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "맞춤법 오타가 잦은 팬텀이 메신저에서 레이블의 소속 스쿼드를 '배스트샐러'로 적은 변형 표기다. 바로 다음 장면(sin_editor_03 L57~58)에서 같은 스쿼드의 아르카나가 온전한 표기인 '베스트셀러'로 스쿼드 이름을 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sin_editor_02",
+          "line_start": 123,
+          "line_end": 126,
+          "quote": "    배스트샐러의 새번재 맴버\n  [MSG_END]\n  [MSG SENDER=\"팬텀\"]\n    레이블"
+        },
+        {
+          "scene_id": "sin_editor_03",
+          "line_start": 57,
+          "line_end": 58,
+          "quote": "아르카나: 같은 스쿼드인데 얼굴을 잘 안 비추거든요.\n아르카나: 뭐랄까··· 베스트셀러도 셋이서 똘똘 뭉치면 좋을 텐데."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__024",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "2세대 페어리 테일 모델",
+          "entity_type": "faction_or_species",
+          "entity_key": "E13"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "갓데스 스쿼드 처분 회의록에서 '배신자 2세대의 포멧을 동일하게 적용할 수 있을 것'이라 적힌 단일 출현이다. 같은 이야기의 ark_guardian_12 L83('2세대는··· 배신자 혐의로 조사 중···') 및 old_tales_10 L39~40('2세대는 지금 모두! 배신자 취급이란 말이야!')에 비추어 배신자 혐의를 받은 2세대 페어리 테일 모델 부류 전체를 가리키는 해석과, 직후 줄(L284~285)의 랩쳐 내통·'레드 슈즈의 침식 연구' 언급이나 old_tales_24 L78('배신자는 신데렐라 단 하나뿐')에 비추어 등록 인물 레드 슈즈 또는 신데렐라 개인을 가리키는 해석이 모두 성립하므로 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_26",
+          "line_start": 283,
+          "line_end": 285,
+          "quote": "배신자 2세대의 포멧을 동일하게 적용할 수 있을 것.\n랩쳐와의 내통 혐의 적용 가능. 자료는 준비되어 있음.\n레드 슈즈의 침식 연구는 라푼젤의 것으로 전환 가능. V.T.C.에서도 매우 협조적."
+        },
+        {
+          "scene_id": "ark_guardian_12",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "오스왈드: 2세대는··· 배신자 혐의로 조사 중···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "alias",
+          "entity_id": "char_레드_슈즈",
+          "name": "레드 슈즈",
+          "entity_type": "character",
+          "why": "바로 이어지는 L284~285에서 랩쳐와의 내통 혐의 및 '레드 슈즈의 침식 연구'를 직접 연결하고 있어, 실제로 랩쳐와 내통하고 침식을 연구한 2세대 니케 레드 슈즈 개인을 가리킬 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "ark_guardian_26",
+              "line_start": 283,
+              "line_end": 285,
+              "quote": "배신자 2세대의 포멧을 동일하게 적용할 수 있을 것.\n랩쳐와의 내통 혐의 적용 가능. 자료는 준비되어 있음.\n레드 슈즈의 침식 연구는 라푼젤의 것으로 전환 가능. V.T.C.에서도 매우 협조적."
+            }
+          ]
+        },
+        {
+          "link_type": "alias",
+          "entity_id": "char_신데렐라",
+          "name": "신데렐라",
+          "entity_type": "character",
+          "why": "old_tales_24 L78에서 모든 혐의를 뒤집어씌우는 구도로 '배신자는 신데렐라 단 하나뿐'이 제시되므로 2세대 신데렐라 개인을 가리킬 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "old_tales_24",
+              "line_start": 78,
+              "line_end": 78,
+              "quote": "오스왈드: 배신자는 신데렐라 단 하나뿐."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep '2세대', '배신자'로 ark_guardian_12 L83, old_tales_10 L39~40, old_tales_24 L64~78 확인"
+      ]
+    },
+    {
+      "link_id": "A2__061__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "10개 출현 모두 인공적으로 배양해 만든 고기 일반을 가리키는 보통 식재료 낱말로 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_01",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "아니스: 방주 안에 소규모지만 재배하는 곳이 있거든. 배양육을 만들기도 하고."
+        },
+        {
+          "scene_id": "chapter_49_02",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "미란다: 여기 시민분들이 배양육을 구워먹고 있습니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__026",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "식재료 코너에서 배양육 함유량이 0.9%에 불과한 초특가 미끼 통조림 상품을 설명하는 수식 표현이지 특정 고유 제품명이 아니다(yan_03 L73~84).",
+      "supporting_evidence": [
+        {
+          "scene_id": "yan_03",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "베스티에게 초특가로 나온 배양육 (저)함유 캔을 추천해 주었다."
+        },
+        {
+          "scene_id": "yan_03",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "  [OPTION TEXT=\"그런데 사실 이건 배양육 함유량이 0.9%밖에 안 돼.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__027",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'배양육 캔 가능한 만큼 많이'처럼 배양육 통조림 일반을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "방주_난민_01",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "    배양육 캔 가능한 만큼 많이 가져와주시면"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__028",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "배의 무덤",
+          "entity_type": "location",
+          "entity_key": "E14"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "'배의 무덤이라 불리는 소용돌이 지역'이라고 원문이 직접 고유 지명임을 밝히는 특정 해역이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_16",
+          "line_start": 155,
+          "line_end": 156,
+          "quote": "알프레드: 이대로 유토피아 호의 방향을 돌리지 않으면, 며칠 뒤 큰 해류를 타게 됩니다유토.\n알프레드: 그 해류는 배의 무덤이라 불리는 소용돌이 지역으로 이어지는데"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__029",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "모란회 조직원들이 지니고 다니는 용 문양 휘장을 가리키며, 고유 이름이 아닌 보통명사 '배지'로 쓰였다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_moran_003",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "    갑자기 배지는 왜?"
+        },
+        {
+          "scene_id": "blabla_moran_003",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "    실은 우리 모란회 애들이 가지고 다니는 배지인데"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__030",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "동력원인 전지 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fool_metal_panic_03",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "메카미 시프티: 경고. 배터리가 부족합니다. 배터리를 교체해 주십시오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__031",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U031" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "T.T. STAR 기념 공연 및 방주 활약 이후 등록 인물 아니스(char_아니스)에게 붙은 별명임이 지문에 직접 서술된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "star_anis_27",
+          "line_start": 43,
+          "line_end": 45,
+          "quote": "아니스에겐 배틀 아이돌이라는 별명이 붙었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__061__032",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U032" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "웨일리",
+          "entity_type": "character",
+          "entity_key": "E15"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "나유타가 랩칠리언('화합공')이 타고 다니는 고유 마더 웨일 개체 '웨일리'를 부르는 별칭이다. 출현한 세 이야기(main_story__chapter_39, chapter_40, character_episodes__나유타) 모두 같은 장면 안에서 '웨일리'와 '백거경'이 동일 개체임이 직접 확인되며, '웨일리'가 레지스트리에 미등록되어 있으므로 원문의 대표 이름인 '웨일리'로 새 엔티티 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_06",
+          "line_start": 10,
+          "line_end": 11,
+          "quote": "나유타: 산 정상에서 명상 중일 때 백거경이 다가와 도움을 요청했소. 정확히는 백거경에 타고 있는 화합공이 도움을 요청한 것이외다.\n라피: 랩칠리언이 도움을 요청했다고? 무슨 문제가 있었어?"
+        },
+        {
+          "scene_id": "main_40_03",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "나유타: 백거경이 식사를 위해 지상에 내려갈 때 해 온다고 들었소."
+        },
+        {
+          "scene_id": "main_40_03",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "드레이크: 좋다! 골인 지점은 웨일리의 머리까지다!"
+        },
+        {
+          "scene_id": "nayuta_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "웨일리의 등 위."
+        },
+        {
+          "scene_id": "nayuta_00",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "나유타: 화합공이 일군 밭은 백거경의 등 위 이곳저곳에 있다오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '웨일리'(및 --offset=100)로 main_39_09 L28, main_40_03 L13, nayuta_00 L2, nayuta_02 L2 확인"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1171 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__062",
+  "candidate_links": [
+    {
+      "link_id": "A2__062__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "웨일리",
+          "entity_type": "character",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "main_39_01에서 랩칠리언과 친구가 되어 하늘을 비행하는 마더 웨일 개체의 이름이 웨일리로 나오고, nayuta_00에서 나유타가 웨일리를 백거경이라 부른다. main_40_10에서 나유타 본체가 대협(지휘관)과 백거경에 관한 기억을 전해 받은 직후 스노우 화이트 일행과 만난 goddess_fall_00에서 대협이 백거엽을 타고 하늘을 여행 중이라 말하므로, 웨일리(백거경)를 가리키는 변형 표기로 추론된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_00",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "나유타: 대협을 말하는 거라면, 대협은 지금 백거엽을 타고 하늘을 여행 중이외다."
+        },
+        {
+          "scene_id": "main_40_10",
+          "line_start": 157,
+          "line_end": 157,
+          "quote": "나유타: 화합공에 백거경, 피노키오 소저까지. 하늘에는 진기한 것이 많구려."
+        },
+        {
+          "scene_id": "nayuta_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "웨일리의 등 위."
+        },
+        {
+          "scene_id": "nayuta_00",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "나유타: 화합공이 일군 밭은 백거경의 등 위 이곳저곳에 있다오."
+        },
+        {
+          "scene_id": "main_39_01",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "랩칠리언: 웨일리란다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "지휘관이 그 시점에 타고 하늘을 여행하던 웨일리 및 나유타의 호칭 백거경을 grep으로 확인한 main_39_01 L4, nayuta_00 L13, main_40_10 L157"
+      ]
+    },
+    {
+      "link_id": "A2__062__002",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "바이스리터",
+          "entity_type": "squad",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "main_17_06, main_25_15, crown_00에서는 크라운과 차임 일행을 백기사라 부르나, 이들의 본래 스쿼드 이름인 바이스리터는 해당 이야기들에 나오지 않고 main_story__chapter_26의 자기소개를 옮겨 와 이은 것이므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_17_06",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "스노우 화이트: [백기사]라는 이름답게 신의를 저버리는 놈들은 아니니까."
+        },
+        {
+          "scene_id": "main_17_06",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "라푼젤: 네. 크라운과 차임이라고  왕국의 주인이 되려는 귀여운 자매님들이 있어요."
+        },
+        {
+          "scene_id": "main_25_15",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "레드 후드: 이봐 백기사들."
+        },
+        {
+          "scene_id": "crown_00",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "백기사들과의 기억이 떠올랐다."
+        },
+        {
+          "scene_id": "main_26_04",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "크라운: 우리는 바이스리터.\n크라운: 고귀한 백기사라고 불러주시길."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "title_ids": ["main_story__chapter_26"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "바이스리터",
+          "entity_type": "squad",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "차임과 크라운이 직접 자신들을 바이스리터이자 고귀한 백기사라고 소개하여 같은 이야기 안에서 두 이름이 같은 스쿼드를 가리킴을 직접 보여 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_26_00",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "차임: 무엄하다! 너희라니! 우린 바이스리터! 고귀한 백기사다!"
+        },
+        {
+          "scene_id": "main_26_04",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "크라운: 우리는 바이스리터.\n크라운: 고귀한 백기사라고 불러주시길."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__004",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "title_ids": ["main_story__chapter_50"] },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "가능성",
+      "rationale": "크라운과 차임의 등장을 묘사하는 대목이나, '마치 우릴 구원해주기 위해 온 백기사의 모습 그대로였다'처럼 구원자 기사 일반에 빗댄 비유 표현으로 쓰였다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_50_02",
+          "line_start": 128,
+          "line_end": 128,
+          "quote": "태양빛을 등진 채 서 있는 모습은, 마치 우릴 구원해주기 위해 온 백기사의 모습 그대로였다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "바이스리터",
+          "entity_type": "squad",
+          "why": "바로 앞 줄에 등장한 크라운과 차임이 평소 자칭하던 스쿼드 별칭을 중의적으로 가리킨다고 볼 여지도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "chapter_50_02",
+              "line_start": 127,
+              "line_end": 127,
+              "quote": "크라운과 차임은 트롬베에 올라탄 채 우릴 내려다보고 있다."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "백빙룡",
+          "entity_type": "character",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "클로이의 이야기이자 잉크가 구현한 시뮬레이션 세계에서 봄의 나라에 겨울의 저주를 내린 최종보스 용 개체로, 현실의 등록 인물에 대응하지 않는 그 세계만의 고유한 캐릭터다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_00",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "나레이션: 차가운 냉기를 품은 불청객, 백빙룡이 찾아온 것입니다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_26",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "목을 베인 백빙룡이 지상에 추락했다."
+        },
+        {
+          "scene_id": "maiden_icerose_00",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "마왕성에 자리 잡은 백빙룡을 쓰러뜨려, [겨울의 저주]를 끝내라!"
+        },
+        {
+          "scene_id": "guillotine_winterslayer_03",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "길로틴: 용사의 뜻을 이어받은 이 길로틴 드 메피스토가 그런 널 대신하여 백빙룡을 쓰러뜨렸으니 말이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__006",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "백빙룡 대서사시",
+          "entity_type": "item",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "클로이가 길로틴과의 이세계 모험담을 적은 노트의 고유 제목이자 그 안에 담긴 모험 기록물을 일관되게 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_22",
+          "line_start": 172,
+          "line_end": 172,
+          "quote": "클로이: 훗날 [백빙룡 대서사시]로 기록될 우리의 모험을 말이다!"
+        },
+        {
+          "scene_id": "ice_dragon_saga_22",
+          "line_start": 211,
+          "line_end": 211,
+          "quote": "잉그리드: [백빙룡 대서사시]라고 적힌 노트를 말이다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_25",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "마왕성 로비. 텅 빈 왕좌엔 낡은 노트 하나가 놓여있다.\n길로틴: [백빙룡 대서사시]인가."
+        },
+        {
+          "scene_id": "guillotine_winterslayer_04",
+          "line_start": 61,
+          "line_end": 62,
+          "quote": "길로틴: [백빙룡 대서사시].\n길로틴: 거기에 사로잡혀있으면, 다음 이야기를 이어나갈 수 없기도 하고 말이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__007",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "백빙룡의 브레스",
+          "entity_type": "concept",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "시뮬레이션 세계관에서 [용사의 검], [즉사의 마안]과 함께 용사에게 타격을 입힐 수 있는 고유 기술·수단 이름으로 제시된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_19",
+          "line_start": 21,
+          "line_end": 22,
+          "quote": "잉그리드: 그런 용사에게 타격을 입힐 수단은 몇 없다.\n잉그리드: 고작해야 [용사의 검], [백빙룡의 브레스], 그리고 [즉사의 마안] 정도겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "세계관 고유의 종족·집단이 아니라 자연계 바다에 서식하는 상어 어종 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "beauty_full_shot_08",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "메이든: 백상아리와 함께 사진 찍고 싶어요."
+        },
+        {
+          "scene_id": "랩칠리언_04",
+          "line_start": 211,
+          "line_end": 211,
+          "quote": "그중에서도 [백상아리]란 종을 흉내내고 있다는 걸"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__009",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "나유타가 선구자(파이오니아 스쿼드) 세 멤버를 백설, 금장발, 홍련이라 부르고, 바로 이어지는 main_39_05에서 지휘관이 스노우 화이트의 특징을 묻자 나유타가 답하여 같은 이야기 안에서 스노우 화이트를 가리킴이 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_04",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "???: 아, 선구자들이란 백설, 금장발, 홍련을 뜻하는 것이외다."
+        },
+        {
+          "scene_id": "main_39_04",
+          "line_start": 106,
+          "line_end": 107,
+          "quote": "라피: ···설마 파이오니아 스쿼드를 말하는 거야?\n???: 오, 맞소이다 맞소이다."
+        },
+        {
+          "scene_id": "main_39_05",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "[OPTION TEXT=\"조, 좋아. 그럼 스노우 화이트의 특징에 대해 말해줘.\"]"
+        },
+        {
+          "scene_id": "main_39_05",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "나유타: 아, 이걸로 대신 할 수 있을 것이외다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__010",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "나유타가 파이오니아 스쿼드 세 멤버를 백설 소저, 금장발 소저, 홍련 소저라 부르고, 같은 장면에서 지휘관이 스노우 화이트의 특징을 묻자 나유타가 벌레 경단으로 답해 스노우 화이트를 가리킴이 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_05",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "나유타: 소인은 선구자 부대의 네 번째 식객으로, 백설 소저, 금장발 소저, 홍련 소저와 같은 뜻을 품고 움직이고 있소."
+        },
+        {
+          "scene_id": "main_39_05",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "[OPTION TEXT=\"조, 좋아. 그럼 스노우 화이트의 특징에 대해 말해줘.\"]"
+        },
+        {
+          "scene_id": "main_39_05",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "나유타: 아, 이걸로 대신 할 수 있을 것이외다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "바이러스 감염을 치료할 약품 일반을 가정하여 말하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "reborn_evil_24",
+          "line_start": 202,
+          "line_end": 204,
+          "quote": "클레어: 백신만 있으면···\n클레어: 어떻게든 치료할 수 있을 테니까···.\n클레어: 백신이란 게 이 세계에 있을지는 모르겠지만···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "에이다가 건네준 바이러스 치료제 표본을 고유 약품명 없이 보통명사 조합으로 부른 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "reborn_evil_25",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "D: 백신 샘플을 건네준 뒤부터 에이다가 안 보인다고 했어."
+        },
+        {
+          "scene_id": "reborn_evil_27",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "마나: 지휘관께서 건네 주신 백신 샘플 덕분에 연구도 수월히 진행 중이고요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__013",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_메어리",
+          "name": "메어리",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "페퍼가 의사인 메어리 선배에게 과거 [백의의 천사]에게 전담으로 챙김 받던 시절 선배에게 죄송했다고 말하며, 같은 이야기의 bluewater_wisland_24에서도 메어리 스스로 환자들에게 백의의 천사라 불린다고 밝혀 같은 인물임이 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "bluewater_wisland_26",
+          "line_start": 138,
+          "line_end": 140,
+          "quote": "페퍼: 아~ 한때는 저도 [백의의 천사]에게 전담으로 챙김 받던 시절이 있었는데!\n페퍼: ···아, 물론 그때로 돌아가고 싶다는 건 아니에요.\n페퍼: 그땐 실수를 너무 많이 해서, 선배한테 죄송해 죽는 줄 알았거든요···."
+        },
+        {
+          "scene_id": "bluewater_wisland_26",
+          "line_start": 150,
+          "line_end": 150,
+          "quote": "페퍼: 방주에서 가장 유능하고 멋진 의사, 메어리 선배를 위한···."
+        },
+        {
+          "scene_id": "bluewater_wisland_24",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "메어리: 환자들에게는 백의의 천사라고 불리고,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "메어리의 별명으로 알고 있음. grep으로 확인한 bluewater_wisland_24 L103"
+      ]
+    },
+    {
+      "link_id": "A2__062__014",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "백일홍",
+          "entity_type": "item",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "홍련이 과거 자신이 사용하던 검의 이름으로 직접 밝힌 고유 무기다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_14",
+          "line_start": 45,
+          "line_end": 46,
+          "quote": "내 검, [백일홍]의 칼날 반쪽이.\n언니의 바디와 함께, 본부로 회수되어 버려서."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "식재료로서 백조의 알 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "crust_02",
+          "line_start": 133,
+          "line_end": 133,
+          "quote": "[OPTION TEXT=\"백조알은 연구를 안 해봤구나?\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__016",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "백조알 퍼펙트",
+          "entity_type": "item",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "크러스트가 지상의 백조알 분석 데이터와 방주의 대체 식품 퍼펙트를 이용해 새로 개발하여 최초 공개한 인공 식재료 제품을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "crust_04",
+          "line_start": 78,
+          "line_end": 79,
+          "quote": "크러스트는 본인의 얼굴만 한 알을 꺼내 들었다.\n긴 연구 끝에 만들어낸, 백조알 퍼펙트일 것이다."
+        },
+        {
+          "scene_id": "crust_01",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "크러스트: 저는 그 데이터와 퍼펙트를 이용해서, 똑같은 맛을 내기 위해 연구를 해요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "방주의 대체 식품 퍼펙트 명명 용례를 grep으로 확인한 over_zone_21 L43, maid_in_valentine_01 L19"
+      ]
+    },
+    {
+      "link_id": "A2__062__017",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "야생 백조가 낳은 알을 가리키는 보통명사 구다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "crust_03",
+          "line_start": 137,
+          "line_end": 138,
+          "quote": "크러스트: 이게 백조의 알인가 봐요.\n어느새 눈앞에 온 크러스트는, 품에 알 하나를 안고 있었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__018",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "백합 기사",
+          "entity_type": "concept",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "아리아가 주연을 맡았던 작중 유명 오페라 작품 [백합 기사]의 고유 제목이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "aria_00",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "아리아: 난 롤아웃 직후부터 [헤스티아], [파르마의 성], [백합 기사] 같은, 이름만 들어도 모두 아는 오페라의 주연을 맡아왔어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__019",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고유 상호가 아니라 로열 로드에 있는 상업 시설 유형을 병원 등과 나란히 일컫는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "good_world_04",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "[OPTION TEXT=\"로열 로드에 있는 백화점을 가야 할 것 같네.\"]"
+        },
+        {
+          "scene_id": "good_world_05",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "백학: 여기가 백화점이군요···!"
+        },
+        {
+          "scene_id": "good_world_09",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "[OPTION TEXT=\"백화점에서도 병원에서도 어딜 가든 시선이 사람들에게 가 있었던 거 같아서.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "바로 이어지는 대사의 '종합 병원 앞'과 마찬가지로 공연 장소를 일반 시설 명칭으로 부른 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "star_anis_09",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "리스: 1시간 뒤. 백화점 광장이에요."
+        },
+        {
+          "scene_id": "star_anis_09",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "리스: 그 다음엔 종합 병원 앞인데, 다들 속바지 챙겨왔지?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "같은 이야기 내 백화점 용례를 grep으로 확인한 star_anis_15 L121"
+      ]
+    },
+    {
+      "link_id": "A2__062__021",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "문예부, 방송부, 미술부 등과 함께 학교에 흔히 있는 일반 동아리 종류를 나열한 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2x2_love_1ch_08",
+          "line_start": 248,
+          "line_end": 248,
+          "quote": "문예부, 방송부, 밴드부, 미술부 등 익숙한 것부터."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 단일 사건이 아니라 '밸런타인 시즌', '요전번 밸런타인도 그렇고, 요번도 그렇고'처럼 해마다 돌아오는 연례 기념일·시즌 일반을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "romantic_valentine_02",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "밸런타인 시즌엔 이런저런 행사가 열린다."
+        },
+        {
+          "scene_id": "mast_romanticmaid_04",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "마스트: 요전번 밸런타인도 그렇고, 요번도 그렇고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__023",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "서로 다른 해의 여러 이야기에 걸쳐 반복되는 연례 기념일로, 원문에서도 '사랑하는 이에게 초콜릿과 달콤한 디저트로 마음을 전하는 날'로 일반적 의미를 풀어 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "romantic_valentine_01",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "밸런타인데이.\n사랑하는 이에게 초콜릿과 달콤한 디저트로 마음을 전하는 날."
+        },
+        {
+          "scene_id": "chocolate_please_00",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "오늘은 밸런타인데이.\n설레는 마음을 담아 초콜릿으로 사랑을 표현하는 날."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__024",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "밸런타인 스페셜 케이크",
+          "entity_type": "item",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "메이드 포 유 카페에서 에이드의 특별 레시피로 만들어 손님이 그 이름으로 주문하고 대접받는 특정 한정 메뉴 제품이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "perfect_maid_11",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "에이드: 프리바티를 찾고, 또 이 밸런타인 스페셜 케이크를 찾아도."
+        },
+        {
+          "scene_id": "perfect_maid_12",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "프리바티: 올해의 밸런타인 스페셜 케이크를 준비해 올리겠습니다."
+        },
+        {
+          "scene_id": "perfect_maid_13",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "에이드: 말씀하신, 밸런타인 스페셜 케이크···."
+        },
+        {
+          "scene_id": "blabla_perfectmaid_004",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "밸런타인 스페셜 케이크라도 만들어드릴까요? : )"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고유 행사 제목이 아니라 '이번 밸런타인 이벤트'처럼 메이드 카페에서 밸런타인데이에 진행하는 행사를 뜻하는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "perfect_maid_06",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "···그렇게 두 임시 메이드와 함께하는 밸런타인 이벤트가 시작되었다."
+        },
+        {
+          "scene_id": "perfect_maid_12",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "프리바티: 이번 밸런타인 이벤트를 위해서 열심히 노력했잖아요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__026",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_벨로타",
+          "name": "벨로타",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "'매이드 카페', '모애모애'처럼 모음 맞춤법을 자주 틀리는 코코아가 장난감 가게에서 '미카랑 밸로타랑' 놀았다고 말하며, neverland 이야기에서 미카와 함께 장난감 가게를 운영하는 인물이 등록 인물 벨로타임이 확인된다. 다른 이야기의 소속·관계를 옮겨 와 추론했으므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_maidforyou_001",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "오늘 장난감 가게 가서 미카랑 밸로타랑 놀고"
+        },
+        {
+          "scene_id": "blabla_maidforyou_001",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "매이드 카페 가서 손님 들이랑 모애모애 큥 하고 집에 왔지"
+        },
+        {
+          "scene_id": "neverland_03",
+          "line_start": 67,
+          "line_end": 67,
+          "quote": "벨로타: 그럼 미카는 장난감 가게 보고 있어."
+        },
+        {
+          "scene_id": "neverland_05",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "벨로타: 싫은데에~? 나는 장난감 가게 주인이니까 안 입을 거야~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "장난감 가게의 미카·벨로타 소속을 알고 있음. grep으로 확인한 neverland_03 L67, neverland_05 L73"
+      ]
+    },
+    {
+      "link_id": "A2__062__027",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_세르반",
+          "name": "세르반",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "엔더슨이 지휘관에게 버닝엄의 차남을 도와준 적이 있다고 말하며, 서브퀘스트 세르반_03에서 버닝엄이 등록 인물 세르반을 자신의 차남이라 밝히고 지휘관에게 구조를 요청한다. 다른 이야기의 가족 관계·사건을 옮겨 와 추론했으므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_09",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "엔더슨: 자네는 버닝엄의 차남을 도와준 적이 있지 않나."
+        },
+        {
+          "scene_id": "세르반_03",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "요즘 세르반과 자주 만났다지?"
+        },
+        {
+          "scene_id": "세르반_03",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "그애는 내 차남이야"
+        },
+        {
+          "scene_id": "세르반_03",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "그를 구해오라는 겁니까?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "버닝엄의 가족 관계 언급을 grep으로 확인한 세르반_03 L39, L42"
+      ]
+    },
+    {
+      "link_id": "A2__062__028",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "blabla_laplace_001에서 라플라스가 지휘관에게 붙인 콜 사인이며, main_41_02에서는 라피가 찾는 지휘관을 라플라스가 버드 보이라 부르고, main_42_01·trony_03·trony_04에서도 라플라스가 지휘관을 직접 호명하고 지휘관이 응답하여 모든 이야기에서 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_laplace_001",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "버드 보이가 좋겠군!"
+        },
+        {
+          "scene_id": "main_41_02",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "라피: 신호탄을 쐈어. 지휘관이 보고 반응해 주면 좋겠는데."
+        },
+        {
+          "scene_id": "main_41_02",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "라플라스: 맞다. 그러면 버드 보이의 행방을 더 찾아내기 수월할 거다."
+        },
+        {
+          "scene_id": "main_42_01",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "라플라스: 그래. 네 말이 맞다, 버드 보이."
+        },
+        {
+          "scene_id": "trony_04",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "라플라스: 버드 보이, 너도 그렇게 생각하지 않나?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__029",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고유 지명이 아니라 사관학교 근처의 방치된 놀이터를 묘사한 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "absolute_04",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "사관학교 근처, 버려진 놀이터에 예비 지휘관들의 기합 소리가 들려왔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__030",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고유 시설명이 아니라 사진 배경이 된 방치된 쇼핑몰을 가리키는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "colorless_14",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "마르차나가 가리킨 사진은 버려진 쇼핑몰 앞에서 찍은 사진이었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__031",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "숲에서 발견한 환각 버섯을 고유 이름 없이 일반 생물 보통 낱말로 부른 것이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "white_memory_page_1001109",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "스노우 화이트는 버섯 하나를 입에 넣었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001112",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "자신이 먹은 버섯이 [환각]을 보여준 것이라는걸."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__032",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "버터",
+          "entity_type": "character",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "SNS 유행 영상의 원본 주인공인 특정 강아지 개체의 고유 이름('버터라는 이름의 강아지')이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "trony_02",
+          "line_start": 157,
+          "line_end": 157,
+          "quote": "트로니: 버터라는 이름의 강아지 영상이 원본인데···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "다른 장면에 동명 개체가 있는지 grep으로 확인함(trony_02 L157 외 없음)"
+      ]
+    },
+    {
+      "link_id": "A2__062__033",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U031" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "매점에서 팝콘과 함께 파는 일반 간식 종류를 말하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_drake_005",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "매점에선 반드시 버터구이 오징어와 팝콘을 사라!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__034",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U032" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "초코쿠키와 나란히 제시된 일반 과자 종류를 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_littlecannon_002",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "[OPTION TEXT=\"버터쿠키\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__062__035",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U033" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'번화가라는 곳 좀 구경하고 가자'처럼 도심의 번잡한 상업 거리 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maxwell_01",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "맥스웰: 번화가라는 곳 좀 구경하고 가자."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

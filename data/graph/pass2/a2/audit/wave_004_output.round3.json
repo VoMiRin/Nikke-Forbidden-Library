@@ -1,0 +1,1985 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "ffeaeaee93f5b87c54dd917256a906e0235b64320c87422cfc83cb571edfdca2",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1dfbc-56b8-7483-96bc-8e75dc3a3a26",
+  "reviews": [
+    {
+      "audit_id": "A2__075:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "17곳·12개 이야기의 발췌를 확인했다. 요한의 자기소개와 호명으로 직접 연결되는 챕터 20·21, FOOTSTEP WALK RUN, GODDESS FALL 미니는 유력한 해석 예외이고, 다른 8개 이야기의 과거 지휘관 언급은 같은 경력·코드 네임을 통한 가능성 기본 판정이다. 두 연결의 대상·범위·신뢰도 구분이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_20_13",
+          "line": 150,
+          "quote": "요한: 방주의 매스컴에서는 [샛별]이라는 이름으로 불리기도 했다."
+        },
+        {
+          "scene_id": "main_29_12",
+          "line": 16,
+          "quote": "시프티: 근데 이건 과거 샛별이라는 코드 네임을 가진 지휘관이 지상을 종횡무진 휘젓고 다니며 활약한 덕분이에요."
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 22,
+          "quote": "중앙 정부 간부: 전설이 되기에 부족함이 없는 지휘관! 샛별, 요한이 함께합니다!"
+        },
+        {
+          "scene_id": "goddess_fall_mini_10",
+          "line": 31,
+          "quote": "하란: 그렇게나 먼 존재였던 방주의 샛별을 내 지휘관으로 삼게 되는 날이 오다니."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__068:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에피넬은 아크레인저 작품의 캐릭터를 말하며 지휘관이 블랙으로 특정한다. ark_ranger_00의 블랙 호명·응답 및 결정 대사와 대조하고 entity로 char_아크레인저_블랙을 확인했다. 다른 이야기의 캐릭터와 이어지는 간접 근거이므로 가능성이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_epinel_003",
+          "line": 75,
+          "quote": "    블랙? 블루? 누구였더라"
+        },
+        {
+          "scene_id": "blabla_epinel_003",
+          "line": 84,
+          "quote": "    그럼 블랙이겠군"
+        },
+        {
+          "scene_id": "ark_ranger_00",
+          "line": 13,
+          "quote": "아크레인저 블랙: 아크레인저는 언제나 옳다."
+        },
+        {
+          "scene_id": "ark_ranger_00",
+          "line": 30,
+          "quote": "아크레인저 레드: 여, 블랙. 끝났냐?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__062:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "장난감 가게에서 미카와 함께 노는 밸로타는 코코아의 다른 오기와 장난감 가게의 미카·벨로타 관계를 함께 보면 벨로타로 읽힌다. neverland_03의 두 인물 대화를 대조했고 entity로 ID를 확인했다. 본문에 정확한 이름이 함께 제시되지는 않아 가능성 연결이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_maidforyou_001",
+          "line": 45,
+          "quote": "    오늘 장난감 가게 가서 미카랑 밸로타랑 놀고"
+        },
+        {
+          "scene_id": "blabla_maidforyou_001",
+          "line": 54,
+          "quote": "    매이드 카페 가서 손님 들이랑 모애모애 큥 하고 집에 왔지"
+        },
+        {
+          "scene_id": "neverland_03",
+          "line": 67,
+          "quote": "벨로타: 그럼 미카는 장난감 가게 보고 있어."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__073:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 출현의 기본·예외 3개 연결을 모두 확인했다. 엘리베이터의 사이코뮤 호명에 엑시아가 응답하므로 기본 별칭은 직접 근거다. ICE DRAGON SAGA의 PVP 상대는 이야기 밖 닉네임 관계로 추론하므로 가능성 예외가 맞다. 챕터 9의 개발 농담은 인물과 다른 쓰임이며 기술 이름과 비유 사이의 보류가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "elevator_01",
+          "line": 20,
+          "quote": "메이든: ···어머? [사이코뮤]님 왜 안 움직이시지?"
+        },
+        {
+          "scene_id": "elevator_01",
+          "line": 21,
+          "quote": "엑시아: 보면 모릅니까- 버퍼링 돌고 있잖아-요-"
+        },
+        {
+          "scene_id": "ice_dragon_saga_14",
+          "line": 105,
+          "quote": "메이든: 이래 봬도 절 PVP에서 꺾은 건, [사이코뮤]뿐이니까요."
+        },
+        {
+          "scene_id": "main_09_13",
+          "line": 37,
+          "quote": "엑시아: 사이코뮤 개발이 멀지 않은 것입니-다-"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기의 세 출현을 확인했다. 길로틴이 베스티를 직접 대면·호명하며 베스티가 반응한다. 같은 이야기의 앱솔루트 회상도 그 호칭을 반복한다. 시뮬레이션이라는 이유로 별개 인물로 나눌 근거가 없고 char_베스티 별칭·유력한 해석이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_08",
+          "line": 30,
+          "quote": "베스티: 내가 다 수주했어···."
+        },
+        {
+          "scene_id": "ice_dragon_saga_08",
+          "line": 32,
+          "quote": "길로틴: [벽안의 작은 야차]."
+        },
+        {
+          "scene_id": "guillotine_winterslayer_02",
+          "line": 21,
+          "quote": "길로틴: [벽안의 작은 야차]는 어디에 있지?"
+        },
+        {
+          "scene_id": "guillotine_winterslayer_02",
+          "line": 23,
+          "quote": "베스티: 저, 정말 길로틴이야?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__066:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기의 네 출현을 확인했다. 장난감 상점에서는 여왕님·북극곰님을 말한 직후 루드밀라·네베라는 지문이 나오고, 앨리스 원더랜드 바니에서는 북극곰님·병아리 씨의 행동을 네베·토브의 대사가 이어받는다. 각 이야기 안의 대응이 있어 네베 별칭·유력한 해석이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "toy_shop_03",
+          "line": 179,
+          "quote": "앨리스: 얼른 여왕님과 북극곰님께 자랑하러 갈래요!"
+        },
+        {
+          "scene_id": "toy_shop_03",
+          "line": 185,
+          "quote": "루드밀라와 네베에겐 비밀로 해야겠다."
+        },
+        {
+          "scene_id": "alice_wonderlandbunny_00",
+          "line": 11,
+          "quote": "북극곰님과 병아리 씨가 머나먼 방주에서 찾아온 한 권의 책을 발견했습니다."
+        },
+        {
+          "scene_id": "alice_wonderlandbunny_00",
+          "line": 15,
+          "quote": "네베: 낙원~?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__072:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라피가 이름을 밝히자 칼리아가 사신이라고 부르고 라피라는 이름이 죽음을 부른다는 소문을 설명한다. 불특정 역할이나 다른 사신이 아니라 char_라피를 가리키는 직접 호칭이다.",
+      "evidence": [
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 70,
+          "quote": "라피: 라피."
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 75,
+          "quote": "칼리아: 사, 사신···!"
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 78,
+          "quote": "칼리아: 라, 라피라는 이름 자체가 죽음을 부르는 이름이라고···!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__063:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "회상 속 벙커의 아이가 콤·헤르민과 대화한다. 바로 앞 memories_teller_29에서 콤이 아트에게 벙커의 아이이며 방주 도착 후 이름을 지어 주었다고 직접 밝힌다. 같은 이야기의 정체 설명이므로 char_아트 별칭·유력한 해석이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "memories_teller_30",
+          "line": 182,
+          "quote": "벙커의 아이: 안 잊어먹으려고 그런 거 아니에요?"
+        },
+        {
+          "scene_id": "memories_teller_29",
+          "line": 18,
+          "quote": "콤: 방주에 오자마자 내가 이름 지어줬다."
+        },
+        {
+          "scene_id": "memories_teller_29",
+          "line": 23,
+          "quote": "콤: 너는 벙커의 아이다."
+        },
+        {
+          "scene_id": "memories_teller_29",
+          "line": 24,
+          "quote": "콤: 벙커에서 태어났고 벙커의 사람들에게 사랑받으며 큰 모두의 아이다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__077:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "제시된 40곳·14개 이야기 및 모든 미제시 감사 표본 O0027(unbreakable_sphere_20 L53), O0030(unbreakable_sphere_25 L55), O0013(old_tales_02 L49)를 show로 확인했다. 세 미제시 출현의 기본 연결 A2__077__013은 리틀 머메이드의 자기소개·동일 이야기 내 호명과 일치한다. shown=0인 이야기는 없다. GOLDEN SHIP과 교회의 전설 속 바다 괴물은 별개 faction_or_species 예외이며, 기본·예외의 대상과 신뢰도가 타당하다. participant_match 자체를 근거로 삼지 않았다.",
+      "evidence": [
+        {
+          "scene_id": "main_41_07",
+          "line": 17,
+          "quote": "리틀 머메이드: [나야. 세이렌.]"
+        },
+        {
+          "scene_id": "golden_ship_01",
+          "line": 114,
+          "quote": "[온 섬을 정복하고, 세이렌마저 굴복시켰다는 그 전설의 대해적.]"
+        },
+        {
+          "scene_id": "church_05",
+          "line": 5,
+          "quote": "  [OPTION TEXT=\"뱃사람을 유혹하는 괴물.\"]"
+        },
+        {
+          "scene_id": "unbreakable_sphere_20",
+          "line": 53,
+          "quote": "자신을 구하고, 모두를 위해 희생하기를 선택한 세이렌을."
+        },
+        {
+          "scene_id": "unbreakable_sphere_25",
+          "line": 55,
+          "quote": "미하라: 모리는 세이렌을 설득하는데 성공했으려나~"
+        },
+        {
+          "scene_id": "old_tales_02",
+          "line": 49,
+          "quote": "에이브: 세이렌! 말하지 마!"
+        },
+        {
+          "scene_id": "old_tales_02",
+          "line": 50,
+          "quote": "리틀 머메이드: !!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__071:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네로가 눈앞의 지붕 색과 주택 밀집 형태로 산책 경계를 설명한다. 이름 붙인 지명이라는 직접 증거는 없고 묘사적 명사구로 읽는 가능성 판정이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "nya_nya_paradise_06",
+          "line": 76,
+          "quote": "네로: 여기서부터 저기 보이는 빨간 지붕 주택가 까지는 산책해도 괜찮은 곳이다냥."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 장면 모두 중앙 정부에서 파견한 검진 담당 부서를 업무로 지칭한다. 독립적인 기관명이라고 단정할 근거가 없으므로 기능을 나타내는 일반 표현·가능성 판정에 동의한다.",
+      "evidence": [
+        {
+          "scene_id": "main_42_11",
+          "line": 45,
+          "quote": "에닉: 중앙 정부에서 보건 부서를 파견했습니다. 정밀 검사 후 문제가 없다면 귀가 조치 예정입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__070:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "비밀 엘리베이터는 버닝엄이 요구한 극비 입국 경로를 인용한 표현이다. L32의 극비 입국 설명과 함께 보면 시설의 정식 명칭보다 비공개라는 속성을 붙인 말로 읽혀 가능성 판정이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "main_24_14",
+          "line": 18,
+          "quote": "도로시: 아. 원래 말씀 주신 건 [비밀 엘리베이터]에 탑승해 방주로 들어오라 였죠?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U029",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 이야기의 네 출현과 기본·예외를 모두 확인했다. GOLDEN SHIP 및 크라운의 보물은 물건의 귀중함을 나타내는 일반 명사이며, 크라운이 실물을 비밀로 한다고 그 말 자체가 고유 이름으로 확정되지는 않는다. 반면 PERSONA ON FRONTLINE L28~29는 뒤틀린 마음의 상징과 개심 작용을 보물로 정의하므로 별도 concept 예외가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "golden_ship_12",
+          "line": 28,
+          "quote": "마스트: 저 망루 위에 보물이 있을 것 같다고 이야기한 것도 나요."
+        },
+        {
+          "scene_id": "crown_01",
+          "line": 90,
+          "quote": "차임: 우리는 그저 보물을 지키고 있는 것뿐이니라!"
+        },
+        {
+          "scene_id": "persona_on_frontline_26",
+          "line": 28,
+          "quote": "퀸(마코토): 악당의 뒤틀린 마음의 상징이 바로 [보물]. 섀도를 쓰러뜨리면 그것을 빼앗을 수 있어."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U029",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기의 세 출현은 던지거나 연막을 내는 투척 무기의 종류다. 특정 수리검의 이름·인물 별칭이 없어 일반 낱말 기본 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "go_ninja_thief_12",
+          "line": 170,
+          "quote": "델타가 던진 수리검이 정확히 수류탄의 안전핀을 뽑았고."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__062:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "문예부·방송부·미술부와 나란히 열거한 동아리 종류다. 밴드부 자체에 별도의 조직 고유 명칭을 부여한 용례가 아니다.",
+      "evidence": [
+        {
+          "scene_id": "2x2_love_1ch_08",
+          "line": 248,
+          "quote": "문예부, 방송부, 밴드부, 미술부 등 익숙한 것부터."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앞 대사에서 상황을 노트에 정리하겠다고 하고 꺼낸 노트의 용도를 확인한다. 기능을 설명하는 명사구로서 일반 낱말 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "police_station_05",
+          "line": 90,
+          "quote": "키리: 이건 상황 정리 노트가 맞네요! 그럼 이제 적어볼까요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__078:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "주방 조명과 작업 편의를 논하며 셰프들이라는 직군 전체를 말한다. 특정 셰프 한 사람을 가리키지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "centi_03",
+          "line": 148,
+          "quote": "지배인: 날카로운 도구들을 다뤄야 하는 셰프들 입장에서,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__072:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "신호가 발견된 곳을 사막이라는 지형 종류로 설명하며 상대도 사막인지 되묻는다. 이름 붙인 지역으로 해석할 근거는 없다.",
+      "evidence": [
+        {
+          "scene_id": "미실리스_연구팀_01",
+          "line": 16,
+          "quote": "    신호는 사막 지대에서 발견되었습니다"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "음료의 크기·맛에 이어 시럽과 아몬드 옵션을 열거한다. 수식어를 결합한 주문 내용이며 고유 제품명으로 볼 근거가 없다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_belorta_005",
+          "line": 81,
+          "quote": "    벤티 사이즈 카라멜 스티머 스무디"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__073:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기의 세 출현은 촬영·삭제·공유하는 사진을 뜻한다. 서로 다른 사진을 하나의 고유 대상 이름으로 묶지 않고 일반 명사로 둔 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_15",
+          "line": 213,
+          "quote": "  [OPTION TEXT=\"···사진은, 책임지고 꼭 지울게.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__072:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 이야기에서 건네주거나 가져가거나 모아 온 식용 사과를 뜻한다. 인명이나 세계관 고유 명칭이 아니라 과일의 보통명사다.",
+      "evidence": [
+        {
+          "scene_id": "main_40_10",
+          "line": 16,
+          "quote": "그 손끝엔, 랩칠리언이 건네준 사과가 들려있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "고양이의 위치를 상점들이 있는 구역으로 설명한 공간 명사구다. 별도의 지역 이름을 부여한 문맥이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3109",
+          "line": 12,
+          "quote": "상점 구역 근처에 검은 고양이 한 마리가 서있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "상호 Sweet & Cream 뒤에서 원하는 디저트 종류를 말한다. 쇼트케이크를 상호나 고유 제품명과 혼동하지 않았다.",
+      "evidence": [
+        {
+          "scene_id": "courthouse_03",
+          "line": 141,
+          "quote": "바이퍼: 그럼 나는 [Sweet & Cream] 쇼트케이크가 좋겠어♡"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U030",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "수리 로봇들이 전부 파괴되지는 않았다는 복수 표현과 추가 제작물 설명이 있다. 작업용 로봇 종류이며 특정 로봇의 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_mini_00",
+          "line": 20,
+          "quote": "세실: 다행히 수리 로봇들이 전부 파괴되지 않은 상태고,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__068:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 장면에서 기계 부품을 지칭하고, main_29_05 L23이 마찰력으로 속도를 줄이거나 고정하는 물건이라고 직접 풀어 쓴다. 일반 낱말 근거가 충분하다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_05",
+          "line": 22,
+          "quote": "트로니: 브레이크··· 브레이크···."
+        },
+        {
+          "scene_id": "main_29_05",
+          "line": 23,
+          "quote": "트로니: 마찰력으로 속도를 줄이거나 고정하는 물건···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "부동산 매매 대금으로 현금 대신 받는 생활 필수 물품류다. 특정 상품의 고유 명칭이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "광고팜플렛_01",
+          "line": 5,
+          "quote": "(현금 사절, 전액 생필품으로만 거래)"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__063:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일곱 출현의 벚꽃길은 관리·산책 대상인 길을 지칭한다. for_rest_07 L61~62에서 벚나무가 있는 축제용 길을 조성했다고 풀어 설명하므로 일반 명사 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "for_rest_07",
+          "line": 61,
+          "quote": "리타: 이 벚꽃길은 나와 트리나가 함께 만들었느니라."
+        },
+        {
+          "scene_id": "for_rest_07",
+          "line": 62,
+          "quote": "리타: [화목제]의 무대가 될 벚꽃길을 조성했으면 한다고,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__078:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "각지에 있는 여러 셔틀 발사대의 파괴를 말한다. 한 시설의 이름으로 볼 수 없다는 근거가 직접 제시된다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_02",
+          "line": 7,
+          "quote": "지휘관: 각지에 있는 셔틀 발사대를 부수는 거였다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__078:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "이미 이야기 중인 조직 세 곳을 수로 묶은 표현이다. 별도의 연합체 이름이 아니며 세이메이카이 등의 개별 명칭과 구분된다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_underworldqueen_006",
+          "line": 171,
+          "quote": "    세 조직을 관리하며 고생이 많았겠지요"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__073:U014",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기에서 꺼내 보거나 필요하다고 요청하는 촬영 기기를 뜻한다. 고유 물품 이름이 아니라 도구 종류다.",
+      "evidence": [
+        {
+          "scene_id": "2x2_love_1ch_15",
+          "line": 109,
+          "quote": "에이미는 아르카나가 꺼낸 사진기를 보고 생각에 잠겼다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "독에 찔릴 수 있는 생물의 예로 성게 같은 것이라고 든다. 특정 개체의 이름이나 별도의 세계관 종족명이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "beauty_full_shot_11",
+          "line": 21,
+          "quote": "메어리: 성게 같은 것에 찔리면···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__068:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메신저 채팅에서는 고성방가가 아니라는 설명으로 블라방을 채팅방 종류로 사용한다. 특정 방의 이름을 말하는 용례가 아니다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_ex_all_007",
+          "line": 87,
+          "quote": "    애초에 여긴 블라방이니까 딱히 고성방가도 아니잖아여"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__080:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현 모두 수색·구조 임무를 맡은 인력을 역할로 부른다. 정해진 고유 스쿼드나 조직 이름을 제시하지 않아 일반 낱말이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_50_17",
+          "line": 74,
+          "quote": "율하: 수색대의 말로는 꿈같았다고 한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__078:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 대화 L105에서 흰쌀밥에 소금을 뿌린 음식으로 직접 설명한다. 음식 종류의 보통명사다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_littlecannon_003",
+          "line": 105,
+          "quote": "    흰쌀밥에 소금만 살짝 뿌리면 최고지"
+        },
+        {
+          "scene_id": "blabla_littlecannon_003",
+          "line": 111,
+          "quote": "    저도 소금밥 좋아해요~"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "다섯 출현이 남쪽 산책로·공장 지대와 대비되는 북쪽 방향의 숲을 말한다. 같은 지형을 북쪽의 숲으로도 풀어 쓰며 지명의 고유성을 뒷받침하지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2207",
+          "line": 3,
+          "quote": "목표 지점으로 가는 방법으로는 위험하지만 북쪽 숲을 지나 공장 지대로 빠르게 넘어가는 길과, 멀리 돌아가지만 그나마 정비되어 있는 남쪽 산책로를 따라가는 길이 있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__061:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "방패·무기를 만든 뒤 신체 보호 장비를 입겠다는 대목이다. 방탄조끼의 종류를 말할 뿐 특정 제품명은 없다.",
+      "evidence": [
+        {
+          "scene_id": "인터넷BJ라이브방송녹화분_02",
+          "line": 5,
+          "quote": "어때요? 잘 만들었죠? 이제 여기서... 방탄조끼를 입어주면...."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "boom_the_ghost_15에서 이름 붙은 지글이·뚝딱이 등을 개별 소개하고 상위·하위 홀로그램의 제어 관계를 설명한다. 표본의 상위 홀로그램들은 이들을 계층으로 묶은 일반 역할 표현이며 별도의 조직명이나 종족명은 아니다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_20",
+          "line": 29,
+          "quote": "일레그: ···상위 홀로그램들은 처음부터 있었던 게 아니져?"
+        },
+        {
+          "scene_id": "boom_the_ghost_15",
+          "line": 14,
+          "quote": "알프레드: 아무튼 이 상위 홀로그램들이 각 영역을 담당하는데, 이들의 하위에 수많은 일반 홀로그램이 있습니다유토."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__062:U027",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사관학교 근처라는 위치와 버려졌다는 상태로 놀이터를 묘사한다. 고유한 시설 이름으로 제시되지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "absolute_04",
+          "line": 92,
+          "quote": "사관학교 근처, 버려진 놀이터에 예비 지휘관들의 기합 소리가 들려왔다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "갇힌 기차에서 창문을 부술 수단으로 소화기를 제안한다. 도구 종류를 뜻하며 특정 물건의 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "train_station_02",
+          "line": 98,
+          "quote": "    프리바티: 초, 총은 위험하니까요! 소화기 어떤가요?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__062:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "감염 치료에 쓸 수 있을 백신의 존재를 가정한다. 이름 붙은 특정 약품이 아니라 약품 종류를 나타내는 일반 낱말이다.",
+      "evidence": [
+        {
+          "scene_id": "reborn_evil_24",
+          "line": 202,
+          "quote": "클레어: 백신만 있으면···"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "설원과 방주 인근을 수색 지역으로 대비한다. 눈 덮인 지형을 가리키는 일반 명사로 읽힌다.",
+      "evidence": [
+        {
+          "scene_id": "absolute_27",
+          "line": 9,
+          "quote": "잉그리드: 다만, 제군들이 설원에서 돌아온 이후에도,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U033",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "식물 맞히기 대화에서 독버섯을 후보로 들었다가 목련이라는 정정을 받는다. 생물의 보통 명칭이며 인물 이름이나 작중 고유 세력명으로 쓴 것이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_26",
+          "line": 123,
+          "quote": "토브: 붉은 뿔 사슴 버섯?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기의 상자는 운반하거나 찾아야 하는 용기를 지칭한다. 소유물이라는 사실과 별개로 고유 이름을 부여하지 않은 보통명사다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_15",
+          "line": 63,
+          "quote": "언노운은 들고 다니던 관과 상자를 감싸듯 엎드리고 있다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메인 코어와 대비한 보조 부품 명칭이다. second_affection_15에서는 랩쳐에도 같은 말을 사용하므로 라피의 특정 코어에만 붙인 이름으로 한정되지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line": 17,
+          "quote": "엘리시온 미케닉: 서, 서브 코어가 활성화됩니다! 메인 코어의 영향력을 밀어내고 있습니다!"
+        },
+        {
+          "scene_id": "second_affection_15",
+          "line": 24,
+          "quote": "차임이 퍼부은 탄환이 랩쳐의 서브 코어를 부순다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "학교에서 안내받은 방과 모리와 대화할 방을 기능으로 부른다. 세 출현 모두 상담용 공간을 뜻하는 보통명사다.",
+      "evidence": [
+        {
+          "scene_id": "school_of_lock_02",
+          "line": 89,
+          "quote": "마르차나: 상담실로 안내하겠습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__069:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "니케의 뇌 스캔이 불가능한 상태를 말하며 miracle_snow_27 L45에서 접근이 아예 불가능하다고 풀어 쓴다. 외부에서 내부를 알 수 없게 된다는 블랙박스의 상태 변화를 설명하는 표현으로 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "wisdom_spring_07",
+          "line": 89,
+          "quote": "마나: 사고 전환이나 블랙박스화 등, 특수한 상황이 아니고서야."
+        },
+        {
+          "scene_id": "miracle_snow_27",
+          "line": 45,
+          "quote": "슈엔: 블랙박스화되어서, 접근이 아예 불가능해."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "다섯 출현은 분홍색 돌고래들과 사진에 얽힌 미신을 다룬다. beauty_full_shot_11 L143이 분홍색으로 빛나는 여러 돌고래라고 직접 풀어 쓰므로 이름 붙은 별도 종족이나 개체로 볼 필요가 없다.",
+      "evidence": [
+        {
+          "scene_id": "beauty_full_shot_11",
+          "line": 143,
+          "quote": "이내 분홍색으로 빛나는 돌고래 여러 마리가 바다위로 튀어 올랐다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "돌기둥과 등대에서 각각 본 그림을 회의에서 공유한다. 작품 제목이 아니라 벽면 그림의 종류를 나타낸다.",
+      "evidence": [
+        {
+          "scene_id": "wave_to_you_12",
+          "line": 3,
+          "quote": "돌기둥과 등대에서 본 벽화에 대해서."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "발신지를 찾으며 송신 기능을 가진 탑의 위치를 지시한다. 특정 탑을 가리키더라도 이 표현은 시설 종류이며 별도 고유 명칭이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "no_caller_id_08",
+          "line": 17,
+          "quote": "라피: 12시 방향에 송신탑. 보여?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U011",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "무엇인지 묻는 앨리스에게 간식 종류를 알려주는 선택지다. 솜사탕의 보통명사 용법이다.",
+      "evidence": [
+        {
+          "scene_id": "alice_01",
+          "line": 15,
+          "quote": "  [OPTION TEXT=\"솜사탕이야.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__062:U031",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "영화관 매점에서 팝콘과 함께 사라고 한 간식 종류다. 제품 고유 이름으로 사용하지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_drake_005",
+          "line": 54,
+          "quote": "    매점에선 반드시 버터구이 오징어와 팝콘을 사라!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U011",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "안내도에 적힌 건물 구분으로 읽고, 이어 기숙사로 쓰인 부속 건물이라고 설명한다. 대괄호 표기만으로 고유 시설명을 부여할 수 없어 일반 낱말 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "reborn_evil_07",
+          "line": 58,
+          "quote": "미란다: [별관]인 것 같습니다!"
+        },
+        {
+          "scene_id": "reborn_evil_07",
+          "line": 62,
+          "quote": "질: 별관은 기숙사로 쓰였나 보네요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "북쪽의 숲을 뚫고 공장지대로 넘어간다는 방위·경로 설명이다. 같은 묶음 U001 북쪽 숲과 동일한 일반 표현이며 새 엔티티를 중복 생성할 이유가 없다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2208",
+          "line": 2,
+          "quote": "\"목표 지점으로 가장 빠르게 가는 방법은 북쪽의 숲을 뚫고 공장지대로 넘어가는 거예요.\""
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__061:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "배양육 함유량이 적은 할인 통조림을 성분으로 설명한 말이다. 뒤의 다섯 캔 구매 대화도 상품 종류의 용법을 뒷받침한다.",
+      "evidence": [
+        {
+          "scene_id": "yan_03",
+          "line": 73,
+          "quote": "베스티에게 초특가로 나온 배양육 (저)함유 캔을 추천해 주었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U032",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "물건이 숨겨진 방을 보안 용도로 지칭한다. 이름 붙은 독립 시설이나 조직을 뜻하지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "poli_03",
+          "line": 132,
+          "quote": "    보안실에 꽁꽁 숨겨져 있었습니다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__066:U014",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "비스킷의 주문 제작품이 하나뿐이라는 사실은 확인된다. 다만 부적 팔찌는 물건의 기능과 형태를 설명하는 술어이며 붙인 고유 이름으로 소개되지는 않아 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "observation_post_05",
+          "line": 35,
+          "quote": "비스킷: 저희 보호소에 있는 동물들이 준 선물들로 만든 세상에 하나밖에 없는 부적 팔찌였거든요···?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__070:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현 모두 전원을 공급하는 휴대 장비를 기능으로 부른다. 동일 장비를 이어 지칭하지만 명칭의 성격은 일반 물품명이다.",
+      "evidence": [
+        {
+          "scene_id": "wave_to_you_11",
+          "line": 5,
+          "quote": "라피: 비상용 발전기야."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__072:U028",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에테르가 소속을 증명하려고 들어 보인 증명서 종류다. M.M.R.라는 기관명과 사원증이라는 일반 물품명을 구분한 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "school_of_lock_05",
+          "line": 38,
+          "quote": "에테르가 M.M.R.의 사원증을 들어 올렸다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__080:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "의사의 남은 소지품인 수술 도구를 열거한다. 고유한 무기·물건 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "어느의사의수기_03",
+          "line": 6,
+          "quote": "이제 나에게 남은 거라곤 오로지 수술용 칼과 사망한 환자뿐이다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "안전을 얻기 위해 바친 돈의 성격을 설명한다. 특정 제도나 물건의 고유 명칭을 나타내지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "콜렉터_01",
+          "line": 282,
+          "quote": "    상납금을 두둑이 바쳤으니ㅎㅎ"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "풀을 뜯는 동물을 보며 송아지인지 확인하는 문맥이다. 특정 개체의 이름이 아니라 어린 소의 보통명사다.",
+      "evidence": [
+        {
+          "scene_id": "산해진미_00",
+          "line": 135,
+          "quote": "네온: 저거 송아지 맞죠?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현은 전초기지에서 새해를 맞아 즐기는 축제를 묘사한다. 같은 장면에서 전초기지에서 열리는 축제라고 풀어 말하며 별도의 행사 이름을 선언하지 않아 일반 낱말 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "out_of_uniform_00",
+          "line": 47,
+          "quote": "아인: 전초기지에서 열리는 축제는 처음이라구요!"
+        },
+        {
+          "scene_id": "out_of_uniform_00",
+          "line": 167,
+          "quote": "  [OPTION TEXT=\"빨리 새해 축제를 즐기러 가볼까?\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__070:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "집에서 쓰러졌을 가능성을 추측하며 도움을 요청할 벨의 기능을 말한다. 고유 장치명이 아니라 일반 호출 장비다.",
+      "evidence": [
+        {
+          "scene_id": "blank_ticket_09",
+          "line": 61,
+          "quote": "솔린: 비상 호출 벨을 누를 틈도 없이 말이야···!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "대회장 천막을 선수들이 대기하는 공간으로 지칭한다. 98번이라는 위치 정보와 별개로 선수 대기실은 용도를 나타내는 일반 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "rumani_03",
+          "line": 9,
+          "quote": "네온: 선수 대기실이 여기죠? 이 근육 모양 천막. 98번."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__061:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 이야기의 네 출현에서 서로 다른 사람이 가진 표와 추첨권의 존재 자체를 말한다. 방주 이주 자격을 얻는 추첨용 표라는 수식 명사구이며 하나의 물건에 붙은 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "for_rest_01",
+          "line": 16,
+          "quote": "???: 방주 추첨권···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "어두운 구멍을 밝히기 위해 터뜨려 던진 신호 도구다. 도구의 일반 명칭으로 판단된다.",
+      "evidence": [
+        {
+          "scene_id": "main_28_17",
+          "line": 70,
+          "quote": "불꽃신호기를 터트린 라피는, 그것을 구멍 아래로 던졌다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "불가사리를 검색해 발견한 모양 장식 상품이다. 키링의 디자인을 설명할 뿐 고유한 제품 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_helm_006",
+          "line": 132,
+          "quote": "    불가사리 키링이라는 게 있네"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "연구소 실적을 발표하는 일정과 보조금 심사를 논하는 자리다. 기능으로 설명한 행사 종류이며 별도 공식 행사명이 제시되지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_mmr_001",
+          "line": 10,
+          "quote": "    우리 연구소 성과 발표회 있거든?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 이야기에서 조명용, 위장 코어용, 남겨진 소지품으로 쓰이는 서로 다른 손전등을 확인했다. 사용 목적이 달라도 명칭은 일반 장비다.",
+      "evidence": [
+        {
+          "scene_id": "great_villain_union_07",
+          "line": 96,
+          "quote": "그레이브: 여기 손전등을 사용해라."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 장면에서 아르카나의 기억 소거가 빨라졌다는 설명에 이어 기술의 기능·개선을 수식한다. 기억을 선택해 지우는 기술을 서술한 명사구로서 고유 기술 이름으로 선언한 용례가 아니다.",
+      "evidence": [
+        {
+          "scene_id": "arcane_archive_13",
+          "line": 193,
+          "quote": "잉그리드: 그러고 보니··· 아르카나의 기억 소거도 끝났던가."
+        },
+        {
+          "scene_id": "arcane_archive_13",
+          "line": 203,
+          "quote": "잉그리드: 이제 엘리시온의 선별 기억 소거 기술은."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__065:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "보육원에 속한 아이들을 묶어 지칭한 표현이다. 특정 개인의 호칭이나 별도 이름을 가진 단체가 아니다.",
+      "evidence": [
+        {
+          "scene_id": "sora_03",
+          "line": 29,
+          "quote": "  [OPTION TEXT=\"그리고 보육원 아이들 이야기는.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__065:U003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현을 확인했고 L54에서 스무 개를 소지한다고 명시한다. 반복해 던지는 소모 장비 종류이며 하나의 고유 물품이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "main_28_13",
+          "line": 54,
+          "quote": "일레그: 보조 배터리는 스무 개 정도 있으니, 제법 도움이 될거에여."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "물건을 사러 들어갈 상점의 종류를 선택하고 생필품을 나누어 가져오기로 한다. 상호가 아니라 취급 품목으로 가게를 설명한다.",
+      "evidence": [
+        {
+          "scene_id": "d_02",
+          "line": 65,
+          "quote": "  [OPTION TEXT=\"생필품 가게.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현에서 누워 쉬거나 그쪽으로 이동하는 휴식용 가구다. 특정 제품의 고유 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "eleggboomandshock_00",
+          "line": 48,
+          "quote": "  [OPTION TEXT=\"그 후엔 선베드에 누워서 좀 쉬려고.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__065:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네 이야기 모두 먹거나 판매하거나 휴대하는 보관용 식량을 가리킨다. 특정 이름이 붙은 식품과 연결할 근거 없이 일반 낱말로 둔 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "over_zone_03",
+          "line": 26,
+          "quote": "도로시: 맛있다 수준은 아니겠지만··· 보존식을 그냥 먹는 것보단 나을 거예요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앤이 쿠키를 나누는 엠마를 요정과 짝을 이루는 선물 제공 역할에 비유한다. 같은 이야기 miracle_snow_03 L60에서도 루피와 앤이 산타클로스·요정이 되자고 하므로 고정 인물의 별칭이나 신앙 대상보다 여러 사람이 맡는 역할로 읽힌다.",
+      "evidence": [
+        {
+          "scene_id": "miracle_snow_11",
+          "line": 33,
+          "quote": "앤: 언니도 진짜 산타클로스 같아요!"
+        },
+        {
+          "scene_id": "miracle_snow_03",
+          "line": 60,
+          "quote": "루피: 산타클로스와 요정이 되는 거지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U014",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "14곳·11개 이야기 전부에서 씻는 공간을 확인했다. 강당 옆, 지휘관실, 호텔 등 서로 다른 공간에 두루 쓰이며 시설 고유 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "license_to_kill_01",
+          "line": 6,
+          "quote": "샤워실 안에는 D와 K가 있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__071:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "컨테이너 안에 설치된 사격용 공간을 지칭한다. 축제 부스의 기능을 나타내는 일반 명사다.",
+      "evidence": [
+        {
+          "scene_id": "2x2_love_2ch_14",
+          "line": 27,
+          "quote": "    우리는 커다란 컨테이너 안에 있는 사격장으로 들어갔다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "병원 안에서 티타임을 가질 휴식 공간을 말한다. 방의 용도 표현이며 독립된 고유 시설명은 없다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_seraphim_004",
+          "line": 142,
+          "quote": "    병원 휴게실에서 셋이 정기적으로 티타임을 가지자"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "인디빌리아가 들어온 건물의 내부를 성이라는 건축물 종류로 말한다. 크라운의 왕국을 뜻하는 고유 명칭과 구별된다.",
+      "evidence": [
+        {
+          "scene_id": "last_kingdom_41",
+          "line": 3,
+          "quote": "인디빌리아: 빨리도 성의 내부까지 와버렸네요. 시시하게."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__072:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 이야기의 네 출현은 챙겨 먹거나 츄르와 맛을 비교하는 동물용 먹이를 뜻한다. 특정 상품명이나 별칭이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "secret_garden_02",
+          "line": 88,
+          "quote": "비스킷: 지상에 올라간다고 해서 사료도 듬뿍 챙겨 왔어요! 나중에 배고프면 같이 먹어요!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__070:U014",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "소라가 자신의 숨겨진 근거지를 소유·비밀이라는 속성으로 소개한다. 비밀 아지트 자체가 고유한 시설명으로 쓰인 증거는 없다.",
+      "evidence": [
+        {
+          "scene_id": "over_the_horizon_11",
+          "line": 149,
+          "quote": "소라: 제 비밀 아지트로요♥"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__078:U031",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "소파를 굴리는 바퀴를 개당 가격과 네 개 묶음으로 판매한다. 대괄호는 판매 설명의 강조이며 고유 제품명으로 볼 이유가 없다.",
+      "evidence": [
+        {
+          "scene_id": "yan_03",
+          "line": 138,
+          "quote": "  [OPTION TEXT=\"그래. 이 [소파 바퀴]는 세기의 발명품이야.\"]"
+        },
+        {
+          "scene_id": "yan_03",
+          "line": 148,
+          "quote": "  [OPTION TEXT=\"개당 10만 크레디트.\"]"
+        },
+        {
+          "scene_id": "yan_03",
+          "line": 153,
+          "quote": "  [OPTION TEXT=\"··· ···인데 4개를 한꺼번에 사면 반값이야.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여러 동물의 생사·위치를 파악하도록 부착한 장치의 기능을 설명한다. 특정 칩 하나의 이름이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "lion_heart_14",
+          "line": 9,
+          "quote": "레오나: 그들의 생사를 알 수 있게 GPS가 내장된 생체 신호 칩을 달아두었습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U031",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현에서 같은 장소의 덫을 석궁을 이용한 함정으로 설명한다. 덫·트랩이라고도 풀어 쓰며 고유 이름을 붙이지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_1116",
+          "line": 3,
+          "quote": "그리고 창고 구석 석궁 함정 아래, 선반에 기대 웅크리고 앉아 있는 사냥꾼의···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__076:U032",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "바로 다음 대사에서 랩쳐의 기원을 알아낼 수 있는 진실이라고 의미를 설명한다. 특정 제목·기술명보다 알고 싶은 지식의 내용을 나타내는 보통 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_06",
+          "line": 23,
+          "quote": "지엔: 세계의 진실."
+        },
+        {
+          "scene_id": "project_matis_06",
+          "line": 25,
+          "quote": "지엔: 니케··· 아니 랩쳐의 기원을 알아낼 수 있는 진실이요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "발에 걸린 물건을 확인하면서 손거울이라는 종류를 말한다. 물건의 고유 이름은 제시되지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "dorothy_serendipity_04",
+          "line": 54,
+          "quote": "도로시: 이건 손거울이네요?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일행에게 함께 지급하는 하강 장비를 크기·종류로 설명한다. 특정 제품 이름이나 고유 대상을 지칭하는 명칭이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_01",
+          "line": 84,
+          "quote": "라피: 전신 착용형 아이젠··· 그리고 소형 슬러스터네."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U034",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 이야기에서 착용·모방·시착하는 서로 다른 안경류를 가리킨다. 선글라스의 보통명사 용법이다.",
+      "evidence": [
+        {
+          "scene_id": "queen's_order_06",
+          "line": 106,
+          "quote": "사쿠라가 선글라스를 건넸다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U014",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "무기상이 보여주는 여러 물건 가운데 한 종류다. 쇠지렛대 자체에 고유 이름이 붙었다고 볼 원문 근거는 없다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_10",
+          "line": 57,
+          "quote": "나레이션: 모든 적을 기절시킬 것만 같은 쇠지렛대와,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세 출현에서 에피넬이 타고 부품을 수리하거나 빌려주는 탈것을 뜻한다. 동일 소유물을 가리켜도 보드는 탈것 종류의 일반 명사다.",
+      "evidence": [
+        {
+          "scene_id": "train_station_03",
+          "line": 22,
+          "quote": "에피넬: 보드 부품이 망가졌는데, 구하기 좀 까다로운 부품이거든."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U028",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "old_tales_25 L143~155를 추가 확인했다. 레드 슈즈의 전용 무장을 달았지만 랩쳐가 레드 슈즈 본인은 아니라는 대사가 있고, 표본의 붉은 다리는 외형 묘사다. 별칭이나 새 종족으로 잇지 않은 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_26",
+          "line": 2,
+          "quote": "붉은 다리의 랩쳐가 공중을 마구잡이로 헤집으며 이동한다."
+        },
+        {
+          "scene_id": "old_tales_25",
+          "line": 155,
+          "quote": "신데렐라: 랩쳐는 너한테는 관심이 없었던 모양이야. 네 전용 무장에만 관심이 있었나 보네."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__074:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엘세리아 나인의 사업장을 상담이라는 업무로 가리키며 다음 대사도 해당 센터라고 받는다. 구원의 성화라는 종교명과 구별되는 일반 시설 종류의 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "reborn_evil_02",
+          "line": 144,
+          "quote": "K: 그래서 이 여자가 운영한다는 상담 센터를 들쑤셔보니,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__064:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "40곳·27개 이야기의 제시 발췌 및 미제시 표본 O0041(blabla_seraphim_003 L9~11), O0040(blabla_seraphim_002 L18~20), O0036(blabla_pepper_001 L6~8)를 show로 확인했다. 미제시 3곳은 각각 방문·입원·근무하는 의료 시설 용법이므로 A2__064__018의 일반 낱말 기본 판정이 맞다. shown=0인 이야기는 없고, 전초기지·방주·지상의 여러 병원을 한 고유 시설로 묶은 연결도 없다.",
+      "evidence": [
+        {
+          "scene_id": "main_05_04",
+          "line": 26,
+          "quote": "소녀: 응? 병이 있다고? 그야 당연하지. 병원이니까."
+        },
+        {
+          "scene_id": "blabla_seraphim_003",
+          "line": 10,
+          "quote": "    오늘 병원 오는 거 잊으신 건 아니죠?!"
+        },
+        {
+          "scene_id": "blabla_seraphim_002",
+          "line": 19,
+          "quote": "    이번에 병원에서 입원한 아이들을 위해"
+        },
+        {
+          "scene_id": "blabla_pepper_001",
+          "line": 7,
+          "quote": "    오늘부로 전초기지의 병원에서 일하게 된 페퍼라고 해요"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__072:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메인 1장의 호출 직후 엔더슨이 중앙 정부 사령부 부사령관으로 자기소개하므로 A2__072__019의 직접 연결이 맞다. 메인 7장·도라의 사령부는 그 소속 관계를 옮겨 오는 추론이므로 같은 E11의 가능성 기본 연결(018)이 적절하다. NEW YEAR, NEW SWORD에는 제29·제5 사령부가 따로 나오며 지원을 요청하는 상급 기관의 정확한 단위를 정할 수 없다. 이를 방주 기관과 합치지 않고 다른 qualifier·E12의 판단 보류 예외(020)로 둔 것도 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_01_07",
+          "line": 40,
+          "quote": "라피: ···사령부에서 호출이?"
+        },
+        {
+          "scene_id": "main_01_08",
+          "line": 4,
+          "quote": "엔더슨: 반갑네. 중앙 정부 사령부에서 부사령관을 맡고 있는."
+        },
+        {
+          "scene_id": "new_year_new_sword_09",
+          "line": 7,
+          "quote": "장화: 아무리 봐도 사령부는 우리에게 지원을 보낼 생각이 없는 것 같아서."
+        },
+        {
+          "scene_id": "new_year_new_sword_05",
+          "line": 11,
+          "quote": "장화: 인류연합군 제29 사령부 탈환 임무 완료했습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "편지 필자의 동료·선임과 함께 사망한 특정 분대장 한 사람이다. 직책 일반으로 처리할 수 없으며, 앞 편지의 병사 시점과 사망 문맥 및 entity 조회를 대조해 등록 인물로 이을 근거를 찾지 못했다. 이름을 새로 추정하지 않고 직함과 '마지막 편지 필자의 상관' qualifier를 사용한 character 판정, 간접 확인 수준의 가능성이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_mini_memory_04",
+          "line": 6,
+          "quote": "그게 와서 동료들도 선임도 분대장님도 다 다 다 죽(잉크가 번져 있다.)"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__078:U033",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아리아 이야기의 5곳은 아리아가 연기하는 오페라 주인공을 가리키며 배우 자신과 구별된다. 쉘터 이야기의 소피아는 2호 쉘터 관리자라고 직접 소개한다. entity 조회에 같은 인물이 없으며, 작품 속 등장인물 E17과 관리자 E18을 서로 다른 qualifier로 구분한 기본·예외 연결이 모두 맞다.",
+      "evidence": [
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line": 7,
+          "quote": "    2호 쉘터의 관리자 소피아라고 해요"
+        },
+        {
+          "scene_id": "aria_00",
+          "line": 93,
+          "quote": "아리아: 이 노래를 부르는 소피아는, 재능 없는 무명의 가수야."
+        },
+        {
+          "scene_id": "aria_02",
+          "line": 15,
+          "quote": "TV 소리: 특히 굴지의 오페라 가수 아리아가 소피아를 연기하며,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__061:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지엔이 머신 메사이어 프로젝트와 나란히 인류의 명운을 걸고 진행한 계획으로 명시한다. 보통의 방주 건설 설명이 아니라 이름 붙은 프로젝트이며, 계획명에 해당하는 concept가 맞다. Pass 1의 유형만 따르지 않고 원문의 계획 성격으로 판단했다.",
+      "evidence": [
+        {
+          "scene_id": "main_43_14",
+          "line": 34,
+          "quote": "지엔: 머신 메사이어 프로젝트, 방주 프로젝트 같은 인류의 명운을 건 프로젝트를 아무렇지도 않게 진행했어요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U033",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "바로 앞 선택지에서 파이오니아 스쿼드의 다른 멤버를 묻자 나유타가 자신을 선구자 부대의 네 번째 식객으로 소개한다. 같은 장면에서 두 표현이 직접 이어지므로 다른 이야기의 소속 추론만으로 연결한 경우가 아니다. 파이오니아 squad로 잇는 유력한 해석이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_39_05",
+          "line": 3,
+          "quote": "  [OPTION TEXT=\"파이오니아 스쿼드에··· 다른 멤버가 있다고는 듣지 못했는데.\"]"
+        },
+        {
+          "scene_id": "main_39_05",
+          "line": 6,
+          "quote": "나유타: 소인은 선구자 부대의 네 번째 식객으로, 백설 소저, 금장발 소저, 홍련 소저와 같은 뜻을 품고 움직이고 있소."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__062:U005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "잉그리드가 용사를 타격할 수 있는 수단 가운데 [백빙룡의 브레스]를 고유 기술명으로 열거한다. 시뮬레이션 안의 기술이라는 이유로 일반 낱말이 되지 않는다. 물건이나 인물이 아닌 concept로 정한 연결이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_19",
+          "line": 22,
+          "quote": "잉그리드: 고작해야 [용사의 검], [백빙룡의 브레스], 그리고 [즉사의 마안] 정도겠지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__061:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "8개 이야기의 14곳을 대조했다. 아우터 림 환락가라는 직접 설명과 거주·진입·통치 문맥이 같은 지역으로 이어지며 이름이 같은 인물이나 작품으로 바뀌는 곳은 없다. location 하나로 묶는 기본 연결과 유력한 해석이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "main_39_11",
+          "line": 46,
+          "quote": "바이퍼: 배드 드림."
+        },
+        {
+          "scene_id": "main_39_11",
+          "line": 47,
+          "quote": "바이퍼: 아우터 림 최대의 환락가지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__072:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "시그널이 기대하던 영화의 이름을 밝히고 그 영화 시사회 당첨을 알린다. 사랑·전율이라는 감정 일반이 아니라 작품 제목이므로 item 새 엔티티가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_signal_002",
+          "line": 51,
+          "quote": "    제가 요새 기대하고 있던 영화"
+        },
+        {
+          "scene_id": "blabla_signal_002",
+          "line": 54,
+          "quote": "    사랑과 전율"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__077:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "얀이 추천한 제목 바로 다음에 아동 도서 베스트셀러라고 설명한다. 특정 동화책의 이름이므로 내용의 일반적인 요약이나 concept가 아닌 item으로 잇는 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_of_victory_03",
+          "line": 87,
+          "quote": "얀: 내 추천은 이거. 세상에서 제일 행복한 나비에 대한 이야기."
+        },
+        {
+          "scene_id": "goddess_of_victory_03",
+          "line": 88,
+          "quote": "얀: 좀 오래된 거긴 한데, 아동 도서 12주 연속 베스트셀러였다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "랩쳐를 마스터 급과 서번트 급으로 나누어 세고, 다음 출현에서도 같은 등급 상대를 이긴다고 말한다. 정해진 구성원의 조직이 아니라 세계관에 이름 붙은 랩쳐 등급·부류이므로 faction_or_species가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_01",
+          "line": 10,
+          "quote": "닥터 마리아: ···마스터 급 다섯에 서번트 급 10기···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__078:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "첫 호명만으로 추정하지 않고 COLORLESS 후반의 명단과 대조했다. 츠바이가 잃은 친구들의 이름이라는 지문이 [세이스]를 직접 특정하며 entity 조회에 등록 인물이 없다. 동일한 미등록 개인을 character로 정한 연결이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "colorless_11",
+          "line": 26,
+          "quote": "미미르 부속 고등학교에 입학한 이후로 츠바이가 잃어온 모든 친구들의 이름이 적혀 있었다."
+        },
+        {
+          "scene_id": "colorless_11",
+          "line": 27,
+          "quote": "[도이스]. [루아]. [피어]. [세이스]···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__069:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "촬영 세트장을 돌아다니는 지문에서 카스피안의 해적의 대표 함선이라고 직접 밝힌다. 블랙 다이아몬드라는 보석 일반이나 실제 등장인물의 별칭이 아니다. 작중 영화라는 qualifier를 가진 함선 item이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "mast_02",
+          "line": 32,
+          "quote": "그러다 카스피안의 해적의 대표 함선인 블랙 다이아몬드 호도 보고."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__065:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "센티가 움직이지 않는 껍데기를 만들겠다고 말한 뒤 리타가 가품을 부수어 위장한다. 진짜 볼트 주니어와 동일 개체로 묶을 근거가 없으며, 모형이라는 별도 item 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "미실리스_연구팀_03",
+          "line": 105,
+          "quote": "센티: 예! 움직이는 거라면 오래 걸리겠지만, 안 움직이는 껍데기만 만들면 금방 만듦다!"
+        },
+        {
+          "scene_id": "미실리스_연구팀_03",
+          "line": 124,
+          "quote": "···리타는 조금의 망설임도 없이 볼트 주니어(가품)를 부쉈다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__070:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "3개 이야기의 4곳 모두 채굴 가치가 있는 섬, 이전에 방문했던 섬, 같은 탐색 지점으로 이어진다. '지난번에 다녀온'이라는 재방문 설명도 있으므로 단순히 다른 이야기의 비슷한 지명을 합친 경우가 아니다. 같은 location의 유력한 해석이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "bluewater_wisland_27",
+          "line": 4,
+          "quote": "엔더슨: [블루워터 아일랜드]는 비로소 채굴 포인트로서의 가치를 인정 받았다네."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__061:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "홍련이 지휘관의 소속을 묻는 문장에서 방주 중앙 정부를 명시한다. 장소인 방주 전체나 인물 직함이 아닌 통치 기관이므로 organization 새 엔티티가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "trendy_bar_01",
+          "line": 134,
+          "quote": "홍련: 맞군! 자네 여기 방주 중앙 정부 소속이었지? 도령이랑 자주 노닥거리다 보니 자꾸 잊는군그래."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__073:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "공용 화장실의 마지막 칸을 먼저 특정한 뒤 그 칸을 산부인과라고 부른다고 직접 설명한다. 버려진 아이들이 발견되는 사정에서 붙은 이름이며 어조가 농담이라고 해서 일반 진료과를 뜻하지는 않는다. 해당 칸을 qualifier로 적은 location 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_43_09",
+          "line": 60,
+          "quote": "스톨 3세: 그중 가장 마지막 칸은 이런저런 잡동사니를 넣어두는 칸으로 쓰는데."
+        },
+        {
+          "scene_id": "main_43_09",
+          "line": 69,
+          "quote": "스톨 3세: 그 칸을 산부인과라고 부르기도 해. 재밌지?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__066:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "12개 이야기의 23곳을 대조했다. 지상의 혹한 지역, 그 지역 지도, 언리미티드의 주둔·구조 활동이 일관되며 상대적인 북쪽 방향만 가리키는 용법은 확인되지 않았다. 특정 지역 '북부'를 location으로 묶은 기본 판정이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "main_04_18",
+          "line": 2,
+          "quote": "엔더슨: 지상의 북부로 가주게."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__079:U027",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네온이 호흡법의 이름과 효과를 직접 설명하고 메어리도 같은 표현으로 되받는다. 실제 효과를 믿을 수 있는지와 이름 붙은 기술인지는 별개다. 원문에 명명된 호흡법이므로 concept 새 엔티티가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "bluewater_wisland_18",
+          "line": 108,
+          "quote": "네온: 수력의 호흡 중입니다."
+        },
+        {
+          "scene_id": "bluewater_wisland_18",
+          "line": 109,
+          "quote": "네온: 남의 이야기가 세 배 더 잘 들리게 된다는 전설의 호흡법이죠."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__073:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앨리스의 앞 장면들에서 '사탕 장수'라는 화자로 등장하는 인간과 사건이 연결된다. 직업 일반이 아니라 앨리스를 유인한 특정 인물이며 entity 조회에 등록된 같은 인물은 없다. 높임말을 제거한 대표 이름과 이야기·역할 qualifier를 둔 character 판정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "alice_01",
+          "line": 190,
+          "quote": "사탕 장수: 이 거리에서 가장 맛있는 사탕을 파는 사람이지."
+        },
+        {
+          "scene_id": "alice_04",
+          "line": 48,
+          "quote": "앨리스: 헤헤. 사탕 장수님을 만나서 병원에 오긴 했지만."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__080:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 장면에서 가게 방문을 권하고 자신이 개발한 마약 바나나칩을 소개하는 특정 화자다. 개발자 직업 일반이나 D의 별칭이 아니며 entity 조회에도 같은 인물이 없다. 본명이 없어도 화자 표기를 대표 이름으로 삼고 역할을 qualifier로 구별한 character 판정이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "d_02",
+          "line": 106,
+          "quote": "수상한 개발자: 아, 이번에 마약 칩을 새로 개발했어."
+        },
+        {
+          "scene_id": "d_02",
+          "line": 156,
+          "quote": "수상한 개발자: 이번 마약 칩 이름은 마약 바나나칩이야!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__061:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "팬텀의 메신저에는 '새번재 맴버' 등 오기가 함께 있고, 이어지는 장면에서 아르카나가 같은 스쿼드와 세 멤버를 말하며 '베스트셀러'로 표기한다. 한 이야기의 직접 문맥으로 오기와 온전한 이름이 연결되므로 베스트셀러 squad의 유력한 해석이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "sin_editor_02",
+          "line": 123,
+          "quote": "    배스트샐러의 새번재 맴버"
+        },
+        {
+          "scene_id": "sin_editor_03",
+          "line": 58,
+          "quote": "아르카나: 뭐랄까··· 베스트셀러도 셋이서 똘똘 뭉치면 좋을 텐데."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__065:U008",
+      "judgment": "맞음",
+      "problems": [
+        "other"
+      ],
+      "reason": "40곳·22개 이야기의 발췌와 occ의 전체 71곳 목록을 대조했다. 미제시 표본 O0055(레오나, leona_02 L83), O0001(BOW-WOW PARADISE, bow_wow_paradise_00 L2), O0021(NYA NYA PARADISE, nya_nya_paradise_09 L45)을 각각 show로 읽었다. O0055의 기본 연결 A2__065__008과 나머지 두 곳의 가능성 예외 009는 대상과 신뢰도 면에서 맞다. shown=0인 이야기는 없다. 기본 범위 각 이야기의 해피주 명시, 다른 이야기의 소속을 옮겨 오는 11개 이야기의 가능성 분리, 미란다의 미아 보호 시설을 일반 낱말로 둔 예외 010을 모두 확인했다. 다만 추가 확인한 bow_wow_paradise_12 L4~18은 보호소에 '바우 와우 파라다이스'라는 이름을 붙였다고 직접 밝힌다. 같은 시설 E2로 연결하면서 008·009의 대표 이름을 '보호소'로만 둔 것은 원문의 가장 온전한 표기를 쓰라는 규칙 3.4를 충분히 반영하지 못한다. 대상 연결 자체는 맞음으로 두되 이 대표 이름 누락을 other 잔여 지적으로 남긴다.",
+      "evidence": [
+        {
+          "scene_id": "leona_02",
+          "line": 83,
+          "quote": "레오나: 어릴 때부터 보호소에 있었던 터라, 다른 사자들에게 다가가는 것 자체가 힘들 거야."
+        },
+        {
+          "scene_id": "bow_wow_paradise_00",
+          "line": 2,
+          "quote": "···좁지도, 넓지도 않은 보호소 안."
+        },
+        {
+          "scene_id": "nya_nya_paradise_09",
+          "line": 45,
+          "quote": "···우리는 보호소 한가운데에 모여 루루에 대한 이야기를 했다."
+        },
+        {
+          "scene_id": "miranda_01",
+          "line": 40,
+          "quote": "미란다: 그, 그럼 일단 보호소에라도···!"
+        },
+        {
+          "scene_id": "bow_wow_paradise_12",
+          "line": 4,
+          "quote": "비스킷: 짠! 보호소 이름 팻말이에요!"
+        },
+        {
+          "scene_id": "bow_wow_paradise_12",
+          "line": 15,
+          "quote": "  [OPTION TEXT=\"바우 와우 파라다이스?\"]"
+        },
+        {
+          "scene_id": "bow_wow_paradise_12",
+          "line": 18,
+          "quote": "비스킷: 네! 강아지들의 낙원이라는 뜻이에요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__071:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "29개 이야기의 제시 40곳 및 occ의 전체 45곳 목록을 대조했다. 미제시 표본 O0020(FOOTSTEP, WALK, RUN, footstep_walk_run_14 L33), O0025(ARK GUARDIAN, ark_guardian_11 L139), O0009(OVER ZONE, over_zone_03 L51)을 show로 확인했다. 각각 기억·상태 변화의 의심, 손상 후 위험, 스노우 화이트의 변화에 관한 언급으로 A2__071__026이 적용되는 것이 맞다. 추가 미제시 O0011(over_zone_12 L42)과 O0015(new_year_new_sword_11 L62)도 확인했으며 같은 현상이다. shown=0인 이야기는 없다. 라푼젤이 뇌 과부하에 따른 정보 변화라고 직접 설명하는 고유 현상이므로 일반적인 생각 바꾸기와 구별한 concept 기본 판정이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "rapunzel_03",
+          "line": 10,
+          "quote": "라푼젤: 과부하를 막기 위해 자체적으로 뇌의 정보가 변화되는, 이른바 사고 전환이 일어나게 돼요."
+        },
+        {
+          "scene_id": "footstep_walk_run_14",
+          "line": 33,
+          "quote": "라피: 사고 전환인가."
+        },
+        {
+          "scene_id": "ark_guardian_11",
+          "line": 139,
+          "quote": "라푼젤: 이대로 둬도 죽진 않겠지만, 사고 전환이 올 수도 있어요."
+        },
+        {
+          "scene_id": "over_zone_03",
+          "line": 51,
+          "quote": "도로시: ···당신은 하나도 바뀌지 않았군요. 사고 전환을 겪었음에도, 그대로에요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사탕 장수를 따라간 아이 가운데 한 소녀를 옷차림으로 특정하고, 뒤에서 같은 소녀가 사탕을 먹고 잠드는 행동을 서술한다. 이름 없는 묘사라는 이유만으로 일반 낱말로 처리할 수 없지만 등록 인물과 동일시할 근거도 없다. character 후보와 이야기 qualifier를 적고 판단을 보류한 것이 맞다. generic_term 대안보다 특정 인물이라는 독해가 강하다.",
+      "evidence": [
+        {
+          "scene_id": "alice_02",
+          "line": 9,
+          "quote": "분홍색 원피스를 입은 소녀도."
+        },
+        {
+          "scene_id": "alice_02",
+          "line": 38,
+          "quote": "사탕을 먹은 분홍색 원피스의 소녀가 잠에 들었습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__075:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엠마가 실제 재료로 가진 음식을 가리킨다. '생고등어 퍼펙트'가 정식 제품명인지 퍼펙트의 맛·재료를 설명한 말인지 이 대화만으로 결정할 수 없다. 이름처럼 보인다는 이유로 item을 확정하거나 요리 재료라는 이유로 일반 낱말을 확정하지 않은 판단 보류가 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_emma_002",
+          "line": 109,
+          "quote": "    마침 재료였던 생고등어 퍼펙트도 있으니까"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__071:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사탕 장수를 따라가고 사탕을 먹은 특정 소녀 하나가 반복해서 서술된다. 빨간 구두는 차림새 정보이며 등록 인물 레드 슈즈와 동일시할 근거가 아니다. 이름을 확정하지 못한 인물 후보에 qualifier를 붙여 보류한 연결이 맞다. 묘사적 표현이라는 이유만으로 generic_term을 택할 수는 없다.",
+      "evidence": [
+        {
+          "scene_id": "alice_02",
+          "line": 12,
+          "quote": "빨간 구두를 신은 소녀도."
+        },
+        {
+          "scene_id": "alice_02",
+          "line": 41,
+          "quote": "사탕을 먹은 빨간 구두의 소녀도 잠에 들었습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__063:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루피가 방송 장소로 가리킨 공원은 특정되어 있지만 '벚꽃 공원'이 그 시설의 이름인지 벚꽃이 있는 공원이라는 설명인지는 확인되지 않는다. 대괄호 유무만으로 고유명 여부를 결정할 수는 없으나, 문맥 자체도 두 해석을 가르지 못한다. location 후보와 일반 낱말 대안을 남긴 판단 보류가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "for_rest_00",
+          "line": 10,
+          "quote": "루피: 오늘은 여기! 벚꽃 공원에 왔는데, 그 이유가 뭔지 아는 사람?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__066:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 출현은 나디아의 재활비를 내고 환불을 상의할 특정 부모를 가리킨다. 부모라는 관계 일반이 아니므로 generic_term으로 확정할 수 없다. 이름·등록 인물 대응과 두 사람을 하나의 엔티티로 만들 근거가 없다는 점을 남겨 target 없이 보류한 판정이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "life_again_02",
+          "line": 57,
+          "quote": "루마니: 부모님이 내주신 돈으로 알고 있는데."
+        },
+        {
+          "scene_id": "life_again_03",
+          "line": 40,
+          "quote": "나디아: 부모님께 말해서 환불받을까도 생각했는데."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__067:U030",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "수프의 다른 재료와 나란히 열거되는 단발 표현이다. 이름 붙은 재료인지 산호초를 수식한 보통 표현인지 설명되지 않으며 '조금'이라는 분량은 어느 쪽에도 쓰일 수 있다. item 후보와 일반 낱말 대안을 두고 보류한 판정이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "harran_01",
+          "line": 155,
+          "quote": "하란: 푸른 개구리의 진액 한 스푼. 붉은 달의 산호초 조금."
+        }
+      ]
+    }
+  ]
+}
