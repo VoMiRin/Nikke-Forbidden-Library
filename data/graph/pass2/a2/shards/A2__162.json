@@ -1,0 +1,1358 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__162",
+  "candidate_links": [
+    {
+      "link_id": "A2__162__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "황금칩",
+          "entity_type": "item",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "테트라 황금칩 이벤트에서 우승 팀장에게 주어지며 머스탱에게 소원을 말할 수 있는 머스탱의 얼굴이 그려진 고유한 우승 상품 칩을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "golden_coin_rush_01",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "코코아: 꼭 같은 스쿼드끼리 팀을 짜지 않아도 되지만 우승 시 황금칩은 팀장에게 주어진다."
+        },
+        {
+          "scene_id": "golden_coin_rush_05",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "소다: 머스탱 사장님의 황금칩···?!"
+        },
+        {
+          "scene_id": "golden_coin_rush_05",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "머스탱의 얼굴이 그려진 황금색 칩이 들어있었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__002",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "탈로스가 전투 중 부서진 왼팔을 고쳐 달라고 했을 때 킬로가 황금으로 된 팔로 바꿔 주겠다고 약속한 데서 비롯된 수식어 붙은 보통 표현으로, 고유한 이름이 붙은 특정 장비가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_12",
+          "line_start": 134,
+          "line_end": 134,
+          "quote": "T.A.L.O.S.: 황금 팔만 제대로 장착했으면 유의미한 피해를 입혔을겁니다."
+        },
+        {
+          "scene_id": "goddess_fall_12",
+          "line_start": 136,
+          "line_end": 136,
+          "quote": "T.A.L.O.S.: 하지만 킬로가 약속했었습니다. 황금 팔로 바꿔준다고요."
+        },
+        {
+          "scene_id": "last_kingdom_38",
+          "line_start": 122,
+          "line_end": 122,
+          "quote": "T.A.L.O.S.: 나중에 꼭 고쳐주십시오."
+        },
+        {
+          "scene_id": "last_kingdom_38",
+          "line_start": 123,
+          "line_end": 123,
+          "quote": "킬로: 황금 팔로 바꿔줄게!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"황금 팔\"로 last_kingdom_38 L122-123에서 부서진 왼팔 수리 약속 대사 확인"
+      ]
+    },
+    {
+      "link_id": "A2__162__003",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "U002 「황금 팔」의 붙여쓰기 표기로, 킬로가 탈로스의 부서진 팔을 황금으로 된 팔로 바꿔 주겠다고 약속한 일을 가리키는 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_50_03",
+          "line_start": 405,
+          "line_end": 405,
+          "quote": "T.A.L.O.S.: 킬로가 저한테 황금팔만 달아줬어도 활약했을겁니다."
+        },
+        {
+          "scene_id": "goddess_fall_12",
+          "line_start": 136,
+          "line_end": 136,
+          "quote": "T.A.L.O.S.: 하지만 킬로가 약속했었습니다. 황금 팔로 바꿔준다고요."
+        },
+        {
+          "scene_id": "last_kingdom_38",
+          "line_start": 123,
+          "line_end": 123,
+          "quote": "킬로: 황금 팔로 바꿔줄게!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "황금 해적단",
+          "entity_type": "organization",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "황금 배를 찾는 모험을 계기로 마스트, 프림, 앵커, 지휘관이 결성해 단체방 이름(황금 해적단방)으로도 쓰는 이름 붙은 집단이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_goldenship_002",
+          "line_start": 154,
+          "line_end": 154,
+          "quote": "우리 황금 해적단끼리"
+        },
+        {
+          "scene_id": "blabla_goldenship_001",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "이름하여 황금 해적단방이요!"
+        },
+        {
+          "scene_id": "blabla_goldenship_001",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "황금 배를 꼭 찾고 말겠다는 이름이지!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"황금 해적단\"으로 blabla_goldenship_001~004 및 blabla_mast_002 용례 확인"
+      ]
+    },
+    {
+      "link_id": "A2__162__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "황금 해적단의 유산",
+          "entity_type": "item",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "마스트가 수십 번 정주행했고 초고화질 리마스터 소문이 돌고 있는 작중 고전 해적 영화 작품의 고유 제목이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_mast_002",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "황금 해적단의 유산도 안 봤다는 뜻이 될 테고?"
+        },
+        {
+          "scene_id": "blabla_mast_002",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "그건 좀 옛날 영화 아냐?"
+        },
+        {
+          "scene_id": "blabla_mast_002",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "실은 한참 만에 황금 해적단의 유산이"
+        },
+        {
+          "scene_id": "blabla_mast_002",
+          "line_start": 93,
+          "line_end": 93,
+          "quote": "초고화질로 리마스터된다는 소문을 들었거든"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__006",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "이전 임무에서 방문했던 거친 지형을 '사막'과 나란히 가리키는 지형 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "트레저_헌터_01",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "아니스: 저번 그 황무지부터 신경 쓰였는데."
+        },
+        {
+          "scene_id": "트레저_헌터_00",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "아니스: 이런 황무지에 보물을 숨겨 놨다고?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "율리아가 지상에서 바이올린을 연주한 거친 들판을 가리키는 지형 보통명사로, 고유 지명이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "julia_03",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "붉게 물든 황야에 율리아의 선율이 흘러넘쳤다."
+        },
+        {
+          "scene_id": "julia_04",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "그녀의 First 여행지는 황야라고 하더군yo"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "병원의 일반 회복 공간 및 대회 탈락자들이 옮겨지는 명목상의 회복 공간을 가리키는 일반 시설 명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_50_17",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "율하: 단순 피로라서 그냥 회복실에 눕혀 놨지만."
+        },
+        {
+          "scene_id": "coin_rush_show_down_18",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "마나: ···생각할 수 있는 건, 탈락으로 처리되어 [회복실]로 옮겨졌다는 거겠네."
+        },
+        {
+          "scene_id": "coin_rush_show_down_19",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "마나: 탈락자들에게 굳이 제압탄을 사용한 후, [회복실]로 옮긴 것도 그 이유입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__009",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'회사 소속 공공 재'와 '일개 직장인'을 대비하며 소속 직장을 일반 명사로 가리킨 보통 낱말로, 고유 기업명이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ether_04",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "에테르: 그 니케들은 다 회사 소속 공공 재고 난 그 회사의 일개 직장인일 뿐이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "회색 올빼미",
+          "entity_type": "character",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "은화의 개인 에피소드에서 은화와 지휘관이 교관으로 지도하는 6명의 신입 양산형 니케 훈련생 중 한 명을 가리키는 고유 호출명이며, 레지스트리에 등록되어 있지 않다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "회색 올빼미: 파란 올빼미!"
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "회색 올빼미: 교관님들이 주신 자료 중에 이런 상황 대처법 없었어?"
+        },
+        {
+          "scene_id": "eunhwa_01",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "은화: 회색 올빼미는··· 동선이 투박한 대신 멘탈이 좋아."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "네 이야기에서 서로 다른 시대·건물의 회의 공간을 가리키는 일반 시설 명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_08",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "회의실."
+        },
+        {
+          "scene_id": "neverland_01",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "엔더슨 부사령관의 호출로 인해 회의실로 향하는 중이다."
+        },
+        {
+          "scene_id": "ark_guardian_07",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "릴리바이스: 오자마자 미안한데, 다들 회의실로 좀 모여줘."
+        },
+        {
+          "scene_id": "project_matis_07",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "슈엔이 결연하게 회의실 안으로 들어섰다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "놀이공원의 일반 놀이기구(회전목마)를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "miracle_snow_02",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "회전목마 앞."
+        },
+        {
+          "scene_id": "miracle_snow_02",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "벨로타와 미카가 회전목마를 타고 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__013",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "조쉬 허밋이 리타에게 선물한 시계의 종류를 이르는 보통 낱말로, 고유한 이름이 붙은 물건이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "for_rest_02",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "리타는 품에서 오래된 회중시계를 꺼내 시간을 확인했다."
+        },
+        {
+          "scene_id": "for_rest_09",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "조쉬 허밋: 내가 쓰던 회중시계야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "니케 신체의 감각 기관 부품 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "emma_tactical_01",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "엠마: 잠시 후각 센서를 껐었거든."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'이어폰', '쇼핑백'과 함께 나열된 의류·굿즈 품목 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "observation_post_06",
+          "line_start": 118,
+          "line_end": 118,
+          "quote": "엑시아: 이어폰부터- 후드- 쇼핑백까지-"
+        },
+        {
+          "scene_id": "observation_post_06",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "엑시아: 엘리시온 굿즈로 풀- 무장한-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__016",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "뒷골목 그늘에서 나타나 퀀시에게 작은 USB를 건네고 사라진 특정 정보원을 가리키나, 후드로 얼굴이 가려져 있고 원문에 누구인지 정할 근거가 없어 판단을 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line_start": 317,
+          "line_end": 317,
+          "quote": "퀀시가 다가서자, 뒷골목의 그늘 속에서 후드를 눌러쓴 누군가가 나타난다."
+        },
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line_start": 318,
+          "line_end": 318,
+          "quote": "그리고, 작은 USB를 건네고 사라진다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "후드를 눌러쓴 누군가",
+          "entity_type": "character",
+          "qualifier": "퀀시의 뒷골목 정보원",
+          "why": "퀀시가 만나러 간 뒷골목 친구 중 한 명인 미등록 정보원일 수 있으나, 후드를 눌러써 기등록 인물인지 여부를 원문만으로 가릴 수 없다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "persona_on_frontline_18",
+              "line_start": 116,
+              "line_end": 116,
+              "quote": "퀀시: 그럼 나는 뒷골목 친구들을 한번 만나 볼게~"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__017",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_제인_밀러",
+          "name": "제인 밀러",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "탈주한 지휘관 제인 밀러를 추적하던 좌표에서 목격된 인물로, 금색 머리칼을 남기고 사라진 뒤 같은 이야기 후속 장면에서 일전에 마주쳤던 장소 인근을 스캔해 찾아낸 인물이 제인 밀러 본인임이 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "중앙_정부_공식_00",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "이름은 제인 밀러."
+        },
+        {
+          "scene_id": "중앙_정부_공식_01",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "후드를 뒤집어쓴 뭔가가 이쪽을 바라보고 있다."
+        },
+        {
+          "scene_id": "중앙_정부_공식_02",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "제인 밀러를 찾을 준비는 다 끝난 거야?"
+        },
+        {
+          "scene_id": "중앙_정부_공식_02",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "일전에 마주쳤던 장소 인근을 모두 스캔했어요"
+        },
+        {
+          "scene_id": "중앙_정부_공식_02",
+          "line_start": 133,
+          "line_end": 133,
+          "quote": "제인 밀러: 어헉!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__018",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "총사령관",
+          "entity_type": "character",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "레오가 기다리던 재단의 후원자(계약자님)는 같은 이야기 후반부(good_world_12)에서 부모 잃은 아이들을 위해 재단을 세우고 백학과 계약을 맺은 방주의 '총사령관'임이 직접 밝혀지며, 총사령관은 레지스트리에 등록되어 있지 않다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "good_world_10",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "중년 남성: 후원자님의 소식을 알 수 있을지 모른다면서···."
+        },
+        {
+          "scene_id": "good_world_10",
+          "line_start": 173,
+          "line_end": 173,
+          "quote": "백학: [네 삶의 영원한 후원자가.]"
+        },
+        {
+          "scene_id": "good_world_12",
+          "line_start": 93,
+          "line_end": 93,
+          "quote": "백학: 자신이 가진 재산을 이용해 [재단]을 만들어,  그 아이들을 위해 사용하게 했죠."
+        },
+        {
+          "scene_id": "good_world_12",
+          "line_start": 137,
+          "line_end": 137,
+          "quote": "백학: 우리가 사는 이 방주의,"
+        },
+        {
+          "scene_id": "good_world_12",
+          "line_start": 138,
+          "line_end": 138,
+          "quote": "백학: 총사령관님이세요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__019",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "아우터 림 골목에서 마주친 이름 없는 취객 단역을 외양으로 묘사한 수식어 붙은 보통 표현이며, 이어지는 지문에서도 '남자'로만 가리킬 뿐 고유한 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d_03",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "후줄근한 남자: 딸꾹-! 어이, 이보쇼."
+        },
+        {
+          "scene_id": "d_03",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "남자는 우리 쪽으로 어슬렁어슬렁 다가오기 시작했다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "프리바티가 외출 허가를 받기 위해 제출한 일반 공문서 양식을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "privaty_04",
+          "line_start": 63,
+          "line_end": 63,
+          "quote": "프리바티가 [훈련 계획서]라고 써진 종이를 내밀었다."
+        },
+        {
+          "scene_id": "privaty_04",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "프리바티: 지상 전투에서 생존율을 높일 수 있도록 지휘관의 체력을 증진시킨다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__021",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "비스킷이 지휘관을 부르는 전용 호칭으로, 출현한 세 이야기 모두에서 비스킷이 '훈련사님'이라 부르고 지휘관이 직접 응답하거나 같은 인물로 지칭되는 원문 근거가 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "bow_wow_paradise_01",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "비스킷: 맞아! 훈련사님이 있었지?!"
+        },
+        {
+          "scene_id": "bow_wow_paradise_02",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "비스킷: 얼른 출발해요. 훈련사님!"
+        },
+        {
+          "scene_id": "lion_heart_06",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "비스킷: 레오나랑 훈련사님 두 분이서 데려가기엔 동물들이 많아서 힘드실 것 같으니까, 도와드릴게요."
+        },
+        {
+          "scene_id": "lion_heart_08",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "비스킷: 훈련사님은 몸만 가시면 된다구요."
+        },
+        {
+          "scene_id": "lion_heart_08",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "레오나: 지휘관은 루비를 부탁할게."
+        },
+        {
+          "scene_id": "blabla_lionheart_003",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "훈련사님은 주무시러 들어갔거든"
+        },
+        {
+          "scene_id": "blabla_lionheart_004",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "ㅠㅠㅠ으아ㅏ 훈련사님"
+        },
+        {
+          "scene_id": "blabla_lionheart_004",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "[MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]"
+        },
+        {
+          "scene_id": "blabla_lionheart_004",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "뭐야 무슨 일이야?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "해피 주 스쿼드가 동물을 돌보고 훈련시키는 시설을 '보호소'와 혼용해 부르는 일반 시설 명사로, 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "biscuit_03",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "비스킷: 근데··· 친구가 어디 있을까요? 훈련소는 안 되는데···."
+        },
+        {
+          "scene_id": "blabla_leona_001",
+          "line_start": 63,
+          "line_end": 63,
+          "quote": "훈련소에서 비스킷은 개 담당"
+        },
+        {
+          "scene_id": "blabla_leona_001",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "종종 임무를 하거나 우리 보호소에 올 때 자주 부딪히게 될 거거든"
+        },
+        {
+          "scene_id": "blabla_leona_002",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "이번에 훈련소에 새로운 동물이 들어왔는데"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__023",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "관내 근접 전투형 니케들이 집합하는 일반 훈련 시설을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_03",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "스피커: [근접 전투형 니케들은 모두 훈련장으로 집합하십시오.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__024",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "휘바 휘바!",
+          "entity_type": "item",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "메어리가 에피넬에게 건넨 치료용 풍선껌 제품의 고유 상품명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hospital_00",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "메어리: 치료용 풍선껌 \"휘바 휘바!\"에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "은화가 과거 인간 지휘관이었을 때 통솔하던 부하 니케들을 뜻하는 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eunhwa_tactical_02",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "은화: 휘하 니케들의 명령 불복종으로 인해 랩쳐에게 허무하게 개죽음을 당한,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__026",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "건물 내 쉬는 공간을 가리키는 일반 시설 명사로, 여러 이야기에서 서로 다른 건물의 휴게 공간에 두루 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_04",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "맥스웰: ···그때 그 휴게실에 가는 게 아니었는데."
+        },
+        {
+          "scene_id": "project_matis_07",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "열악한 환경 탓에 아무도 찾지 않는, 휴게실."
+        },
+        {
+          "scene_id": "rumani_01",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "루마니: 하하. 알겠어요. 그럼 휴게실에서 잠시만 계세요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__027",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "소파 위에 놓인 일반 휴대용 게임 기기를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "novel_03",
+          "line_start": 164,
+          "line_end": 164,
+          "quote": "소파 위에는, 전날 함께 가지고 놀았던 휴대용 게임기가···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__028",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "누르면 경찰에 연락이 가는 일반 호신·신고 기기를 뜻하는 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blank_ticket_08",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "폴리: 휴대용 비상 호출 벨을 드리고, 그냥 보내드렸어영."
+        },
+        {
+          "scene_id": "blank_ticket_08",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "솔린: 그 비상 호출 벨은, 누르면 경찰에 연락이 가는 거지?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__029",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "여러 이야기에서 다양한 인물들이 각자 소지·사용하는 이동전화 기기 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sea_you_again_07",
+          "line_start": 166,
+          "line_end": 166,
+          "quote": "헬름: 다들 휴대폰 있지?"
+        },
+        {
+          "scene_id": "여자친구의편지_01",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "목소리 듣고 싶으니까 휴대폰도 빨리 고치고."
+        },
+        {
+          "scene_id": "sora_03",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "어느 새인지 모르게 내 휴대폰이 소라의 손에 들려있었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__030",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "휴대폰을 판매·수리하는 일반 점포를 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_drake_004",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "수리비로 300만 크레딧을 받을 수 있었던 휴대폰 가게도"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__031",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U031" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "휴먼카드",
+          "entity_type": "organization",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "유실물 대출 광고 문자에 발신 주체로 표기된 카드 금융사의 고유 기관·기업명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "모바일_보이스피싱_광고_모음.zip_02",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "(광고)[휴먼카드] 단기카드대출(현금서비스)"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__032",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U032" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'어두운 동굴'과 나란히 쓰여 과거 머물렀던 바닷가 풍경을 묘사하는 수식어 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_42_03",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "레비아탄: 어두운 동굴에서, 흐린 해변에서 지냈던 그때가 너무 그리워서."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__033",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U033" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "흑룡",
+          "entity_type": "concept",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "길로틴이 자신의 설정 속에서 '[그것]'을 모방해 깨웠다고 일컫는 고유한 어둠의 힘·개념('[흑룡]')으로, 자신의 기술명 '마계흑룡파'와 이어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_of_victory_08",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "길로틴: 크큭··· 그래. 너의 그 작은 호기심이 나의 [흑룡]을 깨웠다."
+        },
+        {
+          "scene_id": "goddess_of_victory_08",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "길로틴: 마. 계. 흑. 룡. 파!!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"흑룡\"으로 길로틴의 '마계흑룡파' 및 다른 장면 용례 확인"
+      ]
+    },
+    {
+      "link_id": "A2__162__034",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U034" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "이전에 들어본 적 없는 드문 종류의 랩쳐를 일컫는 수식어 붙은 보통 표현으로, 고유한 등급명이나 종족명이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "mudfish_15",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "미하라: 이렇게 거대한 몸을 땅속에 숨기고 있는 랩쳐는  들어본 적이 없는데···."
+        },
+        {
+          "scene_id": "mudfish_15",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "미하라: 아무리 봐도, 이건··· 희귀 랩쳐인 것 같지?"
+        },
+        {
+          "scene_id": "mihara_bondingchain_01",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "미하라: 어떻게 해서든 유니와 함께 희귀 랩쳐를 잡을 수 있을 거라고 생각했거든."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"희귀 랩쳐\"로 전체 원문에서 다른 고유 등급·분류 정의가 없음을 확인"
+      ]
+    },
+    {
+      "link_id": "A2__162__035",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U035" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "희망은행",
+          "entity_type": "organization",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "유실물 적금 광고 문자에서 상품 출시 주체 및 고객센터 운영 기관으로 명시된 고유 은행명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "모바일_보이스피싱_광고_모음.zip_00",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "(광고) [희망은행] 희망 Future 적금☆"
+        },
+        {
+          "scene_id": "모바일_보이스피싱_광고_모음.zip_00",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "※ 기타 자세한 내용은 희망은행 고객센터 6888-0000로 문의하세요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__036",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U036" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "빈 집 바닥에 말라 떨어져 있던 하얀 꽃을 가리키는 수식어 붙은 보통 표현으로, 고유 이름이 붙은 물건이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "white_memory_page_1001326",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "스노우 화이트는 빈 공간을 둘러보다가 잔뜩 말라 바닥에 떨어져 있는 [흰 꽃]을 발견한다."
+        },
+        {
+          "scene_id": "white_memory_page_1001327",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "[이 꽃은 나보다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__037",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U037" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_도로시",
+          "name": "도로시",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "유실물 기록자가 랩쳐 앞에서 자신을 구해준 갓데스 스쿼드 일원을 가리킨 표현으로, 메인 스토리(main_19_08)에서 갓데스 스쿼드 소속 도로시를 '흰 날개의 천사'로 묘사한 서술과 일치하나 해당 유실물 안에서 본명이 직접 나오지 않고 다른 이야기의 묘사·소속을 이어 추론한 것이므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "갓데스 다큐멘터리 제작기_02",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "흰 날개의 천사가 날 구해줬다."
+        },
+        {
+          "scene_id": "갓데스 다큐멘터리 제작기_02",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "제대로 보진 못했지만 분명 갓데스였다."
+        },
+        {
+          "scene_id": "main_19_08",
+          "line_start": 177,
+          "line_end": 177,
+          "quote": "도로시: 잘 오셨습니다. 살아남은 자들의 낙원에."
+        },
+        {
+          "scene_id": "main_19_08",
+          "line_start": 178,
+          "line_end": 178,
+          "quote": "흰 날개의 천사가 머무르는, 눈부신 지상 낙원이었다."
+        },
+        {
+          "scene_id": "over_zone_02",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "도로시: 저는 갓데스 스쿼드의 리더 대행 도로시. 전 리더였던 릴리바이스 소령의 사망으로 인해 리더 대행을 맡습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "갓데스 스쿼드 중 흰 날개 묘사를 확인하기 위해 grep \"흰 날개\" 실행 → main_19_08 L177-178에서 도로시를 '흰 날개의 천사'로 서술한 구절 확인"
+      ]
+    },
+    {
+      "link_id": "A2__162__038",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U038" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "흰둥이",
+          "entity_type": "item",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "지휘관이 사 준 곰인형에 솔린이 붙인 고유 이름('까망이'와 짝을 이루는 인형 이름)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "soline_02",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "솔린: 흰둥이랑 공원에 갔었는데."
+        },
+        {
+          "scene_id": "soline_02",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "솔린: 저번에 지휘관이 사준 거··· 그거야."
+        },
+        {
+          "scene_id": "soline_02",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "솔린은 곰인형을 꺼내들었다."
+        },
+        {
+          "scene_id": "soline_04",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "솔린: 내가 가진 흰둥이랑 엄청 친해."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__039",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U039" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "노아가 전파탑 근처에서 보았다는 꽃을 색깔로 꾸민 수식어 붙은 보통 표현으로, 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "dorothy_01",
+          "line_start": 142,
+          "line_end": 142,
+          "quote": "그 근처에 있다던 흰색 꽃도 보이지 않았다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__162__040",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U040" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "무너진 철골 밑에서 발견한 흰 꽃들이 피어 있는 자리를 가리키는 수식어 붙은 보통 표현으로, 고유 지명이나 고유 이름이 붙은 물건이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "dorothy_02",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "철골의 밑에 흰색 꽃밭이 보인다···!"
+        },
+        {
+          "scene_id": "dorothy_02",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "다행히도 기둥 부분이 완전히 무너지지 않아 꽃이 살아있는 상태였다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

@@ -1,0 +1,4400 @@
+{
+  "schema_version": "pass2-audit-input-0.1.0",
+  "kind": "A2",
+  "run": "main",
+  "wave": 9,
+  "judge_family": "gemini",
+  "bundle_stamps": [
+    {
+      "bundle_id": "A2__161",
+      "rules_sha256": "709de71791b58d2de00108acf463e0a2b49192031acdd7f5f44b9c7691ff9480",
+      "input_sha256": "eff95acf2f3ac4b76e191b4a2fa3f59baab56e422455e56303f9a1df47767264",
+      "shard_sha256": "1d79bf9956814b273188056f85d28771a140e358c20ffb4be6e3709c4ceceb69"
+    },
+    {
+      "bundle_id": "A2__162",
+      "rules_sha256": "709de71791b58d2de00108acf463e0a2b49192031acdd7f5f44b9c7691ff9480",
+      "input_sha256": "d06115180380fdac89b8533762e4b59619aff49208c1901fcbb458b5ed3be502",
+      "shard_sha256": "04207a5b49d411af6e5f66dc9691584e6dc1d0e943e174bde714ab5f57b56698"
+    },
+    {
+      "bundle_id": "A2__163",
+      "rules_sha256": "709de71791b58d2de00108acf463e0a2b49192031acdd7f5f44b9c7691ff9480",
+      "input_sha256": "3574d68077e61789a98255db78e0f309678dd45f5800c2f604d2d1d88253114e",
+      "shard_sha256": "1d7d4c957a321aa786f8b79fb7903e71e7c9f70720cfc11ccb48bb085b46aad1"
+    }
+  ],
+  "population_units": 94,
+  "sampled_units": 28,
+  "rate": 0.1,
+  "strata": [
+    {
+      "stratum": "alias/가능성/full/single",
+      "rate": 0.1,
+      "population": 3,
+      "sampled": 1
+    },
+    {
+      "stratum": "alias/유력한 해석/full/exceptions",
+      "rate": 0.1,
+      "population": 1,
+      "sampled": 1
+    },
+    {
+      "stratum": "alias/유력한 해석/full/single",
+      "rate": 0.1,
+      "population": 5,
+      "sampled": 2
+    },
+    {
+      "stratum": "generic_term/가능성/full/single",
+      "rate": 0.30000000000000004,
+      "population": 4,
+      "sampled": 2
+    },
+    {
+      "stratum": "generic_term/유력한 해석/full/single",
+      "rate": 0.30000000000000004,
+      "population": 45,
+      "sampled": 14
+    },
+    {
+      "stratum": "new_entity/가능성/full/single",
+      "rate": 0.1,
+      "population": 2,
+      "sampled": 1
+    },
+    {
+      "stratum": "new_entity/유력한 해석/full/exceptions",
+      "rate": 0.1,
+      "population": 1,
+      "sampled": 1
+    },
+    {
+      "stratum": "new_entity/유력한 해석/full/single",
+      "rate": 0.1,
+      "population": 27,
+      "sampled": 3
+    },
+    {
+      "stratum": "unresolved/판단 보류/full/exceptions",
+      "rate": 0.1,
+      "population": 1,
+      "sampled": 1
+    },
+    {
+      "stratum": "unresolved/판단 보류/full/single",
+      "rate": 0.1,
+      "population": 5,
+      "sampled": 2
+    }
+  ],
+  "items": [
+    {
+      "audit_id": "A2__162:U037",
+      "bundle_id": "A2__162",
+      "unit_id": "U037",
+      "surface": "흰 날개의 천사",
+      "stratum": "alias/가능성/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__162.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__162.excerpts.txt",
+      "unit": {
+        "unit_id": "U037",
+        "surface": "흰 날개의 천사",
+        "variant_key": "흰날개의천사",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 2,
+          "combos_shown": 2,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "alias": 1,
+          "character": 1
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "lost_relics__갓데스_다큐멘터리_제작기",
+            "category": "lost_relics",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "갓데스 다큐멘터리 제작기_02",
+            "title_id": "lost_relics__갓데스_다큐멘터리_제작기",
+            "category": "lost_relics",
+            "line_start": 7,
+            "line_end": 7,
+            "item_ids": [
+              "갓데스 다큐멘터리 제작기_02__uec_002",
+              "갓데스 다큐멘터리 제작기_02__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "alias",
+              "character"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__162__037",
+          "link_type": "alias",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U037"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": "char_도로시",
+              "name": "도로시",
+              "entity_type": "character"
+            }
+          ],
+          "verdict": "별칭",
+          "confidence": "가능성",
+          "rationale": "유실물 기록자가 랩쳐 앞에서 자신을 구해준 갓데스 스쿼드 일원을 가리킨 표현으로, 메인 스토리(main_19_08)에서 갓데스 스쿼드 소속 도로시를 '흰 날개의 천사'로 묘사한 서술과 일치하나 해당 유실물 안에서 본명이 직접 나오지 않고 다른 이야기의 묘사·소속을 이어 추론한 것이므로 가능성으로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "갓데스 다큐멘터리 제작기_02",
+              "line_start": 7,
+              "line_end": 7,
+              "quote": "흰 날개의 천사가 날 구해줬다."
+            },
+            {
+              "scene_id": "갓데스 다큐멘터리 제작기_02",
+              "line_start": 8,
+              "line_end": 8,
+              "quote": "제대로 보진 못했지만 분명 갓데스였다."
+            },
+            {
+              "scene_id": "main_19_08",
+              "line_start": 177,
+              "line_end": 177,
+              "quote": "도로시: 잘 오셨습니다. 살아남은 자들의 낙원에."
+            },
+            {
+              "scene_id": "main_19_08",
+              "line_start": 178,
+              "line_end": 178,
+              "quote": "흰 날개의 천사가 머무르는, 눈부신 지상 낙원이었다."
+            },
+            {
+              "scene_id": "over_zone_02",
+              "line_start": 31,
+              "line_end": 31,
+              "quote": "도로시: 저는 갓데스 스쿼드의 리더 대행 도로시. 전 리더였던 릴리바이스 소령의 사망으로 인해 리더 대행을 맡습니다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": [
+            "갓데스 스쿼드 중 흰 날개 묘사를 확인하기 위해 grep \"흰 날개\" 실행 → main_19_08 L177-178에서 도로시를 '흰 날개의 천사'로 서술한 구절 확인"
+          ]
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U021",
+      "bundle_id": "A2__161",
+      "unit_id": "U021",
+      "surface": "화합공",
+      "stratum": "alias/유력한 해석/full/exceptions",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U021",
+        "surface": "화합공",
+        "variant_key": "화합공",
+        "registry_match": null,
+        "occurrence_total": 8,
+        "item_total": 16,
+        "shown_total": 8,
+        "sampled": false,
+        "coverage": {
+          "titles": 3,
+          "titles_shown": 3,
+          "type_category_combos": 3,
+          "combos_shown": 3,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "character": 10,
+          "alias": 6
+        },
+        "sources": {
+          "uec": 8,
+          "mention": 8
+        },
+        "titles": [
+          {
+            "title_id": "main_story__chapter_39",
+            "category": "main_story",
+            "occurrences": 4,
+            "shown": 4
+          },
+          {
+            "title_id": "main_story__chapter_40",
+            "category": "main_story",
+            "occurrences": 3,
+            "shown": 3
+          },
+          {
+            "title_id": "character_episodes__나유타",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "main_39_05",
+            "title_id": "main_story__chapter_39",
+            "category": "main_story",
+            "line_start": 77,
+            "line_end": 77,
+            "item_ids": [
+              "main_39_05__uec_005",
+              "main_39_05__mnt_012"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "alias",
+              "character"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          },
+          {
+            "scene_id": "main_39_06",
+            "title_id": "main_story__chapter_39",
+            "category": "main_story",
+            "line_start": 10,
+            "line_end": 10,
+            "item_ids": [
+              "main_39_06__uec_002",
+              "main_39_06__mnt_002"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "alias",
+              "character"
+            ],
+            "occ_id": "O0002",
+            "shown": true
+          },
+          {
+            "scene_id": "main_39_08",
+            "title_id": "main_story__chapter_39",
+            "category": "main_story",
+            "line_start": 28,
+            "line_end": 28,
+            "item_ids": [
+              "main_39_08__uec_001",
+              "main_39_08__mnt_006"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "alias",
+              "character"
+            ],
+            "occ_id": "O0003",
+            "shown": true
+          },
+          {
+            "scene_id": "main_39_09",
+            "title_id": "main_story__chapter_39",
+            "category": "main_story",
+            "line_start": 58,
+            "line_end": 58,
+            "item_ids": [
+              "main_39_09__uec_003",
+              "main_39_09__mnt_006"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "alias",
+              "character"
+            ],
+            "occ_id": "O0004",
+            "shown": true
+          },
+          {
+            "scene_id": "main_40_00",
+            "title_id": "main_story__chapter_40",
+            "category": "main_story",
+            "line_start": 31,
+            "line_end": 31,
+            "item_ids": [
+              "main_40_00__uec_002",
+              "main_40_00__mnt_006"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "alias",
+              "character"
+            ],
+            "occ_id": "O0005",
+            "shown": true
+          },
+          {
+            "scene_id": "main_40_02",
+            "title_id": "main_story__chapter_40",
+            "category": "main_story",
+            "line_start": 44,
+            "line_end": 44,
+            "item_ids": [
+              "main_40_02__uec_003",
+              "main_40_02__mnt_005"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "character"
+            ],
+            "occ_id": "O0006",
+            "shown": true
+          },
+          {
+            "scene_id": "main_40_10",
+            "title_id": "main_story__chapter_40",
+            "category": "main_story",
+            "line_start": 157,
+            "line_end": 157,
+            "item_ids": [
+              "main_40_10__uec_008",
+              "main_40_10__mnt_009"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "alias",
+              "character"
+            ],
+            "occ_id": "O0007",
+            "shown": true
+          },
+          {
+            "scene_id": "nayuta_00",
+            "title_id": "character_episodes__나유타",
+            "category": "character_episodes",
+            "line_start": 13,
+            "line_end": 13,
+            "item_ids": [
+              "nayuta_00__uec_002",
+              "nayuta_00__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "character"
+            ],
+            "occ_id": "O0008",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__021",
+          "link_type": "alias",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U021"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": "char_랩칠리언",
+              "name": "랩칠리언",
+              "entity_type": "character"
+            }
+          ],
+          "verdict": "별칭",
+          "confidence": "유력한 해석",
+          "rationale": "main_story__chapter_39와 main_story__chapter_40 안에서는 라피가 말한 '랩칠리언'을 나유타가 곧장 '화합공'으로 받아 답하며 같은 인물임이 대화로 직접 확인된다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_39_05",
+              "line_start": 76,
+              "line_end": 76,
+              "quote": "라피: 우리는 랩칠리언을 만나러 왔어."
+            },
+            {
+              "scene_id": "main_39_05",
+              "line_start": 77,
+              "line_end": 77,
+              "quote": "나유타: 오, 그러고 보니 대협은 화합공과도 친우 관계였지. 그것 참 발도 넓은 것이외다."
+            },
+            {
+              "scene_id": "main_40_02",
+              "line_start": 43,
+              "line_end": 43,
+              "quote": "라피: 설마 랩칠리언이 살고 있는 집이야?"
+            },
+            {
+              "scene_id": "main_40_02",
+              "line_start": 44,
+              "line_end": 44,
+              "quote": "나유타: 그렇소. 화합공이 먹고 자는 집이외다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": [
+            "character_episodes__나유타 내 직접 연결 여부를 확인하기 위해 grep(\"랩칠리언\", character_episodes__나유타) 실행"
+          ]
+        },
+        {
+          "link_id": "A2__161__022",
+          "link_type": "alias",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U021"
+            }
+          ],
+          "scope": {
+            "title_ids": [
+              "character_episodes__나유타"
+            ]
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": "char_랩칠리언",
+              "name": "랩칠리언",
+              "entity_type": "character"
+            }
+          ],
+          "verdict": "별칭",
+          "confidence": "가능성",
+          "rationale": "nayuta_00에서 웨일리의 등 위에서 랩칠리언의 집으로 가던 중 나유타가 '화합공이 일군 밭은 백거경의 등 위 이곳저곳에 있다오'라고 말하나, 이 이야기 안에서는 두 이름이 직접 등치되지 않고 39·40장의 호칭 관계를 옮겨 온 추론이 더해지므로 가능성으로 나눈다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "nayuta_00",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "랩칠리언의 집으로 향하던 중, 우리는 복잡한 터널로 들어섰다."
+            },
+            {
+              "scene_id": "nayuta_00",
+              "line_start": 13,
+              "line_end": 13,
+              "quote": "나유타: 화합공이 일군 밭은 백거경의 등 위 이곳저곳에 있다오."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__163:U003",
+      "bundle_id": "A2__163",
+      "unit_id": "U003",
+      "surface": "히어로",
+      "stratum": "alias/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__163.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__163.excerpts.txt",
+      "unit": {
+        "unit_id": "U003",
+        "surface": "히어로",
+        "variant_key": "히어로",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "concept": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "outpost_stories__법원",
+            "category": "outpost_stories",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "courthouse_01",
+            "title_id": "outpost_stories__법원",
+            "category": "outpost_stories",
+            "line_start": 64,
+            "line_end": 64,
+            "item_ids": [
+              "courthouse_01__uec_005",
+              "courthouse_01__mnt_005"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__163__003",
+          "link_type": "alias",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U003"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": "char_라플라스",
+              "name": "라플라스",
+              "entity_type": "character"
+            }
+          ],
+          "verdict": "별칭",
+          "confidence": "유력한 해석",
+          "rationale": "courthouse_01 L64의 '히어로 등장!'은 바로 앞 줄에서 창문을 깨고 나타난 라플라스가 자기 등장을 알리는 자칭 호칭이다. L74에서 '히어로 출격!'이라고 말한 라플라스가 L76에서 반대쪽 창문으로 사라지므로, 이 출현이 가리키는 사람은 지문으로 정해진다. L69의 '히어로는 이곳저곳을 다니면서'는 라플라스가 자기 역할을 설명하는 말이지만, L64의 지시 대상을 흐리게 하지 않는다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "courthouse_01",
+              "line_start": 63,
+              "line_end": 63,
+              "quote": "라플라스가 창문을 깨고 나타났다."
+            },
+            {
+              "scene_id": "courthouse_01",
+              "line_start": 64,
+              "line_end": 64,
+              "quote": "라플라스: 히어로 등장!"
+            },
+            {
+              "scene_id": "courthouse_01",
+              "line_start": 74,
+              "line_end": 74,
+              "quote": "라플라스: 히어로 출격!"
+            },
+            {
+              "scene_id": "courthouse_01",
+              "line_start": 76,
+              "line_end": 76,
+              "quote": "라플라스가 반대쪽 창문을 깨고 사라졌다."
+            }
+          ],
+          "contradicting_evidence": [
+            {
+              "scene_id": "courthouse_01",
+              "line_start": 69,
+              "line_end": 69,
+              "quote": "라플라스: 히어로는 이곳저곳을 다니면서 평화를 지켜야 하기 때문에 한곳에 머물러 있지 않는다."
+            }
+          ],
+          "alternatives": [
+            {
+              "link_type": "generic_term",
+              "why": "L65의 '악당'과 짝을 이루는 역할 명사를 등장 구호로 쓴 것으로도 읽힌다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "courthouse_01",
+                  "line_start": 65,
+                  "line_end": 65,
+                  "quote": "라플라스: 악당은 어디에 있지?!"
+                }
+              ]
+            }
+          ],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U008",
+      "bundle_id": "A2__161",
+      "unit_id": "U008",
+      "surface": "화룡",
+      "stratum": "alias/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U008",
+        "surface": "화룡",
+        "variant_key": "화룡",
+        "registry_match": {
+          "entity_id": "char_니힐리스타",
+          "canonical_name": "니힐리스타",
+          "surface_labels": [
+            "니힐리스타",
+            "화룡"
+          ],
+          "scene_count": 30
+        },
+        "occurrence_total": 6,
+        "item_total": 6,
+        "shown_total": 6,
+        "sampled": false,
+        "coverage": {
+          "titles": 4,
+          "titles_shown": 4,
+          "type_category_combos": 3,
+          "combos_shown": 3,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 4
+        },
+        "pass1_types": {
+          "alias": 6
+        },
+        "sources": {
+          "uec": 6
+        },
+        "titles": [
+          {
+            "title_id": "main_story__chapter_20",
+            "category": "main_story",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "main_story__chapter_25",
+            "category": "main_story",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "event_stories__goddess_fall",
+            "category": "event_stories",
+            "occurrences": 2,
+            "shown": 2
+          },
+          {
+            "title_id": "side_stories__eden_spear",
+            "category": "side_stories",
+            "occurrences": 2,
+            "shown": 2
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "main_20_00",
+            "title_id": "main_story__chapter_20",
+            "category": "main_story",
+            "line_start": 13,
+            "line_end": 13,
+            "item_ids": [
+              "main_20_00__uec_003"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "alias"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          },
+          {
+            "scene_id": "main_25_07",
+            "title_id": "main_story__chapter_25",
+            "category": "main_story",
+            "line_start": 180,
+            "line_end": 180,
+            "item_ids": [
+              "main_25_07__uec_006"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "alias"
+            ],
+            "participant_match": "char_니힐리스타",
+            "occ_id": "O0002",
+            "shown": true
+          },
+          {
+            "scene_id": "goddess_fall_02",
+            "title_id": "event_stories__goddess_fall",
+            "category": "event_stories",
+            "line_start": 5,
+            "line_end": 5,
+            "item_ids": [
+              "goddess_fall_02__uec_001"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "alias"
+            ],
+            "occ_id": "O0003",
+            "shown": true
+          },
+          {
+            "scene_id": "goddess_fall_03",
+            "title_id": "event_stories__goddess_fall",
+            "category": "event_stories",
+            "line_start": 4,
+            "line_end": 4,
+            "item_ids": [
+              "goddess_fall_03__uec_002"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "alias"
+            ],
+            "participant_match": "char_니힐리스타",
+            "occ_id": "O0004",
+            "shown": true
+          },
+          {
+            "scene_id": "eden_spear_04",
+            "title_id": "side_stories__eden_spear",
+            "category": "side_stories",
+            "line_start": 6,
+            "line_end": 6,
+            "item_ids": [
+              "eden_spear_04__uec_003"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "alias"
+            ],
+            "participant_match": "char_니힐리스타",
+            "occ_id": "O0005",
+            "shown": true
+          },
+          {
+            "scene_id": "eden_spear_07",
+            "title_id": "side_stories__eden_spear",
+            "category": "side_stories",
+            "line_start": 24,
+            "line_end": 24,
+            "item_ids": [
+              "eden_spear_07__uec_003"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "alias"
+            ],
+            "participant_match": "char_니힐리스타",
+            "occ_id": "O0006",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__008",
+          "link_type": "alias",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U008"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": "char_니힐리스타",
+              "name": "니힐리스타",
+              "entity_type": "character"
+            }
+          ],
+          "verdict": "별칭",
+          "confidence": "유력한 해석",
+          "rationale": "네 이야기 모두 그 이야기·장면 안에서 '화룡'이 니힐리스타의 이명·호칭임이 대사로 직접 확인된다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_20_00",
+              "line_start": 13,
+              "line_end": 13,
+              "quote": "세실: 그래요. 니힐리스타의 이명은 화룡이거든요."
+            },
+            {
+              "scene_id": "main_25_07",
+              "line_start": 180,
+              "line_end": 180,
+              "quote": "도로시: 당신은 화룡이라는 이명으로 불리면서, 지상을 자유롭게 날아다니며 불을 내뿜었죠."
+            },
+            {
+              "scene_id": "goddess_fall_02",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "나유타: 소인, 화룡 소저와 동행할까 하오."
+            },
+            {
+              "scene_id": "goddess_fall_02",
+              "line_start": 6,
+              "line_end": 6,
+              "quote": "요한: ···니힐리스타와."
+            },
+            {
+              "scene_id": "eden_spear_04",
+              "line_start": 6,
+              "line_end": 6,
+              "quote": "나유타: 에덴은 화룡과 오랫동안 싸움을 계속 해왔지 않소."
+            },
+            {
+              "scene_id": "eden_spear_04",
+              "line_start": 14,
+              "line_end": 14,
+              "quote": "나유타: 화룡. 니힐리스타."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U036",
+      "bundle_id": "A2__161",
+      "unit_id": "U036",
+      "surface": "황금 사과",
+      "stratum": "generic_term/가능성/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U036",
+        "surface": "황금 사과",
+        "variant_key": "황금사과",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "lost_relics__은색액체",
+            "category": "lost_relics",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "은색액체_01",
+            "title_id": "lost_relics__은색액체",
+            "category": "lost_relics",
+            "line_start": 6,
+            "line_end": 6,
+            "item_ids": [
+              "은색액체_01__uec_003",
+              "은색액체_01__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__037",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U036"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "가능성",
+          "rationale": "'은색 나무'와 나란히 나무에 열리는 황금빛 열매를 묘사한 수식어가 붙은 보통 표현이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "은색액체_01",
+              "line_start": 6,
+              "line_end": 6,
+              "quote": "은색 나무 있지? 황금 사과 열리는 그거."
+            },
+            {
+              "scene_id": "은색액체_01",
+              "line_start": 8,
+              "line_end": 8,
+              "quote": "은색 액체가 비처럼 막 뿜어져 나오니까 절대 가까이 가지 말고."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": [
+            "다른 장면에 고유 대상으로 등장하는지 확인하기 위해 grep(\"황금 사과\") 실행했으나 본 장면 1건뿐임"
+          ]
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U001",
+      "bundle_id": "A2__161",
+      "unit_id": "U001",
+      "surface": "화력 VOD",
+      "stratum": "generic_term/가능성/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U001",
+        "surface": "화력 VOD",
+        "variant_key": "화력vod",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 1,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 1
+        },
+        "sources": {
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "character_episodes__d",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "d_02",
+            "title_id": "character_episodes__d",
+            "category": "character_episodes",
+            "line_start": 71,
+            "line_end": 71,
+            "item_ids": [
+              "d_02__mnt_011"
+            ],
+            "sources": [
+              "mention"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__001",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U001"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "가능성",
+          "rationale": "생필품 가게에서 입욕제·아로마 용품과 나란히 나열된 품목으로, 특정 작품의 고유 제목이 아니라 화력 관련 VOD 일반을 가리키는 수식어가 붙은 보통 표현이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "d_02",
+              "line_start": 71,
+              "line_end": 71,
+              "quote": "[OPTION TEXT=\"입욕제 다섯 세트랑 아로마 용품 네 세트, 화력 VOD···.\"]"
+            },
+            {
+              "scene_id": "d_02",
+              "line_start": 76,
+              "line_end": 76,
+              "quote": "D: 생필품이 아닌 것도 있고."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U029",
+      "bundle_id": "A2__161",
+      "unit_id": "U029",
+      "surface": "환풍구",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U029",
+        "surface": "환풍구",
+        "variant_key": "환풍구",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "location": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "outpost_stories__발전기",
+            "category": "outpost_stories",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "generator_01",
+            "title_id": "outpost_stories__발전기",
+            "category": "outpost_stories",
+            "line_start": 99,
+            "line_end": 99,
+            "item_ids": [
+              "generator_01__uec_007",
+              "generator_01__mnt_007"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "location"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__030",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U029"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "'보통은 환풍구로 가는 게 히어로들의 지름길 아니었나?'처럼 건물 설비 일반을 가리키는 보통명사다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "generator_01",
+              "line_start": 99,
+              "line_end": 99,
+              "quote": "드레이크: 보통은 환풍구로 가는 게, 허억··· 히어로들의 지름길 아니었나?"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__162:U013",
+      "bundle_id": "A2__162",
+      "unit_id": "U013",
+      "surface": "회중시계",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__162.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__162.excerpts.txt",
+      "unit": {
+        "unit_id": "U013",
+        "surface": "회중시계",
+        "variant_key": "회중시계",
+        "registry_match": null,
+        "occurrence_total": 2,
+        "item_total": 4,
+        "shown_total": 2,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 4
+        },
+        "sources": {
+          "uec": 2,
+          "mention": 2
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__for_rest",
+            "category": "event_stories",
+            "occurrences": 2,
+            "shown": 2
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "for_rest_02",
+            "title_id": "event_stories__for_rest",
+            "category": "event_stories",
+            "line_start": 55,
+            "line_end": 55,
+            "item_ids": [
+              "for_rest_02__uec_006",
+              "for_rest_02__mnt_006"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          },
+          {
+            "scene_id": "for_rest_09",
+            "title_id": "event_stories__for_rest",
+            "category": "event_stories",
+            "line_start": 31,
+            "line_end": 31,
+            "item_ids": [
+              "for_rest_09__uec_002",
+              "for_rest_09__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0002",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__162__013",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U013"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "조쉬 허밋이 리타에게 선물한 시계의 종류를 이르는 보통 낱말로, 고유한 이름이 붙은 물건이 아니다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "for_rest_02",
+              "line_start": 55,
+              "line_end": 55,
+              "quote": "리타는 품에서 오래된 회중시계를 꺼내 시간을 확인했다."
+            },
+            {
+              "scene_id": "for_rest_09",
+              "line_start": 31,
+              "line_end": 31,
+              "quote": "조쉬 허밋: 내가 쓰던 회중시계야."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U010",
+      "bundle_id": "A2__161",
+      "unit_id": "U010",
+      "surface": "화룡 파츠",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U010",
+        "surface": "화룡 파츠",
+        "variant_key": "화룡파츠",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "lost_relics__주워갈것들메모",
+            "category": "lost_relics",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "주워갈것들메모_00",
+            "title_id": "lost_relics__주워갈것들메모",
+            "category": "lost_relics",
+            "line_start": 4,
+            "line_end": 4,
+            "item_ids": [
+              "주워갈것들메모_00__uec_001",
+              "주워갈것들메모_00__mnt_002"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__010",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U010"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "같은 메모 앞 줄의 '화룡의 것으로 추정되는 파츠가 다수 있는 듯'을 줄여 쓴 수식어가 붙은 보통 표현으로, 고유한 단일 물품 이름이 아니다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "주워갈것들메모_00",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "화산 근처에 화룡의 것으로 추정되는 파츠가 다수 있는 듯."
+            },
+            {
+              "scene_id": "주워갈것들메모_00",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "근데 화룡 파츠가 왜 있지?"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__163:U007",
+      "bundle_id": "A2__163",
+      "unit_id": "U007",
+      "surface": "히어로 니케 스쿼드",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__163.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__163.excerpts.txt",
+      "unit": {
+        "unit_id": "U007",
+        "surface": "히어로 니케 스쿼드",
+        "variant_key": "히어로니케스쿼드",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "squad": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "project_matis_13",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 42,
+            "line_end": 42,
+            "item_ids": [
+              "project_matis_13__uec_003",
+              "project_matis_13__mnt_004"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "squad"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__163__007",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U007"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "슈엔이 TV 연설에서 'PROJECT MATIS'(메티스 스쿼드)의 취지를 '인류를 구원할 새로운 히어로 니케 스쿼드를 만들어 보이겠다는 뜻'이라고 보통명사로 풀어 설명한 표현을 라플라스가 인용한 수식어가 붙은 보통 표현이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "project_matis_12",
+              "line_start": 13,
+              "line_end": 13,
+              "quote": "슈엔: [이름하여, PROJECT MATIS!]"
+            },
+            {
+              "scene_id": "project_matis_12",
+              "line_start": 17,
+              "line_end": 17,
+              "quote": "슈엔: [인류를 구원할 새로운 히어로 니케 스쿼드를 만들어 보이겠다는 뜻이야.]"
+            },
+            {
+              "scene_id": "project_matis_13",
+              "line_start": 42,
+              "line_end": 42,
+              "quote": "왜소한 소녀: 인류를 구원할 새로운 히어로 니케 스쿼드를 만들겠다고···!"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U018",
+      "bundle_id": "A2__161",
+      "unit_id": "U018",
+      "surface": "화장품",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U018",
+        "surface": "화장품",
+        "variant_key": "화장품",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "blabla__personal__viper",
+            "category": "blabla",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "blabla_viper_004",
+            "title_id": "blabla__personal__viper",
+            "category": "blabla",
+            "line_start": 60,
+            "line_end": 62,
+            "item_ids": [
+              "blabla_viper_004__mnt_001",
+              "blabla_viper_004__uec_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__018",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U018"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "일반 물품 부류를 가리키는 보통명사다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "blabla_viper_004",
+              "line_start": 61,
+              "line_end": 61,
+              "quote": "그럼 나 대신 화장품 좀 사와 줘"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U026",
+      "bundle_id": "A2__161",
+      "unit_id": "U026",
+      "surface": "환각 버섯",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U026",
+        "surface": "환각 버섯",
+        "variant_key": "환각버섯",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "event_lost_relics__white_memory",
+            "category": "event_lost_relics",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "white_memory_06",
+            "title_id": "event_lost_relics__white_memory",
+            "category": "event_lost_relics",
+            "line_start": 2,
+            "line_end": 2,
+            "item_ids": [
+              "white_memory_06__uec_001",
+              "white_memory_06__mnt_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__027",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U026"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "환각 작용을 일으키는 버섯 일반을 뜻하는 보통 표현이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "white_memory_06",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "스노우 화이트가 아무리 환각 버섯을 먹어도, 보고 싶은 그 얼굴은 계속 희뿌옇게 보일뿐이었다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": [
+            "다른 장면에 고유 대상으로 쓰이는지 확인하기 위해 grep(\"환각 버섯\") 실행했으나 본 장면 1건뿐임"
+          ]
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__162:U027",
+      "bundle_id": "A2__162",
+      "unit_id": "U027",
+      "surface": "휴대용 게임기",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__162.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__162.excerpts.txt",
+      "unit": {
+        "unit_id": "U027",
+        "surface": "휴대용 게임기",
+        "variant_key": "휴대용게임기",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "character_episodes__노벨",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "novel_03",
+            "title_id": "character_episodes__노벨",
+            "category": "character_episodes",
+            "line_start": 164,
+            "line_end": 164,
+            "item_ids": [
+              "novel_03__uec_008",
+              "novel_03__mnt_008"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__162__027",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U027"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "소파 위에 놓인 일반 휴대용 게임 기기를 가리키는 보통 낱말이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "novel_03",
+              "line_start": 164,
+              "line_end": 164,
+              "quote": "소파 위에는, 전날 함께 가지고 놀았던 휴대용 게임기가···."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U038",
+      "bundle_id": "A2__161",
+      "unit_id": "U038",
+      "surface": "황금색 불가사리",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U038",
+        "surface": "황금색 불가사리",
+        "variant_key": "황금색불가사리",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__golden_ship",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "golden_ship_13",
+            "title_id": "event_stories__golden_ship",
+            "category": "event_stories",
+            "line_start": 190,
+            "line_end": 190,
+            "item_ids": [
+              "golden_ship_13__uec_006",
+              "golden_ship_13__mnt_006"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__039",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U038"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "앵커가 황금 배 안에 있는지 보겠다고 말한 불특정한 황금빛 불가사리를 뜻하는 수식어가 붙은 보통 표현이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "golden_ship_13",
+              "line_start": 190,
+              "line_end": 190,
+              "quote": "앵커: 황금 배 안에 황금색 불가사리 있는지 볼 거야."
+            },
+            {
+              "scene_id": "golden_ship_08",
+              "line_start": 23,
+              "line_end": 23,
+              "quote": "앵커: ···황금색 불가사리도 없어 보여."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U020",
+      "bundle_id": "A2__161",
+      "unit_id": "U020",
+      "surface": "화학무기",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U020",
+        "surface": "화학무기",
+        "variant_key": "화학무기",
+        "registry_match": null,
+        "occurrence_total": 3,
+        "item_total": 6,
+        "shown_total": 3,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 6
+        },
+        "sources": {
+          "uec": 3,
+          "mention": 3
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__ark_ranger",
+            "category": "event_stories",
+            "occurrences": 3,
+            "shown": 3
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "ark_ranger_18",
+            "title_id": "event_stories__ark_ranger",
+            "category": "event_stories",
+            "line_start": 11,
+            "line_end": 11,
+            "item_ids": [
+              "ark_ranger_18__uec_003",
+              "ark_ranger_18__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          },
+          {
+            "scene_id": "ark_ranger_20",
+            "title_id": "event_stories__ark_ranger",
+            "category": "event_stories",
+            "line_start": 158,
+            "line_end": 158,
+            "item_ids": [
+              "ark_ranger_20__uec_014",
+              "ark_ranger_20__mnt_016"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0002",
+            "shown": true
+          },
+          {
+            "scene_id": "ark_ranger_22",
+            "title_id": "event_stories__ark_ranger",
+            "category": "event_stories",
+            "line_start": 108,
+            "line_end": 108,
+            "item_ids": [
+              "ark_ranger_22__uec_009",
+              "ark_ranger_22__mnt_009"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0003",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__020",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U020"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "특정 고유 무기명이 아니라 무기 종류 일반을 가리키는 보통명사다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "ark_ranger_18",
+              "line_start": 11,
+              "line_end": 11,
+              "quote": "맥스웰: 그래. 화학무기가 본편일 거야."
+            },
+            {
+              "scene_id": "ark_ranger_22",
+              "line_start": 108,
+              "line_end": 108,
+              "quote": "맥스웰: 방주 머리 위에서 화학무기가 터져도 끝."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__163:U006",
+      "bundle_id": "A2__163",
+      "unit_id": "U006",
+      "surface": "히어로 니케 설계도",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__163.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__163.excerpts.txt",
+      "unit": {
+        "unit_id": "U006",
+        "surface": "히어로 니케 설계도",
+        "variant_key": "히어로니케설계도",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "project_matis_06",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 126,
+            "line_end": 126,
+            "item_ids": [
+              "project_matis_06__uec_013",
+              "project_matis_06__mnt_014"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__163__006",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U006"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "고유 문서 이름이 아니라 '히어로 니케' 구상을 담은 설계도를 가리키는 수식어가 붙은 보통 표현으로, 앞뒤에서 '니케 설계도', '네가 만든 설계도', '소녀의 히어로 설계도'처럼 보통명사로 풀어 쓰인다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "project_matis_06",
+              "line_start": 123,
+              "line_end": 123,
+              "quote": "맥스웰: 정말 이 나이 때 니케 설계도를 완성하다니!"
+            },
+            {
+              "scene_id": "project_matis_06",
+              "line_start": 126,
+              "line_end": 126,
+              "quote": "슈엔은 히어로 니케 설계도를 완성했다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__162:U025",
+      "bundle_id": "A2__162",
+      "unit_id": "U025",
+      "surface": "휘하 니케들",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__162.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__162.excerpts.txt",
+      "unit": {
+        "unit_id": "U025",
+        "surface": "휘하 니케들",
+        "variant_key": "휘하니케들",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "faction_or_species": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "character_episodes__은화_택티컬_업",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "eunhwa_tactical_02",
+            "title_id": "character_episodes__은화_택티컬_업",
+            "category": "character_episodes",
+            "line_start": 105,
+            "line_end": 105,
+            "item_ids": [
+              "eunhwa_tactical_02__uec_005",
+              "eunhwa_tactical_02__mnt_005"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "faction_or_species"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__162__025",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U025"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "은화가 과거 인간 지휘관이었을 때 통솔하던 부하 니케들을 뜻하는 수식어 붙은 보통 표현이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "eunhwa_tactical_02",
+              "line_start": 105,
+              "line_end": 105,
+              "quote": "은화: 휘하 니케들의 명령 불복종으로 인해 랩쳐에게 허무하게 개죽음을 당한,"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__162:U029",
+      "bundle_id": "A2__162",
+      "unit_id": "U029",
+      "surface": "휴대폰",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__162.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__162.excerpts.txt",
+      "unit": {
+        "unit_id": "U029",
+        "surface": "휴대폰",
+        "variant_key": "휴대폰",
+        "registry_match": null,
+        "occurrence_total": 10,
+        "item_total": 20,
+        "shown_total": 10,
+        "sampled": false,
+        "coverage": {
+          "titles": 8,
+          "titles_shown": 8,
+          "type_category_combos": 5,
+          "combos_shown": 5,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 20
+        },
+        "sources": {
+          "uec": 10,
+          "mention": 10
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__sea_you_again",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "event_stories__arcane_archive",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "lost_relics__여자친구의편지",
+            "category": "lost_relics",
+            "occurrences": 3,
+            "shown": 3
+          },
+          {
+            "title_id": "outpost_stories__관측소",
+            "category": "outpost_stories",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "character_episodes__소라",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "character_episodes__엠마_택티컬_업",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "blabla__personal__maxwell",
+            "category": "blabla",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "blabla__group__dazzlingcupid",
+            "category": "blabla",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "sea_you_again_07",
+            "title_id": "event_stories__sea_you_again",
+            "category": "event_stories",
+            "line_start": 166,
+            "line_end": 166,
+            "item_ids": [
+              "sea_you_again_07__uec_006",
+              "sea_you_again_07__mnt_009"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          },
+          {
+            "scene_id": "arcane_archive_00",
+            "title_id": "event_stories__arcane_archive",
+            "category": "event_stories",
+            "line_start": 36,
+            "line_end": 36,
+            "item_ids": [
+              "arcane_archive_00__uec_003",
+              "arcane_archive_00__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0002",
+            "shown": true
+          },
+          {
+            "scene_id": "여자친구의편지_01",
+            "title_id": "lost_relics__여자친구의편지",
+            "category": "lost_relics",
+            "line_start": 8,
+            "line_end": 8,
+            "item_ids": [
+              "여자친구의편지_01__uec_001",
+              "여자친구의편지_01__mnt_002"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0003",
+            "shown": true
+          },
+          {
+            "scene_id": "여자친구의편지_02",
+            "title_id": "lost_relics__여자친구의편지",
+            "category": "lost_relics",
+            "line_start": 7,
+            "line_end": 7,
+            "item_ids": [
+              "여자친구의편지_02__uec_001",
+              "여자친구의편지_02__mnt_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0004",
+            "shown": true
+          },
+          {
+            "scene_id": "여자친구의편지_03",
+            "title_id": "lost_relics__여자친구의편지",
+            "category": "lost_relics",
+            "line_start": 7,
+            "line_end": 7,
+            "item_ids": [
+              "여자친구의편지_03__uec_003",
+              "여자친구의편지_03__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0005",
+            "shown": true
+          },
+          {
+            "scene_id": "observation_post_05",
+            "title_id": "outpost_stories__관측소",
+            "category": "outpost_stories",
+            "line_start": 43,
+            "line_end": 43,
+            "item_ids": [
+              "observation_post_05__uec_006",
+              "observation_post_05__mnt_007"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0006",
+            "shown": true
+          },
+          {
+            "scene_id": "sora_03",
+            "title_id": "character_episodes__소라",
+            "category": "character_episodes",
+            "line_start": 56,
+            "line_end": 56,
+            "item_ids": [
+              "sora_03__uec_005",
+              "sora_03__mnt_005"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0007",
+            "shown": true
+          },
+          {
+            "scene_id": "emma_tactical_02",
+            "title_id": "character_episodes__엠마_택티컬_업",
+            "category": "character_episodes",
+            "line_start": 4,
+            "line_end": 4,
+            "item_ids": [
+              "emma_tactical_02__uec_001",
+              "emma_tactical_02__mnt_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0008",
+            "shown": true
+          },
+          {
+            "scene_id": "blabla_maxwell_007",
+            "title_id": "blabla__personal__maxwell",
+            "category": "blabla",
+            "line_start": 30,
+            "line_end": 32,
+            "item_ids": [
+              "blabla_maxwell_007__mnt_001",
+              "blabla_maxwell_007__uec_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0009",
+            "shown": true
+          },
+          {
+            "scene_id": "blabla_dazzlingcupid_002",
+            "title_id": "blabla__group__dazzlingcupid",
+            "category": "blabla",
+            "line_start": 75,
+            "line_end": 77,
+            "item_ids": [
+              "blabla_dazzlingcupid_002__mnt_001",
+              "blabla_dazzlingcupid_002__uec_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0010",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__162__029",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U029"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "여러 이야기에서 다양한 인물들이 각자 소지·사용하는 이동전화 기기 일반을 가리키는 보통 낱말이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "sea_you_again_07",
+              "line_start": 166,
+              "line_end": 166,
+              "quote": "헬름: 다들 휴대폰 있지?"
+            },
+            {
+              "scene_id": "여자친구의편지_01",
+              "line_start": 8,
+              "line_end": 8,
+              "quote": "목소리 듣고 싶으니까 휴대폰도 빨리 고치고."
+            },
+            {
+              "scene_id": "sora_03",
+              "line_start": 56,
+              "line_end": 56,
+              "quote": "어느 새인지 모르게 내 휴대폰이 소라의 손에 들려있었다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U034",
+      "bundle_id": "A2__161",
+      "unit_id": "U034",
+      "surface": "황금 불가사리",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U034",
+        "surface": "황금 불가사리",
+        "variant_key": "황금불가사리",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "blabla__group__goldenship",
+            "category": "blabla",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "blabla_goldenship_001",
+            "title_id": "blabla__group__goldenship",
+            "category": "blabla",
+            "line_start": 80,
+            "line_end": 82,
+            "item_ids": [
+              "blabla_goldenship_001__mnt_002",
+              "blabla_goldenship_001__uec_002"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__035",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U034"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "황금이면 다 좋다는 프림의 말에 앵커가 자신이 좋아하는 불가사리에 황금을 붙여 말한 수식어가 붙은 보통 표현이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "blabla_goldenship_001",
+              "line_start": 46,
+              "line_end": 46,
+              "quote": "프림은 황금이면 다 좋구나"
+            },
+            {
+              "scene_id": "blabla_goldenship_001",
+              "line_start": 81,
+              "line_end": 81,
+              "quote": "나도 황금 불가사리가 좋아"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__162:U002",
+      "bundle_id": "A2__162",
+      "unit_id": "U002",
+      "surface": "황금 팔",
+      "stratum": "generic_term/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__162.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__162.excerpts.txt",
+      "unit": {
+        "unit_id": "U002",
+        "surface": "황금 팔",
+        "variant_key": "황금팔",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__goddess_fall",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "goddess_fall_12",
+            "title_id": "event_stories__goddess_fall",
+            "category": "event_stories",
+            "line_start": 134,
+            "line_end": 134,
+            "item_ids": [
+              "goddess_fall_12__uec_014",
+              "goddess_fall_12__mnt_016"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__162__002",
+          "link_type": "generic_term",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U002"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "일반 낱말",
+          "confidence": "유력한 해석",
+          "rationale": "탈로스가 전투 중 부서진 왼팔을 고쳐 달라고 했을 때 킬로가 황금으로 된 팔로 바꿔 주겠다고 약속한 데서 비롯된 수식어 붙은 보통 표현으로, 고유한 이름이 붙은 특정 장비가 아니다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "goddess_fall_12",
+              "line_start": 134,
+              "line_end": 134,
+              "quote": "T.A.L.O.S.: 황금 팔만 제대로 장착했으면 유의미한 피해를 입혔을겁니다."
+            },
+            {
+              "scene_id": "goddess_fall_12",
+              "line_start": 136,
+              "line_end": 136,
+              "quote": "T.A.L.O.S.: 하지만 킬로가 약속했었습니다. 황금 팔로 바꿔준다고요."
+            },
+            {
+              "scene_id": "last_kingdom_38",
+              "line_start": 122,
+              "line_end": 122,
+              "quote": "T.A.L.O.S.: 나중에 꼭 고쳐주십시오."
+            },
+            {
+              "scene_id": "last_kingdom_38",
+              "line_start": 123,
+              "line_end": 123,
+              "quote": "킬로: 황금 팔로 바꿔줄게!"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": [
+            "grep \"황금 팔\"로 last_kingdom_38 L122-123에서 부서진 왼팔 수리 약속 대사 확인"
+          ]
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U039",
+      "bundle_id": "A2__161",
+      "unit_id": "U039",
+      "surface": "황금색 음료",
+      "stratum": "new_entity/가능성/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U039",
+        "surface": "황금색 음료",
+        "variant_key": "황금색음료",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "blabla__group__goldenship",
+            "category": "blabla",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "blabla_goldenship_004",
+            "title_id": "blabla__group__goldenship",
+            "category": "blabla",
+            "line_start": 18,
+            "line_end": 20,
+            "item_ids": [
+              "blabla_goldenship_004__mnt_001",
+              "blabla_goldenship_004__uec_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__040",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U039"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "바다의 신의 축복",
+              "entity_type": "item",
+              "entity_key": "E7"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "가능성",
+          "rationale": "마스트가 어드마이어 호에서 동료들과 나눠 마시고 헬름에게도 조금 나눠 주자고 한 보물 음료로, golden_ship_14에서 앵커가 '바다 신의 축복? 그 황금색 음료?'라 부른 '바다의 신의 축복'(U030과 동일 대상)을 가리킨다. 이야기 간 단서로 이어지므로 가능성으로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "blabla_goldenship_004",
+              "line_start": 19,
+              "line_end": 19,
+              "quote": "황금색 음료를 먹지 않겠수?"
+            },
+            {
+              "scene_id": "blabla_goldenship_004",
+              "line_start": 55,
+              "line_end": 55,
+              "quote": "한 모금씩만 나눠 먹어도 다 동나겠구만"
+            },
+            {
+              "scene_id": "golden_ship_14",
+              "line_start": 33,
+              "line_end": 33,
+              "quote": "앵커: 바다 신의 축복? 그 황금색 음료?"
+            },
+            {
+              "scene_id": "golden_ship_13",
+              "line_start": 94,
+              "line_end": 94,
+              "quote": "마스트: 아무래도 이게 바다의 신의 축복이라던 그 보물인 것 같수."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__163:U004",
+      "bundle_id": "A2__163",
+      "unit_id": "U004",
+      "surface": "히어로 니케",
+      "stratum": "new_entity/유력한 해석/full/exceptions",
+      "input_file": "data/graph/pass2/a2/bundles/A2__163.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__163.excerpts.txt",
+      "unit": {
+        "unit_id": "U004",
+        "surface": "히어로 니케",
+        "variant_key": "히어로니케",
+        "registry_match": null,
+        "occurrence_total": 6,
+        "item_total": 12,
+        "shown_total": 6,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "concept": 12
+        },
+        "sources": {
+          "uec": 6,
+          "mention": 6
+        },
+        "titles": [
+          {
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "occurrences": 6,
+            "shown": 6
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "project_matis_04",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 57,
+            "line_end": 57,
+            "item_ids": [
+              "project_matis_04__uec_006",
+              "project_matis_04__mnt_007"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          },
+          {
+            "scene_id": "project_matis_07",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 52,
+            "line_end": 52,
+            "item_ids": [
+              "project_matis_07__uec_009",
+              "project_matis_07__mnt_009"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0002",
+            "shown": true
+          },
+          {
+            "scene_id": "project_matis_11",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 24,
+            "line_end": 25,
+            "item_ids": [
+              "project_matis_11__mnt_002",
+              "project_matis_11__uec_002"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0003",
+            "shown": true
+          },
+          {
+            "scene_id": "project_matis_13",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 27,
+            "line_end": 27,
+            "item_ids": [
+              "project_matis_13__uec_002",
+              "project_matis_13__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0004",
+            "shown": true
+          },
+          {
+            "scene_id": "project_matis_18",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 5,
+            "line_end": 5,
+            "item_ids": [
+              "project_matis_18__uec_003",
+              "project_matis_18__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0005",
+            "shown": true
+          },
+          {
+            "scene_id": "project_matis_20",
+            "title_id": "event_stories__project_matis",
+            "category": "event_stories",
+            "line_start": 109,
+            "line_end": 109,
+            "item_ids": [
+              "project_matis_20__uec_002",
+              "project_matis_20__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0006",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__163__004",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U004"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "히어로 니케",
+              "entity_type": "concept",
+              "entity_key": "E2"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "유력한 해석",
+          "rationale": "슈엔이 어릴 적 고안·설계하고 훗날 프로젝트 메티스를 통해 제작을 추진한 고성능 신형 니케 기획·개념을 일컫는 고유한 명칭으로, 지엔의 대사에서 '[히어로 니케]'로 특정되고 뉴스 보도에서도 같은 개념명으로 쓰인다. 다만 project_matis_20 L109의 출현은 설계 구상이 아니라 슈엔 앞에 선 라플라스 개인을 가리키므로 장면 예외 A2__163__016으로 나눈다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "project_matis_04",
+              "line_start": 57,
+              "line_end": 57,
+              "quote": "슈엔: 히어로 니케를 만들고 싶어."
+            },
+            {
+              "scene_id": "project_matis_11",
+              "line_start": 25,
+              "line_end": 25,
+              "quote": "지엔: [히어로 니케]."
+            },
+            {
+              "scene_id": "project_matis_18",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "뉴스 앵커: [이것으로 히어로 니케 제작에 한 걸음 더 다가갈 것으로 보입···.]"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        },
+        {
+          "link_id": "A2__163__016",
+          "link_type": "alias",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U004"
+            }
+          ],
+          "scope": {
+            "scene_ids": [
+              "project_matis_20"
+            ]
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": "char_라플라스",
+              "name": "라플라스",
+              "entity_type": "character"
+            }
+          ],
+          "verdict": "별칭",
+          "confidence": "유력한 해석",
+          "rationale": "project_matis_20 L106~113의 연속 지문은 슈엔에게 손을 내민 라플라스를 '그녀가 만든 설계도의 히어로 니케'(L109), '유일하게 응답해준 이'(L110)로 바로 이어 부르고, 그 인물이 '자신이 히어로라고' 외친다(L112~113). 이 장면의 '히어로 니케'는 설계 구상(E2)이 아니라 그 구상을 이룬 라플라스 개인을 가리키므로 별칭으로 나눈다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "project_matis_20",
+              "line_start": 106,
+              "line_end": 106,
+              "quote": "라플라스가 슈엔에게 손을 내밀었다."
+            },
+            {
+              "scene_id": "project_matis_20",
+              "line_start": 109,
+              "line_end": 109,
+              "quote": "그녀가 만든 설계도의 히어로 니케가."
+            },
+            {
+              "scene_id": "project_matis_20",
+              "line_start": 110,
+              "line_end": 110,
+              "quote": "아무도 도와주지 않던 그녀의 세계에서 유일하게 응답해준 이가,"
+            },
+            {
+              "scene_id": "project_matis_20",
+              "line_start": 112,
+              "line_end": 112,
+              "quote": "스스로를 증명하며 외치고 있었다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [
+            {
+              "link_type": "new_entity",
+              "entity_id": null,
+              "name": "히어로 니케",
+              "entity_type": "concept",
+              "why": "슈엔이 설계한 히어로 니케 구상 자체를 말하고, 라플라스가 그 구상에 들어맞는다는 비유로도 읽힌다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "project_matis_20",
+                  "line_start": 109,
+                  "line_end": 109,
+                  "quote": "그녀가 만든 설계도의 히어로 니케가."
+                }
+              ]
+            }
+          ],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__162:U010",
+      "bundle_id": "A2__162",
+      "unit_id": "U010",
+      "surface": "회색 올빼미",
+      "stratum": "new_entity/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__162.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__162.excerpts.txt",
+      "unit": {
+        "unit_id": "U010",
+        "surface": "회색 올빼미",
+        "variant_key": "회색올빼미",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 1,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "character": 1
+        },
+        "sources": {
+          "uec": 1
+        },
+        "titles": [
+          {
+            "title_id": "character_episodes__은화",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "eunhwa_03",
+            "title_id": "character_episodes__은화",
+            "category": "character_episodes",
+            "line_start": 52,
+            "line_end": 52,
+            "item_ids": [
+              "eunhwa_03__uec_012"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "character"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__162__010",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U010"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "회색 올빼미",
+              "entity_type": "character",
+              "entity_key": "E4"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "유력한 해석",
+          "rationale": "은화의 개인 에피소드에서 은화와 지휘관이 교관으로 지도하는 6명의 신입 양산형 니케 훈련생 중 한 명을 가리키는 고유 호출명이며, 레지스트리에 등록되어 있지 않다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "eunhwa_03",
+              "line_start": 52,
+              "line_end": 52,
+              "quote": "회색 올빼미: 파란 올빼미!"
+            },
+            {
+              "scene_id": "eunhwa_03",
+              "line_start": 53,
+              "line_end": 53,
+              "quote": "회색 올빼미: 교관님들이 주신 자료 중에 이런 상황 대처법 없었어?"
+            },
+            {
+              "scene_id": "eunhwa_01",
+              "line_start": 73,
+              "line_end": 73,
+              "quote": "은화: 회색 올빼미는··· 동선이 투박한 대신 멘탈이 좋아."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U019",
+      "bundle_id": "A2__161",
+      "unit_id": "U019",
+      "surface": "화재 전문가",
+      "stratum": "new_entity/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U019",
+        "surface": "화재 전문가",
+        "variant_key": "화재전문가",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 1,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "character": 1
+        },
+        "sources": {
+          "uec": 1
+        },
+        "titles": [
+          {
+            "title_id": "character_episodes__라플라스",
+            "category": "character_episodes",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "laplace_01",
+            "title_id": "character_episodes__라플라스",
+            "category": "character_episodes",
+            "line_start": 104,
+            "line_end": 104,
+            "item_ids": [
+              "laplace_01__uec_003"
+            ],
+            "sources": [
+              "uec"
+            ],
+            "types": [
+              "character"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__019",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U019"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "화재 전문가",
+              "entity_type": "character",
+              "entity_key": "E10",
+              "qualifier": "laplace_01 화재 현장 뉴스 인터뷰에 나온 전문가"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "유력한 해석",
+          "rationale": "직업 일반이 아니라 기자 옆에서 질문에 답하는 특정 인터뷰이의 화자 표기다. L103에서 기자가 한 사람을 소개하고, L104~106에서 그 사람이 직접 세 줄을 답하며, L111에서 인터뷰를 마친다. 이름이 원문에 없다는 것은 일반 낱말의 근거가 아니다(규칙 3.2·3.3). 레지스트리에 없는 인물이므로 새 엔티티로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "laplace_01",
+              "line_start": 103,
+              "line_end": 103,
+              "quote": "기자: 제 옆에는 화재 전문가가 나와계시는데요. 이번 화재, 전문가의 시선으론 어떻게 보십니까?"
+            },
+            {
+              "scene_id": "laplace_01",
+              "line_start": 104,
+              "line_end": 104,
+              "quote": "화재 전문가: 라플라스 때문에 더 큰 화재로 이어진 것 같습니다. 여기는 가정집이 많은 주택가거든요."
+            },
+            {
+              "scene_id": "laplace_01",
+              "line_start": 111,
+              "line_end": 111,
+              "quote": "기자: 네, 인터뷰 감사드립니다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U023",
+      "bundle_id": "A2__161",
+      "unit_id": "U023",
+      "surface": "확장 무장 [STAR]",
+      "stratum": "new_entity/유력한 해석/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U023",
+        "surface": "확장 무장 [STAR]",
+        "variant_key": "확장무장star",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "main_story__chapter_39",
+            "category": "main_story",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "main_39_17",
+            "title_id": "main_story__chapter_39",
+            "category": "main_story",
+            "line_start": 18,
+            "line_end": 18,
+            "item_ids": [
+              "main_39_17__uec_001",
+              "main_39_17__mnt_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__024",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U023"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "확장 무장 STAR",
+              "entity_type": "item",
+              "entity_key": "E6"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "유력한 해석",
+          "rationale": "프리티의 바디로 제작되어 머스탱이 아니스에게 건넨 고유 무장 '확장 무장 STAR'(U024, U025와 동일 대상)를 가리킨다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_39_17",
+              "line_start": 18,
+              "line_end": 18,
+              "quote": "머스탱: 확장 무장 [STAR]."
+            },
+            {
+              "scene_id": "main_39_17",
+              "line_start": 19,
+              "line_end": 19,
+              "quote": "머스탱: 프리티의 Body로 만들어진, 우리 Sin의 상징."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U022",
+      "bundle_id": "A2__161",
+      "unit_id": "U022",
+      "surface": "확장 무장",
+      "stratum": "unresolved/판단 보류/full/exceptions",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U022",
+        "surface": "확장 무장",
+        "variant_key": "확장무장",
+        "registry_match": null,
+        "occurrence_total": 7,
+        "item_total": 14,
+        "shown_total": 7,
+        "sampled": false,
+        "coverage": {
+          "titles": 6,
+          "titles_shown": 6,
+          "type_category_combos": 3,
+          "combos_shown": 3,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "item": 12,
+          "concept": 2
+        },
+        "sources": {
+          "uec": 7,
+          "mention": 7
+        },
+        "titles": [
+          {
+            "title_id": "main_story__chapter_35",
+            "category": "main_story",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "main_story__chapter_42",
+            "category": "main_story",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "main_story__chapter_43",
+            "category": "main_story",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "main_story__chapter_44",
+            "category": "main_story",
+            "occurrences": 2,
+            "shown": 2
+          },
+          {
+            "title_id": "event_stories__last_kingdom",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          },
+          {
+            "title_id": "event_stories__star_anis",
+            "category": "event_stories",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "main_35_00",
+            "title_id": "main_story__chapter_35",
+            "category": "main_story",
+            "line_start": 16,
+            "line_end": 16,
+            "item_ids": [
+              "main_35_00__uec_003",
+              "main_35_00__mnt_007"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          },
+          {
+            "scene_id": "main_42_16",
+            "title_id": "main_story__chapter_42",
+            "category": "main_story",
+            "line_start": 51,
+            "line_end": 51,
+            "item_ids": [
+              "main_42_16__uec_003",
+              "main_42_16__mnt_008"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0002",
+            "shown": true
+          },
+          {
+            "scene_id": "main_43_14",
+            "title_id": "main_story__chapter_43",
+            "category": "main_story",
+            "line_start": 78,
+            "line_end": 78,
+            "item_ids": [
+              "main_43_14__uec_016",
+              "main_43_14__mnt_018"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0003",
+            "shown": true
+          },
+          {
+            "scene_id": "main_44_00",
+            "title_id": "main_story__chapter_44",
+            "category": "main_story",
+            "line_start": 4,
+            "line_end": 4,
+            "item_ids": [
+              "main_44_00__uec_001",
+              "main_44_00__mnt_001"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0004",
+            "shown": true
+          },
+          {
+            "scene_id": "main_44_01",
+            "title_id": "main_story__chapter_44",
+            "category": "main_story",
+            "line_start": 199,
+            "line_end": 199,
+            "item_ids": [
+              "main_44_01__uec_007",
+              "main_44_01__mnt_011"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0005",
+            "shown": true
+          },
+          {
+            "scene_id": "last_kingdom_44",
+            "title_id": "event_stories__last_kingdom",
+            "category": "event_stories",
+            "line_start": 54,
+            "line_end": 54,
+            "item_ids": [
+              "last_kingdom_44__uec_005",
+              "last_kingdom_44__mnt_006"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "item"
+            ],
+            "occ_id": "O0006",
+            "shown": true
+          },
+          {
+            "scene_id": "star_anis_05",
+            "title_id": "event_stories__star_anis",
+            "category": "event_stories",
+            "line_start": 103,
+            "line_end": 103,
+            "item_ids": [
+              "star_anis_05__uec_006",
+              "star_anis_05__mnt_008"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0007",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__023",
+          "link_type": "unresolved",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U022"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "확장 무장",
+              "entity_type": "concept",
+              "entity_key": "E5"
+            }
+          ],
+          "verdict": "판단 보류",
+          "confidence": "판단 보류",
+          "rationale": "기본 범위(main_35_00)에서는 레드 후드 모드를 켜고 끄는 데 쓰이고 도로시가 쓰던 것과 같은 것이라고 하므로, 세계관 특유의 무장 체계·기술 개념으로 읽힌다. 동시에 레드 후드 모드의 피드백을 넘겨받는 개별 장치를 가리키는 일반 장비 분류 명사로도 비슷하게 읽혀 판단을 보류한다. 아니스가 받은 STAR를 가리키는 장면(main_42_16, main_44_00, main_44_01, star_anis_05)과 방주의 상징으로 만든 무장을 말하는 main_43_14, 크라운의 네이키드 킹을 가리키는 last_kingdom_44는 장면 예외 A2__161__041~044로 나눈다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_35_00",
+              "line_start": 16,
+              "line_end": 16,
+              "quote": "잉그리드: 레드 후드 모드를 확장 무장으로 온 오프 할 수 있는 기능이 그대로 반영되어 있는 상태다."
+            },
+            {
+              "scene_id": "main_35_00",
+              "line_start": 17,
+              "line_end": 17,
+              "quote": "아니스: ···뭐야. 확장 무장?"
+            },
+            {
+              "scene_id": "main_35_00",
+              "line_start": 18,
+              "line_end": 18,
+              "quote": "네온: 어. 그거 도로시가 쓰던 거랑 같은 것 아닌가요?"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [
+            {
+              "link_type": "generic_term",
+              "why": "도로시도 쓰던 것과 '같은 것'이라 하고 레드 후드 모드의 피드백을 '확장 무장에게' 넘긴다고 하므로, 여러 니케가 쓰는 장비 종류를 이르는 일반 분류 표현으로 볼 수 있다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "main_35_00",
+                  "line_start": 18,
+                  "line_end": 18,
+                  "quote": "네온: 어. 그거 도로시가 쓰던 거랑 같은 것 아닌가요?"
+                },
+                {
+                  "scene_id": "main_35_00",
+                  "line_start": 22,
+                  "line_end": 22,
+                  "quote": "잉그리드: 정확하다. 레드 후드 모드의 피드백을 확장 무장에게 전가하는 것이었으니까."
+                }
+              ]
+            }
+          ],
+          "search_hints": [
+            "전체 용례 비교를 위해 grep(\"확장 무장\") 실행"
+          ]
+        },
+        {
+          "link_id": "A2__161__041",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U022"
+            }
+          ],
+          "scope": {
+            "scene_ids": [
+              "main_42_16",
+              "main_44_00",
+              "main_44_01"
+            ]
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "확장 무장 STAR",
+              "entity_type": "item",
+              "entity_key": "E6"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "유력한 해석",
+          "rationale": "이 세 장면의 '확장 무장'은 아니스가 머스탱에게서 받은 특정 장비, 곧 확장 무장 STAR다. main_44_00에서 라피가 '그 확장 무장··· 스타라고 했었지?'라고 묻고 아니스가 '응'이라고 답한다. main_42_16의 '머스탱 사장님이 준비해 놓았던' 확장 무장과 main_44_01의 '확장 무장도 받았으니까'도 같은 아니스의 장비를 가리킨다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_44_00",
+              "line_start": 4,
+              "line_end": 4,
+              "quote": "라피: 괜찮겠어? 그 확장 무장··· 스타라고 했었지?"
+            },
+            {
+              "scene_id": "main_44_00",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "아니스: 응."
+            },
+            {
+              "scene_id": "main_42_16",
+              "line_start": 51,
+              "line_end": 51,
+              "quote": "아니스: 확장 무장도 머스탱 사장님이 준비해 놓았던 거고, 스타 스테이지도 에닉의 도움을 받았고."
+            },
+            {
+              "scene_id": "main_44_01",
+              "line_start": 199,
+              "line_end": 199,
+              "quote": "아니스: 확장 무장도 받았으니까, 이제 열심히 지상 탈환해야지."
+            },
+            {
+              "scene_id": "main_39_17",
+              "line_start": 18,
+              "line_end": 18,
+              "quote": "머스탱: 확장 무장 [STAR]."
+            },
+            {
+              "scene_id": "main_39_17",
+              "line_start": 19,
+              "line_end": 19,
+              "quote": "머스탱: 프리티의 Body로 만들어진, 우리 Sin의 상징."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [],
+          "search_hints": []
+        },
+        {
+          "link_id": "A2__161__042",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U022"
+            }
+          ],
+          "scope": {
+            "scene_ids": [
+              "star_anis_05"
+            ]
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "확장 무장 STAR",
+              "entity_type": "item",
+              "entity_key": "E6"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "가능성",
+          "rationale": "머스탱이 프리티의 몸('어차피 뒤진 몸뚱아리')을 넘긴 뒤 V.T.C. 잔당이 '고철의 바디로 확장 무장인가 뭔가'를 만들었다고 말한다. main_39_17에서 STAR가 '프리티의 Body로 만들어진' 무장이라고 하므로 같은 장비로 읽힌다. 다만 '고철'이 프리티의 몸을 가리키는지는 문맥으로만 이어져 가능성으로 둔다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "star_anis_05",
+              "line_start": 101,
+              "line_end": 101,
+              "quote": "머스탱: 어차피 뒤진 몸뚱아리, 중앙 정부가 필요하대서 줬는데 그게 왜."
+            },
+            {
+              "scene_id": "star_anis_05",
+              "line_start": 103,
+              "line_end": 103,
+              "quote": "머스탱: V.T.C.의 잔당들이 고철의 바디로 확장 무장인가 뭔가 만드는 바람에 난리가 났다고."
+            },
+            {
+              "scene_id": "star_anis_05",
+              "line_start": 104,
+              "line_end": 104,
+              "quote": "머스탱: 프리티가 죽은 이후 고철이 생명체로 인지되는 바람에, 그것들이 한 짓이 생체 실험이 되어버렸다고."
+            },
+            {
+              "scene_id": "main_39_17",
+              "line_start": 18,
+              "line_end": 18,
+              "quote": "머스탱: 확장 무장 [STAR]."
+            },
+            {
+              "scene_id": "main_39_17",
+              "line_start": 19,
+              "line_end": 19,
+              "quote": "머스탱: 프리티의 Body로 만들어진, 우리 Sin의 상징."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [
+            {
+              "link_type": "new_entity",
+              "entity_id": null,
+              "name": "확장 무장",
+              "entity_type": "concept",
+              "why": "머스탱이 '확장 무장인가 뭔가'라고 흐려 말하므로, 특정 장비가 아니라 그런 종류의 무장을 이르는 말일 수 있다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "star_anis_05",
+                  "line_start": 103,
+                  "line_end": 103,
+                  "quote": "머스탱: V.T.C.의 잔당들이 고철의 바디로 확장 무장인가 뭔가 만드는 바람에 난리가 났다고."
+                }
+              ]
+            }
+          ],
+          "search_hints": []
+        },
+        {
+          "link_id": "A2__161__043",
+          "link_type": "unresolved",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U022"
+            }
+          ],
+          "scope": {
+            "scene_ids": [
+              "main_43_14"
+            ]
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "확장 무장 STAR",
+              "entity_type": "item",
+              "entity_key": "E6"
+            }
+          ],
+          "verdict": "판단 보류",
+          "confidence": "판단 보류",
+          "rationale": "지엔이 D.E.E.P.이 '방주의 상징을 죽이고, 그걸 가져다가 확장 무장으로 만들어버렸어요'라고 말한다. 프리티의 몸으로 만든 STAR(main_39_17)를 가리킬 수 있다. 그러나 이 장면에는 '방주의 상징'이 프리티라는 말도, 만들어진 무장이 STAR라는 말도 없어 정할 수 없으므로 보류한다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_43_14",
+              "line_start": 78,
+              "line_end": 78,
+              "quote": "지엔: 방주의 상징을 죽이고, 그걸 가져다가 확장 무장으로 만들어버렸어요."
+            },
+            {
+              "scene_id": "main_39_17",
+              "line_start": 18,
+              "line_end": 18,
+              "quote": "머스탱: 확장 무장 [STAR]."
+            },
+            {
+              "scene_id": "main_39_17",
+              "line_start": 19,
+              "line_end": 19,
+              "quote": "머스탱: 프리티의 Body로 만들어진, 우리 Sin의 상징."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [
+            {
+              "link_type": "new_entity",
+              "entity_id": null,
+              "name": "확장 무장",
+              "entity_type": "concept",
+              "why": "특정 장비가 아니라 방주의 상징을 재료로 만든 무장 일반, 곧 확장 무장이라는 무장 체계를 말한 것일 수 있다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "main_43_14",
+                  "line_start": 78,
+                  "line_end": 78,
+                  "quote": "지엔: 방주의 상징을 죽이고, 그걸 가져다가 확장 무장으로 만들어버렸어요."
+                }
+              ]
+            }
+          ],
+          "search_hints": []
+        },
+        {
+          "link_id": "A2__161__044",
+          "link_type": "new_entity",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U022"
+            }
+          ],
+          "scope": {
+            "scene_ids": [
+              "last_kingdom_44"
+            ]
+          },
+          "target": [
+            {
+              "ref": "entity",
+              "entity_id": null,
+              "name": "네이키드 킹",
+              "entity_type": "item",
+              "entity_key": "E11",
+              "qualifier": "크라운이 쓰는 확장 무장(에블라 입자 장치를 개조한 섬멸용 무장)"
+            }
+          ],
+          "verdict": "새 엔티티",
+          "confidence": "유력한 해석",
+          "rationale": "킬로가 말하는 '크라운의 확장 무장'은 직전 전투에서 크라운이 걸어가기만 했는데 랩쳐들이 터져 나갔다는 그 무장이다. 앞 장면 last_kingdom_43 L90~101에서 차임이 이를 [네이키드 킹]이라 부르고, 크라운의 손짓에 랩쳐들이 증발하는 모습과 함께 장치의 개조·작동을 설명한다. 탈로스가 분석해 사용 조건을 완화하고 양산화하겠다는 대상도 이 개별 무장이므로 무장 체계 일반이 아니다. STAR(E6)와는 다른 장비다. A2__031__019의 네이키드 킹(E9)과 같은 대상이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "last_kingdom_44",
+              "line_start": 48,
+              "line_end": 48,
+              "quote": "킬로: 그럼 크라운이 활약하는 것도 봤겠네요?"
+            },
+            {
+              "scene_id": "last_kingdom_44",
+              "line_start": 51,
+              "line_end": 51,
+              "quote": "킬로: 그냥 걸어가기만 했는데 랩쳐들이 다 터져나갔다면서요?"
+            },
+            {
+              "scene_id": "last_kingdom_44",
+              "line_start": 54,
+              "line_end": 54,
+              "quote": "킬로: 탈로스가 크라운의 확장 무장을 분석해 보기로 했어요."
+            },
+            {
+              "scene_id": "last_kingdom_43",
+              "line_start": 90,
+              "line_end": 90,
+              "quote": "차임: 이름하여 [네이키드 킹]."
+            },
+            {
+              "scene_id": "last_kingdom_43",
+              "line_start": 92,
+              "line_end": 92,
+              "quote": "차임: 그걸 떠돌이 승려가 섬멸용 무장으로 개조한 것이지."
+            },
+            {
+              "scene_id": "last_kingdom_43",
+              "line_start": 95,
+              "line_end": 95,
+              "quote": "크라운이 손짓하듯 손을 휘둘렀다."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [
+            {
+              "link_type": "new_entity",
+              "entity_id": null,
+              "name": "확장 무장",
+              "entity_type": "concept",
+              "why": "양산화 이야기가 이어지므로, 크라운의 무장이 속한 무장 종류를 말한 것으로도 읽힌다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "last_kingdom_44",
+                  "line_start": 55,
+                  "line_end": 55,
+                  "quote": "킬로: 사용 조건을 완화하는 것을 목표로 할 건데, 아, 양산화도 같이요."
+                }
+              ]
+            }
+          ],
+          "search_hints": [
+            "entity로 '네이키드 킹' 확인(레지스트리에 없음), A2__031__019 네이키드 킹 E9와 같은 대상"
+          ]
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U007",
+      "bundle_id": "A2__161",
+      "unit_id": "U007",
+      "surface": "화력의 요정",
+      "stratum": "unresolved/판단 보류/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U007",
+        "surface": "화력의 요정",
+        "variant_key": "화력의요정",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "concept": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "sub_quests__숲속요정",
+            "category": "sub_quests",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "숲속요정_00",
+            "title_id": "sub_quests__숲속요정",
+            "category": "sub_quests",
+            "line_start": 194,
+            "line_end": 194,
+            "item_ids": [
+              "숲속요정_00__uec_008",
+              "숲속요정_00__mnt_011"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__007",
+          "link_type": "unresolved",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U007"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "판단 보류",
+          "confidence": "판단 보류",
+          "rationale": "코어를 부수지 말라는 아니스의 주의에 네온이 '화력의 요정이 그걸 용서할지 모르겠어요'라고 농담으로 받아친다. 원문은 '화력의 요정'에게 용서 여부를 정하는 의지를 줄 뿐, 화력을 단순히 의인화한 비유인지 네온이 이름처럼 부르는 특정 상상 속 존재인지는 설명하지 않는다. 출현도 이 한 줄뿐이다. 농담이라는 점과 단발 출현만으로는 일반 낱말로 정할 수 없어 보류한다. 같은 묶음의 '화력 드래곤'(A2__161__002)과 같은 기준이다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "숲속요정_00",
+              "line_start": 193,
+              "line_end": 193,
+              "quote": "아니스: ···너, 다 안 부수게 조심해."
+            },
+            {
+              "scene_id": "숲속요정_00",
+              "line_start": 194,
+              "line_end": 194,
+              "quote": "네온: 글쎄요. 화력의 요정이 그걸 용서할지 모르겠어요."
+            },
+            {
+              "scene_id": "숲속요정_00",
+              "line_start": 195,
+              "line_end": 195,
+              "quote": "아니스: 아 그럼 빠지던가."
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [
+            {
+              "link_type": "generic_term",
+              "why": "코어까지 부숴 버리는 네온의 화력 집착을 의인화해 받아친 일회성 비유로 읽힌다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "숲속요정_00",
+                  "line_start": 194,
+                  "line_end": 194,
+                  "quote": "네온: 글쎄요. 화력의 요정이 그걸 용서할지 모르겠어요."
+                }
+              ]
+            }
+          ],
+          "search_hints": [
+            "다른 장면에 등장하는지 확인하기 위해 grep(\"화력의 요정\") 실행했으나 본 장면 1건뿐임"
+          ]
+        }
+      ],
+      "unseen_probes": []
+    },
+    {
+      "audit_id": "A2__161:U002",
+      "bundle_id": "A2__161",
+      "unit_id": "U002",
+      "surface": "화력 드래곤",
+      "stratum": "unresolved/판단 보류/full/single",
+      "input_file": "data/graph/pass2/a2/bundles/A2__161.json",
+      "script_file": "data/graph/pass2/a2/bundles/A2__161.excerpts.txt",
+      "unit": {
+        "unit_id": "U002",
+        "surface": "화력 드래곤",
+        "variant_key": "화력드래곤",
+        "registry_match": null,
+        "occurrence_total": 1,
+        "item_total": 2,
+        "shown_total": 1,
+        "sampled": false,
+        "coverage": {
+          "titles": 1,
+          "titles_shown": 1,
+          "type_category_combos": 1,
+          "combos_shown": 1,
+          "combos_not_shown": [],
+          "participant_match_occurrences": 0
+        },
+        "pass1_types": {
+          "concept": 2
+        },
+        "sources": {
+          "uec": 1,
+          "mention": 1
+        },
+        "titles": [
+          {
+            "title_id": "main_story__chapter_13",
+            "category": "main_story",
+            "occurrences": 1,
+            "shown": 1
+          }
+        ],
+        "shown_occurrences": [
+          {
+            "scene_id": "main_13_15",
+            "title_id": "main_story__chapter_13",
+            "category": "main_story",
+            "line_start": 34,
+            "line_end": 34,
+            "item_ids": [
+              "main_13_15__uec_002",
+              "main_13_15__mnt_003"
+            ],
+            "sources": [
+              "mention",
+              "uec"
+            ],
+            "types": [
+              "concept"
+            ],
+            "occ_id": "O0001",
+            "shown": true
+          }
+        ]
+      },
+      "links": [
+        {
+          "link_id": "A2__161__002",
+          "link_type": "unresolved",
+          "subject": [
+            {
+              "ref": "unit",
+              "unit_id": "U002"
+            }
+          ],
+          "scope": {
+            "default": true
+          },
+          "target": [],
+          "verdict": "판단 보류",
+          "confidence": "판단 보류",
+          "rationale": "네온이 잠꼬대로 '스승님'에게 '화력 드래곤은 위험하니까'라고 말하는 대사다. 꿈속에서 맞서는 특정 존재나 이름 붙은 부류일 수도 있고, 즉흥적으로 지어낸 보통 표현일 수도 있다. 원문에는 이를 가를 설명이 없고, 출현도 이 한 줄뿐이다. 꿈이라는 맥락과 단발 출현은 일반 낱말의 근거가 되지 않으므로(규칙 3.2·3.3) 보류한다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_13_15",
+              "line_start": 34,
+              "line_end": 34,
+              "quote": "네온: 으음··· 스승님···. 화력 드래곤은 위험하니까 화력 업을 좀 더 하셔야···."
+            },
+            {
+              "scene_id": "main_13_15",
+              "line_start": 49,
+              "line_end": 49,
+              "quote": "네온: 저는! 졸지 않았습니다! 꿈을 꾸고 있었을 뿐입니다!"
+            }
+          ],
+          "contradicting_evidence": [],
+          "alternatives": [
+            {
+              "link_type": "generic_term",
+              "why": "잠결에 '화력 업'과 함께 내뱉은 말이라, 고정된 대상 이름이 아니라 화력이 센 용을 이르는 즉흥 표현일 수 있다.",
+              "supporting_evidence": [
+                {
+                  "scene_id": "main_13_15",
+                  "line_start": 37,
+                  "line_end": 37,
+                  "quote": "···다들 침대 한편에서 자고 있다."
+                }
+              ]
+            }
+          ],
+          "search_hints": [
+            "다른 장면에 고유 대상으로 등장하는지 확인하기 위해 grep(\"화력 드래곤\") 실행했으나 본 장면 1건뿐임"
+          ]
+        }
+      ],
+      "unseen_probes": []
+    }
+  ],
+  "source_sha256": "4bb8fbc5e27d96e9a5c1f7d409ac493a8a0006bf7bef26a4ba42179df2decc2c"
+}
