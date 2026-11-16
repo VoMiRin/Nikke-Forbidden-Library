@@ -1,0 +1,919 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__153",
+  "candidate_links": [
+    {
+      "link_id": "A2__153__001",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_프리시아",
+          "name": "프리시아",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "side_stories__pretty_star 전체에서 등록 인물 프리시아(char_프리시아)의 연예인 활동명으로 쓰인다. 한슨이 활동명이 프리티라고 밝히고, 프리시아에게 '프리티'라고 부르자 프리시아가 직접 대답하며, 복귀 선언 및 공연 장면에서도 지문의 프리티와 화자 프리시아가 동일 인물로 이어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "pretty_star_04",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "한슨: 활동명은 프리티입니다."
+        },
+        {
+          "scene_id": "pretty_star_07",
+          "line_start": 31,
+          "line_end": 32,
+          "quote": "한슨: ···프리티.\n프리시아: ···왜 갑자기 그렇게 부르는 거야?"
+        },
+        {
+          "scene_id": "pretty_star_12",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "프리티는 복귀를 선언했다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__002",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프리티 복귀 콘서트",
+          "entity_type": "event",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "star_anis_02에서 한 번 나온 표현으로, 프리티가 총격으로 사망하고 아니스·민트가 목숨을 잃은 아크리온 홀 복귀 공연 사건을 일컫는 통칭 사건명(new_entity)으로도 읽히고, 해당 공연을 다룬 다른 장면에서 '프리티의 복귀 콘서트'나 '복귀 콘서트'로 풀어 쓰듯 구어체에서 조사 '의'가 생략된 수식어 결합 보통 표현(generic_term)으로도 읽혀 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "star_anis_02",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "민트: 나랑 아니스야 프리티 복귀 콘서트 때 한날한시에 죽어서 어떻게든 엮인 계기라도 있는데."
+        },
+        {
+          "scene_id": "pretty_star_13",
+          "line_start": 163,
+          "line_end": 163,
+          "quote": "프리티. 복귀 콘서트 중 총격에 의해 사망."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "pretty_star_13",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "TV를 본다. 프리티의 복귀 콘서트에 대한 뉴스가 흘러나오고 있다."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "해당 공연을 다룬 다른 장면들에서는 공식 고유 행사명 표시 없이 '프리티의 복귀 콘서트'나 '복귀 콘서트'라는 일반 명사구로 서술하므로, 조사 '의'가 생략된 보통 표현일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "pretty_star_13",
+              "line_start": 15,
+              "line_end": 15,
+              "quote": "TV를 본다. 프리티의 복귀 콘서트에 대한 뉴스가 흘러나오고 있다."
+            },
+            {
+              "scene_id": "footstep_walk_run_12",
+              "line_start": 76,
+              "line_end": 76,
+              "quote": "리오: 내일 복귀 콘서트가 있어서, 아침부터 바쁘게 움직어야 돼."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep \"복귀 콘서트\"로 확인한 pretty_star_12 L76·L149, pretty_star_13 L15·L163, footstep_walk_run_12 L76"
+      ]
+    },
+    {
+      "link_id": "A2__153__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프리티 스타",
+          "entity_type": "concept",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "세 출현 모두 연예인 니케 프리티의 데뷔곡 제목인 [프리티 스타]를 가리키는 고유한 곡명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "pretty_star_05",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "최초의 연예인 니케 프리티는 데뷔곡 [프리티 스타]와 함께 말 그대로 방주에 폭풍을 몰고 왔다."
+        },
+        {
+          "scene_id": "pretty_star_09",
+          "line_start": 156,
+          "line_end": 156,
+          "quote": "여학생: 무, 무슨 노래로 할 거야? 역시 프리티 스타지? 데뷔곡이니까."
+        },
+        {
+          "scene_id": "pretty_star_10",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "아니스: 아, 그! 저 요즘 [프리티 스타] 춤이랑 노래 연습하는데 한번 봐줄래요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__004",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "에테르가 사표를 출력하겠다며 직장 내 일반 부속 시설인 프린트실이 비어 있는지 묻는 맥락으로, 특정 고유 지명이 아니라 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_mmr_001",
+          "line_start": 176,
+          "line_end": 176,
+          "quote": "혹시 지금 프린트실 비어있어?"
+        },
+        {
+          "scene_id": "blabla_mmr_001",
+          "line_start": 185,
+          "line_end": 185,
+          "quote": "그냥 사표 쓰고 개인 연구소나 차릴까 해서? :)"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프림슈가밀크 커피",
+          "entity_type": "item",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "카페 스위티가 슈가·프림·밀크를 1대 1대 1로 섞어 시험 제조한 4번째 신메뉴 커피에 대해 프림이 제안한 가칭 메뉴명으로, 특정 시제품 음료를 가리키는 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "cafe_01",
+          "line_start": 27,
+          "line_end": 29,
+          "quote": "밀크: 무슨 소리, 우유를 제일 위에 부으니까 '밀크슈가프림 커피'지!\n슈가: 우유가 제일 마지막에 들어갔으니 이름도 제일 뒤로 가는 게 맞다.\n프림: 프림슈가밀크 커피."
+        },
+        {
+          "scene_id": "cafe_01",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "슈가: 슈가, 프림, 밀크를 모두 1대 1대 1의 비율로 섞은 극강의 단 맛을 자랑할 커피지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__006",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "슈가 커피·밀크 커피와 함께 프림(커피 크리머)을 넣은 커피 종류 일반을 가리키는 보통 음료 명칭이다. 카페 스위티의 자판기 메뉴뿐 아니라 길티에게 일반적인 커피 취향을 물을 때나 코인 러시 드링크 존 메뉴에서도 일반 음료 종류로 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "cafe_00",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "밀크: 슈가 커피~ 밀크 커피~ 프림 커피!"
+        },
+        {
+          "scene_id": "milk_04",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "프림: 프림 커피."
+        },
+        {
+          "scene_id": "coin_rush_show_down_23",
+          "line_start": 121,
+          "line_end": 121,
+          "quote": "슈가: ···그렇군. 그럼 밀크 커피나 프림 커피도 싫지?"
+        },
+        {
+          "scene_id": "cafe_08",
+          "line_start": 167,
+          "line_end": 167,
+          "quote": "이후 드링크 존에서 훌륭한 홍차와 프림 커피를 맛볼 수 있었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"프림 커피\"로 확인한 coin_rush_show_down_23 L121, cafe_08 L167"
+      ]
+    },
+    {
+      "link_id": "A2__153__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "바다에 서식하지만 찾아보기 힘든 현실의 심해 어종 학명을 돼지엉덩이벌레와 함께 예시로 들어 물은 것으로, 특정 개체나 세계관 고유 종족·부류가 아닌 일반 생물 종 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "beauty_full_shot_09",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "[OPTION TEXT=\"프세우돌리파리스 암블리스토몹시스야?\"]"
+        },
+        {
+          "scene_id": "beauty_full_shot_09",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "[OPTION TEXT=\"···아냐. 그냥 말해봤어. 바다에 사는데 찾아보기 힘든 것 같길래.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "다리 한쪽을 들어 올리고 서 있는 분홍색 새들을 보고 일반 조류 이름인 플라밍고를 말한 것으로 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "beauty_full_shot_10",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "분홍색 새들이 다리 한쪽을 들어 올린 채 서 있었다."
+        },
+        {
+          "scene_id": "beauty_full_shot_10",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "[OPTION TEXT=\"···플라밍고다···!\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__009",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "플라밍고의 발톱",
+          "entity_type": "item",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "메이든이 게임에서 얻어 적어 준 스페셜 미끼 레시피에서 대괄호로 묶인 아이템 이름([플라밍고의 발톱])으로 제시되어 작중 게임·레시피의 고유 아이템명(new_entity)으로 읽히는 한편, 같은 장면 뒤쪽에서는 일반 새의 신체 부위('이 새의 발톱', '플라밍고의 발톱 조각')로 풀어 쓰여 보통 표현(generic_term)으로도 읽히므로 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "beauty_full_shot_10",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "사쿠라: [라플레시아의 침], [플라밍고의 발톱], [하얀 산호의 뿔]입니다. [해파리의 갑옷]도 필요하지만 그건 메이든에게 받았습니다."
+        },
+        {
+          "scene_id": "beauty_full_shot_10",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "[OPTION TEXT=\"···너무 게임 아이템이잖아.\"]"
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "beauty_full_shot_10",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "[OPTION TEXT=\"네온. 이 새의 발톱이 필요해. 같이 찾아줘.\"]"
+        },
+        {
+          "scene_id": "beauty_full_shot_10",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "···네온의 팔에 박혀있던 플라밍고의 발톱 조각을 손에 넣었다."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "같은 장면에서 해변에 서 있는 불특정 플라밍고 개체의 실제 발톱('이 새의 발톱', '플라밍고의 발톱 조각')을 구하는 것으로 이어지므로 일반 동물의 신체 부위를 가리키는 보통 표현일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "beauty_full_shot_10",
+              "line_start": 54,
+              "line_end": 54,
+              "quote": "[OPTION TEXT=\"네온. 이 새의 발톱이 필요해. 같이 찾아줘.\"]"
+            },
+            {
+              "scene_id": "beauty_full_shot_10",
+              "line_start": 69,
+              "line_end": 69,
+              "quote": "···네온의 팔에 박혀있던 플라밍고의 발톱 조각을 손에 넣었다."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "플래닛 디스트로이어",
+          "entity_type": "item",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "메카 시프티의 입에서 발사되는 무기의 고유 무장명([플래닛 디스트로이어])이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fool_burst_day_09",
+          "line_start": 18,
+          "line_end": 19,
+          "quote": "시프티: 입에서도 뭐가 나갔었죠.\n메카 시프티: 무장명 [플래닛 디스트로이어]입니다."
+        },
+        {
+          "scene_id": "fool_burst_day_11",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "메카 시프티: 아 이러다가 실수로 제 [플래닛 디스트로이어]가 발동될 것 같네요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__011",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "플랜 C 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "마나, 플로라, 신, 길티로 결성되어 코인 러시 시합에 참가한 미실리스 소속 특정 스쿼드의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "coin_rush_show_down_02",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "마나: 이번에 플랜 C 스쿼드가 결성되고, 그 구성원에 신과 길티가 포함되는 바람에."
+        },
+        {
+          "scene_id": "coin_rush_show_down_15",
+          "line_start": 127,
+          "line_end": 127,
+          "quote": "뒷모습을 뚫어져라 바라보다, 그녀가 플랜 C 스쿼드 소속의 마나인 것을 알아챈다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__012",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "플레인 퍼펙트 바",
+          "entity_type": "item",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주의 식량 제품인 퍼펙트 바 중 아무 맛도 나지 않는 기본형 제품(플레인 퍼펙트 바)을 가리키는 고유 제품명이다. main_43_06에서 스톨 3세가 프린세스 머리맡에 둔 '플레인 퍼펙트 바'를 main_43_08에서 '플레인 퍼펙트'로 받아 서술하므로 U013과 같은 대상(E7)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_43_08",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "머리맡에 놓인 플레인 퍼펙트를 집어 입에 넣는다."
+        },
+        {
+          "scene_id": "main_44_13",
+          "line_start": 59,
+          "line_end": 60,
+          "quote": "진: 쟤들 지금 배양육은 고사하고 플레인 퍼펙트나 씹어먹고 있단 말입니다.\n진: 누님 그거 드셔보셨어요? 맛이 없어요. 말 그대로 없어요. 아무 맛도 안 난다고요."
+        },
+        {
+          "scene_id": "main_43_06",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "코를 골며 자고 있는 프린세스의 얼굴을 한 번 쳐다본 후, 가방에서 플레인 퍼펙트 바 하나를 꺼내 프린세스의 머리맡에 둔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"플레인 퍼펙트\"로 확인한 main_43_06 L3·L18"
+      ]
+    },
+    {
+      "link_id": "A2__153__013",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "플레인 퍼펙트 바",
+          "entity_type": "item",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주의 식량 제품인 퍼펙트 바의 기본 무맛 제품(플레인 퍼펙트 바)을 가리키는 고유 제품명이며, 같은 장면(main_43_06 L18)과 이어지는 main_43_08 L3에서 '플레인 퍼펙트'로 줄여 부르는 대상(U012)과 동일하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_43_06",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "코를 골며 자고 있는 프린세스의 얼굴을 한 번 쳐다본 후, 가방에서 플레인 퍼펙트 바 하나를 꺼내 프린세스의 머리맡에 둔다."
+        },
+        {
+          "scene_id": "main_43_06",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "풍선껌이 보인다. 넣어두고 플레인 퍼펙트를 꺼내 먹는다."
+        },
+        {
+          "scene_id": "main_43_08",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "머리맡에 놓인 플레인 퍼펙트를 집어 입에 넣는다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"퍼펙트 바\"로 확인한 blanc_02 L177 등 퍼펙트 바 용례"
+      ]
+    },
+    {
+      "link_id": "A2__153__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "플로라가 관리하는 정원 구역을 '저의 정원', '[보타닉 가든]의 정원', '제 화원'처럼 부르는 것과 마찬가지로 인물명에 소유격 조사 '의'와 보통명사 '정원'을 결합한 수식어 구문이며, 시설의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "trina_02",
+          "line_start": 121,
+          "line_end": 121,
+          "quote": "그렇기에, 나는 플로라의 정원으로 향했다."
+        },
+        {
+          "scene_id": "flora_01",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "플로라: 저의 정원에 오신 것을 환영해요."
+        },
+        {
+          "scene_id": "for_rest_01",
+          "line_start": 167,
+          "line_end": 168,
+          "quote": "플로라: 아스타님, 저희 [보타닉 가든]의 정원은 총 세 구역으로 나누어져 있어요.\n플로라: 꽃으로 가득한 제 화원과,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"플로라의 정원\", \"보타닉 가든\"으로 확인한 for_rest_01 L167-168"
+      ]
+    },
+    {
+      "link_id": "A2__153__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "트로니가 손에 들고 명대사를 따라 하던 장난감 모형 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d.ark_hero_00",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "피규어를 들고 명대사를 읊던 소녀만이 방 안에 남아,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__016",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "장보기 목록에 맥가이버 칼·물과 함께 적힌 일반 비상 물품 종류인 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "장보기목록_02",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "피난 가방 - 329,000원"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__017",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "다큐멘터리 답사 중 찾은 일반 대피 시설을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "갓데스 다큐멘터리 제작기_01",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "먼저 피난민 대피소부터 찾았다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__018",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "긴급 경보 방송에서 시민들에게 이동하라고 안내하는 방주 내 지정 대피 시설 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_18_00",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "안내 방송: [방주 인근에 랩쳐 출현. 시민 여러분들께서는 모두 지정된 피난소로 이동해 주십시오.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__019",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "목단이 '피난 캠프를 돌아다니며 정보를 모으고 있다'고 말하듯 아우터 림 곳곳에 임시로 마련된 대피 캠프 일반을 뜻하는 보통 낱말이며, main_23_12의 배경 지시도 일반 공간 명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_23_05",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "목단: 피난 캠프를 돌아다니며 정보를 모으고 있는데 그럴듯한 건 아직···."
+        },
+        {
+          "scene_id": "main_23_12",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "아우터 림. 피난 캠프."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "병원에 들러 받아 가는 일반 약품·회복제 종류를 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hospital_08",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "[OPTION TEXT=\"피로 회복제가 다 떨어져서 좀 받으러 왔어.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__021",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "피사 돔",
+          "entity_type": "location",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "천장 높이가 50미터이며 과거 에피넬이 방송 촬영을 했던 특정 돔 경기장·시설 하나를 가리키는 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "epinel_01",
+          "line_start": 183,
+          "line_end": 183,
+          "quote": "피사 돔 천장이 얼마나 높은지 아실까요?"
+        },
+        {
+          "scene_id": "epinel_01",
+          "line_start": 196,
+          "line_end": 196,
+          "quote": "50미터였어요"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"피사 돔\"으로 확인한 epinel_01 L30, L136, L139, L183"
+      ]
+    },
+    {
+      "link_id": "A2__153__022",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "피사 돔 폭발 사고",
+          "entity_type": "event",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "3년 전 피사 돔에서 에피넬과 관련해 벌어진 사건을 가리키는 대괄호 표기 고유 사건명([피사 돔 폭발 사고])이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "epinel_01",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "시민: 이게 3년 전의 [피사 돔 폭발 사고]에 이어서, 또 같은 니케가 사고를 일으킨 거거든요."
+        },
+        {
+          "scene_id": "epinel_01",
+          "line_start": 136,
+          "line_end": 136,
+          "quote": "[피사 돔 폭발 사고]라고 들어보셨나요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__023",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "피어",
+          "entity_type": "character",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "미미르 부속 고등학교에서 영구 제명된 츠바이의 친구(카페 운영을 꿈꾸던 학생 니케) 한 사람을 가리키는 미등록 인물의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "colorless_02",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "츠바이: 피어··· 세이스···."
+        },
+        {
+          "scene_id": "colorless_11",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "[도이스]. [루아]. [피어]. [세이스]···."
+        },
+        {
+          "scene_id": "colorless_11",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "츠바이: 피어는 그런 루아 선배가 만든 커피를 파는 카페를 운영하고 싶다고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__024",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "피에르",
+          "entity_type": "organization",
+          "entity_key": "E11"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "크리스마스 패턴 머플러와 스웨터를 출시한 명품 패션 브랜드(기업)를 가리키는 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rupee_wintershopper_00",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "루피: 이것 봐! 피에르에서 나온 크리스마스 패턴 머플러야···!"
+        },
+        {
+          "scene_id": "rupee_wintershopper_00",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "네온: 저 안에 든 거 다 명품일 텐데, 부럽네요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"피에르\"로 추가 출현 없음 확인"
+      ]
+    },
+    {
+      "link_id": "A2__153__025",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "피치베리",
+          "entity_type": "item",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "지상의 더운 지역에서 자라며 달콤한 열매를 맺는 작중 고유 꽃·열매(피치베리)를 가리키는 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "secret_garden_04",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "플로라: 이건 피치베리라는 꽃이에요."
+        },
+        {
+          "scene_id": "secret_garden_06",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "비스킷: 방금 먹었던 피치베리다!"
+        },
+        {
+          "scene_id": "blabla_secretgarden_001",
+          "line_start": 124,
+          "line_end": 124,
+          "quote": "제가 지금 피치베리라는 열매를 먹고 있는데"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__153__026",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "피크닉 세트 F",
+          "entity_type": "item",
+          "entity_key": "E13"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "킬로의 지시에 따라 T.A.L.O.S.가 꺼내 세팅하는 알파벳 식별자가 붙은 특정 피크닉 장비 세트의 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_27",
+          "line_start": 127,
+          "line_end": 128,
+          "quote": "킬로: 탈로스. 피크닉 세트 F로 부탁해.\nT.A.L.O.S.: 라져. 세팅하겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"피크닉 세트\"로 추가 출현 없음 확인"
+      ]
+    }
+  ]
+}

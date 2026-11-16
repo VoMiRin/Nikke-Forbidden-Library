@@ -1,0 +1,1095 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__152",
+  "candidate_links": [
+    {
+      "link_id": "A2__152__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프레데터",
+          "entity_type": "faction_or_species",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "새롭게 발견된 특수 랩쳐 개체군을 묶어 부르는 고유 명칭으로, 여러 개체와 상위 개체가 함께 등장하며 이야기 전체에서 동일한 부류를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "absolute_15",
+          "line_start": 28,
+          "line_end": 30,
+          "quote": "시그널: 특수 개체에게 임시로 붙인 명칭이에요···."
+        },
+        {
+          "scene_id": "absolute_16",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "총 셋의 프레데터가 보였다."
+        },
+        {
+          "scene_id": "absolute_27",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "잉그리드: 프레데터는 제군들의 추측대로 이전의 기록에서도 발견하지 못한 새로운 개체라는 것이 밝혀졌다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__002",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로덕트 23",
+          "entity_type": "faction_or_species",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "다수의 양산형 니케 개체들을 묶어 일컫는 고유한 양산형 니케 모델명(부류)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_46_13",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "프로덕트 23 모델인 양산형 니케들이다."
+        },
+        {
+          "scene_id": "main_46_14",
+          "line_start": 100,
+          "line_end": 100,
+          "quote": "···그 선두에, 프로덕트 23 모델들이 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로덕트 시리즈",
+          "entity_type": "faction_or_species",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "양산형 니케의 특정 모델 계열 전체를 묶어 부르는 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_36_07",
+          "line_start": 9,
+          "line_end": 10,
+          "quote": "맥스웰: 프로덕트 시리즈인 것 같은데, 복장이 연구원 복장이네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__004",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미세스_미스",
+          "name": "미세스 미스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "39챕터에서 네온이 아우터 림 퇴폐 업소에서 찾고 있는 특정 인물 하나를 가리키며, 같은 이야기 안(main_39_14)에서 그 타겟의 이름이 미세스 미스임이 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_11",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "바이퍼: ···[퇴폐 업소에서 놀고 있는 프로듀서 겸 작곡가에 대해 아시는 게 있나요?] 라고 했지."
+        },
+        {
+          "scene_id": "main_39_14",
+          "line_start": 112,
+          "line_end": 114,
+          "quote": "E.H.: ···미세스 미스였지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "main_39_14에서 타겟 이름 미세스 미스를 확인하고 grep으로 main_40_13 L26-27의 이력 일치 확인"
+      ]
+    },
+    {
+      "link_id": "A2__152__005",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "title_ids": ["main_story__chapter_38"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미세스_미스",
+          "name": "미세스 미스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "아비스타가 갱생관에 넣었다가 출소 후 아우터 림 퇴폐 업소에서 행적이 끊겼다고 말한 특정 인물을 가리키나, 38챕터 안에는 이름이 나오지 않고 39·40챕터의 사건·이력을 옮겨 와 미세스 미스로 추론하므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_38_09",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "아비스타: 회사에서 비리를 저지르다 발각된 프로듀서 겸 작곡가인데, 저희가 갱생관에 집어넣었죠."
+        },
+        {
+          "scene_id": "main_38_09",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "아비스타: 아우터 림에 있는 퇴폐 업소에 간 뒤부터 행적이 끊겼어요."
+        },
+        {
+          "scene_id": "main_40_13",
+          "line_start": 26,
+          "line_end": 27,
+          "quote": "네온: 다 할 줄 아는 프로듀서인데, 회사에서 비리를 저질러 갱생관에 가셨다고요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 확인한 main_40_13 L26-27에서 회사 비리로 갱생관에 갔던 프로듀서가 미세스 미스임을 확인"
+      ]
+    },
+    {
+      "link_id": "A2__152__006",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "숙련된 정식 메이드라는 뜻으로 자신의 역할·자질을 설명하는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "trendy_bar_07",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "소다: 지금 같은 상황도 다 준비가 되어있답니다~ 저는 프로 메이드니까요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "종이에는 '임명장'이라 적혀 있고 소다에게도 내일 새로 만들어 주겠다고 하는 등, 프로 메이드로 임명하는 증서를 뜻하는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anchor_innocentmaid_00",
+          "line_start": 29,
+          "line_end": 30,
+          "quote": "코코아: 프로 메이드 임명장."
+        },
+        {
+          "scene_id": "anchor_innocentmaid_00",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "코코아: 흠. 그러면 내일 만드러주께."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__008",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로비던스",
+          "entity_type": "item",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "릴리가 탑승해 전투에 참전한 특정 엑소슈트의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "memories_teller_31",
+          "line_start": 149,
+          "line_end": 149,
+          "quote": "릴리: 엑소슈트 [프로비던스]! 참전할게요!"
+        },
+        {
+          "scene_id": "memories_teller_32",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "릴리: 자, 잠깐! 여러분! 지금 뭐 하시는 건가요? 왜 프로비던스를 공격하는 건데요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__009",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로젝트 A.D.",
+          "entity_type": "concept",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "M.M.R. 심층부에서 비밀리에 진행되어 7호(지휘관)를 탄생시킨 특정 연구 계획을 가리키며, 같은 이야기 안(wisdom_spring_11)의 태블릿 기록에서 이름이 PROJECT. A.D.(프로젝트 A.D.)임이 직접 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "wisdom_spring_09",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "익숙한 목소리: 이분도 그 [프로젝트] 대상자인 거지?"
+        },
+        {
+          "scene_id": "wisdom_spring_14",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "마나: [그들]은 아직 그 [프로젝트]가 있었다는 걸  세상에 알리고 싶지 않다는걸."
+        },
+        {
+          "scene_id": "wisdom_spring_11",
+          "line_start": 43,
+          "line_end": 44,
+          "quote": "[PROJECT. A.D.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로젝트 A.D.",
+          "entity_type": "concept",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "엔더슨 복제 및 언체인드 보유 인공 인간(7호) 제작을 위해 V.T.C.에서 시작되어 M.M.R.로 이관된 특정 연구 프로젝트의 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "good_world_12",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "백학: 바로 친구가 궁금해하는 [프로젝트 A.D.]에요."
+        },
+        {
+          "scene_id": "maria-n_10",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "에닉: 동결되었던 프로젝트 A.D. 재가동."
+        },
+        {
+          "scene_id": "marian_dialog_05",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "닥터 마리아: 프로젝트 A.D.의 산물."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__011",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로젝트 A.D.",
+          "entity_type": "concept",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "에닉이 프로젝트 A.D.의 경위로 엔더슨 복제를 설명하자 닥터 마리아가 A.D.를 풀어 말한 표기로, 프로젝트 A.D.와 동일한 연구 프로젝트다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 152,
+          "line_end": 152,
+          "quote": "에닉: 프로젝트 A.D.에 대해 알고 계십니까?"
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 161,
+          "line_end": 162,
+          "quote": "닥터 마리아: ···프로젝트 Andersen Duplicate···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__012",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로젝트 메티스",
+          "entity_type": "concept",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "미실리스 인더스트리에서 슈엔과 맥스웰이 히어로 니케 제작을 목적으로 추진한 특정 연구개발 프로젝트의 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_16",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "맥스웰: 난 프로젝트 메티스의 책임 연구원인 맥스웰이라고 해."
+        },
+        {
+          "scene_id": "project_matis_18",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "뉴스 앵커: [미실리스 인더스트리의 프로젝트 메티스가 첫 번째 프로토타입 생성에 성공했다는 소식입니다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__013",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로젝트 워드리스",
+          "entity_type": "concept",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "슈엔이 메티스의 성공 사례를 이어받아 미하라와 유니(워드리스 스쿼드)를 개발하기 위해 진행한 특정 프로젝트의 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "wordless_08",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "미하라: 프로젝트 워드리스 출신의 니케들이다."
+        },
+        {
+          "scene_id": "wordless_13",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "마나: 프로젝트 워드리스를 대외적으로 알릴 때,  이 바디를 쓸 것이라고 했었습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__014",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로텍터",
+          "entity_type": "concept",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "프로토콜이나 쿠킹 오일 등 기밀을 다루는 니케의 뇌에 설치되어 침식·뇌 스캔 방지 및 기억 봉인을 수행하는 세계관 고유 보안 기술 체계다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_43_00",
+          "line_start": 13,
+          "line_end": 14,
+          "quote": "에테르: 그러게요. 프로토콜이나 쿠킹 오일 정도 급의 니케가 아니라면 없을 텐데 말이죠."
+        },
+        {
+          "scene_id": "new_flavor_11",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "브래디: 그래서 나와 크러스트의 뇌에는, 프로텍터가 달려있어."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "브래디: 침식이나 뇌 스캔을 방지하기 위해 있는, 일종의 보호 장치라고 생각하면 돼."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__015",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로토콜",
+          "entity_type": "squad",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "엑시아와 노벨이 소속된 중앙 정부 산하 정보·분석 전문 니케 스쿼드의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "coins_in_rush_05",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "루주: 그런데도 코인 러시에··· 카페 스위티의 밀크, 그리고 프로토콜의 엑시아와 함께 방문해서."
+        },
+        {
+          "scene_id": "중앙정부_프로토콜_00",
+          "line_start": 191,
+          "line_end": 191,
+          "quote": "저도,프로토콜,스쿼드인데,속상한,것입니다,,,"
+        },
+        {
+          "scene_id": "eunhwa_02",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "은화: 지금 막 프로토콜에서 전송 받았는데."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__016",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로토콜 P",
+          "entity_type": "concept",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "마스트가 메이드 카페를 해적 카페로 꾸미기 위해 명명하고 실행한 특정 작전(해적화 프로토콜)의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "romantic_valentine_06",
+          "line_start": 237,
+          "line_end": 237,
+          "quote": "마스트: 그리하여 준비한 해적화 프로토콜! 이름하여 프로토콜 P!"
+        },
+        {
+          "scene_id": "mast_romanticmaid_04",
+          "line_start": 17,
+          "line_end": 19,
+          "quote": "마스트: 얼마든지 회수 후 재사용이 가능한 만능 프로토콜이요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__017",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로토콜",
+          "entity_type": "squad",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "엑시아 등이 소속된 니케 스쿼드 프로토콜을 가리키며 U014와 동일한 스쿼드다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_07",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "라피: 프로토콜 스쿼드의 엑시아가 눈치채지 못할 정도였다. 준비를 철저히 한 모양이군."
+        },
+        {
+          "scene_id": "chapter_49_02",
+          "line_start": 106,
+          "line_end": 106,
+          "quote": "사쿠라: 프로토콜 스쿼드와 협력하여 확보하고 있습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__018",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_릴리바이스",
+          "name": "릴리바이스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "new_year_new_sword_04에서 인류연합군이 릴리바이스의 맨손 근접전을 모방해 근접 전투용 개량 양산형을 만들었다고 하므로 '그걸 따라 하겠다고'의 프로토 타입은 릴리바이스를 가리킬 수 있으나, 같은 줄의 '그냥 프로토 타입인 걸'과 new_year_new_sword_07의 시제품 용례처럼 양산과 대비되는 보통 낱말로도 읽혀 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_11",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "인류연합군 장교: 프로토 타입은 그냥 프로토 타입인 걸  그걸 따라 하겠다고 해서 이렇게 된 거 아니야!"
+        },
+        {
+          "scene_id": "new_year_new_sword_04",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "장화: 릴리바이스 소령, 알지?"
+        },
+        {
+          "scene_id": "new_year_new_sword_04",
+          "line_start": 28,
+          "line_end": 29,
+          "quote": "홍련: 우리 같이 근접 전투용으로 개량한 양산형 니케를 만들만하군."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_07",
+          "line_start": 141,
+          "line_end": 142,
+          "quote": "장화: 프로토타입이니··· 결함도 많은 편이니까."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "같은 문장 안에서도 '그냥 프로토 타입인 걸'처럼 양산 이전의 시제품·원형 일반을 뜻하는 보통 낱말로 쓰이며, 같은 이야기 안에서 개량 시제품 바디를 프로토타입이라 부른다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "new_year_new_sword_11",
+              "line_start": 57,
+              "line_end": 57,
+              "quote": "인류연합군 장교: 프로토 타입은 그냥 프로토 타입인 걸  그걸 따라 하겠다고 해서 이렇게 된 거 아니야!"
+            },
+            {
+              "scene_id": "new_year_new_sword_07",
+              "line_start": 142,
+              "line_end": 142,
+              "quote": "장화: 프로토타입이니··· 결함도 많은 편이니까."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep으로 확인한 new_year_new_sword_04 L17-29에서 인류연합군이 릴리바이스의 맨손 근접전을 따라 근접 전투형 개량 양산형을 만든 맥락 확인"
+      ]
+    },
+    {
+      "link_id": "A2__152__019",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "title_ids": ["character_episodes__스노우_화이트_이노센트_데이즈"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_릴리바이스",
+          "name": "릴리바이스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "릴리바이스가 스스로를 프로토 타입이라 소개하자 페어리 테일 모델인 스노우 화이트가 즉시 최초의 니케임을 알아보고 이름을 확인하므로, 이 이야기에서는 릴리바이스 개인을 직접 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "snowwhite_young_00",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "릴리바이스: 이래 봬도 프로토 타입이라,"
+        },
+        {
+          "scene_id": "snowwhite_young_00",
+          "line_start": 52,
+          "line_end": 56,
+          "quote": "릴리바이스: 릴리바이스라고 합니다~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "양산형과 대비되는 초기형 니케 여럿, 일반적인 시제품·영식 개념, 개량 시제품 바디 등 여러 대상에 두루 쓰이는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_zone_12",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "도로시: ···아뇨. 프로토타입인 우리와는 달리 양산형 분들은 칼로리가 필요 없다지만."
+        },
+        {
+          "scene_id": "red_ash_05",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "지휘관: 보통 프로토타입, 영식 뭐 이런 건 그런 거 되잖아."
+        },
+        {
+          "scene_id": "new_year_new_sword_07",
+          "line_start": 142,
+          "line_end": 142,
+          "quote": "장화: 프로토타입이니··· 결함도 많은 편이니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__021",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "title_ids": ["character_episodes__레드_후드"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_릴리바이스",
+          "name": "릴리바이스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "페어리 테일 모델 이전에 따로 존재하는 최초의 단일 개체를 '그 녀석'으로 지칭하며, 다른 이야기(snowwhite_young_00)에서 최초의 니케이자 프로토 타입이 릴리바이스임이 확인되므로 가능성으로 연결한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "redhood_01",
+          "line_start": 14,
+          "line_end": 15,
+          "quote": "레드 후드: 프로토타입이 따로 있거든."
+        },
+        {
+          "scene_id": "redhood_01",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "레드 후드: ···뭐, 그 녀석을 니케라 부를 수 있는지는 의문이지만."
+        },
+        {
+          "scene_id": "snowwhite_young_00",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "릴리바이스: 이래 봬도 프로토 타입이라,"
+        },
+        {
+          "scene_id": "snowwhite_young_00",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "스노우 화이트: 최초의 니케?!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 redhood_01 내 릴리스 언급(L45, L54)을 확인했으나 프로토타입과 직접 등치하는 문장은 없어 다른 이야기 근거로 추론"
+      ]
+    },
+    {
+      "link_id": "A2__152__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "프로젝트 메티스 참가자 여러 명에게 1차·2차에 걸쳐 제작·지급되는 시제품 니케 신체를 가리키는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_16",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "맥스웰: 모든 과정을 버텨내는 사람만이, 니케가 되어 히어로 프로토타입 바디를 받게 되고."
+        },
+        {
+          "scene_id": "project_matis_17",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "슈엔: 프로토타입 바디를 만드는 거 말야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__023",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "앞 장면(project_matis_03)에서 '니케 프로토타입의 설계도', '[프로토타입]의 설계도'로 풀어 쓰고 기밀 문서 쪽에도 있었다고 언급되므로, 고유 이름이 아니라 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_05",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "슈엔: ···프로토타입의 설계도."
+        },
+        {
+          "scene_id": "project_matis_03",
+          "line_start": 55,
+          "line_end": 56,
+          "quote": "맥스웰: [프로토타입]의 설계도라···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 확인한 project_matis_03 L54-56에서 '[프로토타입]의 설계도' 표기와 기밀 문서 언급 확인"
+      ]
+    },
+    {
+      "link_id": "A2__152__024",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프로틴606",
+          "entity_type": "item",
+          "entity_key": "E11"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "광고에서 운동 전후 단백질 보충제로 선전하는 특정 제품의 고유 상표명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fitness_club_00",
+          "line_start": 48,
+          "line_end": 49,
+          "quote": "광고: 프로틴606~! 증말 좋아유!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "일반적인 단백질 바 식품을 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_zone_08",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "스노우 화이트는 품에서 프로틴 바를 꺼내 도로시에게 건넸다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__026",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "일반적인 단백질 음료를 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rumani_01",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "루마니가 건네준 프로틴 셰이크를 마셨다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__027",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프리마돈나",
+          "entity_type": "squad",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "노이즈·볼륨·아리아가 소속된 테트라 라인 음악 니케 스쿼드의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_15",
+          "line_start": 87,
+          "line_end": 89,
+          "quote": "프리마돈나"
+        },
+        {
+          "scene_id": "golden_coin_rush_26",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "볼륨: 1등은 우리 프리마돈나의 차지가 될 거야!"
+        },
+        {
+          "scene_id": "blabla_primadonna_005",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "프리마돈나 단체 인터뷰 얘기"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__028",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "title_ids": ["character_episodes__아리아"] },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "오페라 하우스 직원이 아리아 개인을 가리켜 '저희 극장의, 아니 방주 전체의 프리마돈나'라고 말하므로, 스쿼드명이 아니라 오페라 주역 여가수를 뜻하는 일반 역할 명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "aria_00",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "직원: 아리아 씨는 저희 극장의, 아니 방주 전체의 프리마돈나세요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__029",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프리마돈나",
+          "entity_type": "squad",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "테트라 라인 소속 음악 니케 스쿼드 프리마돈나를 가리키며 U024의 기본 판정 대상과 동일한 스쿼드다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "golden_coin_rush_05",
+          "line_start": 138,
+          "line_end": 138,
+          "quote": "1층에는 달란트 스쿼드와 프리마돈나 스쿼드가 있고."
+        },
+        {
+          "scene_id": "blabla_diesel_006",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "프리마돈나 스쿼드에게 말해보는 건 어때?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__030",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "프리미엄 팰리스 호텔 라운지",
+          "entity_type": "location",
+          "entity_key": "E13"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "로열 로드에 위치한 특정 호텔 시설(부부 동반 모임 장소)의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "kill_the_lord_04",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "D: 장소는 로열 로드에 있는 프리미엄 팰리스 호텔 라운지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__031",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "생화를 특수 보존 용액으로 가공해 시들지 않게 만든 꽃 일반을 뜻하는 보통명사로 원문에서 직접 풀어 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "kill_the_lord_03",
+          "line_start": 212,
+          "line_end": 213,
+          "quote": "D: 생화를 특수 보존 처리된 용액으로 가공해서 장기간 시들지 않는 꽃이에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__152__032",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "델피늄과 함께 조화 재료 및 꽃말의 대상으로 언급된 일반적인 꽃 품종 이름(보통 낱말)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_secretgarden_004",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "정원에서 준비한 조화 중에 델피늄이랑 프리지아도 있었잖아요!"
+        },
+        {
+          "scene_id": "blabla_secretgarden_004",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "혹시 이 꽃들의 꽃말도 알려줄 수 있으신가요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
