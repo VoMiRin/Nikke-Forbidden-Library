@@ -30,7 +30,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 
 // Pass 2 B. 정체 후보(명세 5절 Pass 2 B, 초안 5절 B-0·B-1, 6절, 7절).
-//   node scripts/graph/pass2-b.mjs build [--pilot | --titles=a,b | --all] [--max-units=20] [--wave-size=20] [--run=pilot|probe|probe-retest|main]
+//   node scripts/graph/pass2-b.mjs build [--pilot | --titles=a,b | --all] [--max-units=20] [--wave-size=20] [--run=pilot|probe|probe-retest|main]   (rejudge 묶음은 pass2-a2.mjs b-rejudge-build)
 //   node scripts/graph/pass2-b.mjs status [--wave=N] [--run=...]
 //   node scripts/graph/pass2-b.mjs validate <bundle_id> [--run=...]
 //   node scripts/graph/pass2-b.mjs show <scene_id> [시작줄 끝줄]      (원문 보기)
@@ -78,7 +78,8 @@ const MASKED_AUTHOR_SUFFIX_RE = /(작성자|기록자|녹음자|화자|발신자
 const AUTHOR_MODIFIERS = new Set(['어느', '어떤', '익명의', '익명', '미상의', '신임', '정체불명의']);
 const EXTRA_GENERIC_WORDS = new Set(['남자', '여자', '여자친구', '남자친구', '장교', '병사', '군인', '소년', '소녀']);
 
-const RUNS = new Set(['pilot', 'probe', 'probe-retest', 'main']);
+// rejudge: A-2 뒤 B 재판정(초안 8절 5번). 묶음은 pass2-a2.mjs b-rejudge-build가 만든다
+const RUNS = new Set(['pilot', 'probe', 'probe-retest', 'main', 'rejudge']);
 const runRoot = (run) => (run === 'main' ? path.join(GRAPH_DATA_DIR, 'pass2') : path.join(GRAPH_DATA_DIR, 'pass2', run));
 const RULES_PATH = path.resolve(GRAPH_DATA_DIR, '..', '..', 'docs', 'graphrag', 'GRAPH_RAG_PASS2_B_RULES.md');
 const pathsOf = (run) => {
@@ -1126,13 +1127,17 @@ const main = async () => {
     // 레지스트리에서 이름·별칭으로 entity_id를 찾는다
     const q = args.filter((a) => !a.startsWith('--')).join(' ').trim();
     if (!q) throw new Error('entity <이름>');
-    const hits = [...loadRegistry().values()].filter((e) => e.canonical_name.includes(q) || (e.surface_labels ?? []).some((l) => l.includes(q)));
-    if (!hits.length) console.log(`"${q}": 레지스트리에 없다. 미등록 인물이면 entity_id: null과 name으로 적는다`);
+    const match = (e) => e.canonical_name.includes(q) || (e.surface_labels ?? []).some((l) => l.includes(q));
+    const hits = [...loadRegistry().values()].filter(match);
+    // Pass 2 공식 표(A-2 새 인물·스쿼드·조직). 있으면 함께 찾는다
+    const p2 = [...loadPass2Entities().values()].filter(match);
+    if (!hits.length && !p2.length) console.log(`"${q}": 레지스트리와 Pass 2 공식 표에 없다. 미등록 인물이면 entity_id: null과 name으로 적는다`);
     for (const e of hits.slice(0, 20)) console.log(`${e.entity_id}\t${e.canonical_name}\t별칭: ${(e.surface_labels ?? []).join(', ')}\t장면 ${e.scene_count}`);
+    for (const e of p2.slice(0, 20)) console.log(`${e.entity_id}\t${e.canonical_name}\t[Pass 2 공식 표 ${e.entity_type}${e.qualifier ? `, ${e.qualifier}` : ''}]\t표기: ${(e.surface_labels ?? []).join(', ')}\t이야기 ${e.title_ids?.length ?? 0}`);
     return;
   }
 
-  console.log('사용법: build [--max-units=20 --wave-size=20] | status [--wave=N] | validate <bundle_id> | show <scene_id> [시작 끝] | grep <낱말> --bundle=<bundle_id> [--limit= --offset=] | entity <이름> | finish | review-check | audit-input --wave=N [--rate=0.1] | audit-check --wave=N | answers-template --out= | score --answers= [--answers-scope=plan]  [--run=pilot|probe|probe-retest|main]');
+  console.log('사용법: build [--max-units=20 --wave-size=20] | status [--wave=N] | validate <bundle_id> | show <scene_id> [시작 끝] | grep <낱말> --bundle=<bundle_id> [--limit= --offset=] | entity <이름> | finish | review-check | audit-input --wave=N [--rate=0.1] | audit-check --wave=N | answers-template --out= | score --answers= [--answers-scope=plan]  [--run=pilot|probe|probe-retest|main|rejudge]');
   process.exitCode = 1;
 };
 

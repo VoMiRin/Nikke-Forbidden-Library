@@ -1,0 +1,418 @@
+{
+  "schema_version": "pass2-bundle-0.1.0",
+  "bundle_id": "B1__character_episodes__로산나__rj",
+  "kind": "B",
+  "title_id": "character_episodes__로산나",
+  "title": "로산나",
+  "category": "character_episodes",
+  "script_file": "data/graph/pass2/bundles/B1__character_episodes__로산나.script.txt",
+  "units": [
+    {
+      "unit_id": "U01",
+      "unit_type": "unknown_group",
+      "scene_ids": [
+        "rosanna_01"
+      ],
+      "subject_refs": [
+        {
+          "ref": "item",
+          "item_id": "rosanna_01__unk_001",
+          "unknown_id": "unk_rosanna_01_L0115"
+        },
+        {
+          "ref": "item",
+          "item_id": "rosanna_01__unk_002",
+          "unknown_id": "unk_rosanna_01_L0117"
+        }
+      ],
+      "lines": [
+        {
+          "scene_id": "rosanna_01",
+          "line": 115,
+          "unknown_id": "unk_rosanna_01_L0115",
+          "text": "???: 으억!!"
+        },
+        {
+          "scene_id": "rosanna_01",
+          "line": 117,
+          "unknown_id": "unk_rosanna_01_L0117",
+          "text": "???: 크헉···!"
+        }
+      ],
+      "pass1": {
+        "unknowns": [
+          {
+            "unknown_id": "unk_rosanna_01_L0115",
+            "quote": "으억!!",
+            "speaking_style": "짧은 비명",
+            "target_addressed": null,
+            "contextual_clues": [
+              "복도에 와이어를 들고 숨어들었다가 로산나에게 발각되어 구타당한 인간 침입자"
+            ]
+          },
+          {
+            "unknown_id": "unk_rosanna_01_L0117",
+            "quote": "크헉···!",
+            "speaking_style": "고통스러운 신음",
+            "target_addressed": null,
+            "contextual_clues": [
+              "복도에 와이어를 들고 숨어들었다가 로산나에게 연달아 맞고 쓰러진 인간 침입자"
+            ]
+          }
+        ],
+        "group": {
+          "confidence": "확인된 사실",
+          "reason": "L113에서 로산나가 복도에 숨은 침입자 한 명에게 나오라고 한 뒤 L114~117에서 연달아 구타당하며 비명을 지르는 동일 인물이다.",
+          "resolved_members": []
+        }
+      },
+      "context": [
+        {
+          "scene_id": "rosanna_01",
+          "line_start": 107,
+          "line_end": 125
+        }
+      ],
+      "crowd_hint": {
+        "flag": false,
+        "reason": null
+      },
+      "scan_terms": []
+    }
+  ],
+  "story": [
+    {
+      "scene_id": "rosanna_00",
+      "chronology_type": "present",
+      "summary": "자산가에게 받은 돈으로 인신매매 피해자들을 빼내려던 로산나는 죽은 줄 알았던 전 보스의 셋째 아들 안토니가 보낸 협박 우편을 받고, 콘실리에리에게 3일 내 처리를 지시한 뒤 자신의 '보스'인 지휘관을 지키기 위해 3일간 지휘관의 방에 머물러 온다.",
+      "speakers": [
+        {
+          "label": "자산가",
+          "entity_id": null
+        },
+        {
+          "label": "로산나",
+          "entity_id": "char_로산나"
+        },
+        {
+          "label": "콘실리에리",
+          "entity_id": "char_콘실리에리"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "rosanna_01",
+      "chronology_type": "present",
+      "summary": "동거 첫날 로산나는 지휘관이 머무는 곳에서 창문 너머의 총격과 복도에 와이어를 들고 잠입한 침입자를 처리하면서도 동네 양아치의 장난이라며 침묵의 계율이 걸린 뒷세계 사정을 숨긴 채 밤새 망을 보며 지휘관을 지킨다.",
+      "speakers": [
+        {
+          "label": "로산나",
+          "entity_id": "char_로산나"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "rosanna_01__csh_001",
+          "text": "창문을 깨고 총을 쏜 습격자와 복도에 와이어를 들고 잠입한 침입자는 rosanna_02에서 콘실리에리가 정리했다고 보고하는 안토니 패거리의 히트맨들과 연결된다.",
+          "related_scene_ids": [
+            "rosanna_02"
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "rosanna_02",
+      "chronology_type": "present",
+      "summary": "콘실리에리가 안토니와 그 패거리를 모두 정리했다고 보고하자 로산나는 지휘관이 자기 적들의 표적이 될까 봐 거리를 두려 하면서도 로열 로드의 단골 식당 위치를 흘리고, 결국 찾아온 지휘관과 술잔을 부딪친다.",
+      "speakers": [
+        {
+          "label": "로산나",
+          "entity_id": "char_로산나"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "웨이트리스",
+          "entity_id": null
+        },
+        {
+          "label": "콘실리에리",
+          "entity_id": "char_콘실리에리"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "rosanna_02__csh_001",
+          "text": "L27~28에서 로산나가 언급한 총격과 와이어 교살 시도는 rosanna_01의 습격 사건을 가리킨다.",
+          "related_scene_ids": [
+            "rosanna_01"
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "rosanna_03",
+      "chronology_type": "present",
+      "summary": "식당에서 로산나는 자신의 출생이나 헤도니아의 방식, 언더월드 퀸의 리미트에 대해 이야기한 뒤 지휘관에게 고백해 연인이 되고, 귀가하려던 지휘관은 식당 밖에서 총격을 당해 쓰러진다.",
+      "speakers": [
+        {
+          "label": "로산나",
+          "entity_id": "char_로산나"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "헤도니아 조직원",
+          "entity_id": null
+        },
+        {
+          "label": "웨이트리스",
+          "entity_id": null
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "rosanna_04",
+      "chronology_type": "present",
+      "summary": "콘실리에리는 안토니 잔당 처리를 제대로 하지 못해 지휘관이 총상을 입은 책임을 지고 로산나 앞에서 자신의 어깨를 쏜다. 병실에서 깨어난 지휘관에게 로산나는 습격자들에게 동등한 대가로 복수하겠다고 밝힌 뒤 지휘관과 관계를 맺고, 콘실리에리는 헤도니아와 원한 관계에 있는 뒷세계 인간들을 모두 쓸어버리는 벤데타를 시작한다.",
+      "speakers": [
+        {
+          "label": "콘실리에리",
+          "entity_id": "char_콘실리에리"
+        },
+        {
+          "label": "로산나",
+          "entity_id": "char_로산나"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "젊은 조직원",
+          "entity_id": null
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    }
+  ],
+  "scan": {
+    "terms": [],
+    "dropped_terms": [],
+    "hits": []
+  },
+  "routed_to_a2": [],
+  "rejudge_of": "B1__character_episodes__로산나",
+  "a2_context": [
+    {
+      "surface": "A.C.P.U.",
+      "link_type": "new_entity",
+      "entity_id": "squad_A.C.P.U.",
+      "name": "A.C.P.U.",
+      "entity_type": "squad",
+      "qualifier": "방주의 경찰 스쿼드",
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_03",
+          "line": 309
+        },
+        {
+          "scene_id": "rosanna_04",
+          "line": 213
+        }
+      ],
+      "occurrence_count": 2
+    },
+    {
+      "surface": "규수",
+      "link_type": "alias",
+      "entity_id": "char_사쿠라",
+      "name": "사쿠라",
+      "entity_type": "character",
+      "qualifier": null,
+      "confidence": [
+        "가능성"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_01",
+          "line": 102
+        },
+        {
+          "scene_id": "rosanna_03",
+          "line": 195
+        }
+      ],
+      "occurrence_count": 2
+    },
+    {
+      "surface": "시지 패러리스",
+      "link_type": "new_entity",
+      "entity_id": "squad_시지_패러리스",
+      "name": "시지 패러리스",
+      "entity_type": "squad",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_03",
+          "line": 62
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "쌍둥이 버니들",
+      "link_type": "alias",
+      "entity_id": "char_블랑_누아르",
+      "name": "블랑&누아르",
+      "entity_type": "character",
+      "qualifier": null,
+      "confidence": [
+        "가능성"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_01",
+          "line": 153
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "안토니",
+      "link_type": "new_entity",
+      "entity_id": "char2_안토니",
+      "name": "안토니",
+      "entity_type": "character",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_00",
+          "line": 32
+        },
+        {
+          "scene_id": "rosanna_02",
+          "line": 12
+        },
+        {
+          "scene_id": "rosanna_04",
+          "line": 7
+        }
+      ],
+      "occurrence_count": 3
+    },
+    {
+      "surface": "언더월드 퀸",
+      "link_type": "new_entity",
+      "entity_id": "squad_언더월드_퀸",
+      "name": "언더월드 퀸",
+      "entity_type": "squad",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_00",
+          "line": 64
+        },
+        {
+          "scene_id": "rosanna_03",
+          "line": 9
+        },
+        {
+          "scene_id": "rosanna_04",
+          "line": 233
+        }
+      ],
+      "occurrence_count": 3
+    },
+    {
+      "surface": "전 보스",
+      "link_type": "new_entity",
+      "entity_id": "char2_전대_보스",
+      "name": "전대 보스",
+      "entity_type": "character",
+      "qualifier": "헤도니아 전임 보스",
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_00",
+          "line": 34
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "헤도니아",
+      "link_type": "new_entity",
+      "entity_id": "org_헤도니아",
+      "name": "헤도니아",
+      "entity_type": "organization",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "rosanna_00",
+          "line": 12
+        },
+        {
+          "scene_id": "rosanna_01",
+          "line": 136
+        },
+        {
+          "scene_id": "rosanna_03",
+          "line": 8
+        },
+        {
+          "scene_id": "rosanna_04",
+          "line": 224
+        }
+      ],
+      "occurrence_count": 4
+    }
+  ],
+  "generated_at": "2026-11-16T15:28:22.980Z"
+}

@@ -1,0 +1,601 @@
+{
+  "schema_version": "pass2-bundle-0.1.0",
+  "bundle_id": "B1__character_episodes__앨리스__rj",
+  "kind": "B",
+  "title_id": "character_episodes__앨리스",
+  "title": "앨리스",
+  "category": "character_episodes",
+  "script_file": "data/graph/pass2/bundles/B1__character_episodes__앨리스.script.txt",
+  "units": [
+    {
+      "unit_id": "U01",
+      "unit_type": "unknown_group",
+      "scene_ids": [
+        "alice_02"
+      ],
+      "subject_refs": [
+        {
+          "ref": "item",
+          "item_id": "alice_02__unk_001",
+          "unknown_id": "unk_alice_02_L0124"
+        },
+        {
+          "ref": "item",
+          "item_id": "alice_02__unk_002",
+          "unknown_id": "unk_alice_02_L0126"
+        }
+      ],
+      "lines": [
+        {
+          "scene_id": "alice_02",
+          "line": 124,
+          "unknown_id": "unk_alice_02_L0124",
+          "text": "    ???: 그만해!"
+        },
+        {
+          "scene_id": "alice_02",
+          "line": 126,
+          "unknown_id": "unk_alice_02_L0126",
+          "text": "    ???: 뇌가 다치면 어쩌려고 그래!"
+        }
+      ],
+      "pass1": {
+        "unknowns": [
+          {
+            "unknown_id": "unk_alice_02_L0124",
+            "quote": "그만해!",
+            "speaking_style": "반말, 다급하게 말리는 어조",
+            "target_addressed": "사탕 장수",
+            "contextual_clues": [
+              "사탕 장수가 쓰러진 앨리스를 각목으로 수차례 내려치자 그만하라며 제지하는 인물"
+            ]
+          },
+          {
+            "unknown_id": "unk_alice_02_L0126",
+            "quote": "뇌가 다치면 어쩌려고 그래!",
+            "speaking_style": "반말, 다급하게 추궁하는 어조",
+            "target_addressed": "사탕 장수",
+            "contextual_clues": [
+              "사탕 장수를 붙잡아 말리며 앨리스의 뇌가 다치는 것을 걱정하는 공범 또는 관계자"
+            ]
+          }
+        ],
+        "group": {
+          "confidence": "확인된 사실",
+          "reason": "연속된 대화에서 사탕 장수를 붙잡아 말리며 앨리스를 폭행하지 말라고 제지하는 동일 인물이다.",
+          "resolved_members": []
+        }
+      },
+      "context": [
+        {
+          "scene_id": "alice_02",
+          "line_start": 116,
+          "line_end": 134
+        }
+      ],
+      "crowd_hint": {
+        "flag": false,
+        "reason": null
+      },
+      "scan_terms": [
+        "사탕 장수"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "scene_id": "alice_00",
+      "chronology_type": "present",
+      "summary": "앨리스는 방주에서 잘못 배송된 책을 보고 방주가 정말 낙원인지 궁금해하며, 루드밀라의 권유와 지휘관의 동행 제안으로 행복한 세계를 찾아 방주로 떠나기로 한다.",
+      "speakers": [
+        {
+          "label": "앨리스",
+          "entity_id": "char_앨리스"
+        },
+        {
+          "label": "루드밀라",
+          "entity_id": "char_루드밀라"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "alice_01",
+      "chronology_type": "present",
+      "summary": "지휘관과 함께 방주를 구경하며 솜사탕과 커피를 맛보고 '이상한 나라의 앨리스' 책을 선물 받아 행복해하던 앨리스는, 지휘관이 폴리를 도와 도망자를 쫓으러 간 사이 사탕을 선물할 수 있다는 사탕 장수의 말에 속아 그를 따라간다.",
+      "speakers": [
+        {
+          "label": "앨리스",
+          "entity_id": "char_앨리스"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "폴리",
+          "entity_id": "char_폴리"
+        },
+        {
+          "label": "사탕 장수",
+          "entity_id": null
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [
+        {
+          "kind": "???",
+          "unknown_id": "unk_alice_01_L0186",
+          "surface_text": "사탕 장수",
+          "entity_id": null,
+          "line_start": 189,
+          "line_end": 190,
+          "quote": "???: 사탕을 파는 사람이야.\n사탕 장수: 이 거리에서 가장 맛있는 사탕을 파는 사람이지."
+        },
+        {
+          "kind": "???",
+          "unknown_id": "unk_alice_01_L0188",
+          "surface_text": "사탕 장수",
+          "entity_id": null,
+          "line_start": 189,
+          "line_end": 190,
+          "quote": "???: 사탕을 파는 사람이야.\n사탕 장수: 이 거리에서 가장 맛있는 사탕을 파는 사람이지."
+        },
+        {
+          "kind": "???",
+          "unknown_id": "unk_alice_01_L0189",
+          "surface_text": "사탕 장수",
+          "entity_id": null,
+          "line_start": 189,
+          "line_end": 190,
+          "quote": "???: 사탕을 파는 사람이야.\n사탕 장수: 이 거리에서 가장 맛있는 사탕을 파는 사람이지."
+        }
+      ],
+      "cross_scene_hints": [
+        {
+          "item_id": "alice_01__csh_001",
+          "text": "앨리스가 떠올리는 눈의 여왕님은 앞선 장면들의 루드밀라를 가리킨다.",
+          "related_scene_ids": [
+            "alice_00",
+            "ludmilla_03"
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "alice_02",
+      "chronology_type": "mixed",
+      "summary": "앨리스는 다른 소녀들과 함께 사탕 장수를 따라 어두운 길로 가 수면 유도 및 마비 성분의 약물이 든 사탕을 건네받는다. 토끼 씨(지휘관)의 조언을 떠올린 선택에 따라 사탕을 먹고 자는 척하거나 거절했다가 사탕 장수에게 각목으로 구타당하며, 방주가 낙원처럼 느껴지지 않는다고 생각한다.",
+      "speakers": [
+        {
+          "label": "앨리스",
+          "entity_id": "char_앨리스"
+        },
+        {
+          "label": "사탕 장수",
+          "entity_id": null
+        },
+        {
+          "label": "종업원",
+          "entity_id": null
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        }
+      ],
+      "present_silent": [
+        {
+          "name": "분홍색 원피스를 입은 소녀",
+          "entity_id": null
+        },
+        {
+          "name": "양 갈래로 머리를 묶은 소녀",
+          "entity_id": null
+        },
+        {
+          "name": "파란 머리띠를 한 소녀",
+          "entity_id": null
+        },
+        {
+          "name": "빨간 구두를 신은 소녀",
+          "entity_id": null
+        }
+      ],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "alice_02__csh_001",
+          "text": "앨리스가 부르는 '여왕님'은 루드밀라를 가리킨다.",
+          "related_scene_ids": [
+            "alice_04"
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "alice_03",
+      "chronology_type": "mixed",
+      "summary": "앨리스는 과거 병원에서 뇌 적출 수술을 앞두고 좋아하는 책 속 인물인 '앨리스'가 되고 싶다고 말하던 꿈을 꾼 뒤 깨어난다. 폴리와 미란다가 납치 피해자 4명을 구출하고 범인들을 체포해 복귀한 뒤, 앨리스는 자신을 구하러 온 지휘관(토끼 씨)이야말로 자신의 낙원이라며 앞으로도 토끼 씨로 있어 달라고 고백한다.",
+      "speakers": [
+        {
+          "label": "흰옷의 여성",
+          "entity_id": null
+        },
+        {
+          "label": "수술복을 입은 남자",
+          "entity_id": null
+        },
+        {
+          "label": "청진기를 든 여자",
+          "entity_id": null
+        },
+        {
+          "label": "환자복을 입은 소녀",
+          "entity_id": null
+        },
+        {
+          "label": "앨리스",
+          "entity_id": "char_앨리스"
+        },
+        {
+          "label": "미란다",
+          "entity_id": "char_미란다"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "폴리",
+          "entity_id": "char_폴리"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "alice_04",
+      "chronology_type": "mixed",
+      "summary": "전초기지 병원에서 머스탱이 앨리스의 다리를 고쳐주며 몸을 소중히 하라고 꾸짖고, 루드밀라도 전화로 모르는 사람을 따라가지 말라며 반성문을 지시하면서도 무사함에 안도한다. 밤에 병원을 무서워하는 앨리스의 손을 지휘관이 잡아주자 앨리스는 편안히 잠들고, 꿈속의 하얀 감옥에서도 지휘관의 손을 잡고 밖으로 걸어 나간다.",
+      "speakers": [
+        {
+          "label": "머스탱",
+          "entity_id": "char_머스탱"
+        },
+        {
+          "label": "앨리스",
+          "entity_id": "char_앨리스"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "루드밀라",
+          "entity_id": "char_루드밀라"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    }
+  ],
+  "scan": {
+    "terms": [
+      {
+        "term": "사탕 장수",
+        "sources": [
+          "resolved_name"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "scene_count": 6,
+        "same_title_lines": [
+          {
+            "scene_id": "alice_01",
+            "lines": [
+              202,
+              210
+            ]
+          },
+          {
+            "scene_id": "alice_02",
+            "lines": [
+              2,
+              23,
+              85,
+              96,
+              109,
+              117,
+              121,
+              123
+            ]
+          },
+          {
+            "scene_id": "alice_04",
+            "lines": [
+              48
+            ]
+          }
+        ],
+        "other_title_lines": 10,
+        "kept": 10,
+        "omitted": 0
+      }
+    ],
+    "dropped_terms": [],
+    "hits": [
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0001",
+        "scene_id": "a.c.p.u._freeze_03",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 4,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 2,
+          "line_end": 6,
+          "text": "[L0002] 직원: 할로윈 기념 특별 코스튬입니다~!\n[L0003] 직원: 다른 가게의 디자인과 차별화된 하나뿐인 나만의 코스튬을 가져보세요!\n[L0004] 사탕 장수: 해골 사탕, 박쥐 사탕, 마녀 사탕까지 다 있습니다!\n[L0005] 사탕 장수: 곧 매진이니 구매를 희망하시는 분들은 번호표를 뽑아주세요!\n[L0006] 아니스: 와~"
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0002",
+        "scene_id": "a.c.p.u._freeze_03",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 5,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 3,
+          "line_end": 7,
+          "text": "[L0003] 직원: 다른 가게의 디자인과 차별화된 하나뿐인 나만의 코스튬을 가져보세요!\n[L0004] 사탕 장수: 해골 사탕, 박쥐 사탕, 마녀 사탕까지 다 있습니다!\n[L0005] 사탕 장수: 곧 매진이니 구매를 희망하시는 분들은 번호표를 뽑아주세요!\n[L0006] 아니스: 와~\n[L0007] 아니스: 할로윈으로 완전 도배됐네."
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0003",
+        "scene_id": "a.c.p.u._freeze_04",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 2,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 1,
+          "line_end": 4,
+          "text": "[L0001] [SCENE START]\n[L0002] 사탕 장수: 사탕 있습니다, 사탕~!\n[L0003] 사탕 장수: 맛있고 무서운 수제 사탕 있습니다!\n[L0004] 아니스: 오!"
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0004",
+        "scene_id": "a.c.p.u._freeze_04",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 3,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 1,
+          "line_end": 5,
+          "text": "[L0001] [SCENE START]\n[L0002] 사탕 장수: 사탕 있습니다, 사탕~!\n[L0003] 사탕 장수: 맛있고 무서운 수제 사탕 있습니다!\n[L0004] 아니스: 오!\n[L0005] 아니스: 여기 사탕들 진짜 잘 만들었다."
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0005",
+        "scene_id": "a.c.p.u._freeze_04",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 62,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 60,
+          "line_end": 64,
+          "text": "[L0060] 드레이크: ··· ···.\n[L0061] 드레이크: 이봐, 사장.\n[L0062] 사탕 장수: 예?\n[L0063] 드레이크: 혹시 귀여운 동물 사탕도 있나?\n[L0064] 사탕 장수: 아, 물론 있죠~!"
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0006",
+        "scene_id": "a.c.p.u._freeze_04",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 64,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 62,
+          "line_end": 66,
+          "text": "[L0062] 사탕 장수: 예?\n[L0063] 드레이크: 혹시 귀여운 동물 사탕도 있나?\n[L0064] 사탕 장수: 아, 물론 있죠~!\n[L0065] 사탕 장수: 몇 개나 드릴까~?\n[L0066] 드레이크: 20봉지 내놔라."
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0007",
+        "scene_id": "a.c.p.u._freeze_04",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 65,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 63,
+          "line_end": 67,
+          "text": "[L0063] 드레이크: 혹시 귀여운 동물 사탕도 있나?\n[L0064] 사탕 장수: 아, 물론 있죠~!\n[L0065] 사탕 장수: 몇 개나 드릴까~?\n[L0066] 드레이크: 20봉지 내놔라.\n[L0067] 아니스: 뭐야, 왜 그렇게 많이 사?"
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0008",
+        "scene_id": "a.c.p.u._freeze_04",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 85,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 83,
+          "line_end": 87,
+          "text": "[L0083] 키리: 제가 시력이 많이 안 좋아서···.\n[L0084] 드레이크: 저런, 상당히 불편하겠군.\n[L0085] 사탕 장수: 여기, 주문하신 20봉지 나왔습니다~\n[L0086] 드레이크: 잘 받아 가도록 하지.\n[L0087] 드레이크: 그럼 난 무시무시한 빌런 사탕을 구매했으니, 이만 가보겠다."
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0009",
+        "scene_id": "a.c.p.u._freeze_04",
+        "title_id": "event_stories__a_c_p_u__freeze",
+        "line": 105,
+        "speaker": "사탕 장수",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 103,
+          "line_end": 107,
+          "text": "[L0103]   [OPTION_END]\n[L0104] [CHOICE_END]\n[L0105] 사탕 장수: 예~ 바로 드릴게요~\n[L0106] 준비된 사탕은 빠르게 포장되어 나왔고.\n[L0107] 나는 롤리팝 하나를 키리에게 건네주었다."
+        }
+      },
+      {
+        "scan_id": "B1__character_episodes__앨리스__S0010",
+        "scene_id": "diesel_00",
+        "title_id": "character_episodes__디젤",
+        "line": 64,
+        "speaker": "디젤",
+        "terms": [
+          "사탕 장수"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 62,
+          "line_end": 66,
+          "text": "[L0062] 어린 아이: 그보다 사탕 누나!\n[L0063] 어린 아이: 딸기 맛 사탕밖에 없어? 포도 맛은?\n[L0064] 디젤: 누나는 딸기맛 사탕 장수랍니다. 포도맛은 취급하지 않아요.\n[L0065] 어린 아이: 그게 뭐야. 딸기 맛 맛없는데.\n[L0066] 디젤: 에이~ 일단 한번 먹어봐요. 원래 베이직한 게 가장 오래 사랑받는 법이랍니다."
+        }
+      }
+    ]
+  },
+  "routed_to_a2": [],
+  "rejudge_of": "B1__character_episodes__앨리스",
+  "a2_context": [
+    {
+      "surface": "눈의 여왕님",
+      "link_type": "alias",
+      "entity_id": "char_루드밀라",
+      "name": "루드밀라",
+      "entity_type": "character",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "alice_01",
+          "line": 65
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "사탕 장수님",
+      "link_type": "new_entity",
+      "entity_id": "char2_사탕_장수",
+      "name": "사탕 장수",
+      "entity_type": "character",
+      "qualifier": "앨리스 에피소드의 납치범",
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "alice_04",
+          "line": 48
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "여왕님",
+      "link_type": "alias",
+      "entity_id": "char_루드밀라",
+      "name": "루드밀라",
+      "entity_type": "character",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "alice_02",
+          "line": 32
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "하트 여왕",
+      "link_type": "new_entity",
+      "entity_id": "char2_퀸",
+      "name": "퀸",
+      "entity_type": "character",
+      "qualifier": "초대 랩쳐 수장",
+      "confidence": [
+        "가능성"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "alice_00",
+          "line": 6
+        }
+      ],
+      "occurrence_count": 1
+    }
+  ],
+  "generated_at": "2026-11-16T15:28:22.980Z"
+}

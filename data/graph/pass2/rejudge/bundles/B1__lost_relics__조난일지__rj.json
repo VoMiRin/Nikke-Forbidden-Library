@@ -1,0 +1,948 @@
+{
+  "schema_version": "pass2-bundle-0.1.0",
+  "bundle_id": "B1__lost_relics__조난일지__rj",
+  "kind": "B",
+  "title_id": "lost_relics__조난일지",
+  "title": "조난 일지",
+  "category": "lost_relics",
+  "script_file": "data/graph/pass2/bundles/B1__lost_relics__조난일지.script.txt",
+  "units": [
+    {
+      "unit_id": "U01",
+      "unit_type": "author",
+      "scene_ids": [
+        "조난일지_00",
+        "조난일지_01",
+        "조난일지_02",
+        "조난일지_03"
+      ],
+      "subject_refs": [
+        {
+          "ref": "item",
+          "item_id": "조난일지_00__dca_001"
+        },
+        {
+          "ref": "item",
+          "item_id": "조난일지_01__dca_001"
+        },
+        {
+          "ref": "item",
+          "item_id": "조난일지_02__dca_001"
+        },
+        {
+          "ref": "item",
+          "item_id": "조난일지_03__dca_001"
+        }
+      ],
+      "lines": [],
+      "pass1": {
+        "author": {
+          "title_id": "lost_relics__조난일지",
+          "name": "조난 일지 작성자",
+          "route_reason": "정체를 가린 지칭(…작성자 등)",
+          "flag": null
+        }
+      },
+      "context": [
+        {
+          "scene_id": "조난일지_00",
+          "line_start": 1,
+          "line_end": 6
+        },
+        {
+          "scene_id": "조난일지_01",
+          "line_start": 1,
+          "line_end": 6
+        },
+        {
+          "scene_id": "조난일지_02",
+          "line_start": 1,
+          "line_end": 7
+        },
+        {
+          "scene_id": "조난일지_03",
+          "line_start": 1,
+          "line_end": 7
+        }
+      ],
+      "crowd_hint": {
+        "flag": false,
+        "reason": null
+      },
+      "scan_terms": [
+        "권총",
+        "조난지의 수정"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "scene_id": "조난일지_00",
+      "chronology_type": "present",
+      "summary": "일지 작성자가 방주 외곽 도시에서 조난당해 특이 사항 없이 구조 신호를 계속 발신 중이라고 기록한다.",
+      "speakers": [],
+      "present_silent": [],
+      "document_author": {
+        "name": "조난 일지 작성자",
+        "entity_id": null
+      },
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "조난일지_01",
+      "chronology_type": "present",
+      "summary": "일지 작성자가 수정을 발견했으며 특이 사항 없이 구조 신호를 계속 발신 중이라고 기록한다.",
+      "speakers": [],
+      "present_silent": [],
+      "document_author": {
+        "name": "조난 일지 작성자",
+        "entity_id": null
+      },
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "조난일지_02",
+      "chronology_type": "present",
+      "summary": "조난 일지 작성자가 수정을 발견한 뒤 스쿼드 멤버와 일대가 수정으로 뒤덮이고 지휘관이 도주했으며 구조 신호기에도 수정이 침투했다고 기록한다.",
+      "speakers": [],
+      "present_silent": [],
+      "document_author": {
+        "name": "조난 일지 작성자",
+        "entity_id": null
+      },
+      "resolved_identities": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "조난일지_02__csh_001",
+          "text": "조난 일지 시리즈(조난일지_00~03)의 세 번째 조각으로, 수정 침식과 지휘관의 도주를 기록한다.",
+          "related_scene_ids": [
+            "조난일지_00",
+            "조난일지_01",
+            "조난일지_03"
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "조난일지_03",
+      "chronology_type": "present",
+      "summary": "조난 일지 작성자가 빠르게 확장하는 수정이 자신의 체내에 침투했으며, 외상 없이 사망한 지휘관과 잔여 탄환 1발이 남은 권총을 발견했다고 기록한다.",
+      "speakers": [],
+      "present_silent": [],
+      "document_author": {
+        "name": "조난 일지 작성자",
+        "entity_id": null
+      },
+      "resolved_identities": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "조난일지_03__csh_001",
+          "text": "조난일지_02에서 도주했던 지휘관이 사망 상태로 발견되며, 체내에 수정이 침투한 작성자가 잔여 탄환 1발이 남은 권총을 확인한다.",
+          "related_scene_ids": [
+            "조난일지_02"
+          ]
+        }
+      ]
+    }
+  ],
+  "scan": {
+    "terms": [
+      {
+        "term": "권총",
+        "sources": [
+          "clue_keyword"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "scene_count": 41,
+        "same_title_lines": [
+          {
+            "scene_id": "조난일지_03",
+            "lines": [
+              5
+            ]
+          }
+        ],
+        "other_title_lines": 55,
+        "kept": 40,
+        "omitted": 15
+      },
+      {
+        "term": "조난지의 수정",
+        "sources": [
+          "clue_keyword"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "scene_count": 0,
+        "same_title_lines": [],
+        "other_title_lines": 0,
+        "kept": 0,
+        "omitted": 0
+      }
+    ],
+    "dropped_terms": [
+      {
+        "term": "수정",
+        "sources": [
+          "clue_keyword"
+        ],
+        "scene_count": 194,
+        "reason": "흔한 낱말(장면 194개 > 60)"
+      }
+    ],
+    "hits": [
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0001",
+        "scene_id": "main_01_06",
+        "title_id": "main_story__chapter_01",
+        "line": 14,
+        "speaker": "라피",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 12,
+          "line_end": 16,
+          "text": "[L0012] 시프티: 군법에 따라 니케의 처분은\n[L0013] 시프티: 지휘관이 직접 해야 합니다.\n[L0014] 라피: 자결용 권총입니다. 인간도 사용할 수 있습니다.\n[L0015] 라피: 지근거리에서 격발하시면 됩니다.\n[L0016] [CHOICE_START]"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0002",
+        "scene_id": "main_02_13",
+        "title_id": "main_story__chapter_02",
+        "line": 78,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 76,
+          "line_end": 80,
+          "text": "[L0076] 라피: ···?\n[L0077] 미하라: 감각 교환 완료에요~\n[L0078] 슈엔은 품에서 권총을 꺼내들었다.\n[L0079] 그리고 미하라의 복부를 겨냥했다.\n[L0080] 타앙-!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0003",
+        "scene_id": "main_12_08",
+        "title_id": "main_story__chapter_12",
+        "line": 106,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 104,
+          "line_end": 108,
+          "text": "[L0104] 라플라스: 허억···! 허억···!\n[L0105] 라플라스는 힘겹게 품 안에 손을 집어넣었고.\n[L0106] 잠시 후 권총을 꺼내들었다.\n[L0107] 권총은 허공을 잠시 동안 머물다.\n[L0108] 이윽고 그녀의 턱 밑에서 멈췄다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0004",
+        "scene_id": "main_12_08",
+        "title_id": "main_story__chapter_12",
+        "line": 107,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 105,
+          "line_end": 109,
+          "text": "[L0105] 라플라스는 힘겹게 품 안에 손을 집어넣었고.\n[L0106] 잠시 후 권총을 꺼내들었다.\n[L0107] 권총은 허공을 잠시 동안 머물다.\n[L0108] 이윽고 그녀의 턱 밑에서 멈췄다.\n[L0109] 라플라스: 미안···! 하다···!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0005",
+        "scene_id": "main_19_10",
+        "title_id": "main_story__chapter_19",
+        "line": 98,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 96,
+          "line_end": 100,
+          "text": "[L0096] [CHOICE_END]\n[L0097] 도로시: ···그럼 신뢰의 표시로, 이걸 먼저 드리겠습니다.\n[L0098] 도로시는 장전된 권총 한 정을 내밀었다.\n[L0099] 도로시: 명심하세요.\n[L0100] 도로시: 첫 번째 탄환이 언체인드입니다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0006",
+        "scene_id": "main_24_12",
+        "title_id": "main_story__chapter_24",
+        "line": 106,
+        "speaker": "라피",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 104,
+          "line_end": 108,
+          "text": "[L0104] 아니스: 그럼 미하라는?\n[L0105] 라피: 미하라는···.\n[L0106] 라피: 크로우가 쏜 제압탄에 당한 저희나 유니와는 달리, 자결용 권총에 머리를 당했습니다.\n[L0107] 라피: 손상이 커 급히 수리에 들어갔습니다만···.\n[L0108] 라피: NIMPH가 뇌 수술을 방해했습니다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0007",
+        "scene_id": "main_26_10",
+        "title_id": "main_story__chapter_26",
+        "line": 169,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 167,
+          "line_end": 171,
+          "text": "[L0167] 도로시: 큭···!\n[L0168] 아니스: 이리 와···!!\n[L0169] 도로시의 멱살을 잡고 끌어올린 아니스는, 자결용 권총을 꺼내들어 겨눈다.\n[L0170] 아니스: 라피를 죽이려고 했겠다···! 이 빌어먹을 자식이!!\n[L0171] 도로시: 후후··· 아직 포기하지 않았는데요."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0008",
+        "scene_id": "main_43_10",
+        "title_id": "main_story__chapter_43",
+        "line": 70,
+        "speaker": "여사제",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 68,
+          "line_end": 72,
+          "text": "[L0068] 여사제: 성하의 육체 전환 의식이 끝난 후, 성하께선 휴식에 들고 남은 인원들이 연회를 즐기고 있을 때.\n[L0069] 여사제: 그 남자는 조용히 연회장에 모습을 드러냈습니다.\n[L0070] 여사제: 지휘관 복장을 입고 있었습니다. 손에는 권총 한 자루와, 큰 배낭을 들고 있었습니다.\n[L0071] 여사제: 그는 가만히 서서 우리를 노려보다가.\n[L0072] 여사제: ···공격해 오기 시작했습니다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0009",
+        "scene_id": "main_43_12",
+        "title_id": "main_story__chapter_43",
+        "line": 24,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 22,
+          "line_end": 26,
+          "text": "[L0022] 프린세스가 쓰러진다.\n[L0023] 프린세스는 바닥에 쓰러진 채 고개를 들어 앞을 바라본다.\n[L0024] 여사제가 걸어오고 있다. 손에는 권총이 들려있다.\n[L0025] 반색하며 달려온다.\n[L0026] 프린세스의 몸을 뒤척이다, 목걸이를 당긴다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0010",
+        "scene_id": "chapter_48_07",
+        "title_id": "main_story__chapter_48",
+        "line": 108,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 106,
+          "line_end": 110,
+          "text": "[L0106] 갑판 너머로, 광활하게 펼쳐져 있는 지상을 본다.\n[L0107] 그러기를 잠시.\n[L0108] 도로시는 품에서 권총을 꺼내들어 턱에 겨눈다.\n[L0109] 도로시: ··· ···.\n[L0110] 도로시: 그래도. 다행이야."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0011",
+        "scene_id": "chapter_48_07",
+        "title_id": "main_story__chapter_48",
+        "line": 137,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 135,
+          "line_end": 139,
+          "text": "[L0135] 도로시: 꼭, 되돌려주세요.\n[L0136] 엔더슨: ···그래. 꼭이다.\n[L0137] 도로시가 권총을 집어던진다.\n[L0138] 갑판 끝을 향해 달려간다.\n[L0139] 그리고 하늘을 향해 몸을 던진다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0012",
+        "scene_id": "license_to_kill_12",
+        "title_id": "event_stories__license_to_kill",
+        "line": 44,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 42,
+          "line_end": 46,
+          "text": "[L0042] 사장: 칫!!\n[L0043] 탕! 탕! 탕!\n[L0044] 사장은 도끼를 주워들고 있는 D의 머리를 향해 권총을 발사했다.\n[L0045] D의 고개가 살짝 젖혀졌다.\n[L0046] 그리고 아무렇지도 않게 고개를 추스른 후 사장을 쳐다봤다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0013",
+        "scene_id": "red_ash_17",
+        "title_id": "event_stories__red_ash",
+        "line": 10,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 8,
+          "line_end": 12,
+          "text": "[L0008] 오스왈드: 제가 할 말입니다. 이런 때에 히치하이킹이라니 겁이 너무 없군요.\n[L0009] 레드 후드: 너 말이야. 함부로 모르는 사람을 태우면···.\n[L0010] 레드 후드는 품에서 권총을 꺼내들었다.\n[L0011] 오스왈드: ··· ···.\n[L0012] 레드 후드: 이런 꼴을 당할지도 모른다고."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0014",
+        "scene_id": "red_ash_17",
+        "title_id": "event_stories__red_ash",
+        "line": 14,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 12,
+          "line_end": 16,
+          "text": "[L0012] 레드 후드: 이런 꼴을 당할지도 모른다고.\n[L0013] 오스왈드: 명심하죠.\n[L0014] 레드 후드는 권총을 오스왈드에게 건넸다.\n[L0015] 오스왈드: ??\n[L0016] 레드 후드: 혹시 내 상태가 좀 이상하다 싶으면 바로 쏴."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0015",
+        "scene_id": "red_ash_17",
+        "title_id": "event_stories__red_ash",
+        "line": 18,
+        "speaker": "레드 후드",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 16,
+          "line_end": 20,
+          "text": "[L0016] 레드 후드: 혹시 내 상태가 좀 이상하다 싶으면 바로 쏴.\n[L0017] 레드 후드: 목소리가 바뀐다거나, 눈이 시뻘게진다거나 하면 말이야.\n[L0018] 레드 후드: 니케 자결용 권총이니까, 너도 쏠 수 있어.\n[L0019] 오스왈드: 무서운 소릴 하시는군요.\n[L0020] 레드 후드: 더 무서운 꼴 보기 전에, 그렇게 한다고 약속해."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0016",
+        "scene_id": "red_ash_17",
+        "title_id": "event_stories__red_ash",
+        "line": 22,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 20,
+          "line_end": 24,
+          "text": "[L0020] 레드 후드: 더 무서운 꼴 보기 전에, 그렇게 한다고 약속해.\n[L0021] 오스왈드: ···그러죠.\n[L0022] 오스왈드는 레드 후드의 권총을 받았다.\n[L0023] 오스왈드: 그래서, 어디쯤에서 내려주면 됩니까?\n[L0024] 오스왈드: 레드 후드."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0017",
+        "scene_id": "red_ash_19",
+        "title_id": "event_stories__red_ash",
+        "line": 132,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 130,
+          "line_end": 134,
+          "text": "[L0130] 레드 후드: 오··· 고마워.\n[L0131] 오스왈드: 그리고 이것도 돌려드리죠.\n[L0132] 오스왈드는 레드 후드에게 권총을 건넸다.\n[L0133] 레드 후드: ··· ···.\n[L0134] 오스왈드: 부디 자신에게 쓸 일이 없기를 바랍니다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0018",
+        "scene_id": "red_ash_22",
+        "title_id": "event_stories__red_ash",
+        "line": 69,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 67,
+          "line_end": 71,
+          "text": "[L0067] 레드 후드: 흐읏···! 흐읍···!\n[L0068] 레드 후드: 으아아악···!\n[L0069] 레드 후드는 권총을 꺼내들었다.\n[L0070] 레드 후드: ··· ···.\n[L0071] 레드 후드: 스노우··· 미안하다···."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0019",
+        "scene_id": "lord_for_justice_04",
+        "title_id": "event_stories__lord_for_justice",
+        "line": 214,
+        "speaker": "목단",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 212,
+          "line_end": 216,
+          "text": "[L0212] K: 그게 끝이야?\n[L0213] 목단: 당연히 아니지.\n[L0214] 목단: 그다음으로는 뭔가 가시가 박힌 권총? 기관단총?\n[L0215] 목단: 뭐 하여튼 그런 총을 들고 있더래.\n[L0216] [CHOICE_START]"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0020",
+        "scene_id": "lord_for_justice_12",
+        "title_id": "event_stories__lord_for_justice",
+        "line": 36,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 34,
+          "line_end": 38,
+          "text": "[L0034] 철컥.\n[L0035] VII: ··· ···.\n[L0036] VII은 품속에서 권총을 꺼내 K에게 겨눴다.\n[L0037] [CHOICE_START]\n[L0038]   [OPTION TEXT=\"··· ···!\"]"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0021",
+        "scene_id": "absolute_25",
+        "title_id": "event_stories__absolute",
+        "line": 91,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 89,
+          "line_end": 93,
+          "text": "[L0089] 쿠웅-!\n[L0090] 엠마가 들고 있던 머신건을 내려놓는다.\n[L0091] 그리고 품에서 권총을 꺼내 들었다.\n[L0092] 엠마: 정확히는 못 맞춰. 알지?\n[L0093] 은화: 방향만 알려줘도 충분해."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0022",
+        "scene_id": "absolute_25",
+        "title_id": "event_stories__absolute",
+        "line": 95,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 93,
+          "line_end": 97,
+          "text": "[L0093] 은화: 방향만 알려줘도 충분해.\n[L0094] 베스티가 만들어낸 연기에서 흐름 중, 부자연스러운 흐름을 엠마가 눈을 쫓는다.\n[L0095] 그곳에 권총으로 한 발.\n[L0096] 은화가 이어서 사격.\n[L0097] 프레데터가 쓰러지며 광학미채가 풀린다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0023",
+        "scene_id": "absolute_25",
+        "title_id": "event_stories__absolute",
+        "line": 101,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 99,
+          "line_end": 103,
+          "text": "[L0099] 은화: 계속 가자. 베스티. 연기가 끊어지지 않도록 계속 쏴 갈겨.\n[L0100] 베스티: 응!\n[L0101] 미사일의 폭음. 권총의 발포음. 라이플의 발포음. 무거운 쇳덩이가 쓰러지는 소리가 반복된다.\n[L0102] 그리고 그러기를 잠시, 지금까지 들리지 않았던 소리가 들려왔다.\n[L0103] 기이이잉--!!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0024",
+        "scene_id": "absolute_25",
+        "title_id": "event_stories__absolute",
+        "line": 107,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 105,
+          "line_end": 109,
+          "text": "[L0105] 은화: 위치!\n[L0106] 탕-!\n[L0107] 엠마가 연기가 자욱한 어딘가를 향해 권총을 쏜다.\n[L0108] 은화가 빠르게 조준하고, 방아쇠를 당기려는 순간.\n[L0109] 부우우우웅--!!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0025",
+        "scene_id": "coins_in_rush_12",
+        "title_id": "event_stories__coins_in_rush",
+        "line": 169,
+        "speaker": "지휘관",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 167,
+          "line_end": 171,
+          "text": "[L0167] [CHOICE_END]\n[L0168] [CHOICE_START]\n[L0169]   [OPTION TEXT=\"권총을 꺼내 겨눈다.\"]\n[L0170]     인자해 보이는 남자: 뭣···!\n[L0171]     인자해 보이는 남자: 초, 총을 꺼내다니 이런 비겁한···!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0026",
+        "scene_id": "coins_in_rush_12",
+        "title_id": "event_stories__coins_in_rush",
+        "line": 180,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 178,
+          "line_end": 182,
+          "text": "[L0178]     인자해 보이는 남자: 저를 쏠 각오, 되어있지 않을 것이 분명···!\n[L0179]     철컥.\n[L0180]     권총의 슬라이드를 당겼다.\n[L0181]     [CHOICE_START]\n[L0182]       [OPTION TEXT=\"다리나 팔 정도는 쏠 수 있어.\"]"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0027",
+        "scene_id": "reborn_evil_00",
+        "title_id": "event_stories__reborn_evil",
+        "line": 64,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 62,
+          "line_end": 66,
+          "text": "[L0062] 폴리: ··· ···.\n[L0063] 폴리: 넹. 놓쳐선 안 되졍.\n[L0064] 폴리가 권총을 챙겼다.\n[L0065] 폴리: 큰일이 아니어야 할 텐데영.\n[L0066] 그리곤 경찰서를 나섰다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0028",
+        "scene_id": "ark_guardian_05",
+        "title_id": "event_stories__ark_guardian",
+        "line": 62,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 60,
+          "line_end": 64,
+          "text": "[L0060] 타블렛 너머 지면에 그림자가 보인다.\n[L0061] 너무 깊은 생각을 한 탓에 접근한 것을 눈치채지 못했다.\n[L0062] 오스왈드는 동요하지 않은 척, 잠시동안 가만히 있다가 홀스터의 권총을 빠르게 뽑아 들어 정면을 향해 겨눴다.\n[L0063] 프리시아: 와. 갑자기 손에서 총이 생겼어.\n[L0064] 프리시아: 진짜 신기하다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0029",
+        "scene_id": "ark_guardian_06",
+        "title_id": "event_stories__ark_guardian",
+        "line": 2,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 1,
+          "line_end": 4,
+          "text": "[L0001] [SCENE START]\n[L0002] 오스왈드는 겨눴던 권총을 내려놓았다.\n[L0003] 오스왈드: 누굽니까.\n[L0004] 프리시아: 프리시아."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0030",
+        "scene_id": "ark_guardian_13",
+        "title_id": "event_stories__ark_guardian",
+        "line": 116,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 114,
+          "line_end": 118,
+          "text": "[L0114] 저 멀리, 캠프 쪽으로 향하고 있는 검은 헬레틱이 보인다.\n[L0115] 지휘관: 제발···! 여길 봐라···!\n[L0116] 품에서 권총을 꺼낸다.\n[L0117] 망설이지 않고 쏜다. 탄환이 명중한다.\n[L0118] 검은 헬레틱이 지휘관을 바라본다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0031",
+        "scene_id": "ark_guardian_17",
+        "title_id": "event_stories__ark_guardian",
+        "line": 124,
+        "speaker": "지휘관",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 122,
+          "line_end": 126,
+          "text": "[L0122] 지휘관: 10명 이상. 발소리가 큰 걸로 봐선 무장 상태다.\n[L0123] 지휘관: 이봐 소대장. 남는 총 있어?\n[L0124] 지휘관: 권총이라도 상관없어. 나 백발백중이거든.\n[L0125] 중앙 정부 소대장: 잠시만 기다려주십시오.\n[L0126] 소대장이 품을 뒤적인다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0032",
+        "scene_id": "LIE CAUSE RECOL_02",
+        "title_id": "event_stories__lie_cause_recoil",
+        "line": 9,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 7,
+          "line_end": 11,
+          "text": "[L0007] 타키나: ··· ···!!\n[L0008] 슈가가 총을 들어 올리자.\n[L0009] 긴 머리의 학생이, 권총을 쥐고 슈가를 향해 겨누었다.\n[L0010] 밀크: 총?\n[L0011] 밀크: 어디서 튀어나온 거야, 갑자기?"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0033",
+        "scene_id": "LIE CAUSE RECOL_20",
+        "title_id": "event_stories__lie_cause_recoil",
+        "line": 60,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 58,
+          "line_end": 62,
+          "text": "[L0058] 레인: ···알지도 못하면서···.\n[L0059] 레인: 잘난 척하지 마!!\n[L0060] 레인은 품에서 권총을 꺼내 들어 앞을 향해 조준했다.\n[L0061] 탕-!!\n[L0062] 레인: 으아악!!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0034",
+        "scene_id": "maria-n_04",
+        "title_id": "event_stories__maria-n",
+        "line": 41,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 39,
+          "line_end": 43,
+          "text": "[L0039] 닥터 마리아: 그러자.\n[L0040] 마리아-235: 예. 이따봐요.\n[L0041] 마리아-235가 품에서 권총을 꺼내든다.\n[L0042] 머리에 대고, 방아쇠를 당긴다.\n[L0043] 마리아-235가 힘없이 쓰러진다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0035",
+        "scene_id": "maria-n_07",
+        "title_id": "event_stories__maria-n",
+        "line": 103,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 101,
+          "line_end": 105,
+          "text": "[L0101] 닥터 마리아: 331 너는 죽어. 그게 효율이 좋아.\n[L0102] 마리아-331: ···알겠어요.\n[L0103] 마리아-331이 품에서 권총을 꺼내든다.\n[L0104] 머리에 겨누고, 방아쇠에 손가락을 걸지만\n[L0105] 방아쇠를 당기지 못한다."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0036",
+        "scene_id": "maria-n_07",
+        "title_id": "event_stories__maria-n",
+        "line": 112,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 110,
+          "line_end": 114,
+          "text": "[L0110] 마리아-331: 무, 무서워요.\n[L0111] 닥터 마리아: ··· ···.\n[L0112] 닥터 마리아가 신경질적으로 마리아-331의 권총을 뺏어든다.\n[L0113] 그대로 마리아-311의 머리에 겨눈다.\n[L0114] 닥터 마리아: ··· ···."
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0037",
+        "scene_id": "maria-n_11",
+        "title_id": "event_stories__maria-n",
+        "line": 63,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 61,
+          "line_end": 65,
+          "text": "[L0061] 마리아-n: 이런 바보같은 짓을 할 이유가···!\n[L0062] 탕-!\n[L0063] 남자가 천장을 향해 권총을 발사한다.\n[L0064] 도탄된 탄환이, 마리아-n의 뺨을 스친다.\n[L0065] 마리아-n: ···!!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0038",
+        "scene_id": "maria-n_11",
+        "title_id": "event_stories__maria-n",
+        "line": 86,
+        "speaker": "마리아-n",
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 84,
+          "line_end": 88,
+          "text": "[L0084] 엄폐물에 몸이 가려지는 순간, 탄환이 둘의 머리 위를 스쳐지나간다.\n[L0085] 1호: 헉···!\n[L0086] 마리아-n: 무기는요? 설마 그 권총이 전부는 아니겠죠?\n[L0087] 1호: 무기? 내, 내가 왜 무기를···! 싸우는건 니케 몫이야!\n[L0088] 1호: 나는···! 지휘관은 어···! 지휘를···!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0039",
+        "scene_id": "maria-n_19",
+        "title_id": "event_stories__maria-n",
+        "line": 40,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 38,
+          "line_end": 42,
+          "text": "[L0038]   [OPTION_END]\n[L0039] [CHOICE_END]\n[L0040] 지휘관이 권총을 꺼내든다. 빠르게 조준 후, 방아쇠를 마구 당긴다.\n[L0041] 탕! 탕! 탕! 탕!\n[L0042] 퍼어엉-!!"
+        }
+      },
+      {
+        "scan_id": "B1__lost_relics__조난일지__S0040",
+        "scene_id": "maria-n_19",
+        "title_id": "event_stories__maria-n",
+        "line": 69,
+        "speaker": null,
+        "terms": [
+          "권총"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "excerpt": {
+          "line_start": 67,
+          "line_end": 71,
+          "text": "[L0067] 영거리에 가까운 거리. 충격파는 마리안을 산산조각 낼 것이 분명하다.\n[L0068] 탕! 탕!\n[L0069] 권총음과 함께 랩쳐의 머리가 움찔한다.\n[L0070] 랩쳐가 고개를 돌린다. 지휘관은 계속해서 랩쳐의 머리를 향해 사격한다.\n[L0071] 마리안: 지휘관! 도망···!"
+        }
+      }
+    ]
+  },
+  "routed_to_a2": [],
+  "rejudge_of": "B1__lost_relics__조난일지",
+  "a2_context": [
+    {
+      "surface": "지휘관",
+      "link_type": "new_entity",
+      "entity_id": "char2_지휘관__d11ded",
+      "name": "지휘관",
+      "entity_type": "character",
+      "qualifier": "유실물 '조난일지' 스쿼드의 사망한 지휘관",
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "조난일지_02",
+          "line": 4
+        },
+        {
+          "scene_id": "조난일지_03",
+          "line": 4
+        }
+      ],
+      "occurrence_count": 2
+    }
+  ],
+  "generated_at": "2026-11-16T15:28:22.980Z"
+}

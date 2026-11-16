@@ -4,7 +4,7 @@ import fsp from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GRAPH_DATA_DIR, normalizeWhitespaceOnly, writeJsonAtomic } from './lib.mjs';
-import { selectWave } from './pass2-b-plan.mjs';
+import { selectWave, unitElementKey } from './pass2-b-plan.mjs';
 import { checkAudit, classifyAuthor, computeStamp, staleReason } from './pass2-b.mjs';
 import {
   CONFIDENCE_ENUM,
@@ -37,6 +37,7 @@ const __filename = fileURLToPath(import.meta.url);
 //   node scripts/graph/pass2-a2.mjs compare-check [--run=...]          (골라 보여 준 판정 ↔ 전부 보여 준 판정)
 //   node scripts/graph/pass2-a2.mjs b-update-preview [--run=...]       (A-2 뒤 B 갱신 미리 보기. B 결과는 고치지 않는다)
 //   node scripts/graph/pass2-a2.mjs b-update --run=main                (공식 표로 B 미등록 대상 ID 채움 → data/graph/pass2/merged/B_candidates_a2.json)
+//   node scripts/graph/pass2-a2.mjs b-rejudge-build --run=main         (b-update의 재판정 후보 → B 재판정 묶음 data/graph/pass2/rejudge/bundles/)
 //   node scripts/graph/pass2-a2.mjs promote --run=main                 (실행 결과 표 + a2/curation.json → 공식 표 data/graph/pass2/entities.json·terms.json)
 //   node scripts/graph/pass2-a2.mjs audit-input --wave=N [--rate=0.1] [--judge-family=gemini] [--run=...]
 //   node scripts/graph/pass2-a2.mjs audit-check --wave=N [--run=...]
@@ -1213,6 +1214,95 @@ export const applyBUpdate = ({ bLinks, rows, entities, registry = new Map() }) =
   return { links, filled };
 };
 
+/** 재판정 묶음 ID(B 본 묶음 하나당 하나). 연결 ID는 이 ID에 __NNN을 붙인다 */
+export const rejudgeBundleIdOf = (mainBundleId) => `${mainBundleId}__rj`;
+export const B_REJUDGE_CONTEXT_MAX_OCC = 8;
+
+/**
+ * A-2 공식 판정을 이야기별 표기 목록으로 모은다(재판정 판정자가 읽는 a2_context). 근거가 아니라 원문을 찾아갈 단서다.
+ * ID가 있는 판정(등록 인물 별칭, 공식 표의 인물·스쿼드·조직)만 넣는다. occLine: (bundle_id, unit_id, occ_id) → 줄 번호
+ */
+export const a2ContextByTitle = ({ resolutions, officialEntities, registry, occLine }) => {
+  const off = new Map(officialEntities.map((e) => [e.entity_id, e]));
+  const byTitle = new Map();
+  for (const r of resolutions) {
+    const id = r.link_type === 'alias' ? r.target?.entity_id : r.link_type === 'new_entity' ? r.assigned_entity_id : null;
+    if (!id) continue;
+    const ent = off.get(id) ?? registry.get(id);
+    if (!ent) continue;
+    if (!byTitle.has(r.title_id)) byTitle.set(r.title_id, new Map());
+    const m = byTitle.get(r.title_id);
+    const key = `${r.surface}|${id}`;
+    if (!m.has(key)) m.set(key, { surface: r.surface, link_type: r.link_type, entity_id: id, name: ent.canonical_name, entity_type: ent.entity_type ?? 'character', qualifier: ent.qualifier ?? null, confidence: new Set(), occ: new Map() });
+    const rec = m.get(key);
+    rec.confidence.add(r.confidence);
+    const line = occLine(r.bundle_id, r.unit_id, r.occ_id);
+    rec.occ.set(`${r.scene_id}:${line}`, { scene_id: r.scene_id, line });
+  }
+  const out = new Map();
+  for (const [title, m] of byTitle) {
+    out.set(title, [...m.values()]
+      .map((x) => {
+        const occ = [...x.occ.values()].sort((a, b) => a.scene_id.localeCompare(b.scene_id) || (a.line ?? 0) - (b.line ?? 0));
+        return { surface: x.surface, link_type: x.link_type, entity_id: x.entity_id, name: x.name, entity_type: x.entity_type, qualifier: x.qualifier, confidence: [...x.confidence].sort(), occurrences: occ.slice(0, B_REJUDGE_CONTEXT_MAX_OCC), occurrence_count: occ.length };
+      })
+      .sort((a, b) => a.surface.localeCompare(b.surface) || a.entity_id.localeCompare(b.entity_id)));
+  }
+  return out;
+};
+
+/**
+ * B 재판정 묶음(초안 8절 5번): 다시 판정할 연결의 단위만 남긴 B 묶음 사본에 a2_context를 붙인다.
+ * 옛 판정은 넣지 않는다(독립 판정). 대본은 본 묶음의 것을 그대로 쓴다.
+ */
+export const buildRejudgeBundles = ({ bLinks, candidates, mainBundles, contextByTitle }) => {
+  const linkById = new Map(bLinks.map((l) => [l.link_id, l]));
+  const wanted = new Map(); // main bundle_id → Set(unit_id)
+  const replaced = [];
+  for (const c of candidates) {
+    const link = linkById.get(c.link_id);
+    if (!link) throw new Error(`재판정 후보 ${c.link_id}가 B 결과에 없다`);
+    const bundle = mainBundles.get(link.bundle_id);
+    if (!bundle) throw new Error(`${link.link_id}: 본 묶음 ${link.bundle_id}이 없다`);
+    const keys = new Set(link.subject.map(unitElementKey));
+    const units = bundle.units.filter((u) => u.subject_refs.some((r) => keys.has(unitElementKey(r))));
+    if (!units.length) throw new Error(`${link.link_id}: 단위를 찾지 못했다`);
+    const covered = new Set(units.flatMap((u) => u.subject_refs.map(unitElementKey)));
+    if ([...keys].some((k) => !covered.has(k))) throw new Error(`${link.link_id}: subject 일부가 단위 밖이다`);
+    if (!wanted.has(link.bundle_id)) wanted.set(link.bundle_id, new Set());
+    units.forEach((u) => wanted.get(link.bundle_id).add(u.unit_id));
+    replaced.push({ link_id: link.link_id, bundle_id: link.bundle_id, unit_ids: units.map((u) => u.unit_id) });
+  }
+  // 고른 단위를 덮는 다른 연결이 있으면 그것도 함께 바뀐다
+  for (const [bid, unitIds] of wanted) {
+    const bundle = mainBundles.get(bid);
+    const keys = new Set(bundle.units.filter((u) => unitIds.has(u.unit_id)).flatMap((u) => u.subject_refs.map(unitElementKey)));
+    for (const l of bLinks.filter((x) => x.bundle_id === bid && x.subject.some((s) => keys.has(unitElementKey(s))))) {
+      if (!replaced.some((r) => r.link_id === l.link_id)) throw new Error(`${l.link_id}: 재판정 단위를 덮지만 후보 목록에 없다`);
+    }
+  }
+  const bundles = [...wanted].sort(([a], [b]) => a.localeCompare(b)).map(([bid, unitIds]) => {
+    const main = mainBundles.get(bid);
+    const units = main.units.filter((u) => unitIds.has(u.unit_id));
+    const keep = (ids) => ids.some((id) => unitIds.has(id));
+    const { generated_at: _g, ...rest } = main;
+    return {
+      ...rest,
+      bundle_id: rejudgeBundleIdOf(bid),
+      rejudge_of: bid,
+      units,
+      scan: {
+        terms: (main.scan?.terms ?? []).filter((x) => keep(x.unit_ids ?? [])).map((x) => ({ ...x, unit_ids: x.unit_ids.filter((id) => unitIds.has(id)) })),
+        dropped_terms: main.scan?.dropped_terms ?? [],
+        hits: (main.scan?.hits ?? []).filter((h) => keep(h.unit_ids ?? [])).map((h) => ({ ...h, unit_ids: h.unit_ids.filter((id) => unitIds.has(id)) })),
+      },
+      routed_to_a2: [],
+      a2_context: contextByTitle.get(main.title_id) ?? [],
+    };
+  });
+  return { bundles, replaced };
+};
+
 // ---------------------------------------------------------------------------
 // 감사(초안 12.6절)
 
@@ -1542,6 +1632,61 @@ const main = async () => {
     console.log(`[b-update] B 미등록 대상 ${rows.length}건 ${JSON.stringify(by)}, 채움 ${filled}건`);
     console.log(`[b-update] 다시 판정할 후보(B 판단 보류 중 같은 이야기에 A-2 인물 연결): ${rejudge.length}건(같은 장면 ${rejudge.filter((x) => x.same_scene).length}건). 판정은 하지 않았다`);
     console.log(`[b-update] → ${relPath(out)}`);
+    return;
+  }
+
+  if (cmd === 'b-rejudge-build') {
+    if (run !== 'main') throw new Error('b-rejudge-build는 공식 표(본 실행)로만 한다');
+    const upd = readJsonIfExists(path.join(GRAPH_DATA_DIR, 'pass2', 'merged', 'B_candidates_a2.json'));
+    const res = readJsonIfExists(path.join(P.merged, 'A2_resolutions.json'));
+    const official = readJsonIfExists(OFFICIAL_ENTITIES_PATH);
+    if (!upd || !res || !official) throw new Error('b-update 결과·A-2 해소·공식 표 중 없는 것이 있다');
+    const R = path.join(GRAPH_DATA_DIR, 'pass2', 'rejudge');
+    const RB = path.join(R, 'bundles');
+    if (fs.existsSync(path.join(R, 'shards')) && fs.readdirSync(path.join(R, 'shards')).length) throw new Error('재판정 출력(rejudge/shards)이 이미 있다. 묶음을 다시 만들지 않는다');
+    const mainBundleDir = path.join(GRAPH_DATA_DIR, 'pass2', 'bundles');
+    const bids = [...new Set(upd.rejudge_candidates.map((c) => upd.links.find((l) => l.link_id === c.link_id)?.bundle_id))];
+    const mainBundles = new Map(bids.map((bid) => [bid, readJsonIfExists(path.join(mainBundleDir, `${bid}.json`))]));
+    // A-2 출현 줄 번호
+    const occCache = new Map();
+    const occLine = (bundleId, unitId, occId) => {
+      if (!occCache.has(bundleId)) {
+        const doc = readJsonIfExists(path.join(P.bundles, `${bundleId}.occurrences.json`));
+        occCache.set(bundleId, new Map((doc?.units ?? []).flatMap((u) => u.occurrences.map((o) => [`${u.unit_id}|${o.occ_id}`, o.line_start]))));
+      }
+      return occCache.get(bundleId).get(`${unitId}|${occId}`) ?? null;
+    };
+    const titles = new Set([...mainBundles.values()].map((b) => b.title_id));
+    const resolutions = officialResolutions(res.resolutions, official).filter((r) => titles.has(r.title_id));
+    const contextByTitle = a2ContextByTitle({ resolutions, officialEntities: official.entities, registry: loadRegistry(), occLine });
+    const { bundles, replaced } = buildRejudgeBundles({ bLinks: upd.links, candidates: upd.rejudge_candidates, mainBundles, contextByTitle });
+    await fsp.mkdir(RB, { recursive: true });
+    const generatedAt = new Date().toISOString();
+    const planBundles = [];
+    for (const b of bundles) {
+      const out = { ...b, generated_at: generatedAt };
+      await writeJsonAtomic(path.join(RB, `${b.bundle_id}.json`), out);
+      const count = (t) => b.units.filter((u) => u.unit_type === t).length;
+      planBundles.push({
+        bundle_id: b.bundle_id,
+        rejudge_of: b.rejudge_of,
+        ...(b.parent_bundle_id ? { parent_bundle_id: b.parent_bundle_id } : {}),
+        title_id: b.title_id,
+        title: b.title,
+        units: b.units.length,
+        unit_types: { unknown_group: count('unknown_group'), unknown_line: count('unknown_line'), descriptor: count('descriptor'), author: count('author'), voice: count('voice') },
+        a2_context: b.a2_context.length,
+        input: relPath(path.join(RB, `${b.bundle_id}.json`)),
+        script: b.script_file,
+        output: relPath(path.join(R, 'shards', `${b.bundle_id}.json`)),
+        validate: `node scripts/graph/pass2-b.mjs validate ${b.bundle_id} --run=rejudge`,
+        wave: 1,
+      });
+    }
+    await writeJsonAtomic(path.join(RB, 'plan.json'), { run: 'rejudge', generated_at: generatedAt, note: 'B 재판정(초안 8절 5번): B 판단 보류 중 같은 이야기에 A-2 인물 연결이 생긴 연결의 단위만 다시 판정한다. 묶음에 a2_context(A-2 공식 판정)를 붙였다', bundles: planBundles });
+    await writeJsonAtomic(path.join(R, 'replaced.json'), { generated_at: generatedAt, note: '재판정 결과로 바꿀 B 본 실행 연결', replaced });
+    for (const b of planBundles) console.log(`${b.bundle_id}: 단위 ${b.units}, A-2 표기 ${b.a2_context}`);
+    console.log(`[b-rejudge-build] 묶음 ${planBundles.length}개, 단위 ${planBundles.reduce((n, b) => n + b.units, 0)}개, 바꿀 연결 ${replaced.length}건 → ${relPath(path.join(RB, 'plan.json'))}`);
     return;
   }
 

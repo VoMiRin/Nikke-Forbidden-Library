@@ -14,6 +14,8 @@ import {
   promoteA2,
   officialResolutions,
   applyBUpdate,
+  a2ContextByTitle,
+  buildRejudgeBundles,
   A2_CURATION_SCHEMA_VERSION,
   resolveOccurrences,
   sampleA2Audit,
@@ -531,4 +533,44 @@ test('B 갱신: 공식 ID로 바꾼 해소 항목, 판정 바꿈 반영, 채움 
   assert.equal(bLinks[0].target[0].entity_id, null); // 원본은 고치지 않는다
   assert.throws(() => applyBUpdate({ bLinks, rows: [{ ...rows[0], entity_id: 'char2_y' }], entities }), /유형이 다르다/);
   assert.throws(() => applyBUpdate({ bLinks, rows: [{ ...rows[0], entity_id: 'org_없음' }], entities }), /공식 표·레지스트리에 없다/);
+});
+
+test('B 재판정 묶음: 후보 연결의 단위만 남기고 옛 판정 없이 a2_context를 붙인다', () => {
+  const ref = (s, n) => ({ ref: 'item', item_id: `${s}__unk_00${n}`, unknown_id: `unk_${s}_L000${n}` });
+  const main = {
+    bundle_id: 'B1__t', title_id: 't', generated_at: 'x', script_file: 'data/graph/pass2/bundles/B1__t.script.txt',
+    units: [{ unit_id: 'U01', subject_refs: [ref('s1', 1)] }, { unit_id: 'U02', subject_refs: [ref('s1', 2)] }],
+    scan: { terms: [{ term: 'a', unit_ids: ['U01', 'U02'] }, { term: 'b', unit_ids: ['U02'] }], dropped_terms: [], hits: [{ scan_id: 'h1', unit_ids: ['U02'] }] },
+    routed_to_a2: [{ name: 'x' }],
+  };
+  const bLinks = [
+    { link_id: 'B1__t__001', bundle_id: 'B1__t', subject: [ref('s1', 1)], verdict: '판단 보류' },
+    { link_id: 'B1__t__002', bundle_id: 'B1__t', subject: [ref('s1', 2)], verdict: '정체 후보 있음' },
+  ];
+  const registry = new Map([['char_라피', { entity_id: 'char_라피', canonical_name: '라피' }]]);
+  const ctx = a2ContextByTitle({
+    resolutions: [
+      { title_id: 't', scene_id: 's1', surface: '그녀', link_type: 'alias', target: { entity_id: 'char_라피' }, confidence: '유력한 해석', bundle_id: 'A2__001', unit_id: 'U01', occ_id: 'O0001' },
+      { title_id: 't', scene_id: 's1', surface: '김 간호사', link_type: 'new_entity', assigned_entity_id: 'char2_김_간호사', confidence: '유력한 해석', bundle_id: 'A2__001', unit_id: 'U02', occ_id: 'O0001' },
+      { title_id: 't', scene_id: 's1', surface: '방주', link_type: 'new_entity', assigned_entity_id: undefined, confidence: '유력한 해석', bundle_id: 'A2__001', unit_id: 'U03', occ_id: 'O0001' },
+    ],
+    officialEntities: [{ entity_id: 'char2_김_간호사', canonical_name: '김 간호사', entity_type: 'character' }],
+    registry,
+    occLine: (b, u) => (u === 'U01' ? 5 : 9),
+  });
+  assert.deepEqual(ctx.get('t').map((x) => `${x.surface}→${x.entity_id}@${x.occurrences[0].line}`), ['그녀→char_라피@5', '김 간호사→char2_김_간호사@9']);
+  const { bundles, replaced } = buildRejudgeBundles({ bLinks, candidates: [{ link_id: 'B1__t__001' }], mainBundles: new Map([['B1__t', main]]), contextByTitle: ctx });
+  assert.equal(bundles.length, 1);
+  const b = bundles[0];
+  assert.equal(b.bundle_id, 'B1__t__rj');
+  assert.equal(b.rejudge_of, 'B1__t');
+  assert.deepEqual(b.units.map((u) => u.unit_id), ['U01']);
+  assert.deepEqual(b.scan.terms.map((x) => [x.term, x.unit_ids]), [['a', ['U01']]]);
+  assert.equal(b.scan.hits.length, 0);
+  assert.deepEqual(b.routed_to_a2, []);
+  assert.equal(b.a2_context.length, 2);
+  assert.ok(!('generated_at' in b));
+  assert.ok(!JSON.stringify(b).includes('판단 보류')); // 옛 판정은 넣지 않는다
+  assert.deepEqual(replaced, [{ link_id: 'B1__t__001', bundle_id: 'B1__t', unit_ids: ['U01'] }]);
+  assert.throws(() => buildRejudgeBundles({ bLinks, candidates: [{ link_id: 'B1__t__009' }], mainBundles: new Map([['B1__t', main]]), contextByTitle: ctx }), /B 결과에 없다/);
 });

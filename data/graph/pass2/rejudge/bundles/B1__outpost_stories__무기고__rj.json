@@ -1,0 +1,592 @@
+{
+  "schema_version": "pass2-bundle-0.1.0",
+  "bundle_id": "B1__outpost_stories__무기고__rj",
+  "kind": "B",
+  "title_id": "outpost_stories__무기고",
+  "title": "무기고",
+  "category": "outpost_stories",
+  "script_file": "data/graph/pass2/bundles/B1__outpost_stories__무기고.script.txt",
+  "units": [
+    {
+      "unit_id": "U01",
+      "unit_type": "unknown_group",
+      "scene_ids": [
+        "armory_00"
+      ],
+      "subject_refs": [
+        {
+          "ref": "item",
+          "item_id": "armory_00__unk_001",
+          "unknown_id": "unk_armory_00_L0064"
+        },
+        {
+          "ref": "item",
+          "item_id": "armory_00__unk_002",
+          "unknown_id": "unk_armory_00_L0085"
+        }
+      ],
+      "lines": [
+        {
+          "scene_id": "armory_00",
+          "line": 64,
+          "unknown_id": "unk_armory_00_L0064",
+          "text": "???: 버리지 마세요."
+        },
+        {
+          "scene_id": "armory_00",
+          "line": 85,
+          "unknown_id": "unk_armory_00_L0085",
+          "text": "???: 가지마세요가지마세요가지마세요기다려주세요제발기다려주세요제발제발제발제발제발제발제발··· ··· ··· ···."
+        }
+      ],
+      "pass1": {
+        "unknowns": [
+          {
+            "unknown_id": "unk_armory_00_L0064",
+            "quote": "버리지 마세요.",
+            "speaking_style": "존댓말로 애원하듯 속삭이는 어조",
+            "target_addressed": null,
+            "contextual_clues": [
+              "엠마가 무기고 깊은 곳에 처박힌 [말하는 총]이 밤마다 관리인에게 속삭인다는 괴담을 이야기한 직후 무기고 안에서 들려온 정체불명의 목소리"
+            ]
+          },
+          {
+            "unknown_id": "unk_armory_00_L0085",
+            "quote": "가지마세요가지마세요가지마세요기다려주세요제발기다려주세요제발제발제발제발제발제발제발··· ··· ··· ···.",
+            "speaking_style": "띄어쓰기 없이 다급하고 기괴하게 반복하며 매달리는 존댓말 어조",
+            "target_addressed": "엠마, 베스티, 지휘관",
+            "contextual_clues": [
+              "정체불명의 목소리를 듣고 불안해진 엠마가 베스티, 지휘관과 함께 무기고 입구까지 달리기 내기를 하자며 숫자를 세는 도중 들려온 목소리"
+            ]
+          }
+        ],
+        "group": {
+          "confidence": "유력한 해석",
+          "reason": "무기고 안에서 [말하는 총] 괴담 직후 연달아 들려오며 버리지 말라거나 가지 말라고 애원하는 동일한 맥락과 말투의 목소리임",
+          "resolved_members": []
+        }
+      },
+      "context": [
+        {
+          "scene_id": "armory_00",
+          "line_start": 56,
+          "line_end": 90
+        }
+      ],
+      "crowd_hint": {
+        "flag": false,
+        "reason": null
+      },
+      "scan_terms": [
+        "[말하는 총]"
+      ]
+    }
+  ],
+  "story": [
+    {
+      "scene_id": "armory_00",
+      "chronology_type": "present",
+      "summary": "무기고에서 엠마가 지휘관과 베스티에게 살아있는 사람을 재료로 만들었다가 무기고 깊은 곳에 방치되었다는 전초기지 7대 불가사의 [말하는 총] 괴담을 들려주던 중, 실제로 정체불명의 목소리가 들려오자 세 사람이 함께 무기고 밖으로 달아난다.",
+      "speakers": [
+        {
+          "label": "엠마",
+          "entity_id": "char_엠마"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "베스티",
+          "entity_id": "char_베스티"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_01",
+      "chronology_type": "present",
+      "summary": "네온과 지휘관이 무기고를 방문해 화력이 좋은 무기를 보여달라고 요청하고, 은화는 여러 무기로 시험한 끝에 네온의 화력을 보는 감을 인정하여 안쪽의 특별 취급 무기들을 구경시켜 준다.",
+      "speakers": [
+        {
+          "label": "네온",
+          "entity_id": "char_네온"
+        },
+        {
+          "label": "은화",
+          "entity_id": "char_은화"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_02",
+      "chronology_type": "present",
+      "summary": "스노우 화이트와 지휘관이 총의 방아쇠 부품을 구하러 무기고에 오고, 은화는 스노우 화이트의 낡은 총 대신 신형 ELY-AR-17C를 권하지만 스노우 화이트는 현재 무기에 만족한다며 중고 방아쇠만 받아 떠난다.",
+      "speakers": [
+        {
+          "label": "스노우 화이트",
+          "entity_id": "char_스노우_화이트"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "은화",
+          "entity_id": "char_은화"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_03",
+      "chronology_type": "present",
+      "summary": "헬름이 기부받은 정체불명의 총기를 감정하기 위해 맥스웰, 리타, 지휘관과 함께 무기고에 오고, 은화로부터 그 총이 3억 크레디트 가치의 알파 테크 한정판 모델건이라는 사실을 듣자 너무 큰 금액이라며 돌려주기로 결정한다.",
+      "speakers": [
+        {
+          "label": "헬름",
+          "entity_id": "char_헬름"
+        },
+        {
+          "label": "맥스웰",
+          "entity_id": "char_맥스웰"
+        },
+        {
+          "label": "리타",
+          "entity_id": "char_리타"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "은화",
+          "entity_id": "char_은화"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_04",
+      "chronology_type": "present",
+      "summary": "사쿠라가 찢어진 전투복을 수선할 방탄 비단을 구하러 지휘관과 함께 무기고에 오고, 임시로 무기고를 봐주던 델타가 사쿠라의 전장 예의와 각오를 들은 뒤 절대 죽지 말라는 의미로 옷을 네 겹으로 덧대어 수선해 준다.",
+      "speakers": [
+        {
+          "label": "사쿠라",
+          "entity_id": "char_사쿠라"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "델타",
+          "entity_id": "char_델타"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": [
+        {
+          "item_id": "armory_04__csh_001",
+          "text": "델타가 언급한 '화력의 기운을 느꼈다고 찾아오는 니케'는 armory_01의 네온을 가리킨다.",
+          "related_scene_ids": [
+            "armory_01"
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "armory_05",
+      "chronology_type": "present",
+      "summary": "수영복 차림으로 수중에서 사용할 총기를 찾으러 온 헬름이 지휘관, 네온과 함께 무기고의 총기들을 살펴보고, 네온이 찾아준 얇고 긴 총알을 쓰는 총을 바탕으로 수중 총기 제작을 은화와 상의하기로 한다.",
+      "speakers": [
+        {
+          "label": "헬름",
+          "entity_id": "char_헬름"
+        },
+        {
+          "label": "네온",
+          "entity_id": "char_네온"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_06",
+      "chronology_type": "present",
+      "summary": "킬로가 지휘관과 함께 탈로스의 고장 난 무기를 대체할 거대 무기를 찾으러 무기고에 오고, 직접 데려온 탈로스가 스캔으로 무기고 안쪽에서 호환 무기를 찾아내자 은화가 관심을 보이며 함께 무기를 살펴본다.",
+      "speakers": [
+        {
+          "label": "킬로",
+          "entity_id": "char_킬로"
+        },
+        {
+          "label": "은화",
+          "entity_id": "char_은화"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "T.A.L.O.S.",
+          "entity_id": "char_T_A_L_O_S"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_07",
+      "chronology_type": "present",
+      "summary": "지휘관이 토끼 복장을 한 앨리스와 무기고에 들러 은화에게 구경을 부탁하고, 은화도 토끼 옷을 입고 싶어 한다고 오해한 앨리스가 남는 토끼 옷을 가지러 가자 은화가 지휘관에게 당장 말려 오라고 위협한다.",
+      "speakers": [
+        {
+          "label": "앨리스",
+          "entity_id": "char_앨리스"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "은화",
+          "entity_id": "char_은화"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_08",
+      "chronology_type": "present",
+      "summary": "앱솔루트 스쿼드가 라피와 지휘관을 무기고로 불러 그레이브의 상자에 있던 라피의 새로운 드릴형 무기를 관찰하고, 은화가 라피에게 총의 무게를 잊지 말라고 당부하며 라피에게만 특별히 자신들의 무기 구경을 허락한다.",
+      "speakers": [
+        {
+          "label": "은화",
+          "entity_id": "char_은화"
+        },
+        {
+          "label": "엠마",
+          "entity_id": "char_엠마"
+        },
+        {
+          "label": "베스티",
+          "entity_id": "char_베스티"
+        },
+        {
+          "label": "라피",
+          "entity_id": "char_라피"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    },
+    {
+      "scene_id": "armory_09",
+      "chronology_type": "present",
+      "summary": "베스티와 엠마가 아니스와 지휘관을 무기고로 불러 테트라제 광학 병기인 아니스의 확장 무장 시연을 구경하고, 관심 없다며 떨어져 있던 은화까지 다가와 분석하자 앱솔루트 스쿼드 전원이 무장을 마음껏 구경한다.",
+      "speakers": [
+        {
+          "label": "베스티",
+          "entity_id": "char_베스티"
+        },
+        {
+          "label": "엠마",
+          "entity_id": "char_엠마"
+        },
+        {
+          "label": "지휘관",
+          "entity_id": "char_지휘관"
+        },
+        {
+          "label": "아니스",
+          "entity_id": "char_아니스"
+        },
+        {
+          "label": "은화",
+          "entity_id": "char_은화"
+        }
+      ],
+      "present_silent": [],
+      "document_author": null,
+      "resolved_identities": [],
+      "cross_scene_hints": []
+    }
+  ],
+  "scan": {
+    "terms": [
+      {
+        "term": "[말하는 총]",
+        "sources": [
+          "scene_mention"
+        ],
+        "unit_ids": [
+          "U01"
+        ],
+        "scene_count": 1,
+        "same_title_lines": [
+          {
+            "scene_id": "armory_00",
+            "lines": [
+              3,
+              12,
+              57,
+              63
+            ]
+          }
+        ],
+        "other_title_lines": 0,
+        "kept": 0,
+        "omitted": 0
+      }
+    ],
+    "dropped_terms": [],
+    "hits": []
+  },
+  "routed_to_a2": [],
+  "rejudge_of": "B1__outpost_stories__무기고",
+  "a2_context": [
+    {
+      "surface": "777",
+      "link_type": "new_entity",
+      "entity_id": "squad_777_스쿼드",
+      "name": "777 스쿼드",
+      "entity_type": "squad",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_07",
+          "line": 86
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "미실리스",
+      "link_type": "new_entity",
+      "entity_id": "org_미실리스",
+      "name": "미실리스",
+      "entity_type": "organization",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_03",
+          "line": 20
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "사장님",
+      "link_type": "alias",
+      "entity_id": "char_머스탱",
+      "name": "머스탱",
+      "entity_type": "character",
+      "qualifier": null,
+      "confidence": [
+        "가능성"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_07",
+          "line": 135
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "사장님",
+      "link_type": "alias",
+      "entity_id": "char_잉그리드",
+      "name": "잉그리드",
+      "entity_type": "character",
+      "qualifier": null,
+      "confidence": [
+        "가능성"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_09",
+          "line": 84
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "알파 테크",
+      "link_type": "new_entity",
+      "entity_id": "org_알파_테크",
+      "name": "알파 테크",
+      "entity_type": "organization",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_03",
+          "line": 47
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "앱솔루트 스쿼드",
+      "link_type": "new_entity",
+      "entity_id": "squad_앱솔루트",
+      "name": "앱솔루트",
+      "entity_type": "squad",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_01",
+          "line": 6
+        },
+        {
+          "scene_id": "armory_04",
+          "line": 14
+        },
+        {
+          "scene_id": "armory_08",
+          "line": 36
+        },
+        {
+          "scene_id": "armory_09",
+          "line": 116
+        }
+      ],
+      "occurrence_count": 4
+    },
+    {
+      "surface": "언리미티드",
+      "link_type": "new_entity",
+      "entity_id": "squad_언리미티드",
+      "name": "언리미티드",
+      "entity_type": "squad",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_07",
+          "line": 21
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "엘리시온",
+      "link_type": "new_entity",
+      "entity_id": "org_엘리시온",
+      "name": "엘리시온",
+      "entity_type": "organization",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_00",
+          "line": 11
+        },
+        {
+          "scene_id": "armory_02",
+          "line": 43
+        },
+        {
+          "scene_id": "armory_03",
+          "line": 21
+        },
+        {
+          "scene_id": "armory_09",
+          "line": 84
+        }
+      ],
+      "occurrence_count": 4
+    },
+    {
+      "surface": "중앙 정부",
+      "link_type": "new_entity",
+      "entity_id": "org_중앙_정부",
+      "name": "중앙 정부",
+      "entity_type": "organization",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_03",
+          "line": 32
+        }
+      ],
+      "occurrence_count": 1
+    },
+    {
+      "surface": "테트라",
+      "link_type": "new_entity",
+      "entity_id": "org_테트라_라인",
+      "name": "테트라 라인",
+      "entity_type": "organization",
+      "qualifier": null,
+      "confidence": [
+        "유력한 해석"
+      ],
+      "occurrences": [
+        {
+          "scene_id": "armory_09",
+          "line": 16
+        }
+      ],
+      "occurrence_count": 1
+    }
+  ],
+  "generated_at": "2026-11-16T15:28:22.980Z"
+}
