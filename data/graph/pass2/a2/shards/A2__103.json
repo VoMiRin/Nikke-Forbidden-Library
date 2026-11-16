@@ -1,0 +1,959 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__103",
+  "candidate_links": [
+    {
+      "link_id": "A2__103__001",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_루드밀라",
+          "name": "루드밀라",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "예외로 나눈 마리아-n 이야기를 제외한 5개 이야기 모두에서 앨리스가 루드밀라를 부르는 호칭으로 쓰이며, 각 이야기 안에서 지문·호명·응답·대화를 통해 여왕님이 루드밀라임이 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "alice_wonderlandbunny_00",
+          "line_start": 52,
+          "line_end": 56,
+          "quote": "루드밀라: 마침 차도 다 끓여졌으니 말이다.\n초롱초롱한 눈으로 자신을 바라보는 병아리 씨와.\n따뜻한 차를 내어주는 여왕님을 본 앨리스는 말했습니다.\n앨리스: 알겠어요. 이야기, 한 번 해볼게요!\n앨리스: 그런데요, 여왕님."
+        },
+        {
+          "scene_id": "golden_coin_rush_03",
+          "line_start": 105,
+          "line_end": 107,
+          "quote": "앨리스: 여왕님이 필요한 게 있다고 하셔서 같이 왔어요!\n앨리스: 따로 할 일이 있다고 하셔서 저는 주변을 구경하고 있었어요.\n앨리스: 토끼 씨도 만났으니까 이제 여왕님이 계신 곳으로 돌아가려구요!"
+        },
+        {
+          "scene_id": "golden_coin_rush_03",
+          "line_start": 135,
+          "line_end": 135,
+          "quote": "앨리스: 하지만 여왕님께 돌아가야 하는데···."
+        },
+        {
+          "scene_id": "golden_coin_rush_03",
+          "line_start": 198,
+          "line_end": 201,
+          "quote": "  [OPTION TEXT=\"루드밀라한테 허락받았어.\"]\n  [OPTION_END]\n[CHOICE_END]\n앨리스: 와아~ 정말요~?"
+        },
+        {
+          "scene_id": "toy_shop_03",
+          "line_start": 179,
+          "line_end": 185,
+          "quote": "앨리스: 얼른 여왕님과 북극곰님께 자랑하러 갈래요!\n앨리스: 그럼 다음에 또 봐요!\n[CHOICE_START]\n  [OPTION TEXT=\"···조심해서 가.\"]\n  [OPTION_END]\n[CHOICE_END]\n루드밀라와 네베에겐 비밀로 해야겠다."
+        },
+        {
+          "scene_id": "alice_00",
+          "line_start": 19,
+          "line_end": 21,
+          "quote": "앨리스: 여왕님.\n앨리스: 방주는 정말 낙원인가요?\n루드밀라: 갑자기 그건 왜?"
+        },
+        {
+          "scene_id": "alice_02",
+          "line_start": 31,
+          "line_end": 32,
+          "quote": "앨리스는 사탕을 멍하니 바라보았습니다.\n여왕님이 모르는 사람이 주는 건 먹지 말라고 했는데···."
+        },
+        {
+          "scene_id": "blabla_alice_001",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "  [MSG SENDER=\"앨리스\"]\n    여왕님이 저 토끼 씨한테 갔다 오래요!\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_alice_002",
+          "line_start": 60,
+          "line_end": 65,
+          "quote": "        [MSG SENDER=\"앨리스\"]\n          여왕님께 부탁해도 안될까요?\n        [MSG_END]\n        [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n          루드밀라도 이건 못 할 거야\n        [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__002",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "event_stories__maria-n"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐 퀸",
+          "entity_type": "character",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "이 이야기에서는 토커티브가 정예(헬레틱) 제작 허가권자인 랩쳐의 지배자를 부르는 호칭으로 쓰이며, 같은 장면에서 미러가 같은 대상을 '퀸'으로 부르고 이야기 내 다른 장면에서 온전한 명칭 '랩쳐 퀸'이 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "토커티브: [지금까지는 눈감아 줬지만, 여왕님의 허가 없이 정예를 늘리는 것은 용납할 수 없다.]"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 108,
+          "line_end": 109,
+          "quote": "미러: 너무 많은 것을 바라지 말아요, 토커티브.\n미러: 퀸께서는 욕심쟁이를 싫어하시니까."
+        },
+        {
+          "scene_id": "maria-n_05",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "에닉: 랩쳐 퀸을 만들어낸 자."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__003",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U002"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "퀀시에게 어울리는 동물을 이야기하던 중 여우 모양의 가면 일반을 제안하고 만들어 보겠다고 한 보통 표현이며, 특정 고유 물건의 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_quency_006",
+          "line_start": 94,
+          "line_end": 96,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    여우 가면도 퀀시한테 어울릴 것 같아\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_quency_006",
+          "line_start": 106,
+          "line_end": 108,
+          "quote": "  [MSG SENDER=\"퀀시\"]\n    그럼 여우가면을 한번 만들어봐야겠어!\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__004",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U003"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "여인과 바다",
+          "entity_type": "concept",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "아리아가 어드마이어 호 선상 파티 무대에 올릴 작중 노래극 작품의 고유 제목이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "outdoor_swimming_pool_02",
+          "line_start": 2,
+          "line_end": 5,
+          "quote": "아리아: ···일주일 후의 어드마이어 호 선상 파티에 초대 받았어.\n아리아: 올릴 작품은 [여인과 바다].\n아리아: 한 여인이 배를 타고 나가서,\n아리아: 전설 속의 해상 랩쳐와 치열하게 싸우고 돌아온다는 내용이지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__005",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_릴리바이스",
+          "name": "릴리바이스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "버섯 환각 속 안개에 나타나 스노우 화이트를 이름으로 부르는 특정 인물 한 명('그리운 얼굴')을 가리킨다. 원문 전체에서 이 단위는 한 곳뿐이고 이 장면은 이름을 밝히지 않는다. 버섯을 더 먹고 하얀 꽃을 따라가면 '또다시 하얀 실루엣'이 같은 말로 스노우 화이트를 부르고(1001116·1001119), 아름드리나무 아래 타임캡슐을 묻은 [그녀](1001121)를 거쳐 [그녀]의 관(white_memory_12)과 잠든 릴리바이스(white_memory_18)로 이어지므로 char_릴리바이스를 후보로 둔다. 다만 빨간 꽃 경로는 레드 후드의 추억(1001117·1001122)으로 갈라지고, 처음 본 여자와 하얀 실루엣이 같은 인물이라는 직접 서술은 없어 단정하지 않는다. 이름이 나오지 않는다는 것이나 환각이라는 것은 일반 낱말의 근거가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "white_memory_page_1001111",
+          "line_start": 3,
+          "line_end": 7,
+          "quote": "그 안갯속에 누군가가,\n여자가,\n그리운 얼굴이.\n\n\"스노우 화이트.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001116",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "하얀 꽃을 따라 걷던 스노우 화이트의 앞에 또다시 하얀 실루엣이 보였다."
+        },
+        {
+          "scene_id": "white_memory_page_1001119",
+          "line_start": 4,
+          "line_end": 5,
+          "quote": "\"보고 싶다면, 보러 와야겠지?\"\n\"스노우 화이트.\""
+        },
+        {
+          "scene_id": "white_memory_12",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "그리고 [그녀]와의 추억을 떠올리기 위해 [그녀]의 관이 있는 [초원]에 찾아가기로 결심했다."
+        },
+        {
+          "scene_id": "white_memory_18",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "아주 길고 긴 길을 헤매어 스노우 화이트는 잠든 릴리바이스의 앞에 도착했다."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "white_memory_page_1001122",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "레트로 음악을 사랑했던 그녀, [레드 후드]와 노래를 들었던 추억을."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "alias",
+          "entity_id": "char_레드_후드",
+          "name": "레드 후드",
+          "entity_type": "character",
+          "why": "같은 환각에서 빨간 꽃을 따라가면 그리운 목소리가 레드 후드의 추억으로 이어진다. 처음 본 여자가 어느 경로의 인물인지 원문이 가르지 않는다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "white_memory_page_1001117",
+              "line_start": 2,
+              "line_end": 3,
+              "quote": "빨간 꽃을 따라 걸어간 스노우 화이트는 지지직- 거리는 라디오 소리를,\n레트로 음악, 그리운 고향을 떠올리며 흥얼거리는 누군가의 목소리를 듣는다."
+            },
+            {
+              "scene_id": "white_memory_page_1001122",
+              "line_start": 3,
+              "line_end": 3,
+              "quote": "레트로 음악을 사랑했던 그녀, [레드 후드]와 노래를 들었던 추억을."
+            }
+          ]
+        },
+        {
+          "link_type": "generic_term",
+          "why": "환각 속 형상을 '누군가', '여자', '그리운 얼굴'로 차례로 묘사하는 성별 표현으로만 읽을 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "white_memory_page_1001111",
+              "line_start": 2,
+              "line_end": 5,
+              "quote": "눈 앞에 하얀 안개가 깔렸다.\n그 안갯속에 누군가가,\n여자가,\n그리운 얼굴이."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__006",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U005"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "기차역 안에 있는 사무 공간 일반을 일컫는 보통 낱말이며 특정 시설의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "train_station_10",
+          "line_start": 142,
+          "line_end": 143,
+          "quote": "브리드: 시간이 좀 늦긴 했는데··· 잠깐 괜찮으실까요?\n브리드: 괜찮으시다면 역무실에서 좀 더 얘기를 나눠보고 싶어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__007",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U006"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "공중 강하 시 낙하산 대신 사용하는 감속 장비를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_11",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "지휘관: 낙하산은 사용하지 않는다! 역분사 장치를 사용해라!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__008",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "루드밀라의 수술 서약서에서 좋아하는 것으로 나열된 역사책 일반을 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ludmilla_03",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "[좋아하는 것 : 재스민 차, 역사서]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__009",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'북부의 연구 기지', '연구 기지라고는 하지만 방호 무장이 충실합니다'처럼 시설의 종류를 일컫는 보통 낱말로 쓰였으며 고유 지명이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_18",
+          "line_start": 23,
+          "line_end": 25,
+          "quote": "엔더슨: 어떻게 필그림과 만나는가. 그 춥고 넓은 북부에서.\n엔더슨: 연구 기지가 있네. 좌표는 시프티 양에게 알려줬으니 일단 그곳으로 향하게.\n엔더슨: 그 이후는 연구 기지에서 알아서 해 줄걸세."
+        },
+        {
+          "scene_id": "main_04_19",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "아니스: 북부의 연구 기지로 간다고 했지?"
+        },
+        {
+          "scene_id": "main_04_19",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "라피: 연구 기지라고는 하지만 방호 무장이 충실합니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__010",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U009"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "맥스웰이 실험대 위에 올려두었던 자신의 연구 기록 노트를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_maxwell_002",
+          "line_start": 38,
+          "line_end": 42,
+          "quote": "  [MSG SENDER=\"맥스웰\"]\n    저번에 연구실 왔을 때 내 연구노트 본 적 없어?\n  [MSG_END]\n  [MSG SENDER=\"맥스웰\"]\n    분명 실험대 위에 올려뒀는데"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__011",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U010"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'T 바이러스의 개발 과정과 그 성과가 자세히 적혀 있던 연구 보고서들'처럼 문서의 일반 종류를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "reborn_evil_25",
+          "line_start": 84,
+          "line_end": 85,
+          "quote": "질: 어느 날, 제단 위에 문서들이 널브러져 있었대요.\n질: T 바이러스의 개발 과정과 그 성과가 자세히 적혀 있던 연구 보고서들이 말이죠."
+        },
+        {
+          "scene_id": "reborn_evil_27",
+          "line_start": 216,
+          "line_end": 216,
+          "quote": "K: T 바이러스 실험 과정이 적힌 연구 보고서를 지상의 제단 위에 올려, 이번 일을 꾸몄다는 걸 증명하기엔."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__012",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U011"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "지상의 방어벽 연구 시설, 미실리스 산하 여러 연구 시설, 과거 에이브나 닥터 마리아의 연구 시설 등 여러 시설에 두루 쓰이는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "gingerbreadhouse_09",
+          "line_start": 106,
+          "line_end": 108,
+          "quote": "에이브: 다른 데 갈 생각하지 말고 이 연구소로 돌아와야 해.\n헨젤: 이 연구소?\n헨젤: 헨젤과 그레텔은 이 연구소가 어느 연구소인지 모르겠는데."
+        },
+        {
+          "scene_id": "gingerbreadhouse_09",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "에이브: 너희 둘은 특히나, 다른 연구소로 가면 절대 안 돼. 알겠어?"
+        },
+        {
+          "scene_id": "ether_03",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "에테르: 난 분명히 얘기했어. 우리 연구소는 지상의 병이 걸리면 오는 곳이라고."
+        },
+        {
+          "scene_id": "main_18_03",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "라플라스: 여기가 새로운 방어벽을 만들었다는 연구소인가!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__013",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U012"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "지상 실전 훈련 구역으로 사용된 연구소의 지부 건물을 가리키는 보통 표현이며, 같은 장면 뒤에서는 단순히 '연구소'라고도 부른다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 4,
+          "line_end": 5,
+          "quote": "은화: 지금부터 지상에서의 실전 훈련을 개시한다.\n은화: 작전 목표는 연구소 지부 내에서의 생존."
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "은화: 연구소와 교관 캠프 사이의 거리는 고작 450m."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__014",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U013"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'원래 콘셉트가 자율 방어 시스템이 갖춰진 연구 시설이었으니까'처럼 시설의 일반 유형을 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_07",
+          "line_start": 21,
+          "line_end": 23,
+          "quote": "루드밀라: 어쨌든, 연구 시설로 향한다고 했나?\n루드밀라: 목적이 뭔지는 모르겠지만 그건 지금 불가능해.\n루드밀라: 연구 시설은 랩쳐의 것이 되었다. 외부는 물론 내부까지 모두."
+        },
+        {
+          "scene_id": "main_05_11",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "루드밀라: 원래 콘셉트가 자율 방어 시스템이 갖춰진 연구 시설이었으니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__015",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U014"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "일레그·트로니, 맥스웰, 에테르, 에이브 등 여러 인물의 연구 공간을 두루 일컫는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "booms_day_05",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "일레그와 트로니의 연구실은 본인들의 숙소에서 얼마 떨어지지 않은 곳에 위치해 있었다."
+        },
+        {
+          "scene_id": "project_matis_07",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "맥스웰: 일단 내 연구실로 가서···."
+        },
+        {
+          "scene_id": "blabla_pepper_005",
+          "line_start": 65,
+          "line_end": 67,
+          "quote": "  [MSG SENDER=\"페퍼\"]\n    그 소리를 따라가 보면 잠겨있는 연구실이 있고\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__016",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U015"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "연구실에 딸린 숙소를 가리키는 보통 표현이며 고유 지명이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "fading_affection_3003",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "7호는 연구실 숙소에서 눈을 뜬다."
+        },
+        {
+          "scene_id": "fading_affection_3003",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "7호는 서둘러 침대에서 일어나 숙소 밖으로 나섰다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__017",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U016"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "어린 노아가 지상에 버려졌을 때 애타게 찾던 담당 연구원을 부르는 호칭이나, 원문에 이 회상 대사 한 줄뿐이어서 등록된 연구원 인물인지 미등록 인물인지 정할 근거가 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "noah_04",
+          "line_start": 52,
+          "line_end": 54,
+          "quote": "어린 노아: 래··· 랩쳐가 너무 많아···.\n어린 노아: 왜 아무도 나 안 데리러 와요?\n어린 노아: 연구원님? 다른 니케들은 어디에···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "연구원님",
+          "entity_type": "character",
+          "qualifier": "노아의 과거 회상 속 연구원",
+          "why": "어린 노아를 담당하다가 지상에 버려두고 떠난 별개의 미등록 연구원 한 사람을 부른 호칭일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "noah_04",
+              "line_start": 52,
+              "line_end": 54,
+              "quote": "어린 노아: 래··· 랩쳐가 너무 많아···.\n어린 노아: 왜 아무도 나 안 데리러 와요?\n어린 노아: 연구원님? 다른 니케들은 어디에···."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__018",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U017"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'잘나신 연구원들', '미실리스의 연구원들'처럼 연구원 직군의 여러 사람을 가리키는 복수 보통 낱말이며 이름 붙은 고유 집단이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_20",
+          "line_start": 137,
+          "line_end": 137,
+          "quote": "닥터 마리아: 뭐··· 당시에는 뇌에 문제가 있다는 걸로 잘나신 연구원들이 나한테 거짓말을 했지만."
+        },
+        {
+          "scene_id": "guilty_00",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "길티: 나쁜 건 날 이렇게 만든 미실리스의 연구원들이란 말야···."
+        },
+        {
+          "scene_id": "guilty_02",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "죄수: 당신을 만든 연구원들은 아무런 벌을 받지도 않고!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__019",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U018"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "인공 연못에 피어 있는 식물 연꽃 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hongryeon_goddeath_02",
+          "line_start": 33,
+          "line_end": 35,
+          "quote": "홍련은 로비를 천천히 걸어다니며, 곳곳에 심어진 식물들을 바라본다.\n그리고 작은 인공 연못 앞에 멈춰 섰다.\n홍련: 호오, 연꽃도 있었군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__020",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U019"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "얀이 차를 따라 준 찻잔의 모양과 재질을 묘사한 수식어가 붙은 보통 표현이며 고유 물건의 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "yan_01",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "얀이 연꽃 모양의 청자 찻잔에 차를 따라주었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__021",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U020"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "연기를 피워 시야를 가리는 일반 전술 장비를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "택티컬티택_00",
+          "line_start": 166,
+          "line_end": 168,
+          "quote": "바닥에서 자욱한 연기가 피어올랐다.\n[CHOICE_START]\n  [OPTION TEXT=\"연막탄···!\"]"
+        },
+        {
+          "scene_id": "chocolate_please_04",
+          "line_start": 155,
+          "line_end": 155,
+          "quote": "델타: [신호]를 주시면 제가 연막탄을 던져 넣고 빠르게 초콜릿을 가져오겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__022",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U021"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "연말 극장",
+          "entity_type": "concept",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "코코아의 에피소드('TV 연말극장 보면 나와')와 함께 보면 물리적 극장 시설이 아니라 TV 영화 방송을 뜻하나, 방주 방송국의 고유 프로그램 이름인지 연말 특선 영화 편성 일반을 이르는 보통 표현인지 원문만으로 가를 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "train_station_04",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "코코아: 코코아, 연말 극장에서 이런 장면 본 적 있지."
+        },
+        {
+          "scene_id": "cocoa_01",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "코코아: TV 연말극장 보면 나와."
+        },
+        {
+          "scene_id": "cocoa_04",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "코코아: 코코아 연말극장 나올 수 있게 힘내볼게."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'TV 연말극장'처럼 연말에 TV에서 방영하는 특선 영화 편성 일반을 가리키는 보통 표현일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "cocoa_01",
+              "line_start": 35,
+              "line_end": 35,
+              "quote": "코코아: TV 연말극장 보면 나와."
+            },
+            {
+              "scene_id": "train_station_04",
+              "line_start": 102,
+              "line_end": 102,
+              "quote": "코코아: 코코아, 연말 극장에서 이런 장면 본 적 있지."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__103__023",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U022"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "같은 이야기의 앞 장면에서 '중앙 정부가 일련의 사건들을 [연쇄 실종]으로 볼 수 없다는 공식 입장을 발표했습니다'라고 쓰이듯, 잇따라 일어나는 실종이라는 사건 유형을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "reborn_evil_02",
+          "line_start": 132,
+          "line_end": 133,
+          "quote": "D: 중앙 정부에선 쉬쉬하고 있지만,\nD: 봤다시피 지금 방주에선 [연쇄 실종] 사건이 일어나고 있어."
+        },
+        {
+          "scene_id": "reborn_evil_00",
+          "line_start": 3,
+          "line_end": 4,
+          "quote": "아나운서: 최근 방주 내 실종 사건이 잇따라 발생하는 가운데,\n아나운서: 중앙 정부가 일련의 사건들을 [연쇄 실종]으로 볼 수 없다는 공식 입장을 발표했습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

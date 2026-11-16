@@ -1,0 +1,1978 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "22f5ff9ecac612a5634dd564e1ed8ba1f2839bca6a8b2faa2667298de1f6a198",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6-astra",
+  "auditor_session": "01a1e356-f928-74f3-9c24-61d6f7456847",
+  "reviews": [
+    {
+      "audit_id": "A2__106:U003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "7곳을 모두 대조했다. main_42_01의 응답과 wave_to_you_06의 '지휘관의 애칭' 설명은 char_지휘관을 직접 지시한다. UNBREAKABLE SPHERE와 GINGERBREAD HOUSE의 호칭은 다른 이야기의 동일 관계를 가져오는 추론이므로 기본 가능성이 적절하다. old_tales_mini_memory_39의 미래 구원자는 동화적 역할과 지휘관 은유가 함께 가능하므로 해당 이야기만 보류한 예외도 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_42_01",
+          "line": 79,
+          "quote": "신데렐라: 왕자님."
+        },
+        {
+          "scene_id": "wave_to_you_06",
+          "line": 74,
+          "quote": "라피: 지휘관의 수많은 애칭 중 하나야."
+        },
+        {
+          "scene_id": "unbreakable_sphere_27",
+          "line": 201,
+          "quote": "신데렐라: 왕자님에게 돌아가기 전에,  가능하다면 헨젤, 그레텔을 만나서 가고 싶은데."
+        },
+        {
+          "scene_id": "gingerbreadhouse_03",
+          "line": 113,
+          "quote": "신데렐라: 왕자님이···."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_39",
+          "line": 11,
+          "quote": "소녀를 깨울 [왕자님]을 만나는 날,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "율리아가 자기 스승 한 사람을 가리키므로 일반 직함으로 남길 수 없다. julia_00에서 머스탱 여부를 묻고 율리아가 긍정하며, entity에서도 char_머스탱을 확인했다. 메신저 자체에는 본명이 없어 다른 이야기의 관계를 적용한 가능성 연결이 알맞다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_julia_002",
+          "line": 144,
+          "quote": "    은사님께서 예술가일수록"
+        },
+        {
+          "scene_id": "julia_00",
+          "line": 89,
+          "quote": "  [OPTION TEXT=\"율리아의 은사님이 머스탱이었어?\"]"
+        },
+        {
+          "scene_id": "julia_00",
+          "line": 92,
+          "quote": "율리아: 네··· 그렇습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__111:U005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앨리스의 파티 초대 대상 한 사람이다. golden_coin_rush_13에서 같은 호칭을 루주가 메어리로 풀어 주며 등록 ID도 일치한다. 메신저 이야기 안의 직접 호명은 아니므로 가능성을 유지한 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_alice_008",
+          "line": 76,
+          "quote": "    아! 그리고 의사 토끼 씨랑···"
+        },
+        {
+          "scene_id": "golden_coin_rush_13",
+          "line": 49,
+          "quote": "앨리스: 의사 토끼 씨요~!"
+        },
+        {
+          "scene_id": "golden_coin_rush_13",
+          "line": 55,
+          "quote": "루주: 아, 메어리를 말씀하시는 거군요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "25장의 시뮬레이션 룸 확인 질문과 에닉의 긍정은 등록 잉크를 직접 특정한다. 23장의 '카운터' 언급은 다른 장의 관계 설명으로 신원을 추론해야 하므로 가능성 예외가 타당하다. 두 연결의 target이 같고 확신도만 근거 종류에 따라 갈린다.",
+      "evidence": [
+        {
+          "scene_id": "main_25_02",
+          "line": 274,
+          "quote": "  [OPTION TEXT=\"잉크라면··· 시뮬레이션 룸의?\"]"
+        },
+        {
+          "scene_id": "main_25_02",
+          "line": 277,
+          "quote": "에닉: 그렇습니다."
+        },
+        {
+          "scene_id": "main_23_22",
+          "line": 40,
+          "quote": "버닝엄: ···애, 애초에 잉크와 합쳤어야 했어. 카, 카운터는 무슨···."
+        },
+        {
+          "scene_id": "main_44_11",
+          "line": 65,
+          "quote": "에닉: 잉크라는 존재가 있으나, 제어가 불가능 해 행동 범위를 시뮬레이션 룸만으로 한정했습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__116:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "'설마 일레그야??'에 붐가이가 즉시 긍정한다. entity는 붐가이를 char_일레그의 별칭으로 돌려준다. participant_match뿐 아니라 호명·응답을 확인한 연결이므로 유력한 별칭이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_boomsday_01_001",
+          "line": 19,
+          "quote": "    설마 일레그야??"
+        },
+        {
+          "scene_id": "blabla_boomsday_01_001",
+          "line": 22,
+          "quote": "    녜 지금 어딘가여"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "길로틴이 그 호칭을 부른 직후 드레이크가 응답한다. 실제 인물을 본뜬 NIMPH 시뮬레이션이라는 맥락에서 등록 드레이크로 잇는 규칙이 적용된다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_11",
+          "line": 44,
+          "quote": "길로틴: [위대한 빌런 드레이크]여, 우린 [전설의 검]을 얻을 방법이 필요하다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_00",
+          "line": 89,
+          "quote": "여신: 시뮬레이션. 스타트."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앨리스의 수용 니케들을 동화의 공주에 빗댄 복수 호칭이다. main_06_03의 여러 구조 니케뿐 아니라 noah_03에서 새로 구조해 온 니케에도 쓰이므로 고유 단체나 특정 개인의 이름으로 고정되어 있지 않다. 개별 대상과의 동일성을 단정하지 않은 일반 낱말·가능성이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "alice_wonderlandbunny_04",
+          "line": 89,
+          "quote": "앨리스: 잠자는 공주님들이 행복의 나라로 갈 수 있지 않을까 해서요. 헤헤."
+        },
+        {
+          "scene_id": "main_06_03",
+          "line": 17,
+          "quote": "앨리스: 여기 있는 모두가 잠자는 공주님들이에요!"
+        },
+        {
+          "scene_id": "noah_03",
+          "line": 100,
+          "quote": "앨리스: 잠자는 공주님은 저랑 여왕님이 꼭 깨워 드릴게요!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__107:U027",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 신고 접수처를 바로 뒤에서 '운영 본부'라고 다시 부른다. 축제 운영을 담당하는 부서를 기능으로 부르는 표현이라는 근거가 있으며 별도 고유 기관명으로 확정하기는 어렵다. 일반 낱말을 가능성으로 둔 것이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "little_witch_trick_10",
+          "line": 101,
+          "quote": "  [OPTION TEXT=\"운영국에 접수된 피해 신고도 없었지.\"]"
+        },
+        {
+          "scene_id": "little_witch_trick_10",
+          "line": 106,
+          "quote": "벨로타: 물건을 운영 본부에 제출했을 텐데 말이야."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__107:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네로의 우산은 비를 막는 생활 도구다. REBORN EVIL의 '우산'은 reborn_evil_25에서 엄브렐라/엄브렐러 사 찬양 문장으로 직접 해설되어 같은 낱말의 다른 대상임이 확인된다. 이 이야기만 회사 조직 E6로 분리한 범위·유형이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "nya_nya_paradise_07",
+          "line": 35,
+          "quote": "···네로는 우산을 들고는 루루 옆으로 다가가 우산을 씌워줬다."
+        },
+        {
+          "scene_id": "reborn_evil_00",
+          "line": 77,
+          "quote": "ㄴ 우산이 우리에게 새로운 길을 열어줄 것이다."
+        },
+        {
+          "scene_id": "reborn_evil_25",
+          "line": 90,
+          "quote": "란 문장을 시작으로 뒤는 엄브렐라 사를 찬양하는 내용으로 가득하다."
+        },
+        {
+          "scene_id": "reborn_evil_25",
+          "line": 92,
+          "quote": "질: 엄브렐러 사의 문서들을 신격화한 것 같네요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__107:U038",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "발전 방식이 수력·화력과 대비된다. 눈앞의 시설이 어느 종류인지 묻는 보통명사이며 고유한 시설 이름을 붙이는 장면이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "generator_01",
+          "line": 32,
+          "quote": "  [OPTION TEXT=\"이곳이 원자력 발전소였어?\"]"
+        },
+        {
+          "scene_id": "generator_01",
+          "line": 33,
+          "quote": "    맥스웰: 그래. 애초에 물이 없어 수력 발전도 못 해,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기의 9곳 모두 방주 입구에 임시로 세운 초소를 기능과 설치 상태로 설명한다. '이 초소'와도 교대하는 보통 표현이며, 같은 건물을 반복 지칭한다는 이유만으로 고유 지명이 되지는 않는다.",
+      "evidence": [
+        {
+          "scene_id": "over_zone_02",
+          "line": 3,
+          "quote": "홍련: 임시 초소에 크게 망가진 부분은 없네. 조금만 보수하면 되겠군."
+        },
+        {
+          "scene_id": "over_zone_04",
+          "line": 45,
+          "quote": "홍련: 방주에 혹시 자리가 남을까 싶어, 이 초소 인근으로 사람이 득실거렸네."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "상자를 부수다 발견한 풀을 쓸모없다고 평가한다. 시스템의 획득 안내라는 형식만으로 고유 제품명이 되지 않으며 일반적인 잡초 쓰임이다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_06",
+          "line": 13,
+          "quote": "[시스템 : 놀랍게도! 잡초를 발견했다!]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U040",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루주가 사용하는 용품 보관 케이스를 소유·용도에 따라 설명한다. 안에 게임용품과 칩이 있다는 지문도 그 기능을 확인하므로 일반 낱말이다.",
+      "evidence": [
+        {
+          "scene_id": "jinx_player_10",
+          "line": 110,
+          "quote": "루주: 제가 코인 러시에서 사용하는 전용케이스예요."
+        },
+        {
+          "scene_id": "jinx_player_10",
+          "line": 113,
+          "quote": "그 안엔 각종 게임용품과 알록달록한 칩이 있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세실에게 받아 땅에 심는 장미 씨앗이다. 두 출현에서 식물의 번식 재료를 뜻하며 이름 붙은 별도 물품을 나타내지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "hongryeon_goddeath_02",
+          "line": 17,
+          "quote": "세실: 하지만 장미 씨앗이라면 있죠."
+        },
+        {
+          "scene_id": "hongryeon_goddeath_03",
+          "line": 7,
+          "quote": "봉투에서 장미 씨앗을 꺼내고, 파낸 흙 위에 넣는다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__101:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "3곳 모두 크루즈 갑판 아래의 기관 공간이다. 위치와 기능으로 부르는 선박 부위 명칭이며 특별한 시설명으로 쓰인 예외가 없다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_05",
+          "line": 3,
+          "quote": "나와 일레그, 라피는 갑판 아래의 엔진룸으로 향했다."
+        },
+        {
+          "scene_id": "boom_the_ghost_11",
+          "line": 16,
+          "quote": "라피: 엔진룸의 불을 끈 게 너야?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U027",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "발견된 온천 시설을 '온천장'이라고 설명하고 영어 Hot Spring으로 반응한다. 두 출현의 표기는 시설 종류의 보통명사이며 별도 고유 이름을 선언하지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "neverland_01",
+          "line": 9,
+          "quote": "엔더슨: 지상 북부 기지 주변에서 온천장이 발견됐다고 하네."
+        },
+        {
+          "scene_id": "neverland_02",
+          "line": 44,
+          "quote": "  [OPTION TEXT=\"···북부 기지 주변에 온천장이 발견돼서.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여행 신청자가 각자 작성해야 하는 문서 종류를 말한다. 특정 유서의 제목이나 하나의 고유 물품이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "광고팜플렛_03",
+          "line": 6,
+          "quote": "*반드시 유서 작성 후 신청 바랍니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U029",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "노래를 듣고 그 음악 종류를 말하며, white_memory_13에서도 카세트에 담긴 올드 팝으로 쓰인다. 특정 곡명과 장르 표현을 혼동하지 않은 일반 낱말 판정이다.",
+      "evidence": [
+        {
+          "scene_id": "nonsense_red_00",
+          "line": 36,
+          "quote": "라푼젤: ···올드 팝···."
+        },
+        {
+          "scene_id": "white_memory_13",
+          "line": 20,
+          "quote": "레드 후드가 가장 좋아했던 올드 팝이 담긴 낡은 카세트테이프."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__101:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엘리베이터가 모이는 구역의 기능명이다. main_22_12에서는 J-910이라는 식별자가 별도로 붙어 특정 허브를 구별하므로, 해당 단발 표기 자체를 유일 시설의 고유명으로 볼 필요가 없다.",
+      "evidence": [
+        {
+          "scene_id": "main_35_06",
+          "line": 2,
+          "quote": "엘리베이터 허브."
+        },
+        {
+          "scene_id": "main_22_12",
+          "line": 3,
+          "quote": "방주. 엘리베이터 허브 J-910."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U028",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "취소된 결승전을 다시 치르는 일정이라는 문맥이다. 다시 하는 결승이라는 경기 단계 표현으로, 이름 붙은 별도 행사와 구별된다.",
+      "evidence": [
+        {
+          "scene_id": "epinel_03",
+          "line": 165,
+          "quote": "에피넬: 하지만. 이제 곧 재결승이니까."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아버지가 머물렀던 '임시 숙소들'이라는 복수 표현이다. 여러 거처를 묶어 말하므로 일반 낱말 판단을 직접 뒷받침한다.",
+      "evidence": [
+        {
+          "scene_id": "칠리페퍼_01",
+          "line": 113,
+          "quote": "    내 아버지가 머물렀던 임시 숙소들이야"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__107:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엠마가 만들어 운세를 보는 여러 장의 카드다. 복수와 제작·사용 문맥에서 일반 점술 도구를 가리킨다.",
+      "evidence": [
+        {
+          "scene_id": "library_01",
+          "line": 16,
+          "quote": "엠마: 내가 만든 운세 카드들이 있는데."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "현재 장비로 만든 결과물의 기술 수준을 '급'으로 평가한다. 특정 기술의 고유명이나 기관 이름이 아닌 수준 비교 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_27",
+          "line": 49,
+          "quote": "에이브: 그래도 지금 있는 장비들로 만든 것치곤 오버 테크놀로지 급이야."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "선택지와 지문 모두 호수로 이어진 좁은 길을 말한다. 방향·형태를 나타내는 보통 장소 표현으로 읽힌다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2107",
+          "line": 5,
+          "quote": "  [OPTION TEXT=\"오솔길로 향한다.\" VALUE=\"option_210701\"]"
+        },
+        {
+          "scene_id": "fading_affection_2121",
+          "line": 2,
+          "quote": "마리안은 지휘관과 함께 호수로 이어진 오솔길로 향했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__120:U024",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "의식적 기억과 대비되는 무의식적 기억의 한 방식이라고 본문이 풀이한다. 작중 고유 현상명으로 새로 명명한 것이 아닌 일반 개념어다.",
+      "evidence": [
+        {
+          "scene_id": "library_05",
+          "line": 178,
+          "quote": "마르차나: 그 원리는 의식적 기억이 아닌 절차 기억이라는 무의식적 기억에 저장되었기 때문입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여러 형태의 유령을 의심하거나 오인하는 쓰임이다. boom_the_ghost_15에서 그 대상들이 홀로그램이라고 직접 밝혀져, 유령이라는 고유 종족·인물을 세우기보다 귀신 일반의 표현으로 보는 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_00",
+          "line": 76,
+          "quote": "[유령]의 무리를 향해 뛰어든다."
+        },
+        {
+          "scene_id": "boom_the_ghost_15",
+          "line": 29,
+          "quote": "토브: 유령들이 홀로그램인 걸 알았으니 그냥 무시하고 저희 할 일 해도 되지 않나요?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "찻잔에 따른 차의 향과 종류를 말하고 가장 좋아하는 차라고 확인한다. 인명이나 제품의 고유명으로 쓰이지 않았다.",
+      "evidence": [
+        {
+          "scene_id": "ludmilla_03",
+          "line": 72,
+          "quote": "루드밀라: 이 향기는··· 재스민?"
+        },
+        {
+          "scene_id": "ludmilla_03",
+          "line": 74,
+          "quote": "  [OPTION TEXT=\"루드밀라가 가장 좋아하는 차야.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기에서 시야를 가리는 연기를 내는 전술 장비다. 별도의 이름 붙은 무기가 아니라 장비 종류에 해당한다.",
+      "evidence": [
+        {
+          "scene_id": "택티컬티택_00",
+          "line": 168,
+          "quote": "  [OPTION TEXT=\"연막탄···!\"]"
+        },
+        {
+          "scene_id": "chocolate_please_04",
+          "line": 155,
+          "quote": "델타: [신호]를 주시면 제가 연막탄을 던져 넣고 빠르게 초콜릿을 가져오겠습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__115:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "니케의 이름·군번 및 동물 주인의 식별 표시 등 서로 다른 물품에 쓰인다. 여러 대상에 통용되는 식별 도구의 보통명사임이 분명하다.",
+      "evidence": [
+        {
+          "scene_id": "over_zone_01",
+          "line": 12,
+          "quote": "스노우 화이트: 인식표에는 케이트 양이라고 적혀있었어."
+        },
+        {
+          "scene_id": "admi_00",
+          "line": 55,
+          "quote": "애드미: 주인의 '인식표'를 걸어 놔야 해요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "reborn_evil_00에서 여러 실종을 연쇄 실종으로 볼 수 있는지를 논한다. 뒤의 사건 언급도 이 사건 유형을 가리키므로 대괄호만으로 고유 사건명으로 취급하지 않은 것이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "reborn_evil_02",
+          "line": 133,
+          "quote": "D: 봤다시피 지금 방주에선 [연쇄 실종] 사건이 일어나고 있어."
+        },
+        {
+          "scene_id": "reborn_evil_00",
+          "line": 3,
+          "quote": "아나운서: 최근 방주 내 실종 사건이 잇따라 발생하는 가운데,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "자율 방어 시스템을 갖춘 연구 시설이라는 같은 이야기의 설명이 있다. 기능에 따른 시설 종류 표현이며 특정 장소의 별도 이름이라는 근거가 없다.",
+      "evidence": [
+        {
+          "scene_id": "main_05_07",
+          "line": 21,
+          "quote": "루드밀라: 어쨌든, 연구 시설로 향한다고 했나?"
+        },
+        {
+          "scene_id": "main_05_11",
+          "line": 5,
+          "quote": "루드밀라: 원래 콘셉트가 자율 방어 시스템이 갖춰진 연구 시설이었으니까."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U012",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "실전 훈련 목표인 연구소의 지부를 말하며 같은 장면 뒤에서는 연구소라고 부른다. 수식어가 붙은 보통 시설 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "eunhwa_03",
+          "line": 5,
+          "quote": "은화: 작전 목표는 연구소 지부 내에서의 생존."
+        },
+        {
+          "scene_id": "eunhwa_03",
+          "line": 82,
+          "quote": "은화: 연구소와 교관 캠프 사이의 거리는 고작 450m."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "X가 '자네의 표현대로라면'이라며 윗줄·아랫줄을 대비한다. 위원회 구성원 사이의 서열을 표현하는 집합적 보통말이며 특정 개인의 호칭이나 별도 조직명이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "lord_for_justice_00",
+          "line": 59,
+          "quote": "K: [윗줄] 중에 그나마 사람 같은 건 당신뿐이니까."
+        },
+        {
+          "scene_id": "lord_for_justice_00",
+          "line": 67,
+          "quote": "X: 거기다··· 그래, 자네의 표현대로라면, [윗줄]과 [아랫줄]이 나뉘어 있기까지 해."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__114:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "정원 전체에 달린 태양 대용 조명이다. 복수 설비의 기능을 설명하는 보통 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "flora_03",
+          "line": 117,
+          "quote": "플로라: 태양을 대신할 수 있는 인공 조명이 정원 전체에 달려 있고."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "동일한 레시피로 커피를 만드는 기계를 뜻한다. 대화의 대상이 특정 기계여도 자판기라는 말은 기계 종류의 보통명사로 쓰인다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_cafesweety_002",
+          "line": 82,
+          "quote": "    자판기는 똑같은 레시피로"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마스트의 이름이 적힌 종이에 붙인 내용 설명 표제다. 뒤에서 문서에 서명하는 장면과 이어지며, 작중 작품명이나 고유 제품명으로 보기보다 사기 피해자 명단이라는 보통 문서 표현으로 읽힌다.",
+      "evidence": [
+        {
+          "scene_id": "sin_swiftbunny_03",
+          "line": 14,
+          "quote": "[옥장판 사기 피해자 명단]이라고 적힌 종이를 신에게 건넨다."
+        },
+        {
+          "scene_id": "sin_swiftbunny_03",
+          "line": 84,
+          "quote": "할머니가 신의 손에서 펜을 가져가, 문서에 이름을 적는다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라피가 건네는 권총과 헨젤이 소지한 권총에 두루 쓰인다. 처분·자결이라는 용도로 구별한 무기 종류의 보통 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "main_01_06",
+          "line": 14,
+          "quote": "라피: 자결용 권총입니다. 인간도 사용할 수 있습니다."
+        },
+        {
+          "scene_id": "gingerbreadhouse_10",
+          "line": 220,
+          "quote": "헨젤은 급하게 품 안에 있던 자결용 권총을 겨눴다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "주둔지 01에 임시로 마련한 업무 공간이라는 지문이다. 장소를 소속과 설치 상태로 설명하는 보통 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "unbreakable_sphere_16",
+          "line": 2,
+          "quote": "주둔지 01의 임시 오퍼레이션 룸."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U032",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "우승자에게 주는 메인 이벤트 출전 자격이며 다음 장면에서도 와일드 카드로 참가했다고 설명한다. 머스탱의 한영 혼용 표기가 고유 물품명을 만들지는 않는다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_26",
+          "line": 133,
+          "quote": "머스탱: Chasing Event의 Winner들에게, 와일드 Card를 드리겠습니Da!"
+        },
+        {
+          "scene_id": "coins_in_rush_27",
+          "line": 45,
+          "quote": "밀크: 푸하하하. 와일드 카드로 참가한 사람들이 그렇게 바로 탈락할 줄은 아무도 몰랐겠지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "플로라가 돌보는 정원의 꽃을 다른 꽃 종류와 나열한다. 사람에게 꽃 이름을 붙이는 다른 용법과 달리 이 3곳에서는 실제 식물인 장미를 가리킨다.",
+      "evidence": [
+        {
+          "scene_id": "secret_garden_00",
+          "line": 8,
+          "quote": "플로라: 후후, 장미는 잠시만 기다려요."
+        },
+        {
+          "scene_id": "blabla_flora_003",
+          "line": 31,
+          "quote": "    장미와 튤립"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__107:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "본문이 '우롱차의 한 종류'라고 명시한다. 일반 차 종류를 뜻하며 개별 물품의 고유명과 구별된다.",
+      "evidence": [
+        {
+          "scene_id": "sakura_03",
+          "line": 115,
+          "quote": "사쿠라: 이것은 우롱차의 한 종류로, 차 향이 진하고 그윽한 데다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "디젤의 위령비와 다른 이야기의 헤르민 위령비 등 서로 다른 비석에 통용된다. 사망자를 기리는 시설 종류의 보통명사다.",
+      "evidence": [
+        {
+          "scene_id": "diesel_02",
+          "line": 190,
+          "quote": "디젤: 하지만 저 위령비에도 가지 못하겠는걸요."
+        },
+        {
+          "scene_id": "memories_teller_32",
+          "line": 193,
+          "quote": "우리는 헤르민의 위령비 앞에 서 있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아니스가 원하는 활동 마무리 공연의 형태를 말한다. 공연을 할지에 관한 대화이며 고유 행사명으로 명명하는 쓰임은 아니다.",
+      "evidence": [
+        {
+          "scene_id": "main_38_08",
+          "line": 60,
+          "quote": "프리카: 우리가 네 은퇴 공연하고 싶다는 말을 듣고, 와 드디어 우리가 다시 뭉치는구나 하면서 좋아했어야 해?"
+        },
+        {
+          "scene_id": "main_38_09",
+          "line": 29,
+          "quote": "네온: 몇 명 오지도 않은 무대에서 은퇴 공연 하고 싶냐고요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "거신의 어깨 무장과 어드마이어 함포를 함께 지칭하며 실탄과 대비된다. 여러 무기의 종류를 가리키는 보통명사다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_20",
+          "line": 28,
+          "quote": "거신이 거리를 벌린 후, 어깨의 입자포를 전개한다."
+        },
+        {
+          "scene_id": "train_station_03",
+          "line": 63,
+          "quote": "헬름: ···AZX는 실탄을 사용하지? 어드마이어 호는 입자포를 사용해."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리아가 피하려는 창고와 그 기억을 요약한 메모리 이름표가 함께 있다. 시설 종류와 수집 기록 제목을 고유 엔티티로 만들지 않는 규칙에 맞는다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_1133",
+          "line": 6,
+          "quote": "그래야 [REDACT]저장 창고를[/REDACT] 위험한 곳을 피할 수 있어."
+        },
+        {
+          "scene_id": "fading_affection_memory_1117",
+          "line": 2,
+          "quote": "삭제된 메모리"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U023",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "유토피아 호에서 유령 소동을 겪는 상황을 묘사한 말이다. 별도로 선박 이름이 제시되고 이 표기는 유령이 나타나는 배라는 보통 표현으로 쓰인다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_00",
+          "line": 80,
+          "quote": "유령선에서 유령을 퇴치하고 있다."
+        },
+        {
+          "scene_id": "boom_the_ghost_04",
+          "line": 14,
+          "quote": "일레그: 이 크루즈의 이름은 유토피아 호라고 해여."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U031",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "유실물의 매체와 녹음 상황을 설명하는 한 줄이다. 음성 파일이라는 파일 종류를 특정 고유 물품명으로 올리지 않은 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "반드시사수하라_00",
+          "line": 1,
+          "quote": "전투 중 녹음된 것으로 추정되는 음성 파일"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라플라스가 나가 시뮬레이션 룸에 들어가고 슈엔이 모니터로 보는 공간이다. 두 곳 모두 관제 기능의 방을 뜻하는 보통 시설 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_00",
+          "line": 51,
+          "quote": "라플라스가 오퍼레이션 실 밖으로 달려나갔다."
+        },
+        {
+          "scene_id": "project_matis_24",
+          "line": 3,
+          "quote": "슈엔은 긴장한 눈으로 오퍼레이션 실의 모니터를 바라보았다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__106:U005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "9개 이야기의 18곳에서 침략자를 우주에서 온 존재로 분류해 부르는 보통말이다. '외계인(이하 랩쳐로 기술)'은 그 대상이 랩쳐임을 보여 주지만, 외계인 자체가 새로 붙인 고유 종족명임을 뜻하지는 않는다. 크툴루·영화·가짜 로봇과 대비하는 문맥도 일반 분류 표현을 지지한다.",
+      "evidence": [
+        {
+          "scene_id": "blank_ticket_00",
+          "line": 20,
+          "quote": "이상한 외계인 때문에 나는 지하로 내려가고 있다."
+        },
+        {
+          "scene_id": "UFO챈.zip_00",
+          "line": 4,
+          "quote": "일단 기계처럼 생겼고. 우리가 상상하던 것 같은 크툴루상은 아님."
+        },
+        {
+          "scene_id": "기업-랩쳐음모론_00",
+          "line": 6,
+          "quote": "이번에 갑자기 나타난 외계인(이하 랩쳐로 기술)들도"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U029",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "볼륨이 던진 음료 용기를 뜻한다. 제품명이나 고유 장비명 없이 일반 물품 종류로 사용된다.",
+      "evidence": [
+        {
+          "scene_id": "volume_01",
+          "line": 78,
+          "quote": "볼륨은 들고 있던 음료수 캔을 바닥에 던졌고. 그대로 튕겨 스태프에게 날아가고 있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "플로라가 정원의 실제 꽃들에게 말을 거는 문맥이다. 꽃의 의인화만으로 등록 인물이나 별도 캐릭터의 호칭으로 볼 근거는 없으며 식물 종류 표현이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "flora_01",
+          "line": 6,
+          "quote": "플로라: 작약, 손님은 부끄러워서 싫다고요?"
+        },
+        {
+          "scene_id": "flora_01",
+          "line": 23,
+          "quote": "알록달록한 꽃들과, 조화롭게 퍼지는 향긋한 꽃향기."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U018",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "서로 다른 이야기에서 건물 지붕 위 공간을 가리킨다. 일반적인 건물 부위 명칭으로 통용된다.",
+      "evidence": [
+        {
+          "scene_id": "blank_ticket_12",
+          "line": 9,
+          "quote": "남자 경비원: 나는 그냥 옥상에서 내려오라고 말했던 것뿐인데."
+        },
+        {
+          "scene_id": "command_center_02",
+          "line": 148,
+          "quote": "얀: 옥상으로 가자."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "쇼핑몰 직원처럼 보이게 하는 의복을 말한다. 직장 제복이라는 일반 물품 종류로 쓰였다.",
+      "evidence": [
+        {
+          "scene_id": "yan_03",
+          "line": 54,
+          "quote": "베스티: 그 유니폼은 어, 어떻게 된 거야?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__112:U011",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "이사회 구성원들의 얼굴을 복수로 묘사한 표현이다. 한 사람을 지칭하는 직함이 아니며 이사회 자체의 이름과도 구별되는 구성원 묘사다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_07",
+          "line": 60,
+          "quote": "흥미로운 듯 고개를 끄덕이는 이사회 사람들의 얼굴이 보인다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "5개 이야기의 전초기지·방주·지상 놀이 공간에 두루 쓰인다. 시설 종류의 공통 명칭이므로 서로 다른 장소를 하나의 새 엔티티로 묶을 필요가 없다.",
+      "evidence": [
+        {
+          "scene_id": "miracle_snow_00",
+          "line": 25,
+          "quote": "에닉: 그럼 현 시간부로 전초기지의 유원지에 한정, 2주 동안 눈을 내리도록 조정하겠습니다."
+        },
+        {
+          "scene_id": "out_of_uniform_04",
+          "line": 134,
+          "quote": "아인: 그럼 바로 뒤에 유원지로 가보는 건 어때요?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__106:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "차임을 데려가는 성 건물의 종류를 말한다. 같은 이야기에서 관광지인 고성으로 풀이하므로 고유 시설명이 아닌 보통 장소 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "last_kingdom_21",
+          "line": 33,
+          "quote": "킬로와 라푼젤은 차임을 데리고 왕성 안으로 들어갔다."
+        },
+        {
+          "scene_id": "last_kingdom_13",
+          "line": 16,
+          "quote": "킬로: 이곳은 사실상 관광지인 고성 그 이상도 이하도 아닐 테니까요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__107:U025",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지상에 떨어졌다는 정체불명 암석을 물체의 종류로 부른다. 이름을 붙인 운석을 지시하는 문맥은 아니다.",
+      "evidence": [
+        {
+          "scene_id": "fool_metal_panic_00",
+          "line": 54,
+          "quote": "시프티: 지상 어딘가에 정체불명의 운석이 떨어졌다고 해요! 저랑 같이 가서 조사해 주세요!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U034",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관이 뽁뽁이라고 바로 풀이한다. 포장용 완충 물품의 보통명사임을 직접 확인할 수 있다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_n102_008",
+          "line": 55,
+          "quote": "    완충재구나 a.k.a. 뽁뽁이"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "해상 작전지와 코인 러시에 각각 마련한 병동에 쓰인다. 임시 설치라는 상태를 붙인 시설 종류이며 동명의 고유 장소를 합친 것이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "sea_you_again_26",
+          "line": 127,
+          "quote": "  [OPTION TEXT=\"부상이 제일 심한 헬름은 메어리의 임시 병동에서 빠르게 회복 중에 있습니다.\"]"
+        },
+        {
+          "scene_id": "golden_coin_rush_09",
+          "line": 42,
+          "quote": "메어리를 따라 코인러시 내부 임시 병동으로 향했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U037",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "드릴리가 일행에게 나눠 착용시키는 하강 장비다. 형태와 용도를 나타낸 일반 장비명으로 쓰인다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_01",
+          "line": 84,
+          "quote": "라피: 전신 착용형 아이젠··· 그리고 소형 슬러스터네."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__118:U020",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앵커와 루드밀라의 서로 다른 장갑에 두루 쓰인다. 손에 끼는 물품이라는 공통 종류만 나타낸다.",
+      "evidence": [
+        {
+          "scene_id": "anchor_00",
+          "line": 148,
+          "quote": "앵커: 자, 여기 장갑."
+        },
+        {
+          "scene_id": "blabla_unlimited_001",
+          "line": 69,
+          "quote": "    이 몸이 장갑을 가져오지 않았다"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "7호가 깨어난 연구실 부속 숙소이며 이후 단순히 숙소로 다시 지칭된다. 일반적인 숙박 공간의 설명이다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3003",
+          "line": 3,
+          "quote": "7호는 연구실 숙소에서 눈을 뜬다."
+        },
+        {
+          "scene_id": "fading_affection_3003",
+          "line": 12,
+          "quote": "7호는 서둘러 침대에서 일어나 숙소 밖으로 나섰다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "여럿에게 낙하산 대신 사용하라고 지시하는 감속 장비다. 특정 고유 무기나 기술명이 아니다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_11",
+          "line": 10,
+          "quote": "지휘관: 낙하산은 사용하지 않는다! 역분사 장치를 사용해라!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__107:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메이든이 트로니 손의 공구를 알아보고 놀라는 말이다. 용접하는 기계의 일반 이름으로 쓰였다.",
+      "evidence": [
+        {
+          "scene_id": "d.ark_hero_00",
+          "line": 109,
+          "quote": "메이든: 요, 용접기잖아요? 왜 그런 위험한 걸 들고 가까이 오는 거예요?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U017",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "맥스웰이 지상에 잠시 세웠던 연구소라고 풀어 말한다. 임시라는 설치 상태를 설명한 보통 시설 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "maxwell_02",
+          "line": 27,
+          "quote": "맥스웰: 지상에 잠시 임시 연구소를 세워서 일했던 적이 있었거든."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__114:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 이야기 모두 여러 사람을 니케와 대비해 말하는 인간의 복수형이다. 이름 붙은 별도 집단이나 특정 인물을 나타내지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "ether_04",
+          "line": 149,
+          "quote": "에테르: 다른 인간들이랑 똑같이. 알면서도 모르는 척하고 살아."
+        },
+        {
+          "scene_id": "full_fool_day_09",
+          "line": 116,
+          "quote": "드레이크: 쳇. 이래서 인간들은···."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U026",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "배달 요금을 정하는 전투 경계선이다. 경계 밖 거리마다 요금을 매기는 기준이며 고유 지명으로 쓰이지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "광고팜플렛_00",
+          "line": 5,
+          "quote": "*전선 밖으로는 1km당 1천만원 추가."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "전기 방출과 접근 위험을 설명하는 탄환 종류다. 서로 다른 장에서 같은 보통 장비 표현으로 사용된다.",
+      "evidence": [
+        {
+          "scene_id": "main_28_14",
+          "line": 53,
+          "quote": "시프티: 다들 물러서요! 전격탄이에요!"
+        },
+        {
+          "scene_id": "main_29_15",
+          "line": 116,
+          "quote": "  [OPTION TEXT=\"벽, 바닥, 그리고 전격탄.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "나디아가 재활 후 출전하기를 바라는 경기 대회의 종류다. 구체적인 대회 고유 이름은 제시하지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "life_again_12",
+          "line": 100,
+          "quote": "루마니: 저는 꼭 나디아가 육상대회 나가는 걸 보고 싶거든요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "납골당 안에서 찾는 유골 보관 용기이며 같은 장면은 유골함 대부분이 바닥에 있다고 설명한다. 복수의 일반 물품이다.",
+      "evidence": [
+        {
+          "scene_id": "할아범_01",
+          "line": 153,
+          "quote": "아니스: 그럼··· 얼른 유골함을 찾아볼까?"
+        },
+        {
+          "scene_id": "할아범_01",
+          "line": 159,
+          "quote": "···납골당 안의 유골함 대부분은 바닥을 뒹굴고 있었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U011",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "15개 이야기의 30곳에서 시대·소속·기능이 다른 연구 시설들을 가리킨다. '이 연구소가 어느 연구소인지', '다른 연구소'라는 대조도 보통명사임을 직접 보여 준다. 연구소 하나를 특정하는 인물 호칭과 같은 경우가 아니며 고유 시설로 묶지 않은 판단이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "gingerbreadhouse_09",
+          "line": 108,
+          "quote": "헨젤: 헨젤과 그레텔은 이 연구소가 어느 연구소인지 모르겠는데."
+        },
+        {
+          "scene_id": "gingerbreadhouse_09",
+          "line": 112,
+          "quote": "에이브: 너희 둘은 특히나, 다른 연구소로 가면 절대 안 돼. 알겠어?"
+        },
+        {
+          "scene_id": "main_18_03",
+          "line": 2,
+          "quote": "라플라스: 여기가 새로운 방어벽을 만들었다는 연구소인가!"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리아가 고양이에게 주거나 마리안과 지휘관이 나눠 먹는 음식이다. 여러 개별 음식에 쓰이는 종류명이다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_1119",
+          "line": 3,
+          "quote": "마리아는 품에서, 건조된 육포를 꺼내 고양이에게 건넸다."
+        },
+        {
+          "scene_id": "fading_affection_2232",
+          "line": 9,
+          "quote": "마리안이 지휘관에게 하나뿐인 육포를 내밀었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__108:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "투척한 물체의 납작한 형태를 가리킨다. 관련 장면에서 원반을 가이드 시그널로 사용함이 확인되므로 원판 자체를 고유 장비 이름으로 보지 않은 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_32_10",
+          "line": 12,
+          "quote": "힘껏 베히모스에게 원판을 던진다."
+        },
+        {
+          "scene_id": "main_31_04",
+          "line": 9,
+          "quote": "마나: 예. 좌표 확인. 가이드 시그널을 향해 A 필러를 발사합니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U036",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "'전시회 같은 거'라는 불특정 여가 활동 제안이다. 하나의 이름 붙은 행사가 아니다.",
+      "evidence": [
+        {
+          "scene_id": "life_again_06",
+          "line": 59,
+          "quote": "  [OPTION TEXT=\"그럼 전시회 같은 거 보는 건 어때?\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "주둔지 01의 임시 수리 공간이라는 지문과 수리 완료 대사가 이어진다. 기능과 설치 상태를 설명하는 시설 보통 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "main_33_02",
+          "line": 2,
+          "quote": "주둔지 01의 임시 리페어 센터."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메이든이 만든 낚시용 물질이며 물고기를 끌어들이는 효과를 설명한다. 브랜드나 고유 제품명이 아닌 용도 표현이다.",
+      "evidence": [
+        {
+          "scene_id": "beauty_full_shot_08",
+          "line": 83,
+          "quote": "메이든: 물고기가 좋아하는 유인제예요."
+        },
+        {
+          "scene_id": "beauty_full_shot_08",
+          "line": 89,
+          "quote": "메이든: 유인제요? 제가 만든 거예요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__101:U007",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "40개 발췌와 occ의 43곳을 대조하고 미제시 3곳도 모두 show로 확인했다. 학교 승강기(school_of_lock_10 O0017), 고장 난 승강기(liars_end_08 O0040), 수정 운반 통로(main_29_05 O0009)에 기본 A2__101__007이 올바르게 적용된다. 26개 이야기가 모두 제시되어 shown=0 이야기는 없다. RED ASH는 우주로 향하는 시설을 직전 장면에서 궤도 엘리베이터로 명시하므로 location E6 예외가 맞고, 나머지는 여러 승강기에 두루 쓰이는 일반 낱말이다. 추가 확인한 이야기·출현: main_story__chapter_29 — O0009 main_29_05:L41; event_stories__school_of_lock — O0017 school_of_lock_10:L4; special_stories__liars_end — O0040 liars_end_08:L42.",
+      "evidence": [
+        {
+          "scene_id": "main_22_11",
+          "line": 15,
+          "quote": "진: 예. 방주에는 지상으로 올라가는 엄청 많은 엘리베이터가 있지 않습니까?"
+        },
+        {
+          "scene_id": "red_ash_13",
+          "line": 4,
+          "quote": "릴리바이스: 그럼 이제 엘리베이터를 타고 우주로 가볼까?"
+        },
+        {
+          "scene_id": "red_ash_12",
+          "line": 24,
+          "quote": "릴리바이스: 저 녀석만 꺾으면 궤도 엘리베이터까진 금방이야!"
+        },
+        {
+          "scene_id": "school_of_lock_10",
+          "line": 4,
+          "quote": "엘리베이터 앞에 양산형 니케 한 명만 덩그러니 서 있는 모습이 보였다."
+        },
+        {
+          "scene_id": "liars_end_08",
+          "line": 42,
+          "quote": "  [OPTION TEXT=\"엘리베이터가 고장 난 것 같아.\"]"
+        },
+        {
+          "scene_id": "main_29_05",
+          "line": 41,
+          "quote": "프레자일: 목적을 달성하면 브레이크를 풀어서, 엘리베이터를 통해 이곳으로 보내요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__115:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "40개 발췌와 occ의 100곳을 대조하고 미제시 60곳 모두 show로 확인했다. 인간 전체의 생존·기술·사회·전쟁을 말하는 보통명사이며 이름 붙은 별도 종족이나 조직이 아니다. 3개 unseen_probes(old_tales_23 O0037, main_17_10 O0008, old_tales_dialog_01 O0086)의 기본 A2__115__001 적용도 맞다. shown=0인 메인 18·31·49장, RED ASH, OLD TALES, UNBREAKABLE SPHERE, GODDESS FALL, 러블리 드림, WHITE MEMORY, RED ASH 유실물, OLD TALES 필드 대화를 포함한 모든 미제시 출현을 확인해 다른 용례를 찾지 못했다. 추가 확인한 이야기·출현: main_story__chapter_04 — O0002 main_04_15:L35; main_story__chapter_14 — O0004 main_14_09:L13; main_story__chapter_17 — O0008 main_17_10:L87, O0009 main_17_13:L29, O0010 main_17_16:L89; main_story__chapter_18 — O0011 main_18_04:L35, O0012 main_18_15:L3; main_story__chapter_31 — O0014 main_31_10:L179; main_story__chapter_46 — O0018 main_46_09:L34; main_story__chapter_49 — O0019 chapter_49_04:L98; event_stories__over_zone — O0021 over_zone_01:L61, O0022 over_zone_02:L35, O0023 over_zone_05:L7, O0024 over_zone_06:L27, O0026 over_zone_22:L63, O0027 over_zone_23:L14, O0028 over_zone_26:L35, O0029 over_zone_27:L34; event_stories__red_ash — O0030 red_ash_01:L46; event_stories__old_tales — O0031 old_tales_14:L68, O0032 old_tales_15:L84, O0033 old_tales_17:L6, O0034 old_tales_20:L11, O0035 old_tales_21:L18, O0036 old_tales_22:L57, O0037 old_tales_23:L11, O0038 old_tales_24:L23; event_stories__wisdom_spring — O0040 wisdom_spring_12:L90; event_stories__romantic_valentine — O0042 romantic_valentine_04:L103; event_stories__unbreakable_sphere — O0043 unbreakable_sphere_27:L213; event_stories__arcane_archive — O0044 arcane_archive_10:L17; event_stories__goddess_fall — O0048 goddess_fall_02:L60, O0049 goddess_fall_14:L28; event_stories__ark_guardian — O0051 ark_guardian_07:L83, O0052 ark_guardian_24:L47; side_stories__gingerbread_house — O0057 gingerbreadhouse_00:L65, O0058 gingerbreadhouse_02:L77, O0059 gingerbreadhouse_03:L94, O0061 gingerbreadhouse_11:L23, O0062 gingerbreadhouse_12:L3, O0063 gingerbreadhouse_14:L20; sub_quests__러블리_드림 — O0065 러블리_드림_00:L89; lost_relics__방주추첨권 — O0067 방주추첨권_01:L7; lost_relics__니케실험대상자모집 — O0069 니케실험대상자모집_00:L2, O0071 니케실험대상자모집_02:L2; lost_relics__정갈하게쓴기록 — O0073 정갈하게쓴기록_00:L14, O0075 정갈하게쓴기록_02:L4, O0076 정갈하게쓴기록_03:L6; event_lost_relics__white_memory — O0083 white_memory_page_1001223:L2; event_lost_relics__red_ash_lost — O0084 red_ash_lost_20:L13; event_lost_relics__old_tales_dialog — O0086 old_tales_dialog_01:L13, O0087 old_tales_dialog_08:L22; event_lost_relics__old_tales_mini_memory — O0088 old_tales_mini_memory_02:L3, O0089 old_tales_mini_memory_07:L5, O0090 old_tales_mini_memory_08:L3, O0092 old_tales_mini_memory_15:L3, O0093 old_tales_mini_memory_17:L8; special_stories__fool_burst_day — O0094 fool_burst_day_10:L4; special_stories__fool_metal_panic — O0097 fool_metal_panic_13:L200; blabla__personal__cinderella — O0099 blabla_cinderella_001:L15.",
+      "evidence": [
+        {
+          "scene_id": "main_04_12",
+          "line": 4,
+          "quote": "에닉: 제3. 단, 그 의도가 인류 평화에 이바지하기 위함이었다는 점."
+        },
+        {
+          "scene_id": "over_zone_05",
+          "line": 7,
+          "quote": "도로시: 방주에는 엄선된 인재들만 들어갈 수 있었고, 그 수는 인류 전체에 비하면 아주 극소수였죠."
+        },
+        {
+          "scene_id": "over_zone_05",
+          "line": 8,
+          "quote": "도로시: 대부분의 인간들은 방주에 들어갈 수 없었어요."
+        },
+        {
+          "scene_id": "old_tales_23",
+          "line": 11,
+          "quote": "신데렐라: 인류가 지하로 도망가게 만든 일등공신."
+        },
+        {
+          "scene_id": "main_17_10",
+          "line": 87,
+          "quote": "스노우 화이트: 그 꿈같은 이상론을 인류가 어떻게 받아들이고, 또 니케가 어떻게 받아들이냐에 따라."
+        },
+        {
+          "scene_id": "old_tales_dialog_01",
+          "line": 13,
+          "quote": "지휘관: 그저 단순한 인류의 적일 뿐이야."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__110:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "글러트니의 소화액이라는 직접 설명과 인공물을 같은 액체로 바꾸는 성질, 자연물은 바꾸지 못하는 성질이 있다. 은색 액체 자료의 용해·혼합 성질과 일치하지만 두 표기를 직접 등치하는 대사는 아니므로 동일 물질 E9에 가능성을 준 것이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "unbreakable_sphere_10",
+          "line": 43,
+          "quote": "리틀 머메이드: [그것에 닿는 모든 인공물은 그것과 똑같이 은빛 액체가 되어 녹아내리게 돼.]"
+        },
+        {
+          "scene_id": "unbreakable_sphere_lost_03",
+          "line": 3,
+          "quote": "재료로 글러트니의 은빛 액체에서 뽑아낸 에너지를 사용했다."
+        },
+        {
+          "scene_id": "은색액체_01",
+          "line": 2,
+          "quote": "은색 액체에 닿는 건 다 녹아서 은색 액체로 바뀌어."
+        },
+        {
+          "scene_id": "은색액체_01",
+          "line": 3,
+          "quote": "뭐든 간에. 자연물 빼고는 싹 다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__116:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "퀸의 자격·힘을 뜻하는 E1과 반려에게 주어지는 재생 능력 E2를 구별해야 한다. 41·48·49장 및 GODDESS FALL은 퀸 탄생·탈취·인계와 직접 이어지고 maria-n_09도 같은 이야기의 일곱 조율자 설명으로 뒷받침된다. 39장은 인자 살해자 관계를 다른 장에서 가져와 가능성으로 나눴다. 50장과 maria-n_16·17은 반려 인자를 직접 설명하며, 44장·ARK RANGER의 재생 현상은 그 설명을 적용한 간접 추론이어서 E2 가능성 예외가 적절하다. 네 연결의 범위와 두 entity_key가 일관된다.",
+      "evidence": [
+        {
+          "scene_id": "main_41_08",
+          "line": 20,
+          "quote": "리버렐리오: 포비스트가 퀸을 만들었어."
+        },
+        {
+          "scene_id": "main_39_10",
+          "line": 110,
+          "quote": "나유타: 허나 어째서··· 인자가 활성화되지 않았을 터인데···."
+        },
+        {
+          "scene_id": "main_44_00",
+          "line": 108,
+          "quote": "  [OPTION TEXT=\"주사기가 몸에 안 들어가. 정확히는 들어가는 순간 회복해 버려.\"]"
+        },
+        {
+          "scene_id": "chapter_50_14",
+          "line": 225,
+          "quote": "나유타: 반려 인자··· 라고 부르는 것이 맞겠으나."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 66,
+          "quote": "나유타: 그 대상에게, 자신의 반려가 되어줄 인자를 부여하지."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 67,
+          "quote": "나유타: 그 인자를 부여받은 이는 초월적인 재생 능력과 신체 능력을 가지게 되오."
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line": 132,
+          "quote": "미러: 이 마저도 일곱 조율자의 입장에서는 강대한 힘에 속하는 건가."
+        },
+        {
+          "scene_id": "ark_ranger_16",
+          "line": 99,
+          "quote": "[죽었다]가 살아났다. 인자가 아니었다면 죽었겠지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__102:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "성하를 찾아와 과거 V.T.C. 일을 설명하고 목걸이를 빼앗다 소멸하는 한 사람이다. 일반 직책 전체가 아니라 이 화자를 가리키므로 이야기·역할 qualifier를 가진 미등록 character가 적절하다. entity에서 이 표기의 등록 인물도 확인되지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "main_43_10",
+          "line": 49,
+          "quote": "여사제: 성하···!"
+        },
+        {
+          "scene_id": "main_43_12",
+          "line": 46,
+          "quote": "황금빛이 터져 나옴과 동시에, 여사제가 사라진다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__120:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메뉴판에 다른 특수 음료와 나란히 표시된 상품 이름이고 효능까지 설명된다. 음료 종류 일반이 아닌 이름 붙은 제품이므로 item이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "seedy_club_01",
+          "line": 45,
+          "quote": "[전율의 레모네이드] [고통의 카푸치노] ··· ···."
+        },
+        {
+          "scene_id": "seedy_club_01",
+          "line": 51,
+          "quote": "    유니: 헤헤. 그건 음료의 효능이야."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__106:U019",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "레비아탄이 '우리는 용광로라고 부른다'고 명명하고 사용법 문서도 같은 장소를 정의한다. 퀸 제작용 다크 매터를 관리하는 시설로서 location이 적절하며 일반 제철 설비와 구별된다.",
+      "evidence": [
+        {
+          "scene_id": "main_41_00",
+          "line": 98,
+          "quote": "레비아탄: 우리는 [용광로]라고 부르고 있어."
+        },
+        {
+          "scene_id": "주의용광로사용법_00",
+          "line": 5,
+          "quote": "여기가 뭐냐면 [용광로]라는 곳이야."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__109:U011",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "토커티브가 니케를 인간과 구별해 반복적으로 부르는 집합 명칭이다. 미하라 개인과 동료 니케들 모두에 쓰이고 인간인 지휘관은 제외하므로 개인 별칭보다 니케 부류의 명칭인 faction_or_species가 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line": 14,
+          "quote": "토커티브: [어디까지 버티는지 보여다오!] [유사인간!]"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line": 13,
+          "quote": "토커티브: [후하하. 네놈은 인간이다. 유사인간이 아니라.]"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__116:U009",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "모리의 평가자 등록을 담당하는 명시된 스쿼드 관리실로 안내하고 그 직원이 등록 업무를 처리한다. 해당 스쿼드의 특정 행정 시설을 온전한 명칭으로 지칭하므로 location 새 엔티티로 보는 근거가 있다.",
+      "evidence": [
+        {
+          "scene_id": "mori_02",
+          "line": 2,
+          "quote": "모리의 안내에 따라 평가자로 등록하기 위해 인큐베이터 스쿼드 관리실로 향했다."
+        },
+        {
+          "scene_id": "mori_02",
+          "line": 3,
+          "quote": "직원: 평가자로 등록하고 싶다고요?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__104:U022",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "플로라가 이름을 직접 밝히고 여러 번 대량 재배를 시도한 꽃이라고 설명한다. 한 송이의 물품이 아니라 이름 붙은 희귀 식물 종류이므로 faction_or_species가 맞다. 씨앗·수액·향기 언급도 같은 종류를 지시한다.",
+      "evidence": [
+        {
+          "scene_id": "secret_garden_01",
+          "line": 44,
+          "quote": "플로라: 이름은 오로라 블룸."
+        },
+        {
+          "scene_id": "secret_garden_01",
+          "line": 52,
+          "quote": "플로라: 사실 정원에서 몇 번이고 대량 재배를 시도했던 꽃입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__117:U027",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "복수 자매님 일반과 달리 이 출현은 방금 수습한 니케 한 사람의 무덤을 가리킨다. 앞 장면의 '한 분'과 다음 장면의 '이름 모를 자매님'으로 인물의 범위가 이어진다. 이야기와 역할을 qualifier로 구분한 미등록 character 판정이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "rapunzel_03",
+          "line": 27,
+          "quote": "라푼젤: 그래서 좀 전 자매님의 무덤을 지금 만들어줘야 해요."
+        },
+        {
+          "scene_id": "rapunzel_02",
+          "line": 118,
+          "quote": "라푼젤: ···이 근처에 좀 전의 자매님 중 한 분의 고향이 있거든요."
+        },
+        {
+          "scene_id": "rapunzel_04",
+          "line": 3,
+          "quote": "라푼젤: 이름 모를 자매님의 고향으로."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__119:U006",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "크로우가 특정 아웃로를 편의상 잭이라고 명명하며 다음 장면도 그 딸을 이어 말한다. entity가 찾는 잭 로우는 mast_00에서 영화 속 해적임이 직접 드러나 이 아웃로와 다르다. 실명이 불확실해도 작중 부른 이름과 특정 대상은 명확하므로 새 character가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "crow_02",
+          "line": 56,
+          "quote": "크로우: 그 아웃로, 이름이 아마··· 잭인가, 재키인가. 그 비슷했던 것 같은데."
+        },
+        {
+          "scene_id": "crow_02",
+          "line": 57,
+          "quote": "크로우: 편의상 잭이라고 부르지."
+        },
+        {
+          "scene_id": "crow_03",
+          "line": 62,
+          "quote": "크로우: 지금쯤 잭이란 아웃로를 아버지로 둔 여자아이의 파일이 올라와 있을 테니."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__106:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "D가 먼저 상황극이라고 선언한 뒤 감시 대상 요원 L을 설정하고 통화 연기를 한다. 실제 등록 인물로 추정할 근거가 없고 가상 인물의 코드명은 분명하므로 상황극 qualifier를 가진 character가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "train_station_04",
+          "line": 54,
+          "quote": "D: 그러니까 너와 나는 그에 맞는 상황극을 한다."
+        },
+        {
+          "scene_id": "train_station_04",
+          "line": 99,
+          "quote": "D: 임무는··· 요원 L의 감시."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__115:U002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "정부군이라고 명시하고 V.T.C.와 통합해 중앙 정부가 된 과정을 설명한다. 종족 일반이나 한 전술 스쿼드가 아니라 이름 붙은 군 조직이므로 organization이 적절하다. 음모론 기록도 같은 전쟁 시기의 연합군을 지칭한다.",
+      "evidence": [
+        {
+          "scene_id": "good_world_12",
+          "line": 4,
+          "quote": "백학: 지상에서 랩쳐와 싸우기 위한 정부군인 [인류 연합군]과,"
+        },
+        {
+          "scene_id": "궤도엘리베이터음모론_02",
+          "line": 3,
+          "quote": "여러분 인류 연합군과 갓데스 스쿼드가 수차례 궤도 엘리베이터 공략에 나섰으나 실패한 건,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아리아가 올릴 작품의 제목이라고 직접 밝히며 줄거리도 설명한다. 한 공연 회차나 물리적 책을 뜻하지 않는 작품 자체이므로 concept 새 엔티티가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "outdoor_swimming_pool_02",
+          "line": 3,
+          "quote": "아리아: 올릴 작품은 [여인과 바다]."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__116:U016",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "퀸과 함께 세계를 만드는 집단이며 maria-n_17은 랩쳐 01부터 07까지 정해진 일곱 구성원을 명시한다. 일반 종족명보다 organization이 맞고 '일곱 조율자'와 같은 대상이다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_48_04",
+          "line": 62,
+          "quote": "온리 원: 퀸은 일곱의 조율자와 함께 세상을 만들어 나가야 해."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__109:U008",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "7개 이야기에서 포비스트가 하모니 큐브로 만든 하얀 도시를 계속 같은 이름으로 부른다. 방주 일반의 비유가 아니라 현실 방주와 구별되는 특정 건설지이며 location이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_34_00",
+          "line": 50,
+          "quote": "베히모스: 유사 방주는 거의 다 만들었고, 남은 건 색칠만 하는 것뿐이야."
+        },
+        {
+          "scene_id": "main_41_06",
+          "line": 192,
+          "quote": "하얀색 도시. 유사 방주."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아이리·아비스타가 소속을 밝힐 때 감찰 부대 오버시어라고 반복해서 자기소개한다. 같은 부대의 고유 이름이며 squad 유형을 뒷받침한다.",
+      "evidence": [
+        {
+          "scene_id": "main_37_03",
+          "line": 20,
+          "quote": "아이리: 아이리입니다. 감찰 부대 오버시어 소속이죠."
+        },
+        {
+          "scene_id": "star_anis_00",
+          "line": 38,
+          "quote": "아비스타: 감찰부대 오버시어 소속 아비스타라고 해요."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "기능성 의류의 신규 라인을 낸 쪽이라는 상업 문맥이다. 옥토퍼스는 문어 일반이나 의복 한 벌의 이름이 아니라 제품을 공급하는 브랜드·업체를 지시하므로 organization으로 보는 것이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "main_27_06",
+          "line": 77,
+          "quote": "아니스: 그러네? 옥토퍼스쪽 신규 라인이잖아?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__116:U013",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "파이오니아와 함께 싸우는 부대 단위 팀을 온전한 스쿼드명으로 지칭한다. 개인 별칭이나 종족이 아닌 squad 새 엔티티가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_12",
+          "line": 6,
+          "quote": "파이오니아 스쿼드와 인헤르트 스쿼드는 잘 싸워주고 있다."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__109:U001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "40개 발췌와 occ의 46곳을 대조하고 OLD TALES의 미제시 6곳 모두 show로 확인했다. unseen_probes O0029(old_tales_06), O0037(old_tales_21), O0028(old_tales_05)는 신데렐라의 무장·정비·전개를 직접 보여 주므로 기본 A2__109__001 적용이 맞다. 나머지 미제시 O0027·O0030·O0034도 같은 무장이다. 10개 이야기 모두 제시되어 shown=0은 없다. memory_34는 신데렐라를 직접 부르지만 BLUE IN THE GLASS 36·38·39는 동화적 사건 대응을 통해 이어져 같은 E1의 가능성 예외로 둔 것이 적절하다. 추가 확인한 이야기·출현: event_stories__old_tales — O0027 old_tales_03:L34, O0028 old_tales_05:L20, O0029 old_tales_06:L2, O0030 old_tales_07:L4, O0034 old_tales_15:L66, O0037 old_tales_21:L22.",
+      "evidence": [
+        {
+          "scene_id": "main_32_03",
+          "line": 18,
+          "quote": "그레이브: 신데렐라 전용 무장."
+        },
+        {
+          "scene_id": "old_tales_06",
+          "line": 2,
+          "quote": "붉은 눈의 신데렐라의 몸에서 유리 구두가 분리된다."
+        },
+        {
+          "scene_id": "old_tales_21",
+          "line": 22,
+          "quote": "신데렐라: 유리 구두. 풀 컨텍트."
+        },
+        {
+          "scene_id": "old_tales_05",
+          "line": 20,
+          "quote": "에이브: 먼저 유리 구두와의 링크를 정밀조정할 거야."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_34",
+          "line": 2,
+          "quote": "신데렐라."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_36",
+          "line": 6,
+          "quote": "반짝이는 유리 구두를 만들어 주었습니다."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_38",
+          "line": 6,
+          "quote": "모두 소녀가 가진 유리 구두를, 힘을, 아름다움을 찬양하였습니다."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_39",
+          "line": 7,
+          "quote": "소녀의 아름다운 유리 구두엔 아직,"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__111:U010",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "40개 발췌와 occ의 55곳을 대조하고 미제시 15곳도 모두 show로 확인했다. unseen_probes main_23_06 O0013, main_24_10 O0023, main_23_01 O0009는 같은 이그조틱의 추적 문맥이므로 기본 A2__111__011 적용이 맞다. 추가 미제시 출현도 16·23·24장과 D-OUTSIDERS에서 같은 팀을 가리킨다. 23개 이야기 모두 제시되어 shown=0은 없다. 바이퍼의 스쿼드명 자기소개와 E.H.의 새 리더 취임 설명이 조직의 연속성을 보여 주므로 리더 교체를 별개 엔티티로 나눌 이유가 없다. 추가 확인한 이야기·출현: main_story__chapter_16 — O0001 main_16_00:L22, O0002 main_16_08:L18, O0005 main_16_15:L7; main_story__chapter_23 — O0009 main_23_01:L129, O0010 main_23_02:L4, O0011 main_23_03:L17, O0012 main_23_05:L11, O0013 main_23_06:L29, O0015 main_23_10:L69, O0016 main_23_18:L13, O0017 main_23_20:L14; main_story__chapter_24 — O0021 main_24_03:L111, O0022 main_24_04:L14, O0023 main_24_10:L83; event_stories__d-outsiders — O0042 d-outsiders_04:L65.",
+      "evidence": [
+        {
+          "scene_id": "d-outsiders_03",
+          "line": 14,
+          "quote": "바이퍼: 스쿼드명 이그조틱."
+        },
+        {
+          "scene_id": "main_23_06",
+          "line": 29,
+          "quote": "라피: 이그조틱의 흔적이 남아있을지도 모릅니다."
+        },
+        {
+          "scene_id": "main_24_10",
+          "line": 83,
+          "quote": "슈엔: 이, 이그조틱··· 워드리스···."
+        },
+        {
+          "scene_id": "main_23_01",
+          "line": 129,
+          "quote": "  [OPTION TEXT=\"응. 이그조틱을 잡아야 해.\"]"
+        },
+        {
+          "scene_id": "main_39_12",
+          "line": 3,
+          "quote": "E.H.: E.H.야. 이그조틱의 리더를 맡고 있어."
+        },
+        {
+          "scene_id": "enter_heaven_01",
+          "line": 49,
+          "quote": "잉그리드: 평생 목에 폭탄을 단 채 이그조틱의 리더로 살아가며 엔터 헤븐을 스스로 해체하기로 했지."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__102:U014",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "길로틴 개인 이야기에서는 균형의 수호자의 길을 '이름하여'라고 직접 명명하므로 concept 예외가 맞다. 시뮬레이션의 엑시아는 길로틴에게 인명처럼 부르지만 메이든에게도 같은 문구를 반복하며 윈터 슬레이어에서도 반복 NPC임을 확인한다. 따라서 나머지는 길로틴 별칭과 개념 인용을 함께 남긴 보류가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "guillotine_04",
+          "line": 21,
+          "quote": "길로틴: 그러나 이 감정에도 익숙해져야만 하는 게 바로 [균형의 수호자]의 길. 이름하여."
+        },
+        {
+          "scene_id": "guillotine_04",
+          "line": 22,
+          "quote": "길로틴: 엘 텔레마 솔루스."
+        },
+        {
+          "scene_id": "ice_dragon_saga_17",
+          "line": 21,
+          "quote": "엑시아: 엘 텔레마 솔루스-"
+        },
+        {
+          "scene_id": "ice_dragon_saga_17",
+          "line": 42,
+          "quote": "엑시아: 엘 텔레마 솔루스-"
+        },
+        {
+          "scene_id": "ice_dragon_saga_17",
+          "line": 43,
+          "quote": "메이든: 하아··· 똑같은 대사만 반복하는 NPC인가 보네요."
+        },
+        {
+          "scene_id": "guillotine_winterslayer_01",
+          "line": 70,
+          "quote": "길로틴: 이자는 똑같은 말만 반복하는 NPC라고."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__102:U021",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "직전의 마리안·7호 계획을 받아 설명하므로 미래의 마리안을 지시하는 해석이 있다. 이어지는 장면은 퀸의 기원과 일반적인 인자·공멸 기제를 설명하여 등급 및 초대 퀸을 가리키는 해석도 남는다. 특정 인물 별칭으로 단정하지 않고 서로 다른 후보와 근거를 나눈 보류를 지지한다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_16",
+          "line": 58,
+          "quote": "닥터 마리아: 만약, 만약 마리안이 퀸이 된다면."
+        },
+        {
+          "scene_id": "maria-n_16",
+          "line": 66,
+          "quote": "에닉: 여왕의 마음을 이용해 여왕을 죽이는"
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 35,
+          "quote": "에닉: A.I. 에바가 프로젝트의 총책임자 에블라 박사와 융합, 퀸이 된 사건을 말씀하시는 거군요."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 82,
+          "quote": "나유타: 인자 보유자의 언체인드는 퀸 인자와 격렬하게 반응하오."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__120:U015",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "소문 속 특정 법원을 지칭하지만 실제 표지는 '법원'이고 전초기지는 소재지 수식어일 수도 있다. 시설의 존재와 고유 명칭 여부를 구별하여 location 후보와 일반 낱말 대안을 남긴 보류가 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "courthouse_00",
+          "line": 21,
+          "quote": "폴크방: 전초기지 법원인가요?"
+        },
+        {
+          "scene_id": "courthouse_00",
+          "line": 24,
+          "quote": "폴크방: 이상하네요. 이 앞엔 법원이라고 쓰여있었는데?"
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__105:U030",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "현재의 6명에게 부르는 집합 호칭인 동시에 잉그리드는 과거 교육생도 올빼미들이라고 부른다. 기수 집단·훈련생 부류·비유적 보통 호칭 가운데 하나로 확정하기 어려우므로 대상과 대안을 구별한 보류가 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "eunhwa_03",
+          "line": 3,
+          "quote": "은화: ···올빼미들, 주목."
+        },
+        {
+          "scene_id": "eunhwa_04",
+          "line": 2,
+          "quote": "··· ···6명의 올빼미들을 무사히 니케로 만들어, 방주에 내려보낸 후."
+        },
+        {
+          "scene_id": "eunhwa_00",
+          "line": 72,
+          "quote": "    잉그리드: 그녀 밑에서 배운 올빼미들의 폐기 처리 비율은 고작 20% 내외."
+        }
+      ]
+    },
+    {
+      "audit_id": "A2__103:U004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "안개 속에서 그리운 얼굴의 한 여자가 스노우 화이트를 부르므로 불특정 여성 일반으로 단정할 수 없다. 1001113→1001114의 선택 분기를 직접 따라 확인했다. 하얀 꽃은 1001116·1001119의 실루엣, 1001121의 타임캡슐, white_memory_12의 관 방문, white_memory_18의 릴리바이스로 이어져 등록 char_릴리바이스 후보를 뒷받침한다. 빨간 꽃은 1001117→1001122의 레드 후드 추억으로 이어진다. 최초 여자와 뒤 실루엣의 동일성을 확정하는 서술은 없어, 릴리바이스 target과 레드 후드 대안을 남긴 현재의 보류가 타당하다. 일반 낱말 대안의 약한 성별 묘사 가능성을 기록하되 기본을 보류로 유지한 점에도 문제가 없다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001111",
+          "line": 4,
+          "quote": "여자가,"
+        },
+        {
+          "scene_id": "white_memory_page_1001111",
+          "line": 7,
+          "quote": "\"스노우 화이트.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001116",
+          "line": 2,
+          "quote": "하얀 꽃을 따라 걷던 스노우 화이트의 앞에 또다시 하얀 실루엣이 보였다."
+        },
+        {
+          "scene_id": "white_memory_12",
+          "line": 25,
+          "quote": "그리고 [그녀]와의 추억을 떠올리기 위해 [그녀]의 관이 있는 [초원]에 찾아가기로 결심했다."
+        },
+        {
+          "scene_id": "white_memory_18",
+          "line": 11,
+          "quote": "아주 길고 긴 길을 헤매어 스노우 화이트는 잠든 릴리바이스의 앞에 도착했다."
+        },
+        {
+          "scene_id": "white_memory_page_1001122",
+          "line": 3,
+          "quote": "레트로 음악을 사랑했던 그녀, [레드 후드]와 노래를 들었던 추억을."
+        }
+      ]
+    }
+  ]
+}

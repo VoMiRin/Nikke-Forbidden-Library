@@ -1,0 +1,621 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__111",
+  "candidate_links": [
+    {
+      "link_id": "A2__111__001",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "의뢰인",
+          "entity_type": "character",
+          "entity_key": "E1",
+          "qualifier": "밀크 에피소드의 로드웰 저택 의뢰인"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "milk_00에서는 로드웰 저택에서 물건을 되찾아 달라고 맡긴 뒤 분실 소식에 격노해 협박 메시지를 보낸 특정 인물 한 사람을 가리키므로 일반 낱말로 단정할 수 없으나, 원문에 본명이나 정체가 드러나지 않아 등록 인물인지 미등록 인물인지 정할 근거가 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "milk_00",
+          "line_start": 163,
+          "line_end": 163,
+          "quote": "프림: ···의뢰인. 격노."
+        },
+        {
+          "scene_id": "milk_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "슈가: 로드웰 저택에서 물건 하나를 되찾아 달라는 의뢰?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "고유 호칭이 아니라 의뢰를 맡긴 당사자를 가리키는 일반 역할어로 읽을 여지도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "milk_00",
+              "line_start": 166,
+              "line_end": 166,
+              "quote": "슈가: 의뢰인에게서 메시지가 왔다."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__002",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "title_ids": ["character_episodes__센티"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_캘리",
+          "name": "캘리",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "직전 장면 centi_02에서 메신저 발신자 캘리(char_캘리)가 달란트몰 시공 뉴스를 보고 로열 로드의 자기 호텔 식당 시공을 의뢰했고, 이어지는 centi_03에서 센티가 로열 로드로 와 달란트몰을 보고 연락한 그 의뢰인이 말한 호텔을 찾고 있으므로 등록 인물 캘리를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "centi_03",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "센티: 그런데 의뢰인이 말한 호텔은 어디 있는 검까?"
+        },
+        {
+          "scene_id": "centi_03",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "센티: 애초에 의뢰인 분도 달란트몰을 보고 연락을 주신 거였슴다!"
+        },
+        {
+          "scene_id": "centi_02",
+          "line_start": 130,
+          "line_end": 130,
+          "quote": "[MESSENGER_START TITLE=\"캘리\" PARTICIPANTS=\"캘리,센티\"]"
+        },
+        {
+          "scene_id": "centi_02",
+          "line_start": 150,
+          "line_end": 150,
+          "quote": "무슨 일이 있어도 꼭 당신에게 우리 호텔 식당 시공을"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__003",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "그레이브가 신데렐라를 치료하는 데 쓴 여러 기계들의 용도를 묻는 수식어 붙은 보통 표현이며, 같은 장면 뒤쪽에서 '의료 기기들'로도 풀어 말하므로 특정 대상의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "관짝이_00",
+          "line_start": 180,
+          "line_end": 180,
+          "quote": "라피: 이건 의료용 기계라고 들었는데 맞아?"
+        },
+        {
+          "scene_id": "관짝이_00",
+          "line_start": 217,
+          "line_end": 217,
+          "quote": "라피: 의료 기기들은 여기에 원래 있던 거야?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__004",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'미실리스의 의료팀', '인간용 의료팀'처럼 여러 소속·맥락에서 치료 담당 인력 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_17",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "슈엔은 미실리스의 의료팀에 의해 실려갔다."
+        },
+        {
+          "scene_id": "memories_teller_32",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "프리바티: 그으리고, 지휘관이 크게 부상을 당했으니 의료팀도 대기해 달라고 부탁해 놨고요."
+        },
+        {
+          "scene_id": "memories_teller_32",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "라피: 인간용 의료팀이 대기하고 있다면, 일단 밀어붙일 수는 있습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__005",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "주둔지 01, 에덴, 방주, 축제장 등 여러 장소에 각각 설치된 치료 시설 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "grave_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "주둔지 01. 의무실."
+        },
+        {
+          "scene_id": "goddess_fall_11",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "라푼젤과 파피용이 의무실을 나갔다."
+        },
+        {
+          "scene_id": "little_witch_trick_08",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "크러스트: 혹시 의무실 기록도 이곳에서 확인할 수 있나요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__006",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_메어리",
+          "name": "메어리",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "blabla_alice_008에서 앨리스가 토끼옷 파티 초대 대상으로 '미끌 토끼 씨' 등과 함께 언급한 호칭이다. 다른 이야기(event_stories__golden_coin_rush)에서 앨리스가 바니 복장을 입은 메어리(char_메어리)를 '미끌 토끼 씨'와 나란히 '의사 토끼 씨'라 부르고 루주가 이를 메어리로 확인해 주므로 같은 인물을 가리키나, 본 이야기 안에는 직접 근거가 없어 다른 이야기의 호칭·맥락을 옮겨 온 추론으로서 가능성으로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_alice_008",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "아! 그리고 의사 토끼 씨랑···"
+        },
+        {
+          "scene_id": "golden_coin_rush_06",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "앨리스: 미끌 토끼 씨랑 의사 토끼 씨···!"
+        },
+        {
+          "scene_id": "golden_coin_rush_13",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "앨리스: 의사 토끼 씨요~!"
+        },
+        {
+          "scene_id": "golden_coin_rush_13",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "루주: 아, 메어리를 말씀하시는 거군요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"의사 토끼\"로 확인한 golden_coin_rush_06 L28, golden_coin_rush_13 L49-55"
+      ]
+    },
+    {
+      "link_id": "A2__111__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'회사 의상팀'처럼 소속 회사의 의상 담당 부서를 일반 명사로 부른 표현이며 고유한 조직 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_38_08",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "프리카: 내가 회사 의상팀에 얘기해 놓을게. 가서 사이즈 재고 손보면 금방 할 수 있을 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__008",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "의식 상실 사건",
+          "entity_type": "event",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "D-WAVE 발생 약 일주일 전부터 방주에서 D-섀도의 습격과 관련해 사람들이 잇달아 의식을 잃은 특정 연쇄 사건을 가리키며, 같은 장면 뒤쪽에서 퀸(마코토)이 '[의식 상실 사건]'으로 괄호 표기하고 아이기스도 같은 이름으로 반복 지칭한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_10",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "마침, 의식 상실 사건에 대한 뉴스가 흘러나온다."
+        },
+        {
+          "scene_id": "persona_on_frontline_10",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "유키코: 이 사건이 발생하기 시작한 건 약 일주일 전이야. 그 사람이 소환된 시점과 비슷하다고 생각하지 않아?"
+        },
+        {
+          "scene_id": "persona_on_frontline_10",
+          "line_start": 107,
+          "line_end": 107,
+          "quote": "퀸(마코토): 그리고 [의식 상실 사건]과, 우리가 알고 있는 섀도와는 다른 [D-섀도]의 존재."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"의식 상실\"로 persona_on_frontline_10 L107, L116, L119 확인"
+      ]
+    },
+    {
+      "link_id": "A2__111__009",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "공장에서 무엇을 생산하느냐는 목단의 질문에 주민이 머뭇거리며 보통명사 '의약품'을 더듬어 답한 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "dirty_backyard_00",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "목단: 그러고 보니까 저기서는 뭘 생산하고 있지?"
+        },
+        {
+          "scene_id": "dirty_backyard_00",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "포그 할로우 남자주민: 의··· 약품입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__010",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "다리를 대신하는 보조 기구 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "gingerbreadhouse_05",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "신데렐라: 왜 한 쪽 다리가 의족인 거야?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__011",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "이그조틱",
+          "entity_type": "squad",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "아우터 림을 감시·관리하는 미실리스 소속 니케 스쿼드의 고유 이름이다. 제시된 40곳과 occ·show로 전수 확인한 미제시 15곳 모두 같은 스쿼드를 가리키며, U011(이그조틱 스쿼드)과 같은 대상(E3)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d-outsiders_03",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "바이퍼: 스쿼드명 이그조틱."
+        },
+        {
+          "scene_id": "main_24_20",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "에닉: 제 2. 휘하의 스쿼드인 이그조틱의 관리를 소홀히 하여 방주 테러를 막아내지 못 한 점."
+        },
+        {
+          "scene_id": "main_39_12",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "E.H.: E.H.야. 이그조틱의 리더를 맡고 있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__012",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "이그조틱",
+          "entity_type": "squad",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "미실리스 소속 니케 스쿼드 이그조틱에 '스쿼드'를 붙인 변형 표기로, 모든 출현이 U010(이그조틱)과 동일한 스쿼드(E3)를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_20",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "에닉: 제 3. 이그조틱 스쿼드 추적 과정에서 증거 인멸을 목적으로 이그조틱 스쿼드의 니케를 개인적으로 파괴하려 한 점."
+        },
+        {
+          "scene_id": "main_45_09",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "에닉: 이그조틱 스쿼드의 방주 입장 절차가 간략화됩니다."
+        },
+        {
+          "scene_id": "blabla_newexotic_001",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "이제 여기가 새 이그조틱 스쿼드 단체방이야"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__013",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "이그조틱 자폭 앱",
+          "entity_type": "item",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "슈엔의 핸드폰에 설치되어 이그조틱 대원들의 초커 폭탄을 기폭하는 특정 앱 하나를 가리키며 여러 장면에 '이그조틱 자폭 앱'으로 반복 등장해 새 엔티티(item)로 볼 수 있으나, 앞선 장면에서는 '이그조틱 스쿼드 자폭 앱'으로 풀려 쓰이고 슈엔도 단순히 '앱'이라 지칭해 수식어가 붙은 보통 표현으로 읽힐 근거도 비슷하므로 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_04",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "핸드폰 화면엔 이그조틱 자폭 앱이 켜져 있었다."
+        },
+        {
+          "scene_id": "main_24_10",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "슈엔의 핸드폰엔 이그조틱 자폭 앱이 켜져 있었고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "main_23_02에서는 '이그조틱 스쿼드 자폭 앱'으로 달리 적히고 슈엔 본인도 그냥 '앱'이라 부르므로, 고유 명칭이 아니라 스쿼드 이름에 기능 설명을 붙인 보통 표현으로 볼 근거도 비슷하다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_23_02",
+              "line_start": 30,
+              "line_end": 30,
+              "quote": "···핸드폰 화면엔 이그조틱 스쿼드 자폭 앱이 켜져 있었다."
+            },
+            {
+              "scene_id": "main_24_04",
+              "line_start": 44,
+              "line_end": 44,
+              "quote": "슈엔: 빌어먹을 허브가 부서져서, 급하게 앱을 수정했어."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep \"자폭 앱\"으로 main_23_02 L30, main_23_03 L17 확인"
+      ]
+    },
+    {
+      "link_id": "A2__111__014",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_솔져_E_G",
+          "name": "솔져 E.G.",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "event_stories__absolute에서 화자 라벨 '솔져 E.G.'(char_솔져_E_G)로 등장하는 대원이 은화의 '이글.'이라는 호명에 즉시 대답하고(absolute_23), 지문에서도 같은 인물을 '이글'로 서술하며(absolute_01, absolute_02, absolute_24, absolute_26), 동행 지휘관의 무전 속 '이글'(absolute_06, absolute_10)도 같은 이야기 안의 동일 대원을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "absolute_23",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "은화: 이글."
+        },
+        {
+          "scene_id": "absolute_23",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "솔져 E.G.: 예, 예!"
+        },
+        {
+          "scene_id": "absolute_01",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "솔져 E.G.: 감사합니다."
+        },
+        {
+          "scene_id": "absolute_01",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "이글은 팔콘의 뒤를 따라갔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"솔져 E.G.\"로 event_stories__absolute 7개 장면 및 cocoa_04 L112 확인"
+      ]
+    },
+    {
+      "link_id": "A2__111__015",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_타키나",
+          "name": "타키나",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "같은 장면에서 함께 대화 중인 타키나(char_타키나)를 치사토가 성명 전체인 '이노우에 타키나'로 직접 소개한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "LIE CAUSE RECOL_02",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "타키나: 아···."
+        },
+        {
+          "scene_id": "LIE CAUSE RECOL_02",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "치사토: 저는 니시키기 치사토, 이쪽은 이노우에 타키나."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__111__016",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "스노우 화이트가 자신을 '순례자'라 부르는 랩쳐 토커티브에게 응수하며 던진 멸칭이자 보통명사다. 이어지는 main_06_08에서 모더니아에게 고유 분류명 '헬레틱'과 구별해 '이단', '배신자'라고 부르고 다른 이야기에서도 여러 대상·사물에 두루 쓰이므로 특정 집단이나 인물의 고유 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "???: 꺼져라. 이단."
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "스노우 화이트: 꺼져라, 이단."
+        },
+        {
+          "scene_id": "main_06_08",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "스노우 화이트: ···헬레틱."
+        },
+        {
+          "scene_id": "main_06_08",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "스노우 화이트: 퀸의 직속. 이단···!"
+        },
+        {
+          "scene_id": "chapter_48_02",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "레드 슈즈: 이단이란, 우위에 선 자들이 반대편에 선 자들을 몰아내기 위해 붙이는 이명이죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"이단\"으로 main_06_08 L27, chapter_48_02 L120 등 일반 명사 용례 확인"
+      ]
+    }
+  ]
+}

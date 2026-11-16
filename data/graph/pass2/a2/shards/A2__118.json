@@ -1,0 +1,941 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__118",
+  "candidate_links": [
+    {
+      "link_id": "A2__118__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "자원 채집 부대",
+          "entity_type": "organization",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "라피가 '자원 채집 부대가 정식 명칭'이며 지상의 광석·식물 등 자원을 수집하기 위해 만들어진 부대이고 지휘관과 함께 임무에 나선다고 명시한다. 네 이야기 모두에서 방주의 같은 공식 부대 조직을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "트레저_헌터_01",
+          "line_start": 119,
+          "line_end": 121,
+          "quote": "라피: 자원 채집 부대가 정식 명칭입니다만.\n라피: 주로 땅을 파고 다닌다고 해서 땅굴 부대로 자주 불리곤 하죠.\n라피: 지상에 남아있는 광석이나 식물 같은 자원들을 수집해 오는 것을 목적으로 만들어진 부대입니다."
+        },
+        {
+          "scene_id": "over_the_horizon_02",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "시엘로: 자원 채집 부대가 찾은 물건들을 무사히 가져올 수 있도록,"
+        },
+        {
+          "scene_id": "viper_00",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "자원 채집 부대 소속 지휘관. 이름은···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__002",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "자원 채집 부대",
+          "entity_type": "organization",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "한 번만 등장하며, 방주의 공식 조직인 '자원 채집 부대'(E1)를 '채취'로 달리 부른 변형 표기일 수도 있고, '자원 채취 스쿼드'·'자원 채취 임무'처럼 자원 채취 역할을 맡은 부대 일반을 뜻하는 보통 표현일 수도 있어 원문만으로 가를 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_01",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "일레그: 자원 채취 부대가 찍어온 바다에 떠 있는 호화 크루즈 사진인데여."
+        },
+        {
+          "scene_id": "트레저_헌터_01",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "라피: 자원 채집 부대가 정식 명칭입니다만."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "unbreakable_sphere_08",
+          "line_start": 129,
+          "line_end": 129,
+          "quote": "인상 좋은 니케: 응! 너 모리라고 했지? 우리도 자원 채취 스쿼드라서 너 같은 경력자가 필요해서."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'자원 채취 스쿼드'나 '자원 채취 임무'처럼 지상 자원을 채취하는 부대 일반을 가리키는 보통 표현으로 읽힐 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "unbreakable_sphere_08",
+              "line_start": 129,
+              "line_end": 129,
+              "quote": "인상 좋은 니케: 응! 너 모리라고 했지? 우리도 자원 채취 스쿼드라서 너 같은 경력자가 필요해서."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep으로 '자원 채취'와 이야기 내 '부대' 용례를 확인함(unbreakable_sphere_08 L129, boom_the_ghost_01 L38)"
+      ]
+    },
+    {
+      "link_id": "A2__118__003",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "이전에 다른 스쿼드에 있었던 모리에게 다른 니케가 '우리도 자원 채취 스쿼드라서 너 같은 경력자가 필요해서'라고 말하므로, 단일 스쿼드의 고유명이 아니라 자원 채취 임무를 수행하는 여러 스쿼드를 두루 가리키는 일반 역할 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "unbreakable_sphere_03",
+          "line_start": 75,
+          "line_end": 75,
+          "quote": "미하라: 모리는 자원 채취 스쿼드 출신이야?"
+        },
+        {
+          "scene_id": "unbreakable_sphere_08",
+          "line_start": 129,
+          "line_end": 129,
+          "quote": "인상 좋은 니케: 응! 너 모리라고 했지? 우리도 자원 채취 스쿼드라서 너 같은 경력자가 필요해서."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__004",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'자율 방어 병기 같은 건?'이라고 물으며 경비용 무기 종류가 있는지 확인하는 맥락이므로 특정 병기 하나의 고유명이 아니라 병기 종류를 가리키는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_16",
+          "line_start": 167,
+          "line_end": 168,
+          "quote": "E.H.: 자율 방어 병기 같은 건?\n리버린: 없어요. 전력을 너무 먹고, 그런 게 있으면 의심받기 좋다고 했었어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "자이온",
+          "entity_type": "location",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "이브가 출신지로 밝히고 라피가 '처음 듣는 지명'이라 답하므로 특정 장소를 가리키는 고유 지명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "memories_teller_02",
+          "line_start": 38,
+          "line_end": 39,
+          "quote": "이브: 어디··· 라니? 그야 당연히 자이온에서···.\n라피: ···처음 듣는 지명인데."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__006",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "가능성",
+      "rationale": "크로우가 '전초기지엔 자치 법정도 있고 방주처럼 감시망이 빽빽하지도 않으니'라며 전초기지의 제도적 성격을 설명하는 보통 표현으로 썼고, 전초기지 재판 시설의 표지 명칭도 '법원'이지 '자치 법정'이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_crow_002",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "전초기지엔 자치 법정도 있고"
+        },
+        {
+          "scene_id": "courthouse_00",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "폴크방: 여기 앞에 법원이라고 써져 있어요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '법정' 용례를 확인해 전초기지 법원 이야기(courthouse_00 L35)를 대조함"
+      ]
+    },
+    {
+      "link_id": "A2__118__007",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라플라스",
+          "name": "라플라스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "은화가 '메티스의 자칭 히어로'라고 지칭하며, 다른 이야기에서 메티스 소속이면서 스스로를 히어로라 부르는 등록 인물이 라플라스임이 확인된다. 해당 대화 안에서 본명이 직접 나오지는 않고 다른 이야기의 소속·언행을 옮겨 추론한 연결이므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_eunhwa_005",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "메티스의 자칭 히어로처럼"
+        },
+        {
+          "scene_id": "laplace_00",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "라플라스: 맞다! 히어로 라플라스 등장이다!"
+        },
+        {
+          "scene_id": "laplace_03",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "지켜보는 시민: 메티스에서 라플라스는 빠져야 할 것 같은데···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "메티스 소속으로 스스로 히어로라 칭하는 인물이 라플라스임을 떠올려 grep으로 확인한 laplace_00 L17, laplace_03 L114"
+      ]
+    },
+    {
+      "link_id": "A2__118__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "밀크가 밀크커피를 만드는 기계를 가리켜 '자판기는 똑같은 레시피로 매번 똑같이 만드는데'라고 말한 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_cafesweety_002",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "자판기는 똑같은 레시피로"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__009",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "플로라가 정원에 심어진 꽃들에게 말을 거는 장면에서 꽃 종류인 작약을 부른 보통 식물 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "flora_01",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "플로라: 작약, 손님은 부끄러워서 싫다고요?"
+        },
+        {
+          "scene_id": "flora_01",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "알록달록한 꽃들과, 조화롭게 퍼지는 향긋한 꽃향기."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__010",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "도서관 안 아르카나의 방과 축제 준비용으로 빌려주는 방주 시내의 임시 작업실 등 서로 다른 작업 공간을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_07",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "작업실 앞에 도착해, 익숙한 모습으로 인증을 하고 방문을 연 아르카나는."
+        },
+        {
+          "scene_id": "little_witch_trick_02",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "우리는 벨로타를 따라, 방주 시내 안쪽에 있는 작업실로 향했다."
+        },
+        {
+          "scene_id": "little_witch_trick_02",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "미카: 축제 준비하는 사람들한테 빌려주는 임시 작업실이래요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "가방에서 꺼낸 상자의 크기와 색깔을 묘사한 수식어구일 뿐 고유한 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "unbreakable_sphere_03",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "그리고 가방에서 작은 검은 상자를 꺼내들었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "해커 자택의 옷장을 뒤지다 발견한 물건을 묘사한 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "exia_02",
+          "line_start": 7,
+          "line_end": 8,
+          "quote": "현관과 거실에 있는 옷장이란 옷장은 다 열어 보았다.\n    웬걸, 작은 메달을 발견했다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__013",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "아인이 건넨 상자의 크기를 묘사한 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2x2_love_2ch_14",
+          "line_start": 305,
+          "line_end": 305,
+          "quote": "아인은 작은 상자를 나에게 건넸다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "작전을 수행한 지휘관이 성과를 평가받고 급여를 지급받기 위해 의무적으로 제출하는 일반 행정 문서를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_00",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "라피: 예. 작전 보고서를 제출한 후에 받을 수 있는···."
+        },
+        {
+          "scene_id": "rapi_00",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "라피: 작전을 수행한 지휘관은 작전 보고서를 제출하는 것이 의무입니다."
+        },
+        {
+          "scene_id": "rapi_01",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "[OPTION TEXT=\"작전 보고서를 제출하러 왔어요.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "작전 보고서 제출 시 통장 입금 대신 선택해 받을 수 있는 '일종의 현금 교환증'으로 풀어 설명되며, 지휘관이라면 누구나 발급받아 현금으로 바꾸는 일반 증서 종류다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_00",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "라피: 그렇다면 직접 가서 작전 보고 증서를 제출하면 됩니다."
+        },
+        {
+          "scene_id": "rapi_01",
+          "line_start": 131,
+          "line_end": 131,
+          "quote": "[OPTION TEXT=\"작전 보고 증서는 뭐야?\"]"
+        },
+        {
+          "scene_id": "rapi_01",
+          "line_start": 134,
+          "line_end": 134,
+          "quote": "라피: 작전 성공 보수를 원할 때 받을 수 있는 일종의 현금 교환증입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '작전 보고 증서'의 전체 출현을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__118__016",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "같은 이야기의 앞 장면에서 '창고를 임시 작전 본부로 개조하기 시작했다'고 서술하듯, 임무 수행을 위해 임시로 꾸민 거점을 일컫는 보통 낱말이지 고유 시설명이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "coins_in_rush_18",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "손님들이 다시 몰리기 전에 에이드와 함께 작전 본부로 돌아왔다."
+        },
+        {
+          "scene_id": "coins_in_rush_08",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "다 같이 달려들어서 창고를 임시 작전 본부로 개조하기 시작했다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__017",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "가능성",
+      "rationale": "앨리스가 지상에서 구출되어 의식 없이 잠들어 있는 니케들을 동화적으로 빗대어 부르는 비유적 호칭으로, 새로 구조된 니케에게도 두루 쓰이며 특정 인물이나 고유 조직·종족의 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "alice_wonderlandbunny_04",
+          "line_start": 89,
+          "line_end": 89,
+          "quote": "앨리스: 잠자는 공주님들이 행복의 나라로 갈 수 있지 않을까 해서요. 헤헤."
+        },
+        {
+          "scene_id": "blabla_alice_003",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "가엾은 잠자는 공주님들이 영영 왕자님과"
+        },
+        {
+          "scene_id": "main_06_03",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "앨리스: 여기 있는 모두가 잠자는 공주님들이에요!"
+        },
+        {
+          "scene_id": "main_06_03",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "라피: ···지상에서 [구출]한 니케들이군."
+        },
+        {
+          "scene_id": "noah_03",
+          "line_start": 100,
+          "line_end": 100,
+          "quote": "앨리스: 잠자는 공주님은 저랑 여왕님이 꼭 깨워 드릴게요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '잠자는 공주' 용례를 검색해 main_06_03 L17·L26, noah_03 L100을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__118__018",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "관광 후 사 온 잡지나 지휘관이 아끼는 잡지 등 일반 출판물을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_04",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "네온: 에이. 재미없네요. 잡지는요?"
+        },
+        {
+          "scene_id": "marian_p_01",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "라피: 지휘관이 아끼는 잡지를 실수로 찢어버렸어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__019",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "나무 상자와 항아리를 부수다 발견한 쓸모없는 풀을 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_06",
+          "line_start": 13,
+          "line_end": 14,
+          "quote": "[시스템 : 놀랍게도! 잡초를 발견했다!]\n메이든: ···이건 못 쓰겠네요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__020",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "앵커가 건네는 장갑과 루드밀라가 착용하는 장갑 등 손에 끼는 일반 물품을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anchor_00",
+          "line_start": 148,
+          "line_end": 148,
+          "quote": "앵커: 자, 여기 장갑."
+        },
+        {
+          "scene_id": "blabla_unlimited_001",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "이 몸이 장갑을 가져오지 않았다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__021",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "붉은 글자와 푸른 글자 기물로 상대의 왕을 쓰러뜨리는 전통 보드게임을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_delta_006",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "그건 장기라고 하는 오래된 게임이야"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "전초기지의 벨로타·미카 가게를 가리킬 때도 호텔·공원과 나란히 업종 보통명사로 쓰이며, '이게 무슨 장난감 가게야'나 다른 이야기의 일반 쇼핑 대상처럼 고유 상호가 아닌 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_00",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "솔린: 이게 무슨 장난감 가게야! 장난만 치는 장난 가게지!"
+        },
+        {
+          "scene_id": "elegg_00",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "그 이후에도 전초기지에 있는 호텔, 공원, 장난감 가게 등등."
+        },
+        {
+          "scene_id": "absolute_08",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "베스티: 장난감 가게 구경하고···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '장난감 가게' 전체 용례를 확인해 업종 보통명사 쓰임(absolute_08 L39 등)을 대조함"
+      ]
+    },
+    {
+      "link_id": "A2__118__023",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "전초기지의 장난감을 파는 가게를 경찰서·메이드 카페와 나란히 업종 명칭으로 부른 보통 낱말이며, 같은 장면 안에서 '장난감 가게'와도 자유롭게 혼용되어 고유 상호가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "full_fool_day_07",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "[OPTION TEXT=\"장난감 상점이 없어지면···.\"]"
+        },
+        {
+          "scene_id": "fool_burst_day_06",
+          "line_start": 53,
+          "line_end": 55,
+          "quote": "메카 시프티: 장난감 상점에서 저를 장난감 취급하며 가지고 논 것.\n메카 시프티: 경찰서에서 부당한 감금을 당한 것.\n메카 시프티: 메이드 카페에서 독극물을 섭취한 것."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '장난감 상점'의 전체 출현을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__118__024",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "장막",
+          "entity_type": "concept",
+          "qualifier": "퀸의 시야를 가리던 물거품",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "니힐리스타가 '너희가 [장막]이라 부르는 그것'이라며 궤도 위 퀸의 시야와 목소리를 차단하던 특정 현상·장벽의 호칭처럼 언급하는 반면, 나유타와 미러는 '액체 금속으로 추정되는 장막', '눈을 가리고 있던 장막··· 물거품'처럼 보통명사로 서술해 고유 지칭어와 일반 낱말 해석의 근거가 비슷하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_04",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "니힐리스타: 너희가 [장막]이라 부르는 그것 때문이다."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "goddess_fall_01",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "나유타: 퀸의 앞을 가리고 있던 액체 금속으로 추정되는 장막 때문이었소."
+        },
+        {
+          "scene_id": "goddess_fall_09",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "미러: 눈을 가리고 있던 장막··· 물거품은 사실상 퀸이 마음만 먹었으면 부술 수 있었죠."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "퀸의 눈을 가리던 액체 금속·물거품 막을 묘사하는 보통 낱말로 쓰였을 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "goddess_fall_01",
+              "line_start": 81,
+              "line_end": 81,
+              "quote": "나유타: 퀸의 앞을 가리고 있던 액체 금속으로 추정되는 장막 때문이었소."
+            },
+            {
+              "scene_id": "goddess_fall_09",
+              "line_start": 33,
+              "line_end": 33,
+              "quote": "미러: 눈을 가리고 있던 장막··· 물거품은 사실상 퀸이 마음만 먹었으면 부술 수 있었죠."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep으로 '장막' 용례를 검색해 goddess_fall_09 L33, eden_spear_12 L136을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__118__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "플로라가 정원에 있는 튤립·아이리스·수국 등 여러 꽃과 함께 부르는 일반 꽃 종류를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "secret_garden_13",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "플로라: 그리고 정원에 있는 장미도 아이리스도 리시마키아도. 모두 오로라 블룸을 믿고 있답니다."
+        },
+        {
+          "scene_id": "blabla_flora_003",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "장미와 튤립"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__026",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "홍련이 땅에 심기 위해 세실에게 받아 온 장미의 씨앗을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hongryeon_goddeath_02",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "세실: 하지만 장미 씨앗이라면 있죠."
+        },
+        {
+          "scene_id": "hongryeon_goddeath_03",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "봉투에서 장미 씨앗을 꺼내고, 파낸 흙 위에 넣는다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__027",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "물류창고의 물자를 정리해 둔 태블릿 속 문서 파일을 가리키는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "yulha_01",
+          "line_start": 136,
+          "line_end": 136,
+          "quote": "율하: 그리고 여기에 이 창고에 있는 모든 물자들을 정리한 장부 파일이 들어있지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__028",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "에피넬의 오작동으로 취소되었던 결승전을 다시 치르는 일정을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "epinel_03",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "에피넬의 오작동으로 취소되었던 결승전 일정이"
+        },
+        {
+          "scene_id": "epinel_03",
+          "line_start": 165,
+          "line_end": 165,
+          "quote": "에피넬: 하지만. 이제 곧 재결승이니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__118__029",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "재단",
+          "entity_type": "organization",
+          "qualifier": "백학의 계약자가 설립한 후원 재단",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주 이주 당시 부모를 잃은 아이들을 후원하기 위해 백학의 계약자가 설립하고 백학이 관리하며 계약을 집행한 특정 단체 하나를 일관되게 '[재단]'으로 지칭한다. 원문에 다른 본명이 없으므로 해당 표기로 새 조직 엔티티를 세우고 qualifier로 구별한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "good_world_06",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "백학: 제 계약자님이 운영하시는 [재단]과 계약하신 분이죠."
+        },
+        {
+          "scene_id": "good_world_06",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "사라: 재단의 이름으로 성인이 될 때까지 후원을 해주는 대신."
+        },
+        {
+          "scene_id": "good_world_12",
+          "line_start": 93,
+          "line_end": 93,
+          "quote": "백학: 자신이 가진 재산을 이용해 [재단]을 만들어,  그 아이들을 위해 사용하게 했죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 이야기 내 '재단' 출현 전체를 확인해 별도 본명이 없음을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__118__030",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "#000000, 엠마, 퀸이 각기 사용하는 전파 방해 장치부터 라푼젤이 '한 가닥 한 가닥이 통신을 방해하는 재머'라고 설명하는 머리카락까지 여러 대상에 두루 쓰이는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_41_14",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "#000000: 재머를 가동하고 있으니 걱정마요"
+        },
+        {
+          "scene_id": "absolute_17",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "엠마: 재머는 이미 뿌려뒀거든."
+        },
+        {
+          "scene_id": "rapunzel_01",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "라푼젤: 한 가닥 한 가닥이 통신을 방해하는 재머랍니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
