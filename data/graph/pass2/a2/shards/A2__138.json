@@ -1,0 +1,994 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__138",
+  "candidate_links": [
+    {
+      "link_id": "A2__138__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "퀸",
+          "entity_type": "character",
+          "entity_key": "E1",
+          "qualifier": "초대 랩쳐 수장"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "예외로 나눈 출현을 제외한 대다수 출현(보여 주지 않은 출현 포함 158곳)에서 A.I. 에바와 에블라 박사가 융합해 탄생하여 우주 스테이션에서 랩쳐를 통솔했고, 이후 지상에 내려와 릴리바이스의 몸을 빼앗고 방주를 공격한 초대 랩쳐 수장 개체를 가리킨다. occ·show로 미제시 출현까지 확인한 결과 대부분 동일한 수장 개체를 가리키므로 기본 판정으로 둔다. 레지스트리의 '퀸(마코토)'과는 다른 대상이며, 묶음 내 개체 등급 후보(E2)와 구별하기 위해 qualifier를 적는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_08",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "스노우 화이트: 퀸의 직속. 이단···!"
+        },
+        {
+          "scene_id": "main_35_02",
+          "line_start": 213,
+          "line_end": 213,
+          "quote": "신데렐라: 퀸이 머물고 있는 스테이션을 내가 아름답게 떼어냈거든."
+        },
+        {
+          "scene_id": "main_45_10",
+          "line_start": 148,
+          "line_end": 148,
+          "quote": "도로시: 지상에 퀸이 내려왔습니다."
+        },
+        {
+          "scene_id": "over_zone_24",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "홍련: 그래. 우리의 목적은 랩쳐의 수장인 퀸을 잡는 것."
+        },
+        {
+          "scene_id": "rapunzel_sanctuary_02",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "릴리바이스의 몸을 빼앗은 퀸."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "포비스트가 만든 퀸의 등록 인물명을 확인하기 위해 grep '온리'로 main_41_07, main_42_14, chapter_47_01 등 대조"
+      ]
+    },
+    {
+      "link_id": "A2__138__002",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": {
+        "scene_ids": [
+          "main_41_07",
+          "main_41_08",
+          "main_42_01",
+          "main_42_02",
+          "main_42_04",
+          "main_42_05",
+          "main_42_13",
+          "main_42_14",
+          "chapter_47_01"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_온리_원",
+          "name": "온리 원",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "포비스트가 용광로의 다크 매터와 라피의 구 바디로 탄생시킨 소녀 개체를 '퀸'·'포비스트의 퀸'으로 지칭한다. 각 이야기(챕터 41·42·47) 안에서 해당 소녀가 화자 '온리 원'으로 직접 등장하며 같은 개체임이 지문과 대사로 직접 이어지므로 등록 인물 '온리 원'의 별칭(유력한 해석)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_41_07",
+          "line_start": 101,
+          "line_end": 101,
+          "quote": "바하무트: 퀸이··· 태어났다···!"
+        },
+        {
+          "scene_id": "main_41_07",
+          "line_start": 110,
+          "line_end": 110,
+          "quote": "온리 원: ··· ···."
+        },
+        {
+          "scene_id": "main_41_08",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "리버렐리오: 포비스트가 퀸을 만들었어."
+        },
+        {
+          "scene_id": "main_42_01",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "[OPTION TEXT=\"정황상 저 라피··· 는 포비스트의 퀸이야.\"]"
+        },
+        {
+          "scene_id": "main_42_02",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "리버렐리오: 더 올 거야. 포비스트의 퀸은 글러트니한테 최고의 먹이니까."
+        },
+        {
+          "scene_id": "main_42_04",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "[OPTION TEXT=\"···목적은 포비스트가 만든 퀸에게서 맥스웰, 드레이크, 바하무트를 구출하는 것.\"]"
+        },
+        {
+          "scene_id": "main_42_05",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "모리: 그, 그런데 그 퀸이라는 거. 되게 작아 보이던데 그 안에 셋이 다 들어가 있는 거야?"
+        },
+        {
+          "scene_id": "main_42_13",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "[OPTION TEXT=\"방주로 퀸을 보내다니 뭐 하는 짓이야!\"]"
+        },
+        {
+          "scene_id": "main_42_14",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "라피: 지휘관! 퀸의 다크 매터가 벗겨졌습니다!"
+        },
+        {
+          "scene_id": "main_42_14",
+          "line_start": 125,
+          "line_end": 125,
+          "quote": "온리 원: ···안아··· 줘."
+        },
+        {
+          "scene_id": "chapter_47_01",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "온리 원: 에헤. 헤헤헤."
+        },
+        {
+          "scene_id": "chapter_47_01",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "아니스: ···얘가 포비스트 너희가 만든 퀸이라 이거지? 엄청 작네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep '온리'로 main_41_07, main_42_14, chapter_47_01에서 화자명 '온리 원' 확인"
+      ]
+    },
+    {
+      "link_id": "A2__138__003",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": {
+        "scene_ids": ["main_44_00"]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_온리_원",
+          "name": "온리 원",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "포비스트가 만들었고 카운터스 편이 된 '우리 아이'를 가리키므로 앞선 챕터 41·42에서 탄생한 '온리 원'과 같은 인물이다. 다만 챕터 44 안에는 '온리 원'이라는 이름이 직접 나오지 않고 다른 이야기의 사건을 옮겨 온 추론이므로 가능성으로 구분한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_00",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "아니스: 포비스트가 퀸을 만들었고."
+        },
+        {
+          "scene_id": "main_44_00",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "라피: 퀸··· 그러니까 우리 아이에 대한 정보가 중앙 정부에 퍼질 일은 없을까요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__004",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": {
+        "scene_ids": ["main_40_05", "main_41_06"]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_온리_원",
+          "name": "온리 원",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "화자가 포비스트가 이미 완성해 놓았을 개체를 지칭하며 직후 main_41_07에서 실제로 그 결과물이 '온리 원'으로 탄생하지만, 발화 시점에는 아직 개체가 탄생하기 전(main_41_00 참조)이어서 '온리 원'의 별칭으로 볼지 가정된 개체 등급·직위로 볼지 양쪽 해석이 모두 가능하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_40_05",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "[OPTION TEXT=\"포비스트의 퀸은 이미 완성되어 있을 가능성이 높아.\"]"
+        },
+        {
+          "scene_id": "main_41_06",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "라피: 너희를 잡고, 너희가 만든 퀸도 잡을 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "퀸",
+          "entity_type": "faction_or_species",
+          "qualifier": "랩쳐 최상위 개체 등급·수장 지위",
+          "why": "발화 시점에는 아직 개체가 탄생하기 전(main_41_00 L112)이므로 포비스트가 제작하려던 최상위 개체 등급을 가리킨 것으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_41_00",
+              "line_start": 112,
+              "line_end": 112,
+              "quote": "레비아탄: 우린 이걸로 퀸을 만들 거고, 직계들에게 한 방 먹인 후, 우리만의 세계를 만들 거야."
+            }
+          ]
+        },
+        {
+          "link_type": "generic_term",
+          "why": "포비스트 측 수장·여왕이라는 직위 일반을 가정해 부른 표현으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_40_05",
+              "line_start": 20,
+              "line_end": 20,
+              "quote": "[OPTION TEXT=\"포비스트의 퀸은 이미 완성되어 있을 가능성이 높아.\"]"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": {
+        "title_ids": [
+          "main_story__chapter_38",
+          "lost_relics__주의용광로사용법",
+          "event_lost_relics__maria-n_dialog"
+        ],
+        "scene_ids": [
+          "main_40_06",
+          "main_40_07",
+          "main_40_08",
+          "main_40_09",
+          "main_40_10",
+          "main_41_00",
+          "main_41_02",
+          "main_41_03",
+          "main_45_02",
+          "main_46_07",
+          "chapter_47_04",
+          "chapter_48_04",
+          "chapter_49_05",
+          "chapter_50_25",
+          "goddess_fall_08",
+          "goddess_fall_09",
+          "goddess_fall_14",
+          "goddess_fall_15",
+          "maria-n_12",
+          "maria-n_16",
+          "maria-n_25",
+          "maria-n_26"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "퀸",
+          "entity_type": "faction_or_species",
+          "entity_key": "E2",
+          "qualifier": "랩쳐 최상위 개체 등급·수장 지위"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "특정 개체 하나가 아니라 새로 제작·승화·각성하거나 벗어나는 대상으로서의 '퀸'을 말한다. 원문은 퀸을 '헬레틱보다 더 상위의 것'(maria-n_16 L50~51), '일종의 생명체'(주의용광로사용법_03 L6)인 랩쳐의 최상위 개체 등급으로 서술하는 동시에, '퀸은 하나뿐이어야 하니까'(maria-n_17 L51)처럼 한 번에 하나만 설 수 있는 수장 자리로도 서술한다. 두 서술은 맞서는 것이 아니라 같은 대상의 두 면이다(사용자 확인 2026-11-16: 직위이자 등급). 이 자리는 세계관에서 랩쳐에만 있는 고유한 등급·지위라 사장님·병사 같은 보통 직함(generic_term)이 아니며, 규칙 3.2의 세계관 고유 부류 이름에 해당하므로 faction_or_species 새 엔티티로 둔다. '마리안이 퀸이 됐다'처럼 누가 이 지위에 오르는 서술도 여기 두고, 그 관계는 C 단계에서 잡는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_16",
+          "line_start": 50,
+          "line_end": 51,
+          "quote": "닥터 마리아: 하지만 목표는 헬레틱보다 더 상위의 것.\n닥터 마리아: 퀸이지."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "나유타: 퀸이 있다면 퀸 인자 역시 생겨나지 않지. 퀸은 하나뿐이어야 하니까."
+        },
+        {
+          "scene_id": "main_38_04",
+          "line_start": 91,
+          "line_end": 91,
+          "quote": "라피: 퀸."
+        },
+        {
+          "scene_id": "주의용광로사용법_01",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "퀸을 만들어내기 위해선 알이랑은 비교할 수 없는 거대한 에너지가 필요해."
+        },
+        {
+          "scene_id": "주의용광로사용법_03",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "우리가 만드는 게 퀸이고, 그건 일종의 생명체잖아?"
+        },
+        {
+          "scene_id": "marian_dialog_10",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "미러: 퀸이 된다."
+        },
+        {
+          "scene_id": "main_40_06",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "리버렐리오: 퀸에 대한 이야기."
+        },
+        {
+          "scene_id": "main_40_07",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "리버렐리오: 포비스트의 퀸이 만들어졌다고?"
+        },
+        {
+          "scene_id": "main_40_08",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "리버렐리오: 포비스트가 퀸을 만들어냈을 리가 없지만."
+        },
+        {
+          "scene_id": "main_40_09",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "리버렐리오: 하나 물어볼게. 너희가 퀸을 만들었어?"
+        },
+        {
+          "scene_id": "main_40_10",
+          "line_start": 158,
+          "line_end": 158,
+          "quote": "나유타: 허나 사마수와 새로운 퀸···."
+        },
+        {
+          "scene_id": "main_41_00",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "레비아탄: 우린 이걸로 퀸을 만들 거고, 직계들에게 한 방 먹인 후, 우리만의 세계를 만들 거야."
+        },
+        {
+          "scene_id": "main_41_02",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "맥스웰: 리버렐리오의 말이 사실이라면, 퀸이 생겨나는 것 자체가 큰일인 모양이고."
+        },
+        {
+          "scene_id": "main_41_03",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "리버렐리오: 퀸은 만들어지면 안 되는거야. 설명했잖아."
+        },
+        {
+          "scene_id": "main_45_02",
+          "line_start": 168,
+          "line_end": 168,
+          "quote": "리버렐리오: 너흰 새로운 퀸이 탄생한다는 게 어떤 의미인지 모르고 있어."
+        },
+        {
+          "scene_id": "main_46_07",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "하얀색 방주. 퀸을 만들기 위해 지어진 의식용 공간."
+        },
+        {
+          "scene_id": "chapter_47_04",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "마리안: ···대단하네요. 퀸의 능력인가요?"
+        },
+        {
+          "scene_id": "chapter_48_04",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "온리 원: 가서 하늘에서 온 그것을 죽이고, 인자를 빼앗아 퀸이 될래."
+        },
+        {
+          "scene_id": "chapter_49_05",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "아니스: 하하. 직접 보니까 믿기지 않네. 그 아이 같던 마리안이 퀸이라니."
+        },
+        {
+          "scene_id": "chapter_50_25",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "라피: ···그 아이도, 이제 완전히 퀸이 아니게 된 것이겠죠."
+        },
+        {
+          "scene_id": "goddess_fall_08",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "나유타: 마리안 소저가··· 퀸이 된 것이오?"
+        },
+        {
+          "scene_id": "goddess_fall_09",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "장화: 퀸이라는 큰 소재가 생겼잖아. 그냥 그렇구나하고 넘어갈 순 없을 것 같아서."
+        },
+        {
+          "scene_id": "goddess_fall_14",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "미러: 마리안이 자기가 퀸이라는 걸 밝혀버렸어요."
+        },
+        {
+          "scene_id": "goddess_fall_15",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "나유타: 마리안이 너희들에게 어떤 존재인지는 모르나, 퀸은 퀸이다."
+        },
+        {
+          "scene_id": "maria-n_12",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "에닉: 니케 마리아 모델은 이후 단 1회도 퀸으로 승화하지 못했으며, 공멸 인자의 발생 역시 실행되지 않음."
+        },
+        {
+          "scene_id": "maria-n_16",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "닥터 마리아: 퀸이지."
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "에닉: 퀸과 그 반려의 제작을 중지하시는 겁니까?"
+        },
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 486,
+          "line_end": 486,
+          "quote": "에닉: 이후, 퀸과 7호가 연관되는 상황이 발생하기 전까지"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "판정자가 처음 든 대안: 랩쳐를 통솔하는 유일한 수장·여왕이라는 직위·자격 일반을 뜻하는 보통 직함으로도 읽힌다. 다만 이 직위는 랩쳐 세계관에만 있는 고유한 지위이고 등급 서술과 같은 대상이라 택하지 않는다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "chapter_48_04",
+              "line_start": 28,
+              "line_end": 28,
+              "quote": "온리 원: 가서 하늘에서 온 그것을 죽이고, 인자를 빼앗아 퀸이 될래."
+            },
+            {
+              "scene_id": "chapter_50_25",
+              "line_start": 115,
+              "line_end": 115,
+              "quote": "라피: ···그 아이도, 이제 완전히 퀸이 아니게 된 것이겠죠."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__006",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": {
+        "scene_ids": ["main_42_16"]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_온리_원",
+          "name": "온리 원",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "지휘관과 라피가 겪었던 일들을 설명한 뒤 아니스가 '퀸··· 이라니 갑자기 너무 큰 이야기가 나오네'라고 반응하는 장면이다. 뒤이은 main_44_00 L46~48을 보면 포비스트가 만든 퀸(온리 원) 이야기일 가능성이 있으나, 직전 main_42_15 L276에서 언급된 지상으로 내려올 초대 랩쳐 수장(E1)에 대한 반응일 수도 있어 이 장면만으로는 대상을 하나로 단정할 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_42_16",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "아니스: 퀸··· 이라니 갑자기 너무 큰 이야기가 나오네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "퀸",
+          "entity_type": "character",
+          "qualifier": "초대 랩쳐 수장",
+          "why": "직전 장면(main_42_15 L276)에서 지상으로 내려온다고 언급된 초대 랩쳐 수장 '퀸'을 가리킨 반응일 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "main_42_15",
+              "line_start": 276,
+              "line_end": 276,
+              "quote": "[OPTION TEXT=\"···퀸이. 내려온다고 했지.\"]"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__007",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": {
+        "scene_ids": ["goddess_fall_23"]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "퀸",
+          "entity_type": "character",
+          "entity_key": "E1",
+          "qualifier": "초대 랩쳐 수장"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "출현 O0144가 걸린 L5 한 줄('나유타에게는 차기 퀸. 토커티브에게는 퀸의 다음 바디.') 안에 마리안의 지위를 말하는 '차기 퀸'(개체 등급·직위)과 초대 랩쳐 수장을 가리키는 '퀸의 다음 바디'(E1)가 함께 묶여 있어 단일 출현 안에서 한쪽으로만 단정할 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_23",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "장화: 나유타에게는 차기 퀸. 토커티브에게는 퀸의 다음 바디."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "퀸",
+          "entity_type": "faction_or_species",
+          "qualifier": "랩쳐 최상위 개체 등급·수장 지위",
+          "why": "앞구절의 '차기 퀸'은 특정 개체 이름이 아니라 랩쳐 최상위 개체 등급(또는 수장 직위)을 가리킨다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "goddess_fall_23",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "장화: 나유타에게는 차기 퀸. 토커티브에게는 퀸의 다음 바디."
+            }
+          ]
+        },
+        {
+          "link_type": "generic_term",
+          "why": "앞구절의 '차기 퀸'은 다음 수장·여왕이라는 직위 일반으로도 읽힌다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "goddess_fall_23",
+              "line_start": 5,
+              "line_end": 5,
+              "quote": "장화: 나유타에게는 차기 퀸. 토커티브에게는 퀸의 다음 바디."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'이번 퀸 공략전'(ark_guardian_00 L49)처럼 지시어와 결합해 쓰이며, 100년 전 올드 테일즈의 전투(old_tales_25 L56)와 이후 에덴·방주 합동 전투(chapter_50_00 L179) 등 시대와 주체가 다른 여러 전투에 두루 쓰이는 '퀸을 공략하는 전투'라는 뜻의 수식어 결합 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_00",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "세실: 하지만 이번 퀸 공략전을 통해 깨달은 게 있어요."
+        },
+        {
+          "scene_id": "old_tales_25",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "헨젤: 헨젤은 데뷔전이 퀸 공략전이라서 너무하다고 생각해."
+        },
+        {
+          "scene_id": "chapter_50_00",
+          "line_start": 179,
+          "line_end": 179,
+          "quote": "요한: 에덴의 퀸 공략전에 방주가 협력하는 거다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "다른 전투에도 두루 쓰이는지 grep '공략전'으로 old_tales_25 L56, chapter_50_00 L179 확인"
+      ]
+    },
+    {
+      "link_id": "A2__138__009",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_퀀시",
+          "name": "퀀시",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "팬텀이 지휘관실을 지나가다 떨어지며 '앞으로 퀸시의 루트를 활용할 때는 주의가 필요하겠군'이라고 말한다. 본 이야기(sin_editor) 안에는 '퀀시'가 직접 등장하지 않으나, 다른 이야기(phantom_thief_vs_detective_01, arcane_archive_14)에서 팬텀과 정의괴도단 동료인 '퀀시'가 지휘관실로 이어진 탈옥 루트를 함께 이용하므로 등록 인물 '퀀시'의 오기(별칭)로 추론된다. 다른 이야기의 소속·관계를 옮겨 온 추론이므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sin_editor_01",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "팬텀: 앞으로 퀸시의 루트를 활용할 때는 주의가 필요하겠군."
+        },
+        {
+          "scene_id": "sin_editor_01",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "팬텀: 루트를 통해 지휘관실을 지나가던 중"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_01",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "퀀시가 나왔던 지휘관실 구석의 구멍에서 익숙한 목소리가 들려오기 시작했다."
+        },
+        {
+          "scene_id": "arcane_archive_14",
+          "line_start": 96,
+          "line_end": 96,
+          "quote": "퀀시: 아~ 하다 보니 익숙한 루트로 와버렸나 봐."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "등록 인물 '퀀시'의 오기 가능성을 떠올려 grep '루트'로 phantom_thief_vs_detective_01 L58, arcane_archive_14 L96 확인 및 grep '퀀시'(--title=event_stories__sin_editor)로 본 이야기 내 미등장 확인"
+      ]
+    },
+    {
+      "link_id": "A2__138__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "퀸 인자",
+          "entity_type": "concept",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "일곱 조율자가 강대한 힘을 가진 대상에게 부여하며 각성 시 랩쳐의 퀸이 될 수 있는 자격을 뜻하는 세계관 고유의 인자·개념으로, 14곳 모든 출현에서 동일한 대상을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_40_01",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "나유타: 퀸 인자."
+        },
+        {
+          "scene_id": "main_40_01",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "나유타: 쉽게 이야기하면 퀸이 될 수 있는 자격, 같은 것이라 보면 되는 것이외다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "나유타: 퀸 인자라는 것이 있소."
+        },
+        {
+          "scene_id": "chapter_50_16",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "마리안: 퀸 인자는 침식과 같은 메커니즘이에요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 단일 사건의 고유명이 아니라 '퀸과의 전투'를 뜻하는 보통 표현이다. main_46_02 L10에서는 에덴에서의 앞선 전투를, chapter_50_17 L18에서는 방주 지상 탈환 당시의 전투(L20에서 '퀸과 싸우면서'로 풀어 씀)를 각각 가리키며, main_44_04 L54에서도 '다음 퀸 전'처럼 일반 명사구로 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_46_02",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "나유타: 퀸 전 이후 소인은 남은 분신들로 하여금 신경 쓰이는 곳에 정찰을 보냈소."
+        },
+        {
+          "scene_id": "chapter_50_17",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "율하: ···퀸 전이 끝나고 너 거의 빈사 상태로 실려왔어."
+        },
+        {
+          "scene_id": "chapter_50_17",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "프리바티: 뭘 어떻게 하면 퀸과 싸우면서 단순 피로 정도로 끝났는지는 모르겠지만요."
+        },
+        {
+          "scene_id": "main_44_04",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "세실: 다음 퀸 전을 위해서 홍련, 라푼젤의 존재는 필수에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__012",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "퀸 제거 작전",
+          "entity_type": "event",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "red_ash_13 L86 내레이션에 한 번 나온 표현이다. 인류연합군이 갓데스 스쿼드와 양산형 니케 100기 이상을 투입해 수행한 특정 군사 작전·사건의 이름(new_entity)으로도 읽히고, 앞선 작전 브리핑(red_ash_02, red_ash_09)에서 별도 작전명 없이 '퀸을 죽인다'라고만 설명된 작전을 내레이션이 '퀸을 제거하는 작전'이라는 보통 표현(generic_term)으로 요약한 것으로도 읽혀 어느 쪽인지 가를 원문이 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_13",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "만전 상태인 갓데스 스쿼드 및 양산형 니케 100기 이상, 대량의 장거리 무기가 투입된 퀸 제거 작전은 실패."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "작전 브리핑 장면들에는 고유 작전명이 전혀 등장하지 않고 '퀸을 죽인다'는 목표만 언급되므로, 내레이션에서 '퀸을 제거하는 작전'이라는 설명적 보통 표현으로 적은 것일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "red_ash_09",
+              "line_start": 34,
+              "line_end": 34,
+              "quote": "지휘관: 작전은 심플하다."
+            },
+            {
+              "scene_id": "red_ash_09",
+              "line_start": 37,
+              "line_end": 37,
+              "quote": "지휘관: 퀸을 죽인다."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "본 이야기 내 고유 작전명 언급 여부를 확인하기 위해 grep '작전'(--title=event_stories__red_ash) 실행"
+      ]
+    },
+    {
+      "link_id": "A2__138__013",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "하모니 큐브",
+          "entity_type": "item",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "직전 장면(main_30_07 L67~68)에서 라피가 동료들이 '하모니 큐브' 쪽으로 갔을 것이라 판단해 이동하던 중 그레이브를 만나고, 이어지는 main_30_08 L24~25에서 그레이브가 '큐브, 로 간다. 동료들, 그쪽, 안내.'라고 답하므로 수정 지역에 남아 있는 방주 제작용 초고속 연산 장치인 '하모니 큐브'를 가리킨다. 원문에 나온 가장 온전한 표기인 '하모니 큐브'를 대표 이름으로 적는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_30_08",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "그레이브: 큐브, 로 간다."
+        },
+        {
+          "scene_id": "main_30_07",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "라피: 일행이 하모니 큐브 쪽으로 갔을 것이라 생각하고, 그쪽으로 움직이겠습니다."
+        },
+        {
+          "scene_id": "main_30_00",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "일레그: 그도 그럴게, 원래는 방주 제작용 연산 장치거든여."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__138__014",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "큐티 돌즈 한정판 굿즈",
+          "entity_type": "item",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "마르차나가 실수로 전송한 구매 메모에 한 번 나온 표현이다. 마르차나가 구매하려는 특정 한정판 인형 상품 하나의 고유 상품명(new_entity)으로도 읽히고, '큐티 돌즈' 브랜드에 '한정판 굿즈'라는 일반 수식어·보통명사가 결합된 설명적 표현(generic_term, L67에서 '인형'으로 설명)으로도 읽히며 어느 쪽인지 가를 추가 원문이 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_marciana_003",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "큐티 돌즈 한정판 굿즈 구매"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'한정판 굿즈'가 일반 명사구이고 마르차나가 뒤이어 '인형··· 입니다'라고 보통명사로 설명하므로, '큐티 돌즈'의 한정판 상품을 뜻하는 수식어 결합 보통 표현일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "blabla_marciana_003",
+              "line_start": 67,
+              "line_end": 67,
+              "quote": "디저트 잡지와 동물 잡지, 그리고 인형··· 입니다."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "다른 장면 출현 여부를 확인하기 위해 grep '큐티', '돌즈' 실행(추가 출현 없음)"
+      ]
+    },
+    {
+      "link_id": "A2__138__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "쇼핑몰 이벤트 문구('당신도 큐피드가 될 수 있습니다아~', '큐피드로 만들어 드리는 이벤트!')에서 불특정 참가자('당신')가 경품 '사랑의 화살'을 얻어 사랑을 이루는 역할이 될 수 있다는 가정·비유적 호칭으로 쓰였으므로 특정 대상을 가리키지 않는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "dazzling_cupid_01",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "티아: 당신도 큐피드가 될 수 있습니다아~"
+        },
+        {
+          "scene_id": "dazzling_cupid_01",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "티아: 큐피드로 만들어 드리는 이벤트! 라는데?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "다른 장면 용례를 확인하기 위해 grep '큐피드' 실행"
+      ]
+    },
+    {
+      "link_id": "A2__138__016",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "크라운 왕국",
+          "entity_type": "organization",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "크라운이 왕으로 다스리고 차임·킬로 등이 백성·비서로 소속되며 성을 거점으로 삼아 방주와 동맹을 맺고 자치권을 보장받는 왕국·세력으로, 25곳 모든 출현에서 동일한 이름 붙은 집단(organization)을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_26_09",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "크라운: 당신은 우리 크라운 왕국의 소중한 백성이에요."
+        },
+        {
+          "scene_id": "chapter_50_28",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "버닝엄: 크라운 왕국과 방주는 동맹 관계가 되었어."
+        },
+        {
+          "scene_id": "last_kingdom_27",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "크라운: 그래요. 크라운 왕국의 왕. 크라운입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

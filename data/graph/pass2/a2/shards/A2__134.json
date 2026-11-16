@@ -1,0 +1,1338 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__134",
+  "candidate_links": [
+    {
+      "link_id": "A2__134__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "squad",
+          "entity_key": "E1",
+          "qualifier": "테트라 라인 소속 해결사 스쿼드"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "예외로 나눈 장면(LIE CAUSE RECOL_03·cafe_00 매장, coin_rush_show_down_09·cafe_02·cafe_03·command_center_03·blabla_alice_005·privaty_01 매장·스쿼드 보류)을 제외한 모든 출현(미제시 출현 포함)에서 프림·슈가·밀크로 구성된 테트라 라인 소속 해결사 스쿼드를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_12_12",
+          "line_start": 15,
+          "line_end": 17,
+          "quote": "엔더슨: 기동력이 좋고 전투력이 우수한 스쿼드를 각각 추려주게.\n잉그리드: 앱솔루트가 적임이겠군.\n머스탱: My Wild Girls! 카페 스위티를 보내겠습니Da!"
+        },
+        {
+          "scene_id": "frima_00",
+          "line_start": 2,
+          "line_end": 4,
+          "quote": "테트라 라인 최고의 무력 스쿼드.\n머스탱이 손 수 지은 달콤해 보이는 이름보다 [해결사]라는 이름으로 더 자주 불리는 이들.\n바로 그 카페 스위티 스쿼드의 리더는 프림이다."
+        },
+        {
+          "scene_id": "quiry_03",
+          "line_start": 27,
+          "line_end": 28,
+          "quote": "슈가: 난 카페 스위티의 슈가야.\n슈가: 저쪽은 밀크랑 프림인데 딱히 알아둘 필요는 없어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__002",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "scene_ids": ["LIE CAUSE RECOL_03"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "location",
+          "entity_key": "E2",
+          "qualifier": "방주의 카페"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "이 장면에서는 치사토 일행이 방주에 있는 카페 스위티 스쿼드의 가게를 개조하여 리뉴얼 오픈하면서 그 가게(찻집) 자체를 '찻집, 카페 스위티'라고 부른다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "LIE CAUSE RECOL_03",
+          "line_start": 115,
+          "line_end": 116,
+          "quote": "치사토: 내일부터, 리뉴얼 오픈이야!\n치사토: 찻집, 카페 스위티를!"
+        },
+        {
+          "scene_id": "LIE CAUSE RECOL_03",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "치사토: 그러니까, 이 카페를 찻집 리코리코처럼 맛있는 커피랑 디저트를 즐길 수 있는 가게로 바꾸겠습니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "scene_ids": ["cafe_00"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티 전초기지점",
+          "entity_type": "location",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "이 장면의 원문 구절은 '카페 스위티 전초기지점이 개장하여 찾아가 보았다'이고 다음 줄에서 '가게'로 받으므로, 스쿼드가 아니라 전초기지에 개장한 카페 지점(U003과 동일 대상)을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "cafe_00",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "카페 스위티 전초기지점이 개장하여 찾아가 보았다.\n가게 안엔 거대한 커피 자판기만 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "squad",
+          "entity_key": "E1",
+          "qualifier": "테트라 라인 소속 해결사 스쿼드"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "세 출현 모두 슈가·밀크 등이 속한 스쿼드 '카페 스위티'(U001 기본 판정과 동일 대상)를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "golden_coin_rush_05",
+          "line_start": 139,
+          "line_end": 139,
+          "quote": "2층에는 아까 프로토콜 스쿼드와 카페 스위티 스쿼드가 올라가는 걸 봤다."
+        },
+        {
+          "scene_id": "cafe_01",
+          "line_start": 3,
+          "line_end": 4,
+          "quote": "가게 안에선 카페 스위티 스쿼드가 머리를 싸매고 있다.\n슈가: 파트너, 마침 잘 왔어."
+        },
+        {
+          "scene_id": "blabla_milk_001",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "  [MSG SENDER=\"밀크\"]\n    난 카페 스위티 스쿼드의 밀크라고 해"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티 전초기지점",
+          "entity_type": "location",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "전초기지 안에 개장한 구내 카페 시설 하나를 가리키는 고유 지점명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "privaty_00",
+          "line_start": 113,
+          "line_end": 115,
+          "quote": "프리바티: 여긴 구내 카페인가요?\n[CHOICE_START]\n  [OPTION TEXT=\"전초기지의 명물, 카페 스위티 전초기지점이야.\"]"
+        },
+        {
+          "scene_id": "cafe_00",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "카페 스위티 전초기지점이 개장하여 찾아가 보았다.\n가게 안엔 거대한 커피 자판기만 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__006",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 업소의 고유 이름이 아니라 쉬러 갈 술집 업종 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "coin_rush_show_down_18",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "마나: 최근 너무 무리하긴 했지. 시간 내서 칵테일 바나···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__007",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "캐서린 루",
+          "entity_type": "character",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "데일리아크 기사의 작성자로 명시된 미등록 특정 인물의 고유 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "데일리아크기사스크랩_04",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "(데일리아크) 캐서린 루 기자 = 패전은 우리에게 무엇을 남겼나. 지상의 땅 한 평, 나무 한 그루 되찾지 못했지만 적어도 영웅만은 우리 곁에 남았다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '캐서린 루'를 검색해 데일리아크기사스크랩_04 L4 한 곳에만 출현함을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__134__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "같은 장면 뒤쪽에서 '사출기'로 풀어 설명되며 다른 시설에도 쓰이는 일반 발사·사출 장치 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_38_10",
+          "line_start": 148,
+          "line_end": 149,
+          "quote": "맥스웰: 파워 업 파츠를 어드마이어의 캐터펄트로 쏘아 보낼게!\n맥스웰: 낙하 속도와 캐터펄트의 속도를 계산해서 랑데부 포인트를···! 아잇 아무튼 얼추 맞춰서 쏘아 보낼게!"
+        },
+        {
+          "scene_id": "main_38_10",
+          "line_start": 237,
+          "line_end": 242,
+          "quote": "헬름: 캐터펄트에서 발사됐어.\n[CHOICE_START]\n  [OPTION TEXT=\"캐터펄트···? 사출기 말하는 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n헬름: ···응. 빨리 가야 된다고."
+        },
+        {
+          "scene_id": "ark_ranger_23",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "머스탱: Good. 캐터펄트, Open."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '캐터펄트'를 검색해 main_38_10 L239 및 ark_ranger_23 L15의 일반 장치 용례를 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__134__009",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "캔디 고스트 파티",
+          "entity_type": "event",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주 중앙 공원에서 열리는 대규모 할로윈 이벤트 하나를 가리키는 고유 행사명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "a.c.p.u._freeze_00",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "TV 소리: 그중에서도 공원에서 진행될 [캔디 고스트 파티]가 주목을 받고 있죠."
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_02",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "폴리: 중앙 공원에서 열리는 [캔디 고스트 파티]가 완전 대규모로 진행될 예정이에영."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "캔디 하우스 부스",
+          "entity_type": "location",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "지난 축제에서 실제로 운영되다가 게시글 직후 운영을 중단한 특정 부스의 고유 이름으로 원문에 서술된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "little_witch_trick_08",
+          "line_start": 108,
+          "line_end": 108,
+          "quote": "제목 [ACTION]: 캔디 하우스 부스 사탕 먹고 밤새 토했습니다"
+        },
+        {
+          "scene_id": "little_witch_trick_08",
+          "line_start": 126,
+          "line_end": 128,
+          "quote": "미카는 게시글에 적힌 부스 이름을 하나씩 검색했다.\n미카: ··· ···.\n미카: 확인해 본 부스들 모두, 게시글이 올라온 직후에 운영을 중단했대요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 고유 이름이 아니라 날짜를 표시하는 일반 달력을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "command_center_01",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "네온: 스승님 캘린더에 그려진 빨간 동그라미 표시를!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고유한 시설 이름이 아니라 작전 중 피난민과 병사·니케들이 머무는 주둔지(야영지)를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_13",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "스노우 화이트: 캐, 캠프 쪽으로 가고 있어요!"
+        },
+        {
+          "scene_id": "ark_guardian_13",
+          "line_start": 150,
+          "line_end": 150,
+          "quote": "그때, 도로시의 눈에 캠프에서 뛰쳐나오는 인간 병사들과 양산형 니케들이 들어온다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 event_stories__ark_guardian 내 '캠프'를 검색해 고유명 없이 일반 주둔지로만 쓰임을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__134__013",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "야영에 쓰이는 물품 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_maxwell_004",
+          "line_start": 95,
+          "line_end": 96,
+          "quote": "  [MSG SENDER=\"맥스웰\"]\n    캠핑용품 챙겨서 지상에 가보지 않을래?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "음식에 뿌리는 매운 성분·소스를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "courthouse_06",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "프리바티: 주인님의 오므라이스에 캡사이신을 한가득 뿌려드릴 테니까요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "니케가 들어 있던 보존 장치들과 소원 쪽지를 넣는 작은 통에 각각 쓰인 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "alone_survivor_14",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "···문 너머는, 캡슐이 가득한 장소였다."
+        },
+        {
+          "scene_id": "snowwhite_heavyarms_03",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "스노우 화이트가 빈 캡슐 안에 자신의 소원 쪽지를 다시 집어넣었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__016",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "여러 종류의 커피메이커 가운데 캡슐 방식을 설명하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_brid_006",
+          "line_start": 77,
+          "line_end": 81,
+          "quote": "  [MSG SENDER=\"브리드\"]\n    일단 캡슐형 커피메이커가 있습니다\n  [MSG_END]\n  [MSG SENDER=\"브리드\"]\n    압축된 가루가 작은 캡슐 속을 통과해서"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__017",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "캡틴 아크",
+          "entity_type": "item",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "작중에서 개봉한 히어로 영화 시리즈 작품을 가리키는 고유 제목이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "vesti_tactical_02",
+          "line_start": 86,
+          "line_end": 87,
+          "quote": "라플라스: 그렇다! 오늘이 바로 [캡틴 아크] 시리즈의 새로운 영화 개봉일!\n라플라스: 새로운 히어로 영화는 당연히 개봉 당일에 봐야 하는 법이지!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '캡틴 아크'를 검색해 vesti_tactical_02 L86 한 곳에만 출현함을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__134__018",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "캡틴 앨리게이터",
+          "entity_type": "character",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "일곱 출현 모두 과거 지상의 유명한 해적으로서 황금 배와 보물 지도를 남긴 미등록 특정 인물을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "golden_ship_02",
+          "line_start": 63,
+          "line_end": 64,
+          "quote": "마스트: 지상의 유명한 해적이었다던,\n마스트: 캡틴 앨리게이터가 남긴 보물 지도의 일부분이요."
+        },
+        {
+          "scene_id": "golden_ship_13",
+          "line_start": 157,
+          "line_end": 158,
+          "quote": "마스트: 캡틴 앨리게이터의 황금 배는··· 전설이 아니었수다···!\n마스트: 이 세상에 존재하는 것이었수다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__019",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "캡틴 앨리게이터의 지도 조각",
+          "entity_type": "item",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "어드마이어 자선 경매에서 대괄호로 제시된 특정 출품 유물 하나의 이름으로 읽히지만, 동시에 여러 조각으로 나뉜 보물 지도 중 한 조각을 소유격 수식어로 설명한 보통 명사구로도 읽혀 양쪽 근거가 비슷하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "golden_ship_00",
+          "line_start": 16,
+          "line_end": 17,
+          "quote": "얀: 다음 경매는!\n얀: [캡틴 앨리게이터의 지도 조각]입니다."
+        },
+        {
+          "scene_id": "golden_ship_02",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "마스트가 캡틴 앨리게이터의 지도 조각을 꺼내들었다."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "golden_ship_02",
+          "line_start": 64,
+          "line_end": 65,
+          "quote": "마스트: 캡틴 앨리게이터가 남긴 보물 지도의 일부분이요.\n마스트: 우리는 방주에 이것 말고 다른 지도 조각이 있는지 찾아보고 있수다."
+        },
+        {
+          "scene_id": "golden_ship_03",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "마스트: 다른 지도 조각을 찾았다는 거요?"
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "여러 조각으로 존재하는 보물 지도 중 일부분을 소유격으로 설명한 일반 명사구로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "golden_ship_02",
+              "line_start": 64,
+              "line_end": 65,
+              "quote": "마스트: 캡틴 앨리게이터가 남긴 보물 지도의 일부분이요.\n마스트: 우리는 방주에 이것 말고 다른 지도 조각이 있는지 찾아보고 있수다."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__020",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_잭_로우",
+          "name": "잭 로우",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "출현한 두 이야기(outpost_stories__극장, character_episodes__마스트) 모두 각 이야기 안의 원문에서 작중 영화 '카스피안의 해적'의 주인공 해적인 등록 인물 '잭 로우'를 '캡틴 잭'으로 직접 호칭·서술한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "mast_00",
+          "line_start": 55,
+          "line_end": 57,
+          "quote": "캡틴 잭이 럼을 들어 올린 채, 갑판에 발을 굴렀다.\n쿵!\n잭 로우: 지나가던 해군에게 시비가 걸려도,"
+        },
+        {
+          "scene_id": "mast_02",
+          "line_start": 151,
+          "line_end": 152,
+          "quote": "마스트: 카스피안의 해적에 나오는 해적들은 범죄자로 단정 지어 말할 이들이 아니요!\n마스트: 적어도 캡틴 잭은··· 잭 로우와 빌어먹을 해적단은···!"
+        },
+        {
+          "scene_id": "theater_09",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "영화는 해적 잭 로우와 그의 보물을 훔치려는 이름 모를 괴도의 치열한 경쟁이 주 내용이었다."
+        },
+        {
+          "scene_id": "theater_09",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "마스트: 캡틴 잭은 그렇지 않수!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__021",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "캡틴 잭 해적단",
+          "entity_type": "organization",
+          "entity_key": "E10",
+          "qualifier": "영화 카스피안의 해적"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "작중 영화 '카스피안의 해적' 속에서 캡틴 잭(잭 로우)이 이끄는 해적단을 가리키는 고유 집단명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "mast_00",
+          "line_start": 76,
+          "line_end": 77,
+          "quote": "TV 소리: [우리는 해적~ 캡틴 잭 해적단!]\n해적들의 노래를 끝으로 영화는 종료되었다."
+        },
+        {
+          "scene_id": "mast_00",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "선원들: 우리는 해적~ 캡틴 잭의 빌어먹을 해적단이니까!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__022",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "같은 장면에서 지휘관이 마스트에게 보물찾기 카드를 보낸 뒤 해적 분장을 하고 나타나 스스로를 '캡틴 커맨더'라고 직접 밝히며 마스트도 선장 양반(지휘관)임을 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "mast_03",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "[캡틴 커맨더의 보물은 그곳에 있다!]"
+        },
+        {
+          "scene_id": "mast_03",
+          "line_start": 106,
+          "line_end": 109,
+          "quote": "  [OPTION TEXT=\"반갑다. 난 캡틴 커맨더다.\"]\n  [OPTION_END]\n[CHOICE_END]\n마스트: 설마 선장 양반이요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__023",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고양이를 유인하기 위해 뿌리는 향기 나는 식물(개박하)을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "nya_nya_paradise_03",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "네로: 캣닢을 주변에 뿌려두면 알아서 냄새 맡고 올 거다냥."
+        },
+        {
+          "scene_id": "nya_nya_paradise_03",
+          "line_start": 92,
+          "line_end": 93,
+          "quote": "네로: 고양이가 좋아하는 향기다냥.\n네로: 캣닢으로 여기에 음식이 있는 걸 간접적으로 알려주는 거다냥."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__024",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 고유 물건 이름이 아니라 니케의 신체에 달린 일반 연결 케이블 부품을 가리키는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "cocoa_04",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "코드의 수정은, 니케의 몸에 달린 커넥션 케이블로만 가능하게 되어 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '커넥션 케이블'을 검색해 cocoa_04 L46 한 곳에만 출현함을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__134__025",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 단일 물건의 고유 이름이 아니라 여러 인물의 핸드폰에 내장되어 외부 제어 장치 포트에 연결하는 일반 유선 접속 장치를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_02",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "라피: 지휘관. 커넥팅 디바이스를."
+        },
+        {
+          "scene_id": "main_02_02",
+          "line_start": 8,
+          "line_end": 10,
+          "quote": "시프티: 어··· 지상의 각종 기계들을 오퍼레이터가 원격으로 조종하기 위해 필요한 기계에요.\n시프티: 핸드폰에 튀어나온 부분 있죠?\n시프티: 그걸 쭉 잡아당기면 선이 나올 거예요."
+        },
+        {
+          "scene_id": "rapunzel_00",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "핸드폰에서 커넥팅 디바이스를 뽑아들어 제어 장치에 연결했다."
+        },
+        {
+          "scene_id": "goddess_fall_21",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "파피용은 거칠게 핸드폰에 이어진 커넥팅 디바이스를 뽑는다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep으로 '커넥팅 디바이스'를 검색해 파피용의 핸드폰에도 달린 일반 장치 용례(goddess_fall_21 L61)를 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__134__026",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "커맨드 센터",
+          "entity_type": "location",
+          "entity_key": "E11"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "열 곳의 출현 모두 전초기지 안에서 지휘관실과 니케 숙소가 위치한 특정 중심 시설 건물을 일관되게 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_36_09",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "전초 기지. 커맨드 센터. 지휘관실."
+        },
+        {
+          "scene_id": "avistar_02",
+          "line_start": 4,
+          "line_end": 5,
+          "quote": "아비스타: 다른 건물들은 문제가 없는데, 지휘관실과 니케 분들의 숙소가 있는 이 건물.\n아비스타: 커맨드 센터가 엄청 많은 전력을 사용 중이더라고요."
+        },
+        {
+          "scene_id": "rosanna_03",
+          "line_start": 259,
+          "line_end": 259,
+          "quote": "  [OPTION TEXT=\"전초기지의 커맨드 센터.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__027",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "음료 일반을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "milk_00",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "    밀크: 바쁘긴 뭐가 바빠. 한가하게 커피나 마시러 왔으면서."
+        },
+        {
+          "scene_id": "milk_04",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "밀크: 헛소리하지 말고 가서 커피나 가져와. 패배자들이 무슨 말이 그렇게 많아?"
+        },
+        {
+          "scene_id": "alice_01",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "토끼 씨는 앨리스에게 크림이 산처럼 올라간 커피를 사주었습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__028",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "보통 음식 명사 '팝콘' 앞에 맛을 설명하는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "theater_11",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "아니스: 내가 사온 건 탄산수랑, 딸기 마요네즈 버터 오징어구이, 커피&간장 맛 팝콘!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__029",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "커피맛 퍼펙트",
+          "entity_type": "item",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "방주의 고유 대체 식품인 '퍼펙트'의 특정 파생 제품명으로 볼 여지와, '퍼펙트'에 맛을 뜻하는 일반 수식어 '커피맛'이 결합한 보통 명사구로 볼 여지가 한 번의 출현만으로는 비슷하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "emma_00",
+          "line_start": 89,
+          "line_end": 90,
+          "quote": "엠마: 흑설탕이랑. 맛소금. 그리고··· MSG?\n엠마: 어머. 커피맛 퍼펙트도 있네? 이것도 조금 섞어 볼까."
+        },
+        {
+          "scene_id": "last_kingdom_14",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "차임: 방주에는 지금 퍼펙트라는 대체 식품이 있다."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "queen's_order_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "어린 아이: 그 사과 맛 퍼펙트 내 거야! 먹지 마!"
+        },
+        {
+          "scene_id": "new_flavor_00",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "브래디: 소의 안심 부위를 모방한 퍼펙트."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "대체 식품 '퍼펙트' 앞에 다양한 맛·재료 수식어를 붙여 부르는 일반 식재료 표현으로 볼 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "queen's_order_00",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "어린 아이: 그 사과 맛 퍼펙트 내 거야! 먹지 마!"
+            },
+            {
+              "scene_id": "new_flavor_00",
+              "line_start": 16,
+              "line_end": 16,
+              "quote": "브래디: 소의 안심 부위를 모방한 퍼펙트."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep으로 '퍼펙트'와 '커피맛 퍼펙트'를 검색해 대체 식품 정의와 맛 수식 결합 용례를 확인함"
+      ]
+    },
+    {
+      "link_id": "A2__134__030",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "커피를 내리고 남은 찌꺼기를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maid_cafe_09",
+          "line_start": 80,
+          "line_end": 81,
+          "quote": "에이드: 아가씨의 커피는 일반 커피가 아닙니다.\n에이드: 일반 커피 대신 커피박을 우린 물을 내어드렸어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__031",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "특정 고유 사물 이름이 아니라 가게 안에 놓인 자동판매기 기기를 가리키는 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "cafe_00",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "가게 안엔 거대한 커피 자판기만 있다."
+        },
+        {
+          "scene_id": "cafe_00",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "밀크: 뭐긴 뭐겠어? 커피 자판기지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__032",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "scene_ids": ["coin_rush_show_down_09"] },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "location",
+          "entity_key": "E2",
+          "qualifier": "방주의 카페"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "밀크가 '우리 카페에서 나온 신제품'이라며 커피를 권하자 플로라가 카페 스위티의 커피를 한 번씩 이용한다고 답한다. 이어 '갈 때마다 안 계시던데요'라고 하자 밀크가 '장사는 자판기가 하니까'라고 받는다. 그래서 여기의 카페 스위티는 플로라가 찾아가는 매장(상호)을 가리킨다는 해석이 강하다. 그러나 이 장면은 그 매장이 방주의 가게(E2)인지 전초기지점(E3)인지 가르지 않는다. 또 '카페 스위티의 커피'는 스쿼드가 만든 커피라는 소유·제작자 해석(E1)도 가능해 하나로 정하지 않는다. 지점이 아닌 본래 가게인 방주의 카페를 후보로 두고, 전초기지점과 스쿼드를 대안으로 남긴다.",
+      "supporting_evidence": [
+        { "scene_id": "coin_rush_show_down_09", "line_start": 50, "line_end": 50, "quote": "밀크: 아, 말나온 김에 이거 한번 마셔볼래? 우리 카페에서 나온 신제품인데, 밀크 커피야." },
+        { "scene_id": "coin_rush_show_down_09", "line_start": 53, "line_end": 53, "quote": "플로라: 카페 스위티의 커피는 매우 자극적이어서 한번씩 이용해요." },
+        { "scene_id": "coin_rush_show_down_09", "line_start": 55, "line_end": 56, "quote": "플로라: 갈때마다 안 계시던데요.\n밀크: ···장사는 자판기가 하니까, 응." },
+        { "scene_id": "LIE CAUSE RECOL_03", "line_start": 115, "line_end": 116, "quote": "치사토: 내일부터, 리뉴얼 오픈이야!\n치사토: 찻집, 카페 스위티를!" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "카페 스위티 전초기지점",
+          "entity_type": "location",
+          "why": "플로라가 다니는 매장이 전초기지에 개장한 지점일 수도 있다. 이 지점도 자판기만 있는 가게다.",
+          "supporting_evidence": [
+            { "scene_id": "cafe_00", "line_start": 2, "line_end": 3, "quote": "카페 스위티 전초기지점이 개장하여 찾아가 보았다.\n가게 안엔 거대한 커피 자판기만 있다." }
+          ]
+        },
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "squad",
+          "qualifier": "테트라 라인 소속 해결사 스쿼드",
+          "why": "'카페 스위티의 커피'를 스쿼드가 만든 커피라는 소유·제작자 표현으로 읽을 수도 있다.",
+          "supporting_evidence": [
+            { "scene_id": "coin_rush_show_down_09", "line_start": 53, "line_end": 53, "quote": "플로라: 카페 스위티의 커피는 매우 자극적이어서 한번씩 이용해요." }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__033",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "scene_ids": [
+          "cafe_02",
+          "cafe_03",
+          "command_center_03"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티 전초기지점",
+          "entity_type": "location",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "전초기지 이야기에서 카페 운영·상품을 말하는 세 곳이다. cafe_02는 손님이 줄어든 가게에 디저트가 필요하다며 벨로타가 '카페 스위티를 위해' 카페 운영 경험자를 불렀다고 하고, cafe_03은 카페에서 열린 시음회의 '카페 스위티의 겨울맞이 특제 커피'를 내놓으며, command_center_03은 프림이 배달해 온 커피를 두고 '카페 스위티의 레시피는 절대 바뀌지 않아'라고 한다. 셋 다 매장 상호(cafe_00에서 개장한 전초기지점)로도, 그 매장을 운영하는 스쿼드로도 읽히며 원문이 스쿼드만을 특정하지 않는다. 전초기지의 카페에서 벌어지는 일이므로 전초기지점을 후보로 두고 스쿼드를 대안으로 남긴다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "cafe_00",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "카페 스위티 전초기지점이 개장하여 찾아가 보았다.\n가게 안엔 거대한 커피 자판기만 있다."
+        },
+        {
+          "scene_id": "cafe_02",
+          "line_start": 28,
+          "line_end": 29,
+          "quote": "벨로타: 커피만 팔면 장사가 잘 되긴 해?\n벨로타: 솔직히 요새 손님도 별로 없지?"
+        },
+        {
+          "scene_id": "cafe_02",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "벨로타: 그래서 내가 카페 스위티를 위해 방주에 유명한 카페를 운영했었던 분을 불렀어."
+        },
+        {
+          "scene_id": "cafe_03",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "카페에서는 겨울맞이 특제 커피 시음회가 개최되고 있다."
+        },
+        {
+          "scene_id": "cafe_03",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "밀크: 자. 카페 스위티의 겨울맞이 특제 커피를 맛보도록 해."
+        },
+        {
+          "scene_id": "command_center_03",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "프림: ···커피. 배달 옴."
+        },
+        {
+          "scene_id": "command_center_03",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "[OPTION TEXT=\"카페 스위티의 레시피는 절대 바뀌지 않아.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "squad",
+          "qualifier": "테트라 라인 소속 해결사 스쿼드",
+          "why": "세 곳 모두 슈가·밀크·프림이 직접 커피를 뽑거나 배달하므로, 카페 스위티를 가게를 운영하는 스쿼드(소유·제작자)로 읽을 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "cafe_02",
+              "line_start": 21,
+              "line_end": 21,
+              "quote": "밀크: 뭐든 말만 해~ 우리가 직접 뽑아줄 테니까."
+            },
+            {
+              "scene_id": "cafe_03",
+              "line_start": 33,
+              "line_end": 33,
+              "quote": "밀크: 형씨를 봐서 이번만 특별히 뽑아줄게."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__034",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "scene_ids": [
+          "blabla_alice_005"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "location",
+          "entity_key": "E2",
+          "qualifier": "방주의 카페"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "커피와 홍차 중 무엇을 좋아하느냐는 앨리스의 물음에 지휘관이 고르는 선택지 '카페 스위티의 슈가 커피'다. 가게에서 파는 메뉴로 보면 매장 상호를 가리키고, 스쿼드(또는 멤버 슈가)가 만든 커피로 보면 스쿼드를 가리킨다. 원문은 어느 쪽인지, 매장이라면 방주의 가게인지 전초기지점인지 가르지 않는다. coin_rush_show_down_09(A2__134__032)와 같이 본래 가게인 방주의 카페를 후보로 두고 전초기지점과 스쿼드를 대안으로 남긴다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_alice_005",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "토끼 씨는 커피랑 홍차 중에 어떤 걸 좋아해요?"
+        },
+        {
+          "scene_id": "blabla_alice_005",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "[OPTION TEXT=\"카페 스위티의 슈가 커피\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "카페 스위티 전초기지점",
+          "entity_type": "location",
+          "why": "지휘관이 가까이 두고 마시는 커피라면 전초기지에 개장한 지점의 메뉴일 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "cafe_00",
+              "line_start": 2,
+              "line_end": 2,
+              "quote": "카페 스위티 전초기지점이 개장하여 찾아가 보았다."
+            }
+          ]
+        },
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "squad",
+          "qualifier": "테트라 라인 소속 해결사 스쿼드",
+          "why": "'카페 스위티의 슈가 커피'를 스쿼드(멤버 슈가)가 만든 커피라는 소유·제작자 표현으로 읽을 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "blabla_alice_005",
+              "line_start": 19,
+              "line_end": 19,
+              "quote": "[OPTION TEXT=\"카페 스위티의 슈가 커피\"]"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__134__035",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "scene_ids": [
+          "privaty_01"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "카페 스위티 전초기지점",
+          "entity_type": "location",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "전초기지에 물자를 가져다주는 프리바티를 두고 아니스가 '카페 스위티네 자판기 커피가 많이 마음에 들었나 본데?'라고 한다. 소유되는 것이 가게가 아니라 커피(상품)라서, 커피를 파는 매장 상호로도 스쿼드가 소유·제작한 커피로도 읽힌다. 뒤이어 대가로 자판기 커피를 말하고 '이번엔 프림?'·'슈가가 제일 낫더군요'처럼 멤버 이름이 붙은 메뉴를 고르는 대목은 매장 메뉴 쪽을 받치지만, 원문이 어느 쪽인지 직접 정하지 않는다. 전초기지 장면이고 cafe_00의 전초기지점이 자판기만 있는 가게이므로 전초기지점을 후보로, 스쿼드를 대안으로 둔다(A2__134__033과 같은 처리).",
+      "supporting_evidence": [
+        {
+          "scene_id": "privaty_01",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "프리바티: 특별히 제가 선심 써서. 대가는 자판기 커피 정도로 해드릴게요!"
+        },
+        {
+          "scene_id": "privaty_01",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "아니스: 글쎄··· 카페 스위티네 자판기 커피가 많이 마음에 들었나 본데?"
+        },
+        {
+          "scene_id": "privaty_01",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "프리바티: 전초기지에 소금이 다 떨어졌다면서요?"
+        },
+        {
+          "scene_id": "privaty_01",
+          "line_start": 36,
+          "line_end": 39,
+          "quote": "  [OPTION TEXT=\"이번엔 프림?\"]\n  [OPTION_END]\n[CHOICE_END]\n프리바티: 슈, 슈가가··· 제일 낫더군요."
+        },
+        {
+          "scene_id": "cafe_00",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "카페 스위티 전초기지점이 개장하여 찾아가 보았다.\n가게 안엔 거대한 커피 자판기만 있다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "카페 스위티",
+          "entity_type": "squad",
+          "qualifier": "테트라 라인 소속 해결사 스쿼드",
+          "why": "'카페 스위티네'의 '-네'가 사람 무리를 받으므로 스쿼드가 소유·제작한 자판기 커피로 읽을 수도 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "privaty_01",
+              "line_start": 20,
+              "line_end": 20,
+              "quote": "아니스: 글쎄··· 카페 스위티네 자판기 커피가 많이 마음에 들었나 본데?"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    }
+  ]
+}

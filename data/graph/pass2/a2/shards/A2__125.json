@@ -1,0 +1,1331 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__125",
+  "candidate_links": [
+    {
+      "link_id": "A2__125__001",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 13 브리핑 룸",
+          "entity_type": "location",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "버닝엄과 3대 기업 CEO들이 모여 긴급 회의를 여는 번호 붙은 중앙 정부 내 특정 시설 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_23_22",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "중앙 정부 13 브리핑 룸."
+        },
+        {
+          "scene_id": "main_23_22",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "버닝엄: 사, 사람들이 쉘터에서 맘대로 빠져나왔다고?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__002",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 감찰부",
+          "entity_type": "organization",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "식스오가 헤도니아의 비밀 장부를 전송한 중앙 정부 산하 특정 감찰 부서다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_12",
+          "line_start": 110,
+          "line_end": 110,
+          "quote": "식스오: 지금 헤도니아의 비밀 장부의 일부를 중앙 정부 감찰부에 전송했어요"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 갱생관 감사부",
+          "entity_type": "organization",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "갱생관의 교관들과 함께 길티의 갱생 여부를 심사·판단한 중앙 정부 산하 특정 부서다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "guilty_04",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "마나: 갱생관의 교관들과, 중앙 정부 갱생관 감사부의 판단 결과."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__004",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙정부 고위직 친교 파티",
+          "entity_type": "event",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "어드마이어 호 주간 예약 일정표에서 번호와 요일 뒤에 그대로 인용되어 특정 행사의 공식 명칭으로 읽히지만, 선택지에서는 '중앙정부 고위직 파티'로 풀어 쓰고 헬름도 고위직 파티 전반을 상시적인 자리처럼 설명하여 참석 대상과 성격을 나열한 보통 표현으로도 비슷하게 읽힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_aegis_001",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "3. 목요일 : 중앙정부 고위직 친교 파티"
+        },
+        {
+          "scene_id": "blabla_aegis_001",
+          "line_start": 218,
+          "line_end": 218,
+          "quote": "3. 목요일 : 중앙정부 고위직 친교 파티"
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "blabla_aegis_001",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "[OPTION TEXT=\"중앙정부 고위직 파티라니 뭔가 수상쩍은데\"]"
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "고유 행사명이 아니라 중앙정부 고위직을 대상으로 한 친교 파티라는 일정 설명 표현으로 읽히며, 선택지에서 '중앙정부 고위직 파티'로 풀어 부르고 헬름도 그런 자리의 분위기를 반복되는 일상처럼 서술한다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "blabla_aegis_001",
+              "line_start": 87,
+              "line_end": 87,
+              "quote": "[OPTION TEXT=\"중앙정부 고위직 파티라니 뭔가 수상쩍은데\"]"
+            },
+            {
+              "scene_id": "blabla_aegis_001",
+              "line_start": 95,
+              "line_end": 95,
+              "quote": "그들이 샴페인을 들고 나누는 대화를 듣고 있으면"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__005",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "콤의 데이터를 중앙 정부 데이터 센터에 보관한 뒤 그 공개에 실제로 난색을 표한 정부 측 행위자를 가리킨다. 관계자 일반의 직무를 설명하는 문장이 아니고, 여러 인사를 통칭한다는 근거도 없다. 원문 전체에서 이 단위는 이 한 곳뿐이며 이름·직위가 나오지 않아 특정 관계자 한 사람인지 정부 측을 묶어 말한 것인지 정할 수 없다. 이름이 나오지 않는다는 것은 일반 낱말의 근거가 아니므로(규칙 3.2 직함·호칭) 보류한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "memories_teller_33",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "중앙 정부 관계자는 이 데이터를 공개하는 것에 난색을 표했다."
+        },
+        {
+          "scene_id": "memories_teller_33",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "헤르민과 같은 이유로 치부가 드러나는 것이 두려웠기 때문이겠지."
+        },
+        {
+          "scene_id": "memories_teller_33",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "콤의 모든 데이터는 백업되어 나와 중앙 정부 데이터 센터에 보관되었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "요약 지문에서 데이터 공개를 꺼린 중앙 정부 측 인사들을 뭉뚱그려 말한 표현으로 읽을 수도 있다. 단·복수 표지가 없어 어느 쪽인지 원문이 가르지 않는다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "memories_teller_33",
+              "line_start": 7,
+              "line_end": 7,
+              "quote": "중앙 정부 관계자는 이 데이터를 공개하는 것에 난색을 표했다."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__006",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부군",
+          "entity_type": "organization",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "여러 이야기에서 방주 중앙 정부의 정규 군 조직을 가리키는 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "세르반_03",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "중앙 정부군을 움직일 수는 없는 겁니까?"
+        },
+        {
+          "scene_id": "privaty_04",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "프리바티: 중앙 정부군도 트라이앵글도 그만두고 싶지 않아요."
+        },
+        {
+          "scene_id": "blabla_snowwhite_003",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "중앙 정부군 인트라넷에 접속해 지휘관 [코너 윌슨]을 조회해 보았다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__007",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부군",
+          "entity_type": "organization",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "U006 '중앙 정부군'의 붙여쓰기 변형 표기로, M.M.R. 시설에 배속된 병력을 포함해 동일한 방주 중앙 정부의 군 조직을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d.ark_hero_04",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "잉그리드: M.M.R. 산하 중앙정부군에 넘기라는 명령이 말이다."
+        },
+        {
+          "scene_id": "d.ark_hero_10",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "엑시아: 무엇보다 건물 안의 보초는- 인간인 중앙정부군으로 이루어져 있습니다-"
+        },
+        {
+          "scene_id": "ice_dragon_saga_18",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "길로틴: 방주 내 테러를 계획한 [일렉트릭 쇼크] 스쿼드를 붙잡아 중앙정부군에게 넘기는 거였지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__008",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "현장에 투입된 '양산형 니케들'의 대사에 붙은 소속·역할 라벨로, 특정 개인의 고유 이름이 아니라 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_43_11",
+          "line_start": 159,
+          "line_end": 159,
+          "quote": "자욱한 연기 너머에서, 양산형 니케들이 모습을 드러냈다."
+        },
+        {
+          "scene_id": "main_43_11",
+          "line_start": 161,
+          "line_end": 161,
+          "quote": "중앙 정부 니케: 목표 발견. 확보하겠습니다."
+        },
+        {
+          "scene_id": "main_43_11",
+          "line_start": 191,
+          "line_end": 191,
+          "quote": "양산형 니케가 쓰러진 프리 랫의 손가락을 바라본다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__009",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 니케 관리부",
+          "entity_type": "organization",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "여러 이야기에서 지휘관의 소속 부서 및 고위 간부들이 속한 기관으로 일관되게 언급되는 중앙 정부 산하 특정 부서다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_00_00",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "[OPTION TEXT=\"중앙 정부 니케 관리부.\"]"
+        },
+        {
+          "scene_id": "license_to_kill_10",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "사장은 중앙 정부 니케 관리부의 고위 간부 몇과 연줄이 있었으며,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 데이터베이스",
+          "entity_type": "concept",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "메인 스토리 여러 장에서 동일한 명칭으로 언급되는 중앙 정부의 공식 기록 데이터베이스 시스템이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_18",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "아이리: 감찰 부대라 보통의 니케들에 비해 엄청 큰 기록 열람 권한을 가지고는 있어서, 바로 중앙 정부 데이터베이스를 뒤졌죠."
+        },
+        {
+          "scene_id": "main_12_09",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "잉그리드: 중앙 정부 데이터베이스에 정보가 있긴 하지만."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__011",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 데이터 센터",
+          "entity_type": "location",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "콤의 백업 데이터가 보관된 중앙 정부의 특정 데이터 보관 시설이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "memories_teller_33",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "콤의 모든 데이터는 백업되어 나와 중앙 정부 데이터 센터에 보관되었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "뒤이어 '중앙 정부의 병사들'로 풀어 쓰이는 복수 보통 표현으로, 특정 고유 집단명이 아니라 중앙 정부 소속 일반 병사들을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_04",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "뚫린 벽 너머로 당황하고 있는 중앙 정부 병사들이 보인다."
+        },
+        {
+          "scene_id": "ark_guardian_04",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "중앙 정부의 병사들이 부리나케 달려와 벽에 뚫린 구멍을 바라보았다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__013",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 본부",
+          "entity_type": "location",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "내부에 리페어 센터가 위치한 중앙 정부의 본부 시설을 가리키는 특정 장소 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_03",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "지휘관: 어떻게, 중앙 정부 본부에 있는 리페어 센터는 뭐가 좀 다른가?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__014",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 사령부",
+          "entity_type": "organization",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "엔더슨이 부사령관으로 재직하며 정화 시퀀스 권한 등을 보유한 중앙 정부의 핵심 군령 기관이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_08",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "엔더슨: 반갑네. 중앙 정부 사령부에서 부사령관을 맡고 있는."
+        },
+        {
+          "scene_id": "main_08_05",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "그건 중앙 정부 사령부랑 정보부만 가능함"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__015",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 사무소",
+          "entity_type": "location",
+          "entity_key": "E11"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "여러 에피소드에서 지휘관들이 작전 보고서와 서류를 제출하러 방문하는 방주 내 특정 시설이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_00",
+          "line_start": 183,
+          "line_end": 183,
+          "quote": "라피: 방주의 중앙 정부 사무소로 갈 겁니다."
+        },
+        {
+          "scene_id": "arkrangerblack_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "중앙 정부 사무소에 보고서를 제출하고 나왔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__016",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 인트라넷",
+          "entity_type": "concept",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "이모티콘 배포와 정보 전파가 이루어지는 중앙 정부의 내부 전산망을 가리키는 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_04",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "중앙 정부 소대장: 어, 어디서 들은 건 아니고 중앙 정부 인트라넷에 익명의 누군가가 적극적으로 전파를···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__017",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 정보부",
+          "entity_type": "organization",
+          "entity_key": "E13"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "시프티 등 오퍼레이터들이 소속되어 파견 현황과 정보를 관리하는 중앙 정부 산하 특정 부서다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_07",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "시프티: 저, 저는 중앙 정부 정보부 소속의···."
+        },
+        {
+          "scene_id": "unbreakable_sphere_00",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "시프티: 중앙 정부 정보부에 확인 결과,"
+        },
+        {
+          "scene_id": "중앙_정부_공식_00",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "중앙 정부 정보부 소속 오퍼레이터에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__018",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 제 1 부대",
+          "entity_type": "organization",
+          "entity_key": "E14"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "부사령관과 다수의 인간 부대원 및 프리바티가 속한 중앙 정부 산하 대테러 군 부대 조직이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "privaty_03",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "라피: 중앙 정부 제 1 부대는."
+        },
+        {
+          "scene_id": "privaty_02",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "율하: 제 1 부대 부사령관 님의 전언이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__019",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 제 1 부대",
+          "entity_type": "organization",
+          "entity_key": "E14"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "프리바티가 자신의 공식 소속으로 밝히는 부대로, U018 '중앙 정부 제 1 부대'의 띄어쓰기 변형 표기이며 같은 조직을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "command_center_08",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "프리바티: 지금 저는 메이드가 아니라 중앙정부 제1부대 소속으로 여기 와있습니다."
+        },
+        {
+          "scene_id": "privaty_03",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "라피: 중앙 정부 제 1 부대는."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__020",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 청사",
+          "entity_type": "location",
+          "entity_key": "E15"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "중앙 정부의 주요 조직이 모여 있는 방주 내 핵심 청사 건물을 가리키는 고유 시설명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line_start": 185,
+          "line_end": 185,
+          "quote": "방주로 올라와, 중앙 정부 청사에 도착했다."
+        },
+        {
+          "scene_id": "crow_00",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "크로우: [이에 분노한 수천 명의 시민들이 중앙 정부 청사 앞에 모여 들었으며,]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__021",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "에닉이 식스오에게 제어권을 빼앗길 경우 '방주의 중앙 제어 A.I.만 달라지는 형태'가 될 수 있다고 말하여, 특정 개체의 고유 이름이 아니라 방주를 중앙 제어하는 A.I.라는 역할·지위를 뜻함을 원문이 직접 보여 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_45_02",
+          "line_start": 157,
+          "line_end": 157,
+          "quote": "에닉: 방주의 제어권을 식스오에게 빼앗기게 됩니다."
+        },
+        {
+          "scene_id": "main_45_02",
+          "line_start": 165,
+          "line_end": 165,
+          "quote": "에닉: 조금의 변화도 없이, 방주의 중앙 제어 A.I.만 달라지는 형태일 수도 있죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__022",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U022" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'이 크루즈에는 중앙 제어 시스템이 설치되어 있는 것 같은뎨'라고 하여 선박 설비의 일반 기술 명칭으로 쓰였다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_05",
+          "line_start": 74,
+          "line_end": 74,
+          "quote": "일레그: 이 크루즈에는 중앙 제어 시스템이 설치되어 있는 것 같은뎨."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__023",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U023" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 첩보 관리실",
+          "entity_type": "organization",
+          "entity_key": "E16"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "바이퍼가 이그조틱 스쿼드의 공식 소속 부서로 밝히는 정보부 산하 특정 조직이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d-outsiders_03",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "바이퍼: 소속 부서는 정보부 산하,  중앙 첩보 관리실."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__024",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U024" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "'발전기 내 중앙 통제실'처럼 시설 수식어를 붙여 쓰고 같은 장면 뒤에서는 '통제실'로 줄여 부르는 일반 시설·구역 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "generator_01",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "···발전기 내 중앙 통제실."
+        },
+        {
+          "scene_id": "generator_01",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "맥스웰: 일단 통제실의 전력은 복구 완료."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__025",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U025" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중앙 정부 중앙 회의실",
+          "entity_type": "location",
+          "entity_key": "E17"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "여섯 장면 모두 '중앙 정부 중앙 회의실'로 표기되며 부사령관들과 3대 CEO, 에닉이 모이는 중앙 정부의 최고 회의실 하나를 일관되게 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_45_02",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "수 시간 전. 중앙 정부 중앙 회의실."
+        },
+        {
+          "scene_id": "main_45_02",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "엔더슨: 일개 지휘관이 중앙 회의실에 들어온 게 얼마 만이지?"
+        },
+        {
+          "scene_id": "chapter_49_05",
+          "line_start": 142,
+          "line_end": 142,
+          "quote": "방주. 중앙 정부 중앙 회의실."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__026",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U026" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중위",
+          "entity_type": "character",
+          "entity_key": "E18",
+          "qualifier": "NEW YEAR, NEW SWORD 근접 전투 스쿼드 담당 장교"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "과거 지상전 당시 홍련·장화가 속한 근접 전투 스쿼드를 맡아 직급으로 부르게 한 특정 인류연합군 장교 한 사람을 가리키며, 원문에 본명이 없고 작중에서 장화에게 살해당하는 미등록 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_07",
+          "line_start": 153,
+          "line_end": 153,
+          "quote": "홍련: 중위는 여전히 임무를 성공하라는 말뿐이고?"
+        },
+        {
+          "scene_id": "new_year_new_sword_05",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "인류연합군 장교: 직급으로 불러."
+        },
+        {
+          "scene_id": "new_year_new_sword_05",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "장화: 예~ 중위님."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__027",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U027" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중위",
+          "entity_type": "character",
+          "entity_key": "E18",
+          "qualifier": "NEW YEAR, NEW SWORD 근접 전투 스쿼드 담당 장교"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "U026 '중위'에 존칭 접미사가 붙은 호칭으로, 세 출현 모두 홍련·장화의 근접 전투 스쿼드 담당 인류연합군 장교(장화에게 베여 사망한 미등록 인물)를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_09",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "장화: 우리 게으름뱅이 중위님을 협박해서라도~"
+        },
+        {
+          "scene_id": "new_year_new_sword_10",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "???: 일어나! 지금··· 장화가··· 중위님을··· 크헉!"
+        },
+        {
+          "scene_id": "new_year_new_sword_12",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "장화: 중위님도 이 아이도."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__028",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U028" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "외계 생명체의 레이저 위력을 설명하며 언급한 일반 군용 차량 종류(보통 낱말)다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "UFO챈.zip_01",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "그리고 핵 같은데서 레이저를 쏘는데 중장갑차가 한 방에 뚫림."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__029",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U029" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "중추 전력 센터",
+          "entity_type": "location",
+          "entity_key": "E19"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "도시 관리 A.I. 고스트가 '중추 전력 센터'를 단독 시설명처럼 반복해 불러 미들 시티의 특정 시설 고유 이름으로도 읽히지만, 바로 이어 '미들 시티의 중추 전력이 활성화됩니다'라고 풀어 써 '중추 전력'을 담당하는 일반 시설 유형 표현으로도 비슷하게 읽힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "고스트_00",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "중추 전력 센터의 스위치가 내려간 것이 그 이유로 판단됩니다."
+        },
+        {
+          "scene_id": "고스트_00",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "중추 전력 센터의 가동을 확인했습니다."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "고스트_00",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "이를 수동으로 작동 시 미들 시티의 중추 전력이 활성화됩니다."
+        }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'미들 시티' 같은 고유 지명 없이 '중추 전력'과 '센터'가 결합한 보통 시설 표현으로도 읽히며, 직후 대사에서 '미들 시티의 중추 전력'으로 풀어 서술한다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "고스트_00",
+              "line_start": 73,
+              "line_end": 73,
+              "quote": "이를 수동으로 작동 시 미들 시티의 중추 전력이 활성화됩니다."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__030",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U030" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "병원·리페어 센터 내 중증 환자 병실을 뜻하는 일반 보통명사다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "bluewater_wisland_23",
+          "line_start": 107,
+          "line_end": 107,
+          "quote": "메어리: 늘 중환자실에 실려 왔다가."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__031",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U031" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "코인 러시 경품 진열대 중앙 상단에 놓인 보석(쥬얼) 목걸이로, 뒤이어 현금화하기 쉬운 장신구로 설명되는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_22_08",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "블랑: 주, 중앙 상단의 쥬얼 목걸이에요!"
+        },
+        {
+          "scene_id": "main_22_08",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "사쿠라: 도둑맞은 것은 쥬얼 목걸이. 현금화하기 쉬운 것을 가져갔군요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__032",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U032" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "쥰",
+          "entity_type": "character",
+          "entity_key": "E20"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "누아르가 루주와 나란히 언급하며 연수를 떠나 한 달간 코인 러시를 비웠다고 말한 동료 인물의 고유 이름이며, 레지스트리에 등록되어 있지 않다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_22_05",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "누아르: 루주랑 쥰도 연수 가서 한 달 동안 안 돌아오는데, 우리끼리 감당하기엔 너무 힘들어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__033",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U033" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "즉사(卽死)의 마안교",
+          "entity_type": "organization",
+          "entity_key": "E21"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "길로틴과 그 추종자들이 결성한 단체 블라방 모임의 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "guillotine_00",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "[MESSENGER_START TITLE=\"즉사(卽死)의 마안교\" PARTICIPANTS=\"방장봇,지휘관,길로틴,여명의루이자,나이트메어,어둠의다크니스\"]"
+        },
+        {
+          "scene_id": "guillotine_00",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "즉사(卽死)의 마안, 그 주인과 추종자들의 대회의장에 오신 것을 환영합니다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__034",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U034" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "즉사의 마안",
+          "entity_type": "concept",
+          "entity_key": "E22"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "현실 회상과 시뮬레이션 장면 전반에서 일관되게 길로틴의 특수 안구 능력을 가리키는 고유 명칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_02",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "길로틴: 지금부터 이 [즉사의 마안]으로 네놈들을 처리하겠다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_22",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "클로이: 그대, [즉사의 마안]을 갖고 있는 건가."
+        },
+        {
+          "scene_id": "ice_dragon_saga_24",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "메이든: [편익의 마왕]이니, [즉사의 마안]이니."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__035",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U035" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "유토피아 호의 운용을 맡은 다수의 홀로그램 설비를 가리키는 수식어가 붙은 복수 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_20",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "알프레드: 증강 현실 홀로그램들이 크루즈의 운용을 도맡아, 크루의 부담을 극단적으로 줄이는 방향을 선택했습니다유토."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__036",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U036" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "신분 확인용 사진 일반을 뜻하는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "bluewater_wisland_19",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "메어리: 다리가 불편한 503호 환자분의 딸아이 증명사진···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__037",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U037" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "길거리에서 주운 소지품을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_drake_006",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "길거리에서 지갑을 주웠다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__038",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U038" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "지구",
+          "entity_type": "location",
+          "entity_key": "E23"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "인류가 살아온 행성 지구를 가리키는 고유 지명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "romantic_valentine_14",
+          "line_start": 108,
+          "line_end": 108,
+          "quote": "스윗 조니 Ver.2.14: 그래··· 지구에서 첫 생명이 탄생했을 때부터···."
+        },
+        {
+          "scene_id": "기후변화보고서_02",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "지구의 인구수가 줄 거라는 의미에선 나쁘지 않을지도?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__039",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U039" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "스노우 화이트가 지네를 재료로 빚어 만든 경단을 뜻하는 수식어가 붙은 보통 음식 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_22",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "스노우 화이트: 받아라. 심혈을 기울여 만든 지네 경단이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__125__040",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U040" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "벽에 붙은 지도, 생존 물품 중 하나인 지도, 길 찾기용 지도를 각각 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "police_station_04",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "소다는 벽에 붙어 있던 테이프를 떼다 옆에 있던 지도까지 찢어버렸다."
+        },
+        {
+          "scene_id": "mori_03",
+          "line_start": 154,
+          "line_end": 154,
+          "quote": "나침반, 지도, 응급 키트, 밧줄, 야전 삽 등, 수많은 생존 물품이 그곳에 있었다."
+        },
+        {
+          "scene_id": "fading_affection_2221",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "\"마리안. 여긴 아까 왔던 길 같은데, 지도를 다시 살펴볼까?\""
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
