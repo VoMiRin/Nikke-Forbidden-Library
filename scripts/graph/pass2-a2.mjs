@@ -36,6 +36,7 @@ const __filename = fileURLToPath(import.meta.url);
 //   node scripts/graph/pass2-a2.mjs finish [--run=...]
 //   node scripts/graph/pass2-a2.mjs compare-check [--run=...]          (골라 보여 준 판정 ↔ 전부 보여 준 판정)
 //   node scripts/graph/pass2-a2.mjs b-update-preview [--run=...]       (A-2 뒤 B 갱신 미리 보기. B 결과는 고치지 않는다)
+//   node scripts/graph/pass2-a2.mjs promote --run=main                 (실행 결과 표 + a2/curation.json → 공식 표 data/graph/pass2/entities.json·terms.json)
 //   node scripts/graph/pass2-a2.mjs audit-input --wave=N [--rate=0.1] [--judge-family=gemini] [--run=...]
 //   node scripts/graph/pass2-a2.mjs audit-check --wave=N [--run=...]
 // build는 기계 작업이다. 표기가 무엇인지는 판정하지 않는다.
@@ -96,6 +97,9 @@ const RUN_DIRS = { pilot: 'a2-pilot', retest: 'a2-retest', retest2: 'a2-retest2'
 const runRoot = (run) => path.join(GRAPH_DATA_DIR, 'pass2', RUN_DIRS[run]);
 const RULES_PATH = path.resolve(GRAPH_DATA_DIR, '..', '..', 'docs', 'graphrag', 'GRAPH_RAG_PASS2_A2_RULES.md');
 const B_MERGED_PATH = path.join(GRAPH_DATA_DIR, 'pass2', 'merged', 'B_candidates.json');
+const CURATION_PATH = path.join(GRAPH_DATA_DIR, 'pass2', 'a2', 'curation.json');
+const OFFICIAL_ENTITIES_PATH = path.join(GRAPH_DATA_DIR, 'pass2', 'entities.json');
+const OFFICIAL_TERMS_PATH = path.join(GRAPH_DATA_DIR, 'pass2', 'terms.json');
 const pathsOf = (run) => {
   const root = runRoot(run);
   return {
@@ -908,6 +912,169 @@ export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS }) => {
 };
 
 // ---------------------------------------------------------------------------
+// 공식 표(초안 9절 3번·10번, 사용자 결정 2026-11-17). 실행 결과 표 + 사용자 승인 목록(curation) → data/graph/pass2/
+
+export const A2_CURATION_SCHEMA_VERSION = 'pass2-a2-curation-0.1.0';
+export const PASS2_OFFICIAL_SCHEMA_VERSION = 'pass2-official-0.1.0';
+
+/**
+ * 공식 표를 만든다. 샤드와 해소 파일은 고치지 않는다(회차 감사 도장 유지).
+ * curation:
+ * - merges: [{ groups, canonical_name, qualifier?, entity_type?, note }] 묶음을 넘어 같은 대상인 무리를 합친다.
+ * - separate: [{ groups, note }] 병합 후보였지만 따로 둔 무리(검토 기록).
+ * - type_changes: [{ group, entity_type, note }] 표기 묶음의 유형을 바꾼다(ID 유형으로는 바꾸지 않는다).
+ * - link_overrides: [{ link_id, link_type, target, note }] 판정을 바꿀 연결. 쓰는 쪽이 해소 항목에 덮어쓴다.
+ * 병합 후보(findMergeCandidates)의 모든 무리는 merges나 separate 중 하나에 있어야 한다.
+ * ID: 합치지 않은 무리는 실행 결과의 ID 그대로, 합친 무리는 대표 이름의 바탕 ID(겹치면 무리 키 해시를 붙인다).
+ */
+export const promoteA2 = ({ entities, terms, mergeCandidates = [], linkIds = new Set(), curation }) => {
+  const errors = [];
+  const err = (msg) => errors.push(msg);
+  const groups = new Map();
+  for (const g of [...entities, ...terms]) groups.set(g.group_key, { ...g });
+  if (curation?.schema_version !== A2_CURATION_SCHEMA_VERSION) err(`curation schema_version은 "${A2_CURATION_SCHEMA_VERSION}"이어야 한다`);
+  const merges = curation?.merges ?? [];
+  const separate = curation?.separate ?? [];
+  const typeChanges = curation?.type_changes ?? [];
+  const linkOverrides = curation?.link_overrides ?? [];
+
+  const placed = new Map(); // group_key → 'merges[i]' | 'separate[i]'
+  const place = (gk, where) => {
+    if (!groups.has(gk)) return err(`${where}: 무리 ${gk}가 실행 결과 표에 없다`);
+    if (placed.has(gk)) return err(`${where}: 무리 ${gk}가 ${placed.get(gk)}에도 있다`);
+    placed.set(gk, where);
+  };
+
+  typeChanges.forEach((c, i) => {
+    const where = `type_changes[${i}]`;
+    const g = groups.get(c.group);
+    if (!g) return err(`${where}: 무리 ${c.group}가 실행 결과 표에 없다`);
+    if (g.entity_id) return err(`${where}: ${c.group}는 ID 유형이다. 표기 묶음만 유형을 바꾼다`);
+    if (!A2_ENTITY_TYPES.has(c.entity_type) || ID_PREFIX[c.entity_type]) return err(`${where}: entity_type은 ID 없는 유형이어야 한다`);
+    if (!isNonEmptyString(c.note)) err(`${where}: note를 적는다`);
+    g.entity_type = c.entity_type;
+  });
+
+  merges.forEach((m, i) => {
+    const where = `merges[${i}]`;
+    if (!Array.isArray(m.groups) || m.groups.length < 2) return err(`${where}: groups는 무리 2개 이상이다`);
+    if (!isNonEmptyString(m.canonical_name)) err(`${where}: canonical_name을 적는다`);
+    if (!isNonEmptyString(m.note)) err(`${where}: note를 적는다`);
+    for (const gk of m.groups) place(gk, where);
+    const gs = m.groups.map((gk) => groups.get(gk)).filter(Boolean);
+    if (gs.length !== m.groups.length) return;
+    const types = [...new Set(gs.map((g) => g.entity_type))];
+    if (m.entity_type !== undefined && !A2_ENTITY_TYPES.has(m.entity_type)) err(`${where}: entity_type이 A-2 유형이 아니다`);
+    if (types.length > 1 && !m.entity_type) err(`${where}: 유형이 섞였다(${types.join(', ')}). entity_type을 적는다`);
+    const type = m.entity_type ?? types[0];
+    const idKinds = new Set(gs.map((g) => Boolean(g.entity_id)));
+    if (idKinds.size > 1) err(`${where}: ID 유형 무리와 표기 묶음을 한데 합칠 수 없다`);
+    else if (Boolean(ID_PREFIX[type]) !== idKinds.has(true)) err(`${where}: entity_type ${type}이 무리 종류(${idKinds.has(true) ? 'ID 유형' : '표기 묶음'})와 맞지 않는다`);
+  });
+  separate.forEach((s, i) => {
+    const where = `separate[${i}]`;
+    if (!Array.isArray(s.groups) || !s.groups.length) return err(`${where}: groups를 적는다`);
+    if (!isNonEmptyString(s.note)) err(`${where}: note를 적는다`);
+    for (const gk of s.groups) place(gk, where);
+  });
+  for (const c of mergeCandidates) {
+    const missing = c.groups.map((g) => g.group_key).filter((gk) => !placed.has(gk));
+    if (missing.length) err(`병합 후보 ${c.signature}: 검토하지 않은 무리 ${missing.join(', ')}(merges나 separate에 넣는다)`);
+  }
+  linkOverrides.forEach((o, i) => {
+    const where = `link_overrides[${i}]`;
+    if (!linkIds.has(o.link_id)) err(`${where}: 연결 ${o.link_id}가 해소 파일에 없다`);
+    if (!A2_LINK_TYPES[o.link_type]) err(`${where}: link_type은 ${Object.keys(A2_LINK_TYPES).join(' | ')} 중 하나다`);
+    if (o.link_type === 'new_entity') err(`${where}: new_entity로 바꾸려면 무리가 있어야 한다. 실행에서 다시 판정한다`);
+    if (o.target !== null && (typeof o.target !== 'object' || !A2_ENTITY_TYPES.has(o.target?.entity_type) || !isNonEmptyString(o.target?.name))) err(`${where}: target은 null이거나 name·entity_type을 가진 객체다`);
+    if (!isNonEmptyString(o.note)) err(`${where}: note를 적는다`);
+  });
+  if (errors.length) return { errors };
+
+  // 합친 무리와 혼자인 무리
+  const mergeOf = new Map();
+  for (const m of merges) for (const gk of m.groups) mergeOf.set(gk, m);
+  const units = []; // { groups:[g], canonical_name, qualifier, entity_type, note, merged }
+  const seen = new Set();
+  for (const g of groups.values()) {
+    if (seen.has(g.group_key)) continue;
+    const m = mergeOf.get(g.group_key);
+    if (!m) {
+      seen.add(g.group_key);
+      units.push({ groups: [g], canonical_name: g.canonical_name, qualifier: g.qualifier ?? null, entity_type: g.entity_type, note: null, merged: false });
+      continue;
+    }
+    for (const gk of m.groups) seen.add(gk);
+    const gs = [...m.groups].sort().map((gk) => groups.get(gk));
+    units.push({ groups: gs, canonical_name: m.canonical_name, qualifier: m.qualifier ?? null, entity_type: m.entity_type ?? gs[0].entity_type, note: m.note, merged: true });
+  }
+
+  // ID: 혼자인 무리는 그대로, 합친 무리는 바탕 ID(혼자인 무리의 ID·바탕 ID나 다른 합친 무리와 겹치면 해시)
+  const fixed = units.filter((u) => !u.merged && u.groups[0].entity_id);
+  const fixedIds = new Set([...fixed.map((u) => u.groups[0].entity_id), ...fixed.map((u) => `${ID_PREFIX[u.entity_type]}${slugOf(u.canonical_name)}`)]);
+  const bases = new Map();
+  for (const u of units.filter((x) => x.merged && ID_PREFIX[x.entity_type])) {
+    u.base_id = `${ID_PREFIX[u.entity_type]}${slugOf(u.canonical_name)}`;
+    bases.set(u.base_id, (bases.get(u.base_id) ?? 0) + 1);
+  }
+  for (const u of units) {
+    if (!ID_PREFIX[u.entity_type]) continue;
+    if (!u.merged) u.entity_id = u.groups[0].entity_id;
+    else u.entity_id = fixedIds.has(u.base_id) || bases.get(u.base_id) > 1 ? `${u.base_id}__${sha256(u.groups.map((g) => g.group_key).join('|')).slice(0, 6)}` : u.base_id;
+  }
+  const finalIds = units.filter((u) => u.entity_id).map((u) => u.entity_id);
+  if (new Set(finalIds).size !== finalIds.length) throw new Error('공식 표 ID가 겹친다');
+
+  const sortedUnion = (arrs) => [...new Set(arrs.flat())].sort();
+  const idMap = {};
+  const groupMap = {};
+  const outEntities = [];
+  const outTerms = [];
+  for (const u of units) {
+    const rec = {
+      entity_type: u.entity_type,
+      canonical_name: u.canonical_name,
+      qualifier: u.qualifier,
+      title_ids: sortedUnion(u.groups.map((g) => g.title_ids ?? [])),
+      item_count: u.groups.reduce((n, g) => n + (g.item_count ?? 0), 0),
+      source_groups: u.groups.map((g) => g.group_key),
+      ...(u.note ? { note: u.note } : {}),
+    };
+    if (u.entity_id) {
+      const sourceIds = u.groups.map((g) => g.entity_id).sort();
+      for (const id of sourceIds) idMap[id] = u.entity_id;
+      for (const g of u.groups) groupMap[g.group_key] = { entity_id: u.entity_id };
+      outEntities.push({ entity_id: u.entity_id, ...rec, surface_labels: sortedUnion([[u.canonical_name], ...u.groups.map((g) => [g.canonical_name, ...(g.surfaces ?? [])])]), source_ids: sourceIds });
+    } else {
+      const termKey = u.groups[0].group_key;
+      for (const g of u.groups) groupMap[g.group_key] = { term_key: termKey };
+      outTerms.push({ term_key: termKey, ...rec, surfaces: sortedUnion(u.groups.map((g) => g.surfaces ?? [])) });
+    }
+  }
+  outEntities.sort((a, b) => a.entity_id.localeCompare(b.entity_id));
+  outTerms.sort((a, b) => a.canonical_name.localeCompare(b.canonical_name) || a.term_key.localeCompare(b.term_key));
+  return {
+    errors: [],
+    entities: outEntities,
+    terms: outTerms,
+    idMap,
+    groupMap,
+    linkOverrides: linkOverrides.map((o) => ({ link_id: o.link_id, link_type: o.link_type, verdict: A2_LINK_TYPES[o.link_type], target: o.target, note: o.note })),
+    stats: {
+      merges: merges.length,
+      merged_groups: merges.reduce((n, m) => n + m.groups.length, 0),
+      separate: separate.length,
+      type_changes: typeChanges.length,
+      link_overrides: linkOverrides.length,
+      entities_before: entities.length,
+      entities_after: outEntities.length,
+      terms_before: terms.length,
+      terms_after: outTerms.length,
+    },
+  };
+};
+
+// ---------------------------------------------------------------------------
 // 제시·미제시 출현의 판정 불일치(초안 12.5절). 원인(표본·판정자 차이·추가 문맥)은 원문 검토로 따로 가른다
 
 export const compareSampling = ({ main, check }) => {
@@ -1258,6 +1425,31 @@ const main = async () => {
     const userItems = m.resolutions.filter((r) => r.decided_by === 'user').length;
     if (m.userChecks.length) console.log(`[finish] 사용자 확인 표기: 출현 ${m.userChecks.length}곳(항목 ${userItems}건), 판정자와 다른 출현 ${disagree.length}곳`);
     console.log(`[finish] → ${relPath(P.merged)}/`);
+    return;
+  }
+
+  if (cmd === 'promote') {
+    if (run !== 'main') throw new Error('promote는 본 실행(--run=main) 결과로만 공식 표를 만든다');
+    const ent = readJsonIfExists(path.join(P.merged, 'entities.json'));
+    const trm = readJsonIfExists(path.join(P.merged, 'terms.json'));
+    const res = readJsonIfExists(path.join(P.merged, 'A2_resolutions.json'));
+    if (!ent || !trm || !res) throw new Error('A-2 병합 결과(finish)가 없다');
+    const curationText = fs.readFileSync(CURATION_PATH, 'utf8');
+    const out = promoteA2({ entities: ent.entities, terms: trm.terms, mergeCandidates: ent.merge_candidates, linkIds: new Set(res.resolutions.map((r) => r.link_id).filter(Boolean)), curation: JSON.parse(curationText) });
+    if (out.errors.length) {
+      for (const e of out.errors) console.log(`  ERROR ${e}`);
+      console.log(`[promote] 승인 목록 오류 ${out.errors.length}건. 공식 표를 쓰지 않았다`);
+      process.exitCode = 1;
+      return;
+    }
+    const stamp = { schema_version: PASS2_OFFICIAL_SCHEMA_VERSION, generated_at: new Date().toISOString(), source: { run, merged_generated_at: ent.generated_at, curation: relPath(CURATION_PATH), curation_sha256: sha256(curationText) } };
+    await writeJsonAtomic(OFFICIAL_ENTITIES_PATH, { ...stamp, note: 'Pass 2 공식 엔티티 표(인물 char2_·스쿼드 squad_·조직 org_). id_map은 실행 결과 ID → 공식 ID, group_map은 실행 결과 무리 → 공식 ID/표기 묶음, link_overrides는 해소 항목에 덮어쓸 판정이다', entities: out.entities, id_map: out.idMap, group_map: out.groupMap, link_overrides: out.linkOverrides });
+    await writeJsonAtomic(OFFICIAL_TERMS_PATH, { ...stamp, note: 'Pass 2 공식 표기 묶음(장소·아이템·개념·사건·종족, ID 없음). term_key는 대표 무리 키다', terms: out.terms });
+    const s = out.stats;
+    const byType = out.entities.reduce((acc, e) => ((acc[e.entity_type] = (acc[e.entity_type] ?? 0) + 1), acc), {});
+    console.log(`[promote] 합침 ${s.merges}건(무리 ${s.merged_groups}개), 따로 둠 ${s.separate}건, 유형 바꿈 ${s.type_changes}건, 판정 바꿈 ${s.link_overrides}건`);
+    console.log(`[promote] 엔티티 ${s.entities_before} → ${s.entities_after} ${JSON.stringify(byType)}, 표기 묶음 ${s.terms_before} → ${s.terms_after}`);
+    console.log(`[promote] → ${relPath(OFFICIAL_ENTITIES_PATH)}, ${relPath(OFFICIAL_TERMS_PATH)}`);
     return;
   }
 

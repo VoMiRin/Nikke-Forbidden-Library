@@ -11,6 +11,8 @@ import {
   mergeA2,
   packUnits,
   previewBUpdate,
+  promoteA2,
+  A2_CURATION_SCHEMA_VERSION,
   resolveOccurrences,
   sampleA2Audit,
   sampleOccurrences,
@@ -422,4 +424,76 @@ test('finish 예외 집계: 기본은 빼고 이야기·장면·출현 범위와
   ] };
   assert.deepEqual(exceptionScopeCounts(shard), { total: 5, 이야기: 2, '이야기+장면': 1, 장면: 1, 출현: 1 });
   assert.deepEqual(exceptionScopeCounts({ candidate_links: [{ scope: { default: true } }] }), { total: 0 });
+});
+
+test('공식 표: 합친 무리는 바탕 ID, 혼자인 무리는 ID 그대로, 표기 묶음은 대표 무리 키', () => {
+  const ent = (gk, id, name, type = 'character', extra = {}) => ({ group_key: gk, bundle_id: gk.split('#')[0], entity_key: gk.split('#')[1], entity_id: id, canonical_name: name, qualifier: null, entity_type: type, surfaces: [name], units: [], title_ids: [`t_${gk}`], item_count: 2, ...extra });
+  const entities = [
+    ent('A2__001#E1', 'char2_퀸', '퀸', 'character', { item_count: 10 }),
+    ent('A2__002#E1', 'char2_랩쳐_퀸__aaaaaa', '랩쳐 퀸', 'character', { surfaces: ['하트 여왕'] }),
+    ent('A2__003#E1', 'char2_엄마__bbbbbb', '엄마'),
+    ent('A2__004#E1', 'char2_엄마__cccccc', '엄마'),
+    ent('A2__005#E1', 'char2_엄마__dddddd', '엄마'),
+    ent('A2__006#E1', 'squad_메티스', '메티스', 'squad'),
+  ];
+  const terms = [
+    { ...ent('A2__007#E1', undefined, '다크 매터', 'item'), entity_id: undefined },
+    { ...ent('A2__008#E1', undefined, '다크 매터', 'item', { surfaces: ['검은 물'] }), entity_id: undefined },
+    { ...ent('A2__009#E1', undefined, '릴리바이스 꽃', 'item'), entity_id: undefined },
+  ];
+  const mergeCandidates = [
+    { signature: 'character|엄마', groups: [{ group_key: 'A2__003#E1' }, { group_key: 'A2__004#E1' }, { group_key: 'A2__005#E1' }] },
+  ];
+  const curation = {
+    schema_version: A2_CURATION_SCHEMA_VERSION,
+    merges: [
+      { groups: ['A2__001#E1', 'A2__002#E1'], canonical_name: '퀸', qualifier: '초대 랩쳐 수장', note: '같은 개체' },
+      { groups: ['A2__003#E1', 'A2__004#E1'], canonical_name: '엄마', note: '같은 사람' },
+      { groups: ['A2__007#E1', 'A2__008#E1'], canonical_name: '다크 매터', note: '검은 물 = 다크 매터' },
+    ],
+    separate: [{ groups: ['A2__005#E1'], note: '다른 사람' }],
+    type_changes: [{ group: 'A2__009#E1', entity_type: 'faction_or_species', note: '꽃 종류' }],
+    link_overrides: [{ link_id: 'A2__009__001', link_type: 'unresolved', target: { ref: 'entity', entity_id: null, name: '소녀', entity_type: 'character' }, note: '같은 장면 기준' }],
+  };
+  const out = promoteA2({ entities, terms, mergeCandidates, linkIds: new Set(['A2__009__001']), curation });
+  assert.deepEqual(out.errors, []);
+  const byId = new Map(out.entities.map((e) => [e.entity_id, e]));
+  // 퀸: 바탕 ID char2_퀸이 혼자인 무리와 겹치지 않으므로 그대로
+  assert.ok(byId.has('char2_퀸'));
+  assert.deepEqual(byId.get('char2_퀸').source_groups, ['A2__001#E1', 'A2__002#E1']);
+  assert.equal(byId.get('char2_퀸').item_count, 12);
+  assert.deepEqual(byId.get('char2_퀸').surface_labels, ['랩쳐 퀸', '퀸', '하트 여왕']);
+  assert.equal(out.idMap['char2_랩쳐_퀸__aaaaaa'], 'char2_퀸');
+  // 엄마: 혼자인 엄마(dddddd)가 남으므로 합친 무리 ID는 바탕 ID가 아니라 해시를 붙인다(char2_엄마는 쓰지 않는다)
+  const momIds = out.entities.filter((e) => e.canonical_name === '엄마').map((e) => e.entity_id).sort();
+  assert.equal(momIds.length, 2);
+  assert.ok(momIds.includes('char2_엄마__dddddd'));
+  assert.ok(!momIds.includes('char2_엄마'));
+  assert.equal(out.idMap['char2_엄마__bbbbbb'], out.idMap['char2_엄마__cccccc']);
+  // 혼자인 스쿼드는 ID 그대로
+  assert.ok(byId.has('squad_메티스'));
+  // 표기 묶음: 합친 묶음은 대표 무리 키, 유형 바꿈 반영
+  const dark = out.terms.find((x) => x.canonical_name === '다크 매터');
+  assert.equal(dark.term_key, 'A2__007#E1');
+  assert.deepEqual(dark.surfaces, ['검은 물', '다크 매터']);
+  assert.deepEqual(out.groupMap['A2__008#E1'], { term_key: 'A2__007#E1' });
+  assert.equal(out.terms.find((x) => x.canonical_name === '릴리바이스 꽃').entity_type, 'faction_or_species');
+  assert.equal(out.linkOverrides[0].verdict, '판단 보류');
+  assert.equal(out.stats.entities_after, 4);
+  assert.equal(out.stats.terms_after, 2);
+});
+
+test('공식 표: 검토 안 한 병합 후보, 두 번 쓴 무리, ID·표기 섞기, 없는 연결은 오류', () => {
+  const g = (gk, id, type) => ({ group_key: gk, bundle_id: gk.split('#')[0], entity_id: id, canonical_name: 'x', entity_type: type, surfaces: ['x'], title_ids: [], item_count: 1 });
+  const entities = [g('A2__001#E1', 'char2_x__1', 'character'), g('A2__002#E1', 'char2_x__2', 'character'), g('A2__003#E1', 'org_x', 'organization')];
+  const terms = [g('A2__004#E1', undefined, 'item')];
+  const base = { schema_version: A2_CURATION_SCHEMA_VERSION };
+  const cand = [{ signature: 'character|x', groups: [{ group_key: 'A2__001#E1' }, { group_key: 'A2__002#E1' }] }];
+  const has = (out, re) => out.errors.some((e) => re.test(e));
+  assert.ok(has(promoteA2({ entities, terms, mergeCandidates: cand, curation: base }), /검토하지 않은 무리/));
+  assert.ok(has(promoteA2({ entities, terms, curation: { ...base, merges: [{ groups: ['A2__001#E1', 'A2__002#E1'], canonical_name: 'x', note: 'n' }], separate: [{ groups: ['A2__001#E1'], note: 'n' }] } }), /에도 있다/));
+  assert.ok(has(promoteA2({ entities, terms, curation: { ...base, merges: [{ groups: ['A2__001#E1', 'A2__004#E1'], canonical_name: 'x', entity_type: 'character', note: 'n' }] } }), /한데 합칠 수 없다/));
+  assert.ok(has(promoteA2({ entities, terms, curation: { ...base, merges: [{ groups: ['A2__001#E1', 'A2__003#E1'], canonical_name: 'x', note: 'n' }] } }), /유형이 섞였다/));
+  assert.ok(has(promoteA2({ entities, terms, curation: { ...base, link_overrides: [{ link_id: 'A2__009__009', link_type: 'unresolved', target: null, note: 'n' }] } }), /해소 파일에 없다/));
+  assert.ok(has(promoteA2({ entities, terms, curation: { ...base, type_changes: [{ group: 'A2__004#E1', entity_type: 'character', note: 'n' }] } }), /ID 없는 유형/));
 });
