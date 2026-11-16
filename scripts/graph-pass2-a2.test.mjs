@@ -12,6 +12,8 @@ import {
   packUnits,
   previewBUpdate,
   promoteA2,
+  officialResolutions,
+  applyBUpdate,
   A2_CURATION_SCHEMA_VERSION,
   resolveOccurrences,
   sampleA2Audit,
@@ -496,4 +498,37 @@ test('공식 표: 검토 안 한 병합 후보, 두 번 쓴 무리, ID·표기 �
   assert.ok(has(promoteA2({ entities, terms, curation: { ...base, merges: [{ groups: ['A2__001#E1', 'A2__003#E1'], canonical_name: 'x', note: 'n' }] } }), /유형이 섞였다/));
   assert.ok(has(promoteA2({ entities, terms, curation: { ...base, link_overrides: [{ link_id: 'A2__009__009', link_type: 'unresolved', target: null, note: 'n' }] } }), /해소 파일에 없다/));
   assert.ok(has(promoteA2({ entities, terms, curation: { ...base, type_changes: [{ group: 'A2__004#E1', entity_type: 'character', note: 'n' }] } }), /ID 없는 유형/));
+});
+
+test('B 갱신: 공식 ID로 바꾼 해소 항목, 판정 바꿈 반영, 채움 줄만 entity_id를 넣고 유형이 다르면 멈춘다', () => {
+  const official = {
+    id_map: { 'org_x__aaaaaa': 'org_x', 'char2_y': 'char2_y' },
+    link_overrides: [{ link_id: 'A2__001__002', link_type: 'unresolved', verdict: '판단 보류', target: null, note: 'n' }],
+  };
+  const res = officialResolutions([
+    { link_id: 'A2__001__001', link_type: 'new_entity', assigned_entity_id: 'org_x__aaaaaa', group_key: 'A2__001#E1', decided_by: 'judge' },
+    { link_id: 'A2__001__002', link_type: 'generic_term', target: null, decided_by: 'judge' },
+    { link_id: null, link_type: 'alias', target: { entity_id: 'char_지휘관' }, decided_by: 'user' },
+  ], official);
+  assert.equal(res[0].assigned_entity_id, 'org_x');
+  assert.equal(res[1].link_type, 'unresolved');
+  assert.equal(res[1].decided_by, 'curation');
+  assert.equal(res[2].decided_by, 'user');
+  const entities = [{ entity_id: 'org_x', entity_type: 'organization' }, { entity_id: 'char2_y', entity_type: 'character' }];
+  const bLinks = [
+    { link_id: 'B1__t__001', target: [{ ref: 'entity', entity_id: null, name: 'X', entity_type: 'organization' }] },
+    { link_id: 'B1__t__002', target: [{ ref: 'entity', entity_id: null, name: 'Z', entity_type: 'character' }] },
+  ];
+  const rows = [
+    { link_id: 'B1__t__001', target_index: 0, result: 'fill', entity_id: 'org_x', basis: '근거 장면', evidence_scenes: ['s1'] },
+    { link_id: 'B1__t__002', target_index: 0, result: 'keep', basis: '없음' },
+  ];
+  const { links, filled } = applyBUpdate({ bLinks, rows, entities });
+  assert.equal(filled, 1);
+  assert.equal(links[0].target[0].entity_id, 'org_x');
+  assert.equal(links[0].target[0].a2_fill.basis, '근거 장면');
+  assert.equal(links[1].target[0].entity_id, null);
+  assert.equal(bLinks[0].target[0].entity_id, null); // 원본은 고치지 않는다
+  assert.throws(() => applyBUpdate({ bLinks, rows: [{ ...rows[0], entity_id: 'char2_y' }], entities }), /유형이 다르다/);
+  assert.throws(() => applyBUpdate({ bLinks, rows: [{ ...rows[0], entity_id: 'org_없음' }], entities }), /공식 표·레지스트리에 없다/);
 });

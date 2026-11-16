@@ -36,6 +36,7 @@ const __filename = fileURLToPath(import.meta.url);
 //   node scripts/graph/pass2-a2.mjs finish [--run=...]
 //   node scripts/graph/pass2-a2.mjs compare-check [--run=...]          (골라 보여 준 판정 ↔ 전부 보여 준 판정)
 //   node scripts/graph/pass2-a2.mjs b-update-preview [--run=...]       (A-2 뒤 B 갱신 미리 보기. B 결과는 고치지 않는다)
+//   node scripts/graph/pass2-a2.mjs b-update --run=main                (공식 표로 B 미등록 대상 ID 채움 → data/graph/pass2/merged/B_candidates_a2.json)
 //   node scripts/graph/pass2-a2.mjs promote --run=main                 (실행 결과 표 + a2/curation.json → 공식 표 data/graph/pass2/entities.json·terms.json)
 //   node scripts/graph/pass2-a2.mjs audit-input --wave=N [--rate=0.1] [--judge-family=gemini] [--run=...]
 //   node scripts/graph/pass2-a2.mjs audit-check --wave=N [--run=...]
@@ -1169,6 +1170,49 @@ export const previewBUpdate = ({ bLinks, entities, resolutions, store }) => {
   return out;
 };
 
+/**
+ * 공식 표(promote)를 해소 항목에 입힌다: 실행 결과 ID → 공식 ID(id_map), 승인 목록의 판정 바꿈(link_overrides).
+ * 사용자 확인(USER_DECISIONS)으로 덮어쓴 항목은 바꾸지 않는다.
+ */
+export const officialResolutions = (resolutions, official) => {
+  const overrides = new Map((official.link_overrides ?? []).map((o) => [o.link_id, o]));
+  const idMap = official.id_map ?? {};
+  return resolutions.map((r) => {
+    const o = r.decided_by !== 'user' ? overrides.get(r.link_id) : null;
+    if (o) {
+      const { assigned_entity_id: _a, group_key: _g, ...rest } = r;
+      return { ...rest, link_type: o.link_type, verdict: o.verdict, confidence: '판단 보류', target: o.target, decided_by: 'curation', note: o.note };
+    }
+    if (r.assigned_entity_id) return { ...r, assigned_entity_id: idMap[r.assigned_entity_id] ?? r.assigned_entity_id };
+    return r;
+  });
+};
+
+/**
+ * B 갱신(초안 8절 5번): 미리 보기의 채움 줄만 B 대상에 entity_id를 넣는다. 나머지는 그대로 둔다.
+ * 채운 대상에는 a2_fill(근거)을 붙인다. 공식 표에 없거나 유형이 다른 ID는 멈춘다.
+ */
+export const applyBUpdate = ({ bLinks, rows, entities, registry = new Map() }) => {
+  const byId = new Map(entities.map((e) => [e.entity_id, e]));
+  const fills = new Map(rows.filter((r) => r.result === 'fill').map((r) => [`${r.link_id}#${r.target_index}`, r]));
+  let filled = 0;
+  const links = bLinks.map((link) => {
+    const target = (link.target ?? []).map((t, j) => {
+      const row = fills.get(`${link.link_id}#${j}`);
+      if (!row) return t;
+      const ent = byId.get(row.entity_id) ?? registry.get(row.entity_id);
+      if (!ent) throw new Error(`${link.link_id}: 채울 ID ${row.entity_id}가 공식 표·레지스트리에 없다`);
+      const type = ent.entity_type ?? 'character';
+      if (type !== t.entity_type) throw new Error(`${link.link_id}: 유형이 다르다(B ${t.entity_type} / ${row.entity_id} ${type})`);
+      filled += 1;
+      return { ...t, entity_id: row.entity_id, a2_fill: { basis: row.basis, evidence_scenes: row.evidence_scenes } };
+    });
+    return { ...link, target };
+  });
+  if (filled !== fills.size) throw new Error(`채움 줄 ${fills.size}건 중 ${filled}건만 B 대상과 맞았다`);
+  return { links, filled };
+};
+
 // ---------------------------------------------------------------------------
 // 감사(초안 12.6절)
 
@@ -1450,6 +1494,54 @@ const main = async () => {
     console.log(`[promote] 합침 ${s.merges}건(무리 ${s.merged_groups}개), 따로 둠 ${s.separate}건, 유형 바꿈 ${s.type_changes}건, 판정 바꿈 ${s.link_overrides}건`);
     console.log(`[promote] 엔티티 ${s.entities_before} → ${s.entities_after} ${JSON.stringify(byType)}, 표기 묶음 ${s.terms_before} → ${s.terms_after}`);
     console.log(`[promote] → ${relPath(OFFICIAL_ENTITIES_PATH)}, ${relPath(OFFICIAL_TERMS_PATH)}`);
+    return;
+  }
+
+  if (cmd === 'b-update') {
+    if (run !== 'main') throw new Error('b-update는 공식 표(본 실행)로만 한다');
+    const res = readJsonIfExists(path.join(P.merged, 'A2_resolutions.json'));
+    const official = readJsonIfExists(OFFICIAL_ENTITIES_PATH);
+    const b = readJsonIfExists(B_MERGED_PATH);
+    if (!res || !official || !b) throw new Error('A-2 해소(finish)·공식 표(promote)·B 병합 결과 중 없는 것이 있다');
+    const store = new SceneStore();
+    const resolutions = officialResolutions(res.resolutions, official);
+    const rows = previewBUpdate({ bLinks: b.links, entities: official.entities, resolutions, store });
+    const { links, filled } = applyBUpdate({ bLinks: b.links, rows, entities: official.entities, registry: loadRegistry() });
+    // 다시 판정할 후보(초안 8절 5번): B 판단 보류 중 같은 이야기에 A-2가 인물(별칭·새 인물)을 이은 것. 판정은 하지 않고 목록만 남긴다
+    const personLink = (r) => r.link_type === 'alias' || (r.link_type === 'new_entity' && official.entities.some((e) => e.entity_id === r.assigned_entity_id && e.entity_type === 'character'));
+    const personByTitle = new Map();
+    for (const r of resolutions) {
+      if (!personLink(r)) continue;
+      if (!personByTitle.has(r.title_id)) personByTitle.set(r.title_id, []);
+      personByTitle.get(r.title_id).push(r);
+    }
+    const rejudge = [];
+    for (const l of b.links) {
+      if (l.verdict !== '판단 보류') continue;
+      const inTitle = personByTitle.get(l.title_id) ?? [];
+      if (!inTitle.length) continue;
+      const scenes = new Set([...(l.supporting_evidence ?? []).map((e) => e.scene_id), ...l.subject.map((s) => store.meta(s.item_id?.split('__')[0])?.scene_id).filter(Boolean)]);
+      const inScene = inTitle.filter((r) => scenes.has(r.scene_id));
+      const surfaces = (list) => [...new Set(list.map((r) => `${r.surface}→${r.assigned_entity_id ?? r.target?.entity_id}`))].sort();
+      rejudge.push({ link_id: l.link_id, title_id: l.title_id, same_scene: inScene.length > 0, a2_person_links_in_scene: surfaces(inScene), a2_person_links_in_title: surfaces(inTitle).length });
+    }
+    const out = path.join(GRAPH_DATA_DIR, 'pass2', 'merged', 'B_candidates_a2.json');
+    await writeJsonAtomic(out, {
+      schema_version: PASS2_SCHEMA_VERSION,
+      kind: 'B',
+      run: b.run,
+      generated_at: new Date().toISOString(),
+      note: 'B 병합 결과(B_candidates.json)에 A-2 공식 표로 미등록 대상 ID를 채운 것(초안 8절 5번). 채운 대상에는 a2_fill이 붙는다. B_candidates.json은 고치지 않았다',
+      source: { b_generated_at: b.generated_at, official_generated_at: official.generated_at, a2_resolutions_generated_at: res.generated_at },
+      update_rows: rows,
+      rejudge_candidates: rejudge,
+      links,
+    });
+    const by = rows.reduce((acc, r) => ((acc[r.result] = (acc[r.result] ?? 0) + 1), acc), {});
+    for (const r of rows.filter((x) => x.result !== 'keep')) console.log(`${r.result} ${r.link_id} "${r.name}" → ${r.entity_id ?? r.candidates?.join(', ')} (${r.basis})`);
+    console.log(`[b-update] B 미등록 대상 ${rows.length}건 ${JSON.stringify(by)}, 채움 ${filled}건`);
+    console.log(`[b-update] 다시 판정할 후보(B 판단 보류 중 같은 이야기에 A-2 인물 연결): ${rejudge.length}건(같은 장면 ${rejudge.filter((x) => x.same_scene).length}건). 판정은 하지 않았다`);
+    console.log(`[b-update] → ${relPath(out)}`);
     return;
   }
 
