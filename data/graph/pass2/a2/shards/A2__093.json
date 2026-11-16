@@ -1,0 +1,829 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__093",
+  "candidate_links": [
+    {
+      "link_id": "A2__093__001",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "알트아이젠",
+          "entity_type": "item",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "트럭 대신 치일 대상으로 언급된 고유한 이름이나, 등록 원문 전체에 이 장면 한 곳만 나와 열차·탈것 같은 기체(item)인지 특정 개체(character)인지 원문 근거만으로는 정할 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ice_dragon_saga_00",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "길로틴: 내가 고작 트럭에 치여 죽었을 리 없다!"
+        },
+        {
+          "scene_id": "ice_dragon_saga_00",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "여신: 음··· 그럼 트럭 말고 알트아이젠에 치인 걸로 할까?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "new_entity",
+          "entity_id": null,
+          "name": "알트아이젠",
+          "entity_type": "character",
+          "why": "치이는 주체인 특정 개체(랩쳐 등)의 고유 이름일 수 있으나 원문에 정체 설명이 없다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "ice_dragon_saga_00",
+              "line_start": 49,
+              "line_end": 49,
+              "quote": "여신: 음··· 그럼 트럭 말고 알트아이젠에 치인 걸로 할까?"
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "사전 지식상 인게임 보스(열차형 타일런트급 랩쳐) 이름으로 알려져 있으나, grep 알트아이젠 결과 ice_dragon_saga_00 L49·L55 외 등록 원문 출현이 없어 원문만으로 정체와 유형을 확정할 수 없음."
+      ]
+    },
+    {
+      "link_id": "A2__093__002",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "알파 스쿼드",
+          "entity_type": "squad",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "은화가 담당한 훈련생 모의전에서 보라·빨간·회색 올빼미 조가 자칭한 이름으로, 특정 편성 팀의 고유 이름(squad)으로도 읽히고 뒤이은 '베타 스쿼드'(L77)와 짝을 이루는 모의전용 임시 분대 기호(일반 낱말)로도 읽혀 원문만으로 가를 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eunhwa_02",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "보라 올빼미: ···여, 여기는 알파 스쿼드."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "이어지는 '베타 스쿼드'(L77)와 짝을 이루며 모의전에서 임시로 나눈 1조·2조를 부르는 일반 분대 호출 기호일 수 있다(이후 실전 훈련 장면에서는 쓰이지 않는다).",
+          "supporting_evidence": [
+            {
+              "scene_id": "eunhwa_02",
+              "line_start": 77,
+              "line_end": 77,
+              "quote": "노란 올빼미: 여기는 베타 스쿼드."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__003",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "알파 테크",
+          "entity_type": "organization",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "20정 한정판 모델건을 제작한 특정 제조사·집단을 가리키는 고유한 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "armory_03",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "은화: 이건 알파 테크가 제작한 모델건이다."
+        },
+        {
+          "scene_id": "armory_03",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "은화: 20정만 한정 제작한 귀한 물건이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__004",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "암흑 마계",
+          "entity_type": "location",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "길로틴 특유의 은어 표현으로, 자신이 머무는 특정 장소(방주 등)나 설정 속 장소를 부르는 고유 명칭으로 읽힐 수도 있고 직전 대사의 '세계'(L152)를 받아 현실 세상 일반을 비유한 보통 표현으로 읽힐 수도 있어 한 줄만으로는 가를 수 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_guillotine_005",
+          "line_start": 170,
+          "line_end": 170,
+          "quote": "이 더러운 암흑 마계도"
+        },
+        {
+          "scene_id": "blabla_guillotine_005",
+          "line_start": 173,
+          "line_end": 173,
+          "quote": "꽤 살만한 것 같아"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "직전 지휘관 대사의 '세계'(L152)를 받아 자신이 살아가는 각박한 세상 일반을 중2병 투로 비유한 표현일 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "blabla_guillotine_005",
+              "line_start": 152,
+              "line_end": 152,
+              "quote": "길로틴이든 세계든 포기할 생각 없어"
+            },
+            {
+              "scene_id": "blabla_guillotine_005",
+              "line_start": 170,
+              "line_end": 170,
+              "quote": "이 더러운 암흑 마계도"
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "암흑 물질",
+          "entity_type": "item",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "세 이야기 모두 나유타가 세계관의 고유한 검은 액체 만능 물질('다크 매터')을 부르는 이름이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_40_01",
+          "line_start": 133,
+          "line_end": 134,
+          "quote": "라피: 포비스트가 만든 퀸이 다크 매터를 두르고 있을 테니, 그 인자 살해자라는 헬레틱이 찾아내지 못하겠지.\n나유타: 오. 암흑 물질에 그런 기능이 있었소?"
+        },
+        {
+          "scene_id": "main_46_04",
+          "line_start": 45,
+          "line_end": 47,
+          "quote": "미러: 다크 매터요.\n나유타: 암흑 물질···.\n미러: 다크 매터를 극도로 응축해 동력원으로 사용해요. 만능 물질이니, 동력원으로 쓰는 것도 가능하겠죠."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line_start": 410,
+          "line_end": 410,
+          "quote": "나유타: ···저만한 밀도의 암흑 물질이외다. 제아무리 글러트니라 하더라도 탐내진 않을 것이오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "원문(main_40_01 L133-134, main_46_04 L45-47)에서 '다크 매터'와 같은 물질을 가리키는 한자어 명칭으로 쓰임."
+      ]
+    },
+    {
+      "link_id": "A2__093__006",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "암흑 물질",
+          "entity_type": "item",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "분신을 운용하는 화자(나유타)가 궤도 엘리베이터를 뒤덮은 검은 액체('암흑 물질'·'다크 매터')를 가리켜 부른 붙여쓰기 변형 표기로, U005와 같은 대상이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "불길한 소리.wav_02",
+          "line_start": 4,
+          "line_end": 5,
+          "quote": "주위에는 알 수 없는 검은 액체들이 가득하오.\n추정컨대··· 암흑물질일 것이라고 예상하고 있소."
+        },
+        {
+          "scene_id": "불길한 소리.wav_03",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "궤도 엘리베이터를··· 암흑물질이 뒤덮고 있소."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__007",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "2세대 니케의 팔·다리에 부착되는 센서 부품 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "저스틴_00",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "저희는 지금 2세대 부품 중에서도 [압력 센서]가 부착된 니케의 팔, 다리가 필요합니다."
+        },
+        {
+          "scene_id": "저스틴_00",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "2세대 압력 센서는 인간의 신경 조직과 가장 유사하죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__008",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "앙X라 마이뉴",
+          "entity_type": "concept",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "길로틴이 말한 '[세상의 모든 악]과도 같은 존재'(L62)에 대응하여 지휘관이 언급한 고유 대상의 가린 표기로, 원문에서 가린 글자가 드러나지 않으나 특정 개념적 대상을 가리키므로 표기 그대로 새 엔티티로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "wings_of_victory_04",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "길로틴: [세상의 모든 악]과도 같은 존재다."
+        },
+        {
+          "scene_id": "wings_of_victory_04",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "[OPTION TEXT=\"아아, 그것은 앙X라 마이뉴인가.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__009",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "애니힐리오",
+          "entity_type": "item",
+          "entity_key": "E7",
+          "qualifier": "헬레틱 미사일"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "궤도 엘리베이터 등에서 다수(셋, 50여 기 등)가 발사·요격되는 나노머신 병기인 '헬레틱 미사일'의 코드네임이다. ark_ranger_26에서 첫 탄 본체가 괴성을 내어 레지스트리에 인물(char_애니힐리오)로 등록되어 있으나, 원문(ark_ranger_25 L4, ark_ranger_26 L197-199)이 단일 개체가 아닌 미사일 병기임을 명시하므로 개인 인물이 아닌 무기 체계(item)로 판정하고 qualifier로 구별한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_ranger_25",
+          "line_start": 2,
+          "line_end": 4,
+          "quote": "잉그리드: 애니힐리오가 온다.\n맥스웰: 애니힐리오?\n잉그리드: 헬레틱 미사일의 코드네임이다."
+        },
+        {
+          "scene_id": "ark_ranger_26",
+          "line_start": 197,
+          "line_end": 199,
+          "quote": "잉그리드: 아무래도 이건 단일 객체가 아닌 것으로 판단된다.\n잉그리드: 격추 지점을 확인해보니, 폭발 시에 아무런 흔적도 없이 모두 소멸되어 있었다.\n잉그리드: 정말, 단순 미사일일 뿐이라는 얘기다."
+        },
+        {
+          "scene_id": "chapter_47_04",
+          "line_start": 246,
+          "line_end": 246,
+          "quote": "아니스: 헤, 헬레틱 미사일이잖아···! 애니힐리오던가 그거!"
+        },
+        {
+          "scene_id": "chapter_48_01",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "···애니힐리오 셋이, 솟아오른다."
+        },
+        {
+          "scene_id": "chapter_50_03",
+          "line_start": 75,
+          "line_end": 77,
+          "quote": "소라: !! 애니힐리오 사출 확인!\n시엘로: 수는···.\n시엘로: ···50여 기로 추정됩니다."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "ark_ranger_25",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "잉그리드: 현 시간부로 제군들은 헬레틱 애니힐리오의 낙하를 막는다."
+        },
+        {
+          "scene_id": "ark_ranger_26",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "애니힐리오: 크케케케케케케켁--!!"
+        }
+      ],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__010",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "애드 스X포드",
+          "entity_type": "character",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "서바이벌 전문가의 예시로 언급된 특정 인물의 가린 표기다. 원문에 가려진 글자가 드러나지 않으나 특정 한 사람을 가리키므로 표기 그대로 새 엔티티로 판정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "alone_survivor_07",
+          "line_start": 122,
+          "line_end": 122,
+          "quote": "[OPTION TEXT=\"보통 전문가들은 어디에서 서바이벌을 시작하지?\"]"
+        },
+        {
+          "scene_id": "alone_survivor_07",
+          "line_start": 140,
+          "line_end": 140,
+          "quote": "토브: 그러니까 베X 그릴스나 애드 스X포드가 처음 헬기에서 낙하산 타고 내린···!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "손님이 카페에서 주문하는 일반 다과 메뉴를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ade_agentbunny_00",
+          "line_start": 64,
+          "line_end": 65,
+          "quote": "에이드: 주문은 어떻게 하시겠어요, 아가씨?\n여자 손님: 저는 애프터눈 티로 주세요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "고유 상호명이 아니라 액세서리를 파는 가게 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "naga_00",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "나가: 액세서리 샵에서 세일하는 날이거든, 후훗."
+        },
+        {
+          "scene_id": "naga_01",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "티아: 있지, 있지, 오늘은 나가가 얘기한 대로 액세서리 샵에···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__013",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현에서 사진 등을 끼워 두는 일반 사물인 액자를 가리키는 보통 낱말이다(white_memory에서도 민가의 결혼사진 액자 사물을 가리킬 뿐 고유 이름이 아니다).",
+      "supporting_evidence": [
+        {
+          "scene_id": "memories_teller_31",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "···이브의 품 안에, 여럿의 액자가 안겨있었다."
+        },
+        {
+          "scene_id": "롬_02",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "롬은 액자 여러 개를 꺼냈다."
+        },
+        {
+          "scene_id": "police_station_04",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "미란다는 먼지를 털다 벽에 있던 액자를 떨어뜨렸다."
+        },
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "스노우 화이트와 라푼젤은 말없이 침대 헤드에 놓인 [액자]를 바라보았다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "물거품·장막·검은 액체 등의 성상과 재질을 설명할 때 쓰인 보통 낱말('액체 금속의 일종', '액체 금속이라길래')로 특정 고유 대상의 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "eden_spear_06",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "요한: 액체 금속의 일종이라고만 짐작할 뿐이다. 120km에 걸쳐 퍼져있는 액체 금속."
+        },
+        {
+          "scene_id": "unbreakable_sphere_06",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "미하라: 의외네. 물거품이 액체 금속이라길래, 차가울 줄 알았더니···."
+        },
+        {
+          "scene_id": "goddess_fall_01",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "나유타: 퀸의 앞을 가리고 있던 액체 금속으로 추정되는 장막 때문이었소."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__015",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "니케 체내에 쓰이는 촉매 용액(녹색·붉은색 액체 촉매)을 가리키는 수식어가 붙은 보통 표현으로 특정 고유 대상의 이름이 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_03",
+          "line_start": 91,
+          "line_end": 93,
+          "quote": "라피: 초기의 니케들은 몸속 액체 촉매의 색이 녹색이었습니다.\n라피: 녹색 피를 흘리는 모습이 되어, 여기에서 인지부조화가 발생되는 문제가 있었습니다.\n라피: 이후 모델에서는 붉은색 액체 촉매를 사용하게 되었죠."
+        },
+        {
+          "scene_id": "star_anis_11",
+          "line_start": 191,
+          "line_end": 191,
+          "quote": "여자 의사: ···괜히 액체 촉매의 색을 피와 같은 붉은색으로 만들고, 통각 같은 것을 재현해 놓은 게 아니에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__016",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "액화 재머",
+          "entity_type": "item",
+          "entity_key": "E9"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "엠마가 감응 촉매제 등 용액을 조합해 전장에 분사하는 앱솔루트의 고유 전술 장비 이름(item)으로 읽히기도 하고, 직후 대사(absolute_12 L10)에서 보통명사 '재머'로 풀어 받아 '액화' 수식어가 붙은 일반 장비 표현으로도 읽혀 양쪽 근거가 비슷하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "absolute_12",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "은화: 엠마, 저 녀석의 발을 묶어둘 테니 주변에 액화 재머를 분사해."
+        },
+        {
+          "scene_id": "emma_tactical_00",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "엠마: 이건··· 액화 재머 조합에 쓰이는 용액이잖아?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "'액화'라는 상태 수식어가 붙은 보통 장비 표현이며, 직후 대사에서 보통명사 '재머'로 지칭한다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "absolute_12",
+              "line_start": 9,
+              "line_end": 10,
+              "quote": "은화: 엠마, 저 녀석의 발을 묶어둘 테니 주변에 액화 재머를 분사해.\n은화: 재머에 녀석이 감지되면 바로 알려라."
+            }
+          ]
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__017",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U017" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_앤",
+          "name": "앤",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "네 이야기 모든 장면에서 화자 'N102'(등록 인물 char_앤)가 '앤'으로 직접 호명·응답·자기소개되거나 지문에서 같은 인물로 서술된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_of_victory_01",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "앤이 두 눈을 감고 양손을 모은 채 무릎을 꿇고 있다."
+        },
+        {
+          "scene_id": "goddess_of_victory_01",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "N102: 라푼젤 수녀님이시군요! 저는 앤이라고 해요."
+        },
+        {
+          "scene_id": "courthouse_01",
+          "line_start": 117,
+          "line_end": 118,
+          "quote": "앤이 법원 중앙으로 들어섰다.\nN102: 여, 여긴 어디죠?"
+        },
+        {
+          "scene_id": "miracle_snow_06",
+          "line_start": 51,
+          "line_end": 53,
+          "quote": "N102: 내일 봐요!\n루피: 응. 내일 봐.\n···앤은 힘차게 뛰어갔다."
+        },
+        {
+          "scene_id": "n102_00",
+          "line_start": 22,
+          "line_end": 26,
+          "quote": "  [OPTION TEXT=\"앤···.\"]\n  [OPTION_END]\n[CHOICE_END]\nN102: 흐흠흐흠흠~♪\n앤은 나를 지나치고 걸어갔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__018",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U018" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_앤",
+          "name": "앤",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "같은 장면에서 길로틴이 N102(등록 인물 char_앤)를 '앤 루 메모리아'라고 부르고 N102가 직접 대답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "radio_tower_01",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "[OPTION TEXT=\"앤은 여기서 뭘 하고 있는 거야?\"]"
+        },
+        {
+          "scene_id": "radio_tower_01",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "길로틴: 그래, [앤 루 메모리아]여."
+        },
+        {
+          "scene_id": "radio_tower_01",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "N102: 네! 길로틴 드 메피스토님!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__019",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U019" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "앨든",
+          "entity_type": "character",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "아우터 림 출신으로 세력을 키워 방주로 활동처를 옮긴 특정 인물의 고유 이름이며 레지스트리에 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "persona_on_frontline_20",
+          "line_start": 11,
+          "line_end": 12,
+          "quote": "퀸(마코토): 이름은 앨든.\n퀸(마코토): 아우터 림 출신···. ···그렇네. [기어 올라왔다]는 표현이 맞을지도 몰라."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__020",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U020" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_앨리스",
+          "name": "앨리스",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "등록 인물 앨리스(char_앨리스)가 토끼 의상을 입고 자기 자신을 '앨리스 토끼'라고 직접 소개한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "alice_wonderlandbunny_00",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "앨리스: 어때요? 앨리스 토끼예요!"
+        },
+        {
+          "scene_id": "alice_wonderlandbunny_00",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "앨리스: 앨리스 토끼의 깡총한 이야기를요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__093__021",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U021" }],
+      "scope": { "default": true },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "앱솔루트",
+          "entity_type": "squad",
+          "entity_key": "E11"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "occ로 확인한 86곳 모든 출현에서 은화·엠마·베스티(및 과거 라피)가 소속된 엘리시온의 최강 정예 스쿼드 '앱솔루트'를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "enter_heaven_07",
+          "line_start": 96,
+          "line_end": 96,
+          "quote": "엘리시온 하퍼: 최고의 택티컬로 싸울 [앱솔루트] 스쿼드와"
+        },
+        {
+          "scene_id": "eunhwa_02",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "잉그리드: 과연 앱솔루트의 리더다. 네게 이 녀석들을 맡긴 게 정답이었어, 은화."
+        },
+        {
+          "scene_id": "vesti_01",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "카메라 든 남자: 엘리트 중의 엘리트. [앱솔루트] 소속의··· 전장의 괴물. 맞지?"
+        },
+        {
+          "scene_id": "blabla_absolut_001",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "앱솔루트 단체 블라방입니다~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}

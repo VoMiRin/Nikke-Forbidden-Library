@@ -1,0 +1,461 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2__099",
+  "candidate_links": [
+    {
+      "link_id": "A2__099__001",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "원문으로 대상을 특정할 수 있는 다섯 이야기를 예외로 나눈 뒤 남은 세 이야기(sub_quests__시리얼, lost_relics__어느소녀의수기, character_episodes__디젤)의 출현은 모두 화자의 어머니라는 특정 인물 한 사람씩을 가리키므로 일반 낱말이 아니다. 그러나 세 출현이 서로 다른 인물을 가리키며 각 이야기 안에 본명이나 등록 인물 여부를 가릴 원문 근거가 없어 판단 보류로 둔다.",
+      "supporting_evidence": [
+        { "scene_id": "시리얼_01", "line_start": 172, "line_end": 172, "quote": "우리 엄마 아빠··· 높은 사람이라서···." },
+        { "scene_id": "어느소녀의수기_04", "line_start": 4, "line_end": 4, "quote": "그래서 이제 엄마를 보러 가는 거냐고 했더니 아빠가 울었다." },
+        { "scene_id": "diesel_00", "line_start": 73, "line_end": 73, "quote": "어린 아이: 어? 엄마다!" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 시리얼 실행 결과 sub_quests__시리얼 외 다른 이야기에 인물 시리얼이나 모친 정보 없음 확인"
+      ]
+    },
+    {
+      "link_id": "A2__099__002",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "title_ids": ["event_stories__miracle_snow"] },
+      "target": [{ "ref": "entity", "entity_id": "char_안젤리나", "name": "안젤리나", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "miracle_snow_13에서 앤이 만나고 싶다고 말한 '엄마'는 같은 이야기 miracle_snow_16의 신상 정보에서 '안젤리나 ···앤의 어머니다'로 직접 밝혀지며, miracle_snow_17에서도 두 사람의 대면과 호명으로 직접 이어진다.",
+      "supporting_evidence": [
+        { "scene_id": "miracle_snow_13", "line_start": 59, "line_end": 59, "quote": "앤: 엄마를 만나고 싶어요." },
+        { "scene_id": "miracle_snow_16", "line_start": 13, "line_end": 13, "quote": "이름은 안젤리나. 성별 여성. 45세. 무직." },
+        { "scene_id": "miracle_snow_16", "line_start": 14, "line_end": 14, "quote": "···앤의 어머니다." },
+        { "scene_id": "miracle_snow_17", "line_start": 40, "line_end": 40, "quote": "안젤리나: 앤··· 이니?" },
+        { "scene_id": "miracle_snow_17", "line_start": 42, "line_end": 42, "quote": "앤: 어, 엄···!" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__003",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "title_ids": ["sub_quests__데이파라"] },
+      "target": [{ "ref": "entity", "entity_id": "char_엘세리아_나인", "name": "엘세리아 나인", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "데이파라_00에서 데이파라가 찾아달라고 의뢰한 '엄마'는 랩쳐를 신으로 모시는 사이비 종교 '구원의 성화'에 빠진 인물로 서술된다. 다른 이야기 event_stories__reborn_evil(reborn_evil_01, reborn_evil_02)에서 해당 의뢰와 구원의 성화에 빠진 데이파라의 엄마가 등록 인물 '엘세리아 나인'임이 밝혀지므로, 다른 이야기의 사건·관계 단서를 옮겨 온 연결로서 가능성으로 판정한다.",
+      "supporting_evidence": [
+        { "scene_id": "데이파라_00", "line_start": 10, "line_end": 10, "quote": "저희 엄마를 찾아주셨으면 해요" },
+        { "scene_id": "데이파라_00", "line_start": 242, "line_end": 242, "quote": "저희 엄마는 구원의 성화라는" },
+        { "scene_id": "데이파라_00", "line_start": 245, "line_end": 245, "quote": "사이비 종교에 빠져버리셨어요" },
+        { "scene_id": "reborn_evil_01", "line_start": 42, "line_end": 42, "quote": "[OPTION TEXT=\"전에 데이파라란 아이의 엄마를 찾는 의뢰를 수행하다 들어본 적 있습니다.\"]" },
+        { "scene_id": "reborn_evil_02", "line_start": 142, "line_end": 142, "quote": "K: 중앙 정부 측 기록에 데이파라의 엄마," },
+        { "scene_id": "reborn_evil_02", "line_start": 143, "line_end": 143, "quote": "K: 엘세리아 나인이 [구원의 성화]란 사이비 종교에 빠져 있단 내용이 있더라고." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 데이파라로 확인한 reborn_evil_01 L42, reborn_evil_02 L142-143"
+      ]
+    },
+    {
+      "link_id": "A2__099__004",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "title_ids": ["event_stories__maria-n"] },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에블라 박사", "entity_type": "character", "entity_key": "E1" }],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "maria-n_05에서 마리아-n은 닥터 마리아의 뇌 정보를 NIMPH로 복사해 만든 니케임이 설명되고, maria-n_09에서 마리아-n이 떠올린 아련한 기억 속 소녀는 뇌 질환이 있는 '마리아'로 자기소개하며 꿈을 이루느라 바쁜 '엄마'를 언급한다. 같은 이야기 maria-n_05·maria-n_16에서 닥터 마리아의 모친이 미등록 인물 '에블라 박사'로 제시되므로 간접 단서로 이어지는 에블라 박사(가능성)로 판정한다.",
+      "supporting_evidence": [
+        { "scene_id": "maria-n_09", "line_start": 220, "line_end": 220, "quote": "소녀: 마리아. 마리아야." },
+        { "scene_id": "maria-n_09", "line_start": 229, "line_end": 229, "quote": "소녀: 엄마는··· 안본지 오래됐어." },
+        { "scene_id": "maria-n_09", "line_start": 230, "line_end": 230, "quote": "소녀: 엄마는 꿈을 이루려고 엄청 바쁘대." },
+        { "scene_id": "maria-n_05", "line_start": 41, "line_end": 41, "quote": "에닉: 1. 닥터 마리아의 뇌에 NIMPH를 안착시켜, 뇌의 정보를 복사후 추출." },
+        { "scene_id": "maria-n_05", "line_start": 58, "line_end": 58, "quote": "에닉: 과연. 모친인 에블라 박사의 역작이라는 겁니까." },
+        { "scene_id": "maria-n_16", "line_start": 16, "line_end": 16, "quote": "에닉: 당시 미지의 기술이었던 NIMPH에 자신의 지식을 백업한 후, 그것을 딸인 당신에게 그대로 계승하고 싶어했습니다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 에블라(--title=event_stories__maria-n)로 확인한 maria-n_05 L58, maria-n_16 L16"
+      ]
+    },
+    {
+      "link_id": "A2__099__005",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "title_ids": ["event_stories__memories_teller"] },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "엄마", "entity_type": "character", "entity_key": "E2", "qualifier": "롬과 살던 소녀의 어머니" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "memories_teller_24의 롬 과거 기억에서 방주 입주 추첨권이 없어 지상에 남았다가 사망해 땅에 묻힌 소녀의 청각장애 어머니 한 사람을 가리킨다. 등록 인물이 아님이 원문 맥락상 분명하고 본명이 없으므로 qualifier로 구별한 새 엔티티로 판정한다.",
+      "supporting_evidence": [
+        { "scene_id": "memories_teller_24", "line_start": 56, "line_end": 56, "quote": "소녀의 목소리: 우리 엄마 귀가 잘 안 들리니까, 알려줄 거 있으면 크게 말해야 돼." },
+        { "scene_id": "memories_teller_24", "line_start": 74, "line_end": 74, "quote": "소녀의 목소리: ···추첨권이 없으면 방주로 못 들어간대." },
+        { "scene_id": "memories_teller_24", "line_start": 101, "line_end": 101, "quote": "롬: 엄마. 왜 땅에 묻나?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__006",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U001" }],
+      "scope": { "title_ids": ["event_lost_relics__old_tales_mini_memory"] },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "엄마", "entity_type": "character", "entity_key": "E3", "qualifier": "OLD TALES 편지 작성 병사의 어머니" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "old_tales_mini_memory_00~04의 다섯 편지 모두 갓데스 후속기 배신 사건 당시 전사한 무명 병사가 쉘터에 있는 자기 어머니에게 쓴 편지의 수신인 한 사람을 가리킨다. 등록 인물이 아닌 일회성 기록물 속 특정 인물이며 다른 이름이 없으므로 qualifier를 붙여 새 엔티티로 판정한다.",
+      "supporting_evidence": [
+        { "scene_id": "old_tales_mini_memory_00", "line_start": 2, "line_end": 2, "quote": "엄마 안녕?" },
+        { "scene_id": "old_tales_mini_memory_00", "line_start": 7, "line_end": 7, "quote": "그거 다 아들이 세상 지켜서 받는 거니까 마음껏 누려" },
+        { "scene_id": "old_tales_mini_memory_02", "line_start": 3, "line_end": 3, "quote": "갓데스 후속기였던 니케가 인류를 배신했대" },
+        { "scene_id": "old_tales_mini_memory_04", "line_start": 8, "line_end": 8, "quote": "그게 엄마가 있는 곳으로 가지 않아서" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__007",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U002" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "엄브렐러 사", "entity_type": "organization", "entity_key": "E4" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "reborn_evil_25에서 우산 문양과 문서를 남긴 기업을 가리키며 바로 두 줄 뒤의 '엄브렐러 사'(U003)와 완전히 같은 대상을 가리키는 표기 변형이다. 원문에서 우세하고 온전한 표기인 '엄브렐러 사'를 대표 이름으로 삼아 U003과 같은 entity_key(E4)로 묶는다.",
+      "supporting_evidence": [
+        { "scene_id": "reborn_evil_25", "line_start": 90, "line_end": 90, "quote": "란 문장을 시작으로 뒤는 엄브렐라 사를 찬양하는 내용으로 가득하다." },
+        { "scene_id": "reborn_evil_25", "line_start": 92, "line_end": 92, "quote": "질: 엄브렐러 사의 문서들을 신격화한 것 같네요." },
+        { "scene_id": "reborn_evil_20", "line_start": 60, "line_end": 60, "quote": "[OPTION TEXT=\"우리 세계에서 엄브렐러 사에 대한 이야기는 들어본 적 없어.\"]" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__008",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U003" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "엄브렐러 사", "entity_type": "organization", "entity_key": "E4" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "event_stories__reborn_evil 전반에서 클레어·질·에이다의 원래 세계에 존재하며 T 바이러스·G 바이러스를 개발한 기업 집단을 일관되게 가리키는 고유명사다. 변형 표기인 U002('엄브렐라 사')와 같은 대상이므로 동일 entity_key(E4)를 부여한다.",
+      "supporting_evidence": [
+        { "scene_id": "reborn_evil_07", "line_start": 21, "line_end": 21, "quote": "클레어: [엄브렐러 사]에 대해서도 들어본 적 없는 거죠?" },
+        { "scene_id": "reborn_evil_11", "line_start": 45, "line_end": 45, "quote": "질: ···네. 배후에 엄브렐러 사가 있는 것 같네요." },
+        { "scene_id": "reborn_evil_20", "line_start": 49, "line_end": 49, "quote": "질: 엄브렐러 사는 이 세계에도 존재하는 건가요?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__009",
+      "link_type": "alias",
+      "subject": [{ "ref": "unit", "unit_id": "U004" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": "char_슈가", "name": "슈가", "entity_type": "character" }],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "인물들을 꽃 이름으로 부르는 플로라가 coin_rush_show_down_22에서 코인 러시의 보이는 장소를 다 돌아보고 탈락자들이 보이지 않는다고 말한 사람을 '엉겅퀴님'으로 지칭한다. 같은 이야기 coin_rush_show_down_14에서 플로라가 함께 있는 자리에서 코인 러시를 돌아다녔는데 탈락자들이 한 명도 보이지 않는다고 말한 인물이 등록 인물 '슈가'이므로, 사건·발화 단서로 이어지는 별칭(가능성)으로 판정한다.",
+      "supporting_evidence": [
+        { "scene_id": "coin_rush_show_down_22", "line_start": 29, "line_end": 29, "quote": "플로라: 엉겅퀴님이 탈락자 분들이 보이지 않는다고 할 때부터요." },
+        { "scene_id": "coin_rush_show_down_22", "line_start": 30, "line_end": 30, "quote": "플로라: 코인 러시의 보이는 장소는 다 찾아보셨을테니, 숨겨진 공간이 있을 것이라 생각했죠." },
+        { "scene_id": "coin_rush_show_down_14", "line_start": 34, "line_end": 34, "quote": "슈가: 탈락자들이 보이지 않아." },
+        { "scene_id": "coin_rush_show_down_14", "line_start": 39, "line_end": 39, "quote": "슈가: 응. 심심할 때마다 코인 러시를 돌아다니고 있는데, 한 명도 안 보여." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 탈락자(--title=event_stories__coin_rush_show_down)로 확인한 coin_rush_show_down_14 L34, L39"
+      ]
+    },
+    {
+      "link_id": "A2__099__010",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U005" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "project_matis_04에서 슈엔이 부친에게 수습 과제를 맡았다고 하자 맥스웰이 앞 장(project_matis_03의 '니케 코어 에너지 구조 변경안') 맥락에서 어떤 종류의 안건을 만들어 오라는 뜻인지 되묻는 일반 명사구이며, 슈엔도 만들 대상은 스스로 정하라고 답해 특정 고유 대상의 이름이 아님이 직접 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "project_matis_04", "line_start": 10, "line_end": 10, "quote": "맥스웰: 에너지 개선안을 제대로 만들어 오라는 뜻이야?" },
+        { "scene_id": "project_matis_04", "line_start": 11, "line_end": 11, "quote": "슈엔: 만들고 싶은 건 내가 알아서 정하라고 하셨어!" },
+        { "scene_id": "project_matis_03", "line_start": 74, "line_end": 74, "quote": "엔메: 니케 코어 에너지 구조 변경안?" }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__011",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U006" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "main_29_14에서 바닥에 여러 줄로 이어진 빛나는 선들을 두고 '에너지가 흘러가는 길. 에너지 라인이져'라고 보통명사 뜻풀이로 직접 설명하고 있어 특정 고유 대상의 이름이 아니다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_14", "line_start": 36, "line_end": 36, "quote": "트로니: 아, 이거 에너지 라인이다." },
+        { "scene_id": "main_29_14", "line_start": 37, "line_end": 37, "quote": "일레그: 녜. 맞아여. 에너지가 흘러가는 길. 에너지 라인이져." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__012",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U007" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "k_02에서 K가 주머니에서 하나 꺼내 깨물어 먹는 일반 휴대 식품을 가리키는 보통명사다.",
+      "supporting_evidence": [
+        { "scene_id": "k_02", "line_start": 96, "line_end": 96, "quote": "K는 그렇게 말하곤, 주머니에서 에너지바 하나를 꺼냈다." },
+        { "scene_id": "k_02", "line_start": 111, "line_end": 111, "quote": "K는 에너지바를 조금씩 깨물어 먹고 있다···." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__013",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U008" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "세 이야기의 네 출현 모두 끼니 대용으로 마시거나 에테르가 손수 제작해 건넨 음료 종류 일반을 가리키는 보통명사로 쓰였다.",
+      "supporting_evidence": [
+        { "scene_id": "booms_day_02", "line_start": 78, "line_end": 78, "quote": "일레그: 오늘도 퍼펙트랑 에너지 음료로 끼니 때우셨져?" },
+        { "scene_id": "booms_day_03", "line_start": 18, "line_end": 18, "quote": "일레그는 그 옆에서 책상에 다리를 올린 채, 에너지 음료를 마시고 있었다." },
+        { "scene_id": "blabla_elegg_003", "line_start": 34, "line_end": 34, "quote": "에테르 씨가 전달해 주신 에너지 음료여!" },
+        { "scene_id": "blabla_trony_003", "line_start": 121, "line_end": 121, "quote": "나중에 일레그에게 들으니, 에테르가 손수 제작했다며 준 에너지 음료가 문제였다고 한다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__014",
+      "link_type": "generic_term",
+      "subject": [{ "ref": "unit", "unit_id": "U009" }],
+      "scope": { "default": true },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "가능성",
+      "rationale": "gingerbreadhouse_08에서 신데렐라의 사격 출력을 시험하며 에너지를 차단하는 용도의 방어막을 지칭한 수식어 결합 보통 표현이다. 단독 1회 출현으로 간접 근거에 해당하므로 가능성으로 판정한다.",
+      "supporting_evidence": [
+        { "scene_id": "gingerbreadhouse_08", "line_start": 9, "line_end": 9, "quote": "베르누이아: 에너지 차단 배리어를 뚫고 나갈 정도의 출력이 나올까 봐 걱정했는데," }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep \"차단 배리어\", grep 배리어(--title=side_stories__gingerbread_house)로 추가 고유명 용례 없음 확인"
+      ]
+    },
+    {
+      "link_id": "A2__099__015",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U010" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에너지 파워", "entity_type": "item", "entity_key": "E5" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "shopping_mall_01에서 폴크방이 영양제 코너에서 대괄호로 표기해 추천하며 2+1 행사와 가격(10만 크레디트)까지 구체적으로 설명하는 특정 영양제 제품명이다.",
+      "supporting_evidence": [
+        { "scene_id": "shopping_mall_01", "line_start": 30, "line_end": 30, "quote": "폴크방: 그러면 [에너지 파워]를 같이 먹어도 괜찮을 것  같아요." },
+        { "scene_id": "shopping_mall_01", "line_start": 36, "line_end": 36, "quote": "폴크방: [에너지 파워]는 지금 2+1 행사하고 있어서  두개 사는 게 이득이에요." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__016",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U011" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에너지형 랩쳐", "entity_type": "faction_or_species", "entity_key": "E6" }],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "eunhwa_03 한 장면에서만 나오는 표현으로, 은화가 드론 화면만으로 개체군을 식별해 피격 시 폭발하는 특성을 전술에 이용한다는 점에서는 세계관 내 랩쳐 세부 병종명(faction_or_species)으로 읽히지만, 다른 장면들의 '공중형 랩쳐'·'자폭형 랩쳐'·'대형 랩쳐'처럼 성질을 수식한 보통 표현(generic_term)으로도 비슷하게 읽혀 판단을 보류한다.",
+      "supporting_evidence": [
+        { "scene_id": "eunhwa_03", "line_start": 123, "line_end": 123, "quote": "은화: ···에너지형 랩쳐인가." },
+        { "scene_id": "eunhwa_03", "line_start": 130, "line_end": 130, "quote": "무너진 천장으로 에너지형 랩쳐들이 추락한 순간," },
+        { "scene_id": "eunhwa_03", "line_start": 131, "line_end": 131, "quote": "데코이를 노린 로드급의 빔 포에 맞아 요란하게 폭발했다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "코퍼스 전반에서 '공중형 랩쳐', '자폭형 랩쳐' 등 '[특성]형 랩쳐' 구성이 성질·형태를 묘사하는 수식 표현으로 쓰이므로 고유 부류명이 아닌 보통 표현일 수 있다.",
+          "supporting_evidence": [
+            { "scene_id": "main_19_08", "line_start": 49, "line_end": 49, "quote": "공중형 랩쳐가 포신을 나에게 향했다." },
+            { "scene_id": "chapter_49_09", "line_start": 27, "line_end": 27, "quote": "폭연을 뚫고 자폭형 랩쳐가 스노우 화이트에게 몸을 던진다." }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep 에너지형, grep \"형 랩쳐\"로 단독 출현 여부 및 유사 수식 구성 확인"
+      ]
+    },
+    {
+      "link_id": "A2__099__017",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U012" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에닉의 방", "entity_type": "location", "entity_key": "E7" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "여러 메인 스토리 챕터(22·24·45)에서 대사와 장면 위치 지문('에닉의 방.')으로 반복 등장하며 방주 A.I. 에닉이 자리한 특정 시설 공간을 일관되게 가리킨다.",
+      "supporting_evidence": [
+        { "scene_id": "main_22_00", "line_start": 56, "line_end": 56, "quote": "라피: 알겠습니다. 그럼 에닉의 방으로 루트를 잡겠습니다." },
+        { "scene_id": "main_22_04", "line_start": 4, "line_end": 4, "quote": "라피: 조금 더디기는 하지만 이 정도 속도라면 2시간 이내에 에닉의 방에 도착합니다." },
+        { "scene_id": "main_24_13", "line_start": 83, "line_end": 83, "quote": "에닉의 방." },
+        { "scene_id": "main_45_04", "line_start": 2, "line_end": 2, "quote": "이틀 후. 에닉의 방 앞." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__018",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U013" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에덴", "entity_type": "location", "entity_key": "E8" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "occ로 149개 출현 전부를 점검하고 미제시 장면(main_19_05, main_19_09, chapter_50_09, chapter_50_10, goddess_fall_mini_01, goddess_fall_mini_10 등)까지 show로 확인한 결과, 모든 출현이 요한·세실·도로시 등이 세운 지상 기지 겸 정착지 '[에덴]'(location) 하나를 가리킨다('방주와 에덴의 협약' 등 거점 이름을 구성원·세력처럼 환유로 쓰는 용례도 동일한 단일 거점에 귀속된다).",
+      "supporting_evidence": [
+        { "scene_id": "main_19_09", "line_start": 2, "line_end": 2, "quote": "···지상 기지 [에덴]의 연구실." },
+        { "scene_id": "goddess_fall_mini_01", "line_start": 77, "line_end": 77, "quote": "도로시: 에덴." },
+        { "scene_id": "goddess_fall_mini_01", "line_start": 85, "line_end": 85, "quote": "도로시: [에덴]이라고 부르도록 하죠." },
+        { "scene_id": "eden_spear_00", "line_start": 4, "line_end": 4, "quote": "세실: 도로시가 에덴을 벗어나 방주 방향으로 고속 이동 중. 뿐이죠." },
+        { "scene_id": "nihilister_00", "line_start": 3, "line_end": 3, "quote": "나는 얼마간 에덴에 머무르며 세실과 요한의 일을 돕고 있었다." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__019",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U014" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에덴의 정원", "entity_type": "location", "entity_key": "E9" }],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "character_episodes__도로시(dorothy_00, dorothy_03, dorothy_04)에서 에덴 내부의 특정 정원 공간을 반복해 가리키고 goddess_fall_mini_10에서도 '에덴 정원.'이라는 장면 위치 표기가 쓰여 고유 시설명(location)으로 볼 근거가 있다. 반면 dorothy_00 첫 도입부에서는 '아름다운 정원'·'그 정원'으로 먼저 서술한 뒤 '에덴의 정원'으로 이어 부르고 있어 '에덴에 있는 정원'이라는 수식 구성의 보통 표현(generic_term)으로도 비슷하게 읽히므로 판단을 보류한다.",
+      "supporting_evidence": [
+        { "scene_id": "dorothy_03", "line_start": 60, "line_end": 60, "quote": "에덴의 정원 위에서," },
+        { "scene_id": "dorothy_04", "line_start": 2, "line_end": 2, "quote": "도로시는 에덴의 정원에 서 있었다." },
+        { "scene_id": "goddess_fall_mini_10", "line_start": 4, "line_end": 4, "quote": "에덴 정원." }
+      ],
+      "contradicting_evidence": [
+        { "scene_id": "dorothy_00", "line_start": 6, "line_end": 6, "quote": "아름다운 정원." }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "dorothy_00에서 보통명사 '정원'으로 먼저 소개한 뒤 '에덴의 정원'으로 지칭하고 다른 기록에서는 '에덴 정원'으로 적혀, 고정된 고유명사가 아니라 소속 거점을 수식한 일반 명사구일 수 있다.",
+          "supporting_evidence": [
+            { "scene_id": "dorothy_00", "line_start": 6, "line_end": 6, "quote": "아름다운 정원." },
+            { "scene_id": "dorothy_00", "line_start": 12, "line_end": 12, "quote": "그녀는 늘 에덴의 정원에," }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep \"에덴의 정원\", grep \"에덴 정원\"으로 전체 용례 확인"
+      ]
+    },
+    {
+      "link_id": "A2__099__020",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에덴의 창", "entity_type": "item", "entity_key": "E10", "qualifier": "에덴 최상층의 거대 광학 병기" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "chapter_50_09 한 곳을 제외한 22개 출현 모두 랩쳐 퀸 등 표적을 타격하기 위해 에덴 최상층에 건설된 거대 광학 포격 병기 시설 '에덴의 창'을 가리킨다. 파피용의 동명 근접 무장(E11)과 구별하기 위해 qualifier를 적는다.",
+      "supporting_evidence": [
+        { "scene_id": "goddess_fall_mini_11", "line_start": 4, "line_end": 4, "quote": "세실: 에덴의 창이 완성되었어요." },
+        { "scene_id": "goddess_fall_mini_11", "line_start": 8, "line_end": 8, "quote": "이사벨: 최상층에 만들던 그 거대한 것을 말하는 건가요?" },
+        { "scene_id": "main_44_03", "line_start": 98, "line_end": 98, "quote": "리버렐리오가 에덴의 창을 하늘을 향해 쏘았고" },
+        { "scene_id": "eden_spear_12", "line_start": 38, "line_end": 38, "quote": "리버렐리오는 에덴의 창 조작 패널을 촉수로 조작하기 시작했다." },
+        { "scene_id": "chapter_50_10", "line_start": 184, "line_end": 184, "quote": "요한: 에덴의 창. 발사." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__021",
+      "link_type": "new_entity",
+      "subject": [{ "ref": "unit", "unit_id": "U015" }],
+      "scope": { "scene_ids": ["chapter_50_09"] },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에덴의 창", "entity_type": "item", "entity_key": "E11", "qualifier": "파피용의 근접전용 미니멀 버전 무장" }],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "chapter_50_09의 출현(O0006)은 에덴의 거대 포격 병기 본체가 아니라 파피용이 손에 들고 에고비스타를 찌르는 근접전용 미니멀 버전 무장(마커 겸용 창)을 가리키므로 별도 물건 엔티티로 분리한다.",
+      "supporting_evidence": [
+        { "scene_id": "chapter_50_09", "line_start": 58, "line_end": 58, "quote": "파피용: 에덴의 창이야. 미니멀 버전이지." },
+        { "scene_id": "chapter_50_09", "line_start": 60, "line_end": 60, "quote": "에고비스타: 근접전용 무장이라, 제법 풍류를 알지 않나." },
+        { "scene_id": "chapter_50_10", "line_start": 216, "line_end": 216, "quote": "요한: 파피용의 창을 마커로 사용해, 신호가 발생한 지점으로의 정밀 타격." }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2__099__022",
+      "link_type": "unresolved",
+      "subject": [{ "ref": "unit", "unit_id": "U016" }],
+      "scope": { "default": true },
+      "target": [{ "ref": "entity", "entity_id": null, "name": "에덴전", "entity_type": "event", "entity_key": "E12" }],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "main_story__chapter_46(main_46_04, main_46_05)에서 미러가 지상에 강림한 퀸과 에덴 측이 벌인 특정 전투를 가리키며 쓰므로 사건 고유명(event)으로 볼 여지가 있으나, 같은 장면 앞부분(main_46_04 L2, L33)에서 미러 자신이 '에덴에서의 전투'·'에덴과의 전투'라고 풀어 말하고 다른 인물(chapter_47_02 요한)은 같은 싸움을 '퀸 전'이라 불러, 정식 사건명이 아니라 '에덴에서의 전투'를 줄여 말한 보통 표현(generic_term)으로도 비슷하게 읽히므로 판단을 보류한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_46_04", "line_start": 63, "line_end": 63, "quote": "미러: 퀸의 정예라는 이름이, 에덴전에서는 무색했잖아요?" },
+        { "scene_id": "main_46_04", "line_start": 72, "line_end": 72, "quote": "미러: 에덴전에서 특히나 퀸에게 강렬한 인상을 남긴 이들을 흉내 내 헬레틱으로 만들었어요." },
+        { "scene_id": "main_46_05", "line_start": 84, "line_end": 84, "quote": "미러: 그렇죠. 에덴전 이후에는 계속 여기 있었어요. 일해야 되니까." }
+      ],
+      "contradicting_evidence": [
+        { "scene_id": "main_46_04", "line_start": 2, "line_end": 2, "quote": "미러: 에덴에서의 전투 이후 퀸이 가장 먼저 한 일은." },
+        { "scene_id": "chapter_47_02", "line_start": 122, "line_end": 122, "quote": "요한: 그리고 우리는 퀸 전 이후 전력이 괴멸되었다." }
+      ],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "같은 화자(미러)가 같은 장면에서 '에덴에서의 전투'·'에덴과의 전투'로 먼저 서술한 뒤 '-전'을 붙여 줄여 부르고 다른 인물은 '퀸 전'으로 지칭하므로, 고유 사건명이 아닌 일반 축약 표현일 수 있다.",
+          "supporting_evidence": [
+            { "scene_id": "main_46_04", "line_start": 2, "line_end": 2, "quote": "미러: 에덴에서의 전투 이후 퀸이 가장 먼저 한 일은." },
+            { "scene_id": "main_46_04", "line_start": 33, "line_end": 33, "quote": "미러: 에덴과의 전투 이후 퀸의 [생각]에는 큰 변화가 있었을거라 생각해요." }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep 에덴전으로 chapter_46 외 다른 이야기에 쓰이지 않음을 확인"
+      ]
+    }
+  ]
+}
