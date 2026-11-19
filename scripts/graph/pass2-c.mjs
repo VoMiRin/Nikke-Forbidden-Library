@@ -84,8 +84,9 @@ export const C_REVIEW_PROBLEMS = new Set([
   'other',
 ]);
 
-const RUNS = new Set(['pilot', 'retest', 'main']);
-const RUN_DIRS = { pilot: 'c-pilot', retest: 'c-retest', main: 'c' };
+// wf: 실행 방식(agy run_workflow) 시험. 파일럿 묶음을 copy-bundles로 옮겨 와 같은 규칙으로 다시 판정한다
+const RUNS = new Set(['pilot', 'retest', 'wf', 'main']);
+const RUN_DIRS = { pilot: 'c-pilot', retest: 'c-retest', wf: 'c-wf', main: 'c' };
 const runRoot = (run) => path.join(GRAPH_DATA_DIR, 'pass2', RUN_DIRS[run]);
 const RULES_PATH = path.resolve(GRAPH_DATA_DIR, '..', '..', 'docs', 'graphrag', 'GRAPH_RAG_PASS2_C_RULES.md');
 const A2_MAIN_ROOT = path.join(GRAPH_DATA_DIR, 'pass2', 'a2');
@@ -1530,7 +1531,7 @@ const main = async () => {
   const P = pathsOf(run);
 
   if (cmd === 'build') {
-    if (run === 'retest') throw new Error('retest는 build하지 않는다. copy-bundles로 파일럿 묶음을 옮겨 온다');
+    if (run === 'retest' || run === 'wf') throw new Error(`${run}는 build하지 않는다. copy-bundles로 파일럿 묶음을 옮겨 온다`);
     const selectArg = argValue(args, 'select');
     const select = selectArg ? selectArg.split(';').map((g) => g.split(',').map((x) => x.trim()).filter(Boolean)).filter((g) => g.length) : null;
     if (!select && !args.includes('--all')) throw new Error('build --all(전수) 또는 --select="C1__001,…;C1__010,…"(회차별 선택)을 지정한다');
@@ -1895,7 +1896,7 @@ const main = async () => {
     return;
   }
 
-  console.log('사용법: build --all | build --select="C1__001,…;C1__010,…" | status [--wave=N] | validate <bundle_id> | cand <bundle_id> [<item_id>] | show <scene_id> [시작 끝] | grep <낱말> --bundle= --unit= [--title=a,b] | entity <이름> | finish | audit-input --wave=N [--rate=0.1] | audit-check --wave=N | copy-bundles --from=pilot --bundles=… --run=retest  [--run=pilot|retest|main]');
+  console.log('사용법: build --all | build --select="C1__001,…;C1__010,…" | status [--wave=N] | validate <bundle_id> | cand <bundle_id> [<item_id>] | show <scene_id> [시작 끝] | grep <낱말> --bundle= --unit= [--title=a,b] | entity <이름> | finish | audit-input --wave=N [--rate=0.1] | audit-check --wave=N | copy-bundles --from=pilot --bundles=… --run=retest  [--run=pilot|retest|wf|main]');
   process.exitCode = 1;
 };
 
