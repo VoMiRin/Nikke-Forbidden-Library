@@ -979,6 +979,24 @@ export const externalChanges = ({ entries, judged, clhByScene, wave }) => {
   return out;
 };
 
+/**
+ * 앞 회차 감사 뒤에 그 회차까지의 shard가 고쳐져(뒤 회차 감사 수정 등) 상태가 달라진 앞 회차 단위.
+ * 회차 v 감사 당시 shard(snapshots: bundle_id → shard 객체, 없으면 지금 것)로 계산한 상태와 지금 상태를 v까지의 출력만으로 비교한다.
+ * 뒤 회차 감사에 외부 변경 항목으로 넣어, 앞 회차 감사를 다시 하지 않고 덮는다(설계 G3)
+ */
+export const auditDrift = ({ entries, judged, clhByScene, wave, snapshots }) => {
+  const upto = entries.filter((e) => e.wave <= wave);
+  const j = new Map([...judged].filter(([, v]) => v.wave <= wave));
+  const now = mergeC({ entries: upto, judged: j, clhByScene }).statuses;
+  const then = mergeC({ entries: upto.map((e) => (snapshots.has(e.bundle.bundle_id) ? { ...e, shard: snapshots.get(e.bundle.bundle_id) } : e)), judged: j, clhByScene }).statuses;
+  const out = [];
+  for (const [id, a] of then) {
+    const b = now.get(id);
+    if (b && (a.status !== b.status || a.conf !== b.conf)) out.push({ item_id: id, wave_of_unit: a.wave, before: a.status, after: b.status, before_conf: a.conf, after_conf: b.conf, clue_links: b.clue_links, cause: `회차 ${wave} 감사 뒤 shard 수정` });
+  }
+  return out;
+};
+
 /** 병합기 전용 필드: 근거 장면, 공개 순서, lines 끝과 겹치는 Pass 1 항목·B 연결 */
 export const annotateLinks = ({ links, store, releaseDates, overlapIndex }) => links.map((l) => {
   const ends = { subject: l.subject[0], target: l.target[0] };
@@ -1006,6 +1024,89 @@ export const conflictBundles = (c) => [...new Set([c.bundle_id, c.own?.bundle_id
 // 감사(설계 2.10절)
 
 const rateOf = (status, rate) => Math.min(1, rate * (AUDIT_RATE_FACTOR[status] ?? 1));
+
+/** 두 shard의 달라진 요소. 연결은 link_id, 자기 상태는 item_id, 병합 제안은 suggestion_id로 비교한다 */
+export const diffCShards = (before, after) => {
+  const by = (list, key) => new Map((list ?? []).map((x) => [x[key], JSON.stringify(x)]));
+  const changed = (a, b) => [...new Set([...a.keys(), ...b.keys()])].filter((k) => a.get(k) !== b.get(k)).sort(cmpStr);
+  const lb = by(before.candidate_links, 'link_id');
+  const la = by(after.candidate_links, 'link_id');
+  const removedLinkUnits = changed(lb, la)
+    .filter((id) => !la.has(id))
+    .flatMap((id) => {
+      const l = before.candidate_links.find((x) => x.link_id === id);
+      return [...l.subject, ...l.target].map((s) => s.item_id).filter(Boolean);
+    });
+  return {
+    links: changed(lb, la).filter((id) => la.has(id)),
+    removed_links: changed(lb, la).filter((id) => !la.has(id)),
+    removed_link_units: [...new Set(removedLinkUnits)].sort(cmpStr),
+    unlinked: changed(by(before.unlinked, 'item_id'), by(after.unlinked, 'item_id')),
+    merge_suggestions: changed(by(before.merge_suggestions, 'suggestion_id'), by(after.merge_suggestions, 'suggestion_id')),
+  };
+};
+
+/**
+ * 앞 회차 감사를 이어 인정할 수 있는지(설계 G3: 회차 간 전파는 앞 감사를 다시 하지 않고 뒤 회차 감사가 덮는다).
+ * 뒤 회차 감사 수정이 앞 회차 shard를 고치면 도장이 바뀌어 앞 감사가 무효가 된다. 다음을 모두 만족하면 이어 인정한다.
+ *  1. 묶음 구성·규칙·묶음 입력은 그대로이고 shard 해시만 바뀜
+ *  2. 바뀐 묶음의 감사 당시 shard(스냅숏)가 있고 해시가 감사 입력의 도장과 같음
+ *  3. 지금 다시 만든 감사 항목이 감사한 항목과 완전히 같음(표본·연결·상태 어느 것도 안 바뀜)
+ *  4. 달라진 요소가 모두, 지금 shard를 본(도장 일치) 뒤 회차 PASS 감사의 항목에 들어 있음
+ *     연결: 어느 항목의 links에 그 link_id / 지운 연결·자기 상태: 그 단위가 항목 / 병합 제안: merge:ID 항목
+ * audited: 감사한 입력, current: 지금 도장 [{bundle_id, ...}], snapshots: bundle_id → 감사 당시 shard 글,
+ * shardsNow: bundle_id → 지금 shard 글, regenerated: 지금 다시 만든 items, later: [{wave, input}] (PASS인 뒤 회차만)
+ */
+export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regenerated, later }) => {
+  const errors = [];
+  const before = audited.bundle_stamps;
+  if (before.length !== current.length || before.some((s, i) => s.bundle_id !== current[i].bundle_id)) return { ok: false, errors: ['회차 구성이 바뀌었다'], changes: [] };
+  const changes = [];
+  for (let i = 0; i < before.length; i++) {
+    const a = before[i];
+    const b = current[i];
+    if (a.rules_sha256 !== b.rules_sha256) errors.push(`${a.bundle_id}: 판정 규칙이 바뀌었다`);
+    if (a.input_sha256 !== b.input_sha256) errors.push(`${a.bundle_id}: 묶음이나 대본이 바뀌었다`);
+    if (a.shard_sha256 === b.shard_sha256) continue;
+    const old = snapshots.get(a.bundle_id);
+    if (old == null || sha256(old) !== a.shard_sha256) {
+      errors.push(`${a.bundle_id}: 감사 당시 shard 스냅숏이 없거나 도장과 다르다`);
+      continue;
+    }
+    changes.push({ bundle_id: a.bundle_id, stamp: b, ...diffCShards(JSON.parse(old), JSON.parse(shardsNow.get(a.bundle_id))) });
+  }
+  // 3. 다시 만든 항목 중 달라지거나 새로 생긴 것은 지금 shard를 본 뒤 회차 PASS 감사가 그 단위를 항목으로 가져야 한다
+  //    (단위 상태가 바뀌어 층이 옮겨 가면 표본이 하나 늘 수 있다. auditDrift가 그 단위를 뒤 회차 외부 변경 항목으로 넣는다)
+  if (!Array.isArray(regenerated)) errors.push(`감사 항목을 다시 만들 수 없다: ${regenerated?.error ?? '?'}`);
+  else {
+    const now = new Map(regenerated.map((x) => [x.audit_id, x]));
+    const gone = audited.items.filter((x) => !now.has(x.audit_id)).map((x) => x.audit_id);
+    if (gone.length) errors.push(`다시 만든 감사 항목에서 빠졌다: ${gone.join(', ')}`);
+    const was = new Map(audited.items.map((x) => [x.audit_id, JSON.stringify(x)]));
+    const moved = regenerated.filter((x) => was.get(x.audit_id) !== JSON.stringify(x));
+    const seenAll = later.filter((w) => changes.every((c) => w.input.bundle_stamps.some((s) => s.bundle_id === c.bundle_id && s.shard_sha256 === c.stamp.shard_sha256)));
+    const laterItems = seenAll.flatMap((w) => w.input.items);
+    const ids = new Set([...laterItems.map((x) => x.item_id).filter(Boolean), ...laterItems.map((x) => x.audit_id)]);
+    const uncovered = moved.filter((x) => !ids.has(x.item_id ?? x.audit_id)).map((x) => x.audit_id);
+    if (uncovered.length) errors.push(`다시 만든 감사 항목이 달라졌는데 뒤 회차 PASS 감사가 덮지 않았다: ${uncovered.join(', ')}`);
+  }
+  for (const c of changes) {
+    const seen = later.filter((w) => w.input.bundle_stamps.some((s) => s.bundle_id === c.bundle_id && s.shard_sha256 === c.stamp.shard_sha256));
+    const items = seen.flatMap((w) => w.input.items);
+    const linkIds = new Set(items.flatMap((x) => (x.links ?? []).map((l) => l.link_id)));
+    const itemIds = new Set(items.map((x) => x.item_id).filter(Boolean));
+    const auditIds = new Set(items.map((x) => x.audit_id));
+    const miss = [
+      ...c.links.filter((id) => !linkIds.has(id)).map((id) => `연결 ${id}`),
+      ...c.removed_links.filter((id) => !c.removed_link_units.some((u) => itemIds.has(u))).map((id) => `지운 연결 ${id}`),
+      ...c.unlinked.filter((id) => !itemIds.has(id)).map((id) => `자기 상태 ${id}`),
+      ...c.merge_suggestions.filter((id) => !auditIds.has(`merge:${id}`)).map((id) => `병합 제안 ${id}`),
+    ];
+    if (miss.length) errors.push(`${c.bundle_id}: 뒤 회차 PASS 감사가 덮지 않은 변경 — ${miss.join(', ')}`);
+    c.covered_by = seen.map((w) => w.wave);
+  }
+  return { ok: errors.length === 0, errors, changes: changes.map(({ stamp: _s, ...c }) => c) };
+};
 
 /**
  * units: 이 회차 단위 [{item_id, bundle_id, stage, ...}], statuses: mergeC 결과, others: bundle_id → 묶음 밖 색인
@@ -1042,7 +1143,8 @@ export const sampleCAudit = ({ units, statuses, linksByItem, bundlePaths, others
     counts.push({ stratum, rate: r, population: list.length, sampled: chosen.length });
   }
   const base = items.length;
-  for (const x of extra.externalChanges ?? []) items.push({ audit_id: `ext:${x.item_id}`, kind: 'external_change', ...x, links: linksByItem.get(x.item_id) ?? [] });
+  // status: 바뀐 뒤 현재 상태 전부(자기 상태·note·residual). before/after만으로는 부분 해결인지 감사자가 볼 수 없다
+  for (const x of extra.externalChanges ?? []) items.push({ audit_id: `ext:${x.item_id}`, kind: 'external_change', ...x, status: statuses.get(x.item_id) ?? null, links: linksByItem.get(x.item_id) ?? [] });
   for (const c of extra.conflicts ?? []) items.push({ audit_id: `conflict:${sha256(JSON.stringify(c)).slice(0, 12)}`, kind: 'conflict', conflict: c });
   for (const m of extra.mergeSuggestions ?? []) items.push({ audit_id: `merge:${m.suggestion_id}`, kind: 'merge_suggestion', suggestion: m, ...bundlePaths.get(m.bundle_id) });
   const known = new Set(items.map((x) => x.audit_id));
@@ -1550,24 +1652,57 @@ const main = async () => {
   if (cmd === 'audit-input' || cmd === 'audit-check') {
     const wave = Number(argValue(args, 'wave'));
     const plan = loadPlan(P);
-    const selected = selectWave(plan, wave);
     const ctx = makeCtx();
+    const inputPathOf = (w) => path.join(P.audit, `wave_${pad(w)}_input.json`);
+    const outputPathOf = (w) => path.join(P.audit, `wave_${pad(w)}_output.json`);
+    const shardStore = path.join(P.audit, 'shard_store');
+    const shardText = (bundleId) => fs.readFileSync(path.join(P.shards, `${bundleId}.json`), 'utf8');
+    // 감사 당시 shard를 해시 이름으로 남긴다. 뒤 회차 수정이 앞 회차 shard를 고쳤을 때 무엇이 바뀌었는지 보려고 쓴다
+    const storeShards = (stamps) => {
+      fs.mkdirSync(shardStore, { recursive: true });
+      for (const s of stamps) {
+        const f = path.join(shardStore, `${s.shard_sha256}.json`);
+        if (fs.existsSync(f)) continue;
+        const text = shardText(s.bundle_id);
+        if (sha256(text) !== s.shard_sha256) throw new Error(`${s.bundle_id}: shard가 도장과 다르다`);
+        fs.writeFileSync(f, text);
+      }
+    };
     // 상태는 그 회차까지의 출력 전부에 달려 있으므로 앞 회차 도장도 함께 묶는다
-    const upto = plan.bundles.filter((b) => b.wave <= wave);
-    const bundleStamps = [];
-    for (const b of upto) {
+    const stampsUpTo = (w) => plan.bundles.filter((b) => b.wave <= w).map((b) => {
       const r = validateOne(P, b.bundle_id, ctx);
       if (r.status !== 'pass') throw new Error(`${b.bundle_id}: 미완료 또는 검증 실패`);
       const stale = staleReasonOf(P, b.bundle_id, r.bundle);
       if (stale) throw new Error(`${b.bundle_id}: ${stale}`);
-      bundleStamps.push({ bundle_id: b.bundle_id, ...currentStamp(P, b.bundle_id, r.bundle) });
-    }
-    const inputPath = path.join(P.audit, `wave_${pad(wave)}_input.json`);
-    const outputPath = path.join(P.audit, `wave_${pad(wave)}_output.json`);
-    if (cmd === 'audit-input') {
-      const judgeFamily = argValue(args, 'judge-family') ?? 'gemini';
-      if (!['gemini', 'gpt', 'claude'].includes(judgeFamily)) throw new Error('judge-family는 gemini | gpt | claude 중 하나다');
-      const entries = doneEntries(P, plan, ctx, wave);
+      return { bundle_id: b.bundle_id, ...currentStamp(P, b.bundle_id, r.bundle) };
+    });
+    // 이번 회차 연결이 바꾼 앞 회차 상태 + 앞 회차 감사 뒤 shard 수정으로 바뀐 상태(auditDrift). 단위마다 한 항목
+    const externalOf = (w, entries, judged) => {
+      if (w <= 1) return [];
+      const out = externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave: w });
+      const seen = new Set(out.map((x) => x.item_id));
+      for (let v = 1; v < w; v++) {
+        const audited = readJsonIfExists(inputPathOf(v));
+        if (!audited) continue;
+        const snapshots = new Map();
+        for (const s of audited.bundle_stamps) {
+          if (sha256(shardText(s.bundle_id)) === s.shard_sha256) continue;
+          const f = path.join(shardStore, `${s.shard_sha256}.json`);
+          if (!fs.existsSync(f)) throw new Error(`회차 ${v} 감사 당시 ${s.bundle_id} shard 스냅숏이 없다(${relPath(f)})`);
+          snapshots.set(s.bundle_id, JSON.parse(fs.readFileSync(f, 'utf8')));
+        }
+        if (!snapshots.size) continue;
+        for (const x of auditDrift({ entries, judged, clhByScene: ctx.clhByScene, wave: v, snapshots })) {
+          if (seen.has(x.item_id)) continue;
+          seen.add(x.item_id);
+          out.push(x);
+        }
+      }
+      return out;
+    };
+    const buildInput = (w, previous, judgeFamily, rate) => {
+      const selected = selectWave(plan, w);
+      const entries = doneEntries(P, plan, ctx, w);
       const judged = judgedOf(entries);
       const m = mergeC({ entries, judged, clhByScene: ctx.clhByScene });
       const ids = new Set(selected.map((b) => b.bundle_id));
@@ -1585,7 +1720,6 @@ const main = async () => {
       }));
       const bundlePaths = new Map(entries.map((e) => [e.bundle.bundle_id, { input_file: relPath(path.join(P.bundles, `${e.bundle.bundle_id}.json`)), script_file: e.bundle.script_file, clues_file: e.bundle.clues_file, output_file: relPath(path.join(P.shards, `${e.bundle.bundle_id}.json`)) }]));
       const conflicts = m.conflicts.filter((c) => conflictBundles(c).some((x) => ids.has(x)));
-      const previous = readJsonIfExists(inputPath);
       const sample = sampleCAudit({
         units,
         statuses: m.statuses,
@@ -1593,27 +1727,73 @@ const main = async () => {
         bundlePaths,
         others,
         extra: {
-          externalChanges: wave > 1 ? externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave }) : [],
+          externalChanges: externalOf(w, entries, judged),
           conflicts,
           mergeSuggestions: m.mergeSuggestions.filter((x) => ids.has(x.bundle_id)),
         },
-        rate: Number(argValue(args, 'rate') ?? 0.1),
-        seed: `C/${run}/${wave}`,
+        rate,
+        seed: `C/${run}/${w}`,
         includeIds: previous?.items.map((x) => x.audit_id) ?? [],
       });
-      const input = { schema_version: 'pass2-audit-input-0.1.0', kind: 'C', run, wave, judge_family: judgeFamily, bundle_stamps: bundleStamps, ...sample };
+      const input = { schema_version: 'pass2-audit-input-0.1.0', kind: 'C', run, wave: w, judge_family: judgeFamily, bundle_stamps: stampsUpTo(w), ...sample };
       input.source_sha256 = sha256(JSON.stringify(input));
+      return input;
+    };
+    // 회차 w 감사 판정. 도장이 그대로면 그대로 검사하고, shard만 바뀌었으면 carryOverAudit로 이어 인정을 따진다
+    const checkWave = (w, depth = 0) => {
+      const input = readJsonIfExists(inputPathOf(w));
+      const out = readJsonIfExists(outputPathOf(w));
+      if (!input || !out) return { input, out, errors: ['감사 입력 또는 출력이 없다'], reviewed: 0, judgments: {}, carry: null };
+      const current = stampsUpTo(w);
+      let stamps = current;
+      let carry = null;
+      if (JSON.stringify(input.bundle_stamps) !== JSON.stringify(current)) {
+        const snapshots = new Map(input.bundle_stamps.map((s) => {
+          const f = path.join(shardStore, `${s.shard_sha256}.json`);
+          return [s.bundle_id, fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null];
+        }));
+        const later = [];
+        for (const lw of [...new Set(plan.bundles.map((b) => b.wave))].filter((x) => x > w).sort((a, b) => a - b)) {
+          const r = checkWave(lw, depth + 1);
+          if (!r.errors.length) later.push({ wave: lw, input: r.input });
+        }
+        let regenerated = null;
+        try {
+          regenerated = buildInput(w, input, input.judge_family, input.rate).items;
+        } catch (e) {
+          regenerated = { error: e.message };
+        }
+        carry = carryOverAudit({ audited: input, current, snapshots, shardsNow: new Map(current.map((s) => [s.bundle_id, shardText(s.bundle_id)])), regenerated, later });
+        if (carry.ok) stamps = input.bundle_stamps;
+      }
+      const r = checkAudit(input, out, { store: ctx.store, bundleStamps: stamps, problems: C_REVIEW_PROBLEMS });
+      if (carry && !carry.ok) r.errors.push(...carry.errors.map((e) => `이어 인정 불가: ${e}`));
+      if (!r.errors.length && !carry) storeShards(current);
+      return { ...r, input, out, carry };
+    };
+
+    if (cmd === 'audit-input') {
+      const judgeFamily = argValue(args, 'judge-family') ?? 'gemini';
+      if (!['gemini', 'gpt', 'claude'].includes(judgeFamily)) throw new Error('judge-family는 gemini | gpt | claude 중 하나다');
+      const inputPath = inputPathOf(wave);
+      const input = buildInput(wave, readJsonIfExists(inputPath), judgeFamily, Number(argValue(args, 'rate') ?? 0.1));
+      storeShards(input.bundle_stamps);
       await writeJsonAtomic(inputPath, input);
-      console.log(`[audit-input] 회차 ${wave}: 단위 표본 ${sample.sampled_units}/${sample.population_units}, 전수 항목 ${sample.extra_items}(외부 변경·충돌·병합 제안) → ${relPath(inputPath)}`);
-      for (const c of sample.strata) console.log(`  층 ${c.stratum}: 모집단 ${c.population}, 표본 ${c.sampled} (비율 ${c.rate})`);
-      console.log(`[audit-input] 다른 모델의 감사 출력 → ${relPath(outputPath)}`);
+      console.log(`[audit-input] 회차 ${wave}: 단위 표본 ${input.sampled_units}/${input.population_units}, 전수 항목 ${input.extra_items}(외부 변경·충돌·병합 제안) → ${relPath(inputPath)}`);
+      for (const c of input.strata) console.log(`  층 ${c.stratum}: 모집단 ${c.population}, 표본 ${c.sampled} (비율 ${c.rate})`);
+      console.log(`[audit-input] 다른 모델의 감사 출력 → ${relPath(outputPathOf(wave))}`);
     } else {
-      const input = readJsonIfExists(inputPath);
-      const out = readJsonIfExists(outputPath);
-      if (!input || !out) throw new Error('감사 입력 또는 출력이 없다');
-      const r = checkAudit(input, out, { store: ctx.store, bundleStamps, problems: C_REVIEW_PROBLEMS });
+      const r = checkWave(wave);
+      const { input, out } = r;
       for (const e of r.errors) console.log(`  ERROR ${e}`);
-      console.log(`${r.errors.length ? '[FAIL]' : '[PASS]'} 감사 ${r.reviewed}/${input.items.length}항목, 판정 ${JSON.stringify(r.judgments)}`);
+      if (!input || !out) {
+        process.exitCode = 1;
+        return;
+      }
+      if (r.carry?.ok) {
+        for (const c of r.carry.changes) console.log(`  [이어 인정] ${c.bundle_id}: 연결 ${c.links.join(',') || '-'} / 지운 연결 ${c.removed_links.join(',') || '-'} / 자기 상태 ${c.unlinked.join(',') || '-'} / 병합 제안 ${c.merge_suggestions.join(',') || '-'} → 회차 ${c.covered_by.join(',')} 감사가 덮음`);
+      }
+      console.log(`${r.errors.length ? '[FAIL]' : '[PASS]'} 감사 ${r.reviewed}/${input.items.length}항목, 판정 ${JSON.stringify(r.judgments)}${r.carry?.ok ? ' (shard 변경 이어 인정)' : ''}`);
       const reviews = Array.isArray(out.reviews) ? out.reviews : [];
       const problemCounts = reviews.flatMap((x) => x.problems ?? []).reduce((acc, c) => ((acc[c] = (acc[c] ?? 0) + 1), acc), {});
       console.log(`[audit-check] 감사자 ${out.auditor_family ?? '?'} / ${out.auditor_model ?? '?'} / 세션 ${out.auditor_session ?? '?'}, 문제 코드 ${JSON.stringify(problemCounts)}`);

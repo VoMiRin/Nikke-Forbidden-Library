@@ -13,6 +13,9 @@ import {
   packBundles,
   resolveClueKey,
   sampleCAudit,
+  carryOverAudit,
+  diffCShards,
+  auditDrift,
   scanCorpus,
   selectPairs,
   storyOtherClues,
@@ -324,6 +327,10 @@ test('sampleCAudit: 단서 아님 3배·해결됨 2배, 층마다 최소 1개, �
   const by = Object.fromEntries(r.strata.map((s) => [s.stratum, s.sampled]));
   assert.deepEqual(by, { '단서 아님/해당 없음/2단계': 3, '짝 없음/해당 없음/2단계': 1, '해결됨/유력한 해석/2단계': 1 });
   assert.equal(r.extra_items, 2);
+  // 외부 변경 항목에 현재 상태(남은 의문 포함)가 실린다(2회차 3차 감사 판단 불가)
+  statuses.set('x', { status: '해결됨', conf: '유력한 해석', residual: '남은 의문' });
+  const r2 = sampleCAudit({ units: unitsList, statuses, linksByItem: new Map(), bundlePaths: new Map([['C1__001', {}]]), others: new Map(), extra: { externalChanges: [{ item_id: 'x', before: '짝 없음', after: '해결됨' }] } });
+  assert.equal(r2.items.find((x) => x.audit_id === 'ext:x').status.residual, '남은 의문');
   assert.throws(() => sampleCAudit({ units: unitsList, statuses, linksByItem: new Map(), bundlePaths: new Map([['C1__001', {}]]), others: new Map(), includeIds: ['C1__009:없음'] }));
   // 전수 항목은 사라져도 멈추지 않는다
   sampleCAudit({ units: unitsList, statuses, linksByItem: new Map(), bundlePaths: new Map([['C1__001', {}]]), others: new Map(), includeIds: ['ext:없어짐'] });
@@ -374,4 +381,70 @@ test('sampleCAudit: 감사 항목 ID가 겹치면 멈춘다(GPT 규칙 검수 9)
   const units1 = [{ item_id: 'a__clh_001', bundle_id: 'C1__001', stage: 2, title_id: 't', scene_id: 'a', scene_order: 0 }];
   const dup = { suggestion_id: 'C1__001__M01', bundle_id: 'C1__001' };
   assert.throws(() => sampleCAudit({ units: units1, statuses, linksByItem: new Map(), bundlePaths: new Map([['C1__001', {}]]), others: new Map(), extra: { mergeSuggestions: [dup, dup] } }), /겹친다/);
+});
+
+test('carryOverAudit: 뒤 회차 PASS 감사가 덮은 앞 회차 shard 변경만 이어 인정한다', async () => {
+  const { createHash } = await import('node:crypto');
+  const h = (t) => createHash('sha256').update(t).digest('hex');
+  const link = (id, rationale) => ({ link_id: id, subject: [{ ref: 'item', item_id: 'a__clh_001' }], target: [{ ref: 'item', item_id: 'b__clh_001' }], rationale });
+  const oldShard = JSON.stringify({ candidate_links: [link('C1__001__001', '옛'), link('C1__001__002', '그대로')], unlinked: [], merge_suggestions: [] });
+  const newShard = JSON.stringify({ candidate_links: [link('C1__001__001', '새'), link('C1__001__002', '그대로')], unlinked: [], merge_suggestions: [] });
+  assert.deepEqual(diffCShards(JSON.parse(oldShard), JSON.parse(newShard)).links, ['C1__001__001']);
+  const stamp = (shard) => ({ bundle_id: 'C1__001', rules_sha256: 'r', input_sha256: 'i', shard_sha256: h(shard) });
+  const items = [{ audit_id: 'C1__001:x__clh_001', item_id: 'x__clh_001', links: [] }];
+  const audited = { bundle_stamps: [stamp(oldShard)], items };
+  const current = [stamp(newShard)];
+  const laterInput = { bundle_stamps: [stamp(newShard), { bundle_id: 'C1__002' }], items: [{ audit_id: 'C1__002:b__clh_001', item_id: 'b__clh_001', links: [{ link_id: 'C1__001__001' }] }] };
+  const base = { audited, current, snapshots: new Map([['C1__001', oldShard]]), shardsNow: new Map([['C1__001', newShard]]), regenerated: items, later: [{ wave: 2, input: laterInput }] };
+  const ok = carryOverAudit(base);
+  assert.ok(ok.ok, ok.errors.join('\n'));
+  assert.deepEqual(ok.changes[0].covered_by, [2]);
+  // 뒤 회차 감사가 PASS가 아니면(later에 없으면) 덮지 못한다
+  assert.ok(carryOverAudit({ ...base, later: [] }).errors.some((e) => e.includes('덮지 않은 변경')));
+  // 뒤 회차 감사가 옛 shard를 봤으면 덮지 못한다
+  assert.ok(!carryOverAudit({ ...base, later: [{ wave: 2, input: { ...laterInput, bundle_stamps: [stamp(oldShard)] } }] }).ok);
+  // 스냅숏이 없거나 도장과 다르면 안 된다
+  assert.ok(!carryOverAudit({ ...base, snapshots: new Map() }).ok);
+  assert.ok(!carryOverAudit({ ...base, snapshots: new Map([['C1__001', newShard]]) }).ok);
+  // 다시 만든 항목이 달라지면 안 된다
+  assert.ok(!carryOverAudit({ ...base, regenerated: [{ ...items[0], links: [{ link_id: 'C1__001__001' }] }] }).ok);
+  // 규칙이 바뀌면 안 된다
+  assert.ok(!carryOverAudit({ ...base, current: [{ ...current[0], rules_sha256: 'r2' }] }).ok);
+  // 자기 상태 변경은 그 단위가 뒤 회차 항목이어야 덮는다
+  const unl = JSON.stringify({ ...JSON.parse(newShard), unlinked: [{ item_id: 'a__clh_001', reason: '짝 없음', note: 'n' }] });
+  const r = carryOverAudit({ ...base, current: [stamp(unl)], shardsNow: new Map([['C1__001', unl]]), later: [{ wave: 2, input: { ...laterInput, bundle_stamps: [stamp(unl)] } }] });
+  assert.ok(r.errors.some((e) => e.includes('자기 상태 a__clh_001')));
+});
+
+test('auditDrift: 앞 회차 감사 뒤 그 회차 shard를 고쳐 바뀐 상태만 잡는다', () => {
+  const l1 = { ...link(1, item('a1__clh_001'), item('a3__clh_001'), '같은 대상', { clue: 'subject', reveal: 'target' }, []), link_id: 'C1__001__001' };
+  const audited = { candidate_links: [l1], unlinked: [] };
+  const fixed = { candidate_links: [], unlinked: [{ item_id: 'a1__clh_001', reason: '단서 아님' }] };
+  const entries = [
+    { bundle: { bundle_id: 'C1__001' }, wave: 1, shard: fixed },
+    entry('C1__002', 1, [], [{ item_id: 'a3__clh_001', reason: '단서 아님' }]),
+  ];
+  const judged = judgedOf({ 'a1__clh_001': ['C1__001', 1], 'a3__clh_001': ['C1__002', 1] });
+  const d = auditDrift({ entries, judged, clhByScene, wave: 1, snapshots: new Map([['C1__001', audited]]) });
+  assert.deepEqual(d.map((x) => [x.item_id, x.before, x.after]).sort(), [['a1__clh_001', '해결됨', '단서 아님'], ['a3__clh_001', '공개 전용', '단서 아님']]);
+  assert.deepEqual(auditDrift({ entries, judged, clhByScene, wave: 1, snapshots: new Map() }), []);
+});
+
+test('carryOverAudit: 다시 만든 표본이 늘어도 그 단위를 뒤 회차 PASS 감사가 덮으면 인정한다', async () => {
+  const { createHash } = await import('node:crypto');
+  const h = (t) => createHash('sha256').update(t).digest('hex');
+  const oldShard = JSON.stringify({ candidate_links: [{ link_id: 'C1__001__001', subject: [{ ref: 'item', item_id: 'a__clh_001' }], target: [{ ref: 'item', item_id: 'b__clh_001' }] }], unlinked: [], merge_suggestions: [] });
+  const newShard = JSON.stringify({ candidate_links: [], unlinked: [], merge_suggestions: [] });
+  const stamp = (shard) => ({ bundle_id: 'C1__001', rules_sha256: 'r', input_sha256: 'i', shard_sha256: h(shard) });
+  const items = [{ audit_id: 'C1__001:x__clh_001', item_id: 'x__clh_001', links: [] }];
+  const regenerated = [...items, { audit_id: 'C1__001:a__clh_001', item_id: 'a__clh_001', links: [] }];
+  const later = (laterItems) => [{ wave: 2, input: { bundle_stamps: [stamp(newShard)], items: laterItems } }];
+  const base = { audited: { bundle_stamps: [stamp(oldShard)], items }, current: [stamp(newShard)], snapshots: new Map([['C1__001', oldShard]]), shardsNow: new Map([['C1__001', newShard]]), regenerated };
+  // 새 표본 a와 지운 연결의 끝 a를 외부 변경 항목이 덮는다
+  const ok = carryOverAudit({ ...base, later: later([{ audit_id: 'ext:a__clh_001', kind: 'external_change', item_id: 'a__clh_001', links: [] }]) });
+  assert.ok(ok.ok, ok.errors.join('\n'));
+  const no = carryOverAudit({ ...base, later: later([{ audit_id: 'C1__002:z__clh_001', item_id: 'z__clh_001', links: [] }]) });
+  assert.ok(no.errors.some((e) => e.includes('C1__001:a__clh_001')));
+  // 감사한 항목이 빠지면 안 된다
+  assert.ok(!carryOverAudit({ ...base, regenerated: regenerated.slice(1), later: later([{ audit_id: 'ext:a__clh_001', item_id: 'a__clh_001', links: [] }]) }).ok);
 });
