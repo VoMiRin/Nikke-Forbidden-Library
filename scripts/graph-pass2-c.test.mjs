@@ -157,6 +157,24 @@ test('validateCShard: 공개 쪽으로만 쓰인 단위는 unlinked에 적어야
   assert.deepEqual(codes(validateCShard(s3, bundle, ctx)), []);
 });
 
+test('validateCShard: 검색어를 다 쓴 짝 없음 단위에 예산 소진 표시가 없으면 경고한다(2회차 보고서 9.3)', () => {
+  const warnCodes = (r) => r.warnings.map((w) => w.code);
+  const s = goodShard();
+  s.candidate_links[1].roles = { clue: 'target', reveal: 'subject' };
+  s.unlinked.push({ item_id: 'b1__clh_001', reason: '짝 없음', note: '편지를 쓴 사람이 누구인지' });
+  const used = { ...ctx, unitTermCounts: new Map([['b1__clh_001', 3], ['a1__clh_001', 3]]) };
+  assert.deepEqual(codes(validateCShard(s, bundle, used)), []);
+  assert.deepEqual(warnCodes(validateCShard(s, bundle, used)), ['BUDGET_TAG_MISSING']);
+  // 2개만 썼거나, 표시가 있으면 경고하지 않는다
+  assert.deepEqual(warnCodes(validateCShard(s, bundle, { ...ctx, unitTermCounts: new Map([['b1__clh_001', 2]]) })), []);
+  s.unlinked.at(-1).note = '[검색 예산 소진] 편지를 쓴 사람이 누구인지';
+  assert.deepEqual(warnCodes(validateCShard(s, bundle, used)), []);
+  // 단서 쪽으로 이은 단위의 남은 의문은 예산 소진과 상관없다
+  const s2 = goodShard();
+  s2.unlinked.push({ item_id: 'a1__clh_001', reason: '짝 없음', note: '누가 상자를 보냈는지' });
+  assert.deepEqual(warnCodes(validateCShard(s2, bundle, used)), []);
+});
+
 test('validateCShard: 방향 없는 보류는 양쪽 다 단서 쪽이다', () => {
   const l = link(1, item('a1__clh_002'), item('a2__clh_001'), '판단 보류', null, [ev('a1', 4, 4, '나중에 알게 될 거야'), ev('a2', 2, 2, '아서 경을 만났어')]);
   assert.deepEqual(clueSideIds(l).sort(), ['a1__clh_002', 'a2__clh_001']);

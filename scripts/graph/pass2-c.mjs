@@ -64,6 +64,7 @@ export const SCAN_LINES_IN_EXCERPT = 6; // 발췌 파일에 넣는 C-0 줄(나�
 export const AUDIT_PROBES = 3;
 export const AUDIT_RATE_FACTOR = { '단서 아님': 3, 해결됨: 2 };
 export const SEARCH_BUDGET_TAG = '[검색 예산 소진]';
+export const UNIT_TERM_BUDGET = 3;
 /** 검색어에서 뺄 흔한 말(설계 2.5절 불용어). 대명사·감탄사·접속어 */
 export const SCAN_STOPWORDS = new Set([
   '아니', '아니야', '그래', '정말', '진짜', '우리', '너희', '이거', '그거', '저거', '여기', '거기', '저기', '지금', '그럼', '그냥', '이제', '다시',
@@ -814,6 +815,9 @@ export const validateCShard = (shard, bundle, ctx) => {
     unlinkedIds.add(x.item_id);
     // 단서 쪽으로 이은 단위는 남은 의문(짝 없음)만 따로 적을 수 있다
     if (clueLinked.has(x.item_id) && x.reason !== '짝 없음') err('LINKED_AND_UNLINKED', p, `${x.item_id}는 단서 쪽으로 이었다. unlinked에는 다른 연결로 풀리지 않은 의문이 남을 때만 짝 없음으로 적는다`);
+    // 단서 쪽 연결 없이 짝 없음인데 그 단위 검색어를 다 썼으면 예산 소진 표시를 확인하게 한다(ctx.unitTermCounts: item_id → 고유 검색어 수)
+    const used = ctx.unitTermCounts?.get(x.item_id) ?? 0;
+    if (x.reason === '짝 없음' && !clueLinked.has(x.item_id) && used >= UNIT_TERM_BUDGET && !String(x.note ?? '').startsWith(SEARCH_BUDGET_TAG)) warn('BUDGET_TAG_MISSING', p, `${x.item_id}: 고유 검색어 ${used}개를 다 썼다. 예산 때문에 멈췄으면 note를 ${SEARCH_BUDGET_TAG}로 시작한다(규칙 3.8절)`);
   });
   for (const id of units) if (!clueLinked.has(id) && !unlinkedIds.has(id)) err('UNIT_NOT_COVERED', id, `${id}: 단서 쪽 연결도 unlinked도 없다`);
 
@@ -1482,13 +1486,26 @@ const makeCtx = () => {
   };
   return ctxCache;
 };
+/** search_log에서 이 묶음 단위별 고유 검색어 수. --title만 바꾼 같은 검색어는 하나로 센다(규칙 3.8절) */
+export const unitTermCountsOf = (P, bundleId) => {
+  const terms = new Map();
+  if (!fs.existsSync(P.searchLog)) return new Map();
+  for (const line of fs.readFileSync(P.searchLog, 'utf8').split('\n')) {
+    if (!line.trim()) continue;
+    const r = JSON.parse(line);
+    if (r.bundle_id !== bundleId || !r.unit_id) continue;
+    if (!terms.has(r.unit_id)) terms.set(r.unit_id, new Set());
+    terms.get(r.unit_id).add(r.term);
+  }
+  return new Map([...terms].map(([id, set]) => [id, set.size]));
+};
 const validateOne = (P, bundleId, ctx) => {
   const bundle = loadBundle(P, bundleId);
   const cand = loadCandidates(bundle);
   const s = loadShard(P, bundleId);
   if (s.missing) return { bundle, status: 'missing', errors: [{ code: 'NO_OUTPUT', path: '$', message: '출력 파일이 없다' }], warnings: [] };
   if (s.parseError) return { bundle, status: 'fail', errors: [{ code: 'JSON_PARSE', path: '$', message: s.parseError }], warnings: [] };
-  const { errors, warnings } = validateCShard(s.shard, bundle, { ...ctx, scanById: new Map(cand.hits.map((h) => [h.scan_id, h])) });
+  const { errors, warnings } = validateCShard(s.shard, bundle, { ...ctx, scanById: new Map(cand.hits.map((h) => [h.scan_id, h])), unitTermCounts: unitTermCountsOf(P, bundleId) });
   return { bundle, shard: s.shard, status: errors.length ? 'fail' : 'pass', errors, warnings };
 };
 const countBy = (list) => list.reduce((acc, x) => ((acc[x.code] = (acc[x.code] ?? 0) + 1), acc), {});
