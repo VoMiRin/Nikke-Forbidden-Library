@@ -77,7 +77,9 @@ export const supervisorRange = (steps, { fromStep = null, toStep = null, fromReq
 const CREATED_SUBAGENTS_RE = /^(?:(?:Created|Completed) At: \S+\r?\n)*Created the following subagents?:/;
 // run_workflow가 띄운 에이전트는 "Created the following subagent" 기록이 없다. 끝날 때 감독관에게 오는 시스템 메시지의
 // Logs: 줄("- [agent:self] C 판정자 C1__004: done, turn 1 (<대화 ID>): ...")에서 대화 ID를 읽는다(C workflow 시험, 2026-11-19)
-const WORKFLOW_DONE_RE = /finished with result:\r?\nWorkflow "[^"\n]*" (?:completed|failed)/;
+// 결과가 길면(20묶음) 메시지에는 가운데를 자른 미리보기만 있고 전문은 "full output in a file at file://…" 파일에 있다(C 본 실행 1회차)
+const WORKFLOW_DONE_RE = /finished with result:\r?\n(?:Workflow "[^"\n]*" (?:completed|failed)|The tool's output was truncated)/;
+const FULL_OUTPUT_RE = /full output in a file at file:\/\/(\S+?\.(?:txt|log))\b/;
 const WORKFLOW_AGENT_LINE_RE = /^- \[agent:[^\]]*\][^\n]*?\(([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\)/gm;
 
 export const createdSubagentIds = (steps) => {
@@ -91,6 +93,11 @@ export const createdSubagentIds = (steps) => {
       for (const m of content.matchAll(/"conversationId":\s*"([0-9a-f-]{36})"/g)) add(m[1]);
     } else if (step.type === 'SYSTEM_MESSAGE' && WORKFLOW_DONE_RE.test(content)) {
       for (const m of content.matchAll(WORKFLOW_AGENT_LINE_RE)) add(m[1]);
+      const full = FULL_OUTPUT_RE.exec(content)?.[1];
+      if (full) {
+        if (!fs.existsSync(full)) throw new Error(`workflow 결과 전문 파일이 없다: ${full}`);
+        for (const m of fs.readFileSync(full, 'utf8').matchAll(WORKFLOW_AGENT_LINE_RE)) add(m[1]);
+      }
     }
   }
   return ids;

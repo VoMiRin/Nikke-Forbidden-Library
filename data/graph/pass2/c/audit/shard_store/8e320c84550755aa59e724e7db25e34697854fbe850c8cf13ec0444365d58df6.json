@@ -1,0 +1,400 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__006",
+  "candidate_links": [
+    {
+      "link_id": "C1__006__001",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_25_12__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "over_zone_21__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지상에 거주하는 필그림 도로시가 어떻게 방주의 인공 식량인 퍼펙트를 이미 알고 질색하는가 / 답: 과거 방주 밀봉 직전 엘리베이터로 올려보낸 물품 중 회반죽 같은 초기 퍼펙트를 받았고, 맛이 끔찍하니 위급할 때가 아니면 먹지 말라는 설명을 들었다(over_zone_21 L42-L46) / 근거: main_25_12에서 네온이 도로시가 퍼펙트 바를 곧바로 알아보고 거부하는 데 의아해하며 원래 벽돌 같은 첫인상 반응을 기대했다고 말하는데, 프리퀄인 over_zone_21에서 도로시가 실제로 초기 퍼펙트를 보강용 자재로 착각하며 정체와 끔찍한 맛을 듣는 장면이 나온다.",
+      "supporting_evidence": [
+        { "scene_id": "main_25_12", "line_start": 30, "line_end": 30, "quote": "도로시: ···퍼펙트로군요." },
+        { "scene_id": "main_25_12", "line_start": 31, "line_end": 31, "quote": "네온: 음? 아시네요?" },
+        { "scene_id": "main_25_12", "line_start": 33, "line_end": 33, "quote": "도로시: 퍼펙트만은 절대 사양이에요." },
+        { "scene_id": "over_zone_21", "line_start": 42, "line_end": 42, "quote": "도로시: 아. 물품 중에 회반죽 같은 건 뭐죠? 보강용 자재로 쓰기엔 크기가 너무 작던데." },
+        { "scene_id": "over_zone_21", "line_start": 43, "line_end": 43, "quote": "남자의 목소리: 아, 예. 그건 퍼펙트라고, 방주에서 주식으로 사용할 음식입니다." },
+        { "scene_id": "over_zone_21", "line_start": 45, "line_end": 45, "quote": "남자의 목소리: 하하. 예. 맛이 좀 끔찍하죠? 하지만 이론상 완벽한 식품입니다. 그것만 먹어도 장수할 수 있죠." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__002",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "new_flavor_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "new_flavor_02__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 식당에서 내놓은 음식에서 왜 손님들이 상한 것으로 여길 만큼 이상한 맛이 났는가 / 답: 식당 개별의 조리 문제가 아니라 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌기 때문이다(new_flavor_02 L86-L90) / 근거: 전날 식당 맛 이상 소동을 겪은 브래디가 지휘관에게 납품 시기가 다른 두 도시락을 비교 시식하게 한 뒤 이번 달 이후 제조된 퍼펙트가 원인임을 확정한다.",
+      "supporting_evidence": [
+        { "scene_id": "new_flavor_00", "line_start": 32, "line_end": 32, "quote": "안경 쓴 여자: 맛이 이상하잖아요!" },
+        { "scene_id": "new_flavor_00", "line_start": 36, "line_end": 36, "quote": "젊은 남자: 음식에서 날 수 없는 맛이라니까요!" },
+        { "scene_id": "new_flavor_02", "line_start": 88, "line_end": 88, "quote": "브래디: 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌어." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__003",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "new_flavor_01__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "new_flavor_02__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 어제 저녁부터 식당·가정집 음식과 새벽의 과자·간식에서 왜 일제히 이상한 맛이 나는가 / 답: 제조 일자가 이번 달 이후인 납품분 퍼펙트로 만들어진 음식들의 맛이 이상해졌기 때문이다(new_flavor_02 L86-L90) / 근거: 라피가 쿠킹오일 스쿼드가 확인차 오고 있다고 전한 바로 그 민원 사태에 대해 브래디와 크러스트가 두 도시락 비교로 이번 달 이후 제조된 퍼펙트가 원인임을 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "new_flavor_01", "line_start": 30, "line_end": 30, "quote": "라피: 어제 저녁부터 만들어진 음식들의 맛이 이상하다고 합니다." },
+        { "scene_id": "new_flavor_01", "line_start": 32, "line_end": 32, "quote": "라피: 새벽부터는 과자나 간식 등에서도 이상한 맛이 난다고 하더군요." },
+        { "scene_id": "new_flavor_02", "line_start": 88, "line_end": 88, "quote": "브래디: 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌어." },
+        { "scene_id": "new_flavor_02", "line_start": 90, "line_end": 90, "quote": "크러스트: 두 번째 도시락은, 오늘 납품 받은 재료들로 만들었거든요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__004",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "new_flavor_02__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "new_flavor_12__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "질문: 제조 일자가 이번 달 이후인 퍼펙트로 만든 음식들의 맛이 왜 갑자기 이상해졌는가 / 답: 정할 수 없음. 퍼펙트 제작 과정에서 문제가 생겼고 그 무렵 퍼펙트 공장에서 숙식하며 일하던 양산형 니케 하나가 도망치거나 나간 흔적 없이 사라졌음이 드러나나, 브래디도 정확한 진실은 알 수 없다고 말하여 맛 이상의 구체적 원인을 확정할 수 없다(new_flavor_12 L77-L78, L114-L116, L128) / 근거: 지휘관이 이번 퍼펙트 맛 이상 사태에 무슨 일이 있었는지 묻자 브래디가 폐기·회수 명령을 받으러 갔을 때 들은 공장 내 양산형 니케 실종 건을 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "new_flavor_02", "line_start": 88, "line_end": 88, "quote": "브래디: 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌어." },
+        { "scene_id": "new_flavor_12", "line_start": 114, "line_end": 114, "quote": "브래디: 이번 문제가 생기고, 명령을 받으러 갔을 때." },
+        { "scene_id": "new_flavor_12", "line_start": 115, "line_end": 115, "quote": "브래디: 그 양산형 니케 중 하나가 사라졌다고 들었어." },
+        { "scene_id": "new_flavor_12", "line_start": 116, "line_end": 116, "quote": "브래디: 도망치거나 나간 흔적도 없는데 말이야." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__005",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "blabla_newflavor_001__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "new_flavor_12__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "질문: 퍼펙트에 무슨 문제가 생겨 최근에 만든 음식들의 맛이 모두 이상해졌는가 / 답: 정할 수 없음. 이번 문제가 발생했을 때 퍼펙트 공장에서 일하던 양산형 니케 중 하나가 나간 흔적 없이 사라졌다는 사정이 드러나지만, 브래디와 크러스트도 제작 과정의 문제 외에 진실은 알 수 없다고 하여 맛 이상의 정확한 원인으로 확정할 수 없다(new_flavor_12 L77-L78, L114-L116, L128) / 근거: 같은 퍼펙트 맛 이상 사태를 두고 크러스트가 임시 설명방에서 퍼펙트 문제를 언급하고, 본편 뒤 장면에서 두 사람이 폐기·회수 명령 당시 들은 공장 내 실종 건을 털어놓는다.",
+      "supporting_evidence": [
+        { "scene_id": "blabla_newflavor_001", "line_start": 100, "line_end": 100, "quote": "퍼펙트에 문제가 생긴 건지" },
+        { "scene_id": "blabla_newflavor_001", "line_start": 103, "line_end": 103, "quote": "최근에 만든 음식들의 맛이 모두 이상해져서요ㅠㅠ" },
+        { "scene_id": "new_flavor_12", "line_start": 114, "line_end": 114, "quote": "브래디: 이번 문제가 생기고, 명령을 받으러 갔을 때." },
+        { "scene_id": "new_flavor_12", "line_start": 115, "line_end": 115, "quote": "브래디: 그 양산형 니케 중 하나가 사라졌다고 들었어." },
+        { "scene_id": "new_flavor_12", "line_start": 116, "line_end": 116, "quote": "브래디: 도망치거나 나간 흔적도 없는데 말이야." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__006",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "maiden_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "maiden_03__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 메이든이 '[정지.]', '[수면.]'이라고 말하기만 해서 니케의 움직임을 멈추고 쓰러뜨린 능력은 무엇인가 / 답: 사장님의 마스크 오프 허가를 받아 사용하는 '[언령]' 능력이다(maiden_03 L109-L113) / 근거: 같은 이야기(메이든 에피소드)에서 메이든이 같은 '[정지]' 명령으로 양산형 니케들을 멈추기에 앞서 현 시간부로 '[언령]'을 사용한다고 명시한다.",
+      "supporting_evidence": [
+        { "scene_id": "maiden_00", "line_start": 26, "line_end": 26, "quote": "메이든: [정지.]" },
+        { "scene_id": "maiden_00", "line_start": 27, "line_end": 27, "quote": "시간이 멈춘 듯, 니케의 움직임이 멈췄다." },
+        { "scene_id": "maiden_03", "line_start": 112, "line_end": 112, "quote": "메이든: 알겠습니다. 현 시간부로 [언령]을 사용합니다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__007",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "maiden_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "d.ark_hero_07__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 메이든이 '[정지.]', '[수면.]'이라고 말하기만 해서 니케의 움직임을 멈추고 쓰러뜨린 능력은 무엇인가 / 답: 메이든이 구사하는 '[언령]' 능력이다(d.ark_hero_07 L33, L38-L39) / 근거: 메이든이 현 시간부로 '[언령]'을 사용한다고 밝힌 뒤 똑같이 '[정지]'라고 말해 일레그의 움직임을 멈춘다.",
+      "supporting_evidence": [
+        { "scene_id": "maiden_00", "line_start": 26, "line_end": 26, "quote": "메이든: [정지.]" },
+        { "scene_id": "maiden_00", "line_start": 27, "line_end": 27, "quote": "시간이 멈춘 듯, 니케의 움직임이 멈췄다." },
+        { "scene_id": "d.ark_hero_07", "line_start": 33, "line_end": 33, "quote": "메이든: 현 시간부로 [언령]을 사용합니다." },
+        { "scene_id": "d.ark_hero_07", "line_start": 38, "line_end": 38, "quote": "메이든: [정지]" },
+        { "scene_id": "d.ark_hero_07", "line_start": 39, "line_end": 39, "quote": "메이든의 눈물을 닦아주려던, 일레그의 움직임이 멈췄다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__008",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "maiden_00__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "maiden_03__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 메이든은 왜 사장님의 허가 없이는 마스크를 벗을 수 없으며 언제 허가를 받아 벗는가 / 답: '[언령]' 능력을 사용할 때 사장님(잉그리드)에게 마스크 오프 허가를 받아 마스크를 벗기 때문이다(maiden_03 L109-L113) / 근거: 앞 장면에서 사장님 허가 없이는 마스크를 벗을 수 없다고 한 메이든이 뒤 장면에서 사장님에게 마스크 오프 허가를 요청한 직후 '[언령]'을 사용하며 마스크를 벗는다.",
+      "supporting_evidence": [
+        { "scene_id": "maiden_00", "line_start": 63, "line_end": 63, "quote": "메이든: 안돼요. 허가 없인 벗을 수 없거든요." },
+        { "scene_id": "maiden_00", "line_start": 65, "line_end": 65, "quote": "메이든: 사장님은 무서운 사람이라서···." },
+        { "scene_id": "maiden_03", "line_start": 110, "line_end": 110, "quote": "메이든: 마스크 오프를 허가해 주세요." },
+        { "scene_id": "maiden_03", "line_start": 112, "line_end": 112, "quote": "메이든: 알겠습니다. 현 시간부로 [언령]을 사용합니다." },
+        { "scene_id": "maiden_03", "line_start": 113, "line_end": 113, "quote": "메이든은 마스크를 벗었다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__009",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "maiden_00__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "d.ark_hero_07__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 메이든은 왜 사장님의 허가 없이는 마스크를 벗을 수 없으며 언제 허가를 받아 벗는가 / 답: 타겟을 확보해 '[언령]' 능력을 사용할 때 사장님에게 마스크 오프 허가를 받아 마스크를 벗기 때문이다(d.ark_hero_07 L30-L34) / 근거: 메이든이 사장님에게 전화를 걸어 마스크 오프 허가를 받은 뒤 현 시간부로 '[언령]'을 사용한다며 마스크를 벗는다.",
+      "supporting_evidence": [
+        { "scene_id": "maiden_00", "line_start": 63, "line_end": 63, "quote": "메이든: 안돼요. 허가 없인 벗을 수 없거든요." },
+        { "scene_id": "maiden_00", "line_start": 65, "line_end": 65, "quote": "메이든: 사장님은 무서운 사람이라서···." },
+        { "scene_id": "d.ark_hero_07", "line_start": 30, "line_end": 30, "quote": "메이든: 마스크 오프를 허가해 주세요." },
+        { "scene_id": "d.ark_hero_07", "line_start": 33, "line_end": 33, "quote": "메이든: 현 시간부로 [언령]을 사용합니다." },
+        { "scene_id": "d.ark_hero_07", "line_start": 34, "line_end": 34, "quote": "메이든은 마스크를 벗었다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__010",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "old_tales_02__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "old_tales_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 에이브는 리틀 머메이드(세이렌)가 말을 하자 곧바로 말하지 말라고 제지하며 리틀 머메이드는 '아우으' 같은 소리만 내는가 / 답: 말을 하면 언령이 발동될 위험이 있기 때문이다(old_tales_09 L42-L43) / 근거: 같은 이야기(OLD TALES)에서 에이브가 똑같이 '세이렌··· 말하지 마. 언령이 발동되면 어떡하려고 그래?'라며 발화를 막는 이유를 직접 말한다.",
+      "supporting_evidence": [
+        { "scene_id": "old_tales_02", "line_start": 48, "line_end": 48, "quote": "리틀 머메이드: [마, 말도 안 돼···!]" },
+        { "scene_id": "old_tales_02", "line_start": 49, "line_end": 49, "quote": "에이브: 세이렌! 말하지 마!" },
+        { "scene_id": "old_tales_09", "line_start": 42, "line_end": 42, "quote": "에이브: 세이렌··· 말하지 마." },
+        { "scene_id": "old_tales_09", "line_start": 43, "line_end": 43, "quote": "에이브: 언령이 발동되면 어떡하려고 그래?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__011",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "old_tales_02__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "old_tales_18__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 에이브는 리틀 머메이드(세이렌)가 말을 하자 곧바로 말하지 말라고 제지하는가 / 답: 말(특히 명령조의 말)을 하면 언령이 발동되기 때문이다(old_tales_18 L62, L65) / 근거: 같은 이야기에서 세이렌이 말을 꺼내자 에이브가 다시 제지하며 언령 발동 때문임을 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "old_tales_02", "line_start": 48, "line_end": 48, "quote": "리틀 머메이드: [마, 말도 안 돼···!]" },
+        { "scene_id": "old_tales_02", "line_start": 49, "line_end": 49, "quote": "에이브: 세이렌! 말하지 마!" },
+        { "scene_id": "old_tales_18", "line_start": 62, "line_end": 62, "quote": "에이브: 세이렌. 너 또 말을···!" },
+        { "scene_id": "old_tales_18", "line_start": 65, "line_end": 65, "quote": "에이브: 명령조로 얘기하지 마. 언령이 발동되니까." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__012",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "littlemermaid_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "old_tales_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 에이브는 리틀 머메이드(세이렌)가 말을 하자 말하지 말라고 제지하며 리틀 머메이드는 '아우으' 같은 소리로 의사소통하는가 / 답: 말을 하면 언령이 발동될 수 있기 때문이다(old_tales_09 L42-L43) / 근거: 두 장면 모두 에이브가 세이렌에게 '말하지 마'라고 제지하며, old_tales_09에서 언령 발동 때문임을 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "littlemermaid_00", "line_start": 36, "line_end": 36, "quote": "리틀 머메이드: [열심히 할게···!]" },
+        { "scene_id": "littlemermaid_00", "line_start": 38, "line_end": 38, "quote": "에이브: 말하지 마." },
+        { "scene_id": "littlemermaid_00", "line_start": 40, "line_end": 40, "quote": "리틀 머메이드: 아우으." },
+        { "scene_id": "old_tales_09", "line_start": 42, "line_end": 42, "quote": "에이브: 세이렌··· 말하지 마." },
+        { "scene_id": "old_tales_09", "line_start": 43, "line_end": 43, "quote": "에이브: 언령이 발동되면 어떡하려고 그래?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__013",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "littlemermaid_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "old_tales_18__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 에이브는 리틀 머메이드(세이렌)가 말을 하자 말하지 말라고 제지하는가 / 답: 말(특히 명령조의 말)을 하면 언령이 발동되기 때문이다(old_tales_18 L62, L65) / 근거: 에이브가 세이렌의 발화를 다시 제지하며 언령 발동 때문임을 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "littlemermaid_00", "line_start": 36, "line_end": 36, "quote": "리틀 머메이드: [열심히 할게···!]" },
+        { "scene_id": "littlemermaid_00", "line_start": 38, "line_end": 38, "quote": "에이브: 말하지 마." },
+        { "scene_id": "old_tales_18", "line_start": 62, "line_end": 62, "quote": "에이브: 세이렌. 너 또 말을···!" },
+        { "scene_id": "old_tales_18", "line_start": 65, "line_end": 65, "quote": "에이브: 명령조로 얘기하지 마. 언령이 발동되니까." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__014",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "old_tales_02__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "mudfish_05__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 왜 리틀 머메이드(세이렌)는 에이브의 제지를 받고 말을 삼간 채 '아우으' 같은 소리만 내는가 / 답: 잘못 말하면 본인이 원하지 않아도 언령이 발동되기 때문에 말을 하지 않는 것이다(mudfish_05 L98-L105) / 근거: 에이브의 제지를 직접 언급하진 않으나 같은 인물 리틀 머메이드가 말을 하지 않고 소리로만 소통하는 이유를 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "old_tales_02", "line_start": 49, "line_end": 49, "quote": "에이브: 세이렌! 말하지 마!" },
+        { "scene_id": "old_tales_02", "line_start": 51, "line_end": 51, "quote": "리틀 머메이드: 아, 아우으···." },
+        { "scene_id": "mudfish_05", "line_start": 98, "line_end": 98, "quote": "리틀 머메이드: [나 잘못 말하면, 언령 발동돼.]" },
+        { "scene_id": "mudfish_05", "line_start": 104, "line_end": 104, "quote": "레비: 그래서 말을 안 하는 거야? 혹시나··· 또 발동될까 봐?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__015",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "littlemermaid_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "mudfish_05__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 왜 리틀 머메이드(세이렌)는 에이브의 제지 아래 말을 삼가고 '아우으' 같은 소리로만 의사소통하는가 / 답: 잘못 말하면 본인이 원하지 않아도 언령이 발동되기 때문에 말을 아끼는 것이다(mudfish_05 L98-L105) / 근거: 에이브와의 장면을 직접 가리키지는 않으나 같은 인물 리틀 머메이드가 말을 대신해 소리를 내는 이유를 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "littlemermaid_00", "line_start": 38, "line_end": 38, "quote": "에이브: 말하지 마." },
+        { "scene_id": "littlemermaid_00", "line_start": 40, "line_end": 40, "quote": "리틀 머메이드: 아우으." },
+        { "scene_id": "mudfish_05", "line_start": 98, "line_end": 98, "quote": "리틀 머메이드: [나 잘못 말하면, 언령 발동돼.]" },
+        { "scene_id": "mudfish_05", "line_start": 104, "line_end": 104, "quote": "레비: 그래서 말을 안 하는 거야? 혹시나··· 또 발동될까 봐?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__016",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "mudfish_01__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "mudfish_02__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 리틀 머메이드가 '[멈춰.]'라고 말하자 검은 물을 덮은 소녀의 몸을 굳어 움직이지 못하게 만든 능력은 무엇인가 / 답: 말로 상대의 행동을 강제하는 '언령' 능력이다(mudfish_02 L31-L39) / 근거: 직후 장면에서 리틀 머메이드가 겁먹고 숨은 소녀를 보며 과거 헨젤과 그레텔에게 실수로 '[움직이지··· 말라고.]'라는 언령을 써서 겁먹게 했던 일을 떠올린다.",
+      "supporting_evidence": [
+        { "scene_id": "mudfish_01", "line_start": 61, "line_end": 61, "quote": "리틀 머메이드: [멈춰.]" },
+        { "scene_id": "mudfish_01", "line_start": 63, "line_end": 63, "quote": "소녀의 몸이 굳은 것처럼 움직이지 않았다." },
+        { "scene_id": "mudfish_02", "line_start": 34, "line_end": 34, "quote": "에이브: 정말 언령을 썼다고?" },
+        { "scene_id": "mudfish_02", "line_start": 39, "line_end": 39, "quote": "리틀 머메이드: [움직이지··· 말라고.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__017",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "mudfish_01__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "mudfish_05__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 리틀 머메이드가 '[멈춰.]'라고 말하자 검은 물을 덮은 소녀의 몸을 굳어 움직이지 못하게 만든 능력은 무엇인가 / 답: 리틀 머메이드가 지닌 '언령' 능력이다(mudfish_05 L98-L101) / 근거: 리틀 머메이드가 잘못 말하면 언령이 발동된다고 밝히자 레비(검은 물을 덮은 소녀)가 '그, 그때 나 못 움직이게 만든 그거?'라며 앞 장면의 구속을 직접 받아 확인한다.",
+      "supporting_evidence": [
+        { "scene_id": "mudfish_01", "line_start": 61, "line_end": 61, "quote": "리틀 머메이드: [멈춰.]" },
+        { "scene_id": "mudfish_01", "line_start": 63, "line_end": 63, "quote": "소녀의 몸이 굳은 것처럼 움직이지 않았다." },
+        { "scene_id": "mudfish_05", "line_start": 98, "line_end": 98, "quote": "리틀 머메이드: [나 잘못 말하면, 언령 발동돼.]" },
+        { "scene_id": "mudfish_05", "line_start": 100, "line_end": 100, "quote": "레비: 그, 그때 나 못 움직이게 만든 그거?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__018",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "mudfish_03__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "mudfish_05__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 처음에는 말을 잘하던 리틀 머메이드가 왜 말을 삼가고 '우으' 소리만 내며 물방울로 의사소통하는가 / 답: 잘못 말하면 본인이 원하지 않아도 상대를 못 움직이게 하는 언령이 발동될까 봐 말을 안 한 것이다(mudfish_05 L98-L105) / 근거: 같은 이야기에서 레비가 처음에는 말을 잘하다가 왜 갑자기 '우으' 거리는지 묻자 리틀 머메이드가 언령 오발동 우려 때문임을 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "mudfish_03", "line_start": 50, "line_end": 50, "quote": "리틀 머메이드: 우으우!" },
+        { "scene_id": "mudfish_03", "line_start": 57, "line_end": 57, "quote": "리틀 머메이드: 아우!" },
+        { "scene_id": "mudfish_05", "line_start": 98, "line_end": 98, "quote": "리틀 머메이드: [나 잘못 말하면, 언령 발동돼.]" },
+        { "scene_id": "mudfish_05", "line_start": 104, "line_end": 104, "quote": "레비: 그래서 말을 안 하는 거야? 혹시나··· 또 발동될까 봐?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__019",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "littlemermaid_00__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "littlemermaid_02", "line_start": 67, "line_end": 71, "scan_id": "S0083" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 세이렌에게 '언령을 쓰는 사람은 선해야만 해'라고 말한 '???'는 누구이며, '그렇지 않으면, 그 능력은 분명 너를-' 뒤에 끊긴 말은 무엇인가 / 답: 세이렌이 처음 니케가 됐을 때 에이브가 해준 말이며, 끊긴 뒷말은 '분명 너를 외롭게 만들 거야'이다(littlemermaid_02 L67-L71) / 근거: 리틀 머메이드가 앞 장면의 대사를 끝까지 읊자 에이브가 처음 니케가 됐을 때 자신이 해줬던 말이라고 직접 받는다.",
+      "supporting_evidence": [
+        { "scene_id": "littlemermaid_00", "line_start": 3, "line_end": 3, "quote": "???: 언령을 쓰는 사람은 선해야만 해." },
+        { "scene_id": "littlemermaid_00", "line_start": 4, "line_end": 4, "quote": "???: 그렇지 않으면, 그 능력은" },
+        { "scene_id": "littlemermaid_00", "line_start": 5, "line_end": 5, "quote": "???: 분명 너를-" },
+        { "scene_id": "littlemermaid_02", "line_start": 67, "line_end": 67, "quote": "리틀 머메이드: [언령을 쓰는 사람은 선해야만 해.]" },
+        { "scene_id": "littlemermaid_02", "line_start": 69, "line_end": 69, "quote": "리틀 머메이드: [분명 너를 외롭게 만들 거야.]" },
+        { "scene_id": "littlemermaid_02", "line_start": 71, "line_end": 71, "quote": "에이브: 네가 처음 니케가 됐을 때, 내가 해줬던 말이었지." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__006__020",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "littlemermaid_00__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "unbreakable_sphere_dialog_13__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 세이렌에게 '언령을 쓰는 사람은 선해야만 해'라고 말한 '???'는 누구이며, '그렇지 않으면, 그 능력은 분명 너를-' 뒤에 끊긴 말은 무엇인가 / 답: 세이렌이 처음 니케가 됐을 때 에이브가 해준 말이며, 끊긴 뒷말은 '분명 너를 외롭게 만들 거야'이다(unbreakable_sphere_dialog_13 L4-L8) / 근거: 필드 대화의 회상에서 앞 장면의 끊긴 문장 전체가 이어지고 에이브가 처음 니케가 됐을 때 자신이 해준 말임을 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "littlemermaid_00", "line_start": 3, "line_end": 3, "quote": "???: 언령을 쓰는 사람은 선해야만 해." },
+        { "scene_id": "littlemermaid_00", "line_start": 4, "line_end": 4, "quote": "???: 그렇지 않으면, 그 능력은" },
+        { "scene_id": "littlemermaid_00", "line_start": 5, "line_end": 5, "quote": "???: 분명 너를-" },
+        { "scene_id": "unbreakable_sphere_dialog_13", "line_start": 4, "line_end": 4, "quote": "리틀 머메이드: [언령을 쓰는 사람은 선해야만 해.]" },
+        { "scene_id": "unbreakable_sphere_dialog_13", "line_start": 6, "line_end": 6, "quote": "리틀 머메이드: [분명 너를 외롭게 만들 거야.]" },
+        { "scene_id": "unbreakable_sphere_dialog_13", "line_start": 8, "line_end": 8, "quote": "에이브: 네가 처음 니케가 됐을 때, 내가 해줬던 말이었지." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    { "item_id": "over_zone_21__clh_002", "reason": "단서 아님" },
+    { "item_id": "new_flavor_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "anis_01__clh_001", "reason": "짝 없음", "note": "제조법이 비밀에 부쳐진 퍼펙트를 무엇을 재료로 어떻게 만드는지" },
+    { "item_id": "admi_01__clh_004", "reason": "단서 아님" },
+    { "item_id": "novel_00__clh_001", "reason": "짝 없음", "note": "방주 먹거리의 약 95%를 만드는 정체 모를 인공 식량 퍼펙트의 정체와 원료가 무엇인지" },
+    { "item_id": "redhood_03__clh_001", "reason": "단서 아님" },
+    { "item_id": "cinderella_01__clh_002", "reason": "단서 아님" },
+    { "item_id": "blabla_privaty_002__clh_001", "reason": "단서 아님" },
+    { "item_id": "blabla_eh_002__clh_001", "reason": "단서 아님" },
+    { "item_id": "blabla_newflavor_002__clh_001", "reason": "단서 아님" },
+    { "item_id": "d.ark_hero_07__clh_002", "reason": "단서 아님" },
+    { "item_id": "old_tales_09__clh_001", "reason": "단서 아님" },
+    { "item_id": "old_tales_18__clh_002", "reason": "단서 아님" },
+    { "item_id": "old_tales_24__clh_002", "reason": "단서 아님" },
+    { "item_id": "unbreakable_sphere_02__clh_002", "reason": "단서 아님" },
+    { "item_id": "unbreakable_sphere_10__clh_004", "reason": "단서 아님" },
+    { "item_id": "mudfish_02__clh_001", "reason": "단서 아님" },
+    { "item_id": "mudfish_05__clh_002", "reason": "단서 아님" },
+    { "item_id": "gingerbreadhouse_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "maiden_03__clh_002", "reason": "단서 아님" },
+    { "item_id": "unbreakable_sphere_dialog_13__clh_001", "reason": "단서 아님" },
+    { "item_id": "blabla_external_002__clh_003", "reason": "단서 아님" }
+  ],
+  "merge_suggestions": []
+}

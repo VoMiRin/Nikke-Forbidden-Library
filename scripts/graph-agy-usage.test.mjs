@@ -147,6 +147,26 @@ test('5 agy usage: only the latest request of the supervisor and the subagents i
     assert.deepEqual(wf.rows.map((r) => r.session), ['sup5', WF_A, WF_B]);
     assert.deepEqual(wf.rows.map((r) => r.label).slice(1), ['c-judge C1__004', 'c-judge C1__010']);
     assert.equal(wf.total.input_tokens, 42);
+
+    // 결과가 길어 잘리면 메시지의 전문 파일에서 나머지 판정자를 찾는다
+    const fullPath = path.join(brainDir, 'sup6', 'output.txt');
+    await fs.mkdir(path.dirname(fullPath), { recursive: true });
+    await fs.writeFile(
+      fullPath,
+      `Workflow "C 판정" completed.\nLogs:\n- [agent:self] C 판정자 C1__004: done, turn 1 (${WF_A}): "x"\n- [agent:self] C 판정자 C1__010: done, turn 1 (${WF_B}): "y"\n`
+    );
+    await writeSession(brainDir, 'sup6', [
+      { step_index: 0, type: 'USER_INPUT', content: '이번 요청' },
+      {
+        step_index: 1,
+        type: 'SYSTEM_MESSAGE',
+        content:
+          `[Message] content=Task id "sup6/task-7" finished with result:\nThe tool's output was truncated due to being too long. ` +
+          `You can find the full output in a file at file://${fullPath}.\n\nHere is a preview with the middle of the output truncated:\n` +
+          `Workflow "C 판정" completed.\nLogs:\n- [agent:self] C 판정자 C1__004: done, turn 1 (${WF_A}): "x"\n...`,
+      },
+    ]);
+    assert.deepEqual(collectRunUsage({ brainDir, supervisor: 'sup6' }).rows.map((r) => r.session), ['sup6', WF_A, WF_B]);
   } finally {
     await fs.rm(brainDir, { recursive: true, force: true });
   }
