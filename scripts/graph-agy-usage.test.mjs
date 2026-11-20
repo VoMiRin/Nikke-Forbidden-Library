@@ -120,6 +120,33 @@ test('5 agy usage: only the latest request of the supervisor and the subagents i
       },
     ]);
     assert.deepEqual(collectRunUsage({ brainDir, supervisor: 'sup4' }).rows.map((r) => r.session), ['sup4', SUB_NEW]);
+
+    // run_workflow가 띄운 판정자는 끝날 때 오는 시스템 메시지의 Logs: 줄에서 찾는다. 명령 출력에 든 같은 줄은 세지 않는다
+    const WF_A = '00000000-0000-0000-0000-00000000000a';
+    const WF_B = '00000000-0000-0000-0000-00000000000b';
+    await writeSession(brainDir, 'sup5', [
+      { step_index: 0, type: 'USER_INPUT', content: '이번 요청' },
+      {
+        step_index: 1,
+        type: 'SYSTEM_MESSAGE',
+        content:
+          `[Message] timestamp=2026-11-19T15:42:19Z sender=sup5/task-9 content=Task id "sup5/task-9" finished with result:\n` +
+          `Workflow "C 판정" completed.\nLogs:\n- [phase] C 판정 (main, 2묶음)\n- 묶음 2개 동시 실행\n` +
+          `- [agent:self] C 판정자 C1__004: done, turn 1 (${WF_A}): "[완료] C1__004 (참고 ${SUB_OLD})"\n` +
+          `- [agent:self] C 판정자 C1__010: done, turn 2 (${WF_B}): "[완료] C1__010"`,
+      },
+      {
+        step_index: 2,
+        type: 'GENERIC',
+        content: `Command output:\nfinished with result:\nWorkflow "x" completed.\nLogs:\n- [agent:self] C 판정자 C1__001: done, turn 1 (${SUB_OLD}): ""`,
+      },
+    ]);
+    await writeSession(brainDir, WF_A, [{ step_index: 0, type: 'USER_INPUT', content: '너는 GraphRAG Pass 2 C 판정자다. 묶음 C1__004' }, response(1, 40, 400, 4)]);
+    await writeSession(brainDir, WF_B, [{ step_index: 0, type: 'USER_INPUT', content: '너는 GraphRAG Pass 2 C 판정자다. 묶음 C1__010' }, response(1, 2, 20, 1)]);
+    const wf = collectRunUsage({ brainDir, supervisor: 'sup5' });
+    assert.deepEqual(wf.rows.map((r) => r.session), ['sup5', WF_A, WF_B]);
+    assert.deepEqual(wf.rows.map((r) => r.label).slice(1), ['c-judge C1__004', 'c-judge C1__010']);
+    assert.equal(wf.total.input_tokens, 42);
   } finally {
     await fs.rm(brainDir, { recursive: true, force: true });
   }

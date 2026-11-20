@@ -1,9 +1,11 @@
-# Pass 2 C 판정을 agy run_workflow로 돌리는 스크립트(실행 방식 시험, 2026-11-19).
-# agy 감독관이 run_workflow(ScriptPath=<이 파일 절대 경로>, Args={"run": "wf"})로 실행한다.
+# Pass 2 C 판정을 agy run_workflow로 돌리는 스크립트(실행 방식 시험 2026-11-19, 본 실행 2026-11-20).
+# agy 감독관이 run_workflow(ScriptPath=<이 파일 절대 경로>, Args={"run": "main", "wave": N})로 실행한다.
+# Args: run(필수 아님, 기본 wf), wave(그 회차 묶음만), bundles(묶음 ID 목록, wave와 함께 쓰면 둘 다 맞는 것만), max_followups
 # 일반 python3로는 돌지 않는다(agent·parallel·log·args는 run_workflow가 넣어 준다).
 #
 # - 묶음마다 새 맥락의 판정자 하나(model="inherit": 감독관과 같은 모델). 판정자끼리, 스크립트와 맥락을 나누지 않는다
-# - 판정자 지시문은 GRAPH_RAG_PASS2_C_PILOT.md 1절과 같다. 다른 점은 --run 값과 6번 보고 줄(finish 도구로 보고)뿐이다
+# - 판정자 지시문은 GRAPH_RAG_PASS2_C_PILOT.md 1절에서 자기 점검 네 줄을 뺀 것이다(규칙 3.4~3.6절에 들어감, 2026-11-20).
+#   다른 점은 --run 값과 6번 보고 줄(finish 도구로 보고)이다
 # - 판정자가 보고한 뒤 스크립트가 status(읽기 전용)로 통과 여부를 확인한다. [done]이 아니면 같은 판정자에게 다시 맡긴다(최대 MAX_FOLLOWUPS번)
 #   validate는 스크립트가 돌리지 않는다(검증 기록이 늘어 파일럿과 검증 횟수를 비교할 수 없게 된다)
 # - 묶음 하나가 예외로 끝나도 나머지는 계속한다(parallel은 예외 하나에 전부 취소하므로 묶음마다 잡는다)
@@ -23,11 +25,17 @@ MAX_FOLLOWUPS = int(args.get("max_followups", 2))
 with open(os.path.join(ROOT, "bundles", "plan.json"), encoding="utf-8") as f:
     plan = json.load(f)
 only = set(args.get("bundles") or [])
-bundles = [b for b in plan["bundles"] if not only or b["bundle_id"] in only]
-if only - {b["bundle_id"] for b in bundles}:
-    raise ValueError(f"계획에 없는 묶음: {sorted(only - {b['bundle_id'] for b in bundles})}")
+wave = args.get("wave")
+if only - {b["bundle_id"] for b in plan["bundles"]}:
+    raise ValueError(f"계획에 없는 묶음: {sorted(only - {b['bundle_id'] for b in plan['bundles']})}")
+bundles = [
+    b for b in plan["bundles"]
+    if (not only or b["bundle_id"] in only) and (wave is None or int(b["wave"]) == int(wave))
+]
+if not bundles:
+    raise ValueError(f"고른 묶음이 없다(wave={wave}, bundles={sorted(only)})")
 
-JUDGE = """너는 GraphRAG Pass 2 C 판정자다. 파일럿 묶음 하나만 판정한다.
+JUDGE = """너는 GraphRAG Pass 2 C 판정자다. 묶음 하나만 판정한다.
 1. docs/graphrag/GRAPH_RAG_PASS2_C_RULES.md를 읽어라. 이 규칙이 전부다.
    명세·설계·감독관 지시서·scripts 소스·다른 묶음의 출력·답안은 읽지 마라.
 2. 입력 {input}, 발췌 {script}, 묶음 밖 단서 색인 {clues}.
@@ -37,11 +45,6 @@ JUDGE = """너는 GraphRAG Pass 2 C 판정자다. 파일럿 묶음 하나만 판
    같은 낱말이 두 장면에 나오기만 한 것은 잇지 않는다. 공개 쪽 원문이 그 질문에 답할 때만 잇는다(3.2절).
    같은 대상·판단 보류의 rationale에는 질문: / 답: / 근거:를 모두 적어라(3.4절). 짝 없음에는 note에 남은 의문을 적어라.
    일부 의문만 풀렸으면 이은 연결과 함께 남은 의문을 짝 없음(note)으로 적어라.
-   자기 점검(쓰기 전에 단위마다 확인하라):
-   - 분류가 trait(말버릇·호칭)이거나 묶음 키가 말투여도, 그 대사가 감춘 것(생사·처벌·숨긴 목적 등)이 있으면 같은 이야기 뒤 장면을 show로 읽어 답을 찾아라. 말버릇 항목이라는 이유만으로 단서 아님으로 적지 마라.
-   - 공개 쪽 원문이 답을 문장으로 직접 말하지 않고 여러 장면을 결합하거나 인물 심리를 추론해야 이어지면 가능성이다.
-   - 질문 대상이 여럿(명단, "다들")이면 공개 쪽이 모두에게 답하는지 세어라. 답이 없는 대상은 짝 없음 note로 남겨라.
-   - 인물의 옛 몸체·장비·분신을 부르는 호칭은 그 인물과 합치는 병합 제안을 내지 마라(3.6절 변이 전후와 같다).
    suggested_pairs, official_key, pass1_detail, pass1_hints, 색인은 근거가 아니다. 원문으로 확인하라.
    색인에서 짝일 것 같은 단서는 show로 그 장면을 읽고 확인한 뒤 ref: "item"으로 이어라. ID는 show 머리말에서 옮긴다.
 3. 출력 {output} 하나만 써라. schema_version은 pass2-0.1.0, bundle_id는 {bundle_id}다.
@@ -105,7 +108,7 @@ async def judge(b):
 
 
 os.makedirs(OUT_DIR, exist_ok=True)
-phase(f"C 판정 ({RUN}, {len(bundles)}묶음)")
+phase(f"C 판정 ({RUN}{'' if wave is None else f' 회차 {wave}'}, {len(bundles)}묶음)")
 log(f"묶음 {len(bundles)}개 동시 실행, 재요청 최대 {MAX_FOLLOWUPS}번")
 results = await parallel(bundles, judge)
 summary = {"run": RUN, "bundles": results}

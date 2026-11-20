@@ -75,14 +75,22 @@ export const supervisorRange = (steps, { fromStep = null, toStep = null, fromReq
 };
 
 const CREATED_SUBAGENTS_RE = /^(?:(?:Created|Completed) At: \S+\r?\n)*Created the following subagents?:/;
+// run_workflow가 띄운 에이전트는 "Created the following subagent" 기록이 없다. 끝날 때 감독관에게 오는 시스템 메시지의
+// Logs: 줄("- [agent:self] C 판정자 C1__004: done, turn 1 (<대화 ID>): ...")에서 대화 ID를 읽는다(C workflow 시험, 2026-11-19)
+const WORKFLOW_DONE_RE = /finished with result:\r?\nWorkflow "[^"\n]*" (?:completed|failed)/;
+const WORKFLOW_AGENT_LINE_RE = /^- \[agent:[^\]]*\][^\n]*?\(([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\)/gm;
 
 export const createdSubagentIds = (steps) => {
   const ids = [];
+  const add = (id) => {
+    if (!ids.includes(id)) ids.push(id);
+  };
   for (const step of steps) {
     const content = contentOf(step);
-    if (!CREATED_SUBAGENTS_RE.test(content)) continue;
-    for (const m of content.matchAll(/"conversationId":\s*"([0-9a-f-]{36})"/g)) {
-      if (!ids.includes(m[1])) ids.push(m[1]);
+    if (CREATED_SUBAGENTS_RE.test(content)) {
+      for (const m of content.matchAll(/"conversationId":\s*"([0-9a-f-]{36})"/g)) add(m[1]);
+    } else if (step.type === 'SYSTEM_MESSAGE' && WORKFLOW_DONE_RE.test(content)) {
+      for (const m of content.matchAll(WORKFLOW_AGENT_LINE_RE)) add(m[1]);
     }
   }
   return ids;
