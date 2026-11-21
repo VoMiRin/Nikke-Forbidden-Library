@@ -16,6 +16,7 @@ import {
   carryOverAudit,
   diffCShards,
   auditDrift,
+  conflictBundles,
   scanCorpus,
   selectPairs,
   storyOtherClues,
@@ -465,4 +466,10 @@ test('carryOverAudit: 다시 만든 표본이 늘어도 그 단위를 뒤 회차
   assert.ok(no.errors.some((e) => e.includes('C1__001:a__clh_001')));
   // 감사한 항목이 빠지면 안 된다
   assert.ok(!carryOverAudit({ ...base, regenerated: regenerated.slice(1), later: later([{ audit_id: 'ext:a__clh_001', item_id: 'a__clh_001', links: [] }]) }).ok);
+});
+
+test('conflictBundles: 일부 겹침 충돌은 만난 연결(meets)의 묶음도 걸린 묶음으로 본다', () => {
+  const c = { kind: 'partial_line_item_overlap', link_id: 'C1__002__001', bundle_id: 'C1__002', lines: 'lines:s:60-70', overlapped_items: ['s__clh_001', 's__clh_002'], meets: ['C1__028__004', 'C1__028__010'] };
+  assert.deepEqual(conflictBundles(c), ['C1__002', 'C1__028']);
+  assert.deepEqual(conflictBundles({ kind: 'status', item_id: 'x', own: { bundle_id: 'C1__006' }, links: [{ link_id: 'C1__039__006', bundle_id: 'C1__039', wave: 2 }] }), ['C1__006', 'C1__039']);
 });

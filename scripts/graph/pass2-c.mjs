@@ -1023,7 +1023,10 @@ export const annotateLinks = ({ links, store, releaseDates, overlapIndex }) => l
 });
 
 /** 충돌에 걸린 묶음 */
-export const conflictBundles = (c) => [...new Set([c.bundle_id, c.own?.bundle_id, ...(c.links ?? []).map((l) => l.bundle_id)].filter(Boolean))];
+// meets는 link_id 목록이다. link_id는 검증기가 "<bundle_id>__NNN"으로 강제하므로 묶음을 떼어 낸다
+// (앞 회차 연결과 이번 회차 연결이 만난 일부 겹침 충돌이 이번 회차 감사에 들어가게)
+const bundleOfLinkId = (id) => /^(.+)__\d{3}$/.exec(id ?? '')?.[1] ?? null;
+export const conflictBundles = (c) => [...new Set([c.bundle_id, c.own?.bundle_id, ...(c.links ?? []).map((l) => l.bundle_id), ...(c.meets ?? []).map(bundleOfLinkId)].filter(Boolean))];
 
 // ---------------------------------------------------------------------------
 // 감사(설계 2.10절)

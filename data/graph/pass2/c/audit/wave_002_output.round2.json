@@ -1,0 +1,5762 @@
+{
+  "schema_version": "pass2-audit-0.1.0",
+  "input_sha256": "b64bbcb8e49ab328faf69127f2200147ffb7073882d6a03504fdb061923f63d0",
+  "auditor_family": "gpt",
+  "auditor_model": "gpt-6.2-astra",
+  "auditor_session": "01a1fd1c-e451-7d42-a07e-8ea562c2aa53",
+  "reviews": [
+    {
+      "audit_id": "C1__028:main_24_16__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에닉은 아틀라스에 보관한 마테리얼 H가 인디빌리아의 파편임을 명시한다. 028__002의 공개 방향이 맞다. L68~70은 도로시가 짐작만 한 심부의 사건도 설명한다. 같은 공개 범위에 겹치던 028__004를 별개 답으로 셀 이유가 없고, 에닉의 설명에 새 의문은 없다. 대조 범위는 main_24_18 L172~181, main_24_03 L17~18, main_24_15 L55~65이다.",
+      "evidence": [
+        {
+          "scene_id": "main_24_16",
+          "line": 66,
+          "quote": "에닉: 그리고 M.M.R.의 아틀라스 케이지에 보관되어 있던 마테리얼 H는."
+        },
+        {
+          "scene_id": "main_24_16",
+          "line": 67,
+          "quote": "에닉: 헬레틱 인디빌리아의 파편입니다."
+        },
+        {
+          "scene_id": "main_24_16",
+          "line": 68,
+          "quote": "에닉: 헬레틱 니힐리스타는 애초에 M.M.R.의 심부가 목적이었고."
+        },
+        {
+          "scene_id": "main_24_16",
+          "line": 69,
+          "quote": "에닉: 죽음마저 이용해 목적지에 잠입."
+        },
+        {
+          "scene_id": "main_24_16",
+          "line": 70,
+          "quote": "에닉: 마테리얼 H를 해방해 인디빌리아로 부활시키는 게 최종 목적이었을 것이라 추정됩니다."
+        },
+        {
+          "scene_id": "main_12_11",
+          "line": 17,
+          "quote": "마나: 사고 이후, 현재 아틀라스 케이스에 보관중입니다."
+        },
+        {
+          "scene_id": "main_12_11",
+          "line": 18,
+          "quote": "잉그리드: ···헬레틱의 파편, 아니. 마테리얼 H의 현 무게는?"
+        },
+        {
+          "scene_id": "main_24_15",
+          "line": 59,
+          "quote": "도로시는 M.M.R. 심부로 향하는 문을 바라보았다."
+        },
+        {
+          "scene_id": "main_24_15",
+          "line": 65,
+          "quote": "도로시: ···안에서 뭔가 일어나고 있는 모양이네."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:white_memory_17__clh_001",
+      "judgment": "틀림",
+      "problems": [
+        "confidence_too_high"
+      ],
+      "reason": "016·017을 가능성으로 낮춘 수정은 맞다. 015의 인물과 018의 전진 조건도 직접 풀린다. 다만 014는 여전히 ‘품에서 꺼낸 마른 흰 꽃’과 ‘문을 열자 펼쳐진 꽃밭’ 둘 모두의 품종을 유력으로 답한다. 1001317 L2~3은 두 대상을 구별하고 white_memory_17 L2는 눈앞의 꽃밭만 릴리바이스라고 명명한다. 앞 감사에서 구별한 두 표본을 기준으로, 014의 유력한 답은 꽃밭에 한정하거나 마른 꽃까지 포함할 때는 가능성으로 낮춰야 한다. 대조 범위는 white_memory_page_1001324 L4~14, white_memory_page_1001330 L2, white_memory_page_1001406 L8~13이다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_17",
+          "line": 2,
+          "quote": "스노우 화이트는 눈앞에 펼쳐진 릴리바이스 꽃을 향해 다가갔다."
+        },
+        {
+          "scene_id": "white_memory_17",
+          "line": 12,
+          "quote": "수집품 획득: 릴리바이스 꽃"
+        },
+        {
+          "scene_id": "white_memory_17",
+          "line": 14,
+          "quote": "[릴리바이스]."
+        },
+        {
+          "scene_id": "white_memory_17",
+          "line": 15,
+          "quote": "그녀의 이름도 이 꽃에서 왔다고 했다."
+        },
+        {
+          "scene_id": "white_memory_17",
+          "line": 16,
+          "quote": "릴리바이스와 스노우 화이트의 추억이 담긴 이 꽃이 그녀를 만나러 가게 할 열쇠가 되어줄 것이다."
+        },
+        {
+          "scene_id": "white_memory_page_1001317",
+          "line": 2,
+          "quote": "스노우 화이트는 민가에서 가져온 [마른 흰 꽃]을 품에서 꺼내보곤, 무언가를 다짐한 듯 문을 열었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001317",
+          "line": 3,
+          "quote": "문이 열리고 스노우 화이트의 눈앞에 하얀 꽃밭이 펼쳐졌다."
+        },
+        {
+          "scene_id": "white_memory_page_1001318",
+          "line": 6,
+          "quote": "\"이 꽃, 언니 이름이랑 똑같아요.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001329",
+          "line": 5,
+          "quote": "바짝 말라버린 흰색의 꽃."
+        },
+        {
+          "scene_id": "white_memory_page_1001330",
+          "line": 2,
+          "quote": "스노우 화이트는 이 꽃을 계속 보고 있으면 누군가가 떠오를 것 같다는 생각에 꽃을 외면하기로 한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:white_memory_page_1001405__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 선택에서 멈추면 그녀의 이름을 기억하라는 힌트를 받고, 전진하면 릴리바이스를 떠올려 걷는다. 019는 이름과 전진 조건을 직접 받으며 꽃을 보는 행동에도 새 의문이 없다. 대조 범위는 white_memory_18 L2~4, white_memory_18 L4~6, white_memory_page_1001121 L2~12이다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001405",
+          "line": 2,
+          "quote": "스노우 화이트는 릴리바이스가 좋아했던 [릴리바이스 꽃]을 바라보았다."
+        },
+        {
+          "scene_id": "white_memory_page_1001405",
+          "line": 7,
+          "quote": "마침내 걸어갔다."
+        },
+        {
+          "scene_id": "white_memory_11",
+          "line": 17,
+          "quote": "힌트: [그녀]의 [이름]을 기억해야만 앞으로 나아갈 수 있다."
+        },
+        {
+          "scene_id": "white_memory_page_1001404",
+          "line": 17,
+          "quote": "[NEXT_ROUTE IF_CHOICE=\"white_memory_page_1001404_choice\" OPTION=\"option_100140402\" TARGET=\"white_memory_page_1001405\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:주의용광로사용법_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "은색 용해액으로 알을 만들어 직계에게 타격을 주겠다는 기록에 사용법이 답한다. 같은 실험을 되짚어 목표가 자신들의 퀸이라고 명시한다. 대조 범위는 주의용광로사용법_01 L2~4, 주의용광로사용법_01 L7~9, 주의용광로사용법_02 L2~5이다.",
+      "evidence": [
+        {
+          "scene_id": "주의용광로사용법_00",
+          "line": 6,
+          "quote": "우리 그 다크 매터랑 은색 물을 섞어서 알 만들고 실험했던 거 기억하지?"
+        },
+        {
+          "scene_id": "주의용광로사용법_00",
+          "line": 9,
+          "quote": "우리가 만들고 싶어 했던 가장 중요한걸, 우리만의 퀸을 만들기 위해서야."
+        },
+        {
+          "scene_id": "은색액체_03",
+          "line": 6,
+          "quote": "직계들에게 진정한 의미의 한방을 먹일 수 있는."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:chapter_48_01__clh_005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "퀸이 가져간 몸이 어떤 용도였는지를, 해월을 부르는 명령과 거대화한 리버렐리오의 공격을 본 레비아탄이 직접 짚는다. 공격체의 정체도 이 장면에서 밝혀진다. 대조 범위는 chapter_48_02 L4~58, chapter_48_02 L68~96, chapter_48_03 L65~73이다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_48_01",
+          "line": 85,
+          "quote": "에고비스타: 해월(海月)."
+        },
+        {
+          "scene_id": "chapter_48_01",
+          "line": 111,
+          "quote": "레비아탄: ···몸만 가져간 이유가 이거였네."
+        },
+        {
+          "scene_id": "chapter_48_01",
+          "line": 121,
+          "quote": "  [OPTION TEXT=\"거대화 한 리버렐리오다!\"]"
+        },
+        {
+          "scene_id": "main_46_06",
+          "line": 61,
+          "quote": "미러: 코어가 있는 몸만 챙긴 후 머리는 쓰레기 버리듯 버렸죠."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:fading_affection_3129__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리안과 함께 무엇에 쫓겼는지 떠올리지 못하던 7호가 코어를 깬 일을 기억하며 블랙스미스의 이름을 되찾는다. 회상한 이름이 바로 단서의 답이다. 대조 범위는 fading_affection_3130 L4, fading_affection_3136 L2~5, fading_affection_8101 L7~9이다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3129",
+          "line": 9,
+          "quote": "\"블랙스미스의 코어를 깼어···!\""
+        },
+        {
+          "scene_id": "fading_affection_3129",
+          "line": 11,
+          "quote": "\"맞아. 블랙스미스야. 블랙스미스였어!\""
+        },
+        {
+          "scene_id": "fading_affection_3004",
+          "line": 17,
+          "quote": "\"왜 기억이 안 나지? 분명히 우리가 쫓겼던 게···.\""
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__027:main_45_08__clh_002",
+      "judgment": "틀림",
+      "problems": [
+        "evidence_not_support",
+        "not_a_reveal"
+      ],
+      "reason": "008은 프리티의 특별한 바디를, 010은 전투에서 정체를 알 수 없던 새 의상과 힘을 설명한다. 006은 머스탱이 L202에서 추정한 제작 취지를 확정된 목적으로 적었다. 전투 데이터로 확인한 에너지 제어 기능과 구별해야 한다. 009에서는 지휘관이 같은 전투에서 실드가 얇게 펼친 빔과 같다고 설명한 뒤 아니스가 흡수한다. 모든 에너지를 제어한다는 후속 설명은 더 넓은 기능을 알려 주지만, 그 실드까지 흡수한 까닭은 이미 제시됐다. 이 단위 자체의 공개 전용 상태는 맞다. 대조 범위는 main_45_10 L129~130, main_45_10 L169~176, main_45_00 L2~14이다.",
+      "evidence": [
+        {
+          "scene_id": "main_39_17",
+          "line": 19,
+          "quote": "머스탱: 프리티의 Body로 만들어진, 우리 Sin의 상징."
+        },
+        {
+          "scene_id": "star_anis_25",
+          "line": 76,
+          "quote": "머스탱: 프리티의 Body는 매우 Special한 Body 였습니Da."
+        },
+        {
+          "scene_id": "main_44_08",
+          "line": 22,
+          "quote": "···실드의 입자가, 아니스에게로 다가가고 있다."
+        },
+        {
+          "scene_id": "main_44_08",
+          "line": 29,
+          "quote": "  [OPTION TEXT=\"저 실드는 빔을 얇게 핀 것과 다르지 않아!\"]"
+        },
+        {
+          "scene_id": "main_44_08",
+          "line": 38,
+          "quote": "앨트루이아가 전개한 실드가 분해되며 아니스의 손끝으로 향한다."
+        },
+        {
+          "scene_id": "main_45_07",
+          "line": 303,
+          "quote": "에닉: 확장 무장 스타. 분해 후 재배치 중."
+        },
+        {
+          "scene_id": "main_45_07",
+          "line": 307,
+          "quote": "에닉: 모르겠습니다."
+        },
+        {
+          "scene_id": "main_45_08",
+          "line": 188,
+          "quote": "머스탱: 확장 무장 STAR의 진짜 기능은, Energy 제어 입니Da."
+        },
+        {
+          "scene_id": "main_45_08",
+          "line": 192,
+          "quote": "머스탱: Starlight Mode처럼, Dress 형태가 되기도 합니다."
+        },
+        {
+          "scene_id": "main_45_08",
+          "line": 197,
+          "quote": "머스탱: Yes. 일시적이지만 Legend 니케, 릴리바이스의 Power를 재현할 수 있게 되는거Jyo."
+        },
+        {
+          "scene_id": "main_45_08",
+          "line": 201,
+          "quote": "머스탱: Powerful 한 바디를 타고 났습니Da."
+        },
+        {
+          "scene_id": "main_45_08",
+          "line": 202,
+          "quote": "머스탱: 그 프리티로 만든 확장 Weapon이니, 그 Power를 재현하는 것에 중점을 둔 것이겠Jyo."
+        },
+        {
+          "scene_id": "main_45_08",
+          "line": 203,
+          "quote": "아니스: 음··· 사장님은 잘 모르시네요. 확장 무장에 대해서."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:white_memory_18__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "‘그녀의 ■■’를 인정할 수 없어 멈췄던 인물이 릴리바이스의 관 위에 꽃을 놓고 비로소 작별한다. 지워진 단어를 글자 그대로 복원해 주지는 않지만 이 행동이 죽음을 받아들였다는 해석을 뒷받침한다. 추가된 공개 방향과 가능성이 맞다. 대조 범위는 white_memory_page_1001406 L8~13, white_memory_page_1001407 L11~14, white_memory_page_1001404 L2~7이다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_11",
+          "line": 8,
+          "quote": "그녀의 얼굴을, 이름을 떠올리지도 못하는데 어떻게 그녀의 ■■을 인정할 수 있지?"
+        },
+        {
+          "scene_id": "white_memory_11",
+          "line": 12,
+          "quote": "아직은 그녀의 ■■을 인정할 수 없어."
+        },
+        {
+          "scene_id": "white_memory_18",
+          "line": 35,
+          "quote": "스노우 화이트는 릴리바이스의 관 위에 릴리바이스 꽃을 내려놓았다."
+        },
+        {
+          "scene_id": "white_memory_18",
+          "line": 36,
+          "quote": "비로소 그녀에게 안녕을 고했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:queen's_order_08__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관이 ‘존재하는 것만으로?’라고 되묻자 로산나는 답을 미룬다. 이 장면에서 그의 생명이 위협받을 때 몸의 리미트가 더 풀린다고 밝히고 지휘관도 그 말을 되짚는다. 수정한 공개 방향이 직접 맞으며 평소의 대인 제약을 다시 묻는 연결은 필요 없다.",
+      "evidence": [
+        {
+          "scene_id": "queen's_order_07",
+          "line": 85,
+          "quote": "로산나: 미스터는 존재하는 것만으로도"
+        },
+        {
+          "scene_id": "queen's_order_07",
+          "line": 86,
+          "quote": "로산나: 나한테 큰 힘이 되거든."
+        },
+        {
+          "scene_id": "queen's_order_07",
+          "line": 88,
+          "quote": "  [OPTION TEXT=\"존재하는 것만으로?\"]"
+        },
+        {
+          "scene_id": "queen's_order_08",
+          "line": 390,
+          "quote": "로산나: 느슨했던 내 리미트가 더욱 풀어져 있으니까."
+        },
+        {
+          "scene_id": "queen's_order_08",
+          "line": 396,
+          "quote": "로산나: 지휘관의 목숨에 위협이 되는 행동을 발견하면 제대로 사용할 수 있는 것 같더라고?"
+        },
+        {
+          "scene_id": "queen's_order_08",
+          "line": 398,
+          "quote": "  [OPTION TEXT=\"설마 존재하기만 해도 도움이 된다는 게···.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:bay_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "베이가 관중의 시선을 받고 비틀거리며 숨을 몰아쉰 일을 자신의 주목 공포증과 그 증상으로 직접 설명한다. 어떤 병인지나 시선이 몸에 미치는 영향은 여기서 밝혀져 공개 전용이 맞다. 대조 범위는 bay_03 L109~121, bay_03 L257~261, bay_04 L265이다.",
+      "evidence": [
+        {
+          "scene_id": "bay_00",
+          "line": 106,
+          "quote": "베이: 하아··· 하아···!"
+        },
+        {
+          "scene_id": "bay_00",
+          "line": 110,
+          "quote": "베이는 사람들의 시선에 가두어진 것처럼 몸이 딱딱하게 굳어짐을 느꼈고."
+        },
+        {
+          "scene_id": "bay_01",
+          "line": 53,
+          "quote": "베이: ···사실 내가 주목 공포증이 있어."
+        },
+        {
+          "scene_id": "bay_01",
+          "line": 59,
+          "quote": "베이: 사람들의 시선이 나에게 주목되면 불안한 감정과 함께 호흡이 가빠지는 증상인데."
+        },
+        {
+          "scene_id": "bay_01",
+          "line": 60,
+          "quote": "베이: 요즘엔 이렇게 1:1로 이야기하고 있을 때에도 증상이 나타나더라고."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:n102_03__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엑시아가 추정했던 아침 세뇌의 수단에 대해 연구원이 수첩에 직접 쓴 문장과 반복 횟수, 달라진 반응을 밝힌다. 한 실험을 통해 일반적인 수단을 설명하므로 추가한 가능성 연결이 맞다. 앤이 그날 지휘관을 무서워한 까닭도 이 장면에서 풀린다. 대조 범위는 n102_04 L162~170, n102_01 L184~195, n102_01 L182~186이다.",
+      "evidence": [
+        {
+          "scene_id": "n102_01",
+          "line": 194,
+          "quote": "엑시아: 그리고 어제와 오늘 좋아하는 것이 달라졌다는 건-"
+        },
+        {
+          "scene_id": "n102_01",
+          "line": 195,
+          "quote": "엑시아: 아마 어떤 수단을 통해 하루를 시작할 때 세뇌를 거는 것이겠-죠-"
+        },
+        {
+          "scene_id": "n102_03",
+          "line": 65,
+          "quote": "    수첩에 색다른 내용을 썼을 뿐이야"
+        },
+        {
+          "scene_id": "n102_03",
+          "line": 71,
+          "quote": "    [선생님은 아주 무서운 사람이다]"
+        },
+        {
+          "scene_id": "n102_03",
+          "line": 89,
+          "quote": "    이건 세 줄 연속으로 써봤어"
+        },
+        {
+          "scene_id": "n102_03",
+          "line": 95,
+          "quote": "    효과가 아주 좋네"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__031:coins_in_rush_24__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에이드가 비밀 스쿼드의 리더로 추정한 괴도는 대결한 벨벳이다. 벨벳 자신이 은퇴한 쉐이드의 리더로서 패한 일을 말하고 옛 동료들까지 언급하므로 공개 쪽 근거가 직접적이다. 대조 범위는 coins_in_rush_00 L93~94, coins_in_rush_16 L219~220, coins_in_rush_17 L165~166이다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_16",
+          "line": 119,
+          "quote": "에이드: 네. 확실한 건 아니지만···."
+        },
+        {
+          "scene_id": "coins_in_rush_16",
+          "line": 126,
+          "quote": "에이드: 테트라 비밀 스쿼드의 리더였거든요, 그 사람은."
+        },
+        {
+          "scene_id": "coins_in_rush_16",
+          "line": 151,
+          "quote": "에이드: ···네. 이름은 [쉐이드]."
+        },
+        {
+          "scene_id": "coins_in_rush_24",
+          "line": 56,
+          "quote": "벨벳: 아무리 은퇴했다고는 해도, [쉐이드]의 리더가 기초 특수 훈련 조금 받은 메이드한테 진다고?"
+        },
+        {
+          "scene_id": "coins_in_rush_24",
+          "line": 57,
+          "quote": "벨벳: 예전 멤버들이 보면 기절했겠어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__037:beauty_full_shot_06__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라피가 섬에 와서 말하려던 ‘별도로 지정받은 임무’는 바이퍼가 끼어들어 끊긴다. 나중에 라피가 같은 섬에서 머스탱에게 따로 받은 생태·거주 적합성 조사를 밝힌다. 그때 끝맺지 못한 문장과 동일한 부탁인지는 정황으로 이어지므로 가능성이 적절하다. 대조 범위는 beauty_full_shot_12 L51~52, beauty_full_shot_12 L79~83, beauty_full_shot_19 L33~36이다.",
+      "evidence": [
+        {
+          "scene_id": "beauty_full_shot_03",
+          "line": 236,
+          "quote": "라피: 그럼 저희도 별도로 지정받은 임무를···."
+        },
+        {
+          "scene_id": "beauty_full_shot_03",
+          "line": 237,
+          "quote": "바이퍼: 자암까안♡"
+        },
+        {
+          "scene_id": "beauty_full_shot_06",
+          "line": 16,
+          "quote": "라피: ···실은 머스탱에게 따로 부탁을 받았습니다."
+        },
+        {
+          "scene_id": "beauty_full_shot_06",
+          "line": 17,
+          "quote": "라피: 지금 이곳, 코랄 아일랜드의 생태계를 조사해 달라고요."
+        },
+        {
+          "scene_id": "beauty_full_shot_06",
+          "line": 18,
+          "quote": "라피: ···만에 하나 인간이 올라왔을 때, 살기에 적합한 곳인지 알아봐 달라고 했습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:blabla_aria_001__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메신저 화자는 아리아로 표시되어 있고 세뇨르는 지휘관에게 건네는 인사말이다. 오페라 하우스에서도 같은 상대를 그렇게 부른다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_aria_001",
+          "line": 4,
+          "quote": "    안녕 세뇨르"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:red_ash_mini_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "새 군번줄을 좋아하는 이유는 갓데스의 일원이 됐다는 데 있다. 레드 후드가 뒤에 얼버무리는 것은 전장에서의 다른 용도이며, 다른 이야기에서 발견하는 지휘관의 군번줄과 소유자도 다르다. 대조 범위는 red_ash_mini_07 L12~13, red_ash_mini_07 L15~17, red_ash_mini_08 L6~9이다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_mini_01",
+          "line": 5,
+          "quote": "스노우 화이트: 이거요 이거! 군번줄!"
+        },
+        {
+          "scene_id": "red_ash_mini_01",
+          "line": 8,
+          "quote": "스노우 화이트: 그럼요! 저도 이제 어엿한 갓데스 스쿼드라는 거니까요!"
+        },
+        {
+          "scene_id": "red_ash_mini_01",
+          "line": 11,
+          "quote": "스노우 화이트: 인식표 아닌가요? 소속이 어디고 이름이 뭔지 알 수 있는."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:blabla_external_005__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "길로틴은 자신이 들은 메이든의 소리가 얼마나 끔찍했는지 과장한다. 무슨 소리를 들었는지는 같은 대화의 녹음으로 밝혀지며, 오른눈에 특이한 변화가 일어나는 대목도 없다. 대조 범위는 blabla_external_003 L36~53, blabla_external_002 L128~136, blabla_external_003 L180~191이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_external_005",
+          "line": 114,
+          "quote": "    내 오른쪽 눈에 봉인된 편익의 마왕도"
+        },
+        {
+          "scene_id": "blabla_external_005",
+          "line": 117,
+          "quote": "    침묵했으니"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:project_matis_08__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엔메가 설계도의 진위를 바로 확인하고 2세대 이후 오랜만에 본 재능이라고 평가한다. 모델명은 평가의 비교 대상이다. 대조 범위는 project_matis_09 L63, project_matis_10 L99~108, project_matis_22 L112~119이다.",
+      "evidence": [
+        {
+          "scene_id": "project_matis_08",
+          "line": 102,
+          "quote": "엔메: 그건 진짜가 맞아."
+        },
+        {
+          "scene_id": "project_matis_08",
+          "line": 104,
+          "quote": "엔메: 2세대 페어리테일 이후로, 정말 오랜만에 보는 것이었어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:main_36_09__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아니스가 USB가 무엇이냐고 묻자마자 아비스타가 상인들의 카운터스 상대 가격 인상 내역을 설명한다. 대조 범위는 main_36_11 L67~79, main_36_01 L27~29, main_36_06 L39~40이다.",
+      "evidence": [
+        {
+          "scene_id": "main_36_09",
+          "line": 63,
+          "quote": "아비스타는 아니스에게 USB하나를 건네줬다."
+        },
+        {
+          "scene_id": "main_36_09",
+          "line": 65,
+          "quote": "아비스타: 특정 상인들이 카운터스에게만 상품 가격을 오랜 기간에 걸쳐 서서히 올렸어요."
+        },
+        {
+          "scene_id": "main_36_09",
+          "line": 68,
+          "quote": "아비스타: 예. 바가지를 쓰고 있었다는 말이에요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:blabla_blanc_004__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "블랑은 행운의 토끼라는 자칭으로 점장에게 행복을 주고 싶다고 말한다. 감춘 약속이나 호칭의 주인은 없다. 대조 범위는 blabla_blanc_003 L119~124이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_blanc_004",
+          "line": 85,
+          "quote": "    ㅎㅎ저는 행운의 토끼니까"
+        },
+        {
+          "scene_id": "blabla_blanc_004",
+          "line": 88,
+          "quote": "    앞으로도 쭉 점장님을 행복하게 해드릴게요~!!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:blabla_bunnyx777_005__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루주가 블랑에게 연승한 적 없다는 말은 지휘관의 승리 비결을 묻는 배경이다. 심리전 이야기를 한 분기에서도 지휘관이 운이 좋았다고 바로 답한다. 대조 범위는 blabla_bunnyx777_006 L3~8이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_bunnyx777_005",
+          "line": 22,
+          "quote": "    난 블랑과의 가위바위보에서 한 번도 연속으로 이겨본 적이 없어"
+        },
+        {
+          "scene_id": "blabla_bunnyx777_005",
+          "line": 31,
+          "quote": "    첫 번째 게임에서 어떻게 이겼는지도 너무 궁금해"
+        },
+        {
+          "scene_id": "blabla_bunnyx777_005",
+          "line": 85,
+          "quote": "          그냥 운이 좋았던 것뿐이야"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:footstep_walk_run_13__clh_005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라피가 자기 인식표를 내밀고 RR-15436이 이름이냐는 질문에 긍정한다. 여기서 번호의 주인이 이미 보인다. 대조 범위는 footstep_walk_run_14 L14~18, footstep_walk_run_15 L48~49, footstep_walk_run_05 L10~16이다.",
+      "evidence": [
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 133,
+          "quote": "라피는 조용히 인식표를 내밀었다."
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 134,
+          "quote": "레드 후드: 양산형 니케···. ···RR-15436? 이게 이름이라고?"
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 135,
+          "quote": "라피는 고개를 끄덕였다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:maiden_04__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마스크를 벗어 보인 메이든에게 지휘관이 바코드 패턴까지 보았다고 답한다. 코코아의 바코드는 다른 니케의 표식이며 메이든의 반응을 풀어주는 짝이 아니다. 대조 범위는 maiden_03 L109~113, maiden_00 L157~164, maiden_00 L26~29이다.",
+      "evidence": [
+        {
+          "scene_id": "maiden_04",
+          "line": 240,
+          "quote": "  [OPTION TEXT=\"바코드가 어떤 패턴인지 알겠어.\"]"
+        },
+        {
+          "scene_id": "maiden_04",
+          "line": 243,
+          "quote": "메이든: 꺄악-!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:police_station_06__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "키리가 티미를 폴리로 오인한 이유를 생김새와 나쁜 시력으로 설명한다. 다른 장면의 시력 실수도 같은 특징의 반복이다. 대조 범위는 police_station_07 L22, police_station_08 L89~91, police_station_02 L51~52이다.",
+      "evidence": [
+        {
+          "scene_id": "police_station_06",
+          "line": 40,
+          "quote": "레오나: 키리. 티미는 폴리가 아니야."
+        },
+        {
+          "scene_id": "police_station_06",
+          "line": 43,
+          "quote": "키리: 하얗고 퐁실퐁실한게, 폴리 같아서 그만···."
+        },
+        {
+          "scene_id": "police_station_06",
+          "line": 44,
+          "quote": "레오나: 키리는 눈이 많이 안 좋다고 했었지?"
+        },
+        {
+          "scene_id": "police_station_06",
+          "line": 46,
+          "quote": "키리: 그래서 늘 이렇게 실수하곤 해요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:chapter_48_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "애니힐리오 세 발이 어느 방향으로 틀었는지 지즈가 즉시 본다. 일행이 방주로 가서 막으려는 상황으로 이어져 발사체의 정체나 행선지가 남지 않는다. 대조 범위는 chapter_48_02 L4~58, chapter_48_02 L68~96, chapter_48_02 L103~160이다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_48_01",
+          "line": 26,
+          "quote": "···애니힐리오 셋이, 솟아오른다."
+        },
+        {
+          "scene_id": "chapter_48_01",
+          "line": 31,
+          "quote": "지즈: 미, 미사일이 방향을 틀었어!"
+        },
+        {
+          "scene_id": "chapter_48_01",
+          "line": 32,
+          "quote": "지즈: 방주 방향이야!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__035:main_38_06__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "프리카가 공연할 곡을 지정하고 아니스가 자신들의 마지막 노래라고 알아본다. 안무를 잊었다는 말도 곧 기억한다고 바로잡는다. 대조 범위는 main_38_10 L43~48, main_38_11 L181~190, main_38_12 L90~103이다.",
+      "evidence": [
+        {
+          "scene_id": "main_38_06",
+          "line": 8,
+          "quote": "프리카: 선곡은 [BE MY STAR]로 할 거야. 그럼 됐지?"
+        },
+        {
+          "scene_id": "main_38_06",
+          "line": 9,
+          "quote": "아니스: 우리··· 마지막 노래."
+        },
+        {
+          "scene_id": "main_38_06",
+          "line": 13,
+          "quote": "아니스: ···기억하고 있어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__037:에덴_Notice_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "이사벨은 방주 일행에게 줄 일거리의 한 예로 에덴 훈련 시설을 든다. 인큐베이터에서 정체를 모르는 일이 발생한 장면이 아니다. 대조 범위는 에덴_Notice_01 L18~35이다.",
+      "evidence": [
+        {
+          "scene_id": "에덴_Notice_00",
+          "line": 93,
+          "quote": "          방주에는 없는 인큐베이터를 체험시켜 준다거나"
+        },
+        {
+          "scene_id": "에덴_Notice_00",
+          "line": 96,
+          "quote": "          지휘관의 임무에 함께 딸려 보낸다거나"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__027:cafe_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "프림은 커피 판매에는 찬성하고 수익 배분에는 자신이 리더라고 반대 이유를 밝힌다. 짧게 답하는 말투가 별도의 정보를 숨기지 않는다. 대조 범위는 cafe_01 L67~68, cafe_02 L66~68, cafe_03 L119이다.",
+      "evidence": [
+        {
+          "scene_id": "cafe_00",
+          "line": 39,
+          "quote": "프림: 좋음. 팔자."
+        },
+        {
+          "scene_id": "cafe_00",
+          "line": 53,
+          "quote": "프림: 반대."
+        },
+        {
+          "scene_id": "cafe_00",
+          "line": 55,
+          "quote": "프림: 나. 리더."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:main_39_07__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "레비아탄과 랩칠리언은 대화를 통해 서로 도울 수 있다는 뜻으로 이 표현을 주고받는다. 다른 장에서 베히모스가 같은 말을 써도 이 대목에 미해결된 지시 대상은 없다. 대조 범위는 main_39_10 L12~14, main_39_10 L24~55, main_39_17 L18~19이다.",
+      "evidence": [
+        {
+          "scene_id": "main_39_07",
+          "line": 49,
+          "quote": "랩칠리언: 서로가 서로에게 더욱 도움이 될 수 있는 존재가 될 수 있는 거란다."
+        },
+        {
+          "scene_id": "main_39_07",
+          "line": 51,
+          "quote": "레비아탄: ···대화는··· 진화의 초석···."
+        },
+        {
+          "scene_id": "main_39_07",
+          "line": 53,
+          "quote": "랩칠리언: 그렇단다! 대화는 진화의 초석이란다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:library_11__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "비스킷은 머리를 쓰다듬어 주자 행복하다고 말하면서 꼬리를 흔든다. 행동의 주인과 감정이 모두 드러난다. 대조 범위는 library_07 L42~51, library_05 L3~6이다.",
+      "evidence": [
+        {
+          "scene_id": "library_11",
+          "line": 70,
+          "quote": "백학이 비스킷의 머리를 쓰다듬었고."
+        },
+        {
+          "scene_id": "library_11",
+          "line": 71,
+          "quote": "비스킷: 헥헥~! 너무 행복해요!"
+        },
+        {
+          "scene_id": "library_11",
+          "line": 72,
+          "quote": "비스킷은 미친 듯이 꼬리를 흔들었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:white_memory_page_1001307__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "애도하는 장소에 이미 갖고 온 액자를 놓을지 정하는 선택이다. 액자의 결혼사진과 가져온 경위는 입수 시점에 밝혀졌고, 이 선택지에서 출처가 다시 의문이 되지 않는다. 잘못된 033__003을 제거한 자기 상태에 동의한다. 대조 범위는 white_memory_17 L12~16, white_memory_page_1001330 L2, white_memory_page_1001404 L2~7이다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001307",
+          "line": 8,
+          "quote": "\"떠나간 분들을 애도하는 곳이었나 보네요.\""
+        },
+        {
+          "scene_id": "white_memory_page_1001307",
+          "line": 14,
+          "quote": "  [OPTION TEXT=\"갖고 온 [액자]를 놓고 기도한다.\" VALUE=\"option_100130702\"]"
+        },
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line": 10,
+          "quote": "라푼젤은 그 사진을 빤히 바라보다가 떠난 이들을 애도하고 싶다는 말과 함께 액자를 가져가기로 한다."
+        },
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line": 13,
+          "quote": "한때 영원한 사랑을 약속했던 두 남녀의 결혼사진이 담긴 액자."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__031:ludmilla_02__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루드밀라는 로열이 현역 니케에게 해를 가하기 어려운 까닭을 제조사들의 영향력으로 설명한다. 대조 범위는 ludmilla_03 L4~7, ludmilla_01 L112~113, ludmilla_00 L24~25이다.",
+      "evidence": [
+        {
+          "scene_id": "ludmilla_02",
+          "line": 163,
+          "quote": "루드밀라: 로열이 아무리 입김이 세다 해도."
+        },
+        {
+          "scene_id": "ludmilla_02",
+          "line": 165,
+          "quote": "루드밀라: 니케를 만든 3대 회사가 그들보다 더 강한 입김을 갖고 있으니까."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:sin_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "둘째 면담에서 신은 선물 받은 신발을 묻고 같은 방식으로 계속 말한다. 첫 면담에서 본인이 컨버터 때문에 알아듣기 불편하다고 설명했으며 이번 대사에는 새로 생긴 이상이 없다. 대조 범위는 sin_02 L22~23, sin_03 L158~159, sin_00 L122이다.",
+      "evidence": [
+        {
+          "scene_id": "sin_01",
+          "line": 5,
+          "quote": "신: □※▣게 뭐야?"
+        },
+        {
+          "scene_id": "sin_01",
+          "line": 11,
+          "quote": "신: ▣※이□▣거, 퀀시가 말해□□던 신상이잖아."
+        },
+        {
+          "scene_id": "sin_00",
+          "line": 42,
+          "quote": "신: 아□, ※□▣컨버터 때무※이▣※□□□가?"
+        },
+        {
+          "scene_id": "sin_00",
+          "line": 43,
+          "quote": "신: 교관※도 알아듣기 □□※불펴▣하지? □미※안···."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__031:main_27_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엔더슨은 탈환지에서 가까운 곳과 광물 확보 가능성을 따져 탐색 지역을 정한다. 여기서 수정의 기원이나 특성을 의문으로 제시하지 않는다. 대조 범위는 main_27_05 L50~51, main_27_05 L139~140, main_27_00 L142~151이다.",
+      "evidence": [
+        {
+          "scene_id": "main_27_01",
+          "line": 46,
+          "quote": "엔더슨: 흠. 탈환지 01과 가장 가까운 곳은···."
+        },
+        {
+          "scene_id": "main_27_01",
+          "line": 47,
+          "quote": "엔더슨: 수정 지역인가."
+        },
+        {
+          "scene_id": "main_27_01",
+          "line": 48,
+          "quote": "엔더슨: 단순하게 생각하면 광물의 확보를 기대할 수 있겠어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:beauty_full_shot_05__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "로산나는 서핑을 해 보고 싶었다며 이미 바꾼 수영용 바디를 언급한다. 교체 이유를 감추는 장면이 아니다. 대조 범위는 beauty_full_shot_06 L16~26, beauty_full_shot_12 L51~52, beauty_full_shot_19 L19~20이다.",
+      "evidence": [
+        {
+          "scene_id": "beauty_full_shot_05",
+          "line": 200,
+          "quote": "로산나: 서핑부터 해볼까. 예전부터 해보고 싶었어."
+        },
+        {
+          "scene_id": "beauty_full_shot_05",
+          "line": 201,
+          "quote": "로산나: 기껏 수영용 바디로 교체하기도 했고."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:coins_in_rush_05__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루주가 앞면과 뒷면의 조건을 미리 정한다. 같은 자리에서 앞면을 확인하고 창고로 안내하므로 이 동전 던지기의 뜻과 결과가 모두 나온다. 대조 범위는 coins_in_rush_16 L151~162, coins_in_rush_16 L219~220, coins_in_rush_04 L110~118이다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_05",
+          "line": 107,
+          "quote": "루주: ···앞면은 협력, 뒷면은 거부예요."
+        },
+        {
+          "scene_id": "coins_in_rush_05",
+          "line": 119,
+          "quote": "  [OPTION TEXT=\"앞면··· 인 거지?\"]"
+        },
+        {
+          "scene_id": "coins_in_rush_05",
+          "line": 123,
+          "quote": "루주: 도와드릴게요, 플레이어님."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:blabla_nyanyaparadise_003__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "애드미는 루루가 귀엽고 고양이 이야기하는 걸 좋아한다고 직접 말한다. 루루의 정체를 감춰 두지 않는다. 대조 범위는 blabla_nyanyaparadise_004 L111~116, blabla_nyanyaparadise_001 L21~23이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_nyanyaparadise_003",
+          "line": 34,
+          "quote": "    저도 고양이 이야기하는 거 좋아해서요"
+        },
+        {
+          "scene_id": "blabla_nyanyaparadise_003",
+          "line": 37,
+          "quote": "    루루 너무 귀여웠어요"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:main_17_14__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라피가 예전 지휘권 이양 때부터 함께할 생각이었다며 당시 인식 코드를 재현한다. 회상 대상과 지금 그 말을 꺼낸 뜻이 분명하다.",
+      "evidence": [
+        {
+          "scene_id": "main_17_14",
+          "line": 112,
+          "quote": "라피: [지휘권]을 넘겨드린다고."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line": 113,
+          "quote": "라피: 그때부터 함께할 각오는 되어있었습니다."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line": 115,
+          "quote": "라피: 스쿼드 04-F의 지휘권 변경 완료."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:blabla_newexotic_002__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "자칼은 엉뚱한 단어가 자동 완성 때문이라며 원래 쓰려던 말까지 고친다. 오타가 정체를 숨긴 발신자의 흔적일 여지가 없다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_newexotic_002",
+          "line": 103,
+          "quote": "    자동 오나성 기능이 멋데로 말한 거야"
+        },
+        {
+          "scene_id": "blabla_newexotic_002",
+          "line": 109,
+          "quote": "    바이퍼도 한번 써보라고 말하려 했어!!1"
+        },
+        {
+          "scene_id": "blabla_newexotic_002",
+          "line": 112,
+          "quote": "    자동 오나성 기능111"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:blabla_infinityrail_001__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "브리드는 사탕을 먹지 않는다며 관계가 없다고 하고 디젤도 평소 식성을 확인한다. 다른 사탕 선물은 이 말을 뒤집거나 풀이하지 않는다. 대조 범위는 blabla_infinityrail_005 L116~118, blabla_infinityrail_005 L128~133이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_infinityrail_001",
+          "line": 96,
+          "quote": "    전 사탕을 먹지 않습니다"
+        },
+        {
+          "scene_id": "blabla_infinityrail_001",
+          "line": 99,
+          "quote": "    그러니 전 이 일과 관계가 없습니다"
+        },
+        {
+          "scene_id": "blabla_infinityrail_001",
+          "line": 102,
+          "quote": "    아~ 맞네요~ 브리드는 사탕을 안 먹죠~"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:chapter_50_12__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "리틀 머메이드가 입자를 뿜는 라이터즈 스포일러의 기능을 바로 알아본다. main_34_07에서도 패턴에서 미래 동작을 예측한다고 설명해 이 장면의 미해결 질문은 없다. 대조 범위는 chapter_50_16 L24~29, chapter_50_16 L43~63, chapter_50_01 L27~28이다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_50_12",
+          "line": 301,
+          "quote": "그레이브: 라이터즈 스포일러. 레디."
+        },
+        {
+          "scene_id": "chapter_50_12",
+          "line": 305,
+          "quote": "리틀 머메이드: [미래를 보는 힘··· 이구나.]"
+        },
+        {
+          "scene_id": "main_34_07",
+          "line": 101,
+          "quote": "은화: 5초 이후에 어떻게 움직일지 예측."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:cocoa_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "남자가 바코드를 보고 상대를 니케로 알아챈다. 다른 니케의 바코드와 같은 개인임을 암시하는 표지는 없다. 대조 범위는 cocoa_03 L19~21이다.",
+      "evidence": [
+        {
+          "scene_id": "cocoa_01",
+          "line": 91,
+          "quote": "후줄근한 남자: 저 녀석, 바코드 찍힌 걸로 봐서는 니케 같은데요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:blabla_2023_summer_001__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네온이 수력을 세 번 변주하고 아니스가 평소의 화력을 두고 놀린다. 물을 다루는 미지의 능력이 나타난 대사는 아니다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_2023_summer_001",
+          "line": 66,
+          "quote": "    수력의"
+        },
+        {
+          "scene_id": "blabla_2023_summer_001",
+          "line": 69,
+          "quote": "    수력에 의한"
+        },
+        {
+          "scene_id": "blabla_2023_summer_001",
+          "line": 72,
+          "quote": "    수력을 위한"
+        },
+        {
+          "scene_id": "blabla_2023_summer_001",
+          "line": 75,
+          "quote": "    화력은 어디 두고 ㅋㅋㅋ 배신자네"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:maria-n_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리아-3은 자기 번호를 말하고 전투 모드에 들어가 즉시 사격한다. 인카운터라는 구호 외에 신원이 가려져 있지 않다. 대조 범위는 maria-n_10 L93~95, maria-n_13 L8~16, maria-n_22 L154~171이다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_01",
+          "line": 27,
+          "quote": "마리아-3: 마리아-3. 전투 모드로 이행."
+        },
+        {
+          "scene_id": "maria-n_01",
+          "line": 28,
+          "quote": "마리아-3: 인카운터!"
+        },
+        {
+          "scene_id": "maria-n_01",
+          "line": 29,
+          "quote": "마리아-3의 기관총이 불을 내뿜는다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__027:marciana_04__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라이는 마르차나의 사과를 받아들이며 3학년이라는 사실을 자랑한다. 용서한 이유도 스스로 말한다.",
+      "evidence": [
+        {
+          "scene_id": "marciana_04",
+          "line": 38,
+          "quote": "라이: 나는 3학년이니까 그 정도는 용서해 줄 수 있어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__035:star_anis_21__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "프리카가 두 번째 자작곡이라는 사실, 리스와 함께 만든 경위, 아직 완성 전이라는 점을 한 대화에서 알린다. 대조 범위는 star_anis_22 L10~23, star_anis_22 L33~50, star_anis_14 L139~141이다.",
+      "evidence": [
+        {
+          "scene_id": "star_anis_21",
+          "line": 75,
+          "quote": "프리카: 우리 두 번째 오리지널 곡."
+        },
+        {
+          "scene_id": "star_anis_21",
+          "line": 77,
+          "quote": "프리카: ···리스랑 내가 틈날 때마다 작업했어. 완성 직전 단계고."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:main_34_10__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "입자를 내보내 파도를 예측하고 안전한 길로 안내한다. main_34_07은 예측의 원리를, 이 단위는 신데렐라의 불행을 피하려는 용도를 본문에서 설명한다. 대조 범위는 main_34_11 L13~30, main_34_13 L4~12, main_34_00 L87이다.",
+      "evidence": [
+        {
+          "scene_id": "main_34_10",
+          "line": 61,
+          "quote": "그레이브: 기록된 패턴을 베이스로, 연산 실시."
+        },
+        {
+          "scene_id": "main_34_10",
+          "line": 67,
+          "quote": "그레이브: 가장, 밀도가 낮은 곳으로, 안내한다."
+        },
+        {
+          "scene_id": "main_34_10",
+          "line": 76,
+          "quote": "그레이브: 다가올 불행을 피하기 위한··· 힘."
+        },
+        {
+          "scene_id": "main_34_07",
+          "line": 101,
+          "quote": "은화: 5초 이후에 어떻게 움직일지 예측."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:golden_ship_04__clh_004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앵커에게 레이더 탐색을 맡겨도 되는지 묻고 앵커가 하겠다고 답한다. 이후 발견한 황금 배는 탐색의 결과다. 대조 범위는 golden_ship_13 L81~94, golden_ship_13 L146~158이다.",
+      "evidence": [
+        {
+          "scene_id": "golden_ship_04",
+          "line": 42,
+          "quote": "  [OPTION TEXT=\"앵커가 레이더로 찾아야 하는 데 괜찮겠어?\"]"
+        },
+        {
+          "scene_id": "golden_ship_04",
+          "line": 45,
+          "quote": "앵커: 응. 할 수 있어."
+        },
+        {
+          "scene_id": "golden_ship_04",
+          "line": 46,
+          "quote": "앵커: 황금 배를 봐야하니까. 열심히 할게."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:main_45_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱이 자기 이름으로 아니스에게 아이돌의 자세를 당부한다. 영어와 한국어 어미를 섞지만 발언의 대상과 취지는 명시돼 있다. 대조 범위는 main_45_02 L8~13, main_45_02 L19~20, main_45_02 L53~57이다.",
+      "evidence": [
+        {
+          "scene_id": "main_45_01",
+          "line": 48,
+          "quote": "머스탱: 테트라의 니케는 전장에서도 Idol이어야 한Da."
+        },
+        {
+          "scene_id": "main_45_01",
+          "line": 49,
+          "quote": "머스탱: 잊지 마십시Yo. My 아니스."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:nero_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "책상 밑에서 움직이는 꼬리의 주인은 그 자리에서 네로로 밝혀진다. 물을 싫어하는데 물 관련 시험을 치러야 한다는 고민도 본인이 설명한다.",
+      "evidence": [
+        {
+          "scene_id": "nero_00",
+          "line": 15,
+          "quote": "···책상 밑에 있던 꼬리는 무엇인가 마음에 안 드는 건지."
+        },
+        {
+          "scene_id": "nero_00",
+          "line": 33,
+          "quote": "책상 아래를 바라보니, 네로는 책상 밑 구석에서 몸을 한껏 웅크리고 있었다."
+        },
+        {
+          "scene_id": "nero_00",
+          "line": 57,
+          "quote": "네로: 물과 관련된 테스트다냥."
+        },
+        {
+          "scene_id": "nero_00",
+          "line": 62,
+          "quote": "네로: 냥. 나는 물을 싫어한다냥."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:footstep_walk_run_25__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "잉그리드가 부른 번호에 라피는 지금 자기 이름이 라피라고 답한다. 이름을 감춘 채 다음 장면으로 넘기지 않는다. 대조 범위는 footstep_walk_run_26 L103~121, footstep_walk_run_27 L10~12, footstep_walk_run_12 L108~112이다.",
+      "evidence": [
+        {
+          "scene_id": "footstep_walk_run_25",
+          "line": 41,
+          "quote": "잉그리드: RR-15436. 맞나?"
+        },
+        {
+          "scene_id": "footstep_walk_run_25",
+          "line": 45,
+          "quote": "라피: 아닙니다."
+        },
+        {
+          "scene_id": "footstep_walk_run_25",
+          "line": 46,
+          "quote": "라피: 라피입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:mary_baygoddess_04__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메어리가 자신의 별명을 사용하며 계속하겠다고 말한다. 새로운 인물이 끼어들거나 별개의 존재를 암시하는 대사가 아니다. 대조 범위는 mary_baygoddess_03 L99~103, mary_baygoddess_03 L115~119, mary_baygoddess_03 L81~83이다.",
+      "evidence": [
+        {
+          "scene_id": "mary_baygoddess_04",
+          "line": 56,
+          "quote": "메어리: 후후. 잔인한 말을 하시네요."
+        },
+        {
+          "scene_id": "mary_baygoddess_04",
+          "line": 57,
+          "quote": "메어리: 블랙 데빌 메어리는 만족할 줄을 모른답니다."
+        },
+        {
+          "scene_id": "mary_baygoddess_04",
+          "line": 58,
+          "quote": "메어리: 그러니 계속할게요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:golden_coin_rush_06__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "우승팀의 리더에게 줄 열쇠가 왜 필요한지 머스탱이 직접 설명한다. 골든 칩 전시장의 열쇠임이 발표 안에서 밝혀진다. 대조 범위는 golden_coin_rush_21 L90~93, golden_coin_rush_22 L60~66, golden_coin_rush_04 L13~18이다.",
+      "evidence": [
+        {
+          "scene_id": "golden_coin_rush_06",
+          "line": 98,
+          "quote": "머스탱: 이 Key를 주도록 하겠습니Da."
+        },
+        {
+          "scene_id": "golden_coin_rush_06",
+          "line": 102,
+          "quote": "머스탱: Main Stage 앞에는 Golden Chip이 든 전시장이 있Jyo."
+        },
+        {
+          "scene_id": "golden_coin_rush_06",
+          "line": 103,
+          "quote": "머스탱: ···이 Key는 바로 전시장을 열 수 있는 Key 입니Da!!!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:ark_ranger_08__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱이 아크레인저 블랙이 원하는 몸과 무장의 사양을 되묻는다. 혼용 말투 외에 독자가 해독할 정보는 없다. 대조 범위는 ark_ranger_12 L10~13, ark_ranger_18 L28~29, ark_ranger_25 L30~38이다.",
+      "evidence": [
+        {
+          "scene_id": "ark_ranger_08",
+          "line": 2,
+          "quote": "머스탱: 오. Heavy한 Body와 Battle용 Weapon을 Want 한다고Yo?"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__034:데이파라_00__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "데이파라는 어머니가 빠진 종교의 이름과 랩쳐를 신으로 모시는 교리를 메시지에서 연달아 밝힌다.",
+      "evidence": [
+        {
+          "scene_id": "데이파라_00",
+          "line": 242,
+          "quote": "    저희 엄마는 구원의 성화라는"
+        },
+        {
+          "scene_id": "데이파라_00",
+          "line": 245,
+          "quote": "    사이비 종교에 빠져버리셨어요"
+        },
+        {
+          "scene_id": "데이파라_00",
+          "line": 248,
+          "quote": "    랩쳐를 신으로 모시는 종교라"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:neverland_19__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "블랑은 벨로타의 흔적을 찾는 미카에게 행운을 나누려 손을 잡자고 한다. 토끼라는 호칭 뒤에 다른 인물은 없다. 대조 범위는 neverland_22 L17, neverland_25 L79, neverland_10 L200이다.",
+      "evidence": [
+        {
+          "scene_id": "neverland_19",
+          "line": 23,
+          "quote": "블랑: 나랑 언니랑 같이 손잡고 가자! 알다시피 우리가 행운의 토끼거든~"
+        },
+        {
+          "scene_id": "neverland_19",
+          "line": 24,
+          "quote": "블랑: 갈 때까지 우리의 행운을 나눠줄게."
+        },
+        {
+          "scene_id": "neverland_19",
+          "line": 25,
+          "quote": "블랑: 어쩌면 벨로타의 흔적을 더 잘 찾을 수도 있잖아~!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:wave_to_you_03__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "멀미한 신데렐라가 누울 침대를 세이렌이 즉석에서 만든다. mudfish_05에서도 휴식용 물거품을 펼치는 관찰이어서 010의 제시 쌍 기각이 맞다. 대조 범위는 wave_to_you_06 L100~103, wave_to_you_06 L108~110, wave_to_you_09 L62~66이다.",
+      "evidence": [
+        {
+          "scene_id": "wave_to_you_03",
+          "line": 115,
+          "quote": "리틀 머메이드: [멀미가 날 땐 누워있는 게 좋대.]"
+        },
+        {
+          "scene_id": "wave_to_you_03",
+          "line": 117,
+          "quote": "리틀 머메이드가 손을 뻗어 물거품으로 작은 침대를 만들었다."
+        },
+        {
+          "scene_id": "mudfish_05",
+          "line": 34,
+          "quote": "리틀 머메이드의 손끝에서 물거품이 자라나,  넓은 사각형 형태로 펼쳐졌다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:dazzling_cupid_11__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "티아가 음식에 손대기 전 사진만 찍는 이유와 오래 걸리는 까닭을 나가가 그 자리에서 설명한다. 대조 범위는 dazzling_cupid_09 L60~69, dazzling_cupid_09 L86~97이다.",
+      "evidence": [
+        {
+          "scene_id": "dazzling_cupid_11",
+          "line": 4,
+          "quote": "그 디저트를 향한 티아의 촬영이 시작되었다."
+        },
+        {
+          "scene_id": "dazzling_cupid_11",
+          "line": 6,
+          "quote": "나가: 티아는 디저트를 먹기 전에 사진을 찍는 버릇이 있어."
+        },
+        {
+          "scene_id": "dazzling_cupid_11",
+          "line": 7,
+          "quote": "나가: 보통은 본인이 만족할 때까지 찍어대서, 시간이 좀 오래 걸리는 편이야."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:clothing_store_02__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "드레이크는 옷에 그려진 고양이를 보고 고양이가 제일 무섭다고 말한다. 이 옷이나 그림에 얽힌 특정 과거 사건은 제시되지 않는다. 대조 범위는 clothing_store_05 L27, clothing_store_06 L14, clothing_store_00 L24이다.",
+      "evidence": [
+        {
+          "scene_id": "clothing_store_02",
+          "line": 89,
+          "quote": "앨리스: 체셔가 그려져 있어요!"
+        },
+        {
+          "scene_id": "clothing_store_02",
+          "line": 90,
+          "quote": "드레이크: 내가 제일 무서워하는 게 고양이다···."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:red_ash_lost_08__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라푼젤이 누구냐고 묻자 스노우 화이트가 이름과 자신의 모델 번호를 함께 밝힌다. 대조 범위는 red_ash_lost_09 L53~55, red_ash_lost_14 L8~19, red_ash_lost_07 L3이다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_lost_08",
+          "line": 21,
+          "quote": "라푼젤: 누구··· 시죠?"
+        },
+        {
+          "scene_id": "red_ash_lost_08",
+          "line": 22,
+          "quote": "스노우 화이트: 스, 스노우 화이트입니다! 페어리 테일 모델 4번이에요!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:blabla_arcanearchive_003__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "발신자가 팬텀으로 표시된 대화에서 퇴근하고 괴도 활동을 나서려던 참이라고 알린다. 반복되는 오타가 이 대화에서 다른 발신자의 서명을 가리키지는 않는다. 대조 범위는 blabla_arcanearchive_004 L24~35, blabla_arcanearchive_002 L54~65, blabla_arcanearchive_001 L84~101이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_arcanearchive_003",
+          "line": 10,
+          "quote": "    태근하고"
+        },
+        {
+          "scene_id": "blabla_arcanearchive_003",
+          "line": 13,
+          "quote": "    괘도할동을 나설여던 차미오"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:anis_03__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아니스는 격벽을 만든 배경으로 엔터 헤븐의 무장 활동과 열차 사고를 든다. 그 조직을 감춰 둔 설명이 아니다. 대조 범위는 anis_02 L158~183, anis_00 L129~135, anis_01 L110~119이다.",
+      "evidence": [
+        {
+          "scene_id": "anis_03",
+          "line": 122,
+          "quote": "아니스: 사실 그 격벽이 있는 이유는 다른 데 있어."
+        },
+        {
+          "scene_id": "anis_03",
+          "line": 123,
+          "quote": "아니스: 아우터 림에는 인식 칩이 없는 이들의 인권을 부르짖는 무장 테러 집단 [엔터 헤븐]이 있기 때문이야."
+        },
+        {
+          "scene_id": "anis_03",
+          "line": 125,
+          "quote": "아니스: 예전의 열차 사고가 크게 한 번 있었잖아? 그것도 다 그 녀석들이···."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:terminus_ticket_12__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "누가 말하는지 표시된 네로가 폭풍을 피해 열차를 옮기자고 제안한다. ‘냥’은 이 제안에 별도의 뜻을 더하지 않는다. 대조 범위는 terminus_ticket_15 L84~86, terminus_ticket_27 L117~118, terminus_ticket_03 L59~60이다.",
+      "evidence": [
+        {
+          "scene_id": "terminus_ticket_12",
+          "line": 30,
+          "quote": "네로: 폭풍을 피해서 열차를 옮겨야 하는 것 아니냥?"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:guillotine_04__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관이 니케 처분 때의 슬픔을 짚자 길로틴도 익숙해지지 않는 고통을 인정한다. 봉인자라는 자기소개는 그 고통을 견디겠다는 대답이며 오른눈이 새 현상을 일으키지 않는다. 대조 범위는 guillotine_00 L278~283, guillotine_03 L57~59, guillotine_00 L320~325이다.",
+      "evidence": [
+        {
+          "scene_id": "guillotine_04",
+          "line": 95,
+          "quote": "  [OPTION TEXT=\"니케를 처분하던 날, 너는 분명히 슬퍼 보였어.\"]"
+        },
+        {
+          "scene_id": "guillotine_04",
+          "line": 101,
+          "quote": "길로틴: 내게도 결코 익숙해질 수 없는 고통이 있다는 걸."
+        },
+        {
+          "scene_id": "guillotine_04",
+          "line": 105,
+          "quote": "길로틴: 편익의 마왕의 봉인자(Keeper of one-winged dark lord)!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:secret_garden_09__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "비스킷이 꽃의 상태를 확인하고 플로라가 변화가 없으며 영양제를 줄 예정이라고 답한다. 이때의 상태가 병이나 특정 방해 때문이라는 표지는 없다. 대조 범위는 secret_garden_10 L79, secret_garden_13 L17~18, secret_garden_14 L60~71이다.",
+      "evidence": [
+        {
+          "scene_id": "secret_garden_09",
+          "line": 84,
+          "quote": "비스킷: 헤헤, 플로라! 오로라 블룸은 어때요?"
+        },
+        {
+          "scene_id": "secret_garden_09",
+          "line": 85,
+          "quote": "플로라: 아직은 그대로입니다."
+        },
+        {
+          "scene_id": "secret_garden_09",
+          "line": 86,
+          "quote": "플로라: 나중에 영양제를 투여하러 다시 온실로 가야 해요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__035:red_ash_lost_07__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지팡이가 재생한다는 갓데시움의 뜻과 그것으로 상처를 메우는 방법이 같은 장면에서 설명된다. 대조 범위는 red_ash_lost_08 L22, red_ash_lost_09 L53~55, red_ash_lost_06 L3~6이다.",
+      "evidence": [
+        {
+          "scene_id": "red_ash_lost_07",
+          "line": 38,
+          "quote": "라푼젤: 제가 사용하는 지팡이는 갓데시움을 재생하는 기능을 가졌어요."
+        },
+        {
+          "scene_id": "red_ash_lost_07",
+          "line": 41,
+          "quote": "릴리바이스: ···니케의 신체를 구성하는 물질이에요, 지휘관."
+        },
+        {
+          "scene_id": "red_ash_lost_07",
+          "line": 46,
+          "quote": "라푼젤: 입자?를 쏴요."
+        },
+        {
+          "scene_id": "red_ash_lost_07",
+          "line": 47,
+          "quote": "라푼젤: 그걸로 다친 부위를 메꾸는 거죠."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:booms_day_03__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "팸플릿을 펼친 뒤 게임쇼의 성격, 일정과 엑시아가 지휘관에게 동행을 요구하는 이유까지 대화에서 나온다. 대조 범위는 booms_day_09 L90~92, booms_day_01 L19~23, booms_day_01 L24~36이다.",
+      "evidence": [
+        {
+          "scene_id": "booms_day_03",
+          "line": 52,
+          "quote": "[아크 게임쇼에 게이머 여러분을 초대합니다!]"
+        },
+        {
+          "scene_id": "booms_day_03",
+          "line": 58,
+          "quote": "엑시아: 게이머의- 게이머에 의한- 게이머를 위한 축제-!"
+        },
+        {
+          "scene_id": "booms_day_03",
+          "line": 72,
+          "quote": "엑시아: 2인 1조로 참가해야만 지급되는- 특별 의상 세트-"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__027:unbreakable_sphere_15__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "모리가 어디냐고 묻자 마나가 방주에서 처음 탈환한 지상 지역인 주둔지 01이라고 바로 답한다. 대조 범위는 unbreakable_sphere_16 L90~95, unbreakable_sphere_18 L68~72, unbreakable_sphere_00 L47~53이다.",
+      "evidence": [
+        {
+          "scene_id": "unbreakable_sphere_15",
+          "line": 5,
+          "quote": "모리: 아, 아니 그전에, 여긴 어디···."
+        },
+        {
+          "scene_id": "unbreakable_sphere_15",
+          "line": 6,
+          "quote": "마나: 주둔지 01입니다."
+        },
+        {
+          "scene_id": "unbreakable_sphere_15",
+          "line": 7,
+          "quote": "마나: 방주 최초로, 지상을 탈환한 지역이죠."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:main_04_05__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "토커티브는 감각이 이어진 상대에게 고통을 주려고 자기 팔을 뜯는다. 도발의 말과 쓰러지는 미하라가 그 행동의 인과를 보여 준다. 대조 범위는 main_04_18 L14~21, main_04_18 L38이다.",
+      "evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line": 7,
+          "quote": "둔탁한 소리와 함께 토커티브는 자신의 팔을 뜯어냈다."
+        },
+        {
+          "scene_id": "main_04_05",
+          "line": 13,
+          "quote": "토커티브: [자! 견뎌봐라! 갈기갈기 찢기는 고통을!]"
+        },
+        {
+          "scene_id": "main_04_05",
+          "line": 17,
+          "quote": "수용 범위를 아득히 초월한 고통에"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__034:beauty_full_shot_12__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "세이메이카이에 내려오는 기술인지 바이퍼가 묻자 사쿠라가 바로 긍정한다. 이 대답에 소속이나 전승자를 찾을 별도 의문은 없다. 대조 범위는 beauty_full_shot_19 L19~20, beauty_full_shot_19 L33~36, beauty_full_shot_26 L119~122이다.",
+      "evidence": [
+        {
+          "scene_id": "beauty_full_shot_12",
+          "line": 51,
+          "quote": "바이퍼: 세이메이카이에 대대로 내려오는 기술이야 그거?"
+        },
+        {
+          "scene_id": "beauty_full_shot_12",
+          "line": 52,
+          "quote": "사쿠라: 그렇습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:second_affection_03__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "홍련이 휴식 부족으로 보통 니케에게 생길 수 있는 위험을 경고한다. 누군가 원인 모를 사고 전환을 일으킨 장면이 아니다. 대조 범위는 second_affection_05 L14~15, second_affection_07 L42~45, second_affection_13 L49~51이다.",
+      "evidence": [
+        {
+          "scene_id": "second_affection_03",
+          "line": 43,
+          "quote": "홍련: 우리 같이 지상에서 몸을 험하게 굴리는 이들은 모르겠으나,"
+        },
+        {
+          "scene_id": "second_affection_03",
+          "line": 44,
+          "quote": "홍련: 보통의 낭자들이라면 휴식을 취하지 않으면 위험해."
+        },
+        {
+          "scene_id": "second_affection_03",
+          "line": 45,
+          "quote": "홍련: 사고 전환이 올지도 모르는 일일세. 잘 알지 않나."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:observation_post_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라플라스가 히어로라고 자신을 소개하며 적이 있는지 확인하고, 발견된 랩쳐가 없다는 답을 받는다.",
+      "evidence": [
+        {
+          "scene_id": "observation_post_01",
+          "line": 87,
+          "quote": "라플라스: 히어로~ 인사!"
+        },
+        {
+          "scene_id": "observation_post_01",
+          "line": 95,
+          "quote": "라플라스: 악당들이 한눈에 보인다고 들었는데 사실인가?!"
+        },
+        {
+          "scene_id": "observation_post_01",
+          "line": 107,
+          "quote": "델타: 현재 발견되는 랩쳐는 없습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:blabla_goldenship_002__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앵커와 마스트가 황금 배에 넋을 놓아 짐을 놓친 일을 회상하고 지휘관이 자기가 챙겼다고 바로 알려준다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_goldenship_002",
+          "line": 73,
+          "quote": "    황금 배 그림자 보다가"
+        },
+        {
+          "scene_id": "blabla_goldenship_002",
+          "line": 85,
+          "quote": "    지상에서 엘리베이터 탈 때서야"
+        },
+        {
+          "scene_id": "blabla_goldenship_002",
+          "line": 94,
+          "quote": "    ㅇㅇㅇ 다들 넋 놓고 보고 있길래 챙겼어"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:chime_04__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "레드 후드의 고향은 차임의 이야기를 들으며 가는 목적지다. 어디로 향하는지, 어느 인물의 고향인지를 숨기는 서술이 없다.",
+      "evidence": [
+        {
+          "scene_id": "chime_04",
+          "line": 130,
+          "quote": "차임: 하! 그럼 스노우 화이트 녀석이 왕국으로 마리안을 데려왔을 때부터 시작하겠느니라."
+        },
+        {
+          "scene_id": "chime_04",
+          "line": 131,
+          "quote": "그렇게, 레드 후드의 고향에 도착할 때까지."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__034:little_witch_trick_05__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "레이블이 수첩을 꺼내자 무엇을 적는지도 바로 전해진다. 지휘관의 복장 칭찬을 영구히 보존하고 싶어서다.",
+      "evidence": [
+        {
+          "scene_id": "little_witch_trick_05",
+          "line": 119,
+          "quote": "레이블: 당신이 직접 레이블의 복장을 보고 그런 귀중한 평가를 하다니···!!!"
+        },
+        {
+          "scene_id": "little_witch_trick_05",
+          "line": 120,
+          "quote": "레이블은 황급히 수첩을 꺼내 무언가를 적기 시작했다."
+        },
+        {
+          "scene_id": "little_witch_trick_05",
+          "line": 121,
+          "quote": "레이블: 보, 복장을 보고 잘 어울린다는 평가를···."
+        },
+        {
+          "scene_id": "little_witch_trick_05",
+          "line": 122,
+          "quote": "레이블: 이건 반드시 영구 보존해야···."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:anis_sparklingsummer_02__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사진에 서프보드를 든 가족과 현재 섬의 풍경이 보이고 아니스가 그 섬 주민의 거처였음을 일기와 대조한다. 사진 속에 따로 신원을 추적하는 사람이 제시되지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "anis_sparklingsummer_02",
+          "line": 26,
+          "quote": "    탁자에는 가족사진으로 보이는 액자가 놓여있었다."
+        },
+        {
+          "scene_id": "anis_sparklingsummer_02",
+          "line": 27,
+          "quote": "    먼지를 조금 닦고 자세히 들여다보니 바다 앞에서 서프보드를 들고 찍은 가족사진이었다."
+        },
+        {
+          "scene_id": "anis_sparklingsummer_02",
+          "line": 28,
+          "quote": "    뒤로 보이는 익숙한 배경은 이 섬의 모습임이 틀림없었다."
+        },
+        {
+          "scene_id": "anis_sparklingsummer_02",
+          "line": 40,
+          "quote": "아니스: 이 섬에서 살던 사람이었나 봐."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:blabla_ether_006__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에테르는 안경이 자기 정체성을 나타내기 때문에 바꾸고 싶지 않다고 말한다. 안경의 숨은 성능이나 출처를 문제 삼지 않는다. 대조 범위는 blabla_ether_001 L3~5이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_ether_006",
+          "line": 66,
+          "quote": "    안경은 내 아이덴티티라구"
+        },
+        {
+          "scene_id": "blabla_ether_006",
+          "line": 69,
+          "quote": "    거기에 손을 댈 수는 없어"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:main_07_03__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "망토를 찢어 건네며 발열 망토라고 직접 설명한다. snowwhite_00도 건네는 자리에서 온도 조절법까지 밝히므로 009를 기각한 근거가 양쪽에 있다. 대조 범위는 main_07_05 L51~64, main_07_06 L12, main_07_01 L49~56이다.",
+      "evidence": [
+        {
+          "scene_id": "main_07_03",
+          "line": 21,
+          "quote": "스노우 화이트는 두르고 있던 망토를 찢었다."
+        },
+        {
+          "scene_id": "main_07_03",
+          "line": 22,
+          "quote": "스노우 화이트: 뒤집어써라. 발열 망토다."
+        },
+        {
+          "scene_id": "snowwhite_00",
+          "line": 105,
+          "quote": "스노우 화이트: 발열 망토다. 온도 조절 기능은 옆의 다이얼로 하면 된다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:blabla_secretgarden_004__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "네로가 정원에서 쉬면 잠이 잘 온다고 자기 말투로 전한다. 발신자, 행동, 장소가 모두 드러난다. 대조 범위는 blabla_secretgarden_002 L63~71, blabla_secretgarden_001 L123~137이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_secretgarden_004",
+          "line": 22,
+          "quote": "    냥"
+        },
+        {
+          "scene_id": "blabla_secretgarden_004",
+          "line": 25,
+          "quote": "    정원에서 식빵 굽고 있으면"
+        },
+        {
+          "scene_id": "blabla_secretgarden_004",
+          "line": 28,
+          "quote": "    잠도 잘 온다냥"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:star_anis_21__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아크리온 홀은 공연 당일 일행이 차량으로 향하는 공연장이며 백스테이지로 가는 동선도 바로 제시된다. 대조 범위는 star_anis_22 L10~23, star_anis_22 L33~50, star_anis_17 L142~143이다.",
+      "evidence": [
+        {
+          "scene_id": "star_anis_21",
+          "line": 106,
+          "quote": "T.T. STAR는 아크리온 홀로 향했다."
+        },
+        {
+          "scene_id": "star_anis_21",
+          "line": 109,
+          "quote": "테트라에서 제공한 차량으로 아크리온 홀로 이동한다."
+        },
+        {
+          "scene_id": "star_anis_21",
+          "line": 110,
+          "quote": "백스테이지로 이동하기 위해 광장으로 향한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:neverland_11__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루드밀라는 일행이 모여 케이크를 차린 설온장이 북적여 즐겁다고 말한다. 장소 자체의 정체나 사정은 감춰져 있지 않다. 대조 범위는 neverland_12 L30~32, neverland_13 L61, neverland_25 L79이다.",
+      "evidence": [
+        {
+          "scene_id": "neverland_11",
+          "line": 13,
+          "quote": "벨로타와 엠마. 그리고 나와 미카가 만든 케이크가 자리하고 있었다."
+        },
+        {
+          "scene_id": "neverland_11",
+          "line": 14,
+          "quote": "루드밀라: 설온장이 북적거리니 즐겁구나."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:boom_the_ghost_04__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "토브는 바닥을 확인하고, 안전에 대비해 모두 수영용 바디로 교체했지만 그럴 필요가 없을 정도라고 말한다. 대조 범위는 boom_the_ghost_06 L123~125, boom_the_ghost_07 L104~121, boom_the_ghost_27 L41~52이다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_04",
+          "line": 23,
+          "quote": "토브: 노후화되어서 바닥이 좀 불안정하지 않을까 했는데, 전혀 그런 느낌도 없어요."
+        },
+        {
+          "scene_id": "boom_the_ghost_04",
+          "line": 24,
+          "quote": "토브: 물론 모두 수영용 바디로 바꾸고 왔다지만, 그러지 않아도 됐을 정도예요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:coins_in_rush_00__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱의 웃음과 영어 인사로 끝나는 퇴장이며 ‘Entertainment’에 사건의 암호나 가린 신원은 없다. 대조 범위는 coins_in_rush_02 L38~61, coins_in_rush_04 L110~118, coins_in_rush_05 L106~123이다.",
+      "evidence": [
+        {
+          "scene_id": "coins_in_rush_00",
+          "line": 93,
+          "quote": "머스탱: HAHAHAHAHAHAHA!!!"
+        },
+        {
+          "scene_id": "coins_in_rush_00",
+          "line": 94,
+          "quote": "머스탱: Entertainment--------- 뾰옹-!!!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:main_11_00__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라플라스는 자신을 히어로라 부르며 지쳤다는 지적에 특훈을 제안한다. 신원이나 결심의 이유를 감추지 않는다.",
+      "evidence": [
+        {
+          "scene_id": "main_11_00",
+          "line": 30,
+          "quote": "라플라스: 그만. 자기 관리도 히어로의 덕목 중 하나다."
+        },
+        {
+          "scene_id": "main_11_00",
+          "line": 34,
+          "quote": "라플라스: 일반 니케에게 이런 일침을 당하다니! 아직도 갈 길이 멀었단 말인가···!!"
+        },
+        {
+          "scene_id": "main_11_00",
+          "line": 37,
+          "quote": "라플라스: 장비에 의존하지 마라! 진정한 정의란 가슴에서 나오는 것이다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__027:blabla_rei_003__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "3학년이 된 소감을 묻자 라이가 저학년 때의 고생을 보상받는 기분이라고 했다가 고생한 적은 없다고 덧붙인다. 익살을 그 안에서 완성한다. 대조 범위는 blabla_rei_002 L66~83이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_rei_003",
+          "line": 28,
+          "quote": "      [OPTION TEXT=\"3학년의 삶은 어때?\"]"
+        },
+        {
+          "scene_id": "blabla_rei_003",
+          "line": 33,
+          "quote": "          [그깟 학년이 올랐을 뿐인데 많은 것이 달라졌어요]"
+        },
+        {
+          "scene_id": "blabla_rei_003",
+          "line": 39,
+          "quote": "          [물론 1, 2학년 때 고생 한 적은 없습니다]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__031:star_anis_17__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "스마일 박스가 시작된 지 2주 만에 멤버들이 망가진 원인을 불특정 다수의 장난감이 된 처지라고 서술한다. 대조 범위는 star_anis_18 L92~97, star_anis_21 L75~77, star_anis_21 L106~110이다.",
+      "evidence": [
+        {
+          "scene_id": "star_anis_17",
+          "line": 142,
+          "quote": "스마일 박스 프로젝트가 시작된 지 2주."
+        },
+        {
+          "scene_id": "star_anis_17",
+          "line": 143,
+          "quote": "불특정 다수의 장난감이 된 T.T. STAR는 빠르게 망가졌다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:crow_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "크로우가 시민권과 식량 배분의 불평등을 추궁하자 지휘관이 제한된 자원을 들고, 크로우가 그 논리를 다시 되짚는다. 대립하는 입장을 드러내는 대화다. 대조 범위는 crow_03 L94~103, crow_03 L148~150, crow_04 L100~102이다.",
+      "evidence": [
+        {
+          "scene_id": "crow_01",
+          "line": 67,
+          "quote": "크로우: 왜 그들에게만 시민권을 지급하지 않고,"
+        },
+        {
+          "scene_id": "crow_01",
+          "line": 78,
+          "quote": "  [OPTION TEXT=\"방주의 식량이 제한적이기 때문이겠지.\"]"
+        },
+        {
+          "scene_id": "crow_01",
+          "line": 84,
+          "quote": "크로우: 요컨대 네 말은 방주의 한정된 자원에 비해 인간이 너무 많아서,"
+        },
+        {
+          "scene_id": "crow_01",
+          "line": 86,
+          "quote": "크로우: 그 대상이 운 나쁘게 [아웃로]가 되었다는 건데."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__031:main_18_19__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "랩쳐 말고도 가둘 수 있는 상대가 누구냐는 유니의 물음에 크로우가 인간이라고 바로 답한다. NIMPH 때문에 공격하지 못한다는 유니의 사정도 이어진다. 대조 범위는 main_18_17 L36~47이다.",
+      "evidence": [
+        {
+          "scene_id": "main_18_19",
+          "line": 57,
+          "quote": "크로우: 네가 잡아 가두는 누군가가. 꼭 랩쳐여야만 한다는 법 있어?"
+        },
+        {
+          "scene_id": "main_18_19",
+          "line": 59,
+          "quote": "유니: 유니가 랩쳐 말고 다른 것도 잡을 수 있어?"
+        },
+        {
+          "scene_id": "main_18_19",
+          "line": 62,
+          "quote": "크로우: 인간."
+        },
+        {
+          "scene_id": "main_18_19",
+          "line": 66,
+          "quote": "유니: 유니한텐 NIMPH가 있어서 인간은 공격 못해."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:harran_01__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "하란이 자신이 개발한 수프의 이름과 참조한 마녀들의 문헌을 직접 말한다.",
+      "evidence": [
+        {
+          "scene_id": "harran_01",
+          "line": 246,
+          "quote": "하란: 그래. 내가 직접 개발해낸 [마녀 수프]란다."
+        },
+        {
+          "scene_id": "harran_01",
+          "line": 247,
+          "quote": "하란: 과거 [마녀]라 불리던 이들이 남긴 문헌을 참고해 만들었지."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:lion_heart_11__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "레오나는 동물들이 밤에 위험하지 않은 이유로 랩쳐의 공격 습성을 설명한다. 예외적으로 동물이 공격당하는 현장은 없다. 대조 범위는 lion_heart_13 L63~67이다.",
+      "evidence": [
+        {
+          "scene_id": "lion_heart_11",
+          "line": 60,
+          "quote": "레오나: 해가 졌다고 무서워할 이유도 없고."
+        },
+        {
+          "scene_id": "lion_heart_11",
+          "line": 61,
+          "quote": "레오나: 랩쳐들도 동물들은 공격하지 않아."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:aria_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "직원이 아리아의 이름을 부르고 아리아는 지휘관을 세뇨르라고 환영한다. 화자와 상대가 모두 드러난 인사다.",
+      "evidence": [
+        {
+          "scene_id": "aria_00",
+          "line": 22,
+          "quote": "직원: ···저, 정말입니까? 아리아 씨?"
+        },
+        {
+          "scene_id": "aria_00",
+          "line": 23,
+          "quote": "아리아: 오페라 하우스에 온 걸 환영해, 세뇨르 지휘관."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:guilty_mightybunny_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "상담 때 늘 하던 대로 구속구를 풀어 주고 길티의 손이 자유로워진다. 지휘관이 의식하던 차림새 역시 같은 장면에서 드러난다.",
+      "evidence": [
+        {
+          "scene_id": "guilty_mightybunny_00",
+          "line": 52,
+          "quote": "놀란 가슴을 진정시키며, 평소 절차대로 상담을 시작하려 했다."
+        },
+        {
+          "scene_id": "guilty_mightybunny_00",
+          "line": 54,
+          "quote": "  [OPTION TEXT=\"상담을 시작하자. 구속구 풀어줄게, 길티.\"]"
+        },
+        {
+          "scene_id": "guilty_mightybunny_00",
+          "line": 66,
+          "quote": "바니걸의 유혹을."
+        },
+        {
+          "scene_id": "guilty_mightybunny_00",
+          "line": 68,
+          "quote": "구속구를 풀어 손이 자유로워진 길티가 내 품에 안겨왔다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:neverland_10__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "델타가 정돈된 모습을 군인 말투로 평한다. 무언가 흐트러진 원인을 감추는 발언이 아니다. 대조 범위는 neverland_11 L14, neverland_12 L30~32, neverland_08 L60~63이다.",
+      "evidence": [
+        {
+          "scene_id": "neverland_10",
+          "line": 199,
+          "quote": "시그널: 완전 각이 맞춰져 있어요!"
+        },
+        {
+          "scene_id": "neverland_10",
+          "line": 200,
+          "quote": "델타: 흐트러짐은 용납할 수 없지 말입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__037:go_ninja_thief_12__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "델타가 CCTV로 확인해 안에 두 사람이 있다고 즉시 밝히고 소매치기의 거짓말을 지적한다. 인법이라는 이름 뒤에 남겨 놓은 비밀이 없다. 대조 범위는 go_ninja_thief_14 L14~20, go_ninja_thief_08 L104~106, go_ninja_thief_06 L82~85이다.",
+      "evidence": [
+        {
+          "scene_id": "go_ninja_thief_12",
+          "line": 126,
+          "quote": "델타: 인법! CCTV의 눈!"
+        },
+        {
+          "scene_id": "go_ninja_thief_12",
+          "line": 128,
+          "quote": "델타: ···직접 확인한 결과, 안에는 두 명의 인원이 있지 말입니다."
+        },
+        {
+          "scene_id": "go_ninja_thief_12",
+          "line": 129,
+          "quote": "델타: 당신은 지금 거짓말을 했습니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:chapter_48_00__clh_004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "스노우 화이트가 이름을 밝힌 채 교전 구호를 외친다. 이어지는 전투는 이 구호의 정체나 뜻을 새로 밝히지 않는다. 대조 범위는 chapter_48_01 L24~32, chapter_48_01 L45~85, chapter_48_03 L65~73이다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_48_00",
+          "line": 104,
+          "quote": "스노우 화이트: 인카운터!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:blabla_ex_all_005__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "날씨가 추운지 의견이 갈리자 지휘관이 폴크방은 늘 땀이 난다고 짚는다. 이 날만의 원인 모를 증상은 제시되지 않는다. 대조 범위는 blabla_ex_all_006 L12~17, blabla_ex_all_007 L197~202, blabla_ex_all_003 L18~20이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_ex_all_005",
+          "line": 13,
+          "quote": "    오늘도 땀이 주룩주룩 나던데요;;;;"
+        },
+        {
+          "scene_id": "blabla_ex_all_005",
+          "line": 19,
+          "quote": "    폴크방은 늘 땀나잖아"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:cafe_05__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "나가가 티아가 디저트를 바로 먹지 않는 이유를 만족할 사진을 먼저 찍는 버릇이라고 바로 말한다. 대조 범위는 cafe_01 L67~68, cafe_02 L66~68, cafe_00 L39~55이다.",
+      "evidence": [
+        {
+          "scene_id": "cafe_05",
+          "line": 85,
+          "quote": "나가: 티아는 늘 본인이 만족할만한 디저트 사진을 찍은 후에야 디저트를 먹거든~"
+        },
+        {
+          "scene_id": "cafe_05",
+          "line": 86,
+          "quote": "나가: 그런데 저렇게나 많은 디저트를 사왔잖아?"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:fading_affection_memory_1112__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "저장 메모리는 주거지의 블랙스미스를 처음부터 이름으로 적고 그 촉수와 위험을 요약한다. 다른 회상의 이름을 잊은 사건과 이 포획을 같은 사건으로 정할 표지는 없다. 대조 범위는 fading_affection_memory_1116 L11, fading_affection_memory_1120 L5~12, fading_affection_7201 L12이다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_memory_1112",
+          "line": 3,
+          "quote": "블랙스미스"
+        },
+        {
+          "scene_id": "fading_affection_memory_1112",
+          "line": 5,
+          "quote": "주거지 쪽에 블랙스미스가 돌아다니고 있어."
+        },
+        {
+          "scene_id": "fading_affection_memory_1112",
+          "line": 7,
+          "quote": "아무 대응도 못하고 잡혀갔어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:snowwhite_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "온기가 느껴진 즉시 스노우 화이트가 발열 망토의 용도와 다이얼을 설명한다. main_07_03에서도 그 자리에서 같은 설명을 해 009의 기각이 맞다. 대조 범위는 snowwhite_04 L43~46이다.",
+      "evidence": [
+        {
+          "scene_id": "snowwhite_00",
+          "line": 103,
+          "quote": "스노우 화이트는 망토 하나를 나에게 건넸다."
+        },
+        {
+          "scene_id": "snowwhite_00",
+          "line": 105,
+          "quote": "스노우 화이트: 발열 망토다. 온도 조절 기능은 옆의 다이얼로 하면 된다."
+        },
+        {
+          "scene_id": "main_07_03",
+          "line": 22,
+          "quote": "스노우 화이트: 뒤집어써라. 발열 망토다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:police_station_02__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "하란의 까마귀를 동반할 수 있는지 묻는 말에 미란다가 반려동물의 입장이 가능하다고 곧바로 답한다. 대조 범위는 police_station_05 L22~28, police_station_06 L40~46, police_station_01 L13이다.",
+      "evidence": [
+        {
+          "scene_id": "police_station_02",
+          "line": 51,
+          "quote": "하란: 까마귀도 두고 가야 하니?"
+        },
+        {
+          "scene_id": "police_station_02",
+          "line": 52,
+          "quote": "미란다: 반려동물은 동반 입장 가능하십니다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__035:main_31_06__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마나가 장비명을 바로잡고 네온은 수정 지역을 밀어내는 용도를 확인한다. 그레이브의 말뚝은 수정에 에너지를 주입해 오히려 확장시키므로 011의 기각이 맞다. 대조 범위는 main_31_01 L32~44, main_31_00 L22~41, main_31_02 L62~63이다.",
+      "evidence": [
+        {
+          "scene_id": "main_31_06",
+          "line": 16,
+          "quote": "마나: A 필러입니다."
+        },
+        {
+          "scene_id": "main_31_06",
+          "line": 17,
+          "quote": "네온: A 필러로 수정 지역을 밀어내는 게 목적인 거잖아요?"
+        },
+        {
+          "scene_id": "관짝이_01",
+          "line": 239,
+          "quote": "그레이브: 그 거대한 힘을 수정에 강제로 주입한다."
+        },
+        {
+          "scene_id": "관짝이_01",
+          "line": 240,
+          "quote": "그레이브: 그럼 수정 내의 에너지가 급증하여 빠르게 확장하게 된다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:main_07_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "스노우 화이트가 설명하는 퀸은 랩쳐의 여왕이다. 지엔이 보고받으려는 ‘그것’은 새로 인용한 07의 실험 대화에서 자신이 만든 랩쳐·니케 융합 개체로 좁혀진다. 보강한 근거로 두 대상의 기각을 지지할 수 있다. 대조 범위는 main_07_03 L21~23, main_07_05 L51~64, main_07_06 L153~154이다.",
+      "evidence": [
+        {
+          "scene_id": "main_07_01",
+          "line": 55,
+          "quote": "스노우 화이트: 랩쳐의 여왕."
+        },
+        {
+          "scene_id": "unbreakable_sphere_03",
+          "line": 104,
+          "quote": "지엔: [그것]이 어떤 선택을 하는지,"
+        },
+        {
+          "scene_id": "unbreakable_sphere_07",
+          "line": 79,
+          "quote": "지엔: 랩쳐와 니케가 융합된 개체가 [콜링 시그널]을 들었을 때,"
+        },
+        {
+          "scene_id": "unbreakable_sphere_07",
+          "line": 83,
+          "quote": "지엔: 예. 얼마 전에 내가 만드는 데 성공했거든요."
+        },
+        {
+          "scene_id": "unbreakable_sphere_07",
+          "line": 100,
+          "quote": "지엔: [그것]이 어떤 선택을 하는지,"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__035:perfect_maid_09__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "프리바티는 니케의 성과를 당연시하는 사람들의 반응을 기계로 보는 시각에서 나온다고 해석한다. 발언의 이유가 이미 드러나 있다.",
+      "evidence": [
+        {
+          "scene_id": "perfect_maid_09",
+          "line": 64,
+          "quote": "프리바티: 니케라고 생각하기 시작하면 그래요."
+        },
+        {
+          "scene_id": "perfect_maid_09",
+          "line": 67,
+          "quote": "프리바티: 완벽했던 성과가 당연한 것이 되어버리죠."
+        },
+        {
+          "scene_id": "perfect_maid_09",
+          "line": 71,
+          "quote": "프리바티: 니케를 인간과 다른··· 기계라고 생각하니까."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:cinderella_crystalwave_04__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "신데렐라가 잡지대로 행동했다고 털어놓는다. 앞의 손잡기와 둘만의 시간도 각 장면에서 해당 단계를 먼저 보여 주고, 마지막 지시까지 여기서 읽는다.",
+      "evidence": [
+        {
+          "scene_id": "cinderella_crystalwave_04",
+          "line": 24,
+          "quote": "신데렐라: [나만의 왕자님을 사로잡는 7가지 방법] 이란 글이."
+        },
+        {
+          "scene_id": "cinderella_crystalwave_04",
+          "line": 39,
+          "quote": "신데렐라: 거기 적힌 방법대로 왕자님한테 해본 거거든."
+        },
+        {
+          "scene_id": "cinderella_crystalwave_04",
+          "line": 41,
+          "quote": "[STEP7. 잡지를 덮으세요.]"
+        },
+        {
+          "scene_id": "cinderella_crystalwave_04",
+          "line": 44,
+          "quote": "[그러니, 이제는 눈앞의 그 사람을 바라보며 직접 마음을 전해보세요.]"
+        },
+        {
+          "scene_id": "cinderella_crystalwave_03",
+          "line": 19,
+          "quote": "[STEP3. 단둘이서, 더 가까이.]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:outdoor_swimming_pool_02__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아리아가 지휘관 일행에게 리허설에서 맡을 해상 랩쳐 역할을 지정한다. 세뇨르라고 부른 상대가 누구인지도 분명하다. 대조 범위는 outdoor_swimming_pool_03 L128, outdoor_swimming_pool_04 L76이다.",
+      "evidence": [
+        {
+          "scene_id": "outdoor_swimming_pool_02",
+          "line": 30,
+          "quote": "아리아: 지금부터 시작할 클라이막스 곡의 리허설에서."
+        },
+        {
+          "scene_id": "outdoor_swimming_pool_02",
+          "line": 31,
+          "quote": "아리아: 세뇨르 일행이 해상 랩쳐 역할을 맡아 줬으면 좋겠어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:main_46_17__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루피의 조화 선물과 엔더슨이 내온 차는 용도와 대상이 달라 008의 기각이 맞다. 도로시의 취향을 아는 방문자가 누구인지도 면회 장면 안에서 확인된다. 대조 범위는 main_46_06 L38~42, main_46_16 L83~87, main_46_00 L72이다.",
+      "evidence": [
+        {
+          "scene_id": "main_46_17",
+          "line": 6,
+          "quote": "메리 골드."
+        },
+        {
+          "scene_id": "main_46_17",
+          "line": 8,
+          "quote": "도로시의 앞에 찻잔이 놓이는 소리가 들렸다."
+        },
+        {
+          "scene_id": "main_46_17",
+          "line": 16,
+          "quote": "엔더슨: 흠. 역시 차만 한 게 없군."
+        },
+        {
+          "scene_id": "main_46_17",
+          "line": 37,
+          "quote": "자신의 가장 빛나는 시절을 함께 했던 사람이다."
+        },
+        {
+          "scene_id": "secret_garden_13",
+          "line": 35,
+          "quote": "루피: 댓글 예쁘게 달아준 루팡 다섯 명한테는 내가 만든 조화를 선물해 줄 예정이야!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:gingerbreadhouse_10__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "헨젤은 그레텔이 없어 탄 조합에 에너지를 얼마나 넣어야 할지 모른다고 말하며 파트너의 몫을 실감한다. 이전의 역할 설명도 분량이나 탄 배합량을 가르쳐 주지는 않는다. 대조 범위는 gingerbreadhouse_17 L58~59, gingerbreadhouse_17 L162~163, gingerbreadhouse_05 L47~51이다.",
+      "evidence": [
+        {
+          "scene_id": "gingerbreadhouse_10",
+          "line": 25,
+          "quote": "헨젤: 그레텔 없이 싸우려니까, 마녀의 아궁이도 잘 못 다루겠어."
+        },
+        {
+          "scene_id": "gingerbreadhouse_10",
+          "line": 27,
+          "quote": "헨젤: 얼마나 에너지를 주입해야 할지 모르겠어."
+        },
+        {
+          "scene_id": "old_tales_12",
+          "line": 54,
+          "quote": "에이브: 그레텔이 조합하고, 헨젤이 제어하지."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:cinderella_crystalwave_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "잡지를 누가 냈는지, 어떤 기사를 읽는지와 첫 지시까지 같은 장면에 나온다. 뒤에서 신데렐라가 이를 실행하는 것만으로 잡지가 미해결 단서가 되지는 않는다.",
+      "evidence": [
+        {
+          "scene_id": "cinderella_crystalwave_00",
+          "line": 24,
+          "quote": "라피: 응, 테트라 라인에서 출간하는 잡지."
+        },
+        {
+          "scene_id": "cinderella_crystalwave_00",
+          "line": 32,
+          "quote": "[나만의 왕자님을 사로잡는 7가지 방법]"
+        },
+        {
+          "scene_id": "cinderella_crystalwave_00",
+          "line": 39,
+          "quote": "[오늘은 그 사람과의 애매한 거리를 설렘으로 바꿔줄 특별한 방법들을 알려드릴게요.]"
+        },
+        {
+          "scene_id": "cinderella_crystalwave_00",
+          "line": 41,
+          "quote": "[STEP1. 손은 마음보다 먼저 닿는 고백입니다.]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:blank_ticket_03__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "솔린이 노라의 네모난 뜨개질을 보았고 아침에는 담요를 보고 할머니가 떠났다고 바로 알아챈다. 뒤에 돌려주거나 고마움을 전하는 것은 이미 알아본 담요의 후속 사용이다. 대조 범위는 blank_ticket_08 L26~29, blank_ticket_10 L96, blank_ticket_13 L90~93이다.",
+      "evidence": [
+        {
+          "scene_id": "blank_ticket_03",
+          "line": 60,
+          "quote": "솔린: 그건 그냥 네모난 천 쪼가리잖아."
+        },
+        {
+          "scene_id": "blank_ticket_03",
+          "line": 85,
+          "quote": "디젤: 이 담요랑요."
+        },
+        {
+          "scene_id": "blank_ticket_03",
+          "line": 87,
+          "quote": "솔린: 어, 이건···!"
+        },
+        {
+          "scene_id": "blank_ticket_03",
+          "line": 89,
+          "quote": "솔린: 튀었구나아아!!"
+        },
+        {
+          "scene_id": "blank_ticket_11",
+          "line": 101,
+          "quote": "노라: 그냥 네모난 천 쪼가리라고 했으면서."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:phantom_thief_vs_detective_12__clh_005",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "노벨이 돌아왔다고 알리고 폴리가 반갑게 맞는다. 이름이 표시된 발언에서 ‘것입니다’는 신원 단서로 쓰이지 않는다. 대조 범위는 phantom_thief_vs_detective_01 L35~37, phantom_thief_vs_detective_08 L138~142, phantom_thief_vs_detective_01 L50~52이다.",
+      "evidence": [
+        {
+          "scene_id": "phantom_thief_vs_detective_12",
+          "line": 38,
+          "quote": "노벨: 돌아왔다는 것입니다!"
+        },
+        {
+          "scene_id": "phantom_thief_vs_detective_12",
+          "line": 39,
+          "quote": "폴리: 아, 오셨군영!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__037:main_19_09__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "인큐베이터가 무엇이냐는 질문에 도로시가 방주 시뮬레이션 룸과 비교하여 조정 범위와 가상 적의 차이를 직접 알려준다. 대조 범위는 main_19_04 L70~88, main_19_06 L18~20, main_19_04 L123~124이다.",
+      "evidence": [
+        {
+          "scene_id": "main_19_09",
+          "line": 110,
+          "quote": "도로시: 아, 마침 노아와 이사벨이 인큐베이터에서 훈련 중이네요."
+        },
+        {
+          "scene_id": "main_19_09",
+          "line": 115,
+          "quote": "도로시: 예. 방주의 시뮬레이션 룸과 유사한 개념의 장소지만,"
+        },
+        {
+          "scene_id": "main_19_09",
+          "line": 116,
+          "quote": "도로시: 조금 더 미세한 조정이 가능하고. 조금 더 강력한 가상의 적을 생성할 수 있답니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:d.ark_hero_08__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "에테르는 쪽지를 꺼내는 즉시 일레그의 구금 좌표가 적혀 있다고 말한다. 쪽지 내용은 다른 장면으로 미루지 않는다. 대조 범위는 d.ark_hero_09 L127~137, d.ark_hero_04 L81~83, d.ark_hero_07 L2~4이다.",
+      "evidence": [
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 61,
+          "quote": "에테르가 쪽지 하나를 꺼내 들었다."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 62,
+          "quote": "에테르: 여기엔 일레그가 붙잡혀 있는 곳의 좌표가 적혀 있어."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 63,
+          "quote": "에테르: 반나절 뒤에 심문이 시작될 거야."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__031:anis_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "아니스가 3대 회사의 이름, 공통 생산품과 대표 사업을 안내한다. 세 회사 중 어느 곳인지를 가린 대화가 아니다. 대조 범위는 anis_02 L17~28, anis_02 L57~72, anis_00 L118~123이다.",
+      "evidence": [
+        {
+          "scene_id": "anis_01",
+          "line": 111,
+          "quote": "아니스: 지휘관님도 알고 있지? 엘리시온, 미실리스 인더스트리, 테트라 라인."
+        },
+        {
+          "scene_id": "anis_01",
+          "line": 112,
+          "quote": "아니스: 니케를 유일하게 생산할 수 있는 회사들."
+        },
+        {
+          "scene_id": "anis_01",
+          "line": 117,
+          "quote": "아니스: 엘리시온이 군수, 식품, 운송이었던 것 같고."
+        },
+        {
+          "scene_id": "anis_01",
+          "line": 118,
+          "quote": "아니스: 테트라가 엔터테인먼트, 의류, 생필품···."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:goddess_fall_02__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라푼젤이 노아를 앞에 두고 별명을 확인하고 노아 본인이 바로 인정한다. 인물과 방패라는 별개 개체를 합칠 근거도 없다. 대조 범위는 goddess_fall_09 L43~45, goddess_fall_10 L24~30, goddess_fall_20 L116~117이다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_02",
+          "line": 89,
+          "quote": "라푼젤: 노아 자매님은 지상 최강의 방패라고 불리고 있다죠?"
+        },
+        {
+          "scene_id": "goddess_fall_02",
+          "line": 92,
+          "quote": "노아: 맞아. 내가 바로 그 지상 최강의 방패야."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:chapter_50_00__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "노아가 호칭을 외치며 실제로 실드로 빛을 막는다. 누구의 방패인지, 그 순간 무슨 일을 하는지 모두 드러난다. 대조 범위는 chapter_50_01 L27~28, chapter_50_03 L94, chapter_50_09 L77~78이다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_50_00",
+          "line": 108,
+          "quote": "노아: 지상 최강의 방패다아아아아--!!"
+        },
+        {
+          "scene_id": "chapter_50_00",
+          "line": 110,
+          "quote": "노아의 실드에 막힌 빛이 사방으로 비산한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:maxwell_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "맥스웰이 레모네이드를 좋아하던 때와 니케가 된 뒤 마시지 않은 이유를 대답한다. 대조 범위는 maxwell_00 L136~142이다.",
+      "evidence": [
+        {
+          "scene_id": "maxwell_01",
+          "line": 146,
+          "quote": "맥스웰이 레모네이드를 마셨다."
+        },
+        {
+          "scene_id": "maxwell_01",
+          "line": 149,
+          "quote": "맥스웰: 인간일 때의 내가 좋아했던 건데. 나한테도 나쁘지 않은데?"
+        },
+        {
+          "scene_id": "maxwell_01",
+          "line": 154,
+          "quote": "맥스웰: 응. 나 원래 회사에서 니케 용으로 만들어 주는 것 외엔 안 먹거든."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:sea_you_again_01__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "움직이는 신호의 정체는 같은 장면의 별도 단서 L67~74에 해당한다. L93~95는 섬의 안전을 설명하며 해상 랩쳐가 나오지 않을 것이라고 예상한다. 실제로 나타난 크라켄은 그 예상을 뒤집지만 이 말에 감춰진 사정을 밝히지는 않는다. 대조 범위는 sea_you_again_13 L68, sea_you_again_00 L2~9이다.",
+      "evidence": [
+        {
+          "scene_id": "sea_you_again_01",
+          "line": 73,
+          "quote": "엔더슨: 그곳 근처에서 거대한 신호가 잡혔고."
+        },
+        {
+          "scene_id": "sea_you_again_01",
+          "line": 85,
+          "quote": "엔더슨: 일단 탐지를 해봐도 정체를 확신하기가 힘든 상태라 만일의 사태를 대비해서 자네가 좀 봐줘야겠네."
+        },
+        {
+          "scene_id": "sea_you_again_01",
+          "line": 94,
+          "quote": "엔더슨: 지상에서 그렇게 안전한 곳이 어디 있겠나."
+        },
+        {
+          "scene_id": "sea_you_again_01",
+          "line": 95,
+          "quote": "엔더슨: 갑자기 바다에서 해상 랩쳐 같은 게 튀어나올 것도 아니니 말일세."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:white_memory_page_1001324__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "액자가 놓인 침대와 사진 속 두 사람을 보여 준 뒤, 수집품 설명이 결혼사진이라고 밝힌다. 라푼젤이 가져가는 이유도 곧바로 말한다. 애도하는 방에서 같은 액자를 사용하는 선택은 이 물건에 관한 숨은 정보를 풀지 않는다. 대조 범위는 white_memory_page_1001330 L2, white_memory_page_1001401 L3~4, white_memory_18 L35~36이다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line": 3,
+          "quote": "침대 위에 시체 두 구가 나란히 누운 채, 손을 맞잡고 있었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line": 4,
+          "quote": "스노우 화이트와 라푼젤은 말없이 침대 헤드에 놓인 [액자]를 바라보았다."
+        },
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line": 5,
+          "quote": "사진 속에서 한 쌍의 남녀가 환하게 웃고 있었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line": 10,
+          "quote": "라푼젤은 그 사진을 빤히 바라보다가 떠난 이들을 애도하고 싶다는 말과 함께 액자를 가져가기로 한다."
+        },
+        {
+          "scene_id": "white_memory_page_1001324",
+          "line": 13,
+          "quote": "한때 영원한 사랑을 약속했던 두 남녀의 결혼사진이 담긴 액자."
+        },
+        {
+          "scene_id": "white_memory_page_1001307",
+          "line": 14,
+          "quote": "  [OPTION TEXT=\"갖고 온 [액자]를 놓고 기도한다.\" VALUE=\"option_100130702\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:blabla_arcanearchive_004__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "당황해 메시지를 지우다가 휴대폰을 떨어뜨려 액정이 깨졌다고 팬텀이 직접 전한다. 다른 대화에서도 쓰던 오타는 이 사건의 별도 원인을 숨기지 않는다. 대조 범위는 blabla_arcanearchive_001 L57~80, blabla_arcanearchive_002 L54~65, blabla_arcanearchive_001 L84~101이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_arcanearchive_004",
+          "line": 55,
+          "quote": "    아르카나가 차자왓억쏘"
+        },
+        {
+          "scene_id": "blabla_arcanearchive_004",
+          "line": 58,
+          "quote": "    당항헤서 매시지를 지우려닥아"
+        },
+        {
+          "scene_id": "blabla_arcanearchive_004",
+          "line": 61,
+          "quote": "    핸드포늘 떠러뜰여서"
+        },
+        {
+          "scene_id": "blabla_arcanearchive_004",
+          "line": 64,
+          "quote": "    엑정이 깨졋따고 하오"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:fading_affection_7201__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "붉은 눈으로 총격의 결과를 바라보는 마리안은 이 결말에서 이미 침식된 상태다. 2221의 ‘너무 오래 걸리면’이라는 의문을 설명하는 줄은 시간과 확률을 알려 주는 별도 항목 7201__clh_002(L12)다. 7201__clh_001(L10)의 눈빛만으로는 그 원인을 공개하지 않는다. 대조 범위는 fading_affection_7202 L25, fading_affection_7205 L15~19, fading_affection_2221 L9~10이다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_7201",
+          "line": 10,
+          "quote": "마리안은 붉은 눈으로 무심히 그 광경을 보다, 밖으로 걸어 나갔다."
+        },
+        {
+          "scene_id": "fading_affection_7201",
+          "line": 12,
+          "quote": "힌트: 시간이 지날수록 침식될 확률이 높아진다."
+        },
+        {
+          "scene_id": "fading_affection_2221",
+          "line": 10,
+          "quote": "마리안의 눈이 붉게 물들어 있었다."
+        },
+        {
+          "scene_id": "fading_affection_2221",
+          "line": 16,
+          "quote": "\"너무 오래 걸리면 침식에 걸리게 해놨다고?\""
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:fading_affection_2271__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리안이 시간을 언급하며 붉은 눈으로 남자를 보고, 선택지에 침식도 증가와 침식 엔딩이 명시된다. 7205는 이 선택의 결과로, 이 장면이 가린 눈 색의 원인을 새로 밝혀 주지 않는다. 대조 범위는 fading_affection_6205 L9~11, fading_affection_6211 L11~14, fading_affection_memory_1112 L2~9이다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_2271",
+          "line": 3,
+          "quote": "붉은 눈으로 남자를 마주한다."
+        },
+        {
+          "scene_id": "fading_affection_2271",
+          "line": 4,
+          "quote": "\"벌써··· 시간이 이렇게 되었구나···.\""
+        },
+        {
+          "scene_id": "fading_affection_2271",
+          "line": 11,
+          "quote": "    침식도 +50%"
+        },
+        {
+          "scene_id": "fading_affection_2271",
+          "line": 12,
+          "quote": "    침식 엔딩으로 이어집니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__032:memories_teller_23__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "롬은 운반을 잘하고 이곳 유물이 제2의 방주 제작에 도움이 될 수 있다고 탐색 목적을 밝힌다. 24화의 과거 사연을 지금 이 대사가 묻고 있지는 않다. 대조 범위는 memories_teller_24 L74~79, memories_teller_29 L49~51, memories_teller_07 L9~14이다.",
+      "evidence": [
+        {
+          "scene_id": "memories_teller_23",
+          "line": 44,
+          "quote": "롬: 롬 운반용 로봇. 운반 잘한다."
+        },
+        {
+          "scene_id": "memories_teller_23",
+          "line": 45,
+          "quote": "롬: 그리고 이곳에 좋은 유물 있을지도 모른다."
+        },
+        {
+          "scene_id": "memories_teller_23",
+          "line": 46,
+          "quote": "롬: 제2의 방주 제작에 도움 될 것."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:old_tales_12__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "두 부품을 합치는 즉시 에이브가 무장 이름과 헨젤·그레텔의 분업을 설명한다. 따로 가려진 무장 주인이나 작동 방식이 없다. 대조 범위는 old_tales_14 L18~23, old_tales_15 L66~70, old_tales_03 L34이다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_12",
+          "line": 51,
+          "quote": "그레텔이 들고 있던 거대한 플라스크와 헨젤이 들고 있던 강철 기둥이 합쳐진다."
+        },
+        {
+          "scene_id": "old_tales_12",
+          "line": 53,
+          "quote": "에이브: 만능 조합 및 발사 장치 [마녀의 아궁이]. 헨젤과 그레텔이 함께 사용하는 전용 무장."
+        },
+        {
+          "scene_id": "old_tales_12",
+          "line": 54,
+          "quote": "에이브: 그레텔이 조합하고, 헨젤이 제어하지."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:life_again_07__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "이곳이 어디냐는 질문에 루마니가 라이프 토닉의 가상 운동 공간이라고 답하고 용도도 알려 준다. 에피넬의 트릭 연습과 나디아의 재활은 그 용도의 구체적인 예다. 방주의 다른 시뮬레이션 룸과 연결해야 풀리는 의문은 없다.",
+      "evidence": [
+        {
+          "scene_id": "life_again_07",
+          "line": 40,
+          "quote": "  [OPTION TEXT=\"···여기는 시뮬레이션 룸?\"]"
+        },
+        {
+          "scene_id": "life_again_07",
+          "line": 43,
+          "quote": "루마니: 라이프 토닉만의 가상 운동 공간이에요."
+        },
+        {
+          "scene_id": "life_again_07",
+          "line": 44,
+          "quote": "루마니: 부상이나 피치 못할 사정으로 밖에서 운동하지 못할 때를 대비해서 만든 공간이죠."
+        },
+        {
+          "scene_id": "life_again_07",
+          "line": 53,
+          "quote": "에피넬: 그리고 이곳에선 내 머릿속에 있는 트릭을 실제로 시뮬레이션 돌려볼 수도 있거든."
+        },
+        {
+          "scene_id": "life_again_07",
+          "line": 58,
+          "quote": "루마니: 이번 나디아의 재활은 이곳에서 진행할 거예요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:main_27_05__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일레그는 이미 첫 탈환지임을 알고 그곳을 비워도 되느냐고 걱정한다. 지휘관은 모니터링을 부탁한 뒤 빼앗기면 다시 되찾겠다고 즉답한다. 탈환지 01로 향하는 다른 임무가 이 판단의 숨은 사정을 밝히지는 않는다. 대조 범위는 main_27_01 L46~48이다.",
+      "evidence": [
+        {
+          "scene_id": "main_27_05",
+          "line": 128,
+          "quote": "  [OPTION TEXT=\"이곳의 모니터링을 부탁해도 될까?\"]"
+        },
+        {
+          "scene_id": "main_27_05",
+          "line": 139,
+          "quote": "일레그: ···괜찮은 건가여? 여기 100년 만에 처음 탈환한 곳이잖아여."
+        },
+        {
+          "scene_id": "main_27_05",
+          "line": 140,
+          "quote": "일레그: 빼앗기면 헛수고가 될 텐데여?"
+        },
+        {
+          "scene_id": "main_27_05",
+          "line": 142,
+          "quote": "  [OPTION TEXT=\"문제없어.\"]"
+        },
+        {
+          "scene_id": "main_27_05",
+          "line": 146,
+          "quote": "  [OPTION TEXT=\"다시 빼앗으면 되니까.\"]"
+        },
+        {
+          "scene_id": "main_27_01",
+          "line": 46,
+          "quote": "엔더슨: 흠. 탈환지 01과 가장 가까운 곳은···."
+        },
+        {
+          "scene_id": "main_30_11",
+          "line": 123,
+          "quote": "  [OPTION TEXT=\"방주로 데려가면 큰일일 테니까, 일단 탈환지 01로 갈까 해.\"]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:license_to_kill_12__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "경호원 제압에 쓴 D의 도끼는 둔기처럼 부딪혔고 날이 서지 않았다고 지문이 설명한다. K가 앞서 조사 수단으로 보인 것은 가시가 달린 총이다. 두 장면에 남겨 둔 무기의 정체나 숨은 쓰임새가 없다. 대조 범위는 license_to_kill_04 L89~93이다.",
+      "evidence": [
+        {
+          "scene_id": "license_to_kill_12",
+          "line": 34,
+          "quote": "D가 집어던진 도끼가 경호원의 총을 박살 냈다."
+        },
+        {
+          "scene_id": "license_to_kill_12",
+          "line": 37,
+          "quote": "휘둘러진 도끼는 경호원의 옆구리를 후려쳤고, 불길한 소리와 함께 경호원의 몸이 접히듯 기울어졌다."
+        },
+        {
+          "scene_id": "license_to_kill_12",
+          "line": 39,
+          "quote": "D는 빠르고 정확하게 놀란 채 굳어버린 경호원들을 쓰러뜨렸다."
+        },
+        {
+          "scene_id": "license_to_kill_12",
+          "line": 41,
+          "quote": "···날이 서있지 않는 도끼라, 천만다행이라고 생각했다."
+        },
+        {
+          "scene_id": "license_to_kill_04",
+          "line": 91,
+          "quote": "···K의 총에 달린 가시에서 불길한 소리가 나오고 있다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__034:blabla_moran_001__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "목단은 자신이 보스라고 소개한 뒤 모란회가 의리를 중시한다고 말한다. 본인도 그러냐는 질문에는 곧바로 동의한다. 뒤에서 알아내야 할 구성원의 신원이나 숨긴 행동 동기가 없다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_moran_001",
+          "line": 75,
+          "quote": "    나는 모란회의 보스"
+        },
+        {
+          "scene_id": "blabla_moran_001",
+          "line": 81,
+          "quote": "    그중에서도 우리 모란회는"
+        },
+        {
+          "scene_id": "blabla_moran_001",
+          "line": 84,
+          "quote": "    의리를 중요하게 생각하는 녀석들로 이루어져 있어"
+        },
+        {
+          "scene_id": "blabla_moran_001",
+          "line": 87,
+          "quote": "    그럼 목단도 의리를 중요하게 생각해?"
+        },
+        {
+          "scene_id": "blabla_moran_001",
+          "line": 90,
+          "quote": "    당연하지!"
+        },
+        {
+          "scene_id": "blabla_moran_001",
+          "line": 96,
+          "quote": "    의리에 살고 의리에 죽는다!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:star_anis_15__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱은 공연을 중단시키고 충분히 봤다고 한다. 멤버들은 평가를 몰라 당황하지만, 같은 장면의 회의에서 머스탱이 개개인의 기량이 부족하다고 평가하고 이미지로 승부하겠다고 밝힌다. 뒤의 스마일 박스가 나오기 전부터 중단의 맥락을 알 수 있다. 대조 범위는 star_anis_16 L73~100, star_anis_17 L142~143, star_anis_09 L74~87이다.",
+      "evidence": [
+        {
+          "scene_id": "star_anis_15",
+          "line": 31,
+          "quote": "머스탱: 네가 대체 뭐 때문에 그것들을 그렇게 싸고도는지, 내 눈으로 직접 보겠다."
+        },
+        {
+          "scene_id": "star_anis_15",
+          "line": 49,
+          "quote": "머스탱: Stop."
+        },
+        {
+          "scene_id": "star_anis_15",
+          "line": 52,
+          "quote": "아니스: 어··· 예? 아, 아직 하이라이트 안 보여드렸는데."
+        },
+        {
+          "scene_id": "star_anis_15",
+          "line": 53,
+          "quote": "머스탱: 괜찮습니Da. 충분히 See 했습니Da."
+        },
+        {
+          "scene_id": "star_anis_15",
+          "line": 140,
+          "quote": "머스탱: 대충 결론은 나온 모양이군."
+        },
+        {
+          "scene_id": "star_anis_15",
+          "line": 141,
+          "quote": "머스탱: 아이돌로 써먹을 순 없다. 특별할 것 하나 없고, 개개인의 기량도 너무 떨어져."
+        },
+        {
+          "scene_id": "star_anis_15",
+          "line": 143,
+          "quote": "머스탱: 이미지 메이킹으로 승부를 볼 수밖에 없겠어."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:fitness_club_06__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "잠겨 있는 문을 어떻게 통과했느냐는 레오나의 물음에 지휘관이 마스터키를 썼다고 즉답한다. 열쇠를 누가 감춰 두었는지 또는 열쇠에 별도 기능이 있는지 묻는 내용은 없다. 대조 범위는 fitness_club_08 L46~48, fitness_club_02 L3~4, fitness_club_01 L57~66이다.",
+      "evidence": [
+        {
+          "scene_id": "fitness_club_06",
+          "line": 31,
+          "quote": "레오나: 아니, 것보다 문이 잠겨있을 텐데 어떻게 들어온 거야?"
+        },
+        {
+          "scene_id": "fitness_club_06",
+          "line": 33,
+          "quote": "  [OPTION TEXT=\"체육관을 좀 쓰고 싶어서 마스터키를 썼어.\"]"
+        },
+        {
+          "scene_id": "fitness_club_01",
+          "line": 57,
+          "quote": "에테르: 내 말이 맞지? 7호."
+        },
+        {
+          "scene_id": "fitness_club_08",
+          "line": 46,
+          "quote": "폴크방: 가만히 있으면 줄줄 흐르는 땀이, 달리면 그나마 좀 시원해져서 좋아요···."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:main_24_06__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "슈엔이 고통을 느끼지 않는 까닭을 유니가 미하라와의 감각 교환으로 곧 알아낸다. 10분은 이미 알고 있는 지속 시간이다. ‘가짜’도 직전 대면에서 예전 기억을 잃은 미하라에게 이유를 밝히며 쓴 같은 비난으로, 새 인물의 정체를 감추는 표현이 아니다. 대조 범위는 main_24_14 L10~12, main_24_15 L55~65, main_24_18 L172~181이다.",
+      "evidence": [
+        {
+          "scene_id": "main_24_06",
+          "line": 33,
+          "quote": "유니: 왜 안 아파하지?"
+        },
+        {
+          "scene_id": "main_24_06",
+          "line": 38,
+          "quote": "유니: 슈엔이랑 감각 교환을 했구나?"
+        },
+        {
+          "scene_id": "main_24_06",
+          "line": 41,
+          "quote": "유니: 가짜 주제에."
+        },
+        {
+          "scene_id": "main_24_06",
+          "line": 42,
+          "quote": "유니: 감각 교환은 10분 정도지?"
+        },
+        {
+          "scene_id": "main_24_04",
+          "line": 89,
+          "quote": "유니: 진짜 미하라는··· 언제나 내 편을 들어주고···."
+        },
+        {
+          "scene_id": "main_24_04",
+          "line": 97,
+          "quote": "유니: 기억도 못 하면서 유니에 대해 뭘 안다는 거야!"
+        },
+        {
+          "scene_id": "main_24_04",
+          "line": 99,
+          "quote": "유니: 미하라는 죽었어! 그러니 넌 진짜 미하라가 아냐!"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:blabla_blueezs_001__clh_002",
+      "judgment": "틀림",
+      "problems": [
+        "should_be_hook",
+        "missed_link"
+      ],
+      "reason": "지휘관은 해변까지 와서 ‘어쩌면 진짜 황금 배를 보고 갈지도’라고 한다. 마스트의 취향은 알려져 있지만, 지도 속 전설의 배가 실재하는지는 이때 아직 불확실하다. golden_ship_13에서 같은 일행이 황금빛 함선을 목격하고 마스트가 전설이 아니라 실재했다고 확인한다. 앞으로 올라탈 수 있을지는 여전히 열려 있어도, 배가 실제로 있었는지에는 답이 있다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_blueezs_001",
+          "line": 160,
+          "quote": "    어쩌면 진짜 황금 배를 보고 갈지도 모르지"
+        },
+        {
+          "scene_id": "blabla_blueezs_001",
+          "line": 166,
+          "quote": "    그래 그런 이유라고 했었지"
+        },
+        {
+          "scene_id": "blabla_blueezs_001",
+          "line": 169,
+          "quote": "    마스트는 그런 걸 좋아하니까"
+        },
+        {
+          "scene_id": "golden_ship_01",
+          "line": 116,
+          "quote": "[모든 것을 손에 넣었다는 그가 마지막까지 남겨두었다는 보물 [황금 배].]"
+        },
+        {
+          "scene_id": "golden_ship_13",
+          "line": 148,
+          "quote": "거대한 함선의 황금빛 그림자가 있었다."
+        },
+        {
+          "scene_id": "golden_ship_13",
+          "line": 156,
+          "quote": "마스트: 저, 정말로 있었수."
+        },
+        {
+          "scene_id": "golden_ship_13",
+          "line": 157,
+          "quote": "마스트: 캡틴 앨리게이터의 황금 배는··· 전설이 아니었수다···!"
+        },
+        {
+          "scene_id": "golden_ship_13",
+          "line": 158,
+          "quote": "마스트: 이 세상에 존재하는 것이었수다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:fading_affection_memory_1116__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "미러는 인근의 블랙스미스를 데려오라고 했지만 위치나 출발지를 특정하지 않았다. 호수에서 목격한 1203에서도 정면에서 다가오는 모습만 본다. 2225의 추격은 지휘관과 동행한 북쪽 숲 분기로, 첫 목격 때 구도심에서 호수까지 동일 개체가 따라왔는지는 가릴 수 없다. 021__004의 보류가 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_memory_1116",
+          "line": 5,
+          "quote": "호수 근처에도 블랙스미스가 있었어."
+        },
+        {
+          "scene_id": "fading_affection_memory_1116",
+          "line": 6,
+          "quote": "그건 원래부터 호수에 있었던 걸까?"
+        },
+        {
+          "scene_id": "fading_affection_memory_1116",
+          "line": 7,
+          "quote": "아니면 구도심에 있던 게 나를 따라온 걸까?"
+        },
+        {
+          "scene_id": "fading_affection_1203",
+          "line": 8,
+          "quote": "블랙스미스가 마리아를 향해 다가오고 있었다."
+        },
+        {
+          "scene_id": "fading_affection_1203",
+          "line": 12,
+          "quote": "메모리 저장: 저장된 메모리 : 호수의 랩쳐"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line": 16,
+          "quote": "미러: 인근에 블랙스미스가 있다면 데려와줘요."
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line": 17,
+          "quote": "미러: 침식을 걸어서, 확인해봐야겠어요."
+        },
+        {
+          "scene_id": "fading_affection_2225",
+          "line": 2,
+          "quote": "마리안은 블랙스미스가 뒤따라오고 있다는 걸 알게 된 이상, 느긋하게 갈 여유가 없다고 판단했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:last_kingdom_14__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "013은 냉동 창고 씨앗이 구체적으로 어떤 식량인지 설명하는 연결이다. 성에서 보관하는 현재 목적은 지상 탈환 뒤의 식량 확보로 밝혀진다. 차임의 회상에서도 크라운이 이미 씨앗을 지키고 있어, 완성 후 기록이 끊긴 씨앗이 어떻게 그곳에 남았는지는 풀리지 않는다. 대조 범위는 last_kingdom_20 L42~43, last_kingdom_22 L77~82, last_kingdom_44 L13~19이다.",
+      "evidence": [
+        {
+          "scene_id": "last_kingdom_14",
+          "line": 3,
+          "quote": "차임: 땅에 심어놓기만 해도 삼 개월 만에 수확할 수 있는 곡식이다."
+        },
+        {
+          "scene_id": "last_kingdom_14",
+          "line": 15,
+          "quote": "T.A.L.O.S.: 완성되었다는 기록은 있으나, 그 이후로는 아무런 기록이 없습니다."
+        },
+        {
+          "scene_id": "last_kingdom_13",
+          "line": 41,
+          "quote": "킬로: 무슨 씨앗이요?"
+        },
+        {
+          "scene_id": "last_kingdom_32",
+          "line": 38,
+          "quote": "차임: 이게 실제로 있었구나! 너 이걸 계속 지키고 있던 거야?"
+        },
+        {
+          "scene_id": "last_kingdom_32",
+          "line": 41,
+          "quote": "크라운: 기억나지 않아요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:blabla_n102_005__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앤이 미리 하려던 말이 있었고 적지 못해 잊었다고 한다. 므네 이야기는 지휘관이 먼저 꺼낸 다른 화제다. 후속 대화의 친구 이름과 크로켓, 다른 이야기의 수첩 기록도 이때 하려던 말의 내용을 특정하지 않는다. 대조 범위는 blabla_n102_007 L12~26, blabla_n102_007 L54~65, blabla_n102_009 L104~118이다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_n102_005",
+          "line": 102,
+          "quote": "    오늘 선생님한테 어떤 얘기 하려고 했는지"
+        },
+        {
+          "scene_id": "blabla_n102_005",
+          "line": 105,
+          "quote": "    잊어버린 것 같아요"
+        },
+        {
+          "scene_id": "blabla_n102_005",
+          "line": 108,
+          "quote": "    너무 즐거워서 수첩에 적는걸 깜빡했거든요"
+        },
+        {
+          "scene_id": "blabla_n102_007",
+          "line": 55,
+          "quote": "    처음에 말 걸어주신 분은"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:workshop_02__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메이든이 바꾸고 싶은데도 사장이 지금 마스크를 가장 안정적이라고 한 까닭은 실제로 남은 질문이다. 언령 사용 때나 키스할 때 허가를 받아 벗는 장면은 확인되지만 어느 마스크가 왜 더 안정적인지는 설명하지 않는다. 연결을 지우고 짝 없음으로 남긴 수정이 맞다. 대조 범위는 workshop_00 L38~39, workshop_01 L77~85이다.",
+      "evidence": [
+        {
+          "scene_id": "workshop_02",
+          "line": 21,
+          "quote": "메이든: 피부에 닿는 느낌도 전혀 없고."
+        },
+        {
+          "scene_id": "workshop_02",
+          "line": 28,
+          "quote": "메이든: 사장님은 지금 마스크가 제일 안정적이라고 하시는데···."
+        },
+        {
+          "scene_id": "workshop_02",
+          "line": 29,
+          "quote": "메이든: 저한텐 너무 답답하고 귀찮아서요."
+        },
+        {
+          "scene_id": "maiden_03",
+          "line": 110,
+          "quote": "메이든: 마스크 오프를 허가해 주세요."
+        },
+        {
+          "scene_id": "maiden_03",
+          "line": 112,
+          "quote": "메이든: 알겠습니다. 현 시간부로 [언령]을 사용합니다."
+        },
+        {
+          "scene_id": "maiden_04",
+          "line": 225,
+          "quote": "메이든: 키, 키스하려고요."
+        },
+        {
+          "scene_id": "maiden_04",
+          "line": 228,
+          "quote": "메이든의 마스크가 벗겨졌다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:fading_affection_1211__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "서술이 니케 바디라면 예상되지 않는 숨참을 명시한다. 다른 분기의 붉은 눈은 침식 징후이고 이어지는 마리아의 고백은 박사를 배신하려 했다는 내용이다. 어느 쪽도 여기서 호흡이 가빠진 원인을 밝히지 않아 짝 없음이 맞다. 대조 범위는 fading_affection_7101 L12~16, fading_affection_8101 L7~9, fading_affection_memory_1224 L5~6이다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_1211",
+          "line": 3,
+          "quote": "\"헉··· 허억··· 콜록, 콜록···!\""
+        },
+        {
+          "scene_id": "fading_affection_1211",
+          "line": 4,
+          "quote": "니케의 바디는 이렇게 뛴 정도로 숨을 몰아쉬지 않을 것을 알고 있음에도 마리아는 이상하리만큼 숨이 막히는 기분이 들었다."
+        },
+        {
+          "scene_id": "fading_affection_7101",
+          "line": 16,
+          "quote": "멍하니 허공을 바라보는 마리아의 눈은 어느새 붉게 물들어 있었다."
+        },
+        {
+          "scene_id": "fading_affection_8101",
+          "line": 5,
+          "quote": "\"당신을 배신하려고 했어요.\""
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:blabla_n102_003__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앤이 다른 기호를 떠올리지 못하는 일에는 매일의 기억 소거와 수첩 의존이 가능한 설명이다. n102_04에서 삼색 고양이와 분홍색 책갈피를 좋아한다고 확인되지만 음식 이야기를 하던 이 순간에 떠올리려던 대상인지는 특정되지 않는다. 수첩에 적힌 핫 크로켓도 실제로는 너무 매워하므로 잔여 의문을 닫을 수 없다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_n102_003",
+          "line": 16,
+          "quote": "    마일드 크로켓 말고 좋아하는 건 없어?"
+        },
+        {
+          "scene_id": "blabla_n102_003",
+          "line": 19,
+          "quote": "    음 있었던 거 같은데"
+        },
+        {
+          "scene_id": "blabla_n102_003",
+          "line": 22,
+          "quote": "    잘 기억이 안 나요 ㅠㅠ"
+        },
+        {
+          "scene_id": "n102_02",
+          "line": 174,
+          "quote": "    앤이 매일 기억 소거를 당하는 건 알지?"
+        },
+        {
+          "scene_id": "n102_02",
+          "line": 183,
+          "quote": "    그게 원래 자기의 기억인 양 행동하는 거야"
+        },
+        {
+          "scene_id": "n102_01",
+          "line": 8,
+          "quote": "N102: 내가 가장 좋아하는 핫 크로켓 먹기."
+        },
+        {
+          "scene_id": "n102_01",
+          "line": 75,
+          "quote": "N102: 으으···! 선생님···! 이거 너무 매워요···!"
+        },
+        {
+          "scene_id": "n102_04",
+          "line": 79,
+          "quote": "N102: 마일드 크로켓이랑, 삼색 고양이랑, 분홍색 책갈피죠?"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:필그림조우보고서_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "북부의 하얀 니케에게서 목격한 대형 라이플과 눈밭에서 스노우 화이트가 홀로 쏜 무기가 들어맞는다. 목격 보고 속 전투와 같은 사건임을 특정할 수는 없어 가능성이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "필그림조우보고서_01",
+          "line": 2,
+          "quote": "방주에 있을 때부터 소문을 익히 들은 하얀 니케."
+        },
+        {
+          "scene_id": "필그림조우보고서_01",
+          "line": 4,
+          "quote": "몸만 한 라이플을 쏘며 랩쳐들을 죽이고 있었다."
+        },
+        {
+          "scene_id": "main_07_05",
+          "line": 19,
+          "quote": "스노우 화이트의 라이플이 불을 뿜었다."
+        },
+        {
+          "scene_id": "main_07_05",
+          "line": 22,
+          "quote": "모더니아: ···단독으로 이 정도의 무기를···. 조금 놀랐어요."
+        },
+        {
+          "scene_id": "main_07_05",
+          "line": 26,
+          "quote": "한참을 날아간 스노우 화이트는 눈밭에 곤두박질쳐졌다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__031:fading_affection_3113__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "쪽지가 말한 파란 장미의 의미는 7호가 마리안을 닮은 꽃을 선물하고 싶었다는 기억에서 짐작할 수 있다. 이 장면은 동시에 기억 감퇴의 단서다. 보관 장치를 부수면 마리안과의 기억이 사라진다는 예고가 그 얼굴이 희미해지는 현상을 간접적으로 설명한다. 두 방향을 함께 살린 수정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "하지 말아야 할 일_00",
+          "line": 4,
+          "quote": "3. 파란 장미를 발견해도 아는 척하지 않기."
+        },
+        {
+          "scene_id": "fading_affection_3113",
+          "line": 13,
+          "quote": "푸른빛이 아름다운, 마리안을 닮은 꽃."
+        },
+        {
+          "scene_id": "fading_affection_3113",
+          "line": 14,
+          "quote": "그래서 이 꽃을 볼 때마다 언제나, 그녀에게 선물하고 싶었다."
+        },
+        {
+          "scene_id": "fading_affection_3113",
+          "line": 16,
+          "quote": "이 꽃을 받고 기뻐하는 마리안의 얼굴이, 점점 희미해진다."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 138,
+          "quote": "닥터 마리아: 그렇게 되면 7호의 기억은 서서히 사라질거야."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 141,
+          "quote": "닥터 마리아: ···너와의 기억이 모두, 사라질거라는 얘기야."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:fading_affection_3003__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "7호의 기억 저장 장치를 부수면 기억이 서서히 사라진다는 설명은 숙소에서 위치와 경위를 기억하지 못한 증상의 가능한 원인이다. 그 순간을 직접 지목하지는 않는다. 같은 예고의 중복을 제거하고, 쓰러질 때의 일시적 부작용에 기대던 연결도 지운 수정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_3003",
+          "line": 3,
+          "quote": "7호는 연구실 숙소에서 눈을 뜬다."
+        },
+        {
+          "scene_id": "fading_affection_3003",
+          "line": 5,
+          "quote": "여기가 어디인지, 왜 이곳에 있는지 기억나지 않는다."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 132,
+          "quote": "닥터 마리아: 그래. 분명 거기에 NIMPH를 보관하는 장치가 있을거야."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 134,
+          "quote": "닥터 마리아: 그걸 부수자. 그래야 7호가 살아."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 138,
+          "quote": "닥터 마리아: 그렇게 되면 7호의 기억은 서서히 사라질거야."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 141,
+          "quote": "닥터 마리아: ···너와의 기억이 모두, 사라질거라는 얘기야."
+        },
+        {
+          "scene_id": "fading_affection_3143",
+          "line": 8,
+          "quote": "\"왜··· 이러··· 지?\""
+        },
+        {
+          "scene_id": "fading_affection_3143",
+          "line": 12,
+          "quote": "지직- 부작용일··· 지직- ···예요.\""
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:persona_on_frontline_19__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관은 남자의 이름을 모르고 회사 이름만 제시한다. 바로 다음 장면에서 그 단서로 조사한 자료의 인물이 앨든이라고 밝혀진다. 회사와 브라이언의 정황을 통해 같은 남자를 추적하므로 가능성 연결을 지지한다.",
+      "evidence": [
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line": 85,
+          "quote": "    팬텀: 그 남자의 이름도 아시오?"
+        },
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line": 87,
+          "quote": "      [OPTION TEXT=\"그건··· 몰라.\"]"
+        },
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line": 91,
+          "quote": "      [OPTION TEXT=\"아. [푸른내일지속가능기획지원사무국]이라는 회사를 갖고 있던가 그랬어.\"]"
+        },
+        {
+          "scene_id": "persona_on_frontline_20",
+          "line": 6,
+          "quote": "우리는 테이블에 조사한 자료들을 늘어놓고 둘러앉았다."
+        },
+        {
+          "scene_id": "persona_on_frontline_20",
+          "line": 11,
+          "quote": "퀸(마코토): 이름은 앨든."
+        },
+        {
+          "scene_id": "persona_on_frontline_20",
+          "line": 25,
+          "quote": "아이기스: 이 브라이언이라는 사람이 없었다면 불가능했을 겁니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:main_44_06__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "‘모두 함께인가’에는 이미 함께 있다는 답이 나온다. 남는 것은 ‘작은 문제’다. 헨젤·그레텔이 인류의 도움을 받지 못하고 헬레틱과 계약한 사정이 그 문제를 간접적으로 설명한다. 전원의 최종 합류를 별도 질문으로 세운 연결을 지운 수정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_44_06",
+          "line": 114,
+          "quote": "스노우 화이트: 그들도 모두 함께인가?"
+        },
+        {
+          "scene_id": "main_44_06",
+          "line": 116,
+          "quote": "  [OPTION TEXT=\"작은 문제가 있는 것 같지만, 함께 있어.\"]"
+        },
+        {
+          "scene_id": "gingerbreadhouse_00",
+          "line": 68,
+          "quote": "헨젤: 헨젤이 그레텔이 다쳤다고 말했는데도 도와주지 않았어."
+        },
+        {
+          "scene_id": "gingerbreadhouse_00",
+          "line": 70,
+          "quote": "헨젤: 그런데 그때 우릴 구해준 게··· 헬레틱이었어."
+        },
+        {
+          "scene_id": "gingerbreadhouse_00",
+          "line": 74,
+          "quote": "헨젤: 계약이라는 걸 하긴 했지만···."
+        },
+        {
+          "scene_id": "gingerbreadhouse_00",
+          "line": 82,
+          "quote": "헨젤: 헨젤은 더는 인류를 위해 싸우지 않기로 했으니까,"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:last_kingdom_43__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 무장을 조정하는 승려 나유타의 행동은 이름 없는 개조자가 누구였는지 간접적으로 알려 준다. 차임이 모른다고 말한 의복의 중화 원리는 열충격파를 발생시키는 장치의 기능과 별개다. 수정된 잔여 의문은 바로 그 범위다.",
+      "evidence": [
+        {
+          "scene_id": "last_kingdom_43",
+          "line": 92,
+          "quote": "차임: 그걸 떠돌이 승려가 섬멸용 무장으로 개조한 것이지."
+        },
+        {
+          "scene_id": "last_kingdom_43",
+          "line": 93,
+          "quote": "차임: 사용자의 작은 움직임에도 반응하여 열충격파를 뿜어내는 것으로 말이다."
+        },
+        {
+          "scene_id": "last_kingdom_43",
+          "line": 94,
+          "quote": "차임: 착용하는 의복은 열충격파의 영향을 받지 않는다. 중화시키는 원리라고 들었다만, 자세한 건 모른다."
+        },
+        {
+          "scene_id": "goddess_fall_15",
+          "line": 35,
+          "quote": "요한: ···너도 다를 바 없다, 승려."
+        },
+        {
+          "scene_id": "goddess_fall_15",
+          "line": 72,
+          "quote": "나유타: 일순. 정말 일순이라면 지금까지 모아놓은 에블라 입자를 열 충격파로 전환할 수 있소."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:diesel_00__clh_004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "추모식과 스쿼드 사이에 어떤 사정이 있는지 라피는 자세히 모른다. 디젤이 세 사람을 피해자로 언급하고, 브리드는 당시 열차를 운행했기에 자신을 가해자에 가깝다고 여긴다. 같은 테러에 얽힌 구체적인 사정이어서 수정한 연결이 성립한다.",
+      "evidence": [
+        {
+          "scene_id": "diesel_00",
+          "line": 162,
+          "quote": "라피: 그럴 거야. 인피니티 레일 스쿼드가 저 사건으로 생겨났으니까."
+        },
+        {
+          "scene_id": "diesel_00",
+          "line": 167,
+          "quote": "라피: 네. 자세한 사정은 모르지만 저 사건 이후."
+        },
+        {
+          "scene_id": "diesel_01",
+          "line": 88,
+          "quote": "디젤: 그리고 그 사건의 피해자가 저만 있는 건 아니잖아요."
+        },
+        {
+          "scene_id": "diesel_01",
+          "line": 89,
+          "quote": "디젤: 브리드도 그렇고 솔린도 괜찮은데."
+        },
+        {
+          "scene_id": "diesel_01",
+          "line": 91,
+          "quote": "브리드: 전 피해자 아닙니다. 가해자에 가깝죠."
+        },
+        {
+          "scene_id": "diesel_01",
+          "line": 93,
+          "quote": "브리드: 아시지 않습니까. 그때 AFX를 운행한 게 저라는 거."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:maria-n_27__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "홀로 다크 매터를 붙드는 동안을 얼마나 버텨야 할지는 공개되지 않는다. 나유타는 마리안이 하는 행성 재생에 현재 백여 년이 들며 조율자가 복구되면 크게 줄어든다고 답한다. 이 조건부 기간으로 잇고 가능성으로 둔 것이 타당하다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_27",
+          "line": 10,
+          "quote": "잠들수는 없다. 다크 매터를 계속 붙잡아두어야 하기 때문에."
+        },
+        {
+          "scene_id": "maria-n_27",
+          "line": 12,
+          "quote": "마리안은 얼마나 걸릴지 모를 긴 시간을 홀로 버텨내야한다."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 437,
+          "quote": "  [OPTION TEXT=\"그럼 지금 마리안은 검은 달 안에서 뭘 하고 있는 거야?\"]"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 449,
+          "quote": "나유타: 기간이 오래 걸릴 뿐이외다. 그 기간이 백여 년에 달하는 것이고."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 455,
+          "quote": "  [OPTION TEXT=\"일곱 조율자를 원래대로 되돌린다고 하면.\"]"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 462,
+          "quote": "나유타: 알 수 없지만, 비교도 안 될 정도로 빨라질 건 확실하오."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:yulha_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관이 호텔에서 있었던 일을 기억하는지에 따라 율하의 다리 떨기가 그치거나 다시 시작된다. 호텔 방에서 취한 율하가 목과 다른 곳을 물었다는 기억이 돌아오는 장면이 그 반응을 설명한다. 율하가 동기를 직접 진술하지는 않아 가능성이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "yulha_01",
+          "line": 8,
+          "quote": "율하가 한쪽 다리를 떨었다."
+        },
+        {
+          "scene_id": "yulha_01",
+          "line": 46,
+          "quote": "율하의 다리가 멈췄다."
+        },
+        {
+          "scene_id": "yulha_01",
+          "line": 49,
+          "quote": "율하: 어제. 기억 안 나지."
+        },
+        {
+          "scene_id": "yulha_03",
+          "line": 140,
+          "quote": "목을 물렸다."
+        },
+        {
+          "scene_id": "yulha_03",
+          "line": 143,
+          "quote": "이곳저곳 많이 물렸다!"
+        },
+        {
+          "scene_id": "yulha_03",
+          "line": 160,
+          "quote": "율하: 기, 기억났다고? 뭐, 뭐가."
+        },
+        {
+          "scene_id": "yulha_03",
+          "line": 161,
+          "quote": "율하가 한쪽 다리를 떨기 시작했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:diesel_00__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "포도맛을 달라는 아이에게도 딸기맛을 내미는 행동에 대해, 동생이 좋아해 직접 만들어 본 사탕이고 기일에도 챙긴다는 두 장면이 개인적 사연을 보여 준다. 디젤이 그 아이에게 준 이유를 직접 회고하지는 않으므로 두 연결 모두 가능성이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "diesel_00",
+          "line": 64,
+          "quote": "디젤: 누나는 딸기맛 사탕 장수랍니다. 포도맛은 취급하지 않아요."
+        },
+        {
+          "scene_id": "diesel_00",
+          "line": 65,
+          "quote": "어린 아이: 그게 뭐야. 딸기 맛 맛없는데."
+        },
+        {
+          "scene_id": "diesel_03",
+          "line": 129,
+          "quote": "디젤: 아, 동생이 하도 좋아해서 직접 만들어 본 적은 있는데."
+        },
+        {
+          "scene_id": "diesel_04",
+          "line": 29,
+          "quote": "디젤: 그래도 네가 갖고 싶어 했던 거 다 가져왔어."
+        },
+        {
+          "scene_id": "diesel_04",
+          "line": 33,
+          "quote": "디젤: 딸기맛 사탕이랑."
+        },
+        {
+          "scene_id": "diesel_04",
+          "line": 40,
+          "quote": "디젤: 보고 싶다··· 내 동생."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:d.ark_hero_08__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "일레그 체포의 진짜 이유를 설명하는 006__022의 공개 방향이 맞다. 트로니와 일레그가 알았던 동력원은 D.E.E.P.과 일레그가 각각 초거대 코어로 특정한다. 명령을 받은 에테르와 M.M.R.의 명령권자는 구별되고 권한자의 이름은 여전히 남아 있다.",
+      "evidence": [
+        {
+          "scene_id": "d.ark_hero_07",
+          "line": 31,
+          "quote": "메이든: 네. 타겟을 확보했습니다."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 35,
+          "quote": "에테르: 저기~ 저 높은 사람 중 한 분이 눈치채 버렸더라고."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 36,
+          "quote": "에테르: 너랑 일레그가 방주의 동력원에 대해 알고 있다는 걸."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 38,
+          "quote": "에테르: 그래서야. 일레그가 M.M.R. 산하 중앙정부군에게 붙잡힌 건."
+        },
+        {
+          "scene_id": "footstep_walk_run_20",
+          "line": 105,
+          "quote": "D.E.E.P.: 방주의 동력원으로 쓰이고 있지."
+        },
+        {
+          "scene_id": "main_45_03",
+          "line": 64,
+          "quote": "일레그: 초거대 코어에여."
+        },
+        {
+          "scene_id": "d.ark_hero_13",
+          "line": 76,
+          "quote": "에테르: 우리 M.M.R.의 높으신 분께서 명령했다고."
+        },
+        {
+          "scene_id": "d.ark_hero_13",
+          "line": 82,
+          "quote": "에테르: 정답."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:blabla_rapi_004__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "라피가 설명하지 못한 현상은 잉그리드의 바디 공유·활성화 설명으로 풀리고, 기밀이 된 까닭은 레드 후드 재현을 확인한 잉그리드의 결정에서 드러난다. D.E.E.P.의 공존 실험을 이 현상의 기원으로 잇는 데에는 그 뒤의 관측까지 필요하므로 014의 가능성도 맞다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_rapi_004",
+          "line": 16,
+          "quote": "    레드 후드 말씀이시군요."
+        },
+        {
+          "scene_id": "blabla_rapi_004",
+          "line": 22,
+          "quote": "    극비 사항인 것도 있지만."
+        },
+        {
+          "scene_id": "blabla_rapi_004",
+          "line": 25,
+          "quote": "    저도 정확히 이것이 무엇인지 모릅니다."
+        },
+        {
+          "scene_id": "main_26_01",
+          "line": 77,
+          "quote": "    라피와 레드 후드는 바디를 공유하고 있다"
+        },
+        {
+          "scene_id": "main_26_01",
+          "line": 92,
+          "quote": "    필요 시 레드 후드의 바디를 활성화할 수 있으며"
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line": 33,
+          "quote": "엘리시온 미케닉: 라피가 변한 니케는 갓데스 스쿼드의 레드 후드로 확인됩니다."
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line": 64,
+          "quote": "잉그리드: 이건 묻어야 해. 너무 위험하다."
+        },
+        {
+          "scene_id": "footstep_walk_run_20",
+          "line": 167,
+          "quote": "D.E.E.P.: 공존의 가능성을 열어둬야 하지."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:boom_the_ghost_25__clh_004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "25에서 확인된 사실은 동력원의 점거다. 왜 점거했는지는 인양 후 일레그가 과잉 출력을 방출할 필요가 있었다고 설명한다. 011의 방향이 맞다. 배에 전류가 흐른 까닭을 설명하는 줄은 26에 있으므로 25를 그 공개로 삼던 009·010을 제거한 수정도 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "boom_the_ghost_25",
+          "line": 136,
+          "quote": "알프레드: 동력원 쪽에 이상 감지유토."
+        },
+        {
+          "scene_id": "boom_the_ghost_25",
+          "line": 142,
+          "quote": "알프레드: 랩쳐가 유토피아 호의 동력원을 점거하고 있는 상태입니다유토!"
+        },
+        {
+          "scene_id": "boom_the_ghost_25",
+          "line": 143,
+          "quote": "알프레드: 떼어내지 않으면 제어할 수 없습니다유토!"
+        },
+        {
+          "scene_id": "boom_the_ghost_26",
+          "line": 5,
+          "quote": "일레그: ···크라켄의 동력원이 유토피아 호의 동력원을 대체하고 있는 것이 아니었어여."
+        },
+        {
+          "scene_id": "boom_the_ghost_26",
+          "line": 14,
+          "quote": "일레그: 어떻게든 출력을 사용했어야 한 것으로 보여여."
+        },
+        {
+          "scene_id": "boom_the_ghost_26",
+          "line": 32,
+          "quote": "일레그: 그래서 넘치는 출력을 어떻게든 내뿜어야 했고, 그 대상을 유토피아 호로 정한 걸로 추정되여."
+        },
+        {
+          "scene_id": "boom_the_ghost_26",
+          "line": 33,
+          "quote": "일레그: 덕분이랄까, 유토피아 호에 홀로그램들이 아직까지 유지될 수 있었겠져."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:신에게닿기위한탑.txt_03__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "잠입 기자의 기록은 궤도 엘리베이터 홍보와 수상한 지하 공사의 이면에 있던 계획명을 밝힌다. 나유타와 에닉은 그 계획의 목적과 조율자의 쓰임을 직접 설명한다. 계획서 이야기가 글자 중간에서 끊긴 사정은 어느 설명에도 없어 잔여 의문이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "궤도엘리베이터음모론_00",
+          "line": 7,
+          "quote": "과연 정부가 말한 우주 개척사업이라는 건 무엇을 의미하는 것이었을까요?"
+        },
+        {
+          "scene_id": "신에게닿기위한탑.txt_00",
+          "line": 3,
+          "quote": "아무도 사용하지 않던, 황량한 부지의 땅을 대량으로 매입하더니 높은 벽으로 사방을 막아놓고는 미친 듯이 땅을 파내고 있다고 한다."
+        },
+        {
+          "scene_id": "신에게닿기위한탑.txt_03",
+          "line": 12,
+          "quote": "그것뿐만이 아니다. 정부가 우주 개척 프로젝트라고 명명했던 것과 달리, 지하에는 다른 프로젝트가 진행되고 있었다."
+        },
+        {
+          "scene_id": "신에게닿기위한탑.txt_03",
+          "line": 14,
+          "quote": "이 머신 메사이어 프로젝트 계획서만 있다ㅁ"
+        },
+        {
+          "scene_id": "신에게닿기위한탑.txt_03",
+          "line": 15,
+          "quote": "(임시 저장되었습니다.)"
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 296,
+          "quote": "나유타: 계획은 간단하오. 퀸을 통해 일곱 조율자를 제어해, 죽어가는 행성을 살리자는 취지였지."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 11,
+          "quote": "에닉: 일곱 조율자라 불리는 랩쳐 01, 02, 03, 04, 05, 06, 07을 A.I. 에바가 제어하여"
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 12,
+          "quote": "에닉: 행성을 되살리는 행성 재생 프로젝트입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:ludmilla_00__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "루드밀라가 편지를 직접 읽어 뇌를 돌려달라는 로열의 요구를 밝힌다. 보강된 03의 회상은 루드밀라가 버린 로열과 자신을 비난한 가문을 이어 준다. 편지의 본문과 발신자의 집안을 각각 뒷받침할 근거가 갖춰졌다.",
+      "evidence": [
+        {
+          "scene_id": "ludmilla_00",
+          "line": 74,
+          "quote": "엔더슨: 품위를 위해서."
+        },
+        {
+          "scene_id": "ludmilla_00",
+          "line": 80,
+          "quote": "엔더슨: 이걸 루드밀라에게 전해주게."
+        },
+        {
+          "scene_id": "ludmilla_02",
+          "line": 124,
+          "quote": "루드밀라: 그 편지의 내용이 무엇인지 아는가?"
+        },
+        {
+          "scene_id": "ludmilla_02",
+          "line": 139,
+          "quote": "루드밀라: 루드밀라의 뇌를 돌려달라."
+        },
+        {
+          "scene_id": "ludmilla_02",
+          "line": 141,
+          "quote": "루드밀라: 영원히 로열로 기억될 수 있도록."
+        },
+        {
+          "scene_id": "ludmilla_02",
+          "line": 163,
+          "quote": "루드밀라: 로열이 아무리 입김이 세다 해도."
+        },
+        {
+          "scene_id": "ludmilla_03",
+          "line": 11,
+          "quote": "스스로 버렸던 로열이. 가문만이."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:last_kingdom_42__clh_004",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "토커티브가 쓴 호칭은 ‘여왕님’이고, 마리안이 퀸의 다음 몸이 될 그릇이라는 설명은 정체에 답한다. 인디빌리아가 왜 아무것도 감지하지 못했는지는 별개다. 리버렐리오를 피한 진화 설명만으로 이 대면의 감지 실패까지 단정하지 않고 남겨 둔 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "last_kingdom_42",
+          "line": 18,
+          "quote": "인디빌리아: 저는 당신에 대해서 아무것도 느끼지 못했거든요."
+        },
+        {
+          "scene_id": "last_kingdom_42",
+          "line": 24,
+          "quote": "인디빌리아: ···토커티브가 당신을 지칭할 때 묘한 표현을 쓰더군요."
+        },
+        {
+          "scene_id": "last_kingdom_44",
+          "line": 141,
+          "quote": "토커티브: [여왕님.]"
+        },
+        {
+          "scene_id": "goddess_fall_07",
+          "line": 80,
+          "quote": "토커티브: [마리안은 퀸의 다음 몸이 될 것이다.]"
+        },
+        {
+          "scene_id": "goddess_fall_07",
+          "line": 86,
+          "quote": "인디빌리아: 퀸 인자를 담을 수 있는 그릇··· 이 필요했던 것이군요."
+        },
+        {
+          "scene_id": "marian_dialog_10",
+          "line": 11,
+          "quote": "미러: 그리고 리버렐리오의 눈을 피하기 위해 퀸 인자를 뿜어내지 않게 진화했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__040:ice_dragon_saga_11__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "머스탱이 My Queen을 부르자 사쿠라·로산나·목단이 호응한다. 슈엔이 이미 처리했다는 용사의 정체와 경위는 잉그리드가 전대 용사 라플라스의 세뇌를 설명하면서 드러난다. 002와 003은 각각 다른 질문을 받는다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_11",
+          "line": 92,
+          "quote": "슈엔: 용사는 이미 내가 처리했는걸."
+        },
+        {
+          "scene_id": "ice_dragon_saga_11",
+          "line": 96,
+          "quote": "머스탱: Me가 My Queen과 함께 움직여보겠습니Da."
+        },
+        {
+          "scene_id": "ice_dragon_saga_13",
+          "line": 96,
+          "quote": "사쿠라: 마을로 향하는 길은 뚫었습니다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_13",
+          "line": 98,
+          "quote": "머스탱: Ja, 그럼 My Queen~!"
+        },
+        {
+          "scene_id": "ice_dragon_saga_13",
+          "line": 100,
+          "quote": "로산나: 생사 여부는?"
+        },
+        {
+          "scene_id": "ice_dragon_saga_13",
+          "line": 105,
+          "quote": "목단: 좋아, 우리도 가자."
+        },
+        {
+          "scene_id": "ice_dragon_saga_19",
+          "line": 14,
+          "quote": "잉그리드: 현재 마왕성 앞은 전대 용사인 라플라스가 지키고 있다."
+        },
+        {
+          "scene_id": "ice_dragon_saga_19",
+          "line": 19,
+          "quote": "잉그리드: 그 싸움에서 슈엔에게 완전히 세뇌당하고 말았다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:white_memory_page_1001406__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "발에 걸린 군번줄의 주인과 그 물건이 떠올리게 한 기억은 각각 소장품 설명과 릴리바이스의 입맞춤 회상에서 직접 밝혀진다. 릴리바이스가 지휘관의 군번줄을 줍지 못하고 방주 입구로 달려간 사건을 발견 경위로 잇는 것은 장소와 소지품을 대조해야 하므로 003의 가능성이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "white_memory_page_1001406",
+          "line": 12,
+          "quote": "자세히 바라보자, 그것이 [군번줄]이라는 것을 알 수 있었다."
+        },
+        {
+          "scene_id": "white_memory_page_1001406",
+          "line": 13,
+          "quote": "스노우 화이트는 문득 잊고 있었던, 과거의 추억을 떠올렸다."
+        },
+        {
+          "scene_id": "white_memory_page_1001407",
+          "line": 13,
+          "quote": "릴리바이스가 그의 [군번줄] 위에 입 맞췄다."
+        },
+        {
+          "scene_id": "white_memory_19",
+          "line": 11,
+          "quote": "갓데스 스쿼드의 지휘관이었던 [그]가 목에 늘 메고 있던 군번줄이다."
+        },
+        {
+          "scene_id": "white_memory_19",
+          "line": 12,
+          "quote": "밀봉된 방주 입구 인근의 초원에서 발견되었다."
+        },
+        {
+          "scene_id": "ark_guardian_25",
+          "line": 126,
+          "quote": "지휘관의 군번줄이 바닥에 떨어진다."
+        },
+        {
+          "scene_id": "ark_guardian_25",
+          "line": 128,
+          "quote": "그대로 두고 방주 입구 쪽으로 달려간다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__025:goddess_fall_09__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "미러가 퀸이 착지할 곳에 있을까 두렵다며 감춘 ‘그것들’은 나유타가 같은 하강을 망설인 사정을 이야기하며 특정한 일곱 조율자다. 단순히 복수형이 같은 데 기대지 않아도 된다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_09",
+          "line": 43,
+          "quote": "미러: 앞이 안 보여서 착지한 곳에 [그것들]이 있으면 어떡하지?"
+        },
+        {
+          "scene_id": "goddess_fall_09",
+          "line": 45,
+          "quote": "미러: 아, 이건 잊어주세요."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 433,
+          "quote": "나유타: 지금의 일곱 조율자는 퀸과 함께 행성을 재생한다는 최상위의 명령만이 남아 있을 뿐인."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 435,
+          "quote": "나유타: 오죽했으면 그 퀸마저 그들이 두려워 내려오는 것을 망설였겠소."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:goddess_fall_19__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "검은빛 직후 거체가 나타나 인디빌리아가 거대화임을 알아보는 데서 장면이 끊긴다. 전투를 이어 그 거체를 ‘마리안의 거신’이라고 명시하므로 006의 정체 연결은 직접적이다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_19",
+          "line": 160,
+          "quote": "마리안의 몸에서 검은빛이 뿜어져 나왔다."
+        },
+        {
+          "scene_id": "goddess_fall_19",
+          "line": 167,
+          "quote": "전장에 갑자기 나타난 거체."
+        },
+        {
+          "scene_id": "goddess_fall_19",
+          "line": 169,
+          "quote": "인디빌리아: 거대화···!"
+        },
+        {
+          "scene_id": "goddess_fall_20",
+          "line": 24,
+          "quote": "거신이 퀸의 스테이션에 탄환과 미사일을 쏟아붓는다."
+        },
+        {
+          "scene_id": "goddess_fall_20",
+          "line": 34,
+          "quote": "마리안의 거신은, 처음부터 그곳에 없었다는 듯 사라졌다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__037:main_32_14__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "은화는 그동안 계획을 미룬 이유와 지금 가동하는 이유는 말한다. 계획 자체가 어떤 전력 강화인지는 엠마가 같은 택티컬 업의 바디 교체와 신규 장비 수령을 설명할 때 밝혀진다.",
+      "evidence": [
+        {
+          "scene_id": "main_32_14",
+          "line": 91,
+          "quote": "은화: [택티컬 업] 플랜을 가동하자."
+        },
+        {
+          "scene_id": "main_32_14",
+          "line": 95,
+          "quote": "은화: 이제 저 녀석의 자리를 비워두지 않아도 되니까."
+        },
+        {
+          "scene_id": "main_34_01",
+          "line": 6,
+          "quote": "엠마: 택티컬 업 플랜은 오래전부터 준비되어 있었으니까."
+        },
+        {
+          "scene_id": "main_34_01",
+          "line": 9,
+          "quote": "엠마: 응. 그리고 새로운 장비를 받았지."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__038:blabla_isabel_001__clh_001",
+      "judgment": "틀림",
+      "problems": [
+        "should_be_hook"
+      ],
+      "reason": "038__015는 호칭의 이유에 직접 답하고, 038__009가 사진 엽서와의 연결을 보류한 것도 맞다. 그러나 최종 상태는 해결됨이고 status.residual은 비어 있다. 처음 본 야영 모습은 ‘그날 제게’라고 하다 만 구체적인 행동을 밝히지 않는다. 후보 쌍의 보류와 별도로, 그날 지휘관이 이사벨에게 무엇을 했는지를 단위의 남은 의문으로 적어야 한다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_isabel_001",
+          "line": 79,
+          "quote": "      [OPTION TEXT=\"왜 내게 사랑스럽다고 하는 거지?\"]"
+        },
+        {
+          "scene_id": "blabla_isabel_001",
+          "line": 90,
+          "quote": "          그야 당신이 그날 제게"
+        },
+        {
+          "scene_id": "blabla_isabel_001",
+          "line": 93,
+          "quote": "          ···이사벨은 한동안 답장이 없다."
+        },
+        {
+          "scene_id": "blabla_isabel_001",
+          "line": 99,
+          "quote": "          이런 이야길 메신저로 하고 싶지는 않네요"
+        },
+        {
+          "scene_id": "에덴_Notice_00",
+          "line": 161,
+          "quote": "  [OPTION TEXT=\"날 왜 사랑스러운 분이라고 부르는 거야?\"]"
+        },
+        {
+          "scene_id": "에덴_Notice_00",
+          "line": 163,
+          "quote": "    이사벨: 처음 본 당신의 모습이,  너무 사랑스러워 보였거든요."
+        },
+        {
+          "scene_id": "에덴_Notice_00",
+          "line": 166,
+          "quote": "이사벨: 그때 전 하늘 위를 날고 있었고, 당신은 니케들과 야영 중이었죠."
+        },
+        {
+          "scene_id": "에덴_Notice_01",
+          "line": 233,
+          "quote": "  [OPTION TEXT=\"보통은 소중한 이에게 마음을 전하는 데 쓰지.\"]"
+        },
+        {
+          "scene_id": "에덴_Notice_01",
+          "line": 246,
+          "quote": "이사벨: 그렇다면 이 엽서, 제가 가져도 될까요?"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__026:main_44_00__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "반려 인자는 재생 능력과 언체인드 보유자의 공멸 조건을 설명한다. 지휘관은 포비스트전 무렵 회복력의 정도가 달라진 점도 명시적으로 짚었다. 그 시점에 변화한 계기를 잔여 의문으로 추가한 것이 적절하다.",
+      "evidence": [
+        {
+          "scene_id": "main_44_00",
+          "line": 108,
+          "quote": "  [OPTION TEXT=\"주사기가 몸에 안 들어가. 정확히는 들어가는 순간 회복해 버려.\"]"
+        },
+        {
+          "scene_id": "main_44_00",
+          "line": 113,
+          "quote": "  [OPTION TEXT=\"포비스트 전까지만 해도 이 정도는 아니었던 것 같은데.\"]"
+        },
+        {
+          "scene_id": "main_44_00",
+          "line": 117,
+          "quote": "  [OPTION TEXT=\"···아니. 그때부터일지도. 그 높이에서 떨어졌는데도 살았으니까.\"]"
+        },
+        {
+          "scene_id": "chapter_50_14",
+          "line": 221,
+          "quote": "나유타: 그 외로움을 채워준 대상을 반려로 지정하고."
+        },
+        {
+          "scene_id": "chapter_50_14",
+          "line": 222,
+          "quote": "나유타: 그 반려는 불사에 가까운 재생 능력과, 막대한 신체 능력을 손에 넣게 되오."
+        },
+        {
+          "scene_id": "chapter_50_14",
+          "line": 223,
+          "quote": "나유타: 그 반려가 언체인드 보유자일 경우,"
+        },
+        {
+          "scene_id": "chapter_50_14",
+          "line": 224,
+          "quote": "나유타: 퀸과 접촉하면 공멸하게 되오."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__035:old_tales_mini_memory_25__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "밖에서 들린 목소리와 기계음은 잠입한 조사자가 각각 니케와 랩쳐의 소리로 특정한다. 오스왈드의 조사 결과는 같은 구 V.T.C. 연구실의 관리자와 그곳에 숨겨 둔 침식 배양 실험을 밝힌다. 두 답의 대상과 방향이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "old_tales_mini_memory_25",
+          "line": 4,
+          "quote": "제보대로 내부에서 희미하게 누군가의 목소리와,"
+        },
+        {
+          "scene_id": "old_tales_mini_memory_25",
+          "line": 5,
+          "quote": "알 수 없는 기계 소리가 들리는 것 같습니다."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_28",
+          "line": 3,
+          "quote": "연구실 밖에서 들었던 누군가의 목소리는 니케였습니다."
+        },
+        {
+          "scene_id": "old_tales_mini_memory_28",
+          "line": 11,
+          "quote": "밖에서 들리던 기계음은 랩쳐가 맞았습니다."
+        },
+        {
+          "scene_id": "old_tales_24",
+          "line": 124,
+          "quote": "오스왈드: 레드 슈즈가 비밀리에 관리하고 있던 구 V.T.C.의 연구실이 있다는 것을 확인."
+        },
+        {
+          "scene_id": "old_tales_24",
+          "line": 127,
+          "quote": "오스왈드: 니케들은 모두 뇌 수술을 당한 흔적이 있었고, 랩쳐들은 모두 침식 탑재형 모델이었죠."
+        },
+        {
+          "scene_id": "old_tales_24",
+          "line": 135,
+          "quote": "오스왈드: 사실상 확정적이죠. 레드 슈즈가 침식을 [배양]했다는 것은."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__033:d-outsiders_00__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "방주의 빛을 끄겠다고 익명으로 선언한 그 사건은 이터널 스카이 테러 단독범을 소개하면서 조셉에게 귀속된다. 조셉이 외친 구호와 조직 차원의 작전 여부는 구분되며, 이 연결은 가려진 발화자를 밝히는 데 성립한다.",
+      "evidence": [
+        {
+          "scene_id": "d-outsiders_00",
+          "line": 15,
+          "quote": "익명: ···방주의 모든 빛을 꺼뜨리기로 했다."
+        },
+        {
+          "scene_id": "d-outsiders_00",
+          "line": 17,
+          "quote": "익명: 엔터 헤븐은 빛으로."
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 28,
+          "quote": "바이퍼: 쟤가 그 단독범이야~"
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 29,
+          "quote": "바이퍼: 방주 시내의 이터널 스카이를 날려버린,  그 테러범이라고."
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 40,
+          "quote": "자칼: 그렇게 하면, 조셉이 스스로 정체를 밝힐 거라고 대장이 그랬거든."
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 57,
+          "quote": "바이퍼: 아무래도 이번 테러는 엔터 헤븐 내에서도 합의된 게 아니다 보니."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__029:fading_affection_1211__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "서술에서는 마리아인 인물을 박사는 ‘마리아-n’이라고 부른다. 닥터 마리아의 기록이 999 이후 번호 매기기를 중단해 그 표기로 통칭한 이유를 직접 설명한다. 이 항목의 두 줄은 박사의 호칭을 담고 있다.",
+      "evidence": [
+        {
+          "scene_id": "fading_affection_1211",
+          "line": 5,
+          "quote": "[마리아-n!]"
+        },
+        {
+          "scene_id": "fading_affection_1211",
+          "line": 6,
+          "quote": "귓가에 마리아 박사의 목소리가 선명하게 들렸다."
+        },
+        {
+          "scene_id": "maria-n_07",
+          "line": 148,
+          "quote": "마리아-999 까지 아무런 성과를 거두지 못한다."
+        },
+        {
+          "scene_id": "maria-n_07",
+          "line": 149,
+          "quote": "이후 마리아 모델의 표기 방법에서 넘버링이 무의미하다고 판단."
+        },
+        {
+          "scene_id": "maria-n_07",
+          "line": 150,
+          "quote": "별다른 성과를 내기 전까지 마리아-n으로 통칭한다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__028:main_12_11__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "001·002는 헬레틱의 파편을 원래 이름과 아틀라스 보관 경위로 각각 인디빌리아에 연결한다. 003은 니케를 흡수해도 왜 378g만 남는지에 대해 바로 그 무게가 NIMPH의 무게라는 답을 준다. 파편의 정체와 흡수 물질은 별개의 질문이다.",
+      "evidence": [
+        {
+          "scene_id": "main_12_11",
+          "line": 13,
+          "quote": "마나: 예. 인간 및 기계에는 반응하지 않았고, 오직 니케에만 반응, 흡수했습니다."
+        },
+        {
+          "scene_id": "main_12_11",
+          "line": 14,
+          "quote": "마나: 흡수 이후 중량이 378g 증가했습니다."
+        },
+        {
+          "scene_id": "main_12_11",
+          "line": 18,
+          "quote": "잉그리드: ···헬레틱의 파편, 아니. 마테리얼 H의 현 무게는?"
+        },
+        {
+          "scene_id": "main_22_15",
+          "line": 102,
+          "quote": "라피: ···마테리얼 H의 원형이 되는 이름이야."
+        },
+        {
+          "scene_id": "main_24_16",
+          "line": 67,
+          "quote": "에닉: 헬레틱 인디빌리아의 파편입니다."
+        },
+        {
+          "scene_id": "main_36_05",
+          "line": 12,
+          "quote": "레비아탄: NIMPH 무게잖아 그거."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__022:main_40_01__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "021·022의 공개는 ‘인자 살해자’가 어떤 헬레틱이고 마리아-n이 왜 그 표적에 해당하는지를 밝힌다. L127에서 모른다고 한 근본 목적은 별도 024에서 나유타와 니힐리스타가 설명한다. 023은 지칭되는 리버렐리오를 직접 밝히고, 016의 발현 누락은 미러가 설명한 마리안의 진화에 그 정체를 대입해야 해 가능성이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_09",
+          "line": 146,
+          "quote": "인자 살해자는 그 모습을 잠시동안 싸늘한 눈동자로 바라본 후"
+        },
+        {
+          "scene_id": "main_39_10",
+          "line": 111,
+          "quote": "나유타: 인자 살해자가 가만있을 리가···."
+        },
+        {
+          "scene_id": "main_40_01",
+          "line": 120,
+          "quote": "나유타: 헬레틱 중 [인자 살해자]라는 칭호를 가진 이가 있소."
+        },
+        {
+          "scene_id": "main_40_01",
+          "line": 121,
+          "quote": "나유타: 의미 그대로 퀸 인자가 활성화된 이들을 죽이는 이외다."
+        },
+        {
+          "scene_id": "main_40_01",
+          "line": 126,
+          "quote": "나유타: 그런데 헬레틱 중 하나는, 퀸 인자가 활성화된 존재의 힘이 커지기 전에 찾아내어 죽였소."
+        },
+        {
+          "scene_id": "main_40_01",
+          "line": 127,
+          "quote": "나유타: 왜인지는 알 수 없으나, 소인이 아는 것만 해도 이미 수십번에 달하오."
+        },
+        {
+          "scene_id": "main_40_06",
+          "line": 46,
+          "quote": "나유타: 인자 살해자 소저."
+        },
+        {
+          "scene_id": "main_40_06",
+          "line": 47,
+          "quote": "리버렐리오: ···어라."
+        },
+        {
+          "scene_id": "goddess_fall_04",
+          "line": 82,
+          "quote": "나유타: ···인자 살해자 소저의 목적은 퀸이 내려오기 전에 정리를 하는 것이라 [기억]하오."
+        },
+        {
+          "scene_id": "marian_dialog_10",
+          "line": 11,
+          "quote": "미러: 그리고 리버렐리오의 눈을 피하기 위해 퀸 인자를 뿜어내지 않게 진화했다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__030:goddess_fall_13__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "차임이 네이키드 킹에 대해 말을 꺼내다 중단한다. 나유타와 대화를 재개하면서 확인하려던 전장 사용 가능 여부와, 모인 입자로 순간적인 열충격파를 일으킬 수 있다는 답이 함께 드러난다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_13",
+          "line": 67,
+          "quote": "차임: 잘 되었다. 이 기회에 네이키드 킹에 대해···."
+        },
+        {
+          "scene_id": "goddess_fall_15",
+          "line": 66,
+          "quote": "나유타: ···음. 이건 어렵겠소. 모아놓은 에블라 입자를 모두 소진했구려."
+        },
+        {
+          "scene_id": "goddess_fall_15",
+          "line": 67,
+          "quote": "차임: ···그래. 네이키드 킹을 이 전장에서 쓸 수는 없겠구나. 아쉽다."
+        },
+        {
+          "scene_id": "goddess_fall_15",
+          "line": 72,
+          "quote": "나유타: 일순. 정말 일순이라면 지금까지 모아놓은 에블라 입자를 열 충격파로 전환할 수 있소."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__039:main_41_11__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "안경이 열쇠라는 사실은 지엔이 직접 밝힌다. 받은 경위에는 스톨 3세가 네온이라는 이름을 얻은 장면이 필요하고, 옛 주인에 관해 지엔은 추정형으로 말한다. 005도 네온이 기술 특화 니케들을 믿었을 것이라고 추정한 데까지로 좁혔다. 설계도 자체를 질문으로 삼던 연결도 제거돼 현재 네 연결의 범위와 확신도가 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_41_11",
+          "line": 105,
+          "quote": "네온: 안경이 길을 알려줘서 오다 보니 그만···."
+        },
+        {
+          "scene_id": "main_41_11",
+          "line": 115,
+          "quote": "지엔: 이 안경··· 어디서 났어요?"
+        },
+        {
+          "scene_id": "main_41_12",
+          "line": 83,
+          "quote": "지엔: 열쇠라고 부르는 긴데, 그걸 제대로 쓰려면 패스워드가 필요하거든."
+        },
+        {
+          "scene_id": "main_43_12",
+          "line": 93,
+          "quote": "스톨 3세의 얼굴에 씌워준다."
+        },
+        {
+          "scene_id": "main_43_13",
+          "line": 51,
+          "quote": "???: 오. 그럼 제 이름 네온으로 해주세요."
+        },
+        {
+          "scene_id": "main_43_14",
+          "line": 93,
+          "quote": "지엔: 지금 네온이 가진 열쇠는 V.T.C.의 수장이 가지고 있던 열쇠였던 것 같고."
+        },
+        {
+          "scene_id": "main_43_14",
+          "line": 172,
+          "quote": "네온: 안경이 굳이 여기로 길을 안내한 이유가, 공주님이 M.M.R.을 믿어서라고 생각되는데."
+        },
+        {
+          "scene_id": "main_43_14",
+          "line": 175,
+          "quote": "네온: 입구에 있던 저분들을 믿고 이쪽으로 안내한 것 같거든요."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__023:marian_dialog_11__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관의 기억이 사라지는 원인은 쇄골의 장치를 파괴하는 장면에서 직접 밝혀진다. 기록 삭제가 구전까지 막는 것은 아니며 마리안도 잊지 않겠다고 말한다. ‘그 누구도’ 두 사람의 시간을 기억하지 못하리라 예상한 까닭은 여전히 별개여서 수정한 잔여 의문에 동의한다.",
+      "evidence": [
+        {
+          "scene_id": "marian_dialog_11",
+          "line": 4,
+          "quote": "마리안: 지휘관이 눈을 떴을 때."
+        },
+        {
+          "scene_id": "marian_dialog_11",
+          "line": 14,
+          "quote": "마리안: 아무것도··· 기억하지 못하겠죠."
+        },
+        {
+          "scene_id": "marian_dialog_11",
+          "line": 18,
+          "quote": "마리안: 그 누구도··· 기억하지 못하겠죠."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 218,
+          "quote": "그리고 총 모양의 기계를 지휘관의 쇄골에 가져다댄다."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 227,
+          "quote": "마리안이라는 이름도 기억하지 못 할 것이며"
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 233,
+          "quote": "마리안: 절대··· 잊지 않을게요."
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line": 130,
+          "quote": "닥터 마리아: 구전으로 퍼지는 건 막을 수 없겠지만, 그걸로는 아무것도 할 수 없겠지."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__035:footstep_walk_run_12__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "100배 규모로 2차 지상 탈환전을 준비한다는 소문에 같은 작전을 공식 선포한 연설이 직접 답한다. 니케 생산량의 전망과 실제 동원 물자는 다른 수치이므로 그 두 연결을 제외한 수정이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "footstep_walk_run_12",
+          "line": 59,
+          "quote": "웬디: 2차 지상 탈환전을 준비하고 있나 봐. 중앙 정부에서."
+        },
+        {
+          "scene_id": "footstep_walk_run_12",
+          "line": 61,
+          "quote": "웬디: 규모는 1차에 비해 100배 이상."
+        },
+        {
+          "scene_id": "footstep_walk_run_12",
+          "line": 63,
+          "quote": "웬디: 뭐··· 어디까지나 뜬소문이니까."
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 21,
+          "quote": "중앙 정부 간부: 1차 지상 탈환전 대비 100배의 규모로 진행되며!"
+        },
+        {
+          "scene_id": "footstep_walk_run_13",
+          "line": 30,
+          "quote": "방주의 모든 것을 건 2차 지상 탈환전이 공식적으로 선포되었다."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__024:main_30_16__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "메신저의 고유 발신자 표시는 다른 대화에서 식스오로 확인된다. 이 제안의 수신자는 일레그이고 메시지에는 사고 싶은 정보의 내용이 없다. 발신자만 해결하고 거래 대상을 잔여 의문으로 남긴 것이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "main_30_16",
+          "line": 29,
+          "quote": "[MESSENGER_START TITLE=\"#000000\" PARTICIPANTS=\"#000000,일레그\"]"
+        },
+        {
+          "scene_id": "main_30_16",
+          "line": 31,
+          "quote": "    정보를 사고 싶어요"
+        },
+        {
+          "scene_id": "dirty_backyard_08",
+          "line": 79,
+          "quote": "[MESSENGER_START TITLE=\"#000000\" PARTICIPANTS=\"#000000,아우터 림 주민\"]"
+        },
+        {
+          "scene_id": "dirty_backyard_08",
+          "line": 127,
+          "quote": "아우터 림 주민: 식스오 이 쓰레기만도 못한 개자식이···."
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line": 52,
+          "quote": "  [OPTION TEXT=\"이게 식스오야?\"]"
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line": 56,
+          "quote": "슈가: ···맞아."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__036:guillotine_winterslayer_01__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "길로틴은 백빙룡을 쓰러뜨리기 전인 줄 알지만 엑시아의 안내는 저주가 끝났다고 한다. 베스티가 마지막 싸움이 끝나고 저주가 풀렸다고 밝혀 그 시간상의 어긋남이 풀린다. ‘동료 없는 자’라는 호명은 그 자리에서 같은 말만 반복하는 NPC의 대사로 받아들인다.",
+      "evidence": [
+        {
+          "scene_id": "guillotine_winterslayer_01",
+          "line": 66,
+          "quote": "엑시아: 겨울의 저주가 끝을 맺은 곳- 얼어붙은 마왕성으로-"
+        },
+        {
+          "scene_id": "guillotine_winterslayer_01",
+          "line": 70,
+          "quote": "길로틴: 이자는 똑같은 말만 반복하는 NPC라고."
+        },
+        {
+          "scene_id": "guillotine_winterslayer_01",
+          "line": 79,
+          "quote": "길로틴: 백빙룡을 물리치기 전의 세계선으로 돌아온 건가."
+        },
+        {
+          "scene_id": "guillotine_winterslayer_02",
+          "line": 98,
+          "quote": "베스티: 응. [겨울의 저주]가 풀리기도 했고."
+        },
+        {
+          "scene_id": "guillotine_winterslayer_02",
+          "line": 112,
+          "quote": "베스티: 아, 여긴 우리 용사 일행의 마지막 싸움이 있었던 곳이었잖아."
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__021:unbreakable_sphere_03__clh_001",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "고장 나 멈춘 AA 필러가 왜 여기 있는지는 처음에는 설명하지 않는다. 모리가 그것을 글러트니가 먹어 떨어진 것이라고 말하자 세이렌이 바로 이곳의 필러를 떠올린다. 이름과 장소가 직접 맞물린다.",
+      "evidence": [
+        {
+          "scene_id": "unbreakable_sphere_03",
+          "line": 8,
+          "quote": "미하라: AA 필러··· 라고 했던가?"
+        },
+        {
+          "scene_id": "unbreakable_sphere_03",
+          "line": 10,
+          "quote": "리틀 머메이드: [안에 내재된 에너지가 많은데, 지금은 작동이 멈춘 것 같아서.]"
+        },
+        {
+          "scene_id": "unbreakable_sphere_03",
+          "line": 11,
+          "quote": "리틀 머메이드: [여기에 그대로 두고 있었어.]"
+        },
+        {
+          "scene_id": "unbreakable_sphere_24",
+          "line": 29,
+          "quote": "모리: 글러트니의 코어에 이 수정을 맞추면,"
+        },
+        {
+          "scene_id": "unbreakable_sphere_24",
+          "line": 33,
+          "quote": "모리: 그래서 그··· 뭐냐, AA 필러로 이걸 다 없애려고 했었는데  글러트니가 그걸 먹어서 여기에 떨어진 거래."
+        },
+        {
+          "scene_id": "unbreakable_sphere_24",
+          "line": 34,
+          "quote": "리틀 머메이드: [그래서 여기에 AA 필러가···.]"
+        }
+      ]
+    },
+    {
+      "audit_id": "C1__037:chapter_50_03__clh_003",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리안이 말을 멈췄고 엔더슨은 유사 세계가 무엇인지 모른다. 49장의 대사와 지문이 동일한 공간을 유사 세계로 명명하며 그 안에서는 마리안이 법칙을 정한다고 밝힌다. 먼저 공개된 장면이어도 정보를 제공하는 쪽이어서 방향이 맞다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_50_03",
+          "line": 94,
+          "quote": "마리안: 제가 갈게요. 몇 개는 놓치겠지만, 유사 세계를 전개한다면···."
+        },
+        {
+          "scene_id": "chapter_50_03",
+          "line": 95,
+          "quote": "엔더슨: 그게 뭔지는 모르겠지만 관둬. 저거, 네가 던지는 검은 창이 있으니 그나마 공격 텀이 길어."
+        },
+        {
+          "scene_id": "chapter_49_04",
+          "line": 21,
+          "quote": "마리안: 이곳은 [저의 세계]."
+        },
+        {
+          "scene_id": "chapter_49_04",
+          "line": 22,
+          "quote": "마리안: 이 공간 안에서는 모든 법칙이 제가 정한대로 적용돼요."
+        },
+        {
+          "scene_id": "chapter_49_04",
+          "line": 87,
+          "quote": "거대화, [유사 세계] 안은 모든 법칙이 뒤틀려 있는 장소."
+        }
+      ]
+    },
+    {
+      "audit_id": "ext:d.ark_hero_07__clh_002",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "07은 메이든이 마스크 해제 허가를 받아 언령으로 일레그를 멈추는 장면인 동시에, 왜 친구가 타겟이 됐는지는 숨긴다. 08에서 에테르가 체포 이유를 직접 알려 준다. 1회차 묶음의 006__022는 이 의문을 풀며, 공개 전용에서 해결됨으로 바뀐 상태가 맞다. 명령자가 누구냐는 별도 질문은 08에 남는다.",
+      "evidence": [
+        {
+          "scene_id": "maiden_00",
+          "line": 26,
+          "quote": "메이든: [정지.]"
+        },
+        {
+          "scene_id": "maiden_00",
+          "line": 63,
+          "quote": "메이든: 안돼요. 허가 없인 벗을 수 없거든요."
+        },
+        {
+          "scene_id": "d.ark_hero_07",
+          "line": 30,
+          "quote": "메이든: 마스크 오프를 허가해 주세요."
+        },
+        {
+          "scene_id": "d.ark_hero_07",
+          "line": 31,
+          "quote": "메이든: 네. 타겟을 확보했습니다."
+        },
+        {
+          "scene_id": "d.ark_hero_07",
+          "line": 33,
+          "quote": "메이든: 현 시간부로 [언령]을 사용합니다."
+        },
+        {
+          "scene_id": "d.ark_hero_07",
+          "line": 39,
+          "quote": "메이든의 눈물을 닦아주려던, 일레그의 움직임이 멈췄다."
+        },
+        {
+          "scene_id": "d.ark_hero_07",
+          "line": 44,
+          "quote": "메이든: 타겟을 지정된 좌표로 이송하겠습니다."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 35,
+          "quote": "에테르: 저기~ 저 높은 사람 중 한 분이 눈치채 버렸더라고."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 36,
+          "quote": "에테르: 너랑 일레그가 방주의 동력원에 대해 알고 있다는 걸."
+        },
+        {
+          "scene_id": "d.ark_hero_08",
+          "line": 38,
+          "quote": "에테르: 그래서야. 일레그가 M.M.R. 산하 중앙정부군에게 붙잡힌 건."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__021__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "자판기 앞 인물을 라피라고 서술한 뒤 자신이 입력한 이름을 RR-15436이라고 명시한다. 같은 번호를 부르는 잉그리드에게 직접 라피라고 응답하기도 하므로 한 개인의 이름과 인식 번호다.",
+      "evidence": [
+        {
+          "scene_id": "footstep_walk_run_08",
+          "line": 2,
+          "quote": "라피는 자판기 앞에 섰다."
+        },
+        {
+          "scene_id": "footstep_walk_run_08",
+          "line": 3,
+          "quote": "자신의 이름 RR-15436을 입력한다."
+        },
+        {
+          "scene_id": "footstep_walk_run_25",
+          "line": 44,
+          "quote": "잉그리드: 다시 확인하지. RR-15436. 맞나?"
+        },
+        {
+          "scene_id": "footstep_walk_run_25",
+          "line": 46,
+          "quote": "라피: 라피입니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__022__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "푸른 EZS라는 발신자 표시 아래 본인이 헬름이라고 소개하고 상대도 헬름이냐고 되묻는다. 메신저 별명과 인물이 직접 이어진다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_blueezs_001",
+          "line": 15,
+          "quote": "  [MSG SENDER=\"푸른 EZS\"]"
+        },
+        {
+          "scene_id": "blabla_blueezs_001",
+          "line": 16,
+          "quote": "    헬름이야"
+        },
+        {
+          "scene_id": "blabla_blueezs_001",
+          "line": 19,
+          "quote": "    헬름이라고?"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__023__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "7호라 불려 나오는 인물을 지문은 지휘관이라고 부르고 마리안도 지휘관으로 맞이한다. 에테르 역시 지휘관의 대답을 듣고 ‘7호답네’라고 한다. 기억 상실 연결을 정리한 뒤에도 두 호칭이 같은 개인이라는 원문 근거는 성립한다.",
+      "evidence": [
+        {
+          "scene_id": "d.ark_hero_09",
+          "line": 135,
+          "quote": "  [OPTION TEXT=\"트로니의 선물이 일레그에게 전달될 수 있도록 돕는 것뿐이야.\"]"
+        },
+        {
+          "scene_id": "d.ark_hero_09",
+          "line": 138,
+          "quote": "에테르: ··· ···7호답네."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 14,
+          "quote": "닥터 마리아: 7호. 나와."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 26,
+          "quote": "지휘관은 어리둥절한 표정으로 그 뒤를 따른다."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 34,
+          "quote": "마리안: 지휘관. 어서 와요."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__023__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "엠마가 이글 앞에 서서 물건을 주자 솔져 E.G.가 응답한다. 은화가 ‘이글’이라고 부를 때에도 같은 화자 표시로 대답한다. 앱솔루트에서 이 이름으로 불린 개인을 식별할 직접 근거가 있다.",
+      "evidence": [
+        {
+          "scene_id": "absolute_02",
+          "line": 33,
+          "quote": "엠마는 그런 둘을 뒤따라가다 말고 이글 앞에 멈춰 섰다."
+        },
+        {
+          "scene_id": "absolute_02",
+          "line": 35,
+          "quote": "솔져 E.G.: 이건···?"
+        },
+        {
+          "scene_id": "absolute_23",
+          "line": 104,
+          "quote": "은화: 이글."
+        },
+        {
+          "scene_id": "absolute_23",
+          "line": 105,
+          "quote": "솔져 E.G.: 예, 예!"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__024__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "고유 발신자 #000000의 요구에 대응하던 주민이 식스오를 지목한다. 이어 지휘관이 문자를 보여주며 식스오냐고 묻자 슈가가 직접 확인한다.",
+      "evidence": [
+        {
+          "scene_id": "dirty_backyard_08",
+          "line": 79,
+          "quote": "[MESSENGER_START TITLE=\"#000000\" PARTICIPANTS=\"#000000,아우터 림 주민\"]"
+        },
+        {
+          "scene_id": "dirty_backyard_08",
+          "line": 127,
+          "quote": "아우터 림 주민: 식스오 이 쓰레기만도 못한 개자식이···."
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line": 52,
+          "quote": "  [OPTION TEXT=\"이게 식스오야?\"]"
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line": 55,
+          "quote": "나는 슈가에게 문자를 보여주었다."
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line": 56,
+          "quote": "슈가: ···맞아."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__025__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "같은 회사 이름과 브라이언의 지원을 단서로 지휘관이 식당에서 만난 남자를 추적한다. 다음 장면에서 조사한 인물의 이름은 앨든으로 밝혀진다. 브라이언은 그에게 도움을 준 다른 인물이다.",
+      "evidence": [
+        {
+          "scene_id": "fatal_maid_11",
+          "line": 38,
+          "quote": "차가운 인상의 여자 손님: 당신. [푸른내일지속가능기획지원사무국] 소속이군요?"
+        },
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line": 71,
+          "quote": "    깐깐해 보이는 남자 손님: 당신. 브라이언을 통해서 지원받고 있군요?"
+        },
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line": 72,
+          "quote": "    인자해 보이는 남자: !!!"
+        },
+        {
+          "scene_id": "persona_on_frontline_19",
+          "line": 91,
+          "quote": "      [OPTION TEXT=\"아. [푸른내일지속가능기획지원사무국]이라는 회사를 갖고 있던가 그랬어.\"]"
+        },
+        {
+          "scene_id": "persona_on_frontline_20",
+          "line": 11,
+          "quote": "퀸(마코토): 이름은 앨든."
+        },
+        {
+          "scene_id": "persona_on_frontline_20",
+          "line": 25,
+          "quote": "아이기스: 이 브라이언이라는 사람이 없었다면 불가능했을 겁니다."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__025__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관이 붙인 카운터스라는 이름을 두고 아니스가 ‘우리 스쿼드’라며 예전 04-F 명칭과 직접 비교한다. 같은 부대의 두 명칭을 합치는 제안이다.",
+      "evidence": [
+        {
+          "scene_id": "main_01_09",
+          "line": 25,
+          "quote": "  [OPTION TEXT=\"카운터스.\"]"
+        },
+        {
+          "scene_id": "blabla_counters_003",
+          "line": 66,
+          "quote": "    근데 왜 우리 스쿼드 이름이 카운터스야?"
+        },
+        {
+          "scene_id": "blabla_counters_003",
+          "line": 69,
+          "quote": "    뭐 스쿼드 04-F보단 훨씬 낫지만"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__025__M03",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "크로우가 IP를 바꿔 직접 여론을 만들었다고 밝히고 최초 발의자 JohnD가 누구겠느냐고 되묻는다. 자기 행동을 설명하며 드러낸 게시자 가명이다.",
+      "evidence": [
+        {
+          "scene_id": "main_18_17",
+          "line": 37,
+          "quote": "크로우: IP까지 바꿔가며 여론을 만들어놨는데."
+        },
+        {
+          "scene_id": "main_18_17",
+          "line": 43,
+          "quote": "크로우: [JohnD]."
+        },
+        {
+          "scene_id": "main_18_17",
+          "line": 46,
+          "quote": "크로우: 최초의 발의자."
+        },
+        {
+          "scene_id": "main_18_17",
+          "line": 47,
+          "quote": "크로우: 누구일 거 같아?"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__026__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "D가 보안이 뚫릴 우려가 있는 같은 장소를 ‘금서고’라 부르다가 ‘특급 기밀 보관소’로 고쳐 말한다. 보관소의 통칭과 정식 명칭을 직접 대응시킬 수 있다.",
+      "evidence": [
+        {
+          "scene_id": "church_07",
+          "line": 31,
+          "quote": "D: 만에 하나 그 때문에 금서고··· 아니."
+        },
+        {
+          "scene_id": "church_07",
+          "line": 32,
+          "quote": "D: ···특급 기밀 보관소의 보안이 뚫리면 문제가 생긴다."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__026__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "나유타가 ‘기계 구세주’와 ‘머신 메사이어’를 한 프로젝트의 명칭으로 나란히 말한다. 다른 장면에서도 에닉에게 바로 그 프로젝트에 대해 묻는다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_50_26",
+          "line": 290,
+          "quote": "나유타: 그리고 이 이야기를 하려면 먼저 머신 메사이어. 기계 구세주 프로젝트에 대해 이야기해야 하오."
+        },
+        {
+          "scene_id": "chapter_50_26",
+          "line": 293,
+          "quote": "나유타: 이를 해결하기 위해 진행된 프로젝트가 머신 메사이어 프로젝트요."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line": 9,
+          "quote": "나유타: 기계 구세주. 머신 메사이어 프로젝트에 대해 알고 있소?"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__027__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "주둔지 01에서 시프티가 탈환지 01로 부대를 보낼 계획을 전한다. 마나는 주둔지 01을 방주가 최초로 지상을 탈환한 지역이라고 직접 특정한다. 두 명칭이 가리키는 첫 탈환 거점이 같다.",
+      "evidence": [
+        {
+          "scene_id": "main_29_00",
+          "line": 2,
+          "quote": "주둔지 01."
+        },
+        {
+          "scene_id": "main_29_00",
+          "line": 17,
+          "quote": "시프티: 어쨌든, 조만간 방주 내의 대타격 부대가 탈환지 01로 파견될 예정이에요."
+        },
+        {
+          "scene_id": "unbreakable_sphere_15",
+          "line": 6,
+          "quote": "마나: 주둔지 01입니다."
+        },
+        {
+          "scene_id": "unbreakable_sphere_15",
+          "line": 7,
+          "quote": "마나: 방주 최초로, 지상을 탈환한 지역이죠."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__027__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "닥터 마리아가 불러낸 7호는 뒤따라가는 지휘관으로 서술되고 본인도 지휘관이라고 소개한다. 13에서는 같은 사람에게 어떤 호칭을 쓸지 정하는 대화가 있다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_24",
+          "line": 14,
+          "quote": "닥터 마리아: 7호. 나와."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 26,
+          "quote": "지휘관은 어리둥절한 표정으로 그 뒤를 따른다."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line": 57,
+          "quote": "  [OPTION TEXT=\"처음뵙겠습니다. 저는 지휘관···.\"]"
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 259,
+          "quote": "마리아-n: 그럼 7호씨라고 부르면 되나요? 이상한데요."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 289,
+          "quote": "마리아-n: 그럼, 지휘관이라고 부를게요."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__028__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "바하무트가 뷰티라는 이름을 주자 온리 원이 이를 되뇌고, 그 자리에서 화자 표시가 뷰티로 바뀌며 자신의 새 이름을 선언한다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_50_27",
+          "line": 169,
+          "quote": "바하무트: 뷰티."
+        },
+        {
+          "scene_id": "chapter_50_27",
+          "line": 177,
+          "quote": "온리 원: 뷰티. 뷰티."
+        },
+        {
+          "scene_id": "chapter_50_27",
+          "line": 179,
+          "quote": "뷰티: 응! 내 이름은 이제부터 뷰티야!"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__029__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "플로라가 꽃의 이름을 오로라 블룸이라고 말한 직후 마음의 꽃이라고도 알려져 있다고 덧붙인다. 같은 식물의 이명이다.",
+      "evidence": [
+        {
+          "scene_id": "secret_garden_01",
+          "line": 44,
+          "quote": "플로라: 이름은 오로라 블룸."
+        },
+        {
+          "scene_id": "secret_garden_01",
+          "line": 45,
+          "quote": "플로라: 마음의 꽃이라고도 알려져 있어요."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__031__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "스마일 박스 사건으로 활동 정지된 그룹을 서술자는 T.T. STAR라고 쓰고, 같은 사건 뒤 그룹 순위가 하락했다는 게시글은 티티스타라고 쓴다. 영문명과 한글 독음이 같은 그룹을 가리킨다.",
+      "evidence": [
+        {
+          "scene_id": "star_anis_19",
+          "line": 75,
+          "quote": "계약 불이행의 책임을 물어 T.T. STAR는 3일간 활동 정지 처분을 받았다."
+        },
+        {
+          "scene_id": "star_anis_19",
+          "line": 76,
+          "quote": "스마일 박스 프로젝트는 잠시 잠정적 중단."
+        },
+        {
+          "scene_id": "star_anis_19",
+          "line": 92,
+          "quote": "제목 : 티티스타 순위 떨어진 거 봐"
+        },
+        {
+          "scene_id": "star_anis_19",
+          "line": 93,
+          "quote": "제목 : 이야 28위로 바로 나락행ㅋㅋㅋ"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__031__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리아-n으로 불러 달라고 한 당사자에게 지휘관이 마리안이라는 이름을 제안한다. 같은 대화에서 화자 표시가 바뀌고 본인이 수락한다. 형식 번호를 쓰던 이 개인의 개명을 원문이 보여 준다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_13",
+          "line": 310,
+          "quote": "마리아-n: 마리아-n이라고 불러줘요."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 315,
+          "quote": "마리아-n: 형식 번호··· 같은거예요."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 326,
+          "quote": "  [OPTION TEXT=\"마리안이라고 부를게. 괜찮지?\"]"
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 330,
+          "quote": "마리안: 마리안."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 336,
+          "quote": "마리안: 예. 그렇게 불러줘요."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__031__M03",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "다들 7호라고 부른다는 같은 상대를 마리아-n이 지휘관으로 부르기로 한다. 탈출 계획에서도 수송기에 옮긴 지휘관을 닥터 마리아가 7호라고 지칭한다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_13",
+          "line": 256,
+          "quote": "  [OPTION TEXT=\"다들 7호라고 부르던데.\"]"
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 259,
+          "quote": "마리아-n: 그럼 7호씨라고 부르면 되나요? 이상한데요."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 289,
+          "quote": "마리아-n: 그럼, 지휘관이라고 부를게요."
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line": 10,
+          "quote": "마리안: 예. 지휘관은 수송기에 잘 옮겨놨어요."
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line": 20,
+          "quote": "닥터 마리아: 너와 7호는 그 스쿼드를 지원하러 가는 것으로 되어 있어."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__033__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "익명이 예고한 방주의 빛을 끄는 사건에서 이터널 스카이를 날린 범인은 한 사람이었다. 바이퍼가 단독범을 가리키고 자칼이 조셉의 정체를 드러내기 위한 만남이었다고 확인한다. 이 사건의 익명 화자 표시를 조셉과 이을 근거가 있다.",
+      "evidence": [
+        {
+          "scene_id": "d-outsiders_00",
+          "line": 15,
+          "quote": "익명: ···방주의 모든 빛을 꺼뜨리기로 했다."
+        },
+        {
+          "scene_id": "d-outsiders_00",
+          "line": 17,
+          "quote": "익명: 엔터 헤븐은 빛으로."
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 13,
+          "quote": "조셉: 하, 하하···."
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 28,
+          "quote": "바이퍼: 쟤가 그 단독범이야~"
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 29,
+          "quote": "바이퍼: 방주 시내의 이터널 스카이를 날려버린,  그 테러범이라고."
+        },
+        {
+          "scene_id": "d-outsiders_08",
+          "line": 40,
+          "quote": "자칼: 그렇게 하면, 조셉이 스스로 정체를 밝힐 거라고 대장이 그랬거든."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__033__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "지휘관이 마리아-n에게 마리안이라고 부르겠다고 한 뒤, 마리안으로 표기된 당사자가 그렇게 불러 달라고 한다. 서로 다른 인물의 계승이 아닌 같은 대화 상대의 이름 변경이다.",
+      "evidence": [
+        {
+          "scene_id": "maria-n_13",
+          "line": 310,
+          "quote": "마리아-n: 마리아-n이라고 불러줘요."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 326,
+          "quote": "  [OPTION TEXT=\"마리안이라고 부를게. 괜찮지?\"]"
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 330,
+          "quote": "마리안: 마리안."
+        },
+        {
+          "scene_id": "maria-n_13",
+          "line": 336,
+          "quote": "마리안: 예. 그렇게 불러줘요."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__034__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "사쿠라가 메이든을 아이스로즈로 알아본다. 메이든은 처음엔 부인하지만 길로틴이 붙인 이름이라고 했다가 자신이 아이스로즈임을 직접 인정한다. 시뮬레이션에서 쓰인 이명과 당사자를 연결할 근거가 있다.",
+      "evidence": [
+        {
+          "scene_id": "ice_dragon_saga_14",
+          "line": 96,
+          "quote": "사쿠라: ···메이든."
+        },
+        {
+          "scene_id": "ice_dragon_saga_14",
+          "line": 97,
+          "quote": "사쿠라: 아, 세간에서는 [아이스로즈]로 불리던가요?"
+        },
+        {
+          "scene_id": "ice_dragon_saga_14",
+          "line": 98,
+          "quote": "메이든: 아닌데요!"
+        },
+        {
+          "scene_id": "maiden_icerose_03",
+          "line": 49,
+          "quote": "메이든: 아니거든요! 그건 길로틴이 멋대로 붙인···!"
+        },
+        {
+          "scene_id": "maiden_icerose_03",
+          "line": 52,
+          "quote": "메이든: 차가운··· 냉기의 심판자··· 아이스로즈···."
+        },
+        {
+          "scene_id": "maiden_icerose_03",
+          "line": 53,
+          "quote": "메이든: 예··· 그게 바로 저랍니다···."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__035__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "말뚝을 꺼낸 그레이브에게 네온이 ‘언노운이었던 시절’ 자신들을 공격한 일을 상기시키자 그레이브가 사과한다. 당시 정체를 감추던 사람과 현재의 그레이브를 같은 개인으로 부른다.",
+      "evidence": [
+        {
+          "scene_id": "관짝이_01",
+          "line": 229,
+          "quote": "그레이브가 품에서 말뚝을 꺼내들었다."
+        },
+        {
+          "scene_id": "관짝이_01",
+          "line": 233,
+          "quote": "네온: 맞아요! 언노운이었던 시절에!"
+        },
+        {
+          "scene_id": "관짝이_01",
+          "line": 234,
+          "quote": "네온: 이걸로 우리를 막! 공격했잖아요!"
+        },
+        {
+          "scene_id": "관짝이_01",
+          "line": 235,
+          "quote": "그레이브: ···미안하다."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__036__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "맥스웰이 애니힐리오가 무엇인지 묻자 잉그리드가 헬레틱 미사일의 코드네임이라고 답한다. 미사일과 그 코드명이 직접 대응한다.",
+      "evidence": [
+        {
+          "scene_id": "ark_ranger_25",
+          "line": 2,
+          "quote": "잉그리드: 애니힐리오가 온다."
+        },
+        {
+          "scene_id": "ark_ranger_25",
+          "line": 3,
+          "quote": "맥스웰: 애니힐리오?"
+        },
+        {
+          "scene_id": "ark_ranger_25",
+          "line": 4,
+          "quote": "잉그리드: 헬레틱 미사일의 코드네임이다."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__036__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "요한이 퀸과 연결된 스페이스 스테이션을 소개한 다음 바로 ‘스테이션’이라고 줄여 위치와 무장을 설명한다. 같은 구조물을 지시한다.",
+      "evidence": [
+        {
+          "scene_id": "goddess_fall_16",
+          "line": 102,
+          "quote": "요한: 스페이스 스테이션의 일부가 퀸과 연결되어 있는 것을 확인했다."
+        },
+        {
+          "scene_id": "goddess_fall_16",
+          "line": 103,
+          "quote": "요한: 스테이션은 현재 구름 위에 가려져 있고, 요새로 개조되어 있는 상태다."
+        },
+        {
+          "scene_id": "goddess_fall_16",
+          "line": 104,
+          "quote": "요한: 스테이션의 자동 요격 무장으로 인해, 근처에 접근할 시 빔에 요격된다."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__037__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "마리안이 이곳을 ‘저의 세계’라고 하면서 법칙을 정할 수 있다고 말한다. 이어지는 지문이 그 내부 공간을 거대화 ‘유사 세계’로 명명한다.",
+      "evidence": [
+        {
+          "scene_id": "chapter_49_04",
+          "line": 21,
+          "quote": "마리안: 이곳은 [저의 세계]."
+        },
+        {
+          "scene_id": "chapter_49_04",
+          "line": 22,
+          "quote": "마리안: 이 공간 안에서는 모든 법칙이 제가 정한대로 적용돼요."
+        },
+        {
+          "scene_id": "chapter_49_04",
+          "line": 87,
+          "quote": "거대화, [유사 세계] 안은 모든 법칙이 뒤틀려 있는 장소."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__037__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "신체 조달 문제로 통화하는 도라가 바디 콜렉터들과 협의해야 한다고 한 뒤, 그 일을 하는 이들을 고객에게 ‘콜렉터들’로 줄여 부른다. 두 표현이 같은 업자들을 지칭한다.",
+      "evidence": [
+        {
+          "scene_id": "dolla_02",
+          "line": 152,
+          "quote": "도라: 바디 콜렉터들과도 이야길 해봐야 하고, 무엇보다 50명이라는 숫자는···"
+        },
+        {
+          "scene_id": "dolla_02",
+          "line": 186,
+          "quote": "도라: 신체를 구하는 건 내가 아니라 [콜렉터]들이고, 그들이라고 반드시 누굴 죽여서 구하는 건 아니니까."
+        },
+        {
+          "scene_id": "dolla_02",
+          "line": 187,
+          "quote": "도라: 주로 아우터 림, 그러니까 방주 외곽에 유기된 시체에서 쓸만한 부위를 건지거나···."
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__038__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "길로틴이 ‘나는 길로틴 드 메피스토’라고 스스로 전체 이름을 밝힌다. 균형의 수호자와 봉인자는 뒤에 따로 열거한 칭호다.",
+      "evidence": [
+        {
+          "scene_id": "guillotine_04",
+          "line": 103,
+          "quote": "길로틴: 나는 길로틴 드 메피스토."
+        },
+        {
+          "scene_id": "guillotine_04",
+          "line": 104,
+          "quote": "길로틴: 이 방주를 [조직]으로부터 언젠가 해방시킬 균형의 수호자이자···."
+        },
+        {
+          "scene_id": "guillotine_04",
+          "line": 105,
+          "quote": "길로틴: 편익의 마왕의 봉인자(Keeper of one-winged dark lord)!"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__038__M02",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "앨리스의 퀴즈에서 지휘관이 ‘나’를 고르면 정답으로 인정하며, 곧바로 정답을 토끼 씨라고 밝힌다. 앨리스가 지휘관에게 쓰는 호칭임을 직접 확인할 수 있다.",
+      "evidence": [
+        {
+          "scene_id": "blabla_alice_003",
+          "line": 25,
+          "quote": "      [OPTION TEXT=\"나\"]"
+        },
+        {
+          "scene_id": "blabla_alice_003",
+          "line": 27,
+          "quote": "          딩동댕!"
+        },
+        {
+          "scene_id": "blabla_alice_003",
+          "line": 30,
+          "quote": "          맞았어요!"
+        },
+        {
+          "scene_id": "blabla_alice_003",
+          "line": 36,
+          "quote": "    정답은 바로 토끼 씨예요 ^0^"
+        }
+      ]
+    },
+    {
+      "audit_id": "merge:C1__039__M01",
+      "judgment": "맞음",
+      "problems": [],
+      "reason": "스톨 3세가 안경을 건네받는 장면, 니케화한 생존자가 네온을 새 이름으로 택하는 장면, 안경이 네온을 스캔하고 ‘셋째야’라고 부르는 장면이 이어진다. 함께 보면 두 이름이 한 개인의 니케화 전후를 가리킨다는 병합 근거가 충분하다.",
+      "evidence": [
+        {
+          "scene_id": "main_43_12",
+          "line": 93,
+          "quote": "스톨 3세의 얼굴에 씌워준다."
+        },
+        {
+          "scene_id": "main_43_13",
+          "line": 8,
+          "quote": "???: 저는 니케가 된 거군요."
+        },
+        {
+          "scene_id": "main_43_13",
+          "line": 15,
+          "quote": "???: 안경··· 이 있네요."
+        },
+        {
+          "scene_id": "main_43_13",
+          "line": 51,
+          "quote": "???: 오. 그럼 제 이름 네온으로 해주세요."
+        },
+        {
+          "scene_id": "main_43_14",
+          "line": 131,
+          "quote": "네온의 안경에서 뻗어 나온 푸른색 길과 같은 빛이 네온의 몸을 휘감는다."
+        },
+        {
+          "scene_id": "main_43_14",
+          "line": 137,
+          "quote": "프린세스: 건강해라. 셋째야."
+        }
+      ]
+    }
+  ]
+}
