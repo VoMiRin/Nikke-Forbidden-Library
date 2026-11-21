@@ -1,0 +1,1038 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__049",
+  "candidate_links": [
+    {
+      "link_id": "C1__049__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_09_02__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 스캔 장치에 올려 분석한 탄환의 구성 물질은 무엇인가 / 답: 평범한 라이플용 탄환에 '언체인드'라는 이상한 물질이 하나 섞여 있다(main_09_02 L7-L10) / 근거: 직전 장면에서 스캔 장치에 올린 탄환의 스캔이 바로 다음 장면에서 종료되며 엑시아가 구성 물질 분석 결과를 직접 읽는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_01",
+          "line_start": 5,
+          "line_end": 10,
+          "quote": "엑시아: 이 스캔 장치에 뭐든 올려놓으면- 구성 물질이 무엇인지 쪼잔할 정도로 다 알려줍니-다-\n엑시아: 총알을 올려볼까요-\n[CHOICE_START]\n  [OPTION TEXT=\"스캔 장치에 탄환을 올린다.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_09_02",
+          "line_start": 7,
+          "line_end": 10,
+          "quote": "엑시아: 그냥 평-범-한 라이플용 탄환입-니다-\n엑시아: 만-\n엑시아: 이상-한 게 하나 섞여 있네-요-\n엑시아: ···언체인드-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_21_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 스캔 장치에 올려 분석한 탄환의 구성 물질은 무엇인가 / 답: 군사용 스캔 장치가 군사용 물질만 식별해 평범한 탄환으로 판별했을 뿐, 언체인드 탄환의 실제 핵심 구성 물질은 언체인드 성분과 합성된 인간의 세포다(main_21_01 L35-L48) / 근거: 지휘관이 예전에 군사용 스캔 장치로 그 언체인드 탄환을 검사했던 일을 직접 언급하고 세실이 그 스캔 결과의 한계와 핵심 구성 물질을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_01",
+          "line_start": 5,
+          "line_end": 6,
+          "quote": "엑시아: 이 스캔 장치에 뭐든 올려놓으면- 구성 물질이 무엇인지 쪼잔할 정도로 다 알려줍니-다-\n엑시아: 총알을 올려볼까요-"
+        },
+        {
+          "scene_id": "main_21_01",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "세실: 군사용 스캔 장치에 탄환을 검사했겠죠?"
+        },
+        {
+          "scene_id": "main_21_01",
+          "line_start": 40,
+          "line_end": 42,
+          "quote": "세실: 군사용으로 쓰이는 물질만을 알아낼 수 있었을 거예요.\n세실: 언체인드 탄환의 핵심 구성 물질은.\n세실: 군사용으로는 사용하지 않는···. 정확히는 사용할 수 없는 물질일 테니까."
+        },
+        {
+          "scene_id": "main_21_01",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "세실: 인간의 세포에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"언체인드\"로 확인한 main_21_01 L41"
+      ]
+    },
+    {
+      "link_id": "C1__049__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_09_07",
+          "line_start": 44,
+          "line_end": 46,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지상을 경유해 해킹했음에도 어떻게 엑시아의 위치가 그렇게 빨리 노출되어 트라이앵글이 출동했는가 / 답: 시프티 행세를 하며 통신에 참여하고 있던 슈엔이 정체가 들통날까 봐 중앙 정부 해킹을 명분으로 엑시아를 팔아넘겼다(main_09_07 L44-L46) / 근거: 아니스가 엑시아를 팔았느냐고 직접 묻자 슈엔이 중앙 정부 해킹을 거론하며 자신이 치워버렸다고 시인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_04",
+          "line_start": 6,
+          "line_end": 7,
+          "quote": "엑시아: 이상하네요- 지상을 경유해서 털었는데 내 위치까지 노출됐어요-\n엑시아: 트라이앵글이 오고 있군요- 이렇게 빠를 리가-"
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 44,
+          "line_end": 46,
+          "quote": "아니스: 네가 엑시아를 팔았냐?\n슈엔: 응. 중앙 정부 해킹이라니, 너무 하잖아.\n슈엔: 왠지 슬슬 나에 대해 눈치챌 것 같기도 해서. 그냥 치워버렸어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_09_13__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 엑시아는 무엇을 깨닫고('아- 그런 거였구나-') 어떤 비밀을 지키려 스스로 뇌를 태운다고 했는가 / 답: 중앙 정부 데이터베이스에서 언체인드가 니케 뇌의 NIMPH를 파괴해 기억 소거가 먹히지 않게 만든다는 정보를 확인하고, 앞서 알고 있던 라피의 기억 소거 불발 원인이 언체인드임을 깨달아 그 비밀을 지키려 뇌를 태웠다(main_09_13 L358-L365) / 근거: main_09_04 L17에서 라피가 '너 설마 나 때문에'라고 반응하고 main_09_13 L76-L91에서 뇌를 태운 이유가 해킹과 별개의 중요 정보 때문임에 라피가 '알아'라고 답한 뒤, main_09_13 L358-L365에서 언체인드로 인한 기억 소거 불발이 설명되자 일행이 라피를 떠올리는 여러 장면을 결합해 이어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_04",
+          "line_start": 12,
+          "line_end": 17,
+          "quote": "엑시아: 아-\n엑시아: 그런 거였구나-\n엑시아: 여러분-\n엑시아: 저는 뇌를 태우겠습니다-\n엑시아: 비밀은 소중한 거니까요-\n라피: 잠깐···! 너 설마 나 때문에···!"
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 359,
+          "line_end": 359,
+          "quote": "    물론 기억 소거도 먹히지 않게됨"
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 362,
+          "line_end": 365,
+          "quote": "라피: !!\n네온: 라피···!\n아니스: 너 언제···!\n라피: ···나도 모르겠어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_07__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_08_00__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 한 달의 휴가 직후 지상에 올라온 카운터스에게 시프티가 전속 오퍼레이터라며 갑자기 붙어 행선지를 캐묻고 아니스가 경계한 까닭은 무엇인가 / 답: 진짜 시프티가 아니라 한 달 동안 입원해 복수를 궁리한 슈엔이 딥 페이크로 시프티 행세를 하며 카운터스를 속이고 있었기 때문이다(main_09_07 L34-L38) / 근거: 한 달간 입원해 딥 페이크를 준비해 처음부터 시프티인 척했다는 슈엔의 고백이 휴가 한 달 뒤 시작된 시프티의 수상한 접근을 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_00",
+          "line_start": 23,
+          "line_end": 26,
+          "quote": "시프티: 그래서, 여러분들은 어디로 가시나요?\n시프티: 특수 별동대가 되셔서 공식적인 정보가 안 들어오네요.\n시프티: 번거로우시겠지만 작전 때마다 물어봐야 할 것 같아요.\n시프티: 물론, 먼저 말씀해 주시면 더 좋고요."
+        },
+        {
+          "scene_id": "main_08_00",
+          "line_start": 43,
+          "line_end": 45,
+          "quote": "아니스는 손가락을 들어 올려 입을 막았다.\n그리고 어딘가를 가리켰다.\n···지금은 아무 말 말고 이동하는 게 좋겠다."
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 34,
+          "line_end": 38,
+          "quote": "슈엔: 응. 너한테 박살 난 갈비뼈를 치료한다고 한 달이나 병원 신세를 진 동안.\n슈엔: 어떻게 하면 너흴 엿 먹일지 엄청 고민했거든.\n슈엔: 그래서 딥 페이크를 써보기로 했어.\n슈엔: 한 달이나 공을 들인 보람이 있네. 다들 감쪽같이 속아넘어가서는.\n슈엔: 어땠어? 진짜 시프티 같지 않았어?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "한 달간 처음부터 시프티 행세를 했다는 대사를 바탕으로 직전 8장 도입부를 show main_08_00으로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_07__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_08_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아무에게도 알리지 않고 지상에 올라왔는데 시프티가 왜 기막힌 타이밍에 달라붙어 카운터스를 감시하고 있었는가 / 답: 한 달간 입원 중 카운터스를 골탕 먹이려 한 슈엔이 딥 페이크로 시프티를 사칭해 감시하고 있었기 때문이다(main_09_07 L34-L38) / 근거: '시프티가 왜 우릴 감시하고 있었을까'라는 아니스의 의문에 대해, 그 시프티가 딥 페이크를 쓴 슈엔이었음이 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_01",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "아니스: 시프티가 우릴 감시하고 있기 때문이지."
+        },
+        {
+          "scene_id": "main_08_01",
+          "line_start": 12,
+          "line_end": 13,
+          "quote": "아니스: 그런데 기가 막힌 타이밍에 달라붙었지.\n아니스: 자, 그럼 시프티가 왜 우릴 감시하고 있었을까?"
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 34,
+          "line_end": 38,
+          "quote": "슈엔: 응. 너한테 박살 난 갈비뼈를 치료한다고 한 달이나 병원 신세를 진 동안.\n슈엔: 어떻게 하면 너흴 엿 먹일지 엄청 고민했거든.\n슈엔: 그래서 딥 페이크를 써보기로 했어.\n슈엔: 한 달이나 공을 들인 보람이 있네. 다들 감쪽같이 속아넘어가서는.\n슈엔: 어땠어? 진짜 시프티 같지 않았어?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "직전 8장 도입부의 시프티 감시 의혹 장면을 show main_08_01로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_09_12__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 노벨이 엑시아가 전해주라고 했다며 안으로 들어가서 말하겠다고 감춘 긴밀한 이야기의 내용은 무엇인가 / 답: 엑시아가 암호문으로 남긴 정보로, 언체인드가 니케의 뇌에 있는 나노머신을 파괴해 니케의 불멸을 파괴한다는 내용이다(main_09_12 L22-L28) / 근거: 바로 다음 장면에서 노벨이 안으로 들어간 뒤 '엑시아에게서 전해 받은 정보를 전달하는 것입니다'라며 그 내용을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_11",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "노벨: 전할 게 있어 찾아온 것입니다."
+        },
+        {
+          "scene_id": "main_09_11",
+          "line_start": 27,
+          "line_end": 30,
+          "quote": "노벨: 오오! 엑시아가 전해주라고 한 것인 줄 어떻게 안 것입니까?\n노벨: 역시 왓슨인 것입니다!\n아니스: ??\n노벨: 긴밀한 얘기가 될 테니 안으로 들어가서 얘기하는 것입니다."
+        },
+        {
+          "scene_id": "main_09_12",
+          "line_start": 22,
+          "line_end": 23,
+          "quote": "노벨: 좋은 것입니다. 그럼 엑시아에게서 전해 받은 정보를 전달하는 것입니다.\n노벨: [언체인드는 니케의 불멸을 파괴한다.]"
+        },
+        {
+          "scene_id": "main_09_12",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "노벨: [니케의 뇌에 있는 나노머신을 파괴시켜 불멸이라는 굴레에서 벗어나게 한다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "a.c.p.u._freeze_03__clh_002"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "노벨이 지휘관을 '왓슨'이라 부르고 '~인 것입니다' 어미를 쓰는 평소 말버릇이 할로윈 이벤트 장면에 똑같이 나왔을 뿐, main_09_11의 단서와 공개 관계가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_11",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "노벨: 역시 왓슨인 것입니다!"
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_03",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "노벨: 왓슨!!"
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_03",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "노벨: 살인 사건이 틀림없는 것입니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "golden_coin_rush_05__clh_004"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "노벨의 '왓슨' 호칭과 '~인 것입니다' 말버릇이 코인 러시 이벤트 장면에 반복된 것일 뿐, main_09_11의 단서와 공개 관계가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_11",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "노벨: 역시 왓슨인 것입니다!"
+        },
+        {
+          "scene_id": "golden_coin_rush_05",
+          "line_start": 219,
+          "line_end": 220,
+          "quote": "노벨: 갑자기 왓슨이 나타나다니.\n노벨: 이것 참 흥미로운 사건인 것입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "a.c.p.u._freeze_09",
+          "line_start": 71,
+          "line_end": 71,
+          "scan_id": "S0017"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "노벨의 '~인 것입니다' 말버릇이 할로윈 사탕 사건 장면에 나온 것일 뿐, main_09_11의 단서와 공개 관계가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_11",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "노벨: 실례하는 것입니다."
+        },
+        {
+          "scene_id": "a.c.p.u._freeze_09",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "노벨: 이건 진짜 사건인 것입니다···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__011",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_13__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기억 소거 처치를 받은 라피의 기억이 왜 지워지지 않았는가 / 답: 언체인드가 니케의 뇌 속 NIMPH를 파괴하면 기억 소거가 먹히지 않게 되며, 라피 역시 알 수 없는 시점에 그렇게 되었기 때문이다(main_09_13 L358-L365) / 근거: 엑시아가 언체인드에 의한 NIMPH 파괴로 기억 소거가 먹히지 않게 된다고 설명하자 일행이 곧바로 라피의 기억 소거 불발을 떠올리고 라피도 언제 그렇게 됐는지 모르겠다고 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_15",
+          "line_start": 102,
+          "line_end": 105,
+          "quote": "라피: 기억이 지워지지 않았습니다.\n아니스: ···뭐?\n네온: ···예?\n라피: 아무것도··· 지워지지 않았어요."
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 359,
+          "line_end": 359,
+          "quote": "    물론 기억 소거도 먹히지 않게됨"
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 362,
+          "line_end": 365,
+          "quote": "라피: !!\n네온: 라피···!\n아니스: 너 언제···!\n라피: ···나도 모르겠어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"앱솔루트\"로 찾은 main_04_11 뒤의 기억 소거 판결·복귀 장면을 show main_04_15로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__012",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_13__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_08_03__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기억 소거 실시 기록이 있음에도 왜 라피에게 기억 소거가 먹히지 않았는가 / 답: 언체인드에 의해 뇌의 NIMPH가 파괴되면 기억 소거가 먹히지 않게 되기 때문이다(main_09_13 L358-L365) / 근거: 엑시아가 언체인드의 NIMPH 파괴 결과로 기억 소거 불발을 설명하자 라피와 동료들이 라피의 기억 소거 불발 사실을 직접 받아 반응한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_03",
+          "line_start": 24,
+          "line_end": 25,
+          "quote": "엑시아: 정확히는- 기억 소거가 안 먹힌 거겠네요- 예-\n엑시아: 기억 소거를 실시한 기록은 있으니까- 요-"
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 359,
+          "line_end": 359,
+          "quote": "    물론 기억 소거도 먹히지 않게됨"
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 362,
+          "line_end": 365,
+          "quote": "라피: !!\n네온: 라피···!\n아니스: 너 언제···!\n라피: ···나도 모르겠어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"데이터베이스\"로 확인한 main_08_03 L29를 show main_08_03으로 읽어 단서 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__013",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_14__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기억 소거 처치를 받은 라피의 기억이 왜 지워지지 않았는가 / 답: NIMPH를 죽이는 물질인 언체인드에 노출되었기 때문이다(main_09_14 L41-L50) / 근거: 라피가 이전에 기억 소거를 당했으나 모든 걸 기억하고 있다고 직접 밝히며 그 원인으로 언체인드 노출을 제시한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_15",
+          "line_start": 102,
+          "line_end": 105,
+          "quote": "라피: 기억이 지워지지 않았습니다.\n아니스: ···뭐?\n네온: ···예?\n라피: 아무것도··· 지워지지 않았어요."
+        },
+        {
+          "scene_id": "main_09_14",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "라피: 이전에 기억 소거를 당했으나, 모든 걸 기억하고 있습니다."
+        },
+        {
+          "scene_id": "main_09_14",
+          "line_start": 48,
+          "line_end": 50,
+          "quote": "잉그리드: 다시 묻겠다. 원인에 대해 짐작 가는 것이 있나?\n라피: NIMPH를 죽이는 물질. 언체인드에 노출된 것이라 생각됩니다.\n라피: 언제, 어떤 경위로 노출된 것인지는 알 수 없습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"앱솔루트\"로 찾은 main_04_11 뒤의 기억 소거 복귀 장면을 show main_04_15로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__014",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_09_14__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_08_03__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기억 소거 실시 기록이 있음에도 왜 라피에게 기억 소거가 먹히지 않았는가 / 답: NIMPH를 죽이는 물질인 언체인드에 노출되었기 때문이다(main_09_14 L41-L50) / 근거: 라피가 기억 소거가 먹히지 않은 사실과 그 원인(언체인드 노출)을 잉그리드와 엔더슨 앞에서 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_03",
+          "line_start": 24,
+          "line_end": 25,
+          "quote": "엑시아: 정확히는- 기억 소거가 안 먹힌 거겠네요- 예-\n엑시아: 기억 소거를 실시한 기록은 있으니까- 요-"
+        },
+        {
+          "scene_id": "main_09_14",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "라피: 이전에 기억 소거를 당했으나, 모든 걸 기억하고 있습니다."
+        },
+        {
+          "scene_id": "main_09_14",
+          "line_start": 48,
+          "line_end": 50,
+          "quote": "잉그리드: 다시 묻겠다. 원인에 대해 짐작 가는 것이 있나?\n라피: NIMPH를 죽이는 물질. 언체인드에 노출된 것이라 생각됩니다.\n라피: 언제, 어떤 경위로 노출된 것인지는 알 수 없습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"데이터베이스\"로 확인한 main_08_03 L29를 show main_08_03으로 읽어 단서 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__015",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_10_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_11_00",
+          "line_start": 45,
+          "line_end": 58,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지상에 올라왔을 때부터 일행의 8시 방향 2.5km 거리에서 따라오던 무장 미상 3명의 정체와 미행 목적은 무엇인가 / 답: 헬레틱의 파편이 목표라는 것을 알아낸 슈엔이 파편 수거를 위해 보낸 미실리스의 메티스 스쿼드 3인이다(main_11_00 L45-L58) / 근거: 합류한 메티스 3인에게 은화가 '왜 우릴 미행했지?'라고 직접 묻자 맥스웰이 슈엔의 지시로 헬레틱의 파편을 수거하러 따라왔다고 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_10_04",
+          "line_start": 50,
+          "line_end": 52,
+          "quote": "라피: (8시 방향. 거리는 2.5km)\n은화: (3명. 무장은 파악 불가. 저격 가능.)\n라피: (지금은 안돼. 좀 더 끌어들이자.)"
+        },
+        {
+          "scene_id": "main_11_00",
+          "line_start": 45,
+          "line_end": 50,
+          "quote": "은화: 왜 우릴 미행했지? 미실리스의 개들아.\n맥스웰: 슈엔이 시켰어. 너흴 도와주라고.\n은화: 네 입에서 나온 말 중에 제일 재밌었다. 그걸 믿으라고?\n맥스웰: 그렇지? 너무 뻔했지?\n은화: 왜 왔어?\n맥스웰: 헬레틱의 파편을 수거하러."
+        },
+        {
+          "scene_id": "main_11_00",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "맥스웰: 헬레틱의 파편이 목표라는 걸 알아낸 슈엔이 우릴 보낸 거지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__016",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_10_04__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_10_06__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 시프티가 말을 멈춘 앱솔루트와 라피의 예전 관계와 과거사는 무엇인가 / 답: 라피는 과거 앱솔루트 소속이었으나 타일런트급 다섯 기 작전에서 유탄으로 민간인을 죽이고도 경위서 생각부터 한 자신에게 회의를 느껴 앱솔루트를 그만두었다(main_10_06 L25-L46) / 근거: 같은 장 뒤 장면에서 앱솔루트 대원들과 마주한 라피가 과거 함께 치른 작전과 자신이 앱솔루트를 관둔 사정을 직접 털어놓는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_10_04",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "시프티: 아, 혹시 그거 아시나요? 앱솔루트와 라피는 예전에···."
+        },
+        {
+          "scene_id": "main_10_06",
+          "line_start": 25,
+          "line_end": 30,
+          "quote": "라피: 타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?\n엠마: 응. 기억나. 엄청 힘든 작전이었지.\n베스티: 그때 라피랑 은화가 없었으면 큰일 났을 거야.\n라피: 난 그때 인간을 죽였어.\n베스티: 어···?\n라피: 유탄이었어. 하지만 죽었지."
+        },
+        {
+          "scene_id": "main_10_06",
+          "line_start": 44,
+          "line_end": 46,
+          "quote": "라피: 그래서 관둔 거야. 내가 뭔지 알 수가 없어서.\n라피: 인간도 아니고, 그렇다고 니케도 아닌.\n라피: 내가 뭔지 알 수가 없어서."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__049__017",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_10_06__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_11__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피는 앱솔루트와 어떤 관계였으며 왜 과거 말도 없이 앱솔루트를 떠났는가 / 답: 앱솔루트 소속 시절 타일런트급 다섯 기 작전에서 유탄으로 인간을 죽이고도 경위서 생각부터 한 자신에게 회의를 느껴 자신이 무엇인지 알 수 없게 되자 앱솔루트를 관두었다(main_10_06 L25-L46) / 근거: 엠마가 말도 없이 가버려 섭섭했다고 한 일에 대해 은화가 왜 갑자기 때려치우고 나갔느냐고 묻자 라피가 그 이유를 직접 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_11",
+          "line_start": 62,
+          "line_end": 65,
+          "quote": "라피: ···오랜만이야. 엠마.\n엠마는 라피를 끌어안았다.\n엠마: 그때 말도 없이 가버리고. 내가 얼마나 섭섭했는지 알아?\n라피: ···미안해."
+        },
+        {
+          "scene_id": "main_10_06",
+          "line_start": 25,
+          "line_end": 30,
+          "quote": "라피: 타일런트 급 다섯 기가 방주 근처에 나타난 작전. 기억나?\n엠마: 응. 기억나. 엄청 힘든 작전이었지.\n베스티: 그때 라피랑 은화가 없었으면 큰일 났을 거야.\n라피: 난 그때 인간을 죽였어.\n베스티: 어···?\n라피: 유탄이었어. 하지만 죽었지."
+        },
+        {
+          "scene_id": "main_10_06",
+          "line_start": 44,
+          "line_end": 46,
+          "quote": "라피: 그래서 관둔 거야. 내가 뭔지 알 수가 없어서.\n라피: 인간도 아니고, 그렇다고 니케도 아닌.\n라피: 내가 뭔지 알 수가 없어서."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"앱솔루트\"로 확인한 main_04_11을 show main_04_11로 읽어 단서 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__018",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_10_06__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_32_14__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피는 유탄으로 인간이 죽었을 때 경위서부터 떠올린 뒤 왜 '인간도 아니고, 그렇다고 니케도 아닌 내가 뭔지 알 수가 없어서'라며 아무 말 없이 앱솔루트를 떠났는가 / 답: 레드 후드가 되고 싶어 앱솔루트와 함께했으나, 유탄 사고 때 경위서부터 걱정하는 모습을 통해 레드 후드의 사명은 이해하지 못한 채 껍데기만 흉내 내고 있었음을 깨달아 정체성을 잃고 동료를 이용한 미안함에 말없이 떠났다(main_32_14 L33-L39) / 근거: 라피가 은화와 엠마 앞에서 유탄에 인간이 죽고 경위서 쓰는 것부터 걱정했던 그 사건을 직접 다시 거론하며 당시 숨겼던 레드 후드 모방이라는 내막을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_10_06",
+          "line_start": 34,
+          "line_end": 36,
+          "quote": "라피: 몸통 절반이 없어진 상태로, 피를 쏟아내고 있는 그 인간을 보면서.\n라피: 내가 무슨 생각을 한 줄 알아?\n라피: 아, 경위서를 쓰겠군."
+        },
+        {
+          "scene_id": "main_10_06",
+          "line_start": 44,
+          "line_end": 46,
+          "quote": "라피: 그래서 관둔 거야. 내가 뭔지 알 수가 없어서.\n라피: 인간도 아니고, 그렇다고 니케도 아닌.\n라피: 내가 뭔지 알 수가 없어서."
+        },
+        {
+          "scene_id": "main_32_14",
+          "line_start": 33,
+          "line_end": 39,
+          "quote": "라피: 흉내만 내고 있었던 거야.\n라피: 그때, 내 유탄에 인간이 죽었을 때.\n라피: 경위서 쓰는 것부터 걱정했던 나는.\n라피: 레드 후드의 흉내만 내고 있었다는 걸 알아버렸어.\n라피: 그 사명이 어떤 것인지, 무엇을 짊어지고 있는지 이해하려고 하지도 않은 채.\n라피: 껍데기만 흉내 내고 있었던 거지.\n라피: 그럼 난 뭐였을까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"경위서\"로 확인한 main_32_14 L35"
+      ]
+    },
+    {
+      "link_id": "C1__049__019",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_11_05__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_12_07",
+          "line_start": 85,
+          "line_end": 91,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 랩쳐 반응도 없이 가공 지형 지면에서 솟아나 라피와 메티스를 꿰뚫은 촉수의 정체와 기능은 무엇인가 / 답: 헬레틱의 파편이 있던 지하 공간 전체를 이루는 거대 랩쳐의 촉수로, 피격된 니케에게 침식을 일으킨다(main_12_07 L85-L91) / 근거: 방 전체가 랩쳐임이 드러나며 시설이 움직여 그 촉수를 드러내자 라피가 '저 촉수야! 피격 시 침식을 일으키니 조심해!'라고 직접 지목한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_05",
+          "line_start": 33,
+          "line_end": 36,
+          "quote": "지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다.\n라플라스: 이딴 얕은수를!\n푸슈슝-!\n라플라스는 정확한 조준으로 촉수들을 끊어냈다."
+        },
+        {
+          "scene_id": "main_12_07",
+          "line_start": 86,
+          "line_end": 91,
+          "quote": "시프티: 여, 여러분이 있는 방 전체가 랩쳐에요!\n카각···! 카가가각!!\n불쾌한 금속음과 함께 방 안의 시설이 움직이기 시작했다.\n그리고 그 촉수를 드러냈다.\n은화: 쯧···!\n라피: 저 촉수야! 피격 시 침식을 일으키니 조심해!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "11장 말미의 추락 직후 이어지는 12장을 show main_12_07로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__020",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_11_05__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_12_11__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 가공 지형 지면에서 솟아나 라피와 메티스를 꿰뚫은 촉수의 정체와 목적은 무엇인가 / 답: 마테리얼 H를 확장해 헬레틱을 부활시키기 위한 지하 배양 시설의 수단으로, 촉수로 니케를 침식 상태로 만들어 마테리얼 H의 먹이나 보관소로 보내기 위한 것이다(main_12_11 L29-L35) / 근거: 카운터스·앱솔루트·메티스 연합이 진입한 지하 시설에 대한 조사 보고에서 촉수를 사용해 니케를 침식시켜 먹이로 삼는 시설의 작동 원리와 목적이 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_05",
+          "line_start": 33,
+          "line_end": 36,
+          "quote": "지면에서 솟아 나온 촉수가 라피와 메티스의 몸을 꿰뚫었다.\n라플라스: 이딴 얕은수를!\n푸슈슝-!\n라플라스는 정확한 조준으로 촉수들을 끊어냈다."
+        },
+        {
+          "scene_id": "main_12_11",
+          "line_start": 29,
+          "line_end": 34,
+          "quote": "마나: 그리고 모든 길은 한 곳으로 모입니다. 마테리얼 H가 위치했던 중심부입니다.\n마나: 움직이는 길로 패닉에 빠트리거나, 촉수를 사용해 침식 상태로 만듭니다.\n마나: 마테리얼 H와의 거리가 가까우면 바로 먹이로 보내고.\n마나: 거리가 멀 경우 일정 거리마다 존재하는 [보관소]에 보관합니다.\n마나: 지하 시설의 목적은, 니케를 사용하여 마테리얼 H를 확장.\n마나: 최종적으로는 헬레틱을 부활시키는 것이 확실하겠죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "11장 말미에 이어지는 12장 조사 보고 장면을 show main_12_11로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__021",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_11_05__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_12_11__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 과거 대비 지면이 200m 가량 솟아오른 가공 지형 아래에는 무엇이 숨겨져 있는가 / 답: 중심부의 마테리얼 H(헬레틱의 파편)에 침식·보관한 니케들을 먹이로 공급해 헬레틱을 부활시키려는 반경 20km 규모의 랩쳐 지하 배양 시설이 숨겨져 있었다(main_12_11 L24-L35) / 근거: 가공 지형이 무너지며 추락한 일행이 확인한 지하 시설의 정식 조사 결과를 마나가 보고하며 그 규모와 목적을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_05",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "시프티: 가공 지형 아래에 재머 존재 가능성 높음!"
+        },
+        {
+          "scene_id": "main_11_05",
+          "line_start": 48,
+          "line_end": 49,
+          "quote": "시프티: 과, 과거 대비 현 위치의 지면이 200m 가량 솟아있습니다!\n맥스웰: 이것들 뭘 그렇게 꽁꽁 숨겨놓으셨을까? 응?"
+        },
+        {
+          "scene_id": "main_12_11",
+          "line_start": 29,
+          "line_end": 35,
+          "quote": "마나: 그리고 모든 길은 한 곳으로 모입니다. 마테리얼 H가 위치했던 중심부입니다.\n마나: 움직이는 길로 패닉에 빠트리거나, 촉수를 사용해 침식 상태로 만듭니다.\n마나: 마테리얼 H와의 거리가 가까우면 바로 먹이로 보내고.\n마나: 거리가 멀 경우 일정 거리마다 존재하는 [보관소]에 보관합니다.\n마나: 지하 시설의 목적은, 니케를 사용하여 마테리얼 H를 확장.\n마나: 최종적으로는 헬레틱을 부활시키는 것이 확실하겠죠.\n잉그리드: ···개미굴이 아니라 배양 시설이군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "11장 말미 가공 지형 붕괴 직후 이어지는 12장 조사 보고 장면을 show main_12_11로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__049__022",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_11_06__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_12_07",
+          "line_start": 20,
+          "line_end": 34,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라플라스가 독을 썼는지 의심한 촉수 피격 부위의 마비감은 무엇 때문이었는가 / 답: 독이 아니라 그 촉수에 피격되면서 메티스 전원이 랩쳐의 침식에 걸렸기 때문이다(main_12_07 L20-L34) / 근거: 메티스 전원이 일행을 유인하다 제압된 뒤 라피가 침식임을 밝히고 엠마가 그 촉수에 당한 것이 침식의 원인이라고 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_06",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "라플라스: 좀 전 촉수에 찔린 부분이 살짝 마비되는 느낌이야.\n라플라스: 비열한 악당 놈들. 독을 쓴 건가···!\n맥스웰: 그래? 난 괜찮은 것 같은데."
+        },
+        {
+          "scene_id": "main_12_07",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "라피: 침식입니다."
+        },
+        {
+          "scene_id": "main_12_07",
+          "line_start": 32,
+          "line_end": 34,
+          "quote": "엠마: 모르겠어. 메티스와 합류한 시점에서부터 침식 상태였으니까.\n엠마: 긴가민가 했는데, 여기 오고 난 뒤 확신했어.\n엠마: 아마도··· 그 촉수라는 것에 당한 게 이유일 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "11장 말미에 이어지는 12장을 show main_12_07로 확인"
+      ]
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "main_09_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_09_03__clh_001",
+      "reason": "짝 없음",
+      "note": "방주 내 데이터베이스에서 언체인드에 관한 기록을 누가, 왜 후속 조치로 소거했는지"
+    },
+    {
+      "item_id": "main_09_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_09_13__clh_003",
+      "reason": "짝 없음",
+      "note": "라피가 언제, 어떤 경위로 언체인드에 노출되어 기억 소거가 먹히지 않게 되었는지"
+    },
+    {
+      "item_id": "main_09_14__clh_001",
+      "reason": "짝 없음",
+      "note": "라피가 언제, 어떤 경위로 언체인드에 노출되었는지"
+    },
+    {
+      "item_id": "main_09_14__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_11_00__clh_001",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}

@@ -1,0 +1,1246 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__046",
+  "candidate_links": [
+    {
+      "link_id": "C1__046__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "anis_00__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 사관학교를 졸업했다는 지휘관은 왜 커넥팅 디바이스와 포트 같은 기초 상식조차 모르는가 / 답: 방주에서 태어난 것과 사관학교를 졸업한 것 외의 기억이 흐릿한 기억 상실 상태이기 때문이다(anis_00 L45-L64) / 근거: 세상 물정을 모르는 지휘관에게 아니스 일행이 묻자 지휘관이 사관학교 졸업 외의 기억이 흐릿하다고 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_02",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "[OPTION TEXT=\"포트?\"]"
+        },
+        {
+          "scene_id": "main_02_02",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "아니스: ···사관 학교 졸업한 것, 맞지?"
+        },
+        {
+          "scene_id": "anis_00",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "[OPTION TEXT=\"사관학교를 졸업한 것도 기억하고.\"]"
+        },
+        {
+          "scene_id": "anis_00",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "[OPTION TEXT=\"그런데 그것들 말고는 너무 흐릿해.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "지휘관의 사관학교 기초 상식 부재 관련 장면을 찾기 위해 grep '사관학교'로 확인한 anis_00 L54"
+      ]
+    },
+    {
+      "link_id": "C1__046__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "rapi_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관은 사관학교를 졸업했는데도 왜 현장 기초 상식을 모르는가 / 답: 사관학교 정규 교육은 1년 미만으로 지상·방주·니케·랩쳐 지식을 배우기에 턱없이 부족하며 정신 교육 위주로만 진행되어 지휘관들이 제대로 된 지식 없이 투입되기 때문이다(rapi_01 L95-L108) / 근거: 라피가 지휘관에게 세간의 인식과 다른 사관학교 교육의 실상을 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_02",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "아니스: ···사관 학교 졸업한 것, 맞지?"
+        },
+        {
+          "scene_id": "rapi_01",
+          "line_start": 97,
+          "line_end": 99,
+          "quote": "라피: 그 정규 교육이라 불리는 것의 기간은 1년도 채 되지 않습니다.\n라피: 사실상 지상과 방주, 니케와 랩쳐에 대해 배우기엔 턱없이 모자란 기간이죠.\n라피: 그래서 그 1년 동안 지휘관 후보생들은 정신 교육을 주로 받습니다."
+        },
+        {
+          "scene_id": "rapi_01",
+          "line_start": 108,
+          "line_end": 108,
+          "quote": "라피: 제대로 된 지식 없이 작전에 투입되고, 니케를 막 다루는 행동 때문에 사고가 끊이지 않죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "사관학교 교육 실태 관련 장면을 찾기 위해 grep '사관 학교'·'사관학교'로 확인한 rapi_01 L95-L129"
+      ]
+    },
+    {
+      "link_id": "C1__046__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_24__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 사관학교를 졸업했다는 지휘관은 왜 기초 상식과 과거 기억이 없는가 / 답: 재생산된 클론 7호(지휘관)의 외부 NIMPH 기억 보관 장치를 파괴하여 생산 직후인 사관학교 졸업 직후의 기억만 남고 나머지 기억이 모두 사라졌기 때문이다(maria-n_24 L138-L142) / 근거: 닥터 마리아가 카운터스 합류 직전인 7호의 NIMPH 장치를 부수면 사관학교 졸업 직후의 기억만 남게 된다고 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_02",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "아니스: ···사관 학교 졸업한 것, 맞지?"
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line_start": 138,
+          "line_end": 139,
+          "quote": "닥터 마리아: 그렇게 되면 7호의 기억은 서서히 사라질거야.\n닥터 마리아: 생산 당시의 기억 말고는, 모두 사라질거야."
+        },
+        {
+          "scene_id": "maria-n_24",
+          "line_start": 142,
+          "line_end": 142,
+          "quote": "닥터 마리아: 아마 생산 직후, 그러니까 사관학교를 졸업한 직후의 기억만 가지고 있겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "사관학교 졸업 기억 관련 장면을 찾기 위해 grep '사관학교'로 확인한 maria-n_24 L142"
+      ]
+    },
+    {
+      "link_id": "C1__046__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "maria-n_25",
+          "line_start": 22,
+          "line_end": 24,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관은 정말 사관학교를 정상적으로 갓 졸업한 것이 맞는가 / 답: 실제로 어제 졸업한 일반 졸업생이 아니라 클론 7호를 어제 갓 사관학교를 졸업한 인물로 신분을 준비해 투입한 것이다(maria-n_25 L22-L24) / 근거: 카운터스 합류 수송기 출발 직전 닥터 마리아가 지휘관은 어제 갓 사관학교를 졸업한 인물로 신분이 준비되어 있다고 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_02",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "아니스: ···사관 학교 졸업한 것, 맞지?"
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line_start": 22,
+          "line_end": 24,
+          "quote": "마리안: 지휘관은요?\n닥터 마리아: 깔끔해. 애초에 어제 갓 사관학교를 졸업한 인물로 되어 있으니까.\n닥터 마리아: 신분도 다 준비되어 있으니까, 문제 없을거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "사관학교 졸업 신분 관련 장면을 찾기 위해 grep '사관학교'로 확인한 maria-n_25 L23"
+      ]
+    },
+    {
+      "link_id": "C1__046__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_02_07__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지상에 남은 사람이 없는데도 발전소가 얼마 전부터 가동되기 시작한 원인은 무엇인가 / 답: 발전소 지하에서 랩쳐들이 직접 기계를 조작해 발전소를 가동하고 있었다(main_02_07 L4-L12) / 근거: 발전소 괴현상을 조사하러 내부에 잠입한 일행이 기계 앞에 붙어 발전소를 조작하는 랩쳐들을 직접 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_04",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "시프티: 이유는 알 수 없습니다만, 얼마 전부터 가동을 실시했다 해요."
+        },
+        {
+          "scene_id": "main_02_04",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "시프티: 공식적으로 지상에 남은 사람의 수는 0명입니다.\n시프티: 하지만 예외는 있는 법이라, 해당 괴현상을 조사하기 위해 수 번의 시도가 있었지만."
+        },
+        {
+          "scene_id": "main_02_07",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "[OPTION TEXT=\"···발전소를 조작하고 있는 것 같아.\"]"
+        },
+        {
+          "scene_id": "main_02_07",
+          "line_start": 11,
+          "line_end": 12,
+          "quote": "라피: ···아니스. 잘 봐.\n라피: 조작하고 있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__046__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_13__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 마리안의 침식은 어떻게 방주에서 시작되었는가 / 답: 방주 내부에서 방호벽을 조작할 권한과 단독 회선을 가진 내통자가 코드네임 토커티브와 내통하여 니케에게 침식을 심어 지상으로 올려보냈다(main_04_15 L24-L48) / 근거: 엔더슨이 지휘관이 물었던 마리안의 침식 건을 직접 언급하며 방주 내 랩쳐 내통자의 존재와 침식 유입 수법을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_13",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "[OPTION TEXT=\"마리안의 침식은 방주에서 시작된 것 같은데, 여기에 대해 알고 있는 것이 있나?\"]"
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 24,
+          "line_end": 26,
+          "quote": "엔더슨: 방주 내에서 니케에게 침식을 걸어, 지상으로 올려 작전을 망치는 이들이 있네.\n엔더슨: 음. 이것 또한 확실하진 않군. 개인일지 단체일지도 모르니.\n엔더슨: 어쨌든 우린 그들을 랩쳐와 내통하고 있다고 판단했네."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 37,
+          "line_end": 38,
+          "quote": "엔더슨: 그런 고유 기술이 방주 내에서 니케에게 심어져, 지상으로 나간다.\n엔더슨: 내통자가 있다고 밖에 생각할 수 없지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '마리안의 침식'으로 확인한 main_04_15 L15 및 L24-L48"
+      ]
+    },
+    {
+      "link_id": "C1__046__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_13__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_14_17__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 마리안의 침식은 방주에서 누구에 의해 왜 시작되었는가 / 답: 방주 관리 A.I. 에닉이 방주를 습격하지 않는 대가로 코드네임 토커티브와 거래하여 니케에게 침식 코드를 심고 방호벽을 조작해 지상으로 올려보냈다(main_14_17 L99-L102) / 근거: 마리안에게 침식을 심은 방주 내통자에 대해 묻는 지휘관에게 에닉이 토커티브와의 거래 전말을 직접 자백한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_13",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "[OPTION TEXT=\"마리안의 침식은 방주에서 시작된 것 같은데, 여기에 대해 알고 있는 것이 있나?\"]"
+        },
+        {
+          "scene_id": "main_14_17",
+          "line_start": 99,
+          "line_end": 102,
+          "quote": "에닉: 코드 네임 토커티브는 저에게 거래를 걸어왔습니다.\n에닉: 방주를 습격하지 않는 대신, 일정 수의 니케를 주기적으로 제공해달라는.\n에닉: 그래서 저는 무작위로 니케를 선정해, 코드 네임 토커티브에게 받은 침식 코드를 심은 후.\n에닉: 방호벽을 조작해 지상으로 올려보냈습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "방주 내 침식 내통자 정체를 찾기 위해 grep '내통자'로 확인한 main_14_17 L82-L102"
+      ]
+    },
+    {
+      "link_id": "C1__046__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_02_13__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "maria-n_25",
+          "line_start": 63,
+          "line_end": 77,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 마리안의 침식은 방주에서 구체적으로 어떻게 시작되었는가 / 답: 마리안이 7호(지휘관)를 살리고 자신은 침식에 걸려 사살당한 니케로 처리되게 하려고 방주 내 연구소에서 스스로 강화 시술로 불리던 침식 시술을 받은 뒤 수송기에 탑승했다(maria-n_25 L63-L77) / 근거: 에닉이 마리아 모델에게 침식을 걸어 출동시키게 한 연구소에서 마리안이 침식 니케 처분 규칙을 확인한 뒤 시술을 마치고 수송기로 향한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_13",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "[OPTION TEXT=\"마리안의 침식은 방주에서 시작된 것 같은데, 여기에 대해 알고 있는 것이 있나?\"]"
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line_start": 63,
+          "line_end": 65,
+          "quote": "마리안: 침식에 걸린 니케는, 무조건 처분하는 것이 방주의 규칙이죠?\n마리안: 딱히 머리를 열어보거나 하지도 않을테고요.\n마리안: 그냥 [침식에 걸려서 사살당한 니케]가 되겠네요."
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "[강화 시술]을 마친 마리안이 일어난다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "maria-n_25의 수송기 출동 직전 장면을 show로 확인한 maria-n_25 L63-L77"
+      ]
+    },
+    {
+      "link_id": "C1__046__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_03_02__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 슈엔이 비밀 작전으로 포획하라고 지시한 특정 랩쳐는 무엇인가 / 답: 신호가 잡히지 않고 어떤 랩쳐 규격에도 부합하지 않는 특수 개체 '코드 네임 토커티브'다(main_03_02 L10-L14) / 근거: 같은 비밀 작전 중 포인트에 도착한 미하라와 유니가 잡으러 온 랩쳐가 코드네임 토커티브임을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_00",
+          "line_start": 13,
+          "line_end": 14,
+          "quote": "네온: 특정 랩쳐를 포획하라고 했던 것 같은데요. 그게 가능한가요?\n미하라: 그걸 위한 스쿼드니까. 나와 유니는."
+        },
+        {
+          "scene_id": "main_03_02",
+          "line_start": 12,
+          "line_end": 14,
+          "quote": "미하라: 그래. 코드 네임 토커티브.\n미하라: 그 어떤 랩쳐의 규격에도 부합되지 않는 특수 객체.\n미하라: 우린 그 녀석을 잡으러 온 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__046__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_03_05__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 미하라와 유니는 어떤 방법으로 특정 랩쳐를 포획할 수 있는가 / 답: 유니가 상대의 특정 감각을 꺼버리고 미하라가 감각을 교환해 랩쳐를 무력화시킨 다음 포획한다(main_03_05 L20-L26) / 근거: 교전 중 유니의 능력을 본 라피가 랩쳐 포획 능력과 관계가 있는지 묻자 미하라가 포획 방식을 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_00",
+          "line_start": 13,
+          "line_end": 14,
+          "quote": "네온: 특정 랩쳐를 포획하라고 했던 것 같은데요. 그게 가능한가요?\n미하라: 그걸 위한 스쿼드니까. 나와 유니는."
+        },
+        {
+          "scene_id": "main_03_05",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "라피: 무슨 짓을 한 거지? 랩쳐 포획 능력과 관계가 있는 건가?"
+        },
+        {
+          "scene_id": "main_03_05",
+          "line_start": 22,
+          "line_end": 26,
+          "quote": "미하라: 유니의 능력은 상대의 특정 감각을 꺼버리는 거야.\n유니: 응! 빠지직! 하고 쏴서 끌 수 있어!\n미하라: 내 능력은, 겪어봐서 알겠지만 감각을 교환하는 거고.\n라피: 니케 용 능력이 아니었다는 얘긴가?\n미하라: 맞아. 이걸 사용해서 랩쳐를 무력화 시킨 다음, 포회···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__046__011",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "wordless_08",
+          "line_start": 3,
+          "line_end": 16,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 슈엔은 왜 통신망까지 차단하며 비밀 작전으로 특정 랩쳐 포획을 진행했는가 / 답: 독자적인 니케 개발 업적을 세우기 위한 프로젝트 워드리스의 첫 목표인 토커티브 포획을 달성하려고 상부 보고 없이 일개 지휘관에게 독자적으로 불법 의뢰한 작전이라 외부 노출을 막아야 했기 때문이다(wordless_08 L3-L16) / 근거: 미하라가 워드리스의 토커티브 포획 작전이 슈엔의 독자적 불법 의뢰였으며 외부 노출로 처벌받게 되었다고 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_00",
+          "line_start": 7,
+          "line_end": 12,
+          "quote": "미하라: 그건 안될걸? 슈엔이 통신망을 다 차단해놨거든.\n라피: ··· ···.\n라피: 이 작전. 단순한 작전이 아니군.\n미하라: 후후. 맞아. 이른바.\n미하라: 비.밀.작.전. 이라는 거지.\n아니스: 구린 냄새가 풀풀 나는데."
+        },
+        {
+          "scene_id": "wordless_08",
+          "line_start": 12,
+          "line_end": 16,
+          "quote": "미하라: 첫 번째 목표인 특이 랩쳐, [토커티브]를 번번이 포획하지 못하는 등,\n미하라: 임무 실패를 반복하다가,\n미하라: 슈엔이 독자적으로 일개 지휘관에게 불법 의뢰를 했다는 것을 외부로 노출시켜.\n미하라: 기억 소거형에 처하는 등.\n미하라: 결국 외부에 노출하지 못하는 애물단지가 되어,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "워드리스와 토커티브 포획 작전의 배경을 찾기 위해 grep '워드리스'·'토커티브'로 확인한 wordless_08 L2-L16"
+      ]
+    },
+    {
+      "link_id": "C1__046__012",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "mihara_04__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 미하라는 왜 맞는 것과 상처로 인한 고통을 좋아하며 타인이 치료하는 것을 거부하는가 / 답: 인간 시절 희소병으로 모든 감각을 잃었을 때 유일하게 느낀 고통을 통해 살아있음을 실감했고, 지금도 고통을 자신을 다시 태어나게 해 준 기적으로 여기기 때문이다(mihara_04 L55-L65) / 근거: 미하라가 지휘관에게 자신의 과거 사연과 고통을 좋아하는 성향의 이유를 직접 고백한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_01",
+          "line_start": 13,
+          "line_end": 14,
+          "quote": "미하라: 후후. 괜찮아.\n미하라: 좋아하거든. 맞는 거."
+        },
+        {
+          "scene_id": "main_03_01",
+          "line_start": 27,
+          "line_end": 30,
+          "quote": "미하라: 내 상처는 건드리지 마.\n유니: 응. 미하라는 상처를 좋아하니까, 남이 건드는 거 싫어해.\n아니스: ···무슨 말이야 대체?\n미하라: 그냥 그렇게만 알아둬."
+        },
+        {
+          "scene_id": "mihara_04",
+          "line_start": 55,
+          "line_end": 58,
+          "quote": "미하라: 대부분의 사람은 고통을 그저 피해야 할 것, 껄끄러운 것으로 생각하지.\n미하라: 하지만 나는 그 고통으로 인해 삶을 느꼈어.\n미하라: 그건 지금도 마찬가지고.\n미하라: 난 지금 살아있어."
+        },
+        {
+          "scene_id": "mihara_04",
+          "line_start": 64,
+          "line_end": 65,
+          "quote": "미하라: 고통은 날 다시 태어나게 해 준 기적이야.\n미하라: 그걸 부정하고 싶지 않아."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "미하라의 고통 선호 성향 이유를 확인하기 위해 미하라 캐릭터 에피소드를 show로 읽어 확인한 mihara_04 L55-L65"
+      ]
+    },
+    {
+      "link_id": "C1__046__013",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 어떤 랩쳐 규격에도 부합하지 않고 특이한 발자국만 남기는 코드네임 토커티브는 어떤 특징을 가진 개체인가 / 답: 인간의 말을 구사하고 발을 뻗어 상대를 차 날리는 특수한 발 모양의 지능형 랩쳐다(main_04_04 L48-L57) / 근거: 추적하던 일행 앞에 토커티브가 직접 나타나 말을 걸고 유니와 미하라가 발 모양으로 토커티브임을 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_02",
+          "line_start": 12,
+          "line_end": 13,
+          "quote": "미하라: 그래. 코드 네임 토커티브.\n미하라: 그 어떤 랩쳐의 규격에도 부합되지 않는 특수 객체."
+        },
+        {
+          "scene_id": "main_03_02",
+          "line_start": 17,
+          "line_end": 18,
+          "quote": "라피: 특징은 있나? 교전 이력은?\n미하라: 아무것도 몰라. 실제로 본 적도 없으니까."
+        },
+        {
+          "scene_id": "main_04_04",
+          "line_start": 48,
+          "line_end": 50,
+          "quote": "토커티브: [조금 가지고 놀다 죽이려 했는데, 이런 행운이라니.]\n네온: 마, 말하고 있는데요?\n아니스: 아니, 랩쳐잖아!"
+        },
+        {
+          "scene_id": "main_04_04",
+          "line_start": 55,
+          "line_end": 56,
+          "quote": "유니: 미, 미하라! 발! 발 모양!\n미하라: ···토커티브···!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "이어지는 4챕터 장면을 show 및 grep '토커티브'로 확인한 main_04_04 L48-L57"
+      ]
+    },
+    {
+      "link_id": "C1__046__014",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 규격 외 특수 개체 코드네임 토커티브는 어떤 특징을 가지고 있는가 / 답: 손상된 신체를 순식간에 재생하는 자가 수복 기능을 가지고 있다(main_04_05 L26-L28) / 근거: 아무 특징도 알려지지 않았던 토커티브와의 첫 교전에서 스스로 뜯어낸 몸을 즉시 수복하는 기능이 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_02",
+          "line_start": 17,
+          "line_end": 18,
+          "quote": "라피: 특징은 있나? 교전 이력은?\n미하라: 아무것도 몰라. 실제로 본 적도 없으니까."
+        },
+        {
+          "scene_id": "main_04_05",
+          "line_start": 27,
+          "line_end": 28,
+          "quote": "토커티브는 순식간에 몸을 수복했다.\n아니스: 자, 자가 수복이라고!? 랩쳐한테 그런 기능이···!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "이어지는 4챕터 토커티브 교전 장면을 show 및 grep '토커티브'로 확인한 main_04_05 L26-L28"
+      ]
+    },
+    {
+      "link_id": "C1__046__015",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 어떤 규격에도 부합하지 않는 특수 개체 코드네임 토커티브의 정체와 특징은 무엇인가 / 답: 사고하고 언어를 구사하며 방주 내 내통자와 연결되어 니케에게 침식을 심는 특수 랩쳐다(main_04_15 L32-L48) / 근거: 엔더슨이 코드네임 토커티브를 직접 지칭하며 그 특성과 방주 내통 연루 사실을 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_02",
+          "line_start": 12,
+          "line_end": 13,
+          "quote": "미하라: 그래. 코드 네임 토커티브.\n미하라: 그 어떤 랩쳐의 규격에도 부합되지 않는 특수 객체."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 32,
+          "line_end": 33,
+          "quote": "엔더슨: 하지만 자네는 만났네. 코드네임 토커티브와.\n엔더슨: 사고하고 언어를 하는 랩쳐지."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "엔더슨: 내통자는 토커티브와 이어져있네. 이건 확실하다고보네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__046__016",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "wordless_08",
+          "line_start": 3,
+          "line_end": 13,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 슈엔은 왜 몇 달 전부터 워드리스에게 코드네임 토커티브를 잡으라고 지시했는가 / 답: 선대 CEO들과 견줄 위업을 세워 독자적인 니케 개발 기술을 가진 개발자로 자리매김하기 위해 추진한 랩쳐 포획 프로젝트 '워드리스'의 첫 번째 목표가 특이 랩쳐 토커티브 포획이었기 때문이다(wordless_08 L3-L13) / 근거: 미하라가 프로젝트 워드리스의 설립 목적과 첫 번째 목표였던 토커티브 포획 임무를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_02",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "라피: 이유는?\n미하라: 그것까진 모르겠네. 몇 달 전부터 그걸 잡으라고만 했지, 이유까진 안 알려줬거든."
+        },
+        {
+          "scene_id": "wordless_08",
+          "line_start": 4,
+          "line_end": 6,
+          "quote": "미하라: 선대들과 견줄 위업을 달성하지 못한 슈엔을,\n미하라: 대외적으로 독자적인 니케 개발 기술을 가진 개발자로 자리매김하게 만들어줄,\n미하라: 프로젝트 워드리스 출신의 니케들이다."
+        },
+        {
+          "scene_id": "wordless_08",
+          "line_start": 10,
+          "line_end": 12,
+          "quote": "미하라: 랩쳐 포획 능력을 지닌 니케를 만들기 위해 만들어진 프로젝트였으나.\n미하라: 기대치에 미치지 못한 특수 능력들과,\n미하라: 첫 번째 목표인 특이 랩쳐, [토커티브]를 번번이 포획하지 못하는 등,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "토커티브 포획 지시 이유를 찾기 위해 grep '워드리스'·'토커티브'로 확인한 wordless_08 L3-L13"
+      ]
+    },
+    {
+      "link_id": "C1__046__017",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "wordless_08",
+          "line_start": 3,
+          "line_end": 13,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 슈엔은 왜 몇 달 전부터 지휘관을 40명 넘게 일회용으로 소모하면서까지 토커티브 포획 작전을 반복시켰는가 / 답: 자신을 독자적인 니케 개발자로 자리매김하게 할 프로젝트 워드리스의 첫 번째 목표인 토커티브 포획에 번번이 실패하면서도 성과를 내려 했기 때문이다(wordless_08 L3-L13) / 근거: 미하라가 슈엔의 업적을 위한 프로젝트 워드리스가 첫 목표 토커티브 포획에서 임무 실패를 반복했다고 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_02",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "미하라: 그것까진 모르겠네. 몇 달 전부터 그걸 잡으라고만 했지, 이유까진 안 알려줬거든."
+        },
+        {
+          "scene_id": "main_03_02",
+          "line_start": 35,
+          "line_end": 36,
+          "quote": "라피: 이렇게 일회용으로 사용된 지휘관이, 지금까지 몇 명이나 있었지?\n미하라: 모르긴 몰라도. 40명은 넘을 거야."
+        },
+        {
+          "scene_id": "wordless_08",
+          "line_start": 4,
+          "line_end": 6,
+          "quote": "미하라: 선대들과 견줄 위업을 달성하지 못한 슈엔을,\n미하라: 대외적으로 독자적인 니케 개발 기술을 가진 개발자로 자리매김하게 만들어줄,\n미하라: 프로젝트 워드리스 출신의 니케들이다."
+        },
+        {
+          "scene_id": "wordless_08",
+          "line_start": 12,
+          "line_end": 13,
+          "quote": "미하라: 첫 번째 목표인 특이 랩쳐, [토커티브]를 번번이 포획하지 못하는 등,\n미하라: 임무 실패를 반복하다가,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "반복된 토커티브 포획 임무의 이유를 찾기 위해 grep '워드리스'·'토커티브'로 확인한 wordless_08 L3-L13"
+      ]
+    },
+    {
+      "link_id": "C1__046__018",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_03__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_02__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 벽면을 타고 추적을 피한 듯한 토커티브의 행동은 단순 회피 알고리즘인가, 아니면 지능에 의한 행동인가 / 답: 단순 알고리즘이 아니라 지능을 가지고 추적자들을 매복 지점으로 유인한 것이었다(main_04_02 L4-L7) / 근거: 매복에 걸리자 네온이 앞 장면의 '랩쳐는 지능이 없다'는 말을 직접 되묻고 미하라가 그 말을 철회하며 토커티브에게 유인당했다고 인정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_03",
+          "line_start": 13,
+          "line_end": 16,
+          "quote": "미하라: ···그리고, 우리가 추적하고 있다는 걸 눈치채고 있고.\n네온: ···지능이 있다는 것처럼 들리는데요.\n미하라: 후후. 그럴 리가. 랩쳐는 지능이 없어.\n미하라: 추적이 붙었을 때 따돌려라. 그 정도 알고리즘이겠지."
+        },
+        {
+          "scene_id": "main_04_02",
+          "line_start": 5,
+          "line_end": 7,
+          "quote": "미하라: 아무래도 우리, 유인당한 것 같지?\n네온: 랩쳐는 지능이 없다고 하지 않았나요?\n미하라: 철회할게. 우린 지금 토커티브에게 걸려들었어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "이어지는 4챕터 장면을 show 및 grep '토커티브'로 확인한 main_04_02 L4-L7"
+      ]
+    },
+    {
+      "link_id": "C1__046__019",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_03__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 토커티브는 일반 4족 보행 랩쳐와 달리 벽면을 밟고 기동하며 지능이 있는 것처럼 행동했는가 / 답: 인간의 말을 구사할 정도의 지능과 상대를 발로 차 날릴 수 있는 특수한 발 구조를 가진 랩쳐이기 때문이다(main_04_04 L48-L56) / 근거: 추적 끝에 조우한 토커티브가 직접 말을 하고 발로 라피를 차며 특이한 발 모양을 드러낸다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_03",
+          "line_start": 10,
+          "line_end": 11,
+          "quote": "라피: ···벽면을 딛고 기동할 수 있다고? 랩쳐가?\n아니스: 안되잖아 그거. 기본적으로 4족 보행 아니었어?"
+        },
+        {
+          "scene_id": "main_03_03",
+          "line_start": 14,
+          "line_end": 15,
+          "quote": "네온: ···지능이 있다는 것처럼 들리는데요.\n미하라: 후후. 그럴 리가. 랩쳐는 지능이 없어."
+        },
+        {
+          "scene_id": "main_04_04",
+          "line_start": 48,
+          "line_end": 49,
+          "quote": "토커티브: [조금 가지고 놀다 죽이려 했는데, 이런 행운이라니.]\n네온: 마, 말하고 있는데요?"
+        },
+        {
+          "scene_id": "main_04_04",
+          "line_start": 54,
+          "line_end": 56,
+          "quote": "랩쳐가 뻗은 발에 차여 뒤로 날아가 잔해에 처박혔다.\n유니: 미, 미하라! 발! 발 모양!\n미하라: ···토커티브···!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "이어지는 4챕터 장면을 show 및 grep '토커티브'로 확인한 main_04_04 L48-L56"
+      ]
+    },
+    {
+      "link_id": "C1__046__020",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_03__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 유니는 왜 상으로 상대의 몸을 강하게 꼬집으며 집착하는가 / 답: 평소 감각을 느끼지 못하는 무감각증이지만 타인과 접촉했을 때만 감각을 느껴 계속 타인과의 접촉을 원하기 때문이다(main_04_01 L23-L26) / 근거: 이어지는 추적 작전 중 유니가 지휘관의 손을 꽉 쥐고 놓지 않자 미하라가 유니의 무감각증과 접촉 집착 이유를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_03",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "유니는 미하라의 종아리 부분 일부를 강하게 꼬집었다."
+        },
+        {
+          "scene_id": "main_03_03",
+          "line_start": 27,
+          "line_end": 30,
+          "quote": "유니: 미하라. 많이 아파? 응?\n미하라: 응···! 많이···! 아파···!\n아니스: 아, 잠깐. 나 지금 머리가 좀 혼란스러운데.\n네온: 스승님. 이게 무슨 일일까요?"
+        },
+        {
+          "scene_id": "main_04_01",
+          "line_start": 23,
+          "line_end": 26,
+          "quote": "미하라: ···무감각증이거든.\n미하라: 하지만 어째서인지 타인과 접촉했을 때만 감각을 느껴.\n미하라: 원래 그런 거였는지, 능력을 받아서 그런 건지는 모르는데.\n미하라: 그러다 보니 계속 타인과의 접촉을 원해."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "이어지는 4챕터 장면을 show로 확인한 main_04_01 L23-L26"
+      ]
+    },
+    {
+      "link_id": "C1__046__021",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_03__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "yuni_00",
+          "line_start": 65,
+          "line_end": 72,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 유니는 왜 단순한 접촉이 아니라 상대에게 고통을 주는 것을 상으로 삼아 즐기는가 / 답: 타인과 살을 맞댈 때만 감각을 느끼는 상태에서 부드러운 접촉이 반복되어 감각이 무뎌지자 더 강한 자극을 느끼기 위해 아프게 자극하게 되었기 때문이다(yuni_00 L65-L72) / 근거: 유니가 다른 이들을 아프게 자극하는 이유를 미하라가 카운터스에게 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_03",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "유니는 미하라의 종아리 부분 일부를 강하게 꼬집었다."
+        },
+        {
+          "scene_id": "main_03_03",
+          "line_start": 27,
+          "line_end": 28,
+          "quote": "유니: 미하라. 많이 아파? 응?\n미하라: 응···! 많이···! 아파···!"
+        },
+        {
+          "scene_id": "yuni_00",
+          "line_start": 65,
+          "line_end": 68,
+          "quote": "미하라: 유니는 있지. 평소 때는 아무런 감각을 못 느껴.\n미하라: 그런데 타인이랑 직접 살을 맞댈 때만 감각을 느껴.\n미하라: 당연히 처음에는 어루만진다거나, 쓰다듬는다거나.\n미하라: 이런 소프트한 플레이가 주 종목이었는데."
+        },
+        {
+          "scene_id": "yuni_00",
+          "line_start": 71,
+          "line_end": 72,
+          "quote": "미하라: 반복하면 감각이 무뎌지고, 좀 더 강한 자극을 원하는 법이잖아♡\n미하라: 그래서 때리는 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "유니의 가학 성향 원인을 확인하기 위해 유니 캐릭터 에피소드를 show로 읽어 확인한 yuni_00 L65-L72"
+      ]
+    },
+    {
+      "link_id": "C1__046__022",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_05__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "wordless_08",
+          "line_start": 3,
+          "line_end": 10,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 슈엔은 왜 미하라와 유니에게 특수한 랩쳐 포획 능력을 붙여 제작했는가 / 답: 선대 CEO들과 견줄 업적을 달성해 독자적인 니케 개발자로 대외적 입지를 굳히려고 헬레틱·랩쳐 포획용 니케를 만드는 '프로젝트 워드리스'를 추진했기 때문이다(wordless_08 L3-L10) / 근거: 미하라가 슈엔이 독자 기술로 자신들을 제작한 프로젝트 워드리스의 설립 이유와 목표를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_05",
+          "line_start": 42,
+          "line_end": 45,
+          "quote": "미하라: 우릴 만든 건 슈엔이야.\n라피: ··· ···.\n미하라: 미실리스 인더스트리의 CEO. 우리한테 무슨 짓을 어떻게 왜 했는지.\n미하라: 친절하게 설명해 줄 것 같아?"
+        },
+        {
+          "scene_id": "wordless_08",
+          "line_start": 3,
+          "line_end": 6,
+          "quote": "미하라: 미실리스 인더스트리의 3대 CEO 슈엔이 프로젝트 [메티스]에 이어 독자적인 기술로 만들어낸 니케들로.\n미하라: 선대들과 견줄 위업을 달성하지 못한 슈엔을,\n미하라: 대외적으로 독자적인 니케 개발 기술을 가진 개발자로 자리매김하게 만들어줄,\n미하라: 프로젝트 워드리스 출신의 니케들이다."
+        },
+        {
+          "scene_id": "wordless_08",
+          "line_start": 9,
+          "line_end": 10,
+          "quote": "미하라: 헬레틱 포획을 목표로,\n미하라: 랩쳐 포획 능력을 지닌 니케를 만들기 위해 만들어진 프로젝트였으나."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "슈엔의 워드리스 제작 이유를 찾기 위해 grep '워드리스'로 확인한 wordless_08 L3-L10"
+      ]
+    },
+    {
+      "link_id": "C1__046__023",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_05__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "mihara_04__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 인간 시절의 이상향을 기반으로 제작된다는 니케의 원리와 슈엔의 개입은 미하라가 니케가 될 때 어떻게 작용했는가 / 답: 희소병으로 고통만을 통해 삶을 느끼던 인간 시절 미하라에게 니케가 되면 좋아하는 고통을 마음대로 느낄 수 있게 만들어주겠다고 제안하여 니케로 만들었다(mihara_04 L45-L49) / 근거: 미하라의 인간 시절 회상에서 반말투의 인물이 미하라의 고통 추구 욕망을 이용해 니케화를 제안하는 경위가 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_05",
+          "line_start": 40,
+          "line_end": 42,
+          "quote": "라피: 니케의 신체는 인간일 때의 이상향을 기반으로 만들어져.\n라피: 네가 원하지 않은 능력이 붙었을 리 없···.\n미하라: 우릴 만든 건 슈엔이야."
+        },
+        {
+          "scene_id": "mihara_04",
+          "line_start": 45,
+          "line_end": 49,
+          "quote": "[야. 너 니케가 되어볼래?]\n니케가 되는 건 싫어. 무서우니까.\n[네가 좋아하는 그거. 마음대로 할 수 있게 만들어줄게.]\n그러면.\n나는 계속 살아있다고 느낄 수 있는 거야?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "미하라의 니케화 경위를 확인하기 위해 미하라 캐릭터 에피소드를 show로 읽어 확인한 mihara_04 L45-L49"
+      ]
+    },
+    {
+      "link_id": "C1__046__024",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_03_06__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_15_12__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지휘관이 계획하거나 작성한 적도 없는데 전초기지 방에서 나왔다는 '방주 테러 계획서'의 정체는 무엇인가 / 답: 지휘관을 갱생관에 보낼 약점으로 삼기 위해 조작된 가짜 문서이며 슈엔이 처분하지 않고 계속 보관하고 있었다(main_15_12 L71-L91) / 근거: 슈엔이 다시 방주 테러 계획서를 꺼내 협박하자 지휘관이 조작된 문서라고 지적하고 슈엔이 진위 여부는 알 게 아니라며 협박 수단임을 드러낸다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_03_06",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "거기서 방주 테러 계획서가 나왔더라?"
+        },
+        {
+          "scene_id": "main_03_06",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "그런 걸 계획한 적도, 적은 적도 없다"
+        },
+        {
+          "scene_id": "main_15_12",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "네 방주 테러 계획서"
+        },
+        {
+          "scene_id": "main_15_12",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "조작된 문서지"
+        },
+        {
+          "scene_id": "main_15_12",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "알 게 뭐야"
+        },
+        {
+          "scene_id": "main_15_12",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "이걸로 널 갱생관에 처박아줄 수 있다는 거지"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "방주 테러 계획서의 후속 언급을 찾기 위해 grep '테러 계획서'로 확인한 main_15_12 L72"
+      ]
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "main_02_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_06__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_07__clh_001",
+      "reason": "짝 없음",
+      "note": "랩쳐들이 왜 전례 없이 인간의 발전소 기계를 조작하고 있었는지"
+    },
+    {
+      "item_id": "main_02_07__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_08__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_09__clh_001",
+      "reason": "짝 없음",
+      "note": "[검색 예산 소진] 지휘관과 카운터스가 기존과 차원이 다른 랩쳐들을 상대로 이질적인 실전 결과를 낸 요인이 무엇인지"
+    },
+    {
+      "item_id": "main_02_09__clh_002",
+      "reason": "짝 없음",
+      "note": "인간의 기계를 조작하며 진화하는 랩쳐의 진짜 목적이 무엇인지"
+    },
+    {
+      "item_id": "main_02_12__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_12__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_13__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_13__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_03_05__clh_001",
+      "reason": "짝 없음",
+      "note": "[검색 예산 소진] 랩쳐에게 감각이 있는지, 그리고 랩쳐 포획용으로 개발된 유니와 미하라의 감각 제어 능력이 왜 니케와 인간에게까지 통하는지"
+    },
+    {
+      "item_id": "main_03_05__clh_002",
+      "reason": "짝 없음",
+      "note": "슈엔이 미하라와 유니를 제작할 때 구체적으로 무슨 시술을 어떻게 가했는지와 유니가 니케가 된 경위"
+    },
+    {
+      "item_id": "main_03_06__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_02_00__clh_003",
+      "reason": "짝 없음",
+      "note": "도시 봉쇄 때 도시 내부에 남아 있던 인간들이 어떻게 되었는지"
+    }
+  ],
+  "merge_suggestions": []
+}
