@@ -1076,6 +1076,16 @@ export const diffCShards = (before, after) => {
   };
 };
 
+/**
+ * 앞 회차 표본을 지금 다시 만들 때 새로 뽑힌 단위 ID(감사한 입력에 없던 unit 항목).
+ * 다른 단위의 상태가 바뀌어 층 모집단이 늘면 표본이 늘 수 있다. 그 단위 자체는 안 바뀌었어도 감사받은 적이 없으므로
+ * 뒤 회차 외부 변경 항목으로 넣는다(이어 인정 조건 3)
+ */
+export const newSampleUnits = (auditedItems, regeneratedItems) => {
+  const was = new Set(auditedItems.map((x) => x.audit_id));
+  return regeneratedItems.filter((x) => x.kind === 'unit' && !was.has(x.audit_id)).map((x) => x.item_id).sort(cmpStr);
+};
+
 /** 두 shard 사이에 연결(바뀐 연결의 지금 끝, 지운 연결의 끝)·자기 상태가 달라진 단서 단위 ID */
 export const shardDriftUnits = (before, after) => {
   const d = diffCShards(before, after);
@@ -1728,6 +1738,8 @@ const main = async () => {
       return { bundle_id: b.bundle_id, ...currentStamp(P, b.bundle_id, r.bundle) };
     });
     // 이번 회차 연결이 바꾼 앞 회차 상태 + 앞 회차 감사 뒤 shard 수정으로 바뀐 상태(auditDrift). 단위마다 한 항목
+    // 앞 회차 표본 다시 만들기는 재귀로 거듭 불리므로 한 번 실행 안에서는 회차별로 한 번만 만든다(감사 입력 파일은 실행 중 그대로)
+    const regenCache = new Map();
     const externalOf = (w, entries, judged, statuses) => {
       if (w <= 1) return [];
       const out = externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave: w });
@@ -1756,6 +1768,14 @@ const main = async () => {
             const st = statuses.get(id);
             out.push({ item_id: id, wave_of_unit: st.wave, before: st.status, after: st.status, before_conf: st.conf, after_conf: st.conf, clue_links: st.clue_links, cause: `회차 ${v} 감사 뒤 shard 수정(연결·자기 상태 변경, 상태 같음)` });
           }
+        }
+        // 층 모집단이 바뀌어 회차 v 표본에 새로 뽑힌 단위(감사받은 적 없음)
+        if (!regenCache.has(v)) regenCache.set(v, buildInput(v, audited, audited.judge_family, audited.rate).items);
+        for (const id of newSampleUnits(audited.items, regenCache.get(v))) {
+          if (seen.has(id) || !statuses.has(id)) continue;
+          seen.add(id);
+          const st = statuses.get(id);
+          out.push({ item_id: id, wave_of_unit: st.wave, before: st.status, after: st.status, before_conf: st.conf, after_conf: st.conf, clue_links: st.clue_links, cause: `회차 ${v} 감사 뒤 층 모집단 변화로 회차 ${v} 표본에 새로 들어감(단위 자체는 안 바뀜)` });
         }
       }
       return out;

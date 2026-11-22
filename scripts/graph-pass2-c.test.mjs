@@ -16,6 +16,7 @@ import {
   carryOverAudit,
   diffCShards,
   withUserAliases,
+  newSampleUnits,
   shardDriftUnits,
   auditDrift,
   conflictBundles,
@@ -474,6 +475,18 @@ test('conflictBundles: 일부 겹침 충돌은 만난 연결(meets)의 묶음도
   const c = { kind: 'partial_line_item_overlap', link_id: 'C1__002__001', bundle_id: 'C1__002', lines: 'lines:s:60-70', overlapped_items: ['s__clh_001', 's__clh_002'], meets: ['C1__028__004', 'C1__028__010'] };
   assert.deepEqual(conflictBundles(c), ['C1__002', 'C1__028']);
   assert.deepEqual(conflictBundles({ kind: 'status', item_id: 'x', own: { bundle_id: 'C1__006' }, links: [{ link_id: 'C1__039__006', bundle_id: 'C1__039', wave: 2 }] }), ['C1__006', 'C1__039']);
+});
+
+test('newSampleUnits: 다시 만든 표본에 새로 들어온 unit 항목만 낸다', () => {
+  const audited = [{ audit_id: 'C1__001:a__clh_001', kind: 'unit', item_id: 'a__clh_001' }, { audit_id: 'ext:b__clh_001', kind: 'external_change', item_id: 'b__clh_001' }];
+  const regenerated = [
+    ...audited,
+    { audit_id: 'C1__001:c__clh_002', kind: 'unit', item_id: 'c__clh_002' },
+    { audit_id: 'C1__001:c__clh_001', kind: 'unit', item_id: 'c__clh_001' },
+    { audit_id: 'ext:d__clh_001', kind: 'external_change', item_id: 'd__clh_001' },
+  ];
+  assert.deepEqual(newSampleUnits(audited, regenerated), ['c__clh_001', 'c__clh_002']);
+  assert.deepEqual(newSampleUnits(audited, audited), []);
 });
 
 test('shardDriftUnits: 상태가 같아도 바뀐 연결·지운 연결·자기 상태의 단위를 낸다', () => {
