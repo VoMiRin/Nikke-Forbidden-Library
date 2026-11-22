@@ -1,0 +1,684 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__123",
+  "candidate_links": [
+    {
+      "link_id": "C1__123__001",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_22__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 스노우 화이트가 준비됐는지 물은 '그것'은 무엇인가 / 답: 에블라 입자를 빨아들여 열충격파로 전환하는 개조 무장 '네이키드 킹'(last_kingdom_43 L90-L93) / 근거: last_kingdom_43 L106에서 그 능력 개방까지 에블라 입자를 1년 정도 더 모았어야 했다고 설명해 앞 장면의 '아직 1년은 더 모아야 해요'를 직접 받으며, L144-L145에서 순례자들도 네이키드 킹을 알고 있었음이 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_22", "line_start": 59, "line_end": 59, "quote": "스노우 화이트: 그건 준비됐나?" },
+        { "scene_id": "last_kingdom_22", "line_start": 60, "line_end": 60, "quote": "크라운: 아뇨. 아직 1년은 더 모아야 해요." },
+        { "scene_id": "last_kingdom_43", "line_start": 90, "line_end": 91, "quote": "차임: 이름하여 [네이키드 킹].\n차임: 저것은 원래 골칫덩이인 에블라 입자를 빨아들여 열 에너지로 전환하는 장치였다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__002",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_22__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 크라운이 '그것'을 쓰기 위해 아직 1년은 더 모아야 한다고 한 것은 무엇인가 / 답: 네이키드 킹의 능력 개방을 위해 크라운이 몸속에 모으고 있던 에블라 입자(last_kingdom_43 L104-L106) / 근거: '아직 1년은 더 모아야 해요'(last_kingdom_22 L60)를 '능력 개방까지 아직 1년 정도 에블라 입자를 더 모았어야 했다'(last_kingdom_43 L106)로 직접 받아 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_22", "line_start": 60, "line_end": 61, "quote": "크라운: 아뇨. 아직 1년은 더 모아야 해요.\n스노우 화이트: ···쓰기 어렵겠군." },
+        { "scene_id": "last_kingdom_43", "line_start": 104, "line_end": 104, "quote": "차임: 아가씨는 곳곳을 돌아다니며 몸속에 에블라 입자를 모으고 있었다." },
+        { "scene_id": "last_kingdom_43", "line_start": 106, "line_end": 106, "quote": "차임: 아무튼, 능력 개방까지 아직 1년 정도 에블라 입자를 더 모았어야 했다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__003",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_23__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_22_00", "line_start": 3, "line_end": 17, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 라푼젤이 말한 '방주 쪽에 난 큰일'과 지휘관에게 통신이 닿지 않은 사정은 무엇인가 / 답: 방주 내부에 랩쳐가 침공하고 통신이 단절된 사태(main_22_00 L3-L22) / 근거: 지상의 순례자가 방주 쪽에 큰일이 나 지휘관이 바쁘고 통신이 닿지 않는다고 간접 언급한 내용이 방주 랩쳐 침공 및 통신 두절 사태와 부합한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_23", "line_start": 11, "line_end": 12, "quote": "라푼젤: 방주 쪽에 큰일이 난 모양이에요. 아마 많이 바쁘겠죠.\n라푼젤: 연락은 몇 번 넣어봤지만, 통신 상태가 안 좋은지 닿지 않네요." },
+        { "scene_id": "main_22_00", "line_start": 3, "line_end": 3, "quote": "네온: 방주에··· 랩··· 쳐?" },
+        { "scene_id": "main_22_00", "line_start": 16, "line_end": 17, "quote": "가능한 모든 곳에 연락을 해봤지만.\n아무런 반응이 없다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "메인 스토리 방주 침공·통신 두절 사태를 떠올려 grep 통신으로 확인한 main_22_00 L3-L22"
+      ]
+    },
+    {
+      "link_id": "C1__123__004",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_23__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "eden_spear_01__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 라푼젤이 지상에 있으면서 전해 들은 '방주 쪽의 큰일'은 무슨 사건인가 / 답: 방주 테러와 방주 내 토커티브·인디빌리아 부활 및 축출 후 수습 사태(eden_spear_01 L105-L121) / 근거: 토커티브와 인디빌리아가 방주에서 부활해 밀려난 뒤 크라운 왕국을 습격하기까지의 시점과 방주 테러 수습이라는 정황이 맞물린다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_23", "line_start": 11, "line_end": 11, "quote": "라푼젤: 방주 쪽에 큰일이 난 모양이에요. 아마 많이 바쁘겠죠." },
+        { "scene_id": "eden_spear_01", "line_start": 105, "line_end": 105, "quote": "세실: 토커티브와 인디빌리아가 방주 안에서 부활했다는 첩보가 있어요." },
+        { "scene_id": "eden_spear_01", "line_start": 121, "line_end": 121, "quote": "세실: 방주 테러는 빠르게 진압되었고, 바로 수습에 들어간 모양이에요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__005",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "주워갈것들메모_01__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_26__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 고성 유적 근처 메모에서 수다쟁이 파츠와 함께 언급된 '전갈'(전갈 파츠의 주인)은 누구인가 / 답: 거대화하면 거대 기계 전갈로 변하는 헬레틱 인디빌리아(last_kingdom_26 L3-L8) / 근거: 고성(크라운 왕국) 전투에서 토커티브(수다쟁이)와 함께 행동하며 거대 기계 전갈의 모습을 드러내는 개체가 인디빌리아다.",
+      "supporting_evidence": [
+        { "scene_id": "주워갈것들메모_01", "line_start": 2, "line_end": 3, "quote": "고성 유적 근처(라고 하기엔 좀 먼 듯)\n전갈 파츠랑 수다쟁이 파츠가 있는 것 같음." },
+        { "scene_id": "last_kingdom_26", "line_start": 3, "line_end": 3, "quote": "인디빌리아의 몸이 기괴하게 꺾이며 확장되기 시작했다." },
+        { "scene_id": "last_kingdom_26", "line_start": 7, "line_end": 8, "quote": "그리고 그와 동시에 나타난 거대 기계 전갈은\n거대한 신체를 이용해 단숨에 성벽에 큰 구멍을 냈다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__006",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_27__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "hongryeon_blackshadow_00", "line_start": 81, "line_end": 89, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 홍련이 일대일에서는 누구에게도 지지 않는다고 말한 직후 문득 떠오른 과거 일대일 패배의 기억은 무엇인가 / 답: 갓데스 스쿼드 합류 당시 릴리바이스와 일대일로 맞붙었다가 주먹 한 방에 천장에 박혀 기절하며 완패한 일(hongryeon_blackshadow_00 L81-L89) / 근거: 스노우 화이트 앞에서 일대일 무패를 장담하다 떠올린 과거 패배이며, 일격에 기절했던 일대일 결투 패배 기록이 원문에 확인된다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_27", "line_start": 9, "line_end": 10, "quote": "홍련: 나는 일대일에서는 그 누구에게도 지지 않네.\n홍련: ···응? 뭔가 기억이···." },
+        { "scene_id": "hongryeon_blackshadow_00", "line_start": 84, "line_end": 84, "quote": "릴리바이스가 올려친 주먹에 홍련은 천장에 박혔다." },
+        { "scene_id": "hongryeon_blackshadow_00", "line_start": 89, "line_end": 89, "quote": "라푼젤: 기절한 것 같은데요?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "홍련의 과거 일대일 패배 일화를 떠올려 show로 확인한 hongryeon_blackshadow_00 L81-L89"
+      ]
+    },
+    {
+      "link_id": "C1__123__007",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_27__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "new_year_new_sword_03", "line_start": 2, "line_end": 14, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 홍련이 일대일에서는 누구에게도 지지 않는다고 말한 직후 문득 떠오른 과거 일대일 패배의 기억은 무엇인가 / 답: 과거 언니 장화와의 일대일 검술 대련에서 985전 975패 10무로 한 번도 이기지 못하고 패배를 거듭했던 일(new_year_new_sword_03 L2-L14) / 근거: 검술 일대일 승부에서 단 한 번도 이기지 못했던 홍련의 과거 대련 전적이 원문에 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_27", "line_start": 9, "line_end": 10, "quote": "홍련: 나는 일대일에서는 그 누구에게도 지지 않네.\n홍련: ···응? 뭔가 기억이···." },
+        { "scene_id": "new_year_new_sword_03", "line_start": 6, "line_end": 6, "quote": "홍련: ···패배를 인정하겠네." },
+        { "scene_id": "new_year_new_sword_03", "line_start": 14, "line_end": 14, "quote": "홍련: 은근 슬쩍 승을 올릴 생각 말게. 975승 10무일세." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep 대련으로 new_year_new_sword 대련 전적을 찾아 show로 확인한 new_year_new_sword_03 L2-L14"
+      ]
+    },
+    {
+      "link_id": "C1__123__008",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_27__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "last_kingdom_33", "line_start": 61, "line_end": 63, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브는 기억을 잃은 마리안과 그녀의 이름을 어떻게 알고 있는가 / 답: 마리안이 과거 헬레틱이었을 때 토커티브와 함께 행동하던 사이였기 때문이다(last_kingdom_33 L47, L61-L63) / 근거: 토커티브와 대면한 뒤 마리안이 직접 토커티브가 자신과 아는 사이인지 묻자 스노우 화이트가 과거 함께 행동했었다고 답한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_27", "line_start": 24, "line_end": 24, "quote": "토커티브: [마리안.]" },
+        { "scene_id": "last_kingdom_27", "line_start": 27, "line_end": 27, "quote": "마리안: ···내 이름을 어떻게···." },
+        { "scene_id": "last_kingdom_33", "line_start": 61, "line_end": 62, "quote": "마리안: 그 토커티브라는 분은, 저와 아는 사이인가요?\n스노우 화이트: 그래. 같이 행동했었다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__009",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_27__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_13_10", "line_start": 233, "line_end": 245, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 토커티브는 헬레틱 모더니아가 아닌 '마리안'이라는 이름을 어떻게 알고 있는가 / 답: 모더니아가 원래 인격으로 돌아와 마리안이라 불리던 현장에서 토커티브가 마리안의 머리에 직접 낙하해 침식 코드를 심었기 때문이다(main_13_10 L205-L206, L234-L243, main_13_12 L31) / 근거: 그 습격으로 마리안은 뇌세척을 받아 기억을 잃었으나 토커티브는 마리안을 빼앗긴 당사자로서 이름을 알고 있다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_27", "line_start": 24, "line_end": 24, "quote": "토커티브: [마리안.]" },
+        { "scene_id": "last_kingdom_27", "line_start": 27, "line_end": 27, "quote": "마리안: ···내 이름을 어떻게···." },
+        { "scene_id": "main_13_10", "line_start": 234, "line_end": 237, "quote": "마리안의 머리 위로 낙하했다.\n마리안: ···어?\n토커티브: [네놈들에겐! 단 하나도!]\n토커티브: [넘겨주지 않는다!]" },
+        { "scene_id": "main_13_10", "line_start": 243, "line_end": 243, "quote": "  [OPTION TEXT=\"마리안!\"]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep 토커티브와 grep 마리안으로 확인한 main_13_10 L205-L245"
+      ]
+    },
+    {
+      "link_id": "C1__123__010",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_28__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_44__clh_005" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브가 마리안에게 기억하라고 한 그녀의 정체와 마리안에게서 시작되었다고 한 '이 힘'은 무엇인가 / 답: 헬레틱과 랩쳐를 본능적으로 무릎 꿇려 복종시키는 랩쳐의 '여왕'으로서의 정체와 지배력(last_kingdom_44 L138-L141) / 근거: 마리안이 자신에게서 개화한 것을 확인하러 나가자 인디빌리아와 토커티브가 본능에 의해 무릎을 꿇고 토커티브가 '여왕님'이라 부른다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_28", "line_start": 11, "line_end": 13, "quote": "토커티브: [기억해라. 네가 누구인지.]\n토커티브: [어떤 존재인지.]\n토커티브: [너의 기원이 무엇인지, 무엇을 위해 살고 있는지.]" },
+        { "scene_id": "last_kingdom_28", "line_start": 35, "line_end": 35, "quote": "토커티브: [이 힘···! 그래···! 시작되었단 말인가!]" },
+        { "scene_id": "last_kingdom_44", "line_start": 138, "line_end": 141, "quote": "인디빌리아와 토커티브는 마리안의 앞에 무릎을 꿇었다.\n자신의 의지와는 상관없이 몸에 새겨진 본능에 의해.\n토커티브: [···분부대로 하겠습니다.]\n토커티브: [여왕님.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__011",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_28__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "goddess_fall_22__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브가 마리안에게 말한 '어떤 존재인지, 무엇을 위해 살고 있는지'는 무엇을 가리키는가 / 답: 토커티브가 알고 있는 마리안의 존재 목적은 퀸 인자를 담는 그릇이자 퀸의 다음 바디가 되는 것이다(goddess_fall_22 L40-L47) / 근거: 토커티브가 다시 마리안에게 '너의 몸은 퀸의 다음 바디가 되어야 한다. 그것만을 위해 너는 존재한다'고 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_28", "line_start": 12, "line_end": 13, "quote": "토커티브: [어떤 존재인지.]\n토커티브: [너의 기원이 무엇인지, 무엇을 위해 살고 있는지.]" },
+        { "scene_id": "goddess_fall_22", "line_start": 40, "line_end": 41, "quote": "토커티브: [너의 몸은 퀸의 다음 바디가 되어야 한다.]\n토커티브: [그것만을 위해 너는 존재한다.]" },
+        { "scene_id": "goddess_fall_22", "line_start": 47, "line_end": 47, "quote": "토커티브: [너는 그저, 퀸 인자를 담을 수 있는 그릇으로서 존재하기만 하면 된다.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__012",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_28__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "maria-n_26__clh_006" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브가 마리안에게 떠올리라고 한 그녀의 '기원'과 존재 이유는 무엇인가 / 답: 미러의 지시로 토커티브가 침식된 마리안을 헬레틱으로 만들었으며, 미러가 퀸의 다음 바디가 될 재능을 타고난 아이라며 토커티브에게 보호를 맡긴 기원이다(maria-n_26 L503-L531) / 근거: 토커티브 본인이 마리안의 헬레틱화 현장에 입회해 '퀸의 다음 바디'라는 역할을 부여받은 과거가 직접 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_28", "line_start": 13, "line_end": 13, "quote": "토커티브: [너의 기원이 무엇인지, 무엇을 위해 살고 있는지.]" },
+        { "scene_id": "maria-n_26", "line_start": 503, "line_end": 504, "quote": "미러: 이대로 헬레틱으로 만들면 나노머신이 뇌마저 재생할 거예요.\n미러: 어서 해주세요. 토커티브." },
+        { "scene_id": "maria-n_26", "line_start": 526, "line_end": 526, "quote": "미러: 이 아이, 어쩌면 퀸의 다음 바디가 될 수 있을지도 몰라요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__013",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_29__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 인디빌리아가 물은 대로 크라운은 무엇을 대가로 공기 중의 에블라 입자가 독처럼 작용하게 되었는가 / 답: 에블라 입자를 빨아들여 열충격파를 뿜어내는 섬멸용 개조 무장 '네이키드 킹'(last_kingdom_43 L90-L93) / 근거: 크라운이 말을 돌리며 숨긴 대가가 마지막 결전에서 인디빌리아 앞에 발동한 네이키드 킹임이 직접 밝혀진다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_29", "line_start": 71, "line_end": 72, "quote": "인디빌리아: 그래서, 당신은 뭘 대가로 공기 중에 퍼져있는 에블라 입자가 독이 되었나요?\n크라운: ···완전한 왕은 재미가 없는 법이라서요." },
+        { "scene_id": "last_kingdom_43", "line_start": 90, "line_end": 92, "quote": "차임: 이름하여 [네이키드 킹].\n차임: 저것은 원래 골칫덩이인 에블라 입자를 빨아들여 열 에너지로 전환하는 장치였다.\n차임: 그걸 떠돌이 승려가 섬멸용 무장으로 개조한 것이지." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__014",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_29__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 공기 중에 퍼진 에블라 입자가 크라운에게 독처럼 기침과 고통을 일으키는가 / 답: 네이키드 킹의 능력을 개방하기 위해 몸속에 에블라 입자를 모으고 있었고 그 반발 작용으로 기침과 통증이 발생하기 때문이다(last_kingdom_43 L103-L106) / 근거: 인디빌리아가 독으로 오인한 크라운의 기침·통증 증상의 실제 원인을 차임이 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_29", "line_start": 68, "line_end": 68, "quote": "인디빌리아: 에블라 입자가 당신에겐··· 독이군요?" },
+        { "scene_id": "last_kingdom_43", "line_start": 104, "line_end": 105, "quote": "차임: 아가씨는 곳곳을 돌아다니며 몸속에 에블라 입자를 모으고 있었다.\n차임: 그 반발 작용으로 기침과 통증이 발생되지." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__015",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "kilo_04__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_31__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지휘관은 탈로스의 가슴에서 무엇을 보았기에 킬로가 '나만의 장소'를 찾는 일을 걱정하지 않아도 된다고 했는가 / 답: 온몸이 상처투성이인 탈로스에서 가슴의 조종석 부분만 상처 하나 없이 깨끗하며, 이는 탈로스가 자신에게 이름을 준 킬로의 안전을 최우선으로 지켜왔기 때문이다(last_kingdom_31 L64-L78) / 근거: 킬로가 탈로스의 가슴을 살펴보다 조종석만 새것처럼 깔끔한 이유를 듣고 탈로스와의 관계가 곧 '나만의 장소'(L132-L134)임을 깨닫는다.",
+      "supporting_evidence": [
+        { "scene_id": "kilo_04", "line_start": 140, "line_end": 140, "quote": "  [OPTION TEXT=\"그건 걱정 안 해도 될 것 같아.\"]" },
+        { "scene_id": "kilo_04", "line_start": 145, "line_end": 145, "quote": "  [OPTION TEXT=\"탈로스의 가슴을 봤어?\"]" },
+        { "scene_id": "last_kingdom_31", "line_start": 64, "line_end": 66, "quote": "킬로: 왜 조종석 부분만 상처가 하나도 없어···?\n킬로: 팔이며, 다리며, 어디든 상처 투성이인데.\n킬로: 왜, 왜 조종석만 이렇게 새것처럼 깔끔해?" },
+        { "scene_id": "last_kingdom_31", "line_start": 68, "line_end": 68, "quote": "T.A.L.O.S.: 저는 킬로를 지켜야 하기 때문입니다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "킬로 개인 에피소드를 show로 확인하여 찾은 kilo_04 L139-L147"
+      ]
+    },
+    {
+      "link_id": "C1__123__016",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_32__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 밖에서 에블라 입자가 계속 뿌려지는데도 왜 차임은 탈로스의 에블라 입자 정화 기능을 돌리지 못하게 막으며 놔두면 크라운이 괜찮아질 것이라고 했는가 / 답: 크라운은 네이키드 킹 개방을 위해 몸속에 에블라 입자를 모으고 있었고 헬레틱이 뿌린 에블라 입자 덕분에 개방 시점이 앞당겨지기 때문이다(last_kingdom_43 L103-L108) / 근거: 에블라 입자를 정화하지 않고 받아들여야 1년치 수집량을 앞당겨 채울 수 있었다는 내막을 차임이 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_32", "line_start": 14, "line_end": 16, "quote": "차임: 아아아. 관두거라. 놔두면 괜찮아지실 게다.\nT.A.L.O.S.: 이해 불능.\n킬로: ···계속 에블라 입자를 뿌리고 있는데 괜찮아질 리가 없잖아요." },
+        { "scene_id": "last_kingdom_43", "line_start": 106, "line_end": 108, "quote": "차임: 아무튼, 능력 개방까지 아직 1년 정도 에블라 입자를 더 모았어야 했다.\n마리안: ···헬레틱이 뿜어낸 에블라 입자 덕분에 앞당겨진 거군요.\n차임: 그래." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__017",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_33__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_38__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 침식이 아닌데도 마리안이 토커티브와 대화한 뒤 열이 나고 일행을 죽여야 할 것 같은 충동과 혼란을 겪은 원인은 무엇인가 / 답: 마리안 안의 인자가 활성화되었기 때문이다(last_kingdom_38 L11-L12) / 근거: 토커티브가 마리안에게 기원을 인지시켜 준 뒤 '이미 인자가 활성화되었을 텐데 어째서 유사 인간의 편에서 싸우느냐'고 말해 이상 증세의 원인이 인자 활성화임을 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_33", "line_start": 26, "line_end": 28, "quote": "마리안: 여러분을 죽여야 할 것 같···!\n스노우 화이트: ···침식인가···?\n라푼젤: 아뇨. 그건 아니에요." },
+        { "scene_id": "last_kingdom_38", "line_start": 11, "line_end": 12, "quote": "토커티브: [그럴 리가. 이미 인자가 활성화되었을 텐데.]\n토커티브: [어째서 유사 인간의 편에서···.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__018",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_33__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_44__clh_005" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브가 기원을 떠올리라고 한 뒤 마리안이 랩쳐인지 니케인지 혼란을 겪으며 발현하기 시작한 정체는 무엇인가 / 답: 헬레틱과 토커티브까지 본능적으로 복종시키는 랩쳐의 여왕(퀸)으로서의 개화다(last_kingdom_44 L90, L138-L141) / 근거: 열과 혼란 끝에 마리안에게서 개화한 힘 앞에 인디빌리아와 토커티브가 무릎을 꿇고 '여왕님'이라 부른다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_33", "line_start": 12, "line_end": 12, "quote": "마리안: 저의 기원을 떠올려라." },
+        { "scene_id": "last_kingdom_33", "line_start": 36, "line_end": 38, "quote": "크라운: 랩쳐인지, 니케인지 혼란스럽나요.\n마리안: 으으···!\n마리안: 예, 예···!" },
+        { "scene_id": "last_kingdom_44", "line_start": 138, "line_end": 141, "quote": "인디빌리아와 토커티브는 마리안의 앞에 무릎을 꿇었다.\n자신의 의지와는 상관없이 몸에 새겨진 본능에 의해.\n토커티브: [···분부대로 하겠습니다.]\n토커티브: [여왕님.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__019",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_33__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "goddess_fall_07__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브와 대화한 뒤 침식이 아님에도 마리안에게 일어난 변화의 정체는 무엇인가 / 답: 퀸 인자를 담는 그릇인 마리안이 퀸으로 각성한 것이다(goddess_fall_07 L80-L86) / 근거: 토커티브가 마리안이 퀸으로 각성해 퀸의 다음 몸이 될 준비가 되었다고 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_33", "line_start": 8, "line_end": 8, "quote": "스노우 화이트: 수다쟁이와 대화한 후 상태가 급격히 안 좋아졌다고 들었다." },
+        { "scene_id": "last_kingdom_33", "line_start": 27, "line_end": 28, "quote": "스노우 화이트: ···침식인가···?\n라푼젤: 아뇨. 그건 아니에요." },
+        { "scene_id": "goddess_fall_07", "line_start": 83, "line_end": 86, "quote": "토커티브: [마리안은 퀸으로 각성했다. 준비가 되었다는 얘기다.]\n토커티브: [퀸의 다음 몸이 될 준비가.]\n인디빌리아: 후후. 그래서 그렇게 애지중지했던 것이군요.\n인디빌리아: 퀸 인자를 담을 수 있는 그릇··· 이 필요했던 것이군요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__020",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_34__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기침하는 크라운에게 차임이 조금만 참으라며 '예상대로라면 곧'이라고 예고한 것은 무엇인가 / 답: 에블라 입자를 빨아들여 열충격파를 뿜어내는 무장 '네이키드 킹'의 발동이다(last_kingdom_43 L81, L90-L93) / 근거: 크라운의 고통이 극에 달했을 때 차임이 '드디어 됐다'며 네이키드 킹의 발동을 선언한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_34", "line_start": 39, "line_end": 41, "quote": "차임: 아가씨. 조금만 참으십쇼.\n차임: 예상대로라면, 곧입니다요.\n크라운: 쿨럭, 쿨럭. 예. 믿습니다. 차임." },
+        { "scene_id": "last_kingdom_43", "line_start": 90, "line_end": 93, "quote": "차임: 이름하여 [네이키드 킹].\n차임: 저것은 원래 골칫덩이인 에블라 입자를 빨아들여 열 에너지로 전환하는 장치였다.\n차임: 그걸 떠돌이 승려가 섬멸용 무장으로 개조한 것이지.\n차임: 사용자의 작은 움직임에도 반응하여 열충격파를 뿜어내는 것으로 말이다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__021",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_34__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 차임은 기침하는 크라운에게 예상대로라면 곧이라고 말할 수 있었는가 / 답: 원래 1년 정도 더 모았어야 했던 에블라 입자가 헬레틱의 살포 덕분에 곧 능력 개방치에 도달하기 때문이다(last_kingdom_43 L104-L108) / 근거: 에블라 입자 축적과 반발 작용으로 인한 기침, 그리고 헬레틱 덕분에 개방이 앞당겨졌다는 설명이 차임의 예고를 직접 뒷받침한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_34", "line_start": 39, "line_end": 40, "quote": "차임: 아가씨. 조금만 참으십쇼.\n차임: 예상대로라면, 곧입니다요." },
+        { "scene_id": "last_kingdom_43", "line_start": 106, "line_end": 108, "quote": "차임: 아무튼, 능력 개방까지 아직 1년 정도 에블라 입자를 더 모았어야 했다.\n마리안: ···헬레틱이 뿜어낸 에블라 입자 덕분에 앞당겨진 거군요.\n차임: 그래." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__022",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_36__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_44__clh_005" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 마리안은 왜 전진해 오는 랩쳐 부대들을 공격하면서 '미안해요'라고 사과했는가 / 답: 마리안이 랩쳐들의 여왕(퀸)으로 각성해 가는 존재이기 때문이다(last_kingdom_44 L126-L141) / 근거: 왕국을 지키기 위해 랩쳐를 공격하며 사과하던 마리안은 개화 후 랩쳐들을 죽이지 않고 돌려보내며 '여왕님'으로 불린다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_36", "line_start": 21, "line_end": 23, "quote": "마리안은 쏟아지듯 전진해 오는 랩쳐 부대들을 공격하기 시작했다.\n마리안: ··· ···.\n마리안: ···미안해요." },
+        { "scene_id": "last_kingdom_44", "line_start": 126, "line_end": 126, "quote": "마리안: 랩쳐들을 다 돌려보내세요." },
+        { "scene_id": "last_kingdom_44", "line_start": 140, "line_end": 141, "quote": "토커티브: [···분부대로 하겠습니다.]\n토커티브: [여왕님.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__023",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_36__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "goddess_fall_06", "line_start": 28, "line_end": 37, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 마리안은 왜 랩쳐 부대를 공격하면서 미안해하는가 / 답: 퀸으로 각성한 마리안은 니케와 사람뿐 아니라 랩쳐까지도 모두 서로 사랑하는 세계를 바라며 랩쳐를 해치고 싶어 하지 않기 때문이다(goddess_fall_06 L28-L37) / 근거: 퀸으로서 그리는 세계를 묻는 인디빌리아에게 마리안이 랩쳐도 포함해 모두가 서로 사랑하는 세계를 만들고 싶다고 답한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_36", "line_start": 21, "line_end": 23, "quote": "마리안은 쏟아지듯 전진해 오는 랩쳐 부대들을 공격하기 시작했다.\n마리안: ··· ···.\n마리안: ···미안해요." },
+        { "scene_id": "goddess_fall_06", "line_start": 28, "line_end": 28, "quote": "인디빌리아: 당신이 [퀸]으로서 그리는 세계는 무엇인가요?" },
+        { "scene_id": "goddess_fall_06", "line_start": 36, "line_end": 36, "quote": "마리안: 니케도, 사람도, 랩쳐도. 모두 서로를 사랑할 수 있는 세계를 만들고 싶어요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__024",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_37__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 현재의 토커티브는 이전보다 강해졌고 신체 조직의 패턴이 헬레틱에 가까운 쪽으로 변했는가 / 답: 헬레틱인 화룡(니힐리스타)을 섭취하여 힘이 강해지고 외형 변화의 조짐이 생겼기 때문이다(last_kingdom_09 L8-L10) / 근거: 라푼젤이 포착한 헬레틱 유사 신체 조직과 강화된 힘의 원인이 앞 장면 인디빌리아의 화룡 섭취 언급에서 직접 설명된다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_37", "line_start": 12, "line_end": 12, "quote": "토커티브: [지금까지의 나라고 생각하지 마라. 지금의 난 네놈들 정도는 쉽게 짓이길 수 있다.]" },
+        { "scene_id": "last_kingdom_37", "line_start": 25, "line_end": 26, "quote": "라푼젤: ···신체 조직의 패턴이 일반 랩쳐의 것이 아니네요.\n라푼젤: 헬레틱에 가까운 쪽이군요." },
+        { "scene_id": "last_kingdom_09", "line_start": 8, "line_end": 9, "quote": "인디빌리아: 눈치채고 있지 않나요? 화룡을 섭취하고 난 뒤의 당신은, 아주 아름다워졌어요.\n인디빌리아: 힘은 눈에 띄게 강해졌고, 외형의 변화 또한 조짐이 있죠." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__025",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_37__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_38__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브의 신체 조직 패턴이 헬레틱에 가까운 까닭과 그가 장담한 새로운 힘의 정체는 무엇인가 / 답: 토커티브 체내에 헬레틱 니힐리스타의 나노머신이 들어 있어 활성화되면 양팔이 화룡의 머리로 변하기 때문이다(last_kingdom_38 L30-L39) / 근거: 바로 다음 장면에서 나노머신이 활성화되며 양팔이 니힐리스타의 화룡 형태로 변해 헬레틱 유사 조직의 정체를 직접 드러낸다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_37", "line_start": 25, "line_end": 27, "quote": "라푼젤: ···신체 조직의 패턴이 일반 랩쳐의 것이 아니네요.\n라푼젤: 헬레틱에 가까운 쪽이군요.\n토커티브: [그래. 잘 알아보는군.]" },
+        { "scene_id": "last_kingdom_38", "line_start": 33, "line_end": 33, "quote": "T.A.L.O.S.: 나노머신으로 확정. 활성화 개시. 형태가 변화합니다." },
+        { "scene_id": "last_kingdom_38", "line_start": 38, "line_end": 39, "quote": "토커티브는 양 팔에 화룡의 머리를 달고 있었다.\n스노우 화이트: ···니힐리스타···?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__026",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_37__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_44__clh_004" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 토커티브의 신체 조직 패턴이 일반 랩쳐가 아니라 헬레틱에 가까운 까닭은 무엇인가 / 답: 그날 이후 포식을 통해 신체를 재구축할 수 있게 되었고 머리에는 헬레틱 인디빌리아의 코어 일부까지 박혀 있었기 때문이다(last_kingdom_44 L98-L100) / 근거: 니힐리스타 포식에 더해 포식 기반 신체 재구축과 인디빌리아의 코어 이식이라는 신체적 변화가 헬레틱 유사 조직과 부합한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_37", "line_start": 25, "line_end": 26, "quote": "라푼젤: ···신체 조직의 패턴이 일반 랩쳐의 것이 아니네요.\n라푼젤: 헬레틱에 가까운 쪽이군요." },
+        { "scene_id": "last_kingdom_44", "line_start": 98, "line_end": 100, "quote": "인디빌리아: 당신은 그날 이후 포식함으로써 신체를 재구축할 수 있게 되었고.\n인디빌리아: 마침 던져진 곳이 랩쳐들의 무리가 있는 곳이었으니까요.\n인디빌리아: ···만약을 위해 당신의 머리에 제 코어 일부를 박아놨던 것도, 잘 풀렸고요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__027",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_38__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_40_01__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브가 마리안에게서 활성화되었다고 말한 '인자'란 무엇인가 / 답: 특출난 힘을 가진 랩쳐나 헬레틱에게 발현되어 퀸이 될 수 있는 자격을 뜻하는 '퀸 인자'다(main_40_01 L26-L33) / 근거: 나유타가 랩쳐·헬레틱에게 발현되어 활성화되는 '퀸 인자'의 개념을 직접 정의하며 C-0 후보에서도 같은 용어로 이어진다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_38", "line_start": 11, "line_end": 12, "quote": "토커티브: [그럴 리가. 이미 인자가 활성화되었을 텐데.]\n토커티브: [어째서 유사 인간의 편에서···.]" },
+        { "scene_id": "main_40_01", "line_start": 26, "line_end": 28, "quote": "나유타: 퀸 인자.\n나유타: 라고 부르는 것이 있소.\n나유타: 쉽게 이야기하면 퀸이 될 수 있는 자격, 같은 것이라 보면 되는 것이외다." },
+        { "scene_id": "main_40_01", "line_start": 32, "line_end": 32, "quote": "나유타: 특출난 힘을 가진 랩쳐나 헬레틱에겐 퀸 인자라는 것이 발현되는 경우가 있소." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__028",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_38__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_44__clh_005" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 마리안에게서 활성화된 '인자'는 어떤 힘과 지위를 발현시키는가 / 답: 인디빌리아와 토커티브를 본능에 의해 무릎 꿇게 만드는 랩쳐 여왕(퀸)의 힘이다(last_kingdom_44 L138-L141) / 근거: 토커티브가 활성화되었다고 말한 인자가 개화하자 토커티브 본인이 마리안 앞에 무릎을 꿇고 '여왕님'이라 칭한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_38", "line_start": 11, "line_end": 11, "quote": "토커티브: [그럴 리가. 이미 인자가 활성화되었을 텐데.]" },
+        { "scene_id": "last_kingdom_44", "line_start": 138, "line_end": 141, "quote": "인디빌리아와 토커티브는 마리안의 앞에 무릎을 꿇었다.\n자신의 의지와는 상관없이 몸에 새겨진 본능에 의해.\n토커티브: [···분부대로 하겠습니다.]\n토커티브: [여왕님.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__029",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_38__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "goddess_fall_07__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브가 마리안에게서 활성화되었다고 한 '인자'의 정체는 무엇인가 / 답: 마리안을 퀸으로 각성시키는 '퀸 인자'다(goddess_fall_07 L83-L86) / 근거: 토커티브와 인디빌리아가 마리안의 퀸 각성과 '퀸 인자를 담을 수 있는 그릇'을 직접 언급한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_38", "line_start": 11, "line_end": 12, "quote": "토커티브: [그럴 리가. 이미 인자가 활성화되었을 텐데.]\n토커티브: [어째서 유사 인간의 편에서···.]" },
+        { "scene_id": "goddess_fall_07", "line_start": 83, "line_end": 86, "quote": "토커티브: [마리안은 퀸으로 각성했다. 준비가 되었다는 얘기다.]\n토커티브: [퀸의 다음 몸이 될 준비가.]\n인디빌리아: 후후. 그래서 그렇게 애지중지했던 것이군요.\n인디빌리아: 퀸 인자를 담을 수 있는 그릇··· 이 필요했던 것이군요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__030",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_09__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_38__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 인디빌리아가 말한 '화룡'은 누구이며 화룡 섭취 후 조짐이 있다던 토커티브의 외형 변화는 어떻게 나타나는가 / 답: 화룡은 헬레틱 니힐리스타이며, 토커티브의 나노머신이 활성화되어 양팔이 화룡의 머리 형태로 변한다(last_kingdom_38 L33-L39) / 근거: 앞 장면의 '화룡을 섭취하고 난 뒤 외형의 변화 조짐'이 양팔의 화룡 머리 변형과 스노우 화이트의 '니힐리스타' 지목으로 직접 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_09", "line_start": 8, "line_end": 9, "quote": "인디빌리아: 눈치채고 있지 않나요? 화룡을 섭취하고 난 뒤의 당신은, 아주 아름다워졌어요.\n인디빌리아: 힘은 눈에 띄게 강해졌고, 외형의 변화 또한 조짐이 있죠." },
+        { "scene_id": "last_kingdom_38", "line_start": 33, "line_end": 33, "quote": "T.A.L.O.S.: 나노머신으로 확정. 활성화 개시. 형태가 변화합니다." },
+        { "scene_id": "last_kingdom_38", "line_start": 38, "line_end": 39, "quote": "토커티브는 양 팔에 화룡의 머리를 달고 있었다.\n스노우 화이트: ···니힐리스타···?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__031",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_38__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_40__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 어째서 토커티브의 몸에서 나노머신이 활성화되며 니힐리스타 같은 화룡의 머리가 양팔에 돋아났는가 / 답: 인디빌리아가 토커티브에게 니힐리스타('하나')를 먹여 그 힘을 개화시켰기 때문이다(last_kingdom_40 L3-L5) / 근거: 직후 장면에서 인디빌리아가 토커티브의 전투를 두고 '하나를 먹였을 뿐인데 그 힘을 개화했다'고 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_38", "line_start": 38, "line_end": 39, "quote": "토커티브는 양 팔에 화룡의 머리를 달고 있었다.\n스노우 화이트: ···니힐리스타···?" },
+        { "scene_id": "last_kingdom_40", "line_start": 3, "line_end": 5, "quote": "인디빌리아: 하지만 그 힘을 개화했으니.\n인디빌리아: 앞으로가 더 기대되는군요.\n인디빌리아: ···하나를 먹였을 뿐인데 그 정도라···." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__032",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_38__clh_003" }],
+      "target": [{ "ref": "lines", "scene_id": "goddess_fall_07", "line_start": 70, "line_end": 74, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브는 어떻게 니힐리스타의 나노머신과 화룡의 팔을 지니게 되었는가 / 답: 토커티브가 니힐리스타를 포식했기 때문이다(goddess_fall_07 L70-L74, L101) / 근거: 인디빌리아가 토커티브를 두고 '니힐리스타에 이어' 먹은 존재라고 직접 명시하며 팔에서 돋아난 니힐리스타(L101)를 언급한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_38", "line_start": 38, "line_end": 39, "quote": "토커티브는 양 팔에 화룡의 머리를 달고 있었다.\n스노우 화이트: ···니힐리스타···?" },
+        { "scene_id": "goddess_fall_07", "line_start": 71, "line_end": 73, "quote": "인디빌리아: 이걸 먹어요.\n토커티브: [··· ···.]\n인디빌리아: 니힐리스타에 이어 퀸, 아니 되다 만 것까지 먹은 당신은 한층 더 아름다워질 테죠." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__033",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_38__clh_003" }],
+      "target": [{ "ref": "lines", "scene_id": "main_24_21", "line_start": 47, "line_end": 58, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 토커티브가 니힐리스타의 나노머신과 화룡 형태를 지니게 된 사건은 언제 어떻게 일어났는가 / 답: 방주에서 밀려난 뒤 지상에서 무장 파츠가 없는 니힐리스타에게 인디빌리아와 토커티브가 배고프다며 다가간 사건이다(main_24_21 L47-L58) / 근거: 무장 파츠 재생이 늦어 무방비한 니힐리스타를 토커티브가 포식하게 된 발단 장면이다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_38", "line_start": 38, "line_end": 39, "quote": "토커티브는 양 팔에 화룡의 머리를 달고 있었다.\n스노우 화이트: ···니힐리스타···?" },
+        { "scene_id": "main_24_21", "line_start": 50, "line_end": 53, "quote": "인디빌리아: 배고프지 않나요?\n토커티브: [··· ···.]\n토커티브: [···그렇군.]\n토커티브: [생각해 보니··· 배가 좀 고픈 것 같군.]" },
+        { "scene_id": "main_24_21", "line_start": 57, "line_end": 57, "quote": "니힐리스타: ···꺼져. 나한테 다가오지 마." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__034",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_39__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_43__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 헬레틱이 다가오자 짙어진 농도의 정체는 무엇이며 왜 크라운은 그로 인한 기침과 통증을 '견뎌야 할 고통'이라고 하는가 / 답: 에블라 입자의 농도이며, 크라운은 네이키드 킹 능력 개방을 위해 몸속에 에블라 입자를 모으면서 그 반발 작용으로 생기는 기침과 통증을 견디고 있었기 때문이다(last_kingdom_43 L10, L103-L108) / 근거: 인디빌리아가 높인 에블라 입자 농도를 견디고 흡수한 덕분에 1년 남았던 네이키드 킹 개방이 앞당겨졌음이 직접 밝혀진다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_39", "line_start": 9, "line_end": 11, "quote": "크라운: 농도가 더 짙어졌어요.\n마리안: 괜찮나요?\n크라운: 예. 견뎌야 할 고통입니다." },
+        { "scene_id": "last_kingdom_43", "line_start": 104, "line_end": 107, "quote": "차임: 아가씨는 곳곳을 돌아다니며 몸속에 에블라 입자를 모으고 있었다.\n차임: 그 반발 작용으로 기침과 통증이 발생되지.\n차임: 아무튼, 능력 개방까지 아직 1년 정도 에블라 입자를 더 모았어야 했다.\n마리안: ···헬레틱이 뿜어낸 에블라 입자 덕분에 앞당겨진 거군요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__035",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_40__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "goddess_fall_07", "line_start": 70, "line_end": 74, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 인디빌리아가 토커티브에게 먹였다는 '하나'는 누구인가 / 답: 헬레틱 니힐리스타다(goddess_fall_07 L70-L74) / 근거: 마리안을 먹이면 어떨지 기대하던 인디빌리아가 후속 장면에서 마리안을 먹이려 하며 '니힐리스타에 이어'라고 앞선 대상을 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_40", "line_start": 5, "line_end": 7, "quote": "인디빌리아: ···하나를 먹였을 뿐인데 그 정도라···.\n인디빌리아: 그렇다면···.\n인디빌리아: 당신을 먹이면 어떻게 될까요? 마리안." },
+        { "scene_id": "goddess_fall_07", "line_start": 71, "line_end": 73, "quote": "인디빌리아: 이걸 먹어요.\n토커티브: [··· ···.]\n인디빌리아: 니힐리스타에 이어 퀸, 아니 되다 만 것까지 먹은 당신은 한층 더 아름다워질 테죠." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__036",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_40__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "main_24_21", "line_start": 47, "line_end": 58, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 인디빌리아가 토커티브에게 '하나'를 먹인 과거 사건은 언제 어떻게 일어났는가 / 답: 방주에서 탈출한 뒤 무장 파츠가 없는 니힐리스타를 앞에 두고 인디빌리아가 토커티브에게 배고프지 않냐며 포식을 부추긴 사건이다(main_24_21 L47-L58) / 근거: 인디빌리아가 니힐리스타를 토커티브에게 먹게 한 발단 장면에 해당한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_40", "line_start": 5, "line_end": 5, "quote": "인디빌리아: ···하나를 먹였을 뿐인데 그 정도라···." },
+        { "scene_id": "main_24_21", "line_start": 48, "line_end": 53, "quote": "인디빌리아: 토커티브.\n토커티브: [뭐냐.]\n인디빌리아: 배고프지 않나요?\n토커티브: [··· ···.]\n토커티브: [···그렇군.]\n토커티브: [생각해 보니··· 배가 좀 고픈 것 같군.]" },
+        { "scene_id": "main_24_21", "line_start": 57, "line_end": 58, "quote": "니힐리스타: ···꺼져. 나한테 다가오지 마.\n니힐리스타: 꺼지라고!!" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__123__037",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "last_kingdom_40__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "last_kingdom_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 인디빌리아가 토커티브에게 먹여 힘을 개화하게 했다는 '하나'는 무엇을 가리키는가 / 답: 토커티브가 섭취한 화룡(니힐리스타)이다(last_kingdom_09 L8-L10) / 근거: 같은 인디빌리아가 앞 장면에서 토커티브에게 '화룡을 섭취하고 난 뒤 힘이 눈에 띄게 강해졌다'고 말한 대상을 '하나'로 받아 말한다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_40", "line_start": 3, "line_end": 5, "quote": "인디빌리아: 하지만 그 힘을 개화했으니.\n인디빌리아: 앞으로가 더 기대되는군요.\n인디빌리아: ···하나를 먹였을 뿐인데 그 정도라···." },
+        { "scene_id": "last_kingdom_09", "line_start": 8, "line_end": 10, "quote": "인디빌리아: 눈치채고 있지 않나요? 화룡을 섭취하고 난 뒤의 당신은, 아주 아름다워졌어요.\n인디빌리아: 힘은 눈에 띄게 강해졌고, 외형의 변화 또한 조짐이 있죠.\n인디빌리아: 기대되네요. 당신이 앞으로 더 많은 동족을 포식하면 어떤 변화가 올지." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    { "item_id": "last_kingdom_22__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_26__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_30__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_30__clh_002", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_31__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_31__clh_002", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_32__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_32__clh_004", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_32__clh_005", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_33__clh_002", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_34__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_38__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_38__clh_004", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_38__clh_005", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_38__clh_006", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_41__clh_001", "reason": "단서 아님" },
+    { "item_id": "last_kingdom_42__clh_001", "reason": "단서 아님" }
+  ],
+  "merge_suggestions": [
+    {
+      "suggestion_id": "C1__123__M01",
+      "unit_ids": ["last_kingdom_31__clh_002", "last_kingdom_38__clh_004"],
+      "link_ids": ["C1__123__015"],
+      "targets": [
+        { "kind": "entity", "id": "char_T_A_L_O_S", "name": "T.A.L.O.S." },
+        { "kind": "surface", "id": null, "name": "탈로스" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "T.A.L.O.S.가 스스로 킬로가 자신에게 '탈로스'라는 이름을 붙여 불러 주었다고 말하며, 킬로도 T.A.L.O.S.를 '탈로스'라 부른다(공식 표에는 '킬로 & 탈로스'만 있고 단독 '탈로스' 별칭은 char_T_A_L_O_S에 없음).",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_31", "line_start": 74, "line_end": 75, "quote": "T.A.L.O.S.: T.A.V:H 조작 보조용 A.I.인 저에게 이름을 붙여준 날.\nT.A.L.O.S.: [탈로스]라며 웃으며 불러준 날." }
+      ]
+    },
+    {
+      "suggestion_id": "C1__123__M02",
+      "unit_ids": ["last_kingdom_33__clh_001"],
+      "link_ids": ["C1__123__005"],
+      "targets": [
+        { "kind": "entity", "id": "char_토커티브", "name": "토커티브" },
+        { "kind": "surface", "id": null, "name": "수다쟁이" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "스노우 화이트가 마리안과 대화한 토커티브를 '수다쟁이'라 부른 뒤 같은 대화에서 '토커티브'로 지칭하고, 니힐리스타 역시 토커티브를 '수다쟁이'라고 부른다.",
+      "supporting_evidence": [
+        { "scene_id": "last_kingdom_33", "line_start": 8, "line_end": 8, "quote": "스노우 화이트: 수다쟁이와 대화한 후 상태가 급격히 안 좋아졌다고 들었다." },
+        { "scene_id": "last_kingdom_33", "line_start": 51, "line_end": 51, "quote": "스노우 화이트: 토커티브···!" },
+        { "scene_id": "main_24_21", "line_start": 12, "line_end": 13, "quote": "니힐리스타: 야. 수다쟁이.\n토커티브: [뭐냐.]" }
+      ]
+    }
+  ]
+}

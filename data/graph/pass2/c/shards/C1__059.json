@@ -1825,6 +1825,53 @@
       ],
       "contradicting_evidence": [],
       "search_hints": []
+    },
+    {
+      "link_id": "C1__059__035",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_26_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "footstep_walk_run_20__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 라피와 레드 후드는 어떻게 두 바디와 두 코어가 압축된 채 하나의 바디를 공유하게 되었는가 / 답: 궤도 엘리베이터 지하에서 D.E.E.P.이 잠든 양산형 라피와 페어리 테일 모델 레드 후드에게 공존을 시도하는 처치를 했다(footstep_walk_run_20 L153-L171) / 근거: main_26_01은 두 바디·두 코어의 공유 상태와 그 작동을 설명할 뿐 그렇게 된 경위는 밝히지 않는다. footstep_walk_run_20에는 공존 실험의 제안과 황금색 빛까지만 나오고, 두 코어가 생긴 결과는 footstep_walk_run_25·26의 검사와 변신 장면에서 따로 확인되므로 이를 결합해야 하는 간접 연결이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_26_01",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "    라피와 레드 후드는 바디를 공유하고 있다"
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "    코어 또한 두 개다"
+        },
+        {
+          "scene_id": "footstep_walk_run_20",
+          "line_start": 163,
+          "line_end": 167,
+          "quote": "D.E.E.P.: 페어리 테일 모델과 양산형은 시도해 본 적이 없다.\nD.E.E.P.: 이건 좋은 기회가 되겠군.\n레드 후드: 안 고칠 거야?\nD.E.E.P.: 쌍둥이 초거대 코어는 지금 공멸 말고는 답이 없는 상태다.\nD.E.E.P.: 공존의 가능성을 열어둬야 하지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "26장에서 라피의 이중 코어와 두 배 중량이 설명된 장면을 grep \"두 배\"로 확인한 main_26_01 L83"
+      ]
     }
   ],
   "unlinked": [
@@ -1853,10 +1900,6 @@
     },
     {
       "item_id": "main_25_15__clh_001",
-      "reason": "단서 아님"
-    },
-    {
-      "item_id": "main_26_01__clh_001",
       "reason": "단서 아님"
     },
     {

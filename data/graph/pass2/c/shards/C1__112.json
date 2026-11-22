@@ -765,6 +765,47 @@
       ],
       "contradicting_evidence": [],
       "search_hints": []
+    },
+    {
+      "link_id": "C1__112__014",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "red_ash_14__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "footstep_walk_run_20__clh_005"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 레드 후드는 어떻게 유일하게 침식 상태에서 오랜 시간 제정신을 유지할 만큼 강한 내성을 보였는가 / 답: 믿을 수 없을 정도로 대단한 자아 덕분에 머릿속 NIMPH가 침식과 최종적인 공멸을 향해 계속 싸우며 버티고 있었기 때문이다(footstep_walk_run_20 L176-L179) / 근거: 라푼젤이 원인을 몰랐던 레드 후드의 침식 내성을 D.E.E.P.이 레드 후드의 머리를 직접 살펴보고 자아와 NIMPH의 저항으로 밝혀낸다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "red_ash_14",
+          "line_start": 56,
+          "line_end": 61,
+          "quote": "라푼젤: 레드 후드처럼 침식 상태로 오랜 시간 제정신을 유지한 경우는···.\n도로시: 매우 드물군요.\n라푼젤: 아뇨.\n라푼젤: 지금까지는 레드 후드가 유일해요.\n도로시: ··· ···.\n라푼젤: 그 어떤 케이스를 살펴봐도, 레드 후드만큼의 [내성]을 가진 경우는 없었어요."
+        },
+        {
+          "scene_id": "footstep_walk_run_20",
+          "line_start": 176,
+          "line_end": 179,
+          "quote": "D.E.E.P.: ···안 되겠군. 너무 오래됐어.\nD.E.E.P.: 하지만··· NIMPH가 침식과 계속 싸우고 있어. 최종적으로는 공멸인가.\nD.E.E.P.: ···대단한 자아다. 믿을 수 없을 정도야.\nD.E.E.P.: 이렇게나 버티다니 기적이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "red_ash에서 레드 후드의 이례적인 침식 내성이 언급된 장면을 grep \"침식\" --title=event_stories__red_ash로 확인한 red_ash_14 L56"
+      ]
     }
   ],
   "unlinked": [
@@ -876,10 +917,6 @@
     },
     {
       "item_id": "red_ash_14__clh_001",
-      "reason": "단서 아님"
-    },
-    {
-      "item_id": "red_ash_14__clh_002",
       "reason": "단서 아님"
     }
   ],

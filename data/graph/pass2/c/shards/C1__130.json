@@ -1,0 +1,233 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__130",
+  "candidate_links": [
+    {
+      "link_id": "C1__130__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "juvenile_days_01__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "school_of_lock_07__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 마르차나가 이 학교를 '학교의 탈을 쓴 공간일 뿐'이라고 부른 까닭(학교의 실제 정체와 목적)은 무엇인가 / 답: 니케의 능력치를 교육을 통해 성장시킬 수 있는지 확인하고 M.M.R.의 전용 무장 운용과 지상 실전 시험을 치르기 위해 만들어진 시설이다(school_of_lock_07 L62-L70) / 근거: 같은 교사 마르차나가 자신이 근무하는 미미르 부속 고등학교의 본래 설립 목적과 실전 시험 체계를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "juvenile_days_01",
+          "line_start": 57,
+          "line_end": 59,
+          "quote": "마르차나: 비록 학교의 탈을 쓴 공간일 뿐이지만.\n마르차나: 그래도 이런 상담은, 언제 해도 기분이 좋네요.\n마르차나: 아주 조금은, 청춘을 담고 있는 것처럼 보이니까요."
+        },
+        {
+          "scene_id": "school_of_lock_07",
+          "line_start": 62,
+          "line_end": 65,
+          "quote": "마르차나: 애초에 미미르 부속 고등학교는 니케의 능력치를 교육을 통해 성장시킬 수 있는지 보기 위해 만들어진 곳입니다.\n마르차나: 이곳의 학생들은 어떻게 하면 훌륭한 니케로 성장할 수 있는지 배우고,\n마르차나: M.M.R.에게 부여받은 전용 무장을 어떻게 하면 더 잘 사용할 수 있는지,\n마르차나: 수많은 수업을 통해 연구합니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"미미르 부속\"으로 확인한 school_of_lock_07 L62"
+      ]
+    },
+    {
+      "link_id": "C1__130__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "juvenile_days_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "naga_04",
+          "line_start": 39,
+          "line_end": 53,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 나가가 같은 학교 학생으로서 '내일도 만날 수 있는, 변하지 않는 친구'가 인생을 평범하게 만들어 준다고 말한 뜻과 배경은 무엇인가 / 답: 계속되는 실전 시험의 탈락으로 반과 친구들이 끊임없이 바뀌어 가는 학교에서, 티아와 매일 만나기로 약속하고 함께 시험을 통과하며 티아만큼은 변함없이 곁에 남아 평범한 학교생활을 이어갈 수 있었기 때문이다(naga_04 L39-L53) / 근거: 같은 인물 나가와 티아가 매일 만나기로 한 약속과 추가 시험들을 통과하며 반과 친구들이 바뀌어도 변함없이 남은 관계를 직접 회상한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "juvenile_days_02",
+          "line_start": 145,
+          "line_end": 150,
+          "quote": "나가: 내일도 만날 수 있는, 변하지 않는 친구라는 건~\n나가: 인생을 훨씬 평범하게 만들어 주거든.\n아인: 와···.\n아인: 되게 멋있는 말을 하신 것 같은데, 무슨 소린지 하나도 못 알아듣겠어요.\n나가: 조금만 생각해 보면 금방 알아들을 거야~\n나가: 우린 같은 학교 학생들이잖아? 후훗."
+        },
+        {
+          "scene_id": "naga_04",
+          "line_start": 40,
+          "line_end": 43,
+          "quote": "티아: 나랑 내일 또 만나자.\n티아: 매일 매일 만나자.\n티아: 시험은 이 이후로도 계속 있겠지만, 더욱더 어려워지겠지만~\n티아: 내가 옆에서 함께 할게."
+        },
+        {
+          "scene_id": "naga_04",
+          "line_start": 51,
+          "line_end": 53,
+          "quote": "그 이후에 몇 번이고 추가로 시험이 치러졌지만, 티아와 나는 당당하게 통과했다.\n반도, 친구들도 계속해서 바뀌어갔지만.\n티아만큼은 변함이 없었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"내일도\"로 확인한 naga_04 L32 및 show로 확인한 naga_04 L39-L53"
+      ]
+    },
+    {
+      "link_id": "C1__130__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "juvenile_days_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "school_of_lock_10__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 나가가 '학생과 선생님은 역할이 다르니까', '우린 같은 학교 학생들이잖아'라며 이 학교 학생들에게 '변하지 않는 친구'가 특별한 까닭으로 암시한 학교 규칙은 무엇인가 / 답: 미미르 부속 고등학교 학생들은 시험에서 탈락하면 기억 소거와 함께 이전과는 다른 모습으로 리셋되어 친구와 기억을 모두 잃고 다시 1학년이 된다(school_of_lock_10 L57-L73) / 근거: 같은 미미르 부속 고등학교의 시험 제도로, 선생님과 달리 학생들은 시험 탈락 시 기억과 외형이 바뀌어 버린다는 설정이 나가의 암시에 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "juvenile_days_02",
+          "line_start": 144,
+          "line_end": 150,
+          "quote": "나가: 학생과 선생님은 [역할]이 다르니까.\n나가: 내일도 만날 수 있는, 변하지 않는 친구라는 건~\n나가: 인생을 훨씬 평범하게 만들어 주거든.\n아인: 와···.\n아인: 되게 멋있는 말을 하신 것 같은데, 무슨 소린지 하나도 못 알아듣겠어요.\n나가: 조금만 생각해 보면 금방 알아들을 거야~\n나가: 우린 같은 학교 학생들이잖아? 후훗."
+        },
+        {
+          "scene_id": "school_of_lock_10",
+          "line_start": 70,
+          "line_end": 73,
+          "quote": "트리세라: 친구들도 선생님들도 추억도 기억도 다 잃어버리고 다시 1학년부터···.\n트리세라: 주변 애들이 리셋되는 모습을 자주 보게 되면 학생들이 사고 전환을 일으킬까 봐.\n트리세라: 리셋 당하고 나면 이전이랑은 다른 모습으로,\n트리세라: 기억 소거가 된 채 다시 1학년이 되는 거죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"미미르 부속\"으로 school_of_lock을 찾고 show로 확인한 school_of_lock_10 L57-L73"
+      ]
+    },
+    {
+      "link_id": "C1__130__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "juvenile_days_05__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "juvenile_days_12",
+          "line_start": 68,
+          "line_end": 82,
+          "scan_id": "S0038"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아인과 마르차나의 면담을 몰래 엿듣고 '[왕따]'라는 단어만으로 아인이 누군가를 왕따시켰다는 소문을 퍼뜨린 사람은 누구인가 / 답: 남들에게 들은 소문인 척 말하던 활발한 여학생 본인이다(juvenile_days_12 L68-L82) / 근거: 나루의 블랙박스 녹화 영상에 활발한 여학생이 방음 너머로 '왕따'라는 단어만 엿듣는 모습이 찍혀 있었고, 그 뒤 반 아이들에게 '[왕따]' 키워드를 흘리며 소문을 퍼뜨렸음이 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "juvenile_days_05",
+          "line_start": 30,
+          "line_end": 37,
+          "quote": "활발한 여학생: 뭐··· 방음이 워낙 잘 돼서 제대로 들은 건 없다는데.\n활발한 여학생: 그 단어는 확실히 들었대.\n평범한 여학생: 그 단어?\n활발한 여학생: [왕따].\n평범한 여학생: 헐, 그럼 설마···.\n평범한 여학생: 아인이 누굴 왕따시켰다는 거야?!\n활발한 여학생: 목소리 줄여, 누구 듣겠다.\n활발한 여학생: 어쨌든 그런 소문이 지금 좀 돌고 있긴 해."
+        },
+        {
+          "scene_id": "juvenile_days_12",
+          "line_start": 70,
+          "line_end": 73,
+          "quote": "활발한 여학생: 친구···? 친구가 뭐 어쩌고···.\n활발한 여학생: 어?\n활발한 여학생: 왕따. 분명 왕따라고 했어.\n활발한 여학생: ···오케이."
+        },
+        {
+          "scene_id": "juvenile_days_12",
+          "line_start": 81,
+          "line_end": 82,
+          "quote": "츠바이: 그 이후로 기다렸다는 듯, [왕따] 라는 키워드를 흘렸고.\n츠바이: 반 아이들에게 지속해서 이야기해 왔습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "juvenile_days_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_03__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_09__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_12__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_13__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_13__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_14__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "juvenile_days_14__clh_002",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}
