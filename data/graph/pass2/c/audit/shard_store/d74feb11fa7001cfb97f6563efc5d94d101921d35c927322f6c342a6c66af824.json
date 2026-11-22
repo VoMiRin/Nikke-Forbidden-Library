@@ -1,0 +1,870 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__065",
+  "candidate_links": [
+    {
+      "link_id": "C1__065__001",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_30_01__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 주변과 달리 수정에 조금도 영향을 받지 않은 새하얀 건물은 무엇이며 왜 수정이 침범하지 못했나 / 답: 문과 창문이 기능하지 않는 껍데기뿐인 유리 건물이며 유리 재질이라 수정이 침범하지 못했다(main_30_01 L3-L7) / 근거: 일행이 앞 장면에서 발견한 새하얀 건물에 직접 들어가 표면 재질과 구조를 확인한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_00", "line_start": 55, "line_end": 55, "quote": "네온: ···응? 그러고 보니 저 새하얀 건물은 대체 뭘까요?" },
+        { "scene_id": "main_30_00", "line_start": 58, "line_end": 58, "quote": "프레자일: ···수정에 조금도 영향을 안 받았어요." },
+        { "scene_id": "main_30_01", "line_start": 6, "line_end": 6, "quote": "트로니: 응. 껍데기만 있는 것 같아." },
+        { "scene_id": "main_30_01", "line_start": 7, "line_end": 7, "quote": "시프티: ···유리로 만들어진 건물이라 수정이 침범하지 못한 거군요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__002",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_00__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_30_13__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 수정 투성이인 지역에 왜 저 새하얀 건물이 홀로 서 있나 / 답: 방주 제작용 연산 장치인 하모니 큐브가 수정을 막기 위해 유리로 짓던 기초 건물 중 연산의 작은 오류로 먼 곳에 생겨난 건물이다(main_30_13 L6-L16) / 근거: 일레그가 리버린을 발견한 그 유리 건물이 하모니 큐브 인근 유리 건물들의 일환이라고 직접 지칭해 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_00", "line_start": 55, "line_end": 55, "quote": "네온: ···응? 그러고 보니 저 새하얀 건물은 대체 뭘까요?" },
+        { "scene_id": "main_30_13", "line_start": 15, "line_end": 15, "quote": "일레그: 리버린 씨를 발견한 건물도 그 일환인 것 같고여." },
+        { "scene_id": "main_30_13", "line_start": 16, "line_end": 16, "quote": "일레그: 연산에 작은 오류가 생겨, 먼 곳에 생겨난 거겠져." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__003",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_00__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_42_01", "line_start": 210, "line_end": 210, "scan_id": "S0002" }],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "main_30_00의 새하얀 건물은 수정 지대에 하모니 큐브의 연산 오류로 생겨난 유리 건물이고, main_42_01의 새하얀 건물들은 포비스트의 유사 방주에 있는 별개의 건물들로 표현만 겹칠 뿐이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_00", "line_start": 55, "line_end": 55, "quote": "네온: ···응? 그러고 보니 저 새하얀 건물은 대체 뭘까요?" },
+        { "scene_id": "main_42_01", "line_start": 210, "line_end": 210, "quote": "저 멀리 새하얀 건물들이 무너진다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__004",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_01__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_30_13__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 문과 창문이 기능하지 않는 껍데기뿐인 하얀 유리 건물이 왜 이곳에 만들어져 있나 / 답: 방주 제작용 연산 장치인 하모니 큐브가 수정을 막기 위해 방주 기초로 유리 건물을 짓던 중 연산 오류로 먼 곳에 생겨난 것이다(main_30_13 L6-L16) / 근거: 일레그가 하모니 큐브 인근의 유리 건물들을 보며 리버린을 발견했던 건물이 연산 오류로 먼 곳에 생겨난 같은 일환이라고 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_01", "line_start": 5, "line_end": 5, "quote": "일레그: 문도 있고 창문도 있는뎨···. 기능은 하지 않네여." },
+        { "scene_id": "main_30_01", "line_start": 7, "line_end": 7, "quote": "시프티: ···유리로 만들어진 건물이라 수정이 침범하지 못한 거군요." },
+        { "scene_id": "main_30_13", "line_start": 14, "line_end": 14, "quote": "일레그: 그럼 유리로 건물을 짓자. 가 된 것 같아여." },
+        { "scene_id": "main_30_13", "line_start": 15, "line_end": 15, "quote": "일레그: 리버린 씨를 발견한 건물도 그 일환인 것 같고여." },
+        { "scene_id": "main_30_13", "line_start": 16, "line_end": 16, "quote": "일레그: 연산에 작은 오류가 생겨, 먼 곳에 생겨난 거겠져." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__005",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_28_12__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_30_02__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 리버린이 왜 마스터(#000000)에게 프레자일만은 건드리지 말아 달라고 애원하나 / 답: 과거 식스오의 뒷세계 운반책 일에 잘못 휘말려 프레자일의 동생이 사망한 뒤 다시 이 일에 손을 대면 같이 죽기로 프레자일과 약속했기 때문이다(main_30_02 L24-L43) / 근거: 리버린과 프레자일이 식스오의 일을 다시 하게 된 사실을 프레자일에게 숨겨야 했던 과거 사건과 약속을 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "main_28_12", "line_start": 150, "line_end": 150, "quote": "제발 부탁이니 프레자일은 건드리지 말아 주세요" },
+        { "scene_id": "main_30_02", "line_start": 30, "line_end": 30, "quote": "프레자일: 만약, 만약 이 일에 다시 손을 댄다면." },
+        { "scene_id": "main_30_02", "line_start": 31, "line_end": 31, "quote": "프레자일: 그땐 같이 죽기로 약속했죠." },
+        { "scene_id": "main_30_02", "line_start": 40, "line_end": 40, "quote": "프레자일: 제 동생이거든요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__006",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_03__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_30_02__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 리버린이 왜 같은 스쿼드 멤버인 프레자일에게도 비밀로 하고 탐색 임무에 자원했나 / 답: 과거 식스오의 운반책 일에 프레자일의 동생이 휘말려 죽은 뒤 다시 그 일에 손을 대면 같이 죽기로 약속했기에 식스오의 지시로 온 사실을 프레자일에게 알릴 수 없었기 때문이다(main_30_02 L24-L43) / 근거: 프레자일과 리버린이 동생 사망 사건과 재발 시 동반 사망 약속을 직접 털어놓는다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_03", "line_start": 20, "line_end": 20, "quote": "아니스: ···리버린 말이야. 프레자일한테 얘기 안 하고 올라온 것 같지?" },
+        { "scene_id": "main_29_03", "line_start": 38, "line_end": 38, "quote": "[OPTION TEXT=\"같은 스쿼드 멤버한테도 비밀로 하고 여기 온 것도 그렇고.\"]" },
+        { "scene_id": "main_30_02", "line_start": 30, "line_end": 30, "quote": "프레자일: 만약, 만약 이 일에 다시 손을 댄다면." },
+        { "scene_id": "main_30_02", "line_start": 31, "line_end": 31, "quote": "프레자일: 그땐 같이 죽기로 약속했죠." },
+        { "scene_id": "main_30_02", "line_start": 43, "line_end": 43, "quote": "프레자일: 리버린의 잘못으로 죽은 건 아니죠. 하지만 동생은 죽었어요. 일에 잘못 휘말려서요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__007",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_03__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_30_02__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 리버린이 탐색 임무에 자원해 메시지에 집착하던 내막은 무엇인가 / 답: 식스오가 새로운 탐색지에서 '[그 누구도 손에 넣지 못한 것]'을 가져오라고 시켜서 왔기 때문이다(main_30_02 L59-L62) / 근거: 아니스가 핸드폰만 만지작거리던 이유를 짚자 리버린이 맞다고 인정하며 식스오가 지시한 물건을 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_03", "line_start": 34, "line_end": 34, "quote": "[OPTION TEXT=\"리버린이 전에 메시지에 집착하던 것도 그렇고.\"]" },
+        { "scene_id": "main_29_03", "line_start": 47, "line_end": 47, "quote": "라피: 내막을 알기 전에는 어떤 불안 요소가 있을지 알 수 없습니다." },
+        { "scene_id": "main_30_02", "line_start": 59, "line_end": 59, "quote": "아니스: 핸드폰만 계속 만지작거리던 것도 그 이유겠고." },
+        { "scene_id": "main_30_02", "line_start": 61, "line_end": 61, "quote": "리버린: [그 누구도 손에 넣지 못한 것]을 가져오라고 했어요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__008",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_28_11__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_30_02__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 리버린이 왜 필그림을 보자마자 사진이라도 찍으면 거래를 할 수 있다고 말했나 / 답: 식스오가 '[그 누구도 손에 넣지 못한 것]'을 가져오라고 지시했는데 수정은 가져갈 수 없어 언노운(필그림)의 사진으로 거래하려 했기 때문이다(main_30_02 L61-L64) / 근거: 리버린이 식스오의 지시 내용을 밝히자 네온이 언노운의 사진을 찍으려 한 이유를 짚고 리버린이 인정한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_28_11", "line_start": 65, "line_end": 65, "quote": "리버린: 필그림··· 필그림이야···! 사진이라도 찍으면 거래를···!" },
+        { "scene_id": "main_30_02", "line_start": 61, "line_end": 61, "quote": "리버린: [그 누구도 손에 넣지 못한 것]을 가져오라고 했어요." },
+        { "scene_id": "main_30_02", "line_start": 63, "line_end": 63, "quote": "네온: ···그래서 언노운의 사진을···." },
+        { "scene_id": "main_30_02", "line_start": 64, "line_end": 64, "quote": "리버린: ···수정은 못 가져가니까요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__009",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_11__clh_004" }],
+      "target": [{ "ref": "item", "item_id": "main_30_02__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 리버린이 왜 살려면 어쩔 수 없다며 필그림의 사진 촬영에 집착했나 / 답: 식스오가 탐색지에서 '[그 누구도 손에 넣지 못한 것]'을 가져오라고 지시했고 수정을 가져갈 수 없어 언노운의 사진을 대신 가져가려 했기 때문이다(main_30_02 L61-L64) / 근거: 리버린이 식스오의 지시 품목을 밝히며 언노운의 사진에 집착한 사정을 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_11", "line_start": 74, "line_end": 74, "quote": "일레그: ···왜 그렇게 필그림의 사진에 집착하는지는 모르겠지만여." },
+        { "scene_id": "main_29_11", "line_start": 75, "line_end": 75, "quote": "프레자일: 살려면 어쩔 수 없다고··· 말했다고 하셨죠?" },
+        { "scene_id": "main_30_02", "line_start": 61, "line_end": 61, "quote": "리버린: [그 누구도 손에 넣지 못한 것]을 가져오라고 했어요." },
+        { "scene_id": "main_30_02", "line_start": 63, "line_end": 63, "quote": "네온: ···그래서 언노운의 사진을···." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__010",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_19__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_30_02__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 리버린이 왜 그 사진이라도 없으면 큰일 날 것이라 여겼나 / 답: 식스오로부터 '[그 누구도 손에 넣지 못한 것]'을 가져오라는 지시를 받은 상태에서 수정을 가져갈 수 없자 언노운의 사진이라도 바치려 했기 때문이다(main_30_02 L61-L64) / 근거: 프레자일이 짐작했던 사진 촬영의 이유가 다음 장에서 식스오의 지시 내용으로 구체화된다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_19", "line_start": 29, "line_end": 29, "quote": "프레자일: 그 사진이라도 없으면." },
+        { "scene_id": "main_29_19", "line_start": 30, "line_end": 30, "quote": "프레자일: 큰일 날 거라 생각하고 있을 거예요." },
+        { "scene_id": "main_30_02", "line_start": 61, "line_end": 61, "quote": "리버린: [그 누구도 손에 넣지 못한 것]을 가져오라고 했어요." },
+        { "scene_id": "main_30_02", "line_start": 64, "line_end": 64, "quote": "리버린: ···수정은 못 가져가니까요." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__011",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_05__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_45_03__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 일레그가 말한 방주가 정체도 정확히 모르면서 인프라를 구축해 둔 미지의 존재는 무엇인가 / 답: 방주 전체의 전력을 담당하는 동력원인 초거대 코어다(main_45_03 L63-L74) / 근거: 같은 일레그와 트로니가 방주 지하의 초거대 코어 앞에서 그것이 방주 동력원의 정체이며 변전소를 거쳐 방주 전역으로 동력이 보급된다고 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_05", "line_start": 67, "line_end": 67, "quote": "일레그: 미지의 뭔가를 발견하고, 그게 뭔지도 정확하게 모르면서." },
+        { "scene_id": "main_30_05", "line_start": 68, "line_end": 68, "quote": "일레그: 그걸 위한 인프라를 구축하는게여." },
+        { "scene_id": "main_45_03", "line_start": 63, "line_end": 63, "quote": "일레그: ···이게 방주 동력원의 정체." },
+        { "scene_id": "main_45_03", "line_start": 64, "line_end": 64, "quote": "일레그: 초거대 코어에여." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "방주 동력원에 관한 일레그·트로니의 언급이 뒤 장에서 밝혀지는 것으로 기억함. 동력원 grep으로 확인한 main_45_03 L63-L74"
+      ]
+    },
+    {
+      "link_id": "C1__065__012",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_05__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_45_03__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 일레그가 방주에서도 똑같이 '밥을 주는 것'이라고 비유한 행위의 실체는 무엇인가 / 답: 영구 동력이 아닌 1세대 초거대 코어의 동력을 유지하기 위해 컨테이너에 담긴 생체 조직을 먹이로 공급하는 것이다(main_45_03 L92-L100) / 근거: 일레그와 트로니가 초거대 코어에 연결된 관과 컨테이너들이 코어의 [먹이]인 생체 조직을 주입하는 시설이라고 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_05", "line_start": 70, "line_end": 70, "quote": "일레그: 밥을 주는 것 까지도 똑같네여." },
+        { "scene_id": "main_45_03", "line_start": 93, "line_end": 93, "quote": "일레그: 저 안에 있는 것들이 초거대 코어의 [먹이]가 되는 거예여." },
+        { "scene_id": "main_45_03", "line_start": 100, "line_end": 100, "quote": "트로니: ···생체 조직을 섭취해 동력을 유지하고 있다는 말이야." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "동력원 grep으로 확인한 main_45_03 L92-L100"
+      ]
+    },
+    {
+      "link_id": "C1__065__013",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_05__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "main_30_08__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 관을 들고 다니던 필그림이 수정 지대의 주인인가 / 답: 수정들의 주인이 아니다(main_30_08 L30-L31) / 근거: 라피가 관을 들고 다니던 그레이브에게 이 수정들의 주인이냐고 직접 묻자 아니라고 답한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_05", "line_start": 113, "line_end": 113, "quote": "[OPTION TEXT=\"그 관을 들고 다니던 필그림이 이곳의 주인일 가능성은?\"]" },
+        { "scene_id": "main_30_08", "line_start": 30, "line_end": 30, "quote": "라피: 넌 이 수정들의 주인이야?" },
+        { "scene_id": "main_30_08", "line_start": 31, "line_end": 31, "quote": "그레이브: 아니." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__014",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_08__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "old_tales_27__clh_004" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 그레이브는 왜 단어를 뚝뚝 끊어 어눌하게 말하며 말을 잘 못하나 / 답: 과거 에이브 시절 지상 연구원들에게 붙잡혀 1년간 외피와 내부를 조사당한 뒤 얼굴이 망가지고 말을 제대로 못 하게 된 후유증 때문이다(old_tales_27 L134-L138) / 근거: 멀쩡하게 말하던 에이브가 연구원들의 해체 조사 직후부터 그레이브 특유의 끊어 말하는 말투로 바뀌며 '말, 제대로, 못 하겠, 다'라고 말한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_08", "line_start": 37, "line_end": 37, "quote": "그레이브: 대화, 오랜, 만." },
+        { "scene_id": "main_30_08", "line_start": 38, "line_end": 38, "quote": "그레이브: 얘기, 잘, 못 한다." },
+        { "scene_id": "old_tales_27", "line_start": 138, "line_end": 138, "quote": "에이브: 말, 제대로, 못 하겠, 다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__015",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_08__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_32_03", "line_start": 31, "line_end": 45, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 그레이브가 하모니 큐브가 있는 이곳에서 무엇을 하고 있나 / 답: 과거 싸움에서 큰 부상을 입은 신데렐라의 몸을 부품과 재료, 그리고 하모니 큐브의 연산 능력을 활용한 관의 치료 능력으로 회복시키고 있다(main_32_03 L31-L45) / 근거: 그레이브가 하모니 큐브 인근에서 데이터 하이재킹으로 연산 능력을 끌어와 관 속 신데렐라의 몸을 고치고 있었다고 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_08", "line_start": 32, "line_end": 32, "quote": "라피: 그럼 여기서 뭘 하고 있지?" },
+        { "scene_id": "main_30_08", "line_start": 35, "line_end": 35, "quote": "그레이브: 다시, 쓴다." },
+        { "scene_id": "main_32_03", "line_start": 38, "line_end": 38, "quote": "그레이브: 하모니 큐브 연산 능력 활용." },
+        { "scene_id": "main_32_03", "line_start": 39, "line_end": 39, "quote": "그레이브: 관의 치료 능력 많이 올려준다." },
+        { "scene_id": "main_32_03", "line_start": 42, "line_end": 42, "quote": "그레이브: 신데렐라 몸은 완전 회복 직전." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__016",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_08__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_32_12", "line_start": 330, "line_end": 338, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 그레이브가 말한 '오래되어 잊혀지고 퇴색된 이야기를 다시 쓴다'는 말은 무엇을 뜻하나 / 답: 아나키오르가 아닌 신데렐라로서 눈을 뜨게 하여 치욕스러웠던 과거를 다시 쓰고 오래된 이야기를 해피 엔딩으로 끝내겠다는 뜻이다(main_32_12 L330-L338) / 근거: 그레이브가 신데렐라를 깨우며 '다시 쓰는 거다', '오래된 이야기는 해피 엔딩으로 끝나야 한다'라고 같은 표현을 직접 받아 말한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_08", "line_start": 33, "line_end": 33, "quote": "그레이브: ···오래된, 이야기." },
+        { "scene_id": "main_30_08", "line_start": 34, "line_end": 34, "quote": "그레이브: 잊혀져, 퇴색된, 이야기." },
+        { "scene_id": "main_30_08", "line_start": 35, "line_end": 35, "quote": "그레이브: 다시, 쓴다." },
+        { "scene_id": "main_32_12", "line_start": 333, "line_end": 333, "quote": "그레이브: 그 치욕스러웠던 과거를 다시 쓰는 거다." },
+        { "scene_id": "main_32_12", "line_start": 335, "line_end": 335, "quote": "그레이브: 오래된 이야기는." },
+        { "scene_id": "main_32_12", "line_start": 336, "line_end": 336, "quote": "그레이브: 해피 엔딩으로 끝나야 한다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__017",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_08__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "grave_01__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 과거 인간들이 왜 그레이브의 배를 가르고 머리를 찌르는 생체 실험을 가했나 / 답: 신기한 무언가가 나오지 않을까 궁금해하며 원하는 것을 찾을 때까지 머리를 열어 계속 헤집다가 아무것도 나오지 않자 멈췄고 그때 물리적으로 뇌가 망가졌다(grave_01 L68-L75) / 근거: 그레이브 본인이 인간들이 머리를 열어 헤집었던 이유와 그로 인한 뇌 손상을 직접 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_08", "line_start": 67, "line_end": 67, "quote": "그레이브: 배, 가른다." },
+        { "scene_id": "main_30_08", "line_start": 68, "line_end": 68, "quote": "그레이브: 머리, 찌른다." },
+        { "scene_id": "grave_01", "line_start": 70, "line_end": 70, "quote": "그레이브: 인간 내 머리 열어봤다. 헤집었다." },
+        { "scene_id": "grave_01", "line_start": 71, "line_end": 71, "quote": "그레이브: 신기한 무언가가 나오지 않을까 궁금해했다." },
+        { "scene_id": "grave_01", "line_start": 75, "line_end": 75, "quote": "그레이브: 그때 머리 많이 망가졌다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__018",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_08__clh_003" }],
+      "target": [{ "ref": "lines", "scene_id": "old_tales_27", "line_start": 114, "line_end": 126, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지상의 인간들이 왜 그레이브(에이브)를 붙잡아 외피와 내부를 가르고 조사했나 / 답: 지상 연구원들이 방주 건설 이전의 니케에게서 NIMPH 이상 여부와 로스트 테크놀로지를 발견해 한몫 잡으려고 1년간 외피와 내부를 해체해 확인했다(old_tales_27 L114-L126) / 근거: 에이브가 연구원들에게 붙잡혀 외피와 내부를 확인당한 사건이 직접 묘사된다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_08", "line_start": 67, "line_end": 67, "quote": "그레이브: 배, 가른다." },
+        { "scene_id": "main_30_08", "line_start": 68, "line_end": 68, "quote": "그레이브: 머리, 찌른다." },
+        { "scene_id": "old_tales_27", "line_start": 118, "line_end": 118, "quote": "연구원: 일단 외피부터 확인해 보고, 그다음 내부를 확인해 보자." },
+        { "scene_id": "old_tales_27", "line_start": 126, "line_end": 126, "quote": "연구원: 로스트 테크놀로지라도 발견해서 한몫 잡아보려고 했더니 글렀네." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__019",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_09__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_02_12", "line_start": 66, "line_end": 68, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 그레이브의 '네가 보기에 너는 무엇으로 보이는가'라는 말에 지휘관이 왜 '···그 말···.'이라며 반응했나 / 답: 과거 라피가 지휘관에게 '지휘관에겐 우리가 무엇으로 보이십니까?'라고 물었던 말과 겹쳤기 때문이다(main_02_12 L66-L67) / 근거: 지휘관이 과거 대사를 명시하지 않고 '···그 말···.'로만 가리키므로 감춰진 쪽은 main_30_09이고 그 말의 실체가 적힌 main_02_12가 공개 쪽이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_09", "line_start": 50, "line_end": 50, "quote": "그레이브: 무엇으로, 보이는가." },
+        { "scene_id": "main_30_09", "line_start": 53, "line_end": 53, "quote": "[OPTION TEXT=\"···그 말···.\"]" },
+        { "scene_id": "main_02_12", "line_start": 67, "line_end": 67, "quote": "라피: 지휘관에겐 우리가 무엇으로 보이십니까?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__020",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_09__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_32_14", "line_start": 39, "line_end": 43, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 그레이브가 사명과 함께 '네가 보기에 너는 무엇으로 보이는가'라고 묻자 라피는 왜 크게 동요했나 / 답: 자신이 레드 후드의 껍데기만 흉내 내고 있었을 뿐 스스로 무엇을 위해 살아왔으며 자신이 무엇이고 무엇으로 보이는지 해답을 찾지 못하고 있었기 때문이다(main_32_14 L39-L43) / 근거: 라피가 그레이브의 질문 문구인 '나는 무엇으로 보이는가'를 그대로 되뇌며 해답을 찾지 못했다고 고백한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_09", "line_start": 49, "line_end": 49, "quote": "그레이브: 네가 보기에, 너는." },
+        { "scene_id": "main_30_09", "line_start": 50, "line_end": 50, "quote": "그레이브: 무엇으로, 보이는가." },
+        { "scene_id": "main_30_09", "line_start": 51, "line_end": 51, "quote": "라피: !!" },
+        { "scene_id": "main_32_14", "line_start": 42, "line_end": 42, "quote": "라피: 나는 무엇으로 보이는가." },
+        { "scene_id": "main_32_14", "line_start": 43, "line_end": 43, "quote": "라피: ···그 해답을 찾지 못했어." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__021",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_09__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_40_17", "line_start": 117, "line_end": 117, "scan_id": "S0003" }],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "main_30_09는 사명과 정체성을 묻는 그레이브의 비유적 질문이고, main_40_17은 프리카가 씻으러 가기 전 실제 거울에 비친 자신의 모습을 보는 지문으로 무관한 장면이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_09", "line_start": 48, "line_end": 48, "quote": "그레이브: 거울에, 무엇이, 비치는가." },
+        { "scene_id": "main_40_17", "line_start": 117, "line_end": 117, "quote": "거울에 비친 자신의 모습을 본다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__022",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_28_11__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_30_09__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 의료용 기계들에 둘러싸인 거대한 수정 안에 보이던 흐릿한 사람 형태의 그림자와 라피의 불길한 예감의 정체는 무엇인가 / 답: 그레이브가 관 속에 눕혀 보호하고 있던 청백색 니케 아나키오르(신데렐라)다(main_30_09 L141-L159) / 근거: 수정 안 그림자를 보며 부숴야 한다고 반응했던 라피가 그레이브의 관 속에서 청백색 니케를 보자 헬레틱 아나키오르라고 알아본다.",
+      "supporting_evidence": [
+        { "scene_id": "main_28_11", "line_start": 22, "line_end": 22, "quote": "높게 솟은 수정 안에 흐릿한 그림자가 보인다." },
+        { "scene_id": "main_28_11", "line_start": 24, "line_end": 24, "quote": "[OPTION TEXT=\"···사람··· 인가?\"]" },
+        { "scene_id": "main_30_09", "line_start": 144, "line_end": 144, "quote": "청백색의 니케가 누워있었다." },
+        { "scene_id": "main_30_09", "line_start": 159, "line_end": 159, "quote": "라피: 헬레틱 아나키오르가 네 관에 있는 거냐!" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__023",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_28_12__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "main_30_09__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 언노운(그레이브)이 짊어지고 다니는 그 관은 무엇인가 / 답: 잠든 듯 누워 있는 청백색의 니케 아나키오르(신데렐라)가 들어 있는 관이다(main_30_09 L141-L159) / 근거: 라피가 앞에서 물었던 그레이브의 관 내부가 열리며 안에 누워 있는 청백색 니케가 직접 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "main_28_12", "line_start": 192, "line_end": 192, "quote": "라피: 그 관은 뭐고, 세븐스 드워프라는 말은 또 뭐지?" },
+        { "scene_id": "main_30_09", "line_start": 141, "line_end": 141, "quote": "그리고 시선을 내려, 그레이브의 관 안에 있는 것을 바라보았다." },
+        { "scene_id": "main_30_09", "line_start": 144, "line_end": 144, "quote": "청백색의 니케가 누워있었다." },
+        { "scene_id": "main_30_09", "line_start": 159, "line_end": 159, "quote": "라피: 헬레틱 아나키오르가 네 관에 있는 거냐!" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__024",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_15__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_30_09__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 언노운(그레이브)이 무너지는 수정 속에서 몸으로 감싸 지킬 만큼 소중히 여기는 관 안에는 무엇이 있나 / 답: 청백색의 니케 아나키오르(신데렐라)가 잠든 듯 누워 있다(main_30_09 L141-L159) / 근거: 그레이브가 목숨 걸고 지키던 관의 내부가 열리며 그 안에 누워 있는 니케의 정체가 밝혀진다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_15", "line_start": 63, "line_end": 63, "quote": "언노운은 들고 다니던 관과 상자를 감싸듯 엎드리고 있다." },
+        { "scene_id": "main_29_15", "line_start": 66, "line_end": 66, "quote": "[OPTION TEXT=\"···그 관과 상자가 소중한 거지?\"]" },
+        { "scene_id": "main_30_09", "line_start": 141, "line_end": 141, "quote": "그리고 시선을 내려, 그레이브의 관 안에 있는 것을 바라보았다." },
+        { "scene_id": "main_30_09", "line_start": 144, "line_end": 144, "quote": "청백색의 니케가 누워있었다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__025",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_16__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "main_30_09__clh_003" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사람 혹은 니케용 인큐베이터나 콜드 슬립 장치로 추정된 언노운의 관 안에는 누가 들어 있나 / 답: 잠든 것처럼 누워 있는 청백색 니케 아나키오르(신데렐라)가 들어 있다(main_30_09 L141-L159) / 근거: 지휘관이 니케용 콜드 슬립 장치로 추정한 그 관이 열리며 안에 누워 있는 청백색 니케가 확인된다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_16", "line_start": 48, "line_end": 48, "quote": "[OPTION TEXT=\"크기로 봐선 당연히 사람, 혹은 니케용일테고···.\"]" },
+        { "scene_id": "main_29_16", "line_start": 57, "line_end": 57, "quote": "[OPTION TEXT=\"인큐베이터나 콜드 슬립 장치에 가까운 것 같은데···.\"]" },
+        { "scene_id": "main_30_09", "line_start": 143, "line_end": 143, "quote": "그곳에는 마치 편안하게 잠든 것처럼 보이는." },
+        { "scene_id": "main_30_09", "line_start": 144, "line_end": 144, "quote": "청백색의 니케가 누워있었다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__026",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_09__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "main_30_10__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 만난 적 없는 라피가 어떻게 관 속의 청백색 니케를 보자마자 헬레틱 아나키오르라는 이름과 정체를 알았나 / 답: 라피 안에 남아 있던 레드 후드의 기억을 통해 확신하게 된 것이다(main_30_10 L118-L127) / 근거: 네온이 관 속 인물이 헬레틱인 줄 어떻게 알았냐고 묻자 라피와 지휘관이 레드 후드의 기억 때문이라고 답한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_09", "line_start": 145, "line_end": 145, "quote": "라피: 아나키오르···!" },
+        { "scene_id": "main_30_09", "line_start": 159, "line_end": 159, "quote": "라피: 헬레틱 아나키오르가 네 관에 있는 거냐!" },
+        { "scene_id": "main_30_10", "line_start": 118, "line_end": 118, "quote": "네온: 그런데 관 안에 있는 게 헬레틱인 줄은 어떻게 아셨나요?" },
+        { "scene_id": "main_30_10", "line_start": 122, "line_end": 122, "quote": "라피: 아마도··· 그걸 알고 있는 이유는 레드 후드의···." },
+        { "scene_id": "main_30_10", "line_start": 124, "line_end": 124, "quote": "[OPTION TEXT=\"···레드 후드의 기억일 수도 있겠다.\"]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__027",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_09__clh_003" }],
+      "target": [{ "ref": "item", "item_id": "main_32_03__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피가 관 속 니케를 헬레틱 아나키오르라고 부르자 그레이브는 왜 그 이름으로 부르지 말라며 격분했나 / 답: 그녀의 본래 이름은 신데렐라이며 그레이브가 언체인드로 고쳐 이제 더 이상 헬레틱이 아니기 때문이다(main_32_03 L3-L11) / 근거: 라피가 아나키오르라는 호칭을 신데렐라로 고쳐 부르며 묻자 그레이브가 언체인드로 고쳐 헬레틱이 아니라고 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_09", "line_start": 159, "line_end": 159, "quote": "라피: 헬레틱 아나키오르가 네 관에 있는 거냐!" },
+        { "scene_id": "main_30_09", "line_start": 164, "line_end": 164, "quote": "그레이브: 그 이름으로, 부르지, 마라···!" },
+        { "scene_id": "main_32_03", "line_start": 3, "line_end": 3, "quote": "라피: 아나키오르··· 아니. 신데렐라는 이제 헬레틱이 아니라고?" },
+        { "scene_id": "main_32_03", "line_start": 6, "line_end": 6, "quote": "그레이브: 고쳤다." },
+        { "scene_id": "main_32_03", "line_start": 8, "line_end": 8, "quote": "[OPTION TEXT=\"···언체인드.\"]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__028",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_09__clh_003" }],
+      "target": [{ "ref": "lines", "scene_id": "main_32_03", "line_start": 28, "line_end": 42, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 아나키오르(신데렐라)가 잠든 채로 이곳 그레이브의 관 안에 들어 있나 / 답: 과거 큰 부상을 입은 신데렐라의 몸을 유리 구두와 링크시킬 수 있도록 그레이브가 부품을 모으고 하모니 큐브의 연산 능력으로 관의 치료 능력을 높여 고치고 있었기 때문이다(main_32_03 L28-L42) / 근거: 라피의 '왜 헬레틱 아나키오르가 네 관에 있는 거냐'는 질문에 대해 그레이브가 관에 눕혀 하모니 큐브 인근에서 치료해 온 경위를 설명한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_09", "line_start": 159, "line_end": 159, "quote": "라피: 헬레틱 아나키오르가 네 관에 있는 거냐!" },
+        { "scene_id": "main_30_09", "line_start": 165, "line_end": 165, "quote": "라피: 말해! 아나키오르를 왜 네가···!" },
+        { "scene_id": "main_32_03", "line_start": 28, "line_end": 28, "quote": "그레이브: 신데렐라 많이 다쳤다." },
+        { "scene_id": "main_32_03", "line_start": 38, "line_end": 38, "quote": "그레이브: 하모니 큐브 연산 능력 활용." },
+        { "scene_id": "main_32_03", "line_start": 39, "line_end": 39, "quote": "그레이브: 관의 치료 능력 많이 올려준다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__029",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_26_12__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_30_10__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 레드 후드가 사라진 뒤에도 라피의 코어 부근에 미약하게 감지되던 알 수 없는 에너지는 무엇이었나 / 답: 오버히트 없이 안정된 출력으로 발현되는 레드 후드의 힘과 기억의 잔재다(main_30_10 L50-L127) / 근거: 더 이상 레드 후드를 못 쓰는 줄 알았던 라피가 다시 붉게 변해 안정된 출력으로 힘을 쓰고 레드 후드의 기억을 떠올린다.",
+      "supporting_evidence": [
+        { "scene_id": "main_26_12", "line_start": 39, "line_end": 39, "quote": "잉그리드: 라피의 코어 부근에 알 수 없는 에너지가 감지된다는 거다." },
+        { "scene_id": "main_30_10", "line_start": 50, "line_end": 50, "quote": "라피의 머리가 붉게 타오르기 시작했다." },
+        { "scene_id": "main_30_10", "line_start": 113, "line_end": 113, "quote": "아니스: 그리고 라피가 레드 후드를 사용했다고? 그거 이제 못 쓰는 거 아니었어?" },
+        { "scene_id": "main_30_10", "line_start": 115, "line_end": 115, "quote": "라피: 많이··· 안정된 느낌이랄까." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__030",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_29_16__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_30_10__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 언노운과 세븐스 드워프 이야기를 하던 라피는 왜 어쩐지 가슴이 두근거리는 느낌이 든다고 했나 / 답: 라피 안에 남아 있던 레드 후드의 힘과 기억이 반응하고 있었기 때문이다(main_30_10 L50-L127) / 근거: 언노운과 대면한 뒤 라피의 머리가 붉게 타오르며 레드 후드의 힘과 아나키오르에 대한 기억이 발현된다.",
+      "supporting_evidence": [
+        { "scene_id": "main_29_16", "line_start": 27, "line_end": 27, "quote": "라피: ···신경 쓰이는데." },
+        { "scene_id": "main_29_16", "line_start": 28, "line_end": 28, "quote": "라피: 어쩐지 가슴이 좀 두근거리는 느낌이어서." },
+        { "scene_id": "main_30_10", "line_start": 50, "line_end": 50, "quote": "라피의 머리가 붉게 타오르기 시작했다." },
+        { "scene_id": "main_30_10", "line_start": 124, "line_end": 124, "quote": "[OPTION TEXT=\"···레드 후드의 기억일 수도 있겠다.\"]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__031",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_10__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "old_tales_14", "line_start": 2, "line_end": 3, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피가 붉게 변하며 외친 '파티는 이미 오래전에 끝났다'는 말과 아나키오르에 대한 확신이 실제로 레드 후드의 기억에서 비롯된 것인가 / 답: 과거 레드 후드가 신데렐라(아나키오르)의 유리 구두를 깨뜨리고 제압하며 '유리 구두가 깨졌네. 파티는 끝났다.'라고 말했던 실제 사건의 기억이다(old_tales_14 L2-L3) / 근거: 레드 후드가 아나키오르를 쓰러뜨리며 한 대사를 라피가 아나키오르 앞에서 그대로 되풀이한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_10", "line_start": 55, "line_end": 55, "quote": "라피: 파티는 이미···! 오래전에 끝났다···!" },
+        { "scene_id": "main_30_10", "line_start": 124, "line_end": 124, "quote": "[OPTION TEXT=\"···레드 후드의 기억일 수도 있겠다.\"]" },
+        { "scene_id": "old_tales_14", "line_start": 2, "line_end": 2, "quote": "레드 후드: 유리 구두가 깨졌네." },
+        { "scene_id": "old_tales_14", "line_start": 3, "line_end": 3, "quote": "레드 후드: 파티는 끝났다." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__032",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_10__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "main_35_00", "line_start": 5, "line_end": 6, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 더 이상 못 쓰는 줄 알았던 레드 후드의 힘이 왜 오버히트 없이 안정된 느낌으로 라피에게서 발현되었나 / 답: 라피의 코어에 남아 있던 미약한 에너지가 라피와 서서히 융합되고 있었기 때문이다(main_35_00 L5-L6) / 근거: 잉그리드가 라피의 코어에 남아 있던 미약한 에너지가 정황상 라피와 완전히 융합되어 사라졌다고 진단한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_10", "line_start": 113, "line_end": 113, "quote": "아니스: 그리고 라피가 레드 후드를 사용했다고? 그거 이제 못 쓰는 거 아니었어?" },
+        { "scene_id": "main_30_10", "line_start": 115, "line_end": 115, "quote": "라피: 많이··· 안정된 느낌이랄까." },
+        { "scene_id": "main_35_00", "line_start": 6, "line_end": 6, "quote": "잉그리드: 코어에 남아있던 미약한 에너지는 사라졌다. 정황상 너와 완전히 융합되었다고 보는 게 맞겠군." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__033",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_11__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_30_13__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아무것도 얻지 못한 것처럼 보이던 리버린이 순순히 복귀 안내를 자청하자 프레자일은 왜 의아해했나 / 답: 리버린이 이미 가방 안에 작은 건전지와 수정을 넣은 유리병을 숨겨 식스오에게 가져가려 했기 때문이다(main_30_13 L48-L56) / 근거: 프레자일이 리버린의 가방에서 수정 유리병을 꺼내며 아무것도 얻지 못했는데 돌아가려 한 것이 이상했다고 직접 밝힌다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_11", "line_start": 135, "line_end": 135, "quote": "리버린: 그, 그럼 이제 복귀하는 건가요?" },
+        { "scene_id": "main_30_11", "line_start": 139, "line_end": 139, "quote": "프레자일: ···?" },
+        { "scene_id": "main_30_13", "line_start": 54, "line_end": 54, "quote": "프레자일: 이상하다고 생각했어." },
+        { "scene_id": "main_30_13", "line_start": 55, "line_end": 55, "quote": "프레자일: 넌 아무것도 얻질 못 했는데, 돌아가려 한다는 게." },
+        { "scene_id": "main_30_13", "line_start": 56, "line_end": 56, "quote": "프레자일: 이걸 식스오한테 가져다주려고?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__034",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_12__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_30_13__clh_002" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관이 하모니 큐브로 더 나아갈지 판단하려고 복귀 시간을 묻자 리버린은 왜 두 시간 거리를 반나절이라고 부풀려 말하려 했나 / 답: 이미 가방에 수정 유리병을 챙겨 두어 하모니 큐브까지 가지 않고 곧바로 방주로 돌아가 식스오에게 전달하려 했기 때문이다(main_30_13 L48-L62) / 근거: 다음 장면에서 리버린이 가방에 수정 유리병을 숨겨 두고 먼저 방주로 돌아가려 했던 사실이 드러난다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_12", "line_start": 29, "line_end": 29, "quote": "리버린: 반나절은···." },
+        { "scene_id": "main_30_12", "line_start": 30, "line_end": 30, "quote": "프레자일: 두 시간이면 충, 충분하다고 생각해요오···." },
+        { "scene_id": "main_30_13", "line_start": 52, "line_end": 52, "quote": "유리병 안에는 수정이 있었다. 작은 건전지와 함께." },
+        { "scene_id": "main_30_13", "line_start": 56, "line_end": 56, "quote": "프레자일: 이걸 식스오한테 가져다주려고?" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__035",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_17__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "main_45_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "질문: #000000이 프레자일에게 가장 중요한 것은 아직 말하지 않았다며 간직해 주는 대가로 리버린을 협박한 큰 비밀은 무엇인가 / 답: 정할 수 없음. main_45_09에서 인형처럼 멍하니 리버린과 프레자일의 이름을 부르는 로지를 두고 E.H.가 리버린이 식스오에게서 벗어나지 못한 이유와 연결 지어 의심하지만 스스로 억측이라며 확정하지 않는다 / 근거: 두 장면 모두 리버린이 프레자일과 관련해 식스오(#000000)에게 붙잡혀 벗어나지 못한 사정을 가리키나 원문에서 비밀의 구체적 내용이 확정되지 않는다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_17", "line_start": 51, "line_end": 51, "quote": "가장 중요한 건 말 안했잖아요?" },
+        { "scene_id": "main_30_17", "line_start": 81, "line_end": 81, "quote": "큰 비밀을 제가 간직하는 대가로" },
+        { "scene_id": "main_45_09", "line_start": 78, "line_end": 78, "quote": "바이퍼: 한 번씩 리버린이랑 프레자일 이름을 부른다던데···. 뭔지 알 수가 없네." },
+        { "scene_id": "main_45_09", "line_start": 81, "line_end": 81, "quote": "E.H.: 리버린이 식스오에게서 벗어나지 못한 이유는 설마···." },
+        { "scene_id": "main_45_09", "line_start": 83, "line_end": 83, "quote": "E.H.: 아니. 억측이겠지." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__036",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_17__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "LIE CAUSE RECOL_01__clh_002" }],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "main_30_17의 #000000은 리버린을 협박하는 식스오의 메신저 코드네임이고, LIE CAUSE RECOL_01의 000000은 밀크가 알려 주는 와이파이 비밀번호로 전혀 다른 대상이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_17", "line_start": 80, "line_end": 80, "quote": "[MSG SENDER=\"#000000\"]" },
+        { "scene_id": "LIE CAUSE RECOL_01", "line_start": 125, "line_end": 125, "quote": "쿠루미: 와이파이 비밀번호, 알려줘." },
+        { "scene_id": "LIE CAUSE RECOL_01", "line_start": 127, "line_end": 127, "quote": "밀크: 000000이야." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__037",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_17__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "lord_for_justice_08", "line_start": 90, "line_end": 90, "scan_id": "S0004" }],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "lord_for_justice_08은 저지스 문건에서 #000000이라는 코드네임을 쓰는 인물을 언급할 뿐, main_30_17에서 #000000이 프레자일에게 숨겨 주고 있는 리버린의 큰 비밀이 무엇인지 답하지 않는다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_17", "line_start": 81, "line_end": 81, "quote": "큰 비밀을 제가 간직하는 대가로" },
+        { "scene_id": "lord_for_justice_08", "line_start": 90, "line_end": 90, "quote": "[정보 및 해킹에 능한 인물로, [#000000]라는 코드네임을 사용 중.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__038",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_17__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "main_41_13__clh_004" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: #000000은 왜 구치소에 화재를 일으켜 리버린을 빼낸 뒤 탐색에서 남은 해머링의 머리를 가져오라고 지시했나 / 답: 해머링의 목 절단면에 붙어 있는 E2 크리스탈을 떼어내 유리병에 담아 확보하기 위해서였다(main_41_13 L66-L78) / 근거: 리버린이 가져온 해머링의 머리에서 #000000이 목에 붙은 E2 크리스탈을 망치와 정으로 떼어내 유리병에 넣으라고 직접 지시한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_17", "line_start": 135, "line_end": 135, "quote": "탐색에서 남은 유일한 것을 나에게 가져와요" },
+        { "scene_id": "main_30_17", "line_start": 150, "line_end": 150, "quote": "해머링의 머리" },
+        { "scene_id": "main_41_13", "line_start": 66, "line_end": 66, "quote": "목 부분의 절단면에는 E2 크리스탈이 붙어있다." },
+        { "scene_id": "main_41_13", "line_start": 77, "line_end": 77, "quote": "#000000: 해머링의 목에 있는 E2 크리스탈을 떼어내서" },
+        { "scene_id": "main_41_13", "line_start": 78, "line_end": 78, "quote": "#000000: 옆에 있는 유리병에 넣어요" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__039",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_17__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "main_44_14", "line_start": 3, "line_end": 5, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: #000000이 해머링의 머리를 가져오게 한 목적은 결국 무엇으로 이어졌나 / 답: 수정에 오염된 해머링의 머리를 훔쳐 식스오에게 가져다준 일로 방주에 테러를 일으키는 데 쓰였다(main_44_14 L3-L5) / 근거: 프레자일이 리버린의 탈주와 해머링 머리 탈취 및 식스오의 방주 테러 경위를 직접 요약한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_17", "line_start": 120, "line_end": 120, "quote": "구치소에 화재가 발생해서" },
+        { "scene_id": "main_30_17", "line_start": 150, "line_end": 150, "quote": "해머링의 머리" },
+        { "scene_id": "main_44_14", "line_start": 3, "line_end": 3, "quote": "프레자일: ···리버린이 탈주하고." },
+        { "scene_id": "main_44_14", "line_start": 4, "line_end": 4, "quote": "프레자일: 수정에 오염된 해머링 님의 머리를 훔쳐서 식스오에게 가져다주고." },
+        { "scene_id": "main_44_14", "line_start": 5, "line_end": 5, "quote": "프레자일: 그것 때문에 방주에 테러가 발생했고." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__040",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_17__clh_002" }],
+      "target": [{ "ref": "item", "item_id": "LIE CAUSE RECOL_01__clh_002" }],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "main_30_17의 #000000은 식스오의 코드네임이고, LIE CAUSE RECOL_01의 000000은 와이파이 비밀번호로 무관한 대상이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_17", "line_start": 116, "line_end": 116, "quote": "[MSG SENDER=\"#000000\"]" },
+        { "scene_id": "LIE CAUSE RECOL_01", "line_start": 125, "line_end": 125, "quote": "쿠루미: 와이파이 비밀번호, 알려줘." },
+        { "scene_id": "LIE CAUSE RECOL_01", "line_start": 127, "line_end": 127, "quote": "밀크: 000000이야." }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__065__041",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "main_30_17__clh_002" }],
+      "target": [{ "ref": "lines", "scene_id": "lord_for_justice_08", "line_start": 90, "line_end": 90, "scan_id": "S0004" }],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "lord_for_justice_08은 저지스 문건에서 #000000이라는 코드네임을 쓰는 인물을 소개할 뿐, main_30_17에서 구치소 화재와 해머링의 머리 탈취를 지시한 이유에 답하지 않는다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_17", "line_start": 150, "line_end": 150, "quote": "해머링의 머리" },
+        { "scene_id": "lord_for_justice_08", "line_start": 90, "line_end": 90, "quote": "[정보 및 해킹에 능한 인물로, [#000000]라는 코드네임을 사용 중.]" }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "main_30_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_02__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_04__clh_002",
+      "reason": "짝 없음",
+      "note": "탐색대 합류 전 한 달간부터 현재까지 리버린의 이동·통신 기록과 2주 전 발매된 핸드폰의 구매·배송 내역이 중앙 정부와 미실리스에 전혀 남아 있지 않은 이유와 경위"
+    },
+    {
+      "item_id": "main_30_05__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_07__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_07__clh_003",
+      "reason": "짝 없음",
+      "note": "크리스탈 체임버가 신발에 구멍을 뚫어 인간인 지휘관을 흡수하려 한 이유와 인간이 그대로 흡수되면 어떻게 되는지"
+    },
+    {
+      "item_id": "main_30_08__clh_003",
+      "reason": "짝 없음",
+      "note": "친절을 가장해 그레이브의 헬멧과 관을 빼앗고 사진을 찍었으며 랩쳐 위기에서 구해준 뒤에도 다시 전기를 가해 배신한 인간들이 누구였으며 구체적으로 어떤 사건이었는지"
+    },
+    {
+      "item_id": "main_30_08__clh_004",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_09__clh_001",
+      "reason": "짝 없음",
+      "note": "[검색 예산 소진] 그레이브가 지상에서 만나 모두 죽었다는 니케 세 명(이미 늦은 상태였던 둘과 '인간'이었던 하나)이 누구이며 무슨 일이 있었는지"
+    },
+    {
+      "item_id": "main_30_10__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_11__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_12__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_13__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_13__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_13__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_30_16__clh_001",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": [
+    {
+      "suggestion_id": "C1__065__M01",
+      "unit_ids": [
+        "main_30_02__clh_003",
+        "main_30_17__clh_001",
+        "main_30_17__clh_002"
+      ],
+      "link_ids": [
+        "C1__065__039"
+      ],
+      "targets": [
+        { "kind": "entity", "id": "char_식스오", "name": "식스오" },
+        { "kind": "entity", "id": "char_000000", "name": "#000000" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "main_30_02에서 리버린이 식스오가 '[그 누구도 손에 넣지 못한 것]'을 가져오라고 시켰다고 밝히고, main_30_17에서 메신저 상대 '#000000'이 '말씀드렸던 것은 가져왔나요?'라고 물은 뒤 해머링의 머리를 가져오라고 지시하며, main_44_14에서 그것을 식스오에게 가져다주었다고 서술하므로 '#000000'은 식스오가 쓰는 메신저 코드네임이다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_02", "line_start": 58, "line_end": 58, "quote": "아니스: ···지금 이야기가 돌아가는 그림이, 너 여기 식스오가 시켜서 온 거지?" },
+        { "scene_id": "main_30_02", "line_start": 61, "line_end": 61, "quote": "리버린: [그 누구도 손에 넣지 못한 것]을 가져오라고 했어요." },
+        { "scene_id": "main_30_17", "line_start": 16, "line_end": 16, "quote": "[MESSENGER_START TITLE=\"#000000\" PARTICIPANTS=\"#000000,리버린\"]" },
+        { "scene_id": "main_30_17", "line_start": 21, "line_end": 21, "quote": "말씀드렸던 것은 가져왔나요?" },
+        { "scene_id": "main_44_14", "line_start": 4, "line_end": 4, "quote": "프레자일: 수정에 오염된 해머링 님의 머리를 훔쳐서 식스오에게 가져다주고." }
+      ]
+    },
+    {
+      "suggestion_id": "C1__065__M02",
+      "unit_ids": [
+        "main_30_08__clh_001"
+      ],
+      "link_ids": [],
+      "targets": [
+        { "kind": "entity", "id": "char_그레이브", "name": "그레이브" },
+        { "kind": "entity", "id": "char_관짝이", "name": "관짝이" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "main_30_08에서 지휘관이 그레이브에게 붙여 주려 한 별명 '관짝이'를 그레이브가 서브 퀘스트 관짝이_00의 메신저 계정명으로 직접 사용하며 자신이 그레이브임을 인정한다.",
+      "supporting_evidence": [
+        { "scene_id": "main_30_08", "line_start": 10, "line_end": 10, "quote": "[OPTION TEXT=\"관짝이.\"]" },
+        { "scene_id": "main_30_08", "line_start": 20, "line_end": 20, "quote": "그레이브: ···그레이브." },
+        { "scene_id": "관짝이_00", "line_start": 10, "line_end": 10, "quote": "설마 그레이브야?" },
+        { "scene_id": "관짝이_00", "line_start": 13, "line_end": 13, "quote": "그렇다" },
+        { "scene_id": "관짝이_00", "line_start": 34, "line_end": 34, "quote": "그래서 관짝이라고 쓰기로 했다" }
+      ]
+    }
+  ]
+}

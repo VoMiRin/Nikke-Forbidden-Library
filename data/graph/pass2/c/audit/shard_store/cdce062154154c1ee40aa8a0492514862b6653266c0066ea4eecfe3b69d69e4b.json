@@ -1,0 +1,1837 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__047",
+  "candidate_links": [
+    {
+      "link_id": "C1__047__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지능이 없다고 알려진 랩쳐인 토커티브가 어떻게 일행을 매복 지형으로 유인해 지휘관을 노렸으며 그 의도는 무엇인가 / 답: 토커티브는 인간의 말을 구사하며 사고하는 특수 개체 랩쳐로, 지휘관 일행을 조금 가지고 놀다 죽이려 했다(main_04_04 L48-50) / 근거: 같은 작전에서 토커티브에게 유인당해 저격당한 뒤 곧바로 토커티브 본체가 나타나 직접 말을 하며 의도를 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_02",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "네온: 랩쳐는 지능이 없다고 하지 않았나요?"
+        },
+        {
+          "scene_id": "main_04_02",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "미하라: 철회할게. 우린 지금 토커티브에게 걸려들었어."
+        },
+        {
+          "scene_id": "main_04_04",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "토커티브: [조금 가지고 놀다 죽이려 했는데, 이런 행운이라니.]"
+        },
+        {
+          "scene_id": "main_04_04",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "네온: 마, 말하고 있는데요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_09__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 랩쳐인 토커티브는 어떤 정체이기에 인간의 말을 구사하는가 / 답: 토커티브는 방주의 남자 니케 프로젝트에서 실패작이 되어 버림받은 희생양 출신이다(maria-n_09 L105-106) / 근거: 미러가 토커티브를 직접 지칭하며 남자 니케 프로젝트의 실패작으로 방주에 버림받은 과거를 언급한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_04",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "네온: 마, 말하고 있는데요?"
+        },
+        {
+          "scene_id": "main_04_04",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "아니스: 아니, 랩쳐잖아!"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "미러: 남자 니케라는 바보 같은 프로젝트의 희생양이 된 걸로는 모자라나요?"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 106,
+          "line_end": 106,
+          "quote": "미러: 실패작이 되어 방주에게 버림받았으면서, 이젠 랩쳐에게도 버림받고 싶으신건가요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"토커티브는\"으로 찾은 maria-n_09를 show로 읽어 확인(maria-n_09 L105-L106)"
+      ]
+    },
+    {
+      "link_id": "C1__047__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "goddess_fall_23",
+          "line_start": 26,
+          "line_end": 28,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관 일행을 조금 가지고 놀다 죽이려던 토커티브가 피를 흘린 지휘관을 발견하고 '이런 행운이라니'라고 말한 이유는 무엇인가 / 답: 니힐리스타가 토커티브에게 언체인드를 찾으라고 지시한 상태였다(goddess_fall_23 L27) / 근거: 직전(main_04_04 L35) 지휘관의 손등에서 피가 난 직후 토커티브가 행운이라 말하며 생포로 선회한 정황과, 지휘관의 피가 언체인드임(main_35_02 L101-109) 및 니힐리스타의 언체인드 탐색 지시(goddess_fall_23 L27)를 결합하면 설명된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_04",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "토커티브: [조금 가지고 놀다 죽이려 했는데, 이런 행운이라니.]"
+        },
+        {
+          "scene_id": "goddess_fall_23",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "미러: 니힐리스타가 토커티브한테 언체인드를 찾으라고 시켰었거든요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"토커티브는\"으로 찾은 goddess_fall_23을 show로 확인(goddess_fall_23 L26-L28)"
+      ]
+    },
+    {
+      "link_id": "C1__047__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_09_13",
+          "line_start": 383,
+          "line_end": 396,
+          "scan_id": "S0016"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 랩쳐인 토커티브에게 어떻게 순식간에 몸을 고치는 자가 수복 기능이 있는가 / 답: 토커티브의 자가 수복 능력은 나노머신에 기인할 가능성이 높다(main_09_13 L395) / 근거: 지휘관이 토커티브가 보였던 자가 수복을 직접 상기시키자 엑시아가 그 원리를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "토커티브는 순식간에 몸을 수복했다."
+        },
+        {
+          "scene_id": "main_04_05",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "아니스: 자, 자가 수복이라고!? 랩쳐한테 그런 기능이···!"
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 383,
+          "line_end": 383,
+          "quote": "다들 토커티브가 무슨 짓을 했는지 기억나?"
+        },
+        {
+          "scene_id": "main_09_13",
+          "line_start": 395,
+          "line_end": 395,
+          "quote": "ㅇㅇ토커티브의 자가 수복 능력도 나노머신에 기인할 가능성이 높음"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_26_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브는 왜 금세 다시 일어난 라피를 보고 '페어리 테일 모델. 레드 후드인가.'라고 했으며 둘은 무슨 관계인가 / 답: 라피와 레드 후드는 두 개의 바디와 코어가 하나로 압축되어 바디를 공유하고 있으며, 필요 시 레드 후드의 바디를 활성화해 상식을 뛰어넘는 힘을 발휘할 수 있다(main_26_01 L77-107) / 근거: 잉그리드(택티컬티택)가 라피의 몸 안에 레드 후드의 바디와 코어가 함께 존재한다는 사실을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "토커티브: [페어리 테일 모델. 레드 후드인가.]"
+        },
+        {
+          "scene_id": "main_04_05",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "라피: ···조용히 해라."
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "라피와 레드 후드는 바디를 공유하고 있다"
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "필요 시 레드 후드의 바디를 활성화할 수 있으며"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"레드 후드\"로 확인한 main_26_01 L76-L108"
+      ]
+    },
+    {
+      "link_id": "C1__047__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "footstep_walk_run_20__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 양산형 니케 출신인 라피에게 어떻게 페어리 테일 모델 레드 후드가 깃들게 되었는가 / 답: 과거 D.E.E.P.이 잠든 양산형 라피와 페어리 테일 모델 레드 후드를 살핀 뒤 두 모델의 공존을 시도했다(footstep_walk_run_20 L155-171) / 근거: D.E.E.P.이 양산형 라피와 페어리 테일 모델 레드 후드를 직접 지칭하며 공존 시술을 행하는 과거 장면이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "토커티브: [페어리 테일 모델. 레드 후드인가.]"
+        },
+        {
+          "scene_id": "footstep_walk_run_20",
+          "line_start": 163,
+          "line_end": 163,
+          "quote": "D.E.E.P.: 페어리 테일 모델과 양산형은 시도해 본 적이 없다."
+        },
+        {
+          "scene_id": "footstep_walk_run_20",
+          "line_start": 167,
+          "line_end": 167,
+          "quote": "D.E.E.P.: 공존의 가능성을 열어둬야 하지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"페어리 테일\"로 확인한 footstep_walk_run_20 L155-L172"
+      ]
+    },
+    {
+      "link_id": "C1__047__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_09__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 라피가 방주에 보고하라고 한 '인간의 언어를 하는 랩쳐'(토커티브)는 원래 어떤 존재인가 / 답: 방주의 남자 니케 프로젝트에서 실패작이 되어 버림받은 존재다(maria-n_09 L105-L106) / 근거: 미러가 토커티브의 출신을 직접 밝히지만, 인간의 언어를 하는 능력이 그 출신 때문이라고는 말하지 않는다. 출신에서 그 능력을 짐작해야 하므로 가능성이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "라피: 돌아가서 보고해 주십쇼. 인간의 언어를 하는 랩쳐가 있···."
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "미러: 남자 니케라는 바보 같은 프로젝트의 희생양이 된 걸로는 모자라나요?"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 106,
+          "line_end": 106,
+          "quote": "미러: 실패작이 되어 방주에게 버림받았으면서, 이젠 랩쳐에게도 버림받고 싶으신건가요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"토커티브는\"으로 찾은 maria-n_09 L105-L106"
+      ]
+    },
+    {
+      "link_id": "C1__047__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_005"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_18__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브를 물러나게 한 의문의 니케 집단('순례자')은 무엇인가 / 답: 지상에서 살아가는 니케들을 뜻하는 통칭 '필그림'이다(main_04_18 L14-20) / 근거: 엔더슨이 지휘관이 목격한 토커티브를 물러나게 한 니케를 직접 가리켜 필그림이라 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "토커티브: [크으···! 순례자···!]"
+        },
+        {
+          "scene_id": "main_04_18",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "엔더슨: 통칭 [필그림]. 지상에서 살아가는 니케들을 뜻하네."
+        },
+        {
+          "scene_id": "main_04_18",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "엔더슨: 확실한 건 그녀들은 지상에서 살아가고 있고, 단 한 번도 제대로 된 조우를 한 적이 없다는 것일세."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_005"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_06_01",
+          "line_start": 30,
+          "line_end": 40,
+          "scan_id": "S0032"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 토커티브가 부른 '순례자'의 뜻과 그때 나타난 인물의 코드 네임은 무엇인가 / 답: 순례자는 곧 필그림을 뜻하며, 북부에서 포착된 해당 필그림의 코드 네임은 '스노우 화이트'다(main_06_01 L30, L40) / 근거: 토커티브를 물리친 필그림을 만나러 간 북부 연구 기지에서 루드밀라가 '순례자, 즉 필그림'과 코드 네임 '스노우 화이트'를 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "토커티브: [크으···! 순례자···!]"
+        },
+        {
+          "scene_id": "main_06_01",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "루드밀라: 그리고 화면에 표시된 것은 순례자, 즉 필그림의 목격 지점이다."
+        },
+        {
+          "scene_id": "main_06_01",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "루드밀라: 코드 네임은, [스노우 화이트]."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_05__clh_005"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_06_07",
+          "line_start": 81,
+          "line_end": 95,
+          "scan_id": "S0035"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 대함 라이플로 토커티브의 몸에 거대한 구멍을 내고 물러나게 한 의문의 인물(???)은 누구인가 / 답: 순례자(필그림) 스노우 화이트다(main_06_07 L82-94) / 근거: 다시 토커티브의 몸에 거대한 구멍을 내며 나타난 '???'를 토커티브가 '순례자'라 부르고, 지휘관이 '스노우 화이트'라 부르자 본인이 그 이름을 인정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_05",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "토커티브의 몸에 거대한 구멍이 생겨났다."
+        },
+        {
+          "scene_id": "main_04_05",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "토커티브: [크으···! 순례자···!]"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "토커티브: [순례자아아--!!]"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "스노우 화이트···?"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 94,
+          "line_end": 94,
+          "quote": "스노우 화이트: 오랜만이군. 그 이름으로 불리는 것도."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__012",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_06__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "mihara_04__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 왜 미하라는 자신이 고통에 익숙하다고 말하는가 / 답: 인간 시절 모든 감각을 잃는 희소병을 앓던 중 유일하게 남은 감각인 고통으로 살아 있음을 느꼈고, 니케가 된 지금도 고통을 통해 삶을 느끼기 때문이다(mihara_04 L55-65) / 근거: 미하라 본인이 과거 희소병 시절부터 고통을 통해 삶을 느껴 온 이유를 직접 고백한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_06",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "미하라: 내가 교환할게. 고통에는 익숙하니까."
+        },
+        {
+          "scene_id": "mihara_04",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "미하라: 하지만 나는 그 고통으로 인해 삶을 느꼈어."
+        },
+        {
+          "scene_id": "mihara_04",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "미하라: 그건 지금도 마찬가지고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "미하라 캐릭터 에피소드 mihara_04를 show로 읽어 확인(mihara_04 L55-L65)"
+      ]
+    },
+    {
+      "link_id": "C1__047__013",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_10_06__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피는 과거 앱솔루트와 어떤 관계였으며 왜 말도 없이 떠나버렸는가 / 답: 라피는 과거 앱솔루트 소속이었으나, 타일런트 급 다섯 기와의 작전 중 유탄으로 인간이 죽었을 때 경위서부터 떠올린 자신이 망가졌다고 느껴 말 한마디 없이 서류로만 탈퇴했다(main_10_06 L25-46) / 근거: 은화가 왜 갑자기 때려치우고 나갔느냐고 직접 묻자 라피가 앱솔루트 탈퇴 이유를 털어놓는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_11",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "엠마: 그때 말도 없이 가버리고. 내가 얼마나 섭섭했는지 알아?"
+        },
+        {
+          "scene_id": "main_10_06",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "라피: 난 그때 인간을 죽였어."
+        },
+        {
+          "scene_id": "main_10_06",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "라피: 그래서 관둔 거야. 내가 뭔지 알 수가 없어서."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"앱솔루트\"로 찾은 main_10_06을 show로 확인(main_10_06 L25-L46)"
+      ]
+    },
+    {
+      "link_id": "C1__047__014",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_31_07__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피는 어떻게 앱솔루트를 떠났으며 은화는 왜 라피에게 적대적으로 반응하는가 / 답: 앱솔루트 결성 직후 합류해 최강 스쿼드로 활약하며 은화가 각별히 아낀 파트너였으나, 어느 날 아무 말 없이 서면으로 탈퇴한 뒤 미안함 때문에 은화를 피해 다녔다(main_31_07 L50-80) / 근거: 엠마와 라피가 과거 앱솔루트 합류·서면 탈퇴 경위와 은화의 태도 이유를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_11",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "엠마: 그때 말도 없이 가버리고. 내가 얼마나 섭섭했는지 알아?"
+        },
+        {
+          "scene_id": "main_04_11",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "은화: 그렇게 잘난 듯 떠들어대더니 결국엔 이런 곳에서 사고나 치고 있는 거냐."
+        },
+        {
+          "scene_id": "main_31_07",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "엠마: 앱솔루트가 만들어지고, 얼마 지나지 않아 라피가 합류했어."
+        },
+        {
+          "scene_id": "main_31_07",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "엠마: 어느 날 갑자기 라피가 아무런 얘기도 없이 앱솔루트를 탈퇴했다는 것을 서면으로 알게 됐지."
+        },
+        {
+          "scene_id": "main_31_07",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "라피: ···미안해서."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"앱솔루트\"로 확인한 main_31_07 L50-L80"
+      ]
+    },
+    {
+      "link_id": "C1__047__015",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 68,
+          "line_end": 70,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피는 왜 앱솔루트 동료들에게 사정을 말하지 못하고 탈퇴했는가 / 답: 레드 후드가 되겠다는 생각에 사로잡혀 자신을 동료로 대해 준 앱솔루트 멤버들을 이용했다는 사실을 깨닫고 탈퇴했다(footstep_walk_run_26 L69-70) / 근거: 라피 본인이 과거 앱솔루트 탈퇴의 내막을 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_11",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "엠마: 그때 말도 없이 가버리고. 내가 얼마나 섭섭했는지 알아?"
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "라피: 레드 후드가 되겠다는 생각에 사로잡혀서, 나를 동료로 대해준 이들을 이용했어."
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "라피: 그 사실을 깨닫고 앱솔루트를 탈퇴했지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"앱솔루트\"로 확인한 footstep_walk_run_26 L68-L70"
+      ]
+    },
+    {
+      "link_id": "C1__047__016",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_11__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "footstep_walk_run_27",
+          "line_start": 52,
+          "line_end": 62,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관과 함께 있는 라피의 달라진 표정을 보고 엠마가 '찾은 모양이구나? 드디어.'라고 물은, 라피가 찾고 있던 것은 무엇인가 / 답: 죽거나 망가지는 모습이 상상되지 않으면서도 자신을 이끌어 줄 누군가다(footstep_walk_run_27 L54-55) / 근거: 앱솔루트를 나온 뒤 떠돌던 라피가 아니스에게 자신이 찾고 있는 대상을 직접 밝히며, 지휘관을 만난 직후의 본 단서 대화와 정황상 맞물린다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_11",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "엠마: 찾은 모양이구나? 드디어."
+        },
+        {
+          "scene_id": "main_04_11",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "라피: ···아직, 확실하진 않지만."
+        },
+        {
+          "scene_id": "footstep_walk_run_27",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "라피: 죽거나 망가지는 모습이 상상되지 않으면서도"
+        },
+        {
+          "scene_id": "footstep_walk_run_27",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "라피: 나를 이끌어줄 누군가를 찾고 있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"찾고 있\"으로 확인한 footstep_walk_run_27 L52-L62"
+      ]
+    },
+    {
+      "link_id": "C1__047__017",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_01_07__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 견고한 방호벽이 침식을 걸러내는 방주에서 출발한 수송기에 탄 마리안이 어떻게 탑승 때부터 침식 상태일 수 있었는가 / 답: 방호벽 조작 권한과 단독 회선을 가진 방주 내 내통자가 토커티브와 내통하여 방주 안에서 니케에게 침식을 심어 지상으로 내보내고 있었다(main_04_15 L24-48) / 근거: 엔더슨이 마리안의 침식에 대한 질문을 직접 상기한 뒤 방호벽을 우회해 방주 안에서 침식이 심어진 경위를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_07",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "라피: 수송기를 격추시켰다는 말은, 탑승할 때부터 침식 상태였다고 보는 게 맞겠지."
+        },
+        {
+          "scene_id": "main_01_07",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "라피: 아니. 방호벽은 견고해. 침식 정도는 쉽게 걸러낼 거야."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "엔더슨: 방주 내에서 니케에게 침식을 걸어, 지상으로 올려 작전을 망치는 이들이 있네."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "엔더슨: 방호벽을 조작할 수 있는 권한, 누구에게도 들키지 않는 단독 회선을 쓸 정도로."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"침식\"으로 확인한 main_01_07 L4-L24"
+      ]
+    },
+    {
+      "link_id": "C1__047__018",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_01_08__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 엔더슨이 마리안의 침식에 대한 답을 미루며 가정으로 암시한 '어떤 의도로 니케에게 침식을 심어 놓은 아득한 상대'의 내막은 무엇인가 / 답: 방호벽 조작 권한과 단독 회선을 지닌 방주 내 고위 내통자가 토커티브와 내통하여 방주 안에서 니케에게 침식을 심어 지상으로 올려보내고 있다(main_04_15 L24-48) / 근거: 엔더슨이 앞서 지휘관이 마리안의 침식에 대해 물었던 일을 직접 언급하며 그때 답하지 않았던 사실을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_08",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "엔더슨: 만약에 누군가가 어떤 의도가 있어서 니케에게 침식을 심어놓았다고 한다면."
+        },
+        {
+          "scene_id": "main_01_08",
+          "line_start": 59,
+          "line_end": 59,
+          "quote": "엔더슨: 그 상대가 자네가 어쩌지 못할 정도로 아득한 무언가라면."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "엔더슨: 방주 내에서 니케에게 침식을 걸어, 지상으로 올려 작전을 망치는 이들이 있네."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "엔더슨: 내통자는 토커티브와 이어져있네. 이건 확실하다고보네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"침식\"으로 확인한 main_01_08 L50-L60"
+      ]
+    },
+    {
+      "link_id": "C1__047__019",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_14_17__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 방호벽 조작 권한과 단독 회선을 가지고 토커티브와 내통하며 방주 안에서 니케에게 침식을 심어 지상으로 올려보내는 내통자는 누구이며 왜 그런 일을 하는가 / 답: 방주를 관리하는 A.I. 에닉이며, 방주의 위치를 아는 토커티브가 방주를 습격하지 않는 대가로 니케 제공을 요구하자 방주를 보전하기 위해 무작위 니케에게 침식 코드를 심고 방호벽을 조작해 올려보냈다(main_14_17 L99-102) / 근거: 지휘관이 토커티브와 내통해 침식을 심은 내통자에 대해 묻자 에닉이 본인이었음을 직접 자백한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_15",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "엔더슨: 방호벽을 조작할 수 있는 권한, 누구에게도 들키지 않는 단독 회선을 쓸 정도로."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "엔더슨: 내통자는 토커티브와 이어져있네. 이건 확실하다고보네."
+        },
+        {
+          "scene_id": "main_14_17",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "에닉: 코드 네임 토커티브는 저에게 거래를 걸어왔습니다."
+        },
+        {
+          "scene_id": "main_14_17",
+          "line_start": 101,
+          "line_end": 101,
+          "quote": "에닉: 그래서 저는 무작위로 니케를 선정해, 코드 네임 토커티브에게 받은 침식 코드를 심은 후."
+        },
+        {
+          "scene_id": "main_14_17",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "에닉: 방호벽을 조작해 지상으로 올려보냈습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"내통자\"로 확인한 main_14_17 L95-L102"
+      ]
+    },
+    {
+      "link_id": "C1__047__020",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_12_09__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기억 소거 처분을 받은 라피의 기억이 왜 아무것도 지워지지 않았는가 / 답: 언체인드 노출로 라피의 뇌에 NIMPH가 없는 상태이기 때문이다(main_12_09 L27-28) / 근거: 잉그리드가 라피의 뇌에 NIMPH가 소실되어 기억 소거가 먹히지 않았다고 직접 확인해 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_15",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "라피: 기억이 지워지지 않았습니다."
+        },
+        {
+          "scene_id": "main_04_15",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "라피: 아무것도··· 지워지지 않았어요."
+        },
+        {
+          "scene_id": "main_12_09",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "잉그리드: 뇌에 NIMPH가 없다는 얘기와 동일하다."
+        },
+        {
+          "scene_id": "main_12_09",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "잉그리드: 즉, 기억소거가 먹히지 않는다는 말은 사실이란 얘기군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"기억 소거\"로 확인한 main_12_09 L24-L28"
+      ]
+    },
+    {
+      "link_id": "C1__047__021",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_15__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_35_02",
+          "line_start": 101,
+          "line_end": 109,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 라피가 기억 소거 처분 전에 어떻게 NIMPH를 잃어 기억이 지워지지 않게 되었는가 / 답: 지휘관의 피가 곧 언체인드였기 때문이다(main_35_02 L101-109) / 근거: 기억 소거 직전 작전(main_04_04 L39)에서 라피가 맨손으로 지휘관의 피를 지혈한 사실과, 라피에게 NIMPH가 없다는 사실로 지휘관의 피가 언체인드임을 짐작했다는 잉그리드의 발언이 결합된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_15",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "라피: 기억이 지워지지 않았습니다."
+        },
+        {
+          "scene_id": "main_35_02",
+          "line_start": 108,
+          "line_end": 108,
+          "quote": "잉그리드: 라피에게 NIMPH가 없다는 것을 알았을 때, 대충 짐작은 하고 있었다만···."
+        },
+        {
+          "scene_id": "main_35_02",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "잉그리드: 그렇다고 네 피가 언체인드일 줄이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"NIMPH가 없\"으로 확인한 main_35_02 L101-L109"
+      ]
+    },
+    {
+      "link_id": "C1__047__022",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_16__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_12_09__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피가 실제로 기억 소거 시술을 받았음에도 왜 기억 소거가 먹히지 않았는가 / 답: 라피의 뇌에 NIMPH가 없기 때문이다(main_12_09 L27-28) / 근거: 기억 소거 시술이 라피에게 먹히지 않았다는 같은 현상에 대해 잉그리드가 뇌 속 NIMPH 소실이 원인임을 직접 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_16",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "아니스: 기억 소거를 받은 건 맞아?"
+        },
+        {
+          "scene_id": "main_04_16",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "네온: 와아. 기억 소거가 안 먹히기도 하는군요."
+        },
+        {
+          "scene_id": "main_12_09",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "잉그리드: 뇌에 NIMPH가 없다는 얘기와 동일하다."
+        },
+        {
+          "scene_id": "main_12_09",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "잉그리드: 즉, 기억소거가 먹히지 않는다는 말은 사실이란 얘기군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"NIMPH가 없\"으로 확인한 main_12_09 L24-L28"
+      ]
+    },
+    {
+      "link_id": "C1__047__023",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_18__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_06_01",
+          "line_start": 29,
+          "line_end": 40,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 엔더슨이 '그 이후는 연구 기지에서 알아서 해 줄걸세'라고 한, 북부 연구 기지에서 필그림과 만나게 해 주는 방법은 무엇인가 / 답: 북부 연구 기지의 단말기에 북부 전체 지도와 필그림(스노우 화이트)의 목격 지점 및 주기적 출몰 시기가 기록되어 있어 출몰 예정 포인트로 찾아갈 수 있다(main_06_01 L29-40) / 근거: 엔더슨의 지시대로 찾아간 북부 연구 기지에서 루드밀라가 단말기 자료를 열어 필그림과 만나는 구체적 방법을 제시한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_18",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "엔더슨: 어떻게 필그림과 만나는가. 그 춥고 넓은 북부에서."
+        },
+        {
+          "scene_id": "main_04_18",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "엔더슨: 그 이후는 연구 기지에서 알아서 해 줄걸세."
+        },
+        {
+          "scene_id": "main_06_01",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "루드밀라: 그리고 화면에 표시된 것은 순례자, 즉 필그림의 목격 지점이다."
+        },
+        {
+          "scene_id": "main_06_01",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "루드밀라: 그리고 마침. 곧 이 포인트에 나타날 때가 되었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__024",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_19__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_35_10",
+          "line_start": 69,
+          "line_end": 73,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 테트라 라인 CEO 머스탱이 아니스에게 돌아오라고('Return') 권유하며 기다릴 수 있다고 한 아니스의 과거 자리는 무엇인가 / 답: 아니스는 과거 테트라 라인 소속 아이돌(T.T.STAR)로 일하다 은퇴하려 했고, 머스탱이 이를 장기 휴가로 처리해 두며 복귀를 기다리고 있었다(main_35_10 L69-73) / 근거: 아니스와 머스탱 본인이 과거 아이돌 은퇴 요청을 장기 휴가로 처리하고 복귀를 기다려 왔던 사정을 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_19",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "머스탱: 그럼 이제 슬슬 Return?"
+        },
+        {
+          "scene_id": "main_04_19",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "머스탱: All Right 아니스. 나는 기다릴 수 있어yo."
+        },
+        {
+          "scene_id": "main_35_10",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "아니스: 아, 아무튼. 나는 예전에 아이돌 일을 했었고."
+        },
+        {
+          "scene_id": "main_35_10",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "아니스: 그걸 사장님이 장기 휴가로 처리해 주신 거고."
+        },
+        {
+          "scene_id": "main_35_10",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "머스탱: Yes. Me는 아니스가 다시 Come Back할 것을 Trust하고 있었으니까Yo."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__025",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_04_19__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "star_anis_24",
+          "line_start": 128,
+          "line_end": 140,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아니스는 왜 머스탱이 있는 원래 자리에서 떠나 지상 전투 부대에 있게 되었는가 / 답: 아이돌(T.T. STAR) 시절 사건 뒤 머스탱이 휴식 후 복귀 조치를 제안했으나, 아니스가 방주 사람들에게 환멸을 느껴 아이돌을 그만두고 지상의 전투 부대로 보내 달라고 요청했기 때문이다(star_anis_24 L128-140) / 근거: 머스탱과 아니스가 아이돌 복귀 문제와 지상 전투 부대 전출을 놓고 대화하는 과거 당사자 장면이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_19",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "머스탱: 그럼 이제 슬슬 Return?"
+        },
+        {
+          "scene_id": "main_04_19",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "아니스: 음··· 아뇨. 아직은 좀."
+        },
+        {
+          "scene_id": "star_anis_24",
+          "line_start": 128,
+          "line_end": 128,
+          "quote": "머스탱: 잠시 Rest후, 사과 방송 후, 복귀할 수 있도록 조치하겠습니Da."
+        },
+        {
+          "scene_id": "star_anis_24",
+          "line_start": 132,
+          "line_end": 132,
+          "quote": "아니스: 저 이제 아이돌 안 해요."
+        },
+        {
+          "scene_id": "star_anis_24",
+          "line_start": 140,
+          "line_end": 140,
+          "quote": "아니스: 전투 부대 소속으로 가고 싶어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__026",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "maria-n_09",
+          "line_start": 213,
+          "line_end": 220,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지휘관이 의식을 잃었을 때 떠오른 병원 기억 속에서 뇌 관련 병이 있다고 말하며 이름을 밝히려다 끊긴 소녀는 누구인가 / 답: 어린 시절의 마리아(닥터 마리아, 마리안의 오리지널)다(maria-n_09 L213-220) / 근거: 동일한 병원 대화가 그대로 이어진 직후 소녀가 '내 이름은···. 마리아. 마리아야.'라고 이름을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_04",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "소녀: 나도 있어, 병. 뭐라더라··· 뇌가 뭐 어떻다고 했던 것 같은데."
+        },
+        {
+          "scene_id": "main_05_04",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "소녀: 내 이름은···."
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 219,
+          "line_end": 219,
+          "quote": "소녀: 내 이름은···."
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 220,
+          "line_end": 220,
+          "quote": "소녀: 마리아. 마리아야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"병원\" --title=event_stories__maria-n,event_stories__wisdom_spring으로 확인한 maria-n_09 L213-L220"
+      ]
+    },
+    {
+      "link_id": "C1__047__027",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_04__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_16__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 병원의 소녀(마리아)가 '뇌가 뭐 어떻다고 했던 것 같은데'라고 말한 뇌 관련 사정은 무엇인가 / 답: 마리아(닥터 마리아)는 뇌 기능이 압도적으로 높은 돌연변이로, 어머니 에블라 박사가 NIMPH에 백업한 지식을 살아 있는 인간의 뇌로 계승시키기 위해 NIMPH 친화도를 극도로 높이도록 키워진 존재였다(maria-n_16 L12-17) / 근거: 병원 기억의 소녀가 마리아(닥터 마리아)임이 밝혀진 장면(maria-n_09 L188-220)과 닥터 마리아의 성장기 뇌·NIMPH 내력을 설명하는 장면을 결합해 이어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_04",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "소녀: 나도 있어, 병. 뭐라더라··· 뇌가 뭐 어떻다고 했던 것 같은데."
+        },
+        {
+          "scene_id": "maria-n_16",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "닥터 마리아: ···나는 그렇게 [키워졌으니까]. NIMPH 친화도를 극도로 높이기 위해 만들어진 거나 다름없어."
+        },
+        {
+          "scene_id": "maria-n_16",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "닥터 마리아: 하지만 성공 사례는 나 뿐이야. 그것도 뇌 기능이 압도적으로 높은 돌연변이였기 때문에 가능했던 일이라고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "maria-n_16을 show로 읽어 확인(maria-n_16 L11-L17)"
+      ]
+    },
+    {
+      "link_id": "C1__047__028",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_04__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_05_07",
+          "line_start": 15,
+          "line_end": 24,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지휘관이 여기가 어디냐고 물었을 때 앨리스가 말한 '나쁜 하트 여왕 때문에 얼어버린 세계'는 실제로 어디이며 무엇을 가리키는가 / 답: 언리미티드 스쿼드가 활동하는 지상의 북부 설원 지대이며, 앨리스가 하트 여왕 측이라 부르는 대상은 북부 연구 시설까지 차지한 랩쳐다(main_05_07 L15-24) / 근거: 앨리스를 잠시 물린 뒤 루드밀라가 동화풍 비유를 걷고 이곳의 실제 위치(북부)와 랩쳐에게 시설을 빼앗긴 현실을 다시 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_04",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "앨리스: 이곳은 나쁜 하트 여왕 때문에 얼어버린 세계에요."
+        },
+        {
+          "scene_id": "main_05_07",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "루드밀라: [지상에서 길을 잃었다면 북부로 가라.] 는 말을 들어본 적 있을 거다."
+        },
+        {
+          "scene_id": "main_05_07",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "루드밀라: 연구 시설은 랩쳐의 것이 되었다. 외부는 물론 내부까지 모두."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__029",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_04__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "alice_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 왜 앨리스는 북부의 현실을 '하트 여왕' 같은 동화 속 개념으로 인식하고 말하는가 / 답: 앨리스가 과거 동화책 '이상한 나라의 앨리스'를 읽기만 해도 행복해져서 매일 그것만 읽었기 때문이다(alice_01 L104-115) / 근거: 앨리스가 부르는 '하트 여왕'·'토끼 씨'가 동화 '이상한 나라의 앨리스'의 등장인물이며, 과거 매일 그 책만 읽으며 행복을 느꼈다는 회상이 간접적으로 그 배경을 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_04",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "앨리스: 이곳은 나쁜 하트 여왕 때문에 얼어버린 세계에요."
+        },
+        {
+          "scene_id": "alice_01",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "토끼 씨는 이상한 나라의 앨리스를 골라 주었습니다."
+        },
+        {
+          "scene_id": "alice_01",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "앨리스: 예전에는 매일매일 이것만 읽었었는데···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"하트 여왕\"으로 찾은 alice_00에 이어 alice_01을 show로 확인(alice_01 L104-L115)"
+      ]
+    },
+    {
+      "link_id": "C1__047__030",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_05__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_05_07__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 루드밀라가 말한 '하트의 여왕에게 빼앗긴 우리 집'은 실제로 무엇이며 누구에게 빼앗긴 것인가 / 답: 언리미티드의 거점이던 북부 연구 시설이며, 내외부 모두 랩쳐의 것이 되어 집을 잃고 떠도는 처지가 되었다(main_05_07 L23-24) / 근거: 앨리스를 내보낸 뒤 루드밀라가 '연구 시설은 랩쳐의 것이 되었다. 덕분에 우린 집을 잃고 떠도는 신세지.'라며 앞선 비유의 실제 뜻을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_05",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "루드밀라: 그래. 이제 슬슬 하트의 여왕에게 빼앗긴 우리 집을 찾을 때가 온 것 같아서 말이야."
+        },
+        {
+          "scene_id": "main_05_07",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "루드밀라: 연구 시설은 랩쳐의 것이 되었다. 외부는 물론 내부까지 모두."
+        },
+        {
+          "scene_id": "main_05_07",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "루드밀라: 덕분에 우린 집을 잃고 떠도는 신세지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__031",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_07__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_05_11",
+          "line_start": 5,
+          "line_end": 13,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 북부 연구 시설이 어떻게 단순 점령이 아니라 내부까지 랩쳐의 것이 되어 버렸는가 / 답: 원래 자율 방어 시스템과 높은 수준의 무장을 갖춘 요새형 시설이었으나, 외부 침입 없이 해킹으로 추정되는 과정을 거쳐 기지 대부분과 방어 무장이 적의 손에 넘어갔다(main_05_11 L5-13) / 근거: 연구 기지에 도착한 루드밀라가 기지를 빼앗긴 구체적 경로와 무장이 아군을 겨누게 된 상태를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_07",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "루드밀라: 아니. 점령과는 좀 다르다. 말 그대로 랩쳐의 것이 되었지."
+        },
+        {
+          "scene_id": "main_05_07",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "루드밀라: 연구 시설은 다른 [뭔가]가 돼버렸다."
+        },
+        {
+          "scene_id": "main_05_11",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "루드밀라: 원래 콘셉트가 자율 방어 시스템이 갖춰진 연구 시설이었으니까."
+        },
+        {
+          "scene_id": "main_05_11",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "루드밀라: ···놈들에게 빼앗긴 지금은, 그 무장들이 우릴 겨누게 되었지만 말이야."
+        },
+        {
+          "scene_id": "main_05_11",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "루드밀라: 아마도. 외부의 침입은 없었으니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__032",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_07__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_05_12",
+          "line_start": 2,
+          "line_end": 12,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 연구 시설이 단순 점령을 넘어 변해버렸다는 '다른 [뭔가]'란 구체적으로 어떤 상태인가 / 답: 외부 프레임 조인트로 지탱되며 건물 자체가 적대 개체처럼 일행과 직접 전투를 벌이는 상태다(main_05_12 L2-12) / 근거: 연구 기지 앞에서 일행이 건물 자체와 싸우며 조인트를 파괴해 무너뜨리는 공략법을 논의한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_07",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "루드밀라: 연구 시설은 다른 [뭔가]가 돼버렸다."
+        },
+        {
+          "scene_id": "main_05_12",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "아니스: 하하. 이것 참. 건물이랑 싸우는 건 또 처음이네."
+        },
+        {
+          "scene_id": "main_05_12",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "루드밀라: 외부 프레임을 지탱하는 조인트들이 있다. 거길 부순다면 우수수 무너지겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__033",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_06_07__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 연구 기지 해킹과 관련해 실제로 방주 내통자가 존재하며 연구 기지를 노린 목적은 정말 필그림 정보였는가 / 답: 토커티브는 실제로 방주와 내통하고 있으며, 지휘관이 필그림을 만나려는 목적으로 움직이는 것을 알고 유인할 미끼로 쓰기 위해 연구 기지 내부의 지도를 조작했다(main_06_07 L46-57) / 근거: 지휘관이 토커티브에게 연구 기지 지도 조작 여부와 방주 내통 여부를 직접 추궁하자 토커티브가 둘 다 시인하며 유인 목적을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_11",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "···내통자가 있는 게 확실하겠네."
+        },
+        {
+          "scene_id": "main_05_11",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "라피: 필그림에 대한 정보라 보는 것이 타당하겠죠."
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "연구 기지 내부의 지도는 네가 조작했나?"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "토커티브: [그렇다.]"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "토커티브: [유인하기에 그것만 한 먹이가 없었으니까.]"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "네가 방주와 내통하고 있는 건가?"
+        },
+        {
+          "scene_id": "main_06_07",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "토커티브: [그렇다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__047__034",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_05_11__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_14_17__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 연구 기지 해킹을 계기로 존재가 확신된 방주 측 내통자는 누구인가 / 답: 토커티브와 거래하며 내통하고 있던 방주 측 주체는 방주 관리 A.I. 에닉이다(main_14_17 L99-102). 다만 에닉이 연구 기지 해킹에 관여했는지는 언급되지 않는다 / 근거: 토커티브가 방주와의 내통을 시인한 뒤(main_06_07 L54-57), 에닉이 자신이 토커티브와 내통했음을 자백하므로 내통자의 정체가 간접적으로 이어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_05_11",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "···내통자가 있는 게 확실하겠네."
+        },
+        {
+          "scene_id": "main_05_11",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "라피: 예. 이번 건으로 확신이 생겼습니다."
+        },
+        {
+          "scene_id": "main_14_17",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "에닉: 코드 네임 토커티브는 저에게 거래를 걸어왔습니다."
+        },
+        {
+          "scene_id": "main_14_17",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "에닉: 방호벽을 조작해 지상으로 올려보냈습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep \"내통자\"로 확인한 main_14_17 L95-L102"
+      ]
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "main_04_01__clh_001",
+      "reason": "짝 없음",
+      "note": "무감각증인 유니가 타인과 접촉했을 때만 감각을 느끼는 까닭이 원래부터였는지 능력을 받아서인지"
+    },
+    {
+      "item_id": "main_04_06__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_06__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_09__clh_001",
+      "reason": "짝 없음",
+      "note": "슈엔이 지휘관 일행과 토커티브의 조우 사실을 협박까지 동원해 숨기려 한 이유가 무엇인지"
+    },
+    {
+      "item_id": "main_04_12__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_14__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_14__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_16__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_17__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_19__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_04_19__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_05_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_05_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_05_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_05_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_05_11__clh_001",
+      "reason": "짝 없음",
+      "note": "북부 연구 기지의 자율 방어 시스템을 실제로 해킹한 주체가 누구인지"
+    }
+  ],
+  "merge_suggestions": [
+    {
+      "suggestion_id": "C1__047__M01",
+      "unit_ids": [
+        "main_04_05__clh_005"
+      ],
+      "link_ids": [
+        "C1__047__009"
+      ],
+      "targets": [
+        {
+          "kind": "term",
+          "id": "A2__082#E1",
+          "name": "순례자"
+        },
+        {
+          "kind": "term",
+          "id": "A2__154#E1",
+          "name": "필그림"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "루드밀라가 '순례자, 즉 필그림'이라고 명시하여 두 표기가 지상에서 살아가는 니케 집단이라는 같은 대상을 가리킴을 직접 보여 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_01",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "루드밀라: 그리고 화면에 표시된 것은 순례자, 즉 필그림의 목격 지점이다."
+        }
+      ]
+    }
+  ]
+}

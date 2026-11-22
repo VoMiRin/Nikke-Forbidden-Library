@@ -15,6 +15,7 @@ import {
   sampleCAudit,
   carryOverAudit,
   diffCShards,
+  shardDriftUnits,
   auditDrift,
   conflictBundles,
   scanCorpus,
@@ -472,4 +473,13 @@ test('conflictBundles: 일부 겹침 충돌은 만난 연결(meets)의 묶음도
   const c = { kind: 'partial_line_item_overlap', link_id: 'C1__002__001', bundle_id: 'C1__002', lines: 'lines:s:60-70', overlapped_items: ['s__clh_001', 's__clh_002'], meets: ['C1__028__004', 'C1__028__010'] };
   assert.deepEqual(conflictBundles(c), ['C1__002', 'C1__028']);
   assert.deepEqual(conflictBundles({ kind: 'status', item_id: 'x', own: { bundle_id: 'C1__006' }, links: [{ link_id: 'C1__039__006', bundle_id: 'C1__039', wave: 2 }] }), ['C1__006', 'C1__039']);
+});
+
+test('shardDriftUnits: 상태가 같아도 바뀐 연결·지운 연결·자기 상태의 단위를 낸다', () => {
+  const l = (id, a, b, extra = {}) => ({ link_id: id, subject: [{ ref: 'item', item_id: a }], target: b.startsWith('lines') ? [{ ref: 'lines', scene_id: 's', line_start: 1, line_end: 2 }] : [{ ref: 'item', item_id: b }], ...extra });
+  const before = { candidate_links: [l('C1__001__001', 'a__clh_001', 'b__clh_001'), l('C1__001__002', 'c__clh_001', 'lines'), l('C1__001__003', 'e__clh_001', 'f__clh_001')], unlinked: [{ item_id: 'g__clh_001', reason: '단서 아님' }], merge_suggestions: [] };
+  const after = { candidate_links: [l('C1__001__001', 'a__clh_001', 'b__clh_001'), l('C1__001__002', 'c__clh_001', 'd__clh_001'), l('C1__001__004', 'h__clh_001', 'f__clh_001')], unlinked: [{ item_id: 'g__clh_001', reason: '짝 없음', note: 'x' }], merge_suggestions: [] };
+  // 002 바뀜(c·d), 003 지움(e·f), 004 새로(h·f), g 자기 상태 바뀜. 그대로인 001(a·b)은 빠진다
+  assert.deepEqual(shardDriftUnits(before, after), ['c__clh_001', 'd__clh_001', 'e__clh_001', 'f__clh_001', 'g__clh_001', 'h__clh_001']);
+  assert.deepEqual(shardDriftUnits(before, before), []);
 });

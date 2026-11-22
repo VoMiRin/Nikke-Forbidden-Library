@@ -1054,6 +1054,14 @@ export const diffCShards = (before, after) => {
   };
 };
 
+/** 두 shard 사이에 연결(바뀐 연결의 지금 끝, 지운 연결의 끝)·자기 상태가 달라진 단서 단위 ID */
+export const shardDriftUnits = (before, after) => {
+  const d = diffCShards(before, after);
+  const ends = (l) => [...l.subject, ...l.target].map((s) => s.item_id).filter(Boolean);
+  const now = new Map((after.candidate_links ?? []).map((l) => [l.link_id, l]));
+  return [...new Set([...d.links.flatMap((id) => ends(now.get(id))), ...d.removed_link_units, ...d.unlinked])].sort(cmpStr);
+};
+
 /**
  * 앞 회차 감사를 이어 인정할 수 있는지(설계 G3: 회차 간 전파는 앞 감사를 다시 하지 않고 뒤 회차 감사가 덮는다).
  * 뒤 회차 감사 수정이 앞 회차 shard를 고치면 도장이 바뀌어 앞 감사가 무효가 된다. 다음을 모두 만족하면 이어 인정한다.
@@ -1698,7 +1706,7 @@ const main = async () => {
       return { bundle_id: b.bundle_id, ...currentStamp(P, b.bundle_id, r.bundle) };
     });
     // 이번 회차 연결이 바꾼 앞 회차 상태 + 앞 회차 감사 뒤 shard 수정으로 바뀐 상태(auditDrift). 단위마다 한 항목
-    const externalOf = (w, entries, judged) => {
+    const externalOf = (w, entries, judged, statuses) => {
       if (w <= 1) return [];
       const out = externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave: w });
       const seen = new Set(out.map((x) => x.item_id));
@@ -1717,6 +1725,15 @@ const main = async () => {
           if (seen.has(x.item_id)) continue;
           seen.add(x.item_id);
           out.push(x);
+        }
+        // 상태는 그대로인데 연결·자기 상태만 바뀐 단위도 넣는다(이어 인정 조건 4가 그 단위를 뒤 회차 항목으로 요구한다)
+        for (const [bundleId, snap] of snapshots) {
+          for (const id of shardDriftUnits(snap, JSON.parse(shardText(bundleId)))) {
+            if (seen.has(id) || !statuses.has(id)) continue;
+            seen.add(id);
+            const st = statuses.get(id);
+            out.push({ item_id: id, wave_of_unit: st.wave, before: st.status, after: st.status, before_conf: st.conf, after_conf: st.conf, clue_links: st.clue_links, cause: `회차 ${v} 감사 뒤 shard 수정(연결·자기 상태 변경, 상태 같음)` });
+          }
         }
       }
       return out;
@@ -1748,7 +1765,7 @@ const main = async () => {
         bundlePaths,
         others,
         extra: {
-          externalChanges: externalOf(w, entries, judged),
+          externalChanges: externalOf(w, entries, judged, m.statuses),
           conflicts,
           mergeSuggestions: m.mergeSuggestions.filter((x) => ids.has(x.bundle_id)),
         },
