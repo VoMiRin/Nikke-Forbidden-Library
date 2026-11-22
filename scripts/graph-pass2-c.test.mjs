@@ -15,6 +15,7 @@ import {
   sampleCAudit,
   carryOverAudit,
   diffCShards,
+  withUserAliases,
   shardDriftUnits,
   auditDrift,
   conflictBundles,
@@ -482,4 +483,20 @@ test('shardDriftUnits: 상태가 같아도 바뀐 연결·지운 연결·자기 
   // 002 바뀜(c·d), 003 지움(e·f), 004 새로(h·f), g 자기 상태 바뀜. 그대로인 001(a·b)은 빠진다
   assert.deepEqual(shardDriftUnits(before, after), ['c__clh_001', 'd__clh_001', 'e__clh_001', 'f__clh_001', 'g__clh_001', 'h__clh_001']);
   assert.deepEqual(shardDriftUnits(before, before), []);
+});
+
+test('withUserAliases: A-2 사용자 결정 별칭만 레지스트리 인물 표기에 더한다', () => {
+  const registry = new Map([['char_지휘관', { entity_id: 'char_지휘관', canonical_name: '지휘관', surface_labels: ['지휘관'] }], ['char_라피', { entity_id: 'char_라피', canonical_name: '라피', surface_labels: ['라피'] }]]);
+  const res = [
+    { surface: '7호', verdict: '별칭', decided_by: 'user', target: { ref: 'entity', entity_id: 'char_지휘관' } },
+    { surface: '7호', verdict: '별칭', decided_by: 'user', target: { ref: 'entity', entity_id: 'char_지휘관' } },
+    { surface: '부관', verdict: '별칭', decided_by: 'judge', target: { ref: 'entity', entity_id: 'char_라피' } },
+    { surface: '없는이', verdict: '별칭', decided_by: 'user', target: { ref: 'entity', entity_id: 'char_없음' } },
+  ];
+  const out = withUserAliases(registry, res);
+  assert.deepEqual(out.get('char_지휘관').surface_labels, ['지휘관', '7호']);
+  assert.deepEqual(out.get('char_지휘관').user_aliases, ['7호']);
+  assert.deepEqual(out.get('char_라피').surface_labels, ['라피']);
+  assert.equal(out.has('char_없음'), false);
+  assert.deepEqual(registry.get('char_지휘관').surface_labels, ['지휘관']);
 });

@@ -219,6 +219,28 @@ export const a2OccIndex = ({ resolutions, groupMap, occRange }) => {
   return out;
 };
 
+/**
+ * 레지스트리 인물에 A-2에서 사용자가 정한 별칭(decided_by: user, verdict: 별칭)을 표기로 더한다.
+ * 예: "7호"는 모든 이야기에서 char_지휘관(사용자 확인 2026-11-11·12). 레지스트리 파일은 고치지 않는다
+ */
+export const withUserAliases = (registry, resolutions) => {
+  const add = new Map();
+  for (const r of resolutions ?? []) {
+    const id = r.target?.ref === 'entity' ? r.target.entity_id : null;
+    if (r.decided_by !== 'user' || r.verdict !== '별칭' || !id || !registry.has(id) || !r.surface) continue;
+    if (!add.has(id)) add.set(id, new Set());
+    add.get(id).add(r.surface);
+  }
+  const out = new Map(registry);
+  for (const [id, names] of add) {
+    const e = registry.get(id);
+    const labels = [...new Set([...(e.surface_labels ?? []), ...names])];
+    out.set(id, { ...e, surface_labels: labels, user_aliases: [...names].filter((n) => !(e.surface_labels ?? []).includes(n)).sort(cmpStr) });
+  }
+  return out;
+};
+const loadRegistryC = () => withUserAliases(loadRegistry(), readJsonIfExists(path.join(A2_MAIN_ROOT, 'merged', 'A2_resolutions.json'))?.resolutions);
+
 /** 전역 사전: 변형 열쇠 → 공식 키 집합(레지스트리 이름·별칭, 공식 엔티티, 공식 표기 묶음) */
 export const officialDictionary = ({ registry, officialEntities, terms }) => {
   const out = new Map();
@@ -1190,7 +1212,7 @@ const loadA2Context = (store) => {
   const resolutions = officialResolutions(res.resolutions, official);
   return {
     occIndex: a2OccIndex({ resolutions, groupMap: official.group_map ?? {}, occRange }),
-    dictionary: officialDictionary({ registry: loadRegistry(), officialEntities: official.entities, terms: terms.terms }),
+    dictionary: officialDictionary({ registry: loadRegistryC(), officialEntities: official.entities, terms: terms.terms }),
     keyNames: new Map([
       ...official.entities.map((e) => [`ent:${e.entity_id}`, e.canonical_name]),
       ...terms.terms.map((t) => [`term:${t.term_key}`, t.canonical_name]),
@@ -1923,11 +1945,11 @@ const main = async () => {
     if (!q) throw new Error('entity <이름>');
     const nq = nfkc(q);
     const has = (names) => names.some((n) => nfkc(n ?? '').includes(nq));
-    const reg = [...loadRegistry().values()].filter((e) => has([e.canonical_name, ...(e.surface_labels ?? [])]));
+    const reg = [...loadRegistryC().values()].filter((e) => has([e.canonical_name, ...(e.surface_labels ?? [])]));
     const off = [...loadPass2Entities().values()].filter((e) => has([e.canonical_name, ...(e.surface_labels ?? [])]));
     const terms = (readJsonIfExists(OFFICIAL_TERMS_PATH)?.terms ?? []).filter((t) => has([t.canonical_name, ...(t.surfaces ?? [])]));
     if (!reg.length && !off.length && !terms.length) console.log(`"${q}": 레지스트리·공식 표·표기 묶음에 없다`);
-    for (const e of reg.slice(0, 15)) console.log(`entity\t${e.entity_id}\t${e.canonical_name}\t별칭: ${(e.surface_labels ?? []).join(', ')}`);
+    for (const e of reg.slice(0, 15)) console.log(`entity\t${e.entity_id}\t${e.canonical_name}\t별칭: ${(e.surface_labels ?? []).join(', ')}${e.user_aliases?.length ? `\t(공식 별칭, 이미 합쳐짐: ${e.user_aliases.join(', ')})` : ''}`);
     for (const e of off.slice(0, 15)) console.log(`entity\t${e.entity_id}\t${e.canonical_name}\t${e.entity_type}${e.qualifier ? ` (${e.qualifier})` : ''}\t표기: ${(e.surface_labels ?? []).join(', ')}`);
     for (const t of terms.slice(0, 15)) console.log(`term\t${t.term_key}\t${t.canonical_name}\t${t.entity_type}${t.qualifier ? ` (${t.qualifier})` : ''}\t표기: ${(t.surfaces ?? []).join(', ')}`);
     return;
