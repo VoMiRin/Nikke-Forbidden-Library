@@ -1,0 +1,478 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__101",
+  "candidate_links": [
+    {
+      "link_id": "C1__101__001",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_01__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: C.O.L.의 대표(사장)가 중고 전자제품 거래 외에 막대한 수익을 올리는 '뭔가'는 무엇인가 / 답: 중앙 정부에서 폐기될 예정인 양산형 니케들을 전자제품 운송 트럭에 숨겨 아우터 림에 팔아넘기는 밀매 사업(license_to_kill_09 L57-L95) / 근거: C.O.L.의 아우터 림 전자제품 운송 트럭 짐칸에서 양산형 니케들이 나왔고, 동행한 직원이 사장도 알고 벌이는 니케 판매임을 시인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_01",
+          "line_start": 55,
+          "line_end": 56,
+          "quote": "K: 전자제품을 거래하는 것만으로 그 수익은 말이 안 돼.\nK: 그것 이외에 뭔가가 있다는 것이 [저지스]에서 내린 결론이고."
+        },
+        {
+          "scene_id": "license_to_kill_09",
+          "line_start": 71,
+          "line_end": 72,
+          "quote": "젊은 직원: 아 알면서 뭘 물어봐?\n젊은 직원: 그럼, 이 아우터 림까지 달랑 전자제품만 싣고 올 줄 알았어?"
+        },
+        {
+          "scene_id": "license_to_kill_09",
+          "line_start": 91,
+          "line_end": 92,
+          "quote": "D: 사장님도 이걸 아나요?\n젊은 직원: 당연한 소릴 하고 있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__002",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_01__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_10__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: C.O.L.의 대표(사장)가 중고 전자제품 거래 외에 막대한 수익을 올려 회사를 급성장시킨 '뭔가'는 무엇인가 / 답: 중앙 정부에서 사들인 수명이 다 해가는 양산형 니케들과 각종 무기를 전자 제품 기부 형태로 아우터 림에 팔고 세력들에게 보급 여부를 두고 돈을 요구해 수익을 올린 거래(license_to_kill_10 L27-L33) / 근거: D가 조사한 서류철에서 C.O.L.의 사장이 그 일련의 거래에서 발생하는 이익을 기반으로 회사를 성장시켰다고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_01",
+          "line_start": 55,
+          "line_end": 56,
+          "quote": "K: 전자제품을 거래하는 것만으로 그 수익은 말이 안 돼.\nK: 그것 이외에 뭔가가 있다는 것이 [저지스]에서 내린 결론이고."
+        },
+        {
+          "scene_id": "license_to_kill_10",
+          "line_start": 27,
+          "line_end": 28,
+          "quote": "중앙 정부는 수명이 다 해가는 양산형 니케들 및 각종 무기들을 사장에게 판매했고.\n사장은 그 양산형 니케들과 무기를 아우터 림에 전자 제품 기부라는 형태로 판매했다."
+        },
+        {
+          "scene_id": "license_to_kill_10",
+          "line_start": 32,
+          "line_end": 33,
+          "quote": "아우터 림에 자리한 크고 작은 세력들을 상대로 양산형 니케와 무기의 보급 여부를 두고 돈을 요구했다는 사실도 있었다.\nC.O.L.의 사장은 그 일련의 거래에서 발생하는 이익을 기반으로 회사를 성장시켰고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__003",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_02__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "lord_for_justice_06", "line_start": 38, "line_end": 43, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 보통 시지 패러리스의 판단을 수용해 최종 결정하던 타겟 처단 여부를 저지스는 왜 처음으로 지휘관에게 최종 결정권자로 맡겼는가 / 답: 저지스의 일원 VII이 방주와 인류의 희망인 지휘관을 흔들림 없는 완벽한 정의의 상징으로 만들기 위한 밑거름으로 삼으려 판결을 맡겼다(lord_for_justice_06 L38-L43) / 근거: 같은 장면 뒤쪽(L44-L56)에서 K가 내놓은 추측은 D가 사실 여부가 판단되지 않았다고 선을 그었고(L62), 후속 이야기 lord_for_justice_06에서 시지 패러리스와 지휘관에게 임무를 내린 저지스의 VII이 지휘관이 지금까지 내린 판결은 완벽한 정의의 상징이 되기 위한 밑거름이라고 밝힌다. 다만 C.O.L. 사건을 직접 지칭하지 않고 여러 이야기를 결합해야 하므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_02",
+          "line_start": 36,
+          "line_end": 38,
+          "quote": "D: 저지스에서의 전언이다.\nD: 우리도 이런 경우는 처음이야.\nK: 그래. 보통은 우리 판단을 적극 수용해서 최종적으로 결정하거든? 근데 이번엔 네가 최종 결정권자야."
+        },
+        {
+          "scene_id": "lord_for_justice_06",
+          "line_start": 38,
+          "line_end": 43,
+          "quote": "VII: 너는 그 정의를 따라야만 한다.\nVII: 방주의 희망으로서.\nVII: 그리고 인류의 희망으로서.\nVII: 한 치의 흔들림도 없는 완벽한 정의의 상징이 되어야 한다.\nVII: 네가 지금까지 내린 판결은 그 밑거름이고.\nVII: 네가 앞으로 내릴 판결은 그 결실이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__004",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_03__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_07__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 현장 감독이 입사 3주 만에 발탁된 '사장 직속'은 무슨 일을 하며 월급이 얼마나 뛰는 자리인가 / 답: 기본 보수의 다섯 배를 받고 C.O.L.의 아우터 림 전자제품 기부 명목 운송 업무를 맡는 자리(license_to_kill_07 L74-L103) / 근거: 사장이 지휘관과 D에게 직속 업무를 제안하며 아우터 림 운송 업무와 다섯 배 보수를 제시해, 현장 감독이 자세한 내용은 모른 채 손바닥(다섯 손가락)을 펴 보인 월급 상승과 표면적 업무 내용을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_03",
+          "line_start": 158,
+          "line_end": 162,
+          "quote": "D: 사장님 직속은 무슨 일을 하나요?\n현장 감독: 뭐 나도 자세한 건 모르겠지만 사장 직속이니 좋은 일이지 않겠어요?\n현장 감독: 그리고 결정적으로 월급이···.\n현장 감독은 말없이 손바닥을 펴 보였다.\n현장 감독: 이만큼이나 뛰었다 이거요."
+        },
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 74,
+          "line_end": 76,
+          "quote": "사장: 우리 C.O.L.은 운송 업무도 하고 있는 걸 알고 계시죠?\n사장: 특별한 구역에 운송을 하고 있거든요.\n사장: 그 업무를 맡아주시면 됩니다."
+        },
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 102,
+          "line_end": 103,
+          "quote": "D: 보수는 어떻게 되나요?\n사장: 지금의 다섯 배. 쳐드리겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__005",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_03__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 월급이 크게(다섯 배) 뛰는 사장 직속은 실제로 무슨 일을 하는가 / 답: 전자제품 운송으로 위장해 중앙 정부 폐기 예정 양산형 니케들을 아우터 림에 팔아넘기는 밀매 운송 업무(license_to_kill_09 L57-L75) / 근거: 사장 직속 운송 업무에 투입된 트럭에서 양산형 니케들이 나왔고, 동행한 직원이 '기본 봉급의 다섯 배나 준다고 할 때부터 알았을 것 아냐'라며 실제 업무를 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_03",
+          "line_start": 158,
+          "line_end": 162,
+          "quote": "D: 사장님 직속은 무슨 일을 하나요?\n현장 감독: 뭐 나도 자세한 건 모르겠지만 사장 직속이니 좋은 일이지 않겠어요?\n현장 감독: 그리고 결정적으로 월급이···.\n현장 감독은 말없이 손바닥을 펴 보였다.\n현장 감독: 이만큼이나 뛰었다 이거요."
+        },
+        {
+          "scene_id": "license_to_kill_09",
+          "line_start": 72,
+          "line_end": 75,
+          "quote": "젊은 직원: 그럼, 이 아우터 림까지 달랑 전자제품만 싣고 올 줄 알았어?\n젊은 직원: 왜 이래. 순진한 척하고.\n젊은 직원: 기본 봉급의 다섯 배나 준다고 할 때부터 알았을 것 아냐.\n젊은 직원: 세상 누가 배송만 하는데 다섯 배나 준다고 할 것 같아?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__006",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_03__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "license_to_kill_12", "line_start": 98, "line_end": 109, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사장은 왜 특별한 기술도 없는 직원을 입사 3주 만에 발탁해 사장 직속 운송 업무에 앉히는가 / 답: 자신이 양지에 남기 위한 꼬리 자르기 용도로 열심히 일하고 절실한 직원에게 운송을 맡긴 것(license_to_kill_12 L98-L109) / 근거: 직원에게 운송 업무를 맡긴 이유를 추궁받자 사장이 단순한 호의라는 거짓말을 거두고 양지에 남기 위한 꼬리 자르기라고 직접 자백한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_03",
+          "line_start": 164,
+          "line_end": 166,
+          "quote": "현장 감독: 뭐 딱히 기술이 필요한 것도 아니에요. 그저 열심히. 최선을 다해서. 절실하게.\n현장 감독: 사장님은 그런 사람 좋아하니까.\n현장 감독: 나도 여기 온 지 3주 밖에 안 됐어요."
+        },
+        {
+          "scene_id": "license_to_kill_12",
+          "line_start": 108,
+          "line_end": 109,
+          "quote": "사장: 그래. 꼬리 자르기다.\n사장: 난 양지에 있을 필요가 있어. 그래야 선의를 베풀 수 있으니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__007",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_04__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "license_to_kill_10", "line_start": 86, "line_end": 92, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 타겟이 지원금의 80% 이상을 방치된 희귀병 연구·치료에 쏟아붓고 있는 이 병원의 뒤를 캐보면 감춰진 비리나 문제가 있는가 / 답: 온갖 방법을 동원해 조사해도 아무 문제 없이 정직하고 투명하게 운용되는 완전무결한 병원이다(license_to_kill_10 L86-L92) / 근거: license_to_kill_04에서 해당 병원의 뒤를 더 캐보겠다고 한 K가 license_to_kill_10에서 병원 조사 결과 아무 문제 없이 완전무결하게 깨끗하다고 직접 보고한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_04",
+          "line_start": 74,
+          "line_end": 75,
+          "quote": "K: 타겟이 지원해 주는 금액의 80% 이상이 저 병을 연구하고 치료하는 것에 쓰이고 있어.\nK: 돈을 마구잡이로 쏟아붓고 있어서 병에 대한 연구가 제법 진척이 있고."
+        },
+        {
+          "scene_id": "license_to_kill_04",
+          "line_start": 78,
+          "line_end": 80,
+          "quote": "K: 저 꼬맹이, 3일 전만 하더라도 침대에 누워있는 것 밖에 못 했다고 해.\nD: 요점은?\nK: 뭐 더 조사해 보고 뒤를 캐봐야 하겠지만."
+        },
+        {
+          "scene_id": "license_to_kill_10",
+          "line_start": 86,
+          "line_end": 92,
+          "quote": "D: 병원 조사 결과는.\nK: 음.\nK: 이런저런 [방법]을 다 동원해서 알아봤는데.\nK: 병원은 완전무결. 엄~~청 깨끗해.\nK: 약간 뭐랄까··· 청렴하게 운용하는 것의 모범 사례를 본 것 같달까.\nK: 안 나와 아무것도. 이래도 되나 싶을 정도로 정직하고 투명해.\nK: 그래서 병원은 끝. 아무 문제 없음."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__008",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_05__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_06__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 안개 낀 회사 입구 공중에서 끼익거리며 흔들리고 있어 비명과 신고 요청을 부른 것은 무엇인가 / 답: 회사 입구에서 사망한 현장 감독(license_to_kill_06 L7-L16) / 근거: 안개 낀 날 회사 입구에서 비명이 터진 직후 이어진 장면에서 직원들이 현장 감독이 왜 회사 입구에서 그렇게 가버렸는지 진술한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_05",
+          "line_start": 74,
+          "line_end": 75,
+          "quote": "끼익··· 끼익···.\n뭔가가 공중에서 흔들리고 있는 게 보였다."
+        },
+        {
+          "scene_id": "license_to_kill_05",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "회사 입구 쪽에서 공포에 질린 비명소리가 들려왔다."
+        },
+        {
+          "scene_id": "license_to_kill_06",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "물자 분류 직원: 그렇다고 그렇게 가버릴 줄은 몰랐는데···."
+        },
+        {
+          "scene_id": "license_to_kill_06",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "운송 담당 직원: 목숨을 바쳤으면 바쳤지, 불만이 있었을 리가···.\n운송 담당 직원: ···그런데 왜 회사 입구에서···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__009",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_06__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_07__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 현장 감독이 발탁된 뒤 낯빛이 어두워졌던 '사장 직속'은 무슨 일을 하는 자리인가 / 답: 기본 보수의 다섯 배를 받고 C.O.L.의 아우터 림 운송 업무를 맡는 자리(license_to_kill_07 L74-L103) / 근거: D가 '사장 직속이 되면 무슨 일을 하는 거지?'라고 물은 뒤, 전임자가 사라진 사장 직속 자리를 제안받아 사장이 아우터 림 운송 업무임을 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_06",
+          "line_start": 8,
+          "line_end": 9,
+          "quote": "물자 분류 직원: 최근 들어 낯빛이 좀 어두워지긴 했지.\n물자 분류 직원: 그 뭐냐. 사장 직속이 된 이후였던 것 같은데."
+        },
+        {
+          "scene_id": "license_to_kill_06",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "D: 사장 직속이 되면 무슨 일을 하는 거지?"
+        },
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 74,
+          "line_end": 76,
+          "quote": "사장: 우리 C.O.L.은 운송 업무도 하고 있는 걸 알고 계시죠?\n사장: 특별한 구역에 운송을 하고 있거든요.\n사장: 그 업무를 맡아주시면 됩니다."
+        },
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "사장: 음. 아우터 림입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__010",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_06__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사장 직속이 된 현장 감독은 무슨 일을 맡았기에 낯빛이 어두워졌는가 / 답: 전자제품 트럭에 중앙 정부 폐기 예정 양산형 니케들을 숨겨 아우터 림에 내전용 총알받이로 팔아넘기는 운송 업무를 맡아 그 실상을 알게 되었다(license_to_kill_09 L57-L86) / 근거: 전임자의 사장 직속 운송 업무 현장에서 양산형 니케 밀매가 드러나고, 동행한 직원이 '전에 온 놈도 그렇고 왜 이렇게 깨끗한 놈들만 있대?'라며 전임자 역시 이를 알게 되어 거부감을 보였음을 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_06",
+          "line_start": 8,
+          "line_end": 9,
+          "quote": "물자 분류 직원: 최근 들어 낯빛이 좀 어두워지긴 했지.\n물자 분류 직원: 그 뭐냐. 사장 직속이 된 이후였던 것 같은데."
+        },
+        {
+          "scene_id": "license_to_kill_06",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "D: 사장 직속이 되면 무슨 일을 하는 거지?"
+        },
+        {
+          "scene_id": "license_to_kill_09",
+          "line_start": 80,
+          "line_end": 81,
+          "quote": "젊은 직원: 몰라.\n젊은 직원: 내전용 총알받이로나 쓰이겠지."
+        },
+        {
+          "scene_id": "license_to_kill_09",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "젊은 직원: 나 참. 전에 온 놈도 그렇고 왜 이렇게 깨끗한 놈들만 있대?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__011",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_06__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "license_to_kill_12", "line_start": 111, "line_end": 116, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 애사심이 깊던 현장 감독은 왜 사장 직속이 된 뒤 회사 입구에서 사망했는가 / 답: 운송 업무 중 확인하지 말라던 짐칸의 실상을 보고 양심의 가책을 느껴 스스로 목숨을 끊었다(license_to_kill_12 L114-L115) / 근거: 사장이 운송 담당 직원이 짐을 기어코 확인하고 양심의 가책을 느껴 목숨을 끊기도 한다고 말하며, 앞선 전임자 정황(07·09장면)과 결합하면 현장 감독의 사망 이유에 해당한다. 다만 현장 감독을 직접 호명하지 않고 여러 장면을 결합해야 하므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_06",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "운송 담당 직원: 목숨을 바쳤으면 바쳤지, 불만이 있었을 리가···.\n운송 담당 직원: ···그런데 왜 회사 입구에서···."
+        },
+        {
+          "scene_id": "license_to_kill_12",
+          "line_start": 114,
+          "line_end": 116,
+          "quote": "사장: 짐을 확인하지 말라고 신신당부했다.\n사장: 그걸 기어코 봐서, 멋대로 양심의 가책을 느껴···. 목숨을 끊기도 하지.\n사장: 그것까진 내가 어떻게 할 수 없어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__012",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_07__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_09__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 보수를 다섯 배나 주면서 불법이 아니라며 아우터 림에 전자제품을 기부한다고 한 C.O.L. 운송 업무의 실체는 무엇인가 / 답: 전자제품 뒤에 중앙 정부 폐기 예정 양산형 니케들을 숨겨 아우터 림에 내전용 총알받이로 팔아넘기는 밀매 운송(license_to_kill_09 L57-L95) / 근거: 다음 날 수행한 해당 아우터 림 운송 트럭 짐칸에서 양산형 니케들이 나왔고, 직원이 다섯 배 봉급을 직접 언급하며 니케 판매임을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 86,
+          "line_end": 87,
+          "quote": "사장: 아아. 불법적인 일은 아니니 걱정하지 마세요.\n사장: 사실 저는 주기적으로 아우터 림에 전자제품을 기부하고 있습니다."
+        },
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 102,
+          "line_end": 103,
+          "quote": "D: 보수는 어떻게 되나요?\n사장: 지금의 다섯 배. 쳐드리겠습니다."
+        },
+        {
+          "scene_id": "license_to_kill_09",
+          "line_start": 57,
+          "line_end": 59,
+          "quote": "짐칸에 실어 놨던 전자 제품들이 요란한 소리를 내며 이리저리 넘어졌다.\n그리고 그 너머에서 나온 것은.\n10명 남짓한 양산형 니케들이었다."
+        },
+        {
+          "scene_id": "license_to_kill_09",
+          "line_start": 72,
+          "line_end": 75,
+          "quote": "젊은 직원: 그럼, 이 아우터 림까지 달랑 전자제품만 싣고 올 줄 알았어?\n젊은 직원: 왜 이래. 순진한 척하고.\n젊은 직원: 기본 봉급의 다섯 배나 준다고 할 때부터 알았을 것 아냐.\n젊은 직원: 세상 누가 배송만 하는데 다섯 배나 준다고 할 것 같아?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__013",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_07__clh_001" }],
+      "target": [{ "ref": "item", "item_id": "license_to_kill_10__clh_001" }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사장이 아우터 림에 전자제품을 기부한다며 맡긴 운송 업무는 실제로 무엇을 거래하는 일인가 / 답: 중앙 정부에서 사들인 수명이 다 해가는 양산형 니케들과 각종 무기를 '전자 제품 기부'라는 형태로 아우터 림에 판매하는 거래(license_to_kill_10 L27-L28) / 근거: D가 조사한 서류철이 사장의 '전자 제품 기부'를 직접 받아 그 실체가 양산형 니케 및 무기 판매였음을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 86,
+          "line_end": 87,
+          "quote": "사장: 아아. 불법적인 일은 아니니 걱정하지 마세요.\n사장: 사실 저는 주기적으로 아우터 림에 전자제품을 기부하고 있습니다."
+        },
+        {
+          "scene_id": "license_to_kill_10",
+          "line_start": 27,
+          "line_end": 28,
+          "quote": "중앙 정부는 수명이 다 해가는 양산형 니케들 및 각종 무기들을 사장에게 판매했고.\n사장은 그 양산형 니케들과 무기를 아우터 림에 전자 제품 기부라는 형태로 판매했다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__101__014",
+      "link_type": "hook",
+      "subject": [{ "ref": "item", "item_id": "license_to_kill_07__clh_001" }],
+      "target": [{ "ref": "lines", "scene_id": "license_to_kill_12", "line_start": 98, "line_end": 109, "scan_id": null }],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 배송할 사람이 많을 텐데 사장은 왜 아우터 림 운송 업무를 일반 직원에게 다섯 배 보수를 주며 맡기는가 / 답: 위험하다는 선입견 때문이나 호의가 아니라 자신이 양지에 남기 위한 꼬리 자르기 때문이다(license_to_kill_12 L98-L109) / 근거: license_to_kill_07에서 배송할 사람이 많을 텐데 왜 맡기느냐는 질문에 사장은 선입견 때문이라고 둘러댔으나, license_to_kill_12에서 직원에게 운송 업무를 맡긴 진짜 이유가 꼬리 자르기라고 자백한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "license_to_kill_07",
+          "line_start": 100,
+          "line_end": 101,
+          "quote": "사장: 어쨌든 그런 선입견 때문에 아우터 림으로 가는 것을 꺼리는 분들이 대부분입니다.\n사장: 하지만··· 두 분은 제가 듣기로는 딱히 그런 걸 따지지 않으실 것 같아서요."
+        },
+        {
+          "scene_id": "license_to_kill_12",
+          "line_start": 108,
+          "line_end": 109,
+          "quote": "사장: 그래. 꼬리 자르기다.\n사장: 난 양지에 있을 필요가 있어. 그래야 선의를 베풀 수 있으니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "license_to_kill_06__clh_001",
+      "reason": "짝 없음",
+      "note": "본인이 말한 적 없는 불법 도박 빚 소문이 왜 돌았으며 현장 감독의 집이 왜 부자연스러울 정도로 깨끗하게 정리되어 있었는지"
+    },
+    {
+      "item_id": "license_to_kill_09__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "license_to_kill_09__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "license_to_kill_10__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "license_to_kill_10__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "license_to_kill_11__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "license_to_kill_12__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "license_to_kill_13__clh_001",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}

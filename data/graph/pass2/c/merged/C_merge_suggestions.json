@@ -2,7 +2,7 @@
   "schema_version": "pass2-0.1.0",
   "kind": "C",
   "run": "main",
-  "generated_at": "2026-11-22T11:32:31.023Z",
+  "generated_at": "2026-11-22T13:31:21.701Z",
   "note": "감사 PASS 전에는 curation.json에 넣지 않는다",
   "suggestions": [
     {
@@ -4554,6 +4554,252 @@
       ],
       "bundle_id": "C1__100",
       "wave": 5
+    },
+    {
+      "suggestion_id": "C1__117__M01",
+      "unit_ids": [
+        "dirty_backyard_05__clh_002",
+        "dirty_backyard_10__clh_002"
+      ],
+      "link_ids": [
+        "C1__117__016"
+      ],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char_식스오",
+          "name": "식스오"
+        },
+        {
+          "kind": "entity",
+          "id": "char_000000",
+          "name": "#000000"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "메신저 발신자 '#000000'의 문자를 확인한 아우터 림 주민이 곧바로 식스오를 욕하고(dirty_backyard_08 L79-L127), 지휘관에게 온 '#000000'의 문자를 본 슈가가 식스오의 연락이 맞다고 직접 확인한다(dirty_backyard_09 L30-L56).",
+      "supporting_evidence": [
+        {
+          "scene_id": "dirty_backyard_08",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "[MESSENGER_START TITLE=\"#000000\" PARTICIPANTS=\"#000000,아우터 림 주민\"]"
+        },
+        {
+          "scene_id": "dirty_backyard_08",
+          "line_start": 127,
+          "line_end": 127,
+          "quote": "아우터 림 주민: 식스오 이 쓰레기만도 못한 개자식이···."
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "[MESSENGER_START TITLE=\"#000000\" PARTICIPANTS=\"#000000,지휘관\"]"
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "슈가: 파트너, 혹시 식스오로부터 연락이 왔나?"
+        },
+        {
+          "scene_id": "dirty_backyard_09",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "슈가: ···맞아."
+        }
+      ],
+      "bundle_id": "C1__117",
+      "wave": 6
+    },
+    {
+      "suggestion_id": "C1__117__M02",
+      "unit_ids": [
+        "lion_heart_01__clh_001"
+      ],
+      "link_ids": [],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char_길로틴",
+          "name": "길로틴"
+        },
+        {
+          "kind": "surface",
+          "id": null,
+          "name": "길로틴 드 메피스토"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "길로틴이 스스로를 '길로틴 드 메피스토'라 부르며 길로틴이라 부르는 것을 허락한다고 말한다(lion_heart_01 L142, lion_heart_02 L82-L84).",
+      "supporting_evidence": [
+        {
+          "scene_id": "lion_heart_01",
+          "line_start": 142,
+          "line_end": 142,
+          "quote": "밤은 나, 길로틴 드 메피스토의 시간."
+        },
+        {
+          "scene_id": "lion_heart_02",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "길로틴: 길로틴 드 메피스토다."
+        },
+        {
+          "scene_id": "lion_heart_02",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "길로틴: 하지만 티미 데 비스타의 보좌관이라는 자격을 갖고 있으니 특별히 길로틴이라고 부르는 걸 허락하지."
+        }
+      ],
+      "bundle_id": "C1__117",
+      "wave": 6
+    },
+    {
+      "suggestion_id": "C1__119__M01",
+      "unit_ids": [
+        "booms_day_05__clh_002",
+        "booms_day_06__clh_001",
+        "booms_day_10__clh_001"
+      ],
+      "link_ids": [
+        "C1__119__011"
+      ],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char_트로니",
+          "name": "트로니"
+        },
+        {
+          "kind": "entity",
+          "id": "char_T_Rony",
+          "name": "T.Rony"
+        },
+        {
+          "kind": "entity",
+          "id": "char_handle_T_Rony",
+          "name": "[T.Rony]"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "T.Rony와 [T.Rony]는 트로니가 사용하는 게임 닉네임(온라인 핸들)이자 booms_day에서 모니터에 비친 트로니 자신의 내면 목소리를 가리키는 표기로, 세 엔티티는 모두 같은 인물 트로니를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "booms_day_10",
+          "line_start": 42,
+          "line_end": 46,
+          "quote": "트로니가 조종하던 전투기가 보였다.\n전투기 아래에는 닉네임이 적혀 있었다.\n[T.Rony]\n곧 모니터는 예비 전력이 다 했는지 빛을 잃었다.\n그 대신, 트로니의 눈엔 모니터에 비친 자신의 모습이 보였다."
+        },
+        {
+          "scene_id": "booms_day_06",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "T.Rony: [트로니, 도망쳐서 해결되는 건 아무것도 없어.]"
+        },
+        {
+          "scene_id": "d.ark_hero_02",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "[사이코뮤] : T.Rony 이해함?\n트로니: 응. 집중할게.\n[T.Rony] : wwwwwwwwwwqqqeehh"
+        }
+      ],
+      "bundle_id": "C1__119",
+      "wave": 6
+    },
+    {
+      "suggestion_id": "C1__120__M01",
+      "unit_ids": [
+        "kill_the_lord_01__clh_001",
+        "kill_the_lord_13__clh_002"
+      ],
+      "link_ids": [
+        "C1__120__003",
+        "C1__120__004",
+        "C1__120__005"
+      ],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char_카밀라",
+          "name": "카밀라"
+        },
+        {
+          "kind": "surface",
+          "id": null,
+          "name": "레이디"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "임무 브리핑에서 타겟의 본명이 카밀라 해링턴이며 통칭이 [레이디]라고 직접 밝히고, 저택 방문 장면에서도 같은 대상을 타겟 레이디와 카밀라로 부른다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "kill_the_lord_01",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "K: 이름은 카밀라 해링턴, 나이는 24세."
+        },
+        {
+          "scene_id": "kill_the_lord_01",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "D: 타켓. 통칭 [레이디]는 일주일에 한 번씩 사교 모임을 주최하고 있어."
+        }
+      ],
+      "bundle_id": "C1__120",
+      "wave": 6
+    },
+    {
+      "suggestion_id": "C1__120__M02",
+      "unit_ids": [
+        "kill_the_lord_04__clh_003"
+      ],
+      "link_ids": [
+        "C1__120__008"
+      ],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char_로산나",
+          "name": "로산나"
+        },
+        {
+          "kind": "entity",
+          "id": "char_로즈",
+          "name": "로즈"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "로산나가 옆집 이웃으로 위장해 자신을 로즈라고 소개하며, 메신저 대화에서도 발신자 로즈가 자신이 로산나이고 로즈는 가명이라고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "kill_the_lord_04",
+          "line_start": 141,
+          "line_end": 141,
+          "quote": "로산나: 로즈라고 해요, 잘 부탁해요."
+        },
+        {
+          "scene_id": "blabla_rose_001",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "나야 로산나"
+        },
+        {
+          "scene_id": "blabla_rose_001",
+          "line_start": 13,
+          "line_end": 13,
+          "quote": "로즈라고 되어있는데?"
+        },
+        {
+          "scene_id": "blabla_rose_001",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "가명이야"
+        }
+      ],
+      "bundle_id": "C1__120",
+      "wave": 6
     }
   ]
 }
