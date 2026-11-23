@@ -1,0 +1,677 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__207",
+  "candidate_links": [
+    {
+      "link_id": "C1__207__001",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "음악 애호가_00__clh_002" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "음악 애호가_01",
+          "line_start": 42,
+          "line_end": 45,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사제 율리아를 따로 언급하며 지휘관을 무심코 '마에'라 부르려다 '전장의 지휘자님'으로 고쳐 부르고 현을 켜겠다고 한 메신저 발신자 '음악 애호가'의 정체는 누구인가 / 답: 율리아 본인이다(음악 애호가_01 L45) / 근거: 음악 애호가_01에서 '음악 애호가'가 스승님께 신선한 음률을 선물하고 싶다고 메시지를 보내자 지문이 곧바로 '율리아는 뮤직 마스터에게 새로운 음악을 들려주고 싶어 하는 것 같다'고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "음악 애호가_00",
+          "line_start": 157,
+          "line_end": 161,
+          "quote": "  [MSG SENDER=\"음악 애호가\"]\n    감사합니다 마에\n  [MSG_END]\n  [MSG SENDER=\"음악 애호가\"]\n    전장의 지휘자님!"
+        },
+        {
+          "scene_id": "음악 애호가_01",
+          "line_start": 42,
+          "line_end": 45,
+          "quote": "  [MSG SENDER=\"음악 애호가\"]\n    신선한 음률을 선물하고 싶습니다\n  [MSG_END]\n  ···율리아는 뮤직 마스터에게 새로운 음악을 들려주고 싶어 하는 것 같다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "같은 이야기 다음 장면 음악 애호가_01을 show로 읽어 L42-L45에서 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__002",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "철도로GO_00__clh_001" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "terminus_ticket_02",
+          "line_start": 68,
+          "line_end": 75,
+          "scan_id": "S0057"
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 가명 '철도로GO'로 자신을 '인피니티 레일' 소속이라 말실수한 뒤 아크 익스프레스의 기관사 겸 승무원 겸 청소담당이라 둘러대며 옆의 작은 존재가 방해했다고 변명한 발신자와 일행은 누구인가 / 답: 인피니티 레일 스쿼드의 리더이자 승무원인 디젤과 동료 기관사 브리드·승무원 솔린이다(terminus_ticket_02 L71-L75) / 근거: 인피니티 레일 스쿼드 명칭, 말끝을 늘이는 '~' 말투, 기관사·승무원 직무 구성이 일치하나 공개 장면이 이 의뢰를 직접 지칭하지는 않으므로 간접 연결이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "철도로GO_00",
+          "line_start": 59,
+          "line_end": 60,
+          "quote": "  [MSG SENDER=\"철도로GO\"]\n    인피니티 레일에서"
+        },
+        {
+          "scene_id": "철도로GO_00",
+          "line_start": 77,
+          "line_end": 81,
+          "quote": "  [MSG SENDER=\"철도로GO\"]\n    저는 아크 익스프레스에서 기관사 겸 승무원 겸\n  [MSG_END]\n  [MSG SENDER=\"철도로GO\"]\n    청소담당으로 일하마ㅓㅅ가ㅗ"
+        },
+        {
+          "scene_id": "terminus_ticket_02",
+          "line_start": 71,
+          "line_end": 75,
+          "quote": "디젤: 안녕하세요, 저는 인피니티 레일 스쿼드의 리더이자 AZX의 승무원인 디젤이라고 합니다.\n디젤: 친절하게 모시겠습니다.\n브리드: 안녕하십니까, AZX의 기관사 브리드입니다.\n브리드: 안전하게 모시겠습니다.\n솔린: AZX의 승무원인 솔린이라고 해."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "cand의 C-0 검색 결과 S0057(terminus_ticket_02 L71)을 show로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__003",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "철도로GO_00__clh_001" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "train_station_00",
+          "line_start": 56,
+          "line_end": 68,
+          "scan_id": "S0058"
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 가명 '철도로GO'로 '인피니티 레일' 소속이라 말실수하고 청소담당이라고 둘러대며 '어머'·'~' 말투를 쓰는 발신자와 일행은 누구인가 / 답: 인피니티 레일 스쿼드의 디젤과 동료 브리드·솔린이다(train_station_00 L56-L68) / 근거: 디젤의 '어머' 말투와 인피니티 레일 스쿼드 세 멤버(디젤·브리드·솔린)가 직접 기차역을 청소하는 모습이 단서의 특징들과 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "철도로GO_00",
+          "line_start": 80,
+          "line_end": 87,
+          "quote": "  [MSG SENDER=\"철도로GO\"]\n    청소담당으로 일하마ㅓㅅ가ㅗ\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    ??\n  [MSG_END]\n  [MSG SENDER=\"철도로GO\"]\n    어머 죄송해요~"
+        },
+        {
+          "scene_id": "train_station_00",
+          "line_start": 56,
+          "line_end": 59,
+          "quote": "디젤: 어머, 지휘관 어디 가세요?\n디젤: 지휘관도 저희랑 함께해 주실 거죠?\n브리드: 해주신다고 믿겠습니다.\n솔린: 해줄 거지?"
+        },
+        {
+          "scene_id": "train_station_00",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "인피니티 레일 스쿼드와 함께 기차역을 열심히 청소했다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "cand의 C-0 검색 결과 S0058(train_station_00 L68)을 show로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__004",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "제니퍼f_00__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "LIE CAUSE RECOL_22__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 실종 아동이 마지막 좌표에 남긴 찢어진 종이 조각('도망가고. 나는 니케가. 미친 사람들. 차라리 지상으로.')이 암시하는 방주 아동 보호 센터의 실체는 무엇인가 / 답: 제니퍼가 운영하던 센터는 아이들이 죽거나 어느 정도 자라야 돈이 되는 방식으로 아이들을 이용해 돈을 벌고 있었고, 이 때문에 무서워서 도망가는 아이들이 생겼으며 이후 센터는 암살자 양성소로 개편되었다(LIE CAUSE RECOL_22 L77-L101) / 근거: 제니퍼가 지휘관에게 실종 아동 수색 의뢰를 맡겼던 당시 센터에서 아이들을 이용해 돈을 벌다가 무서워서 도망가는 아이들이 생겼다고 직접 회고한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "제니퍼f_00",
+          "line_start": 124,
+          "line_end": 127,
+          "quote": "아니스: 단서가 될 만한 건 이 찢어진 종이 조각뿐인 것 같은데.\n네온: 일기장 같은 거였을까요?\n네온: 조각이 너무 작네요, 문장이 띄엄띄엄이에요.\n도망가고. 나는 니케가. 미친 사람들. 차라리 지상으로."
+        },
+        {
+          "scene_id": "LIE CAUSE RECOL_22",
+          "line_start": 78,
+          "line_end": 83,
+          "quote": "제니퍼: 아이들을 이용해 돈을 벌고는 있었지만, 수완이 좋지는 않았어요.\n제니퍼: 죽거나, 아이들이 어느 정도 자라야 돈이 됐거든요.\n제니퍼: 정말 제 돈으로 갈 곳 없는 아이들을 키우고 있었던 거예요!\n제니퍼: 하하, 말도 안 되죠. 자선 사업가도 아니고.\n제니퍼: 게다가 무서워서 도망가는 애들까지 생겨버렸으니, 완전 손해 보는 장사였어요.\n제니퍼: 그러고, 지휘관님에게 의뢰를 드렸잖아요~ 후후."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "제니퍼f_00__clh_003에서 '아동 보호'를 grep해 event_stories__lie_cause_recoil을 찾고 show로 LIE CAUSE RECOL_22__clh_001 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__005",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "제니퍼f_00__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "LIE CAUSE RECOL_19__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아동 학대·강제 니케화 소문을 유언비어라 부정하며 센터 위치를 감춘 방주 아동 보호 센터의 실제 정체는 무엇인가 / 답: 방주 아동 보호 센터를 가장한 소년 암살 훈육소다(LIE CAUSE RECOL_19 L33) / 근거: 지휘관이 과거 제니퍼의 의뢰 문자를 떠올리며 찾아간 동일한 '방주 아동 보호 센터'의 실체를 슈가가 직접 규정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "제니퍼f_00",
+          "line_start": 169,
+          "line_end": 176,
+          "quote": "  [MSG SENDER=\"제니퍼f!\"]\n    저희 기관에서 아이들을 가둬놓고 학대한다거나\n  [MSG_END]\n  [MSG SENDER=\"제니퍼f!\"]\n    성인이 되면 강제로 뇌 기증을 해서 니케로 만든다거나\n  [MSG_END]\n  [MSG SENDER=\"제니퍼f!\"]\n    그런 말도 안 되는 이야기들입니다"
+        },
+        {
+          "scene_id": "LIE CAUSE RECOL_19",
+          "line_start": 32,
+          "line_end": 33,
+          "quote": "슈가: 그럼 하나는 확실해졌네.\n슈가: 그곳은 [방주 아동 보호 센터]를 가장한 [소년 암살 훈육소]였다는 거."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "'아동 보호' grep으로 LIE CAUSE RECOL_19 L33 {LIE CAUSE RECOL_19__clh_002} 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__006",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "제니퍼f_00__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "LIE CAUSE RECOL_22__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 제니퍼f!가 방주 아동 보호 센터 관련 소문을 부정하다가 지휘관이 센터 위치를 묻자 급히 대화를 끊고 계정을 제한한 이유는 무엇인가 / 답: 실제로 아이들이 죽거나 자라야 돈이 되는 방식으로 아이들을 이용해 돈을 벌고 있었는데 지휘관이 수상하게 여기자 갱생관에 끌려갈 위기감을 느껴 수상한 흔적을 정리하고 아이들을 암살자로 키우기 위해서였다(LIE CAUSE RECOL_22 L78-L101) / 근거: 제니퍼가 과거 지휘관에게 의뢰했을 때 의심받은 일을 직접 언급하며 그때 걸리겠다고 깨달아 센터를 재정비했다고 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "제니퍼f_00",
+          "line_start": 181,
+          "line_end": 196,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    혹시 센터의 위치가\n  [MSG_END]\n  [MSG SENDER=\"제니퍼f!\"]\n    시간이 많이 지체 되었군요\n  [MSG_END]\n  [MSG SENDER=\"제니퍼f!\"]\n    다시 한번 도움을 주셔서 감사합니다\n  [MSG_END]\n  [MSG SENDER=\"제니퍼f!\"]\n    다음에 또 연락드리겠습니다\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    잠깐 제니퍼\n  [MSG_END]\n  이용이 제한된 게정입니다."
+        },
+        {
+          "scene_id": "LIE CAUSE RECOL_22",
+          "line_start": 96,
+          "line_end": 101,
+          "quote": "제니퍼: 그런데 지휘관님 덕분에 깨달았죠.\n제니퍼: 아, 이대로는 안 되겠구나. 나 걸리겠구나! 하고 말이에요.\n제니퍼: 돈도 많이 못 버는데, 이대로 갱생관에 끌려갈 순 없잖아요?\n제니퍼: 그래서, 겉으로 수상해 보일 수 있는 부분을 모두 정리하고.\n제니퍼: 아이들을 제대로 키우기 시작했어요.\n제니퍼: 암살자로 말이에요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "'아동 보호' grep으로 event_stories__lie_cause_recoil을 찾고 show로 LIE CAUSE RECOL_22__clh_001 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__007",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "데이파라_00__clh_002" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "reborn_evil_21",
+          "line_start": 2,
+          "line_end": 15,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지상 공터의 작은 제단 주위에서 비무장 민간인들이 저항 흔적 없이 편안한 표정으로 사망한 채 손에 랩쳐 부품을 쥐고 있던 일의 진상은 무엇인가 / 답: 데이파라의 모친 엘세리아 나인이 창시한 사이비 종교 [구원의 성화]가 랩쳐를 심판자로 믿고 종말과 죽음을 구원으로 여겨 신도 중 일부를 지상에 올려 보내 랩쳐에게 제물로 바친 것이다(reborn_evil_21 L2-L11) / 근거: 데이파라_00 후반의 [구원의 성화] 언급 및 reborn_evil_02 L29-L32의 제단 회상을 거쳐 reborn_evil_21의 사건 요약이 지상 제물 희생의 경위를 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "데이파라_00",
+          "line_start": 156,
+          "line_end": 161,
+          "quote": "공터에는 작은 제단과 용도를 알 수 없는 그릇과 날붙이, 장식들이 놓여 있다.\n그리고···.\n아니스: ···진짜 끔찍하네. 살아있는 사람은 없는 것 같아.\n네온: 대체 무슨 일이 벌어졌던 걸까요···?\n라피: 전부 비무장 민간인이야.\n라피: 그리고··· 저항하거나 도망친 흔적이 전혀 없어."
+        },
+        {
+          "scene_id": "데이파라_00",
+          "line_start": 178,
+          "line_end": 179,
+          "quote": "잠든듯 누워있는 한 남성이 손에 꼭 쥐고 있는 무언가가 눈에 띄었다.\n라피: 이건··· 랩쳐의 부품입니다."
+        },
+        {
+          "scene_id": "reborn_evil_21",
+          "line_start": 2,
+          "line_end": 11,
+          "quote": "[구원의 성화]\n랩쳐를 하늘에서 내려온 심판자라 부르며,\n그들이 어리석은 인류를 종말로 인도함으로써\n구원의 길에 다다르게 할 것이라 굳게 믿는 사이비 종교.\n창시자는 엘세리아 나인.\nㄴ 지휘관이었던 남편이 의식을 되찾지 못해 좌절하고 있던 와중,\nㄴ 의문의 인물로부터 랩쳐의 코어를 받은 게 종교 설립의 계기가 되었으리라 추정.\n[구원의 성화]를 창시한 뒤, 상담 센터에 방문한 이들을 신도로 유인.\n이후 아우터 림의 저택에서 정기적으로 집회를 염.\nㄴ 신도 중 일부를 지상에 올려 보내 랩쳐에게 제물로 바치기도 함."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "2호_쉘터_관리계정_00__clh_003의 C-0 결과로 event_stories__reborn_evil을 찾고 show로 reborn_evil_21 L2-L15 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__008",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "isabel_00__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "에덴_Notice_01__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 이사벨이 지휘관이 자신을 사랑해서 주었고 그로 인해 구원받았다고 말한 '[그걸]'의 정체는 무엇인가 / 답: 지휘관이 에덴에서 이사벨에게 보통 소중한 이에게 마음을 전하는 데 쓴다며 꺼내 보여주고 건네준 작은 사진 엽서다(에덴_Notice_01 L220-L235) / 근거: isabel_04 L2-L15, L35-L37에서 이사벨이 사랑의 증거로 내민 낡은 엽서의 회상 대사가 에덴_Notice_01 L221-L252와 일치하여 두 장면을 결합하면 '[그걸]'이 이 사진 엽서임이 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "isabel_00",
+          "line_start": 136,
+          "line_end": 137,
+          "quote": "이사벨: 당신도 절 사랑했으니까 [그걸] 주신 거 아닌가요?\n이사벨: 그때 제가, 아아··· 얼마나 구원 받았는지 몰라요."
+        },
+        {
+          "scene_id": "에덴_Notice_01",
+          "line_start": 220,
+          "line_end": 221,
+          "quote": "포켓에서 작은 사진 엽서를 꺼냈다.\n이사벨: 이건··· 뭔가요?"
+        },
+        {
+          "scene_id": "에덴_Notice_01",
+          "line_start": 232,
+          "line_end": 235,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"보통은 소중한 이에게 마음을 전하는 데 쓰지.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "음악 애호가_01__clh_001의 C-0 결과 S0025(isabel_01)를 계기로 character_episodes__이사벨(isabel_00~04)을 show로 읽어 isabel_00__clh_002 및 isabel_04 회상 대사를 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__009",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "에덴_Notice_02__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "eden_spear_11__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 요한이 에덴은 단순한 거주용 시설이 아니라 때가 오면 쏠 '창'이라고 말한 것의 구체적 정체는 무엇인가 / 답: 에덴 자체가 전력을 끌어다 쏘는 초거대 입자포 무장인 '에덴의 창'이다(eden_spear_11 L62-L70) / 근거: 요한이 에덴 자체를 초거대 입자포라 설명하며 세실과 하란이 그 무장을 '에덴의 창'(eden_spear_11 L28, L51)이라 직접 부른다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "에덴_Notice_02",
+          "line_start": 204,
+          "line_end": 206,
+          "quote": "요한: 에덴은.\n요한: 단순한 거주용 시설이 아니다.\n요한: 미끼이자 창이다."
+        },
+        {
+          "scene_id": "에덴_Notice_02",
+          "line_start": 212,
+          "line_end": 214,
+          "quote": "요한: 때가 오면 우리는 미끼를 던질 것이고.\n요한: 창을 쏠 거다.\n요한: 여긴 그때를 위한 비상용 시설이다."
+        },
+        {
+          "scene_id": "eden_spear_11",
+          "line_start": 62,
+          "line_end": 69,
+          "quote": "나유타: 에덴은 그 자체가 무장이었구려.\n요한: 그래.\n요한: 초거대 입자포라 봐도 무방하다.\n나유타: 이걸 지금까지 왜 안 쓴 것이오.\n요한: 쓸 대상이 없었으니까.\n나유타: 아니, 화룡 소저도 있고 이리저리 많지 않았소.\n요한: 에덴의 전력을 끌어다 쏘는 공격 일변도의 무장이다.\n요한: 발사 후 광학미채도 유지할 수 없을 정도로 무방비 상태가 된다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "에덴_Notice_02__clh_003에서 '에덴의 창'을 grep해 eden_spear_11을 찾고 show로 eden_spear_11__clh_001 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__010",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "에덴_Notice_02__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "goddess_fall_00__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 요한이 '창을 쏠 거다. 여긴 그때를 위한 비상용 시설이다'라고 한 에덴 지하 대규모 발전 시설은 어떻게 쓰이는가 / 답: 퀸을 상대로 '에덴의 창'을 발사할 때 출력을 확보하기 위해 에덴 내부 동력과 함께 동원되는 지하 발전기다(goddess_fall_00 L19-L24) / 근거: 요한이 에덴의 창 준비 상태를 묻자 세실이 에덴 내부 동력 및 인근의 지하 발전기까지 모두 동원하고 있다고 직접 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "에덴_Notice_02",
+          "line_start": 213,
+          "line_end": 214,
+          "quote": "요한: 창을 쏠 거다.\n요한: 여긴 그때를 위한 비상용 시설이다."
+        },
+        {
+          "scene_id": "goddess_fall_00",
+          "line_start": 19,
+          "line_end": 21,
+          "quote": "요한: ···에덴의 창은?\n세실: 에덴 내부 동력 및 인근의 지하 발전기까지 모두 동원하고 있어요.\n세실: 곧 사용할 수 있어요. 전체 출력의 50% 정도겠지만요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "에덴_Notice_02__clh_003에서 '에덴의 창'을 grep해 goddess_fall_00 L19 {goddess_fall_00__clh_001}을 찾고 show로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__011",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "에덴_Notice_02__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "eden_spear_11__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 라피가 에덴을 처음 봤을 때 최상부의 모습이 무언가와 닮아 신경 쓰였다고 말하려다 요한이 때가 되면 알려주겠다며 제지한 에덴 구조물의 정체는 무엇인가 / 답: 에덴 자체가 거대한 빛의 기둥을 발사하는 초거대 입자포 무장('에덴의 창')이다(eden_spear_11 L62-L64) / 근거: 요한이 '창을 쏠 거다'라고 한 직후 라피가 에덴 최상부의 모습을 언급하려다 제지당했고, 뒤 이야기에서 에덴 건물 자체가 초거대 입자포 병기임이 밝혀지나 최상부 외형을 직접 묘사하지는 않으므로 간접 연결이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "에덴_Notice_02",
+          "line_start": 216,
+          "line_end": 219,
+          "quote": "라피: 에덴을 처음 봤을 때, 신경 쓰이던 게 있었어.\n라피: 최상부의 모습이 마치···.\n요한: 더 알려고 하지 마라.\n요한: 때가 되면 알려주겠다."
+        },
+        {
+          "scene_id": "eden_spear_11",
+          "line_start": 62,
+          "line_end": 64,
+          "quote": "나유타: 에덴은 그 자체가 무장이었구려.\n요한: 그래.\n요한: 초거대 입자포라 봐도 무방하다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "'에덴의 창'을 grep해 eden_spear_11을 찾고 show로 eden_spear_11__clh_001 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__012",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "2호_쉘터_관리계정_00__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "reborn_evil_01__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 2호 쉘터에서 실종된 사이비 교도가 일부 끊긴 채 중얼거리던 구절의 전문과 소속 종교는 무엇인가 / 답: 랩쳐를 신으로 모시는 사이비 종교 [구원의 성화]가 집회에서 낭독하는 기도문이다(reborn_evil_01 L53-L58, L68) / 근거: 사이비 교도가 중얼거린 세 문장이 엔더슨이 제시한 [구원의 성화] 집회 기도문 전문의 첫 세 줄과 그대로 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 85,
+          "line_end": 87,
+          "quote": "사이비 교도: ··· ···의 삶이 도태에 빠져 세상을 어지럽히고\n사이비 교도: 이치를 거슬러 새로운 인간을 만들어··· ··· 하니,\n사이비 교도: 하늘에서 차가운··· ··· 심판자들이 내려왔도다."
+        },
+        {
+          "scene_id": "reborn_evil_01",
+          "line_start": 53,
+          "line_end": 55,
+          "quote": "인간의 삶이 도태에 빠져 세상을 어지럽히고\n이치를 거슬러 새로운 인간을 만들어내 신의 뜻에 반하니,\n하늘에서 차가운 심판자들이 내려왔도다."
+        },
+        {
+          "scene_id": "reborn_evil_01",
+          "line_start": 68,
+          "line_end": 68,
+          "quote": "엔더슨: [구원의 성화]가 집회에서 낭독하는 기도문이라고 하더군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "2호_쉘터_관리계정_00__clh_003의 C-0 결과 S0130(reborn_evil_01 L42)을 show로 읽어 reborn_evil_01__clh_002 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__013",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "2호_쉘터_관리계정_00__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "reborn_evil_15__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사이비 교도가 읊조린 기도문 속 '하늘에서 차가운··· ··· 심판자들이 내려왔도다'의 '차가운 심판자'는 무엇을 가리키는가 / 답: 랩쳐를 가리킨다(reborn_evil_15 L8) / 근거: 데이파라가 모친의 방에서 발견한 [구원의 성화] 기록에 동일한 기도문 구절이 '하늘에서 차가운 심판자, 랩쳐가 내려왔도다'라고 직접 적혀 있다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "사이비 교도: 하늘에서 차가운··· ··· 심판자들이 내려왔도다."
+        },
+        {
+          "scene_id": "reborn_evil_15",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "인간의 삶이 도태에 빠져 세상을 어지럽히고\n이치를 거슬러 새로운 인간을 만들어내 신의 뜻에 반하니,\n하늘에서 차가운 심판자, 랩쳐가 내려왔도다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "2호_쉘터_관리계정_00__clh_003의 C-0 결과 S0136(reborn_evil_15)을 show로 읽어 reborn_evil_15__clh_001 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__014",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "2호_쉘터_관리계정_00__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "reborn_evil_16__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사이비 교도가 읊조린 기도문 속 '이치를 거슬러 새로운 인간을 만들어'의 '새로운 인간'은 무엇을 가리키는가 / 답: 니케를 가리킨다(reborn_evil_16 L47) / 근거: [구원의 성화]의 [PROJECT. REBORN EVIL] 문서가 동일한 교리 문장을 '이치를 거슬러 새로운 인간, 니케를 만들어내 신의 뜻에 반함'이라고 직접 풀어서 적는다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 85,
+          "line_end": 86,
+          "quote": "사이비 교도: ··· ···의 삶이 도태에 빠져 세상을 어지럽히고\n사이비 교도: 이치를 거슬러 새로운 인간을 만들어··· ··· 하니,"
+        },
+        {
+          "scene_id": "reborn_evil_16",
+          "line_start": 46,
+          "line_end": 48,
+          "quote": "인간의 삶이 도태에 빠져 세상을 어지럽히고\n이치를 거슬러 새로운 인간, 니케를 만들어내 신의 뜻에 반함.\n이에 우리 [구원의 성화]는 심판자가 인류를 종말로 이끌 수 있도록,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "event_stories__reborn_evil의 후속 장면 reborn_evil_16을 show로 읽어 reborn_evil_16__clh_002 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__015",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "2호_쉘터_관리계정_00__clh_002" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "reborn_evil_21",
+          "line_start": 2,
+          "line_end": 15,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 데이파라의 모친인 사이비 교도의 정체는 누구이며 그가 구원받기 위해 그동안 '신의 심판자들'께 바쳐왔다는 많은 제물은 무엇인가 / 답: [구원의 성화] 창시자 엘세리아 나인이며, 상담 센터 방문자들을 신도로 유인한 뒤 그중 일부를 지상에 올려 보내 랩쳐에게 제물로 바쳐왔다(reborn_evil_21 L6-L11) / 근거: 2호_쉘터_관리계정_00 L178-L193에서 이 교도가 데이파라의 모친임이 드러나고 reborn_evil_02 L142-L143에서 데이파라의 모친이 엘세리아 나인임이 밝혀져 reborn_evil_21의 행적 요약과 이어진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 120,
+          "line_end": 122,
+          "quote": "사이비 교도: 그냥 확실한 건 그거지.\n사이비 교도: 난 그동안 신의 심판자들께 많은 제물을 바쳐왔고.\n사이비 교도: 그렇기에 종말의 날에도 구원 받을 수 있겠지만,"
+        },
+        {
+          "scene_id": "reborn_evil_21",
+          "line_start": 6,
+          "line_end": 11,
+          "quote": "창시자는 엘세리아 나인.\nㄴ 지휘관이었던 남편이 의식을 되찾지 못해 좌절하고 있던 와중,\nㄴ 의문의 인물로부터 랩쳐의 코어를 받은 게 종교 설립의 계기가 되었으리라 추정.\n[구원의 성화]를 창시한 뒤, 상담 센터에 방문한 이들을 신도로 유인.\n이후 아우터 림의 저택에서 정기적으로 집회를 염.\nㄴ 신도 중 일부를 지상에 올려 보내 랩쳐에게 제물로 바치기도 함."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "event_stories__reborn_evil의 reborn_evil_21을 show로 읽어 L2-L15 확인"
+      ]
+    },
+    {
+      "link_id": "C1__207__016",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "2호_쉘터_관리계정_00__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "reborn_evil_02__clh_003" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 데이파라가 지휘관에게 어떻게 되었냐고 물었으나 아직 나오지 않았다던 모친 및 [구원의 성화] 관련 중앙 정부 조사 기록의 내용은 무엇인가 / 답: 중앙 정부 측 기록에 데이파라의 엄마가 심리 상담가 엘세리아 나인이며 [구원의 성화]라는 사이비 종교에 빠져 있다는 내용이 남겨졌고, 중앙 정부가 쉬쉬하는 사이 그녀의 상담 센터와 연관된 연쇄 실종 사건이 벌어졌다(reborn_evil_02 L132-L145) / 근거: 데이파라와 그 모친, [구원의 성화]에 관한 중앙 정부 측 기록을 K가 직접 언급하며 사건의 후속 정황을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 192,
+          "line_end": 203,
+          "quote": "  [MSG SENDER=\"2호 쉘터 관리계정\"]\n    데이파라라고 하면 알 거라 했어요\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    아\n  [MSG_END]\n  [MSG SENDER=\"2호 쉘터 관리계정\"]\n    그리고 또 음\n  [MSG_END]\n  [MSG SENDER=\"2호 쉘터 관리계정\"]\n    조사는 어떻게 되었냐고 물어보던데\n  [MSG_END]"
+        },
+        {
+          "scene_id": "2호_쉘터_관리계정_00",
+          "line_start": 219,
+          "line_end": 221,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    조사 결과는 아직 나오지 않았다고 전해줘\n  [MSG_END]"
+        },
+        {
+          "scene_id": "reborn_evil_02",
+          "line_start": 141,
+          "line_end": 145,
+          "quote": "데이파라란 딸이 있음.\nK: 중앙 정부 측 기록에 데이파라의 엄마,\nK: 엘세리아 나인이 [구원의 성화]란 사이비 종교에 빠져 있단 내용이 있더라고.\nK: 그래서 이 여자가 운영한다는 상담 센터를 들쑤셔보니,\nK: 실종자 전원이 어떻게든 연관되어 있다는 걸 알게 됐어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "cand의 C-0 검색 결과 S0131, S0132(reborn_evil_02 L141-L142)를 show로 읽어 reborn_evil_02__clh_003 확인"
+      ]
+    }
+  ],
+  "unlinked": [
+    { "item_id": "음악 애호가_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "음악 애호가_01__clh_001", "reason": "단서 아님" },
+    { "item_id": "숲속요정_00__clh_001", "reason": "단서 아님" },
+    {
+      "item_id": "숲속요정_00__clh_003",
+      "reason": "짝 없음",
+      "note": "정제되지 않은 랩쳐 코어를 조사하려던 MMR 소속 '숲속요정'에게 찾아온 손님이 누구이며 왜 직후 계정이 블록·삭제되었는지"
+    },
+    { "item_id": "알콜러버_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "방주_난민_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "방주_난민_03__clh_001", "reason": "단서 아님" },
+    { "item_id": "방주_난민_03__clh_002", "reason": "단서 아님" },
+    { "item_id": "제니퍼f_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "김작가_00__clh_002", "reason": "단서 아님" },
+    { "item_id": "데이파라_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "로망티스트_00__clh_003", "reason": "단서 아님" },
+    { "item_id": "로망티스트_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "로망티스트_00__clh_002", "reason": "단서 아님" },
+    { "item_id": "에덴_Notice_00__clh_002", "reason": "단서 아님" },
+    { "item_id": "에덴_Notice_00__clh_003", "reason": "단서 아님" },
+    { "item_id": "에덴_Notice_01__clh_002", "reason": "단서 아님" },
+    { "item_id": "에덴_Notice_01__clh_003", "reason": "단서 아님" },
+    { "item_id": "에덴_Notice_02__clh_001", "reason": "단서 아님" },
+    {
+      "item_id": "에덴_Notice_02__clh_002",
+      "reason": "짝 없음",
+      "note": "요한이 에덴을 '미끼이자 창'이라 부르며 때가 오면 던지겠다고 한 '미끼'가 구체적으로 무엇을 가리키는지"
+    },
+    { "item_id": "문구점_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "문구점_00__clh_002", "reason": "단서 아님" },
+    { "item_id": "중앙정부_트라이앵글_00__clh_001", "reason": "단서 아님" },
+    { "item_id": "중앙정부_트라이앵글_00__clh_002", "reason": "단서 아님" },
+    { "item_id": "중앙정부_트라이앵글_00__clh_003", "reason": "단서 아님" },
+    {
+      "item_id": "2호_쉘터_관리계정_00__clh_003",
+      "reason": "짝 없음",
+      "note": "본명을 밝히기 꺼리며 '데이파라'라고만 전하게 한 소녀의 실제 본명이 무엇인지"
+    },
+    { "item_id": "중앙정부_프로토콜_00__clh_001", "reason": "단서 아님" }
+  ],
+  "merge_suggestions": [
+    {
+      "suggestion_id": "C1__207__M01",
+      "unit_ids": ["음악 애호가_00__clh_002"],
+      "link_ids": ["C1__207__001"],
+      "targets": [
+        { "kind": "entity", "id": "char_음악_애호가", "name": "음악 애호가" },
+        { "kind": "entity", "id": "char_율리아", "name": "율리아" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "음악 애호가_01에서 발신자 '음악 애호가'가 스승님께 신선한 음률을 선물하고 싶다고 말한 직후 지문이 그 발신자를 '율리아'로 지칭하므로 두 이름은 같은 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "음악 애호가_01",
+          "line_start": 42,
+          "line_end": 45,
+          "quote": "  [MSG SENDER=\"음악 애호가\"]\n    신선한 음률을 선물하고 싶습니다\n  [MSG_END]\n  ···율리아는 뮤직 마스터에게 새로운 음악을 들려주고 싶어 하는 것 같다."
+        }
+      ]
+    },
+    {
+      "suggestion_id": "C1__207__M02",
+      "unit_ids": ["제니퍼f_00__clh_003"],
+      "link_ids": ["C1__207__005", "C1__207__006"],
+      "targets": [
+        { "kind": "entity", "id": "char_제니퍼f", "name": "제니퍼f!" },
+        { "kind": "entity", "id": "char_제니퍼", "name": "제니퍼" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "제니퍼f_00의 메신저 발신자 '제니퍼f!'를 지휘관이 '제니퍼'라 부르며, LIE CAUSE RECOL_14에서 방주 아동 보호 센터장 '제니퍼'를 만났을 때 과거 제니퍼f!의 의뢰 문자를 떠올리며 같은 사람임을 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "제니퍼f_00",
+          "line_start": 190,
+          "line_end": 195,
+          "quote": "  [MSG SENDER=\"제니퍼f!\"]\n    다음에 또 연락드리겠습니다\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    잠깐 제니퍼\n  [MSG_END]"
+        },
+        {
+          "scene_id": "LIE CAUSE RECOL_14",
+          "line_start": 98,
+          "line_end": 103,
+          "quote": "제니퍼: 저는 방주 아동 보호 센터의 센터장, 제니퍼예요.\n···제니퍼.\n안녕하십니까 지휘관님\n방주 아동 보호 센터 매니저 제니퍼라고 합니다\n저희는 학대를 받고 있거나 집이 없는 아이들을 보호하는 비영리 단체입니다\n아, 이 사람이었구나."
+        }
+      ]
+    }
+  ]
+}

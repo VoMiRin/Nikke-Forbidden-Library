@@ -1843,7 +1843,13 @@ const main = async () => {
       return input;
     };
     // 회차 w 감사 판정. 도장이 그대로면 그대로 검사하고, shard만 바뀌었으면 carryOverAudit로 이어 인정을 따진다
+    // 뒤 회차 판정은 재귀로 거듭 불린다. 메모 없이는 회차 수에 지수로 늘어나므로(11회차에서 1회차 검사만 수천 번 호출) 한 실행 안에서 회차별로 한 번만 계산한다
+    const checkCache = new Map();
     const checkWave = (w, depth = 0) => {
+      if (!checkCache.has(w)) checkCache.set(w, checkWaveOnce(w, depth));
+      return checkCache.get(w);
+    };
+    const checkWaveOnce = (w, depth) => {
       const input = readJsonIfExists(inputPathOf(w));
       const out = readJsonIfExists(outputPathOf(w));
       if (!input || !out) return { input, out, errors: ['감사 입력 또는 출력이 없다'], reviewed: 0, judgments: {}, carry: null };

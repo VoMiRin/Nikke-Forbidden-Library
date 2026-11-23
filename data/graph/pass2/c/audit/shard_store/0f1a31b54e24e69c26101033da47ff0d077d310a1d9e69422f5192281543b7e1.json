@@ -1,0 +1,312 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__216",
+  "candidate_links": [
+    {
+      "link_id": "C1__216__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "hotel_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "hotel_05",
+          "line_start": 58,
+          "line_end": 71,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 마이티 툴즈도 정체를 모를 만큼 비밀리에 이 호텔 건축을 요청한 특정 스쿼드는 누구이며 왜 호텔을 지었는가 / 답: 사람을 죽이는 일에서 잠시 숨통을 틔울 안전지대를 마련하고자 이 호텔을 시작한 암살자 K와 D(hotel_05 L61-L71) / 근거: 같은 전초기지 호텔을 두고 hotel_00에서는 비밀주의인 특정 스쿼드의 요청으로 지어진 건물이라 하고, hotel_05에서는 스태프인 K와 D가 자신들이 이 호텔을 시작했다고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hotel_00",
+          "line_start": 13,
+          "line_end": 16,
+          "quote": "라피: 그저 특정 스쿼드가 원하는 건물이니 지어라라고 의뢰가 들어온 모양이니까.\n아니스: 그거 리타가 얘기해 준거야?\n라피: 응.\n아니스: 마이티 툴즈도 모른다니, 도대체 얼마나 비밀주의인 스쿼드인 거야?"
+        },
+        {
+          "scene_id": "hotel_05",
+          "line_start": 61,
+          "line_end": 62,
+          "quote": "K: 그래 그래.\nK: 너도 알다시피, 우린 사람 죽이는 일을 하잖아."
+        },
+        {
+          "scene_id": "hotel_05",
+          "line_start": 69,
+          "line_end": 71,
+          "quote": "K: 어디 하나라도 숨통 틔울 데가 있어야지.\nK: 그래서 시작한 거야.\nK: 이 호텔을."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__216__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "hotel_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_02_09",
+          "line_start": 7,
+          "line_end": 20,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 라피·아니스·네온의 스쿼드가 징계를 받아 이곳으로 올라오게 된 과거의 '그때 그 일'은 무엇인가 / 답: 발전소 조사 임무 중 교전 여파로 발전소가 대파되어 방주 2개월치 자원과 시설을 날려버린 책임으로 방주에서 추방당해 전초기지에 배속된 일(main_02_09 L7-L19) / 근거: hotel_00에서 라피·아니스·네온이 과거의 일 때문에 징계로 올라와 부실한 숙소를 쓴다고 말하며, main_02_09와 이어지는 장면에서 지휘관과 휘하 스쿼드가 발전소 폭발 책임으로 전초기지에 배속된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hotel_00",
+          "line_start": 22,
+          "line_end": 24,
+          "quote": "라피: 우리는 다른 스쿼드랑 다르게 여기에 징계로 올라온 거였으니까.\n아니스: !!\n아니스: 그, 그때 그 일이 아직도 발목을 잡는단 말이야?"
+        },
+        {
+          "scene_id": "main_02_09",
+          "line_start": 9,
+          "line_end": 12,
+          "quote": "엔더슨: 교전의 여파로 발전소 내부가 연쇄 폭발을 일으켜 대파되었고.\n엔더슨: 보관 중이던 자재와 시설은 가루도 남지 않았지.\n엔더슨: 2개월일세. 무려 2개월이나 방주를 먹여살릴 자원을.\n엔더슨: 자네와 그 니케들이 날려버린 거야."
+        },
+        {
+          "scene_id": "main_02_09",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "엔더슨: 자네와 휘하 스쿼드는 오늘부로 방주에서 추방당해, [전초 기지]로 배속될 걸세."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "카운터스가 발전소 대파 책임으로 전초기지에 배속된 초반 메인 스토리를 떠올려 grep 징계 후 show main_02_09로 확인한 main_02_09 L7-L20"
+      ]
+    },
+    {
+      "link_id": "C1__216__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "hotel_01__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "hotel_05__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 객실 앞에 간식 트롤리와 쪽지만 두고 사라진 호텔 주인은 누구이며 왜 모습을 드러내지 않는가 / 답: 암살자인 K와 D가 투숙객이 불안해하지 않도록 모습을 숨기고 무인 호텔로 운영한다는 두 번째 규칙을 지키기 때문이다(hotel_05 L82-L84) / 근거: 같은 호텔에서 hotel_01은 트롤리와 쪽지만 남기고 나타나지 않는 주인의 정체와 이유를 궁금해하고, hotel_05에서 K와 D가 모습을 숨기고 다니는 이유를 호텔의 두 번째 규칙으로 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hotel_01",
+          "line_start": 83,
+          "line_end": 86,
+          "quote": "센티: 간식이랑 쪽지 한장이 있슴다!\n리타: 쪽지엔 뭐라고 적혀 있느냐.\n센티: 읽어드리겠슴다!\n센티: [간식을 조금 준비했슴다. 모쪼록 편히 쉬시길] 이라고 적혀져 있슴다."
+        },
+        {
+          "scene_id": "hotel_05",
+          "line_start": 82,
+          "line_end": 84,
+          "quote": "K: 그게 우리가 정한 이 호텔의 두 번째 규칙이니까?\nD: ···이러나저러나 우린 암살자야.\nD: 모습을 드러냈다간 투숙객이 불안해하겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__216__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "hotel_04__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "sin_00__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 신이 말할 때 왜 특수 기호(□▣※)가 섞여 발화가 일그러지는가 / 답: 입에 착용한 컨버터 때문에 발화가 일그러져 알아듣기 불편하게 들린다(sin_00 L42-L43) / 근거: 두 장면 모두 신의 대사에 동일한 특수 기호(□▣※)가 섞여 나오며 sin_00에서 신이 알아듣기 불편한 발화의 원인을 컨버터 때문이라고 직접 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hotel_04",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "신: 믹서기□▣도 있다니 상▣▣※점 ※통※크게 50점※※~!"
+        },
+        {
+          "scene_id": "sin_00",
+          "line_start": 42,
+          "line_end": 43,
+          "quote": "신: 아□, ※□▣컨버터 때무※이▣※□□□가?\n신: 교관※도 알아듣기 □□※불펴▣하지? □미※안···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "신의 발화 노이즈가 컨버터 때문이라는 설정을 떠올려 grep 컨버터 및 show sin_00으로 확인한 sin_00 L37-L43(sin_00__clh_002)"
+      ]
+    },
+    {
+      "link_id": "C1__216__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "hotel_10__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "hotel_05",
+          "line_start": 58,
+          "line_end": 71,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 호텔 룸서비스를 만든 사람으로 음식 손질보다 '다른 쪽을 손질하는 게 더 익숙한' 호텔 관리자는 누구이며 그 일은 무엇인가 / 답: 타겟을 죽이는 암살 일을 본업으로 하면서 이 호텔을 운영하는 스태프 K와 D(hotel_05 L61-L71) / 근거: hotel_10에서 브래디가 이 호텔의 룸서비스를 만든 관리자가 음식보다 다른 쪽을 손질하는 데 익숙하다고 감지하며, hotel_05에서 이 호텔의 스태프가 사람 죽이는 일을 하는 K와 D임이 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hotel_10",
+          "line_start": 107,
+          "line_end": 109,
+          "quote": "브래디: 정확하게 말하자면 [맛]은 좋아.\n브래디: 하지만, 이걸 만든 사람은···.\n브래디: 음식을 손질하는 것보다, 다른 쪽을 손질하는 게 더 익숙한가 보네."
+        },
+        {
+          "scene_id": "hotel_05",
+          "line_start": 61,
+          "line_end": 65,
+          "quote": "K: 그래 그래.\nK: 너도 알다시피, 우린 사람 죽이는 일을 하잖아.\nK: 이게 상상 이상으로 피곤한 일이거든.\nD: ···타겟이 정해질 때마다 그 양심을 저울추에 달아서,\nD: 죽일지, 말지를 결정해."
+        },
+        {
+          "scene_id": "hotel_05",
+          "line_start": 70,
+          "line_end": 71,
+          "quote": "K: 그래서 시작한 거야.\nK: 이 호텔을."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "hotel_00__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_00__clh_004",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_03__clh_001",
+      "reason": "짝 없음",
+      "note": "[검색 예산 소진] 아무도 없던 호텔 객실 샤워실에서 물소리와 젖은 발소리가 난 뒤 남겨진 물에 젖은 손바닥 자국의 정체와 원인이 무엇인지"
+    },
+    {
+      "item_id": "hotel_05__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_05__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_07__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_07__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hotel_08__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_06__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_08__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_08__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maid_cafe_09__clh_001",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}

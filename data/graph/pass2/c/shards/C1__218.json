@@ -1,0 +1,331 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__218",
+  "candidate_links": [
+    {
+      "link_id": "C1__218__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "armory_05__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "sea_you_again_10__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 헬름이 대비해야 한다며 언급한 '바다에서 이미 일어났던 일'은 무슨 사건인가 / 답: 바닷속에 묻혀 있던 타일런트 급 해상 랩쳐 크라켄이 바다에 출현했던 사건(sea_you_again_10 L108, L114, L120) / 근거: 수영복 차림의 헬름이 바다에서 이미 일이 일어났다며 수중용 총기를 찾고(armory_05 L22, L26-L30), sea_you_again_10에서 수영복 차림으로 바다에 나간 헬름 일행 앞에 해상 랩쳐 크라켄이 나타난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "armory_05",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "헬름: 바다에선 많은 일이 일어날 수 있잖아."
+        },
+        {
+          "scene_id": "armory_05",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "헬름: 이미 일어나기도 했고."
+        },
+        {
+          "scene_id": "armory_05",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "헬름: 그래서 수중에서 사용할 수 있는 총기가 있을까 싶어서 왔어."
+        },
+        {
+          "scene_id": "sea_you_again_10",
+          "line_start": 108,
+          "line_end": 108,
+          "quote": "헬름: [크라켄]이라고 하는 해상 랩쳐야."
+        },
+        {
+          "scene_id": "sea_you_again_10",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "헬름: 그렇게 결국 긴 시간 동안 바닷속에 묻혀 있었겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__218__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "관짝이_02__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "armory_08__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 그레이브가 보관하던 세븐스 드워프의 실제 총 본체에도 드릴과 비슷한 기능이 들어 있는가 / 답: 상자 안에 들어 있던 본체를 본 라피는 드릴형 유탄일 것이라고 추정하고, 은화는 그래서 랩쳐의 안쪽까지 파고들 수 있었나 보다고 받는다(armory_08 L25-L29) / 근거: 관짝이_02에서 그레이브가 실제 총에도 드릴과 비슷한 무언가가 있을지 모른다고 했고, armory_08에서 그 총의 탄종을 라피가 추정으로 말하므로 가능성이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "관짝이_02",
+          "line_start": 236,
+          "line_end": 236,
+          "quote": "네온: 이것도 세븐스 드워프 용 부품인가요?"
+        },
+        {
+          "scene_id": "관짝이_02",
+          "line_start": 241,
+          "line_end": 241,
+          "quote": "그레이브: 실제 총에서도 드릴과 비슷한 무언가 있을지 모른다는 생각이 들었다."
+        },
+        {
+          "scene_id": "관짝이_02",
+          "line_start": 242,
+          "line_end": 242,
+          "quote": "그레이브: 하지만 정확한 건 모른다."
+        },
+        {
+          "scene_id": "armory_08",
+          "line_start": 25,
+          "line_end": 29,
+          "quote": "베스티: 아, 안에 뭐가 있는 걸까···?\n베스티: 하, 한 번씩 펑펑 터지던데··· 화, 화력이 엄청났어···!\n라피: 드릴형 유탄일 거야.\n은화: 호오.\n은화: 그래서 랩쳐의 안쪽까지 파고들 수 있었나 보군."
+        },
+        {
+          "scene_id": "armory_08",
+          "line_start": 33,
+          "line_end": 34,
+          "quote": "라피: 그리고 본체는 상자 안에 들었어서, 더 멀쩡한 것 같아.\n엠마: 그레이브가 들고 있던 무기 상자 안에 이런 게 들었을 줄이야~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "스노우 화이트에게 돌려주려던 그레이브의 무기 상자 속 총이 세븐스 드워프임을 떠올려 grep \"세븐스 드워프\"로 확인한 관짝이_02 L235-L244"
+      ]
+    },
+    {
+      "link_id": "C1__218__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "blabla_ludmilla_002__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "generator_00__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 루드밀라가 우편으로 받은 기계 보호용 장갑과 쪽지의 '수많은 베이비들'은 무엇을 가리키며 누가 보낸 것인가 / 답: 맥스웰이 기계들을 부르는 호칭('베이비들')으로 기계들을 가리키며, 전파 차단 장갑 제작을 제안했던 맥스웰이 보낸 것으로 볼 수 있다(generator_00 L23-L25, L70) / 근거: 쪽지의 '베이비들의 안전을 위해'라는 표현이 기계를 '내 베이비들'이라 부르는 맥스웰의 고유 호칭 및 전파 차단 장갑 제작 언급과 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_ludmilla_002",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "이 신비한 장갑과"
+        },
+        {
+          "scene_id": "blabla_ludmilla_002",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "이 세상의 수많은 베이비들의 안전을 위해"
+        },
+        {
+          "scene_id": "blabla_ludmilla_002",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "베이비가 누군지는 모르겠지만"
+        },
+        {
+          "scene_id": "generator_00",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "맥스웰: 내 베이비들이 이렇게까지 바짝 긴장해 있는데?"
+        },
+        {
+          "scene_id": "generator_00",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "루드밀라: 설마 이 기계들을 말하는 건가?"
+        },
+        {
+          "scene_id": "generator_00",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "맥스웰: 당신의 전파를 막아주는 장갑을 만들어보는 것도."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "armory_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_00__clh_002",
+      "reason": "짝 없음",
+      "note": "무기고 안에서 '버리지 마세요', '가지마세요 기다려주세요 제발'이라고 속삭인 정체불명의 목소리가 누구(무엇)인지"
+    },
+    {
+      "item_id": "armory_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_03__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_03__clh_003",
+      "reason": "짝 없음",
+      "note": "리타가 말하려다 은화가 막은, 저번에 쇼핑몰 장난감 코너에서 은화에게 있었던 일이 무엇인지"
+    },
+    {
+      "item_id": "armory_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_05__clh_002",
+      "reason": "짝 없음",
+      "note": "무기고에 있던, 끝이 뭉툭하고 얇고 긴 총알을 쓰는 무거운 총을 원래 어디에 사용하려고 만든 것인지"
+    },
+    {
+      "item_id": "armory_06__clh_001",
+      "reason": "짝 없음",
+      "note": "무기고 안쪽에서 T.A.L.O.S.가 스캔해 발견한, 현재 착용 무기와 76.83% 일치하는 거대 무기의 정체가 무엇인지"
+    },
+    {
+      "item_id": "armory_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "armory_08__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_00__clh_001",
+      "reason": "짝 없음",
+      "note": "루드밀라의 손에서 기계를 위협하는 전파 신호가 어떻게 흘러나오는지"
+    },
+    {
+      "item_id": "generator_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_02__clh_001",
+      "reason": "짝 없음",
+      "note": "발전소의 남아도는 전력을 빼돌려 방주에 공급하겠다며 프림과 밀크에게 의뢰를 맡긴 부자 니케가 누구인지"
+    },
+    {
+      "item_id": "generator_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_05__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_06__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "generator_08__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_00__clh_002",
+      "reason": "짝 없음",
+      "note": "크로우 일행이 도라에게 사흘 내로 조달을 요청한 위조 시민권 칩 73개를 어디에 쓰려 했는지(왜 73개인지)"
+    },
+    {
+      "item_id": "trendy_bar_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_05__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_05__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_06__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_07__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_08__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "trendy_bar_09__clh_002",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}
