@@ -1,0 +1,446 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__168",
+  "candidate_links": [
+    {
+      "link_id": "C1__168__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_16__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_19__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 포획한 헬레틱 아나키오르에게 언체인드를 투입한 이후에 생긴 사소한 문제는 무엇인가 / 답: 헬레틱 아나키오르가 탈주하고 이후 레드 슈즈가 사망한 사건(ark_guardian_19 L77-78) / 근거: ark_guardian_16에서 포획된 헬레틱 아나키오르에게 언체인드를 투입한 뒤 문제가 생겨 헬하운드를 붙였다고 한 사안을 ark_guardian_19에서 특무실장 오스왈드가 보고서로 확인하며 아나키오르 탈주와 레드 슈즈 사망으로 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_16",
+          "line_start": 13,
+          "line_end": 15,
+          "quote": "V.T.C. 여사제: 덧붙여 포획한 헬레틱 아나키오르에게도 투입한 결과, 지휘관님의 언체인드는 진짜임이 판명되었습니다.\nV.T.C. 여사제: 뭐··· 이후에 사소한 문제가 있긴 했지만 크게 신경 쓸 정도는 아니겠죠.\nV.T.C. 여사제: 헬하운드를 붙여놨으니 금방 해결될 겁니다."
+        },
+        {
+          "scene_id": "ark_guardian_19",
+          "line_start": 76,
+          "line_end": 78,
+          "quote": "오스왈드는 핸드폰 화면에 띄워진 보고서를 본다.\n오스왈드: ···헬레틱 아나키오르가 탈주.\n오스왈드: 이후, 레드 슈즈가 사망···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__168__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_19__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "old_tales_20",
+          "line_start": 180,
+          "line_end": 190,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 탈주한 헬레틱 아나키오르가 왜 레드 슈즈가 사망한 뒤 아무런 파괴 행동도 하지 않는가(헬레틱에게 어떤 의도가 있는 것인가) / 답: 헬레틱으로서의 의도가 아니라 의식을 되찾은 신데렐라가 자신에게 침식을 만들어 넣은 원흉인 레드 슈즈만 처단한 것이며 더 이상 헬레틱 아나키오르가 아니기 때문이다(old_tales_20 L180-190) / 근거: 오스왈드가 보고서에서 본 아나키오르 탈주 후 레드 슈즈 사망 사건의 당사자인 신데렐라가 아나키오르가 아닌 본래 자아로 돌아왔으며 침식을 심은 레드 슈즈를 직접 죽였다고 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_19",
+          "line_start": 77,
+          "line_end": 80,
+          "quote": "오스왈드: ···헬레틱 아나키오르가 탈주.\n오스왈드: 이후, 레드 슈즈가 사망···.\n오스왈드: 이후의 아나키오르는 아무런 행동이 없다.\n오스왈드: 의도가 있는 것처럼 보이는데. 의도라. 헬레틱에게."
+        },
+        {
+          "scene_id": "old_tales_20",
+          "line_start": 180,
+          "line_end": 183,
+          "quote": "신데렐라: 아니. 내가··· 한 건 맞는데···.\n신데렐라: 레드 슈즈가 나한테 침식을···.\n신데렐라: 침식, 침식을 만들었다고 했어, 레드 슈즈가.\n신데렐라: 그걸 나한테···."
+        },
+        {
+          "scene_id": "old_tales_20",
+          "line_start": 189,
+          "line_end": 190,
+          "quote": "신데렐라: 아니야···! 나는 헬레틱이 아니야! 아나키오르가 아니야!\n신데렐라: 나는 신데렐라야!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep 아나키오르로 확인한 old_tales_20 L180-190"
+      ]
+    },
+    {
+      "link_id": "C1__168__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_19__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "old_tales_21",
+          "line_start": 8,
+          "line_end": 22,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 레드 슈즈가 사망한 이후 아나키오르는 왜 아무런 행동도 하지 않고 있는가 / 답: 레드 슈즈를 죽이고 동료들에게 불신당한 신데렐라가 아무것도 없는 은신처에서 울다 잠들기를 반복하며 스스로 사라지려 했기 때문이다(old_tales_21 L8-22) / 근거: old_tales_20의 레드 슈즈 살해 직후 이어지는 장면에서 신데렐라가 은신처에 머물며 아무 활동 없이 자결을 시도한 행적이 보고서의 '이후의 아나키오르는 아무런 행동이 없다'에 대응한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_19",
+          "line_start": 78,
+          "line_end": 80,
+          "quote": "오스왈드: 이후, 레드 슈즈가 사망···.\n오스왈드: 이후의 아나키오르는 아무런 행동이 없다.\n오스왈드: 의도가 있는 것처럼 보이는데. 의도라. 헬레틱에게."
+        },
+        {
+          "scene_id": "old_tales_21",
+          "line_start": 8,
+          "line_end": 13,
+          "quote": "신데렐라는 잠에서 깨어났다.\n아무것도 없는 곳에서 멍하니 창밖을 응시한다.\n구름 한 점 없는 하늘이 지평선과 맞닿은 풍경을 바라본다.\n그리고 눈물을 흘린다.\n해가 진다.\n신데렐라는 울다 잠이 든다."
+        },
+        {
+          "scene_id": "old_tales_21",
+          "line_start": 21,
+          "line_end": 22,
+          "quote": "신데렐라: 아름답지 못 한 동화는 사라져야 한다.\n신데렐라: 유리 구두. 풀 컨텍트."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "old_tales_20에 이어지는 old_tales_21 L8-22를 show로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__168__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_19__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "old_tales_24__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 오스왈드가 동향을 지켜보라고 한 구 V.T.C.의 연구실에는 무엇이 있었으며 그가 의심한 인류의 배신자는 누구인가 / 답: 구 V.T.C.의 연구실은 V.T.C. 우수 연구원 출신인 2세대 니케 레드 슈즈가 비밀리에 관리하며 니케 200여 기와 침식 탑재형 랩쳐 10여 기로 침식을 배양하던 곳이며, 배신자는 레드 슈즈다(old_tales_24 L124-135) / 근거: 같은 인물 오스왈드가 직접 '구 V.T.C.의 연구실'을 조사한 결과를 밝히며 레드 슈즈의 침식 배양 사실을 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_19",
+          "line_start": 88,
+          "line_end": 91,
+          "quote": "오스왈드: 분명히 우리가 모르는 뭔가가 있습니다.\n오스왈드: 구 V.T.C.의 연구실 쪽은 어떻게 되었습니까.\n오스왈드: ···알겠습니다. 계속 지켜봐 주십시오.\n오스왈드: 최악의 경우, 인류의 배신자가 있을지도 모르겠군요."
+        },
+        {
+          "scene_id": "old_tales_24",
+          "line_start": 124,
+          "line_end": 125,
+          "quote": "오스왈드: 레드 슈즈가 비밀리에 관리하고 있던 구 V.T.C.의 연구실이 있다는 것을 확인.\n오스왈드: 그곳에서 200여 기의 니케와 10여 기의 랩쳐를 발견할 수 있었습니다."
+        },
+        {
+          "scene_id": "old_tales_24",
+          "line_start": 134,
+          "line_end": 135,
+          "quote": "오스왈드: 침식 유발 장치만이 기능하고 있었습니다.\n오스왈드: 사실상 확정적이죠. 레드 슈즈가 침식을 [배양]했다는 것은."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep 레드 슈즈로 확인한 old_tales_24 L124-135"
+      ]
+    },
+    {
+      "link_id": "C1__168__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_18__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_20__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 스노우 화이트가 스쿼드 전원에게 다 같이 갔으면 한다고 말한 곳은 어디인가 / 답: 스노우 화이트가 오래전에 찾아둔 새하얀 릴리바이스 꽃이 핀 평원(ark_guardian_20 L11-14) / 근거: ark_guardian_18 말미에 스노우 화이트가 모두 함께 가자고 제안한 뒤 이어지는 갓데스 스쿼드 장면(ark_guardian_20)에서 스노우 화이트가 오래전에 찾은 곳이라며 일행을 데려간 꽃밭의 꽃이 릴리바이스임이 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_18",
+          "line_start": 134,
+          "line_end": 136,
+          "quote": "스노우 화이트: 저. 지휘관. 언니.\n스노우 화이트: 우, 우리 스쿼드 모두 다 같이 갔으면 하는 곳이 있어요.\n스노우 화이트: 다들 시간 괜찮으세요?"
+        },
+        {
+          "scene_id": "ark_guardian_20",
+          "line_start": 11,
+          "line_end": 14,
+          "quote": "스노우 화이트: 오래전에 찾았어요. 아직 멀쩡할지 좀 걱정이었는데, 다행이네요.\n꽃잎이 날아와 도로시의 손바닥에 내려앉는다.\n도로시: ···릴리바이스.\n릴리바이스: 응. 내 이름, 이 꽃에서 따왔대."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__168__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_21__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_22__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 전투 중 릴리바이스의 얼굴 어딘가에서 흐르는 미지근한 액체는 무엇인가 / 답: 피(ark_guardian_22 L38-39) / 근거: 같은 3차 밀봉 전투의 앞 장면에서 보지 않고 닦아낸 얼굴의 액체가 이어지는 장면에서 타월로 얼굴을 닦자 피가 가득 묻어나오는 것으로 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_21",
+          "line_start": 14,
+          "line_end": 15,
+          "quote": "릴리바이스는 얼굴 어딘가에서 흐르는 미지근한 액체를 닦는다.\n확인하지는 않는다. 무엇인지는 보지 않아도 알 수 있다."
+        },
+        {
+          "scene_id": "ark_guardian_22",
+          "line_start": 38,
+          "line_end": 39,
+          "quote": "릴리바이스가 그것을 받아 들고 얼굴을 닦는다.\n피가 가득 묻어나온다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__168__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "over_zone_01__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_24__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아크 가디언 작전 당시 스노우 화이트는 왜 보통의 사고 전환과 달리 효율적으로 사고 전환되었는가 / 답: 사고 전환은 극한의 상황에서 벗어나기 위해 NIMPH가 필요한 정보만 보존·극대화하고 불필요한 것을 버려 뇌의 정보와 감정을 재조립하는 현상이며, 스노우 화이트는 재배치된 정보가 기적적으로 아귀가 맞아떨어진 극히 일부의 사례였기 때문이다(ark_guardian_24 L4-9) / 근거: over_zone_01에서 홍련이 이례적이라고 언급한 아크 가디언 직후 스노우 화이트의 효율적인 사고 전환이 ark_guardian_24에서 실제 발생 장면과 NIMPH 재조립 원리로 직접 설명된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_zone_01",
+          "line_start": 82,
+          "line_end": 84,
+          "quote": "홍련: 많은 사고 전환을 본 것은 아니네만, 저렇게 뭐랄까···.\n홍련: 효율적으로 사고 전환된 것은 처음 보는군.\n도로시: 그래도 다행이죠. 우리도 모두 기억하고 있고, 든든해졌으니까요."
+        },
+        {
+          "scene_id": "ark_guardian_24",
+          "line_start": 4,
+          "line_end": 9,
+          "quote": "실상은 극한의 상황에서 벗어나기 위해 NIMPH가 뇌의 정보와 감정을 재조립하는 것이다.\nNIMPH에 입력된 수많은 정보와 감정을 검색해, 해당 상황을 벗어나기 위한 것으로만 재배치한다.\n필요 없는 것은 버리고, 필요한 것은 보존하여 극대화한다.\n이 과정에서 정보가 꼬여, 대부분은 광인과 다름없는 모습이 되지만.\n극히 일부, 재배치된 정보가 기적적으로 아귀가 맞아떨어지는 경우가 있다.\n스노우 화이트는 그 극히 일부에 속한 니케였다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep 사고 전환으로 확인한 over_zone_01 L82-84"
+      ]
+    },
+    {
+      "link_id": "C1__168__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_24__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "ark_guardian_26",
+          "line_start": 255,
+          "line_end": 256,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 양산형 헬레틱은 왜 스노우 화이트가 어디선가 봤던 얼굴을 하고 있는가(소체의 정체는 무엇인가) / 답: 미러가 양산형 유사 인간(양산형 니케)들을 소체로 활용해 만든 헬레틱이었기 때문이다(ark_guardian_26 L255-256) / 근거: 같은 전투 이후 미러가 양산형 유사 인간들을 활용한 헬레틱 계획을 언급하며 소체의 정체를 밝히고, 스노우 화이트가 사고 전환으로 양산형 니케들과의 추억을 버려(ark_guardian_24 L24-28) 동료들의 얼굴을 어디선가 봤던 얼굴로만 인식한 것과 맞물린다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_24",
+          "line_start": 73,
+          "line_end": 75,
+          "quote": "너덜너덜해진 양산형 헬레틱이 무릎을 꿇은 채 스노우 화이트를 올려다보고 있다.\n스노우 화이트는 그 얼굴을 본다.\n붉은 눈. 어디선가 봤던 얼굴."
+        },
+        {
+          "scene_id": "ark_guardian_26",
+          "line_start": 255,
+          "line_end": 256,
+          "quote": "미러: 양산형 유사 인간들을 활용한 헬레틱 계획은 폐기하는 게 맞겠네요.\n미러: 소체와 자아의 완성도가 너무 떨어져서 안 하느니만 못하네요. 공정만 복잡해서는."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__168__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "ark_guardian_26__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "ark_guardian_06",
+          "line_start": 25,
+          "line_end": 31,
+          "scan_id": "S0055"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 마지막 엘리베이터로 향하던 프리시아가 품속에서 만지작거리는 접힌 서류는 무엇인가 / 답: 오스왈드가 사인과 도장을 찍어 준 보호자 동의서(ark_guardian_06 L25-31) / 근거: 앞 장면에서 프리시아가 품에서 꺼내 내밀었던 두 번 접힌 서류가 보호자 동의서이며, 마지막 엘리베이터 앞에서 보호자인 오스왈드를 기다리며 품속의 접힌 서류를 의식하는 묘사가 이어진다. 다만 앞서 담당 병사가 접수를 위해 서류를 가져간 장면이 있어 재수령 여부는 간접적이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "ark_guardian_26",
+          "line_start": 109,
+          "line_end": 110,
+          "quote": "품을 만지작거린다. 접힌 서류가 만져진다.\n프리시아는 그 서류를 의식하며 바닥을 바라보며 걷는다."
+        },
+        {
+          "scene_id": "ark_guardian_06",
+          "line_start": 25,
+          "line_end": 31,
+          "quote": "프리시아: 이거.\n프리시아가 두 번 접힌 서류를 내민다.\n프리시아: 여기에 사인 좀 해줘.\n오스왈드: 사인이요?\n프리시아: 응.\n오스왈드는 프리시아가 내민 서류를 바라본다.\n오스왈드: 보호자 동의서로군요."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "ark_guardian_06",
+          "line_start": 127,
+          "line_end": 128,
+          "quote": "중앙 정부 병사는 경례 후 뒤돌아 걸어갔다.\n서류를 들여다보며 계속 고개를 갸웃한다."
+        }
+      ],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "ark_guardian_20__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_20__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_20__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_22__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_22__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_24__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_24__clh_004",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_25__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_27__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ark_guardian_27__clh_002",
+      "reason": "짝 없음",
+      "note": "예전 방주 입구 꽃밭의 새하얀 꽃이 100여 년 동안 성질이 변한 이전의 꽃인지 아예 다른 꽃인지"
+    }
+  ],
+  "merge_suggestions": []
+}

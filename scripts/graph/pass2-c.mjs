@@ -1116,11 +1116,15 @@ export const shardDriftUnits = (before, after) => {
  *  1. 묶음 구성·규칙·묶음 입력은 그대로이고 shard 해시만 바뀜
  *  2. 바뀐 묶음의 감사 당시 shard(스냅숏)가 있고 해시가 감사 입력의 도장과 같음
  *  3. 지금 다시 만든 감사 항목이 감사한 항목과 완전히 같음(표본·연결·상태 어느 것도 안 바뀜)
+ *     (단, 앞 회차 표본 층 변화로 덤으로 들어갔던 외부 변경 항목은 빠져도 된다)
  *  4. 달라진 요소가 모두, 지금 shard를 본(도장 일치) 뒤 회차 PASS 감사의 항목에 들어 있음
  *     연결: 어느 항목의 links에 그 link_id / 지운 연결·자기 상태: 그 단위가 항목 / 병합 제안: merge:ID 항목
  * audited: 감사한 입력, current: 지금 도장 [{bundle_id, ...}], snapshots: bundle_id → 감사 당시 shard 글,
  * shardsNow: bundle_id → 지금 shard 글, regenerated: 지금 다시 만든 items, later: [{wave, input}] (PASS인 뒤 회차만)
  */
+/** 앞 회차 표본 층 모집단 변화로 들어간 외부 변경 항목(단위 자체는 안 바뀜)의 cause 표지 */
+export const SAMPLE_DRIFT_CAUSE = '층 모집단 변화로';
+export const isSampleDriftItem = (x) => x?.kind === 'external_change' && typeof x.cause === 'string' && x.cause.includes(SAMPLE_DRIFT_CAUSE);
 export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regenerated, later }) => {
   const errors = [];
   const before = audited.bundle_stamps;
@@ -1144,7 +1148,8 @@ export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regener
   if (!Array.isArray(regenerated)) errors.push(`감사 항목을 다시 만들 수 없다: ${regenerated?.error ?? '?'}`);
   else {
     const now = new Map(regenerated.map((x) => [x.audit_id, x]));
-    const gone = audited.items.filter((x) => !now.has(x.audit_id)).map((x) => x.audit_id);
+    // 앞 회차 표본 층 변화로 덤으로 들어갔던 외부 변경 항목은 그 층이 되돌아가면 빠질 수 있다(덮어야 할 변경이 아니다)
+    const gone = audited.items.filter((x) => !now.has(x.audit_id) && !isSampleDriftItem(x)).map((x) => x.audit_id);
     if (gone.length) errors.push(`다시 만든 감사 항목에서 빠졌다: ${gone.join(', ')}`);
     const was = new Map(audited.items.map((x) => [x.audit_id, JSON.stringify(x)]));
     const moved = regenerated.filter((x) => was.get(x.audit_id) !== JSON.stringify(x));
@@ -1792,7 +1797,7 @@ const main = async () => {
           if (seen.has(id) || !statuses.has(id)) continue;
           seen.add(id);
           const st = statuses.get(id);
-          out.push({ item_id: id, wave_of_unit: st.wave, before: st.status, after: st.status, before_conf: st.conf, after_conf: st.conf, clue_links: st.clue_links, cause: `회차 ${v} 감사 뒤 층 모집단 변화로 회차 ${v} 표본에 새로 들어감(단위 자체는 안 바뀜)` });
+          out.push({ item_id: id, wave_of_unit: st.wave, before: st.status, after: st.status, before_conf: st.conf, after_conf: st.conf, clue_links: st.clue_links, cause: `회차 ${v} 감사 뒤 ${SAMPLE_DRIFT_CAUSE} 회차 ${v} 표본에 새로 들어감(단위 자체는 안 바뀜)` });
         }
       }
       return out;

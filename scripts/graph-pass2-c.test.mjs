@@ -14,6 +14,7 @@ import {
   resolveClueKey,
   sampleCAudit,
   carryOverAudit,
+  isSampleDriftItem,
   diffCShards,
   withUserAliases,
   newSampleUnits,
@@ -540,4 +541,20 @@ test('withUserAliases: A-2 사용자 결정 별칭만 레지스트리 인물 표
   assert.deepEqual(out.get('char_라피').surface_labels, ['라피']);
   assert.equal(out.has('char_없음'), false);
   assert.deepEqual(registry.get('char_지휘관').surface_labels, ['지휘관']);
+});
+
+test('carryOverAudit: 앞 회차 표본 층 변화로 덤으로 들어갔던 외부 변경 항목만 다시 만든 입력에서 빠져도 된다', () => {
+  const stamp = { bundle_id: 'C1__001', rules_sha256: 'r', input_sha256: 'i', shard_sha256: 's' };
+  const kept = { audit_id: 'C1__001:x__clh_001', item_id: 'x__clh_001', links: [] };
+  const drift = { audit_id: 'ext:m__clh_001', kind: 'external_change', item_id: 'm__clh_001', cause: '회차 5 감사 뒤 층 모집단 변화로 회차 5 표본에 새로 들어감(단위 자체는 안 바뀜)', links: [] };
+  const edited = { ...drift, audit_id: 'ext:n__clh_001', item_id: 'n__clh_001', cause: '회차 5 감사 뒤 shard 수정' };
+  assert.ok(isSampleDriftItem(drift));
+  assert.ok(!isSampleDriftItem(edited));
+  assert.ok(!isSampleDriftItem({ ...drift, kind: 'unit' }));
+  const run = (items) => carryOverAudit({ audited: { bundle_stamps: [stamp], items }, current: [stamp], snapshots: new Map(), shardsNow: new Map(), regenerated: [kept], later: [] });
+  const ok = run([kept, drift]);
+  assert.ok(ok.ok, ok.errors.join('\n'));
+  // shard 수정으로 들어간 외부 변경 항목이나 일반 항목이 빠지면 여전히 막는다
+  assert.ok(run([kept, edited]).errors.some((e) => e.includes('빠졌다: ext:n__clh_001')));
+  assert.ok(!run([{ ...kept, audit_id: 'C1__001:y__clh_001', item_id: 'y__clh_001' }, kept]).ok);
 });
