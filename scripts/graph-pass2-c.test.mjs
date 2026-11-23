@@ -20,6 +20,8 @@ import {
   shardDriftUnits,
   auditDrift,
   conflictBundles,
+  conflictLinkIds,
+  linkDetailIndex,
   scanCorpus,
   selectPairs,
   storyOtherClues,
@@ -475,6 +477,32 @@ test('conflictBundles: 일부 겹침 충돌은 만난 연결(meets)의 묶음도
   const c = { kind: 'partial_line_item_overlap', link_id: 'C1__002__001', bundle_id: 'C1__002', lines: 'lines:s:60-70', overlapped_items: ['s__clh_001', 's__clh_002'], meets: ['C1__028__004', 'C1__028__010'] };
   assert.deepEqual(conflictBundles(c), ['C1__002', 'C1__028']);
   assert.deepEqual(conflictBundles({ kind: 'status', item_id: 'x', own: { bundle_id: 'C1__006' }, links: [{ link_id: 'C1__039__006', bundle_id: 'C1__039', wave: 2 }] }), ['C1__006', 'C1__039']);
+});
+
+test('sampleCAudit: 충돌 항목에 걸린 연결의 끝 범위·확신도·이유를 싣고 audit_id는 충돌 객체로만 정한다(6회차 제안)', () => {
+  const st = { kind: 'status', item_id: 'a__clh_001', own: { bundle_id: 'C1__001', reason: '단서 아님' }, links: [{ link_id: 'C1__002__003', bundle_id: 'C1__002', wave: 1 }] };
+  const ov = { kind: 'partial_line_item_overlap', link_id: 'C1__002__004', bundle_id: 'C1__002', lines: 'lines:s:1-9', overlapped_items: ['s__clh_001'], meets: ['C1__001__001'] };
+  assert.deepEqual(conflictLinkIds(ov), ['C1__002__004', 'C1__001__001']);
+  const link = (id, conf) => ({ link_id: id, subject: [{ ref: 'item', item_id: 'a__clh_001' }], target: [{ ref: 'lines', scene_id: 's', line_start: 1, line_end: 9, scan_id: null }], roles: { clue: 'subject', reveal: 'target' }, verdict: '같은 대상', confidence: conf, rationale: '질문: q / 답: a / 근거: e', supporting_evidence: [] });
+  const entries = [
+    { bundle: { bundle_id: 'C1__001' }, wave: 1, shard: { candidate_links: [link('C1__001__001', '유력한 해석')] } },
+    { bundle: { bundle_id: 'C1__002' }, wave: 1, shard: { candidate_links: [link('C1__002__003', '가능성'), link('C1__002__004', '유력한 해석')] } },
+  ];
+  const linkById = linkDetailIndex(entries);
+  const base = { units: [], statuses: new Map(), linksByItem: new Map(), bundlePaths: new Map(), others: new Map() };
+  const r = sampleCAudit({ ...base, extra: { conflicts: [st, ov], linkById } });
+  const [a, b] = r.items;
+  assert.equal(a.link_details.length, 1);
+  assert.equal(a.link_details[0].confidence, '가능성');
+  assert.deepEqual(a.link_details[0].target, link('x').target);
+  assert.equal(a.link_details[0].bundle_id, 'C1__002');
+  assert.deepEqual(b.link_details.map((x) => x.link_id), ['C1__002__004', 'C1__001__001']);
+  // 연결 내용이 없어도 audit_id는 같다(앞 회차 감사 항목 ID가 바뀌지 않게)
+  const plain = sampleCAudit({ ...base, extra: { conflicts: [st, ov] } });
+  assert.deepEqual(plain.items.map((x) => x.audit_id), r.items.map((x) => x.audit_id));
+  assert.equal(plain.items[0].link_details, undefined);
+  // 지금 shard에 없는 연결은 missing으로 표시한다
+  assert.deepEqual(sampleCAudit({ ...base, extra: { conflicts: [st], linkById: new Map() } }).items[0].link_details, [{ link_id: 'C1__002__003', missing: true }]);
 });
 
 test('newSampleUnits: 다시 만든 표본에 새로 들어온 unit 항목만 낸다', () => {

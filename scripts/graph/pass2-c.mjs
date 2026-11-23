@@ -1048,6 +1048,22 @@ export const annotateLinks = ({ links, store, releaseDates, overlapIndex }) => l
 // meets는 link_id 목록이다. link_id는 검증기가 "<bundle_id>__NNN"으로 강제하므로 묶음을 떼어 낸다
 // (앞 회차 연결과 이번 회차 연결이 만난 일부 겹침 충돌이 이번 회차 감사에 들어가게)
 const bundleOfLinkId = (id) => /^(.+)__\d{3}$/.exec(id ?? '')?.[1] ?? null;
+/** 충돌이 가리키는 연결 ID(일부 겹침의 자기 연결·만난 연결, 쌍·상태 충돌의 걸린 연결) */
+export const conflictLinkIds = (c) => [...new Set([c.link_id, ...(c.links ?? []).map((l) => l.link_id), ...(c.meets ?? [])].filter(Boolean))];
+
+/** shard 묶음들 → link_id → 감사자에게 보일 연결 내용 */
+export const linkDetailIndex = (entries) => {
+  const out = new Map();
+  for (const { bundle, shard, wave } of entries) {
+    for (const l of shard.candidate_links) {
+      out.set(l.link_id, { link_id: l.link_id, bundle_id: bundle.bundle_id, wave, subject: l.subject, target: l.target, roles: l.roles ?? null, verdict: l.verdict, confidence: l.confidence, rationale: l.rationale, supporting_evidence: l.supporting_evidence ?? [] });
+    }
+  }
+  return out;
+};
+
+export const conflictLinkDetails = (c, linkById) => conflictLinkIds(c).map((id) => linkById.get(id) ?? { link_id: id, missing: true });
+
 export const conflictBundles = (c) => [...new Set([c.bundle_id, c.own?.bundle_id, ...(c.links ?? []).map((l) => l.bundle_id), ...(c.meets ?? []).map(bundleOfLinkId)].filter(Boolean))];
 
 // ---------------------------------------------------------------------------
@@ -1193,7 +1209,8 @@ export const sampleCAudit = ({ units, statuses, linksByItem, bundlePaths, others
   const base = items.length;
   // status: 바뀐 뒤 현재 상태 전부(자기 상태·note·residual). before/after만으로는 부분 해결인지 감사자가 볼 수 없다
   for (const x of extra.externalChanges ?? []) items.push({ audit_id: `ext:${x.item_id}`, kind: 'external_change', ...x, status: statuses.get(x.item_id) ?? null, links: linksByItem.get(x.item_id) ?? [] });
-  for (const c of extra.conflicts ?? []) items.push({ audit_id: `conflict:${sha256(JSON.stringify(c)).slice(0, 12)}`, kind: 'conflict', conflict: c });
+  // 충돌에 걸린 연결의 끝 범위·확신도·이유를 함께 싣는다(6회차: 상대 범위·확신도가 없어 감사자가 끝까지 확인 못 함). audit_id는 충돌 객체만으로 정한다
+  for (const c of extra.conflicts ?? []) items.push({ audit_id: `conflict:${sha256(JSON.stringify(c)).slice(0, 12)}`, kind: 'conflict', conflict: c, ...(extra.linkById ? { link_details: conflictLinkDetails(c, extra.linkById) } : {}) });
   for (const m of extra.mergeSuggestions ?? []) items.push({ audit_id: `merge:${m.suggestion_id}`, kind: 'merge_suggestion', suggestion: m, ...bundlePaths.get(m.bundle_id) });
   const known = new Set(items.map((x) => x.audit_id));
   if (known.size !== items.length) throw new Error('감사 항목 ID가 겹친다(병합 제안 ID 중복 등)');
@@ -1809,6 +1826,7 @@ const main = async () => {
         extra: {
           externalChanges: externalOf(w, entries, judged, m.statuses),
           conflicts,
+          linkById: linkDetailIndex(entries),
           mergeSuggestions: m.mergeSuggestions.filter((x) => ids.has(x.bundle_id)),
         },
         rate,
