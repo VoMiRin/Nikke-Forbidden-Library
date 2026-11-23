@@ -1,0 +1,1032 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__148",
+  "candidate_links": [
+    {
+      "link_id": "C1__148__001",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_00__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_01__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기억 소거에 들어가는 아르카나에게 잉그리드가 말한 '슬슬 한계'란 어떤 상황과 결과를 가리키는가 / 답: 거의 매일 기억 소거를 받아 오던 아르카나가 취급한 정보뿐 아니라 자신이 누구인지조차 잊어버리는 부작용이 터진 것(arcane_archive_01 L60-L73) / 근거: 직전 장면에서 잉그리드가 한계를 우려하며 기억 소거를 개시한 직후, 다음 장면에서 팬텀이 아르카나가 매일 기억 소거를 받다 자기 자신까지 잊어버리는 일이 터졌다고 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 2,
+          "line_end": 4,
+          "quote": "잉그리드: ···괜찮겠나?\n아르카나: 네?\n잉그리드: 슬슬 한계라는 걸 너도 알고 있을 텐데."
+        },
+        {
+          "scene_id": "arcane_archive_01",
+          "line_start": 65,
+          "line_end": 66,
+          "quote": "팬텀: 그렇게 계속, 기억 소거를 받아 오다가···.\n팬텀: 이번에 일이 터진 것이지."
+        },
+        {
+          "scene_id": "arcane_archive_01",
+          "line_start": 72,
+          "line_end": 73,
+          "quote": "팬텀: 원래는 자신이 취급한 정보에 대해서만 잊어야 하오.\n팬텀: 하지만 아르카나는 지금 자기가 누구인지조차 잊고 말았소."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__002",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_00__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_05__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아르카나가 기억 소거를 계속 받는 것이 왜 한계이며 그 한계를 넘으면 어떻게 되는가 / 답: 잦은 기억 소거가 반복되면 NIMPH가 기억이 없는 상태를 정상으로 착각해 지워져선 안 되는 기억까지 스스로 지우며, 결국 NIMPH가 초기화되어 사고 전환과 같은 백지 상태가 된다(arcane_archive_05 L39-L62) / 근거: 앞 장면에서 잉그리드가 우려한 기억 소거의 한계를 뒤 병원 진료 장면에서 메어리가 NIMPH 초기화 및 사고 전환 기제로 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 2,
+          "line_end": 4,
+          "quote": "잉그리드: ···괜찮겠나?\n아르카나: 네?\n잉그리드: 슬슬 한계라는 걸 너도 알고 있을 텐데."
+        },
+        {
+          "scene_id": "arcane_archive_05",
+          "line_start": 40,
+          "line_end": 43,
+          "quote": "메어리: 종국에는 아무것도 기억하지 못하는 백지 상태가 되어 버렸고,\n메어리: 검사 결과, NIMPH가 초기화 된 것으로 파악.\n메어리: 그리고 그 원인은···.\n메어리: ···잦은 빈도의 기억 소거로 추정."
+        },
+        {
+          "scene_id": "arcane_archive_05",
+          "line_start": 50,
+          "line_end": 51,
+          "quote": "메어리: NIMPH는 [기억이 없는 상태]가 정상이라고 착각하게 되고,\n메어리: 지워져서는 안 되는 기억들도 [알아서] 지워버려요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__003",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_00__clh_004" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "lord_for_justice_00",
+          "line_start": 65,
+          "line_end": 74,
+          "scan_id": "S0002"
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 잉그리드가 입력해 인증받은 '사용자 코드, I'와 시스템 문구 '정의로운 판결을 위하여'는 어느 조직의 어떤 코드·구호인가 / 답: 위원회 '[저지스]'의 로마 숫자 코드네임 체계와 구호다(lord_for_justice_00 L65-L74) / 근거: 두 장면에 동일한 문구 '정의로운 판결을 위하여'가 나오며, 뒤 장면에서 저지스의 코드네임이 숫자로 되어 있음이 설명된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 42,
+          "line_end": 44,
+          "quote": "시스템: [···인증되었습니다]\n시스템: [사용자 코드, I]\n시스템: [정의로운 판결을 위하여]"
+        },
+        {
+          "scene_id": "lord_for_justice_00",
+          "line_start": 65,
+          "line_end": 66,
+          "quote": "X: [저지스]는 위원회일세. 그러니 모두가 평등하게 의견을 내고, 조율해야 하지.\nX: 하지만 우리의 코드네임은 숫자로 되어 있다네."
+        },
+        {
+          "scene_id": "lord_for_justice_00",
+          "line_start": 73,
+          "line_end": 74,
+          "quote": "X: 대답은?\nK: ···정의로운 판결을 위하여."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__004",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_00__clh_004" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_13__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 엘리시온 사장 잉그리드가 인증한 '사용자 코드 I'와 '정의로운 판결을 위하여'는 어떤 소속과 직함을 뜻하는가 / 답: 특급 기밀 보관소와 관련된 '[저지스]'에서 잉그리드가 가진 다른 직함이다(arcane_archive_13 L151-L156) / 근거: 앞 장면에서 잉그리드가 코드 I로 인증한 뒤, 뒤 장면에서 지휘관이 저지스와 특급 기밀 보관소의 관계를 묻자 잉그리드가 여기서 봤던 누군가를 다른 곳에서 다른 직함으로 만나는 경우가 많다고 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 42,
+          "line_end": 44,
+          "quote": "시스템: [···인증되었습니다]\n시스템: [사용자 코드, I]\n시스템: [정의로운 판결을 위하여]"
+        },
+        {
+          "scene_id": "arcane_archive_13",
+          "line_start": 151,
+          "line_end": 151,
+          "quote": "  [OPTION TEXT=\"···어째서 [저지스]가 특급 기밀 보관소와 관련되어 있는 거지?\"]"
+        },
+        {
+          "scene_id": "arcane_archive_13",
+          "line_start": 154,
+          "line_end": 156,
+          "quote": "잉그리드: 새삼스럽지만, 방주는 참 좁군.\n잉그리드: 여기서 봤던 누군가를,\n잉그리드: 다른 곳에서, 다른 직함으로 다시 만나는 경우도 많지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__005",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_00__clh_004" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_08__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 잉그리드가 사용자 코드 I로 인증하며 말한 '나도 내가 해야 할 일을 하겠다'는 무엇을 가리키는가 / 답: 비관계자가 들어오면 처분되는 특급 기밀 시설에 들어온 지휘관에게 출입 및 정보 열람 허가를 내린 일이다(arcane_archive_08 L107-L115) / 근거: 코드 I로 인증한 잉그리드의 발언 뒤, 특급 기밀 시설 경보로 출동한 K에게 상부 명령으로 지휘관의 출입 허가와 [I]의 전언이 내려온다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 38,
+          "line_end": 41,
+          "quote": "잉그리드: ···[I].\n시스템: [사용자 인증 진행 중···]\n잉그리드: ···너는 네가 해야 할 일을 해라.\n잉그리드: 나도 내가 해야 할 일을 하겠다."
+        },
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 107,
+          "line_end": 109,
+          "quote": "K: 여기는 비관계자가 들어오면 바로 목 날아가는 특급 기밀 시설이라서.\nK: 원래 저기 아르카나가 관리자고, 쟤만 출입할 수 있거든?\nK: 그런데 방금 너한테도 출입 허가가 내려졌어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__006",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_01__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_05__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 원래 취급한 정보만 잊어야 하는 기억 소거를 계속 받던 아르카나가 왜 자신이 누구인지조차 잊어버리는 부작용을 겪었는가 / 답: 잦은 기억 소거가 반복되면 NIMPH가 기억이 없는 상태를 정상으로 착각해 지워져선 안 되는 기억까지 알아서 지워버리기 때문이다(arcane_archive_05 L43-L52) / 근거: 앞 장면에서 팬텀이 말한 기억 소거 부작용의 구체적인 원인을 뒤 진료 장면에서 메어리가 NIMPH의 적응 작용으로 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_01",
+          "line_start": 71,
+          "line_end": 73,
+          "quote": "팬텀: 그렇다고 할 수 있겠소.\n팬텀: 원래는 자신이 취급한 정보에 대해서만 잊어야 하오.\n팬텀: 하지만 아르카나는 지금 자기가 누구인지조차 잊고 말았소."
+        },
+        {
+          "scene_id": "arcane_archive_05",
+          "line_start": 50,
+          "line_end": 52,
+          "quote": "메어리: NIMPH는 [기억이 없는 상태]가 정상이라고 착각하게 되고,\n메어리: 지워져서는 안 되는 기억들도 [알아서] 지워버려요.\n메어리: ···말하자면, 익숙해지는 거죠. 기억이 사라진 상태에."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__007",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_01__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_09__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아르카나는 왜 같은 베스트셀러 스쿼드인 팬텀보다도 훨씬 자주, 거의 매일 기억 소거를 받아야 했는가 / 답: 절대 외부에 새어나가선 안 되는 최고 등급 기밀 기록들을 보관하는 금서고(특급 기밀 보관소)를 관리하는 일을 맡아 업무 후마다 기억 소거를 받아야 하기 때문이다(arcane_archive_09 L143-L147) / 근거: 기억이 돌아온 아르카나가 자신의 금서고 관리 업무와 최고 등급 기밀 취급에 따른 기억 소거 의무를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_01",
+          "line_start": 54,
+          "line_end": 55,
+          "quote": "팬텀: 나도 기억 소거를 자주 받지만.\n팬텀: 아르카나는 훨씬 더 자주 받는다오."
+        },
+        {
+          "scene_id": "arcane_archive_01",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "팬텀: 거의 매일 받는 걸로 알고 있소."
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 143,
+          "line_end": 145,
+          "quote": "아르카나: 어쨌든. 제가 하는 일은 이 금서고를 관리하는 일.\n아르카나: 그리고 물론. 이 안에 있는 기록들은 전부 절대 밖에 새어나가서는 안 되는 최고 등급 기밀들이기 때문에.\n아르카나: 저는 팬텀과 레이블처럼, 일을 한 뒤에는 기억 소거를 받아야 해요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__008",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_02__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_09__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 같은 스쿼드인 팬텀조차 알지 못하며 더 깊은 비밀을 다룬다고 추측한 아르카나의 구체적인 업무는 무엇인가 / 답: 방주 도서관의 구 열람실인 금서고(특급 기밀 보관소)와 그 안의 최고 등급 기밀 기록들을 관리하는 일이다(arcane_archive_09 L140-L145) / 근거: 앞 장면에서 팬텀이 추측만 했던 아르카나의 기밀 업무를 뒤 장면에서 아르카나가 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_02",
+          "line_start": 43,
+          "line_end": 44,
+          "quote": "팬텀: 업무적으로는 그저,\n팬텀: 아르카나가 특히 더 깊은 비밀을 다루는 게 아닐지 추측하는 정도요."
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 143,
+          "line_end": 144,
+          "quote": "아르카나: 어쨌든. 제가 하는 일은 이 금서고를 관리하는 일.\n아르카나: 그리고 물론. 이 안에 있는 기록들은 전부 절대 밖에 새어나가서는 안 되는 최고 등급 기밀들이기 때문에."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__009",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_03__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_07__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아르카나의 작업실 한쪽 벽면을 빼곡히 메우고 있는 사진들에는 어떤 감춰진 용도가 있는가 / 답: 그 벽의 사진 중 하나를 거꾸로 뒤집으면 책장이 옆으로 밀려나며 오래된 열람실로 통하는 비밀 문이 열린다(arcane_archive_07 L7-L15) / 근거: 작업실 벽에 빼곡히 붙어 있던 사진들 가운데 하나가 책장 뒤 비밀 문을 여는 장치로 직접 쓰인다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_03",
+          "line_start": 104,
+          "line_end": 105,
+          "quote": "한쪽 벽면을 빼곡히 메우고 있는 사진들에,\n용도를 알 수 없는 오컬트 물품들까지."
+        },
+        {
+          "scene_id": "arcane_archive_07",
+          "line_start": 7,
+          "line_end": 9,
+          "quote": "사진이 빼곡히 붙어 있는 벽으로 다가섰다.\n아르카나: ··· ···.\n아르카나가 사진 중 하나를 거꾸로 뒤집자···."
+        },
+        {
+          "scene_id": "arcane_archive_07",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "책장이 옆으로 밀려나고, 오래됐지만 튼튼해 보이는 문이 드러났다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__010",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_03__clh_001" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "arcane_archive_13",
+          "line_start": 40,
+          "line_end": 47,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아르카나의 작업실 벽면에 왜 그렇게 많은 자신의 사진이 붙어 있었는가 / 답: 기억을 남기려는 이유가 아니라 자기 얼굴을 보는 것이 재미있어서 찍은 사진들이다(arcane_archive_13 L41-L47) / 근거: 지휘관이 아르카나의 방에 붙어 있던 사진들을 떠올리며 말하자 아르카나가 사진을 찍는 이유를 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_03",
+          "line_start": 104,
+          "line_end": 105,
+          "quote": "한쪽 벽면을 빼곡히 메우고 있는 사진들에,\n용도를 알 수 없는 오컬트 물품들까지."
+        },
+        {
+          "scene_id": "arcane_archive_13",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "아르카나: ···사진은 그냥 재미있어서 찍는 건데요?"
+        },
+        {
+          "scene_id": "arcane_archive_13",
+          "line_start": 46,
+          "line_end": 47,
+          "quote": "아르카나: 자기 얼굴 보면 재미있지 않아요?\n아르카나: 난 그렇던데."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__011",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_03__clh_004" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_04__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아르카나가 테이블에 내려놓은 [DEATH] 타로 카드는 무슨 뜻인가 / 답: 불길해 보이는 느낌과 달리 새로운 시작과 재탄생을 뜻하는 긍정적인 의미다(arcane_archive_04 L6-L7) / 근거: 앞 장면에서 죽음 카드의 뜻을 몰랐던 아르카나가 이어지는 장면에서 책을 찾아 정방향 죽음 카드의 풀이를 읽어 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_03",
+          "line_start": 208,
+          "line_end": 210,
+          "quote": "아르카나가 카드 한 장을 뒤집어 살포시 테이블에 내려놓았다.\n아르카나: 일하기 전에 한 번씩, 스스로 점을 치곤 했다는 것 정도만···.\n카드에는 [DEATH]라고 쓰여있다."
+        },
+        {
+          "scene_id": "arcane_archive_04",
+          "line_start": 6,
+          "line_end": 7,
+          "quote": "아르카나: 정방향 죽음 카드는 불길해 보이는 느낌과는 달리.\n아르카나: 새로운 시작과 재탄생을 뜻하는 긍정적인 의미가 강하며···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__012",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_04__clh_002" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "arcane_archive_12",
+          "line_start": 21,
+          "line_end": 28,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 기억을 잃은 아르카나가 타로점을 보던 중 어떻게 외부에 알려지지 않은 지휘관의 헬레틱 교전 사실과 후퇴·철수 제외 승률 100% 데이터를 알고 읊었는가 / 답: 아르카나가 금서고에서 외부에 공표되지 않은 특수별동대 카운터스 스쿼드의 헬레틱 교전 등 극비 임무와 전략적 후퇴·철수 제외 승률 100% 기록을 관리해 왔기 때문이다(arcane_archive_12 L21-L28) / 근거: 금서고의 카운터스 서가 앞에서 아르카나가 헬레틱 교전 기록과 '후퇴나 성공적인 철수를 빼면 승률 100%'라는 동일한 내용을 다시 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_04",
+          "line_start": 119,
+          "line_end": 122,
+          "quote": "아르카나: 현재까지의 기록상, 지휘관 지휘관의 승률은 82%.\n아르카나: 작전상 후퇴 및 성공적인 철수를 제외할 경우···.\n아르카나: ···100%.\n아르카나: 임관부터 최종 업데이트 시점까지의 데이터를 근거로 계산한."
+        },
+        {
+          "scene_id": "arcane_archive_12",
+          "line_start": 21,
+          "line_end": 23,
+          "quote": "아르카나: 그래도 이분들은 특수별동대로서 극비 임무를 워낙 많이 하신 분들이라.\n아르카나: 거의 갓데스 만큼이나 외부에 공표되지 않은 것들이 많아요.\n아르카나: 만나는 헬레틱마다 전부 이겼다니까요?"
+        },
+        {
+          "scene_id": "arcane_archive_12",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "아르카나: 그, 그래도 전략적 후퇴나 성공적인 철수를 빼면 승률 100%라구요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__013",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_06__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_07__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 방에도 사진이 많이 붙어 있었다는 말을 들은 아르카나는 왜 갑자기 멍한 상태가 되어 말없이 가게 밖으로 나갔는가 / 답: 멍한 상태 그대로 도서관 작업실의 사진 붙은 벽 앞으로 돌아가 사진 하나를 거꾸로 뒤집고 책장 뒤 비밀 문을 열어 오래된 열람실로 들어가기 위해서였다(arcane_archive_07 L6-L34) / 근거: 직전 장면에서 사진 언급에 멍해져 나간 아르카나를 뒤따라가자 곧바로 작업실 벽 사진을 뒤집고 비밀 문 안으로 들어간다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_06",
+          "line_start": 216,
+          "line_end": 217,
+          "quote": "아르카나: 네. 별다른 일 없을 때도 사진··· 을···.\n아르카나: ··· ···."
+        },
+        {
+          "scene_id": "arcane_archive_06",
+          "line_start": 227,
+          "line_end": 228,
+          "quote": "내 부름이 들리지 않는 것처럼,\n그대로 가게 밖으로 나갔다."
+        },
+        {
+          "scene_id": "arcane_archive_07",
+          "line_start": 6,
+          "line_end": 9,
+          "quote": "작업실 앞에 도착해, 익숙한 모습으로 인증을 하고 방문을 연 아르카나는.\n사진이 빼곡히 붙어 있는 벽으로 다가섰다.\n아르카나: ··· ···.\n아르카나가 사진 중 하나를 거꾸로 뒤집자···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__014",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_07__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_08__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 작업실 책장 뒤 비밀 문 너머에 있는 오래된 열람실은 어떤 성격의 시설인가 / 답: 관리자 아르카나만 출입할 수 있고 비관계자가 들어오면 즉시 처분되는 특급 기밀 시설이다(arcane_archive_08 L107-L108) / 근거: 비밀 문 안 열람실로 들어온 뒤 출동한 K가 그곳의 보안 등급과 관리자를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_07",
+          "line_start": 33,
+          "line_end": 34,
+          "quote": "방주 도서관 것보다 오래되어 보이는 열람실 가운데에.\n아르카나가 멍하니 서 있었다."
+        },
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 107,
+          "line_end": 108,
+          "quote": "K: 여기는 비관계자가 들어오면 바로 목 날아가는 특급 기밀 시설이라서.\nK: 원래 저기 아르카나가 관리자고, 쟤만 출입할 수 있거든?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__015",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_07__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_09__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아르카나가 책장 뒤 비밀 문 앞에서 '죽음', '재탄생', '새로운, 시작을'이라고 말한 까닭은 무엇인가 / 답: 업무 시간에 보관소에 들어갈 때 외우면 안에서 있었던 일이 전부 기억나게 하는 자기암시 트리거다(arcane_archive_09 L81-L88) / 근거: 뒤 장면에서 아르카나가 앞서 문을 열기 전에 중얼거렸던 '죽음, 재탄생' 문구를 직접 가리켜 자기암시 트리거라고 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_07",
+          "line_start": 16,
+          "line_end": 21,
+          "quote": "아르카나: ···죽음.\n또각.\n아르카나: ···재탄생.\n또각.\n아르카나: ··· ···.\n아르카나: 새로운, 시작을."
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 86,
+          "line_end": 88,
+          "quote": "아르카나: 네. 그게 트리거거든요. 자기암시 같은 거라고 해야 하나?\n아르카나: 일할 시간이 돼서 여기 들어와야 할 때 딱 외워주면.\n아르카나: 짠~ 안에서 있었던 일이 전부 기억난답니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__016",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_07__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_09__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 작업실 책장 뒤 복도 너머의 '방주 도서관 것보다 오래되어 보이는 열람실'은 왜 그곳에 있으며 무엇에 쓰이는 곳인가 / 답: 방주 도서관이 처음 세워졌을 때 사용하던 구 열람실로, 현재는 최고 등급 기밀 기록들을 보관하는 금서고(특급 기밀 보관소)로 쓰이고 있다(arcane_archive_09 L138-L144) / 근거: 같은 열람실 안에서 아르카나가 도서관 증축 전의 구 열람실을 금서고로 쓰고 있다고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_07",
+          "line_start": 33,
+          "line_end": 34,
+          "quote": "방주 도서관 것보다 오래되어 보이는 열람실 가운데에.\n아르카나가 멍하니 서 있었다."
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 138,
+          "line_end": 140,
+          "quote": "아르카나: 예~엣날에 방주 도서관이 처음 세워졌을 때 사용하던 열람실이거든요.\n아르카나: 도서관은 그다음에 증축을 몇 번 해서 지금의 모습이 됐고,\n아르카나: 구 열람실인 여기는 금서고로 사용 중이죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__017",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_08__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_09__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: D가 왕관의 무게를 이겨내는 데 참고하면 도움이 될 것이라며 가리킨 '여기에 있는 것들'은 무엇인가 / 답: 구 열람실인 특급 기밀 보관소(금서고) 안에 보관된 최고 등급 기밀 기록들이다(arcane_archive_09 L140-L144) / 근거: 같은 시설에서 D가 말한 '여기에 있는 것들'을 이어지는 장면에서 아르카나가 금서고 안의 최고 등급 기밀 기록들로 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 90,
+          "line_end": 91,
+          "quote": "D: ···왕관의 무게.\nD: 여기에 있는 것들을 참고하면, 이겨내는 데에 도움이 될 거예요."
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 143,
+          "line_end": 144,
+          "quote": "아르카나: 어쨌든. 제가 하는 일은 이 금서고를 관리하는 일.\n아르카나: 그리고 물론. 이 안에 있는 기록들은 전부 절대 밖에 새어나가서는 안 되는 최고 등급 기밀들이기 때문에."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__018",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_08__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_09__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: K가 자세한 사정은 모른 채 아르카나가 관리하는 특급 기밀 시설이라고만 말한 이곳은 구체적으로 무엇을 하는 곳인가 / 답: 방주 도서관이 처음 세워졌을 때 사용하던 구 열람실로, 외부 유출이 금지된 최고 등급 기밀 기록들을 보관하는 금서고(특급 기밀 보관소)다(arcane_archive_09 L138-L144) / 근거: K가 자세한 설명을 아르카나에게 들으라고 한 뒤 이어지는 장면에서 아르카나가 이 시설의 정체와 용도를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 107,
+          "line_end": 108,
+          "quote": "K: 여기는 비관계자가 들어오면 바로 목 날아가는 특급 기밀 시설이라서.\nK: 원래 저기 아르카나가 관리자고, 쟤만 출입할 수 있거든?"
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 138,
+          "line_end": 140,
+          "quote": "아르카나: 예~엣날에 방주 도서관이 처음 세워졌을 때 사용하던 열람실이거든요.\n아르카나: 도서관은 그다음에 증축을 몇 번 해서 지금의 모습이 됐고,\n아르카나: 구 열람실인 여기는 금서고로 사용 중이죠."
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 143,
+          "line_end": 144,
+          "quote": "아르카나: 어쨌든. 제가 하는 일은 이 금서고를 관리하는 일.\n아르카나: 그리고 물론. 이 안에 있는 기록들은 전부 절대 밖에 새어나가서는 안 되는 최고 등급 기밀들이기 때문에."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__019",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_08__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_00__clh_004" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: K를 통해 지휘관의 핸드폰으로 '[항상 택티컬하게 행동하도록.]'이라는 전언을 보낸 '[I]'는 누구인가 / 답: 휴대폰에 '[I]'를 입력해 '사용자 코드, I'로 인증받은 엘리시온 사장 잉그리드다(arcane_archive_00 L38-L43) / 근거: 앞 장면에서 잉그리드가 코드 '[I]'로 사용자 인증을 받은 것이 직접 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 160,
+          "line_end": 161,
+          "quote": "K: [I]로부터의 전언.\nK: ···핸드폰 확인해 보란다."
+        },
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 166,
+          "line_end": 167,
+          "quote": "핸드폰을 꺼내 화면을 켜자, 메시지가 하나 도착해 있다.\n[항상 택티컬하게 행동하도록.]"
+        },
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "잉그리드: ···[I]."
+        },
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 42,
+          "line_end": 43,
+          "quote": "시스템: [···인증되었습니다]\n시스템: [사용자 코드, I]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__020",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_08__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_13__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관에게 '[항상 택티컬하게 행동하도록.]'이라는 메시지를 보낸 '[I]'는 누구인가 / 답: '택티컬'이라는 특유의 말버릇을 쓰는 엘리시온 사장 잉그리드다(arcane_archive_13 L203-L206) / 근거: 메시지에 쓰인 '택티컬' 표현을 뒤 장면에서 잉그리드가 그대로 사용하며 지휘관이 이에 반응한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 160,
+          "line_end": 161,
+          "quote": "K: [I]로부터의 전언.\nK: ···핸드폰 확인해 보란다."
+        },
+        {
+          "scene_id": "arcane_archive_08",
+          "line_start": 166,
+          "line_end": 167,
+          "quote": "핸드폰을 꺼내 화면을 켜자, 메시지가 하나 도착해 있다.\n[항상 택티컬하게 행동하도록.]"
+        },
+        {
+          "scene_id": "arcane_archive_13",
+          "line_start": 203,
+          "line_end": 206,
+          "quote": "잉그리드: 이제 엘리시온의 선별 기억 소거 기술은.\n잉그리드: 더 빠르고.\n잉그리드: 더욱 안전하고.\n잉그리드: 더더욱 택티컬해졌다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__021",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_10__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_13__clh_003" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 다른 일을 하다 은퇴하고 도서관 관장으로 부임해 베스트셀러 스쿼드를 만든 창립자는 누구인가 / 답: 오래된 허가증에 이니셜 '[O]'라는 서명을 남긴 인물이다(arcane_archive_13 L253-L256) / 근거: 뒤 장면에서 잉그리드가 '베스트셀러 스쿼드의 창립자'를 직접 받아 허가증에 남은 서명 이니셜 '[O]'를 알려 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_10",
+          "line_start": 61,
+          "line_end": 62,
+          "quote": "아르카나: 네. 저희 베스트셀러 스쿼드를 만들고, 도서관 관리를 맡기신 분이 있어요.\n아르카나: 다른 일 하시다가 은퇴하고 도서관 관장으로 부임하셨다고 하거든요."
+        },
+        {
+          "scene_id": "arcane_archive_13",
+          "line_start": 253,
+          "line_end": 256,
+          "quote": "잉그리드: 베스트셀러 스쿼드의 창립자 말이다.\n잉그리드: 허가증에 서명이 남아 있었다.\n잉그리드: 이니셜 한 글자 뿐이기는 하지만.\n잉그리드: [O]라고 적혀있군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__022",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_10__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "pretty_star_14__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 베스트셀러 스쿼드를 만들고 도서관 관리를 맡긴 창립자는 누구인가 / 답: 말살된 갓데스의 기록을 남기고 자신의 의지로 베스트셀러 스쿼드가 만들어지게 한 오스왈드다(pretty_star_14 L50-L92) / 근거: pretty_star_14에서 양자 아서가 오스왈드에게 아버지의 의지에 의해 베스트셀러 스쿼드가 만들어질 것이라고 직접 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_10",
+          "line_start": 61,
+          "line_end": 62,
+          "quote": "아르카나: 네. 저희 베스트셀러 스쿼드를 만들고, 도서관 관리를 맡기신 분이 있어요.\n아르카나: 다른 일 하시다가 은퇴하고 도서관 관장으로 부임하셨다고 하거든요."
+        },
+        {
+          "scene_id": "pretty_star_14",
+          "line_start": 89,
+          "line_end": 91,
+          "quote": "오스왈드: 그래. 고생 많았다.\n아서: 베스트셀러 스쿼드는 만들어질 겁니다. 아버지의 의지에 의해.\n아서: 잊혀져선 안되는 기록이, 후대의 후대까지 이어지겠죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "이니셜 O와 아크 가디언 작전 언급으로 오스왈드를 떠올려 grep 오스왈드 및 grep 베스트셀러로 확인한 pretty_star_14 L50-L92"
+      ]
+    },
+    {
+      "link_id": "C1__148__023",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_10__clh_004" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "arcane_archive_11__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 금서고 통로 끝 작은 골방의 '[갓데스 스쿼드]' 푯말이 붙은 책장에는 어떤 기록이 보관되어 있는가 / 답: 창립자가 직접 쓴, 결성부터 아크 가디언 작전까지 갓데스 스쿼드의 모든 행적을 담은 기록서와 요약본이다(arcane_archive_11 L6-L10) / 근거: 골방 책장의 푯말이 드러난 직후 이어지는 장면에서 아르카나가 그 방의 책 내용을 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_10",
+          "line_start": 217,
+          "line_end": 219,
+          "quote": "아르카나가 한 걸음 물러나서 드러난 책장의 푯말.\n누군가의 손글씨로 쓰여진 그 푯말에는.\n[갓데스 스쿼드]라고 적혀 있었다."
+        },
+        {
+          "scene_id": "arcane_archive_11",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "아르카나: 이 방에 있는 책들은 창립자님이 직접 쓰셨어요.\n아르카나: 처음 스쿼드가 결성되었을 때부터, 아크 가디언 작전까지.\n아르카나: 갓데스의 모든 행적이 기록되어 있죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__148__024",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_10__clh_004" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "pretty_star_14__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 창립자는 왜 갓데스 스쿼드가 잊혀 아무도 모르는 존재가 되는 것을 용납하지 못하고 작은 골방에 기록을 남겼는가 / 답: 중앙 정부에서 갓데스의 기록이 완전히 말살되자 오스왈드가 세상을 비춘 이들은 잊혀져선 안 된다며 세상의 구석에라도 남겨 두기 위해 기록을 집필하고 베스트셀러 스쿼드를 만들게 했기 때문이다(pretty_star_14 L50-L92) / 근거: 앞 장면의 창립자 의도와 갓데스 기록 보관이 pretty_star_14에서 오스왈드의 결심과 집필, 베스트셀러 스쿼드 창설로 구체적으로 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_10",
+          "line_start": 206,
+          "line_end": 206,
+          "quote": "아르카나: 창립자님은, 그들이 그렇게 되는 걸 용납할 수 없었던 거예요."
+        },
+        {
+          "scene_id": "arcane_archive_10",
+          "line_start": 217,
+          "line_end": 219,
+          "quote": "아르카나가 한 걸음 물러나서 드러난 책장의 푯말.\n누군가의 손글씨로 쓰여진 그 푯말에는.\n[갓데스 스쿼드]라고 적혀 있었다."
+        },
+        {
+          "scene_id": "pretty_star_14",
+          "line_start": 50,
+          "line_end": 55,
+          "quote": "특무대원: ···특무실장님. 갓데스의 기록은 이제 완전히 말살되었습니다.\n특무대원: 기록을 남기는 것만으로도 중죄입니다.\n오스왈드: 확신이 생겼습니다.\n오스왈드: 세상을 비춘 이들은 퇴색되어서도 안 되고, 잊혀져서도 안 됩니다.\n오스왈드: 세상이 그들의 존재를 거부한다면.\n오스왈드: 저는 세상의 끝, 구석에라도 그들을 남겨놓을 겁니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep 오스왈드 및 grep 베스트셀러로 확인한 pretty_star_14 L50-L92"
+      ]
+    },
+    {
+      "link_id": "C1__148__025",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_11__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "pretty_star_14__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 골방에 있는 갓데스 스쿼드 행적 기록서들을 직접 쓴 창립자는 누구인가 / 답: 중앙 정부의 눈을 피해 갓데스의 기록을 책으로 직접 써서 완성하고 베스트셀러 스쿼드가 만들어지게 한 오스왈드다(pretty_star_14 L50-L92) / 근거: 창립자가 직접 썼다는 갓데스 행적 기록서를 pretty_star_14에서 오스왈드가 직접 집필해 마침표를 찍는 장면이 나온다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_11",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "아르카나: 이 방에 있는 책들은 창립자님이 직접 쓰셨어요.\n아르카나: 처음 스쿼드가 결성되었을 때부터, 아크 가디언 작전까지.\n아르카나: 갓데스의 모든 행적이 기록되어 있죠."
+        },
+        {
+          "scene_id": "pretty_star_14",
+          "line_start": 65,
+          "line_end": 68,
+          "quote": "오스왈드는 페이지의 마지막에 점을 찍는다.\n책을 덮고, 그 위에 낡은 가죽 장갑을 얹은 후, 눈을 감는다.\n중앙 정부의 눈을 피해 기록을 남기는 것은 쉬운 일이 아니었다.\n하지만, 결국 해냈다."
+        },
+        {
+          "scene_id": "pretty_star_14",
+          "line_start": 90,
+          "line_end": 91,
+          "quote": "아서: 베스트셀러 스쿼드는 만들어질 겁니다. 아버지의 의지에 의해.\n아서: 잊혀져선 안되는 기록이, 후대의 후대까지 이어지겠죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep 오스왈드 및 grep 베스트셀러로 확인한 pretty_star_14 L50-L92"
+      ]
+    },
+    {
+      "link_id": "C1__148__026",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "arcane_archive_11__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "maria-n_17__clh_004" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 갓데스 스쿼드에 대한 책에서 기록이 빠져 이름을 알 수 없는 '갓데스 스쿼드의 지휘관'은 누구인가 / 답: 아크 가디언 작전 당시 갓데스 스쿼드의 지휘관이었던 엔더슨이다(maria-n_17 L155) / 근거: 에닉이 아크 가디언 당시 '갓데스 스쿼드의 지휘관 엔더슨'이라고 직접 지칭해 실명을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_11",
+          "line_start": 144,
+          "line_end": 144,
+          "quote": "갓데스 스쿼드의 지휘관에 관한 내용은 어디에서도 찾을 수 없었다."
+        },
+        {
+          "scene_id": "arcane_archive_11",
+          "line_start": 149,
+          "line_end": 150,
+          "quote": "아르카나: 본인이 빼달라고 요청했대요.\n아르카나: [나는 이들과 같은 곳에 이름을 올릴 자격이 없다]고."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 155,
+          "line_end": 156,
+          "quote": "에닉: 방주 완전 밀봉 작전 아크 가디언 당시, 갓데스 스쿼드의 지휘관 엔더슨에게서 발견했습니다.\n에닉: 작전 중 혼수 상태에 빠진 엔더슨에게서 언체인드를 추출하여 양산화를 시도하여 무기화에는 성공했으나,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '갓데스 스쿼드의 지휘관'으로 확인한 maria-n_17 L155"
+      ]
+    }
+  ],
+  "unlinked": [
+    { "item_id": "arcane_archive_00__clh_002", "reason": "단서 아님" },
+    {
+      "item_id": "arcane_archive_00__clh_003",
+      "reason": "짝 없음",
+      "note": "기억 소거 절차를 개시한 잉그리드가 무엇을 두고 아슬아슬하게 권한 바깥쪽이라고 말했는지"
+    },
+    { "item_id": "arcane_archive_01__clh_001", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_03__clh_002", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_03__clh_003", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_04__clh_001", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_05__clh_001", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_05__clh_002", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_05__clh_003", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_06__clh_001", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_09__clh_001", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_09__clh_002", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_10__clh_001", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_10__clh_003", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_11__clh_002", "reason": "단서 아님" },
+    {
+      "item_id": "arcane_archive_11__clh_003",
+      "reason": "짝 없음",
+      "note": "갓데스 스쿼드의 지휘관이 왜 그들과 같은 곳에 이름을 올릴 자격이 없다며 자신의 기록을 빼달라고 요청했는지"
+    },
+    {
+      "item_id": "arcane_archive_11__clh_004",
+      "reason": "짝 없음",
+      "note": "갓데스 스쿼드 지휘관 이후 금서고에 기록된 인물 중 '[미친개]'로 불린 사람이 누구인지"
+    },
+    {
+      "item_id": "arcane_archive_11__clh_005",
+      "reason": "짝 없음",
+      "note": "갓데스 스쿼드 기록서 사이에 끼어 있던 오래된 메모지('[옛이야기는, 아름답게 끝난다.]')를 누가 무슨 뜻으로 남겼는지"
+    },
+    { "item_id": "arcane_archive_12__clh_001", "reason": "단서 아님" },
+    { "item_id": "arcane_archive_12__clh_002", "reason": "단서 아님" }
+  ],
+  "merge_suggestions": [
+    {
+      "suggestion_id": "C1__148__M01",
+      "unit_ids": ["arcane_archive_09__clh_002"],
+      "link_ids": [
+        "C1__148__007",
+        "C1__148__008",
+        "C1__148__016",
+        "C1__148__017",
+        "C1__148__018"
+      ],
+      "targets": [
+        { "kind": "term", "id": "A2__146#E3", "name": "특급 기밀 보관소" },
+        { "kind": "term", "id": "A2__027#E4", "name": "금서고" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "아르카나가 방주 도서관의 구 열람실인 '특급 기밀 보관소'를 소개하며 앞으로 계속 '금서고'라고 부르겠다고 말해 두 명칭이 같은 장소임을 직접 보여 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "아르카나: 여기가 좀 전에 말한 특급 기밀 보관소."
+        },
+        {
+          "scene_id": "arcane_archive_09",
+          "line_start": 140,
+          "line_end": 142,
+          "quote": "아르카나: 구 열람실인 여기는 금서고로 사용 중이죠.\n아르카나: 그리고 제일 중요한, 제가 하는 일은 이 금서고···.\n아르카나: 아. 앞으로도 계속 금서고라고 불러야겠다. 입에 딱 붙네요."
+        }
+      ]
+    },
+    {
+      "suggestion_id": "C1__148__M02",
+      "unit_ids": [
+        "arcane_archive_00__clh_004",
+        "arcane_archive_08__clh_003"
+      ],
+      "link_ids": ["C1__148__019"],
+      "targets": [
+        { "kind": "entity", "id": "char_잉그리드", "name": "잉그리드" },
+        { "kind": "surface", "id": null, "name": "I" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "잉그리드가 휴대폰 인증에 '[I]'를 입력하여 '사용자 코드, I'로 인증받으므로 저지스 코드명 I와 잉그리드는 같은 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "잉그리드: ···[I]."
+        },
+        {
+          "scene_id": "arcane_archive_00",
+          "line_start": 42,
+          "line_end": 43,
+          "quote": "시스템: [···인증되었습니다]\n시스템: [사용자 코드, I]"
+        }
+      ]
+    },
+    {
+      "suggestion_id": "C1__148__M03",
+      "unit_ids": ["arcane_archive_10__clh_002"],
+      "link_ids": ["C1__148__021", "C1__148__022"],
+      "targets": [
+        { "kind": "entity", "id": "char_오스왈드", "name": "오스왈드" },
+        { "kind": "surface", "id": null, "name": "O" }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "베스트셀러 스쿼드 창립자의 허가증 서명 이니셜이 '[O]'로 밝혀지고, pretty_star_14에서 오스왈드의 의지로 베스트셀러 스쿼드가 만들어짐이 드러나므로 '[O]'와 오스왈드는 같은 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "arcane_archive_13",
+          "line_start": 253,
+          "line_end": 256,
+          "quote": "잉그리드: 베스트셀러 스쿼드의 창립자 말이다.\n잉그리드: 허가증에 서명이 남아 있었다.\n잉그리드: 이니셜 한 글자 뿐이기는 하지만.\n잉그리드: [O]라고 적혀있군."
+        },
+        {
+          "scene_id": "pretty_star_14",
+          "line_start": 89,
+          "line_end": 90,
+          "quote": "오스왈드: 그래. 고생 많았다.\n아서: 베스트셀러 스쿼드는 만들어질 겁니다. 아버지의 의지에 의해."
+        }
+      ]
+    }
+  ]
+}

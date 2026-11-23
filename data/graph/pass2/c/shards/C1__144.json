@@ -1,0 +1,892 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__144",
+  "candidate_links": [
+    {
+      "link_id": "C1__144__001",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_00__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_02__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 식당 손님들이 먹은 음식에서 왜 음식에서 날 수 없는 이상한 맛이 났는가 / 답: 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌기 때문이다(new_flavor_02 L86-L88) / 근거: 브래디가 식당에서 주문한 음식이 퍼펙트로 만든 스테이크였고(new_flavor_00 L16), 뒤 장면에서 이번 달 이후 제조된 퍼펙트로 만든 음식들의 맛이 이상해졌음을 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_00",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "안경 쓴 여자: 맛이 이상하잖아요!"
+        },
+        {
+          "scene_id": "new_flavor_00",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "젊은 남자: 음식에서 날 수 없는 맛이라니까요!"
+        },
+        {
+          "scene_id": "new_flavor_02",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "브래디: 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__002",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_00__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_06__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 다른 손님들은 맛이 이상하다고 한 식당 음식을 먹었을 때 왜 브래디는 아무 맛도 느끼지 못하고 아무것도 알 수 없었는가 / 답: 브래디의 미각 자체가 망가진 것이 아니라 문제가 있는 퍼펙트로 만들어진 음식들을 먹을 때만 맛과 정보·감정이 모두 느껴지지 않는 현상이 나타난 것이다(new_flavor_06 L111-L116) / 근거: 브래디가 '말은 안 했지만, 어제 갔었던 식당에서부터 이랬어'라며 new_flavor_00의 식당 일을 직접 가리켜 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_00",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "브래디: 아무 맛이 안 나."
+        },
+        {
+          "scene_id": "new_flavor_00",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "브래디: 아무것도 모르겠어."
+        },
+        {
+          "scene_id": "new_flavor_06",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "브래디: 문제가 있는 퍼펙트로 만들어진 음식들을 먹으면, 아무런 맛도 느껴지지 않아."
+        },
+        {
+          "scene_id": "new_flavor_06",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "브래디: 말은 안 했지만, 어제 갔었던 식당에서부터 이랬어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__003",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_00__clh_002" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "new_flavor_12",
+          "line_start": 78,
+          "line_end": 80,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 식당의 퍼펙트 스테이크를 먹었을 때 왜 음식을 먹으면 모든 정보를 아는 브래디에게 아무 맛도 정보도 느껴지지 않았는가 / 답: 퍼펙트 제작 과정에서 생긴 문제를 브래디가 맛보아 알아내지 못하도록 안전장치를 해두었기 때문이다(new_flavor_12 L78-L80) / 근거: 어제 식당에서 먹은 음식이 문제 있는 퍼펙트 요리였음이 new_flavor_06 L111-L116에서 확인되고, new_flavor_12 L78-L80에서 브래디가 문제 있는 퍼펙트에서 맛을 못 느끼는 까닭을 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_00",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "브래디: 아무 맛이 안 나."
+        },
+        {
+          "scene_id": "new_flavor_00",
+          "line_start": 27,
+          "line_end": 27,
+          "quote": "브래디: 아무것도 모르겠어."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "브래디: 그래서 아무런 맛을 못 느끼는 건가, 싶어."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "브래디: 내가 맛을 보면, 어떤 문제가 생긴 건지 알게 될 테니까 안전장치를 해둔 거지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__004",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_01__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_02__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 어제 저녁부터 만들어진 식당·가정집 음식들과 새벽부터 과자·간식 등에서 왜 처음 먹어보는 이상한 맛이 났는가 / 답: 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌기 때문이다(new_flavor_02 L86-L90) / 근거: 라피가 이유를 알 수 없다며 자세한 확인을 위해 쿠킹오일 스쿼드가 온다고 한 뒤, 쿠킹오일 스쿼드가 시식 비교로 이번 달 이후 제조된 퍼펙트가 원인임을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_01",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "라피: ···지금, 정확한 이유는 알 수 없지만."
+        },
+        {
+          "scene_id": "new_flavor_01",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "라피: 어제 저녁부터 만들어진 음식들의 맛이 이상하다고 합니다."
+        },
+        {
+          "scene_id": "new_flavor_02",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "브래디: 제조 일자가 이번 달 이후인 퍼펙트로 만들어진 음식들의 맛이 이상해졌어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__005",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_03__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_04__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 브래디는 왜 엠마가 만든 음식을 먹기 전에 먼저 엠마를 핥아보았는가 / 답: 니케마다 고유의 맛이 있어 위험한 음식을 만들 만한 니케인지 먼저 맛보아 확인한 뒤 음식을 먹은 것이다(new_flavor_04 L88-L90) / 근거: 이어지는 장면에서 지휘관이 왜 엠마를 핥아봤는지 직접 묻자 브래디가 그 이유를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_03",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "브래디: 엠마, 잠시만 실례할게."
+        },
+        {
+          "scene_id": "new_flavor_03",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "브래디: 그럼, 음식도 잘 먹을게."
+        },
+        {
+          "scene_id": "new_flavor_04",
+          "line_start": 89,
+          "line_end": 89,
+          "quote": "브래디: 니케들도 각자 고유의 맛이 있거든."
+        },
+        {
+          "scene_id": "new_flavor_04",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "브래디: 위험한 음식을 만들만한 니케인지 확인하고 음식을 먹은 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__006",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_03__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_06__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 브래디가 엠마의 수프를 먹었을 때 왜 맛이 느껴지지 않았는가 / 답: 엠마의 괴식 때문이 아니라 문제가 있는 퍼펙트로 만들어진 음식을 먹으면 맛·정보·감정이 모두 느껴지지 않기 때문이다(new_flavor_06 L111-L114) / 근거: 크러스트가 '아까 엠마의 음식을 먹고···'라고 짚자 브래디가 '엠마의 음식 때문이 아니야'라며 문제 있는 퍼펙트 재료 때문임을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_03",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "브래디: ···맛이 안 느껴져."
+        },
+        {
+          "scene_id": "new_flavor_06",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "브래디: 문제가 있는 퍼펙트로 만들어진 음식들을 먹으면, 아무런 맛도 느껴지지 않아."
+        },
+        {
+          "scene_id": "new_flavor_06",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "브래디: 아냐, 엠마의 음식 때문이 아니야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__007",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_06__clh_001" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "new_flavor_12",
+          "line_start": 78,
+          "line_end": 80,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 다른 사람들에게는 이상한 맛이 나는 문제의 퍼펙트 음식을 먹을 때 왜 브래디에게는 맛뿐만 아니라 정보나 감정도 전혀 느껴지지 않는가 / 답: 브래디가 맛을 보면 퍼펙트 제작 과정에서 어떤 문제가 생겼는지 알게 될 테니 아무 맛도 느끼지 못하도록 안전장치를 해두었기 때문이다(new_flavor_12 L78-L80) / 근거: 브래디가 문제 있는 퍼펙트에서 자신이 아무런 맛을 못 느끼는 까닭을 직접 받아 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_06",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "브래디: 문제가 있는 퍼펙트로 만들어진 음식들을 먹으면, 아무런 맛도 느껴지지 않아."
+        },
+        {
+          "scene_id": "new_flavor_06",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "브래디: 맛뿐만이 아니라, 정보나 감정도 느껴지지 않아."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "브래디: 그래서 아무런 맛을 못 느끼는 건가, 싶어."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "브래디: 내가 맛을 보면, 어떤 문제가 생긴 건지 알게 될 테니까 안전장치를 해둔 거지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__008",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_07__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_10__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 브래디가 맛과 정보를 받지 못할 때 일어난다며 설명하기 어렵다고 얼버무린 '스스로에게 갇혀버리는' 현상은 실제로 어떤 상태인가 / 답: 자기 자신을 맛보려 하며 자신의 정보·기억·맛을 끊임없이 되새김질하다가 그 정보에 매몰되어 자신이 누구인지 잊어버릴 정도로 닳고 닳을 때까지 맛보게 되는 증상이다(new_flavor_10 L184-L188) / 근거: 브래디가 앞 장면에서 '스스로에게 갇혀버려'라고만 했던 표현을 뒤 장면에서 '나 스스로에게 갇혀버리면 [나]를 맛보려고 해'라고 직접 받아 실상을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_07",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "브래디: 나는 맛과 정보를 받지 못하면, 스스로에게 갇혀버려."
+        },
+        {
+          "scene_id": "new_flavor_07",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "브래디: 뭐라고 설명하긴 어려운데."
+        },
+        {
+          "scene_id": "new_flavor_10",
+          "line_start": 184,
+          "line_end": 184,
+          "quote": "브래디: 그래서, 이런 상황에서 나 스스로에게 갇혀버리면."
+        },
+        {
+          "scene_id": "new_flavor_10",
+          "line_start": 185,
+          "line_end": 185,
+          "quote": "브래디: [나]를 맛보려고 해."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__009",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_08__clh_002" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "new_flavor_13",
+          "line_start": 216,
+          "line_end": 226,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 처음 느껴보는 맛과 자극을 좋아한다던 브래디가 '그래서 나, 지휘관을···.'이라며 끝맺지 못한 말은 무엇이었는가 / 답: 처음에는 호기심이었으나 시간이 갈수록 지휘관이 어떤 맛이 날지 궁금해져 지휘관을 맛보고 싶어 했다는 뜻이다(new_flavor_13 L216, L224-L226) / 근거: 브래디가 지휘관에게 직접 '나, 지휘관을 맛보고 싶어'라고 부탁하며 처음부터 호기심을 가졌던 속내를 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_08",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "브래디: 그래서 나, 지휘관을···."
+        },
+        {
+          "scene_id": "new_flavor_13",
+          "line_start": 216,
+          "line_end": 216,
+          "quote": "브래디: 나, 지휘관을 맛보고 싶어."
+        },
+        {
+          "scene_id": "new_flavor_13",
+          "line_start": 226,
+          "line_end": 226,
+          "quote": "브래디: 지휘관은 어떤 맛이 날지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__010",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_09__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_11__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 브래디와 크러스트가 현재 퍼펙트보다 더 싸게 대량 생산해야 한다고 말할 때 지휘관이 느낀 이상함의 정체는 무엇인가 / 답: 두 사람은 극비인 퍼펙트의 비밀을 알고 있으며 기밀 유지를 위해 뇌에 프로텍터가 달려 있다(new_flavor_11 L109-L115) / 근거: new_flavor_11 L95-L99에서 new_flavor_09 L20-L24의 대화를 그대로 회상한 뒤 지휘관이 두 사람이 퍼펙트의 비밀을 알고 있음을 짚자 브래디가 '맞아'라고 인정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_09",
+          "line_start": 21,
+          "line_end": 21,
+          "quote": "브래디: 싸게 대량 생산이 가능해야 한다는 거지."
+        },
+        {
+          "scene_id": "new_flavor_09",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "브래디: 지금의 퍼펙트를 만드는 것보다도 더."
+        },
+        {
+          "scene_id": "new_flavor_11",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "브래디: 맞아."
+        },
+        {
+          "scene_id": "new_flavor_11",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "브래디: 그래서 나와 크러스트의 뇌에는, 프로텍터가 달려있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__011",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_09__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_12__clh_002" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 브래디와 크러스트는 왜 지금의 퍼펙트보다 더 싸게 대량 생산할 수 있어 퍼펙트를 완전히 대체할 식품은 없을 것이라고 단정했는가 / 답: 퍼펙트의 주재료는 지상이 아닌 곳에서 아주 싼 값에 구할 수 있고 하나만 있어도 대량의 퍼펙트를 만들 수 있기 때문이다(new_flavor_12 L91-L97, L104) / 근거: 지휘관이 '그래서 퍼펙트를 완전히 대체할 만한 건 없을 거라고 확신했던 거구나'라며 new_flavor_09 L24의 말을 직접 받아 묻자 브래디가 '맞아'라고 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_09",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "브래디: 지금의 퍼펙트를 만드는 것보다도 더."
+        },
+        {
+          "scene_id": "new_flavor_09",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "크러스트: 그래서, 퍼펙트를 완전히 대체할 만한 건 없을 거라고 생각해요."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "브래디: 그건 아주 싼 값에 구할 수 있고, 하나만 있어도 대량의 퍼펙트를 만들 수 있지."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "브래디: 맞아."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__012",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_10__clh_003" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "new_flavor_13",
+          "line_start": 216,
+          "line_end": 226,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지휘관이 비밀을 알게 되어 영광이라고 말했을 때 브래디는 왜 침을 삼켰는가 / 답: 시간이 갈수록 지휘관이 어떤 맛이 날지 궁금해져 지휘관을 맛보고 싶어졌기 때문이다(new_flavor_13 L216, L224-L226) / 근거: 뒤 장면에서 브래디가 다시 침을 삼킨 뒤(L208) 지휘관을 맛보고 싶다며 그동안 점점 더 맛이 궁금해졌다고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_10",
+          "line_start": 200,
+          "line_end": 200,
+          "quote": "브래디: ···정말 그렇게 생각해?"
+        },
+        {
+          "scene_id": "new_flavor_10",
+          "line_start": 202,
+          "line_end": 202,
+          "quote": "브래디: 꿀꺽-"
+        },
+        {
+          "scene_id": "new_flavor_13",
+          "line_start": 216,
+          "line_end": 216,
+          "quote": "브래디: 나, 지휘관을 맛보고 싶어."
+        },
+        {
+          "scene_id": "new_flavor_13",
+          "line_start": 225,
+          "line_end": 225,
+          "quote": "브래디: 시간이 갈수록, 점점 더 궁금해졌어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__013",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_11__clh_001" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_12__clh_001" }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 퍼펙트의 비밀을 아는 브래디와 크러스트의 뇌에 달려 있다는 프로텍터는 무엇이며 어떤 기능을 하는가 / 답: 침식이나 뇌 스캔을 방지하기 위해 니케의 뇌에 설치하는 일종의 보호 장치다(new_flavor_12 L15-L16) / 근거: new_flavor_11 끝에서 뇌에 프로텍터가 달려 있다고 말한 직후, 이어지는 new_flavor_12 도입부에서 그 프로텍터가 무엇인지 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_11",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "브래디: 그래서 나와 크러스트의 뇌에는, 프로텍터가 달려있어."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "브래디: 침식이나 뇌 스캔을 방지하기 위해 있는, 일종의 보호 장치라고 생각하면 돼."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__014",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_12__clh_003" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "new_flavor_13",
+          "line_start": 216,
+          "line_end": 226,
+          "scan_id": null
+        }
+      ],
+      "roles": { "clue": "subject", "reveal": "target" },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 브래디가 지휘관의 말을 듣고 침을 삼키며 '정말, 궁금하네'라고 한 것은 무엇을 궁금해한 것인가 / 답: 지휘관이 어떤 맛이 날지 궁금해하며 지휘관을 맛보고 싶어 한 것이다(new_flavor_13 L216, L225-L226) / 근거: 다음 장면에서 브래디가 다시 침을 삼킨 뒤(L208) 지휘관에게 직접 맛보고 싶다고 부탁하며 '시간이 갈수록, 점점 더 궁금해졌어. 지휘관은 어떤 맛이 날지'라고 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 167,
+          "line_end": 167,
+          "quote": "브래디: 정말, 궁금하네."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 168,
+          "line_end": 168,
+          "quote": "브래디: ···꿀꺽."
+        },
+        {
+          "scene_id": "new_flavor_13",
+          "line_start": 216,
+          "line_end": 216,
+          "quote": "브래디: 나, 지휘관을 맛보고 싶어."
+        },
+        {
+          "scene_id": "new_flavor_13",
+          "line_start": 226,
+          "line_end": 226,
+          "quote": "브래디: 지휘관은 어떤 맛이 날지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__015",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_04__clh_003" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "true_flavor_01",
+          "line_start": 4,
+          "line_end": 4,
+          "scan_id": "S0009"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "크러스트가 특별 수업에서 쿠킹오일 스쿼드 소속임을 자기소개할 뿐 단서와 공개의 관계가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_04",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "크러스트: 이게 바로, 쿠킹오일 스쿼드가 하는 일들이에요!"
+        },
+        {
+          "scene_id": "true_flavor_01",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "크러스트: 저는 오늘 특별 수업을 맡게 된 쿠킹오일 스쿼드의 크러스트라고 합니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__016",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_04__clh_003" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "true_flavor_14",
+          "line_start": 4,
+          "line_end": 4,
+          "scan_id": "S0010"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "크러스트가 특별 수업에서 쿠킹오일 스쿼드 소속임을 자기소개할 뿐 단서와 공개의 관계가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_04",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "크러스트: 이게 바로, 쿠킹오일 스쿼드가 하는 일들이에요!"
+        },
+        {
+          "scene_id": "true_flavor_14",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "크러스트: 오늘 특별 수업을 맡게 된 쿠킹오일 스쿼드의 크러스트입니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__017",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_04__clh_003" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "crust_04",
+          "line_start": 2,
+          "line_end": 2,
+          "scan_id": "S0012"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "쿠킹오일 스쿼드와 지상에 다녀온 뒤의 상황을 언급할 뿐 단서와 공개의 관계가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_04",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "크러스트: 이게 바로, 쿠킹오일 스쿼드가 하는 일들이에요!"
+        },
+        {
+          "scene_id": "crust_04",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "쿠킹오일 스쿼드와 지상에 다녀온 후."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__018",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_12__clh_001" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_01_04",
+          "line_start": 5,
+          "line_end": 5,
+          "scan_id": "S0014"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "new_flavor_12__clh_001의 프로텍터는 침식·뇌 스캔 방지용 뇌 보호 장치인 반면, main_01_04의 우하단 프로텍터는 전투 중 파손된 외부 장갑 부위다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "브래디: 침식이나 뇌 스캔을 방지하기 위해 있는, 일종의 보호 장치라고 생각하면 돼."
+        },
+        {
+          "scene_id": "main_01_04",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "마리안: 좌측 쇄골 프레임 파손. 우하단 프로텍터 대파."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__019",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_12__clh_001" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_07_06",
+          "line_start": 8,
+          "line_end": 8,
+          "scan_id": "S0015"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "new_flavor_12__clh_001은 뇌 내부 보호 장치인 반면, main_07_06의 프로텍터는 모더니아의 얼굴을 가리던 외부 바이저다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "브래디: 침식이나 뇌 스캔을 방지하기 위해 있는, 일종의 보호 장치라고 생각하면 돼."
+        },
+        {
+          "scene_id": "main_07_06",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "모더니아: 프로텍터가···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__020",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_12__clh_001" }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_13_10",
+          "line_start": 158,
+          "line_end": 158,
+          "scan_id": "S0018"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "new_flavor_12__clh_001은 뇌 내부 보호 장치인 반면, main_13_10의 프로텍터는 모더니아의 얼굴 부분을 감싸고 있던 외부 장갑이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "브래디: 침식이나 뇌 스캔을 방지하기 위해 있는, 일종의 보호 장치라고 생각하면 돼."
+        },
+        {
+          "scene_id": "main_13_10",
+          "line_start": 158,
+          "line_end": 158,
+          "quote": "얼굴 부분을 감싸고 있던 프로텍터가 모두 떨어져 나갔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__021",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_09__clh_002" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_11__clh_001" }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "new_flavor_09__clh_002는 맛으로 식욕을 채우는 브래디의 특성 설명이고, new_flavor_11__clh_001은 퍼펙트의 비밀을 알아 뇌에 프로텍터가 달려 있다는 내용으로 서로 무관하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_09",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "브래디: 그리고 나는 맛을 보는 것만으로 식욕을 채우니까, 괜찮아."
+        },
+        {
+          "scene_id": "new_flavor_11",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "브래디: 그래서 나와 크러스트의 뇌에는, 프로텍터가 달려있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__144__022",
+      "link_type": "hook",
+      "subject": [
+        { "ref": "item", "item_id": "new_flavor_09__clh_003" }
+      ],
+      "target": [
+        { "ref": "item", "item_id": "new_flavor_11__clh_001" }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "new_flavor_09__clh_003은 새로 깐 사탕에서 맛이 나지 않았다는 언급이고, new_flavor_11__clh_001은 퍼펙트의 비밀을 알아 뇌에 프로텍터가 달려 있다는 내용으로 서로 무관하다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_flavor_09",
+          "line_start": 95,
+          "line_end": 95,
+          "quote": "브래디: 새로 깐 사탕에서는 아무런 맛도 안 나더라고."
+        },
+        {
+          "scene_id": "new_flavor_11",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "브래디: 그래서 나와 크러스트의 뇌에는, 프로텍터가 달려있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    { "item_id": "new_flavor_03__clh_002", "reason": "단서 아님" },
+    { "item_id": "new_flavor_04__clh_001", "reason": "단서 아님" },
+    { "item_id": "new_flavor_04__clh_002", "reason": "단서 아님" },
+    { "item_id": "new_flavor_04__clh_003", "reason": "단서 아님" },
+    { "item_id": "new_flavor_05__clh_001", "reason": "단서 아님" },
+    { "item_id": "new_flavor_07__clh_002", "reason": "단서 아님" },
+    { "item_id": "new_flavor_08__clh_001", "reason": "단서 아님" },
+    { "item_id": "new_flavor_08__clh_003", "reason": "단서 아님" },
+    { "item_id": "new_flavor_09__clh_002", "reason": "단서 아님" },
+    { "item_id": "new_flavor_09__clh_003", "reason": "단서 아님" },
+    { "item_id": "new_flavor_10__clh_001", "reason": "단서 아님" },
+    { "item_id": "new_flavor_10__clh_002", "reason": "단서 아님" },
+    { "item_id": "new_flavor_12__clh_001", "reason": "단서 아님" },
+    {
+      "item_id": "new_flavor_12__clh_002",
+      "reason": "짝 없음",
+      "note": "지상이 아닌 곳에서 값싸게 구해 하나만으로 대량의 퍼펙트를 만든다는 주재료의 정체와, 퍼펙트 공장에서 흔적 없이 사라진 양산형 니케에게 무슨 일이 있었는지"
+    },
+    { "item_id": "new_flavor_13__clh_001", "reason": "단서 아님" },
+    { "item_id": "new_flavor_13__clh_002", "reason": "단서 아님" },
+    {
+      "item_id": "new_flavor_13__clh_003",
+      "reason": "짝 없음",
+      "note": "다른 인간이나 사물과 달리 지휘관을 맛보았을 때만 감정·정보·이야기가 전혀 느껴지지 않고 달콤한 맛만 나는 이유가 무엇인지"
+    }
+  ],
+  "merge_suggestions": []
+}
