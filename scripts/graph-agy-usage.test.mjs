@@ -4,7 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 
-import { collectRunUsage, formatUsageTable } from './graph/agy-usage.mjs';
+import { collectRunUsage, formatUsageTable, shellReadsScripts } from './graph/agy-usage.mjs';
 
 // 5절 사용량 집계: 감독관 로그의 이번 요청 구간과 그 구간에서 만든 서브에이전트만 센다.
 
@@ -170,4 +170,20 @@ test('5 agy usage: only the latest request of the supervisor and the subagents i
   } finally {
     await fs.rm(brainDir, { recursive: true, force: true });
   }
+});
+
+test('셸 scripts/ 열람: 읽기 명령의 파일 인자만 센다', () => {
+  // 실제로 도구 소스를 읽은 것
+  assert.equal(shellReadsScripts('sed -n 1,80p scripts/graph/validate-output.mjs'), true);
+  assert.equal(shellReadsScripts('cat scripts/graph/pass2-c.mjs | head -50'), true);
+  assert.equal(shellReadsScripts('grep -n "checkQuote" scripts/graph/pass2-lib.mjs'), true);
+  assert.equal(shellReadsScripts('grep -rn foo /home/user/repo/scripts/'), true);
+  assert.equal(shellReadsScripts('ls && cat "scripts/graph/x.mjs"'), true);
+  assert.equal(shellReadsScripts('grep -e scripts/ -r . && head scripts/a.mjs'), true);
+  // 오탐이었던 것(C1__158·C1__196·C1__254): 검색어 안의 scripts/, 원문 대본 경로, node 실행
+  assert.equal(shellReadsScripts(`grep -o 'node scripts/graph/pass2-c.mjs grep [^"]*' /x/transcript.jsonl && node scripts/graph/pass2-c.mjs show a 1 2`), false);
+  assert.equal(shellReadsScripts('grep -c "scripts/" /x/transcript.jsonl'), false);
+  assert.equal(shellReadsScripts('cat public/scripts/main/ch01.txt'), false);
+  assert.equal(shellReadsScripts('node scripts/graph/pass2-c.mjs validate C1__001'), false);
+  assert.equal(shellReadsScripts(''), false);
 });

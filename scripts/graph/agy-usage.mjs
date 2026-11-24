@@ -136,6 +136,65 @@ export const labelOf = (steps) => {
 /**
  * 한 세션 구간의 사용량과 파일 열람을 센다.
  */
+const SHELL_READERS = new Set(['cat', 'sed', 'head', 'tail', 'less', 'more', 'grep', 'rg', 'awk', 'nl', 'bat']);
+// 첫 번째 옵션 아닌 인자가 파일이 아니라 검색어·스크립트인 명령
+const PATTERN_FIRST = new Set(['sed', 'grep', 'rg', 'awk']);
+
+/** 셸 명령을 따옴표를 존중해 낱말로 나눈다. 따옴표는 벗긴다. 명령 구분자(&&, ||, |, ;, &)는 따로 낱말 null로 둔다. */
+const shellWords = (cmd) => {
+  const out = [];
+  let cur = '';
+  let has = false;
+  let quote = null;
+  for (let i = 0; i < cmd.length; i++) {
+    const ch = cmd[i];
+    if (quote) {
+      if (ch === quote) quote = null;
+      else cur += ch;
+    } else if (ch === "'" || ch === '"') {
+      quote = ch;
+      has = true;
+    } else if (/\s/.test(ch) || '|;&'.includes(ch)) {
+      if (has) out.push(cur);
+      cur = '';
+      has = false;
+      if ('|;&'.includes(ch)) out.push(null);
+    } else {
+      cur += ch;
+      has = true;
+    }
+  }
+  if (has) out.push(cur);
+  return out;
+};
+
+/**
+ * 셸로 도구 소스(저장소 scripts/ 아래 파일)를 읽었는가.
+ * cat·sed 등 읽기 명령의 파일 인자만 본다. grep·sed 등의 검색어·스크립트 인자, 원문 대본 경로(public/scripts/),
+ * node scripts/... 실행은 세지 않는다.
+ */
+export const shellReadsScripts = (commandLine) => {
+  const words = shellWords(String(commandLine ?? ''));
+  let seg = [];
+  const check = () => {
+    const [name, ...rest] = seg;
+    seg = [];
+    if (!name || !SHELL_READERS.has(name.split('/').pop())) return false;
+    let args = rest;
+    if (PATTERN_FIRST.has(name.split('/').pop()) && !rest.some((w) => /^-(?:e|f)$|^--(?:regexp|file|expression)=?/.test(w))) {
+      const i = rest.findIndex((w) => !w.startsWith('-'));
+      if (i >= 0) args = [...rest.slice(0, i), ...rest.slice(i + 1)];
+    }
+    return args.some((w) => !w.startsWith('-') && /(?:^|\/)scripts\//.test(w) && !/(?:^|\/)public\/scripts\//.test(w));
+  };
+  for (const w of words) {
+    if (w === null) {
+      if (check()) return true;
+    } else seg.push(w);
+  }
+  return check();
+};
+
 export const summarizeSteps = (steps) => {
   const responses = steps.filter((s) => s.type === 'PLANNER_RESPONSE');
   const totals = Object.fromEntries(TOKEN_FIELDS.map((f) => [f, 0]));
@@ -162,7 +221,7 @@ export const summarizeSteps = (steps) => {
       toolCalls += 1;
       const args = JSON.stringify(call.args ?? {});
       // 셸로 소스를 읽은 것(cat·sed·head 등으로 scripts/ 아래 파일). node scripts/... 실행은 제외
-      if (call.name === 'run_command' && /\b(?:cat|sed|head|tail|less|more|grep|rg|awk|nl|bat)\b[^|;&]*\bscripts\//.test(String(call.args?.CommandLine ?? ''))) {
+      if (call.name === 'run_command' && shellReadsScripts(call.args?.CommandLine)) {
         shellScriptReads += 1;
       }
       if (firstValidatorRunStep === null && call.name === 'run_command' && /validate-output\.mjs|repair-pass1\.mjs (check|apply)/.test(args)) {
@@ -242,7 +301,7 @@ export const formatUsageTable = (usage) => {
     lines.push('', `토큰 필드가 없는 응답이 있는 세션(0으로 세지 않고 빠짐): ${missing.map((r) => `${r.session.slice(0, 8)} ${r.missing_fields.join('/')}`).join(', ')}`);
   }
   lines.push('', 'thinking 토큰 수는 로그에 없다. output_tokens에 포함되는지는 확인 안 됨.');
-  lines.push('scripts/ 열람은 파일 열람 도구 기록과, cat·sed 등 셸 명령에 scripts/ 경로가 들어간 경우를 센다. 다른 방법으로 읽은 것은 잡지 못한다.');
+  lines.push('scripts/ 열람은 파일 열람 도구 기록과, cat·sed 등 읽기 명령의 파일 인자가 scripts/ 아래인 경우를 센다(grep·sed의 검색어, public/scripts/ 원문, node 실행은 빼고). 다른 방법으로 읽은 것은 잡지 못한다.');
   lines.push('진행 중 오류는 세션 안에서 이어져 복구된 것도 센다(출력 잘림·스트림 끊김은 실행 환경의 오류 메시지, 도구 실패는 실패한 도구 스텝).');
   lines.push(`긴 대기는 도구 스텝의 시작~완료 기록이 ${LONG_WAIT_MINUTES}분 이상인 것이다. 명령이 오래 걸렸는지 결과 전달이 늦었는지는 로그로 알 수 없다.`);
   return lines.join('\n');
