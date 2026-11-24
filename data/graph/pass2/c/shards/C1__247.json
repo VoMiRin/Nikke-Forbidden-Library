@@ -1,0 +1,766 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__247",
+  "candidate_links": [
+    {
+      "link_id": "C1__247__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "rouge_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "rouge_02__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 루주가 행운을 확인하겠다며 튕긴 것은 무엇이며 어떤 결과가 나와 말을 잇지 못했는가 / 답: 하루의 총 운을 결정하는 동전을 던졌고 최악의 날이 시작됨을 뜻하는 뒷면이 나왔다(rouge_02 L133-L139) / 근거: 같은 날 이어지는 장면에서 루주가 아침마다 동전을 던져 운을 확인하며 오늘 뒷면이 나와 최악의 날이 시작됐다고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rouge_00",
+          "line_start": 129,
+          "line_end": 129,
+          "quote": "루주: 그럼, 나의 행운을 확인해 볼까?"
+        },
+        {
+          "scene_id": "rouge_00",
+          "line_start": 133,
+          "line_end": 133,
+          "quote": "루주: 이건···."
+        },
+        {
+          "scene_id": "rouge_02",
+          "line_start": 133,
+          "line_end": 133,
+          "quote": "루주: 오늘 하루의 총 운을 결정하는, 이 동전이에요."
+        },
+        {
+          "scene_id": "rouge_02",
+          "line_start": 138,
+          "line_end": 138,
+          "quote": "루주: 하지만 뒷면이 나오면··· 최악의 날이 시작되는 거예요."
+        },
+        {
+          "scene_id": "rouge_02",
+          "line_start": 139,
+          "line_end": 139,
+          "quote": "루주: ···오늘처럼요···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "rouge_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "rouge_03__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 블랑과 누아르가 루주에게 해 주는 충전은 무엇이며 왜 받는 것인가 / 답: 동전의 뒷면이 나왔을 때 블랑과 누아르에게 행운을 받아야 하는 루주의 징크스다(rouge_03 L26-L29) / 근거: rouge_01에서 블랑과 누아르가 루주에게 충전을 해 주고, rouge_03에서 루주가 동전 뒷면이 나왔을 때 블랑과 누아르에게 행운을 받는 징크스가 있다고 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rouge_01",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "블랑: 충저어어언···!!!"
+        },
+        {
+          "scene_id": "rouge_01",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "루주: 덕분에 잘 버틸 수 있을 것 같아."
+        },
+        {
+          "scene_id": "rouge_03",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "루주: ···블랑과 누아르에게 행운을 좀 받고 와도 괜찮을까요···?"
+        },
+        {
+          "scene_id": "rouge_03",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "루주: 이것도 제 징크스 중 하나거든요."
+        },
+        {
+          "scene_id": "rouge_03",
+          "line_start": 29,
+          "line_end": 29,
+          "quote": "루주: 동전의 뒷면이 나왔을 때 꼭 블랑과 누아르에게 행운을 받아야 하는···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "rouge_01__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "rouge_02",
+          "line_start": 164,
+          "line_end": 173,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 루주는 왜 게임에서 패배하고도 플레이어님의 운이 그대로인 것 같아 다행이라고 말했는가 / 답: 동전 뒷면이 나온 날 자신의 불운이 게임 상대인 지휘관에게 넘어가지 않았기 때문이다(rouge_02 L164-L173) / 근거: 지휘관이 게임 마지막에 안심했던 이유를 묻자 루주가 플레이어님에게 자신의 불운이 넘어가지 않아서였다고 직접 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "rouge_01",
+          "line_start": 119,
+          "line_end": 119,
+          "quote": "루주: 하지만 다행이에요."
+        },
+        {
+          "scene_id": "rouge_01",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "루주: 플레이어님의 운은 그대로인 것 같으니까요."
+        },
+        {
+          "scene_id": "rouge_02",
+          "line_start": 164,
+          "line_end": 164,
+          "quote": "루주: 혹시 오늘 나의 불운이 다른 사람들에게 넘어가진 않을까."
+        },
+        {
+          "scene_id": "rouge_02",
+          "line_start": 173,
+          "line_end": 173,
+          "quote": "루주: 플레이어님에겐 다행히 제 불운이 넘어가지 않았으니까요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "quency_escapequeen_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "quency_escapequeen_03__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 최근 방주의 주택가 빈집에 배관을 타고 벽의 구멍으로 침입해 고가의 물품들을 훔쳐 간 하얀색과 검은색 인상착의의 범인은 누구인가 / 답: 드레이크다(quency_escapequeen_03 L14) / 근거: 퀀시가 뉴스에 나온 도둑이냐고 묻자 드레이크가 뉴스에 나온 도둑이 바로 자신이라고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "quency_escapequeen_00",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "아나운서: 범인은 밤시간대 빈집에 침입해. 단시간 내 고가의 물건을 여러 개 훔쳐가는 대범함을 보였는데요."
+        },
+        {
+          "scene_id": "quency_escapequeen_00",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "[하얀색과 검은색이 보였어요.]"
+        },
+        {
+          "scene_id": "quency_escapequeen_03",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "퀀시: 그래서 네가 도둑이냐고!"
+        },
+        {
+          "scene_id": "quency_escapequeen_03",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "드레이크: 그래, 뉴스에 나온 도둑. 바로 이 몸이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "phantom_03",
+          "line_start": 8,
+          "line_end": 11,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 팬텀이 도서관 사서 외에 숨기고 있는 자신의 진짜 모습은 무엇인가 / 답: 밤에 악한 자에게서 소중한 물건을 되찾는 괴도 팬텀이다(phantom_03 L8-L11) / 근거: 도서관 사서 팬텀이 밤에 옥상에서 스스로를 괴도 팬텀이라 칭하며 악한 자에게서 물건을 되찾기 위해 와이어를 타고 출발한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_00",
+          "line_start": 67,
+          "line_end": 67,
+          "quote": "팬텀: 나의 정체를 알고 있다는 것은···."
+        },
+        {
+          "scene_id": "phantom_00",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "팬텀: ···나의 [진짜 모습]을 알고 온 것이오?"
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "팬텀: 그럼, 괴도 팬텀."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "팬텀: 악한 자에게서 소중했던 물건을 되찾기 위해, 출발하겠소."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_00__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "phantom_03__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 도서관 사서인 팬텀은 왜 예고장으로 사용할 예쁜 무늬의 종이를 직접 만들었는가 / 답: 괴도 팬텀으로 활동하며 물건을 되찾아 갈 때 현장에 예고장을 남기기 위해서다(phantom_03 L62-L64) / 근거: 팬텀이 목걸이를 되찾아 간 방 책상 위에 첫날 보여 준 것과 같은 익숙한 무늬의 괴도 팬텀 예고장을 써서 남긴다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_00",
+          "line_start": 124,
+          "line_end": 124,
+          "quote": "팬텀은 아주 예쁜 무늬를 가진 작은 종이를 꺼내 주었다."
+        },
+        {
+          "scene_id": "phantom_00",
+          "line_start": 130,
+          "line_end": 130,
+          "quote": "팬텀: 내가 예고장으로 사용하기 위해 직접 만들었소."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "책상 위에 놓여있는 익숙한 무늬의 예고장을 읽어보았다."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 63,
+          "line_end": 63,
+          "quote": "두 게의 목거리 중 한 게는 다시 돌려주개쏘."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "과도 팬텀."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_01__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "phantom_03__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 팬텀은 왜 노인의 유품인 금색 목걸이를 훔쳐 간 청년의 기사와 주소를 스크랩하고 예고장을 보내려 했는가 / 답: 괴도 팬텀으로서 청년의 집에 들어가 도둑맞은 목걸이를 되찾기 위해서다(phantom_03 L28-L31) / 근거: 팬텀이 괴도 팬텀으로서 낡은 집에서 화려한 목걸이를 찾아내고 선량한 자에게서 빼앗은 것을 용서할 수 없다며 회수한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_01",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "[80대 노인의 유품 훔쳐 간 20대 청년, 잠적.]"
+        },
+        {
+          "scene_id": "phantom_01",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "[금색 목걸이.], [방주 ㅇㅇ공원 근처.]"
+        },
+        {
+          "scene_id": "phantom_01",
+          "line_start": 74,
+          "line_end": 74,
+          "quote": "[주소 화긴해씀, 예고짱 써서 보네기]"
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "팬텀: 낡은 집과는 어울리지 않는, 화려한 목걸이."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "팬텀: 선량한 자들에게서 이런 것들이나 뺏다니···."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "팬텀: 이 괴도 팬텀은 절대 용서할 수 없소!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_02__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "phantom_03",
+          "line_start": 8,
+          "line_end": 11,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 팬텀이 떨어트린 종이에 적힌 괴도 팬텀은 누구이며 정말 오늘 밤 악한 자에게서 물건을 되찾으러 가는 것인가 / 답: 팬텀 본인이 괴도 팬텀이며 실제로 그날 밤 악한 자에게서 소중했던 물건을 되찾으러 출발한다(phantom_03 L8-L11) / 근거: 팬텀이 종이 문구를 괴도 소설 명대사라며 부인했으나 밤에 옥상에서 종이 문구 그대로 괴도 팬텀으로서 물건을 되찾으러 출발한다고 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_02",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "오늘 밤, 악한 자에게서 소중했던 물건을 되찾아 가겠소."
+        },
+        {
+          "scene_id": "phantom_02",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "괴도 팬텀."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "팬텀: 그럼, 괴도 팬텀."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "팬텀: 악한 자에게서 소중했던 물건을 되찾기 위해, 출발하겠소."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "zwei_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "rei_02__clh_001"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "같은 교과서 [방주의 역사] 274페이지와 미실리스 설정을 공유하지만, zwei_00은 츠바이의 모범생 성격을 보여 주는 대화이고 rei_02도 사진 설명만 할 뿐 3번째 줄 마지막 단어를 밝히지 않아 단서와 공개 관계가 아니다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "zwei_00",
+          "line_start": 93,
+          "line_end": 93,
+          "quote": "아인: 그럼 [방주의 역사] 274페이지 3번째 줄, 마지막 단어 뭔지 아시나요?"
+        },
+        {
+          "scene_id": "zwei_00",
+          "line_start": 95,
+          "line_end": 95,
+          "quote": "츠바이: 미실리스일걸?"
+        },
+        {
+          "scene_id": "rei_02",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "교과서 [방주의 역사], 274페이지."
+        },
+        {
+          "scene_id": "rei_02",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "슈엔이 갓 미실리스의 CEO가 되었을 당시의 사진이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_04__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "phantom_01",
+          "line_start": 110,
+          "line_end": 110,
+          "scan_id": "S0062"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "첫날 빌렸던 소설 [괴도, 건물을 뛰어넘다]를 뒤 장면에서 다시 언급할 뿐 어느 쪽에도 감춰진 의문이나 정체 공개가 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_04",
+          "line_start": 192,
+          "line_end": 192,
+          "quote": "팬텀: 내가 처음부터 너무 마스터피스를 주었나 보오."
+        },
+        {
+          "scene_id": "phantom_01",
+          "line_start": 110,
+          "line_end": 110,
+          "quote": "[괴도, 건물을 뛰어넘다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__247__011",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "phantom_03__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "phantom_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 청년의 집에서 찾은 화려한 목걸이 두 개 가운데 예고장대로 되찾아야 할 물건은 어느 것이었고, 둘 다 들고 간 뒤 다른 하나는 어떻게 되었는가 / 답: 되찾을 물건은 80대 노인의 유품이었고 유품은 주인에게 돌아갔으며, 청년 본인의 목걸이는 경찰 확인 결과 멀쩡히 그대로 있었다(phantom_04 L84-L86) / 근거: 팬텀은 어느 것을 훔쳐야 하는지 모른 채 둘 다 가져갔다가 확인받고 하나는 돌려주겠다고 했고, 팬텀의 태블릿에 스크랩된 뒤 기사가 유품의 귀환과 청년의 목걸이가 남아 있음을 구별해 알린다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_02",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "오늘 밤, 악한 자에게서 소중했던 물건을 되찾아 가겠소."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "팬텀: ···목걸이가 두 개인데, 둘 중 어느 걸 훔쳐야 하는 것이오?"
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 43,
+          "line_end": 44,
+          "quote": "팬텀: 둘 다 들고 간 다음!\n팬텀: 확인받고 나서, 남은 하나는 돌려주러 오겠소!"
+        },
+        {
+          "scene_id": "phantom_04",
+          "line_start": 84,
+          "line_end": 86,
+          "quote": "[80대 노인 유품, 다시 품으로 돌아왔다.]\n[유품 훔쳤던 20대 청년, 본인 목걸이도 도둑맞았다 주장.]\n[경찰이 확인해 보니, 멀쩡하게 있는 것이 확인되어···.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "zwei_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "zwei_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "zwei_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "zwei_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rouge_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rouge_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rouge_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rouge_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "quency_escapequeen_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "quency_escapequeen_00__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "quency_escapequeen_00__clh_004",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "quency_escapequeen_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "quency_escapequeen_01__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "quency_escapequeen_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "quency_escapequeen_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_01__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_03__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_03__clh_004",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "phantom_04__clh_003",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": [
+    {
+      "suggestion_id": "C1__247__M01",
+      "unit_ids": [
+        "phantom_00__clh_001",
+        "phantom_02__clh_003",
+        "phantom_03__clh_002"
+      ],
+      "link_ids": [
+        "C1__247__005",
+        "C1__247__008"
+      ],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char_팬텀",
+          "name": "팬텀"
+        },
+        {
+          "kind": "surface",
+          "id": null,
+          "name": "괴도 팬텀"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "도서관 사서 팬텀이 밤에 악한 자에게서 물건을 되찾으러 활동할 때 스스로를 '괴도 팬텀'이라 부르며 예고장에 서명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_03",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "팬텀: 그럼, 괴도 팬텀."
+        },
+        {
+          "scene_id": "phantom_03",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "팬텀: 이 괴도 팬텀은 절대 용서할 수 없소!"
+        }
+      ]
+    },
+    {
+      "suggestion_id": "C1__247__M02",
+      "unit_ids": [
+        "phantom_01__clh_003"
+      ],
+      "link_ids": [],
+      "targets": [
+        {
+          "kind": "term",
+          "id": "A2__032#E6",
+          "name": "니캐애 간한 문서"
+        },
+        {
+          "kind": "surface",
+          "id": null,
+          "name": "니케에 관한 문서"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "팬텀이 맞춤법 검사를 하지 못한 채 옮겨 적은 [니캐애 간한 문서]를 직접 읽으며 원래 제목이 '니케에 관한 문서'임을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_01",
+          "line_start": 148,
+          "line_end": 148,
+          "quote": "[니캐애 간한 문서]"
+        },
+        {
+          "scene_id": "phantom_01",
+          "line_start": 196,
+          "line_end": 196,
+          "quote": "팬텀: 니케에 관한 문서."
+        }
+      ]
+    }
+  ]
+}

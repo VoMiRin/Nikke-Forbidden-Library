@@ -1,0 +1,296 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__244",
+  "candidate_links": [
+    {
+      "link_id": "C1__244__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "hongryeon_blackshadow_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "new_year_new_sword_14__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 갓데스 스쿼드가 무슨 코어로 홍련의 어떤 검을 만들어 주었는가 / 답: 홍련이 쓰던 언니 장화의 부서진 검 화무십일홍의 칼날을 장화의 코어 조각으로 보완해 단단한 검으로 수리해 주었다(new_year_new_sword_14 L41, L48-L51) / 근거: 두 장면 모두 홍련이 전우들을 잃은 뒤 새로 만난 동료들이 코어로 자신의 검을 만들어(수리해) 주었다고 직접 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hongryeon_blackshadow_00",
+          "line_start": 31,
+          "line_end": 31,
+          "quote": "홍련: ···코어로 검을 만들어준 것도 고맙네."
+        },
+        {
+          "scene_id": "new_year_new_sword_14",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "화무십일홍은 내가 잘 사용하고 있네."
+        },
+        {
+          "scene_id": "new_year_new_sword_14",
+          "line_start": 49,
+          "line_end": 49,
+          "quote": "그 후 만난 동료들 중, 좋은 무기 장인이 있어서."
+        },
+        {
+          "scene_id": "new_year_new_sword_14",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "언니의 코어 조각으로 부서진 칼날을 보완해,"
+        },
+        {
+          "scene_id": "new_year_new_sword_14",
+          "line_start": 51,
+          "line_end": 51,
+          "quote": "좀 더 단단한 검으로 수리해 주었다네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "사전 지식으로 홍련의 검 수리 경위가 event_stories__new_year_new_sword에 나오는 것을 떠올려 grep(화무십일홍)과 show로 new_year_new_sword_14 L40-L51을 확인함."
+      ]
+    },
+    {
+      "link_id": "C1__244__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "hongryeon_blackshadow_04__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "new_year_new_sword_13",
+          "line_start": 61,
+          "line_end": 73,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 홍련 혼자 살아남고 모두 죽었다는 과거의 전우들은 누구이며 왜 죽었는가 / 답: 홍련이 과거 속했던 스쿼드의 언니(장화)와 검을 쓰던 동료들로, 깊어진 감정의 골로 서로에게 검을 겨누는 내전 끝에 모두 죽고 홍련 혼자 남겨졌다(new_year_new_sword_13 L61-L73) / 근거: 두 장면 모두 홍련이 갓데스 스쿼드 합류 전 과거 동료들이 모두 죽고 자신만 살아남아 검을 쥐고 있다고 직접 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "hongryeon_blackshadow_04",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "나 혼자 살아남아, 검을 휘두르고 있다네."
+        },
+        {
+          "scene_id": "hongryeon_blackshadow_04",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "자네들이 함께 있었다면 얼마나 좋았을까."
+        },
+        {
+          "scene_id": "new_year_new_sword_13",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "홍련: ···모두 죽었네."
+        },
+        {
+          "scene_id": "new_year_new_sword_13",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "홍련: 랩쳐를 향해야 할 검이 서로를 향해 겨눠지고,"
+        },
+        {
+          "scene_id": "new_year_new_sword_13",
+          "line_start": 63,
+          "line_end": 63,
+          "quote": "홍련: 깊어진 감정의 골이 서로를 베게 했으니까."
+        },
+        {
+          "scene_id": "new_year_new_sword_13",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "홍련: 언니와 동료들의 남은 잔해들을 이 손으로 묻어주었지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep(전우)으로 찾은 event_stories__new_year_new_sword(new_year_new_sword_06 L105)의 뒤 장면을 show로 읽어 new_year_new_sword_13 L61-L73을 확인함."
+      ]
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "mica_snowbuddy_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "mica_snowbuddy_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "mica_snowbuddy_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_01__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "hongryeon_blackshadow_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "leona_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "leona_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "leona_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "moran_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "moran_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "moran_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "privaty_unkindmaid_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "privaty_unkindmaid_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ade_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ade_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "ade_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "elegg_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "d_killerwife_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "d_killerwife_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "d_killerwife_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "d_killerwife_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "d_killerwife_04__clh_001",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": [
+    {
+      "suggestion_id": "C1__244__M01",
+      "unit_ids": [
+        "d_killerwife_00__clh_001"
+      ],
+      "link_ids": [],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char_카밀라",
+          "name": "카밀라"
+        },
+        {
+          "kind": "surface",
+          "id": null,
+          "name": "레이디"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "d_killerwife_00에서 D가 언급한 '타깃 [레이디]'는 kill_the_lord_01에서 D와 K가 설명한 타겟 카밀라 해링턴(char_카밀라)의 통칭([레이디])으로, 본명과 코드명(통칭)이 같은 인물을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "d_killerwife_00",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "D: 타깃 [레이디]를 쫓는 임무에서 입고 있었던 건 기억하지 못하는 모양이군."
+        },
+        {
+          "scene_id": "kill_the_lord_01",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "D: 이번 타겟은 로열 아가씨야."
+        },
+        {
+          "scene_id": "kill_the_lord_01",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "K: 이름은 카밀라 해링턴, 나이는 24세."
+        },
+        {
+          "scene_id": "kill_the_lord_01",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "D: 타켓. 통칭 [레이디]는 일주일에 한 번씩 사교 모임을 주최하고 있어."
+        }
+      ]
+    }
+  ]
+}

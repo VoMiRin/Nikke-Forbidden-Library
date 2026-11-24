@@ -1,0 +1,768 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__257",
+  "candidate_links": [
+    {
+      "link_id": "C1__257__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "laplace_ultimatehero_03__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "laplace_ultimatehero_04",
+          "line_start": 8,
+          "line_end": 9,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 오늘 수업이 끝났는데도 아직 모든 게 끝났다고 할 수는 없다고 한 남은 일은 무엇인가 / 답: 후배들이 수업 때 배운 것을 잘 실천하고 있는지 확인하러 가는 일(laplace_ultimatehero_04 L8) / 근거: 03 말미에 오늘 수업 이후 남은 일을 암시한 직후, 며칠 뒤 이어지는 04 첫머리에서 라플라스가 후배들의 실천 여부를 확인하러 왔다고 목적을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "laplace_ultimatehero_03",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "라플라스: 내가 준비한 오늘 수업은 끝이다."
+        },
+        {
+          "scene_id": "laplace_ultimatehero_03",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "라플라스: 하지만 이걸로 모든 게 끝났다고 할 수는 없지."
+        },
+        {
+          "scene_id": "laplace_ultimatehero_04",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "라플라스: 우린 후배들이 배운 것을 잘 실천하고 있는지 확인하러 온 거다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__257__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "maxwell_mechanic_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_17__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관의 프로필에서 소속·계급·임관일 이외의 인적 사항이 전부 공란으로 감춰진 임관 전 출신·이력은 무엇인가 / 답: 프로젝트 A.D.를 통해 연구소에서 육성·재생산되어 필요할 때 지휘관 신분으로 꺼내 쓰이는 엔더슨의 복제 클론 7호다(maria-n_17 L161-L198) / 근거: 지휘관이 7호라는 다른 이야기의 설정을 거치면, 소속·계급·임관일 외의 일반 인적 사항이 비어 있는 비밀스러운 과거 정체가 설명된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maxwell_mechanic_00",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "소속, 계급, 임관일."
+        },
+        {
+          "scene_id": "maxwell_mechanic_00",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "그 이외의 정보는 전부 공란."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 184,
+          "line_end": 184,
+          "quote": "에닉: 일곱의 클론이 완성되었습니다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 195,
+          "line_end": 195,
+          "quote": "에닉: 지휘관이라는 신분은, 여러모로 사용하기 편리하기 때문입니다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 198,
+          "line_end": 198,
+          "quote": "에닉: 육체의 전성기 때까지 성장시킨 기록이 연구소에 있으므로, 원할 때 얼마든지 해당 나이대로 재생산 할 수 있습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "지휘관의 출신·임관 전 이력이 프로젝트 A.D. 관련 이야기에서 다뤄진 것을 떠올려 grep(재생, PROJECT. A.D.)과 show로 확인한 maria-n_17 L152-L207"
+      ]
+    },
+    {
+      "link_id": "C1__257__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "maxwell_mechanic_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "wisdom_spring_14__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관의 프로필에서 소속·계급·임관일 이외의 인적 사항은 왜 감춰져 공란으로 비어 있는가 / 답: 지휘관이 탄생한 프로젝트를 세상에 알리지 않기 위해 부사령관들과 3대 CEO들에게도 비밀로 한 채 극비리에 진행했기 때문이다(wisdom_spring_14 L88-L91) / 근거: 지휘관이 해당 프로젝트의 7호라는 설정을 결합하면, 미실리스 연구원인 맥스웰이 열람한 프로필에 임관 전 이력이 일절 공개되지 않은 까닭이 설명된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maxwell_mechanic_00",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "소속, 계급, 임관일."
+        },
+        {
+          "scene_id": "maxwell_mechanic_00",
+          "line_start": 53,
+          "line_end": 53,
+          "quote": "그 이외의 정보는 전부 공란."
+        },
+        {
+          "scene_id": "wisdom_spring_14",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "마나: [그들]은 아직 그 [프로젝트]가 있었다는 걸  세상에 알리고 싶지 않다는걸."
+        },
+        {
+          "scene_id": "wisdom_spring_14",
+          "line_start": 90,
+          "line_end": 90,
+          "quote": "마나: 그래서 부사령관들과 3대 CEO들에게도 비밀로 한 채,"
+        },
+        {
+          "scene_id": "wisdom_spring_14",
+          "line_start": 91,
+          "line_end": 91,
+          "quote": "마나: 오로지 [그들]과 총사령관의 승인만으로 M.M.R. 심층부에서 비밀리에 진행되었던 것 아니야?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep(회복력, PROJECT. A.D.)으로 wisdom_spring 이벤트를 찾고 show로 확인한 wisdom_spring_14 L88-L92"
+      ]
+    },
+    {
+      "link_id": "C1__257__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "maxwell_mechanic_00__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "maxwell_mechanic_01",
+          "line_start": 4,
+          "line_end": 5,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "질문: 맥스웰이 방을 나서기 직전 어딘가로 전송한 메시지의 수신처와 내용은 무엇인가 / 답: 정할 수 없음. 직후 소챕터가 지휘관의 맥스웰 숙소 첫 방문으로 시작되지만(maxwell_mechanic_01 L4-L5), 메시지 자체를 언급하는 문장이 없어 지휘관을 숙소로 부른 연락인지 원문만으로 확정할 수 없다 / 근거: 전날 밤 지휘관을 실험과 데이터를 떼고 더 알고 싶다며 메시지를 보낸 직후 장면에서 지휘관이 맥스웰의 숙소를 처음 방문한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "maxwell_mechanic_00",
+          "line_start": 89,
+          "line_end": 89,
+          "quote": "어딘가로 맥스웰의 메시지가 전송되었다."
+        },
+        {
+          "scene_id": "maxwell_mechanic_01",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "맥스웰: 이건 내 숙소 첫 방문 기념으로 주는 웰컴 드링크."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__257__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "drake_greatvillain_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "drake_greatvillain_03",
+          "line_start": 116,
+          "line_end": 123,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 시안 컨펌 없이 극장 관계자에게 일임되어 제작된 홍보용 플래카드에는 행사가 무엇으로 적혀 있었나 / 답: 드레이크의 자선 모금 행사(drake_greatvillain_03 L116-L123) / 근거: 01에서 극장 관계자가 제작을 맡고 드레이크가 시안 컨펌을 일임한 플래카드가 03에서 극장 앞에 걸려 자선 모금 행사라는 문구가 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "drake_greatvillain_01",
+          "line_start": 112,
+          "line_end": 112,
+          "quote": "극장 관계자: 결제도 끝났으니, 아마 바로 필요한 무대 장식이나 홍보용 플래카드 제작에 들어갈 겁니다."
+        },
+        {
+          "scene_id": "drake_greatvillain_01",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "드레이크: 전부 네놈에게 일임하도록 하지!"
+        },
+        {
+          "scene_id": "drake_greatvillain_03",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "시선을 피하니, 극장 앞에 걸려있는 플래카드가 눈에 들어왔다."
+        },
+        {
+          "scene_id": "drake_greatvillain_03",
+          "line_start": 123,
+          "line_end": 123,
+          "quote": "드레이크: 왜, 왜 내 데뷔 무대가 자선 모금 행사로···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__257__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "guilty_mightybunny_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_17__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관의 회복 속도가 보통 인간과 달리 비정상적으로 빠른 이유는 무엇인가 / 답: 프로젝트 A.D.에서 언체인드의 세포 붕괴 부작용을 상쇄하고자 자연 치유 능력을 극대화하는 방향으로 만들어진 엔더슨의 복제 클론(7호)이기 때문이다(maria-n_17 L169-L170, L184-L185) / 근거: 지휘관이 7호라는 다른 장면들의 설정을 거치면 선천적인 비정상적 회복 능력의 기반이 설명된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "guilty_mightybunny_01",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "아니스: 그리고··· 지휘관님의 회복 속도가 아무리 보통이 아니라곤 해도··· 이런 상황을 계속 그냥 방치할 순 없다고."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 170,
+          "line_end": 170,
+          "quote": "에닉: 프로젝트는 자연스럽게 자연 치유 능력을 극대화하는 방향으로 선회했습니다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 184,
+          "line_end": 184,
+          "quote": "에닉: 일곱의 클론이 완성되었습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "지휘관의 빠른 회복 속도와 치유 능력 설정을 확인하기 위해 grep(재생)으로 찾은 maria-n_17 L152-L207"
+      ]
+    },
+    {
+      "link_id": "C1__257__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "guilty_mightybunny_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_40_01__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관의 회복 속도가 보통 인간과 달리 비정상적으로 빠른 이유는 무엇인가 / 답: 지휘관에게 내재된 재생 능력이 퀸 인자와 짝을 이뤄 활성화되었기 때문이다(main_40_01 L34-L35) / 근거: 다른 이야기에서 같은 인물인 지휘관의 비정상적인 상처 회복 현상을 재생 능력으로 지칭하며 그 발동 원인을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "guilty_mightybunny_01",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "아니스: 그리고··· 지휘관님의 회복 속도가 아무리 보통이 아니라곤 해도··· 이런 상황을 계속 그냥 방치할 순 없다고."
+        },
+        {
+          "scene_id": "main_40_01",
+          "line_start": 34,
+          "line_end": 34,
+          "quote": "나유타: 대협의 그 재생 능력은"
+        },
+        {
+          "scene_id": "main_40_01",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "나유타: 퀸 인자와 짝을 이뤄 활성화되는 능력이외다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "지휘관의 회복 속도 원인을 확인하기 위해 grep(재생)으로 찾은 main_40_01 L26-L35"
+      ]
+    },
+    {
+      "link_id": "C1__257__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "guilty_mightybunny_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "chapter_50_14__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관의 회복 속도가 보통 인간과 달리 비정상적으로 빠른 이유는 무엇인가 / 답: 퀸이 외로움을 채워준 대상을 반려로 지정해 부여한 반려 인자(공멸 인자)로 인해 불사에 가까운 재생 능력을 얻었기 때문이다(chapter_50_14 L221-L226) / 근거: 다른 이야기에서 지휘관의 빠른 상처 회복이 퀸의 반려 인자에 따른 재생 능력임을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "guilty_mightybunny_01",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "아니스: 그리고··· 지휘관님의 회복 속도가 아무리 보통이 아니라곤 해도··· 이런 상황을 계속 그냥 방치할 순 없다고."
+        },
+        {
+          "scene_id": "chapter_50_14",
+          "line_start": 221,
+          "line_end": 221,
+          "quote": "나유타: 그 외로움을 채워준 대상을 반려로 지정하고."
+        },
+        {
+          "scene_id": "chapter_50_14",
+          "line_start": 222,
+          "line_end": 222,
+          "quote": "나유타: 그 반려는 불사에 가까운 재생 능력과, 막대한 신체 능력을 손에 넣게 되오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "지휘관의 재생 능력 정체를 확인하기 위해 grep(재생)으로 찾은 chapter_50_14 L219-L226"
+      ]
+    },
+    {
+      "link_id": "C1__257__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "sin_swiftbunny_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "sin_swiftbunny_04",
+          "line_start": 72,
+          "line_end": 74,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 신이 메뉴에 없던 조각 케이크를 다음 시즌 시험작이라며 내놓은 진짜 이유와 정체는 무엇인가 / 답: 신메뉴 시험작이 아니라 지휘관이 신경 써주는 것이 고마워 따로 준비한 케이크였다(sin_swiftbunny_04 L72-L74) / 근거: 신이 저번에 준 케이크를 직접 지칭하며 신메뉴가 아니었다고 사실을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sin_swiftbunny_00",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "신: ···뭐, 다음 시즌에 낼 예정인 시험작이야."
+        },
+        {
+          "scene_id": "sin_swiftbunny_04",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "신: ···우선, 저번에 준 케이크 있잖아."
+        },
+        {
+          "scene_id": "sin_swiftbunny_04",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "신: 그거 신메뉴 아니었어."
+        },
+        {
+          "scene_id": "sin_swiftbunny_04",
+          "line_start": 74,
+          "line_end": 74,
+          "quote": "신: 교관이 신경 써주는 게 고마워서 따로 준비한 거거든."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__257__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "sin_swiftbunny_00__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "sin_swiftbunny_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 어두워질 무렵 뒷골목으로 향한 익숙한 뒷모습은 누구이며 합류한 인상이 좋지 않은 남자는 누구인가 / 답: 뒷모습은 신이며, 남자는 신이 예전에 갱생관에서 엮였던 사람으로 우연히 다시 만나 그의 일에 말려들게 된 상대다(sin_swiftbunny_01 L145-L146, L160) / 근거: 신이 지휘관이 봤던 사람이 예전에 갱생관에서 엮였던 그 사람일 것이라고 직접 받아 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sin_swiftbunny_00",
+          "line_start": 124,
+          "line_end": 124,
+          "quote": "익숙한 뒷모습이 근처 뒷골목으로 향한다."
+        },
+        {
+          "scene_id": "sin_swiftbunny_00",
+          "line_start": 125,
+          "line_end": 125,
+          "quote": "그리고 골목 어귀에서, 한눈에 봐도 인상이 좋지 않은 남자와 합류해 사라진다."
+        },
+        {
+          "scene_id": "sin_swiftbunny_01",
+          "line_start": 145,
+          "line_end": 145,
+          "quote": "신: 그러다 우연히, 예전에 갱생관에서 엮였던 사람이랑 만났어."
+        },
+        {
+          "scene_id": "sin_swiftbunny_01",
+          "line_start": 146,
+          "line_end": 146,
+          "quote": "신: 아마 교관이 봤던 게 그 사람이겠지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__257__011",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "belorta_pumpkinwitch_01__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "belorta_pumpkinwitch_04__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 사역마 계약서 제10조에 '■■'로 가려져 있는 마녀의 보수는 무엇인가 / 답: 벨로타의 입맞춤(belorta_pumpkinwitch_04 L78-L81) / 근거: 벨로타가 계약서 제10조 문구를 그대로 다시 읊은 뒤 가려진 보수라며 입을 맞춘다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "belorta_pumpkinwitch_01",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "벨로타: 제10조. 사역마가 자신의 역할을 충실히 이행한 경우, 마녀는 보수로 ■■를 지급한다."
+        },
+        {
+          "scene_id": "belorta_pumpkinwitch_04",
+          "line_start": 78,
+          "line_end": 78,
+          "quote": "벨로타: 여기 가려진 보수가 뭐였냐 하면~"
+        },
+        {
+          "scene_id": "belorta_pumpkinwitch_04",
+          "line_start": 81,
+          "line_end": 81,
+          "quote": "쪽, 쪽-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__257__012",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "belorta_pumpkinwitch_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "belorta_pumpkinwitch_03",
+          "line_start": 23,
+          "line_end": 24,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 마법약 재료 목록 끝에서 '사역마의···.'로 생략된 재료는 무엇인가 / 답: 사역마의 비명(belorta_pumpkinwitch_03 L24) / 근거: 02에서 한숨과 눈물까지 언급한 뒤 03에서 남은 재료가 사역마의 심장 소리와 사역마의 비명이라고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "belorta_pumpkinwitch_02",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "사역마의 한숨, 사역마의 눈물, 사역마의 심장 소리, 사역마의···."
+        },
+        {
+          "scene_id": "belorta_pumpkinwitch_03",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "벨로타: 남은 건··· 사역마의 심장 소리랑 사역마의 비명이네♡"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__257__013",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "belorta_pumpkinwitch_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "belorta_pumpkinwitch_04",
+          "line_start": 13,
+          "line_end": 25,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 벨로타가 비밀에 부친 채 재료 목록만 보여준 마법약은 무슨 약인가 / 답: 마신 사람이 하루 종일 상대방 생각만 하게 되는 '사랑의 마법약'(belorta_pumpkinwitch_04 L18-L25) / 근거: 02의 재료 목록에 적힌 재료들을 그대로 솥에 넣어 마법약을 완성하며 이름과 효능을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "belorta_pumpkinwitch_02",
+          "line_start": 15,
+          "line_end": 15,
+          "quote": "그곳엔 마법약에 필요한 재료 목록이 있었다."
+        },
+        {
+          "scene_id": "belorta_pumpkinwitch_02",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "사탕 한 줌, 진한 초콜릿, 잘 익은 호박."
+        },
+        {
+          "scene_id": "belorta_pumpkinwitch_04",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "사탕, 초콜릿, 호박, 눈물, 한숨, 심장 소리, 비명···."
+        },
+        {
+          "scene_id": "belorta_pumpkinwitch_04",
+          "line_start": 19,
+          "line_end": 19,
+          "quote": "벨로타: 무려 [사랑의 마법약] 이라구~"
+        },
+        {
+          "scene_id": "belorta_pumpkinwitch_04",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "벨로타: 마신 사람이 하루 종일 상대방 생각만 하게 되는 약, 이래!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "laplace_ultimatehero_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "laplace_ultimatehero_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "laplace_ultimatehero_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "laplace_ultimatehero_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "laplace_ultimatehero_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "laplace_ultimatehero_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maxwell_mechanic_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maxwell_mechanic_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maxwell_mechanic_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "maxwell_mechanic_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "drake_greatvillain_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "drake_greatvillain_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "drake_greatvillain_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "guilty_mightybunny_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "sin_swiftbunny_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "sin_swiftbunny_00__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "sin_swiftbunny_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "sin_swiftbunny_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "sin_swiftbunny_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "sin_swiftbunny_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "belorta_pumpkinwitch_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "belorta_pumpkinwitch_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "belorta_pumpkinwitch_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "belorta_pumpkinwitch_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "belorta_pumpkinwitch_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "belorta_pumpkinwitch_04__clh_002",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}
