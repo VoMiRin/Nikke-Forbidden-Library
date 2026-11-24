@@ -427,6 +427,9 @@ export const blablaScripts: ScriptData[] = [
     { id: 'blabla_snowwhite_002', categoryKey: 'blabla', section: '개인', title: '스노우 화이트', subTitle: '002', mainChapterFile: 'personal/snowwhite.txt' },
     { id: 'blabla_snowwhite_003', categoryKey: 'blabla', section: '개인', title: '스노우 화이트', subTitle: '003', mainChapterFile: 'personal/snowwhite.txt' },
 
+    // 스카이
+    { id: 'blabla_sky_001', categoryKey: 'blabla', section: '개인', title: '스카이', subTitle: '001', mainChapterFile: 'personal/sky.txt' },
+
     // 시그널
     { id: 'blabla_signal_001', categoryKey: 'blabla', section: '개인', title: '시그널', subTitle: '001', mainChapterFile: 'personal/signal.txt' },
     { id: 'blabla_signal_002', categoryKey: 'blabla', section: '개인', title: '시그널', subTitle: '002', mainChapterFile: 'personal/signal.txt' },

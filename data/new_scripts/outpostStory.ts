@@ -96,6 +96,7 @@ export const outpostStoryScripts: ScriptData[] = [
     { id: 'toy_shop_09', categoryKey: 'outpost_stories', title: '장난감 상점', subTitle: '상부상조', mainChapterFile: '장난감_상점.txt' },
     { id: 'toy_shop_10', categoryKey: 'outpost_stories', title: '장난감 상점', subTitle: '사이좋은 친구', mainChapterFile: '장난감_상점.txt' },
     { id: 'toy_shop_11', categoryKey: 'outpost_stories', title: '장난감 상점', subTitle: '귀여움의 기준', mainChapterFile: '장난감_상점.txt' },
+    { id: 'toy_shop_12', categoryKey: 'outpost_stories', title: '장난감 상점', subTitle: '까다롭지만 단순한', mainChapterFile: '장난감_상점.txt' },
 
     // 기차역
     { id: 'train_station_00', categoryKey: 'outpost_stories', title: '기차역', subTitle: '전초기지 역의 목적?', mainChapterFile: '기차역.txt' },

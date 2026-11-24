@@ -1775,4 +1775,21 @@ export const eventStoryScripts: ScriptData[] = [
     { id: 'maria-n_25', categoryKey: 'event_stories', title: 'MARIA-n', subTitle: '안녕 : A', mainChapterFile: 'maria-n.txt' },
     { id: 'maria-n_26', categoryKey: 'event_stories', title: 'MARIA-n', subTitle: '안녕 : B', mainChapterFile: 'maria-n.txt' },
     { id: 'maria-n_27', categoryKey: 'event_stories', title: 'MARIA-n', subTitle: '검은 달 안에서', mainChapterFile: 'maria-n.txt' },
+
+    // SKY ON THE ROCK
+    { id: 'skyontherock_00', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '액자 속 추억', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_01', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '어느 소녀의 습격 : A', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_02', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '어느 소녀의 습격 : B', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_03', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '가슴이 하는 말 : A', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_04', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '가슴이 하는 말 : B', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_05', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: 'BURNBACK : A', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_06', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: 'BURNBACK : B', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_07', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '하루만 빌릴 수 있다면', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_08', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '벗겨지는 마음의 녹 : A', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_09', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '벗겨지는 마음의 녹 : B', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_10', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '행동은 가슴이 시킨다 : A', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_11', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '행동은 가슴이 시킨다 : B', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_12', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '하늘과 산들바람의 여행 : A', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_13', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '하늘과 산들바람의 여행 : B', mainChapterFile: 'sky_on_the_rock.txt' },
+    { id: 'skyontherock_14', categoryKey: 'event_stories', title: 'SKY ON THE ROCK', subTitle: '변함없는 우리', mainChapterFile: 'sky_on_the_rock.txt' },
 ];

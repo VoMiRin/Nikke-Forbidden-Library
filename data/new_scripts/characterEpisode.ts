@@ -1184,4 +1184,11 @@ export const characterEpisodeScripts: ScriptData[] = [
     { id: 'hongryeon_goddeath_02', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '망운지정', mainChapterFile: '홍련_신살.txt' },
     { id: 'hongryeon_goddeath_03', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '회자정리', mainChapterFile: '홍련_신살.txt' },
     { id: 'hongryeon_goddeath_04', categoryKey: 'character_episodes', title: '홍련 : 신살', subTitle: '낙화춘불진', mainChapterFile: '홍련_신살.txt' },
+
+    // 스카이
+    { id: 'sky_00', categoryKey: 'character_episodes', title: '스카이', subTitle: '가슴에 남은 미소', mainChapterFile: '스카이.txt' },
+    { id: 'sky_01', categoryKey: 'character_episodes', title: '스카이', subTitle: '강아지의 마음', mainChapterFile: '스카이.txt' },
+    { id: 'sky_02', categoryKey: 'character_episodes', title: '스카이', subTitle: '어울리지 않는 호칭', mainChapterFile: '스카이.txt' },
+    { id: 'sky_03', categoryKey: 'character_episodes', title: '스카이', subTitle: '마음의 이름', mainChapterFile: '스카이.txt' },
+    { id: 'sky_04', categoryKey: 'character_episodes', title: '스카이', subTitle: '언젠가의 대답', mainChapterFile: '스카이.txt' },
 ];
