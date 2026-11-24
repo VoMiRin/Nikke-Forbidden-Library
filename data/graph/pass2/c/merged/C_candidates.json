@@ -2,7 +2,7 @@
   "schema_version": "pass2-0.1.0",
   "kind": "C",
   "run": "main",
-  "generated_at": "2026-11-24T02:43:40.520Z",
+  "generated_at": "2026-11-24T03:07:49.000Z",
   "missing_bundles": [
     "C1__241",
     "C1__242",
@@ -251849,6 +251849,82 @@
           "B1__event_lost_relics__fading_affection__part_005__008"
         ]
       }
+    },
+    {
+      "link_id": "C1__196__060",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_15__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_17__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 어린 시절 기억이 없는 지휘관(7호)은 왜 어렸을 때 병원에 계속 있었는가 / 답: 7호는 프로젝트 A.D.로 완성된 일곱 클론 가운데 하나로, 완성된 클론은 연구소에서 20대 중반까지 각종 실험을 동반한 성장을 거치기 때문이다(maria-n_17 L184-L188) / 근거: maria-n_09 L215-L217에서 어린 지휘관은 병이 있어 그 병원에 왔다고 하고, 같은 곳에 있던 소녀 마리아도 뇌의 병 때문이라고 들었는데 maria-n_20 L137에서 닥터 마리아는 그 병이 연구원들의 거짓말이었다고 밝힌다. 에닉은 클론이 자란 연구소를 닥터 마리아가 잘 알 것이라 한다(maria-n_17 L188). 그 병원이 곧 클론을 키운 연구소라는 것은 세 장면을 이어야 나오므로 가능성이다. (사용자 판단으로 되살린 연결, 2026-11-24)",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_15",
+          "line_start": 101,
+          "line_end": 101,
+          "quote": "  [OPTION TEXT=\"병원에 계속 있었다는 것 말고는 기억이 아예 없네.\"]"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 215,
+          "line_end": 217,
+          "quote": "소녀: 넌 어쩌다 여기 온 거야?\n소녀: 응? 병이 있다고? 그야 당연하지. 병원이니까.\n소녀: 나도 있어, 병. 뭐라더라··· 뇌가 뭐 어떻다고 했던 것 같은데."
+        },
+        {
+          "scene_id": "maria-n_20",
+          "line_start": 137,
+          "line_end": 137,
+          "quote": "닥터 마리아: 뭐··· 당시에는 뇌에 문제가 있다는 걸로 잘나신 연구원들이 나한테 거짓말을 했지만."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 184,
+          "line_end": 188,
+          "quote": "에닉: 일곱의 클론이 완성되었습니다.\n에닉: 언체인드를 몸에 담고 있는,\n에닉: 퀸의 반려가 될 클론이.\n에닉: 완성된 클론은 연구소에서 20대 중반까지 각종 실험을 동반한 성장을 이뤄냅니다.\n에닉: 그 연구소가 어떤 연구소인지는, 당신도 잘 알고 있을 거라 판단합니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [],
+      "bundle_id": "C1__196",
+      "wave": 10,
+      "normalized": {
+        "subject": {
+          "key": "item:maria-n_15__clh_001",
+          "item_id": "maria-n_15__clh_001",
+          "partial": []
+        },
+        "target": {
+          "key": "item:maria-n_17__clh_004",
+          "item_id": "maria-n_17__clh_004",
+          "partial": []
+        }
+      },
+      "evidence_scenes": [
+        "maria-n_09",
+        "maria-n_15",
+        "maria-n_17",
+        "maria-n_20"
+      ],
+      "release_order": {
+        "result": "같은 이야기",
+        "basis": "same_title"
+      },
+      "overlapping_items": {}
     },
     {
       "link_id": "C1__197__006",
