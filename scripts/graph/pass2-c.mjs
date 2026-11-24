@@ -1888,7 +1888,8 @@ const main = async () => {
       const input = buildInput(wave, readJsonIfExists(inputPath), judgeFamily, Number(argValue(args, 'rate') ?? 0.1));
       storeShards(input.bundle_stamps);
       await writeJsonAtomic(inputPath, input);
-      console.log(`[audit-input] 회차 ${wave}: 단위 표본 ${input.sampled_units}/${input.population_units}, 전수 항목 ${input.extra_items}(외부 변경·충돌·병합 제안) → ${relPath(inputPath)}`);
+      const kindCount = (k) => input.items.filter((x) => x.kind === k).length;
+      console.log(`[audit-input] 회차 ${wave}: 단위 표본 ${input.sampled_units}/${input.population_units}, 전수 항목 ${input.extra_items}(외부 변경 ${kindCount('external_change')}·충돌 ${kindCount('conflict')}·병합 제안 ${kindCount('merge_suggestion')}) → ${relPath(inputPath)}`);
       for (const c of input.strata) console.log(`  층 ${c.stratum}: 모집단 ${c.population}, 표본 ${c.sampled} (비율 ${c.rate})`);
       console.log(`[audit-input] 다른 모델의 감사 출력 → ${relPath(outputPathOf(wave))}`);
     } else {
