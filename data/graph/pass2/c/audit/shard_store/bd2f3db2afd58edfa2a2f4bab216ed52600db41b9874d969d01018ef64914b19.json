@@ -1,0 +1,737 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__224",
+  "candidate_links": [
+    {
+      "link_id": "C1__224__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "flower_park_01__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "flower_park_06__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 트리나는 왜 생화 공원에서 갑자기 옷을 훌렁 벗는가 / 답: 옷을 벗고 자연에 가장 가까운 상태로 꽃밭에 누워 자연과 하나가 되는 상쾌한 기분으로 휴식을 취하기 위해서다(flower_park_06 L155-164) / 근거: 같은 생화 공원에서 트리나가 같은 효과음('훌렁-')과 함께 탈의하며 그 이유를 직접 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "flower_park_01",
+          "line_start": 107,
+          "line_end": 108,
+          "quote": "트리나: 흠흠흠~♪\n훌렁-"
+        },
+        {
+          "scene_id": "flower_park_06",
+          "line_start": 155,
+          "line_end": 158,
+          "quote": "훌렁-\n나는 트리나가 옷을 완전히 벗기 전에 돌아 누웠다.\n트리나: 이렇게 자연에 가장 가까운 상태로 누우면~\n트리나: 엄청 상쾌한 기분을 느낄 수 있답니다~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "rapi_00__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_00_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 소구경 화기로 랩쳐에게 무모하게 돌격해 기존 지휘관이 사망했을 때 지휘관을 지키지 못한 라피와 아니스는 어떻게 처벌을 면했는가 / 답: 중앙 정부에서 기존 지휘관의 그 행위를 처벌 예외 사유인 자결로 판단해 처벌받지 않고 넘어갔다(rapi_00 L149-150) / 근거: 현 지휘관이 합류 전 지휘관의 죽음을 직접 언급하자 라피가 중앙 정부의 자결 판정 결과를 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_00_04",
+          "line_start": 8,
+          "line_end": 11,
+          "quote": "아니스: 대인 화기를 들고는 랩쳐한테 막 쏴재끼더라고.\n아니스: [랩쳐-! 인류의 원수-!]라고 하면서.\n아니스: 그런 소구경 화기가 랩쳐한테 먹힐 리가 없을텐데도, 그랬어.\n마리안: ···지켜주지 못하셨군요. 두 분이."
+        },
+        {
+          "scene_id": "rapi_00",
+          "line_start": 149,
+          "line_end": 150,
+          "quote": "라피: ···예. 중앙 정부에서는 그 행위를 자결로 판단했습니다.\n라피: 덕분에 저와 아니스는 처벌을 받지 않고 넘어갈 수 있었죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '이전 지휘관'으로 찾은 main_00_03 L43에 이어지는 main_00_04를 show로 확인"
+      ]
+    },
+    {
+      "link_id": "C1__224__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "neon_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "neon_01",
+          "line_start": 109,
+          "line_end": 120,
+          "scan_id": "S0085"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: [총기사랑하자]에서 자신이 전설의 총을 가지고 있다고 댓글을 단 활동자는 누구이며 그 주장은 사실인가 / 답: 댓글 작성자는 드레이크이며, 전설적인 니케인 자신이 쓰는 총을 전설의 총이라 부른 것일 뿐 실제 전설의 총은 없다고 실토한다(neon_01 L109-120) / 근거: 엑시아가 [총기사랑하자] 댓글 작성자의 주소를 추적해 네온이 찾아간 인물이 드레이크이고(neon_01 L35-66), 시합 후 드레이크가 자기 총을 내밀며 진상을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "neon_00",
+          "line_start": 120,
+          "line_end": 120,
+          "quote": "RE [ACTION]:왜 비웃지? 전설의 총은 진짜 있다 내가 가지고 있다"
+        },
+        {
+          "scene_id": "neon_00",
+          "line_start": 124,
+          "line_end": 125,
+          "quote": "네온: 이 댓글을 단 분. 총기사랑하자에서 오랫동안 활동한 분이거든요.\n네온: 화력 위주의 유용한 커스터마이징 정보도 자주 올리셨어요."
+        },
+        {
+          "scene_id": "neon_01",
+          "line_start": 111,
+          "line_end": 111,
+          "quote": "드레이크: 나는 전설적인 니케다. 그런 니케가 쓰는 총이 전설의 총인 건 당연하지."
+        },
+        {
+          "scene_id": "neon_01",
+          "line_start": 119,
+          "line_end": 120,
+          "quote": "네온: 전설의 총.\n드레이크: 그런 건 없다. 미안하다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "neon_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "neon_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: [총기사랑하자] 댓글에서 언급되어 네온이 실존한다고 믿은 '전설의 총'은 실제로 존재하며 무엇인가 / 답: 3개 부품으로 나뉘어 실존했으나 모든 탄환을 감당하는 화력 병기가 아니라 나무와 강철로 되어 총알을 총구 앞으로 넣는 아주 오래된 골동품('총이라는 것의 어머니' 정도 되는 모델)이다(neon_04 L120-124) / 근거: [총기사랑하자] 댓글을 계기로 네온이 찾아 나선 '전설의 총'이 맥스웰의 고대 문헌 단서를 거쳐 neon_04에서 완성·감정된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "neon_00",
+          "line_start": 111,
+          "line_end": 112,
+          "quote": "네온: ···있었던 거예요.\n네온: 전설의 총이."
+        },
+        {
+          "scene_id": "neon_04",
+          "line_start": 123,
+          "line_end": 124,
+          "quote": "네온: 이거, 엄청 오래전 모델 맞죠?\n잉그리드: 그래. 내 기억이 맞다면 총이라는 것의 어머니 정도 되는 모델이지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "neon_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "neon_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 방주 소문에서 모든 탄환에 대응하고 자율 비행·자가 수리 능력을 지녀 3개 파츠로 봉인됐다고 한 '전설의 총'의 실제 정체는 무엇인가 / 답: 초월적 성능을 지닌 무기가 아니라 나무 재질과 강철 부품으로 되어 총알을 총구 앞으로 넣는 아주 오래된 골동품('총이라는 것의 어머니' 정도 되는 모델)이다(neon_04 L120-124) / 근거: 맥스웰이 건넨 고대 문헌 해석본의 좌표대로 모은 3개 파츠를 세척·보강해 조립하자 실제 총의 정체가 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "neon_02",
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "맥스웰: 세상에 단 한 자루만 존재하는 전설의 총이 있다는.\n맥스웰: 모든 탄환에 대응 가능하고, 절대 고장이 나지 않으며.\n맥스웰: 자율 비행 능력에 자가 수리 능력까지 가졌다고 해."
+        },
+        {
+          "scene_id": "neon_04",
+          "line_start": 120,
+          "line_end": 124,
+          "quote": "네온: 나무 재질에··· 강철 부품들···.\n네온: 와, 총알을 총구 앞으로 넣는군요.\n네온: ··· ···.\n네온: 이거, 엄청 오래전 모델 맞죠?\n잉그리드: 그래. 내 기억이 맞다면 총이라는 것의 어머니 정도 되는 모델이지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "neon_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "neon_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 잉그리드가 보관하고 있던 낡은 총 손잡이 파츠는 실제로 전설의 총 부품이 맞으며 완성하면 어떤 총이 되는가 / 답: 다른 두 부품과 동일 계열의 부품으로 조립되어 총구 앞으로 총알을 넣는 아주 오래된 골동품 모델('총이라는 것의 어머니')을 이룬다(neon_04 L120-124) / 근거: neon_04에서 손잡이를 포함한 세 부품을 잉그리드가 세척·보강해 네온이 직접 하나의 총으로 조립한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "neon_02",
+          "line_start": 101,
+          "line_end": 103,
+          "quote": "잉그리드가 건네준 것은 낡은 총 손잡이였다.\n네온: 이게··· 전설의 총 파츠 중 하나군요.\n잉그리드: 손잡이 파츠지."
+        },
+        {
+          "scene_id": "neon_04",
+          "line_start": 123,
+          "line_end": 124,
+          "quote": "네온: 이거, 엄청 오래전 모델 맞죠?\n잉그리드: 그래. 내 기억이 맞다면 총이라는 것의 어머니 정도 되는 모델이지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "neon_03__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "neon_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 슈가가 정크 마운틴에서 찾아낸 총몸 추정 부품은 실제로 전설의 총 부품이 맞으며 어떤 총을 이루는가 / 답: 손잡이·개머리판과 동일 계열의 부품으로 조립되어 총알을 총구 앞으로 넣는 아주 오래된 골동품 모델('총이라는 것의 어머니')을 이룬다(neon_04 L120-124) / 근거: neon_04에서 두 번째 부품인 총몸을 세척·보강해 나머지 두 부품과 조립하여 총을 완성한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "neon_03",
+          "line_start": 29,
+          "line_end": 30,
+          "quote": "슈가: 부품 하나를 찾았어. 총몸인거 같은데.\n슈가: 꼬박 3일은 걸렸지."
+        },
+        {
+          "scene_id": "neon_04",
+          "line_start": 123,
+          "line_end": 124,
+          "quote": "네온: 이거, 엄청 오래전 모델 맞죠?\n잉그리드: 그래. 내 기억이 맞다면 총이라는 것의 어머니 정도 되는 모델이지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "neon_03__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "neon_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 지휘관의 방 상자에서 발견된 녹슨 개머리판은 실제로 전설의 총 부품이 맞으며 어떤 총을 이루는가 / 답: 손잡이·총몸과 동일 계열의 부품으로 조립되어 총알을 총구 앞으로 넣는 아주 오래된 골동품 모델('총이라는 것의 어머니')을 이룬다(neon_04 L120-124) / 근거: neon_04에서 마지막 부품인 개머리판을 잉그리드가 세척·보강해 앞선 두 부품과 함께 조립하여 총을 완성한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "neon_03",
+          "line_start": 204,
+          "line_end": 204,
+          "quote": "조금도 극적이지 않은 분위기에서, 상자 안에 보관된 녹슨 개머리판을 찾을 수 있었다."
+        },
+        {
+          "scene_id": "neon_04",
+          "line_start": 123,
+          "line_end": 124,
+          "quote": "네온: 이거, 엄청 오래전 모델 맞죠?\n잉그리드: 그래. 내 기억이 맞다면 총이라는 것의 어머니 정도 되는 모델이지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "anis_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "anis_02__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아니스가 개인적으로 모은다며 지휘관에게 사달라고 부탁한 목걸이는 무엇인가 / 답: 해체된 아이돌 그룹 트윙클 트라이 스타 멤버 중 한 명이 운영하는 액세서리 브랜드 'T.T.스타'의 신상 제품이며 아니스는 자신이 그 팬이라고 말한다(anis_02 L99-106, L127-130) / 근거: anis_02에서 아니스가 '내가 전초기지에서 말했던 목걸이'라며 T.T.스타 신상을 구매한 뒤 T.T.스타에 대해 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_00",
+          "line_start": 87,
+          "line_end": 88,
+          "quote": "아니스: 아, 혹시 가는 김에 나 목걸이 하나만 사줄 수 있어?\n아니스: 비싼 건 아니고, 그냥 내가 개인적으로 모으는 건데···."
+        },
+        {
+          "scene_id": "anis_02",
+          "line_start": 127,
+          "line_end": 130,
+          "quote": "아니스: 응.  트윙클 트라이 스타라고···.\n아니스: 예전에 활동했던 아이돌 그룹인데. 해체된지는 좀 됐어.\n아니스: 멤버 중 한 명이 액세서리 사업에 뛰어들었는데, 가격이랑 디자인이 괜찮아서 팬이 제법 많아.\n아니스: ···나도 그중 한 명이고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "anis_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_38_07",
+          "line_start": 32,
+          "line_end": 34,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 아니스는 왜 그 목걸이를 개인적으로 모으고 있었는가 / 답: 단순한 팬이어서가 아니라 자신이 과거 T.T.STAR 멤버였으며 옛 동료 프리카가 만든 액세서리와 굿즈가 나올 때마다 전부 사 모으고 있었기 때문이다(main_38_07 L32-34) / 근거: anis_02에서 해당 목걸이가 T.T.스타 멤버의 액세서리임이 밝혀지고, main_38_07에서 전 멤버인 아니스가 민트에게 프리카가 만든 액세서리를 나오는 대로 다 사고 있다고 고백한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_00",
+          "line_start": 87,
+          "line_end": 88,
+          "quote": "아니스: 아, 혹시 가는 김에 나 목걸이 하나만 사줄 수 있어?\n아니스: 비싼 건 아니고, 그냥 내가 개인적으로 모으는 건데···."
+        },
+        {
+          "scene_id": "main_38_07",
+          "line_start": 32,
+          "line_end": 34,
+          "quote": "아니스: 알아. ···그리고 나오는 건 다 사고 있어.\n아니스: 굿즈 같은 것들도···.\n아니스: 프리카가 만든 액세서리도···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "anis_02__clh_004의 액세서리 사업 언급을 바탕으로 grep '액세서리'를 실행해 main_38_07 L32-34 확인"
+      ]
+    },
+    {
+      "link_id": "C1__224__011",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "anis_00__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "star_anis_04",
+          "line_start": 26,
+          "line_end": 35,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 아니스는 과거 유동 인구가 많은 방주 시내에 무엇을 홍보하러 많이 왔었는가 / 답: 과거 신생 아이돌 그룹 T.T. STAR 멤버로 활동할 때 유동 인구가 많은 방주 시내 한복판의 신장개업 고깃집 앞에서 가게 홍보와 그룹 노출을 위한 거리 공연을 반복했기 때문이다(star_anis_04 L26-35) / 근거: 방주 시내의 많은 유동 인구를 언급하며 홍보하러 자주 왔었다는 아니스의 실언이 과거 T.T. STAR의 방주 시내 홍보 공연 행적과 부합한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_00",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "아니스: 나도 홍보한다고 참 많이도 왔었···."
+        },
+        {
+          "scene_id": "anis_00",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "아니스: 응? 홍보? 갑자기 무슨 소리야?"
+        },
+        {
+          "scene_id": "star_anis_04",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "민트: 보통은 그런 팬들이 적극적으로 홍보도 해주기 때문에, 우리 같은 신예는 엄청 도움을 많이 받을 수 있어."
+        },
+        {
+          "scene_id": "star_anis_04",
+          "line_start": 31,
+          "line_end": 34,
+          "quote": "민트: 여기, 위치가 너무 좋아.\n민트: 방주 시내 한복판이야. 유동 인구도 많고.\n프리카: 그건 그래. 사람들 엄청 다니더라.\n아니스: 오. 그럼 당연히 노출될 확률도 높아지겠네?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '홍보'로 확인한 star_anis_04 L26-35"
+      ]
+    },
+    {
+      "link_id": "C1__224__012",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "anis_00__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_35_10__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 아니스는 과거 무슨 신분으로 홍보 활동을 했으며 왜 그 사실을 시치미 떼며 숨겼는가 / 답: 과거 테트라 소속 아이돌 그룹 트윙클 트라이 스타(T.T.STAR)로 활동했던 이력이 있었고 동료들에게 그 과거를 부끄러워하며 감추고 있었기 때문이다(main_35_10 L31-32, L55-59) / 근거: anis_00에서 홍보 발언을 얼버무렸던 아니스가 main_35_10에서 과거 T.T.STAR 아이돌이었다는 사실을 처음으로 실토한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_00",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "아니스: 나도 홍보한다고 참 많이도 왔었···."
+        },
+        {
+          "scene_id": "anis_00",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "아니스: 응? 홍보? 갑자기 무슨 소리야?"
+        },
+        {
+          "scene_id": "main_35_10",
+          "line_start": 31,
+          "line_end": 32,
+          "quote": "아니스: 나 예전에 아이돌 했었거든.\n아니스: 그··· 트윙클 트라이 스타라고··· 줄여서 T.T.STAR."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "anis_02__clh_004의 트윙클 트라이 스타 언급을 바탕으로 grep '트윙클'을 실행해 main_35_10 L31-32 확인"
+      ]
+    },
+    {
+      "link_id": "C1__224__013",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "anis_03__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "anis_02__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 방주 시민들이 인식 칩을 팔이나 귀가 아니라 보통 목덜미에 많이 이식하는 이유는 무엇인가 / 답: 방주에 불법 침입한 아웃로들이 팔이나 귀의 인식 칩은 부위째 잘라 강탈하지만, 목덜미는 잘못 자르면 살인이 되어 처벌이 무거우므로 노리지 않기 때문이다(anis_03 L88-94) / 근거: 아니스가 '좀 전에 인식 칩을 심는 위치에 대해 얘기했지?'라며 앞 장면의 발언을 직접 받아 이유를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_02",
+          "line_start": 18,
+          "line_end": 19,
+          "quote": "아니스: 이식하는 부위는 뭐 제각각이야. 팔에 하기도 하고 귀에 하기도 하고.\n아니스: 그런데 보통은 목덜미에 많이 하는 편이지."
+        },
+        {
+          "scene_id": "anis_03",
+          "line_start": 88,
+          "line_end": 92,
+          "quote": "아니스: ···좀 전에 인식 칩을 심는 위치에 대해 얘기했지?\n아니스: 팔이나 귀, 뭐 이런 곳에 심어놓으면.\n아니스: 한탕 할 생각으로 방주에 불법 침입한 아웃로들이 부위 째로 잘라가 버리거든.\n아니스: 인식 칩만 빼내는 기술은 고급 기술이라서 그냥 통째로 잘라버려.\n아니스: 그래서 목덜미에 심는 거야. 거기 건 잘못 자르면 죽으니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__224__014",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "anis_03__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "diesel_00__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아니스가 무장 테러 집단 엔터 헤븐의 소행으로 언급하다 말을 맺지 못한 '예전의 큰 열차 사고'는 구체적으로 어떤 사건인가 / 답: 엔터 헤븐이 일반 시민이 탑승한 AFX 열차에 폭탄 테러를 일으켜 500명에 가까운 시민의 목숨을 앗아간 'AFX 열차 테러' 사건이다(diesel_00 L155-158, L168) / 근거: 두 장면 모두 엔터 헤븐이 과거에 일으킨 대규모 열차 테러 사건을 가리키며 아니스도 추모 방송을 보며 당시 충격을 언급한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_03",
+          "line_start": 123,
+          "line_end": 125,
+          "quote": "아니스: 아우터 림에는 인식 칩이 없는 이들의 인권을 부르짖는 무장 테러 집단 [엔터 헤븐]이 있기 때문이야.\n아니스: 날이 갈수록 그 세력이 커져서 중앙 정부에서도 주시하고 있다고 들었어.\n아니스: 예전의 열차 사고가 크게 한 번 있었잖아? 그것도 다 그 녀석들이···."
+        },
+        {
+          "scene_id": "diesel_00",
+          "line_start": 155,
+          "line_end": 158,
+          "quote": "TV 소리: [···주기를 맞아, 올해에도 AFX 열차 테러의 희생자를 기리는 추모식이 있을 예정입니다.]\nTV 소리: [사건 당시, 500명에 가까운 시민들의 목숨을 앗아간 이 사건은.]\nTV 소리: [군사용 화물이 아닌 일반인이 탑승한 열차에 폭탄 테러를 했다는 점에서 더욱 악질적이라고 할 수 있으며.]\nTV 소리: [엔터 헤븐의 위험성을 증명하는 계기가 되었습니다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '열차'로 확인한 diesel_00 L155-175"
+      ]
+    },
+    {
+      "link_id": "C1__224__015",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "anis_03__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "enter_heaven_10__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 아니스가 엔터 헤븐의 소행으로 언급하다 말을 맺지 못한 '예전의 큰 열차 사고'는 어떻게 벌어진 사건인가 / 답: 엔터 헤븐 강경파인 크로우가 역내 플랫폼에 진입하던 엘리시온 운영 AFX 열차 객차 안에서 대규모 폭탄 테러를 일으켜 열차를 산산조각 내고 역사 구조물까지 붕괴시킨 대형 참사다(enter_heaven_10 L192-194, L204-206) / 근거: 엔터 헤븐 구호와 함께 보도된 방주 최악의 AFX 열차 대규모 폭탄 테러의 경위가 직접 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "anis_03",
+          "line_start": 123,
+          "line_end": 125,
+          "quote": "아니스: 아우터 림에는 인식 칩이 없는 이들의 인권을 부르짖는 무장 테러 집단 [엔터 헤븐]이 있기 때문이야.\n아니스: 날이 갈수록 그 세력이 커져서 중앙 정부에서도 주시하고 있다고 들었어.\n아니스: 예전의 열차 사고가 크게 한 번 있었잖아? 그것도 다 그 녀석들이···."
+        },
+        {
+          "scene_id": "enter_heaven_10",
+          "line_start": 192,
+          "line_end": 194,
+          "quote": "뉴스 앵커: [엘리시온 사가 운영 중인 AFX 열차를 대상으로 한 대규모 폭탄 테러가 발생했습니다.]\n뉴스 앵커: [사고는 열차가 역내 플랫폼으로 진입하던 순간 발생했습니다.]\n뉴스 앵커: [객차 내에서 터진 강력한 폭발은 열차를 산산조각 낸 것은 물론, 역사 구조물까지 붕괴시키며 걷잡을 수 없는 대형 참사로 이어졌습니다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '열차'로 확인한 enter_heaven_10 L191-198"
+      ]
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "flower_park_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "flower_park_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "flower_park_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "flower_park_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "flower_park_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "flower_park_05__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "flower_park_06__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_00__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_03__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_03__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "rapi_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "neon_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "neon_03__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "neon_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "anis_02__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "anis_03__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "anis_04__clh_001",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}

@@ -1,0 +1,885 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__225",
+  "candidate_links": [
+    {
+      "link_id": "C1__225__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "delta_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "delta_01",
+          "line_start": 93,
+          "line_end": 106,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 델타가 군인다운 행동거지와 말투를 고쳐 잠복 수사를 하려는 이유는 무엇인가 / 답: 인간 시절 자신을 죽인 뉴먼 거리 폭탄 테러 사건의 미검거 범인을 추적하려는데, 과거 잠복 중 착장과 거동을 들켜 범인을 놓치고 지원 팀에서 영구제명되었기 때문이다(delta_01 L93-L106) / 근거: delta_00에서 잠복 수사를 하려는 개인적 사정을 숨겼고, delta_01의 프로파일과 별첨 기록이 왜 잠복 수사를 고집하는지와 착장·거동 발각 경위를 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "delta_00",
+          "line_start": 33,
+          "line_end": 33,
+          "quote": "델타: 최대한 무장을 라이트하게 가져가려 한 상태임에도, 행동거지나 말투에서 군인임이 적나라하게 드러나고 있습니다."
+        },
+        {
+          "scene_id": "delta_00",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "델타: 이런 상태로 잠복 수사를 하는 건 불가능에 가까울 겁니다."
+        },
+        {
+          "scene_id": "delta_01",
+          "line_start": 93,
+          "line_end": 94,
+          "quote": "인간 델타는,  방주 시내 한복판에서 폭탄 테러에 휘말려 죽었다.\n그리고 그 사건의 범인은 아직까지도 잡히지 않은 상태다."
+        },
+        {
+          "scene_id": "delta_01",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "···다만 의문인 점은,  왜 델타가 [잠복 수사]를 고집하냐는 것이다."
+        },
+        {
+          "scene_id": "delta_01",
+          "line_start": 105,
+          "line_end": 106,
+          "quote": "[급습을 위해 잠복하던 중, 델타의 착장과 거동을 수상하게 여긴 범인이 뒷문을 통해 도주.]\n[이에 책임을 물어, 델타를 해당 사건의 지원 팀에서 영구제명함···.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "delta_01__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "delta_03__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 뉴먼 거리 테러 사건 당시 A.C.P.U.의 급습 직전 뒷문으로 도주한 범인은 누구이며 어디로 갔는가 / 답: 크로우는 그 테러 사건에 관여한 자로, 방주·아우터 림을 가리지 않고 시신을 수집해 연명하는 한 늙은이가 A.C.P.U.에 체포되기 직전까지 갔다가 고향으로 돌아와 숨어 지낸다고 말한다(delta_03 L41-L44) / 근거: 'A.C.P.U.에 체포되기 직전'이 delta_01의 급습 직전 도주와 맞지만, 크로우는 그가 델타를 보고 뒷문으로 달아난 그 범인이라고 말하지 않는다. delta_02에서 시내 DKD 39.22에 사는 용의자가 폭탄 테러를 했다고 진술하므로 도주한 범인이 그 용의자일 수도 있어 가능성이다. 크로우가 댄 동기(시민권 칩 밀수)는 '그런 모양'이라는 추측이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "delta_01",
+          "line_start": 104,
+          "line_end": 105,
+          "quote": "[뉴먼 거리 테러 사건 당시, A.C.P.U.에 협조하여 테러 사건의 범인을 추적, 소재지를 알아냄.]\n[급습을 위해 잠복하던 중, 델타의 착장과 거동을 수상하게 여긴 범인이 뒷문을 통해 도주.]"
+        },
+        {
+          "scene_id": "delta_03",
+          "line_start": 41,
+          "line_end": 44,
+          "quote": "크로우: 내가 아는 한 XX년 전의 테러 사건에 관여했던 건,\n크로우: 방주, 아우터 림 가리지 않고 시신을 수집해 연명하는 한 늙은이였다.\n크로우: 당시엔 편법으로 시민권 칩을 대량 밀수하려고 그런 간 큰 짓을 벌인 모양이지만.\n크로우: A.C.P.U.에 체포되기 직전까지 가고 나서는,  고향으로 돌아와 조용히 숨 죽이고 지낸다는 모양이더군."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "delta_02",
+          "line_start": 5,
+          "line_end": 6,
+          "quote": "델타: ··· ···DKD 39.22.\n델타: 절 죽인 원수의 거주지가 이런 시내 한복판에 있었다니··· 피가 거꾸로 솟는 기분입니다."
+        },
+        {
+          "scene_id": "delta_02",
+          "line_start": 83,
+          "line_end": 84,
+          "quote": "델타: ···요컨대,  당시 폭탄 테러를 했던 건 네가 맞지만.\n델타: 그건 네 의지가 아니라,  익명의 [누군가]가 네 가족을 인질로 잡고 협박했기 때문이었다?"
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "delta_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "delta_03__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 폭탄 테러 용의자의 가족을 인질로 잡고 공중전화로 협박한 아우터 림의 익명의 아웃로는 누구인가 / 답: 크로우가 그 테러 사건에 관여한 자로 지목한, 방주·아우터 림을 가리지 않고 시신을 수집해 연명하는 한 늙은이일 수 있다(delta_03 L41-L44) / 근거: delta_02에서 아웃로 배후를 쫓아 크로우에게 협조를 구했고 delta_03에서 크로우가 테러 관여자를 지목하지만, 그가 협박 전화를 건 사람이라는 진술은 없어 가능성이다. 동기는 크로우가 시민권 칩 밀수였던 '모양'이라고 추측할 뿐이고, delta_04에서 붙잡힌 패거리는 당국의 이중적 태도에 대한 불만이라는 다른 동기를 주장한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "delta_02",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "델타: 그건 네 의지가 아니라,  익명의 [누군가]가 네 가족을 인질로 잡고 협박했기 때문이었다?"
+        },
+        {
+          "scene_id": "delta_02",
+          "line_start": 95,
+          "line_end": 95,
+          "quote": "용의자: 딱 하나 알고 있는 게 있어. 그놈이··· 아웃로였다는 거."
+        },
+        {
+          "scene_id": "delta_03",
+          "line_start": 41,
+          "line_end": 43,
+          "quote": "크로우: 내가 아는 한 XX년 전의 테러 사건에 관여했던 건,\n크로우: 방주, 아우터 림 가리지 않고 시신을 수집해 연명하는 한 늙은이였다.\n크로우: 당시엔 편법으로 시민권 칩을 대량 밀수하려고 그런 간 큰 짓을 벌인 모양이지만."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "delta_04",
+          "line_start": 56,
+          "line_end": 59,
+          "quote": "델타: 요컨대 이들은 시민 거주구의 치안 유지에는 만전을 기하면서,\n델타: 아우터 림의 치안은 방치하는 당국의 이중적인 태도에 불만을 품고,\n델타: 그것을 우회적으로 표현하고자 시민 거주구에 폭탄 테러를 가했다.\n델타: ···고 주장하고 있습니다."
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "delta_02__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "isabel_01__clh_002"
+        }
+      ],
+      "roles": null,
+      "verdict": "다른 대상",
+      "confidence": "유력한 해석",
+      "rationale": "delta_02의 DKD 39.22는 폭탄 테러 용의자의 방주 시내 거주지 주소이고, isabel_01의 [DKD 58]은 지휘관이 명작으로 꼽던 영화 CD 제목이므로 약자 표기만 겹치는 다른 대상이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "delta_02",
+          "line_start": 5,
+          "line_end": 6,
+          "quote": "델타: ··· ···DKD 39.22.\n델타: 절 죽인 원수의 거주지가 이런 시내 한복판에 있었다니··· 피가 거꾸로 솟는 기분입니다."
+        },
+        {
+          "scene_id": "isabel_01",
+          "line_start": 129,
+          "line_end": 130,
+          "quote": "[레비의 휴일], [여신전대 아크 레인저 극장판], [DKD 58] 등등.\n모두 평소 내가 명작으로 꼽던 영화들이다···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_00__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 폴리가 개처럼 코를 킁킁거리며 실제로 냄새로 사건을 판별하는 특징은 어디에서 비롯되었는가 / 답: 폴리의 니케 수술 도중 개 유전자가 섞였을 가능성이 있다(poli_04 L146) / 근거: poli_00에서 폴리가 개처럼 냄새를 맡는 모습을 미란다가 이상하게 여기며 개 키메라 의혹이 이어지고, poli_04에서 잉그리드가 니케 수술 중 개 유전자가 섞였을지 모른다고 밝힌다. 후각을 직접 지칭하지 않고 간접 연결되므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_00",
+          "line_start": 10,
+          "line_end": 11,
+          "quote": "폴리: 넹. 사건을 맡는 형사의 코!\n폴리: 킁킁! 킁킁킁!"
+        },
+        {
+          "scene_id": "poli_00",
+          "line_start": 14,
+          "line_end": 15,
+          "quote": "폴리: 여기서 사건의 냄새가 납니당.\n미란다: 어··· 이런걸 보고 뭘 닮았다고 하던데···."
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 143,
+          "line_end": 143,
+          "quote": "폴리에게 말해주지 못한 게 있는데"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 146,
+          "line_end": 146,
+          "quote": "폴리의 니케 수술 도중 개 유전자가 섞였을지도 모른"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_00__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 글자가 모두 암호화되어 있던 코스프레 카페의 서류를 폴리는 어떻게 보자마자 키메라 리스트라고 알았는가 / 답: 그 코스프레 카페는 1년 전 인간 시절의 폴리가 이미 발견해 정리했던 현장이었기 때문이다(poli_04 L42) / 근거: poli_01 L165-L167에서 폴리가 카페와 리스트 모두 옛 기억처럼 낯익다고 말하고, poli_04 L42에서 1년 전 폴리가 그 카페를 발견해 정리했음이 밝혀진다. 여러 장면을 결합해 리스트 인지의 이유를 잇게 되므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_00",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "폴리: 키메라··· 리스트?"
+        },
+        {
+          "scene_id": "poli_00",
+          "line_start": 45,
+          "line_end": 46,
+          "quote": "폴리: 음? 뭐야··· 이거 글자가 다 암호화되어있네여?\n폴리: 근데 어떻게 알았지?"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "폴리: 범인이 그러더라고여. 그 카페는 1년 전에 제가 발견해서 정리하고 도망친 곳이라고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_00__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "poli_04",
+          "line_start": 19,
+          "line_end": 29,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 키메라 리스트에 '개 유전자 실험 키메라 — 이름: 폴리 (Poli)'로 적힌 대상은 누구인가 / 답: 형사 폴리가 아니라 범인이 납치해 키메라 실험을 하고 살해했던 잉그리드 사장의 동명이견 강아지 폴리다(poli_04 L19-L29) / 근거: 범인이 형사 폴리를 보고 죽었던 개 키메라가 살아 돌아왔다고 외치며, 폴리가 그를 잉그리드 사장의 강아지 폴리 납치·살해 및 키메라 실험 혐의로 체포하고 잉그리드가 진범임을 확인한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_00",
+          "line_start": 128,
+          "line_end": 129,
+          "quote": "[개 유전자 실험 키메라]\n[이름 : 폴리 (Poli)]"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "???: 죽었던 개 키메라가 살아 돌아왔다!!"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 25,
+          "line_end": 28,
+          "quote": "폴리: 불법 동물 소유 및 키메라 실험.\n폴리: 엘리시온 사(社), 잉그리드 사장의 강아지.\n폴리: 폴리의 납치 및 살해 혐의로.\n폴리: 널 체포한닷!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__008",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_01__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 폴리에게 코스프레 카페와 지하 연구실이 옛날에 와 본 것처럼 낯익고 지난번엔 볼 게 더 많았다는 기억이 떠오르는 이유는 무엇인가 / 답: 그 카페는 1년 전 인간 시절의 폴리가 이미 발견해서 정리하고 범인들이 도망쳤던 곳이기 때문이다(poli_04 L42) / 근거: poli_01에서 폴리가 코스프레 카페 지하 연구실에 기시감을 느끼며 무슨 기억인지 의아해하고, poli_04에서 범인의 진술로 그 카페를 1년 전 폴리가 발견해 정리했음이 직접 밝혀진다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_01",
+          "line_start": 141,
+          "line_end": 141,
+          "quote": "폴리: 여기도 묘하게 옛날에 와봤던 거 같은 기억이···."
+        },
+        {
+          "scene_id": "poli_01",
+          "line_start": 157,
+          "line_end": 157,
+          "quote": "폴리: 지난번에는 훨씬 볼게 많았···."
+        },
+        {
+          "scene_id": "poli_01",
+          "line_start": 165,
+          "line_end": 167,
+          "quote": "폴리: 저··· 이상하게 여기가 낯이 익어용.\n폴리: 지난번에 리스트도 그렇고···.\n폴리: 이, 이게 다 무슨 기억일까여··· 하하."
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "폴리: 범인이 그러더라고여. 그 카페는 1년 전에 제가 발견해서 정리하고 도망친 곳이라고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_01__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 폴리는 어떻게 소리 소문 없이 죽었으며 왜 남들과 비교할 수 없을 만큼 빠르게 니케로 복귀했는가 / 답: 엘리시온 폭탄 테러가 있던 날 잉그리드를 구하다 치명상을 입었고, 잉그리드가 직접 빠르게 니케로 만들어 살려냈기 때문이다(poli_04 L55-L58) / 근거: poli_04에서 폴리가 자신이 어떻게 죽었는지와 왜 빠르게 니케가 되었는지를 묻고, 잉그리드가 그 질문을 그대로 받아 직접 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_01",
+          "line_start": 188,
+          "line_end": 188,
+          "quote": "폴리: 죽었을 때의 기억이 생각나지 않아여."
+        },
+        {
+          "scene_id": "poli_01",
+          "line_start": 194,
+          "line_end": 196,
+          "quote": "폴리: 아무런 소란이 일지 않을 만큼 소리 소문 없이 죽어버렸다는 거랑.\n폴리: 다른 사람들이랑 비교할 수 없을 만큼.\n폴리: 제 복귀가 빨랐다는 점이에용."
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 56,
+          "line_end": 58,
+          "quote": "잉그리드: 네가 왜 빠르게 니케가 되었을까.\n잉그리드: 이유는 간단하다.\n잉그리드: 테러가 있던 날. 네가 날 구했기 때문이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_01__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_02__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 코스프레 카페 지하 연구실에서 발견된 엘리시온 심벌과 '폴리' 이름표가 달린 개 목걸이의 주인은 누구인가 / 답: 잉그리드가 키우다 1년 전에 납치당해 죽은 강아지 폴리다(poli_02 L151-L159, L190-L192) / 근거: poli_02에서 폴리가 지하 연구실에서 발견된 해당 개 목걸이를 직접 언급하며 묻자 잉그리드가 자신이 키우던 강아지 폴리가 납치되어 죽었음을 확인해 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_01",
+          "line_start": 236,
+          "line_end": 236,
+          "quote": "폴리라는 이름표와 엘리시온의 심벌이 달린 개 목걸이다!"
+        },
+        {
+          "scene_id": "poli_02",
+          "line_start": 151,
+          "line_end": 152,
+          "quote": "폴리: 혹시 폴리라는 강아지를 키우신 적이 있나여?\n잉그리드: 그렇다만."
+        },
+        {
+          "scene_id": "poli_02",
+          "line_start": 155,
+          "line_end": 155,
+          "quote": "잉그리드: 죽었다."
+        },
+        {
+          "scene_id": "poli_02",
+          "line_start": 159,
+          "line_end": 159,
+          "quote": "폴리: 엘리시온의 심벌과 폴리라는 이름표가 달린 개 목걸이가 발견되었습니당."
+        },
+        {
+          "scene_id": "poli_02",
+          "line_start": 190,
+          "line_end": 190,
+          "quote": "잉그리드: 폴리는 납치당했다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__011",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_01__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 엘리시온 심벌과 '폴리' 이름표가 달린 개 목걸이가 왜 코스프레 카페 지하 연구실 바닥에 있었는가 / 답: 아우터 림으로 도망쳤던 범인들이 돌아오자 폴리가 직접 사건을 맡아 수사하게 하려고 잉그리드가 카페에 가져다 놓았다(poli_04 L43-L47) / 근거: poli_04에서 폴리가 사장님 손에 있어야 할 폴리의 개 목걸이를 직접 가져다 놓았는지 묻자 잉그리드가 맞다고 인정하며 이유를 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_01",
+          "line_start": 236,
+          "line_end": 236,
+          "quote": "폴리라는 이름표와 엘리시온의 심벌이 달린 개 목걸이다!"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 43,
+          "line_end": 45,
+          "quote": "폴리: 그리고 그곳에··· 사장님 손에 있어야 할 폴리의 개 목걸이도 있었고용.\n폴리: 그것도 사장님이 가져다 놓으신 거. 맞죠?\n잉그리드: 맞다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__012",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_03__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 1년 전에 납치당한 잉그리드의 강아지 폴리는 왜 죽었으며 잉그리드는 그 죽음을 어떻게 알았는가 / 답: 강아지 폴리가 납치될 무렵 엘리시온 건물에서 폭탄이 심어진 동물을 이용한 폭탄 테러가 벌어져 죽었기 때문이다(poli_03 L60-L69) / 근거: poli_02에서 잉그리드가 강아지 폴리의 사망 경위를 답하지 않았고, poli_03에서 엠마의 증언을 들은 폴리가 이로써 사장님이 어떻게 강아지 폴리의 죽음을 알았는지 알겠다고 직접 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_02",
+          "line_start": 155,
+          "line_end": 155,
+          "quote": "잉그리드: 죽었다."
+        },
+        {
+          "scene_id": "poli_02",
+          "line_start": 160,
+          "line_end": 161,
+          "quote": "폴리: 그 애가 죽은 이유가···.\n폴리: 혹시 키메라 실험 때문인가여?"
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "엠마: 폭탄 테러였다고 들었어. 끔찍하게도···."
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 67,
+          "line_end": 67,
+          "quote": "엠마: 맞아. 폭탄이 심어진 동물을 이용했었대."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__013",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "poli_03",
+          "line_start": 78,
+          "line_end": 85,
+          "scan_id": "S0083"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 1년 전 잉그리드의 강아지 폴리를 납치해 죽게 한 진범은 누구인가 / 답: 엘리시온에서 동물 뇌 니케 실험을 진행하다 쫓겨난 연구원이다(poli_03 L78-L85) / 근거: poli_02에서 강아지 폴리가 1년 전 납치당했음이 밝혀진 뒤 폴리가 진범을 찾겠다고 나서고, poli_03에서 1년 전 강아지 폴리 납치·키메라 실험·테러의 범인을 동물 뇌 니케 실험으로 쫓겨난 연구원으로 특정한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_02",
+          "line_start": 190,
+          "line_end": 192,
+          "quote": "잉그리드: 폴리는 납치당했다.\n폴리: 역시···!\n잉그리드: 1년 전에."
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 78,
+          "line_end": 81,
+          "quote": "폴리: 1년 전 사장님의 강아지, 폴리는 납치되었고 동물 키메라 실험과.\n폴리: 엘리시온··· 아니, 사장님을 노린 테러에 이용된 거였어여.\n폴리: 그 시기에 사장님께 원한을 가지고.\n폴리: 키메라 실험을 할 수 있는 사람은···."
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "폴리: 맞아여! 저도 그렇게 생각해여!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__014",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_03__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 잉그리드가 1년 전 강아지 폴리 납치 사건의 조사를 부탁한 형사는 누구인가 / 답: 폴리 본인이다(poli_03 L158-L162) / 근거: poli_02에서 잉그리드가 한 형사에게 조사를 부탁했다고만 말하고 말을 아꼈으며, poli_03에서 미란다가 보안실 기록을 확인해 강아지 수색 의뢰 담당 형사가 폴리였음을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_02",
+          "line_start": 198,
+          "line_end": 199,
+          "quote": "잉그리드: 그리고 난 그때 한 명의 형사에게.\n잉그리드: 이 일에 대한 조사를 부탁했지."
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 159,
+          "line_end": 159,
+          "quote": "담당 형사는!"
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 162,
+          "line_end": 162,
+          "quote": "폴리였습니다!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__015",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_03__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 1년 전 엘리시온 건물 동물 폭탄 테러 당시 발생한 누군지 모를 사상자는 누구인가 / 답: 테러 당일 강아지 폴리로부터 잉그리드를 구하다 치명상을 입은 인간 시절의 폴리다(poli_04 L58) / 근거: poli_03에서 엠마가 폭탄 테러 당시 누군지는 모르겠지만 사상자가 있었다고 말하고, poli_04에서 잉그리드가 테러가 있던 날 폴리가 자신을 구하다 죽어 니케가 되었음을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_03",
+          "line_start": 58,
+          "line_end": 61,
+          "quote": "폴리: 그때 사상자가 있었나여?\n엠마: 있었던 걸로 알아. 누군지는 모르겠지만.\n폴리: 왜 사고가 났던 거였어여? 정확히 어떤 사고가 났던 거예여?\n엠마: 폭탄 테러였다고 들었어. 끔찍하게도···."
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 58,
+          "line_end": 58,
+          "quote": "잉그리드: 테러가 있던 날. 네가 날 구했기 때문이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__016",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_03__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 강아지 폴리 수색 담당 형사였던 폴리가 왜 수색 대상이 사망한 사건 도중 장기 휴가를 쓰고 사건이 종결되었는가 / 답: 수색 대상인 강아지 폴리가 이용된 폭탄 테러 당일 폴리가 잉그리드를 구하다 죽고 잉그리드에 의해 빠르게 니케가 되었기 때문이다(poli_04 L55-L58) / 근거: poli_01에서 경찰관이 죽어 니케가 되면 장기 휴가로 처리한다는 설정이 나오고, poli_04에서 폴리가 테러 당일 잉그리드를 구하다 사망해 니케가 된 경위가 밝혀진다. 여러 장면의 설정을 결합해야 하므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_03",
+          "line_start": 177,
+          "line_end": 177,
+          "quote": "사건 도중! 수색 대상이 사망해서!"
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 180,
+          "line_end": 180,
+          "quote": "폴리는 장기 휴가를 쓰고!"
+        },
+        {
+          "scene_id": "poli_03",
+          "line_start": 183,
+          "line_end": 183,
+          "quote": "사건은 종결되었습니다!"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 56,
+          "line_end": 58,
+          "quote": "잉그리드: 네가 왜 빠르게 니케가 되었을까.\n잉그리드: 이유는 간단하다.\n잉그리드: 테러가 있던 날. 네가 날 구했기 때문이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__225__017",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "poli_03__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "poli_04__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 폴리가 장소를 모르는 상태에서도 코로 냄새를 맡아 범인의 은신처를 찾아낼 수 있는 이유는 무엇인가 / 답: 폴리의 니케 수술 도중 개 유전자가 섞였을 가능성이 있다(poli_04 L146) / 근거: poli_03에서 지휘관이 장소를 모르는데 어떻게 수색하느냐고 묻자 폴리가 코로 냄새를 맡아 현장을 찾아내고, poli_04에서 잉그리드가 니케 수술 중 개 유전자가 섞였을지 모른다고 밝힌다. 후각을 직접 지칭하지 않고 간접 연결되므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "poli_03",
+          "line_start": 248,
+          "line_end": 250,
+          "quote": "폴리: 형사의 코를 믿으세여!\n폴리: 킁킁! 여기에여.\n폴리: 여기에서 수상한 냄새가 나여!"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 143,
+          "line_end": 143,
+          "quote": "폴리에게 말해주지 못한 게 있는데"
+        },
+        {
+          "scene_id": "poli_04",
+          "line_start": 146,
+          "line_end": 146,
+          "quote": "폴리의 니케 수술 도중 개 유전자가 섞였을지도 모른"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "delta_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "delta_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "delta_03__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "signal_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "signal_00__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "signal_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "signal_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "signal_04__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "poli_00__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "poli_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "poli_02__clh_001",
+      "reason": "짝 없음",
+      "note": "엘리시온 출신 연구원이 진행했던 동물 뇌 니케 실험이 성공했는지"
+    },
+    {
+      "item_id": "poli_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "poli_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "poli_04__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "poli_04__clh_004",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}
