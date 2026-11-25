@@ -495,6 +495,16 @@ test('carryOverAudit: 외부 변경이 없어져 빠진 ext 항목은 그 단위
   assert.ok(!carryOverAudit({ ...base, audited: { ...base.audited, items: [unit] }, later: later([cover]) }).ok);
 });
 
+test('carryOverAudit: 장면 순번(scene_order)만 밀린 항목은 달라진 것으로 보지 않는다(증분 1)', () => {
+  const stamp = { bundle_id: 'C1__001', rules_sha256: 'r', input_sha256: 'i', shard_sha256: 's' };
+  const item = (order, keyword = 'k') => ({ audit_id: 'C1__001:a__clh_001', kind: 'unit', item_id: 'a__clh_001', unit: { item_id: 'a__clh_001', keyword, scene_order: order }, links: [] });
+  const base = { audited: { bundle_stamps: [stamp], items: [item(2564)] }, current: [stamp], snapshots: new Map(), shardsNow: new Map(), later: [] };
+  const ok = carryOverAudit({ ...base, regenerated: [item(2589)] });
+  assert.ok(ok.ok, ok.errors.join('\n'));
+  // 내용이 다르면 여전히 걸린다
+  assert.ok(carryOverAudit({ ...base, regenerated: [item(2589, 'other')] }).errors.some((e) => e.includes('달라졌는데')));
+});
+
 test('conflictBundles: 일부 겹침 충돌은 만난 연결(meets)의 묶음도 걸린 묶음으로 본다', () => {
   const c = { kind: 'partial_line_item_overlap', link_id: 'C1__002__001', bundle_id: 'C1__002', lines: 'lines:s:60-70', overlapped_items: ['s__clh_001', 's__clh_002'], meets: ['C1__028__004', 'C1__028__010'] };
   assert.deepEqual(conflictBundles(c), ['C1__002', 'C1__028']);

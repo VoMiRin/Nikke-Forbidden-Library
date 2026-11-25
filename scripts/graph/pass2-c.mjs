@@ -1158,8 +1158,11 @@ export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regener
       .filter((x) => !now.has(x.audit_id) && !isSampleDriftItem(x) && !(x.kind === 'external_change' && ids.has(x.item_id)))
       .map((x) => x.audit_id);
     if (gone.length) errors.push(`다시 만든 감사 항목에서 빠졌다: ${gone.join(', ')}`);
-    const was = new Map(audited.items.map((x) => [x.audit_id, JSON.stringify(x)]));
-    const moved = regenerated.filter((x) => was.get(x.audit_id) !== JSON.stringify(x));
+    // scene_order는 코퍼스 전체 장면 순번이라 대본이 추가되면 뒤 장면 값이 밀린다(증분 1: 새 이야기가 끼어 11회차 160항목).
+    // 기존 장면끼리의 앞뒤는 그대로라 표본 선택은 같고, 판정 내용도 아니므로 비교에서 뺀다
+    const stable = (x) => JSON.stringify(x, (k, v) => (k === 'scene_order' ? undefined : v));
+    const was = new Map(audited.items.map((x) => [x.audit_id, stable(x)]));
+    const moved = regenerated.filter((x) => was.get(x.audit_id) !== stable(x));
     const uncovered = moved.filter((x) => !ids.has(x.item_id ?? x.audit_id)).map((x) => x.audit_id);
     if (uncovered.length) errors.push(`다시 만든 감사 항목이 달라졌는데 뒤 회차 PASS 감사가 덮지 않았다: ${uncovered.join(', ')}`);
   }
