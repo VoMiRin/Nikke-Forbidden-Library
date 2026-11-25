@@ -2,7 +2,7 @@
   "schema_version": "pass2-0.1.0",
   "kind": "C",
   "run": "main",
-  "generated_at": "2026-11-25T05:14:45.497Z",
+  "generated_at": "2026-11-25T09:53:48.934Z",
   "note": "감사 PASS 전에는 curation.json에 넣지 않는다",
   "suggestions": [
     {
@@ -10056,6 +10056,43 @@
       ],
       "bundle_id": "C1__294",
       "wave": 15
+    },
+    {
+      "suggestion_id": "CI1__002__M01",
+      "unit_ids": [
+        "project_matis_27__clh_002"
+      ],
+      "link_ids": [],
+      "targets": [
+        {
+          "kind": "entity",
+          "id": "char2_아버지__3e3a8c",
+          "name": "아버지"
+        },
+        {
+          "kind": "entity",
+          "id": "char_엔메",
+          "name": "엔메"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "슈엔이 취임 연설에서 '2대 CEO이시자, 저의 아버님인 엔메 님'(project_matis_09 L44)이라고 직접 밝히므로, 슈엔과 지엔의 아버지(char2_아버지__3e3a8c)와 엔메(char_엔메)는 같은 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "project_matis_09",
+          "line_start": 44,
+          "line_end": 44,
+          "quote": "슈엔: 2대 CEO이시자, 저의 아버님인 엔메 님의 의, 의지에 따라,"
+        },
+        {
+          "scene_id": "project_matis_27",
+          "line_start": 50,
+          "line_end": 54,
+          "quote": "지엔: 지상에서도 방주의 보안을 뚫고 네트워크에 접속할 수 있는,\n지엔: 방주 통신 체계를 구축한 희대의 천재.\n지엔: 누군지 정말 몰라요?\n슈엔: 설마···.\n슈엔: ···아버님?"
+        }
+      ],
+      "bundle_id": "CI1__002",
+      "wave": 16
     }
   ]
 }
