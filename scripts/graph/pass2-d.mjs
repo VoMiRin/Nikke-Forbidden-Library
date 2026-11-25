@@ -880,7 +880,7 @@ export const sampleDAudit = ({ units, linksByUnit, memosByUnit, overrides, merge
   const report = [];
   for (const [k, list] of [...strata].sort((a, b) => cmpStr(a[0], b[0]))) {
     const st = k.split('/')[0];
-    const r = Math.min(1, rate * (AUDIT_RATE_FACTOR[st] ?? 1));
+    const r = Math.round(Math.min(1, rate * (AUDIT_RATE_FACTOR[st] ?? 1)) * 1000) / 1000;
     const n = Math.max(1, Math.ceil(list.length * r));
     const ranked = [...list].sort((a, b) => cmpStr(rankOf(seed, `${a.bundle_id}:${a.unit_id}`), rankOf(seed, `${b.bundle_id}:${b.unit_id}`)));
     const picked = new Set(ranked.slice(0, n).map((u) => `${u.bundle_id}:${u.unit_id}`));
