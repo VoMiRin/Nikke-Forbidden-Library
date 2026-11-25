@@ -27,7 +27,10 @@ D 판정자는 이 규칙만 읽고 묶음 하나를 판정한다. 명세·설�
     - 두 끝이 같은 노드면(예: 한 인물의 두 이름) 그 쌍은 한 대상 안의 관계(별칭 유래·작명 등)다.
   - `address_summary`: 두 대상 사이에 자주 쓴 호칭. **근거가 아니다.**
   - `prior_pass2_context`: 같은 장면의 앞 단계(B 정체 후보, C 단서↔공개) 판정 요약. **근거가 아니다.**
-  - `ambiguous_endpoints`: 기계 대응이 불확실한 끝. `resolved_by`가 `title_unique`·`b_candidate`·`generic_term`·`unresolved`이거나 다른 후보(`candidates`)가 있는 메모다. 원문으로 확인한다(3.7절).
+  - `ambiguous_endpoints`: 기계 대응이 불확실한 끝이 있는 메모 목록이다. 원문으로 확인한다(3.7절).
+    - 들어가는 메모: 끝 해소 방법(`resolved_by`)이 참여자·A-2 판정·이야기별 별칭·같은 장면 정체 공개가 아닌 메모, 그리고 다른 후보(`candidates`)가 있는 메모다.
+    - 다른 해소 방법으로는 `title_unique`(같은 이야기의 유일 표기), `b_candidate`(정체 후보), `generic_term`(일반 낱말), `unresolved`(미해소)가 있다.
+    - 메모 줄의 `subject_resolved_by`·`target_resolved_by`에도 같은 값이 있다.
 - `memos[]`: 메모. 한 줄에 하나다. 적지 않은 칸은 기본값이다.
   - 기본값: `refers_to_past: false`, `chronology_type: "present"`, `in_branch_option: null`, `claimant: null`, `history_order: null`, 끝 해소 방법 `participants`
   - 칸: `item_id`, `unit_id`, `scene_id`, `subject`·`target`(원문 표기), `subject_node`·`target_node`(기계가 붙인 노드), `relation_or_change`(Pass 1 요약, **근거 아님**), `epistemic_type`, `claimant`, `claim_line`, `line_start`·`line_end`, `refers_to_past`, `chronology_type`, `in_branch_option`(`choice_line`·`option_text`), `history_order`(공식 연표 번호. 없으면 연표에 없는 장면)
@@ -69,9 +72,11 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
   - 한쪽만의 감정·평가·선언이면 `false`로 둔다.
 - `subject`·`target`은 쌍의 두 끝(보정했으면 보정 뒤 끝)과 같은 대상이어야 한다.
   - 참조는 묶음의 `node_a.ref`·`node_b.ref`를 그대로 옮긴다.
-  - 표기 노드(`gen:`·`unres:`)는 `{"ref": "surface", "name": "<원문 표기>", "entity_type": null}`로 적는다.
+  - 표기 노드(`gen:`·`unres:`)는 그 노드의 `ref`(`{"ref": "surface", "name": "<원문 표기>", "entity_type": null}`)를 그대로 옮긴다.
+  - 기록의 방향은 **관계의 방향**으로 정한다. 메모의 `subject`·`target` 순서를 따를 필요는 없다. 예: A가 요청하고 B가 받아들여 B가 A를 지휘하게 됐으면, 지휘 관계 기록은 B→A다.
 - **같은 상태가 여러 장면에서 되풀이되면 한 기록의 `memo_ids`에 모두 넣는다.** 예: 지휘관을 지키겠다는 다짐이 여러 이야기에 나옴.
   - 상태가 바뀌거나 맥락·주장 화자가 다르면 기록을 나눈다.
+  - **사이에 변화가 끼면 묶지 않는다.** 변화 앞의 반복은 한 기록, 변화 기록, 변화 뒤에 다시 나타난 같은 상태는 `continues`로 따로 둔다. 한 기록에 묶은 메모들이 그 사이의 변화를 건너뛰면 안 된다.
   - 다른 장면의 반복 메모를 중복 사유로 빼지 않는다(3.9절).
 - 한 메모가 두 관계를 함께 말하면(예: 상관이면서 신뢰한다) 같은 메모를 두 기록의 `memo_ids`에 넣어도 된다.
 - 기록마다 귀속 메모 장면의 원문 인용이 하나 이상 있어야 한다.
@@ -95,6 +100,7 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
 ### 3.4 사실과 주장, 선언과 성립 (`epistemic_status`, `claimants`)
 
 - `established`: 지문·연출·절차·상호 수락·일방 결별 행위로 작중에서 성립이 확인된 관계다. `claimants`는 빈 배열이다.
+  - **대화 자체가 성립을 수행하면 `established`다.** 지어낸 예: A "현장 지휘를 맡아 주세요", B "알겠다"로 지휘가 시작되면 상호 수락이다. 다만 그 대화가 감정·평가를 말하기만 하면(예: "넌 믿을 만해") `claimed`다.
 - `claimed`: 대사로 말한 관계다. 진술·회고·소문·제3자 평가, 그리고 **상대가 받아들였는지 확인되지 않은 일방 선언**이 여기에 든다.
   - `claimants`에 말한 화자를 적는다. 참조는 묶음 노드나 `entity`로 찾은 ID를 쓰고, 없으면 `surface`로 적는다.
 - **제3자의 말은 그 제3자의 주장이다.** 당사자의 확립된 관계나 다른 화자의 주장과 한 기록에 합치지 않는다.
@@ -104,16 +110,21 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
 ### 3.5 맥락 (`context_scope`)과 배타 갈래
 
 - `canon`: 정사 맥락의 실제 관계다(본편·이벤트·에피소드 등).
-- `branch`: 선택지 한 갈래나 병렬 루트 한쪽에서만 성립하는 관계다.
+- `branch`: 정사 관계인데 선택지 한 갈래나 병렬 루트 한쪽에서만 성립하는 관계다.
 - `roleplay_or_sim`: 상황극·연극·시뮬레이션 배역으로 연기한 임시 관계다. 예: 학생과 선생 역할극.
   - 시뮬레이션 속 인물이 실제 인물을 본뜬 것이면 그 인물 자체는 실제 대상이다. 배역 안 관계만 이 맥락으로 둔다.
 - `dream_or_hypothetical`: 꿈·환상·상상·가정 속 관계다.
+- **맥락이 겹치면** `roleplay_or_sim`·`dream_or_hypothetical`이 `branch`보다 앞선다. 예: 상황극 안에서 한 옵션에만 나온 배역 관계는 `roleplay_or_sim`이다. 배타 여부(아래)는 맥락 값과 상관없이 따로 지킨다.
 - **서로 배타적인 갈래는 섞지 않는다.** 다음 두 경우가 배타적이다.
   - 같은 장면·같은 선택지(`in_branch_option.choice_line`)의 서로 다른 옵션에서 나온 메모들
-  - 한 번의 진행 경로에서 함께 지나갈 수 없는 장면들(`show` 머리말의 병렬 루트·다음 경로로 확인한다)
+  - 한 번의 진행 경로에서 함께 지나갈 수 없는 장면들
+    - 선택 경로 그래프가 있는 이야기에서만 따진다. `show` 머리말에 "선택 경로 그래프가 있는 이야기다"와 다음 장면이 나온다.
+    - 재시작·기록 메뉴로 돌아가는 경로("다시 기록하기" 등)는 한 번의 진행이 아니다. 머리말의 다음 장면은 그런 경로를 이미 뺀 것이다.
+    - 경로 그래프가 없는 이야기는 장면 사이 배타를 따지지 않는다.
   - 배타 갈래의 메모는 한 기록에 함께 넣지 않는다. `prev_link_ids`로도 잇지 않는다.
   - 각 갈래는 따로 `initial`이나 `standalone`으로 둔다.
-  - 갈래가 다시 합쳐진 뒤의 공통 상태는 갈래 밖(분기 전·합류 뒤) 메모로 잇는다.
+  - 갈래가 다시 합쳐진 뒤의 공통 상태는 갈래 밖(분기 전·합류 뒤) 메모로 잇는다. **한 갈래 안 기록을 합류 뒤 공통 기록의 앞 기록으로 쓰지 않는다.** 검증기가 막는다.
+  - 여러 옵션에 같은 상태가 다 나와도 그 메모들은 옵션 안 메모다. 공통 상태로 묶지 않고 갈래마다 따로 둔다.
 - 같은 경로에서 연달아 지나갈 수 있는 장면은 배타가 아니다. 병렬로 표시돼 있어도 한쪽에서 다른 쪽으로 가는 경로가 있으면 이어도 된다.
 
 ### 3.6 작중 순서와 전환
@@ -123,7 +134,9 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
   - `script`: 원문의 시간 표현·사건 언급·호칭 변화, 또는 **선형으로 이어지는 같은 이야기 안의 장면 진행**이다. 병렬 루트, 수집형 기록(유실물 슬롯 번호), 회상 구간은 장면 번호만으로 앞뒤를 정하지 않는다.
   - `official_timeline`: 공식 연표 번호(`history_order`)가 서로 다르고 앞 기록이 더 앞이다. **번호가 같으면(같은 연표 단위) `official_timeline`으로 잇지 않는다.** 같은 이야기 안이면 `script`를 쓴다.
   - `unknown`: 여러 기록이 있으나 원문·연표 어느 쪽으로도 앞뒤를 알 수 없다.
-  - `not_applicable`: 앞 기록이 없다(`initial`, 홀로인 `standalone`).
+  - `not_applicable`: 앞 기록이 없다(`initial`, `standalone`).
+  - **짝:** `prev_link_ids`가 비면 `not_applicable`이다. 앞 기록이 있으면 `script`·`official_timeline`·`unknown` 중 하나다.
+  - 여러 장면을 한 기록에 묶었으면, 연표 비교는 그 장면들의 범위(가장 이른~가장 늦은)로 한다. 앞 기록 범위가 뒤 기록 범위보다 모두 앞이어야 한다.
 - `progression`
   - `initial`: 그 맥락에서 처음 확인된 상태다(`prev_link_ids: []`).
   - `continues`: 앞 기록과 같은 방향의 상태가 유지되거나 깊어진다.
@@ -137,23 +150,50 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
   - `past_before_scene`: 근거 장면에서 그보다 앞선 과거의 관계를 말한 것이다.
   - 과거를 말하는 기록은 다음 셋 중 하나다: `past_before_scene`, `refers_to_past: true`인 메모가 있는 기록, `flashback` 메모가 있는 기록.
     - 이런 기록을 순서에 쓰려면 **관계가 실제로 성립한 시점**을 `anchor`로 적는다. 순서에 쓴다는 것은 스스로 `script`·`official_timeline`을 쓰거나, 다른 기록이 이 기록 뒤에 `script`·`official_timeline`·`changes_from`으로 잇는 경우다.
-    - `{"kind": "timeline", "scene_id": "<그 일이 일어난 장면>", "evidence": [인용]}`: 연표 비교는 이 장면의 연표 위치로 한다.
-    - `{"kind": "script", "evidence": [인용]}`: 원문이 직접 앞뒤를 말하는 경우다.
-  - **말한 장면의 위치를 그 일의 위치로 쓰지 않는다.** `anchor` 장면은 말한 장면보다 앞이어야 한다. 같은 연표 단위 안이면 같은 이야기의 장면 순서로 앞이어야 한다.
-  - 성립 시점을 특정할 수 없으면 `anchor` 없이 "말한 장면 이전"까지만 둔다. 그 기록은 `order_basis: unknown`이고, `changes_from`의 앞뒤로 쓰지 않는다.
-- 원문 근거와 공식 연표가 어긋나면 한쪽을 버리지 않는다. 둘 다 적고 `contradicting_evidence`에 남긴다.
+    - `{"kind": "timeline", "scene_id": "<그 일이 실제로 일어난 장면>", "evidence": [인용]}`
+      - 그 일이 원문에 장면으로 나올 때 쓴다. 연표 비교는 이 장면의 연표 위치로 한다.
+      - 이 장면은 귀속 메모의 **모든** 발화 장면보다 앞이어야 한다. 연표 번호가 다르면 번호로, 같으면 같은 이야기의 장면 순서로 비교한다.
+      - 경로 그래프 이야기는 한 진행 경로에서 앞인지로 비교한다. 병렬 루트로 갈리거나 수집형 기록(유실물)이라 장면 번호로 정할 수 없으면 쓸 수 없다. `script`를 쓴다.
+    - `{"kind": "script", "evidence": [인용]}`
+      - 원문 문장이 그 일의 상대적 시점을 직접 말할 때 쓴다. 인용은 발화 장면의 문장이어도 된다. 지어낸 예: "내가 처음 부대에 들어왔을 때", "그 전투가 끝난 뒤로".
+      - 장면을 지정하지 않으므로 연표 번호 비교(`official_timeline`)에는 쓸 수 없다. `script` 순서에만 쓴다.
+  - **말한 장면의 위치를 그 일의 위치로 쓰지 않는다.**
+  - 성립 시점을 특정할 수 없으면 `anchor` 없이 "말한 장면 이전"까지만 둔다. 그 기록은 앞 기록이 없으면 `standalone`이다. 이으면 `order_basis: unknown`이고 `changes_from`의 앞뒤로 쓰지 않는다.
+- **원문 근거와 공식 연표가 어긋나면** 한쪽을 버리지 않는다.
+  - `rationale`의 `선후·근거:`에 두 연표 번호와 원문 근거를 함께 적는다.
+  - 어긋나게 하는 쪽의 원문 줄을 `contradicting_evidence`에 인용한다. 예: 원문은 A 뒤라고 말하는데 연표가 반대면, 연표상 앞서는 기록 장면의 해당 줄을 넣는다.
 
 ### 3.7 끝점 확인과 보정 (`endpoint_overrides`)
 
 - 기계는 각 메모의 `subject`·`target` 표기를 그 장면 참여자·A-2 판정·정체 후보·같은 이야기 유일 표기로 대상에 붙였다.
 - `ambiguous_endpoints`와, 이름이 직책·일반 낱말인 끝은 원문으로 확인한다. 예: 다른 시대의 지휘관, 같은 이름의 다른 인물, 장소 이름과 조직 이름.
 - 원문이 가리키는 실제 대상이 다르면 보정을 적는다.
+  - `unit_id`: 그 메모가 원래 속한 단위(보정해도 바꾸지 않는다)
   - `memo_ids`: 고친 메모(하나 이상, 이 단위의 메모)
   - `side`: 그 메모 **원래의** `subject`/`target` 칸 중 고친 쪽(쌍의 A/B가 아니다)
   - `from`: 기계가 붙인 원래 끝의 참조(묶음 노드 `ref` 그대로)
   - `to`: 바로잡은 대상
   - `confidence`, `rationale`, `supporting_evidence`
-- 보정한 메모의 기록은 보정 뒤 쌍으로 적는다. 보정 뒤 쌍이 이 묶음의 다른 단위와 같아지면 검증기가 경고한다. 두 단위의 기록이 서로 맞는지 확인한다.
+- 같은 메모의 같은 칸(`item_id`, `side`)은 한 번만 보정한다.
+- 보정한 메모의 기록은 **보정 뒤 쌍**으로 적는다. 기록의 `unit_id`는 원래 단위 그대로다. 보정 뒤 쌍이 달라진 메모는 안 고친 메모와 한 기록에 넣지 않는다. `prev_link_ids`도 보정 뒤 쌍이 같은 기록끼리만 잇는다.
+- 보정 뒤 쌍이 이 묶음의 다른 단위와 같아지거나 두 단위의 보정이 같은 새 쌍으로 모이면 검증기가 경고한다(`SAME_BUNDLE_PAIR_OVERLAP`). 두 단위의 기록이 서로 맞는지 확인한다.
+- `to`가 일반 낱말이면 `{"ref": "surface", "name": …}`로 적는다. 이것은 새 표기 대상이 되고, 묶음의 `gen:`·`unres:` 노드와는 별개다.
+- 완성 예(지어낸 것). 단위 `U020`의 쌍은 `entity:char_가` ↔ `gen:비밀 서고`다. 메모 `ex_09__rln_002`의 `target` "비밀 서고"가 원문에서 공식 시설 `term:A2__900#E1`(가 도서관 금서실)을 가리킨다.
+
+```json
+{
+  "unit_id": "U020",
+  "memo_ids": ["ex_09__rln_002"],
+  "side": "target",
+  "from": { "ref": "surface", "name": "비밀 서고", "entity_type": null },
+  "to": { "ref": "term", "term_key": "A2__900#E1", "name": "가 도서관 금서실", "entity_type": "location" },
+  "confidence": "유력한 해석",
+  "rationale": "앞 대사에서 같은 곳을 가 도서관 금서실이라 부른다",
+  "supporting_evidence": [{ "scene_id": "ex_09", "line_start": 14, "line_end": 14, "quote": "원문 그대로" }]
+}
+```
+
+  이 메모의 기록은 `unit_id: "U020"`, `subject`는 가, `target`은 위 `to` 참조로 적는다.
 - 실제 관계 대상이 따로 없이 비유·관용구를 끝으로 잘못 잡은 메모는 보정하지 않는다. `excluded_memos`(`끝점 오추출`)로 뺀다.
 
 ### 3.8 경계 사례
@@ -180,6 +220,7 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
 
 - `note`는 필수다. 원문 인용(`supporting_evidence`)은 적으면 검사한다.
 - 말로 밝힌 감정·태도·의지(예: "고맙다", "지켜 주겠다")는 일회성이 아니다. 관계 상태로 기록한다.
+  - 지어낸 예: 첫 만남에서 "안녕"만 나눴으면 `일회성 행동`이다. "도와주러 와 줘서 고마워"처럼 상대에 대한 감사를 밝혔으면 관계 기록(`affinity_or_trust`, `claimed`)이다.
 
 ### 3.10 확신도 (`confidence`)
 
@@ -250,12 +291,23 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
 
 - `link_id`는 `<bundle_id>__001`부터 겹치지 않게 매긴다.
 - `rationale`은 `상태: … / 선후·근거: …` 형식이다.
-- `supporting_evidence`·`contradicting_evidence`·`search_hints`는 배열이다(없으면 `[]`). 인용 하나는 15줄까지다.
+- `supporting_evidence`는 **하나 이상** 적는다. `contradicting_evidence`·`search_hints`는 없으면 `[]`다.
+- 인용은 원문 줄을 그대로 옮긴다. 하나는 15줄까지이고, 4글자보다 짧은 부분 인용은 받지 않는다.
 - `evidence_scenes`·`timeline_info`·`release_dates`·`verdict`는 쓰지 않는다. 앞의 셋은 병합기가 붙이고, `verdict`는 D에서 쓰지 않는 칸이다.
 - **출력이 너무 길면 나눠 쓴다.**
-  - 부분 파일 하나에 위 형식의 배열 일부를 적는다. `link_id`는 임시 이름(`P1`, `P2` …)을 써도 된다. 같은 파일 안의 `prev_link_ids`도 임시 이름으로 가리킬 수 있다.
-  - `append-shard <bundle_id> --from=<부분 파일>`로 덧붙이면 도구가 이어지는 번호로 바꾸고, 남은 메모 수를 알려 준다.
-  - 앞 부분의 기록은 이미 바뀐 실제 `link_id`로 가리킨다.
+  - 부분 파일은 **이름 있는 배열을 담은 객체**다. 배열만 넣지 않는다.
+
+    ```json
+    { "candidate_links": [ { "link_id": "P1", "unit_id": "U001", "prev_link_ids": [], "…": "…" }, { "link_id": "P2", "prev_link_ids": ["P1"], "…": "…" } ], "excluded_memos": [] }
+    ```
+
+  - `link_id`는 임시 이름(`P1`, `P2` …)을 써도 된다. 같은 파일 안의 `prev_link_ids`도 임시 이름으로 가리킨다.
+  - `append-shard <bundle_id> --from=<부분 파일>`을 실행하면 다음을 출력한다.
+    - 임시 ID → 실제 ID 대응
+    - 이미 같은 내용이 있어 넣지 않은 항목
+    - 남은 메모 수
+  - 다음 부분에서 앞 부분 기록을 가리킬 때는 출력된 실제 `link_id`를 쓴다.
+  - 같은 부분을 다시 넣어도 같은 내용은 복제되지 않는다. 그래도 재시도 전에는 자기 샤드에서 이미 들어갔는지 확인한다.
   - 남은 메모가 0이 되면 `validate`한다.
 
 ## 5. 검증
@@ -280,7 +332,7 @@ node scripts/graph/pass2-d.mjs validate <bundle_id> --run=<run>
 | 경고 `SAME_BUNDLE_PAIR_OVERLAP` | 보정 뒤 쌍이 같은 묶음의 다른 단위와 같음 |
 | 경고 `ESTABLISHED_FROM_CLAIM_ONLY` | 메모가 모두 주장인데 `established` |
 | 경고 `TIMELINE_CONFLICTS_WITH_SCRIPT` | `script`로 이었는데 연표는 반대 |
-| 경고 `MERGE_SAME_ID` / `BUDGET_TAG_MISSING` | 이미 같은 대상을 병합 제안 / 예산 소진 표시 없음 |
+| 경고 `MERGE_SAME_ID` / `BUDGET_TAG_MISSING` / `BUDGET_EXCEEDED` | 이미 같은 대상을 병합 제안 / 예산 소진 표시 없음 / 쌍·묶음 검색 한도를 넘음 |
 
 ## 6. 하지 않는 것
 

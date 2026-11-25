@@ -195,3 +195,41 @@ test('연표: 14장 장면은 history_order 310, 공식 ID 정규화는 user_ent
   assert.equal(canon.keyOfRef({ ref: 'term', term_key: 'A2__122#E4', name: '제1 방주' }), 'term:A2__001#E1');
   assert.ok(line('main_14_17', 32));
 });
+
+test('GPT 규칙 검수 반영: order_basis 짝, 갈래 기록을 합류 뒤 기록의 앞으로 쓰지 않음, append 복제 방지', () => {
+  // 앞 기록이 있는데 not_applicable
+  const r1 = validateDShard(shardWith([
+    link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)]),
+    link(2, ['main_14_17__rln_003'], [ev('main_14_17', 32)]),
+    link(3, ['main_14_17__rln_004'], [ev('main_14_17', 34)], { progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'not_applicable' }),
+  ]), bundle, ctx);
+  assert.ok(codes(r1).includes('ORDER_BASIS_INVALID'));
+  // 한 갈래 기록(branch) 뒤에 갈래 밖 기록을 잇기
+  const r2 = validateDShard(shardWith([
+    link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)], { context_scope: 'branch' }),
+    link(2, ['main_14_17__rln_003'], [ev('main_14_17', 32)]),
+    link(3, ['main_14_17__rln_004'], [ev('main_14_17', 34)], { progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'script' }),
+  ]), bundle, ctx);
+  assert.ok(codes(r2).includes('EXCLUSIVE_BRANCH_CHAINED'));
+  // 같은 부분 파일을 두 번 넣어도 복제되지 않는다, 배열만 넣으면 오류
+  const b = { bundle_id: 'D1__900', memos: [{ item_id: 'm1' }] };
+  const part = { candidate_links: [{ link_id: 'P1', memo_ids: ['m1'], prev_link_ids: [], rationale: 'x' }] };
+  const a1 = appendPart(null, part, b);
+  const a2 = appendPart(a1.shard, part, b);
+  assert.equal(a2.shard.candidate_links.length, 1);
+  assert.deepEqual(a2.skipped, ['P1']);
+  assert.throws(() => appendPart(null, part.candidate_links, b), /객체/);
+});
+
+test('GPT 규칙 검수 반영: 두 보정이 같은 새 쌍으로 모이면 같은 묶음 겹침 경고', () => {
+  const two = { ...bundle, units: [{ ...bundle.units[0], unit_id: 'U001', memo_ids: ['main_14_14__rln_005'] }, { unit_id: 'U002', pair_key: pairKeyOf(A, 'entity:char_네온'), node_a: { key: A, ref: ref(A) }, node_b: { key: 'entity:char_네온', ref: canon.entityNode('char_네온').ref }, memo_ids: ['main_14_17__rln_004'] }], memos: [bundle.memos[0], { ...bundle.memos[2], unit_id: 'U002', target_node: 'entity:char_네온' }] };
+  const rapi = canon.entityNode('char_라피').ref;
+  const ovr = (unit, id, from) => ({ unit_id: unit, memo_ids: [id], side: 'target', from, to: rapi, confidence: '가능성', rationale: 'r', supporting_evidence: [ev('main_14_17', 34)] });
+  const s = shardWith([
+    link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)], { target: [rapi] }),
+    { ...link(2, ['main_14_17__rln_004'], [ev('main_14_17', 34)], { target: [rapi] }), unit_id: 'U002' },
+  ]);
+  s.endpoint_overrides = [ovr('U001', 'main_14_14__rln_005', ref(B)), ovr('U002', 'main_14_17__rln_004', canon.entityNode('char_네온').ref)];
+  const r = validateDShard(s, two, ctx);
+  assert.ok(r.warnings.some((w) => w.code === 'SAME_BUNDLE_PAIR_OVERLAP'));
+});

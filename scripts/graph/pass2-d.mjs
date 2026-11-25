@@ -72,6 +72,7 @@ export const D_REVIEW_PROBLEMS = new Set([
 ]);
 /** 끝 버튼이 이것이면 그 장면의 다음 경로는 재시작·기록 메뉴로 돌아가는 간선이다(8.3절). 한 번의 진행 경로에서 뺀다 */
 export const RESTART_BUTTONS = new Set(['다시 기록하기', '다시 탐색하기', '메모리 목록으로']);
+const SURE_RESOLVERS = new Set(['participants', 'a2', 'scoped_alias', 'same_scene_reveal']);
 const NODE_TYPES = new Set([...A2_ENTITY_TYPES, 'faction_or_species']);
 const COMMANDER_VK = variantKey('지휘관'); // 직책 다의어: 전역 대응(4단계)에서 뺀다
 
@@ -194,7 +195,17 @@ export const routeGraphOf = (store) => {
     return !reachable(ta, a).has(b) && !reachable(ta, b).has(a);
   };
   const isInGraph = (adj, sid) => [...adj.values()].some((t) => t.includes(sid));
-  return { graph, scenesExclusive };
+  /** a가 한 진행 경로에서 b보다 앞인가: true | false | null(같은 경로 그래프 이야기가 아니거나 서로 배타) */
+  const precedes = (a, b) => {
+    const ta = store.meta(a)?.title_id;
+    if (!ta || ta !== store.meta(b)?.title_id || !graph.has(ta)) return null;
+    const adj = graph.get(ta);
+    if (!(adj.has(a) || isInGraph(adj, a)) || !(adj.has(b) || isInGraph(adj, b))) return null;
+    if (reachable(ta, a).has(b)) return true;
+    if (reachable(ta, b).has(a)) return false;
+    return null;
+  };
+  return { graph, scenesExclusive, precedes };
 };
 
 /** 두 메모가 서로 배타적인가: 같은 장면 같은 선택지의 다른 옵션, 또는 한 진행 경로에서 함께 나올 수 없는 장면 */
@@ -578,15 +589,14 @@ export const validateDShard = (shard, bundle, ctx) => {
     const e = effective.get(id);
     return pairKeyOf(e.subject, e.target);
   };
-  // 같은 묶음 안 다른 단위와 쌍이 겹침(경고)
-  const unitPair = new Map(bundle.units.map((u) => [u.unit_id, u.pair_key]));
+  // 같은 묶음 안에서 (보정 뒤) 같은 쌍이 두 단위 이상에 걸림(경고). 두 보정이 새 쌍으로 모인 경우도 잡는다
+  const unitsOfPair = new Map();
   for (const [id] of effective) {
-    const m = memoById.get(id);
     const pk = effPair(id);
-    if (pk === unitPair.get(m.unit_id)) continue;
-    const other = [...unitPair].find(([uid, k]) => k === pk && uid !== m.unit_id);
-    if (other) warn('SAME_BUNDLE_PAIR_OVERLAP', id, `보정 뒤 쌍이 같은 묶음의 ${other[0]}와 같다. 두 단위 기록을 맞춘다`);
+    if (!unitsOfPair.has(pk)) unitsOfPair.set(pk, new Set());
+    unitsOfPair.get(pk).add(memoById.get(id).unit_id);
   }
+  for (const [pk, us] of unitsOfPair) if (us.size > 1) warn('SAME_BUNDLE_PAIR_OVERLAP', [...us].sort().join(','), `(보정 뒤) 같은 쌍 ${pk}이 단위 ${[...us].sort().join(', ')}에 걸린다. 두 단위 기록을 맞춘다`);
 
   // 관계 기록
   const linkIds = new Set();
@@ -680,11 +690,29 @@ export const validateDShard = (shard, bundle, ctx) => {
 
   // 사슬: prev_link_ids, 순환, 배타, 순서 근거, anchor
   const isPastish = (l) => l.temporal_anchor === 'past_before_scene' || (l.memo_ids ?? []).some((id) => memoById.get(id)?.refers_to_past || memoById.get(id)?.chronology_type === 'flashback');
-  const speechScene = (l) => (l.memo_ids ?? []).map((id) => memoById.get(id)?.scene_id).filter(Boolean).sort((a, b) => store.sceneOrder.get(b) - store.sceneOrder.get(a))[0];
+  // 연표 위치 범위: 과거 기록은 timeline anchor 장면, 현재 기록은 귀속 메모 장면들의 최소~최대
   const posOf = (l) => {
-    if (isPastish(l)) return l.anchor?.kind === 'timeline' ? ctx.timeline.get(l.anchor.scene_id) ?? null : null;
-    const hs = (l.memo_ids ?? []).map((id) => ctx.timeline.get(memoById.get(id)?.scene_id)).filter(Boolean);
-    return hs.length ? hs.sort((a, b) => a.history_order - b.history_order)[0] : null;
+    if (isPastish(l)) {
+      const t = l.anchor?.kind === 'timeline' ? ctx.timeline.get(l.anchor.scene_id) : null;
+      return t ? { min: t.history_order, max: t.history_order } : null;
+    }
+    const hs = (l.memo_ids ?? []).map((id) => ctx.timeline.get(memoById.get(id)?.scene_id)?.history_order).filter((x) => x !== undefined);
+    return hs.length ? { min: Math.min(...hs), max: Math.max(...hs) } : null;
+  };
+  const isBranchOnly = (l) => l.context_scope === 'branch' || ((l.memo_ids ?? []).length && (l.memo_ids ?? []).every((id) => memoById.get(id)?.in_branch_option));
+  /** anchor 장면이 발화 장면보다 앞인가: true | false | null(장면 번호로 정할 수 없음) */
+  const anchorBefore = (a, sp) => {
+    if (a === sp) return false;
+    const ta = ctx.timeline.get(a);
+    const ts = ctx.timeline.get(sp);
+    if (ta && ts && ta.history_order !== ts.history_order) return ta.history_order < ts.history_order;
+    const ma = store.meta(a);
+    const ms = store.meta(sp);
+    if (ma?.title_id !== ms?.title_id) return ta && ts ? null : true; // 다른 이야기: 연표가 같으면 정할 수 없고, 연표 밖이면 원문 인용을 믿는다
+    const r = ctx.routes.precedes?.(a, sp);
+    if (r !== null && r !== undefined) return r;
+    if (['lost_relics', 'event_lost_relics'].includes(ma.category)) return null; // 수집형 기록은 슬롯 번호로 앞뒤를 정하지 않는다
+    return ma.index_in_title < ms.index_in_title;
   };
   const referencedBy = new Map();
   for (const l of links) for (const pid of Array.isArray(l?.prev_link_ids) ? l.prev_link_ids : []) {
@@ -697,6 +725,8 @@ export const validateDShard = (shard, bundle, ctx) => {
     if (CHAINED.has(l.progression) && !l.prev_link_ids.length) err('PROGRESSION_AND_PREV', `${p}.prev_link_ids`, `${l.progression}는 앞선 기록을 prev_link_ids에 적는다`);
     if (['initial', 'standalone'].includes(l.progression) && l.prev_link_ids.length) err('PROGRESSION_AND_PREV', `${p}.prev_link_ids`, `${l.progression}에는 prev_link_ids를 적지 않는다`);
     if (l.progression === 'changes_from' && !['script', 'official_timeline'].includes(l.order_basis)) err('ORDER_BASIS_INVALID', `${p}.order_basis`, 'changes_from은 script | official_timeline 근거로만 잇는다');
+    if (!l.prev_link_ids.length && l.order_basis !== 'not_applicable' && ORDER_BASES.has(l.order_basis)) err('ORDER_BASIS_INVALID', `${p}.order_basis`, '앞 기록이 없으면 order_basis는 not_applicable이다');
+    if (l.prev_link_ids.length && l.order_basis === 'not_applicable') err('ORDER_BASIS_INVALID', `${p}.order_basis`, '앞 기록이 있으면 script | official_timeline | unknown 중 하나다');
     for (const pid of l.prev_link_ids) {
       const prev = linkById.get(pid);
       if (!prev) { err('PROGRESSION_AND_PREV', `${p}.prev_link_ids`, `없는 기록 ${pid}`); continue; }
@@ -707,30 +737,30 @@ export const validateDShard = (shard, bundle, ctx) => {
       const ma = (prev.memo_ids ?? []).map((id) => memoById.get(id)).filter(Boolean);
       const mb = (l.memo_ids ?? []).map((id) => memoById.get(id)).filter(Boolean);
       if (ma.some((x) => mb.some((y) => memosExclusive(x, y, ctx.routes)))) err('EXCLUSIVE_BRANCH_CHAINED', `${p}.prev_link_ids`, `${pid}와 서로 배타적인 갈래의 기록을 이었다`);
+      if (isBranchOnly(prev) && !isBranchOnly(l)) err('EXCLUSIVE_BRANCH_CHAINED', `${p}.prev_link_ids`, `${pid}는 한 갈래 안 기록이다. 합류 뒤 공통 기록은 갈래 밖(분기 전) 기록에 잇는다`);
       if (l.order_basis === 'official_timeline') {
         const a = posOf(prev);
         const b = posOf(l);
         if (!a || !b) err('ORDER_BASIS_INVALID', `${p}.order_basis`, `official_timeline인데 ${!a ? pid : l.link_id}의 연표 위치가 없다(회고는 timeline anchor)`);
-        else if (a.history_order >= b.history_order) err('ORDER_BASIS_INVALID', `${p}.order_basis`, `연표 순서가 앞서지 않는다(${a.history_order} → ${b.history_order}). 같은 연표 단위면 script 근거를 쓴다`);
+        else if (a.max >= b.min) err('ORDER_BASIS_INVALID', `${p}.order_basis`, `연표 순서가 앞서지 않는다(${a.min}~${a.max} → ${b.min}~${b.max}). 같은 연표 단위면 script 근거를 쓰고, 여러 장면을 묶었으면 변화 시점에서 나눈다`);
       }
       if (l.order_basis === 'script') {
         const a = posOf(prev);
         const b = posOf(l);
-        if (a && b && a.history_order > b.history_order) warn('TIMELINE_CONFLICTS_WITH_SCRIPT', `${p}.order_basis`, `script로 이었는데 연표는 반대(${a.history_order} → ${b.history_order})다. contradicting_evidence를 확인한다`);
+        if (a && b && a.min > b.max && !(l.contradicting_evidence ?? []).length) warn('TIMELINE_CONFLICTS_WITH_SCRIPT', `${p}.order_basis`, `script로 이었는데 연표는 반대(${a.min} → ${b.max})이고 contradicting_evidence가 비었다`);
       }
     }
     // anchor 필수(G3, 8.2-4)
     if (isPastish(l)) {
       const usesOrder = ['official_timeline', 'script'].includes(l.order_basis) || (referencedBy.get(l.link_id) ?? []).some((n) => ['official_timeline', 'script'].includes(n.order_basis) || n.progression === 'changes_from');
       if (usesOrder && !l.anchor) err('ANCHOR_REQUIRED', `${p}.anchor`, '회고·회상 기록을 순서에 쓰려면 성립 시점 anchor를 적는다(없으면 발화 이전까지만, 순서 unknown)');
-      if (l.anchor?.kind === 'timeline' && store.has(l.anchor.scene_id) && l.temporal_anchor === 'past_before_scene') {
-        const sp = speechScene(l);
-        const ta = ctx.timeline.get(l.anchor.scene_id);
-        const ts = ctx.timeline.get(sp);
-        const sameTitle = store.meta(l.anchor.scene_id)?.title_id === store.meta(sp)?.title_id;
-        if (l.anchor.scene_id === sp) err('ANCHOR_REQUIRED', `${p}.anchor.scene_id`, 'anchor는 발화 장면 자신이 아니다');
-        else if (ta && ts && ta.history_order > ts.history_order) err('ANCHOR_REQUIRED', `${p}.anchor.scene_id`, 'anchor가 발화 장면보다 연표상 뒤다');
-        else if ((!ta || !ts || ta.history_order === ts.history_order) && sameTitle && store.meta(l.anchor.scene_id).index_in_title > store.meta(sp).index_in_title) err('ANCHOR_REQUIRED', `${p}.anchor.scene_id`, 'anchor가 발화 장면보다 뒤 장면이다');
+      if (l.anchor?.kind === 'timeline' && store.has(l.anchor.scene_id)) {
+        // 귀속 메모의 모든 발화 장면보다 앞이어야 한다
+        for (const sp of [...new Set((l.memo_ids ?? []).map((id) => memoById.get(id)?.scene_id).filter(Boolean))]) {
+          const r = anchorBefore(l.anchor.scene_id, sp);
+          if (r === false) err('ANCHOR_REQUIRED', `${p}.anchor.scene_id`, `anchor ${l.anchor.scene_id}가 발화 장면 ${sp}보다 앞이 아니다`);
+          else if (r === null) err('ANCHOR_REQUIRED', `${p}.anchor.scene_id`, `anchor ${l.anchor.scene_id}와 발화 장면 ${sp}의 앞뒤를 장면 번호·연표로 정할 수 없다(병렬 루트·수집형 기록·같은 연표 번호). kind: script로 원문 인용을 적는다`);
+        }
       }
     }
     // 확립 경고
@@ -770,11 +800,14 @@ export const validateDShard = (shard, bundle, ctx) => {
     else m.supporting_evidence.forEach((ev, j) => checkEvidence(ev, `${p}.supporting_evidence[${j}]`));
   });
   // 검색 예산
+  let total = 0;
   for (const [uid, n] of ctx.termCounts ?? []) {
+    total += n;
+    if (n > PAIR_TERM_BUDGET) warn('BUDGET_EXCEEDED', uid, `쌍 고유 검색어가 ${n}개다(한도 ${PAIR_TERM_BUDGET})`);
     if (n < PAIR_TERM_BUDGET) continue;
-    const held = links.filter((l) => l?.unit_id === uid && l.confidence === '판단 보류');
-    if (held.length && !held.some((l) => String(l.rationale ?? '').includes(SEARCH_BUDGET_TAG))) warn('BUDGET_TAG_MISSING', uid, `고유 검색어 ${n}개를 다 썼다. 예산 때문에 판단 보류했으면 rationale에 ${SEARCH_BUDGET_TAG}를 적는다`);
+    for (const l of links.filter((x) => x?.unit_id === uid && x.confidence === '판단 보류')) if (!String(l.rationale ?? '').includes(SEARCH_BUDGET_TAG)) warn('BUDGET_TAG_MISSING', l.link_id, `쌍 고유 검색어 ${n}개를 다 썼다. 예산 때문에 판단 보류했으면 rationale에 ${SEARCH_BUDGET_TAG}를 적는다`);
   }
+  if (total > BUNDLE_TERM_BUDGET) warn('BUDGET_EXCEEDED', bundle.bundle_id, `묶음 고유 검색어가 ${total}개다(한도 ${BUNDLE_TERM_BUDGET})`);
   return { errors, warnings };
 };
 
@@ -870,7 +903,8 @@ export const sampleDAudit = ({ units, linksByUnit, memosByUnit, overrides, merge
   for (const u of units) {
     const links = linksByUnit.get(`${u.bundle_id}|${u.unit_id}`) ?? [];
     const st = unitStratum(u, links);
-    const conf = links.length ? links.map((l) => l.confidence).sort().at(-1) : '해당 없음';
+    const rank = { '판단 보류': 0, 가능성: 1, '유력한 해석': 2 };
+    const conf = links.length ? links.map((l) => l.confidence).sort((a, b) => (rank[b] ?? -1) - (rank[a] ?? -1))[0] : '해당 없음';
     const k = `${st}/${conf}`;
     if (!strata.has(k)) strata.set(k, []);
     strata.get(k).push(u);
@@ -934,7 +968,7 @@ export const buildD = ({ run, inputs, baseIncrement, limits = {}, waveSize = WAV
       const ms = bundleMemos.filter((m) => m.unit_id === u.unit_id);
       u.address_summary = addressSummary(u, ms, inputs);
       u.prior_pass2_context = priorContext(u, ms, inputs);
-      u.ambiguous_endpoints = ms.filter((m) => m.ambiguous_candidates.subject.length || m.ambiguous_candidates.target.length || ['title_unique', 'b_candidate'].includes(m.subject_resolved_by) || ['title_unique', 'b_candidate'].includes(m.target_resolved_by)).map((m) => ({ item_id: m.item_id, subject: { surface: m.subject, resolved_by: m.subject_resolved_by, candidates: m.ambiguous_candidates.subject }, target: { surface: m.target, resolved_by: m.target_resolved_by, candidates: m.ambiguous_candidates.target } }));
+      u.ambiguous_endpoints = ms.filter((m) => m.ambiguous_candidates.subject.length || m.ambiguous_candidates.target.length || !SURE_RESOLVERS.has(m.subject_resolved_by) || !SURE_RESOLVERS.has(m.target_resolved_by)).map((m) => ({ item_id: m.item_id, subject: { surface: m.subject, resolved_by: m.subject_resolved_by, candidates: m.ambiguous_candidates.subject }, target: { surface: m.target, resolved_by: m.target_resolved_by, candidates: m.ambiguous_candidates.target } }));
     }
     const scriptText = units.map((u) => excerptOfUnit(u, bundleMemos.filter((m) => m.unit_id === u.unit_id), store)).join('\n\n');
     const scriptFile = path.join(P.bundles, `${bundleId}.excerpts.txt`);
@@ -1112,6 +1146,7 @@ const doneEntries = (P, plan, ctx, maxWave = Infinity) => plan.bundles.filter((b
 
 /** 부분 결과를 샤드에 덧붙인다(2.5절 차선책 (가)). 임시 link_id(P1 등)는 이어지는 번호로 바꾸고 prev_link_ids도 고친다 */
 export const appendPart = (shard, part, bundle) => {
+  if (!part || typeof part !== 'object' || Array.isArray(part)) throw new Error('부분 파일은 {"candidate_links": [...], "excluded_memos": [...], …} 같은 객체다(배열만 넣지 않는다)');
   const out = { schema_version: PASS2_SCHEMA_VERSION, bundle_id: bundle.bundle_id, endpoint_overrides: [], candidate_links: [], excluded_memos: [], merge_suggestions: [], ...(shard ?? {}) };
   let next = Math.max(0, ...out.candidate_links.map((l) => Number(/__(\d{3})$/.exec(l.link_id ?? '')?.[1] ?? 0))) + 1;
   const rename = new Map();
@@ -1120,10 +1155,17 @@ export const appendPart = (shard, part, bundle) => {
     if (realRe.test(l.link_id ?? '') && !out.candidate_links.some((x) => x.link_id === l.link_id)) continue;
     rename.set(l.link_id, `${bundle.bundle_id}__${pad(next++)}`);
   }
-  for (const l of part.candidate_links ?? []) out.candidate_links.push({ ...l, link_id: rename.get(l.link_id) ?? l.link_id, prev_link_ids: (l.prev_link_ids ?? []).map((p) => rename.get(p) ?? p) });
-  for (const k of ['endpoint_overrides', 'excluded_memos', 'merge_suggestions']) out[k].push(...(part[k] ?? []));
+  // 같은 내용(link_id·prev_link_ids 빼고)이 이미 있으면 다시 넣지 않는다: 같은 부분 파일을 재시도해도 복제되지 않게
+  const sig = (x) => JSON.stringify({ ...x, link_id: undefined, prev_link_ids: undefined });
+  const have = new Set([...out.candidate_links, ...out.endpoint_overrides, ...out.excluded_memos, ...out.merge_suggestions].map(sig));
+  const skipped = [];
+  for (const l of part.candidate_links ?? []) {
+    if (have.has(sig(l))) { skipped.push(l.link_id); continue; }
+    out.candidate_links.push({ ...l, link_id: rename.get(l.link_id) ?? l.link_id, prev_link_ids: (l.prev_link_ids ?? []).map((p) => rename.get(p) ?? p) });
+  }
+  for (const k of ['endpoint_overrides', 'excluded_memos', 'merge_suggestions']) for (const x of part[k] ?? []) { if (have.has(sig(x))) { skipped.push(`${k}:${x.item_id ?? x.suggestion_id ?? (x.memo_ids ?? []).join(',')}`); continue; } out[k].push(x); }
   const covered = new Set([...out.candidate_links.flatMap((l) => l.memo_ids ?? []), ...out.excluded_memos.map((x) => x.item_id)]);
-  return { shard: out, remaining: bundle.memos.filter((m) => !covered.has(m.item_id)).map((m) => m.item_id) };
+  return { shard: out, remaining: bundle.memos.filter((m) => !covered.has(m.item_id)).map((m) => m.item_id), renamed: [...rename].filter(([a]) => !skipped.includes(a)), skipped };
 };
 
 const main = async () => {
@@ -1210,6 +1252,8 @@ const main = async () => {
     const r = appendPart(cur.shard ?? null, JSON.parse(fs.readFileSync(path.resolve(from), 'utf8')), bundle);
     fs.mkdirSync(P.shards, { recursive: true });
     fs.writeFileSync(path.join(P.shards, `${id}.json`), `${JSON.stringify(r.shard, null, 2)}\n`);
+    if (r.renamed.length) console.log(`[append-shard] 임시 ID → 실제 ID: ${r.renamed.map(([a, b]) => `${a}→${b}`).join(', ')}`);
+    if (r.skipped.length) console.log(`[append-shard] 이미 있는 같은 내용이라 넣지 않음: ${r.skipped.join(', ')}`);
     console.log(`[append-shard] ${id}: 기록 ${r.shard.candidate_links.length}, 제외 ${r.shard.excluded_memos.length}, 남은 메모 ${r.remaining.length}${r.remaining.length ? ` (${r.remaining.slice(0, 10).join(', ')}${r.remaining.length > 10 ? ' …' : ''})` : ' → validate 하라'}`);
     return;
   }
@@ -1240,7 +1284,12 @@ const main = async () => {
     const route = meta.mgt?.route;
     console.log(`@@@ ${sid} | ${meta.title_id} | ${meta.sub_title ?? ''} | ${lines.length - 1}줄 | 이야기 안 ${meta.index_in_title + 1}번째${tl ? ` | 연표 ${tl.history_order}` : ''}`);
     if (route?.parallel_scene_ids?.length) console.log(`# 병렬 루트 장면: ${route.parallel_scene_ids.join(', ')}`);
-    if (route?.next_routes?.length) console.log(`# 다음 경로: ${route.next_routes.map((r) => `${r.target}${r.option ? `(${r.option})` : ''}`).join(', ')}`);
+    const adj = ctx.routes.graph.get(meta.title_id);
+    if (adj) {
+      const eff = adj.get(sid) ?? [];
+      console.log(`# 선택 경로 그래프가 있는 이야기다. 한 번의 진행 경로의 다음 장면(재시작·기록 메뉴 복귀 제외): ${eff.join(', ') || '없음(끝 또는 복귀)'}`);
+      if ((route?.next_routes?.length ?? 0) > eff.length) console.log('# 이 장면의 원래 다음 경로는 재시작·기록 메뉴 복귀라 앞뒤 판단에서 뺀다');
+    } else if (route?.parallel_scene_ids?.length) console.log('# 경로 그래프가 없는 이야기다. 병렬 표시가 있어도 장면 순서는 2.4·3.6절대로 본다');
     for (let i = a; i <= b; i++) console.log(`[${lineTag(i)}] ${lines[i]}`);
     return;
   }
