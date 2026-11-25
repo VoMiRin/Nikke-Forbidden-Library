@@ -1,0 +1,462 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__284",
+  "candidate_links": [
+    {
+      "link_id": "C1__284__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "blabla_alice_001__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "blabla_alice_002",
+          "line_start": 60,
+          "line_end": 65,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 앨리스가 자신에게 지시를 내린 인물로 부르는 '여왕님'은 누구인가 / 답: 루드밀라(blabla_alice_002 L64) / 근거: 이어지는 대화에서 앨리스가 '여왕님께 부탁해도 안될까요?'라고 묻자 지휘관이 그 대상을 직접 '루드밀라'로 받아 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_alice_001",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "여왕님이 저 토끼 씨한테 갔다 오래요!"
+        },
+        {
+          "scene_id": "blabla_alice_002",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "여왕님께 부탁해도 안될까요?"
+        },
+        {
+          "scene_id": "blabla_alice_002",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "루드밀라도 이건 못 할 거야"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__284__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "blabla_alice_008__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "golden_coin_rush_03",
+          "line_start": 93,
+          "line_end": 96,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 앨리스가 부르는 '하얀 토끼 씨'와 '검정 토끼 씨'는 각각 누구인가 / 답: 블랑과 누아르(golden_coin_rush_03 L96) / 근거: 앨리스가 코인 러시에서 찾던 토끼 씨가 '하얀 토끼 씨와 검정 토끼 씨'였다고 말하자 루주가 블랑과 누아르를 가리키는 말임을 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_alice_008",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "하얀 토끼 씨랑 검정 토끼 씨도 초대해요!"
+        },
+        {
+          "scene_id": "golden_coin_rush_03",
+          "line_start": 94,
+          "line_end": 94,
+          "quote": "앨리스: 하얀 토끼 씨와 검정 토끼 씨였어요!"
+        },
+        {
+          "scene_id": "golden_coin_rush_03",
+          "line_start": 96,
+          "line_end": 96,
+          "quote": "루주: 음, 누가 봐도 블랑과 누아르를 가리키는 말이잖아요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '하얀 토끼' 및 '토끼 씨' 검색으로 확인한 golden_coin_rush_03 L93-L96"
+      ]
+    },
+    {
+      "link_id": "C1__284__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "blabla_alice_008__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "golden_coin_rush_04",
+          "line_start": 168,
+          "line_end": 176,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 앨리스가 부르는 '반짝 토끼 씨'는 누구인가 / 답: 소다(golden_coin_rush_04 L168-L176) / 근거: 바니 복장으로 갈아입고 나온 소다를 보고 앨리스가 직접 '반짝 토끼 씨가 되셨어요~!!'라고 부른다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_alice_008",
+          "line_start": 67,
+          "line_end": 67,
+          "quote": "그리고 반짝 토끼 씨도요!"
+        },
+        {
+          "scene_id": "golden_coin_rush_04",
+          "line_start": 168,
+          "line_end": 168,
+          "quote": "소다: 헤헤, 어떤가요?"
+        },
+        {
+          "scene_id": "golden_coin_rush_04",
+          "line_start": 176,
+          "line_end": 176,
+          "quote": "앨리스: 반짝 토끼 씨가 되셨어요~!!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '토끼 씨' 검색으로 확인한 golden_coin_rush_04 L168-L176"
+      ]
+    },
+    {
+      "link_id": "C1__284__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "blabla_alice_008__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "golden_coin_rush_06",
+          "line_start": 28,
+          "line_end": 41,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 앨리스가 부르는 '미끌 토끼 씨'와 '의사 토끼 씨'는 각각 누구인가 / 답: 폴크방과 메어리(golden_coin_rush_06 L28-L41) / 근거: 바니 복장을 입은 폴크방과 메어리에게 앨리스가 '미끌 토끼 씨랑 의사 토끼 씨···! 두 분은 어떻게 토끼 씨가 되셨나요?!'라고 묻자 땀으로 젖어 갈아입은 폴크방과 안전 요원으로 근무 중인 메어리가 차례로 답한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_alice_008",
+          "line_start": 70,
+          "line_end": 70,
+          "quote": "미끌 토끼 씨도 부르고"
+        },
+        {
+          "scene_id": "blabla_alice_008",
+          "line_start": 76,
+          "line_end": 76,
+          "quote": "아! 그리고 의사 토끼 씨랑···"
+        },
+        {
+          "scene_id": "golden_coin_rush_06",
+          "line_start": 28,
+          "line_end": 28,
+          "quote": "앨리스: 미끌 토끼 씨랑 의사 토끼 씨···!"
+        },
+        {
+          "scene_id": "golden_coin_rush_06",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "폴크방: 오자마자 실내가 너무 더워서 온몸이 땀으로 다 젖었거든요."
+        },
+        {
+          "scene_id": "golden_coin_rush_06",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "메어리: 저는 기분도 내볼 겸 입어봤어요~"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '토끼 씨' 검색으로 확인한 golden_coin_rush_06 L28-L41"
+      ]
+    },
+    {
+      "link_id": "C1__284__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "blabla_alice_008__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "golden_coin_rush_19",
+          "line_start": 13,
+          "line_end": 17,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 앨리스가 부르는 '금색 토끼 씨'는 누구인가 / 답: 루피(golden_coin_rush_19 L14-L17) / 근거: 루피가 스스로 '금색 토끼 씨는 어때~?'라며 말을 걸자 앨리스가 루피를 직접 '금색 토끼 씨~!'라고 부른다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_alice_008",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "금색 토끼 씨도 불러요!"
+        },
+        {
+          "scene_id": "golden_coin_rush_19",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "루피: 미끌 토끼 씨 말고~ 금색 토끼 씨는 어때~?"
+        },
+        {
+          "scene_id": "golden_coin_rush_19",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "앨리스: 금색 토끼 씨~!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep '토끼 씨' 검색으로 확인한 golden_coin_rush_19 L13-L17"
+      ]
+    },
+    {
+      "link_id": "C1__284__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "blabla_yan_001__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "new_flavor_12__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "질문: 퍼펙트(퍼펙트 차) 안에 든 성분이 무엇인가 / 답: 정할 수 없음. new_flavor_12__clh_002에서 퍼펙트의 주재료가 지상이 아닌 곳에 있고 싼 값에 하나만으로 대량 생산이 가능하며 공장의 양산형 니케 실종과 맞물려 있음을 암시하지만, 같은 장면에서 '우리도 몰라', '진실은 알 수 없겠지만'이라 하여 성분의 정체를 확정하지 않는다 / 근거: 두 항목 모두 방주의 대체 식품 '퍼펙트'를 이루는 미지의 성분·주재료를 다룬다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_yan_001",
+          "line_start": 128,
+          "line_end": 128,
+          "quote": "퍼펙트 차? ㅡㅡ;"
+        },
+        {
+          "scene_id": "blabla_yan_001",
+          "line_start": 134,
+          "line_end": 134,
+          "quote": "안에 든 성분이 뭘 줄 알고 ㅋㅋㅋ"
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 91,
+          "line_end": 91,
+          "quote": "브래디: 퍼펙트를 만들 때 들어가는 주재료."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 92,
+          "line_end": 92,
+          "quote": "브래디: 그건 아주 싼 값에 구할 수 있고, 하나만 있어도 대량의 퍼펙트를 만들 수 있지."
+        },
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 115,
+          "line_end": 115,
+          "quote": "브래디: 그 양산형 니케 중 하나가 사라졌다고 들었어."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "new_flavor_12",
+          "line_start": 128,
+          "line_end": 128,
+          "quote": "브래디: 진실은 알 수 없겠지만."
+        }
+      ],
+      "search_hints": [
+        "grep '퍼펙트' 검색으로 확인한 new_flavor_12 L91-L116(new_flavor_12__clh_002)"
+      ]
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "blabla_admi_001__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_admi_002__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_admi_005__clh_001",
+      "reason": "짝 없음",
+      "note": "프리바티가 애드미의 가방을 메고 흐뭇한 얼굴로 거울을 본 이유가 무엇인지"
+    },
+    {
+      "item_id": "blabla_alice_004__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_alice_007__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_anchor_001__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_anchor_002__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_yan_001__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_yan_002__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ade_001__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ade_003__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ade_004__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ade_006__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ether_001__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ether_002__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ether_003__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ether_004__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ether_004__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ether_005__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_ether_007__clh_001",
+      "reason": "짝 없음",
+      "note": "지휘관과 일레그 덕분에 해결되었다는 에테르의 '신경 쓰이던 일'(전력 문제를 포함한 이것저것)이 구체적으로 무엇인지"
+    },
+    {
+      "item_id": "blabla_epinel_001__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_epinel_002__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_epinel_003__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_exia_001__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_exia_001__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_exia_003__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_emma_001__clh_001",
+      "reason": "짝 없음",
+      "note": "[검색 예산 소진] 엠마가 지휘관실에 두고 간 분홍색 줄무늬 쇼핑백 안에 든 과감한 디자인의 물건이 무엇인지"
+    },
+    {
+      "item_id": "blabla_emma_004__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_emma_005__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_emma_007__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "blabla_emma_009__clh_001",
+      "reason": "단서 아님"
+    }
+  ],
+  "merge_suggestions": []
+}
