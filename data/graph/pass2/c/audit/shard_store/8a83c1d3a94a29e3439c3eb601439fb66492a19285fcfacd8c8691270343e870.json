@@ -1,0 +1,1043 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "C1__058",
+  "candidate_links": [
+    {
+      "link_id": "C1__058__001",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "diesel_00__clh_004"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_24_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피가 자세한 사정은 모른다고 한, AFX 열차 테러로 인피니티 레일 스쿼드가 생겨난 내막은 무엇인가 / 답: 엘리시온이 그 열차 테러로 죽은 인간들을 열차를 관리하는 니케로 만들었고, 디젤과 솔린이 그 피해자다(main_24_01 L36-L44) / 근거: diesel_00에서 라피가 스쿼드가 그 사건으로 생겨났지만 자세한 사정은 모른다고 하고, main_24_01에서 크로우가 테러로 죽은 인간을 열차 관리 니케로 만들었다고 말하자 디젤이 '우리를, 내 동생을'이라며 자신들이 그 피해자임을 드러낸다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "diesel_00",
+          "line_start": 162,
+          "line_end": 162,
+          "quote": "라피: 그럴 거야. 인피니티 레일 스쿼드가 저 사건으로 생겨났으니까."
+        },
+        {
+          "scene_id": "diesel_00",
+          "line_start": 167,
+          "line_end": 167,
+          "quote": "라피: 네. 자세한 사정은 모르지만 저 사건 이후."
+        },
+        {
+          "scene_id": "main_24_01",
+          "line_start": 38,
+          "line_end": 38,
+          "quote": "디젤: 우리를···!! 내 동생을···!!"
+        },
+        {
+          "scene_id": "main_24_01",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "크로우: 열차 테러로 죽은 인간을, 열차를 관리하는 니케로 만들었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__002",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_16_15__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_24_01__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: NIMPH가 심어져 있는 크로우가 왜 지휘관을 직접 쏘지 않고 철판에 탄환을 튕겨 맞혔으며 어떻게 인간을 해치는 사격이 가능했는가 / 답: 사람을 직접 쏘는 것이 아니라 옆에 있는 물체를 쏜다는 이미지에만 집중하고 상대가 다치거나 죽을 수 있다는 생각을 배제해 머릿속 NIMPH를 제어한다는 이미지를 가지면 발포할 수 있다(main_24_01 L76-L83) / 근거: 16장에서 철판 도탄 사격으로 지휘관을 쏜 크로우 본인이 24장에서 니케가 인간 쪽으로 발포할 때 옆 사물을 쏜다는 간접 사격 이미지로 NIMPH 제약을 우회하는 원리를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_16_15",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "크로우의 탄환은 자칼이 눈 위에 세워둔 철판을 맞고 튕겨서,"
+        },
+        {
+          "scene_id": "main_16_15",
+          "line_start": 88,
+          "line_end": 88,
+          "quote": "내 몸을 그대로 뚫고 지나갔다."
+        },
+        {
+          "scene_id": "main_24_01",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "크로우: 난 지금 저 녀석을 쏘는 것이 아니다. 저 녀석 옆에 있는 것을 쏘는 것이다."
+        },
+        {
+          "scene_id": "main_24_01",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "크로우: 네 머릿속에 들어있는 NIMPH를 제어한다는 이미지를 가져."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "16장에서 크로우가 철판 도탄으로 지휘관을 쏜 장면이 떠올라 grep(\"크로우의\")과 show로 main_16_15 L86-L88(main_16_15__clh_001)을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__003",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_24_04",
+          "line_start": 34,
+          "line_end": 40,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 유니가 이그조틱을 미끼로 슈엔을 미실리스 의료센터로 유인할 것이라는 지휘관의 추론은 실제로 맞았는가 / 답: 맞다. 유니가 이그조틱이 근처에 있다며 슈엔을 미실리스 의료센터 원장실로 불러냈다(main_24_04 L34-L40) / 근거: main_24_02에서 지휘관이 추론한 기만 유인 그대로 슈엔이 미실리스 의료센터 원장실에 도착해 이그조틱의 행방을 묻고 유니가 아직 안 왔지만 근처에 있다며 붙잡아 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_02",
+          "line_start": 156,
+          "line_end": 156,
+          "quote": "유니는 슈엔에게 크로우를 미실리스 의료센터에서 잡았다고 거짓말을 한다."
+        },
+        {
+          "scene_id": "main_24_04",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "슈엔: 그래. 겁나게 밟고 왔다. 그래서, 그것들은 어딨어?"
+        },
+        {
+          "scene_id": "main_24_04",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "슈엔: 이 근처에 있는 건 맞아?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__004",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_02__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_24_06",
+          "line_start": 80,
+          "line_end": 94,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 미실리스 의료센터에서 유니와 함께 기다리는 크로우의 진짜 목적은 지휘관의 추론대로 슈엔인가 / 답: 유니가 슈엔을 죽일 수 있게 도와준 것은 맞으나 슈엔은 곁다리일 뿐이고, 크로우의 진짜 목적은 방주의 선택과 지휘관의 추락이다(main_24_06 L80-L94) / 근거: 의료센터 현장에 나타난 크로우가 유니를 도운 사실을 인정하면서도 슈엔은 곁다리였으며 자신의 목적은 지휘관의 추락이라고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_02",
+          "line_start": 161,
+          "line_end": 161,
+          "quote": "언체인드를 가진 유니가 크로우와 함께 기다리고 있다."
+        },
+        {
+          "scene_id": "main_24_02",
+          "line_start": 163,
+          "line_end": 163,
+          "quote": "크로우의 다음 목적은 슈엔이다."
+        },
+        {
+          "scene_id": "main_24_06",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "크로우: 도와줬지. 슈엔을 죽일 수 있게."
+        },
+        {
+          "scene_id": "main_24_06",
+          "line_start": 94,
+          "line_end": 94,
+          "quote": "크로우: 슈엔은 사실 곁다리일 뿐이지. 뭐, 저 정도면 충분한 것 같고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__005",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_23_03__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_24_03__clh_002"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 이빨 자국이 남은 채 부서진 미실리스 메인 허브를 누가 왜 파괴했는가 / 답: 자칼이 크로우와 바이퍼의 명령에 따라 방주 테러와의 연관성을 인식하지 못한 채 자신의 의지로 미실리스의 메인 허브를 부쉈다(main_24_03 L97-L103) / 근거: 23장에서 이빨 자국만 언급되며 범인이 가려져 있던 미실리스 메인 허브 파손을 24장 자칼의 뇌 스캔 결과에서 직접 지목해 진상을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_23_03",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "미하라: 좀 전에 미실리스의 메인 허브가 부서진 모양이에요."
+        },
+        {
+          "scene_id": "main_23_03",
+          "line_start": 23,
+          "line_end": 23,
+          "quote": "미하라: 이빨 자국이 어쨌다는 둥 했다는 것 같아요."
+        },
+        {
+          "scene_id": "main_24_03",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "잉그리드: 미실리스의 메인 허브를 부순 것. 모두 자칼이 자신의 의지대로 한 것이 사실이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__006",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_06__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_17__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 지휘관의 회복력이 평범한 인간과 달리 비정상적으로 뛰어난 이유는 무엇인가 / 답: 초인적인 자연 치유 능력을 지닌 엔더슨을 복제하며 자연 치유 능력을 극대화하는 방향으로 완성한 프로젝트 A.D.의 클론(7호)이기 때문이다(maria-n_17 L161-L170, L184-L195) / 근거: 크로우가 지휘관의 비정상적인 회복력을 지적한 의문에 대해, 지휘관이 실험체 7호로 드러나는 다른 이야기(wisdom_spring)와 결합하면 프로젝트 A.D. 클론의 자연 치유 능력 극대화라는 원인이 성립한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_06",
+          "line_start": 141,
+          "line_end": 141,
+          "quote": "크로우: ···역시 이상해. 네 회복력은 정상이 아냐."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 167,
+          "line_end": 167,
+          "quote": "에닉: 특히나 우수했던 것은 자연 치유 능력이었습니다."
+        },
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 170,
+          "line_end": 170,
+          "quote": "에닉: 프로젝트는 자연스럽게 자연 치유 능력을 극대화하는 방향으로 선회했습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "지휘관의 회복력 비밀이 추후 이벤트에서 다뤄진 점을 바탕으로 grep(\"회복력\")으로 wisdom_spring을 확인한 뒤 grep(\"7호\")과 show로 maria-n_17 L152-L207(maria-n_17__clh_004)을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__007",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_14__clh_003"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "dorothy_04",
+          "line_start": 103,
+          "line_end": 117,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 도로시가 에덴을 움직여 방주와 접촉하는 계기가 된 '어느 무해한 인간'은 누구이며 무엇을 다시 깨닫게 해 주었는가 / 답: 에덴에 머물다 방주로 돌아간 지휘관이며, 도로시는 그와의 만남을 통해 자신에게 아직 애정이 남아 있음을 깨닫고 낙원인 방주로 향하기로 결심했다(dorothy_04 L103-L117) / 근거: 24장 이전 에덴 체류 시기를 다룬 도로시 개인 에피소드에서 도로시가 방주로 떠나는 나약한 인간(지휘관)을 바라보며 자신에게 남은 애정을 자각하고 방주로 내려가 뿌리내리겠다고 다짐한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_14",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "도로시: 어느 무해한 인간과 만난 것이 계기가 되었다고 해두죠."
+        },
+        {
+          "scene_id": "main_24_14",
+          "line_start": 106,
+          "line_end": 106,
+          "quote": "도로시: 제가 뭘 원하는지 다시 깨닫게 해 줬거든요."
+        },
+        {
+          "scene_id": "dorothy_04",
+          "line_start": 103,
+          "line_end": 103,
+          "quote": "도로시: 아직 내게 남아있었군요."
+        },
+        {
+          "scene_id": "dorothy_04",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "도로시: ···애정이."
+        },
+        {
+          "scene_id": "dorothy_04",
+          "line_start": 116,
+          "line_end": 116,
+          "quote": "그녀의 낙원이 있는 땅굴까지 굴러떨어져,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "도로시의 개인 에피소드에서 에덴을 떠나는 지휘관과의 대화가 방주행 결심 계기로 묘사된 것을 바탕으로 show dorothy_04로 L103-L117을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__009",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_19__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_39_13",
+          "line_start": 2,
+          "line_end": 11,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "가능성",
+      "rationale": "질문: 에닉이 방주의 방위를 위해 직접 설계·운용하겠다며 제작 허가를 받은 니케 두 기는 누구인가 / 답: 에닉과 닮은 외형으로 아우터 림 감시역에 직접 파견된 엔드리스와 이터니티 두 기이다(main_39_13 L3-L11) / 근거: 방주 테러 직후 에닉이 니케 두 기 제작을 허가받았고, 이후 테러 원인을 제공한 아우터 림에 에닉과 닮은 니케 둘(엔드리스·이터니티)을 직접 파견했으며 후속 장면(main_45_04)과 결합해 에닉이 만든 두 기임이 드러난다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_19",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "에닉: 제가 설계 및 운용할 니케 제작을 제안 드리는 것입니다."
+        },
+        {
+          "scene_id": "main_24_19",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "에닉: 두 기입니다."
+        },
+        {
+          "scene_id": "main_39_13",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "E.H.: ···엔드리스."
+        },
+        {
+          "scene_id": "main_39_13",
+          "line_start": 8,
+          "line_end": 8,
+          "quote": "E.H.: 그리고 이터니티."
+        },
+        {
+          "scene_id": "main_39_13",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "E.H.: 에닉이 직접 아우터 림에 파견 보낸 니케들이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep(\"두 기\")와 grep(\"에닉이\")로 엔드리스·이터니티 단서를 찾고 show main_39_13으로 L2-L11을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__010",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_19__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "main_45_04",
+          "line_start": 95,
+          "line_end": 108,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 에닉이 니케 제작 데이터를 응용해 직접 설계·운용하겠다며 만든 두 기의 니케는 어떤 존재인가 / 답: 인간의 뇌가 아닌 A.I.를 탑재해 에닉이 직접 만든 자신작 엔드리스와 이터니티이다(main_45_04 L95-L108) / 근거: 에닉 본인이 엔드리스와 이터니티를 인간의 뇌 대신 A.I.를 탑재한 자신의 자신작이라고 직접 밝히며 24장에서 제안한 데이터 응용 및 자체 설계·운용 니케 두 기의 정체를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_19",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "에닉: 제가 설계 및 운용할 니케 제작을 제안 드리는 것입니다."
+        },
+        {
+          "scene_id": "main_24_19",
+          "line_start": 42,
+          "line_end": 42,
+          "quote": "에닉: 응용 또한 가능합니다."
+        },
+        {
+          "scene_id": "main_45_04",
+          "line_start": 100,
+          "line_end": 100,
+          "quote": "에닉: 인간의 뇌가 아닌 A.I.를 탑재하고 있는 니케입니다."
+        },
+        {
+          "scene_id": "main_45_04",
+          "line_start": 101,
+          "line_end": 101,
+          "quote": "에닉: 식스오가 탐낼 하드웨어임에 틀림이 없겠죠. 제 자신작이기도 합니다."
+        },
+        {
+          "scene_id": "main_45_04",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "아니스: 이터니티인가 걔는?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep(\"엔드리스\")와 show main_45_04로 에닉이 직접 제작 사양을 밝히는 L95-L108을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__011",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_19__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_26_01__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 잉그리드가 특수별동대가 자력으로 알아내기 전에는 누설할 수 없다고 한 라피에 관한 일급기밀은 무엇인가 / 답: 라피와 레드 후드가 압축된 두 개의 바디와 두 개의 코어를 공유하고 있다는 대외비 사실이다(main_26_01 L76-L108) / 근거: 24장에서 특수별동대가 자력으로 알아내면 괜찮다고 했던 잉그리드(택티컬티택)가 26장에서 일행이 레드 후드와 직접 만난 뒤 대외비 중의 대외비라며 라피의 이중 바디·코어 비밀을 직접 알려 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_19",
+          "line_start": 97,
+          "line_end": 97,
+          "quote": "잉그리드: 일급기밀이라는 얘기다. 내가 누설할 순 없어."
+        },
+        {
+          "scene_id": "main_24_19",
+          "line_start": 98,
+          "line_end": 98,
+          "quote": "잉그리드: 대신 특수별동대가 자력으로 알아낸다면, 그건 누설된 게 아니니 괜찮다는 의미다."
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "라피와 레드 후드는 바디를 공유하고 있다"
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 86,
+          "line_end": 86,
+          "quote": "코어 또한 두 개다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "26장에서 잉그리드가 메신저로 라피의 비밀을 밝히는 전개를 바탕으로 grep(\"코어\")과 show main_26_01로 main_26_01__clh_001을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__012",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_19__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_26_01__clh_003"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 잉그리드가 지휘관에게 '여러 가지 의미로 라피를 되찾아야 할 거다'라고 말한 까닭은 무엇인가 / 답: 레드 후드로 변해 있는 시간이 길어질수록 라피의 뇌파가 약해지고 라피가 점점 기억을 잃어버리기 때문이다(main_26_01 L248-L266) / 근거: 24장에서 단순 행방 추적 외에 여러 가지 의미로 라피를 되찾아야 한다고 암시했던 잉그리드가 26장에서 레드 후드화 지속 시 라피의 기억이 소실된다는 사실을 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_19",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "잉그리드: 너는 여러 가지 의미로 라피를 되찾아야 할 거다."
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 263,
+          "line_end": 263,
+          "quote": "레드 후드로 변해있는 시간이 길면 길수록"
+        },
+        {
+          "scene_id": "main_26_01",
+          "line_start": 266,
+          "line_end": 266,
+          "quote": "라피는 점점 기억을 잃는다"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep(\"코어\")로 찾은 main_26_01을 show로 이어 읽어 main_26_01__clh_003을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__013",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_19__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "footstep_walk_run_26__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 라피에 관한 비밀이 왜 '방주가 뒤집힐 수도 있는 중요한 얘기'로서 일급기밀로 묶여 있는가 / 답: 라피의 서브 코어 바디 재구축 결과를 통해 과정을 역추적하면 NIMPH에 특정 인물의 데이터를 넣어 죽은 자를 되살리거나 동일 인물을 얼마든지 니케로 만들어낼 수 있기 때문이다(footstep_walk_run_26 L49-L64) / 근거: 24장에서 잉그리드가 썼던 '방주가 뒤집힐 수도 있는'이라는 표현을 과거 라피의 레드 후드 바디 재구축 실험 장면에서 잉그리드 본인이 그대로 말하며 은폐 이유를 설명한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_19",
+          "line_start": 87,
+          "line_end": 87,
+          "quote": "잉그리드: 방주가 뒤집힐 수도 있는 중요한 얘기니까."
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 50,
+          "line_end": 50,
+          "quote": "잉그리드: 방주가 뒤집어질 수도 있는 일이다."
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 52,
+          "line_end": 52,
+          "quote": "잉그리드: 원하는 인물을 만들 수 있다."
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "엘리시온 미케닉: 그, 그뿐만이 아닙니다. 죽은 자도 살아 돌아오게 할 수 있고, 동일 인물을 얼마든지 만들어낼 수 있···!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "라피의 이중 코어 과거사를 다룬 footstep_walk_run을 대상으로 grep(\"코어\")과 show를 실행해 footstep_walk_run_26__clh_001을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__014",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_21__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "goddess_fall_23",
+          "line_start": 11,
+          "line_end": 18,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 퀸이 토커티브를 알지도 못할 것이라는 니힐리스타의 말에도 토커티브가 자신이 퀸에게 구원받았다고 믿는 진상은 무엇인가 / 답: 실제 퀸이 구원한 것이 아니라, 헬레틱이 아니라서 퀸의 목소리를 들을 수 없는 토커티브에게 미러가 퀸의 뜻이라며 거짓말해 속인 것이다(goddess_fall_23 L11-L18) / 근거: 토커티브가 퀸에게 인정받고 구원받았다는 사명을 품게 된 이유에 대해 미러가 직접 자신이 '퀸이 그러더라'라고 거짓말해 속였다고 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_21",
+          "line_start": 36,
+          "line_end": 36,
+          "quote": "토커티브: [난 그분께 구원받았으니까.]"
+        },
+        {
+          "scene_id": "main_24_21",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "토커티브: [갈 곳을 잃고 죽어가던 내가,] [다시 태어나게 해 준 것이 퀸이시다.]"
+        },
+        {
+          "scene_id": "goddess_fall_23",
+          "line_start": 12,
+          "line_end": 12,
+          "quote": "미러: 자신은 퀸에게 인정받고 구원받았으니, 퀸을 위해 뭐든 해서 인정받고 싶다는···."
+        },
+        {
+          "scene_id": "goddess_fall_23",
+          "line_start": 16,
+          "line_end": 16,
+          "quote": "미러: 예. 퀸이 그러더라~ 라고 거짓말했죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": [
+        "grep(\"토커티브는\")으로 goddess_fall_23 L11을 찾고 show goddess_fall_23으로 L11-L18을 확인함"
+      ]
+    },
+    {
+      "link_id": "C1__058__015",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_21__clh_002"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "maria-n_09__clh_004"
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 갈 곳을 잃고 죽어가던 과거의 토커티브는 원래 어떤 존재였는가 / 답: 남자 니케라는 프로젝트의 희생양이 되었다가 실패작으로 방주에게 버림받은 존재였다(maria-n_09 L105-L106) / 근거: 미러가 토커티브에게 남자 니케 프로젝트의 실패작이 되어 방주에게 버림받았다고 직접 말한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_21",
+          "line_start": 37,
+          "line_end": 37,
+          "quote": "토커티브: [갈 곳을 잃고 죽어가던 내가,] [다시 태어나게 해 준 것이 퀸이시다.]"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "미러: 남자 니케라는 바보 같은 프로젝트의 희생양이 된 걸로는 모자라나요?"
+        },
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 106,
+          "line_end": 106,
+          "quote": "미러: 실패작이 되어 방주에게 버림받았으면서, 이젠 랩쳐에게도 버림받고 싶으신건가요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__016",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "긴급뉴스대본_FB_3_final_2.pdf_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_24_00__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 중앙 정부 방송이 '방주에 랩쳐가 쳐들어온 전대미문의 사건'이라고만 보도한 침공의 실제 침입 구역과 보도 경위는 무엇인가 / 답: 방주의 이터널 스카이 150블록을 뚫고 랩쳐가 침공했으나 피드백 지시로 구체적 위치가 삭제되고 자극적인 '전대미문' 문구로 수정되었다(긴급뉴스대본_FB_3_final_2.pdf_00 L2-L7) / 근거: main_24_00 L5의 아나운서 보도 문장과 긴급뉴스대본_FB_3_final_2.pdf_00 L4의 수정 문구가 토씨까지 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_00",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "방주의 이터널 스카이 150블록을 뚫고 랩쳐가 침공했습니다."
+        },
+        {
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_00",
+          "line_start": 4,
+          "line_end": 7,
+          "quote": "->방주에 랩쳐가 쳐들어온 전대미문의 사건이 발생했습니다.\nFB : 자세한 내용 전달 불필요.\n랩쳐가 방주로 왔다는 사실이 중요함.\n자극적인 멘트로 전대미문 기입."
+        },
+        {
+          "scene_id": "main_24_00",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "아나운서: 방주에 랩쳐가 쳐들어온 전대미문의 사건이 발생했습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__017",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "긴급뉴스대본_FB_3_final_2.pdf_03__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "item",
+          "item_id": "main_24_00__clh_001"
+        }
+      ],
+      "roles": {
+        "clue": "target",
+        "reveal": "subject"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 중앙 정부 방송이 '사망자 0명이라는 경이로운 성과'라고 보도한 방주 랩쳐 침공의 실제 인명 피해 진상은 무엇인가 / 답: 전투 중 일부 쉘터가 파괴되어 다수의 부상자와 사망자가 발생했으나 '사망자는 0명이어야 함'이라는 피드백 지시로 사망자 0명으로 조작되었다(긴급뉴스대본_FB_3_final_2.pdf_03 L2-L6) / 근거: main_24_00 L8의 아나운서 보도 문장과 긴급뉴스대본_FB_3_final_2.pdf_03 L5의 수정 문구가 완전히 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_03",
+          "line_start": 2,
+          "line_end": 3,
+          "quote": "전투 과정에서 일부 쉘터가 파괴되어,\n다수의 부상자 및 사망자가 발생."
+        },
+        {
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_03",
+          "line_start": 5,
+          "line_end": 6,
+          "quote": "-> 사망자 0명이라는 경이로운 성과를 거두고 있습니다.\nFB : 사망자는 0명이어야 함."
+        },
+        {
+          "scene_id": "main_24_00",
+          "line_start": 7,
+          "line_end": 8,
+          "quote": "아나운서: 모든 니케가 투입되어 랩쳐 소탕에 나선 결과.\n아나운서: 사망자 0명이라는 경이로운 성과를 거두고 있습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__018",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_01",
+          "line_start": 2,
+          "line_end": 6,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 중앙 정부 방송이 '발 빠른 대처로 방주의 모든 시민이 쉘터로 피난했다'고 보도한 대피는 실제로 어땠나 / 답: 원고는 상황 발생 20분 뒤 중앙 정부가 쉘터 피난을 권고했다는 내용이었으나, 피드백 지시로 시간과 권고가 빠지고 '모든 시민이 피난했다'로 고쳐졌다(긴급뉴스대본_FB_3_final_2.pdf_01 L2-L6) / 근거: main_24_00 L6의 보도 문장이 원고의 수정 문구(L4)와 그대로 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_00",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "아나운서: 하지만 중앙 정부의 발 빠른 대처로 인해, 방주의 모든 시민이 쉘터로 피난했으며."
+        },
+        {
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_01",
+          "line_start": 2,
+          "line_end": 6,
+          "quote": "상황 발생 20분 후, 중앙 정부는 침공 사실을 방주 내의 시민들에게 전파, 쉘터로의 피난을 권고했습니다.\n\n->하지만 중앙 정부의 발 빠른 대처로 인해, 방주의 모든 시민이 쉘터로 피난했으며.\nFB : 시간 기입 불필요. 그냥 빠르게 대처했다로 충분.\n피난 권고도 불필요한 내용. 피난했다로 수정."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__019",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_02",
+          "line_start": 2,
+          "line_end": 7,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 방송이 '모든 니케가 투입되어 랩쳐 소탕에 나섰다'고 보도한 전투는 실제로 어땠나 / 답: 원고는 가용 니케 대부분이 투입되어 랩쳐와 전투를 시작했다는 내용이었으나, 피드백 지시로 '대부분'은 '전부'로, 일방적으로 이기는 느낌을 주려고 '전투'는 '소탕'으로 고쳐졌다(긴급뉴스대본_FB_3_final_2.pdf_02 L2-L7) / 근거: main_24_00 L7의 보도 문장이 원고의 수정 문구(L4)와 그대로 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_00",
+          "line_start": 7,
+          "line_end": 7,
+          "quote": "아나운서: 모든 니케가 투입되어 랩쳐 소탕에 나선 결과."
+        },
+        {
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_02",
+          "line_start": 2,
+          "line_end": 7,
+          "quote": "방주 내에 가용 가능한 니케 대부분이 전투에 투입되어 랩쳐와의 전투를 시작했으나\n\n-> 모든 니케가 투입되어 랩쳐 소탕에 나선 결과.\nFB : 대부분 언급 불필요. 전부 투입으로 수정.\n전투라는 단어 불필요.\n일방적으로 이기는 느낌 전달을 위해 소탕으로 수정."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "C1__058__020",
+      "link_type": "hook",
+      "subject": [
+        {
+          "ref": "item",
+          "item_id": "main_24_00__clh_001"
+        }
+      ],
+      "target": [
+        {
+          "ref": "lines",
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_04",
+          "line_start": 2,
+          "line_end": 5,
+          "scan_id": null
+        }
+      ],
+      "roles": {
+        "clue": "subject",
+        "reveal": "target"
+      },
+      "verdict": "같은 대상",
+      "confidence": "유력한 해석",
+      "rationale": "질문: 방송의 '방주는 안전합니다'라는 말은 원래 무엇이었나 / 답: 원고는 중앙 정부가 랩쳐 소탕에 더욱 박차를 가하겠다고 했다는 내용이었으나 '방주는 안전합니다'로 바뀌었다(긴급뉴스대본_FB_3_final_2.pdf_04 L2-L4) / 근거: main_24_00 L9의 보도 문장이 원고의 수정 문구(L4)와 그대로 일치한다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_00",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "아나운서: 방주는 안전합니다."
+        },
+        {
+          "scene_id": "긴급뉴스대본_FB_3_final_2.pdf_04",
+          "line_start": 2,
+          "line_end": 5,
+          "quote": "중앙 정부 측은 랩쳐 소탕에 더욱 박차를 가할 것이라 얘기했습니다.\n\n-> 방주는 안전합니다.\nFB : 내 사무실로 올 것."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "unlinked": [
+    {
+      "item_id": "main_24_01__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_01__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_01__clh_003",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_02__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_03__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_03__clh_004",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_03__clh_003",
+      "reason": "짝 없음",
+      "note": "필그림 수색 작전 당시 미실리스의 요청으로 배정된 스카우팅이 어째서 먼저 지상으로 올라갔는지"
+    },
+    {
+      "item_id": "main_24_04__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_04__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_12__clh_001",
+      "reason": "짝 없음",
+      "note": "정상 작동 중인 NIMPH에도 크로우가 테러 등을 저지를 수 있었던 진짜 원인과 뇌 조사에서 무엇이 밝혀지는지"
+    },
+    {
+      "item_id": "main_24_12__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_13__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_13__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_14__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_15__clh_001",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_16__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_18__clh_002",
+      "reason": "단서 아님"
+    },
+    {
+      "item_id": "main_24_21__clh_001",
+      "reason": "짝 없음",
+      "note": "토커티브가 잡종이라는 말에 '그 말은 하지 않는 게 좋겠군'이라며 민감하게 반응하는 까닭이 무엇인지"
+    },
+    {
+      "item_id": "main_24_21__clh_002",
+      "reason": "짝 없음",
+      "note": "버림받고 죽어가던 토커티브가 어떤 경위로 랩쳐로 다시 태어났는지"
+    }
+  ],
+  "merge_suggestions": []
+}

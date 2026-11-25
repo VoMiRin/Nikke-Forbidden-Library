@@ -474,6 +474,27 @@ test('carryOverAudit: 다시 만든 표본이 늘어도 그 단위를 뒤 회차
   assert.ok(!carryOverAudit({ ...base, regenerated: regenerated.slice(1), later: later([{ audit_id: 'ext:a__clh_001', item_id: 'a__clh_001', links: [] }]) }).ok);
 });
 
+test('carryOverAudit: 외부 변경이 없어져 빠진 ext 항목은 그 단위를 뒤 회차 PASS 감사가 덮을 때만 인정한다(14회차)', async () => {
+  const { createHash } = await import('node:crypto');
+  const h = (t) => createHash('sha256').update(t).digest('hex');
+  const oldShard = JSON.stringify({ candidate_links: [{ link_id: 'C1__001__001', subject: [{ ref: 'item', item_id: 'a__clh_001' }], target: [{ ref: 'item', item_id: 'b__clh_001' }] }], unlinked: [], merge_suggestions: [] });
+  const newShard = JSON.stringify({ candidate_links: [], unlinked: [], merge_suggestions: [] });
+  const stamp = (shard) => ({ bundle_id: 'C1__001', rules_sha256: 'r', input_sha256: 'i', shard_sha256: h(shard) });
+  const ext = { audit_id: 'ext:a__clh_001', kind: 'external_change', item_id: 'a__clh_001', cause: '회차 3 감사 뒤 shard 수정', links: [{ link_id: 'C1__001__001' }] };
+  const base = { audited: { bundle_stamps: [stamp(oldShard)], items: [ext] }, current: [stamp(newShard)], snapshots: new Map([['C1__001', oldShard]]), shardsNow: new Map([['C1__001', newShard]]), regenerated: [] };
+  const later = (laterItems, shard = newShard) => [{ wave: 2, input: { bundle_stamps: [stamp(shard)], items: laterItems } }];
+  const cover = { audit_id: 'ext:a__clh_001', kind: 'external_change', item_id: 'a__clh_001', links: [] };
+  const ok = carryOverAudit({ ...base, later: later([cover]) });
+  assert.ok(ok.ok, ok.errors.join('\n'));
+  // 뒤 회차가 그 단위를 갖지 않으면 빠진 항목이다
+  assert.ok(carryOverAudit({ ...base, later: later([{ audit_id: 'C1__002:z__clh_001', item_id: 'z__clh_001', links: [] }]) }).errors.some((e) => e.includes('빠졌다: ext:a__clh_001')));
+  // 뒤 회차가 옛 shard를 봤으면 덮지 못한다
+  assert.ok(carryOverAudit({ ...base, later: later([cover], oldShard) }).errors.some((e) => e.includes('빠졌다: ext:a__clh_001')));
+  // 표본 단위가 빠지는 것은 여전히 안 된다
+  const unit = { audit_id: 'C1__001:a__clh_001', kind: 'unit', item_id: 'a__clh_001', links: [] };
+  assert.ok(!carryOverAudit({ ...base, audited: { ...base.audited, items: [unit] }, later: later([cover]) }).ok);
+});
+
 test('conflictBundles: 일부 겹침 충돌은 만난 연결(meets)의 묶음도 걸린 묶음으로 본다', () => {
   const c = { kind: 'partial_line_item_overlap', link_id: 'C1__002__001', bundle_id: 'C1__002', lines: 'lines:s:60-70', overlapped_items: ['s__clh_001', 's__clh_002'], meets: ['C1__028__004', 'C1__028__010'] };
   assert.deepEqual(conflictBundles(c), ['C1__002', 'C1__028']);

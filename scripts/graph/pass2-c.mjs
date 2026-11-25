@@ -1148,14 +1148,18 @@ export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regener
   if (!Array.isArray(regenerated)) errors.push(`감사 항목을 다시 만들 수 없다: ${regenerated?.error ?? '?'}`);
   else {
     const now = new Map(regenerated.map((x) => [x.audit_id, x]));
-    // 앞 회차 표본 층 변화로 덤으로 들어갔던 외부 변경 항목은 그 층이 되돌아가면 빠질 수 있다(덮어야 할 변경이 아니다)
-    const gone = audited.items.filter((x) => !now.has(x.audit_id) && !isSampleDriftItem(x)).map((x) => x.audit_id);
-    if (gone.length) errors.push(`다시 만든 감사 항목에서 빠졌다: ${gone.join(', ')}`);
-    const was = new Map(audited.items.map((x) => [x.audit_id, JSON.stringify(x)]));
-    const moved = regenerated.filter((x) => was.get(x.audit_id) !== JSON.stringify(x));
     const seenAll = later.filter((w) => changes.every((c) => w.input.bundle_stamps.some((s) => s.bundle_id === c.bundle_id && s.shard_sha256 === c.stamp.shard_sha256)));
     const laterItems = seenAll.flatMap((w) => w.input.items);
     const ids = new Set([...laterItems.map((x) => x.item_id).filter(Boolean), ...laterItems.map((x) => x.audit_id)]);
+    // 앞 회차 표본 층 변화로 덤으로 들어갔던 외부 변경 항목은 그 층이 되돌아가면 빠질 수 있다(덮어야 할 변경이 아니다).
+    // 외부 변경을 만든 연결을 뒤에 지워 변경 자체가 없어진 경우도, 그 단위의 지금 상태를 지금 shard를 본 뒤 회차 PASS 감사가
+    // 항목으로 가졌으면 빠져도 된다(14회차: C1__043__013 삭제로 5회차의 ext:chapter_50_03__clh_010이 사라짐)
+    const gone = audited.items
+      .filter((x) => !now.has(x.audit_id) && !isSampleDriftItem(x) && !(x.kind === 'external_change' && ids.has(x.item_id)))
+      .map((x) => x.audit_id);
+    if (gone.length) errors.push(`다시 만든 감사 항목에서 빠졌다: ${gone.join(', ')}`);
+    const was = new Map(audited.items.map((x) => [x.audit_id, JSON.stringify(x)]));
+    const moved = regenerated.filter((x) => was.get(x.audit_id) !== JSON.stringify(x));
     const uncovered = moved.filter((x) => !ids.has(x.item_id ?? x.audit_id)).map((x) => x.audit_id);
     if (uncovered.length) errors.push(`다시 만든 감사 항목이 달라졌는데 뒤 회차 PASS 감사가 덮지 않았다: ${uncovered.join(', ')}`);
   }
