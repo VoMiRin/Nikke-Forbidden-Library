@@ -2,7 +2,7 @@
   "schema_version": "pass2-0.1.0",
   "kind": "A2",
   "run": "main",
-  "generated_at": "2026-11-16T14:50:18.190Z",
+  "generated_at": "2026-11-25T07:49:41.051Z",
   "note": "실행 결과 표. data/graph/pass2/entities.json(공식 표)로 옮기는 것은 사용자 확인 뒤 따로 한다",
   "entities": [
     {
@@ -3005,6 +3005,25 @@
       "entity_id": "char2_세이스"
     },
     {
+      "group_key": "A2I1__001#E8",
+      "bundle_id": "A2I1__001",
+      "entity_key": "E8",
+      "canonical_name": "세피",
+      "qualifier": null,
+      "entity_type": "character",
+      "surfaces": [
+        "세피"
+      ],
+      "units": [
+        "A2I1__001:U017"
+      ],
+      "title_ids": [
+        "event_stories__sky_on_the_rock"
+      ],
+      "item_count": 15,
+      "entity_id": "char2_세피"
+    },
+    {
       "group_key": "A2__160#E6",
       "bundle_id": "A2__160",
       "entity_key": "E6",
@@ -3538,6 +3557,25 @@
       ],
       "item_count": 10,
       "entity_id": "char2_아빠"
+    },
+    {
+      "group_key": "A2I1__001#E9",
+      "bundle_id": "A2I1__001",
+      "entity_key": "E9",
+      "canonical_name": "아빠",
+      "qualifier": "세피의 아버지",
+      "entity_type": "character",
+      "surfaces": [
+        "아빠"
+      ],
+      "units": [
+        "A2I1__001:U019"
+      ],
+      "title_ids": [
+        "event_stories__sky_on_the_rock"
+      ],
+      "item_count": 1,
+      "entity_id": "char2_아빠__6f1109"
     },
     {
       "group_key": "A2__090#E5",
@@ -4554,17 +4592,17 @@
       "entity_id": "char2_제임스"
     },
     {
-      "group_key": "A2__122#E17",
-      "bundle_id": "A2__122",
-      "entity_key": "E17",
+      "group_key": "A2I1__001#E11",
+      "bundle_id": "A2I1__001",
+      "entity_key": "E11",
       "canonical_name": "조나단",
-      "qualifier": null,
+      "qualifier": "코코아의 상상 속 스토커",
       "entity_type": "character",
       "surfaces": [
         "조나단"
       ],
       "units": [
-        "A2__122:U036"
+        "A2I1__001:U026"
       ],
       "title_ids": [
         "outpost_stories__장난감_상점"
@@ -13523,6 +13561,32 @@
       ]
     },
     {
+      "signature": "character|아빠",
+      "match": "same_name",
+      "groups": [
+        {
+          "group_key": "A2__088#E20",
+          "entity_id": "char2_아빠",
+          "canonical_name": "아빠",
+          "entity_type": "character",
+          "qualifier": "어느 소녀의 수기 화자의 아버지",
+          "surfaces": [
+            "아빠"
+          ]
+        },
+        {
+          "group_key": "A2I1__001#E9",
+          "entity_id": "char2_아빠__6f1109",
+          "canonical_name": "아빠",
+          "entity_type": "character",
+          "qualifier": "세피의 아버지",
+          "surfaces": [
+            "아빠"
+          ]
+        }
+      ]
+    },
+    {
       "signature": "character|앨든",
       "match": "same_name",
       "groups": [
@@ -14334,6 +14398,16 @@
           "surfaces": [
             "하트 여왕의 부하들",
             "하트 여왕의 하수인"
+          ]
+        },
+        {
+          "group_key": "A2I1__001#E3",
+          "entity_id": null,
+          "canonical_name": "랩쳐",
+          "entity_type": "faction_or_species",
+          "qualifier": null,
+          "surfaces": [
+            "랩쳐"
           ]
         }
       ]
@@ -15236,7 +15310,7 @@
       ]
     },
     {
-      "signature": "item|승리의날개 / item|승리의날개호",
+      "signature": "item|붕붕이 / item|승리의날개 / item|승리의날개호",
       "match": "variant",
       "groups": [
         {
@@ -15272,6 +15346,16 @@
           "qualifier": null,
           "surfaces": [
             "승리의 날개"
+          ]
+        },
+        {
+          "group_key": "A2I1__001#E7",
+          "entity_id": null,
+          "canonical_name": "승리의 날개 호",
+          "entity_type": "item",
+          "qualifier": null,
+          "surfaces": [
+            "붕붕이"
           ]
         }
       ]
@@ -15670,6 +15754,44 @@
           "surfaces": [
             "에덴"
           ]
+        },
+        {
+          "group_key": "A2I1__001#E6",
+          "entity_id": null,
+          "canonical_name": "방주",
+          "entity_type": "location",
+          "qualifier": null,
+          "surfaces": [
+            "방주"
+          ]
+        }
+      ]
+    },
+    {
+      "signature": "location|로열로드",
+      "match": "same_name",
+      "groups": [
+        {
+          "group_key": "A2__043#E2",
+          "entity_id": null,
+          "canonical_name": "로열 로드",
+          "entity_type": "location",
+          "qualifier": null,
+          "surfaces": [
+            "로얄 로드",
+            "로열 로드",
+            "로열로드"
+          ]
+        },
+        {
+          "group_key": "A2I1__001#E4",
+          "entity_id": null,
+          "canonical_name": "로열 로드",
+          "entity_type": "location",
+          "qualifier": null,
+          "surfaces": [
+            "로열로드"
+          ]
         }
       ]
     },
@@ -15707,6 +15829,16 @@
           "surfaces": [
             "메이드 카페",
             "메이드 카페 분점"
+          ]
+        },
+        {
+          "group_key": "A2I1__001#E5",
+          "entity_id": null,
+          "canonical_name": "메이드 카페",
+          "entity_type": "location",
+          "qualifier": null,
+          "surfaces": [
+            "메이드 카페"
           ]
         }
       ]
@@ -15781,6 +15913,16 @@
           "qualifier": "해피주 동물 보호소",
           "surfaces": [
             "보호소"
+          ]
+        },
+        {
+          "group_key": "A2I1__001#E13",
+          "entity_id": null,
+          "canonical_name": "바우 와우 파라다이스",
+          "entity_type": "location",
+          "qualifier": null,
+          "surfaces": [
+            "동물 보호소"
           ]
         }
       ]
@@ -15860,6 +16002,35 @@
           "qualifier": null,
           "surfaces": [
             "중앙 정부 13 브리핑 룸"
+          ]
+        }
+      ]
+    },
+    {
+      "signature": "location|지휘관실",
+      "match": "same_name",
+      "groups": [
+        {
+          "group_key": "A2__127#E6",
+          "entity_id": null,
+          "canonical_name": "지휘관실",
+          "entity_type": "location",
+          "qualifier": null,
+          "surfaces": [
+            "지휘관 실",
+            "지휘관,실",
+            "지휘관··· 실",
+            "지휘관실"
+          ]
+        },
+        {
+          "group_key": "A2I1__001#E12",
+          "entity_id": null,
+          "canonical_name": "지휘관실",
+          "entity_type": "location",
+          "qualifier": null,
+          "surfaces": [
+            "지휘관실"
           ]
         }
       ]

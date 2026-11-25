@@ -1,0 +1,1462 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "A2I1__001",
+  "candidate_links": [
+    {
+      "link_id": "A2I1__001__001",
+      "link_type": "unresolved",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U001"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "관제부",
+          "entity_type": "organization",
+          "entity_key": "E1"
+        }
+      ],
+      "verdict": "판단 보류",
+      "confidence": "판단 보류",
+      "rationale": "비행 교육 수료증 사본을 제출하는 부서로 한 번만 언급되어, 특정 기구의 고유 부서 이름인지 항공·비행 관제 업무 부서를 일컫는 일반 직제 명칭인지 가를 추가 원문이 없다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_00",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "스카이: 다 하셨으면 사본을 만들어 드릴 테니, 사본을 관제부에 제출해 주세요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [
+        {
+          "link_type": "generic_term",
+          "why": "고유 조직명이 아니라 관제 업무를 담당하는 부서를 뜻하는 일반 부서 명칭(보통 낱말)으로 쓰였을 수 있다.",
+          "supporting_evidence": [
+            {
+              "scene_id": "skyontherock_00",
+              "line_start": 66,
+              "line_end": 66,
+              "quote": "스카이: 다 하셨으면 사본을 만들어 드릴 테니, 사본을 관제부에 제출해 주세요."
+            }
+          ]
+        }
+      ],
+      "search_hints": [
+        "grep 관제부 결과 전체 코퍼스에서 skyontherock_00 L66 한 곳에만 등장함"
+      ]
+    },
+    {
+      "link_id": "A2I1__001__002",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U002"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "벨로타가 장난감 가게를 어두운 조명과 귀신 분장으로 꾸며 개조한 공포 체험 공간 형태 일반을 뜻하는 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_01",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "벨로타: 맞아. 심심해서 장난감 가게를 귀신의 집으로 개조해 봤어."
+        },
+        {
+          "scene_id": "toy_shop_01",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "벨로타: 아무래도 귀신의 집이니까 엄청 무서운 귀신으로 분장해 줬으면 좋겠어♡"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__003",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U003"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "바우 와우 파라다이스",
+          "entity_type": "location",
+          "entity_key": "E13"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "스카이가 어제 다녀왔다는 동물 보호소(sky_02 L61)는 바로 앞 장면 sky_01에서 스카이가 들어서자 비스킷이 맞이하고 강아지 산책을 권하는 그 보호소다(sky_01 L4·L6·L23-24). 다른 이야기의 지문이 비스킷이 있는 곳을 '바우 와우 파라다이스'로 밝히므로(bow_wow_paradise_13 L57) 그 장소로 잇는다. 이 이야기 안에서 이름을 읽지는 않아 다른 이야기에서 옮겨 온 추론이므로 가능성이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sky_02",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "스카이: 어제 강아지들의 마음을 알고 싶어서, 동물 보호소에 잠깐 다녀왔어요."
+        },
+        {
+          "scene_id": "sky_01",
+          "line_start": 4,
+          "line_end": 4,
+          "quote": "스카이가 동물 보호소에 들어서자, 강아지들이 반갑게 짖어댔다."
+        },
+        {
+          "scene_id": "sky_01",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "비스킷: 어서 오세요!"
+        },
+        {
+          "scene_id": "bow_wow_paradise_13",
+          "line_start": 57,
+          "line_end": 57,
+          "quote": "그곳은 바로 비스킷이 있는 바우 와우 파라다이스다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__004",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U004"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "락 스피릿호",
+          "entity_type": "item",
+          "entity_key": "E2"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "스카이가 세피와 함께 탄 열기구에 직접 지어 준 고유 이름이며 이후 장면들에서도 같은 열기구를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_12",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "스카이: 락 스피릿호."
+        },
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 159,
+          "line_end": 159,
+          "quote": "스카이: 또 다 같이 락 스피릿호를 타러 갈 거예요."
+        },
+        {
+          "scene_id": "skyontherock_14",
+          "line_start": 84,
+          "line_end": 84,
+          "quote": "스카이: 캡틴은 락 스피릿호의 캡틴이잖아요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__005",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U005"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "랩쳐",
+          "entity_type": "faction_or_species",
+          "entity_key": "E3"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주 주변 상공 출몰 여부가 방주의 안전과 직결되는 세계관의 적대 종족·부류인 랩쳐를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_10",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "스카이: 이건 현재 방주 주변 상공의 랩쳐 출몰 현황을 분석한 자료예요."
+        },
+        {
+          "scene_id": "skyontherock_10",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "스카이: 지금 방주 주변에서 랩쳐를 찾아볼 수 없으니,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__006",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U006"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "로열 로드",
+          "entity_type": "location",
+          "entity_key": "E4"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "방주 내 특정 거리·구역인 로열 로드를 붙여 쓴 표기로, 근린 공원의 위치를 나타내는 고유 지명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sky_01",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "로열로드 근린의 공원."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__007",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U007"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "손님과 놀아줄 완구 종류로 칼을 홈에 꽂아 튕겨 나오는 통상적인 룰렛 게임 장난감을 말한 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "벨로타: 메이드와의 벌칙을 건 룰렛 게임 아니겠어~?"
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 39,
+          "line_end": 39,
+          "quote": "코코아: 이 50개의 홈에 칼을 꽂아서 먼저 칼이 튕겨나오는 쪽이,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__008",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "메이드 카페",
+          "entity_type": "location",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "코코아가 메이드장으로 있고 에이드·소다가 근무하며 스카이가 일일 메이드 견학을 간 특정 매장 메이드 카페를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 20,
+          "line_end": 20,
+          "quote": "코코아: 코코아, 요 근처 메이드 카페에서 메이드장 하고 이써."
+        },
+        {
+          "scene_id": "sky_03",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "스카이: 손님으로 메이드 카페에 온 게 아니라서요."
+        },
+        {
+          "scene_id": "sky_04",
+          "line_start": 6,
+          "line_end": 6,
+          "quote": "스카이가 메이드 카페에서 나왔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 분점으로 romantic_valentine_02 L5 확인: 메이드 카페 분점은 발렌타인 행사로 방주에 열린 별도 분점이며, 본 단위의 출현들은 코코아·에이드·소다의 본래 메이드 카페임"
+      ]
+    },
+    {
+      "link_id": "A2I1__001__034",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U008"
+        }
+      ],
+      "scope": {
+        "occ_ids": [
+          "O0002"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "메이드 카페",
+          "entity_type": "location",
+          "entity_key": "E5"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "소라가 캡틴이 즐겨 간다고 말한 메이드 카페(sky_02 L41)는 캡틴의 평소 방문 습관을 말한 것이다. 같은 장면 뒤의 견학 예고(L110)는 스카이의 목적지에 관한 말이라, 캡틴의 단골집까지 코코아·에이드가 있는 같은 매장으로 읽는 데 추론이 필요하므로 같은 대상의 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sky_02",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "소라: 캡틴이 메이드 카페를 즐겨 가신다는 건 알고 있었지만,"
+        },
+        {
+          "scene_id": "sky_02",
+          "line_start": 110,
+          "line_end": 110,
+          "quote": "스카이: 그런 의미에서 메이드 카페에 견학 좀 다녀오겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__009",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U009"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "물고기 모양 슬리퍼의 자매품으로 언급된 심해 생물 모방 패션 소품 종류를 생김새대로 부른 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "벨로타: 자매품으로 오징어 가면이랑 문어 빨판 토시도 있어."
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "소다: 와아~ 코코아! 이 근사하고 멋진 패션 소품들은 뭔가요?"
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "에이드: 음··· 아마도 심해에 있는 생물을 모방한 것 아닐까?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__010",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U010"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "방주",
+          "entity_type": "location",
+          "entity_key": "E6"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "네 출현 모두 비행 금지령과 정찰의 기준이 되는 인류 거주 도시 방주를 가리키는 고유 지명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_03",
+          "line_start": 205,
+          "line_end": 205,
+          "quote": "스카이: 지금 방주에서 모든 비행이 금지됐다는 거."
+        },
+        {
+          "scene_id": "skyontherock_10",
+          "line_start": 5,
+          "line_end": 5,
+          "quote": "스카이: 이건 현재 방주 주변 상공의 랩쳐 출몰 현황을 분석한 자료예요."
+        },
+        {
+          "scene_id": "skyontherock_12",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "멀리 펼쳐진 방주의 모습이 한눈에 들어왔다."
+        },
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "[방주 정찰을 위한 비행 훈련을 실시.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__011",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U011"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "세피가 입원해 치료받는 의료 기관을 고유 이름 없이 보통 낱말 병원으로 지칭한 것이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 32,
+          "line_end": 32,
+          "quote": "페퍼: 그럼 우리, 병원에서 같이 최선을 다해보자!"
+        },
+        {
+          "scene_id": "skyontherock_14",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "스카이: 저번에 혼자서 휠체어를 타고 병원 앞을 달리다가 붙잡혀 왔거든요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__012",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U012"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스카이",
+          "name": "스카이",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "세피가 병원 복도에서 휠체어로 배식 카트를 피하며 달린 스카이(언니)에게 병원 사람들이 붙여 준 별명이라고 직접 밝힌다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_14",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "세피: 그래서 병원 사람들이 언니 별명도 붙여줬어."
+        },
+        {
+          "scene_id": "skyontherock_14",
+          "line_start": 66,
+          "line_end": 66,
+          "quote": "세피: [병원을 가르는 와일드 드라이버]라고."
+        },
+        {
+          "scene_id": "skyontherock_14",
+          "line_start": 69,
+          "line_end": 69,
+          "quote": "스카이: 머, 멋있다고 그런 걸 따라 하지 마세요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__013",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U013"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "승리의 날개 호",
+          "entity_type": "item",
+          "entity_key": "E7"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "가능성",
+      "rationale": "세 출현 모두 스카이가 조종하는 오버 더 호라이즌의 비행기를 부르는 애칭 붕붕이이며, 다른 이야기(ark_ranger_25)에서 스카이와 시엘로가 승리의 날개 호를 붕붕이로 부르는 것을 통해 같은 기체로 이어진다. 본 단위의 두 이야기 안에는 정식 기체명이 직접 나오지 않으므로 가능성으로 둔다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_00",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "스카이: 미칠 듯한 붕붕이의 속도감!"
+        },
+        {
+          "scene_id": "skyontherock_09",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "스카이: 저부터가 날고 싶다는 마음 하나만으로 붕붕이와 함께 날았으니까요."
+        },
+        {
+          "scene_id": "toy_shop_12",
+          "line_start": 9,
+          "line_end": 9,
+          "quote": "스카이: 붕붕이처럼 생긴 장난감을 기내에 두면, 분위기가 더 좋을 것 같아서 사러왔어요."
+        },
+        {
+          "scene_id": "ark_ranger_25",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "잉그리드: 가라 승리의 날개 호!"
+        },
+        {
+          "scene_id": "ark_ranger_25",
+          "line_start": 75,
+          "line_end": 75,
+          "quote": "스카이: 붕붕이! 전속!! 전!! 진!!"
+        },
+        {
+          "scene_id": "ark_ranger_25",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "승리의 날개 호가 낙하하는 애니힐리오에게 빠르게 접근한다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 붕붕이로 ark_ranger_25 L72-79 확인: 스카이가 조종하는 승리의 날개 호의 애칭임"
+      ]
+    },
+    {
+      "link_id": "A2I1__001__014",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U014"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "비정기 비행 훈련을 신청하기 위해 작성·제출하는 행정 서류 양식의 일반 명칭(수식어가 붙은 보통 표현)이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "잉그리드: 그래서 이런 서류를 제출했던 것 아닌가?"
+        },
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 79,
+          "line_end": 79,
+          "quote": "[비정기 훈련 신청서]"
+        },
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 105,
+          "line_end": 105,
+          "quote": "스카이: 다음에 또 [훈련 신청서]를 올려도 되는지 여쭤보고 싶어서요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__015",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U015"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "종이를 뽑아 당첨 여부를 가리는 흔한 놀이 도구 종류를 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "미카: 메이드와의 사진을 건 뽑기판 아닐까요?"
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "코코아: 이 50개의 뽑기 종이 중에 당첨을 뽑는 쪽이,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__016",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U016"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "오버 더 호라이즌 스쿼드의 업무 공간을 고유 명칭 없이 보통 낱말 사무실로 부른 것이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sky_02",
+          "line_start": 10,
+          "line_end": 10,
+          "quote": "시엘로: 사무실엔 무슨 일로 오셨나요~?"
+        },
+        {
+          "scene_id": "sky_04",
+          "line_start": 35,
+          "line_end": 35,
+          "quote": "[OPTION TEXT=\"아까 사무실에서 평소랑 좀 다른 느낌이었거든.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__017",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U017"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "세피",
+          "entity_type": "character",
+          "entity_key": "E8"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "모든 출현이 병원에 입원 중이던 어린 소녀이자 열기구 탑승을 소망한 미등록 인물 세피를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_01",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "[신청자 : 세피]"
+        },
+        {
+          "scene_id": "skyontherock_10",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "스카이: 아, 세피는 그 아픈 아이의 이름인데요."
+        },
+        {
+          "scene_id": "skyontherock_14",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "세피의 수술이 끝났다는 소식을 듣고,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__018",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U018"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "스카이가 주인님이라고 불러 본 '아는 분'(sky_03 L14)은 바로 앞 장면에서 시엘로가 왜 캡틴을 주인님이라고 부르느냐고 묻고(sky_02 L60) 스카이가 그 이유를 말한 상대다. 이 이야기의 캡틴은 같은 묶음에서 char_지휘관으로 판정했다(캡틴, character_episodes__스카이는 다른 이야기에서 옮겨 온 추론이라 가능성). 같은 근거 종류이므로 가능성이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sky_03",
+          "line_start": 14,
+          "line_end": 14,
+          "quote": "스카이: 실은 아는 분을 주인님이라고 불러보면 어떨까 싶어서 불러봤거든요."
+        },
+        {
+          "scene_id": "sky_03",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "에이드: ···왜 그분을 주인님이라고 불러보려고 생각하신 걸까요?"
+        },
+        {
+          "scene_id": "sky_02",
+          "line_start": 60,
+          "line_end": 60,
+          "quote": "시엘로: 그럼 왜 캡틴을 주인님이라고 부르는 거예요, 스카이?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__019",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U019"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "아빠",
+          "entity_type": "character",
+          "entity_key": "E9",
+          "qualifier": "세피의 아버지"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "세피와 함께 열기구를 만들고 열기구로 하늘을 날기로 약속했으나 얼마 전 세상을 떠난 세피의 아버지라는 특정 미등록 인물을 가리키며, 이야기 안에 본명은 나오지 않고 지난 판정의 다른 이야기 속 아빠와도 다른 인물이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_12",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "세피: 언니 덕분에 아빠랑 했던 약속도 지킬 수 있었어! 고마워!"
+        },
+        {
+          "scene_id": "skyontherock_12",
+          "line_start": 114,
+          "line_end": 114,
+          "quote": "세피: 열기구로 진짜 하늘을 날아보겠다고, 아빠랑 약속했거든!"
+        },
+        {
+          "scene_id": "skyontherock_01",
+          "line_start": 65,
+          "line_end": 65,
+          "quote": "세피: 아빠도 얼마 전에 엄마 만나러 갔어."
+        },
+        {
+          "scene_id": "skyontherock_04",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "세피: 아빠랑 같이 열심히 만든 열기구거든!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 아빠로 다른 이야기들의 아빠(어느소녀의수기 등)와 별개 인물임을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2I1__001__020",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U020"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "아이라이더 RTX",
+          "entity_type": "item",
+          "entity_key": "E10"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "광고로 널리 알려진 헬리콥터형 무선 조종 비행기 장난감 제품의 고유 모델명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_12",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "벨로타: 최첨단 [헬리콥터형 비행기, 아이라이더 RTX]야!"
+        },
+        {
+          "scene_id": "toy_shop_12",
+          "line_start": 62,
+          "line_end": 62,
+          "quote": "벨로타가 비장하게 꺼낸 장난감은, 헬리콥터의 프로펠러가 달린 비행기 장난감이었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__021",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U021"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_오버_더_호라이즌_스쿼드",
+          "name": "오버 더 호라이즌 스쿼드",
+          "entity_type": "squad"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "스카이가 기장으로 있고 소라·시엘로가 함께 속한 오버 더 호라이즌 스쿼드를 스쿼드 접미어 없이 부른 약칭이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_02",
+          "line_start": 123,
+          "line_end": 123,
+          "quote": "스카이: 오버 더 호라이즌 스쿼드의 기장, 스카이."
+        },
+        {
+          "scene_id": "skyontherock_03",
+          "line_start": 102,
+          "line_end": 102,
+          "quote": "우리는 그렇게 오버 더 호라이즌의 사무실로 향했다."
+        },
+        {
+          "scene_id": "skyontherock_10",
+          "line_start": 56,
+          "line_end": 56,
+          "quote": "스카이: 전 오버 더 호라이즌의 기장이에요."
+        },
+        {
+          "scene_id": "sky_02",
+          "line_start": 89,
+          "line_end": 89,
+          "quote": "소라: 아마 사람들은 스카이를 오버 더 호라이즌의 기장이 아니라,"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 오버 더 호라이즌으로 스카이·소라·시엘로 소속의 동일 스쿼드임을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2I1__001__022",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U022"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_오버_더_호라이즌_스쿼드",
+          "name": "오버 더 호라이즌 스쿼드",
+          "entity_type": "squad"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "스카이가 기장이며 비행 허가 심사와 운항을 담당하는 오버 더 호라이즌 스쿼드를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_02",
+          "line_start": 123,
+          "line_end": 123,
+          "quote": "스카이: 오버 더 호라이즌 스쿼드의 기장, 스카이."
+        },
+        {
+          "scene_id": "skyontherock_07",
+          "line_start": 45,
+          "line_end": 45,
+          "quote": "페퍼: 그걸 담당하고 있는 곳이 오버 더 호라이즌 스쿼드다, 라고요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__023",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U023"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "물고기 모양 슬리퍼의 자매품으로 언급된 심해 생물 모방 패션 소품 종류를 모양대로 부른 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 80,
+          "line_end": 80,
+          "quote": "벨로타: 자매품으로 오징어 가면이랑 문어 빨판 토시도 있어."
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 82,
+          "line_end": 82,
+          "quote": "소다: 와아~ 코코아! 이 근사하고 멋진 패션 소품들은 뭔가요?"
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "에이드: 음··· 아마도 심해에 있는 생물을 모방한 것 아닐까?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__024",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U024"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "비행 멀미로 치료받으러 간 시설을 고유 이름 없이 보통 낱말 의무실로 지칭한 것이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sky_04",
+          "line_start": 113,
+          "line_end": 113,
+          "quote": "스카이: 멀미가 심해져서 의무실까지 가셨잖아요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__025",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U025"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "벨로타와 미카가 운영하는 상점을 고유 상호가 아닌 업종 보통 낱말 장난감 가게로 지칭한 것이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_01",
+          "line_start": 11,
+          "line_end": 11,
+          "quote": "벨로타: 맞아. 심심해서 장난감 가게를 귀신의 집으로 개조해 봤어."
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 99,
+          "line_end": 99,
+          "quote": "그날 코코아는 장난감 가게를 누비며 무한한 상상의 나래를 펼쳤고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__026",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U026"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "조나단",
+          "entity_type": "character",
+          "entity_key": "E11",
+          "qualifier": "코코아의 상상 속 스토커"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "코코아가 뽑기판을 두고 펼친 상상 속 상황극에서 자기 이름을 조나단이라고 밝히는 가상의 스토커 악당이며, 다른 기록물의 조나단 크로스와 구별되는 고유 인명이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 47,
+          "line_end": 47,
+          "quote": "수상한 남자: 내 이름은 조나단. 직업은 스토커지."
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "[OPTION TEXT=\"뭔가 굉장한 걸 상상한 것 같은데.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": [
+        "grep 조나단으로 lost_relics__jonathan_report의 조나단 크로스와 별개 대상임을 확인함"
+      ]
+    },
+    {
+      "link_id": "A2I1__001__027",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U027"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "물고기 모양 슬리퍼를 색깔과 생김새로 가리킨 수식어가 붙은 보통 표현이며, 벨로타도 별도의 이름이 기억나지 않는다고 답해 고유 이름이 아님을 직접 보여 준다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "코코아: 저 웃기게 생긴 주황색 슬리퍼는 뭐야?"
+        },
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 72,
+          "line_end": 72,
+          "quote": "벨로타: 뭐야~ 눈썰미 좋네! 저건 물고기 모양으로 나온 슬리퍼야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__028",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U028"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "지하 공간과 대비하여 바다가 존재하는 지표면 위 세계 일반을 가리키는 보통 낱말이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_04",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "에이드: 그러게. 바다는 지상에밖에 없는 건데."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__029",
+      "link_type": "new_entity",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U029"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": null,
+          "name": "지휘관실",
+          "entity_type": "location",
+          "entity_key": "E12"
+        }
+      ],
+      "verdict": "새 엔티티",
+      "confidence": "유력한 해석",
+      "rationale": "주인공 지휘관이 생활하며 생필품을 두는 고유 거처·집무 공간인 지휘관실을 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_03",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "지휘관실에 생필품이 떨어져 쇼핑을 나왔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__030",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U030"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "잉그리드가 주인공 지휘관의 소속 스쿼드로 언급한 카운터스를 가리킨다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "잉그리드: 게다가 카운터스의 지휘관이 함께했으니, 훈련을 진행하는 데 전혀 문제가 없는 상태다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__031",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U031"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "유력한 해석",
+      "rationale": "event_stories__sky_on_the_rock 안에서 스카이가 캡틴이라 부르는 화자('나')는 지휘관실에 거주하며 잉그리드·페퍼에게 카운터스의 지휘관으로 불리는 등록 인물 지휘관임이 직접 확인된다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_02",
+          "line_start": 172,
+          "line_end": 172,
+          "quote": "스카이: ···캡틴?"
+        },
+        {
+          "scene_id": "skyontherock_03",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "지휘관실에 생필품이 떨어져 쇼핑을 나왔다."
+        },
+        {
+          "scene_id": "skyontherock_03",
+          "line_start": 30,
+          "line_end": 30,
+          "quote": "스카이: ···캡틴?"
+        },
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "잉그리드: 게다가 카운터스의 지휘관이 함께했으니, 훈련을 진행하는 데 전혀 문제가 없는 상태다."
+        },
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 117,
+          "line_end": 117,
+          "quote": "스카이: 캡틴도 정말 고생 많으셨어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__032",
+      "link_type": "alias",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U031"
+        }
+      ],
+      "scope": {
+        "title_ids": [
+          "character_episodes__스카이"
+        ]
+      },
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "verdict": "별칭",
+      "confidence": "가능성",
+      "rationale": "character_episodes__스카이에서도 스카이·소라·시엘로가 비행 교육을 받은 1인칭 화자를 캡틴이라 부르나, 이 이야기 안에는 지휘관이라는 명칭이 직접 나오지 않아 다른 이야기의 호칭·관계를 옮겨 온 추론이므로 가능성으로 나눈다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "sky_01",
+          "line_start": 75,
+          "line_end": 75,
+          "quote": "스카이: 그리고 캡틴을 생각하는 제 마음이,"
+        },
+        {
+          "scene_id": "sky_02",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "소라: 스카이, 캡틴이 오셨어요~☆"
+        },
+        {
+          "scene_id": "sky_04",
+          "line_start": 109,
+          "line_end": 109,
+          "quote": "[OPTION TEXT=\"비행 교육을 받으러 갔을 때 말하는 거야?\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "A2I1__001__033",
+      "link_type": "generic_term",
+      "subject": [
+        {
+          "ref": "unit",
+          "unit_id": "U032"
+        }
+      ],
+      "scope": {
+        "default": true
+      },
+      "target": [],
+      "verdict": "일반 낱말",
+      "confidence": "유력한 해석",
+      "rationale": "메이든이 사고 싶어 한 전시용 피규어가 구하기 힘든 한정판 상품임을 뜻하는 수식어가 붙은 보통 표현이다.",
+      "supporting_evidence": [
+        {
+          "scene_id": "toy_shop_01",
+          "line_start": 71,
+          "line_end": 71,
+          "quote": "메이든: 이 피규어 얼만가요?"
+        },
+        {
+          "scene_id": "toy_shop_01",
+          "line_start": 73,
+          "line_end": 73,
+          "quote": "메이든: 당연하죠! 한정판 피규어 인걸요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "alternatives": [],
+      "search_hints": []
+    }
+  ]
+}
