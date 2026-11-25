@@ -60,6 +60,13 @@ JUDGE = """너는 GraphRAG Pass 2 C 판정자다. 묶음 하나만 판정한다.
    경고는 원문으로 확인하고 남긴 이유를 보고하라. 통과하려고 근거를 지어내거나 규칙을 고치지 마라.
 6. 규칙 7절 형식의 보고를 finish 도구로 한 번에 내라."""
 
+# 증분 회차(GRAPH_RAG_INCREMENT_DESIGN.md 4.6): 재확인 단위가 있는 묶음에만 붙인다. 규칙 파일은 묶음 도장에 들어가므로 고치지 않는다
+REVISIT = """
+7. 재확인 단위: units 중 revisit가 있는 단위(발췌 머리말 다음 줄 "(재확인 단위 — …)")는 본 실행에서 이미 판정한 옛 미해결 단서다.
+   새 대본이 더해져 짝이 생겼을 수 있어 이 묶음이 그 단위의 판정을 새로 맡는다. 지난 판정(짝 없음·보류, 남은 의문, 단서 쪽 연결)은 근거가 아니다.
+   다른 단위와 똑같이 처음부터 판정하라. 짝을 찾으면 단서 쪽으로 잇고, 일부만 풀렸으면 남은 의문을 짝 없음 note로 적는다.
+   짝이 없으면 지난 남은 의문을 원문으로 다시 확인해 짝 없음으로 적는다. 지난 단서 쪽 연결은 이 묶음의 판정으로 바뀌므로, 여전히 맞으면 다시 적어라."""
+
 REPORT = {"type": "string"}
 
 
@@ -77,7 +84,8 @@ def status_line(bundle_id):
 async def judge(b):
     bid = b["bundle_id"]
     rec = {"bundle_id": bid, "started_at": time.time(), "turns": [], "error": None}
-    judge_agent = agent(JUDGE.format(run=RUN, **b), schema=REPORT, role=f"C 판정자 {bid}", model="inherit")
+    prompt = JUDGE.format(run=RUN, **b) + (REVISIT if b.get("revisit_units") else "")
+    judge_agent = agent(prompt, schema=REPORT, role=f"C 판정자 {bid}", model="inherit")
     try:
         report = await judge_agent("지시대로 이 묶음을 판정하라.")
         rec["turns"].append({"kind": "first", "report": report, "status_after": status_line(bid)})

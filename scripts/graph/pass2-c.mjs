@@ -7,6 +7,7 @@ import { GRAPH_DATA_DIR, writeJsonAtomic } from './lib.mjs';
 import { selectWave } from './pass2-b-plan.mjs';
 import { checkAudit, computeStamp, staleReason } from './pass2-b.mjs';
 import { nfkc, officialResolutions, variantKey } from './pass2-a2.mjs';
+import { loadRetraction, loadScopes } from './increment-scope.mjs';
 import {
   CONFIDENCE_ENUM,
   PASS2_BUNDLE_SCHEMA_VERSION,
@@ -439,6 +440,7 @@ export const unitBlock = (u, store, scanLines = []) => {
   const lines = store.lines(u.scene_id) ?? [''];
   const meta = store.meta(u.scene_id) ?? {};
   const out = [unitHeader(u), `@@@ ${u.scene_id} | ${u.title_id} | ${meta.sub_title ?? ''}`];
+  if (u.revisit) out.splice(1, 0, `(재확인 단위 — 본 실행 판정: ${u.revisit.status}${u.revisit.note ? `, 남은 의문: ${u.revisit.note}` : ''}${u.revisit.clue_links?.length ? `, 단서 쪽 연결 ${u.revisit.clue_links.join(', ')}` : ''} / 다시 보는 까닭: ${u.revisit.reasons.join('·')})`);
   const a = Math.max(1, u.line_start - EXCERPT_RADIUS);
   const b = Math.min(lines.length - 1, u.line_end + EXCERPT_RADIUS);
   for (let n = a; n <= b; n++) out.push(`[${lineTag(n)}] ${lines[n] ?? ''}`);
@@ -893,7 +895,65 @@ const confRank = { '유력한 해석': 2, 가능성: 1, '판단 보류': 0 };
  * entries: [{ bundle, shard, wave }] 통과한 출력. judged: 이 실행에서 판정한 단위(item_id → {bundle_id, wave, stage, clue_category})
  * 반환: links(정규화·중복 병합), statuses(item_id → {status, conf, ...}), conflicts, mergeSuggestions
  */
-export const mergeC = ({ entries, judged, clhByScene }) => {
+/**
+ * 증분(GRAPH_RAG_INCREMENT_DESIGN.md 4.2·4.6). 넘겨받은 묶음만으로 정한다.
+ * - 철회: 증분 k에서 바뀌거나 지운 장면을, 증분 k보다 앞선 묶음이 단위·연결 끝으로 가리키면 뺀다.
+ * - 새 주인: 증분 묶음이 단위로 가진 옛 단위(재확인 단위)는 그 묶음이 주인이다. 앞선 묶음의 그 단위 자기 판정(unlinked)과
+ *   그 단위를 단서 쪽으로 잇는 연결은 뺀다(공개 쪽 연결은 남긴다).
+ * judged는 단위의 첫 주인(본 실행 묶음)을 담는다. 여기서 새 주인으로 바꾸고, 철회만 되고 새 주인이 없는 단위는 뺀다.
+ */
+const incNoOf = (id) => {
+  const m = /^inc_(\d{3})$/.exec(id ?? '');
+  return m ? Number(m[1]) : 0;
+};
+const sceneOfItemId = (id) => id.slice(0, id.lastIndexOf('__'));
+export const effectiveEntries = (entries, judged, retraction) => {
+  if (!retraction) return { entries, judged, withdrawn: new Set() };
+  const owner = new Map();
+  for (const e of entries) {
+    if (!e.bundle.increment) continue;
+    for (const u of e.bundle.units) {
+      const cur = owner.get(u.item_id);
+      if (!cur || incNoOf(cur.entry.bundle.increment) < incNoOf(e.bundle.increment)) owner.set(u.item_id, { entry: e, unit: u });
+    }
+  }
+  if (!owner.size && !retraction.changedAt?.size) return { entries, judged, withdrawn: new Set() };
+  const withdrawn = new Set();
+  const out = entries.map((e) => {
+    const n = incNoOf(e.bundle.increment);
+    const retracted = (sid) => Boolean(sid) && retraction.isRetracted(e.bundle.increment, sid);
+    const superseded = (id) => {
+      const o = owner.get(id);
+      return Boolean(o) && o.entry !== e && incNoOf(o.entry.bundle.increment) > n;
+    };
+    const endScene = (x) => (x?.ref === 'item' ? sceneOfItemId(x.item_id) : x?.scene_id);
+    const clueIds = (l) => (l.roles ? [l[l.roles.clue]?.[0]] : [l.subject?.[0], l.target?.[0]]).filter((x) => x?.ref === 'item').map((x) => x.item_id);
+    const keepLink = (l) => !retracted(endScene(l.subject?.[0])) && !retracted(endScene(l.target?.[0])) && !clueIds(l).some(superseded);
+    const keepUnit = (id) => !retracted(sceneOfItemId(id)) && !superseded(id);
+    const links = e.shard.candidate_links.filter(keepLink);
+    const unlinked = e.shard.unlinked.filter((x) => keepUnit(x.item_id));
+    const units = e.bundle.units.filter((u) => keepUnit(u.item_id));
+    if (links.length === e.shard.candidate_links.length && unlinked.length === e.shard.unlinked.length && units.length === e.bundle.units.length) return e;
+    for (const u of e.bundle.units) if (!keepUnit(u.item_id)) withdrawn.add(u.item_id);
+    return { ...e, bundle: { ...e.bundle, units }, shard: { ...e.shard, candidate_links: links, unlinked }, dropped_links: e.shard.candidate_links.filter((l) => !keepLink(l)).map((l) => l.link_id) };
+  });
+  const incOfBundle = new Map(entries.map((e) => [e.bundle.bundle_id, e.bundle.increment]));
+  const j = new Map();
+  for (const [id, info] of judged) {
+    const o = owner.get(id);
+    if (o) {
+      j.set(id, { bundle_id: o.entry.bundle.bundle_id, wave: o.entry.wave, stage: o.entry.bundle.stage, clue_category: o.unit.clue_category ?? info.clue_category });
+      continue;
+    }
+    if (retraction.isRetracted(incOfBundle.get(info.bundle_id), sceneOfItemId(id))) continue;
+    j.set(id, info);
+  }
+  for (const [id, o] of owner) if (!j.has(id)) j.set(id, { bundle_id: o.entry.bundle.bundle_id, wave: o.entry.wave, stage: o.entry.bundle.stage, clue_category: o.unit.clue_category });
+  return { entries: out, judged: j, withdrawn };
+};
+
+export const mergeC = ({ entries, judged, clhByScene, retraction = null }) => {
+  ({ entries, judged } = effectiveEntries(entries, judged, retraction));
   const raw = [];
   const unlinked = new Map();
   const mergeSuggestions = [];
@@ -994,8 +1054,8 @@ export const mergeC = ({ entries, judged, clhByScene }) => {
 };
 
 /** 회차 W의 연결이 앞 회차 단위의 최종 상태를 바꾼 것(설계 2.2절 5) */
-export const externalChanges = ({ entries, judged, clhByScene, wave }) => {
-  const upto = (w) => mergeC({ entries: entries.filter((e) => e.wave <= w), judged: new Map([...judged].filter(([, v]) => v.wave <= w)), clhByScene }).statuses;
+export const externalChanges = ({ entries, judged, clhByScene, wave, retraction = null }) => {
+  const upto = (w) => mergeC({ entries: entries.filter((e) => e.wave <= w), judged: new Map([...judged].filter(([, v]) => v.wave <= w)), clhByScene, retraction }).statuses;
   const before = upto(wave - 1);
   const after = upto(wave);
   const out = [];
@@ -1011,11 +1071,11 @@ export const externalChanges = ({ entries, judged, clhByScene, wave }) => {
  * 회차 v 감사 당시 shard(snapshots: bundle_id → shard 객체, 없으면 지금 것)로 계산한 상태와 지금 상태를 v까지의 출력만으로 비교한다.
  * 뒤 회차 감사에 외부 변경 항목으로 넣어, 앞 회차 감사를 다시 하지 않고 덮는다(설계 G3)
  */
-export const auditDrift = ({ entries, judged, clhByScene, wave, snapshots }) => {
+export const auditDrift = ({ entries, judged, clhByScene, wave, snapshots, retraction = null }) => {
   const upto = entries.filter((e) => e.wave <= wave);
   const j = new Map([...judged].filter(([, v]) => v.wave <= wave));
-  const now = mergeC({ entries: upto, judged: j, clhByScene }).statuses;
-  const then = mergeC({ entries: upto.map((e) => (snapshots.has(e.bundle.bundle_id) ? { ...e, shard: snapshots.get(e.bundle.bundle_id) } : e)), judged: j, clhByScene }).statuses;
+  const now = mergeC({ entries: upto, judged: j, clhByScene, retraction }).statuses;
+  const then = mergeC({ entries: upto.map((e) => (snapshots.has(e.bundle.bundle_id) ? { ...e, shard: snapshots.get(e.bundle.bundle_id) } : e)), judged: j, clhByScene, retraction }).statuses;
   const out = [];
   for (const [id, a] of then) {
     const b = now.get(id);
@@ -1125,7 +1185,7 @@ export const shardDriftUnits = (before, after) => {
 /** 앞 회차 표본 층 모집단 변화로 들어간 외부 변경 항목(단위 자체는 안 바뀜)의 cause 표지 */
 export const SAMPLE_DRIFT_CAUSE = '층 모집단 변화로';
 export const isSampleDriftItem = (x) => x?.kind === 'external_change' && typeof x.cause === 'string' && x.cause.includes(SAMPLE_DRIFT_CAUSE);
-export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regenerated, later }) => {
+export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regenerated, later, withdrawn = new Set() }) => {
   const errors = [];
   const before = audited.bundle_stamps;
   if (before.length !== current.length || before.some((s, i) => s.bundle_id !== current[i].bundle_id)) return { ok: false, errors: ['회차 구성이 바뀌었다'], changes: [] };
@@ -1155,7 +1215,8 @@ export const carryOverAudit = ({ audited, current, snapshots, shardsNow, regener
     // 외부 변경을 만든 연결을 뒤에 지워 변경 자체가 없어진 경우도, 그 단위의 지금 상태를 지금 shard를 본 뒤 회차 PASS 감사가
     // 항목으로 가졌으면 빠져도 된다(14회차: C1__043__013 삭제로 5회차의 ext:chapter_50_03__clh_010이 사라짐)
     const gone = audited.items
-      .filter((x) => !now.has(x.audit_id) && !isSampleDriftItem(x) && !(x.kind === 'external_change' && ids.has(x.item_id)))
+      // 증분에서 철회되거나 증분 묶음이 새 주인이 된 단위는, 그 단위를 지금 shard를 본 뒤 회차 PASS 감사가 가졌으면 빠져도 된다
+      .filter((x) => !now.has(x.audit_id) && !isSampleDriftItem(x) && !(x.kind === 'external_change' && ids.has(x.item_id)) && !(withdrawn.has(x.item_id) && ids.has(x.item_id)))
       .map((x) => x.audit_id);
     if (gone.length) errors.push(`다시 만든 감사 항목에서 빠졌다: ${gone.join(', ')}`);
     // scene_order는 코퍼스 전체 장면 순번이라 대본이 추가되면 뒤 장면 값이 밀린다(증분 1: 새 이야기가 끼어 11회차 160항목).
@@ -1517,6 +1578,109 @@ export const buildC = async ({ run, select = null, maxUnits = MAX_UNITS, maxChar
   return plan;
 };
 
+
+/**
+ * 증분 회차 묶음(GRAPH_RAG_INCREMENT_DESIGN.md 4.6). 범위 파일의 새·바뀐 장면 단서와, 옛 미해결(짝 없음·보류) 중
+ * 기계 기준(C-0 검색어가 새 장면에 걸림, 새 장면의 장면 간 힌트가 가리킴, 새 단서와 같은 키)에 걸린 재확인 단위를 묶는다.
+ * C-0·제시 쌍·같은 이야기 단서는 코퍼스 전체로 만든다. 기존 묶음·계획 항목은 건드리지 않고 계획 끝에 새 회차로 붙인다.
+ */
+export const buildCIncrement = async ({ run, incId, maxUnits = MAX_UNITS, maxChars = MAX_CHARS }) => {
+  const P = pathsOf(run);
+  const plan = readJsonIfExists(P.plan);
+  if (!plan) throw new Error(`계획 파일이 없다: ${relPath(P.plan)}`);
+  if (plan.bundles.some((b) => b.increment === incId)) throw new Error(`${incId} 묶음이 이미 계획에 있다`);
+  const scope = loadScopes().find((x) => x.increment_id === incId);
+  if (!scope) throw new Error(`증분 범위 파일이 없다: ${incId}`);
+  if (!scope.pass1?.merged) throw new Error(`${incId}: Pass 1 병합 전이다(increment-scope refresh)`);
+  const status = readJsonIfExists(path.join(P.merged, 'C_unit_status.json'));
+  if (!status) throw new Error('C 병합 결과(C_unit_status.json)가 없다');
+  const store = new SceneStore();
+  const all = planAll({ store, byTitle: loadByTitle(), maxUnits, maxChars, log: (m) => console.log(`[build] ${m}`) });
+  const sceneIds = new Set([...scope.added_scenes, ...scope.changed_scenes].map((x) => x.scene_id));
+  const fresh = all.units.filter((u) => sceneIds.has(u.scene_id));
+  const freshKeys = new Set(fresh.map((u) => u.key).filter((k) => !k.startsWith('item:')));
+  const hinted = new Set(all.hints.filter((h) => sceneIds.has(h.scene_id)).flatMap((h) => h.related_scene_ids));
+  const revisit = [];
+  for (const u of all.units) {
+    if (sceneIds.has(u.scene_id)) continue;
+    const st = status.statuses[u.item_id];
+    if (!st || !['짝 없음', '보류'].includes(st.status)) continue;
+    const reasons = [];
+    const hit = u.scan_hits.filter((h) => sceneIds.has(h.scene_id));
+    if (hit.length) reasons.push(`C-0 검색어가 새 장면에 걸림(${[...new Set(hit.map((h) => h.scene_id))].join(', ')})`);
+    if (hinted.has(u.scene_id)) reasons.push('새 장면의 장면 간 힌트가 이 장면을 가리킴');
+    if (freshKeys.has(u.key)) reasons.push(`새 단서와 같은 키(${u.key_name ?? u.key})`);
+    if (!reasons.length) continue;
+    u.revisit = { status: st.status, note: st.residual ?? st.note ?? null, clue_links: st.clue_links ?? [], own_bundle: st.own_bundle, wave: st.wave, reasons };
+    revisit.push(u);
+  }
+  const titleOrder = store.titles.map((t) => t.title_id);
+  const packed = packBundles([...fresh, ...revisit], { titleOrder, maxUnits, maxChars });
+  const n = Number(incId.slice(4));
+  packed.forEach((b, i) => {
+    b.bundle_id = `CI${n}__${pad(i + 1)}`;
+  });
+  // 같은 이야기 단서·노출은 전수 패킹과 함께 계산한다(옛 단서의 묶음 단계가 필요하다). 증분 단위는 전수 패킹에서 뺀다
+  const incIds = new Set(packed.flatMap((b) => b.units.map((u) => u.item_id)));
+  const context = [...packed, ...all.packed.map((b) => ({ ...b, units: b.units.filter((u) => !incIds.has(u.item_id)) }))];
+  const contextOthers = storyOtherClues(context, all.units, all.hintLinks);
+  const exposure = checkExposure(context, contextOthers);
+  if (exposure.missing.length) throw new Error(`노출 불변식 위반 ${exposure.missing.length}쌍`);
+  const others = contextOthers.slice(0, packed.length);
+  const byKey = unitsByKey(all.units);
+  const wave = Math.max(0, ...plan.bundles.map((b) => b.wave ?? 0)) + 1;
+  const generatedAt = new Date().toISOString();
+  await fsp.mkdir(P.bundles, { recursive: true });
+  const added = [];
+  for (const [i, b] of packed.entries()) {
+    const f = bundleFiles({ b, others: others[i], store, clhByScene: all.clhByScene, hintLinks: all.hintLinks, hints: all.hints, signals: all.signals, byKey });
+    const file = (ext) => path.join(P.bundles, `${b.bundle_id}.${ext}`);
+    const units = f.bundle.units.map((x) => {
+      const u = b.units.find((y) => y.item_id === x.item_id);
+      return u.revisit ? { ...x, revisit: u.revisit } : x;
+    });
+    const bundle = { ...f.bundle, units, increment: incId, generated_at: generatedAt, script_file: relPath(file('excerpts.txt')), clues_file: relPath(file('clues.txt')), candidates_file: relPath(file('candidates.json')) };
+    await fsp.writeFile(file('excerpts.txt'), f.script, 'utf8');
+    await fsp.writeFile(file('clues.txt'), f.clues, 'utf8');
+    await writeJsonAtomic(file('candidates.json'), f.candidates);
+    await writeJsonAtomic(file('json'), bundle);
+    const bundleJsonChars = JSON.stringify(bundle).length;
+    added.push({
+      bundle_id: b.bundle_id,
+      kind: 'C',
+      stage: b.stage,
+      wave,
+      increment: incId,
+      units: b.units.length,
+      revisit_units: b.units.filter((u) => u.revisit).length,
+      titles: b.titles,
+      keys: b.keys ?? null,
+      big_title_piece: b.big ?? false,
+      suggested_pairs: f.bundle.suggested_pairs.length,
+      clue_categories: b.units.reduce((acc, u) => ((acc[u.clue_category] = (acc[u.clue_category] ?? 0) + 1), acc), {}),
+      excerpt_chars: f.script.length,
+      clues_chars: f.clues.length,
+      clues_lines: others[i].length,
+      bundle_json_chars: bundleJsonChars,
+      total_input_chars: f.script.length + f.clues.length + bundleJsonChars,
+      input: relPath(file('json')),
+      script: relPath(file('excerpts.txt')),
+      clues: relPath(file('clues.txt')),
+      candidates: relPath(file('candidates.json')),
+      output: relPath(path.join(P.shards, `${b.bundle_id}.json`)),
+      validate: `node scripts/graph/pass2-c.mjs validate ${b.bundle_id} --run=${run}`,
+    });
+  }
+  const population = { scenes: sceneIds.size, new_units: fresh.length, revisit_units: revisit.length, revisit: revisit.map((u) => ({ item_id: u.item_id, status: u.revisit.status, reasons: u.revisit.reasons })) };
+  await writeJsonAtomic(P.plan, { ...plan, bundles: [...plan.bundles, ...added], increments: [...(plan.increments ?? []), { increment_id: incId, wave, generated_at: generatedAt, population, bundles: added.map((b) => b.bundle_id) }] });
+  const idx = readJsonIfExists(path.join(P.bundles, 'units_index.json'));
+  if (idx) {
+    for (const b of packed) for (const u of b.units) idx.units[u.item_id] = { bundle_id: b.bundle_id, stage: b.stage, increment: incId };
+    await writeJsonAtomic(path.join(P.bundles, 'units_index.json'), idx);
+  }
+  return { wave, population, bundles: added };
+};
+
 // ---------------------------------------------------------------------------
 // CLI
 
@@ -1555,6 +1719,7 @@ const makeCtx = () => {
     pass2Entities: loadPass2Entities(),
     termKeys: new Set((terms?.terms ?? []).map((t) => t.term_key)),
     releaseDates: loadReleaseDates(),
+    retraction: loadRetraction(),
   };
   return ctxCache;
 };
@@ -1611,7 +1776,12 @@ const doneEntries = (P, plan, ctx, maxWave = Infinity) => {
   return out;
 };
 /** 이 실행에서 판정한(완료한) 단위 */
-const judgedOf = (entries) => new Map(entries.flatMap((e) => e.bundle.units.map((u) => [u.item_id, { bundle_id: e.bundle.bundle_id, wave: e.wave, stage: e.bundle.stage, clue_category: u.clue_category }])));
+// 단위의 첫 주인(본 실행 묶음)을 담는다. 증분 묶음이 새 주인이 된 단위는 mergeC(effectiveEntries)가 바꾼다
+const judgedOf = (entries) => {
+  const out = new Map();
+  for (const e of entries) for (const u of e.bundle.units) if (!out.has(u.item_id)) out.set(u.item_id, { bundle_id: e.bundle.bundle_id, wave: e.wave, stage: e.bundle.stage, clue_category: u.clue_category });
+  return out;
+};
 
 const main = async () => {
   const [cmd, ...args] = process.argv.slice(2);
@@ -1619,6 +1789,15 @@ const main = async () => {
   if (!RUNS.has(run)) throw new Error(`--run은 ${[...RUNS].join(' | ')} 중 하나다`);
   const P = pathsOf(run);
 
+  if (cmd === 'build' && argValue(args, 'increment')) {
+    if (run !== 'main') throw new Error('증분 묶음은 본 실행(--run=main)에만 붙인다');
+    const r = await buildCIncrement({ run, incId: argValue(args, 'increment'), maxUnits: Number(argValue(args, 'max-units') ?? MAX_UNITS), maxChars: Number(argValue(args, 'max-chars') ?? MAX_CHARS) });
+    for (const b of r.bundles) console.log(`${b.bundle_id} [${b.stage}단계] 회차 ${b.wave}: 단위 ${b.units}(재확인 ${b.revisit_units}), 제시 쌍 ${b.suggested_pairs}, 입력 ${b.total_input_chars.toLocaleString()}자, 이야기 ${b.titles.length}`);
+    const p = r.population;
+    console.log(`[build] 증분: 장면 ${p.scenes}, 새 단서 ${p.new_units}, 재확인 단위 ${p.revisit_units} → 회차 ${r.wave} 묶음 ${r.bundles.length}개`);
+    for (const x of p.revisit) console.log(`  재확인 ${x.item_id} (${x.status}): ${x.reasons.join(' / ')}`);
+    return;
+  }
   if (cmd === 'build') {
     if (run === 'retest' || run === 'wf') throw new Error(`${run}는 build하지 않는다. copy-bundles로 파일럿 묶음을 옮겨 온다`);
     const selectArg = argValue(args, 'select');
@@ -1704,7 +1883,7 @@ const main = async () => {
     }
     const entries = doneEntries(P, plan, ctx);
     const judged = judgedOf(entries);
-    const m = mergeC({ entries, judged, clhByScene: ctx.clhByScene });
+    const m = mergeC({ entries, judged, clhByScene: ctx.clhByScene, retraction: ctx.retraction });
     const byTitle = loadByTitle();
     const links = annotateLinks({ links: m.links, store: ctx.store, releaseDates: ctx.releaseDates, overlapIndex: overlapIndexOf([...byTitle.values()]) });
     const statuses = Object.fromEntries(m.statuses);
@@ -1713,7 +1892,7 @@ const main = async () => {
       return { item_id: id, scene_id: u.scene_id, title_id: u.title_id, clue_category: u.clue_category, keyword: u.keyword, status: s.residual ? `${s.status}(남은 의문)` : s.status, note: s.residual ?? s.note, budget_exhausted: s.budget_exhausted, bundle_id: s.own_bundle, clue_links: s.clue_links };
     });
     const waves = [...new Set(plan.bundles.map((b) => b.wave))].sort((a, b) => a - b);
-    const external = waves.slice(1).flatMap((w) => externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave: w }).map((x) => ({ ...x, changed_in_wave: w })));
+    const external = waves.slice(1).flatMap((w) => externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave: w, retraction: ctx.retraction }).map((x) => ({ ...x, changed_in_wave: w })));
     const stamp = { schema_version: PASS2_SCHEMA_VERSION, kind: 'C', run, generated_at: new Date().toISOString() };
     const missing = plan.bundles.filter((b) => progress[b.bundle_id].status !== 'merged').map((b) => b.bundle_id);
     await writeJsonAtomic(path.join(P.merged, 'C_candidates.json'), { ...stamp, missing_bundles: missing, links });
@@ -1743,6 +1922,15 @@ const main = async () => {
     const wave = Number(argValue(args, 'wave'));
     const plan = loadPlan(P);
     const ctx = makeCtx();
+    // 증분에서 철회되거나 새 주인이 생긴 단위(이어 인정에서 빠져도 되는 단위). 한 번만 센다
+    let withdrawnCache = null;
+    const withdrawnAll = () => {
+      if (!withdrawnCache) {
+        const es = doneEntries(P, plan, ctx);
+        withdrawnCache = effectiveEntries(es, judgedOf(es), ctx.retraction).withdrawn;
+      }
+      return withdrawnCache;
+    };
     const inputPathOf = (w) => path.join(P.audit, `wave_${pad(w)}_input.json`);
     const outputPathOf = (w) => path.join(P.audit, `wave_${pad(w)}_output.json`);
     const shardStore = path.join(P.audit, 'shard_store');
@@ -1771,7 +1959,7 @@ const main = async () => {
     const regenCache = new Map();
     const externalOf = (w, entries, judged, statuses) => {
       if (w <= 1) return [];
-      const out = externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave: w });
+      const out = externalChanges({ entries, judged, clhByScene: ctx.clhByScene, wave: w, retraction: ctx.retraction });
       const seen = new Set(out.map((x) => x.item_id));
       for (let v = 1; v < w; v++) {
         const audited = readJsonIfExists(inputPathOf(v));
@@ -1784,7 +1972,7 @@ const main = async () => {
           snapshots.set(s.bundle_id, JSON.parse(fs.readFileSync(f, 'utf8')));
         }
         if (!snapshots.size) continue;
-        for (const x of auditDrift({ entries, judged, clhByScene: ctx.clhByScene, wave: v, snapshots })) {
+        for (const x of auditDrift({ entries, judged, clhByScene: ctx.clhByScene, wave: v, snapshots, retraction: ctx.retraction })) {
           if (seen.has(x.item_id)) continue;
           seen.add(x.item_id);
           out.push(x);
@@ -1813,7 +2001,7 @@ const main = async () => {
       const selected = selectWave(plan, w);
       const entries = doneEntries(P, plan, ctx, w);
       const judged = judgedOf(entries);
-      const m = mergeC({ entries, judged, clhByScene: ctx.clhByScene });
+      const m = mergeC({ entries, judged, clhByScene: ctx.clhByScene, retraction: ctx.retraction });
       const ids = new Set(selected.map((b) => b.bundle_id));
       const linksByItem = new Map();
       for (const l of m.links) for (const s of ['subject', 'target']) {
@@ -1822,7 +2010,9 @@ const main = async () => {
         if (!linksByItem.has(id)) linksByItem.set(id, []);
         linksByItem.get(id).push(l);
       }
-      const units = entries.filter((e) => ids.has(e.bundle.bundle_id)).flatMap((e) => e.bundle.units.map((u) => ({ ...u, bundle_id: e.bundle.bundle_id, stage: e.bundle.stage, scene_order: ctx.store.sceneOrder.get(u.scene_id) ?? 0 })));
+      // 단위는 증분 정리(철회·새 주인) 뒤의 것을 쓴다. 철회된 옛 단위는 상태가 없다
+      const effective = effectiveEntries(entries, judged, ctx.retraction).entries;
+      const units = effective.filter((e) => ids.has(e.bundle.bundle_id)).flatMap((e) => e.bundle.units.map((u) => ({ ...u, bundle_id: e.bundle.bundle_id, stage: e.bundle.stage, scene_order: ctx.store.sceneOrder.get(u.scene_id) ?? 0 })));
       const others = new Map(entries.filter((e) => ids.has(e.bundle.bundle_id)).map((e) => {
         const lines = fs.readFileSync(path.resolve(e.bundle.clues_file), 'utf8').split('\n').slice(1).filter(Boolean);
         return [e.bundle.bundle_id, lines.map((l) => ctx.clhById.get(l.split('\t')[0])).filter(Boolean).map((v) => ({ ...v, scene_order: ctx.store.sceneOrder.get(v.scene_id) }))];
@@ -1843,7 +2033,8 @@ const main = async () => {
         },
         rate,
         seed: `C/${run}/${w}`,
-        includeIds: previous?.items.map((x) => x.audit_id) ?? [],
+        // 증분에서 철회·이관된 단위는 이 회차 표본에서 빠진다(이어 인정이 뒤 회차 감사로 덮였는지 따로 본다)
+        includeIds: previous?.items.filter((x) => !(x.kind === 'unit' && withdrawnAll().has(x.item_id))).map((x) => x.audit_id) ?? [],
       });
       const input = { schema_version: 'pass2-audit-input-0.1.0', kind: 'C', run, wave: w, judge_family: judgeFamily, bundle_stamps: stampsUpTo(w), ...sample };
       input.source_sha256 = sha256(JSON.stringify(input));
@@ -1879,7 +2070,7 @@ const main = async () => {
         } catch (e) {
           regenerated = { error: e.message };
         }
-        carry = carryOverAudit({ audited: input, current, snapshots, shardsNow: new Map(current.map((s) => [s.bundle_id, shardText(s.bundle_id)])), regenerated, later });
+        carry = carryOverAudit({ audited: input, current, snapshots, shardsNow: new Map(current.map((s) => [s.bundle_id, shardText(s.bundle_id)])), regenerated, later, withdrawn: withdrawnAll() });
         if (carry.ok) stamps = input.bundle_stamps;
       }
       const r = checkAudit(input, out, { store: ctx.store, bundleStamps: stamps, problems: C_REVIEW_PROBLEMS });

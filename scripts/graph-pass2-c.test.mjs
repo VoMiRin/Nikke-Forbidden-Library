@@ -9,6 +9,7 @@ import {
   evidenceSupportsEnd,
   externalChanges,
   mergeC,
+  effectiveEntries,
   normalizeEnd,
   packBundles,
   resolveClueKey,
@@ -588,4 +589,43 @@ test('carryOverAudit: 앞 회차 표본 층 변화로 덤으로 들어갔던 외
   // shard 수정으로 들어간 외부 변경 항목이나 일반 항목이 빠지면 여전히 막는다
   assert.ok(run([kept, edited]).errors.some((e) => e.includes('빠졌다: ext:n__clh_001')));
   assert.ok(!run([{ ...kept, audit_id: 'C1__001:y__clh_001', item_id: 'y__clh_001' }, kept]).ok);
+});
+
+test('effectiveEntries: 바뀐 장면의 옛 단위·연결은 철회하고, 증분 묶음이 가진 옛 단위는 새 주인으로 옮긴다(증분 1)', () => {
+  const retraction = { changedAt: new Map([['toy_11', 1]]), isRetracted: (inc, sid) => sid === 'toy_11' && !inc };
+  const link = (id, clue, reveal, extra = {}) => ({ link_id: id, subject: [{ ref: 'item', item_id: clue }], target: [{ ref: 'item', item_id: reveal }], roles: { clue: 'subject', reveal: 'target' }, verdict: '같은 대상', confidence: '가능성', ...extra });
+  const old = { wave: 11, bundle: { bundle_id: 'C1__217', stage: 2, units: [{ item_id: 'toy_11__clh_001', clue_category: 'item' }, { item_id: 'old_a__clh_001', clue_category: 'item' }, { item_id: 'old_b__clh_001', clue_category: 'trait' }] },
+    shard: { candidate_links: [link('C1__217__001', 'old_a__clh_001', 'x__clh_001', { verdict: '판단 보류', confidence: '판단 보류' }), link('C1__217__002', 'old_b__clh_001', 'old_a__clh_001')],
+      unlinked: [{ item_id: 'toy_11__clh_001', reason: '단서 아님' }, { item_id: 'old_a__clh_001', reason: '짝 없음', note: 'q' }, { item_id: 'old_b__clh_001', reason: '단서 아님' }], merge_suggestions: [] } };
+  const inc = { wave: 16, bundle: { bundle_id: 'CI1__001', stage: 2, increment: 'inc_001', units: [{ item_id: 'toy_11__clh_001', clue_category: 'trait' }, { item_id: 'old_a__clh_001', clue_category: 'item' }] },
+    shard: { candidate_links: [link('CI1__001__001', 'old_a__clh_001', 'sky__clh_001')], unlinked: [{ item_id: 'toy_11__clh_001', reason: '단서 아님' }], merge_suggestions: [] } };
+  const judged = new Map([...old.bundle.units, ...inc.bundle.units].reduce((m, u) => (m.has(u.item_id) ? m : m.set(u.item_id, { bundle_id: 'C1__217', wave: 11, stage: 2, clue_category: u.clue_category })), new Map()));
+  const r = effectiveEntries([old, inc], judged, retraction);
+  const o = r.entries[0];
+  assert.deepEqual(o.bundle.units.map((u) => u.item_id), ['old_b__clh_001']);
+  assert.deepEqual(o.shard.unlinked.map((x) => x.item_id), ['old_b__clh_001']);
+  // 재확인 단위를 단서로 잇던 옛 연결은 빠지고, 공개 쪽으로 쓴 연결은 남는다
+  assert.deepEqual(o.shard.candidate_links.map((l) => l.link_id), ['C1__217__002']);
+  assert.deepEqual(r.judged.get('old_a__clh_001').bundle_id, 'CI1__001');
+  assert.deepEqual(r.judged.get('toy_11__clh_001').bundle_id, 'CI1__001');
+  assert.deepEqual([...r.withdrawn].sort(), ['old_a__clh_001', 'toy_11__clh_001']);
+  // 증분 회차를 넣지 않으면(앞 회차까지 상태) 옛 주인 그대로이고, 철회만 된 단위는 판정 단위에서 빠진다
+  const before = effectiveEntries([old], new Map([...judged].filter(([id]) => id !== 'x')), retraction);
+  assert.equal(before.judged.get('old_a__clh_001').bundle_id, 'C1__217');
+  assert.equal(before.judged.has('toy_11__clh_001'), false);
+  // mergeC: 재확인 단위는 새 주인의 연결로 해결됨, 옛 짝 없음 note는 남은 의문이 되지 않는다
+  const m = mergeC({ entries: [old, inc], judged, clhByScene: new Map(), retraction });
+  assert.equal(m.statuses.get('old_a__clh_001').status, '해결됨');
+  assert.equal(m.statuses.get('old_a__clh_001').residual, null);
+  assert.equal(m.statuses.get('toy_11__clh_001').own_bundle, 'CI1__001');
+});
+
+test('carryOverAudit: 증분에서 철회·이관된 단위는 뒤 회차 PASS 감사가 그 단위를 가질 때만 빠져도 된다', () => {
+  const stamp = { bundle_id: 'C1__001', rules_sha256: 'r', input_sha256: 'i', shard_sha256: 's' };
+  const unit = { audit_id: 'C1__001:a__clh_001', kind: 'unit', item_id: 'a__clh_001', links: [] };
+  const base = { audited: { bundle_stamps: [stamp], items: [unit] }, current: [stamp], snapshots: new Map(), shardsNow: new Map(), regenerated: [], withdrawn: new Set(['a__clh_001']) };
+  const later = (items) => [{ wave: 16, input: { bundle_stamps: [stamp], items } }];
+  assert.ok(carryOverAudit({ ...base, later: later([{ audit_id: 'CI1__001:a__clh_001', kind: 'unit', item_id: 'a__clh_001' }]) }).ok);
+  assert.ok(!carryOverAudit({ ...base, later: [] }).ok);
+  assert.ok(!carryOverAudit({ ...base, withdrawn: new Set(), later: later([{ audit_id: 'CI1__001:a__clh_001', kind: 'unit', item_id: 'a__clh_001' }]) }).ok);
 });
