@@ -124,7 +124,10 @@ export const loadRegistry = (graphDir = GRAPH_DATA_DIR) => {
 /** Pass 2 엔티티 표(스쿼드·조직, 초안 9절 3번). 아직 없으면 빈 표다. */
 export const loadPass2Entities = (graphDir = GRAPH_DATA_DIR) => {
   const doc = readJsonIfExists(path.join(graphDir, 'pass2', 'entities.json'));
-  return new Map((doc?.entities ?? []).map((e) => [e.entity_id, e]));
+  const out = new Map((doc?.entities ?? []).map((e) => [e.entity_id, e]));
+  // 뒤 병합(D-pre 등)으로 흡수된 지난 공식 ID도 남은 엔티티로 조회된다(id_map). 앞 단계 샤드의 참조가 깨지지 않게 한다
+  for (const [from, to] of Object.entries(doc?.id_map ?? {})) if (!out.has(from) && out.has(to)) out.set(from, out.get(to));
+  return out;
 };
 
 // ---------------------------------------------------------------------------

@@ -1157,10 +1157,27 @@ export const promoteA2 = ({ entities, terms, mergeCandidates = [], linkIds = new
   }
   // 지난 공식 표의 ID·표기 묶음 키를 이어받는다(증분 설계 4.4). 합친 무리에 증분 무리가 더해져도 공식 ID·term_key가
   // 바뀌지 않게 한다. 한 단위의 무리들이 지난 표에서 서로 다른 ID·키였으면(이번에 새로 합침) 이어받지 않고 위 규칙을 쓴다
+  // 지난 표에서 서로 다른 공식 ID·키였던 무리를 이번에 합치면(D-pre: C 병합 승인) 남길 것을 병합 행의 keep으로 정한다.
+  // keep이 없으면 멈춘다(사전순 첫 무리 키로 바뀌면 옛 키를 참조하는 C 산출물과 어긋난다, D 설계 8.1-2)
   const priorMap = prior?.groupMap ?? {};
+  const priorVals = (u, field) => [...new Set(u.groups.map((g) => priorMap[g.group_key]?.[field]).filter(Boolean))].sort();
+  for (const u of units) {
+    if (!u.merged) continue;
+    const field = ID_PREFIX[u.entity_type] ? 'entity_id' : 'term_key';
+    const vals = priorVals(u, field);
+    const m = mergeOf.get(u.groups[0].group_key);
+    if (vals.length > 1) {
+      if (!m.keep) err(`병합 ${u.canonical_name}: 지난 공식 ${field}가 여럿이다(${vals.join(', ')}). keep으로 남길 것을 적는다`);
+      else if (!vals.includes(m.keep)) err(`병합 ${u.canonical_name}: keep ${m.keep}이 지난 공식 ${field}(${vals.join(', ')})에 없다`);
+      else u.keep = m.keep;
+    } else if (m.keep && m.keep !== vals[0]) err(`병합 ${u.canonical_name}: keep ${m.keep}이 지난 공식 ${field}와 다르다`);
+    u.absorbed = vals.filter((v) => v !== (u.keep ?? vals[0]));
+  }
+  if (errors.length) return { errors };
   const priorOf = (u, field) => {
-    const vals = new Set(u.groups.map((g) => priorMap[g.group_key]?.[field]).filter(Boolean));
-    return vals.size === 1 ? [...vals][0] : null;
+    if (u.keep) return u.keep;
+    const vals = priorVals(u, field);
+    return vals.length === 1 ? vals[0] : null;
   };
   const takenIds = new Set();
   for (const u of units) {
@@ -1190,6 +1207,7 @@ export const promoteA2 = ({ entities, terms, mergeCandidates = [], linkIds = new
     if (u.entity_id) {
       const sourceIds = u.groups.map((g) => g.entity_id).sort();
       for (const id of sourceIds) idMap[id] = u.entity_id;
+      for (const id of u.absorbed ?? []) idMap[id] = u.entity_id; // 흡수된 지난 공식 ID도 남은 ID로 조회된다
       for (const g of u.groups) groupMap[g.group_key] = { entity_id: u.entity_id };
       outEntities.push({ entity_id: u.entity_id, ...rec, surface_labels: sortedUnion([[u.canonical_name], ...u.groups.map((g) => [g.canonical_name, ...(g.surfaces ?? [])])]), source_ids: sourceIds });
     } else {

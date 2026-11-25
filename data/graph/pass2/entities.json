@@ -1,11 +1,11 @@
 {
   "schema_version": "pass2-official-0.1.0",
-  "generated_at": "2026-11-25T07:57:42.683Z",
+  "generated_at": "2026-11-25T12:36:45.829Z",
   "source": {
     "run": "main",
     "merged_generated_at": "2026-11-25T07:49:41.051Z",
     "curation": "data/graph/pass2/a2/curation.json",
-    "curation_sha256": "e3983c6ae33d811b44ba81fa3c364c9a906c38b6a4492394a76e0a3c4dbb1c24"
+    "curation_sha256": "45d75d81d17de11a63e74adafb57bd236d6c9dc091e3177f3c5e6717a902f93e"
   },
   "note": "Pass 2 공식 엔티티 표(인물 char2_·스쿼드 squad_·조직 org_). id_map은 실행 결과 ID → 공식 ID, group_map은 실행 결과 무리 → 공식 ID/표기 묶음, link_overrides는 해소 항목에 덮어쓸 판정이다",
   "entities": [
@@ -206,17 +206,22 @@
       "canonical_name": "A.I. 에바",
       "qualifier": null,
       "title_ids": [
-        "event_stories__maria-n"
+        "event_stories__maria-n",
+        "main_story__chapter_15"
       ],
-      "item_count": 4,
+      "item_count": 6,
       "source_groups": [
-        "A2__005#E4"
+        "A2__005#E4",
+        "A2__100#E5"
       ],
+      "note": "D-pre C 병합 승인 #49 (2026-11-25 사용자 승인): 에바 = A.I. 에바",
       "surface_labels": [
-        "A.I. 에바"
+        "A.I. 에바",
+        "에바"
       ],
       "source_ids": [
-        "char2_A.I._에바"
+        "char2_A.I._에바",
+        "char2_에바"
       ]
     },
     {
@@ -900,15 +905,19 @@
         "main_story__chapter_49",
         "main_story__chapter_50"
       ],
-      "item_count": 6,
+      "item_count": 8,
       "source_groups": [
-        "A2__040#E2"
+        "A2__040#E2",
+        "A2__151#E17"
       ],
+      "note": "D-pre C 병합 승인 #63 (2026-11-25 사용자 승인): 랩쳐 01 = 프라이드",
       "surface_labels": [
-        "랩쳐 01"
+        "랩쳐 01",
+        "프라이드"
       ],
       "source_ids": [
-        "char2_랩쳐_01"
+        "char2_랩쳐_01",
+        "char2_프라이드"
       ]
     },
     {
@@ -3294,22 +3303,26 @@
       "title_ids": [
         "event_stories__persona_on_frontline"
       ],
-      "item_count": 14,
+      "item_count": 16,
       "source_groups": [
         "A2__026#E6",
         "A2__030#E11",
+        "A2__072#E16",
         "A2__093#E10"
       ],
-      "note": "병합 후보 검토(2026-11-17 사용자 승인): 판정자가 같은 대상으로 적은 표기(그 남자, 남자, 앨든)",
+      "note": "병합 후보 검토(2026-11-17 사용자 승인): 판정자가 같은 대상으로 적은 표기(그 남자, 남자, 앨든) / D-pre C 병합 승인 #28 (2026-11-25 사용자 승인): 인자해 보이는 남자 = 앨든",
       "surface_labels": [
         "그 남자",
         "남자",
-        "앨든"
+        "사업가 A씨",
+        "앨든",
+        "인자해 보이는 남자"
       ],
       "source_ids": [
         "char2_앨든__418b33",
         "char2_앨든__6f823a",
-        "char2_앨든__ddb52c"
+        "char2_앨든__ddb52c",
+        "char2_인자해_보이는_남자"
       ]
     },
     {
@@ -3447,25 +3460,6 @@
       ],
       "source_ids": [
         "char2_에밀리_콜"
-      ]
-    },
-    {
-      "entity_id": "char2_에바",
-      "entity_type": "character",
-      "canonical_name": "에바",
-      "qualifier": null,
-      "title_ids": [
-        "main_story__chapter_15"
-      ],
-      "item_count": 2,
-      "source_groups": [
-        "A2__100#E5"
-      ],
-      "surface_labels": [
-        "에바"
-      ],
-      "source_ids": [
-        "char2_에바"
       ]
     },
     {
@@ -3894,26 +3888,6 @@
       ],
       "source_ids": [
         "char2_이터니티"
-      ]
-    },
-    {
-      "entity_id": "char2_인자해_보이는_남자",
-      "entity_type": "character",
-      "canonical_name": "인자해 보이는 남자",
-      "qualifier": null,
-      "title_ids": [
-        "event_stories__persona_on_frontline"
-      ],
-      "item_count": 2,
-      "source_groups": [
-        "A2__072#E16"
-      ],
-      "surface_labels": [
-        "사업가 A씨",
-        "인자해 보이는 남자"
-      ],
-      "source_ids": [
-        "char2_인자해_보이는_남자"
       ]
     },
     {
@@ -5074,25 +5048,6 @@
       ]
     },
     {
-      "entity_id": "char2_프라이드",
-      "entity_type": "character",
-      "canonical_name": "프라이드",
-      "qualifier": null,
-      "title_ids": [
-        "main_story__chapter_50"
-      ],
-      "item_count": 2,
-      "source_groups": [
-        "A2__151#E17"
-      ],
-      "surface_labels": [
-        "프라이드"
-      ],
-      "source_ids": [
-        "char2_프라이드"
-      ]
-    },
-    {
       "entity_id": "char2_피어",
       "entity_type": "character",
       "canonical_name": "피어",
@@ -5775,7 +5730,7 @@
       "entity_id": "org_T.T._STAR",
       "entity_type": "organization",
       "canonical_name": "T.T. STAR",
-      "qualifier": "아니스·민트·프리카 아이돌 그룹",
+      "qualifier": null,
       "title_ids": [
         "blabla__personal__anis",
         "blabla__personal__prika",
@@ -5802,14 +5757,15 @@
         "outpost_stories__엘리베이터",
         "sub_quests__음악_애호가"
       ],
-      "item_count": 166,
+      "item_count": 174,
       "source_groups": [
         "A2__012#E17",
         "A2__013#E6",
         "A2__083#E2",
-        "A2__146#E2"
+        "A2__146#E2",
+        "A2__147#E3"
       ],
-      "note": "트윙클 트라이 스타·스마일 박스·Twinkle Twin Star(3인조→아니스 탈퇴 뒤 2인조) 모두 같은 그룹(손으로 합칠 목록 2026-11-13)",
+      "note": "트윙클 트라이 스타·스마일 박스·Twinkle Twin Star(3인조→아니스 탈퇴 뒤 2인조) 모두 같은 그룹(손으로 합칠 목록 2026-11-13) / D-pre C 병합 승인 #20 (2026-11-25 사용자 승인): T.T. STAR = 티티스타",
       "surface_labels": [
         "T.T. STAR",
         "T.T.STAR",
@@ -5817,13 +5773,15 @@
         "TTSTAR",
         "Twinkle Twin Star",
         "스마일 박스",
-        "트윙클 트라이 스타"
+        "트윙클 트라이 스타",
+        "티티스타"
       ],
       "source_ids": [
         "org_T.T._STAR",
         "org_Twinkle_Twin_Star",
         "org_트윙클_트라이_스타__313f47",
-        "org_트윙클_트라이_스타__9a55f8"
+        "org_트윙클_트라이_스타__9a55f8",
+        "org_티티스타"
       ]
     },
     {
@@ -6419,25 +6377,6 @@
       ]
     },
     {
-      "entity_id": "org_메피스토주의_황금_십자회",
-      "entity_type": "organization",
-      "canonical_name": "메피스토주의 황금 십자회",
-      "qualifier": null,
-      "title_ids": [
-        "character_episodes__길로틴"
-      ],
-      "item_count": 2,
-      "source_groups": [
-        "A2__052#E8"
-      ],
-      "surface_labels": [
-        "메피스토주의 황금 십자회"
-      ],
-      "source_ids": [
-        "org_메피스토주의_황금_십자회"
-      ]
-    },
-    {
       "entity_id": "org_모란회",
       "entity_type": "organization",
       "canonical_name": "모란회",
@@ -6509,30 +6448,6 @@
       ],
       "source_ids": [
         "org_미래투자TV"
-      ]
-    },
-    {
-      "entity_id": "org_미미르",
-      "entity_type": "organization",
-      "canonical_name": "미미르",
-      "qualifier": null,
-      "title_ids": [
-        "blabla__group__counters",
-        "blabla__group__mmr",
-        "blabla__personal__neon",
-        "blabla__personal__rei",
-        "character_episodes__라이",
-        "event_stories__school_of_lock"
-      ],
-      "item_count": 14,
-      "source_groups": [
-        "A2__054#E15"
-      ],
-      "surface_labels": [
-        "미미르"
-      ],
-      "source_ids": [
-        "org_미미르"
       ]
     },
     {
@@ -6749,11 +6664,15 @@
       "qualifier": null,
       "title_ids": [
         "blabla__group__aegis",
+        "blabla__group__counters",
         "blabla__group__mmr",
         "blabla__personal__ether",
         "blabla__personal__mana",
+        "blabla__personal__neon",
+        "blabla__personal__rei",
         "character_episodes__노벨",
         "character_episodes__델타",
+        "character_episodes__라이",
         "character_episodes__마나",
         "character_episodes__모더니아",
         "character_episodes__에테르",
@@ -6790,22 +6709,25 @@
         "sub_quests__세르반",
         "sub_quests__숲속요정"
       ],
-      "item_count": 172,
+      "item_count": 186,
       "source_groups": [
         "A2__010#E9",
+        "A2__054#E15",
         "A2__055#E3",
         "A2__056#E4"
       ],
-      "note": "연구 기관 M.M.R.(스쿼드 M.M.R.은 따로)",
+      "note": "연구 기관 M.M.R.(스쿼드 M.M.R.은 따로) / D-pre C 병합 승인 #21 (2026-11-25 사용자 승인): 미실리스 군사 연구 센터 = 미미르",
       "surface_labels": [
         "M.M.R",
         "M.M.R.",
         "M.M.R. 연구소",
         "MMR",
+        "미미르",
         "미미르의 연구 센터",
         "미실리스 군사 연구 센터"
       ],
       "source_ids": [
+        "org_미미르",
         "org_미실리스_군사_연구_센터__0468c9",
         "org_미실리스_군사_연구_센터__2a93b3",
         "org_미실리스_군사_연구_센터__b7ed3f"
@@ -8839,27 +8761,6 @@
       ]
     },
     {
-      "entity_id": "org_티티스타",
-      "entity_type": "organization",
-      "canonical_name": "티티스타",
-      "qualifier": null,
-      "title_ids": [
-        "event_stories__star_anis",
-        "main_story__chapter_39",
-        "main_story__chapter_44"
-      ],
-      "item_count": 8,
-      "source_groups": [
-        "A2__147#E3"
-      ],
-      "surface_labels": [
-        "티티스타"
-      ],
-      "source_ids": [
-        "org_티티스타"
-      ]
-    },
-    {
       "entity_id": "org_파랑새_길드",
       "entity_type": "organization",
       "canonical_name": "파랑새 길드",
@@ -9037,21 +8938,25 @@
       "entity_id": "org_협회",
       "entity_type": "organization",
       "canonical_name": "협회",
-      "qualifier": "길로틴과 클로이의 비밀 결사",
+      "qualifier": null,
       "title_ids": [
         "character_episodes__길로틴",
         "character_episodes__베스티_택티컬_업",
         "event_stories__ice_dragon_saga",
         "outpost_stories__승리의_여신"
       ],
-      "item_count": 16,
+      "item_count": 18,
       "source_groups": [
+        "A2__052#E8",
         "A2__159#E10"
       ],
+      "note": "(따로 둔 기록: 길로틴과 클로이의 비밀 결사 협회(모험가 협회와 다름)) / D-pre C 병합 승인 #16 (2026-11-25 사용자 승인): 협회 = 메피스토주의 황금 십자회",
       "surface_labels": [
+        "메피스토주의 황금 십자회",
         "협회"
       ],
       "source_ids": [
+        "org_메피스토주의_황금_십자회",
         "org_협회"
       ]
     },
@@ -9158,15 +9063,19 @@
       "title_ids": [
         "event_stories__footstep_walk_run"
       ],
-      "item_count": 4,
+      "item_count": 6,
       "source_groups": [
-        "A2__001#E8"
+        "A2__001#E8",
+        "A2__083#E9"
       ],
+      "note": "D-pre C 병합 승인 #81 (2026-11-25 사용자 승인): 스쿼드 09-10F = 09-10F 스쿼드",
       "surface_labels": [
-        "09-10F 스쿼드"
+        "09-10F 스쿼드",
+        "스쿼드 09-10F"
       ],
       "source_ids": [
-        "squad_09-10F_스쿼드"
+        "squad_09-10F_스쿼드",
+        "squad_스쿼드_09-10F"
       ]
     },
     {
@@ -9610,21 +9519,24 @@
         "outpost_stories__승리의_여신",
         "outpost_stories__장난감_상점"
       ],
-      "item_count": 76,
+      "item_count": 78,
       "source_groups": [
         "A2__011#E20",
-        "A2__045#E1"
+        "A2__045#E1",
+        "A2__147#E4"
       ],
-      "note": "병합 후보 검토(2026-11-17 사용자 승인): 판정자가 같은 대상으로 적은 표기(Rewind, 리와인드, 리와인드 스쿼드, 리와인드 팀)",
+      "note": "병합 후보 검토(2026-11-17 사용자 승인): 판정자가 같은 대상으로 적은 표기(Rewind, 리와인드, 리와인드 스쿼드, 리와인드 팀) / D-pre C 병합 승인 #68 (2026-11-25 사용자 승인): 리와인드 = 팀 리와인드",
       "surface_labels": [
         "Rewind",
         "리와인드",
         "리와인드 스쿼드",
-        "리와인드 팀"
+        "리와인드 팀",
+        "팀 리와인드"
       ],
       "source_ids": [
         "squad_리와인드__092cf6",
-        "squad_리와인드__6a8252"
+        "squad_리와인드__6a8252",
+        "squad_팀_리와인드"
       ]
     },
     {
@@ -10181,47 +10093,6 @@
       ],
       "source_ids": [
         "squad_스쿨_서클"
-      ]
-    },
-    {
-      "entity_id": "squad_스쿼드_04-F",
-      "entity_type": "squad",
-      "canonical_name": "스쿼드 04-F",
-      "qualifier": null,
-      "title_ids": [
-        "blabla__group__counters",
-        "event_stories__maria-n",
-        "main_story__chapter_00",
-        "main_story__chapter_17"
-      ],
-      "item_count": 8,
-      "source_groups": [
-        "A2__083#E8"
-      ],
-      "surface_labels": [
-        "스쿼드 04-F"
-      ],
-      "source_ids": [
-        "squad_스쿼드_04-F"
-      ]
-    },
-    {
-      "entity_id": "squad_스쿼드_09-10F",
-      "entity_type": "squad",
-      "canonical_name": "스쿼드 09-10F",
-      "qualifier": null,
-      "title_ids": [
-        "event_stories__footstep_walk_run"
-      ],
-      "item_count": 2,
-      "source_groups": [
-        "A2__083#E9"
-      ],
-      "surface_labels": [
-        "스쿼드 09-10F"
-      ],
-      "source_ids": [
-        "squad_스쿼드_09-10F"
       ]
     },
     {
@@ -10932,6 +10803,7 @@
         "event_stories__fatal_maid",
         "event_stories__good_world",
         "event_stories__hightech_toy",
+        "event_stories__maria-n",
         "event_stories__memories_teller",
         "event_stories__neverland",
         "event_stories__new_year_new_sword",
@@ -10942,6 +10814,7 @@
         "event_stories__star_anis",
         "event_stories__unbreakable_sphere",
         "event_stories__wave_to_you",
+        "main_story__chapter_00",
         "main_story__chapter_01",
         "main_story__chapter_02",
         "main_story__chapter_04",
@@ -10953,6 +10826,7 @@
         "main_story__chapter_13",
         "main_story__chapter_15",
         "main_story__chapter_16",
+        "main_story__chapter_17",
         "main_story__chapter_18",
         "main_story__chapter_20",
         "main_story__chapter_22",
@@ -10991,21 +10865,24 @@
         "sub_quests__에덴_Notice",
         "sub_quests__중앙정부_트라이앵글"
       ],
-      "item_count": 378,
+      "item_count": 386,
       "source_groups": [
         "A2__059#E1",
+        "A2__083#E8",
         "A2__132#E8",
         "A2__133#E1"
       ],
-      "note": "병합 후보 검토(2026-11-17 사용자 승인): 판정자가 같은 대상으로 적은 표기(반격 부대, 카운▣□터▣스, 카운터 스쿼드, 카운터스, 카운터스 스쿼드)",
+      "note": "병합 후보 검토(2026-11-17 사용자 승인): 판정자가 같은 대상으로 적은 표기(반격 부대, 카운▣□터▣스, 카운터 스쿼드, 카운터스, 카운터스 스쿼드) / D-pre C 병합 승인 #29 (2026-11-25 사용자 승인): 스쿼드 04-F = 카운터스",
       "surface_labels": [
         "반격 부대",
+        "스쿼드 04-F",
         "카운▣□터▣스",
         "카운터 스쿼드",
         "카운터스",
         "카운터스 스쿼드"
       ],
       "source_ids": [
+        "squad_스쿼드_04-F",
         "squad_카운터스__6ae2b6",
         "squad_카운터스__cd7642",
         "squad_카운터스__da8fa6"
@@ -11196,25 +11073,6 @@
       ],
       "source_ids": [
         "squad_특수별동대_카운터스"
-      ]
-    },
-    {
-      "entity_id": "squad_팀_리와인드",
-      "entity_type": "squad",
-      "canonical_name": "팀 리와인드",
-      "qualifier": null,
-      "title_ids": [
-        "event_stories__one_more_time"
-      ],
-      "item_count": 2,
-      "source_groups": [
-        "A2__147#E4"
-      ],
-      "surface_labels": [
-        "팀 리와인드"
-      ],
-      "source_ids": [
-        "squad_팀_리와인드"
       ]
     },
     {
@@ -11478,6 +11336,7 @@
     "char2_6호": "char2_6호",
     "char2_8호": "char2_8호",
     "char2_A.I._에바": "char2_A.I._에바",
+    "char2_에바": "char2_A.I._에바",
     "char2_D1G-g2r": "char2_D1G-g2r",
     "char2_L": "char2_L",
     "char2_PAIK파티시에": "char2_PAIK파티시에",
@@ -11519,6 +11378,7 @@
     "char2_랩쳐_04__e90786": "char2_라스",
     "char2_라이온": "char2_라이온",
     "char2_랩쳐_01": "char2_랩쳐_01",
+    "char2_프라이드": "char2_랩쳐_01",
     "char2_랩쳐_03__15a039": "char2_엔비",
     "char2_랩쳐_03__a335c3": "char2_엔비",
     "char2_엔비": "char2_엔비",
@@ -11661,6 +11521,7 @@
     "char2_앨든__418b33": "char2_앨든",
     "char2_앨든__6f823a": "char2_앨든",
     "char2_앨든__ddb52c": "char2_앨든",
+    "char2_인자해_보이는_남자": "char2_앨든",
     "char2_양산형_니케": "char2_양산형_니케",
     "char2_엄마__e39813": "char2_엄마__e39813",
     "char2_엄마__f0dbcf": "char2_엄마__f0dbcf",
@@ -11669,7 +11530,6 @@
     "char2_에릭__f866b4": "char2_에릭__6b3779",
     "char2_에릭__c6138c": "char2_에릭__c6138c",
     "char2_에밀리_콜": "char2_에밀리_콜",
-    "char2_에바": "char2_에바",
     "char2_에반": "char2_에반",
     "char2_에블라_박사__1a48e9": "char2_에블라_박사",
     "char2_에블라_박사__a76e73": "char2_에블라_박사",
@@ -11695,7 +11555,6 @@
     "char2_이사회의_남성_임원": "char2_이사회의_남성_임원",
     "char2_이성을_잃은_니케": "char2_이성을_잃은_니케",
     "char2_이터니티": "char2_이터니티",
-    "char2_인자해_보이는_남자": "char2_인자해_보이는_남자",
     "char2_자매님": "char2_자매님",
     "char2_잭": "char2_잭",
     "char2_전대_보스": "char2_전대_보스",
@@ -11756,7 +11615,6 @@
     "char2_편익의_마왕__cae13b": "char2_편익의_마왕",
     "char2_포크": "char2_포크",
     "char2_푸르딩": "char2_푸르딩",
-    "char2_프라이드": "char2_프라이드",
     "char2_피어": "char2_피어",
     "char2_핏빛_피치파이": "char2_핏빛_피치파이",
     "char2_핑크": "char2_핑크",
@@ -11797,6 +11655,7 @@
     "org_Twinkle_Twin_Star": "org_T.T._STAR",
     "org_트윙클_트라이_스타__313f47": "org_T.T._STAR",
     "org_트윙클_트라이_스타__9a55f8": "org_T.T._STAR",
+    "org_티티스타": "org_T.T._STAR",
     "org_TV_특종_비리를_밝혀라!": "org_TV_특종_비리를_밝혀라!",
     "org_T조": "org_T조",
     "org_V.T.C.__17de3e": "org_V.T.C.",
@@ -11828,12 +11687,16 @@
     "org_리버티": "org_리버티",
     "org_마음의_괴도단__1cbb2c": "org_마음의_괴도단",
     "org_마음의_괴도단__2c421c": "org_마음의_괴도단",
-    "org_메피스토주의_황금_십자회": "org_메피스토주의_황금_십자회",
+    "org_메피스토주의_황금_십자회": "org_협회",
+    "org_협회": "org_협회",
     "org_모란회": "org_모란회",
     "org_모험가_협회__85dfe0": "org_모험가_협회",
     "org_모험가_협회__ae46c4": "org_모험가_협회",
     "org_미래투자TV": "org_미래투자TV",
-    "org_미미르": "org_미미르",
+    "org_미미르": "org_미실리스_군사_연구_센터",
+    "org_미실리스_군사_연구_센터__0468c9": "org_미실리스_군사_연구_센터",
+    "org_미실리스_군사_연구_센터__2a93b3": "org_미실리스_군사_연구_센터",
+    "org_미실리스_군사_연구_센터__b7ed3f": "org_미실리스_군사_연구_센터",
     "org_미미르_부속_고등학교__3ce5b6": "org_미미르_부속_고등학교",
     "org_미미르_부속_고등학교__d011f9": "org_미미르_부속_고등학교",
     "org_미미르_부속_고등학교__e92c78": "org_미미르_부속_고등학교",
@@ -11842,9 +11705,6 @@
     "org_미실리스_인더스트리__a8fe97": "org_미실리스",
     "org_미실리스_인더스트리__c7b41b": "org_미실리스",
     "org_미실리스_과학기술연구소": "org_미실리스_과학기술연구소",
-    "org_미실리스_군사_연구_센터__0468c9": "org_미실리스_군사_연구_센터",
-    "org_미실리스_군사_연구_센터__2a93b3": "org_미실리스_군사_연구_센터",
-    "org_미실리스_군사_연구_센터__b7ed3f": "org_미실리스_군사_연구_센터",
     "org_미실리스_법무팀": "org_미실리스_법무팀",
     "org_미실리스_연구팀": "org_미실리스_연구팀",
     "org_발렌틴": "org_발렌틴",
@@ -11941,7 +11801,6 @@
     "org_통합_P반": "org_통합_P반",
     "org_특무대": "org_특무대",
     "org_특별과외활동부": "org_특별과외활동부",
-    "org_티티스타": "org_티티스타",
     "org_파랑새_길드": "org_파랑새_길드",
     "org_포근포근_협회": "org_포근포근_협회",
     "org_포비스트__151437": "org_포비스트",
@@ -11950,13 +11809,13 @@
     "org_푸른내일지속가능기획지원사무국": "org_푸른내일지속가능기획지원사무국",
     "org_피에르": "org_피에르",
     "org_헤도니아": "org_헤도니아",
-    "org_협회": "org_협회",
     "org_화양연화": "org_화양연화",
     "org_황금_해적단": "org_황금_해적단",
     "org_휴먼카드": "org_휴먼카드",
     "org_희망은행": "org_희망은행",
     "org_히어로_연합": "org_히어로_연합",
     "squad_09-10F_스쿼드": "squad_09-10F_스쿼드",
+    "squad_스쿼드_09-10F": "squad_09-10F_스쿼드",
     "squad_65-04B_스쿼드": "squad_65-04B_스쿼드",
     "squad_71-12A_스쿼드": "squad_71-12A_스쿼드",
     "squad_777": "squad_777_스쿼드",
@@ -11977,6 +11836,7 @@
     "squad_리얼_카인드니스": "squad_리얼_카인드니스",
     "squad_리와인드__092cf6": "squad_리와인드",
     "squad_리와인드__6a8252": "squad_리와인드",
+    "squad_팀_리와인드": "squad_리와인드",
     "squad_리콜&릴리즈": "squad_리콜&릴리즈",
     "squad_리틀_캐논__30a3ea": "squad_리틀_캐논",
     "squad_리틀_캐논__642169": "squad_리틀_캐논",
@@ -12002,8 +11862,10 @@
     "squad_스카우팅": "squad_스카우팅",
     "squad_스컬_헤드": "squad_스컬_헤드",
     "squad_스쿨_서클": "squad_스쿨_서클",
-    "squad_스쿼드_04-F": "squad_스쿼드_04-F",
-    "squad_스쿼드_09-10F": "squad_스쿼드_09-10F",
+    "squad_스쿼드_04-F": "squad_카운터스",
+    "squad_카운터스__6ae2b6": "squad_카운터스",
+    "squad_카운터스__cd7642": "squad_카운터스",
+    "squad_카운터스__da8fa6": "squad_카운터스",
     "squad_시지_패러리스": "squad_시지_패러리스",
     "squad_실버건_스쿼드": "squad_실버건_스쿼드",
     "squad_아크레인저": "squad_아크레인저",
@@ -12032,9 +11894,6 @@
     "squad_일렉트릭_쇼크_스쿼드": "squad_일렉트릭_쇼크",
     "squad_일반_B팀": "squad_일반_B팀",
     "squad_전투_보조_팀": "squad_전투_보조_팀",
-    "squad_카운터스__6ae2b6": "squad_카운터스",
-    "squad_카운터스__cd7642": "squad_카운터스",
-    "squad_카운터스__da8fa6": "squad_카운터스",
     "squad_카페_스위티__4e940f": "squad_카페_스위티",
     "squad_카페_스위티__f725c5": "squad_카페_스위티",
     "squad_카페_스위티_스쿼드": "squad_카페_스위티",
@@ -12042,7 +11901,6 @@
     "squad_트라이앵글": "squad_트라이앵글",
     "squad_특수별동대": "squad_특수별동대",
     "squad_특수별동대_카운터스": "squad_특수별동대_카운터스",
-    "squad_팀_리와인드": "squad_팀_리와인드",
     "squad_파이오니아": "squad_파이오니아_스쿼드",
     "squad_파이오니아_스쿼드": "squad_파이오니아_스쿼드",
     "squad_패스파인더_스쿼드": "squad_패스파인더_스쿼드",
@@ -12087,6 +11945,9 @@
       "entity_id": "char2_8호"
     },
     "A2__005#E4": {
+      "entity_id": "char2_A.I._에바"
+    },
+    "A2__100#E5": {
       "entity_id": "char2_A.I._에바"
     },
     "A2__008#E8": {
@@ -12210,6 +12071,9 @@
       "entity_id": "char2_라이온"
     },
     "A2__040#E2": {
+      "entity_id": "char2_랩쳐_01"
+    },
+    "A2__151#E17": {
       "entity_id": "char2_랩쳐_01"
     },
     "A2__001#E3": {
@@ -12635,6 +12499,9 @@
     "A2__030#E11": {
       "entity_id": "char2_앨든"
     },
+    "A2__072#E16": {
+      "entity_id": "char2_앨든"
+    },
     "A2__093#E10": {
       "entity_id": "char2_앨든"
     },
@@ -12661,9 +12528,6 @@
     },
     "A2__100#E4": {
       "entity_id": "char2_에밀리_콜"
-    },
-    "A2__100#E5": {
-      "entity_id": "char2_에바"
     },
     "A2__100#E6": {
       "entity_id": "char2_에반"
@@ -12739,9 +12603,6 @@
     },
     "A2__114#E1": {
       "entity_id": "char2_이터니티"
-    },
-    "A2__072#E16": {
-      "entity_id": "char2_인자해_보이는_남자"
     },
     "A2__117#E7": {
       "entity_id": "char2_자매님"
@@ -12923,9 +12784,6 @@
     "A2__151#E11": {
       "entity_id": "char2_푸르딩"
     },
-    "A2__151#E17": {
-      "entity_id": "char2_프라이드"
-    },
     "A2__153#E10": {
       "entity_id": "char2_피어"
     },
@@ -13046,6 +12904,9 @@
     "A2__146#E2": {
       "entity_id": "org_T.T._STAR"
     },
+    "A2__147#E3": {
+      "entity_id": "org_T.T._STAR"
+    },
     "A2__013#E9": {
       "entity_id": "org_TV_특종_비리를_밝혀라!"
     },
@@ -13140,7 +13001,10 @@
       "entity_id": "org_마음의_괴도단"
     },
     "A2__052#E8": {
-      "entity_id": "org_메피스토주의_황금_십자회"
+      "entity_id": "org_협회"
+    },
+    "A2__159#E10": {
+      "entity_id": "org_협회"
     },
     "A2__053#E1": {
       "entity_id": "org_모란회"
@@ -13154,8 +13018,17 @@
     "A2__054#E13": {
       "entity_id": "org_미래투자TV"
     },
+    "A2__010#E9": {
+      "entity_id": "org_미실리스_군사_연구_센터"
+    },
     "A2__054#E15": {
-      "entity_id": "org_미미르"
+      "entity_id": "org_미실리스_군사_연구_센터"
+    },
+    "A2__055#E3": {
+      "entity_id": "org_미실리스_군사_연구_센터"
+    },
+    "A2__056#E4": {
+      "entity_id": "org_미실리스_군사_연구_센터"
     },
     "A2__055#E1": {
       "entity_id": "org_미미르_부속_고등학교"
@@ -13180,15 +13053,6 @@
     },
     "A2__056#E3": {
       "entity_id": "org_미실리스_과학기술연구소"
-    },
-    "A2__010#E9": {
-      "entity_id": "org_미실리스_군사_연구_센터"
-    },
-    "A2__055#E3": {
-      "entity_id": "org_미실리스_군사_연구_센터"
-    },
-    "A2__056#E4": {
-      "entity_id": "org_미실리스_군사_연구_센터"
     },
     "A2__056#E6": {
       "entity_id": "org_미실리스_법무팀"
@@ -13478,9 +13342,6 @@
     "A2__146#E6": {
       "entity_id": "org_특별과외활동부"
     },
-    "A2__147#E3": {
-      "entity_id": "org_티티스타"
-    },
     "A2__147#E6": {
       "entity_id": "org_파랑새_길드"
     },
@@ -13505,9 +13366,6 @@
     "A2__158#E4": {
       "entity_id": "org_헤도니아"
     },
-    "A2__159#E10": {
-      "entity_id": "org_협회"
-    },
     "A2__161#E4": {
       "entity_id": "org_화양연화"
     },
@@ -13524,6 +13382,9 @@
       "entity_id": "org_히어로_연합"
     },
     "A2__001#E8": {
+      "entity_id": "squad_09-10F_스쿼드"
+    },
+    "A2__083#E9": {
       "entity_id": "squad_09-10F_스쿼드"
     },
     "A2__003#E14": {
@@ -13584,6 +13445,9 @@
       "entity_id": "squad_리와인드"
     },
     "A2__045#E1": {
+      "entity_id": "squad_리와인드"
+    },
+    "A2__147#E4": {
       "entity_id": "squad_리와인드"
     },
     "A2__045#E5": {
@@ -13661,11 +13525,17 @@
     "A2__083#E7": {
       "entity_id": "squad_스쿨_서클"
     },
-    "A2__083#E8": {
-      "entity_id": "squad_스쿼드_04-F"
+    "A2__059#E1": {
+      "entity_id": "squad_카운터스"
     },
-    "A2__083#E9": {
-      "entity_id": "squad_스쿼드_09-10F"
+    "A2__083#E8": {
+      "entity_id": "squad_카운터스"
+    },
+    "A2__132#E8": {
+      "entity_id": "squad_카운터스"
+    },
+    "A2__133#E1": {
+      "entity_id": "squad_카운터스"
     },
     "A2__086#E1": {
       "entity_id": "squad_시지_패러리스"
@@ -13751,15 +13621,6 @@
     "A2__120#E10": {
       "entity_id": "squad_전투_보조_팀"
     },
-    "A2__059#E1": {
-      "entity_id": "squad_카운터스"
-    },
-    "A2__132#E8": {
-      "entity_id": "squad_카운터스"
-    },
-    "A2__133#E1": {
-      "entity_id": "squad_카운터스"
-    },
     "A2__007#E13": {
       "entity_id": "squad_카페_스위티"
     },
@@ -13780,9 +13641,6 @@
     },
     "A2__147#E1": {
       "entity_id": "squad_특수별동대_카운터스"
-    },
-    "A2__147#E4": {
-      "entity_id": "squad_팀_리와인드"
     },
     "A2__075#E9": {
       "entity_id": "squad_파이오니아_스쿼드"
@@ -13854,7 +13712,10 @@
       "term_key": "A2__001#E20"
     },
     "A2__001#E12": {
-      "term_key": "A2__001#E12"
+      "term_key": "A2__009#E14"
+    },
+    "A2__009#E14": {
+      "term_key": "A2__009#E14"
     },
     "A2__001#E23": {
       "term_key": "A2__001#E23"
@@ -13899,7 +13760,10 @@
       "term_key": "A2__003#E9"
     },
     "A2__003#E10": {
-      "term_key": "A2__003#E10"
+      "term_key": "A2__009#E15"
+    },
+    "A2__009#E15": {
+      "term_key": "A2__009#E15"
     },
     "A2__003#E12": {
       "term_key": "A2__003#E12"
@@ -13953,7 +13817,10 @@
       "term_key": "A2__006#E5"
     },
     "A2__006#E6": {
-      "term_key": "A2__006#E6"
+      "term_key": "A2__088#E17"
+    },
+    "A2__088#E17": {
+      "term_key": "A2__088#E17"
     },
     "A2__006#E7": {
       "term_key": "A2__006#E7"
@@ -14046,7 +13913,10 @@
       "term_key": "A2__008#E19"
     },
     "A2__008#E9": {
-      "term_key": "A2__008#E9"
+      "term_key": "A2__091#E10"
+    },
+    "A2__091#E10": {
+      "term_key": "A2__091#E10"
     },
     "A2__008#E10": {
       "term_key": "A2__008#E10"
@@ -14076,7 +13946,7 @@
       "term_key": "A2__009#E9"
     },
     "A2__009#E1": {
-      "term_key": "A2__009#E1"
+      "term_key": "A2__080#E3"
     },
     "A2__080#E3": {
       "term_key": "A2__080#E3"
@@ -14105,17 +13975,20 @@
     "A2__009#E18": {
       "term_key": "A2__009#E18"
     },
-    "A2__009#E14": {
-      "term_key": "A2__009#E14"
-    },
-    "A2__009#E15": {
-      "term_key": "A2__009#E15"
-    },
     "A2__009#E16": {
-      "term_key": "A2__009#E16"
+      "term_key": "A2__162#E1"
+    },
+    "A2__162#E1": {
+      "term_key": "A2__162#E1"
     },
     "A2__009#E17": {
-      "term_key": "A2__009#E17"
+      "term_key": "A2__144#E10"
+    },
+    "A2__013#E1": {
+      "term_key": "A2__144#E10"
+    },
+    "A2__144#E10": {
+      "term_key": "A2__144#E10"
     },
     "A2__009#E19": {
       "term_key": "A2__009#E19"
@@ -14136,7 +14009,10 @@
       "term_key": "A2__010#E1"
     },
     "A2__010#E2": {
-      "term_key": "A2__010#E2"
+      "term_key": "A2__087#E15"
+    },
+    "A2__087#E15": {
+      "term_key": "A2__087#E15"
     },
     "A2__010#E3": {
       "term_key": "A2__010#E3"
@@ -14150,9 +14026,6 @@
     "A2__010#E13": {
       "term_key": "A2__010#E13"
     },
-    "A2__087#E15": {
-      "term_key": "A2__087#E15"
-    },
     "A2__010#E14": {
       "term_key": "A2__010#E14"
     },
@@ -14160,7 +14033,10 @@
       "term_key": "A2__010#E16"
     },
     "A2__010#E17": {
-      "term_key": "A2__010#E17"
+      "term_key": "A2__057#E7"
+    },
+    "A2__057#E7": {
+      "term_key": "A2__057#E7"
     },
     "A2__010#E19": {
       "term_key": "A2__010#E19"
@@ -14196,13 +14072,19 @@
       "term_key": "A2__011#E11"
     },
     "A2__011#E15": {
-      "term_key": "A2__011#E15"
+      "term_key": "A2__152#E6"
+    },
+    "A2__152#E6": {
+      "term_key": "A2__152#E6"
     },
     "A2__011#E16": {
       "term_key": "A2__011#E16"
     },
     "A2__011#E13": {
-      "term_key": "A2__011#E13"
+      "term_key": "A2__152#E5"
+    },
+    "A2__152#E5": {
+      "term_key": "A2__152#E5"
     },
     "A2__011#E14": {
       "term_key": "A2__011#E14"
@@ -14214,6 +14096,9 @@
       "term_key": "A2__011#E21"
     },
     "A2__012#E1": {
+      "term_key": "A2__012#E1"
+    },
+    "A2__146#E4": {
       "term_key": "A2__012#E1"
     },
     "A2__012#E2": {
@@ -14260,9 +14145,6 @@
     },
     "A2__012#E18": {
       "term_key": "A2__012#E18"
-    },
-    "A2__013#E1": {
-      "term_key": "A2__013#E1"
     },
     "A2__013#E2": {
       "term_key": "A2__013#E2"
@@ -14456,11 +14338,20 @@
     "A2__027#E4": {
       "term_key": "A2__027#E4"
     },
+    "A2__146#E3": {
+      "term_key": "A2__027#E4"
+    },
     "A2__028#E1": {
       "term_key": "A2__028#E1"
     },
     "A2__028#E2": {
-      "term_key": "A2__028#E2"
+      "term_key": "A2__049#E19"
+    },
+    "A2__049#E19": {
+      "term_key": "A2__049#E19"
+    },
+    "A2__050#E1": {
+      "term_key": "A2__049#E19"
     },
     "A2__028#E5": {
       "term_key": "A2__028#E5"
@@ -14609,6 +14500,9 @@
     "A2__054#E3": {
       "term_key": "A2__018#E2"
     },
+    "A2__093#E5": {
+      "term_key": "A2__018#E2"
+    },
     "A2__034#E2": {
       "term_key": "A2__034#E2"
     },
@@ -14736,6 +14630,9 @@
       "term_key": "A2__041#E3"
     },
     "A2__041#E4": {
+      "term_key": "A2__041#E4"
+    },
+    "A2__048#E13": {
       "term_key": "A2__041#E4"
     },
     "A2__041#E5": {
@@ -14897,9 +14794,6 @@
     "A2__048#E12": {
       "term_key": "A2__048#E12"
     },
-    "A2__048#E13": {
-      "term_key": "A2__048#E13"
-    },
     "A2__049#E1": {
       "term_key": "A2__049#E1"
     },
@@ -14926,12 +14820,6 @@
     },
     "A2__049#E18": {
       "term_key": "A2__049#E18"
-    },
-    "A2__049#E19": {
-      "term_key": "A2__049#E19"
-    },
-    "A2__050#E1": {
-      "term_key": "A2__049#E19"
     },
     "A2I1__001#E5": {
       "term_key": "A2__049#E15"
@@ -15044,9 +14932,6 @@
     "A2__057#E3": {
       "term_key": "A2__057#E3"
     },
-    "A2__057#E7": {
-      "term_key": "A2__057#E7"
-    },
     "A2__057#E11": {
       "term_key": "A2__057#E11"
     },
@@ -15132,6 +15017,9 @@
       "term_key": "A2__001#E1"
     },
     "A2__091#E1": {
+      "term_key": "A2__001#E1"
+    },
+    "A2__122#E4": {
       "term_key": "A2__001#E1"
     },
     "A2__060#E3": {
@@ -15275,6 +15163,9 @@
     "A2__069#E4": {
       "term_key": "A2__068#E9"
     },
+    "A2__141#E2": {
+      "term_key": "A2__068#E9"
+    },
     "A2__070#E3": {
       "term_key": "A2__070#E3"
     },
@@ -15408,7 +15299,10 @@
       "term_key": "A2__081#E2"
     },
     "A2__082#E1": {
-      "term_key": "A2__082#E1"
+      "term_key": "A2__154#E1"
+    },
+    "A2__154#E1": {
+      "term_key": "A2__154#E1"
     },
     "A2__082#E4": {
       "term_key": "A2__082#E4"
@@ -15465,7 +15359,10 @@
       "term_key": "A2__084#E4"
     },
     "A2__084#E6": {
-      "term_key": "A2__084#E6"
+      "term_key": "A2__161#E1"
+    },
+    "A2__161#E1": {
+      "term_key": "A2__161#E1"
     },
     "A2__084#E7": {
       "term_key": "A2__084#E7"
@@ -15535,9 +15432,6 @@
     },
     "A2__088#E15": {
       "term_key": "A2__037#E16"
-    },
-    "A2__088#E17": {
-      "term_key": "A2__088#E17"
     },
     "A2__089#E1": {
       "term_key": "A2__089#E1"
@@ -15644,9 +15538,6 @@
     "A2__091#E7": {
       "term_key": "A2__091#E7"
     },
-    "A2__091#E10": {
-      "term_key": "A2__091#E10"
-    },
     "A2__092#E1": {
       "term_key": "A2__092#E1"
     },
@@ -15670,9 +15561,6 @@
     },
     "A2__092#E20": {
       "term_key": "A2__092#E20"
-    },
-    "A2__093#E5": {
-      "term_key": "A2__093#E5"
     },
     "A2__093#E6": {
       "term_key": "A2__093#E6"
@@ -15818,6 +15706,9 @@
     "A2__104#E3": {
       "term_key": "A2__104#E3"
     },
+    "A2__126#E3": {
+      "term_key": "A2__104#E3"
+    },
     "A2__104#E4": {
       "term_key": "A2__104#E4"
     },
@@ -15861,6 +15752,9 @@
       "term_key": "A2__106#E10"
     },
     "A2__107#E1": {
+      "term_key": "A2__107#E1"
+    },
+    "A2__119#E6": {
       "term_key": "A2__107#E1"
     },
     "A2__107#E2": {
@@ -15911,6 +15805,9 @@
     "A2__109#E3": {
       "term_key": "A2__109#E3"
     },
+    "A2__155#E3": {
+      "term_key": "A2__109#E3"
+    },
     "A2__109#E4": {
       "term_key": "A2__109#E4"
     },
@@ -15945,6 +15842,9 @@
       "term_key": "A2__110#E11"
     },
     "A2__111#E2": {
+      "term_key": "A2__111#E2"
+    },
+    "A2__128#E4": {
       "term_key": "A2__111#E2"
     },
     "A2__112#E1": {
@@ -16019,9 +15919,6 @@
     "A2__119#E3": {
       "term_key": "A2__119#E3"
     },
-    "A2__119#E6": {
-      "term_key": "A2__119#E6"
-    },
     "A2__119#E7": {
       "term_key": "A2__119#E7"
     },
@@ -16055,9 +15952,6 @@
     "A2__122#E11": {
       "term_key": "A2__122#E11"
     },
-    "A2__122#E4": {
-      "term_key": "A2__122#E4"
-    },
     "A2__122#E6": {
       "term_key": "A2__122#E6"
     },
@@ -16076,7 +15970,13 @@
     "A2__122#E14": {
       "term_key": "A2__122#E14"
     },
+    "A2__041#E14": {
+      "term_key": "A2__123#E5"
+    },
     "A2__123#E5": {
+      "term_key": "A2__123#E5"
+    },
+    "A2__141#E3": {
       "term_key": "A2__123#E5"
     },
     "A2__124#E5": {
@@ -16124,9 +16024,6 @@
     "A2__126#E2": {
       "term_key": "A2__126#E2"
     },
-    "A2__126#E3": {
-      "term_key": "A2__126#E3"
-    },
     "A2__126#E8": {
       "term_key": "A2__126#E8"
     },
@@ -16150,9 +16047,6 @@
     },
     "A2__128#E3": {
       "term_key": "A2__128#E3"
-    },
-    "A2__128#E4": {
-      "term_key": "A2__128#E4"
     },
     "A2__128#E5": {
       "term_key": "A2__128#E5"
@@ -16364,15 +16258,6 @@
     "A2__141#E1": {
       "term_key": "A2__141#E1"
     },
-    "A2__141#E2": {
-      "term_key": "A2__141#E2"
-    },
-    "A2__041#E14": {
-      "term_key": "A2__041#E14"
-    },
-    "A2__141#E3": {
-      "term_key": "A2__041#E14"
-    },
     "A2__142#E1": {
       "term_key": "A2__142#E1"
     },
@@ -16421,9 +16306,6 @@
     "A2__144#E8": {
       "term_key": "A2__144#E8"
     },
-    "A2__144#E10": {
-      "term_key": "A2__144#E10"
-    },
     "A2__143#E3": {
       "term_key": "A2__143#E3"
     },
@@ -16435,12 +16317,6 @@
     },
     "A2__146#E1": {
       "term_key": "A2__146#E1"
-    },
-    "A2__146#E3": {
-      "term_key": "A2__146#E3"
-    },
-    "A2__146#E4": {
-      "term_key": "A2__146#E4"
     },
     "A2__146#E8": {
       "term_key": "A2__146#E8"
@@ -16559,12 +16435,6 @@
     "A2__152#E4": {
       "term_key": "A2__152#E4"
     },
-    "A2__152#E5": {
-      "term_key": "A2__152#E5"
-    },
-    "A2__152#E6": {
-      "term_key": "A2__152#E6"
-    },
     "A2__152#E7": {
       "term_key": "A2__152#E7"
     },
@@ -16604,9 +16474,6 @@
     "A2__153#E13": {
       "term_key": "A2__153#E13"
     },
-    "A2__154#E1": {
-      "term_key": "A2__154#E1"
-    },
     "A2__154#E2": {
       "term_key": "A2__154#E2"
     },
@@ -16636,9 +16503,6 @@
     },
     "A2__155#E1": {
       "term_key": "A2__155#E1"
-    },
-    "A2__155#E3": {
-      "term_key": "A2__155#E3"
     },
     "A2__155#E6": {
       "term_key": "A2__155#E6"
@@ -16751,9 +16615,6 @@
     "A2__160#E5": {
       "term_key": "A2__160#E5"
     },
-    "A2__161#E1": {
-      "term_key": "A2__161#E1"
-    },
     "A2__161#E3": {
       "term_key": "A2__161#E3"
     },
@@ -16768,9 +16629,6 @@
     },
     "A2__162#E3": {
       "term_key": "A2__162#E3"
-    },
-    "A2__162#E1": {
-      "term_key": "A2__162#E1"
     },
     "A2__162#E6": {
       "term_key": "A2__162#E6"

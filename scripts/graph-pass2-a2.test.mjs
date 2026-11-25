@@ -539,6 +539,26 @@ test('공식 표: 지난 공식 표의 ID·표기 묶음 키를 이어받아 증
   assert.deepEqual(promoteA2({ entities, terms, curation }).terms.map((t) => t.term_key), ['A2I1__001#E2']);
 });
 
+test('공식 표: 지난 표에서 다른 키였던 무리를 합치면 keep이 필요하고, 흡수된 키·ID는 남은 쪽으로 조회된다(D 8.1-2)', () => {
+  const g = (gk, id, name, type) => ({ group_key: gk, bundle_id: gk.split('#')[0], entity_key: gk.split('#')[1], entity_id: id, canonical_name: name, qualifier: null, entity_type: type, surfaces: [name], units: [], title_ids: ['t'], item_count: 1 });
+  const entities = [g('A2__010#E1', 'org_협회', '협회', 'organization'), g('A2__011#E1', 'org_메피', '메피스토주의 황금 십자회', 'organization')];
+  const terms = [g('A2__001#E1', undefined, '방주', 'location'), g('A2I1__001#E6', undefined, '방주', 'location'), g('A2__122#E4', undefined, '제1 방주', 'location')];
+  const prior = { groupMap: { 'A2__010#E1': { entity_id: 'org_협회' }, 'A2__011#E1': { entity_id: 'org_메피' }, 'A2__001#E1': { term_key: 'A2__001#E1' }, 'A2I1__001#E6': { term_key: 'A2__001#E1' }, 'A2__122#E4': { term_key: 'A2__122#E4' } } };
+  const cur = (keepArk, keepOrg) => ({ schema_version: A2_CURATION_SCHEMA_VERSION, type_changes: [], link_overrides: [], separate: [], merges: [
+    { groups: ['A2__001#E1', 'A2I1__001#E6', 'A2__122#E4'], canonical_name: '방주', note: 'n', ...(keepArk ? { keep: keepArk } : {}) },
+    { groups: ['A2__010#E1', 'A2__011#E1'], canonical_name: '메피스토주의 황금 십자회', note: 'n', ...(keepOrg ? { keep: keepOrg } : {}) },
+  ] });
+  const has = (out, re) => (out.errors ?? []).some((e) => re.test(e));
+  assert.ok(has(promoteA2({ entities, terms, curation: cur(null, 'org_메피'), prior }), /keep으로 남길 것/));
+  assert.ok(has(promoteA2({ entities, terms, curation: cur('A2__999#E1', 'org_메피'), prior }), /에 없다/));
+  const out = promoteA2({ entities, terms, curation: cur('A2__001#E1', 'org_메피'), prior });
+  assert.deepEqual(out.errors, []);
+  assert.deepEqual(out.terms.map((t) => t.term_key), ['A2__001#E1']);
+  assert.deepEqual(out.groupMap['A2__122#E4'], { term_key: 'A2__001#E1' });
+  assert.deepEqual(out.entities.map((e) => e.entity_id), ['org_메피']);
+  assert.equal(out.idMap['org_협회'], 'org_메피');
+});
+
 test('공식 표: 검토 안 한 병합 후보, 두 번 쓴 무리, ID·표기 섞기, 없는 연결은 오류', () => {
   const g = (gk, id, type) => ({ group_key: gk, bundle_id: gk.split('#')[0], entity_id: id, canonical_name: 'x', entity_type: type, surfaces: ['x'], title_ids: [], item_count: 1 });
   const entities = [g('A2__001#E1', 'char2_x__1', 'character'), g('A2__002#E1', 'char2_x__2', 'character'), g('A2__003#E1', 'org_x', 'organization')];

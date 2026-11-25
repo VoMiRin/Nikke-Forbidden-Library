@@ -1717,7 +1717,8 @@ const makeCtx = () => {
     clhByScene: clhIndexByScene(units),
     registry: loadRegistry(),
     pass2Entities: loadPass2Entities(),
-    termKeys: new Set((terms?.terms ?? []).map((t) => t.term_key)),
+    // 흡수된 지난 term_key는 무리 키라 group_map으로 남은 키에 조회된다(D-pre)
+    termKeys: new Set([...(terms?.terms ?? []).map((t) => t.term_key), ...Object.entries(readJsonIfExists(OFFICIAL_ENTITIES_PATH)?.group_map ?? {}).filter(([, v]) => v.term_key).map(([k]) => k)]),
     releaseDates: loadReleaseDates(),
     retraction: loadRetraction(),
   };
