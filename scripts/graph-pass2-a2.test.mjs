@@ -308,6 +308,39 @@ test('병합: 무리 ID를 모든 항목이 공유, 묶음을 넘는 같은 이�
   assert.equal(byItem.get('x2').shown, false);
 });
 
+test('ID: 지난 병합의 ID는 그대로 두고, 같은 이름의 새 무리만 해시로 구별한다(증분)', () => {
+  const prior = new Map([['A#E1', 'char2_테스트']]);
+  const gs = assignEntityIds([
+    { group_key: 'A#E1', canonical_name: '테스트', entity_type: 'character' },
+    { group_key: 'A2I1__001#E1', canonical_name: '테스트', entity_type: 'character' },
+    { group_key: 'A2I1__001#E2', canonical_name: '새 인물', entity_type: 'character' },
+  ], prior);
+  assert.equal(gs[0].entity_id, 'char2_테스트');
+  assert.ok(gs[1].entity_id.startsWith('char2_테스트__'));
+  assert.equal(gs[2].entity_id, 'char2_새_인물');
+  // 지난 ID의 무리가 없어졌으면(철회) 같은 이름의 새 무리가 바탕 ID를 쓴다
+  const again = assignEntityIds([{ group_key: 'A2I1__001#E1', canonical_name: '테스트', entity_type: 'character' }], prior);
+  assert.equal(again[0].entity_id, 'char2_테스트');
+});
+
+test('병합: 증분에서 바뀐 장면의 옛 출현은 철회하고 증분 묶음의 출현은 남긴다', () => {
+  const retraction = { isRetracted: (inc, sid) => sid === 'toy' && !inc };
+  const units = [{ unit_id: 'U001', surface: '가게' }];
+  const occ = { units: [{ unit_id: 'U001', occurrences: [
+    { occ_id: 'O0001', scene_id: 'toy', title_id: 't', item_ids: ['toy__uec_001'], shown: true },
+    { occ_id: 'O0002', scene_id: 'other', title_id: 't', item_ids: ['other__uec_001'], shown: true },
+  ] }] };
+  const shard = { candidate_links: [{ link_id: 'A2__001__001', link_type: 'generic_term', verdict: '일반 낱말', confidence: '유력한 해석', subject: [{ ref: 'unit', unit_id: 'U001' }], scope: { default: true }, target: [] }] };
+  const incShard = { candidate_links: [{ ...shard.candidate_links[0], link_id: 'A2I1__001__001' }] };
+  const incOcc = { units: [{ unit_id: 'U001', occurrences: [{ occ_id: 'O0001', scene_id: 'toy', title_id: 't', item_ids: ['toy__uec_001'], shown: true }] }] };
+  const m = mergeA2({ retraction, mainBundles: [
+    { bundle: { bundle_id: 'A2__001', units }, shard, occurrences: occ },
+    { bundle: { bundle_id: 'A2I1__001', increment: 'inc_001', units }, shard: incShard, occurrences: incOcc },
+  ] });
+  assert.deepEqual(m.resolutions.map((r) => `${r.bundle_id}:${r.item_id}`), ['A2__001:other__uec_001', 'A2I1__001:toy__uec_001']);
+  assert.deepEqual(m.retractedOccurrences.map((x) => `${x.bundle_id}:${x.occ_id}`), ['A2__001:O0001']);
+});
+
 test('펼치기: 출현 예외 > 장면 예외 > 이야기 예외 > 기본', () => {
   const occs = [{ occ_id: 'O1', scene_id: 's1', title_id: 't1' }, { occ_id: 'O2', scene_id: 's2', title_id: 't1' }, { occ_id: 'O3', scene_id: 's2', title_id: 't1' }, { occ_id: 'O4', scene_id: 's3', title_id: 't2' }];
   const L = [{ link_id: 'd', scope: { default: true } }, { link_id: 't', scope: { title_ids: ['t1'] } }, { link_id: 's', scope: { scene_ids: ['s2'] } }, { link_id: 'o', scope: { occ_ids: ['O3'] } }];

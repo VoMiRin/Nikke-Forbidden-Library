@@ -47,6 +47,34 @@ export const diffScenes = (baseScenes, manifestScenes) => {
   return { added: added.sort(byId), changed: changed.sort(byId), deleted: deleted.sort(byId) };
 };
 
+const incNo = (id) => {
+  const m = /^inc_(\d{3})$/.exec(id ?? '');
+  return m ? Number(m[1]) : 0;
+};
+
+/**
+ * 철회 판단(4.2). 증분 k에서 바뀌거나 지운 장면을, 증분 k보다 앞선 묶음(increment 필드가 없는 본 실행 묶음 포함)이
+ * 근거·출현으로 가리키면 그 부분은 철회 대상이다. 묶음은 만들 때의 increment ID를 bundle.increment에 적는다.
+ */
+export const makeRetraction = (scopes) => {
+  const changedAt = new Map(); // scene_id → 마지막으로 바뀐 증분 번호
+  for (const s of [...scopes].sort((a, b) => incNo(a.increment_id) - incNo(b.increment_id))) {
+    const n = incNo(s.increment_id);
+    for (const x of [...(s.changed_scenes ?? []), ...(s.deleted_scenes ?? [])]) changedAt.set(x.scene_id, n);
+  }
+  const isRetracted = (bundleIncrement, sceneId) => {
+    const n = changedAt.get(sceneId);
+    return n !== undefined && incNo(bundleIncrement) < n;
+  };
+  return { changedAt, isRetracted, scopes };
+};
+
+export const loadScopes = (dir = INCREMENTS_DIR) =>
+  fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter((f) => /^inc_\d{3}\.json$/.test(f)).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')))
+    : [];
+export const loadRetraction = (dir = INCREMENTS_DIR) => makeRetraction(loadScopes(dir));
+
 const git = (...args) => execFileSync('git', args, { cwd: ROOT_DIR, encoding: 'utf8', maxBuffer: 512 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
 const gitJson = (rev, rel) => JSON.parse(git('show', `${rev}:${rel}`));
 const byTitleRel = (titleId) => `data/graph/pass1/by_title/${titleId}.json`;

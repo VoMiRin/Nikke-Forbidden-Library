@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { GRAPH_DATA_DIR, normalizeWhitespaceOnly, writeJsonAtomic } from './lib.mjs';
 import { selectWave, unitElementKey } from './pass2-b-plan.mjs';
 import { checkAudit, classifyAuthor, computeStamp, staleReason } from './pass2-b.mjs';
+import { loadRetraction, loadScopes } from './increment-scope.mjs';
 import {
   CONFIDENCE_ENUM,
   ENTITY_TYPE_ENUM,
@@ -420,6 +421,48 @@ export const selectPilotUnits = (units, { surfaces = PILOT_SURFACES, singletonsP
   return { units: units.filter((u) => picked.has(u.surface)), missing };
 };
 
+/** 묶음 파일(JSON·발췌·출현)을 쓰고 계획 항목을 돌려준다. extra: { increment, excerptOf } */
+const writeA2Bundle = async ({ P, run, store }, bundleId, kind, list, extra = {}) => {
+  const bundleUnits = list.map((u, i) => {
+    const { occurrences, _chars: _c, ...rest } = u;
+    return {
+      unit_id: `U${pad(i + 1)}`,
+      ...rest,
+      shown_occurrences: occurrences.filter((o) => o.shown),
+    };
+  });
+  const text = list.map((u, i) => (extra.excerptOf ?? unitExcerptText)(u, `U${pad(i + 1)}`, store)).join('\n');
+  const scriptFile = path.join(P.bundles, `${bundleId}.excerpts.txt`);
+  const occFile = path.join(P.bundles, `${bundleId}.occurrences.json`);
+  const bundle = {
+    schema_version: PASS2_BUNDLE_SCHEMA_VERSION,
+    bundle_id: bundleId,
+    kind: kind === 'check' ? 'A2-check' : 'A2',
+    generated_at: new Date().toISOString(),
+    script_file: relPath(scriptFile),
+    occurrences_file: relPath(occFile),
+    sample_max: SAMPLE_MAX,
+    ...(extra.increment ? { increment: extra.increment } : {}),
+    units: bundleUnits,
+  };
+  await fsp.writeFile(scriptFile, text, 'utf8');
+  await writeJsonAtomic(occFile, { bundle_id: bundleId, units: list.map((u, i) => ({ unit_id: `U${pad(i + 1)}`, surface: u.surface, occurrences: u.occurrences })) });
+  await writeJsonAtomic(path.join(P.bundles, `${bundleId}.json`), bundle);
+  return {
+    bundle_id: bundleId,
+    kind: bundle.kind,
+    units: bundleUnits.length,
+    surfaces: bundleUnits.map((u) => u.surface),
+    sampled_units: bundleUnits.filter((u) => u.sampled).length,
+    excerpt_chars: text.length,
+    input: relPath(path.join(P.bundles, `${bundleId}.json`)),
+    script: relPath(scriptFile),
+    occurrences: relPath(occFile),
+    output: relPath(path.join(P.shards, `${bundleId}.json`)),
+    validate: `node scripts/graph/pass2-a2.mjs validate ${bundleId} --run=${run}`,
+  };
+};
+
 export const buildA2 = async ({ run, pilot, maxUnits = 40, maxChars = 30000, waveSize = 20 }) => {
   if (![maxUnits, maxChars, waveSize].every(isPositiveInt)) throw new Error('max-units·max-chars·wave-size는 1 이상의 정수다');
   const P = pathsOf(run);
@@ -443,45 +486,7 @@ export const buildA2 = async ({ run, pilot, maxUnits = 40, maxChars = 30000, wav
   await fsp.rm(P.bundles, { recursive: true, force: true });
   await fsp.mkdir(P.bundles, { recursive: true });
   const planBundles = [];
-  const writeBundle = async (bundleId, kind, list) => {
-    const bundleUnits = list.map((u, i) => {
-      const { occurrences, _chars: _c, ...rest } = u;
-      return {
-        unit_id: `U${pad(i + 1)}`,
-        ...rest,
-        shown_occurrences: occurrences.filter((o) => o.shown),
-      };
-    });
-    const text = list.map((u, i) => unitExcerptText(u, `U${pad(i + 1)}`, store)).join('\n');
-    const scriptFile = path.join(P.bundles, `${bundleId}.excerpts.txt`);
-    const occFile = path.join(P.bundles, `${bundleId}.occurrences.json`);
-    const bundle = {
-      schema_version: PASS2_BUNDLE_SCHEMA_VERSION,
-      bundle_id: bundleId,
-      kind: kind === 'check' ? 'A2-check' : 'A2',
-      generated_at: new Date().toISOString(),
-      script_file: relPath(scriptFile),
-      occurrences_file: relPath(occFile),
-      sample_max: SAMPLE_MAX,
-      units: bundleUnits,
-    };
-    await fsp.writeFile(scriptFile, text, 'utf8');
-    await writeJsonAtomic(occFile, { bundle_id: bundleId, units: list.map((u, i) => ({ unit_id: `U${pad(i + 1)}`, surface: u.surface, occurrences: u.occurrences })) });
-    await writeJsonAtomic(path.join(P.bundles, `${bundleId}.json`), bundle);
-    planBundles.push({
-      bundle_id: bundleId,
-      kind: bundle.kind,
-      units: bundleUnits.length,
-      surfaces: bundleUnits.map((u) => u.surface),
-      sampled_units: bundleUnits.filter((u) => u.sampled).length,
-      excerpt_chars: text.length,
-      input: relPath(path.join(P.bundles, `${bundleId}.json`)),
-      script: relPath(scriptFile),
-      occurrences: relPath(occFile),
-      output: relPath(path.join(P.shards, `${bundleId}.json`)),
-      validate: `node scripts/graph/pass2-a2.mjs validate ${bundleId} --run=${run}`,
-    });
-  };
+  const writeBundle = async (bundleId, kind, list) => planBundles.push(await writeA2Bundle({ P, run, store }, bundleId, kind, list));
 
   for (const u of units) u._chars = unitExcerptText(u, 'U000', store).length;
   const packed = packUnits(units, { maxUnits, maxChars });
@@ -519,6 +524,114 @@ export const buildA2 = async ({ run, pilot, maxUnits = 40, maxChars = 30000, wav
   };
   await writeJsonAtomic(P.plan, plan);
   return plan;
+};
+
+
+/**
+ * 지난 판정 요약(증분 설계 4.4 확인 단위). 표기마다 최종 결정별 출현 수와 대상을 모은다.
+ * 철회된 출현(바뀐 장면의 옛 판)은 세지 않는다. 공식 표 ID가 있으면 함께 적는다
+ */
+export const priorDecisionsBySurface = (resolutions, { isRetracted = () => false, officialIdOf = () => null } = {}) => {
+  const out = new Map();
+  for (const r of resolutions) {
+    if (isRetracted(r)) continue;
+    const key = nfkc(r.surface);
+    const t = r.target ?? null;
+    const runId = r.assigned_entity_id ?? t?.entity_id ?? null;
+    const sig = `${r.link_type}|${runId ?? ''}|${t?.name ?? ''}|${t?.entity_type ?? ''}`;
+    if (!out.has(key)) out.set(key, new Map());
+    const m = out.get(key);
+    if (!m.has(sig)) {
+      m.set(sig, {
+        link_type: r.link_type,
+        verdict: r.verdict,
+        target: t ? { entity_id: runId, official_id: runId ? officialIdOf(runId) : null, name: t.name ?? null, entity_type: t.entity_type ?? null } : null,
+        decided_by: r.decided_by,
+        occurrences: 0,
+        titles: new Set(),
+      });
+    }
+    const d = m.get(sig);
+    d.occurrences += 1;
+    d.titles.add(r.title_id);
+  }
+  const final = new Map();
+  for (const [k, m] of out) {
+    final.set(k, [...m.values()].sort((a, b) => b.occurrences - a.occurrences).map((d) => ({ ...d, titles: d.titles.size })));
+  }
+  return final;
+};
+
+const priorText = (prior) =>
+  prior.map((d) => `${d.verdict}${d.target ? `(${[d.target.official_id ?? d.target.entity_id, d.target.name, d.target.entity_type].filter(Boolean).join(' · ')})` : ''} ${d.occurrences}곳·이야기 ${d.titles}개${d.decided_by === 'user' ? ' [사용자 결정]' : ''}`).join('; ');
+
+/**
+ * 증분 회차 묶음(증분 설계 4.4). 범위 파일의 새·바뀐 장면에서만 항목을 모으고, 지난 판정이 있는 표기는 확인 단위로 둔다.
+ * 기존 묶음·계획 항목은 건드리지 않고 계획 끝에 새 회차로 붙인다.
+ */
+export const buildA2Increment = async ({ run, incId, maxUnits = 40, maxChars = 30000 }) => {
+  const P = pathsOf(run);
+  const plan = readJsonIfExists(P.plan);
+  if (!plan) throw new Error(`계획 파일이 없다: ${relPath(P.plan)}`);
+  if (plan.bundles.some((b) => b.increment === incId)) throw new Error(`${incId} 묶음이 이미 계획에 있다`);
+  const scope = loadScopes().find((x) => x.increment_id === incId);
+  if (!scope) throw new Error(`증분 범위 파일이 없다: ${incId}`);
+  if (!scope.pass1?.merged) throw new Error(`${incId}: Pass 1 병합 전이다(increment-scope refresh)`);
+  const sceneIds = new Set([...scope.added_scenes, ...scope.changed_scenes].map((x) => x.scene_id));
+  const store = new SceneStore();
+  const registry = loadRegistry();
+  const genericLabels = new Set(JSON.parse(fs.readFileSync(path.join(GRAPH_DATA_DIR, 'generic_roles.json'), 'utf8')).role_labels);
+  const docs = [...loadByTitle().values()]
+    .map((d) => ({ ...d, scenes: (d.scenes ?? []).filter((sc) => sceneIds.has(sc.scene_id)) }))
+    .filter((d) => d.scenes.length);
+  const { items, excluded } = collectA2Items(docs, { registry, genericLabels });
+  const units = buildUnits(items, store, { registry });
+  // 지난 판정: 본 실행 병합 결과에서 철회분을 빼고 모은다
+  const res = readJsonIfExists(path.join(P.merged, 'A2_resolutions.json'));
+  if (!res) throw new Error('A-2 병합 결과(A2_resolutions.json)가 없다');
+  const retraction = loadRetraction();
+  const incOf = new Map(plan.bundles.map((b) => [b.bundle_id, b.increment]));
+  const official = readJsonIfExists(OFFICIAL_ENTITIES_PATH);
+  const idMap = official?.id_map ?? {};
+  const prior = priorDecisionsBySurface(res.resolutions, {
+    isRetracted: (r) => retraction.isRetracted(incOf.get(r.bundle_id), r.scene_id),
+    officialIdOf: (id) => idMap[id] ?? null,
+  });
+  for (const u of units) {
+    const p = prior.get(nfkc(u.surface));
+    if (p?.length) u.prior_decisions = p;
+  }
+  const excerptOf = (u, unitId, st) => {
+    const text = unitExcerptText(u, unitId, st);
+    if (!u.prior_decisions) return text;
+    const [head, ...rest] = text.split('\n');
+    return [head, `(확인 단위 — 본 실행의 지난 판정: ${priorText(u.prior_decisions)})`, ...rest].join('\n');
+  };
+  for (const u of units) u._chars = excerptOf(u, 'U000', store).length;
+  const packed = packUnits(units, { maxUnits, maxChars });
+  const n = Number(incId.slice(4));
+  const wave = Math.max(0, ...plan.bundles.map((b) => b.wave ?? 0)) + 1;
+  await fsp.mkdir(P.bundles, { recursive: true });
+  const added = [];
+  for (const [i, b] of packed.entries()) {
+    const entry = await writeA2Bundle({ P, run, store }, `A2I${n}__${pad(i + 1)}`, 'main', b.units, { increment: incId, excerptOf });
+    added.push({ ...entry, wave, increment: incId, check_units: b.units.filter((u) => u.prior_decisions).length });
+  }
+  const population = {
+    scenes: sceneIds.size,
+    items_judged: items.length,
+    items_excluded: excluded.length,
+    items_participant_match: items.filter((it) => it.participant_match).length,
+    surfaces: units.length,
+    check_surfaces: units.filter((u) => u.prior_decisions).length,
+  };
+  const next = {
+    ...plan,
+    bundles: [...plan.bundles, ...added],
+    increments: [...(plan.increments ?? []), { increment_id: incId, wave, generated_at: new Date().toISOString(), population, bundles: added.map((b) => b.bundle_id) }],
+  };
+  await writeJsonAtomic(P.plan, next);
+  return { wave, population, bundles: added };
 };
 
 // ---------------------------------------------------------------------------
@@ -594,6 +707,7 @@ export const validateA2Shard = (shard, bundle, ctx, occurrencesByUnit) => {
   const idRe = new RegExp(`^${bundle.bundle_id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}__\\d{3}$`);
   const linkIds = new Set();
   const entityKeys = new Map(); // entity_key → { name, entity_type, qualifier, link_id }
+  const retracted = [];
 
   const checkEvidence = (ev, p) => {
     if (!ev || typeof ev !== 'object') return err('SCHEMA', p, '근거는 객체여야 한다');
@@ -601,6 +715,8 @@ export const validateA2Shard = (shard, bundle, ctx, occurrencesByUnit) => {
       if (k === 'reveals_identity') err('FORBIDDEN_FIELD', `${p}.reveals_identity`, 'reveals_identity는 B 전용이다');
       else if (!['scene_id', 'line_start', 'line_end', 'quote'].includes(k)) err('SCHEMA', `${p}.${k}`, `알 수 없는 필드 ${k}`);
     }
+    // 증분에서 바뀌거나 지운 장면의 옛 판을 가리킨 근거는 철회 대상이다. 지금 원문과 대조하지 않고 기록만 한다(증분 설계 4.2)
+    if (isNonEmptyString(ev.scene_id) && ctx.retraction?.isRetracted(bundle.increment, ev.scene_id)) return retracted.push({ path: p, scene_id: ev.scene_id });
     if (!isNonEmptyString(ev.scene_id) || !ctx.store.has(ev.scene_id)) return err('EVIDENCE_SCENE', `${p}.scene_id`, `등록 장면이 아니다: ${ev.scene_id}`);
     const why = checkQuote(ctx.store.lines(ev.scene_id), ev.line_start, ev.line_end, ev.quote);
     if (why) err('QUOTE_LOCATION', `${p}.quote`, `${ev.scene_id}: ${why}`);
@@ -763,7 +879,7 @@ export const validateA2Shard = (shard, bundle, ctx, occurrencesByUnit) => {
   for (const [sig, keys] of bySig) {
     if (keys.length > 1) err('ENTITY_KEY', keys.join(','), `${keys.join(', ')}는 이름·유형·qualifier가 같다(${sig}). 같은 대상이면 같은 entity_key를, 다른 대상이면 qualifier로 구별한다`);
   }
-  return { errors, warnings };
+  return { errors, warnings, retracted };
 };
 
 // ---------------------------------------------------------------------------
@@ -783,17 +899,26 @@ const slugOf = (name) => nfkc(name).trim().replace(/\s+/g, '_');
  * 새 엔티티 무리를 먼저 정한 뒤 ID를 한 번만 만든다. 무리는 (묶음, entity_key)다.
  * 다른 묶음에서 이름·유형이 같은 무리는 합치지 않고 merge_candidates로 남긴다(초안 12.4절).
  */
-export const assignEntityIds = (groups) => {
+export const assignEntityIds = (groups, priorIds = new Map()) => {
+  // 지난 병합에서 ID를 받은 무리(지금도 있는 것)는 그 ID를 그대로 쓴다. 증분에서 같은 이름의 새 무리가 생겨도
+  // 기존 ID가 해시 꼬리로 바뀌지 않게 한다(증분 설계 4.4). 지난 ID가 없으면 예전과 같다
+  const kept = new Set();
   const byBase = new Map();
   for (const g of groups) {
     const prefix = ID_PREFIX[g.entity_type];
     if (!prefix) continue;
+    const prior = priorIds.get(g.group_key);
+    if (prior && prior.startsWith(prefix)) {
+      g.entity_id = prior;
+      kept.add(prior);
+      continue;
+    }
     g.base_id = `${prefix}${slugOf(g.canonical_name)}`;
     if (!byBase.has(g.base_id)) byBase.set(g.base_id, []);
     byBase.get(g.base_id).push(g);
   }
-  for (const list of byBase.values()) {
-    for (const g of list) g.entity_id = list.length === 1 ? g.base_id : `${g.base_id}__${sha256(g.group_key).slice(0, 6)}`;
+  for (const [base, list] of byBase) {
+    for (const g of list) g.entity_id = list.length === 1 && !kept.has(base) ? g.base_id : `${g.base_id}__${sha256(g.group_key).slice(0, 6)}`;
   }
   const ids = groups.filter((g) => g.entity_id).map((g) => g.entity_id);
   if (new Set(ids).size !== ids.length) throw new Error('새 엔티티 ID가 겹친다');
@@ -856,8 +981,9 @@ export const findMergeCandidates = (groups) => {
  * 결과: 항목별 해소(resolutions), ID를 준 새 엔티티(entities), ID 없는 표기 묶음(terms), 묶음을 넘는 병합 후보.
  * mainBundles: [{ bundle, shard, occurrences }]
  */
-export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS }) => {
+export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS, retraction = null, priorIds = new Map() }) => {
   const resolutions = [];
+  const retractedOccurrences = [];
   const userChecks = [];
   const groups = new Map(); // group_key → group
   for (const { bundle, shard, occurrences } of mainBundles) {
@@ -872,6 +998,11 @@ export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS }) => {
       const links = linksByUnit.get(u.unit_id) ?? [];
       const decision = userDecisions.get(u.surface);
       for (const { occurrence: o, link, applied_scope } of resolveOccurrences(links, occByUnit.get(u.unit_id) ?? [])) {
+        // 증분에서 바뀐 장면의 옛 출현은 병합하지 않는다. 새 판의 출현은 증분 묶음이 판정한다(증분 설계 4.2)
+        if (retraction?.isRetracted(bundle.increment, o.scene_id)) {
+          retractedOccurrences.push({ bundle_id: bundle.bundle_id, unit_id: u.unit_id, surface: u.surface, occ_id: o.occ_id, scene_id: o.scene_id, item_ids: o.item_ids, link_id: link?.link_id ?? null });
+          continue;
+        }
         const t = link.target[0] ?? null;
         const judged = { link_id: link.link_id, link_type: link.link_type, verdict: link.verdict, confidence: link.confidence, target: t, applied_scope };
         let final = { ...judged, decided_by: 'judge' };
@@ -899,7 +1030,7 @@ export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS }) => {
     }
   }
   const used = [...groups.values()].filter((g) => g.item_count > 0);
-  assignEntityIds(used);
+  assignEntityIds(used, priorIds);
   const byKey = new Map(used.map((g) => [g.group_key, g]));
   for (const r of resolutions) if (r.group_key && byKey.get(r.group_key).entity_id) r.assigned_entity_id = byKey.get(r.group_key).entity_id;
   const out = (g) => ({ ...g, surfaces: [...g.surfaces].sort(), units: [...g.units].sort(), title_ids: [...g.title_ids].sort() });
@@ -910,7 +1041,7 @@ export const mergeA2 = ({ mainBundles, userDecisions = USER_DECISIONS }) => {
   const ids = new Set(entities.map((e) => e.entity_id));
   const dangling = resolutions.filter((r) => r.assigned_entity_id && !ids.has(r.assigned_entity_id)).length;
   if (dangling) throw new Error(`표에 없는 ID를 가리키는 항목 ${dangling}건`);
-  return { resolutions, entities, terms, userChecks, mergeCandidates };
+  return { resolutions, entities, terms, userChecks, mergeCandidates, retractedOccurrences };
 };
 
 // ---------------------------------------------------------------------------
@@ -1433,15 +1564,15 @@ const loadShard = (P, bundleId) => {
     return { parseError: e.message };
   }
 };
-const makeCtx = () => ({ store: new SceneStore(), registry: loadRegistry(), pass2Entities: loadPass2Entities() });
+const makeCtx = () => ({ store: new SceneStore(), registry: loadRegistry(), pass2Entities: loadPass2Entities(), retraction: loadRetraction() });
 const validateOne = (P, bundleId, ctx) => {
   const bundle = loadBundle(P, bundleId);
   const occ = loadOccurrences(bundle);
   const s = loadShard(P, bundleId);
   if (s.missing) return { bundle, occ, status: 'missing', errors: [{ code: 'NO_OUTPUT', path: '$', message: '출력 파일이 없다' }], warnings: [] };
   if (s.parseError) return { bundle, occ, status: 'fail', errors: [{ code: 'JSON_PARSE', path: '$', message: s.parseError }], warnings: [] };
-  const { errors, warnings } = validateA2Shard(s.shard, bundle, ctx, occMapOf(occ));
-  return { bundle, occ, shard: s.shard, status: errors.length ? 'fail' : 'pass', errors, warnings };
+  const { errors, warnings, retracted } = validateA2Shard(s.shard, bundle, ctx, occMapOf(occ));
+  return { bundle, occ, shard: s.shard, status: errors.length ? 'fail' : 'pass', errors, warnings, retracted };
 };
 /** 예외 연결(기본이 아닌 연결)을 범위 종류별로 센다. 한 연결이 이야기·장면을 함께 가지면 조합으로 센다(2차 재시험 보고서 7절 제안) */
 export const exceptionScopeCounts = (shard) => {
@@ -1473,6 +1604,7 @@ const printResult = (bundleId, r) => {
   console.log(`${tag} ${bundleId}: 오류 ${r.errors.length}건, 경고 ${r.warnings.length}건`);
   for (const e of r.errors) console.log(`  ERROR ${e.code} ${e.path}: ${e.message}`);
   for (const w of r.warnings) console.log(`  WARN  ${w.code} ${w.path}: ${w.message}`);
+  if (r.retracted?.length) console.log(`  철회 근거 ${r.retracted.length}건(증분에서 바뀐 장면의 옛 판, 원문 대조 안 함): ${[...new Set(r.retracted.map((x) => x.scene_id))].join(', ')}`);
 };
 const argValue = (args, name) => {
   const a = args.find((x) => x.startsWith(`--${name}=`));
@@ -1495,6 +1627,17 @@ const main = async () => {
   if (!RUNS.has(run)) throw new Error(`--run은 ${[...RUNS].join(' | ')} 중 하나다`);
   const P = pathsOf(run);
 
+  if (cmd === 'build' && argValue(args, 'increment')) {
+    if (run !== 'main') throw new Error('증분 묶음은 본 실행(--run=main)에만 붙인다');
+    const r = await buildA2Increment({ run, incId: argValue(args, 'increment'), maxUnits: Number(argValue(args, 'max-units') ?? 40), maxChars: Number(argValue(args, 'max-chars') ?? 30000) });
+    for (const b of r.bundles) {
+      console.log(`${b.bundle_id} [${b.kind}] 회차 ${b.wave}: 단위 ${b.units}(확인 단위 ${b.check_units}, 골라 보여 준 단위 ${b.sampled_units}), 발췌 ${b.excerpt_chars.toLocaleString()}자`);
+      console.log(`  표기: ${b.surfaces.join(', ')}`);
+    }
+    const p = r.population;
+    console.log(`[build] 증분: 장면 ${p.scenes}, 판정 항목 ${p.items_judged}(같은 장면 참여자 표시 ${p.items_participant_match}), 사용자 제외 ${p.items_excluded}, 표기 ${p.surfaces}개 중 확인 단위 ${p.check_surfaces}개 → 회차 ${r.wave} 묶음 ${r.bundles.length}개`);
+    return;
+  }
   if (cmd === 'build') {
     if (run.startsWith('retest')) throw new Error(`${run}는 build하지 않는다. copy-bundles로 파일럿 묶음을 옮겨 온다`);
     const pilot = args.includes('--pilot') || (run === 'pilot' && !args.includes('--all'));
@@ -1582,10 +1725,12 @@ const main = async () => {
       console.log(`${b.bundle_id} [${b.kind}]: ${progress[b.bundle_id].status}${stale ? `(${stale})` : ''} (검증 ${attempts.length}회, 남은 오류 ${r.errors.length}, 경고 ${r.warnings.length}${exc ? `, ${fmtExceptions(exc)}` : ''})`);
     }
     const done = doneBundles(P, plan, ctx, 'A2');
-    const m = mergeA2({ mainBundles: done });
+    const prior = readJsonIfExists(path.join(P.merged, 'entities.json'));
+    const priorIds = new Map((prior?.entities ?? []).map((e) => [e.group_key, e.entity_id]));
+    const m = mergeA2({ mainBundles: done, retraction: ctx.retraction, priorIds });
     const missing = plan.bundles.filter((b) => b.kind === 'A2' && progress[b.bundle_id].status !== 'merged').map((b) => b.bundle_id);
     const stamp = { schema_version: PASS2_SCHEMA_VERSION, kind: 'A2', run, generated_at: new Date().toISOString() };
-    await writeJsonAtomic(path.join(P.merged, 'A2_resolutions.json'), { ...stamp, missing_bundles: missing, resolutions: m.resolutions, user_decision_checks: m.userChecks });
+    await writeJsonAtomic(path.join(P.merged, 'A2_resolutions.json'), { ...stamp, missing_bundles: missing, resolutions: m.resolutions, user_decision_checks: m.userChecks, retracted_occurrences: m.retractedOccurrences });
     await writeJsonAtomic(path.join(P.merged, 'entities.json'), { ...stamp, note: '실행 결과 표. data/graph/pass2/entities.json(공식 표)로 옮기는 것은 사용자 확인 뒤 따로 한다', entities: m.entities, merge_candidates: m.mergeCandidates });
     await writeJsonAtomic(path.join(P.merged, 'terms.json'), { ...stamp, terms: m.terms });
     await writeJsonAtomic(P.progress, { schema_version: PASS2_SCHEMA_VERSION, run, updated_at: new Date().toISOString(), bundles: progress });
@@ -1594,6 +1739,7 @@ const main = async () => {
     const byScope = m.resolutions.reduce((acc, r) => { const k = `${r.applied_scope}/${r.shown ? 'shown' : 'not_shown'}`; acc[k] = (acc[k] ?? 0) + 1; return acc; }, {});
     console.log(`[finish] 병합 ${done.length}/${plan.bundles.filter((b) => b.kind === 'A2').length}묶음(누락 ${missing.length}), 항목 ${m.resolutions.length}건 ${JSON.stringify(byType)}`);
     console.log(`[finish] 결정 출처(항목 수) ${JSON.stringify(byDecider)}, 적용 범위/제시(항목 수) ${JSON.stringify(byScope)}`);
+    if (m.retractedOccurrences.length) console.log(`[finish] 철회한 출현 ${m.retractedOccurrences.length}곳(증분에서 바뀐 장면의 옛 판): ${[...new Set(m.retractedOccurrences.map((x) => `${x.bundle_id}:${x.unit_id}(${x.surface})`))].join(', ')}`);
     console.log(`[finish] 새 엔티티 ${m.entities.length}개(여러 표기에서 모인 것 ${m.entities.filter((e) => e.surfaces.length > 1).length}), ID 없는 표기 묶음 ${m.terms.length}개, 묶음을 넘는 병합 후보 ${m.mergeCandidates.length}개(합치지 않음)`);
     for (const c of m.mergeCandidates) console.log(`  병합 후보 [${c.match}] ${c.signature}: ${c.groups.map((g) => `${g.entity_id ?? g.group_key}(${g.surfaces.join('·')})`).join(' ↔ ')}`);
     const disagree = m.userChecks.filter((x) => !x.judge_agrees);
