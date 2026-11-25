@@ -101,6 +101,17 @@ test('anchor: 같은 연표 단위(310) 안에서는 장면 순서로 앞선 anc
   assert.ok(r2.warnings.some((w) => w.code === 'PAST_MEMO_IN_PRESENT'));
 });
 
+test('같은 장면 줄 순서: 앞 기록 줄이 뒤 기록보다 늦으면 경고(파일럿 1회차)', () => {
+  const mk = (first, second) => validateDShard(shardWith([
+    link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)]),
+    link(2, [first], [ev('main_14_17', first.endsWith('3') ? 32 : 34)], { progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'script' }),
+    link(3, [second], [ev('main_14_17', second.endsWith('3') ? 32 : 34)], { progression: 'continues', prev_link_ids: ['D1__900__002'], order_basis: 'script' }),
+  ]), bundle, ctx);
+  const has = (r) => r.warnings.some((w) => w.code === 'SAME_SCENE_LINE_REVERSED');
+  assert.ok(has(mk('main_14_17__rln_004', 'main_14_17__rln_003')));
+  assert.ok(!has(mk('main_14_17__rln_003', 'main_14_17__rln_004')));
+});
+
 test('연표: 같은 연표 단위 기록 둘을 official_timeline만으로 310→310 잇는 것은 실패(8.3)', () => {
   const r = validateDShard(shardWith([
     link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)]),

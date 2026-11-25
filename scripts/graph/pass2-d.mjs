@@ -100,6 +100,7 @@ const pathsOf = (run) => {
     progress: path.join(root, 'progress.json'),
     log: path.join(root, 'validation_log.jsonl'),
     searchLog: path.join(root, 'search_log.jsonl'),
+    appendLog: path.join(root, 'append_log.jsonl'),
     audit: path.join(root, 'audit'),
   };
 };
@@ -745,6 +746,13 @@ export const validateDShard = (shard, bundle, ctx) => {
         if (!a || !b) err('ORDER_BASIS_INVALID', `${p}.order_basis`, `official_timeline인데 ${!a ? pid : l.link_id}의 연표 위치가 없다(회고는 timeline anchor)`);
         else if (a.max >= b.min) err('ORDER_BASIS_INVALID', `${p}.order_basis`, `연표 순서가 앞서지 않는다(${a.min}~${a.max} → ${b.min}~${b.max}). 같은 연표 단위면 script 근거를 쓰고, 여러 장면을 묶었으면 변화 시점에서 나눈다`);
       }
+      // 같은 장면 안 줄 순서(과거 기록·공유 메모는 빼고 본다)
+      if (!isPastish(prev) && !isPastish(l)) {
+        const shared = new Set((prev.memo_ids ?? []).filter((id) => (l.memo_ids ?? []).includes(id)));
+        const span = (x) => (x.memo_ids ?? []).filter((id) => !shared.has(id)).map((id) => memoById.get(id)).filter(Boolean);
+        const rev = span(prev).flatMap((pm) => span(l).filter((cm) => pm.scene_id === cm.scene_id && pm.line_start > cm.line_end).map((cm) => [pm, cm]))[0];
+        if (rev) warn('SAME_SCENE_LINE_REVERSED', `${p}.prev_link_ids`, `${pid}의 ${rev[0].item_id}(L${rev[0].line_start})가 같은 장면 ${rev[0].scene_id}에서 이 기록의 ${rev[1].item_id}(L${rev[1].line_end})보다 뒤다`);
+      }
       if (l.order_basis === 'script') {
         const a = posOf(prev);
         const b = posOf(l);
@@ -1254,6 +1262,7 @@ const main = async () => {
     const r = appendPart(cur.shard ?? null, JSON.parse(fs.readFileSync(path.resolve(from), 'utf8')), bundle);
     fs.mkdirSync(P.shards, { recursive: true });
     fs.writeFileSync(path.join(P.shards, `${id}.json`), `${JSON.stringify(r.shard, null, 2)}\n`);
+    await fsp.appendFile(P.appendLog, `${JSON.stringify({ at: new Date().toISOString(), bundle_id: id, from: path.basename(from), added_links: r.renamed.length, skipped: r.skipped.length, links: r.shard.candidate_links.length, excluded: r.shard.excluded_memos.length, remaining_memos: r.remaining.length })}\n`);
     if (r.renamed.length) console.log(`[append-shard] 임시 ID → 실제 ID: ${r.renamed.map(([a, b]) => `${a}→${b}`).join(', ')}`);
     if (r.skipped.length) console.log(`[append-shard] 이미 있는 같은 내용이라 넣지 않음: ${r.skipped.join(', ')}`);
     console.log(`[append-shard] ${id}: 기록 ${r.shard.candidate_links.length}, 제외 ${r.shard.excluded_memos.length}, 남은 메모 ${r.remaining.length}${r.remaining.length ? ` (${r.remaining.slice(0, 10).join(', ')}${r.remaining.length > 10 ? ' …' : ''})` : ' → validate 하라'}`);
