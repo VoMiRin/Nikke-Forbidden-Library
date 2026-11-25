@@ -521,6 +521,24 @@ test('공식 표: 합친 무리는 바탕 ID, 혼자인 무리는 ID 그대로, 
   assert.equal(out.stats.terms_after, 2);
 });
 
+test('공식 표: 지난 공식 표의 ID·표기 묶음 키를 이어받아 증분 무리가 더해져도 바뀌지 않는다', () => {
+  const g = (gk, id, name, type) => ({ group_key: gk, bundle_id: gk.split('#')[0], entity_key: gk.split('#')[1], entity_id: id, canonical_name: name, qualifier: null, entity_type: type, surfaces: [name], units: [], title_ids: ['t'], item_count: 1 });
+  const entities = [g('A2__001#E1', 'char2_엄마__aaaaaa', '엄마', 'character'), g('A2__002#E1', 'char2_엄마__bbbbbb', '엄마', 'character'), g('A2I1__001#E1', 'char2_엄마__cccccc', '엄마', 'character')];
+  const terms = [g('A2__003#E1', undefined, '방주', 'location'), g('A2__004#E1', undefined, '방주', 'location'), g('A2I1__001#E2', undefined, '방주', 'location')];
+  const curation = { schema_version: A2_CURATION_SCHEMA_VERSION, type_changes: [], link_overrides: [], separate: [], merges: [
+    { groups: ['A2__001#E1', 'A2__002#E1', 'A2I1__001#E1'], canonical_name: '엄마', note: 'n' },
+    { groups: ['A2__003#E1', 'A2__004#E1', 'A2I1__001#E2'], canonical_name: '방주', note: 'n' },
+  ] };
+  const prior = { groupMap: { 'A2__001#E1': { entity_id: 'char2_엄마__old111' }, 'A2__002#E1': { entity_id: 'char2_엄마__old111' }, 'A2__003#E1': { term_key: 'A2__003#E1' }, 'A2__004#E1': { term_key: 'A2__003#E1' } } };
+  const out = promoteA2({ entities, terms, curation, prior });
+  assert.deepEqual(out.errors, []);
+  assert.deepEqual(out.entities.map((e) => e.entity_id), ['char2_엄마__old111']);
+  assert.equal(out.idMap['char2_엄마__cccccc'], 'char2_엄마__old111');
+  assert.deepEqual(out.terms.map((t) => t.term_key), ['A2__003#E1']);
+  // 지난 표가 없으면 예전 규칙(사전순 첫 무리)이다
+  assert.deepEqual(promoteA2({ entities, terms, curation }).terms.map((t) => t.term_key), ['A2I1__001#E2']);
+});
+
 test('공식 표: 검토 안 한 병합 후보, 두 번 쓴 무리, ID·표기 섞기, 없는 연결은 오류', () => {
   const g = (gk, id, type) => ({ group_key: gk, bundle_id: gk.split('#')[0], entity_id: id, canonical_name: 'x', entity_type: type, surfaces: ['x'], title_ids: [], item_count: 1 });
   const entities = [g('A2__001#E1', 'char2_x__1', 'character'), g('A2__002#E1', 'char2_x__2', 'character'), g('A2__003#E1', 'org_x', 'organization')];

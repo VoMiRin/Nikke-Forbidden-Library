@@ -1,11 +1,11 @@
 {
   "schema_version": "pass2-official-0.1.0",
-  "generated_at": "2026-11-16T15:19:12.314Z",
+  "generated_at": "2026-11-25T07:57:42.683Z",
   "source": {
     "run": "main",
-    "merged_generated_at": "2026-11-16T14:50:18.190Z",
+    "merged_generated_at": "2026-11-25T07:49:41.051Z",
     "curation": "data/graph/pass2/a2/curation.json",
-    "curation_sha256": "fa69cdac93bea6d69c5aa725723da1b2ace62072c5428e6e88f064cec27b8b49"
+    "curation_sha256": "e3983c6ae33d811b44ba81fa3c364c9a906c38b6a4492394a76e0a3c4dbb1c24"
   },
   "note": "Pass 2 공식 엔티티 표(인물 char2_·스쿼드 squad_·조직 org_). id_map은 실행 결과 ID → 공식 ID, group_map은 실행 결과 무리 → 공식 ID/표기 묶음, link_overrides는 해소 항목에 덮어쓸 판정이다",
   "entities": [
@@ -2624,6 +2624,25 @@
       ]
     },
     {
+      "entity_id": "char2_세피",
+      "entity_type": "character",
+      "canonical_name": "세피",
+      "qualifier": null,
+      "title_ids": [
+        "event_stories__sky_on_the_rock"
+      ],
+      "item_count": 15,
+      "source_groups": [
+        "A2I1__001#E8"
+      ],
+      "surface_labels": [
+        "세피"
+      ],
+      "source_ids": [
+        "char2_세피"
+      ]
+    },
+    {
       "entity_id": "char2_셜록_홈즈",
       "entity_type": "character",
       "canonical_name": "셜록 홈즈",
@@ -3150,6 +3169,25 @@
       ],
       "source_ids": [
         "char2_아빠"
+      ]
+    },
+    {
+      "entity_id": "char2_아빠__6f1109",
+      "entity_type": "character",
+      "canonical_name": "아빠",
+      "qualifier": "세피의 아버지",
+      "title_ids": [
+        "event_stories__sky_on_the_rock"
+      ],
+      "item_count": 1,
+      "source_groups": [
+        "A2I1__001#E9"
+      ],
+      "surface_labels": [
+        "아빠"
+      ],
+      "source_ids": [
+        "char2_아빠__6f1109"
       ]
     },
     {
@@ -4038,13 +4076,13 @@
       "entity_id": "char2_조나단",
       "entity_type": "character",
       "canonical_name": "조나단",
-      "qualifier": null,
+      "qualifier": "코코아의 상상 속 스토커",
       "title_ids": [
         "outpost_stories__장난감_상점"
       ],
       "item_count": 2,
       "source_groups": [
-        "A2__122#E17"
+        "A2I1__001#E11"
       ],
       "surface_labels": [
         "조나단"
@@ -11586,6 +11624,7 @@
     "char2_선배": "char2_선배",
     "char2_선선대": "char2_선선대",
     "char2_세이스": "char2_세이스",
+    "char2_세피": "char2_세피",
     "char2_셜록_홈즈__0983a7": "char2_셜록_홈즈",
     "char2_셜록_홈즈__ec5a2f": "char2_셜록_홈즈",
     "char2_셰리": "char2_셰리",
@@ -11613,6 +11652,7 @@
     "char2_아버지__390482": "char2_아버지__390482",
     "char2_아버지__3e3a8c": "char2_아버지__3e3a8c",
     "char2_아빠": "char2_아빠",
+    "char2_아빠__6f1109": "char2_아빠__6f1109",
     "char2_아이리스_먼로": "char2_아이리스_먼로",
     "char2_아일랜드_이터": "char2_아일랜드_이터",
     "char2_안토니": "char2_안토니",
@@ -12487,6 +12527,9 @@
     "A2__078#E4": {
       "entity_id": "char2_세이스"
     },
+    "A2I1__001#E8": {
+      "entity_id": "char2_세피"
+    },
     "A2__078#E9": {
       "entity_id": "char2_셜록_홈즈"
     },
@@ -12567,6 +12610,9 @@
     },
     "A2__088#E20": {
       "entity_id": "char2_아빠"
+    },
+    "A2I1__001#E9": {
+      "entity_id": "char2_아빠__6f1109"
     },
     "A2__090#E5": {
       "entity_id": "char2_아이리스_먼로"
@@ -12721,7 +12767,7 @@
     "A2__122#E16": {
       "entity_id": "char2_제임스"
     },
-    "A2__122#E17": {
+    "A2I1__001#E11": {
       "entity_id": "char2_조나단"
     },
     "A2__122#E18": {
@@ -14659,8 +14705,14 @@
     "A2__039#E13": {
       "term_key": "A2__039#E13"
     },
+    "A2I1__001#E2": {
+      "term_key": "A2I1__001#E2"
+    },
     "A2__039#E15": {
       "term_key": "A2__039#E15"
+    },
+    "A2I1__001#E3": {
+      "term_key": "A2__011#E19"
     },
     "A2__011#E19": {
       "term_key": "A2__011#E19"
@@ -14736,6 +14788,9 @@
     },
     "A2__043#E1": {
       "term_key": "A2__043#E1"
+    },
+    "A2I1__001#E4": {
+      "term_key": "A2__043#E2"
     },
     "A2__043#E2": {
       "term_key": "A2__043#E2"
@@ -14877,6 +14932,9 @@
     },
     "A2__050#E1": {
       "term_key": "A2__049#E19"
+    },
+    "A2I1__001#E5": {
+      "term_key": "A2__049#E15"
     },
     "A2__049#E15": {
       "term_key": "A2__049#E15"
@@ -15031,6 +15089,9 @@
     "A2__058#E11": {
       "term_key": "A2__058#E11"
     },
+    "A2I1__001#E13": {
+      "term_key": "A2__058#E12"
+    },
     "A2__058#E12": {
       "term_key": "A2__058#E12"
     },
@@ -15051,6 +15112,9 @@
     },
     "A2__059#E6": {
       "term_key": "A2__059#E6"
+    },
+    "A2I1__001#E6": {
+      "term_key": "A2__001#E1"
     },
     "A2__001#E1": {
       "term_key": "A2__001#E1"
@@ -15415,6 +15479,9 @@
     "A2__084#E11": {
       "term_key": "A2__084#E11"
     },
+    "A2I1__001#E7": {
+      "term_key": "A2__068#E1"
+    },
     "A2__068#E1": {
       "term_key": "A2__068#E1"
     },
@@ -15501,6 +15568,9 @@
     },
     "A2__090#E2": {
       "term_key": "A2__090#E2"
+    },
+    "A2I1__001#E10": {
+      "term_key": "A2I1__001#E10"
     },
     "A2__090#E7": {
       "term_key": "A2__090#E7"
@@ -16065,6 +16135,9 @@
     },
     "A2__127#E7": {
       "term_key": "A2__092#E8"
+    },
+    "A2I1__001#E12": {
+      "term_key": "A2__127#E6"
     },
     "A2__127#E6": {
       "term_key": "A2__127#E6"

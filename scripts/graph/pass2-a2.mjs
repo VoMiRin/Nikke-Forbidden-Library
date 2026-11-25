@@ -1060,7 +1060,7 @@ export const PASS2_OFFICIAL_SCHEMA_VERSION = 'pass2-official-0.1.0';
  * 병합 후보(findMergeCandidates)의 모든 무리는 merges나 separate 중 하나에 있어야 한다.
  * ID: 합치지 않은 무리는 실행 결과의 ID 그대로, 합친 무리는 대표 이름의 바탕 ID(겹치면 무리 키 해시를 붙인다).
  */
-export const promoteA2 = ({ entities, terms, mergeCandidates = [], linkIds = new Set(), curation }) => {
+export const promoteA2 = ({ entities, terms, mergeCandidates = [], linkIds = new Set(), curation, prior = null }) => {
   const errors = [];
   const err = (msg) => errors.push(msg);
   const groups = new Map();
@@ -1155,6 +1155,20 @@ export const promoteA2 = ({ entities, terms, mergeCandidates = [], linkIds = new
     if (!u.merged) u.entity_id = u.groups[0].entity_id;
     else u.entity_id = fixedIds.has(u.base_id) || bases.get(u.base_id) > 1 ? `${u.base_id}__${sha256(u.groups.map((g) => g.group_key).join('|')).slice(0, 6)}` : u.base_id;
   }
+  // 지난 공식 표의 ID·표기 묶음 키를 이어받는다(증분 설계 4.4). 합친 무리에 증분 무리가 더해져도 공식 ID·term_key가
+  // 바뀌지 않게 한다. 한 단위의 무리들이 지난 표에서 서로 다른 ID·키였으면(이번에 새로 합침) 이어받지 않고 위 규칙을 쓴다
+  const priorMap = prior?.groupMap ?? {};
+  const priorOf = (u, field) => {
+    const vals = new Set(u.groups.map((g) => priorMap[g.group_key]?.[field]).filter(Boolean));
+    return vals.size === 1 ? [...vals][0] : null;
+  };
+  const takenIds = new Set();
+  for (const u of units) {
+    if (!u.entity_id) continue;
+    const p = priorOf(u, 'entity_id');
+    if (p && p.startsWith(ID_PREFIX[u.entity_type]) && !takenIds.has(p)) u.entity_id = p;
+    takenIds.add(u.entity_id);
+  }
   const finalIds = units.filter((u) => u.entity_id).map((u) => u.entity_id);
   if (new Set(finalIds).size !== finalIds.length) throw new Error('공식 표 ID가 겹친다');
 
@@ -1179,7 +1193,7 @@ export const promoteA2 = ({ entities, terms, mergeCandidates = [], linkIds = new
       for (const g of u.groups) groupMap[g.group_key] = { entity_id: u.entity_id };
       outEntities.push({ entity_id: u.entity_id, ...rec, surface_labels: sortedUnion([[u.canonical_name], ...u.groups.map((g) => [g.canonical_name, ...(g.surfaces ?? [])])]), source_ids: sourceIds });
     } else {
-      const termKey = u.groups[0].group_key;
+      const termKey = priorOf(u, 'term_key') ?? u.groups[0].group_key;
       for (const g of u.groups) groupMap[g.group_key] = { term_key: termKey };
       outTerms.push({ term_key: termKey, ...rec, surfaces: sortedUnion(u.groups.map((g) => g.surfaces ?? [])) });
     }
@@ -1756,7 +1770,8 @@ const main = async () => {
     const res = readJsonIfExists(path.join(P.merged, 'A2_resolutions.json'));
     if (!ent || !trm || !res) throw new Error('A-2 병합 결과(finish)가 없다');
     const curationText = fs.readFileSync(CURATION_PATH, 'utf8');
-    const out = promoteA2({ entities: ent.entities, terms: trm.terms, mergeCandidates: ent.merge_candidates, linkIds: new Set(res.resolutions.map((r) => r.link_id).filter(Boolean)), curation: JSON.parse(curationText) });
+    const priorOfficial = readJsonIfExists(OFFICIAL_ENTITIES_PATH);
+    const out = promoteA2({ entities: ent.entities, terms: trm.terms, mergeCandidates: ent.merge_candidates, linkIds: new Set(res.resolutions.map((r) => r.link_id).filter(Boolean)), curation: JSON.parse(curationText), prior: priorOfficial ? { groupMap: priorOfficial.group_map ?? {} } : null });
     if (out.errors.length) {
       for (const e of out.errors) console.log(`  ERROR ${e}`);
       console.log(`[promote] 승인 목록 오류 ${out.errors.length}건. 공식 표를 쓰지 않았다`);
