@@ -689,7 +689,8 @@ export const validateDShard = (shard, bundle, ctx) => {
   }
 
   // 사슬: prev_link_ids, 순환, 배타, 순서 근거, anchor
-  const isPastish = (l) => l.temporal_anchor === 'past_before_scene' || (l.memo_ids ?? []).some((id) => memoById.get(id)?.refers_to_past || memoById.get(id)?.chronology_type === 'flashback');
+  // 회고 메모(refers_to_past)가 있어도 판정자가 관계를 발화 장면 현재의 것(scene_present)으로 적었으면 과거 기록으로 보지 않는다(경고만). 회상 장면(flashback) 메모는 언제나 과거다.
+  const isPastish = (l) => l.temporal_anchor === 'past_before_scene' || (l.memo_ids ?? []).some((id) => memoById.get(id)?.chronology_type === 'flashback');
   // 연표 위치 범위: 과거 기록은 timeline anchor 장면, 현재 기록은 귀속 메모 장면들의 최소~최대
   const posOf = (l) => {
     if (isPastish(l)) {
@@ -763,6 +764,7 @@ export const validateDShard = (shard, bundle, ctx) => {
         }
       }
     }
+    if (!isPastish(l) && !l.anchor && (l.memo_ids ?? []).some((id) => memoById.get(id)?.refers_to_past)) warn('PAST_MEMO_IN_PRESENT', p, '회고 메모가 있는데 scene_present다. 관계가 발화 장면 현재에 성립·유지되는지 본다(과거 관계면 past_before_scene과 anchor)');
     // 확립 경고
     if (l.epistemic_status === 'established' && (l.memo_ids ?? []).length && (l.memo_ids ?? []).every((id) => memoById.get(id)?.epistemic_type === 'character_claim')) warn('ESTABLISHED_FROM_CLAIM_ONLY', p, '귀속 메모가 모두 주장인데 established다. 지문·연출로 확인했는지 본다');
   });

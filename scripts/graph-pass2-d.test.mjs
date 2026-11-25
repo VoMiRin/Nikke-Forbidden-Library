@@ -84,13 +84,21 @@ test('anchor: 같은 연표 단위(310) 안에서는 장면 순서로 앞선 anc
   ]), bundle, ctx);
   assert.deepEqual(codes(base('main_14_14')).filter((c) => c === 'ANCHOR_REQUIRED'), []);
   assert.ok(codes(base('main_14_18')).includes('ANCHOR_REQUIRED'));
-  // anchor 없이 순서에 쓰면 실패
+  // 과거 기록(past_before_scene)을 anchor 없이 순서에 쓰면 실패
   const r = validateDShard(shardWith([
+    link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)]),
+    link(2, ['main_14_17__rln_003'], [ev('main_14_17', 32)], { temporal_anchor: 'past_before_scene', progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'script' }),
+    link(3, ['main_14_17__rln_004'], [ev('main_14_17', 34)]),
+  ]), bundle, ctx);
+  assert.ok(codes(r).includes('ANCHOR_REQUIRED'));
+  // 회고 메모가 있어도 scene_present로 적었으면 anchor 없이 이을 수 있고 경고만 난다(파일럿 1회차 감사)
+  const r2 = validateDShard(shardWith([
     link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)]),
     link(2, ['main_14_17__rln_003'], [ev('main_14_17', 32)], { progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'script' }),
     link(3, ['main_14_17__rln_004'], [ev('main_14_17', 34)]),
   ]), bundle, ctx);
-  assert.ok(codes(r).includes('ANCHOR_REQUIRED'));
+  assert.ok(!codes(r2).includes('ANCHOR_REQUIRED'));
+  assert.ok(r2.warnings.some((w) => w.code === 'PAST_MEMO_IN_PRESENT'));
 });
 
 test('연표: 같은 연표 단위 기록 둘을 official_timeline만으로 310→310 잇는 것은 실패(8.3)', () => {
