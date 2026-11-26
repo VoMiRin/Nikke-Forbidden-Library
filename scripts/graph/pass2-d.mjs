@@ -52,6 +52,8 @@ export const SEARCH_BUDGET_TAG = '[검색 예산 소진]';
 export const ADDRESS_TOP = 5;
 export const PRIOR_CONTEXT_MAX = 5;
 export const AUDIT_RATE_FACTOR = { all_excluded: 3, has_change: 2, multi_steady: 1.5, single_memo: 1 };
+/** 메모가 이만큼 이상인 큰 쌍 단위는 표본 비율과 상관없이 늘 감사한다(파일럿 2회차 뒤 사용자 결정, 11-26) */
+export const AUDIT_LARGE_UNIT_MEMOS = 80;
 
 export const RELATION_TYPES = new Set(['affiliation', 'command_or_hierarchy', 'status_or_rank', 'kinship_or_creation', 'origin_or_transformation', 'identity_or_naming', 'affinity_or_trust', 'conflict_or_hostility', 'lore_or_management']);
 export const EPISTEMIC = new Set(['established', 'claimed']);
@@ -929,7 +931,9 @@ export const sampleDAudit = ({ units, linksByUnit, memosByUnit, overrides, merge
     const ranked = [...list].sort((a, b) => cmpStr(rankOf(seed, `${a.bundle_id}:${a.unit_id}`), rankOf(seed, `${b.bundle_id}:${b.unit_id}`)));
     const picked = new Set(ranked.slice(0, n).map((u) => `${u.bundle_id}:${u.unit_id}`));
     for (const u of list) if (include.has(`${u.bundle_id}:${u.unit_id}`)) picked.add(`${u.bundle_id}:${u.unit_id}`);
-    report.push({ stratum: k, population: list.length, sampled: picked.size, rate: r });
+    const large = list.filter((u) => (memosByUnit.get(`${u.bundle_id}|${u.unit_id}`)?.length ?? 0) >= AUDIT_LARGE_UNIT_MEMOS);
+    for (const u of large) picked.add(`${u.bundle_id}:${u.unit_id}`);
+    report.push({ stratum: k, population: list.length, sampled: picked.size, rate: r, large_units: large.length });
     for (const u of list.filter((x) => picked.has(`${x.bundle_id}:${x.unit_id}`))) {
       items.push({ audit_id: `${u.bundle_id}:${u.unit_id}`, kind: 'unit', bundle_id: u.bundle_id, unit_id: u.unit_id, stratum: st, nodes: [u.node_a.ref, u.node_b.ref], memos: memosByUnit.get(`${u.bundle_id}|${u.unit_id}`) ?? [], links: linksByUnit.get(`${u.bundle_id}|${u.unit_id}`) ?? [], excluded: u.excluded ?? [], files: bundlePaths.get(u.bundle_id) });
     }
@@ -1409,7 +1413,7 @@ const main = async () => {
     writeJsonAtomic(inputPath, input);
     const kinds = sample.items.reduce((acc, x) => ((acc[x.kind] = (acc[x.kind] ?? 0) + 1), acc), {});
     console.log(`[audit-input] 회차 ${wave}: 단위 표본 ${sample.sampled_units}/${sample.population_units}, 항목 ${JSON.stringify(kinds)} → ${relPath(inputPath)}`);
-    for (const s of sample.strata) console.log(`  층 ${s.stratum}: 모집단 ${s.population}, 표본 ${s.sampled} (비율 ${s.rate})`);
+    for (const s of sample.strata) console.log(`  층 ${s.stratum}: 모집단 ${s.population}, 표본 ${s.sampled} (비율 ${s.rate}${s.large_units ? `, 메모 ${AUDIT_LARGE_UNIT_MEMOS}건 이상 큰 쌍 ${s.large_units} 늘 포함` : ''})`);
     console.log(`[audit-input] 다른 모델의 감사 출력 → ${relPath(path.join(P.audit, `wave_${pad(wave)}_output.json`))}`);
     return;
   }

@@ -7,7 +7,9 @@ import { GRAPH_DATA_DIR } from './graph/lib.mjs';
 import { SceneStore, loadRegistry, readJsonIfExists } from './graph/pass2-lib.mjs';
 import { makeRetraction } from './graph/increment-scope.mjs';
 import {
+  AUDIT_LARGE_UNIT_MEMOS,
   appendPart,
+  sampleDAudit,
   effectiveDEntries,
   evidenceScenesOf,
   makeCanon,
@@ -204,6 +206,24 @@ test('감사 층: 전부 제외·변화 있음·여러 메모 유지·메모 1�
   assert.equal(unitStratum({ memo_ids: ['a', 'b'] }, [{ progression: 'initial' }, { progression: 'changes_from' }]), 'has_change');
   assert.equal(unitStratum({ memo_ids: ['a', 'b'] }, [{ progression: 'continues' }]), 'multi_steady');
   assert.equal(unitStratum({ memo_ids: ['a'] }, [{ progression: 'initial' }]), 'single_memo');
+});
+
+test('감사 표본: 메모 80건 이상 큰 쌍은 비율과 상관없이 늘 넣고, 작은 쌍은 층 비율대로 뽑는다(파일럿 2회차 뒤)', () => {
+  const mk = (i, n) => ({ bundle_id: `D1__${String(i).padStart(3, '0')}`, unit_id: 'U001', node_a: { ref: 'a' }, node_b: { ref: 'b' }, memos: n });
+  const units = [mk(1, AUDIT_LARGE_UNIT_MEMOS), mk(2, AUDIT_LARGE_UNIT_MEMOS - 1), ...Array.from({ length: 20 }, (_, i) => mk(10 + i, 3))];
+  const linksByUnit = new Map(units.map((u) => [`${u.bundle_id}|${u.unit_id}`, [{ progression: 'initial', confidence: '유력한 해석' }, { progression: 'continues', confidence: '유력한 해석' }]]));
+  const memosByUnit = new Map(units.map((u) => [`${u.bundle_id}|${u.unit_id}`, Array.from({ length: u.memos }, (_, j) => ({ item_id: `m${j}` }))]));
+  const units2 = units.map((u) => ({ ...u, memo_ids: memosByUnit.get(`${u.bundle_id}|${u.unit_id}`).map((m) => m.item_id) }));
+  const seeds = ['s1', 's2', 's3', 's4', 's5'];
+  for (const seed of seeds) {
+    const out = sampleDAudit({ units: units2, linksByUnit, memosByUnit, overrides: [], merges: [], rate: 0.1, seed, bundlePaths: new Map() });
+    const ids = out.items.map((x) => x.audit_id);
+    assert.ok(ids.includes('D1__001:U001'), `${seed}: 80건 쌍은 늘 포함`);
+    assert.equal(out.strata[0].large_units, 1);
+    assert.ok(out.sampled_units <= 1 + Math.ceil(22 * 0.15) + 1, `${seed}: 작은 쌍은 비율대로만`);
+  }
+  const hits79 = seeds.filter((seed) => sampleDAudit({ units: units2, linksByUnit, memosByUnit, overrides: [], merges: [], rate: 0.1, seed, bundlePaths: new Map() }).items.some((x) => x.audit_id === 'D1__002:U001')).length;
+  assert.ok(hits79 < seeds.length, '79건 쌍은 늘 포함하지 않는다');
 });
 
 test('연표: 14장 장면은 history_order 310, 공식 ID 정규화는 user_entity_merges를 따른다', () => {
