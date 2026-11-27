@@ -7,7 +7,9 @@ import { GRAPH_DATA_DIR } from './graph/lib.mjs';
 import { SceneStore, loadRegistry, readJsonIfExists } from './graph/pass2-lib.mjs';
 import { makeRetraction } from './graph/increment-scope.mjs';
 import {
+  collectMinorNotes,
   AUDIT_LARGE_UNIT_MEMOS,
+  CLAIM_MANY_MEMOS,
   appendPart,
   sampleDAudit,
   effectiveDEntries,
@@ -101,6 +103,23 @@ test('anchor: 같은 연표 단위(310) 안에서는 장면 순서로 앞선 anc
   ]), bundle, ctx);
   assert.ok(!codes(r2).includes('ANCHOR_REQUIRED'));
   assert.ok(r2.warnings.some((w) => w.code === 'PAST_MEMO_IN_PRESENT'));
+});
+
+test('회상 메모: 회상만으로 된 기록은 과거(anchor 필요), 성립 기록에 합쳐진 되풀이 회상은 위치를 바꾸지 않는다(본 실행 1회차)', () => {
+  const fb = { ...bundle, memos: bundle.memos.map((m) => (m.item_id === 'main_14_17__rln_003' ? { ...m, chronology_type: 'flashback' } : m)) };
+  // 회상 메모 하나뿐인 기록을 순서에 쓰면 anchor가 필요하다
+  const only = validateDShard(shardWith([
+    link(1, ['main_14_14__rln_005'], [ev('main_14_14', 69, 72)]),
+    link(2, ['main_14_17__rln_003'], [ev('main_14_17', 32)], { progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'script' }),
+    link(3, ['main_14_17__rln_004'], [ev('main_14_17', 34)]),
+  ]), fb, ctx);
+  assert.ok(codes(only).includes('ANCHOR_REQUIRED'));
+  // 성립 기록(현재 메모)에 회상 메모를 합치면 anchor 없이 잇고, 위치는 현재 메모로 정한다
+  const merged = validateDShard(shardWith([
+    link(1, ['main_14_14__rln_005', 'main_14_17__rln_003'], [ev('main_14_14', 69, 72), ev('main_14_17', 32)]),
+    link(2, ['main_14_17__rln_004'], [ev('main_14_17', 34)], { progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'script' }),
+  ]), fb, ctx);
+  assert.ok(!codes(merged).includes('ANCHOR_REQUIRED'));
 });
 
 test('같은 장면 줄 순서: 앞 기록 줄이 뒤 기록보다 늦으면 경고(파일럿 1회차)', () => {
@@ -271,4 +290,36 @@ test('GPT 규칙 검수 반영: 두 보정이 같은 새 쌍으로 모이면 같
   s.endpoint_overrides = [ovr('U001', 'main_14_14__rln_005', ref(B)), ovr('U002', 'main_14_17__rln_004', canon.entityNode('char_네온').ref)];
   const r = validateDShard(s, two, ctx);
   assert.ok(r.warnings.some((w) => w.code === 'SAME_BUNDLE_PAIR_OVERLAP'));
+});
+
+test('감사 비차단 메모: minor_notes를 모으고, 문자열 배열이 아니면 형식 오류(본 실행 1회차 3차 감사 뒤)', () => {
+  const r = collectMinorNotes([
+    { audit_id: 'D1__001:U001', judgment: '맞음', problems: [], minor_notes: ['D1__001__024 / maria-n_22 L181: 답례 누락'] },
+    { audit_id: 'D1__002:U003', judgment: '맞음', problems: [] },
+    { audit_id: 'D1__003:U001', judgment: '맞음', problems: [], minor_notes: 'x' },
+  ]);
+  assert.equal(r.notes.length, 1);
+  assert.equal(r.notes[0].audit_id, 'D1__001:U001');
+  assert.equal(r.errors.length, 1);
+});
+
+test('2회차 전 경고: 연표 없는 장면 메모를 낀 official_timeline, 메모가 많은 claimed 기록(본 실행 1회차 감사)', () => {
+  const tl = { ...bundle, units: [{ ...bundle.units[0], memo_ids: [...bundle.units[0].memo_ids, 'crown_03__rln_002', 'chapter_50_14__rln_011'] }], memos: [...bundle.memos, memoRec('crown_03__rln_002', 'crown_03', 107, 111, { history_order: null }), memoRec('chapter_50_14__rln_011', 'chapter_50_14', 413, 416, { history_order: 970 })] };
+  const mk = (firstMemos, firstEv) => validateDShard(shardWith([
+    link(1, firstMemos, firstEv),
+    link(2, ['main_14_17__rln_003', 'main_14_17__rln_004'], [ev('main_14_17', 32, 34)]),
+    link(3, ['chapter_50_14__rln_011'], [ev('chapter_50_14', 413, 416)], { progression: 'continues', prev_link_ids: ['D1__900__001'], order_basis: 'official_timeline' }),
+  ]), tl, ctx);
+  const withCrown = mk(['main_14_14__rln_005', 'crown_03__rln_002'], [ev('main_14_14', 69, 72), ev('crown_03', 107, 111)]);
+  assert.ok(withCrown.warnings.some((w) => w.code === 'TIMELINE_UNKNOWN_MEMO'));
+  const plain = mk(['main_14_14__rln_005'], [ev('main_14_14', 69, 72)]);
+  assert.ok(!plain.warnings.some((w) => w.code === 'TIMELINE_UNKNOWN_MEMO'));
+  // claimed 기록 메모 수 경고
+  const ids = Array.from({ length: CLAIM_MANY_MEMOS }, (_, i) => `main_14_14__rln_9${i}`);
+  const many = { ...bundle, units: [{ ...bundle.units[0], memo_ids: [...bundle.units[0].memo_ids, ...ids] }], memos: [...bundle.memos, ...ids.map((id) => memoRec(id, 'main_14_14', 69, 72))] };
+  const r = validateDShard(shardWith([
+    link(1, ['main_14_14__rln_005', ...ids], [ev('main_14_14', 69, 72)]),
+    link(2, ['main_14_17__rln_003', 'main_14_17__rln_004'], [ev('main_14_17', 32, 34)]),
+  ]), many, ctx);
+  assert.ok(r.warnings.some((w) => w.code === 'CLAIM_MANY_MEMOS'));
 });

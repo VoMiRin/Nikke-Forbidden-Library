@@ -54,6 +54,8 @@ export const PRIOR_CONTEXT_MAX = 5;
 export const AUDIT_RATE_FACTOR = { all_excluded: 3, has_change: 2, multi_steady: 1.5, single_memo: 1 };
 /** 메모가 이만큼 이상인 큰 쌍 단위는 표본 비율과 상관없이 늘 감사한다(파일럿 2회차 뒤 사용자 결정, 11-26) */
 export const AUDIT_LARGE_UNIT_MEMOS = 80;
+/** claimed 기록 하나의 메모가 이만큼 이상이면 수락·실행·전환이 묻혔는지 경고한다(본 실행 1회차 감사 뒤, 11-27) */
+export const CLAIM_MANY_MEMOS = 8;
 
 export const RELATION_TYPES = new Set(['affiliation', 'command_or_hierarchy', 'status_or_rank', 'kinship_or_creation', 'origin_or_transformation', 'identity_or_naming', 'affinity_or_trust', 'conflict_or_hostility', 'lore_or_management']);
 export const EPISTEMIC = new Set(['established', 'claimed']);
@@ -72,6 +74,17 @@ export const D_REVIEW_PROBLEMS = new Set([
   'missed_change', 'false_change', 'order_basis_wrong', 'timeline_conflict_ignored', 'context_scope_wrong', 'should_be_relation',
   'should_exclude_memo', 'evidence_not_support', 'confidence_too_high', 'prior_knowledge_as_evidence', 'merge_suggestion_wrong', 'other',
 ]);
+/** 감사 출력의 비차단 메모(minor_notes)를 모은다. 문자열 배열이 아니면 형식 오류 */
+export const collectMinorNotes = (reviews) => {
+  const notes = [];
+  const errors = [];
+  for (const r of reviews ?? []) {
+    if (r?.minor_notes === undefined) continue;
+    if (!Array.isArray(r.minor_notes) || r.minor_notes.some((x) => typeof x !== 'string' || !x.trim())) { errors.push(`${r?.audit_id}: minor_notes는 비어 있지 않은 문자열 배열이다`); continue; }
+    for (const note of r.minor_notes) notes.push({ audit_id: r.audit_id, note });
+  }
+  return { notes, errors };
+};
 /** 끝 버튼이 이것이면 그 장면의 다음 경로는 재시작·기록 메뉴로 돌아가는 간선이다(8.3절). 한 번의 진행 경로에서 뺀다 */
 export const RESTART_BUTTONS = new Set(['다시 기록하기', '다시 탐색하기', '메모리 목록으로']);
 const SURE_RESOLVERS = new Set(['participants', 'a2', 'scoped_alias', 'same_scene_reveal']);
@@ -692,15 +705,18 @@ export const validateDShard = (shard, bundle, ctx) => {
   }
 
   // 사슬: prev_link_ids, 순환, 배타, 순서 근거, anchor
-  // 회고 메모(refers_to_past)가 있어도 판정자가 관계를 발화 장면 현재의 것(scene_present)으로 적었으면 과거 기록으로 보지 않는다(경고만). 회상 장면(flashback) 메모는 언제나 과거다.
-  const isPastish = (l) => l.temporal_anchor === 'past_before_scene' || (l.memo_ids ?? []).some((id) => memoById.get(id)?.chronology_type === 'flashback');
+  // 회고 메모(refers_to_past)가 있어도 판정자가 관계를 발화 장면 현재의 것(scene_present)으로 적었으면 과거 기록으로 보지 않는다(경고만).
+  // 회상 장면(flashback) 메모만으로 된 기록은 과거다. 앞선 성립을 되풀이한 회상 메모가 그 성립 기록에 합쳐진 경우(규칙 3.2)는
+  // 현재 메모가 기록의 위치를 정하므로 과거로 보지 않는다(본 실행 1회차 감사 뒤).
+  const isFlashback = (id) => memoById.get(id)?.chronology_type === 'flashback';
+  const isPastish = (l) => l.temporal_anchor === 'past_before_scene' || ((l.memo_ids ?? []).filter((id) => memoById.get(id)).length > 0 && (l.memo_ids ?? []).filter((id) => memoById.get(id)).every(isFlashback));
   // 연표 위치 범위: 과거 기록은 timeline anchor 장면, 현재 기록은 귀속 메모 장면들의 최소~최대
   const posOf = (l) => {
     if (isPastish(l)) {
       const t = l.anchor?.kind === 'timeline' ? ctx.timeline.get(l.anchor.scene_id) : null;
       return t ? { min: t.history_order, max: t.history_order } : null;
     }
-    const hs = (l.memo_ids ?? []).map((id) => ctx.timeline.get(memoById.get(id)?.scene_id)?.history_order).filter((x) => x !== undefined);
+    const hs = (l.memo_ids ?? []).filter((id) => !isFlashback(id)).map((id) => ctx.timeline.get(memoById.get(id)?.scene_id)?.history_order).filter((x) => x !== undefined);
     return hs.length ? { min: Math.min(...hs), max: Math.max(...hs) } : null;
   };
   const isBranchOnly = (l) => l.context_scope === 'branch' || ((l.memo_ids ?? []).length && (l.memo_ids ?? []).every((id) => memoById.get(id)?.in_branch_option));
@@ -743,6 +759,11 @@ export const validateDShard = (shard, bundle, ctx) => {
       if (ma.some((x) => mb.some((y) => memosExclusive(x, y, ctx.routes)))) err('EXCLUSIVE_BRANCH_CHAINED', `${p}.prev_link_ids`, `${pid}와 서로 배타적인 갈래의 기록을 이었다`);
       if (isBranchOnly(prev) && !isBranchOnly(l)) err('EXCLUSIVE_BRANCH_CHAINED', `${p}.prev_link_ids`, `${pid}는 한 갈래 안 기록이다. 합류 뒤 공통 기록은 갈래 밖(분기 전) 기록에 잇는다`);
       if (l.order_basis === 'official_timeline') {
+        // 연표 번호 없는 장면의 현재 메모는 연표 비교에서 빠진다(본 실행 1회차 6·7차 감사: crown_03)
+        for (const x of [prev, l]) if (!isPastish(x)) {
+          const noTl = (x.memo_ids ?? []).filter((id) => memoById.get(id) && !isFlashback(id) && ctx.timeline.get(memoById.get(id).scene_id)?.history_order === undefined);
+          if (noTl.length) warn('TIMELINE_UNKNOWN_MEMO', `${p}.order_basis`, `official_timeline인데 ${x.link_id}에 연표 번호 없는 장면 메모(${noTl.join(', ')})가 있다. 그 메모가 앞 성립의 회고가 아니면 연표 순서를 보장할 수 없다(rationale에 밝히거나 연표 있는 기록에서 잇는다)`);
+        }
         const a = posOf(prev);
         const b = posOf(l);
         if (!a || !b) err('ORDER_BASIS_INVALID', `${p}.order_basis`, `official_timeline인데 ${!a ? pid : l.link_id}의 연표 위치가 없다(회고는 timeline anchor)`);
@@ -775,6 +796,8 @@ export const validateDShard = (shard, bundle, ctx) => {
       }
     }
     if (!isPastish(l) && !l.anchor && (l.memo_ids ?? []).some((id) => memoById.get(id)?.refers_to_past)) warn('PAST_MEMO_IN_PRESENT', p, '회고 메모가 있는데 scene_present다. 관계가 발화 장면 현재에 성립·유지되는지 본다(과거 관계면 past_before_scene과 anchor)');
+    // 주장 기록에 메모가 많으면 그 사이 수락·실행·전환이 묻혔는지 본다(본 실행 1회차 감사)
+    if (l.epistemic_status === 'claimed' && (l.memo_ids ?? []).length >= CLAIM_MANY_MEMOS) warn('CLAIM_MANY_MEMOS', p, `claimed 기록 하나에 메모 ${(l.memo_ids ?? []).length}건이다. 그 사이 현장 수락·실행(established)이나 상태 변화가 끼었는지 본다(3.2·3.4절)`);
     // 확립 경고
     if (l.epistemic_status === 'established' && (l.memo_ids ?? []).length && (l.memo_ids ?? []).every((id) => memoById.get(id)?.epistemic_type === 'character_claim')) warn('ESTABLISHED_FROM_CLAIM_ONLY', p, '귀속 메모가 모두 주장인데 established다. 지문·연출로 확인했는지 본다');
   });
@@ -1431,6 +1454,14 @@ const main = async () => {
     for (const e of r.errors) console.log(`  ERROR ${e}`);
     console.log(`${r.errors.length ? '[FAIL]' : '[PASS]'} 감사 ${r.reviewed}/${input.items.length}항목, 판정 ${JSON.stringify(r.judgments)}`);
     const reviews = Array.isArray(out.reviews) ? out.reviews : [];
+    // 비차단 메모(D_AUDIT, 11-27 사용자 결정): FAIL 사유가 아니고 정리 회차(DR)·Pass 3용으로 모아 둔다
+    const minor = collectMinorNotes(reviews);
+    for (const e of minor.errors) { r.errors.push(e); console.log(`  ERROR ${e}`); }
+    if (minor.notes.length) {
+      fs.writeFileSync(path.join(P.audit, `wave_${pad(wave)}_minor.json`), JSON.stringify({ run, wave, input_sha256: out.input_sha256 ?? null, auditor_session: out.auditor_session ?? null, notes: minor.notes }, null, 2) + '\n');
+      console.log(`[audit-check] 비차단 메모 ${minor.notes.length}건 → ${path.join(P.audit, `wave_${pad(wave)}_minor.json`)}`);
+    }
+    if (minor.errors.length) console.log(`[FAIL] minor_notes 형식 오류 ${minor.errors.length}건`);
     const pc = reviews.flatMap((x) => x.problems ?? []).reduce((acc, c) => ((acc[c] = (acc[c] ?? 0) + 1), acc), {});
     console.log(`[audit-check] 감사자 ${out.auditor_family ?? '?'} / ${out.auditor_model ?? '?'} / 세션 ${out.auditor_session ?? '?'}, 문제 코드 ${JSON.stringify(pc)}`);
     for (const x of reviews.filter((y) => y.judgment !== '맞음' || (y.problems ?? []).length)) {
