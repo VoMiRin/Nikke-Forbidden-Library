@@ -66,6 +66,14 @@ export const TITLE_DESCRIPTIONS: Record<string, Record<string, string>> = {
         '신임 장교의 일지': '지휘관을 동경한 한 장교의 낡은 노트',
         '하지 말아야 할 일': '항상 함께하길 원했던 누군가가 써 내려간 슬픈 결심.',
     },
+    // 이벤트 유실물 중 게임에서 유실물로 수집하는 기록: Locale_Memorial의 memorial_<이벤트>_NN_description.
+    event_lost_relics: {
+        '침식 보고서': '레드 슈즈가 남긴 침식에 대한 자료',
+        '침식 보고서 -비공식- (1/2)': '레드 슈즈가 남긴 침식에 대한 비공식 자료 (1/2)',
+        '침식 보고서 -비공식- (2/2)': '레드 슈즈가 남긴 침식에 대한 비공식 자료 (2/2)',
+        '레드 슈즈의 목소리': '존재할 리 없는 레드 슈즈의 목소리',
+        '잊힐 그녀의 이야기': '세상에 알려지지 않을, 세계를 구하기 위해 싸워온 리틀 머메이드의 기록.',
+    },
 };
 
 export const titleDescriptionFor = (categoryKey: string | undefined, title: string | undefined): string | undefined =>
