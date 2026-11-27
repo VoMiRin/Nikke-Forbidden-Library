@@ -1,0 +1,2886 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "D1__002",
+  "endpoint_overrides": [
+    {
+      "unit_id": "U002",
+      "memo_ids": [
+        "maria-n_10__rln_005"
+      ],
+      "side": "subject",
+      "from": {
+        "ref": "entity",
+        "entity_id": "char_마리안",
+        "name": "마리안",
+        "entity_type": "character"
+      },
+      "to": {
+        "ref": "term",
+        "term_key": "A2__032#E9",
+        "name": "니케 마리아 모델",
+        "entity_type": "faction_or_species"
+      },
+      "confidence": "유력한 해석",
+      "rationale": "에닉이 토커티브가 요구한 '한 종류의 니케'가 '실버건 스쿼드의 마리아 모델'을 지칭한다고 추론하고 기존 성공 케이스 2건을 언급하므로, 개인 마리안이 아닌 부류인 니케 마리아 모델을 가리킨다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_10",
+          "line_start": 81,
+          "line_end": 83,
+          "quote": "에닉: [가능하면 한 종류의 니케를 침식 상태로 만들어 지상으로 올려라.]\n에닉: [그렇지 않으면 방주를 공격하겠다.]\n에닉: 가능하면 한 종류의. 이는 실버건 스쿼드의 마리아 모델을 지칭하는 것으로 확정."
+        },
+        {
+          "scene_id": "maria-n_10",
+          "line_start": 97,
+          "line_end": 98,
+          "quote": "에닉: 코드네임 토커티브는 마리아 모델을 활용해 퀸 제작을 의도.\n에닉: 성공한 2건의 케이스도 미완성, 불안정 등의 이유로 인해 폐기, 혹은 자멸한 것으로 추정."
+        }
+      ]
+    }
+  ],
+  "candidate_links": [
+    {
+      "link_id": "D1__002__001",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "org_중앙_정부_니케_관리부",
+          "name": "중앙 정부 니케 관리부",
+          "entity_type": "organization"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_26__rln_001",
+        "main_00_00__rln_001",
+        "blabla_marian_003__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 마리안의 소속 확인 질문에 자신의 소속을 중앙 정부 니케 관리부라고 밝힌다 / 선후·근거: 추락 직후 장면(maria-n_26·main_00_00)과 마리안의 문자 연습 대화(blabla_marian_003)에서 같은 소속 진술이 되풀이되어 한 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 27,
+          "line_end": 30,
+          "quote": "마리안: ···됐어···! 소속을 말해주세요!\n[CHOICE_START]\n  [OPTION TEXT=\"중앙 정부 니케 관리부.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "main_00_00",
+          "line_start": 24,
+          "line_end": 27,
+          "quote": "마리안: ···됐어···! 소속을 말해주세요!\n[CHOICE_START]\n  [OPTION TEXT=\"중앙 정부 니케 관리부.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "blabla_marian_003",
+          "line_start": 26,
+          "line_end": 37,
+          "quote": "  [MSG SENDER=\"마리안\"]\n    소속을 마래쥬세요\n  [MSG_END]\n  [MSG SENDER=\"마리안\"]\n    말해\n  [MSG_END]\n  [MSG SENDER=\"마리안\"]\n    문자 어려버요\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    중앙 정부 니케 관리부\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__002",
+      "unit_id": "U002",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "term",
+          "term_key": "A2__032#E9",
+          "name": "니케 마리아 모델",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_실버건_스쿼드",
+          "name": "실버건 스쿼드",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_에닉",
+          "name": "에닉",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_10__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 에닉이 토커티브가 요구한 한 종류의 니케가 실버건 스쿼드의 마리아 모델을 지칭하는 것으로 확정하며 실버건 스쿼드 소속 모델임을 밝힌다 / 선후·근거: 연표 93의 maria-n_10에서 현존하는 실버건 스쿼드 소속 모델로 확인되는 처음 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_10",
+          "line_start": 81,
+          "line_end": 84,
+          "quote": "에닉: [가능하면 한 종류의 니케를 침식 상태로 만들어 지상으로 올려라.]\n에닉: [그렇지 않으면 방주를 공격하겠다.]\n에닉: 가능하면 한 종류의. 이는 실버건 스쿼드의 마리아 모델을 지칭하는 것으로 확정.\n에닉: 코드네임 토커티브는 실버건 스쿼드의 존재에 대해 파악 중임을 확정."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__003",
+      "unit_id": "U002",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_실버건_스쿼드",
+          "name": "실버건 스쿼드",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_26__rln_007",
+        "main_00_03__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 마리안이 라피에게 자신이 실버건 스쿼드 소속이고 병과는 기관총 사수라고 밝힌다 / 선후·근거: 합류 장면을 그린 maria-n_26과 main_00_03에서 같은 소속 진술이 나타나 한 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 176,
+          "line_end": 177,
+          "quote": "라피: 마리안이라 했나? 소속과 병과는?\n마리안: 실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다."
+        },
+        {
+          "scene_id": "main_00_03",
+          "line_start": 49,
+          "line_end": 50,
+          "quote": "라피: 마리안이라 했나? 소속과 병과는?\n마리안: 실버건 스쿼드 소속이에요. 병과는 기관총 사수입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__004",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_26__rln_006",
+        "main_00_03__rln_001",
+        "main_17_14__rln_004",
+        "good_world_00__rln_001",
+        "anis_star_01__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관 인식 코드에 액세스해 스쿼드 04-F의 지휘권을 변경하여 지휘관이 스쿼드(카운터스)의 명령권자·지휘관이 되고 그 지휘 관계가 유지된다. anis_star_01에서 지휘관이 \"내가 막 카운터스의 지휘관이 됐을 때\"라며 부임 무렵을 되짚는 말도 새 지휘 상태가 아니라 이 성립의 회고라 함께 묶는다 / 선후·근거: 연표 번호가 없는 anis_star_01은 부임 무렵(maria-n_26·main_00_03)을 가리키는 회고라 이 기록의 위치를 바꾸지 않는다. 합류 장면(maria-n_26·main_00_03)에서 성립한 뒤 main_17_14의 지휘권 변경 재확인과 방주 복귀 명령 수행, good_world_00의 지문 서술까지 변화 없이 유지되어 한 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 162,
+          "line_end": 169,
+          "quote": "라피: 잠시만 실례하겠습니다.\n라피: 지휘관 인식 코드, 액세스.\n라피: ··· ···.\n라피: 스쿼드 04-F의 지휘권 변경 완료.\n아니스: 라피! 너 누군지도 모르는 인간한테 그렇게 함부로···!\n라피: 긴급사태야. 우리 앞엔 랩쳐가 있고.\n아니스: 그건··· 그렇지만···!\n라피: 현 시간부로 당신은 우리의 명령권자가 됩니다."
+        },
+        {
+          "scene_id": "main_00_03",
+          "line_start": 36,
+          "line_end": 42,
+          "quote": "라피: 지휘관 인식 코드, 액세스.\n라피: ··· ···.\n라피: 스쿼드 04-F의 지휘권 변경 완료.\n아니스: 라피! 너 누군지도 모르는 인간한테 그렇게 함부로···!\n라피: 긴급사태야. 우리 앞엔 랩쳐가 있고.\n아니스: 그건··· 그렇지만···!\n라피: 현 시간부로 당신은 우리의 명령권자가 됩니다."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line_start": 112,
+          "line_end": 115,
+          "quote": "라피: [지휘권]을 넘겨드린다고.\n라피: 그때부터 함께할 각오는 되어있었습니다.\n라피: 지휘관 인식 코드, 액세스.\n라피: 스쿼드 04-F의 지휘권 변경 완료."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line_start": 123,
+          "line_end": 136,
+          "quote": "라피: 그러니 지휘관.\n라피: 명령을 내려주십시오.\n라피: 어디든 함께하겠습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"방주로 돌아가자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예.\n아니스: 오케이!\n네온: 네!"
+        },
+        {
+          "scene_id": "anis_star_01",
+          "line_start": 24,
+          "line_end": 31,
+          "quote": "아니스: ···지휘관님, 혹시 기억나?\n아니스: 예전에 내가 방주 소개해준다고 지휘관님 데리고 돌아다녔던 거.\n아니스: 저걸 보면서 나한테 방주에 비는 내리냐, 눈은 내리냐 엄청 물어봤었잖아.\n[CHOICE_START]\n  [OPTION TEXT=\"내가 막 카운터스의 지휘관이 됐을 때 말이지?\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 응. 정확히는 내가 지휘관님한테 방주 알려준다고 둘이 돌아다녔을 때."
+        },
+        {
+          "scene_id": "good_world_00",
+          "line_start": 12,
+          "line_end": 13,
+          "quote": "TV 화면에 [카운터스 스쿼드]와 그들의 지휘관,\n지휘관의 이름과 얼굴이 비쳤다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__005",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "identity_or_naming",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_01_09__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 잉그리드가 스쿼드 명을 말하라고 하자 지휘관이 카운터스라고 명명하고 잉그리드가 이를 확인한다 / 선후·근거: 연표 120의 main_01_09에서 스쿼드 명명이 처음 성립한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_09",
+          "line_start": 22,
+          "line_end": 29,
+          "quote": "잉그리드: 훈련에 앞서, 제군들의 스쿼드 명을 받겠다.\n잉그리드: 지휘관, 스쿼드 명을 말해라.\n[CHOICE_START]\n  [OPTION TEXT=\"카운터스.\"]\n  [OPTION_END]\n[CHOICE_END]\n잉그리드: 확인했다.\n잉그리드: 그럼 카운터스 제군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__006",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_버닝엄",
+          "name": "버닝엄",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__002__004"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "chapter_49_05__rln_009"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 버닝엄이 지휘관을 카운터스의 지휘관으로 지칭한다 / 선후·근거: 앞선 지휘 성립·유지 기록(연표 95~900)보다 공식 연표 번호가 뒤인 연표 960 장면에서 같은 지휘 관계가 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_49_05",
+          "line_start": 159,
+          "line_end": 159,
+          "quote": "버닝엄: 엔더슨과 카운터스의 지휘관을 믿는다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__007",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_46_15__rln_004",
+        "blabla_arkrangerblack_001__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 스스로 카운터스의 지휘관임을 밝히고 아크레인저 블랙의 질문에 맞다고 확인한다 / 선후·근거: main_46_15와 blabla_arkrangerblack_001에서 같은 자기 진술이 되풀이되어 묶고 블라블라 장면의 연표가 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_46_15",
+          "line_start": 95,
+          "line_end": 98,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"카운터스, 특수별동대의 지휘관인 제가 보증합니다.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "blabla_arkrangerblack_001",
+          "line_start": 3,
+          "line_end": 8,
+          "quote": "  [MSG SENDER=\"아크레인저 블랙\"]\n    카운터스 지휘관인가\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    맞아\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__009",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "isabel_03__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 카운터스에 대한 공격을 멈추라고 한 뒤 이사벨의 물음에 지휘관이 자신이 그들의 지휘관이라고 밝힌다 / 선후·근거: isabel_03 L106 선택지의 한 옵션에서만 나타나는 분기 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "isabel_03",
+          "line_start": 99,
+          "line_end": 108,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"카운터스에 대한 공격을 멈춰.\"]\n  [OPTION_END]\n[CHOICE_END]\n이사벨: ···왜요?\n이사벨: 설마 당신을 제대로 지켜내지도 못한 저 니케들에게,\n이사벨: 특별한 감정이라도 품고 계셨던 건가요?\n[CHOICE_START]\n  [OPTION TEXT=\"나는 그들의 지휘관이야.\"]\n  [OPTION_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__010",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_에닉",
+          "name": "에닉",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_26__rln_013"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 에닉이 7호의 행방을 확인하며 니케 마리아 타입 처분 후 스쿼드 04-F의 지휘관으로 임명되어 별도의 특이 사항 없이 지내고 있음을 진술한다 / 선후·근거: maria-n_26 후반부 에닉의 현 상황 정리 발언이며 성립 기록의 전체 범위와 선후를 잇지 않아 독립으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 480,
+          "line_end": 482,
+          "quote": "에닉: 7호의 행방 확인 중.\n에닉: 니케 마리아 타입 처분 후 스쿼드 04-F의 지휘관으로 임명.\n에닉: 별도의 특이 사항은 관찰되지 않음."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__011",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_counters_003__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 카운터스의 블라블라 채팅방에 초대된 지휘관에게 우선순위가 낮은 명령은 이곳을 통해 해 주어도 된다고 말한다 / 선후·근거: 연표 번호가 없는 블라블라 장면의 라피 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_counters_003",
+          "line_start": 24,
+          "line_end": 29,
+          "quote": "  [MSG SENDER=\"라피\"]\n    카운터스의 블라블라 채팅방입니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    우선순위가 낮은 명령은 이곳을 통해 해주셔도 됩니다.\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__012",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_잉그리드",
+          "name": "잉그리드",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "skyontherock_13__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 잉그리드가 지휘관을 카운터스의 지휘관이라고 칭한다 / 선후·근거: 연표 번호가 없는 이벤트 장면의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "skyontherock_13",
+          "line_start": 85,
+          "line_end": 85,
+          "quote": "잉그리드: 게다가 카운터스의 지휘관이 함께했으니, 훈련을 진행하는 데 전혀 문제가 없는 상태다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__013",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_도라",
+          "name": "도라",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "dolla_01__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 도라가 지휘관이 지휘관직을 내려놓으면 카운터스 소속 니케들에게 안타까운 일이라며 지휘관이 카운터스를 맡고 있음을 말한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "dolla_01",
+          "line_start": 142,
+          "line_end": 144,
+          "quote": "도라: 그래서, 이걸로 뭘 할 건데? 지휘관직을 내려놓고, 어디서 자유로운 삶이라도 시작해볼 셈?\n도라: ···뭐, 그런 것도 나쁘진 않겠지.\n도라: [카운터스] 소속의 니케들에겐 안타까운 일이지만."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__014",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_신",
+          "name": "신",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "sin_04__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 신이 지휘관(교관)네 스쿼드를 카운터스로 지칭한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "sin_04",
+          "line_start": 155,
+          "line_end": 156,
+          "quote": "신: 그※□□런데 교관네 스쿼※□드 있잖아~\n신: 카운▣□터▣스였나? □※※거기 니케들 어※때?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__015",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_팬텀",
+          "name": "팬텀",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "phantom_00__rln_006"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 팬텀이 지휘관이 카운터스 스쿼드를 지휘하는 존재라고 말한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_00",
+          "line_start": 84,
+          "line_end": 90,
+          "quote": "팬텀: 그대가 말 한 라피라는 자는, 카운터 스쿼드 소속이오.\n팬텀: 그리고 그대가 바로, 그들을 지휘하는 존재로군.\n[CHOICE_START]\n  [OPTION TEXT=\"···카운터스.\"]\n  [OPTION_END]\n[CHOICE_END]\n팬텀: 카운터스! 스쿼드 소속이오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__016",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "surface",
+          "name": "여자 기자",
+          "entity_type": null
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "drake_greatvillain_03__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 여자 기자가 지휘관을 카운터스의 지휘관님이라고 부른다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "drake_greatvillain_03",
+          "line_start": 104,
+          "line_end": 104,
+          "quote": "여자 기자: 그럼 카운터스의 지휘관님과 함께 행동하고 있으신 이유도 있을까요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__017",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "surface",
+          "name": "남자 교수",
+          "entity_type": null
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "drake_greatvillain_04__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 남자 교수가 방송 의견에서 지휘관을 카운터스의 지휘관이라고 칭한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "drake_greatvillain_04",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "남자 교수: 본인의 인지도를 활용한 것도 있지만, 카운터스의 지휘관과 함께 했다는 점도 꽤 크게 작용했다고 봅니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__018",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_세실",
+          "name": "세실",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "hongryeon_goddeath_00__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 세실이 홍련에게 경위를 전하며 지휘관을 카운터스의 지휘관이라고 칭한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "hongryeon_goddeath_00",
+          "line_start": 48,
+          "line_end": 49,
+          "quote": "세실: 네, 없었어요. 하지만 카운터스의 지휘관을 통해 입수했죠.\n세실: 방주와 교섭해서요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__019",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_02_13__rln_006",
+        "main_11_04__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 슈엔에게 \"내 동료들에게, 사과해라.\"라고 하고, \"내 동료들이 지켜줄 테니까.\"라고 한다. 자신과 카운터스를 서로의 동료로 지목한 진술이며 화자는 지휘관이다. main_11_04에서 카운터스가 자신을 지켜 줄 것이라는 기대는 방향이 달라 따로 기록한다(D1__002__043). fool_metal_panic_03의 동료 지목은 다른 기록과 선후를 정할 수 없어 따로 둔다(D1__002__047) / 선후·근거: 연표 130(main_02_13)과 280(main_11_04)에서 같은 동료 지목이 변화 없이 되풀이된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_13",
+          "line_start": 162,
+          "line_end": 164,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"내 동료들에게, 사과해라.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "main_11_04",
+          "line_start": 24,
+          "line_end": 28,
+          "quote": "맥스웰: 흐음···. 무슨 자신감이래?\n[CHOICE_START]\n  [OPTION TEXT=\"내 동료들이 지켜줄 테니까.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__047",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "fool_metal_panic_03__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 독백에서 카운터스를 \"나와 함께 사선을 넘나든 진정한 동료\"라고 부른다. 자신과 카운터스를 서로의 동료로 지목한 진술이며 화자는 지휘관이다 / 선후·근거: 연표가 없는 fool_metal_panic_03 L66의 독백이라 본편 기록과 선후를 정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "fool_metal_panic_03",
+          "line_start": 65,
+          "line_end": 66,
+          "quote": "터무니 없는 얘기긴 하다.\n하지만 나와 함께 사선을 넘나든 진정한 동료, 카운터스라면 내 말을 믿어줄 것이 분명하다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__048",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "fool_metal_panic_03__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 같은 독백에서 지휘관이 \"카운터스라면 내 말을 믿어줄 것이 분명하다.\"라며 카운터스가 자신의 말을 믿어 줄 것이라고 확신한다. 카운터스→지휘관 방향의 신뢰에 대한 지휘관의 기대다 / 선후·근거: fool_metal_panic_03 L66의 독백이며 같은 장면의 대원들 반응(D1__002__049)으로 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "fool_metal_panic_03",
+          "line_start": 65,
+          "line_end": 66,
+          "quote": "터무니 없는 얘기긴 하다.\n하지만 나와 함께 사선을 넘나든 진정한 동료, 카운터스라면 내 말을 믿어줄 것이 분명하다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__049",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__002__048"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "fool_metal_panic_03__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 네온에 따르면 라피는 지휘관이 만우절에 도와달라며 이상한 얘기를 꺼낸다는 쪽에 걸었다. 라피가 나를 그렇게 생각했느냐는 지휘관에게 라피는 \"다른 의미로 믿고 있었다고 생각해 주시면 감사하겠습니다.\"라고 답한다. 지휘관의 말을 믿어 줄 것이라는 기대와 달리, 라피는 그 말을 만우절 장난으로 예상하고 있었다는 라피 자신의 진술이다. 반대쪽에 건 아니스의 평가는 따로 기록한다 / 선후·근거: 같은 이야기 fool_metal_panic_03 L66의 기대(D1__002__048) 뒤 메신저 L99~105의 줄 순서로 잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "fool_metal_panic_03",
+          "line_start": 98,
+          "line_end": 99,
+          "quote": "  [MSG SENDER=\"네온\"]\n    라피가 얘기 한다에 걸었어요"
+        },
+        {
+          "scene_id": "fool_metal_panic_03",
+          "line_start": 101,
+          "line_end": 105,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    라피가 나를 그렇게 생각했다니\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    다른 의미로 믿고 있었다고 생각해 주시면 감사하겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__050",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__002__048"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "fool_metal_panic_03__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 네온에 따르면 아니스는 지휘관이 이상한 얘기를 꺼내지 않는다는 쪽에 걸었다. 지휘관이 도움을 청하자 아니스는 \"아 진짜 어떻게 매년 그렇게 뻔한 수법만 쓰는 거야\", \"올해는 좀 다르지 않을까 했더니\"라며 지휘관의 연락을 해마다 되풀이되는 만우절 수법으로 평가한다. 믿어 줄 것이라는 지휘관의 기대와 부딪히는 아니스의 진술이며, 라피의 답(D1__002__049)과는 다른 평가다 / 선후·근거: 같은 이야기 fool_metal_panic_03 L66의 기대(D1__002__048) 뒤 메신저 L96·L108~111의 줄 순서로 잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "fool_metal_panic_03",
+          "line_start": 95,
+          "line_end": 96,
+          "quote": "  [MSG SENDER=\"네온\"]\n    참고로 아니스가 얘기 안 한다"
+        },
+        {
+          "scene_id": "fool_metal_panic_03",
+          "line_start": 107,
+          "line_end": 111,
+          "quote": "  [MSG SENDER=\"아니스\"]\n    아 진짜 어떻게 매년 그렇게 뻔한 수법만 쓰는 거야\n  [MSG_END]\n  [MSG SENDER=\"아니스\"]\n    올해는 좀 다르지 않을까 했더니"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__043",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_11_04__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 무슨 자신감이냐는 맥스웰의 말에 지휘관이 \"내 동료들이 지켜줄 테니까.\"라며 카운터스가 자신을 지켜 줄 것이라고 기대를 밝힌다. 카운터스→지휘관 방향의 보호에 대한 지휘관의 주장이다 / 선후·근거: main_11_04(연표 280) L24-26의 진술이며 같은 방향의 다른 기록과 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_04",
+          "line_start": 24,
+          "line_end": 28,
+          "quote": "맥스웰: 흐음···. 무슨 자신감이래?\n[CHOICE_START]\n  [OPTION TEXT=\"내 동료들이 지켜줄 테니까.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__044",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_15_13__rln_004",
+        "main_16_05__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 침식된 동료들을 쏘는 악몽을 막을 수 있다면 \"나는 뭐든 할 거야.\"라고 하고, main_16_05에서는 \"어떤 식으로든 너희들에게 걸림돌이 되고 싶지는 않으니까.\"라며 카운터스를 지키고 짐이 되지 않으려는 뜻을 밝힌다. 지휘관→카운터스 방향의 보호 의지다 / 선후·근거: main_15_13(연표 330)과 main_16_05(연표 380)에서 같은 방향의 의지가 이어져 한 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_15_13",
+          "line_start": 24,
+          "line_end": 33,
+          "quote": "  [OPTION TEXT=\"자주 꾸는 악몽이 있어.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"···침식된 너희를 내가 쏘는 꿈이야.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"그걸 막을 수 있다면 나는 뭐든 할 거야.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "main_16_05",
+          "line_start": 41,
+          "line_end": 48,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"아니스. 나는 괜찮아.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"어떤 식으로든 너희들에게 걸림돌이 되고 싶지는 않으니까.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__041",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_크로우",
+          "name": "크로우",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__002__019"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_16_03__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 크로우가 \"저 신입 지휘관이 조금 친절하게 대해줬다고 해서, 동료라도 된 줄 아나 본데.\"라며 지휘관과 카운터스가 동료라는 것을 부정한다 / 선후·근거: L38은 앞 기록(D1__002__019)의 발언을 직접 가리키지 않는다. 019의 main_02_13(연표 130)·main_11_04(연표 280)가 main_16_03(연표 380)보다 앞서므로 연표 비교로 잇는다. 같은 장면 안의 재반박(D1__002__045·042)은 줄 순서로 잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_16_03",
+          "line_start": 37,
+          "line_end": 38,
+          "quote": "크로우: 너희야말로 매사에 다 안일해서 어떻게 살지?\n크로우: 저 신입 지휘관이 조금 친절하게 대해줬다고 해서, 동료라도 된 줄 아나 본데."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__045",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__002__041"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_16_03__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 동료라도 된 줄 아느냐는 크로우의 부정에 지휘관이 \"우리는 동료야.\"라고 맞받아 자신과 카운터스가 동료라고 다시 말한다 / 선후·근거: 같은 장면 main_16_03 L38의 크로우 부정(D1__002__041) 바로 뒤 L40의 대답이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_16_03",
+          "line_start": 40,
+          "line_end": 40,
+          "quote": "  [OPTION TEXT=\"우리는 동료야.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__042",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_크로우",
+          "name": "크로우",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__002__045"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_16_03__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: \"우리는 동료야.\"라는 지휘관의 말에 크로우가 \"다 같이 개고생 한다는 점에선 동료가 맞지.\"라고 받으면서도, 방주에 내려가면 니케는 고철로 전락하고 지휘관은 영웅이 된다며 \"그런 게 너희가 말하는 동료라면, 방주 총사령관과 나도 참 사이좋은 동료겠군.\"이라고 다시 비꼬아 반박한다 / 선후·근거: 같은 장면 L40의 지휘관 재반박(D1__002__045) 뒤 L43-47에서 크로우가 다시 반박한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_16_03",
+          "line_start": 43,
+          "line_end": 47,
+          "quote": "크로우: 뭐, 다 같이 개고생 한다는 점에선 동료가 맞지.\n크로우: 하지만 방주에 내려가면 어떨까?\n크로우: 누군 말하는 고철 덩어리로 전락하고,\n크로우: 누구는 그 고철이 세운 공로로 떵떵거리는 영웅이 될 텐데.\n크로우: 그런 게 너희가 말하는 동료라면,  방주 총사령관과 나도 참 사이좋은 동료겠군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__020",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_16_02__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 눈앞의 카운터스 대원들에게 \"그럴 능력은 없지만, 적어도 너희가 인간다운 대우를 받도록 노력할 순 있겠지.\"라고 다짐한다. 아니스는 니케 인권 운동가가 어떤 눈으로 보이는지 일깨우며 \"난 우리 때문에 지휘관 님이 위험해지는 건 싫거든.\"이라고 답한다. 니케 인권 이야기는 그 다짐의 위험을 설명하는 일반론이고, 다짐을 직접 받는 쪽은 \"너희\"로 불린 카운터스다 / 선후·근거: 연표 380의 main_16_02에서 확인되는 지휘관의 다짐이며, 다른 동료 진술 기록(D1__002__019)과 장면 순서가 섞여 사슬로 잇지 않고 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_16_02",
+          "line_start": 25,
+          "line_end": 28,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그럴 능력은 없지만, 적어도 너희가 인간다운 대우를 받도록 노력할 순 있겠지.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_16_02",
+          "line_start": 41,
+          "line_end": 41,
+          "quote": "아니스: 그런데 난 우리 때문에 지휘관 님이 위험해지는 건 싫거든. 절대로."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__021",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "dolla_01__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 도라가 카운터스 소속 니케들을 언급하자 지휘관이 니케들을 배신할 생각은 없다고 밝힌다 / 선후·근거: dolla_01 L145 선택지의 한 옵션에서만 나타나는 분기 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "dolla_01",
+          "line_start": 144,
+          "line_end": 149,
+          "quote": "도라: [카운터스] 소속의 니케들에겐 안타까운 일이지만.\n[CHOICE_START]\n  [OPTION TEXT=\"그런 짓은 하지 않아.\"]\n  [OPTION_END]\n  [OPTION TEXT=\"니케들을 배신할 생각은 없어.\"]\n  [OPTION_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__022",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "isabel_03__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 특별한 감정이라도 품었느냐는 이사벨의 물음에 지휘관이 선택지 한 갈래에서 \"그들은 나의 소중한 동료야.\"라고 답한다. 자신과 카운터스를 서로의 동료로 지목한 진술이며 화자는 지휘관이다 / 선후·근거: isabel_03 L106 선택지 한 옵션 안에서만 나오는 진술이라 branch 맥락의 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "isabel_03",
+          "line_start": 99,
+          "line_end": 102,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"카운터스에 대한 공격을 멈춰.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "isabel_03",
+          "line_start": 106,
+          "line_end": 111,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"나는 그들의 지휘관이야.\"]\n  [OPTION_END]\n  [OPTION TEXT=\"그들은 나의 소중한 동료야.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__023",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엠마",
+          "name": "엠마",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "emma_02__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 엠마가 카운터스가 지휘관을 따르는 것은 지휘관이 다다르려는 이상향이 그들에게도 충분히 의미 있기 때문이라고 말한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "emma_02",
+          "line_start": 96,
+          "line_end": 98,
+          "quote": "엠마: 물론 이번 임무에서처럼, 슈엔의 변덕에 휘둘리는 건 달갑지 않겠지만~\n엠마: 그럼에도 카운터스가 지휘관을 따르는 건.\n엠마: 그 사지를 넘어 지휘관이 다다르려는 이상향이, 그들에게도 충분히 의미 있기 때문이라고 생각해."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__051",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_17_14__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 함께 도망쳐야 할지 묻는 지휘관에게 라피가 \"저희는 걱정하지 마십시오.\"라며 지휘권을 넘겨드린 \"그때부터 함께할 각오는 되어있었습니다.\"라고 일행을 대표해 밝히고, 지휘권 변경을 다시 수행한 뒤 \"어디든 함께하겠습니다.\"라고 재확인한다. 카운터스→지휘관 방향의 동행·협력 의지에 대한 라피의 진술이다. 지휘권 자체는 D1__002__004에 있다 / 선후·근거: main_17_14(연표 400) L110~125의 진술이며, 카운터스→지휘관 방향의 다른 기록과 잇는 근거가 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_17_14",
+          "line_start": 110,
+          "line_end": 113,
+          "quote": "라피: 지휘관, 저희는 걱정하지 마십시오.\n라피: 말씀드렸지 않습니까.\n라피: [지휘권]을 넘겨드린다고.\n라피: 그때부터 함께할 각오는 되어있었습니다."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line_start": 123,
+          "line_end": 125,
+          "quote": "라피: 그러니 지휘관.\n라피: 명령을 내려주십시오.\n라피: 어디든 함께하겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__052",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_17_14__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 같은 물음에 아니스가 \"이미 우린 늦었어. 한배를 탄지 오래라고.\"라며 이제 와서 새삼스럽다고 답한다. 카운터스가 이미 지휘관과 운명을 함께하고 있다는 아니스의 진술로, 라피의 각오 표명(앞 기록)과 화자를 나눈다 / 선후·근거: main_17_14(연표 400) L104~106의 진술이며 다른 기록과 잇는 근거가 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_17_14",
+          "line_start": 104,
+          "line_end": 106,
+          "quote": "아니스: 하하! 이제 와서 무슨 소리 하는 거야.\n아니스: 이미 우린 늦었어. 한배를 탄지 오래라고.\n아니스: 죽을뻔한 게 몇 번인데 새삼?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__024",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_길로틴",
+          "name": "길로틴",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_external_003__rln_006"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 길로틴이 \"벗과 카운터스는 상성이 좋은 것 같아\"라고 두 대상 사이의 궁합을 평가한다. 지휘관의 맞장구는 따로 기록한다(D1__002__046) / 선후·근거: 연표 번호가 없는 메신저 blabla_external_003 L174-175의 평가라 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_external_003",
+          "line_start": 174,
+          "line_end": 175,
+          "quote": "  [MSG SENDER=\"길로틴\"]\n    벗과 카운터스는 상성이 좋은 것 같아"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__046",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__002__024"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "blabla_external_003__rln_006"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 둘의 상성이 좋다는 길로틴의 평가에 지휘관이 \"완전 좋지\"라고 동의한다 / 선후·근거: 같은 장면 L175의 길로틴 평가(D1__002__024) 바로 뒤 L178의 대답이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_external_003",
+          "line_start": 177,
+          "line_end": 178,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    완전 좋지"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__025",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "org_사관학교",
+          "name": "사관학교",
+          "entity_type": "organization"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_13__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 마리아-n에게 어제 갓 사관학교를 졸업했다고 말한다 / 선후·근거: 발화 시점 이전의 사관학교 졸업 이력을 말하며 실제 졸업 장면이 대본에 없어 독립으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_13",
+          "line_start": 294,
+          "line_end": 297,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"어제 갓 사관학교를 졸업했는데 지휘관이라고 부르면 민망해.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__026",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "org_사관학교",
+          "name": "사관학교",
+          "entity_type": "organization"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_26__rln_008",
+        "main_00_04__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 아니스가 검색을 통해 지휘관이 어제 사관학교를 졸업한 완전 생 신입이라고 밝히며, 클론이 성장 후 사관학교를 졸업해 동면한다는 에닉의 설명과 어제 갓 사관학교를 졸업한 인물로 신분이 준비되어 있다는 닥터 마리아의 발언이 함께 확인된다 / 선후·근거: 합류 장면을 그린 maria-n_26과 main_00_04의 동일 진술을 묶고 실제 졸업 장면이 없어 독립으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_26",
+          "line_start": 220,
+          "line_end": 222,
+          "quote": "아니스: ···이 지휘관님. 완전 생 신입인데?\n라피: ···뭐?\n아니스: 어제 사관학교를 졸업했대."
+        },
+        {
+          "scene_id": "main_00_04",
+          "line_start": 32,
+          "line_end": 34,
+          "quote": "아니스: ···이 지휘관님. 완전 생 신입인데?\n라피: ···뭐?\n아니스: 어제 사관학교를 졸업했대."
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "maria-n_17",
+          "line_start": 190,
+          "line_end": 194,
+          "quote": "에닉: 성장을 마친 클론은 사관학교로 가 엘리트 코스를 밟습니다.\n닥터 마리아: 엘리트 코스 같은 소리하네. 거기 머저리 양성소잖아.\n에닉: ···일부 동의합니다.\n에닉: 이후 사관 학교를 졸업 후 동면 상태에 돌입합니다.\n에닉: 필요시, 언제든 [꺼내 쓸 수 있도록] 하기 위함입니다."
+        },
+        {
+          "scene_id": "maria-n_25",
+          "line_start": 22,
+          "line_end": 24,
+          "quote": "마리안: 지휘관은요?\n닥터 마리아: 깔끔해. 애초에 어제 갓 사관학교를 졸업한 인물로 되어 있으니까.\n닥터 마리아: 신분도 다 준비되어 있으니까, 문제 없을거야."
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__027",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "org_사관학교",
+          "name": "사관학교",
+          "entity_type": "organization"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_얀",
+          "name": "얀",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_yan_001__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 얀이 듣기로 지휘관이 사관학교를 나온 지 얼마 되지도 않은 신참이라고 말한다 / 선후·근거: 발화 시점 이전의 사관학교 배출 이력을 말하며 성립 장면이 없어 독립으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_yan_001",
+          "line_start": 15,
+          "line_end": 20,
+          "quote": "  [MSG SENDER=\"얀\"]\n    듣자니 사관학교 나온지 얼마 되지도 않은\n  [MSG_END]\n  [MSG SENDER=\"얀\"]\n    신참이라 카던데\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__028",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "org_사관학교",
+          "name": "사관학교",
+          "entity_type": "organization"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_은화",
+          "name": "은화",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_eunhwa_004__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 은화가 지휘관에게 건강한 육체에 건전한 정신이 깃든다고 사관학교에서 배우지 않았느냐고 말한다 / 선후·근거: 발화 시점 이전의 사관학교 교육 이력을 말하며 성립 장면이 없어 독립으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_eunhwa_004",
+          "line_start": 62,
+          "line_end": 67,
+          "quote": "  [MSG SENDER=\"은화\"]\n    건강한 육체에 건전한 정신이 깃든다고\n  [MSG_END]\n  [MSG SENDER=\"은화\"]\n    사관학교에서 배우지 않았어?\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__029",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_01_02__rln_002",
+        "main_01_10__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 방주 정보부 소속 오퍼레이터 시프티가 현 시간부로 지휘관의 작전을 서포팅하기로 상호 인사·수락하고 작전 개시에 맞춰 서포트하러 합류한다 / 선후·근거: 연표 120의 main_01_02에서 서포팅 협력 관계가 성립하고 같은 장의 main_01_10에서 실행으로 이어져 한 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_02",
+          "line_start": 21,
+          "line_end": 27,
+          "quote": "시프티: 지휘관님 안녕하세요? 방주 정보부 소속 오퍼레이터, 시프티라고 합니다.\n시프티: 현 시간부로 작전을 서포팅 하게 되었습니다. 잘 부탁드려요.\n[CHOICE_START]\n  [OPTION TEXT=\"앞으로 잘 부탁해.\"]\n  [OPTION_END]\n[CHOICE_END]\n시프티: 예!"
+        },
+        {
+          "scene_id": "main_01_10",
+          "line_start": 61,
+          "line_end": 61,
+          "quote": "시프티: 작전 개시라고 들었어요. 서포트하러 왔죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__030",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__002__029"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_28_02__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 시프티가 지휘관이 준비되지 않은 선전포고로 너덜너덜해지길 원하지 않는다며 방주에서 힘을 가지길 원한다는 대화 기록을 지우겠다고 밝힌다 / 선후·근거: 작전 서포트 성립 기록(연표 120)보다 공식 연표 번호가 뒤인 연표 610 장면에서 지휘관을 아끼고 보호하려는 태도로 깊어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_28_02",
+          "line_start": 134,
+          "line_end": 137,
+          "quote": "시프티: 이 대화는 기록에서 지울게요.\n시프티: 방주에서 힘을 가지길 원한다는 말은, 선전포고나 다름없거든요.\n시프티: 준비되지 않은 상태에서의 선전포고의 결과는, 그저 너덜너덜해질 뿐이에요.\n시프티: 지휘관이 그렇게 되길 원하진 않거든요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__031",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "viper_00__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 시프티가 능력뿐 아니라 의지가 중요한 이런 명령을 수행할 사람은 지휘관밖에 없다고 평가한다 / 선후·근거: 연표 번호가 없는 viper_00의 회상 구간 진술이므로 사슬 밖 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "viper_00",
+          "line_start": 68,
+          "line_end": 70,
+          "quote": "시프티: 네. 부사령관님밖에 없죠. 이런 명령을 내리실 분은.\n시프티: 그리고 이런 명령을 수행할 사람은 지휘관밖에 없구요.\n시프티: 능력도 능력이지만, 이런 일은 의지가 중요하니까요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__032",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "full_fool_day_02__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 랩쳐가 몰려오자 시프티가 지휘관에게 자신을 도와 지휘해 달라고 요청한다 / 선후·근거: 지휘관의 응답 전에 장면이 끝나며 연표 번호가 없는 특별 스토리 장면이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "full_fool_day_02",
+          "line_start": 20,
+          "line_end": 23,
+          "quote": "시프티: 이, 일단 저 좀 도와주세요!\n시프티: 래, 랩쳐가 몰려오고 있으니까! 저 좀 지휘해 주세요!\n시프티: 오, 오오오! 옵니다!!\n[SCENE END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__033",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "full_fool_day_05__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 시프티가 랩쳐들과 지상 환경을 자신을 위해 준비해 주었다고 여기며 지휘관에게 고마움을 밝힌다 / 선후·근거: 연표 번호가 없는 특별 스토리 장면의 감사 표현이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "full_fool_day_05",
+          "line_start": 22,
+          "line_end": 24,
+          "quote": "시프티가 허리를 숙여 인사했다.\n시프티: 고맙습니다. 지휘관.\n시프티: 이곳의 랩쳐들도, 지상의 환경도. 저를 위해 준비해 주시느라 고생 많으셨어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__034",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_01_09__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 배석한 훈련 브리핑에서 지휘관이 스쿼드 명을 카운터스로 정하고 잉그리드가 카운터스 제군이라 확인하여 라피의 카운터스 소속이 성립한다 / 선후·근거: 연표 120의 main_01_09에서 카운터스 소속이 처음 확립된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_09",
+          "line_start": 21,
+          "line_end": 29,
+          "quote": "라피: ··· ···.\n잉그리드: 훈련에 앞서, 제군들의 스쿼드 명을 받겠다.\n잉그리드: 지휘관, 스쿼드 명을 말해라.\n[CHOICE_START]\n  [OPTION TEXT=\"카운터스.\"]\n  [OPTION_END]\n[CHOICE_END]\n잉그리드: 확인했다.\n잉그리드: 그럼 카운터스 제군."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__035",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_에닉",
+          "name": "에닉",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__002__034"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_04_12__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 에닉이 판결에서 라피를 카운터스 소속 니케로 지칭한다 / 선후·근거: 카운터스 소속 성립(연표 120)보다 공식 연표가 뒤인 연표 160 장면에서 소속이 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_12",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "에닉: 소동의 주역인 워드리스와 카운터스. 해당 스쿼드의 리더인 니케 라피와 미하라에게."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__036",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "status_or_rank",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_에닉",
+          "name": "에닉",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_04_12__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 에닉이 라피를 카운터스 스쿼드의 리더라는 직위로 지칭한다 / 선후·근거: 연표 160의 main_04_12에서 카운터스 내 리더 직위가 처음 확인된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_12",
+          "line_start": 17,
+          "line_end": 17,
+          "quote": "에닉: 소동의 주역인 워드리스와 카운터스. 해당 스쿼드의 리더인 니케 라피와 미하라에게."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__037",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미하라",
+          "name": "미하라",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__002__035"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_12_10__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 미하라가 카운터스를 떠올리며 아니스·네온과 함께 라피를 카운터스 구성원으로 언급한다 / 선후·근거: 앞선 소속 진술(연표 160)보다 공식 연표가 뒤인 연표 290 장면에서 같은 소속 상태가 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_12_10",
+          "line_start": 19,
+          "line_end": 20,
+          "quote": "미하라: ···아. 카운터스.\n미하라: 아니스와 네온, 라피였지?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__038",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__002__037"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_27_04__rln_002",
+        "boom_the_ghost_11__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 스스로 카운터스 소속임을 밝히고 도로시에게 카운터스가 결성된 이후의 이야기를 전하며 카운터스에 들어오면 다 이야기해 줄 수 있다고 현 소속을 재확인한다 / 선후·근거: 앞선 기록(연표 290)보다 공식 연표가 뒤인 연표 600(main_27_04)과 연표 690(boom_the_ghost_11)에서 라피 본인의 같은 소속 진술이 이어져 한 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_27_04",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "라피: 카운터스 소속의 라피, 아니스, 네온이야."
+        },
+        {
+          "scene_id": "boom_the_ghost_11",
+          "line_start": 75,
+          "line_end": 87,
+          "quote": "용병처럼 떠돌다 아니스와 만난 일.\n카운터스가 결성되고 난 이후의 이야기들.\n그리고 강대한 적과 만나 위기의 순간을 겪었을 때, 계승이라는 것의 의미를 깨닫고.\n진정한 의미로 레드 후드를 계승하게 되었다는 이야기까지.\n라피는 덤덤하게 이야기했다.\n도로시: ··· ···.\n라피: 그리고 지금 나는, 네 앞에서 내 이야기를 하고 있어.\n도로시: 강대한 적··· 헬레틱인가요? 그리고 지상에서 만난 동료라니, 그건 또 뭐죠?\n라피: ··· ···.\n라피: 그 구성원에 대한 이야기는 디테일하게 하진 않을게.\n라피: 네가 들으면··· 음. 아무튼 리스크가 너무 높아.\n도로시: ···?\n라피: 네가 카운터스에 들어온다면 다 이야기해 줄 수 있지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__039",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_팬텀",
+          "name": "팬텀",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "phantom_00__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 팬텀이 라피가 카운터스 스쿼드 소속이라고 말한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "phantom_00",
+          "line_start": 84,
+          "line_end": 90,
+          "quote": "팬텀: 그대가 말 한 라피라는 자는, 카운터 스쿼드 소속이오.\n팬텀: 그리고 그대가 바로, 그들을 지휘하는 존재로군.\n[CHOICE_START]\n  [OPTION TEXT=\"···카운터스.\"]\n  [OPTION_END]\n[CHOICE_END]\n팬텀: 카운터스! 스쿼드 소속이오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__002__040",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_메이든",
+          "name": "메이든",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_external_003__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 메이든이 카운터스를 분석하며 항상 차분하게 주위를 살피는 라피가 있어 큰 문제 없이 임무를 완수하고 팀 내 균형이 잘 잡혀 있다고 말한다 / 선후·근거: 연표 번호가 없는 블라블라 대화의 제3자 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_external_003",
+          "line_start": 135,
+          "line_end": 143,
+          "quote": "  [MSG SENDER=\"메이든\"]\n    우선 카운터스\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    왠지 떨리네\n  [MSG_END]\n  [MSG SENDER=\"메이든\"]\n    그들은 보기보다 밸런스가 좋아요\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_external_003",
+          "line_start": 153,
+          "line_end": 161,
+          "quote": "  [MSG SENDER=\"메이든\"]\n    항상 차분하게 주위를 살피는 라피가 있어\n  [MSG_END]\n  [MSG SENDER=\"메이든\"]\n    큰 문제없이 임무를 완수하죠\n  [MSG_END]\n  [MSG SENDER=\"메이든\"]\n    팀 내 균형이 잘 잡혀있다고 볼 수 있어요\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "excluded_memos": [],
+  "merge_suggestions": []
+}

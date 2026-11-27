@@ -1,0 +1,3923 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "D1__018",
+  "endpoint_overrides": [
+    {
+      "unit_id": "U010",
+      "memo_ids": [
+        "main_08_00__rln_001",
+        "main_08_05__rln_003"
+      ],
+      "side": "subject",
+      "from": {
+        "ref": "entity",
+        "entity_id": "char_시프티",
+        "name": "시프티",
+        "entity_type": "character"
+      },
+      "to": {
+        "ref": "entity",
+        "entity_id": "char_슈엔",
+        "name": "슈엔",
+        "entity_type": "character"
+      },
+      "confidence": "유력한 해석",
+      "rationale": "main_09_07에서 8챕터부터 동행한 시프티는 한 달 전부터 합숙 교육 중인 진짜 시프티가 아니라 미실리스 CEO 슈엔이 처음부터 딥 페이크로 위장한 것임이 밝혀진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_07",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "슈엔: 쨘- 사실 시프티는 미실리스의 CEO 슈엔이었습니다!"
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 36,
+          "line_end": 43,
+          "quote": "슈엔: 그래서 딥 페이크를 써보기로 했어.\n슈엔: 한 달이나 공을 들인 보람이 있네. 다들 감쪽같이 속아넘어가서는.\n슈엔: 어땠어? 진짜 시프티 같지 않았어?\n슈엔: 연기 죽이지? 응?\n아니스: 시프티는 어떻게 했지?\n슈엔: 정기 합숙 훈련인가 뭐던가. 아무튼 한 달 전부터 거기서 교육 중이야.\n아니스: 아, 그럼 처음부터 시프티인 척 한 건가?\n슈엔: 그렇지."
+        }
+      ]
+    },
+    {
+      "unit_id": "U011",
+      "memo_ids": [
+        "main_08_01__rln_001",
+        "main_08_05__rln_004",
+        "main_09_00__rln_003"
+      ],
+      "side": "target",
+      "from": {
+        "ref": "entity",
+        "entity_id": "char_시프티",
+        "name": "시프티",
+        "entity_type": "character"
+      },
+      "to": {
+        "ref": "entity",
+        "entity_id": "char_슈엔",
+        "name": "슈엔",
+        "entity_type": "character"
+      },
+      "confidence": "유력한 해석",
+      "rationale": "main_09_07에서 지상에 올라온 카운터스에게 달라붙어 동행한 시프티는 한 달 전부터 합숙 교육 중인 진짜 시프티가 아니라 처음부터 딥 페이크로 위장한 슈엔이었음이 드러나므로, 아니스가 감시를 의심하고 말을 건네며 비밀 공유를 경계한 현장 대상은 슈엔이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_07",
+          "line_start": 24,
+          "line_end": 24,
+          "quote": "슈엔: 쨘- 사실 시프티는 미실리스의 CEO 슈엔이었습니다!"
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 36,
+          "line_end": 43,
+          "quote": "슈엔: 그래서 딥 페이크를 써보기로 했어.\n슈엔: 한 달이나 공을 들인 보람이 있네. 다들 감쪽같이 속아넘어가서는.\n슈엔: 어땠어? 진짜 시프티 같지 않았어?\n슈엔: 연기 죽이지? 응?\n아니스: 시프티는 어떻게 했지?\n슈엔: 정기 합숙 훈련인가 뭐던가. 아무튼 한 달 전부터 거기서 교육 중이야.\n아니스: 아, 그럼 처음부터 시프티인 척 한 건가?\n슈엔: 그렇지."
+        }
+      ]
+    }
+  ],
+  "candidate_links": [
+    {
+      "link_id": "D1__018__001",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미러",
+          "name": "미러",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_09__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 미러가 토커티브는 과거 남자 니케 프로젝트의 희생양이 되어 실패작으로서 방주에게 버림받았다고 말한다 / 선후·근거: maria-n_09 이전 과거의 일을 말한 회고 진술이며 성립 장면을 특정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 105,
+          "line_end": 106,
+          "quote": "미러: 남자 니케라는 바보 같은 프로젝트의 희생양이 된 걸로는 모자라나요?\n미러: 실패작이 되어 방주에게 버림받았으면서, 이젠 랩쳐에게도 버림받고 싶으신건가요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__002",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "lore_or_management",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미러",
+          "name": "미러",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_10__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 미러가 토커티브에게 방주에 연락해 전하라고 지시하며 방주를 토커티브의 고향이라 부른다 / 선후·근거: maria-n_10 이전 출신지 관계를 가리키는 진술이며 성립 시점을 특정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_10",
+          "line_start": 15,
+          "line_end": 17,
+          "quote": "미러: 토커티브. 방주에 연락해줘요.\n토커티브: [···뭐?]\n미러: 방주에 연락해서 이대로 전해줘요."
+        },
+        {
+          "scene_id": "maria-n_10",
+          "line_start": 25,
+          "line_end": 26,
+          "quote": "미러: 잔말말고 이대로 전해줘요.\n미러: 오랜만에 고향에 연락도 하고, 좋잖아요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__003",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_06_07__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브가 방주와 내통하고 있느냐는 질문에 그렇다고 시인한다 / 선후·근거: main_06_07에서 방주와의 내통 관계를 처음 시인한 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_07",
+          "line_start": 53,
+          "line_end": 57,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"네가 방주와 내통하고 있는 건가?\"]\n  [OPTION_END]\n[CHOICE_END]\n토커티브: [그렇다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__004",
+      "unit_id": "U002",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_06_08__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 헬레틱을 퀸의 직속이라 부른다 / 선후·근거: 연표 210인 main_06_08에서 확인된 첫 진술이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_08",
+          "line_start": 26,
+          "line_end": 27,
+          "quote": "스노우 화이트: ···헬레틱.\n스노우 화이트: 퀸의 직속. 이단···!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__005",
+      "unit_id": "U002",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_인디빌리아",
+          "name": "인디빌리아",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__004"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "last_kingdom_42__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 인디빌리아가 헬레틱을 퀸의 정예들이라 말한다 / 선후·근거: 앞 기록(연표 210)보다 뒤인 연표 540의 last_kingdom_42에서 다른 화자가 같은 상하 관계를 말한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_42",
+          "line_start": 12,
+          "line_end": 13,
+          "quote": "인디빌리아: 우리 헬레틱···. 그러니까 퀸의 정예들은.\n인디빌리아: 서로의 존재에 대해 인지하게 돼요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__006",
+      "unit_id": "U002",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_니힐리스타",
+          "name": "니힐리스타",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "script",
+        "evidence": [
+          {
+            "scene_id": "eden_spear_08",
+            "line_start": 21,
+            "line_end": 22,
+            "quote": "니힐리스타: 퀸의 목소리가 들리지 않게 되기 전까지, 우리가 지겹도록 듣던 말은 그거였어.\n니힐리스타: [릴리스의 바디를 찾아라]."
+          }
+        ]
+      },
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "eden_spear_08__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 니힐리스타가 퀸의 목소리가 들리지 않게 되기 전까지 헬레틱들이 뇌리에 새겨지는 명령 같은 퀸의 목소리를 들었다고 말한다 / 선후·근거: eden_spear_08 대사에서 목소리가 끊기기 전의 과거 상태임을 직접 밝히며 정확한 연표 시점은 알 수 없어 새 사슬의 출발점으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "eden_spear_08",
+          "line_start": 10,
+          "line_end": 12,
+          "quote": "나유타: 목소리. 헬레틱은 퀸의 목소리를 듣는 것이오?\n니힐리스타: 그래. 정확히는··· 목소리는 아니야.\n니힐리스타: 그냥 뇌리에 새겨지는 명령··· 같은 거라고 보면 되겠지."
+        },
+        {
+          "scene_id": "eden_spear_08",
+          "line_start": 21,
+          "line_end": 22,
+          "quote": "니힐리스타: 퀸의 목소리가 들리지 않게 되기 전까지, 우리가 지겹도록 듣던 말은 그거였어.\n니힐리스타: [릴리스의 바디를 찾아라]."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__007",
+      "unit_id": "U002",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_니힐리스타",
+          "name": "니힐리스타",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__006"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "eden_spear_08__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 니힐리스타가 어느 순간부터 벽 같은 것에 막혀 퀸의 목소리가 들리지 않게 되었고 현재 우주에 있는 퀸은 헬레틱에게 영향을 미칠 수 없다고 말한다 / 선후·근거: eden_spear_08 원문에서 목소리를 듣던 과거 뒤로 목소리가 끊겨 현재 영향을 미칠 수 없게 된 전환을 직접 서술한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "eden_spear_08",
+          "line_start": 14,
+          "line_end": 18,
+          "quote": "니힐리스타: 아무튼 어느 순간부터 퀸에게서 목소리가 들려오지 않게 됐어.\n니힐리스타: 벽 같은 것에 막혔다고 해야 하나···. 점점 작아지다가 결국 들리지 않게 되었으니까.\n니힐리스타: 리버렐리오는 자기만 퀸의 목소리가 들리는 척 우리를 협박했지만, 모두 알고 있었어.\n니힐리스타: 퀸은 우주에 있으며, 우리에게 영향을 미칠 수 없다.\n니힐리스타: 그렇게 된 지는 좀 됐어. 정확하게 기억은 못 하겠네."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__008",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_06_08__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 모더니아(마리안)가 토커티브를 생각하면 스노우 화이트는 여기서 죽어 마땅하다며 얼굴을 똑똑히 기억해 놓겠다고 적대한다 / 선후·근거: 연표 210인 main_06_08에서 확인된 첫 적대 진술이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_08",
+          "line_start": 33,
+          "line_end": 35,
+          "quote": "모더니아: 토커티브를 생각하면 당신은 여기서 죽어 마땅하지만.\n모더니아: 제 소중한 동료의 목숨을 위해 물러나겠어요.\n모더니아: ···그 얼굴. 똑똑히 기억해 놓을게요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__009",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "timeline",
+        "scene_id": "main_07_05",
+        "evidence": [
+          {
+            "scene_id": "main_07_05",
+            "line_start": 18,
+            "line_end": 26,
+            "quote": "콰아앙-!!\n스노우 화이트의 라이플이 불을 뿜었다.\n그리고 그 탄환은, 모더니아에게 닿지 못하고 폭발했다.\n스노우 화이트: 자기장···!? 단독으로 이 정도 밀도라니···!\n모더니아: ···단독으로 이 정도의 무기를···. 조금 놀랐어요.\n모더니아: 하지만 제대로 된 정비를 받지 못 한 모양이네요. 아쉽게도.\n퍼억-!\n모더니아의 날개가 스노우 화이트를 후려쳤다.\n한참을 날아간 스노우 화이트는 눈밭에 곤두박질쳐졌다."
+          }
+        ]
+      },
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__008"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "last_kingdom_33__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 과거 마리안과 조우해 서로를 두들겨 패며 싸웠다고 회고한다 / 선후·근거: 성립 장면인 main_07_05(연표 230)가 앞 기록 main_06_08(연표 210)보다 뒤이고 발화 장면 last_kingdom_33(연표 540)보다 앞이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_33",
+          "line_start": 63,
+          "line_end": 69,
+          "quote": "스노우 화이트: 나와 조우한 적이 있었지.\n마리안: ···그렇··· 군요.\n스노우 화이트: 너는 나를 두들겨 팼다.\n마리안: ···예?\n스노우 화이트: 나도 너를 두들겨 팼다.\n마리안: 그, 그렇군요. 미안해요.\n스노우 화이트: 서로 주고받았으니 미안할 것 없다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__010",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__009"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_14_14__rln_006",
+        "second_affection_10__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 부탁을 받아들여 마리안을 둘러업고 동료들과 함께 데려가며 크라운에게 마리안의 보호를 맡긴다 / 선후·근거: 과거 교전(연표 230) 뒤인 main_14_14(연표 310)와 second_affection_10(연표 320)에서 보호 관계가 실제로 수행·유지된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_14_14",
+          "line_start": 99,
+          "line_end": 109,
+          "quote": "스노우 화이트: 그래.\n스노우 화이트: 너희가 나한테 진심을 담은 부탁을 했으니, 나도 진심을 보여줄 필요가 있어서 데려왔다.\n스노우 화이트: 마침 주기적으로 만나는 날과 가깝기도 했고.\n[CHOICE_START]\n  [OPTION TEXT=\"···고마워. 어려운 부탁을 들어줘서.\"]\n  [OPTION_END]\n[CHOICE_END]\n스노우 화이트: 그런 말 마라.\n스노우 화이트: 이 녀석이 이렇게 된 건, 내 잘못이니까.\n스노우 화이트: 그럼, 가지.\n스노우 화이트는 마리안을 둘러업고 동료들과 함께 걸어갔다."
+        },
+        {
+          "scene_id": "second_affection_10",
+          "line_start": 49,
+          "line_end": 56,
+          "quote": "스노우 화이트: 아니. 마리안을 부탁한다.\n스노우 화이트: ···아마 일어나면 한바탕 소동이 일어날지도 모른다.\n스노우 화이트: 잘 부탁하지.\n크라운: 전할 말은 없나요?\n스노우 화이트: 다시 만나러 오겠다. 그때까지 잘 있어라.\n크라운: ···알겠어요.\n크라운: 그럼 믿고 맡겨주세요.\n스노우 화이트: 그래. 부탁하지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__011",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_14_14__rln_006",
+        "second_affection_00__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 마리안이 이렇게 된 것은 자신의 잘못·탓이라며 거듭 자책하고 책임감을 드러낸다 / 선후·근거: main_14_14(연표 310)에서 처음 밝히고 이어진 second_affection_00(연표 320)에서 같은 자책을 되풀이한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_14_14",
+          "line_start": 106,
+          "line_end": 107,
+          "quote": "스노우 화이트: 그런 말 마라.\n스노우 화이트: 이 녀석이 이렇게 된 건, 내 잘못이니까."
+        },
+        {
+          "scene_id": "second_affection_00",
+          "line_start": 21,
+          "line_end": 23,
+          "quote": "홍련: ···자네. 자책하지 말게.\n홍련: 낭자가 이렇게 된 것은 자네 탓이 아닐세.\n스노우 화이트: 내 탓이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__012",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__011"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "second_affection_10__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 크라운을 통해 마리안에게 다시 만나러 오겠으니 그때까지 잘 있으라는 전언을 남긴다 / 선후·근거: 마리안을 데리고 이동하던 second_affection_00(1화) 뒤 고성에 도착해 맡기는 second_affection_10(11화)에서 이어진 다짐이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "second_affection_10",
+          "line_start": 52,
+          "line_end": 53,
+          "quote": "크라운: 전할 말은 없나요?\n스노우 화이트: 다시 만나러 오겠다. 그때까지 잘 있어라."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__013",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "kinship_or_creation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라푼젤",
+          "name": "라푼젤",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "second_affection_05__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라푼젤이 스노우 화이트가 이미 자신만의 방법으로 마리안을 가르쳐 주고 있다고 말한다 / 선후·근거: second_affection_05에서 스노우 화이트의 가르침이 처음 언급된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "second_affection_05",
+          "line_start": 68,
+          "line_end": 71,
+          "quote": "홍련: 스노우 화이트는 어떻게 생각할 것 같나.\n라푼젤: 스노우 화이트는 벌써 시작했어요.\n라푼젤: 자신만의 방법으로 가르쳐주고 있죠.\n라푼젤: 그건 걱정하지 않아도 돼요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__014",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "kinship_or_creation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "timeline",
+        "scene_id": "second_affection_07",
+        "evidence": [
+          {
+            "scene_id": "second_affection_07",
+            "line_start": 62,
+            "line_end": 64,
+            "quote": "스노우 화이트: 좋다. 해보지.\n스노우 화이트: 그런 모험심은 좋다. 항상 시도해라.\n마리안: 예!"
+          }
+        ]
+      },
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__013"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "chapter_47_00__rln_009"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 자신들이 마리안을 자유롭게 키워 훌륭하게 잘 자랐다고 회고한다 / 선후·근거: 성립 장면인 second_affection_07(연표 320, 8화)이 앞 기록 second_affection_05(6화) 뒤의 선형 진행이며 발화 장면 chapter_47_00(연표 940)보다 앞이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_47_00",
+          "line_start": 203,
+          "line_end": 204,
+          "quote": "스노우 화이트: 동의한다. 자유롭게 두면 알아서 성장한다.\n스노우 화이트: 우리는 마리안을 그렇게 키웠고, 그 덕에 훌륭하게 잘 자랐다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__015",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__009"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "second_affection_13__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 마리안이 항상 바쁜데도 자신을 여기까지 데려다준 스노우 화이트 일행에게 감사한 마음뿐이라며 보고 싶어 한다 / 선후·근거: 과거 적대·교전(연표 230) 뒤인 second_affection_13(연표 320)에서 감사와 그리움으로 태도가 바뀌었다",
+      "supporting_evidence": [
+        {
+          "scene_id": "second_affection_13",
+          "line_start": 56,
+          "line_end": 64,
+          "quote": "마리안: 저 혹시. 스노우 화이트 쪽에서의 연락은 없나요?\n차임: 음. 아직 별다른 연락은 없구나.\n차임: ··· ···.\n차임: ···아직 인사도 안 하고 훌쩍 가버린 걸 원망하는 게냐?\n마리안: 후후. 그럴 리가요.\n마리안: 그분들은 중요한 일을 하시는 분들이잖아요. 항상 바쁘고.\n마리안: 그럼에도 불구하고 저를 여기까지 데려다주셨으니, 감사한 마음뿐이죠.\n마리안: ···그냥. 보고 싶어서요.\n마리안: 이제야 얼마나 고마운 분들인지 깨닫게 됐으니까요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__016",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__015"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "second_affection_15__rln_006"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 마리안이 스노우 화이트를 비롯한 소중한 이들의 이름을 부르며 자신을 지켜 달라고 하고 자신도 반드시 모두를 지켜 주겠다고 다짐한다 / 선후·근거: 같은 이야기의 앞선 second_affection_13(14화) 뒤인 second_affection_15(16화)에서 유대와 수호 의지가 깊어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "second_affection_15",
+          "line_start": 65,
+          "line_end": 71,
+          "quote": "마리안: 지휘관. 라피. 아니스. 네온.\n마리안: 스노우 화이트. 홍련. 라푼젤.\n마리안: 그리고··· 크라운. 차임.\n마리안: 저를 지켜주세요.\n마리안: 저도 그렇게 할게요.\n마리안: 제가 반드시 지켜줄게요.\n마리안: 모두."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__017",
+      "unit_id": "U003",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__010",
+        "D1__018__016"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "goddess_fall_14__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 마리안의 정체 고백 뒤에도 바뀌는 건 없다고 밝히고, 랩쳐들로 인류를 멸망시키게 되면 자신을 죽여 달라는 마리안의 요청을 알겠다며 받아들여 상호 신뢰와 약속이 성립한다 / 선후·근거: 앞선 보호·다짐 기록(연표 310~320)보다 뒤인 연표 840의 goddess_fall_14에서 관계가 유지·확립된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_14",
+          "line_start": 22,
+          "line_end": 34,
+          "quote": "마리안: ···여러분. 저기··· 저는···.\n스노우 화이트: 바뀌는 건 없다.\n홍련: 동의하네.\n라푼젤: 이전에 크라운 왕국에서 저희한테 총구를 겨눴을 때, 어느 정도 짐작하기도 했었고요.\n라푼젤: 그리고 우리 목표는 어디까지나 저기 있는 퀸이에요.\n스노우 화이트: 이후가 중요하다.\n스노우 화이트: 마리안. 너는 랩쳐들로 인류를 멸망시킬 건가?\n마리안: 아니요.\n스노우 화이트: 그렇게 되지 않을 거라는 보장은?\n마리안: 만약 그렇게 된다면, 여러분이 저를 죽여주세요.\n홍련: ··· ···.\n라푼젤: ··· ···.\n스노우 화이트: ···알겠다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__018",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_홍련",
+          "name": "홍련",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_17_09__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 홍련이 과거 마리안이 토커티브에게 당해 NIMPH 때문에 헬레틱이 되었다고 말한다 / 선후·근거: main_17_09 이전 과거의 가해 사실을 제3자가 회고한 진술이며 성립 장면을 특정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_17_09",
+          "line_start": 74,
+          "line_end": 74,
+          "quote": "홍련: 뭐, 그 낭자는 토커티브에게 당한 거긴 하지만. 애초에 NIMPH만 없었다면 헬레틱이 되지 않았을 테니."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__019",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_06_08__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 모더니아(마리안)가 쓰러진 토커티브에게 \"이제 안심하세요. 제가 구해드릴게요.\"라며 구해 주겠다고 말한다. 같은 장면에서 토커티브를 동료로 지목한 말은 쌍방 관계라 따로 기록한다(D1__018__065) / 선후·근거: 연표 210인 main_06_08에서 처음 드러난 구조 의지다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_08",
+          "line_start": 23,
+          "line_end": 24,
+          "quote": "모더니아: ···토커티브. 가엾게도.\n모더니아: 이제 안심하세요. 제가 구해드릴게요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__069",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__019"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_06_08__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 모더니아(마리안)가 \"제 소중한 동료의 목숨을 위해 물러나겠어요.\"라며 물러나고, 쫓으려는 스노우 화이트에게 \"당신의 상대는 제가 아니에요.\"라고 한 뒤 랩쳐들이 그 앞을 막아서자 \"부탁드릴게요. 여러분.\"이라며 상대를 맡긴다. 토커티브를 보호하려고 추격을 막은 조치가 그 자리에서 실행된다. 수복을 마쳤는지까지는 이 장면에서 단정하지 않는다 / 선후·근거: 같은 장면 main_06_08 L24의 구조 의지(D1__018__019) 뒤 L33~41에서 실행되므로 줄 순서로 잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_08",
+          "line_start": 33,
+          "line_end": 34,
+          "quote": "모더니아: 토커티브를 생각하면 당신은 여기서 죽어 마땅하지만.\n모더니아: 제 소중한 동료의 목숨을 위해 물러나겠어요."
+        },
+        {
+          "scene_id": "main_06_08",
+          "line_start": 36,
+          "line_end": 40,
+          "quote": "스노우 화이트: 놓치지 않는다!\n모더니아: 당신의 상대는 제가 아니에요.\n쿵! 쿵! 쿵!\n거대한 랩쳐들이 스노우 화이트의 앞을 막아섰다.\n모더니아: 부탁드릴게요. 여러분."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__065",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_06_08__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 모더니아(마리안)가 스노우 화이트에게 \"···당신인가요? 제 동료를 상처 입힌 것이.\"라고 하고, \"제 소중한 동료의 목숨을 위해 물러나겠어요.\"라며 토커티브를 자신의 동료로 지목한다. 동료 관계는 쌍방이고 화자는 마리안이다 / 선후·근거: main_06_08(연표 210) L25·L34의 진술이며 다른 기록과 사슬로 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_08",
+          "line_start": 25,
+          "line_end": 25,
+          "quote": "모더니아: ···당신인가요? 제 동료를 상처 입힌 것이."
+        },
+        {
+          "scene_id": "main_06_08",
+          "line_start": 33,
+          "line_end": 34,
+          "quote": "모더니아: 토커티브를 생각하면 당신은 여기서 죽어 마땅하지만.\n모더니아: 제 소중한 동료의 목숨을 위해 물러나겠어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__020",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "timeline",
+        "scene_id": "main_07_05",
+        "evidence": [
+          {
+            "scene_id": "main_07_05",
+            "line_start": 2,
+            "line_end": 3,
+            "quote": "스노우 화이트: ···찾았다. 헬레틱과 토커티브다.\n스노우 화이트: 토커티브를 수복 중인 건가. 동료애가 넘치는 녀석들이군."
+          }
+        ]
+      },
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__019"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "last_kingdom_33__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 토커티브를 기억하지 못하는 마리안에게 과거 둘이 같이 행동했었다고 알려 준다 / 선후·근거: 스노우 화이트가 둘의 동행을 목격한 main_07_05(연표 230)가 앞 기록 main_06_08(연표 210)보다 뒤이고 발화 장면 last_kingdom_33(연표 540)보다 앞이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_33",
+          "line_start": 61,
+          "line_end": 62,
+          "quote": "마리안: 그 토커티브라는 분은, 저와 아는 사이인가요?\n스노우 화이트: 그래. 같이 행동했었다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__021",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "last_kingdom_38__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브가 유사 인간의 편에서 랩쳐를 막는 마리안을 자신들의 편에 있어야 할 자신의 꿈이라 여기며 유사 인간들이 빼앗아 갔다고 분노한다. 마리안이 다른 편에 서게 된 변화 자체는 D1__018__070에 있다 / 선후·근거: 연표 540인 last_kingdom_38에서 토커티브의 집착이 처음 직접 드러난다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_38",
+          "line_start": 15,
+          "line_end": 16,
+          "quote": "토커티브: [저렇게 될 수가 없다! 운명이자 숙명을 거스를 순 없다!]\n토커티브: [어째서 우리의 편이 아니라, 네놈들의 편에 서서 싸우고 있는 건가!]"
+        },
+        {
+          "scene_id": "last_kingdom_38",
+          "line_start": 24,
+          "line_end": 28,
+          "quote": "토커티브: [또 빼앗은 건가.]\n토커티브: [네놈들은···! 나한테서 얼마나 더···!]\n토커티브: [얼마나 더 빼앗아갈 셈이냐···!]\n토커티브: [나의 사명···! 나의 긍지···! 나의 자리를 빼앗아 간 것도 모자라···!]\n토커티브: [나의 꿈마저 빼앗아 갈 셈이냐!!]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__070",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__020"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "last_kingdom_38__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: last_kingdom_38에서 마리안은 성문 쪽에서 랩쳐를 막아내고 있고, 이를 본 토커티브가 \"어째서 우리의 편이 아니라, 네놈들의 편에 서서 싸우고 있는 건가!\"라고 외친다. 예전에 둘이 같이 행동하던 상태(D1__018__020)가 끝나고 마리안이 토커티브와 다른 편에서 행동하게 된 변화다. 이 장면에서 둘이 직접 교전하지는 않으므로 적대로 넓히지 않고 협력 관계의 종료로 적는다. 토커티브의 집착·분노는 D1__018__021에 따로 둔다 / 선후·근거: 앞 기록의 동행 시점 main_07_05(연표 230, anchor) 뒤인 last_kingdom_38(연표 540)이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_38",
+          "line_start": 7,
+          "line_end": 8,
+          "quote": "토커티브는 고개를 돌려 성문 쪽을 바라보다 그대로 굳었다.\n토커티브의 시선은 랩쳐를 막아내고 있는 마리안에게 고정되어 있었다."
+        },
+        {
+          "scene_id": "last_kingdom_38",
+          "line_start": 12,
+          "line_end": 16,
+          "quote": "토커티브: [어째서 유사 인간의 편에서···.]\n토커티브: [네놈들···! 마리안에게 뭘 했나!]\n스노우 화이트: 이쪽이 묻고 싶은 말이다.\n토커티브: [저렇게 될 수가 없다! 운명이자 숙명을 거스를 순 없다!]\n토커티브: [어째서 우리의 편이 아니라, 네놈들의 편에 서서 싸우고 있는 건가!]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__022",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_인디빌리아",
+          "name": "인디빌리아",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__021"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "last_kingdom_42__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 인디빌리아가 토커티브가 헬레틱에서 다시 돌아온 유일한 존재인 마리안에게 관심이 매우 많다고 말한다 / 선후·근거: 같은 이야기의 앞선 last_kingdom_38(39화) 뒤인 last_kingdom_42(43화)에서 이어진 제3자 진술이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_42",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "인디빌리아: ···토커티브가 당신한테 관심이 매우 많은 것 같더군요.\n인디빌리아: 헬레틱에서 다시 돌아온 유일한 존재···.\n인디빌리아: 라는데."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__023",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "last_kingdom_44__rln_006",
+        "goddess_fall_05__rln_011",
+        "goddess_fall_08__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 마리안이 랩쳐들을 돌려보내고 왕국을 넘보지 말라고 명하자 토커티브가 의지와 상관없이 몸에 새겨진 본능에 의해 무릎을 꿇고 여왕님이라 부르며 \"분부대로 하겠습니다.\"라고 복종한다. goddess_fall_05에서도 토커티브가 마리안을 어깨에 태워 이동하며 \"분부대로 하겠습니다 여왕님.\"이라고 같은 방향의 지휘·복종을 되풀이한다. goddess_fall_08에서 미러가 \"인디빌리아와 토커티브를 거둬간 후\"라고 전한 경위도 이 성립을 되풀이한 것이다 / 선후·근거: 연표 540인 last_kingdom_44에서 처음 성립한 지배·복종 관계가 연표 820인 goddess_fall_05에서 변화 없이 다시 행사된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_44",
+          "line_start": 126,
+          "line_end": 128,
+          "quote": "마리안: 랩쳐들을 다 돌려보내세요.\n마리안: 그리고.\n마리안: 다시는 왕국을 넘보지 마세요."
+        },
+        {
+          "scene_id": "last_kingdom_44",
+          "line_start": 138,
+          "line_end": 141,
+          "quote": "인디빌리아와 토커티브는 마리안의 앞에 무릎을 꿇었다.\n자신의 의지와는 상관없이 몸에 새겨진 본능에 의해.\n토커티브: [···분부대로 하겠습니다.]\n토커티브: [여왕님.]"
+        },
+        {
+          "scene_id": "goddess_fall_05",
+          "line_start": 82,
+          "line_end": 89,
+          "quote": "마리안은 토커티브의 어깨 위에서 순식간에 스쳐 지나가는 풍경을 넋 놓고 바라보았다.\n마리안: 총성과 폭음이 들리네요.\n마리안: 역시 전투가 벌어지고 있는 걸까요?\n인디빌리아: 퀸이 내려오고 있을테니까요. 유사 인간들이 그걸 막아내려 하고 있을 테고.\n토커티브: [소리가 들려온 방향은 에덴입니다. 에덴과 퀸이 전투 중일지도 모릅니다.]\n마리안: ··· ···.\n마리안: 토커티브. 좀 더 서둘러주세요. 죄송해요.\n토커티브: [분부대로 하겠습니다 여왕님.]"
+        },
+        {
+          "scene_id": "goddess_fall_08",
+          "line_start": 41,
+          "line_end": 42,
+          "quote": "미러: 크라운 왕국에서의 전투로 인해 마리안은 퀸 인자를 각성.\n미러: 인디빌리아와 토커티브를 거둬간 후, 원래의 퀸을 느끼고는 이곳으로 왔어요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__067",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_인디빌리아",
+          "name": "인디빌리아",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__023"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "goddess_fall_07__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브가 마리안을 먹으라는 제안을 거절하자 인디빌리아가 \"어째서죠? 아직 이 되다 만 것의 지배를 받고 있나요?\"라며, 토커티브가 여전히 마리안의 지배를 받아 거절한 것이냐고 묻는다. 둘 사이의 유대에 대한 별도 가설은 따로 기록한다(D1__018__068) / 선후·근거: last_kingdom_44의 복종(D1__018__023) 뒤 goddess_fall_07 L76의 인디빌리아 가설이며, 바로 뒤 토커티브가 다른 이유를 밝힌다(D1__018__025)",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_07",
+          "line_start": 75,
+          "line_end": 76,
+          "quote": "토커티브: [거절한다.]\n인디빌리아: 어째서죠? 아직 이 되다 만 것의 지배를 받고 있나요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__068",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_인디빌리아",
+          "name": "인디빌리아",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "goddess_fall_07__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 인디빌리아가 이어서 \"후후. 되다 만 것끼리의 유대, 뭐 이런 건가요?\"라며, 토커티브의 거절이 마리안과 토커티브 사이의 유대 때문이냐고 또 다른 가설을 내놓는다. 두 사람 사이의 유대에 대한 인디빌리아의 추측이다 / 선후·근거: goddess_fall_07 L77의 진술이며, 바로 뒤 토커티브가 다른 이유를 밝히므로(D1__018__025) 다른 기록과 사슬로 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_07",
+          "line_start": 77,
+          "line_end": 77,
+          "quote": "인디빌리아: 후후. 되다 만 것끼리의 유대, 뭐 이런 건가요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__025",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "reinterprets",
+      "prev_link_ids": [
+        "D1__018__022"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "goddess_fall_07__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 마리안을 먹으라는 인디빌리아의 제안을 토커티브가 \"거절한다.\"라고 물리치고 \"나는 마리안을 지켜야 하니까.\", \"마리안은 퀸의 다음 몸이 될 것이다.\", \"온전해야 할 필요가 있다는 얘기지.\"라고 이유를 밝힌다. 앞서 인디빌리아가 말한 토커티브의 큰 관심이 마리안을 퀸의 다음 몸으로 온전히 지키려는 것이었다고 다시 읽힌다. 이를 들은 인디빌리아의 해석은 따로 기록한다(D1__018__066) / 선후·근거: 연표 540의 last_kingdom_42에서 인디빌리아가 말한 관심(D1__018__022) 뒤 연표 820의 goddess_fall_07 L75-84에서 그 이유가 공개된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_07",
+          "line_start": 75,
+          "line_end": 84,
+          "quote": "토커티브: [거절한다.]\n인디빌리아: 어째서죠? 아직 이 되다 만 것의 지배를 받고 있나요?\n인디빌리아: 후후. 되다 만 것끼리의 유대, 뭐 이런 건가요?\n토커티브: [나는 마리안을 지켜야 하니까.]\n인디빌리아: ···뭐라고요?\n토커티브: [마리안은 퀸의 다음 몸이 될 것이다.]\n토커티브: [온전해야 할 필요가 있다는 얘기지.]\n인디빌리아: 오··· 그렇군요.\n토커티브: [마리안은 퀸으로 각성했다. 준비가 되었다는 얘기다.]\n토커티브: [퀸의 다음 몸이 될 준비가.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__066",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_인디빌리아",
+          "name": "인디빌리아",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__025"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "goddess_fall_07__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브의 설명을 들은 인디빌리아가 \"후후. 그래서 그렇게 애지중지했던 것이군요.\", \"퀸 인자를 담을 수 있는 그릇··· 이 필요했던 것이군요.\"라며, 토커티브가 마리안을 아낀 것은 퀸 인자를 담을 그릇으로 쓰기 위해서였다고 스스로 해석한다 / 선후·근거: 같은 장면 goddess_fall_07 L78-84의 토커티브 설명(D1__018__025) 바로 뒤 L85-86에서 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_07",
+          "line_start": 85,
+          "line_end": 86,
+          "quote": "인디빌리아: 후후. 그래서 그렇게 애지중지했던 것이군요.\n인디빌리아: 퀸 인자를 담을 수 있는 그릇··· 이 필요했던 것이군요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__026",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__025"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "goddess_fall_07__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브가 코어와 뇌만 피해 퀸으로 완성된 마리안의 바디를 먹으면 어떻게 될지 궁금하지 않느냐는 인디빌리아의 유혹에 구미가 당긴다며 포식에 동조한다 / 선후·근거: 같은 장면 goddess_fall_07의 L75-L84 거절·보호 발언 직후인 L97-L104에서 가해 의사로 태도가 바뀐다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_07",
+          "line_start": 97,
+          "line_end": 105,
+          "quote": "인디빌리아: 퀸 인자가 담기는 곳은 코어와 뇌.\n인디빌리아: 그곳만 피해서 먹는다면 문제없잖아요.\n인디빌리아: 어차피 재생할 텐데. 안 그래요?\n인디빌리아: 그리고 당신도 기대되잖아요?\n인디빌리아: 당신의 팔에서 돋아난 니힐리스타가, 가증스러운 순례자들을 다 태워버린 때를 떠올려봐요.\n인디빌리아: 퀸으로 완성된 바디를 먹으면, 어떻게 되는 거지?\n인디빌리아: 궁금하지 않나요?\n토커티브: [그건··· 구미가 당기는군.]\n인디빌리아: 후후. 그렇죠? 그럼 어디로 할까···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__028",
+      "unit_id": "U004",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미러",
+          "name": "미러",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "timeline",
+        "scene_id": "goddess_fall_07",
+        "evidence": [
+          {
+            "scene_id": "goddess_fall_07",
+            "line_start": 102,
+            "line_end": 106,
+            "quote": "인디빌리아: 퀸으로 완성된 바디를 먹으면, 어떻게 되는 거지?\n인디빌리아: 궁금하지 않나요?\n토커티브: [그건··· 구미가 당기는군.]\n인디빌리아: 후후. 그렇죠? 그럼 어디로 할까···.\n인디빌리아: 가볍게 팔부터 시작해 볼까요?"
+          }
+        ]
+      },
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__023"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "goddess_fall_08__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 미러가 상처 입은 마리안이 인디빌리아와 토커티브에게 배신당했다고 말한다 / 선후·근거: last_kingdom_44(연표 540)에서 성립하고 goddess_fall_05에서도 이어진 복종(D1__018__023) 뒤, 배신 장면 goddess_fall_07(연표 820, 8화)이 발화 장면 goddess_fall_08(9화)보다 앞이라 이야기 순서로 잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_08",
+          "line_start": 28,
+          "line_end": 29,
+          "quote": "미러: 배신당했거든요.\n미러: 인디빌리아와 토커티브에게."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__029",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_06_08__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 모더니아(마리안)를 인류를 저버리고 랩쳐를 선택한 니케인 헬레틱으로 지목한다 / 선후·근거: 연표 210인 main_06_08에서 처음 확인된 헬레틱 소속 진술이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_06_08",
+          "line_start": 26,
+          "line_end": 30,
+          "quote": "스노우 화이트: ···헬레틱.\n스노우 화이트: 퀸의 직속. 이단···!\n스노우 화이트: 인류를 져버린 배신자!!\n스노우 화이트: 랩쳐를 선택한 니케--!!\n모더니아: 너무 많아요. 그냥 모더니아라고 불러주시겠어요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__030",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마나",
+          "name": "마나",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__029"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_12_11__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 마나가 지하 시설에 참전한 모더니아(마리안)를 헬레틱 모더니아라고 보고한다 / 선후·근거: 앞 기록(연표 210)보다 뒤인 연표 290의 main_12_11에서 헬레틱 소속 상태가 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_12_11",
+          "line_start": 43,
+          "line_end": 43,
+          "quote": "마나: 헬레틱 모더니아가 참전하여 현재 모든 스쿼드가 퇴각한 상태입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__031",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라푼젤",
+          "name": "라푼젤",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__030"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "second_affection_05__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라푼젤이 마리안을 인류의 편으로 돌아선 헬레틱이라 부르며 랩쳐 측에서 이탈한 상태임을 밝힌다 / 선후·근거: 헬레틱으로 참전하던 main_12_11(연표 290) 뒤인 second_affection_05(연표 320)에서 인류 편으로 돌아선 전환이 확인된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "second_affection_05",
+          "line_start": 52,
+          "line_end": 54,
+          "quote": "라푼젤: 예. 인류의 편으로 돌아선 헬레틱.\n라푼젤: 그 단어만으로도 가지는 특이성.\n라푼젤: 마리안은 힘든 삶을 살아가겠죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__032",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_크라운",
+          "name": "크라운",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "last_kingdom_33__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 크라운이 마리안은 과거 헬레틱이었으며 자신도 이를 알고 있었다고 밝힌다 / 선후·근거: last_kingdom_33 이전의 과거 헬레틱 소속을 가리키는 회고 진술이며 성립 시점을 특정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "last_kingdom_33",
+          "line_start": 47,
+          "line_end": 49,
+          "quote": "크라운: 마리안은 헬레틱이었으니까요.\n마리안: 알고··· 계셨군요.\n크라운: 예. 알고 있었습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__033",
+      "unit_id": "U005",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__158#E8",
+          "name": "헬레틱",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_counters_007__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 니케가 헬레틱이 된 소수의 경우에 마리안이 해당한다고 말한다 / 선후·근거: 연표 번호가 없는 메신저 대화에서 이전의 헬레틱화 사실을 말하며 성립 시점을 특정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_counters_007",
+          "line_start": 60,
+          "line_end": 65,
+          "quote": "  [MSG SENDER=\"라피\"]\n    니케가 헬레틱이 된 경우는 많지는 않지만 소수 있어.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    마리안이 그 케이스라고 봐야겠지.\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__034",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "maria-n_09__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브가 여왕님(퀸)의 허가 없이 정예를 늘리는 것은 용납할 수 없다며 퀸의 권한에 복종하는 입장을 밝힌다 / 선후·근거: 연표 93인 maria-n_09에서 가장 먼저 확인된 상하 관계 진술이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "maria-n_09",
+          "line_start": 64,
+          "line_end": 64,
+          "quote": "토커티브: [지금까지는 눈감아 줬지만, 여왕님의 허가 없이 정예를 늘리는 것은 용납할 수 없다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__035",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__034"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_07_01__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 토커티브 일행은 퀸의 직속이라고 말한다 / 선후·근거: 앞 기록(연표 93)보다 뒤인 연표 230의 main_07_01에서 제3자가 상하 관계를 설명한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_07_01",
+          "line_start": 49,
+          "line_end": 50,
+          "quote": "스노우 화이트: 확실한 건 놈들은 퀸의 직속이고.\n스노우 화이트: 그놈들을 쫓다 보면 퀸에게 닿을 수 있다는 거다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__036",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__035"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_24_21__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브가 자신이 모시는 것과 자신에게 명령할 수 있는 것은 오직 퀸뿐이라고 말한다 / 선후·근거: 앞 기록(연표 230)보다 뒤인 연표 490의 main_24_21에서 충성과 복종을 거듭 밝힌다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_21",
+          "line_start": 32,
+          "line_end": 38,
+          "quote": "토커티브: [난 네 부하가 아니다.]\n토커티브: [내가 모시는 것은 오직 퀸뿐이다.]\n니힐리스타: 뭐라는 거야. 퀸은 너 같은 거 알지도 못할걸?\n토커티브: [그래도 상관없다.]\n토커티브: [난 그분께 구원받았으니까.]\n토커티브: [갈 곳을 잃고 죽어가던 내가,] [다시 태어나게 해 준 것이 퀸이시다.]\n토커티브: [그러니 나에게 명령할 수 있는 것은 퀸뿐이다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__037",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "kinship_or_creation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_24_21__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 토커티브가 갈 곳을 잃고 죽어가던 자신을 다시 태어나게 해 구원해 준 것이 퀸이라고 말한다 / 선후·근거: main_24_21 이전 과거의 재탄생 경위를 말한 진술이며 성립 시점을 특정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_21",
+          "line_start": 36,
+          "line_end": 37,
+          "quote": "토커티브: [난 그분께 구원받았으니까.]\n토커티브: [갈 곳을 잃고 죽어가던 내가,] [다시 태어나게 해 준 것이 퀸이시다.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__038",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_마리안",
+          "name": "마리안",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "goddess_fall_05__rln_014"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 마리안이 토커티브와 인디빌리아를 원래 퀸의 종속이었던 자들이라고 말한다 / 선후·근거: goddess_fall_05 이전부터 이어져 온 과거의 종속 지위를 가리키며 성립 시점을 특정할 수 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_05",
+          "line_start": 97,
+          "line_end": 99,
+          "quote": "마리안: 당신들은 원래 퀸의 종속이었던 자들이죠.\n마리안: 제가 원래의 퀸을 느꼈듯, 당신들도 그 존재를 느꼈을 텐데.\n마리안: 어째서 제 부탁, 명령을 듣는 거죠?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__039",
+      "unit_id": "U006",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_토커티브",
+          "name": "토커티브",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_미러",
+          "name": "미러",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__036"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "goddess_fall_22__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 미러가 토커티브는 퀸에게 인정받고 목소리를 들어야 하는 입장이며 마리안을 먹으려 한 일을 퀸이 알면 내칠지도 모른다고 경고한다 / 선후·근거: 앞 기록(연표 490)보다 뒤인 연표 840의 goddess_fall_22에서 퀸 아래 복속된 입장이 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_22",
+          "line_start": 68,
+          "line_end": 74,
+          "quote": "미러: 세상에, 먹으려고까지 했다면서요?\n미러: 큰일 나요 진짜. 퀸께서 알면 당신, 머리가 날아가는 정도로 끝나지 않을 거예요.\n미러: 내칠지도 모른다고요?\n토커티브: [!!]\n미러: 아시겠나요? 사태가 심각해요. 다져놓고 부러뜨린 건 제가 잘 수습할 테니, 다음부턴 절대 그러지 마요.\n미러: 당신은 퀸에게 인정받고··· 퀸의 목소리를 들어야 하잖아요?\n토커티브: [···그래. 주의하지.]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__040",
+      "unit_id": "U007",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__011#E19",
+          "name": "랩쳐",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_홍련",
+          "name": "홍련",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "over_zone_24__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 홍련이 퀸을 랩쳐의 수장이라 부른다 / 선후·근거: 연표 70인 over_zone_24에서 가장 먼저 확인된 수장 관계 진술이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "over_zone_24",
+          "line_start": 18,
+          "line_end": 18,
+          "quote": "홍련: 그래. 우리의 목적은 랩쳐의 수장인 퀸을 잡는 것."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__041",
+      "unit_id": "U007",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__011#E19",
+          "name": "랩쳐",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__040"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_07_01__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 퀸을 랩쳐의 여왕이라 설명한다 / 선후·근거: 앞 기록(연표 70)보다 뒤인 연표 230의 main_07_01에서 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_07_01",
+          "line_start": 55,
+          "line_end": 55,
+          "quote": "스노우 화이트: 랩쳐의 여왕."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__042",
+      "unit_id": "U007",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__011#E19",
+          "name": "랩쳐",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_나유타",
+          "name": "나유타",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__041"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "goddess_fall_12__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 나유타가 맹목적이고 일사불란하게 움직이는 랩쳐들을 보며 퀸의 지배력이 랩쳐들에게도 영향을 미쳤다고 판단한다 / 선후·근거: 앞 기록(연표 230)보다 뒤인 연표 820의 goddess_fall_12에서 지배 관계가 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_12",
+          "line_start": 3,
+          "line_end": 5,
+          "quote": "랩쳐들은 사방에서 끊임없이 에덴으로 다가오고 있다.\n이상할 정도로 맹목적이고 일사불란한 모습.\n나유타: ···그래. 퀸의 지배력이 헬레틱에게만 영향을 미쳤을 리가 없지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__043",
+      "unit_id": "U007",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char2_퀸",
+          "name": "퀸",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__011#E19",
+          "name": "랩쳐",
+          "entity_type": "faction_or_species"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_도로시",
+          "name": "도로시",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__042"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_45_10__rln_007"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 도로시가 방송에서 지상에 내려온 퀸을 랩쳐들의 수장이라 부르는 존재라고 설명한다 / 선후·근거: 앞 기록(연표 820)보다 뒤인 연표 910의 main_45_10에서 수장 지위가 다시 언급된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_45_10",
+          "line_start": 148,
+          "line_end": 149,
+          "quote": "도로시: 지상에 퀸이 내려왔습니다.\n도로시: 예. 랩쳐의 퀸입니다. 랩쳐들의 수장이라 부르는 존재입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__044",
+      "unit_id": "U008",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "timeline",
+        "scene_id": "over_zone_22",
+        "evidence": [
+          {
+            "scene_id": "over_zone_22",
+            "line_start": 78,
+            "line_end": 86,
+            "quote": "방주의 밀봉이 끝났다.\n스노우 화이트: ··· ···.\n라푼젤: ··· ···.\n홍련: ··· ···.\n도로시: ···끝났군요.\n피나: 고생 많으셨어요.\n도로시: 피나도요.\n남자의 목소리: 현 시간부로 방주의 밀봉이 끝났습니다.\n남자의 목소리: 갓데스 스쿼드에 다시 한번 감사의 말씀드립니다."
+          }
+        ]
+      },
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_44_06__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 모든 기억을 되찾은 스노우 화이트가 과거 방주 밀봉을 도왔던 일을 이야기한다 / 선후·근거: 방주 밀봉이 이뤄진 over_zone_22(연표 70)가 발화 장면 main_44_06(연표 870)보다 앞이며 방주를 위한 조력의 출발점이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_06",
+          "line_start": 6,
+          "line_end": 10,
+          "quote": "스노우 화이트는 어두운 공간에서, 허공을 응시하며 자신의 모든 기억에 대해 얘기해줬다.\n갓데스 스쿼드로서 인류를 위해 싸웠던 일.\n레드 후드와 릴리바이스를 잃었던 일.\n방주 밀봉을 도왔던 일.\n방주에 배신당했던 일."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__045",
+      "unit_id": "U008",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "timeline",
+        "scene_id": "over_zone_22",
+        "evidence": [
+          {
+            "scene_id": "over_zone_22",
+            "line_start": 104,
+            "line_end": 115,
+            "quote": "도로시: 처음부터 우릴 들여보내 줄 생각이 없었죠?\n오스왈드: 예. 말 그대로 밀봉이니까요.\n도로시: 우리를 잃는 건 방주 입장에서도 큰 손해일 텐데요.\n오스왈드: 과학은 발전하는 법입니다. 이미 3세대 바디 개발이 막바지일 정도입니다.\n도로시: 우리에게 축적된 데이터는 스펙의 차이를 아득히 뛰어넘을 수 있어요.\n오스왈드: 그것 또한 조금만 지나면 구식 데이터가 될 뿐이겠죠.\n도로시: 오스왈드.\n오스왈드: 말씀하십시오.\n도로시: 문을 열어요.\n오스왈드: 열 수 없습니다. 그러고 싶지만 할 수 없어요.\n도로시: 열어요.\n오스왈드: 안됩니다."
+          }
+        ]
+      },
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_44_06__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 기억을 되찾은 스노우 화이트가 과거 방주에 배신당했던 일을 회고한다 / 선후·근거: 밀봉 직후 출입을 거부당한 over_zone_22(연표 70)가 발화 장면 main_44_06(연표 870)보다 앞이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_44_06",
+          "line_start": 6,
+          "line_end": 10,
+          "quote": "스노우 화이트는 어두운 공간에서, 허공을 응시하며 자신의 모든 기억에 대해 얘기해줬다.\n갓데스 스쿼드로서 인류를 위해 싸웠던 일.\n레드 후드와 릴리바이스를 잃었던 일.\n방주 밀봉을 도왔던 일.\n방주에 배신당했던 일."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__046",
+      "unit_id": "U008",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_하란",
+          "name": "하란",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "goddess_fall_02__rln_009"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 하란이 스노우 화이트 일행도 자신들보다 더 지독하게 방주에 배신당했다고 말한다 / 선후·근거: 도로시에게 전해 들은 과거 배신을 말한 제3자 진술로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_02",
+          "line_start": 124,
+          "line_end": 128,
+          "quote": "하란: 우리 모두는 방주에 배신당했단다.\n하란: 하지만 그건.\n하란: 너희도 마찬가지지 않니?\n스노우 화이트: ··· ···.\n하란: 오히려 우리보다 지독하게 당했더구나."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__047",
+      "unit_id": "U008",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "lore_or_management",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_07_04__rln_001",
+        "goddess_fall_02__rln_010"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 이룬 것이 없고 방주가 어떤 세계인지 전혀 모르며 아무것도 이루지 못한 채 돌아가면 방주가 곤란해진다며 방주로 돌아가지 않고 지상을 떠돈다고 밝힌다 / 선후·근거: main_07_04(연표 230)와 goddess_fall_02(연표 820)에서 방주로 귀환하지 않는 같은 태도를 되풀이한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_07_04",
+          "line_start": 25,
+          "line_end": 29,
+          "quote": "스노우 화이트: 우린 방주를 모른다.\n스노우 화이트: 어떤 세계인지, 어떤 환경인지.\n스노우 화이트: 전혀 모른다.\n스노우 화이트: 그렇기에 우린 방주로 갈 수 없다.\n스노우 화이트: 가고 싶은지조차 알 수 없다."
+        },
+        {
+          "scene_id": "goddess_fall_02",
+          "line_start": 134,
+          "line_end": 135,
+          "quote": "하란: 그럼 왜 방주로 돌아가지 않니?\n스노우 화이트: 우리는 아무것도 이루지 못했다. 이대로 돌아가면 방주가 곤란해질 테니까."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__048",
+      "unit_id": "U008",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__044"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "goddess_fall_02__rln_010"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 자신들을 쳐낸 이유를 굳이 찾아가 따지고 싶지 않으며 방주가 곤란할까 봐 돌아가지 않고 방주와 인류를 위해 퀸을 잡으러 지상을 떠돈다고 인정한다 / 선후·근거: 과거 방주 밀봉을 도왔던 over_zone_22(연표 70)보다 뒤인 연표 820의 goddess_fall_02에서도 방주를 위하는 태도가 유지된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_02",
+          "line_start": 134,
+          "line_end": 141,
+          "quote": "하란: 그럼 왜 방주로 돌아가지 않니?\n스노우 화이트: 우리는 아무것도 이루지 못했다. 이대로 돌아가면 방주가 곤란해질 테니까.\n하란: 어째서니.\n스노우 화이트: 우릴 그렇게 쳐낸 것에는 이유가 있을 거다.\n스노우 화이트: 그 이유는 궁금하지만, 굳이 찾아가서 따지고 싶지는 않다.\n하란: 너흴 배신한 방주지만, 너희는 방주가 곤란할까 봐 찾아가지도 않고.\n하란: 방주를, 인류를 위해 퀸을 잡으러 지상을 떠도는 것이니?\n스노우 화이트: 그래."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__049",
+      "unit_id": "U008",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "term",
+          "term_key": "A2__001#E1",
+          "name": "방주",
+          "entity_type": "location"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_스노우_화이트",
+          "name": "스노우 화이트",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__048"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "goddess_fall_27__rln_006"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 스노우 화이트가 자신들은 용서했다며 도로시에게도 용서하라고 말한다 / 선후·근거: 앞 기록 goddess_fall_02(연표 820)보다 뒤인 연표 840의 goddess_fall_27에서 방주를 용서한 입장을 다시 밝힌다",
+      "supporting_evidence": [
+        {
+          "scene_id": "goddess_fall_27",
+          "line_start": 146,
+          "line_end": 147,
+          "quote": "스노우 화이트: 우리는 용서했다.\n스노우 화이트: 너도 용서해라."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__050",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_07_09__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 엔더슨을 비롯한 중앙 정부 주요 인사들의 결정으로 지휘관과 휘하 스쿼드가 특수별동대로 임명되고 지휘관이 이를 수락한다 / 선후·근거: 연표 230인 main_07_09에서 특수별동대 소속이 처음 성립한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_07_09",
+          "line_start": 15,
+          "line_end": 21,
+          "quote": "엔더슨: 해서, 나를 비롯한 중앙 정부 주요 인사들은 결정을 내렸네.\n엔더슨: 자네가 지상의 존재들과 접촉률이 비상하게 높은 것에 기인.\n엔더슨: 자네와 자네 휘하 스쿼드를 특수 별동대로 임명하기로.\n[CHOICE_START]\n  [OPTION TEXT=\"특수 별동대?\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_07_09",
+          "line_start": 36,
+          "line_end": 39,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"예. 알겠습니다.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__051",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_잉그리드",
+          "name": "잉그리드",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__050"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "택티컬티택_00__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 택티컬티택(잉그리드)이 방주가 외부로 병력을 뺄 수 없는 상황에서 특수별동대인 지휘관만 추적할 수 있다고 말한다 / 선후·근거: main_07_09에서 특수별동대로 처음 임명된 뒤에 가능한 호칭·자격 언급이므로 원문 근거로 뒤잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "택티컬티택_00",
+          "line_start": 104,
+          "line_end": 112,
+          "quote": "  [MSG SENDER=\"택티컬티택\"]\n    너도 알다시피 지금 방주는 외부로 병력을 뺄 수 없다\n  [MSG_END]\n  [MSG SENDER=\"택티컬티택\"]\n    특수별동대인 너만 추적할 수 있다\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    알겠어. 해볼게\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__052",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__050"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "핸섬_커맨더_00__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 시프티가 지휘관을 포함한 특수별동대도 복귀 후 바로 정밀 스캔을 받아야 한다고 말한다 / 선후·근거: main_07_09의 특수별동대 임명 성립 이후에 쓰이는 소속 언급이므로 원문 근거로 뒤잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "핸섬_커맨더_00",
+          "line_start": 176,
+          "line_end": 176,
+          "quote": "시프티: 지휘관을 포함한 특수별동대도 복귀 후 바로 정밀 스캔을 받아야 해요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__053",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_프리바티",
+          "name": "프리바티",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__050"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "blabla_triangle_003__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 프리바티가 지휘관이 특수별동대가 되었다고 언급하며 마음대로 행동하지 말라고 말한다 / 선후·근거: 특수별동대가 되었다는 사건 언급으로 main_07_09의 임명 성립 뒤임이 원문에 드러난다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_triangle_003",
+          "line_start": 3,
+          "line_end": 14,
+          "quote": "  [MSG SENDER=\"프리바티\"]\n    지휘관\n  [MSG_END]\n  [MSG SENDER=\"프리바티\"]\n    특수 별동대가 되었다고 해서 너무 그렇게 맘대로 행동하면\n  [MSG_END]\n  [MSG SENDER=\"프리바티\"]\n    저희도 어쩔 수 없어진다는 점\n  [MSG_END]\n  [MSG SENDER=\"프리바티\"]\n    명심해 주세요\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__054",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_07_09__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 중앙 정부 결정으로 지휘관과 지휘관 휘하 스쿼드가 특수별동대로 임명되고 스스로 판단해 움직일 권한을 부여받는다 / 선후·근거: 연표 230인 main_07_09에서 특수별동대 지휘 권한이 처음 성립한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_07_09",
+          "line_start": 15,
+          "line_end": 25,
+          "quote": "엔더슨: 해서, 나를 비롯한 중앙 정부 주요 인사들은 결정을 내렸네.\n엔더슨: 자네가 지상의 존재들과 접촉률이 비상하게 높은 것에 기인.\n엔더슨: 자네와 자네 휘하 스쿼드를 특수 별동대로 임명하기로.\n[CHOICE_START]\n  [OPTION TEXT=\"특수 별동대?\"]\n  [OPTION_END]\n[CHOICE_END]\n엔더슨: 간단하게 얘기하자면 스스로 판단하고 움직일 수 있게 되는 걸세.\n엔더슨: 부사령관 아래로는 자네에게 명령을 내릴 수 없지.\n엔더슨: 또한, 부사령관 이상이 명령을 내리더라도 거부할 수 있네. 타당한 이유만 있다면.\n엔더슨: 보고만 적절하게 해준다면 누구도 터치할 수 없는, 말 그대로 특수한 별동대일세."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__055",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_네온",
+          "name": "네온",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__054"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_41_12__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 네온이 자신의 스승님을 특수별동대 지휘관이라 지칭한다 / 선후·근거: 임명 장면(연표 230)보다 뒤인 연표 830의 main_41_12에서 지휘관 직위가 유지된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_41_12",
+          "line_start": 100,
+          "line_end": 102,
+          "quote": "네온: 엔더슨 부사령관님도요? 잉그리드 사장님도요?\n네온: 특수별동대 지휘관인 스승님도요?\n네온: 찾을 것 같은데요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__056",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__055"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_46_15__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 자신을 특수별동대의 지휘관이라 밝히며 보증에 나선다 / 선후·근거: 앞 기록(연표 830)보다 뒤인 연표 920의 main_46_15에서 본인이 직위를 밝힌다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_46_15",
+          "line_start": 95,
+          "line_end": 98,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"카운터스, 특수별동대의 지휘관인 제가 보증합니다.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__057",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_엔더슨",
+          "name": "엔더슨",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__056"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_46_18__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 엔더슨이 지휘관이 특수별동대의 지휘관이라며 의견을 묻는다 / 선후·근거: 같은 이야기 안의 앞선 main_46_15(16화) 뒤인 main_46_18(19화)에서 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_46_18",
+          "line_start": 35,
+          "line_end": 36,
+          "quote": "엔더슨: 음. 자네라면 뭔가 적절한 방법이 있을 거라 생각되네만.\n엔더슨: 뭐니 뭐니 해도 특수별동대의 지휘관 아닌가."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__058",
+      "unit_id": "U009",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대",
+          "name": "특수별동대",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__018__054"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "b-side_idol_04__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 점원이 특수별동대 지휘관이라 알아보자 지휘관이 맞다고 인정한다 / 선후·근거: main_07_09의 특수별동대 임명 성립 이후에 가능한 호칭 인정이므로 원문 근거로 뒤잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "b-side_idol_04",
+          "line_start": 21,
+          "line_end": 30,
+          "quote": "점원: 역시 맞군요!\n점원: 특수별동대 지휘관!\n[CHOICE_START]\n  [OPTION TEXT=\"에.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"아···! 네, 맞습니다.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__059",
+      "unit_id": "U010",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affiliation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_08_00__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 딥 페이크로 시프티인 척 위장한 슈엔이 카운터스 전속 오퍼레이터로 지원해 당첨되었으며 앞으로 계속 함께 행동한다고 주장한다 / 선후·근거: 연표 250인 main_08_00에서 위장 오퍼레이터 행세를 시작하며 main_09_07에서 처음부터 슈엔이었음이 확인된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_00",
+          "line_start": 5,
+          "line_end": 8,
+          "quote": "시프티: 저 사실 카운터스 전속 오퍼레이터로 지원했거든요.\n시프티: 딱히 지원자도 없고 해서 바로 당첨됐어요.\n아니스: 그럼 앞으로도 계속 우리랑 같이 행동하는 거야?\n시프티: 예."
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 36,
+          "line_end": 43,
+          "quote": "슈엔: 그래서 딥 페이크를 써보기로 했어.\n슈엔: 한 달이나 공을 들인 보람이 있네. 다들 감쪽같이 속아넘어가서는.\n슈엔: 어땠어? 진짜 시프티 같지 않았어?\n슈엔: 연기 죽이지? 응?\n아니스: 시프티는 어떻게 했지?\n슈엔: 정기 합숙 훈련인가 뭐던가. 아무튼 한 달 전부터 거기서 교육 중이야.\n아니스: 아, 그럼 처음부터 시프티인 척 한 건가?\n슈엔: 그렇지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__060",
+      "unit_id": "U010",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_08_05__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 시프티로 위장한 슈엔이 카운터스 일행을 동료들이라 부르며 여러분이 좋고 오래 살아남도록 도와주고 싶으니 믿어 달라고 말한다 / 선후·근거: 연표 250인 main_08_05에서 처음 나온 호감·신뢰 요청 진술이며 main_09_07에서 슈엔의 연기였음이 밝혀진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_05",
+          "line_start": 70,
+          "line_end": 81,
+          "quote": "시프티: 죄송해요. 아무래도 신경 쓰여서 다시 왔어요.\n시프티: 저··· 사실 의심받아도 할 말은 없다고 생각하는데, 그래도 저는 여러분이 좋아요.\n시프티: 아시잖아요. 정을 붙일만하면 니케들은 사라져버려요.\n시프티: 그래서 오퍼레이터 행동 강령 중에 니케에게 정을 붙이지 말라는 게 있을 정도니까.\n시프티: 그런데···.\n시프티: 저 그게 안돼요.\n시프티: 저는 여러분이 오래 살아남았으면 좋겠어요.\n시프티: 그걸 도와주고 싶고요.\n시프티: 이젠··· 이별하고 싶지 않거든요.\n시프티: 동료들과.\n아니스: ··· ···.\n시프티: 믿어 주시면··· 안 될까요?"
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 38,
+          "line_end": 43,
+          "quote": "슈엔: 어땠어? 진짜 시프티 같지 않았어?\n슈엔: 연기 죽이지? 응?\n아니스: 시프티는 어떻게 했지?\n슈엔: 정기 합숙 훈련인가 뭐던가. 아무튼 한 달 전부터 거기서 교육 중이야.\n아니스: 아, 그럼 처음부터 시프티인 척 한 건가?\n슈엔: 그렇지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__061",
+      "unit_id": "U010",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_시프티",
+          "name": "시프티",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_13_00__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 시프티가 스쿼드의 힘을 믿는다는 네온의 말에 자신도 카운터스 여러분을 믿는다며 꼭 해내자고 말한다 / 선후·근거: 앞선 8챕터 메모는 슈엔의 위장 발언이라 쌍이 다르므로 연표 300인 main_13_00에서 진짜 시프티의 신뢰 기록을 새로 세운다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_13_00",
+          "line_start": 10,
+          "line_end": 12,
+          "quote": "네온: 저도 우리 스쿼드의 힘을 믿어요.\n시프티: 예. 저도 여러분을 믿어요.\n시프티: 해내죠. 꼭."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__062",
+      "unit_id": "U011",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_08_01__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 아니스가 시프티로 위장해 기가 막힌 타이밍에 달라붙은 슈엔을 시프티로 여기며 일행을 감시하고 있다고 의심하고 아무도 믿을 수 없다고 말한다 / 선후·근거: 연표 250인 main_08_01에서 처음 드러난 의심·불신 상태다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_01",
+          "line_start": 6,
+          "line_end": 13,
+          "quote": "아니스: 시프티가 우릴 감시하고 있기 때문이지.\n아니스: 지휘관님. 우리가 지상에 올라온다는 것, 엑시아 말고 아는 사람이 있어?\n[CHOICE_START]\n  [OPTION TEXT=\"없어. 아무한테도 얘기 안 했으니까.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 그런데 기가 막힌 타이밍에 달라붙었지.\n아니스: 자, 그럼 시프티가 왜 우릴 감시하고 있었을까?"
+        },
+        {
+          "scene_id": "main_08_01",
+          "line_start": 22,
+          "line_end": 22,
+          "quote": "아니스: 아무도 믿을 수 없어."
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 40,
+          "line_end": 43,
+          "quote": "아니스: 시프티는 어떻게 했지?\n슈엔: 정기 합숙 훈련인가 뭐던가. 아무튼 한 달 전부터 거기서 교육 중이야.\n아니스: 아, 그럼 처음부터 시프티인 척 한 건가?\n슈엔: 그렇지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__063",
+      "unit_id": "U011",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__062"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_08_05__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 시프티로 위장한 슈엔이 믿어 달라고 하자 아니스가 완전히 믿는 것은 불가능하지만 그래도 힘을 내 보겠다고 답한다 / 선후·근거: 같은 이야기의 앞선 main_08_01(2화) 뒤인 main_08_05(6화)에서 믿어 보려는 태도로 누그러진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_08_05",
+          "line_start": 81,
+          "line_end": 84,
+          "quote": "시프티: 믿어 주시면··· 안 될까요?\n아니스: ···미안. 완전히 믿는다는 건 나한테는 불가능한 일이야.\n아니스: 그래도, 힘은 내볼게.\n시프티: ···예. 알겠어요."
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 40,
+          "line_end": 43,
+          "quote": "아니스: 시프티는 어떻게 했지?\n슈엔: 정기 합숙 훈련인가 뭐던가. 아무튼 한 달 전부터 거기서 교육 중이야.\n아니스: 아, 그럼 처음부터 시프티인 척 한 건가?\n슈엔: 그렇지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__018__064",
+      "unit_id": "U011",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_슈엔",
+          "name": "슈엔",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "conflict_or_hostility",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__018__063"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_09_00__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 네온이 동행 중인 위장 시프티(슈엔)에게도 비밀을 말하자고 하자 아니스가 중앙 정부와 딱 붙어 있는 애라며 위험하다고 경계한다 / 선후·근거: 앞 기록 main_08_05(연표 250)보다 뒤인 연표 260의 main_09_00에서 비밀 공유를 두고 다시 불신·경계를 드러낸다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_09_00",
+          "line_start": 27,
+          "line_end": 29,
+          "quote": "네온: 차라리 시프티한테도 말하는 건 어떨까요?\n아니스: 위험하지 아무래도. 중앙 정부랑 딱 붙어있는 애니까.\n네온: 오, 역시 불신의 아니스."
+        },
+        {
+          "scene_id": "main_09_07",
+          "line_start": 40,
+          "line_end": 43,
+          "quote": "아니스: 시프티는 어떻게 했지?\n슈엔: 정기 합숙 훈련인가 뭐던가. 아무튼 한 달 전부터 거기서 교육 중이야.\n아니스: 아, 그럼 처음부터 시프티인 척 한 건가?\n슈엔: 그렇지."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "excluded_memos": [
+    {
+      "unit_id": "U003",
+      "item_id": "first_affection_07__rln_004",
+      "reason": "일회성 행동",
+      "note": "스노우 화이트가 이때 굼벵이가 제철이라 가장 맛있다고 알려 주었다는 단발성 대화만 전할 뿐 지속되는 관계 상태나 변화를 말하지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "first_affection_07",
+          "line_start": 49,
+          "line_end": 50,
+          "quote": "마리안: 세상에. 굼벵이들이 살이 너무 잘 올랐지 뭐예요?\n마리안: 스노우 화이트가, 이때 굼벵이가 가장 맛있다고 했어요. 재철이라고."
+        }
+      ]
+    }
+  ],
+  "merge_suggestions": []
+}

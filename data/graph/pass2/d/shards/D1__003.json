@@ -1,0 +1,4640 @@
+{
+  "schema_version": "pass2-0.1.0",
+  "bundle_id": "D1__003",
+  "endpoint_overrides": [
+    {
+      "unit_id": "U001",
+      "memo_ids": [
+        "new_year_new_sword_01__rln_002"
+      ],
+      "side": "subject",
+      "from": {
+        "ref": "entity",
+        "entity_id": "char_라피",
+        "name": "라피",
+        "entity_type": "character"
+      },
+      "to": {
+        "ref": "entity",
+        "entity_id": "char_아니스",
+        "name": "아니스",
+        "entity_type": "character"
+      },
+      "confidence": "가능성",
+      "rationale": "라피 계정에서 \"대표적으로 아니ㅅㄴㅇㅎㅀㅇ\"라고 치다 끊긴 직후 \"지휘관님!\"과 반말로 말투가 바뀌고 지휘관도 \"아니스?\"라고 묻는다. 그러나 발신 표시는 계속 라피이고 본인이 아니스라고 확인하는 말은 없으므로, L68-L82를 보낸 실제 주체가 아니스라는 것은 말투와 정황에 기댄 가능성이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_01",
+          "line_start": 53,
+          "line_end": 67,
+          "quote": "  [MSG SENDER=\"라피\"]\n    대표적으로 아니ㅅㄴㅇㅎㅀㅇ\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    지휘관님!\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    지금 어디 있어?\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    전초기지에 있는 거지?\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    아니스?\n  [MSG_END]"
+        }
+      ]
+    }
+  ],
+  "candidate_links": [
+    {
+      "link_id": "D1__003__001",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "new_year_new_sword_01__rln_002"
+      ],
+      "confidence": "가능성",
+      "rationale": "상태: 라피의 메신저 계정으로 메시지를 친 사람(끝점 보정으로 아니스로 봄)이 지휘관에게 다른 니케들에게 당하지 않게 잘 도망 다니라며 누구에게라도 당하면 진짜 엄청 속상해할 것이라고 당부한다. 발신자가 아니스라는 것은 말투와 지휘관의 \"아니스?\" 물음에 기댄 추론이고 본인 확인이 없어 가능성으로 둔다 / 선후·근거: 끝점 보정으로 쌍이 아니스↔지휘관이 된 단일 기록으로 다른 기록과 선후 사슬을 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "new_year_new_sword_01",
+          "line_start": 53,
+          "line_end": 67,
+          "quote": "  [MSG SENDER=\"라피\"]\n    대표적으로 아니ㅅㄴㅇㅎㅀㅇ\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    지휘관님!\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    지금 어디 있어?\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    전초기지에 있는 거지?\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    아니스?\n  [MSG_END]"
+        },
+        {
+          "scene_id": "new_year_new_sword_01",
+          "line_start": 68,
+          "line_end": 82,
+          "quote": "  [MSG SENDER=\"라피\"]\n    다른 애들한테 당하지 않게 조심하면서 잘 도망 다니고 있어!\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    누구한테라도 당하면\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    진짜\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    진짜!!!!111\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    엄청 속상해할 거니까!\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__002",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_00_03__rln_002",
+        "main_01_00__rln_001",
+        "main_01_03__rln_001",
+        "main_01_10__rln_002",
+        "main_04_16__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 스쿼드 04-F의 지휘권을 변경해 지휘관이 명령권자가 되고 진행 중인 작전을 인계받아 지휘한다. main_01_03에서 라피가 명령을 내려 달라고 하자 지휘관이 \"그렇다면 전진하자.\"라고 명하고 라피가 \"라져.\"라고 복창하며, 발전소 조사 작전에도 연속 배정되고 스쿼드에 함구 명령을 내려 라피가 복종한다 / 선후·근거: main_00_03(연표 110)에서 지휘권 변경으로 처음 성립하고 main_01_00·main_01_03·main_01_10(연표 120)과 main_04_16(연표 160)에서 같은 지휘 관계가 유지·행사된다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_00_03",
+          "line_start": 36,
+          "line_end": 42,
+          "quote": "라피: 지휘관 인식 코드, 액세스.\n라피: ··· ···.\n라피: 스쿼드 04-F의 지휘권 변경 완료.\n아니스: 라피! 너 누군지도 모르는 인간한테 그렇게 함부로···!\n라피: 긴급사태야. 우리 앞엔 랩쳐가 있고.\n아니스: 그건··· 그렇지만···!\n라피: 현 시간부로 당신은 우리의 명령권자가 됩니다."
+        },
+        {
+          "scene_id": "main_01_00",
+          "line_start": 11,
+          "line_end": 17,
+          "quote": "라피: 어쨌든 현 시간부로 당신은 본 스쿼드의 지휘관이 됩니다.\n라피: 진행 중인 작전을 인계해야 합니다만, 문제 없으십니까?\n[CHOICE_START]\n  [OPTION TEXT=\"문제없어.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 작전에 대해 브리핑하겠습니다."
+        },
+        {
+          "scene_id": "main_01_03",
+          "line_start": 23,
+          "line_end": 29,
+          "quote": "라피: 그렇다면 명령을 내려주십시오.\n라피: 그거면 됩니다. 우린 지휘관의 명령을 따르니까요.\n[CHOICE_START]\n  [OPTION TEXT=\"그렇다면 전진하자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 라져."
+        },
+        {
+          "scene_id": "main_01_10",
+          "line_start": 38,
+          "line_end": 42,
+          "quote": "라피: 지휘관은 누가 배정됩니까?\n[CHOICE_START]\n  [OPTION TEXT=\"나.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_04_16",
+          "line_start": 78,
+          "line_end": 85,
+          "quote": "아니스: 지휘관님. 우리에게 명령을 내려줘.\n[CHOICE_START]\n  [OPTION TEXT=\"모두, 라피의 기억이 사라지지 않은 사실을 숨겨줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ···라져.\n아니스: 오케이.\n네온: 예."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__003",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__002"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_25_15__rln_005",
+        "main_26_06__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 레드 후드에게 자신이 라피의 지휘관이라고 거듭 밝힌다 / 선후·근거: 앞 기록(연표 110~160)에서 성립한 지휘 관계를 main_25_15(연표 510)와 main_26_06(연표 520)에서 본인 진술로 재확인하므로 공식 연표 순서를 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_25_15",
+          "line_start": 88,
+          "line_end": 94,
+          "quote": "레드 후드: ···그러는 너희는 라피와 무슨 관계지?\n아니스: 친구.\n네온: 동료에요.\n[CHOICE_START]\n  [OPTION TEXT=\"지휘관.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_26_06",
+          "line_start": 105,
+          "line_end": 108,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"난 라피의 지휘관이고, 라피는 나를 언제나 지켜줬으니까.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__004",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_01_03__rln_001",
+        "main_01_10__rln_005",
+        "main_08_05__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관에게 \"그렇다면 명령을 내려주십시오.\", \"우린 지휘관의 명령을 따르니까요.\"라며 위험하거나 의문이 드는 작전이라도 명령인 이상 지휘관의 명령을 따른다고 거듭 밝힌다. 명령권을 가진 쪽은 지휘관이고 따르는 쪽은 라피다. 실제로 명령하고 복창한 장면은 D1__003__002에 둔다 / 선후·근거: main_01_03·main_01_10(연표 120)에서 처음 복종 원칙을 말하고 main_08_05(연표 250)에서 되풀이한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_03",
+          "line_start": 23,
+          "line_end": 24,
+          "quote": "라피: 그렇다면 명령을 내려주십시오.\n라피: 그거면 됩니다. 우린 지휘관의 명령을 따르니까요."
+        },
+        {
+          "scene_id": "main_01_10",
+          "line_start": 65,
+          "line_end": 66,
+          "quote": "라피: ···명령인 이상 따르겠습니다만.\n라피: 괜찮으시겠습니까? 지휘관."
+        },
+        {
+          "scene_id": "main_08_05",
+          "line_start": 55,
+          "line_end": 56,
+          "quote": "라피: 지휘관. 아무런 백업 없이 지뢰밭을 지나가는 건 너무 위험합니다.\n라피: 물론 명령이라면 따르겠습니다만."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__005",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__004"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_12_07__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관에게 알리지 않고 메티스를 제압한 라피가 \"죄송합니다.\"라고 사과하고 \"하극상으로 인한 벌은 달게 받겠습니다.\"라고 말한다. 징계 권한을 가진 상관은 지휘관이고 이를 인정하는 쪽은 라피다. 같은 대사 L54의 이념에 대한 평가는 방향과 종류가 달라 따로 기록한다(D1__003__076) / 선후·근거: 앞 기록(연표 120~250) 뒤인 main_12_07(연표 290) 장면으로 공식 연표 순서를 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_12_07",
+          "line_start": 55,
+          "line_end": 57,
+          "quote": "라피: 이곳은 적진. 혹은 적의 뱃속. 불안요소를 키울 수 없었습니다.\n라피: 죄송합니다.\n라피: 하극상으로 인한 벌은 달게 받겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__076",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_12_07__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 \"지휘관이 니케를 아끼는 그 이념은 훌륭하다고 생각합니다.\"라며 지휘관의 이념을 높이 평가한다. 바로 뒤 \"하지만\"으로 적진이라 따르지 못했다고 이어지므로, 평가와 별개로 이번 행동은 지휘관을 따르지 않았다. 라피→지휘관 방향의 평가이며, 하극상의 벌을 받겠다는 지휘 관계 인정은 D1__003__005에 있다 / 선후·근거: main_12_07(연표 290) L54의 평가이며 동료 관계 유보(D1__003__015)·지목(D1__003__073) 사슬과는 다른 내용이라 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_12_07",
+          "line_start": 54,
+          "line_end": 54,
+          "quote": "라피: 지휘관이 니케를 아끼는 그 이념은 훌륭하다고 생각합니다. 하지만."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__006",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "rapi_00__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관의 명령을 따르고 지휘관을 지키는 것이 니케가 할 일이라며 자신들에게 무언가 시키는 것을 부담스러워하지 말라고 밝힌다. 명령하는 쪽은 지휘관, 따르는 쪽은 라피다 / 선후·근거: 공식 연표 번호가 없고 본편 장면과의 선후 단서가 없어 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_00",
+          "line_start": 151,
+          "line_end": 157,
+          "quote": "라피: ···말이 길었습니다만, 요약하자면.\n라피: 지휘관의 명령을 따르고, 지휘관을 지키는 것.\n라피: 그게 니케가 할 일입니다.\n라피: 물론 모든 일거수일투족에 명령을 받을 순 없기에.\n라피: 평소 때는 자신의 판단하에 생활하고 있습니다만,\n라피: 그러던 중 명령이 들어오면 따라야 한다. 가 기본 메커니즘이라 봐주셔도 무방합니다.\n라피: 그러니 저희에게 뭔가를 시키는 것을 부담스러워하지 마십시오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__007",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_길로틴",
+          "name": "길로틴",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "yes_my_commander_05__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 길로틴이 라피를 지휘관('벗')의 충실한 수족이라고 부른다. 부리는 쪽은 지휘관, 수족은 라피다 / 선후·근거: 연표 번호가 없는 스페셜 스토리의 제3자 단독 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "yes_my_commander_05",
+          "line_start": 11,
+          "line_end": 12,
+          "quote": "길로틴: 너, 너는··· 라피···?\n길로틴: 벗의 충실한 수족인 네가··· 조직의 암살자, 였다고···?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__008",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_02_12__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 니케는 인간이 아니라 병기일 뿐이며 대파된 니케가 다시 나타나는 것도 흔한 일이니 복잡한 표정을 짓지 말아 달라며 지휘관과 감정적 거리를 둔다 / 선후·근거: main_02_12(연표 130)에서 처음 확인되는 태도다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_12",
+          "line_start": 60,
+          "line_end": 64,
+          "quote": "라피: 이 기회에 확실히 말씀드리자면···.\n라피: 우리 니케는 인간이 아닙니다.\n라피: 인류의 적인 랩쳐와 맞서 싸우기 위해, 큰 힘과 불멸을 가둬두고 있는 병기일 뿐입니다.\n라피: 대파된 니케가 아무렇지도 않게 다시 나타나는 건 흔히 있는 일이죠.\n라피: 그러니 그런 복잡한 표정은 짓지 말아 주십시오."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__009",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_04_02__rln_001",
+        "main_06_05__rln_001",
+        "main_07_06__rln_004",
+        "main_11_04__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관을 랩쳐와 눈사태 등 위험에서 절대 놓치지 않고 죽음으로 내몰지 않으며 무슨 일이 있어도 지키겠다고 거듭 다짐한다 / 선후·근거: main_04_02(연표 160)에서 처음 선언하고 main_06_05(연표 210)·main_07_06(연표 230)·main_11_04(연표 280)에서 같은 보호 다짐을 되풀이한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_02",
+          "line_start": 21,
+          "line_end": 23,
+          "quote": "라피: 지휘관! 제 뒤로!\n라피: 놈들은 명백히 지휘관을 노리고 있습니다.\n라피: 하지만 걱정하지 마십시오. 우린 지휘관을 지킵니다."
+        },
+        {
+          "scene_id": "main_06_05",
+          "line_start": 53,
+          "line_end": 54,
+          "quote": "라피: 꽉 잡으십시오 지휘관!\n라피: 이번엔, 절대 놓치지 않겠습니다."
+        },
+        {
+          "scene_id": "main_07_06",
+          "line_start": 113,
+          "line_end": 114,
+          "quote": "라피: 방법이 아닙니다. 절대 가게 두지 않습니다.\n라피: ···지휘관을 몇 번이나 지키지 못한 것도 모자라, 죽음으로 내몰 수는 없습니다."
+        },
+        {
+          "scene_id": "main_11_04",
+          "line_start": 29,
+          "line_end": 34,
+          "quote": "라피: 예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"그래. 믿을게.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__010",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_04_02__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 자신을 지키겠다는 라피에게 믿겠다고 답하며 신뢰를 표한다 / 선후·근거: main_04_02(연표 160)에서 정사 본편 기준 지휘관의 신뢰 진술이 처음 드러난다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_02",
+          "line_start": 23,
+          "line_end": 27,
+          "quote": "라피: 하지만 걱정하지 마십시오. 우린 지휘관을 지킵니다.\n[CHOICE_START]\n  [OPTION TEXT=\"믿을게.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__011",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__010"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_04_16__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 들키면 파직되거나 아우터 림으로 갈 수 있는 상황에서도 라피의 기억이 사라지지 않은 사실을 숨기기로 결정하고 스쿼드에 함구 명령을 내려 라피를 지킨다 / 선후·근거: 같은 main_story__chapter_04 안의 선형 진행(main_04_02 → main_04_16)으로 앞 기록 뒤다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_16",
+          "line_start": 46,
+          "line_end": 48,
+          "quote": "네온: 어··· 그러면 만약 들키면 스승님은···.\n아니스: 파직되거나. 최악의 경우 아우터 림으로 가겠지.\n아니스: 그런데 결국 그런 거 아냐? 한 무리의 대장이라는 게."
+        },
+        {
+          "scene_id": "main_04_16",
+          "line_start": 70,
+          "line_end": 84,
+          "quote": "아니스: 그래서, 어떻게 할 거야? 지휘관님.\n[CHOICE_START]\n  [OPTION TEXT=\"숨기자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ···괜찮으시겠습니까.\n네온: 저는 괜찮다고 생각해요.\n아니스: 좋아. 그럼 확실히 하자고.\n아니스: 지휘관님. 우리에게 명령을 내려줘.\n[CHOICE_START]\n  [OPTION TEXT=\"모두, 라피의 기억이 사라지지 않은 사실을 숨겨줘.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ···라져.\n아니스: 오케이."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__012",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__011"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_11_04__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 난전에서 동료들이 지켜줄 것이라 말하고 무슨 일이 있어도 지키겠다는 라피에게 믿겠다고 답한다 / 선후·근거: 앞 기록(연표 160) 뒤인 main_11_04(연표 280) 장면으로 공식 연표 순서를 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_04",
+          "line_start": 25,
+          "line_end": 34,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"내 동료들이 지켜줄 테니까.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예. 무슨 일이 있어도 지휘관은 제가 지키겠습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"그래. 믿을게.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__013",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라플라스",
+          "name": "라플라스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_11_04__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라플라스가 라피와 지휘관의 작전 수행 내역을 살펴본 결과 단순한 지휘관과 니케의 관계가 아니라 전우에 가까운 느낌이라고 평가한다 / 선후·근거: main_11_04(연표 280)에서 제3자인 라플라스가 두 사람의 현재 관계를 처음 평가한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_04",
+          "line_start": 35,
+          "line_end": 42,
+          "quote": "라플라스: ···라피. 넌 지휘관과 무슨 관계지?\n라피: ?? 니케와 지휘관의 관계야.\n라플라스: 아냐. 그런 걸 물어본 게 아니다.\n라플라스: 실례되는 행동이지만, 둘의 작전 수행 내역을 살펴봤다.\n라플라스: 그 결과. 단순한 지휘관과 니케의 관계라고는 생각되지 않아.\n맥스웰: 오~ 뭐야 뭐야? 설마 둘이···?\n라플라스: 나의 감상으로는···. 전우에 가까운 느낌이었다.\n라플라스: 내가 느낀 바가 맞나?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__014",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__013"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_11_04__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 라피와 자신이 전우에 가까운 느낌이라는 라플라스의 말에 맞다고 동의한다 / 선후·근거: 같은 main_11_04 장면 안에서 라플라스의 질문(L38-L42) 직후 지휘관이 답하는(L43-L46) 줄 순서 진행이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_04",
+          "line_start": 41,
+          "line_end": 46,
+          "quote": "라플라스: 나의 감상으로는···. 전우에 가까운 느낌이었다.\n라플라스: 내가 느낀 바가 맞나?\n[CHOICE_START]\n  [OPTION TEXT=\"맞아.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__056",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라플라스",
+          "name": "라플라스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__003__014"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_11_04__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 전우에 가깝다는 말에 \"맞아.\"라고 동의하자 라플라스가 \"니케와 인간이 전우라···. 비웃음 사기 딱 좋은 얘기군.\"이라 하고 \"니케와 인간은 전우가 될 수 없다.\", \"니케는 인간을 지키는 존재.\"라며 자신이 꺼낸 전우 평가를 스스로 반박한다 / 선후·근거: 같은 장면 main_11_04에서 지휘관의 동의(L44, D1__003__014) 뒤 L47-52에서 라플라스의 반박이 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_04",
+          "line_start": 47,
+          "line_end": 52,
+          "quote": "라플라스: 니케와 인간이 전우라···.\n라플라스: 비웃음 사기 딱 좋은 얘기군.\n드레이크: 하하하.\n맥스웰: 그러지 좀 마 제발.\n라플라스: 니케와 인간은 전우가 될 수 없다.\n라플라스: 니케는 인간을 지키는 존재. 도움을 받는다는 일 따위 있을 수 없다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__072",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_레비아탄",
+          "name": "레비아탄",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_36_00__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 거짓말을 해도 좋다는 말을 들은 레비아탄과 달리 그 조건이 불공평하다고 라피가 지휘관에게 항의하자, 레비아탄이 \"거봐! 의심받잖아 너! 동료한테도!\"라며 라피와 지휘관을 동료로 지목한다 / 선후·근거: main_36_00(연표 750) L140-144의 문답이며 같은 장면의 라피 발언(D1__003__057)으로 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_36_00",
+          "line_start": 140,
+          "line_end": 144,
+          "quote": "  [OPTION TEXT=\"하지만 너는 거짓말을 하든, 진실을 말해주든 마음대로 해.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 지휘관. 그건 너무 불공평합니다.\n레비아탄: 하, 하하! 거봐! 의심받잖아 너! 동료한테도!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__015",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__056"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_11_04__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라플라스가 떠난 뒤 라피가 \"틀린 말은 아닙니다. 니케는 인간을 지키기 위해 만들어진 존재.\"라며 지휘관과 자신 사이에 동료니 전우니 하는 관계는 \"애초에 성립이 안 될지도 모르죠.\"라고 유보한다. 유보한 대상은 두 사람 사이의 쌍방 관계이며 주장자는 라피 한 명이다 / 선후·근거: 같은 main_11_04 장면 안에서 라플라스의 반박(L51-52, D1__003__056) 뒤 L66-67에서 라피가 그 반박을 받아 같은 쪽으로 말한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_11_04",
+          "line_start": 65,
+          "line_end": 67,
+          "quote": "라피: ··· ···.\n라피: 틀린 말은 아닙니다. 니케는 인간을 지키기 위해 만들어진 존재.\n라피: 동료니, 전우니 하는 것은 애초에 성립이 안 될지도 모르죠."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__016",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__009"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_13_15__rln_001",
+        "main_17_14__rln_005",
+        "main_24_11__rln_002",
+        "main_28_04__rln_002",
+        "main_33_01__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 잠든 지휘관 옆을 지키고 어디든 함께하겠다고 다짐하며, 지휘관이 추락하거나 죽게 두지 않기 위해 밀착 마크하고 언체인드 노출 위험보다 지휘관의 생존을 우선한다. main_17_14에서 라피가 명령을 청하고 지휘관이 귀환을 명해 라피가 따른 지휘 행사는 따로 기록한다(D1__003__067) / 선후·근거: 앞 기록(연표 160~280) 뒤인 main_13_15(연표 300)부터 main_33_01(연표 660)까지 공식 연표 순서대로 보호·동행 의지가 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_13_15",
+          "line_start": 23,
+          "line_end": 27,
+          "quote": "라피: 혹시나 해서 말씀드리자면.\n라피: 지휘관은 마리안을 구했습니다.\n라피: 그 사실만은 절대 변하지 않습니다.\n라피: 그러니, 지금은 주무십시오.\n라피: 제가 옆을 지키고 있겠습니다."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line_start": 110,
+          "line_end": 115,
+          "quote": "라피: 지휘관, 저희는 걱정하지 마십시오.\n라피: 말씀드렸지 않습니까.\n라피: [지휘권]을 넘겨드린다고.\n라피: 그때부터 함께할 각오는 되어있었습니다.\n라피: 지휘관 인식 코드, 액세스.\n라피: 스쿼드 04-F의 지휘권 변경 완료."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line_start": 125,
+          "line_end": 125,
+          "quote": "라피: 어디든 함께하겠습니다."
+        },
+        {
+          "scene_id": "main_24_11",
+          "line_start": 176,
+          "line_end": 179,
+          "quote": "라피: 제가 쐈습니다. 그러니 지휘관은 쏠 필요가 없었습니다.\n라피: 앞으로도 그럴 겁니다.\n라피: 지휘관은 절대 떨어지지 않습니다.\n라피: 제가, 저희들이 절대 그렇게 두지 않습니다."
+        },
+        {
+          "scene_id": "main_28_04",
+          "line_start": 108,
+          "line_end": 109,
+          "quote": "라피: 그럼 저는 지휘관 옆에서 밀착 마크 하겠습니다.\n라피: 우리는 머리만 남으면 되지만, 지휘관은 안됩니다."
+        },
+        {
+          "scene_id": "main_33_01",
+          "line_start": 111,
+          "line_end": 121,
+          "quote": "아니스: 좋아. 라피가 없는 상태에서 지휘관님이 크게 다치면.\n아니스: 그냥 치료하자.\n네온: 언체인드에 노출되는 걸 감안하고 말이죠?\n아니스: 응.\n[CHOICE_START]\n  [OPTION TEXT=\"아니, 그건 너무 위험···.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 지휘관이 죽는 걸 지켜보는 것보단 낫다고 생각합니다.\n네온: 맞아요. 그건 너무 잔인해요.\n아니스: 좋아. 이걸로 결정."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__067",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_17_14__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 \"그러니 지휘관. 명령을 내려주십시오.\"라고 청하고 지휘관이 \"방주로 돌아가자.\"라고 명하자 라피가 \"예.\"라고 따른다. 지휘관의 명령과 라피의 수락으로 지휘가 그 자리에서 행사된다 / 선후·근거: main_17_14(연표 400) L123-134의 문답이며 다른 기록과 사슬로 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_17_14",
+          "line_start": 123,
+          "line_end": 124,
+          "quote": "라피: 그러니 지휘관.\n라피: 명령을 내려주십시오."
+        },
+        {
+          "scene_id": "main_17_14",
+          "line_start": 131,
+          "line_end": 134,
+          "quote": "  [OPTION TEXT=\"방주로 돌아가자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__017",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__003__008"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_21_02__rln_001",
+        "main_24_11__rln_004",
+        "main_24_18__rln_001",
+        "main_26_11__rln_004",
+        "main_32_01__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 비밀이 생겼다고 마음 쓸 필요 없다고 배려하고 지휘관이 지휘관으로 있어 줘서 감사하다고 전하며, 자신을 꼭 찾아 달라고 부탁한 뒤 찾으러 올 것을 믿고 있었다고 밝히고 지휘관의 판단을 믿는다 / 선후·근거: main_02_12(연표 130)에서 병기라며 감정적 거리를 두던 상태에서 main_21_02~main_32_01(연표 460~650)의 깊은 감사·의탁·신뢰로 바뀐 공식 연표상 전환이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_21_02",
+          "line_start": 41,
+          "line_end": 42,
+          "quote": "라피: 혹시나 해서 말씀드리는 것이지만, 우리에게 비밀이 생겼다고 해서 마음 쓰실 필요는 없습니다.\n아니스: 맞아. 그게 우리를 기만하는 것만 아니면 돼."
+        },
+        {
+          "scene_id": "main_24_11",
+          "line_start": 192,
+          "line_end": 193,
+          "quote": "라피: ···저도, 감사합니다.\n라피: 지휘관이 지휘관으로 있어줘서."
+        },
+        {
+          "scene_id": "main_24_18",
+          "line_start": 170,
+          "line_end": 171,
+          "quote": "라피: 지휘관.\n라피: 저를 꼭 찾아주십시오."
+        },
+        {
+          "scene_id": "main_26_11",
+          "line_start": 152,
+          "line_end": 157,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"약속 지켰어.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예. 감사합니다.\n라피: 믿고 있었습니다."
+        },
+        {
+          "scene_id": "main_32_01",
+          "line_start": 70,
+          "line_end": 71,
+          "quote": "라피: ···믿는 겁니다. 지휘관의 판단을.\n라피: 그리고 그레이브도요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__018",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__012"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_24_11__rln_003",
+        "main_25_10__rln_002",
+        "main_26_06__rln_003",
+        "main_28_02__rln_002",
+        "main_31_09__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 라피에게 살아 있어 줘서 고맙다고 하고 서로를 희생시키지 않는다고 밝히며, 라피가 그 무엇보다 소중하고 어쩔 수 없는 선택을 했을 때 편을 들어 줄 동료라고 말하고 자신을 믿어 달라고 한다. main_28_02의 \"그때도 너희는 내 동료일 테니까.\"는 쌍방 동료 지목이라 따로 기록한다(D1__003__068) / 선후·근거: 앞 기록(연표 280) 뒤인 main_24_11(연표 490)부터 main_31_09(연표 640)까지 공식 연표 순서대로 유대와 신뢰 표현이 깊어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_24_11",
+          "line_start": 184,
+          "line_end": 191,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"고마워.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"살아있어줘서.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_25_10",
+          "line_start": 70,
+          "line_end": 78,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"우리는 서로를 희생시키지 않아.\"]\n  [OPTION_END]\n[CHOICE_END]\n도로시: 라피도 그렇게 생각할까요?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 확신할 수 있어.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_26_06",
+          "line_start": 121,
+          "line_end": 128,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"라피는 소중해.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"나한텐 아마 그 무엇보다 소중하겠지.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_28_02",
+          "line_start": 84,
+          "line_end": 95,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"너희가 만약 방주의 뜻에 맞지 않는 선택을 했을 때.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"어쩔 수 없이 그렇게 되어버렸을 때.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"너희들의 편을 들어주고 싶어.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_31_09",
+          "line_start": 126,
+          "line_end": 130,
+          "quote": "라피: ··· ···.\n[CHOICE_START]\n  [OPTION TEXT=\"날 믿어줘. 최악의 상황은 일어나지 않을 거야.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__068",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_28_02__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 비서 자리를 두고 농담하던 중 지휘관이 \"그때도 너희는 내 동료일 테니까.\"라고 해 라피 일행을 자신의 동료로 지목한다. 동료 관계는 쌍방이고 화자는 지휘관이다 / 선후·근거: main_28_02(연표 610) L128의 진술이며 다른 기록과 사슬로 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_28_02",
+          "line_start": 128,
+          "line_end": 128,
+          "quote": "  [OPTION TEXT=\"그때도 너희는 내 동료일 테니까.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__019",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_25_10__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 라피 역시 서로를 희생시키지 않는다는 같은 생각임을 확신한다 / 선후·근거: main_25_10(연표 510)에서 라피→지휘관 방향의 태도를 지휘관이 진술한 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_25_10",
+          "line_start": 70,
+          "line_end": 78,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"우리는 서로를 희생시키지 않아.\"]\n  [OPTION_END]\n[CHOICE_END]\n도로시: 라피도 그렇게 생각할까요?\n[CHOICE_START]\n  [OPTION TEXT=\"응. 확신할 수 있어.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__020",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_26_06__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 레드 후드에게 라피는 언제나 자신을 지켜 주었다고 과거부터 이어진 라피의 보호를 진술한다 / 선후·근거: main_26_06(연표 520)에서 앞선 시점의 보호 전반을 회고하므로 특정 단일 성립 장면 anchor 없이 독립 과거 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_26_06",
+          "line_start": 105,
+          "line_end": 108,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"난 라피의 지휘관이고, 라피는 나를 언제나 지켜줬으니까.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__073",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__003__015"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_34_02__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 우리를 동료로 생각하고 있긴 하느냐는 아니스의 물음(L46)에 라피가 \"물론이야.\"라고 답한다(L47). 라피가 일행(지휘관 포함)을 서로의 동료로 지목한 라피의 진술이다. 같은 장면 L128 지휘관의 동료 선언과 라피의 수락은 D1__003__022에 따로 기록한다 / 선후·근거: main_11_04(연표 280)에서 동료나 전우는 성립이 안 될지도 모른다고 했던 상태(D1__003__015)에서 main_34_02(연표 670)의 동료 지목으로 바뀐다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_02",
+          "line_start": 46,
+          "line_end": 47,
+          "quote": "아니스: 우리를 동료로 생각하고 있긴 해?\n라피: 물론이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__021",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__073"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_34_02__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 동료로 생각한다고 답한 라피가 \"나한테는 과분하다고 생각하고 있어.\"라며 일행을 과분하게 여긴다고 밝힌다. 동료 지목(D1__003__073)과 별개인 라피 쪽의 감정이다 / 선후·근거: 같은 장면 main_34_02 L47의 동료 지목 바로 뒤 L48의 진술이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_02",
+          "line_start": 48,
+          "line_end": 48,
+          "quote": "라피: 나한테는 과분하다고 생각하고 있어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__022",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__021"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_34_02__rln_009"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 지휘관이자 동료로서 지금 라피의 이야기를 들어야겠다고 말하고 라피가 알겠다며 받아들여 동료로서 속내를 나누는 관계가 성립한다 / 선후·근거: 같은 main_34_02 장면 안에서 라피의 동료 인정(L46-L48) 뒤에 지휘관의 동료 선언과 라피의 수락(L127-L137)이 이어지는 줄 순서 진행이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_02",
+          "line_start": 127,
+          "line_end": 137,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"라피. 지휘관이자 너의 동료로서.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"지금 네 얘기를 들어야겠어.\"]\n  [OPTION_END]\n[CHOICE_END]\n아니스: 나도 마찬가지야.\n네온: 물론 저도요.\n라피: ···알겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__023",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": {
+        "kind": "script",
+        "evidence": [
+          {
+            "scene_id": "main_34_03",
+            "line_start": 28,
+            "line_end": 36,
+            "quote": "라피: 헤매던 중, 지휘관을 만났습니다.\n라피: 그 올곧은 눈, 똑바로 걷는 걸음걸이가 눈 부셔 보였죠.\n라피: 그 옆을 함께 걷는다면,\n라피: 옆에서 같은 것을 바라보고 같은 방향으로 걷는다면\n라피: 아무것도 없던 나에게도\n라피: 뭔가가 생겨나지 않을까.\n라피: 저는 지휘관을 지켜야 했습니다.\n라피: 포기하고 있던 저에게 다시 찾아온··· 행운이라고 생각했으니까요.\n라피: 유일하게 남은, 레드 후드에게 이어받은 힘으로 지휘관을 지켜야 했습니다."
+          }
+        ]
+      },
+      "progression": "initial",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_34_03__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 헤매던 중 만난 지휘관을 다시 찾아온 행운으로 여기고 그 옆을 함께 걸으면 자신에게도 무언가 생길까 기대해 레드 후드에게 이어받은 힘으로 지휘관을 지켜야만 했다고 과거 심경을 고백한다 / 선후·근거: main_34_03 L28-L36에서 '헤매던 중, 지휘관을 만났습니다'라고 성립 시점을 직접 밝힌 과거 회고 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_03",
+          "line_start": 28,
+          "line_end": 41,
+          "quote": "라피: 헤매던 중, 지휘관을 만났습니다.\n라피: 그 올곧은 눈, 똑바로 걷는 걸음걸이가 눈 부셔 보였죠.\n라피: 그 옆을 함께 걷는다면,\n라피: 옆에서 같은 것을 바라보고 같은 방향으로 걷는다면\n라피: 아무것도 없던 나에게도\n라피: 뭔가가 생겨나지 않을까.\n라피: 저는 지휘관을 지켜야 했습니다.\n라피: 포기하고 있던 저에게 다시 찾아온··· 행운이라고 생각했으니까요.\n라피: 유일하게 남은, 레드 후드에게 이어받은 힘으로 지휘관을 지켜야 했습니다.\n라피: 그것 말고는 없었습니다.\n라피: 저한테 있던 조금의 인연에 미련이 남아, 레드 후드를 떠나보낸.\n라피: 이기적인 제가 할 수 있는 유일한 것이었습니다.\n라피: 그래서 저는 강해야 했습니다.\n라피: 싸우는 것 말고는, 저에게 남은 것이 없었습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__024",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__018"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_34_03__rln_004",
+        "main_34_03__rln_008",
+        "main_34_05__rln_010",
+        "main_34_12__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 라피에게 강하지 않아도 함께 걸을 수 있다고 말하고, 겨우 보이기 시작한 끈을 잡으려 발버둥 치는 사람으로 보인다며 그 뒤의 라피가 기대된다고 격려하고, main_34_05에서 레드 후드의 계승을 할 수 있다고 지지한다. main_34_12에서 라피는 지휘관이 다음 모습이 기대된다고 말했다고 이 격려를 되짚는다(L180~181, 라피 자신의 다짐은 D1__003__025). 지휘관의 격려·지지 진술이다. 함께 잡자는 제안과 라피의 수락은 D1__003__074, 해보자는 말과 라피의 수락은 D1__003__075에 따로 기록한다 / 선후·근거: 앞 기록(연표 490~640) 뒤인 main_34_03·main_34_05(연표 670) 장면으로 공식 연표 순서를 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_03",
+          "line_start": 60,
+          "line_end": 64,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"강하지 않아도 함께 걸을 수 있다고 생각해.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예. 지휘관이라면 그렇게 말씀하실 거라 생각했습니다."
+        },
+        {
+          "scene_id": "main_34_03",
+          "line_start": 151,
+          "line_end": 153,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"겨우 보이기 시작한 끈을 잡기 위해 발버둥 치는 사람으로 보여.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "main_34_03",
+          "line_start": 159,
+          "line_end": 161,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그 뒤에 어떤 라피가 기다리고 있을지 기대돼.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "main_34_05",
+          "line_start": 129,
+          "line_end": 131,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···할 수 있어. 라피.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "main_34_12",
+          "line_start": 180,
+          "line_end": 181,
+          "quote": "라피: 지휘관이 말했어.\n라피: 이다음에 내가 어떤 모습이 될지, 기대된다고 말했어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__074",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__022"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_34_03__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 끈을 잡으려 발버둥 치는 사람으로 보인다는 말에 이어 지휘관이 \"잡자.\"라며 그 끈을 함께 잡자고 제안하고, 라피가 \"예. 부탁드리겠습니다.\"라고 받아들인다. 제안과 수락으로 두 사람이 함께하기로 한 협력이 그 자리에서 성립한다(지휘관의 격려 진술은 D1__003__024) / 선후·근거: 같은 이야기 main_34_02의 동료 선언·수락(D1__003__022) 뒤 장면 main_34_03 L156~164로 장면 순서를 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_03",
+          "line_start": 155,
+          "line_end": 158,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"잡자.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_34_03",
+          "line_start": 163,
+          "line_end": 164,
+          "quote": "라피: ··· ···.\n라피: 예. 부탁드리겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__075",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__074"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_34_05__rln_010",
+        "main_34_05__rln_011"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 레드 후드의 계승을 앞두고 지휘관이 \"···할 수 있어. 라피.\", \"해보자.\"라고 하자 라피가 \"해보겠습니다.\"라고 받아들인다(L138은 main_34_05__rln_011에 속한다). 지휘관의 지지를 라피가 수락해 함께 해 보기로 한 일이 그 자리에서 성립한다 / 선후·근거: 같은 이야기 main_34_03의 협력 수락(앞 기록) 뒤 장면 main_34_05 L130~138로 장면 순서를 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_05",
+          "line_start": 129,
+          "line_end": 138,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"···할 수 있어. 라피.\"]\n  [OPTION_END]\n[CHOICE_END]\n[CHOICE_START]\n  [OPTION TEXT=\"해보자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ··· ···.\n라피: 해보겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__025",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__003__023"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_34_05__rln_011",
+        "main_34_12__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관과 아니스·네온이 함께라면 해낼 수 있을 것 같다며, 다음 모습을 기대한다고 말해 준 지휘관을 실망시키지 않고 지휘관의 옆에서 계승하며 나아가겠다고 다짐한다 / 선후·근거: 과거 싸우는 힘만으로 지휘관을 지켜야 옆을 걸을 수 있다고 여겼던 상태(main_34_03 회고)에서 같은 34장 선형 진행(main_34_05·main_34_12)을 거쳐 지휘관 곁에서 함께 계승하며 나아가는 결의로 바뀐 전환이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_34_05",
+          "line_start": 137,
+          "line_end": 141,
+          "quote": "라피: ··· ···.\n라피: 해보겠습니다.\n라피: ··· ···.\n라피: 지휘관과, 아니스, 네온이 함께라면.\n라피: 할 수 있을 것 같습니다."
+        },
+        {
+          "scene_id": "main_34_12",
+          "line_start": 180,
+          "line_end": 186,
+          "quote": "라피: 지휘관이 말했어.\n라피: 이다음에 내가 어떤 모습이 될지, 기대된다고 말했어.\n라피: 그러니 보여줘야 해.\n라피: 지휘관을 실망시킬 수 없어.\n라피: 지휘관의 옆에 있으면, 아니스와 네온이 함께 있으면. 계승하면서 나아갈 수 있어.\n라피: 나아가고 나아가다 보면.\n라피: 난 나로서 완성되고, 계승도 완성될 거야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__026",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__025"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "footstep_walk_run_26__rln_006"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 레드 후드에게 이어받은 힘과 사명, 동료들, 그리고 자신을 이끌어 줄 지휘관이 있으니 레드 후드처럼 되는 일에 실패할 이유가 없다고 신뢰를 밝힌다 / 선후·근거: 공식 연표 번호는 본 장면이 80이고 앞 기록(34장)이 670으로 반대이나, 원문 L67-L73에서 '현재. 지휘관실'이라 밝히고 지휘관·네온과 만나 여기까지 왔으며 L89-L95·L106에서 레드 후드에게 받은 선물과 이어받은 힘·사명을 언급하므로 원문 사건 순서상 앞 기록 뒤다",
+      "supporting_evidence": [
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 88,
+          "line_end": 95,
+          "quote": "라피: 하지만 이젠···.\n라피: 레드 후드가 되는 것이 아닌, 레드 후드처럼 되고 싶습니다.\n라피: 할 수 있을 것 같습니다.\n라피: 아니, 하겠습니다. 그렇게 되겠습니다.\n라피: 저에게는 레드 후드에게 이어받은 힘과 사명\n라피: 죽거나 망가지는 것이 상상되지 않는 동료들과\n라피: 나를 이끌어줄 지휘관이 있으니까요.\n라피: 실패할 이유가 없습니다."
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 105,
+          "line_end": 108,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"그때, 레드 후드한테 받았던 선물이야.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 2,
+          "line_end": 7,
+          "quote": "수년 후. 방주, 엘리시온 연구소.\n잉그리드: 성과 보고는 전해 들었다.\n잉그리드: 은화가 칭찬이 자자하더군. 그러기 쉽지 않은데 말이야.\n라피: 아닙니다. 셋이 신경 써준 덕분입니다.\n잉그리드: 좋다. 이대로만 가지.\n잉그리드: 앱솔루트가 명실공히 최강이 될 날이 곧 오겠군."
+        },
+        {
+          "scene_id": "footstep_walk_run_26",
+          "line_start": 67,
+          "line_end": 73,
+          "quote": "현재. 지휘관실.\n라피: ···이후의 이야기는 모두가 알고 있는 대로야.\n라피: 레드 후드가 되겠다는 생각에 사로잡혀서, 나를 동료로 대해준 이들을 이용했어.\n라피: 그 사실을 깨닫고 앱솔루트를 탈퇴했지.\n라피: 이곳저곳을 헤매다가 아니스와 만났고.\n라피: 지휘관을 만나고, 네온과 만났어.\n라피: 그리고 여기까지 온 거야."
+        }
+      ],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__027",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__025"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_35_18__rln_001",
+        "main_40_01__rln_001",
+        "main_40_05__rln_001",
+        "main_44_00__rln_003",
+        "main_44_17__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관을 그 누구보다 믿는다고 말하고, 대책이 없거나 어떤 상황·어떤 때라도 자신들이 보기에 지휘관은 지휘관일 뿐이라며 지휘관을 믿겠다고 거듭 밝힌다 / 선후·근거: 앞 기록(연표 670) 뒤인 main_35_18(연표 730)·main_40_01·main_40_05(연표 810)·main_44_00·main_44_17(연표 870)로 공식 연표 순서를 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_35_18",
+          "line_start": 79,
+          "line_end": 81,
+          "quote": "라피: 설마 저를 못 믿으시는 겁니까? 저는 지휘관을 그 누구보다 믿는데 지휘관께서는 저를···.\n라피를 바라본다.\n라피 역시 나를 바라본다."
+        },
+        {
+          "scene_id": "main_40_01",
+          "line_start": 74,
+          "line_end": 81,
+          "quote": "라피: 저한테 말씀하신 적이 있었죠.\n라피: 라피는 라피라고.\n라피: 지휘관은 지휘관입니다.\n[CHOICE_START]\n  [OPTION TEXT=\"···알겠어. 지금 고민해 봤자 의미 없으니 할 일을 하자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예. 믿고 있습니다."
+        },
+        {
+          "scene_id": "main_40_05",
+          "line_start": 102,
+          "line_end": 109,
+          "quote": "라피: ··· ···.\n라피: 그거, 그럴듯한 말로 포장하고 있지만 대책 없는 것 아닙니까?\n[CHOICE_START]\n  [OPTION TEXT=\"그렇··· 지.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ···알겠습니다. 지휘관을 믿겠습니다.\n라피: 잘 풀리면 좋겠군요."
+        },
+        {
+          "scene_id": "main_44_00",
+          "line_start": 151,
+          "line_end": 154,
+          "quote": "라피: 지휘관.\n라피: 지휘관은 지휘관입니다. 어떤 상황, 어떤 때라도.\n라피: 저희가 보기에 지휘관은 지휘관일 뿐입니다.\n라피: 그걸 잊지 말아 주십시오."
+        },
+        {
+          "scene_id": "main_44_17",
+          "line_start": 165,
+          "line_end": 167,
+          "quote": "아니스: 나랑 라피가 책임지고 구해줄게.\n아니스: 그러니 지휘관님도 우릴 책임지고 구해줘. 알겠지?\n라피: 믿겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__028",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__025"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "boom_the_ghost_04__rln_002",
+        "main_36_12__rln_007",
+        "main_38_00__rln_001",
+        "main_39_06__rln_003",
+        "great_villain_union_06__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관을 삶의 동력원이라 하고, 오지랖의 화신인 지휘관이 자신의 한결같은 취향이라며 함께하겠다고 하고, 지휘관의 기행과 복근을 멋있다고 여기며 자기 몸을 만지는 데 지휘관의 허락을 구하고 어젯밤 찾아온 일이 좋았다며 매일 찾아와 주기를 바란다. main_36_00의 \"연인\" 발언과 철회는 따로 기록한다(D1__003__057, D1__003__058) / 선후·근거: 앞 기록(연표 670) 뒤인 boom_the_ghost_04(연표 690)부터 great_villain_union_06(연표 852)까지 공식 연표 순서대로 호감 표현이 이어진다",
+      "supporting_evidence": [
+        {
+          "scene_id": "boom_the_ghost_04",
+          "line_start": 157,
+          "line_end": 167,
+          "quote": "라피: 지휘관. 침실이 조금 신경 쓰이는데 같이 가보시겠습니까?\n[CHOICE_START]\n  [OPTION TEXT=\"···동력원부터 확인해 봐야 하지 않을까.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 지휘관이 제 삶의 동력원이니 저는 지휘관을 확인···.\n[CHOICE_START]\n  [OPTION TEXT=\"···일레그랑 같이 다니자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 물론 그럴 생각이었습니다. 농담 한 번 해본 겁니다."
+        },
+        {
+          "scene_id": "main_36_12",
+          "line_start": 78,
+          "line_end": 87,
+          "quote": "라피: 하지만, 그것이야 말로 지휘관이라 할 수 있겠군요.\n라피: 오지랖의 화신. 참견쟁이.\n라피: ···그러고 보니 제가 아는 누군가와 매우 닮았군요.\n[CHOICE_START]\n  [OPTION TEXT=\"···레드 후드?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 후후. 예. 그렇습니다.\n라피: 예나 지금이나, 저는 취향이 한결같군요.\n라피: 가시죠. 그 오지랖의 길에 함께 하겠습니다."
+        },
+        {
+          "scene_id": "main_38_00",
+          "line_start": 21,
+          "line_end": 27,
+          "quote": "라피: 거기다 니케의 전투용 바디를 아무런 장비 없이 든다거나.\n라피: 대함용 라이플을 직접 쏜다거나 하는 기행을 보여줬지.\n맥스웰: ···어떻게 생각해?\n라피: 멋있다고 생각해.\n맥스웰: ··· ···.\n라피: 특히나 좀 전의 배의 상처를 확인할 때 보였던 복근은···.\n라피: 하아··· 정말이지."
+        },
+        {
+          "scene_id": "main_39_06",
+          "line_start": 32,
+          "line_end": 38,
+          "quote": "나유타: 잠시, 실례해도 되겠소? 몸을 좀 만져보고 싶소.\n라피: 지휘관. 괜찮으시겠습니까?\n[CHOICE_START]\n  [OPTION TEXT=\"?? 응. 왜?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 지휘관의 허락 없이 누군가 제 몸을 만지는 건 있을 수 없는 일이니까요."
+        },
+        {
+          "scene_id": "great_villain_union_06",
+          "line_start": 48,
+          "line_end": 49,
+          "quote": "라피: 지휘관, 어젯밤 너무 좋았습니다.\n라피: 이렇게 매일 찾아와 주신다면 저는···!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__077",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "command_or_hierarchy",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__005"
+      ],
+      "order_basis": "official_timeline",
+      "memo_ids": [
+        "main_39_06__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 \"지휘관의 허락 없이 누군가 제 몸을 만지는 건 있을 수 없는 일이니까요.\"라며 허락을 구하자 지휘관이 \"···괜찮아. 허락할게.\"라고 허락하고, 나유타가 라피의 코어 쪽에 손을 대 검사를 시작한다. 라피가 인정한 지휘관의 승인 권한을 지휘관이 그 자리에서 행사한 일이다(허락을 구한 라피의 호감 진술은 D1__003__028) / 선후·근거: 하극상의 벌을 받겠다며 지휘관의 권한을 인정한 main_12_07(연표 290, D1__003__005) 뒤인 main_39_06(연표 790)이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_39_06",
+          "line_start": 38,
+          "line_end": 40,
+          "quote": "라피: 지휘관의 허락 없이 누군가 제 몸을 만지는 건 있을 수 없는 일이니까요.\n[CHOICE_START]\n  [OPTION TEXT=\"···괜찮아. 허락할게.\"]"
+        },
+        {
+          "scene_id": "main_39_06",
+          "line_start": 43,
+          "line_end": 44,
+          "quote": "나유타: 그럼 잠시만 실례하겠소.\n나유타가 손을 뻗어 라피의 가슴 부분, 코어가 있는 곳에 가져다 댔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__057",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__003__072"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_36_00__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 동료한테도 의심받는다는 레비아탄의 말에 라피가 \"동료가 아니야. 연인이다.\"라고 말한다. 화자는 라피 한 명이지만 동료라는 앞말을 바꾸어 두 사람 사이의 관계를 연인으로 지목한 진술이다 / 선후·근거: 같은 장면 main_36_00 L144의 레비아탄 발언(D1__003__072) 바로 뒤 L145이며, 곧바로 철회된다(D1__003__058)",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_36_00",
+          "line_start": 145,
+          "line_end": 145,
+          "quote": "라피: 동료가 아니야. 연인이다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__058",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__003__057"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_36_00__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 레비아탄·신데렐라·맥스웰이 모두 \"뭐?\"라고 되묻자 라피가 \"농담이야.\"라며 두 사람이 연인이라는 말을 바로 거둔다 / 선후·근거: 같은 장면 main_36_00 L145의 \"연인\" 발언(D1__003__057) 뒤 L146-149에서 철회한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_36_00",
+          "line_start": 146,
+          "line_end": 149,
+          "quote": "레비아탄: 뭐?\n신데렐라: 뭐?\n맥스웰: 뭐?\n라피: 농담이야."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__029",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__028"
+      ],
+      "order_basis": "unknown",
+      "memo_ids": [
+        "chapter_50_25__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 죽음의 문턱에 닿았을 때 지휘관의 미소와 목소리가 떠올라 일어날 수 있었다고 과거 전투 당시의 일을 고백한다 / 선후·근거: chapter_50_25(연표 970)에서 과거 시점의 일을 회고하나 그 순간이 별도 장면으로 특정되지 않으므로 성립 시점 anchor 없이 unknown으로 잇는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "chapter_50_25",
+          "line_start": 135,
+          "line_end": 137,
+          "quote": "라피: 죽음의 문턱에 닿았을 때 떠오른게 있습니다.\n라피: 지휘관의 미소와, 지휘관의 목소리가 떠올라 저는 일어날 수 있-\n아니스: 자, 다른 얘기로 새기 전에 내 상태를 얘기하자면."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__030",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "kinship_or_creation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "roleplay_or_sim",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_42_15__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관을 아빠, 라피를 엄마라고 부르는 온리 원에게 라피가 \"그래. 엄마야.\", \"아빠의 부인인 엄마야.\"라고 하고, 이어 \"여보. 우리 아이 좀 봐요.\"라며 지휘관의 아내 역을 연기한다. 지휘관이 곧바로 \"···이상한 상황극은 그만둬.\"라고 지적하듯 아이 앞에서 맡은 배역이므로 상황극 맥락에 둔다. 지휘관의 부정은 따로 기록한다(D1__003__059) / 선후·근거: main_42_15(연표 850)에서 배역으로 배우자임을 자칭한 단독 진술이라 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_42_15",
+          "line_start": 171,
+          "line_end": 176,
+          "quote": "온리 원: 엄마.\n신데렐라: ··· ···.\n리틀 머메이드: ··· ···.\n라피: ··· ···.\n라피: 그래. 엄마야.\n라피: 아빠의 부인인 엄마야."
+        },
+        {
+          "scene_id": "main_42_15",
+          "line_start": 186,
+          "line_end": 186,
+          "quote": "라피: 여보. 우리 아이 좀 봐요. 너무 예쁘지 않나요?"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__059",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "kinship_or_creation",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__003__030"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "main_42_15__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 아빠의 부인인 엄마라고 하자 지휘관이 \"아니··· 야.\"라고 부정하고, 라피가 \"여보.\"라며 계속하자 \"···이상한 상황극은 그만둬.\"라고 상황극임을 지적한다. 지휘관은 배우자 관계를 인정하지 않는다 / 선후·근거: 같은 장면 main_42_15 L175-176의 자칭(D1__003__030) 뒤 L178과 L188에서 부정한다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_42_15",
+          "line_start": 177,
+          "line_end": 180,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"아니··· 야.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "main_42_15",
+          "line_start": 186,
+          "line_end": 189,
+          "quote": "라피: 여보. 우리 아이 좀 봐요. 너무 예쁘지 않나요?\n[CHOICE_START]\n  [OPTION TEXT=\"···이상한 상황극은 그만둬.\"]\n  [OPTION_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__031",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "dream_or_hypothetical",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_35_17__rln_004"
+      ],
+      "confidence": "가능성",
+      "rationale": "상태: 지휘관이 세계를 적으로 돌리게 되면 어떻게 할 것이냐는 질문에 라피는 그런 가정은 아무 의미 없다면서도 만약 그렇게 된다면 \"지휘관에게 문제가 있는 것 아닐까요.\"라고 답한다. 세계와 대립하는 쪽은 가정 속의 지휘관이고, 라피는 지휘관을 적대하거나 등을 돌리겠다고 하지 않는다. 가정 속 지휘관의 판단을 의심하는 라피의 반응으로, 우호·신뢰 축에 적는다 / 선후·근거: 가정 속 상황에 관한 문답(dream_or_hypothetical)이므로 정사 사슬 밖에 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_35_17",
+          "line_start": 72,
+          "line_end": 84,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"내가 세계를 적으로 돌리게 되면 어떻게 할 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 지휘관답지 않은 유치한 질문이군요. 그런 가정은 아무 의미 없습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 하지만 만약 그렇게 된다면···.\n라피: ··· ···.\n라피: ···지휘관에게 문제가 있는 것 아닐까요.\n라피: 세계가 적이라니 그건 너무··· 명백한···."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__032",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__025"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "rapi_redhood_00__rln_001",
+        "rapi_redhood_01__rln_001",
+        "rapi_redhood_01__rln_002",
+        "rapi_redhood_02__rln_001",
+        "rapi_redhood_02__rln_002",
+        "rapi_redhood_03__rln_001",
+        "rapi_redhood_04__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 바뀐 모습이 된 이후 라피가 지휘관이 보고 싶어 찾아오고 손을 잡고 걷거나 같은 세면용품을 쓰며 늘 함께 있는 느낌을 좋아하고, 지휘관에게만 보여줄 수 있는 표정과 함께하는 즐거움·배부름을 밝히며 하고 싶은 일은 모두 지휘관이 계셔야 할 수 있는 것들뿐이라고 고백한다. rapi_redhood_01에서 계속 손을 잡고 걷자는 부탁이 받아들여져 실제로 함께 걸은 일은 따로 기록한다(D1__003__063) / 선후·근거: rapi_redhood_00 L85의 '이 모습이 된 이후로'라는 원문 언급으로 34장 계승 이후임이 확인되며 에피소드 00~04의 선형 진행을 따른다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_redhood_00",
+          "line_start": 79,
+          "line_end": 87,
+          "quote": "라피: 저는, 지휘관이···.\n라피: 지휘관이 보고 싶어서 왔습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"··· ···!\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 이 모습이 된 이후로, 계속 욕구가 생깁니다.\n라피: 밖을 나가고 싶다거나, 단 걸 먹고 싶다거나.\n라피: ···지휘관을 만나고 싶다거나 말입니다."
+        },
+        {
+          "scene_id": "rapi_redhood_01",
+          "line_start": 77,
+          "line_end": 82,
+          "quote": "라피: 손, 빼지 않으셔도 됩니다.\n라피: 미안해하지 않으셔도 됩니다.\n라피: 저도 지휘관이 내민 손을 잡으려고 했으니까요.\n라피: ··· ···.\n라피: 먼저 내밀어 주시고, 잡아주셔서 기뻤습니다.\n라피: ···계속 잡고 걸어도 괜찮겠습니까?"
+        },
+        {
+          "scene_id": "rapi_redhood_01",
+          "line_start": 168,
+          "line_end": 172,
+          "quote": "  [OPTION TEXT=\"써 보니까 마음에 들어?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ···예.\n라피: 지휘관과 늘 함께 있는 것 같아서 좋습니다."
+        },
+        {
+          "scene_id": "rapi_redhood_02",
+          "line_start": 111,
+          "line_end": 113,
+          "quote": "라피: 크흠, 안 됩니다.\n라피: 카메라 앞에서는 이런 표정이 나오질 않으니까요.\n라피: 사진으로는 남길 수 없는, 지휘관에게만 보여줄 수 있는 표정입니다."
+        },
+        {
+          "scene_id": "rapi_redhood_02",
+          "line_start": 190,
+          "line_end": 194,
+          "quote": "  [OPTION TEXT=\"지금은 달라졌구나.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 예.\n라피: 함께 하는 것의 즐거움을 알아버린 거죠."
+        },
+        {
+          "scene_id": "rapi_redhood_03",
+          "line_start": 61,
+          "line_end": 65,
+          "quote": "  [OPTION TEXT=\"라피도 어서 먹어 봐.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 괜찮습니다, 지휘관이 더 드셔주십시오.\n라피: 보기만 해도 배부르다는 감정을 처음으로 느끼고 있으니까요."
+        },
+        {
+          "scene_id": "rapi_redhood_04",
+          "line_start": 117,
+          "line_end": 120,
+          "quote": "라피: ··· ···.\n라피: 예, 그럼 부탁드리겠습니다.\n라피: 제가 하고 싶은 건 모두, 지휘관이 계셔야 할 수 있는 것들 뿐이니까요.\n라피: 앞으로도 잘 부탁드리겠습니다, 지휘관."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__063",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "rapi_redhood_01__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 \"···계속 잡고 걸어도 괜찮겠습니까?\"라고 묻고 지휘관이 \"당연하지.\"라고 답하자 라피가 \"이번에는 나란히 걷겠습니다.\"라고 하고, \"나와 라피는 손을 잡고 걸어갔다.\" 손을 잡고 함께 걷자는 부탁이 받아들여져 그 자리에서 실행된다 / 선후·근거: 연표가 없는 개인 에피소드 rapi_redhood_01 L81-89의 문답과 지문이며 다른 기록과 사슬로 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_redhood_01",
+          "line_start": 81,
+          "line_end": 89,
+          "quote": "라피: 먼저 내밀어 주시고, 잡아주셔서 기뻤습니다.\n라피: ···계속 잡고 걸어도 괜찮겠습니까?\n[CHOICE_START]\n  [OPTION TEXT=\"당연하지.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 감사합니다.\n라피: 이번에는 나란히 걷겠습니다.\n나와 라피는 손을 잡고 걸어갔다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__033",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "rapi_redhood_02__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 신뢰 가득한 눈으로 지휘관을 바라본다 / 선후·근거: 연표 번호가 없는 개인 에피소드 지문으로 확인된 성립 상태라 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_redhood_02",
+          "line_start": 193,
+          "line_end": 195,
+          "quote": "라피: 예.\n라피: 함께 하는 것의 즐거움을 알아버린 거죠.\n라피가 신뢰 가득한 눈으로 나를 바라본다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__034",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "rapi_redhood_04__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 라피를 세게 감싸 안고 라피가 하고 싶은 일이 이상하거나 곤란하더라도 모두 함께하자고 말하며 라피가 이를 받아들여 서로 잘 부탁한다고 약속한다 / 선후·근거: 연표 번호가 없는 개인 에피소드의 상호 행위·약속 성립 기록이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_redhood_04",
+          "line_start": 91,
+          "line_end": 93,
+          "quote": "나는 힘을 줘, 라피를 세게 감싸 안았다.\n라피: ··· ···!\n라피: 지휘관···."
+        },
+        {
+          "scene_id": "rapi_redhood_04",
+          "line_start": 102,
+          "line_end": 115,
+          "quote": "라피: 이대로면, 해보고 싶은 게 점점 늘어날 것 같습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"다 하자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 제가 하고 싶은 게 이상한 것일 수도 있습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"그래도 하자.\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 지휘관을 곤란하게 만들 수도 있습니다.\n[CHOICE_START]\n  [OPTION TEXT=\"괜찮아, 하자.\"]\n  [OPTION_END]"
+        },
+        {
+          "scene_id": "rapi_redhood_04",
+          "line_start": 118,
+          "line_end": 125,
+          "quote": "라피: 예, 그럼 부탁드리겠습니다.\n라피: 제가 하고 싶은 건 모두, 지휘관이 계셔야 할 수 있는 것들 뿐이니까요.\n라피: 앞으로도 잘 부탁드리겠습니다, 지휘관.\n[CHOICE_START]\n  [OPTION TEXT=\"나도 잘 부탁해, 라피.\"]\n  [OPTION_END]\n[CHOICE_END]\n나는 라피와 그렇게 한참을 안고 있었고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__035",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__025"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "blabla_rapi_005__rln_001",
+        "blabla_rapi_005__rln_002",
+        "blabla_rapi_006__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 일상에서도 바뀐 모습으로 살아가게 된 라피가 헤매던 자신을 잡아준 지휘관에게 감사하며 언제든 지휘관께 갈 수 있도록 대기하겠다고 밝히고, 단둘이 술을 마시며 지휘관에 대해 더 알고 자신에 대해서도 말하고 싶다고 호감을 표한다 / 선후·근거: blabla_rapi_005 L89-L93·L114에서 바뀐 모습으로 살아가게 된 일과 헤매던 자신을 잡아준 일을 언급하므로 원문 사건 순서상 34장 계승 이후다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_rapi_005",
+          "line_start": 89,
+          "line_end": 94,
+          "quote": "  [MSG SENDER=\"라피\"]\n    작전 중이 아니라, 일상에서도.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    이 모습으로 살아가게 되었으니까요.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_rapi_005",
+          "line_start": 104,
+          "line_end": 118,
+          "quote": "  [MSG SENDER=\"라피\"]\n    그러니 이젠 더는 고민하지 않을 겁니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    이것이 접니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    이렇게 살아가기로 맹세했습니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    헤매던 절 잡아주셔서,\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    다시 한번 감사드립니다.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_rapi_005",
+          "line_start": 128,
+          "line_end": 136,
+          "quote": "  [MSG SENDER=\"라피\"]\n    그럼 저는 대기하고 있겠습니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    ···언제든 지휘관께 갈 수 있도록.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    그러니 제가 필요하다면 언제든 불러주십시오\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_rapi_006",
+          "line_start": 61,
+          "line_end": 74,
+          "quote": "    나에 대해 더 알고 싶어?\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    알고 싶습니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    그리고 저에 대해서도 말하고 싶습니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    이상하게 그런 기분이 듭니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    불편··· 하실까요?\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__036",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_rapi_006__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 함께 술을 사러 나가기로 한 뒤 라피가 쇼핑할 때 오늘도 손을 잡아도 되는지 묻고 지휘관이 물론이라며 승낙한다 / 선후·근거: 연표 번호가 없는 메신저 에피소드의 상호 합의 성립 기록이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_rapi_006",
+          "line_start": 105,
+          "line_end": 116,
+          "quote": "  [MSG SENDER=\"라피\"]\n    아, 그럼 혹시 쇼핑할 때···.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    음···.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    오늘도 손을 잡아도 되겠습니까?\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    물론이야\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__037",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "rapi_04__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관은 다른 지휘관들과 달라 죽지 않았으면 한다며 포기하길 바라는 마음과 함께해 주길 바라는 마음이 동시에 있다고 고백한다 / 선후·근거: 연표 번호가 없는 캐릭터 에피소드(rapi_04) 분기 전 공통 구간의 시작 상태다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_04",
+          "line_start": 81,
+          "line_end": 90,
+          "quote": "라피: 다른 것 같습니다.\n라피: 뭔지는 모르겠으나, 당신은 달라요.\n라피: 그래서 죽지 않았으면 합니다.\n[CHOICE_START]\n  [OPTION TEXT=\"내가 포기하길 바라는 거야?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: 저도 모르겠습니다.\n라피: 포기하길 바라는 마음과, 함께해 주길 바라는 마음이 함께 있습니다.\n라피: 그래서 솔직히 말씀드리는 겁니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__038",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "changes_from",
+      "prev_link_ids": [
+        "D1__003__037"
+      ],
+      "order_basis": "script",
+      "memo_ids": [
+        "rapi_04__rln_005"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관에게 지금처럼 자신만의 시선으로 바라보고 판단하는 마음이 변하지 않는다면 원하는 것을 향해 걸어가라며 끝까지 지휘관 옆을 지키겠다고 다짐한다 / 선후·근거: 같은 rapi_04 장면 안에서 분기 전의 양가적 망설임(L81-L90)에서 합류 뒤 끝까지 함께하겠다는 결의(L111-L119)로 바뀐 줄 순서상 전환이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_04",
+          "line_start": 111,
+          "line_end": 119,
+          "quote": "라피: 변하지 않길 바랍니다.\n라피: 당신이 지금의 마음을 간직한 채, 변하지 않길 바랍니다.\n라피: 어떤 것이든, 원하는 것을 향해 걸어가십시오.\n라피: 저는 궁금합니다.\n라피: 당신이 걷는 그 걸음걸이가.\n라피: 이 세계에 어떤 변화를 가져올지 궁금합니다.\n라피: 그리고 그 변화의 중심에서, 당신의 마음이 변하지 않는다면.\n라피: 지금처럼 모든 것을 자신만의 시선으로 바라보고 판단하는 그 마음이 변하지 않는다면.\n라피: 저는, 저희는 끝까지 당신 옆을 지키겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__039",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "피라_00__rln_003",
+        "rapi_03__rln_001",
+        "chime_02__rln_001",
+        "avistar_01__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 다시 돌아온 라피에게 기쁘다고 말하고, 라피 일행을 자신의 동료라 부르며 이레귤러화 같은 일이 일어나지 않게 하겠다고 약속하고, 라피가 마리안만큼 소중하다고 인정하며 보고서 수량에서 실수할 성격이 아니라고 신뢰한다. chime_02에서는 차임이 먼저 라피가 마리안만큼 소중하냐고 헤아리고 지휘관이 \"···맞아.\"라고 인정한다. 차임의 평가는 따로 기록한다(D1__003__064). 테디_00의 \"내 동료들에게 함부로 명령하지 마.\"는 쌍방 동료 지목이라 따로 기록한다(D1__003__069) / 선후·근거: 공식 연표 번호가 없는 서브퀘스트·에피소드들에서 되풀이되는 지휘관의 신뢰·애정 진술로 사슬 밖 독립 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "피라_00",
+          "line_start": 134,
+          "line_end": 142,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    라피\n  [MSG_END]\n  [MSG SENDER=\"피라\"]\n    예. 지휘관.\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    다시 돌아와서 너무 기뻐\n  [MSG_END]"
+        },
+        {
+          "scene_id": "rapi_03",
+          "line_start": 139,
+          "line_end": 142,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"너희에게 그런 일이 일어나게 하진 않을 거야.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "chime_02",
+          "line_start": 31,
+          "line_end": 37,
+          "quote": "차임: 보아하니 알겠더구나.\n차임: 그 라피라는 녀석도 마리안만큼이나···.\n차임: 네놈에게 소중한 게지?\n[CHOICE_START]\n  [OPTION TEXT=\"···맞아.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        },
+        {
+          "scene_id": "avistar_01",
+          "line_start": 51,
+          "line_end": 54,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"라피가 이런 거에서 실수를 할 성격도 아니고, 이상하네.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__069",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "테디_00__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 너희들 빨리 날 지키라는 테디에게 지휘관이 \"내 동료들에게 함부로 명령하지 마.\"라고 해 라피 일행을 자신의 동료로 지목한다. 동료 관계는 쌍방이고 화자는 지휘관이다 / 선후·근거: 연표가 없는 테디_00 L134-136의 진술이며 다른 기록과 사슬로 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "테디_00",
+          "line_start": 134,
+          "line_end": 136,
+          "quote": "테디: 너희들 빨리 날 지켜!!\n[CHOICE_START]\n  [OPTION TEXT=\"내 동료들에게 함부로 명령하지 마.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__064",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_차임",
+          "name": "차임",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "chime_02__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 차임이 \"보아하니 알겠더구나.\"라며 \"그 라피라는 녀석도 마리안만큼이나···. 네놈에게 소중한 게지?\"라고 지휘관의 마음을 헤아린다. 지휘관은 \"···맞아.\"라고 인정한다(D1__003__039) / 선후·근거: 연표가 없는 개인 에피소드 chime_02 L31-35의 문답이라 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "chime_02",
+          "line_start": 31,
+          "line_end": 35,
+          "quote": "차임: 보아하니 알겠더구나.\n차임: 그 라피라는 녀석도 마리안만큼이나···.\n차임: 네놈에게 소중한 게지?\n[CHOICE_START]\n  [OPTION TEXT=\"···맞아.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__040",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "피라_00__rln_004",
+        "피라_02__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 부계정 '피라'로 연락한 라피가 지휘관에게 자신도 돌아와 기쁘다며 앞으로 잘 부탁드린다고 말하고, 그 자리에 함께 있어 주어 오랫동안 기억에 남을 것 같다고 거듭 감사한다 / 선후·근거: 연표 번호가 없는 sub_quests__피라(피라_00·피라_02) 안에서 되풀이되는 감사 진술이라 독립 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "피라_00",
+          "line_start": 6,
+          "line_end": 8,
+          "quote": "  [MSG SENDER=\"피라\"]\n    라피입니다.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "피라_00",
+          "line_start": 143,
+          "line_end": 148,
+          "quote": "  [MSG SENDER=\"피라\"]\n    저도 그렇습니다.\n  [MSG_END]\n  [MSG SENDER=\"피라\"]\n    앞으로도 잘 부탁드립니다.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "피라_02",
+          "line_start": 293,
+          "line_end": 301,
+          "quote": "  [MSG SENDER=\"피라\"]\n    아마 오랫동안 이번 일이 기억에 남을 것 같습니다.\n  [MSG_END]\n  [MSG SENDER=\"피라\"]\n    그 자리에 함께 계셔주셔서.\n  [MSG_END]\n  [MSG SENDER=\"피라\"]\n    다시 한번 감사드립니다. 지휘관.\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__041",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": true,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "피라_00__rln_005",
+        "피라_02__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피('피라')가 개인 메신저 ID를 삭제하지 않고 종종 지휘관에게 개인 용무를 부탁해도 되는지 물어 승낙받고, 다음에 또 이런 일이 있으면 함께 가자는 지휘관의 제안에 꼭 그렇게 하겠다고 상호 약속한다 / 선후·근거: 연표 번호가 없는 sub_quests__피라(피라_00·피라_02) 안에서 성립·유지된 개인 동행 약속이라 독립 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "피라_00",
+          "line_start": 155,
+          "line_end": 163,
+          "quote": "  [MSG SENDER=\"피라\"]\n    이 id는 삭제하지 않겠습니다.\n  [MSG_END]\n  [MSG SENDER=\"피라\"]\n    종종 지휘관에게 개인적인 용무를 부탁해도 되겠습니까?\n  [MSG_END]\n  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    물론이지.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "피라_02",
+          "line_start": 302,
+          "line_end": 307,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    다음에 또 이런 일이 있으면 함께 가자\n  [MSG_END]\n  [MSG SENDER=\"피라\"]\n    예. 꼭 그렇게 하겠습니다.\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__042",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "sea_you_again_18__rln_001",
+        "sea_you_again_22__rln_001",
+        "persona_on_frontline_00__rln_001",
+        "d_01__rln_001",
+        "blabla_2023_summer_001__rln_003",
+        "blabla_counters_014__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관을 살리고 무사히 돌려보내는 것이 제일 중요하다고 밝히고, 지휘관에게 탈이 없으면 만족하며 D가 떠날 때까지 옆에서 주시하겠다고 하고, 지휘관이 변하더라도 쏘지 못할 것 같다고 말한다 / 선후·근거: 공식 연표 번호가 없는 이벤트·에피소드·메신저에서 되풀이되는 안위 보호 태도이므로 사슬 밖 독립 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "sea_you_again_18",
+          "line_start": 60,
+          "line_end": 61,
+          "quote": "라피: 그러다 전멸하면?\n라피: 무슨 일이 있어도 지휘관만은 무사히 돌려보내야만 해."
+        },
+        {
+          "scene_id": "sea_you_again_22",
+          "line_start": 78,
+          "line_end": 80,
+          "quote": "라피: 방법이 없습니다.\n라피: 지금 상황에서 정면 승부는 승산이 없습니다.\n라피: 저희의 임무는 지휘관을 살리는 것이라는 걸 알아주십시오."
+        },
+        {
+          "scene_id": "persona_on_frontline_00",
+          "line_start": 80,
+          "line_end": 83,
+          "quote": "라피: ··· ···!\n흠칫했던 라피가, 천천히 몸에서 힘을 뺀다.\n라피: ··· ···.\n라피: ···못 쏠 것 같네."
+        },
+        {
+          "scene_id": "d_01",
+          "line_start": 105,
+          "line_end": 107,
+          "quote": "  [MSG SENDER=\"라피\"]\n    그래도 혹시 모르니 D가 이곳을 떠날 때까지. 저도 지휘관 옆에서 주시하고 있겠습니다.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_2023_summer_001",
+          "line_start": 330,
+          "line_end": 335,
+          "quote": "  [MSG SENDER=\"라피\"]\n    전 따로 바라는 건 없습니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    지휘관에게 탈이 없으면 그걸로 만족합니다.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_counters_014",
+          "line_start": 98,
+          "line_end": 109,
+          "quote": "  [MSG SENDER=\"라피\"]\n    사정은 알 수 없으나\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    제일 중요한 건 지휘관이 무사하게 돌아오시는 것입니다\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    언제라도 좋으니\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    위험에 처하신다면 연락해 주십시오\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__043",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "bluewater_wisland_21__rln_001",
+        "bluewater_wisland_22__rln_002",
+        "rumani_02__rln_001",
+        "anniversary_07__rln_003",
+        "blabla_rapi_003__rln_001",
+        "blabla_rapi_004__rln_001",
+        "blabla_newflavor_004__rln_003",
+        "blabla_counters_008__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 지휘관의 결정을 신뢰해 따르고 지휘관은 한다면 하는 사람이며 뛰어난 점들을 인지하고 있었다고 평가하며, 항상 걱정해 주고 선물이 되어 준 데 감사하고 지휘관이 생각하는 것 이상으로 믿고 따르니 함께 고민하자고 하며 레드 후드에 대해 확신이 서면 가장 먼저 말씀드리겠다고 약속한다 / 선후·근거: 공식 연표 번호가 없는 이벤트·에피소드·메신저에서 되풀이되는 신뢰·감사 진술이므로 사슬 밖 독립 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "bluewater_wisland_21",
+          "line_start": 76,
+          "line_end": 77,
+          "quote": "네온: 너무 쉬운 거 아닌가요, 라피?\n라피: 충분히 장단을 고려하고 내리신 결정일 거라 생각해."
+        },
+        {
+          "scene_id": "bluewater_wisland_22",
+          "line_start": 83,
+          "line_end": 83,
+          "quote": "라피: ···저도 지휘관만 괜찮으시다면 문제 없습니다."
+        },
+        {
+          "scene_id": "rumani_02",
+          "line_start": 46,
+          "line_end": 46,
+          "quote": "라피: 지켜보자. 지휘관은 한다면 하는 사람이니까."
+        },
+        {
+          "scene_id": "anniversary_07",
+          "line_start": 110,
+          "line_end": 114,
+          "quote": "라피: 최고의 1주년 선물이라고 말씀해 주신 그 한마디가.\n라피: 제게는 최고의 1주년 선물이 된 것 같습니다.\n라피: 감사드립니다.\n라피: 앞으로도 저희 카운터스를 잘 이끌어 주시길 바랍니다. 지휘관.\n라피: 물론, 저도 포함해서 말입니다."
+        },
+        {
+          "scene_id": "blabla_rapi_003",
+          "line_start": 68,
+          "line_end": 82,
+          "quote": "  [MSG SENDER=\"라피\"]\n    저희는 지휘관이 생각하는 것 이상으로.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    믿고 따르고 있습니다.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    도움이 되실진 모르겠지만.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    혼자 고민하시는 것보단.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    같이 고민하고 해결하는 게 낫다고 생각합니다.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_rapi_004",
+          "line_start": 30,
+          "line_end": 35,
+          "quote": "  [MSG SENDER=\"라피\"]\n    모든 것이 확신으로 바뀔 때.\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    지휘관에게 가장 먼저 말씀드리겠습니다.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_newflavor_004",
+          "line_start": 93,
+          "line_end": 98,
+          "quote": "  [MSG SENDER=\"라피\"]\n    지휘관의 뛰어난 부분들은 모두 인지하고 있었으나\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    미각까지 그럴 줄은 몰랐네.\n  [MSG_END]"
+        },
+        {
+          "scene_id": "blabla_counters_008",
+          "line_start": 65,
+          "line_end": 70,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    그래도 고마워\n  [MSG_END]\n  [MSG SENDER=\"라피\"]\n    항상 걱정해 주셔서 제가 더 감사합니다.\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__070",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_counters_008__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 메신저에서 지휘관이 라피에게 \"그래도 고마워\"라고 감사를 전하고, 라피가 \"항상 걱정해 주셔서 제가 더 감사합니다.\"라고 답한다. 라피의 답례(D1__003__043)와 방향이 다른 지휘관→라피의 감사다 / 선후·근거: 연표가 없는 blabla_counters_008 L65-69의 문답이며 다른 기록과 사슬로 잇지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_counters_008",
+          "line_start": 65,
+          "line_end": 66,
+          "quote": "  [MSG SENDER=\"지휘관\" IS_SENDER=\"true\"]\n    그래도 고마워"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__044",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "avistar_01__rln_002",
+        "yes_my_commander_00__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 늦은 시간에 찾아온 지휘관에게 이 시간이면 오히려 언제든 환영이라고 말하고, 귀여운 옷과 예스 베개를 준비해 지휘관에게 밤에 함께하자고 말하려 했다고 밝힌다 / 선후·근거: 공식 연표 번호가 없는 에피소드·스페셜 스토리에서 드러나는 호감 표현으로 사슬 밖 독립 기록으로 묶는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "avistar_01",
+          "line_start": 19,
+          "line_end": 20,
+          "quote": "라피: 아뇨, 괜찮습니다.\n라피: 이 시간이면 오히려 언제든 환영입니다."
+        },
+        {
+          "scene_id": "yes_my_commander_00",
+          "line_start": 24,
+          "line_end": 27,
+          "quote": "아니스: [누구]에게 예스라고 말하고 싶은 걸까?\n스윽.\n네온: [무엇]이 예스라고 말하고 싶으신 거죠?\n라피: 지휘관에게, 밤에 함께-"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__071",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "데이파라_00__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 아니스가 \"라피도 예전처럼 [지휘관, 다시 생각해보시는 게 좋을 것 같습니다.] 하고, 울먹이면서 설득하진 않는 걸 보니\"라며 예전에 라피가 지휘관을 걱정해 울먹이며 말렸다고 말한다 / 선후·근거: 데이파라_00 L127-128의 진술이며 \"예전\"이 언제인지 원문이 특정하지 않아 anchor 없이 발화 이전까지만 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "데이파라_00",
+          "line_start": 127,
+          "line_end": 128,
+          "quote": "아니스: 라피도 예전처럼 [지휘관, 다시 생각해보시는 게 좋을 것 같습니다.] 하고,\n아니스: 울먹이면서 설득하진 않는 걸 보니 그런 것 같고."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__065",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__003__071"
+      ],
+      "order_basis": "unknown",
+      "memo_ids": [
+        "데이파라_00__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 예전처럼 울먹이며 설득하진 않는다는 아니스의 말에 라피가 \"···울먹인 적은 없어.\"라고 부정한다 / 선후·근거: 같은 장면 L127-128의 아니스 진술(D1__003__071) 바로 뒤 L129의 부정이며, \"예전\"이 언제인지 원문이 특정하지 않아 anchor 없이 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "데이파라_00",
+          "line_start": 129,
+          "line_end": 129,
+          "quote": "라피: ···울먹인 적은 없어."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__060",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_네온",
+          "name": "네온",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "contradicts",
+      "prev_link_ids": [
+        "D1__003__065"
+      ],
+      "order_basis": "unknown",
+      "memo_ids": [
+        "데이파라_00__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 울먹인 적은 없다는 라피의 부정에 네온이 \"그렇지 않아요. 그때 라피는 분명히 울고 있었어요.\", \"스승님을 걱정하는 마음에, 가슴으로 울고 있었다구요!\"라고 반박한다 / 선후·근거: 같은 장면 데이파라_00 L129의 라피 부정(D1__003__065) 바로 뒤 L130-131의 반박이며, \"그때\"가 언제인지 원문이 특정하지 않아 anchor 없이 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "데이파라_00",
+          "line_start": 130,
+          "line_end": 131,
+          "quote": "네온: 그렇지 않아요. 그때 라피는 분명히 울고 있었어요.\n네온: 스승님을 걱정하는 마음에, 가슴으로 울고 있었다구요!"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__045",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "past_before_scene",
+      "anchor": null,
+      "progression": "continues",
+      "prev_link_ids": [
+        "D1__003__060"
+      ],
+      "order_basis": "unknown",
+      "memo_ids": [
+        "데이파라_00__rln_002"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 네온의 반박 뒤 \"진짜 울었어?\"라는 지휘관의 물음에 라피가 \"···걱정은 했습니다.\"라고 답한다. 울었다는 것은 받아들이지 않았지만 지휘관을 걱정했다는 점은 인정한다 / 선후·근거: 같은 장면 L130-131의 네온 반박(D1__003__060) 뒤 L133-136에서 이어진다. 걱정한 과거 시점은 특정되지 않아 anchor는 두지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "데이파라_00",
+          "line_start": 133,
+          "line_end": 136,
+          "quote": "  [OPTION TEXT=\"진짜 울었어?\"]\n  [OPTION_END]\n[CHOICE_END]\n라피: ···걱정은 했습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__046",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_차임",
+          "name": "차임",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "chime_02__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 차임이 라피도 지휘관과 헤어지기는 싫을 것이며 다 생각이 있어 그런 것일 거라고 추측한다 / 선후·근거: 연표 번호가 없는 캐릭터 에피소드의 제3자 단독 추측 진술이므로 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "chime_02",
+          "line_start": 106,
+          "line_end": 108,
+          "quote": "차임: 라피라는 녀석도 네놈과 헤어지기는 싫을 것이니라.\n차임: 다 생각이 있어서 그런 것일 터이니.\n차임: 너무 마음고생하지 말거라."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__047",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_아니스",
+          "name": "아니스",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "canon",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "blabla_anis_013__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 아니스가 라피는 지휘관이 'ㅋ'만 보내도 샤워 중에 뛰쳐나와 바로 확인한다고 말한다 / 선후·근거: 연표 번호가 없는 개인 메신저의 제3자 단독 주장이라 독립 기록으로 둔다",
+      "supporting_evidence": [
+        {
+          "scene_id": "blabla_anis_013",
+          "line_start": 116,
+          "line_end": 127,
+          "quote": "  [MSG SENDER=\"아니스\"]\n    아 근데 라피는\n  [MSG_END]\n  [MSG SENDER=\"아니스\"]\n    지휘관님이 ㅋ만 보내도\n  [MSG_END]\n  [MSG SENDER=\"아니스\"]\n    샤워 중에 뛰쳐나와서\n  [MSG_END]\n  [MSG SENDER=\"아니스\"]\n    바로 확인하잖아\n  [MSG_END]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__048",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_01_10__rln_006"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 라피 일행에게 자신은 너희를 쏘지 않는다고 밝힌다 / 선후·근거: main_01_10 L67 선택지의 '난 너희를 쏘지 않아.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_10",
+          "line_start": 67,
+          "line_end": 68,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"난 너희를 쏘지 않아.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__049",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_01_10__rln_008"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 라피가 쏘지 않겠다는 지휘관에게 자신들도 마찬가지라고 답한다 / 선후·근거: main_01_10 L67 선택지의 '난 너희를 쏘지 않아.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_10",
+          "line_start": 68,
+          "line_end": 69,
+          "quote": "  [OPTION TEXT=\"난 너희를 쏘지 않아.\"]\n    라피: 그건 우리도 마찬가지입니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__050",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_01_10__rln_010"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 라피 일행을 믿는다고 밝힌다 / 선후·근거: main_01_10 L67 선택지의 '난 너희를 믿어.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_01_10",
+          "line_start": 72,
+          "line_end": 73,
+          "quote": "  [OPTION TEXT=\"난 너희를 믿어.\"]\n    아니스: 하하. 도대체 뭘 보고 우릴 믿는다고 말하는지 원."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__051",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_02_12__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 괴물로 보인다는 지휘관에게 라피가 연민이나 동정 없이 사는 세계가 다른 미지의 괴물로 놔두는 편이 서로 편할 것이라며 거리를 둔다 / 선후·근거: main_02_12 L68 선택지의 '괴물로 보여.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_12",
+          "line_start": 69,
+          "line_end": 73,
+          "quote": "  [OPTION TEXT=\"괴물로 보여.\"]\n    라피: 사실 크게 다르지 않습니다.\n    라피: 그렇기에 우리에게 연민도, 동정도 느끼실 필요 없습니다.\n    라피: 사는 세계가 다른, 그저 미지의 괴물로서 놔두시면 됩니다.\n    라피: 그 편이··· 서로가 편할 테니까요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__061",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_02_12__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 자신들이 무엇으로 보이느냐는 라피의 물음에 지휘관이 \"괴물로 보여.\"라고 답한다. 라피(니케)를 인간과 다른 존재로 본다는 지휘관→라피 방향의 인식이다. 사는 세계가 다르니 놔두라는 거리 두기는 L70~73 라피의 말이라 이 기록에 넣지 않는다(D1__003__051). 이름이나 호칭을 정하는 장면이 아니고 공격·적대도 없어 우호·신뢰 축에 적는다 / 선후·근거: main_02_12 L68 선택지의 '괴물로 보여.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_12",
+          "line_start": 66,
+          "line_end": 69,
+          "quote": "라피: ···지휘관.\n라피: 지휘관에겐 우리가 무엇으로 보이십니까?\n[CHOICE_START]\n  [OPTION TEXT=\"괴물로 보여.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__052",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_02_12__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 인간으로 보인다는 지휘관에게 라피가 인간으로 봐주는 건 감사하나 시간이 지날수록 다르다는 것을 느껴 상처받는 건 지휘관이 될 것이라 경계한다 / 선후·근거: main_02_12 L68 선택지의 '인간으로 보여.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_12",
+          "line_start": 75,
+          "line_end": 79,
+          "quote": "  [OPTION TEXT=\"인간으로 보여.\"]\n    라피: 우릴 인간으로 봐주는 건 감사한 일입니다만.\n    라피: 결국 상처받는 건 지휘관이 될 겁니다.\n    라피: 시간이 지날수록 [다르다]는 것을 느낄 테니까요.\n    라피: 제 말 명심해 주시길."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__062",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_02_12__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 자신들이 무엇으로 보이느냐는 라피의 물음에 지휘관이 \"인간으로 보여.\"라고 답한다. 라피(니케)를 인간으로 대하는, 지휘관→라피 방향의 우호적 인식이다. 이름이나 호칭을 정하는 장면이 아니다. 라피의 대답(D1__003__052)과 방향이 다르다 / 선후·근거: main_02_12 L68 선택지의 '인간으로 보여.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_02_12",
+          "line_start": 66,
+          "line_end": 68,
+          "quote": "라피: ···지휘관.\n라피: 지휘관에겐 우리가 무엇으로 보이십니까?\n[CHOICE_START]"
+        },
+        {
+          "scene_id": "main_02_12",
+          "line_start": 75,
+          "line_end": 75,
+          "quote": "  [OPTION TEXT=\"인간으로 보여.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__053",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_04_14__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 기억 소거를 앞둔 라피가 잊지 않겠다는 지휘관에게 그동안 감사했다며 이후의 자신도 잘 부탁드린다고 신뢰를 표한다 / 선후·근거: main_04_14 L4 선택지의 '라피와 얘기한다.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_14",
+          "line_start": 18,
+          "line_end": 24,
+          "quote": "    [CHOICE_START]\n      [OPTION TEXT=\"···내가 잊지 않을 거야.\"]\n      [OPTION_END]\n    [CHOICE_END]\n    라피: ··· ···.\n    라피: 그동안 감사했습니다. 지휘관.\n    라피: 이후의 저도 잘 부탁드리겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__066",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "main_04_14__rln_001"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 기억 소거 뒤에는 지휘관도 기억하지 못할 것이라는 라피에게 지휘관이 \"···내가 잊지 않을 거야.\"라고 다짐한다. 라피의 감사(D1__003__053)와 방향이 다른 지휘관→라피의 다짐이다 / 선후·근거: main_04_14 L4 선택지의 '라피와 얘기한다.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_04_14",
+          "line_start": 17,
+          "line_end": 19,
+          "quote": "    라피: 네온도, 아니스도, 지휘관도 기억하지 못할 겁니다.\n    [CHOICE_START]\n      [OPTION TEXT=\"···내가 잊지 않을 거야.\"]"
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__054",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "claimed",
+      "claimants": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "rapi_04__rln_003"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 죽지 않겠다는 지휘관의 말에 라피가 당신의 말은 어째서인지 믿고 싶어진다고 답한다 / 선후·근거: rapi_04 L91 선택지의 '나는 죽지 않아.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_04",
+          "line_start": 92,
+          "line_end": 94,
+          "quote": "  [OPTION TEXT=\"나는 죽지 않아.\"]\n    라피: ···예.\n    라피: 당신의 말은 어째서인지 믿고 싶어지는군요."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    },
+    {
+      "link_id": "D1__003__055",
+      "unit_id": "U001",
+      "link_type": "relation",
+      "subject": [
+        {
+          "ref": "entity",
+          "entity_id": "char_라피",
+          "name": "라피",
+          "entity_type": "character"
+        }
+      ],
+      "target": [
+        {
+          "ref": "entity",
+          "entity_id": "char_지휘관",
+          "name": "지휘관",
+          "entity_type": "character"
+        }
+      ],
+      "bidirectional": false,
+      "relation_type": "affinity_or_trust",
+      "epistemic_status": "established",
+      "claimants": [],
+      "context_scope": "branch",
+      "temporal_anchor": "scene_present",
+      "anchor": null,
+      "progression": "standalone",
+      "prev_link_ids": [],
+      "order_basis": "not_applicable",
+      "memo_ids": [
+        "rapi_04__rln_004"
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "상태: 지휘관이 \"라피가 날 지켜주면 돼.\"라고 하자 라피가 \"···알겠습니다.\", \"제가 지키겠습니다.\"라고 받아들인다. 지휘관의 부탁을 라피가 그 자리에서 수락해 보호 약속이 성립한다 / 선후·근거: rapi_04 L91 선택지의 '라피가 날 지켜주면 돼.' 갈래에서만 나오는 분기 기록이다",
+      "supporting_evidence": [
+        {
+          "scene_id": "rapi_04",
+          "line_start": 96,
+          "line_end": 98,
+          "quote": "  [OPTION TEXT=\"라피가 날 지켜주면 돼.\"]\n    라피: ···알겠습니다.\n    라피: 제가 지키겠습니다."
+        }
+      ],
+      "contradicting_evidence": [],
+      "search_hints": []
+    }
+  ],
+  "excluded_memos": [
+    {
+      "unit_id": "U001",
+      "item_id": "nayuta_02__rln_004",
+      "reason": "관계 아님",
+      "note": "나유타가 자신이 지휘관에게 마음을 열게 된 계기로 메티스·라피 등 지휘관 주위 소저들의 언행을 언급할 뿐, 라피와 지휘관 사이의 구체적 관계 상태를 진술하지 않는다",
+      "supporting_evidence": [
+        {
+          "scene_id": "nayuta_02",
+          "line_start": 69,
+          "line_end": 75,
+          "quote": "나유타: 아무래도···.\n나유타: 아무래도, 대협 주위의 소저들 말과 행동을 보아서, 인 것 같소.\n[CHOICE_START]\n  [OPTION TEXT=\"내 주위라면, 메티스랑 라피 말이야?\"]\n  [OPTION_END]\n[CHOICE_END]\n나유타: 그렇소. 뭐, 다른 소저들도 포함이긴 하오만."
+        }
+      ]
+    }
+  ],
+  "merge_suggestions": []
+}

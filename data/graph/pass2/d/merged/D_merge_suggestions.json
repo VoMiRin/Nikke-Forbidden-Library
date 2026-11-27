@@ -1,0 +1,52 @@
+{
+  "schema_version": "pass2-d-merged-0.1.0",
+  "kind": "merge_suggestions",
+  "run": "main",
+  "generated_at": "2026-11-27T02:40:20.858Z",
+  "suggestions": [
+    {
+      "suggestion_id": "D1__005__M01",
+      "unit_ids": [
+        "U001"
+      ],
+      "targets": [
+        {
+          "ref": "entity",
+          "entity_id": "squad_카운터스",
+          "name": "카운터스",
+          "entity_type": "squad"
+        },
+        {
+          "ref": "entity",
+          "entity_id": "squad_특수별동대_카운터스",
+          "name": "특수별동대 카운터스",
+          "entity_type": "squad"
+        }
+      ],
+      "confidence": "유력한 해석",
+      "rationale": "main_27_04에서 라피가 라피·아니스·네온을 카운터스 소속이라 소개하고, chapter_50_02에서 지휘관이 아니스와 네온을 가리켜 '특수별동대 카운터스의 멤버들'이라 부르므로, 별도 엔티티로 등록된 '특수별동대 카운터스'는 '카운터스'에 직제 수식어가 붙은 같은 스쿼드다",
+      "supporting_evidence": [
+        {
+          "scene_id": "main_27_04",
+          "line_start": 26,
+          "line_end": 26,
+          "quote": "라피: 카운터스 소속의 라피, 아니스, 네온이야."
+        },
+        {
+          "scene_id": "chapter_50_02",
+          "line_start": 193,
+          "line_end": 193,
+          "quote": "라피: ···지휘관. 이곳은 바이스리터에게 맡기고 저희는 아니스와 네온을···."
+        },
+        {
+          "scene_id": "chapter_50_02",
+          "line_start": 202,
+          "line_end": 205,
+          "quote": "[CHOICE_START]\n  [OPTION TEXT=\"둘은 강해. 믿자. 특수별동대 카운터스의 멤버들이잖아.\"]\n  [OPTION_END]\n[CHOICE_END]"
+        }
+      ],
+      "bundle_id": "D1__005",
+      "wave": 1
+    }
+  ]
+}
