@@ -98,6 +98,7 @@ export interface Script {
   categoryKey: string;
   section?: string; // Optional grouping inside a category (e.g. 블라블라 개인/단체방)
   titleSection?: string; // Optional grouping inside a title (e.g. FADING AFFECTION 마리아의 기록/메모리)
+  groupTitle?: string; // In-game name of the item a scene belongs to (e.g. 이벤트 유실물 '침식 보고서'); shown only in the viewer header
   content?: string; // Full script content, lazy-loaded
   subTitle?: string; // Sub-Chapter Title or specific part name
   searchableContent: string; // Pre-calculated for searching dialogue and narration
@@ -117,6 +118,7 @@ export interface ScriptManifestEntry {
   categoryKey: string;
   section?: string;
   titleSection?: string;
+  groupTitle?: string;
   subTitle?: string;
   mainChapterFile: string;
   mainChapterVersion?: string;

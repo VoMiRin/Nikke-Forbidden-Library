@@ -730,7 +730,10 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
   };
 
   const sceneLabel = script ? (script.subTitle || script.title) : '';
-  const titleDescription = script ? titleDescriptionFor(script.categoryKey, script.title) : undefined;
+  // 게임 속 묶음 이름(groupTitle, 예: 이벤트 유실물의 유실물 이름)이 있으면 그 설명을 먼저 쓴다
+  const titleDescription = script
+    ? (titleDescriptionFor(script.categoryKey, script.groupTitle) ?? titleDescriptionFor(script.categoryKey, script.title))
+    : undefined;
   const scriptLabel = script ? `${script.title}${script.subTitle ? ` — ${script.subTitle}` : ''}` : '';
 
   if (!script) {
@@ -902,7 +905,11 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
 
         <header className="border-b border-nikke-border pb-10 pt-12 max-sm:pb-6 max-sm:pt-7">
           {script.subTitle && (
-            <p className="text-[15px] text-nikke-text-secondary max-sm:text-[13px]">{script.title}</p>
+            <p className="text-[15px] text-nikke-text-secondary max-sm:text-[13px]">
+              {script.title}
+              {/* 목록에는 큰 타이틀만 두고, 장면을 볼 때만 게임 속 묶음 이름을 함께 보인다 */}
+              {script.groupTitle && <> · {script.groupTitle}</>}
+            </p>
           )}
           <h1
             id="script-title"

@@ -176,22 +176,22 @@ export const eventLostRelicsScripts: ScriptData[] = [
     { id: 'old_tales_dialog_17', categoryKey: 'event_lost_relics', title: 'OLD TALES 필드 대화', subTitle: 'OLD TALES 필드 대화 18', mainChapterFile: 'old_tales_dialog.txt' },
     { id: 'old_tales_dialog_18', categoryKey: 'event_lost_relics', title: 'OLD TALES 필드 대화', subTitle: 'OLD TALES 필드 대화 19', mainChapterFile: 'old_tales_dialog.txt' },
 
-    // OLD TALES 유실물 (타이틀은 게임 데이터 Locale_Memorial의 memorial_oldtales_NN_name)
-    { id: 'old_tales_lost_00', categoryKey: 'event_lost_relics', title: '침식 보고서', subTitle: '침식 보고서 I', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_01', categoryKey: 'event_lost_relics', title: '침식 보고서', subTitle: '침식 보고서 II', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_02', categoryKey: 'event_lost_relics', title: '침식 보고서', subTitle: '침식 보고서 III', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_03', categoryKey: 'event_lost_relics', title: '침식 보고서', subTitle: '침식 보고서 IV', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_04', categoryKey: 'event_lost_relics', title: '침식 보고서', subTitle: '침식 보고서 VI', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_05', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 I -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_06', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 II -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_07', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 III -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_08', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 IV -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_09', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 V -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_10', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (2/2)', subTitle: '침식 보고서 VI -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_11', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (2/2)', subTitle: '침식 보고서 VII -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_12', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (2/2)', subTitle: '침식 보고서 VIII -비공식-', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_13', categoryKey: 'event_lost_relics', title: '침식 보고서 -비공식- (2/2)', subTitle: '됐다됐다됐다', mainChapterFile: 'old_tales_lost.txt' },
-    { id: 'old_tales_lost_14', categoryKey: 'event_lost_relics', title: '레드 슈즈의 목소리', subTitle: '※□＠■※', mainChapterFile: 'old_tales_lost.txt' },
+    // OLD TALES 유실물 (groupTitle은 게임 데이터 Locale_Memorial의 유실물 이름 memorial_oldtales_NN_name)
+    { id: 'old_tales_lost_00', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서', subTitle: '침식 보고서 I', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_01', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서', subTitle: '침식 보고서 II', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_02', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서', subTitle: '침식 보고서 III', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_03', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서', subTitle: '침식 보고서 IV', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_04', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서', subTitle: '침식 보고서 VI', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_05', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 I -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_06', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 II -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_07', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 III -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_08', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 IV -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_09', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (1/2)', subTitle: '침식 보고서 V -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_10', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (2/2)', subTitle: '침식 보고서 VI -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_11', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (2/2)', subTitle: '침식 보고서 VII -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_12', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (2/2)', subTitle: '침식 보고서 VIII -비공식-', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_13', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '침식 보고서 -비공식- (2/2)', subTitle: '됐다됐다됐다', mainChapterFile: 'old_tales_lost.txt' },
+    { id: 'old_tales_lost_14', categoryKey: 'event_lost_relics', title: 'OLD TALES 유실물', groupTitle: '레드 슈즈의 목소리', subTitle: '※□＠■※', mainChapterFile: 'old_tales_lost.txt' },
 
     // OLD TALES 미니게임 기억
     { id: 'old_tales_mini_memory_00', categoryKey: 'event_lost_relics', title: 'OLD TALES 미니게임 기억', subTitle: '첫 번째 편지', mainChapterFile: 'old_tales_mini_memory.txt' },
@@ -259,11 +259,11 @@ export const eventLostRelicsScripts: ScriptData[] = [
     { id: 'unbreakable_sphere_dialog_20', categoryKey: 'event_lost_relics', title: 'UNBREAKABLE SPHERE 필드 대화', subTitle: 'UNBREAKABLE SPHERE 필드 대화 21', mainChapterFile: 'unbreakable_sphere_dialog.txt' },
     { id: 'unbreakable_sphere_dialog_21', categoryKey: 'event_lost_relics', title: 'UNBREAKABLE SPHERE 필드 대화', subTitle: 'UNBREAKABLE SPHERE 필드 대화 22', mainChapterFile: 'unbreakable_sphere_dialog.txt' },
 
-    // UNBREAKABLE SPHERE 유실물 (타이틀은 게임 데이터 Locale_Memorial의 memorial_unbreakablesphere_NN_name)
-    { id: 'unbreakable_sphere_lost_00', categoryKey: 'event_lost_relics', title: '잊힐 그녀의 이야기', subTitle: '첫 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
-    { id: 'unbreakable_sphere_lost_01', categoryKey: 'event_lost_relics', title: '잊힐 그녀의 이야기', subTitle: '두 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
-    { id: 'unbreakable_sphere_lost_02', categoryKey: 'event_lost_relics', title: '잊힐 그녀의 이야기', subTitle: '세 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
-    { id: 'unbreakable_sphere_lost_03', categoryKey: 'event_lost_relics', title: '잊힐 그녀의 이야기', subTitle: '네 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
+    // UNBREAKABLE SPHERE 유실물 (groupTitle은 게임 데이터 Locale_Memorial의 유실물 이름 memorial_unbreakablesphere_NN_name)
+    { id: 'unbreakable_sphere_lost_00', categoryKey: 'event_lost_relics', title: 'UNBREAKABLE SPHERE 유실물', groupTitle: '잊힐 그녀의 이야기', subTitle: '첫 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
+    { id: 'unbreakable_sphere_lost_01', categoryKey: 'event_lost_relics', title: 'UNBREAKABLE SPHERE 유실물', groupTitle: '잊힐 그녀의 이야기', subTitle: '두 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
+    { id: 'unbreakable_sphere_lost_02', categoryKey: 'event_lost_relics', title: 'UNBREAKABLE SPHERE 유실물', groupTitle: '잊힐 그녀의 이야기', subTitle: '세 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
+    { id: 'unbreakable_sphere_lost_03', categoryKey: 'event_lost_relics', title: 'UNBREAKABLE SPHERE 유실물', groupTitle: '잊힐 그녀의 이야기', subTitle: '네 번째 기록', mainChapterFile: 'unbreakable_sphere_lost.txt' },
 
     // GODDESS FALL
     { id: 'goddess_fall_mini_00', categoryKey: 'event_lost_relics', title: 'GODDESS FALL', subTitle: 'REBUILD', mainChapterFile: 'goddess_fall_mini.txt' },
