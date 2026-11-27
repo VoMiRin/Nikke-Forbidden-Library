@@ -676,7 +676,7 @@ export const ScriptViewer: React.FC<ScriptViewerProps> = ({
       }
 
       if (element.type === 'dialogue') {
-        return wrapElement(<DialogueRenderer key={key} element={element} />);
+        return wrapElement(<DialogueRenderer key={key} element={element} sceneColors={script?.speakerColors} />);
       }
 
       if (element.type === 'narration') {

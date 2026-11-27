@@ -1,19 +1,27 @@
 import React from 'react';
-import type { DialogueElement } from '../../types';
+import type { DialogueElement, SceneSpeakerColors } from '../../types';
 import { SPEAKER_COLORS } from '../../lib/speakerColors';
 import { InlineText } from './InlineText';
 
 interface DialogueRendererProps {
   element: DialogueElement;
+  sceneColors?: SceneSpeakerColors;
 }
 
 const COMMANDER_SPEAKERS = new Set(['COMMANDER', '지휘관']);
 
-export const DialogueRenderer: React.FC<DialogueRendererProps> = ({ element }) => {
+/** 줄 색 → 장면 색 → 이름 기본색. 같은 이름이라도 장면의 코스튬·변형 화자 ID에 따라 인게임 색이 다르다. */
+const resolveSpeakerColor = (speaker: string, dialogue: string | undefined, sceneColors?: SceneSpeakerColors) => (
+  (dialogue !== undefined ? sceneColors?.lines?.[speaker]?.[dialogue] : undefined)
+  ?? sceneColors?.names?.[speaker]
+  ?? SPEAKER_COLORS[speaker]
+);
+
+export const DialogueRenderer: React.FC<DialogueRendererProps> = ({ element, sceneColors }) => {
   const speaker = element.speaker;
   const isCommander = !!speaker && COMMANDER_SPEAKERS.has(speaker.trim().toUpperCase());
-  // 니케는 인게임 기본색, 지휘관은 강조색, 그 밖의 화자(NPC 등)는 중립색 막대
-  const speakerColor = speaker ? SPEAKER_COLORS[speaker.trim()] : undefined;
+  // 니케는 인게임 색, 지휘관은 강조색, 그 밖의 화자(NPC 등)는 중립색 막대
+  const speakerColor = speaker ? resolveSpeakerColor(speaker.trim(), element.dialogue, sceneColors) : undefined;
   const barColor = isCommander ? 'rgb(var(--nikke-accent))' : speakerColor ?? 'rgb(var(--nikke-border-strong))';
 
   return (

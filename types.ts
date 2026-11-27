@@ -104,6 +104,7 @@ export interface Script {
   searchableSpeakers: string; // Pre-calculated for searching speakers
   mainChapterFile: string; // Filename (e.g., "chapter_00.txt")
   mainChapterVersion?: string; // Version token for cache-busting chapter text only when the file changes
+  speakerColors?: SceneSpeakerColors; // Per-scene in-game colours for costume/variant speaker IDs
   loadContent: () => Promise<string>; // Function to load the full content
   searchSnippet?: string;
   searchMatchType?: SearchMatchType;
@@ -119,6 +120,16 @@ export interface ScriptManifestEntry {
   subTitle?: string;
   mainChapterFile: string;
   mainChapterVersion?: string;
+  speakerColors?: SceneSpeakerColors;
+}
+
+/**
+ * 장면별 화자 색(data/speakerSceneColors.json). 같은 이름이라도 코스튬·변형 화자 ID에 따라 인게임 색이 다를 때 쓴다.
+ * 줄 색(lines[이름][대사]) → 장면 색(names[이름]) → 이름 기본색(lib/speakerColors.ts) 순으로 고른다.
+ */
+export interface SceneSpeakerColors {
+  names?: Record<string, string>;
+  lines?: Record<string, Record<string, string>>;
 }
 
 export interface SearchIndexDocument extends ScriptManifestEntry {

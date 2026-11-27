@@ -127,6 +127,8 @@ const main = async () => {
   const chapterFileCache = new Map();
   const searchIndex = [];
   const speakerRecords = [];
+  // 장면별 화자 색: scripts/buildSpeakerSceneColors.mjs가 만든 커밋된 파일. 키는 `${categoryKey}/${id}`.
+  const sceneSpeakerColors = JSON.parse(await fs.readFile(path.join(rootDir, 'data', 'speakerSceneColors.json'), 'utf8'));
 
   for (const script of newScriptsData) {
     const chapterKey = `${script.categoryKey}/${script.mainChapterFile}`;
@@ -193,7 +195,13 @@ const main = async () => {
     subTitle,
     mainChapterFile,
     mainChapterVersion: chapterVersionCache.get(`${categoryKey}/${mainChapterFile}`),
+    speakerColors: sceneSpeakerColors[`${categoryKey}/${id}`],
   }));
+  const unusedSceneColorKeys = Object.keys(sceneSpeakerColors)
+    .filter(key => !manifest.some(entry => `${entry.categoryKey}/${entry.id}` === key));
+  if (unusedSceneColorKeys.length > 0) {
+    console.warn(`speakerSceneColors.json has ${unusedSceneColorKeys.length} scene(s) missing from the manifest; rerun scripts/buildSpeakerSceneColors.mjs. e.g. ${unusedSceneColorKeys.slice(0, 3).join(', ')}`);
+  }
 
   const { speakers, speakerIndex } = buildSpeakerAssets(speakerRecords);
   await writeJson(path.join(publicDir, 'speakers.json'), speakers);
